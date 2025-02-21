@@ -96,27 +96,11 @@ for f in system system_ext product vendor vendor_dlkm odm; do
     mv ${f}.img ../dyn 
 done
 
-# Switch to `syn` directory and create a 7z archive for `boot` categorty image files tagged with "-boot"
-cd ../syn
-7z a -mmt4 -mx6 ../out/${TAG}-image-boot.7z * 
-
-# Delete `syn` directory
-rm -rf ../syn
-
-# Switch to `ota` directory and create a 7z archive for `firmware` category image files tagged with "-firmware"
-cd ../ota
-7z a -mmt4 -mx6 ../out/${TAG}-image-firmware.7z *
-
-# Delete `ota` directory
-rm -rf ../ota
-
-# Switch to `dyn` directory and create a split 7z archive for `logical` category image files tagged with "-logical"
-cd ../dyn
-7z a -mmt4 -mx6 -v1g ../out/${TAG}-image-logical.7z *
+# Archive images in parallel and remove directories after success
+cd ../syn && 7z a -mmt4 -mx6 ../out/${TAG}-image-boot.7z * && rm -rf ../syn &  
+cd ../ota && 7z a -mmt4 -mx6 ../out/${TAG}-image-firmware.7z * && rm -rf ../ota &  
+cd ../dyn && 7z a -mmt4 -mx6 -v1g ../out/${TAG}-image-logical.7z * && rm -rf ../dyn & 
 wait
-
-# Delete `dyn` directory
-rm -rf ../dyn
 
 # Echo tag name, release body, and release history
 echo "tag=$TAG" >> "$GITHUB_OUTPUT"
