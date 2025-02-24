@@ -38,6 +38,11 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
+# Extract fingerprint info
+extract_fingerprint() {
+    unzip -p ota.zip META-INF/com/android/metadata | grep "^post-build=" | cut -d'=' -f2 || echo "InvalidFingerprint"
+}
+
 # Download the main OTA firmware
 download_file "$1"
 
@@ -45,6 +50,7 @@ download_file "$1"
 unzip ota.zip payload.bin || { echo "Failed to unzip payload"; exit 1; }
 mv payload.bin payload_working.bin
 TAG=$(unzip -p ota.zip payload_properties.txt | grep ^POST_OTA_VERSION= | cut -b 18-)
+FINGERPRINT=$(extract_fingerprint)
 BODY="[$TAG]($1) (full)"
 rm ota.zip
 
@@ -61,6 +67,7 @@ for i in "${@:2}"; do
     unzip ota.zip payload.bin || { echo "Failed to unzip incremental payload"; exit 1; }
     mv payload.bin payload_working.bin
     TAG=$(unzip -p ota.zip payload_properties.txt | grep ^POST_OTA_VERSION= | cut -b 18-)
+    FINGERPRINT=$(extract_fingerprint)  # Update fingerprint for the latest incremental
     BODY="$BODY -> [$TAG]($i)"
     rm ota.zip
 
@@ -70,6 +77,9 @@ for i in "${@:2}"; do
     mv ota_new ota
     rm payload_working.bin
 done
+
+# Append the final fingerprint to BODY after processing all incrementals
+BODY=$(printf "%s\n\n**Fingerprint:**\n%s" "$BODY" "${FINGERPRINT//|/$'\n'}")
 
 # Create required directories
 mkdir -p out dyn syn
@@ -103,5 +113,9 @@ cd ../dyn && 7z a -mmt4 -mx6 -v1g ../out/${TAG}-image-logical.7z * && rm -rf ../
 wait
 
 # Echo tag name, release body, and release history
-echo "tag=$TAG" >> "$GITHUB_OUTPUT"
-echo "body=$BODY" >> "$GITHUB_OUTPUT"
+{
+    echo "tag=$TAG"
+    echo "body<<EOF"
+    echo "$BODY"
+    echo "EOF"
+} >> "$GITHUB_OUTPUT"
