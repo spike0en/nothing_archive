@@ -43,13 +43,18 @@ extract_fingerprint() {
     unzip -p ota.zip META-INF/com/android/metadata | grep "^post-build=" | cut -d'=' -f2 || echo "InvalidFingerprint"
 }
 
+# Extract POST_OTA_VERSION info
+extract_version() {
+    unzip -p ota.zip payload_properties.txt | grep "^POST_OTA_VERSION=" | cut -d'=' -f2 || echo "UnknownVersion"
+}
+
 # Download the main OTA firmware
 download_file "$1"
 
 # Extract and process payload
 unzip ota.zip payload.bin || { echo "Failed to unzip payload"; exit 1; }
 mv payload.bin payload_working.bin
-TAG=$(unzip -p ota.zip payload_properties.txt | grep ^POST_OTA_VERSION= | cut -b 18-)
+TAG=$(extract_version)
 FINGERPRINT=$(extract_fingerprint)
 BODY="[$TAG]($1) (full)"
 rm ota.zip
@@ -66,7 +71,7 @@ for i in "${@:2}"; do
     download_file "$i"
     unzip ota.zip payload.bin || { echo "Failed to unzip incremental payload"; exit 1; }
     mv payload.bin payload_working.bin
-    TAG=$(unzip -p ota.zip payload_properties.txt | grep ^POST_OTA_VERSION= | cut -b 18-)
+    TAG=$(extract_version) # Update TAG (release name) to the latest POST_OTA_VERSION
     FINGERPRINT=$(extract_fingerprint)  # Update fingerprint for the latest incremental
     BODY="$BODY -> [$TAG]($i)"
     rm ota.zip
@@ -115,6 +120,7 @@ wait
 # Echo tag name, release body, and release history
 {
     echo "tag=$TAG"
+    echo "release_name=$TAG" 
     echo "body<<EOF"
     echo "$BODY"
     echo "EOF"

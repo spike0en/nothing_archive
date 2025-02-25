@@ -7,7 +7,7 @@ on:
         description: 'URLs (comma or space separated)'
         required: true
       name:
-        description: 'Name for release (title and tag)'
+        description: 'Release tag'
         required: true
 
 jobs:
@@ -42,5 +42,6 @@ jobs:
         artifacts: out/*
         artifactErrorsFailBuild: true
         body: ${{ steps.dump.outputs.body }}
-        tag: ${{ github.event.inputs.name }}
+        tag: ${{ steps.dump.outputs.tag }}
+        name: ${{ steps.dump.outputs.tag }}
         token: ${{ secrets.GITHUB_TOKEN }}
