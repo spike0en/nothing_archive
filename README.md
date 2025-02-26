@@ -40,9 +40,10 @@
 
 ## Downloads 📥  
 
-- Releases for OTA images are tagged and named using the format: `NothingOS Version`-`Device Codename`.`Incremental Date` and `POST_OTA_VERSION`_`NothingOS Version`, as shown [here](https://github.com/spike0en/nothing_archive/releases), respectively.  
+- Releases for OTA images are tagged and named using the format: `<NothingOS Version>`-`<Device Codename>`.`<Incremental Date>` and `<POST_OTA_VERSION>`_`<NothingOS Version>`, as shown [here](https://github.com/spike0en/nothing_archive/releases), respectively.
+- Region-specific releases are tagged using the format: `<NothingOS Version>`-`<G or E>`-`<Device Codename>`.`<Incremental Date>`, applicable to certain older [Spacewar](#nothing-phone-1) builds that are not unified. Here, G = GLO (Global), and E = EEA (European Economic Area).
 - For releases with a Nothing OS version in the format X.Y.Za and X.Y, tags are renamed to X.Y.0-A and X.Y.0 respectively for proper sorting (e.g., `2.5.5A` → `2.5.5-A`, `2.6` → `2.6.0`, `3.0` → `3.0.0`).
-- Android Developer preview releases are tagged as `0.0.0-DP`-`Device Codename`.`Incremental Date`.  
+- Android Developer preview releases are tagged as `0.0.0-DP`-`<Device Codename>`.`<Incremental Date>`.
 - Unless specifically stated otherwise in the release notes, the releases published here are compatible with all regional and color variants of the device.  
 - For detailed instructions on interpreting the required incremental OTA firmware, refer to this [OTA Sideloading Guide](https://telegra.ph/OTA-Sideloading-Guide-for-Nothing-Devices-01-17).
 
@@ -57,6 +58,8 @@ Click on the respective device name to quickly navigate to its respective releas
 ---
 
 #### Nothing Phone (1)
+
+**Note: Builds older than Nothing OS version 1.5.2 for Spacewar are region-specific. GLO = Global (including India) & EEA = European Economic Area**
 
 | **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
 |------------------|-------------------|-----------------------------------------------------|-------------------------------------------------------|-------------------------|
