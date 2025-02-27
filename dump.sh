@@ -119,8 +119,8 @@ wait
 
 # Echo tag name, release body, and release history
 {
-    echo "tag=$TAG"
-    echo "release_name=$TAG" 
+    echo "tag=$release_tag"
+    echo "release_name=$TAG"
     echo "body<<EOF"
     echo "$BODY"
     echo "EOF"

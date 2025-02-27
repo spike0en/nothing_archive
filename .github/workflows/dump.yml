@@ -31,6 +31,7 @@ jobs:
     - name: Download & Process OTA Packages
       id: dump
       run: |
+        echo "release_tag=${{ inputs.name }}" >> "$GITHUB_ENV"
         IFS=',' read -ra URLS <<< "${{ inputs.urls }}"
         for url in "${URLS[@]}"; do
           echo "$url"
@@ -41,7 +42,7 @@ jobs:
       with:
         artifacts: out/*
         artifactErrorsFailBuild: true
+        tag: ${{ env.release_tag }}
+        name: ${{ steps.dump.outputs.release_name }}
         body: ${{ steps.dump.outputs.body }}
-        tag: ${{ steps.dump.outputs.tag }}
-        name: ${{ steps.dump.outputs.tag }}
         token: ${{ secrets.GITHUB_TOKEN }}
