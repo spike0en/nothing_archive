@@ -50,20 +50,21 @@
 
 ### Supported Models 📱  
 
-Click on the respective device name to quickly navigate to its respective release index:  
-
-**⚪ Nothing:** [Phone (1)](#nothing-phone-1) · [Phone (2)](#nothing-phone-2) · [Phone (2a)](#nothing-phone-2a) · [Phone (2a) Plus](#nothing-phone-2a-plus)  
-
-**🔴 CMF by Nothing:** [Phone (1)](#cmf-phone-1)   
+Select your **device model** from the dropdown list below to access it's **Release Index**:
 
 ---
 
-#### Nothing Phone (1)
+<details>
+  <summary>Nothing Phone (1) - Spacewar</summary>
+
+<br>
 
 **Note: Builds older than Nothing OS version 1.5.1 OB-2 for Spacewar are region-specific. GLO = Global (including India) & EEA = European Economic Area**
 
+<br>
+
 | **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
-|------------------|-------------------|-----------------------------------------------------|-------------------------------------------------------|-------------------------|
+|------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
 | 3.0 | Spacewar-V3.0-250218-1552 | Spacewar_V3.0-250108-1938 -> [Spacewar_V3.0-250218-1552](https://android.googleapis.com/packages/ota-api/package/556f03d356f4a672c04658a7d351305904a515b3.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.0.0+spacewar.250218) |
 | 3.0 | Spacewar-V3.0-250108-1938 | Spacewar_V3.0-241211-0926 -> [Spacewar_V3.0-250108-1938](https://android.googleapis.com/packages/ota-api/package/5120cc00410342a673f19758eff45337443d934c.zip) // Spacewar_U2.6-241031-1818 -> [Spacewar_V3.0-250108-1938](https://android.googleapis.com/packages/ota-api/package/6090fa491107f5cd6c02527eec962da40ea2fe35.zip) | [Here](https://archive.org/download/nothing-archive/full_ota/spacewar/Spacewar_V3.0-250108-1938_3.0.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.0.0+spacewar.250108) |
 | 3.0 OB-1 | Spacewar-V3.0-241211-0926 | Spacewar_U2.6-241031-1818 -> [Spacewar_V3.0-241211-0926](https://android.googleapis.com/packages/ota-api/package/3c291e4fb02cd41d58cececb5ee4855d719eb6b7.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.0.0+spacewar.241211) |
@@ -101,12 +102,17 @@ Click on the respective device name to quickly navigate to its respective releas
 | 1.0.2 | Spacewar-S1.0-220705-2027 | N/A | [GLO](https://android.googleapis.com/packages/ota-api/package/fad5d83167989dd71ef9adbb4243a8baa02956e6.zip) // [EEA](https://android.googleapis.com/packages/ota-api/package/09a261dea24fa76050bf9b03fff232dbab9b3a28.zip) | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/1.0.2-G+spacewar.220705) // [EEA](https://github.com/spike0en/nothing_archive/releases/tag/1.0.2-E+spacewar.220705) | 
 | 1.0.1 | Spacewar-S1.0-22 | N/A | [EEA](https://archive.org/download/nothing-archive/full_ota/spacewar/Spacewar_S1.0-22_1.0.1-EEA.zip) | [EEA](https://github.com/spike0en/nothing_archive/releases/tag/1.0.1-E+spacewar.220000) |
 
----
+<br>
 
-#### Nothing Phone (2)
+</details>
 
-| **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                 | **Full OTA**                           | **OTA Images**          |
-|------------------|-------------------|-----------------------------------------------------|-------------------------------------------------------|-------------------------|
+<details>
+  <summary>Nothing Phone (2) - Pong</summary>
+  
+<br>
+
+| **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
+|------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
 | 3.0 | Pong-V3.0-250113-1723 | Pong_V3.0-241226-2001 -> [Pong_V3.0-250113-1723](https://android.googleapis.com/packages/ota-api/package/2d4ff3545f89bf68eca8f54f2dc6bb94da625ae3.zip) | [Here](https://archive.org/download/nothing-archive/full_ota/pong/Pong_V3.0-250113-1723_3.0.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.0.0+pong.250113) |
 | 3.0 | Pong-V3.0-241226-2001 | Pong_U2.6-241016-1700 -> [Pong_V3.0-241226-2001](https://android.googleapis.com/packages/ota-api/package/dccd75a44c18bf956e56c82e2cd7f6861c10cad5.zip) // Pong_V3.0-241207-0124 -> [Pong_V3.0-241226-2001](https://android.googleapis.com/packages/ota-api/package/c256635e9442c1fe8de48a9c93cf199c779a7b27.zip) | [Here](https://archive.org/download/nothing-archive/full_ota/pong/Pong_V3.0-241226-2001_3.0.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.0.0+pong.241226) |
 | 3.0 | Pong-V3.0-241207-0124 | Pong_U2.6-241016-1700 -> [Pong_V3.0-241207-0124](https://android.googleapis.com/packages/ota-api/package/75ded7f0b0553a9e590c9c85434a1dde5b23df9a.zip) // Pong_V3.0-241028-1925 -> [Pong_V3.0-241207-0124](https://android.googleapis.com/packages/ota-api/package/b5b75a650caf20c5b06d8a29a9d595783c6b3e72.zip) | [Here](https://archive.org/download/nothing-archive/full_ota/pong/Pong_V3.0-241207-0124_3.0.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.0.0+pong.241207) |
@@ -130,13 +136,21 @@ Click on the respective device name to quickly navigate to its respective releas
 | 2.0.1A | Pong-T2.0-230719-1458 | Pong_T2.0-230709-2003 -> [Pong_T2.0-230719-1458](https://android.googleapis.com/packages/ota-api/package/d0f3e3e897154d513c91634ad225da1b724c9455.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/2.0.1-A+pong.230719) |
 | 2.0.1 | Pong-T2.0-230709-2003 | N/A | [Here](https://android.googleapis.com/packages/ota-api/package/7becde0f47753b99a7cc37ff27713ba8a48ef51a.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/2.0.1+pong.230709) |
 
----
+<br>
 
-#### Nothing Phone (2a)
+</details>
+
+<details>
+  <summary>Nothing Phone (2a) - Pacman</summary>
+  
+<br>
+
 **Note**: Versions 2.5.3 to 2.5.5A are compatible only with the Milk, White, and Black variants of the device. Versions 2.5.6 and higher support all color variants, including Blue and the Special Edition.
 
-| **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                 | **Full OTA**                           | **OTA Images**          |
-|------------------|-------------------|-----------------------------------------------------|-------------------------------------------------------|-------------------------|
+<br>
+
+| **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
+|------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
 | 3.0 | Pacman-V3.0-250114-1909 | Pacman_V3.0-250103-1741 -> [Pacman_V3.0-250114-1909](https://android.googleapis.com/packages/ota-api/package/b087f08204adfcd5ef226f2559fc8c1d3e613dc9.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.0.0+pacman.250114) |
 | 3.0 | Pacman-V3.0-250103-1741 | Pacman_V3.0-241210-2057 -> [Pacman_V3.0-250103-1741](https://android.googleapis.com/packages/ota-api/package/34c43764d71f9df1c6c1575cc35134c68acebcb6.zip) | [Here](https://archive.org/download/nothing-archive/full_ota/pacman/Pacman_V3.0-241210-2057.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.0.0+pacman.250103) |
 | 3.0 | Pacman-V3.0-241210-2057 | Pacman-U2.6-241021_2253 -> [Pacman_V3.0-241210-2057](https://android.googleapis.com/packages/ota-api/package/7e81406e8f6908b1504620ca979cb8fa80dc84cb.zip) | N/A | [Here](https://android.googleapis.com/packages/ota-api/package/7e81406e8f6908b1504620ca979cb8fa80dc84cb.zip) |
@@ -153,12 +167,17 @@ Click on the respective device name to quickly navigate to its respective releas
 | 2.5.3 | Pacman-U2.5-240301-2206 | N/A | [Here](https://archive.org/download/nothing-archive/full_ota/pacman/Pacman_U2.5-240301-2206_2.5.3.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/2.5.3+pacman.240301) |
 | 2.5 | Pacman-U2.5-231207-0042 | N/A | [Here](https://archive.org/download/nothing-archive/full_ota/pacman/Pacman_U2.5-231207-0042_2.5.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/2.5.0+pacman.231207) |
 
----
+<br>
 
-#### Nothing Phone (2a) Plus
+</details>
 
-| **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                 | **Full OTA**                           | **OTA Images**          |
-|------------------|-------------------|-----------------------------------------------------|-------------------------------------------------------|-------------------------|
+<details>
+  <summary>Nothing Phone (2a) Plus - PacmanPro</summary>
+  
+<br>
+
+| **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
+|------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
 | 3.0 | PacmanPro-V3.0-250207-2041 | PacmanPro_V3.0-241226-1537 -> [PacmanPro_V3.0-250207-2041](https://android.googleapis.com/packages/ota-api/package/ea9af989918db06e6510fff9d59552d5a429191b.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.0.0+pacmanpro.250207) |
 | 3.0 | PacmanPro-V3.0-241226-1537 | PacmanPro_V3.0-241126-1448 -> [PacmanPro_V3.0-241226-1537](https://android.googleapis.com/packages/ota-api/package/920e82afd0cb40da211a887baeb5297224c3a2c8.zip) // PacmanPro_U2.6-241217-1545 -> [PacmanPro_V3.0-241226-1537](https://android.googleapis.com/packages/ota-api/package/76b3f6ca552d54d5438aef2d8685586250e8b6ca.zip) | [Here](https://archive.org/download/nothing-archive/full_ota/pacmanpro/PacmanPro_V3.0-241226-1537_3.0.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.0.0+pacmanpro.241226) |
 | 3.0 OB-1 | PacmanPro-V3.0-241126-1448 | PacmanPro_U2.6-241125-2243 -> [PacmanPro_V3.0-241126-1448](https://d2j3l8bo7dc01w.cloudfront.net/ota_diff_20241125_224310_20241126_144811.zip?Expires=1993198031&Signature=CUmhVNk~bhACxtqLFXzj4Wr6b1~Bvc6F7-TVE~3reJLIp1K534egj9liWfX45VscVKmyMXFjr~nRTXjLw7DE4CuYAtyd43DkvUhasyDNTyeVHOoiGa1dZznANiP1y4TTg-ATCAVovwv3kVHlZGhii7a~T8gYNGXsUPdknC-L-6dgI1AVutlQ2sYE4axXuGp2BOq9S6dvG28xkmdQWyZrxomo1bFXsPpiEcAfiL94UP2HNQ23RVmLfyElVWpZxscGQgHfTmMtcl3aJxAxCcUedMj3KThkkfV~k9sMhiB2Vn-5s43l5gW6wu3E6FbiWYaeRtQ65SDr9AZs4B0cDV-pGA__&Key-Pair-Id=K1EOR8HYJKSWP1) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.0.0+pacmanpro.241126) |
@@ -167,12 +186,17 @@ Click on the respective device name to quickly navigate to its respective releas
 | 2.6 | PacmanPro-U2.6-240924-2223 | PacmanPro_U2.6-240723-1102 -> [PacmanPro_U2.6-240924-2223](https://android.googleapis.com/packages/ota-api/package/b8d1f9e6b3de2f85bc2ca29632bb11b23686078f.zip) | [Here](https://archive.org/download/nothing-archive/full_ota/pacmanpro/PacmanPro_U2.6-240924-2223_2.6.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/2.6.0+pacmanpro.240924) |
 | 2.6 | PacmanPro-U2.6-240723-1102 | N/A | [Here](https://archive.org/download/nothing-archive/full_ota/pacmanpro/PacmanPro_U2.6-240723-1102.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/2.6.0+pacmanpro.240827) |
 
----
+<br>
 
-#### CMF Phone (1)
+</details>
 
-| **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                 | **Full OTA**                           | **OTA Images**          |
-|------------------|-------------------|-----------------------------------------------------|-------------------------------------------------------|-------------------------|
+<details>
+  <summary>CMF Phone (1) - Tetris</summary>
+  
+<br>
+
+| **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
+|------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
 | 3.0 | Tetris-V3.0-250208-2015 | Tetris_V3.0-250111-2249 -> [Tetris_V3.0-250208-2015](https://android.googleapis.com/packages/ota-api/package/b7baa86871347adcf54b1b7d80aa6129e0755627.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.0.0+tetris.250208) |
 | 3.0 | Tetris-V3.0-250111-2249 | Tetris_U2.6-241204-2338 -> [Tetris_V3.0-250111-2249](https://android.googleapis.com/packages/ota-api/package/5dccb5b8fedd073b498b7ca3ea364ab9dc3702d8.zip) // Tetris_V3.0-241205-0050 -> [Tetris_V3.0-250111-2249](https://android.googleapis.com/packages/ota-api/package/67feb668686ad7363ef39906168530af25c265b9.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.0.0+tetris.250111) |
 | 3.0 OB-1 | Tetris-V3.0-241205-0050 | Tetris_U2.6-241125-2107 -> [Tetris_V3.0-241205-0050](https://d2j3l8bo7dc01w.cloudfront.net/ota_diff_20241125_210739_20241205_005022.zip?Expires=1993023098&Signature=c7Wzv7dfnpD1TbSb~imjm9sGWwpQrCgY9caLXO94DbUK~yQvCFs6yxqMXTUTdZtFhZOXp4BR7b2qwF1bXMHrJg-Kb7gEq5087yZEKOx6UJUFzOmth97BxvfxmIt6ROiwhLJ2~7U9XwZnD4oI8cgGfFaGS6EL21KrOIax1groWS09mh6Ogm-ssLjsc~-1qCQU2ogNHtu2Yt6AfWPAvZ7dpMb4WBN2qjrKJdRjzMTuCyH6zud8S42Bwyw0UefY-OA2pFoMti0KKUCyPwGlQxOvAZiKfZS6n6RBNkhekQzaPi-G0mG1m0kujK8e01fdT769RfTESbuwlBceCsemnktj3w__&Key-Pair-Id=K1EOR8HYJKSWP1) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.0.0+tetris.241205) |
@@ -185,6 +209,10 @@ Click on the respective device name to quickly navigate to its respective releas
 | 2.6 | Tetris-U2.6-240729-1047 | Tetris_U2.6-240702-2200 -> [Tetris_U2.6-240729-1047](https://android.googleapis.com/packages/ota-api/package/48fe84d5164a62417debe07bfff5d7c3ba19046e.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/2.6.0+tetris.240729) | 
 | 2.6 | Tetris-U2.6-240713-1955 | Tetris_U2.6-240702-2200 -> [Tetris-U2.6-240713-1955](https://android.googleapis.com/packages/ota-api/package/24c251bfc97dbe9a32777af2677e979e38bfcef2.zip) // Tetris_U2.6-240606-1805 -> [Tetris_U2.6-240713-1955](https://android.googleapis.com/packages/ota-api/package/d84e482fad907cef29a0de4dc344d18e61adf42a.zip) // Tetris_U2.6-240524-1536 -> [Tetris_U2.6-240713-1955](https://android.googleapis.com/packages/ota-api/package/72b82b535759b4559d0eb60c20e9ceabd303872a.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/2.6.0+tetris.240713) |
 | 2.6 | Tetris-U2.6-240702-2200 | N/A | [Here](https://archive.org/download/nothing-archive/full_ota/tetris/Tetris_U2.6-240702-2200_2.6.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/2.6.0+tetris.240702) |
+
+<br>
+
+</details>
 
 ---
 
