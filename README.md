@@ -16,21 +16,26 @@
 [![Stars](https://img.shields.io/github/stars/spike0en/nothing_archive?logo=github&color=D4AF37)](#support-the-project-)
 [![Forks](https://img.shields.io/github/forks/spike0en/nothing_archive?logo=github&color=468FAF)](https://github.com/spike0en/nothing_archive/network/members)
 
+---
+
 ## Index 📑  
 
-- [About](#about-)
-- [Features & Benefits](#features--benefits-)
+- [About the Project](#overview-)
+- [Disclaimer](#disclaimer-)
+- [Notes](#notes-)
+- [Categorization](#categorization-)
 - [Downloads](#downloads-)
 - [Flashing the Stock ROM Using Fastboot](#flashing-the-stock-rom-using-fastboot-)
-- [Disclaimer](#disclaimer-)
 - [Acknowledgments](#acknowledgments-)
 - [Support the Project](#support-the-project-)
 
-## About 📢  
+---
+
+## Overview 🔍  
 
 **Nothing Archive** is the most up-to-date Nothing OS firmware repository, offering official OTA updates, full firmware packages, and stock OTA images for **Nothing Phone (1), Phone (2), Phone (2a), Phone (2a) Plus**, and **CMF Phone (1)**, all sourced directly from official OEM servers. All files are [archived](https://archive.org/details/nothing-archive), ensuring easy access and long-term preservation.
 
-## Features & Benefits 🚀 
+### Features & Benefits: 
 
 - 📡 **Direct OTA Indexing** – Tracks **Nothing OS OTA update links** from official servers, providing access to **incremental and full updates** for Nothing and CMF devices.  
 - 🛠️ **Manual Installation (Sideloading)** – Install **Nothing OS firmware manually** during staged rollouts or when OTA updates fail using the inbuilt **offline Nothing OS offline updater or beta updater app** or via **ADB sideload** using a custom recovery when available. 
@@ -38,7 +43,20 @@
 - 🔓 **Rooting & Unrooting Support** – Provides **stock boot images for Magisk, KernelSU, and Apatch**, while also allowing **unrooting** by flashing the original boot image to keep **OTA updates functional** when modified partitions are detected.  
 - ⚡ **Flash Firmware & Unbrick Devices** – Provides **fastboot-flashable Nothing OS firmware** to help **resolve boot loops, recover soft-bricked devices, and restore the stock ROM**, as long as fastboot is accessible.
 
-## Downloads 📥  
+---
+
+## Disclaimer 🚨
+
+By using this archive, users acknowledge and accept these terms:
+- **✅ Authenticity** – All firmware files in this archive are **unaltered, unmodified, and sourced directly from the OEM**.  
+- **⚠️ Flash at Your Own Risk** – Installing firmware on an **unlocked bootloader** device carries inherent risks. Follow instructions carefully to **avoid bricking your device**.  
+- **📌 Compatibility** – Ensure the firmware matches your **Nothing or CMF device variant** before installation.
+- **🚫 No Warranty or Official Support** – This is a **community-driven project, unaffiliated with [Nothing](https://nothing.tech)**. Any **update failures, software bugs, or device issues** remain the OEM’s responsibility. The author and contributors **are not liable for bricked devices** due to incorrect flashing, misuse, or firmware modifications. Always download firmware **directly from this archive** to ensure integrity.  
+- **🛡️ Open Source Integrity** – Redistribution is permitted **only with proper attribution**. Users are encouraged to support and share this project **to maintain its availability**. **Reselling freely available firmware is strictly prohibited!**  
+
+---
+
+## Notes 📝
 
 - Releases for OTA images are tagged and named using the format: `<NothingOS Version>`+`<Device Codename>`.`<Incremental Date>` and `<POST_OTA_VERSION>`_`<NothingOS Version>`, as shown [here](https://github.com/spike0en/nothing_archive/releases), respectively.
 - Region-specific releases are tagged using the format: `<NothingOS Version>`-`<G or E>`+`<Device Codename>`.`<Incremental Date>`, applicable to certain older [Spacewar](#nothing-phone-1) builds that are not unified. Here, G = GLO (Global), and E = EEA (European Economic Area).
@@ -48,11 +66,45 @@
 - Unless specifically stated otherwise in the release notes, the releases published here are compatible with all regional and color variants of the device.  
 - For detailed instructions on interpreting the required incremental OTA firmware, refer to this [OTA Sideloading Guide](https://telegra.ph/OTA-Sideloading-Guide-for-Nothing-Devices-01-17).
 
-### Supported Models 📱  
+---
 
-Select your **device model** from the dropdown list below to access it's **Release Index**:
+## Categorization 📂
+
+The **unmodified** stock OTA image files are archived in `.7z` format and categorized into three distinct groups based on the nature of their partitions: **Boot**, **Firmware**, and **Logical**, for the respective models as follows:
+
+<details>
+  <summary>Nothing</summary>
+
+<br>
+
+| Device | Boot (`-image-boot.7z`) | Firmware (`-image-firmware.7z`) | Logical (`-image-logical.7z.001-00x`) |
+|--------|-------------------------|---------------------------------|---------------------------------------|
+| **Phone (1)**       | `boot`, `dtbo`, `vendor_boot`, `vbmeta` **(Total: 4)** | `abl`, `aop`, `bluetooth`, `cpucp`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `qupfw`, `shrm`, `tz`, `uefisecapp`, `xbl`, `xbl_config` **(Total: 18)** | `system`, `system_ext`, `product`, `vendor`, `odm`, `vbmeta_system`, `vbmeta_vendor` **(Total: 7)** |
+| **Phone (2)**       | `boot`, `dtbo`, `vendor_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor` **(Total: 7)** | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `multiimgqti`, `qupfw`, `qweslicstore`, `shrm`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` **(Total: 23)** | `system`, `system_ext`, `product`, `vendor`, `vendor_dlkm`, `odm` **(Total: 6)** |
+| **Phone (2a) / (2a) Plus** | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta` **(Total: 5)** | `apusys`, `audio_dsp`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `mcupm`, `md1img`, `mvpu_algo`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` **(Total: 22)** | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product`, `vbmeta_system`, `vbmeta_vendor` **(Total: 10)** |
+
+<br>
+
+</details>
+
+<details>
+  <summary>CMF by Nothing</summary>
+
+<br>
+
+| Device | Boot (`-image-boot.7z`) | Firmware (`-image-firmware.7z`) | Logical (`-image-logical.7z.001-00x`) |
+|--------|-------------------------|---------------------------------|---------------------------------------|
+| **Phone (1)**           | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta` **(Total: 5)** | `apusys`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `modem`, `mcupm`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` **(Total: 20)** | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product`, `vbmeta_system`, `vbmeta_vendor` **(Total: 10)** |
+
+<br>
+
+</details>
 
 ---
+
+## Downloads 📥  
+
+Select your **device model** from the dropdown list below to access it's **Release Index**:
 
 <details>
   <summary>Nothing Phone (1) - Spacewar</summary>
@@ -245,14 +297,7 @@ Select your **device model** from the dropdown list below to access it's **Relea
    - If successful, choose to reboot to system: `(Y)`
    - If any errors occur, reboot to bootloader and flash again after addressing the cause of failure. Proceeding with `Reboot to system` in such cases may result in a soft or hard bricked device.
 
-## Disclaimer 🚨  
-
-By using this archive, users acknowledge and accept these terms:
-- **✅ Authenticity** – All firmware files in this archive are **unaltered, unmodified, and sourced directly from the OEM**.  
-- **⚠️ Flash at Your Own Risk** – Installing firmware on an **unlocked bootloader** device carries inherent risks. Follow instructions carefully to **avoid bricking your device**.  
-- **📌 Compatibility** – Ensure the firmware matches your **Nothing or CMF device variant** before installation.
-- **🚫 No Warranty or Official Support** – This is a **community-driven project, unaffiliated with [Nothing](https://nothing.tech)**. Any **update failures, software bugs, or device issues** remain the OEM’s responsibility. The author and contributors **are not liable for bricked devices** due to incorrect flashing, misuse, or firmware modifications. Always download firmware **directly from this archive** to ensure integrity.  
-- **🛡️ Open Source Integrity** – Redistribution is permitted **only with proper attribution**. Users are encouraged to support and share this project **to maintain its availability**. **Reselling freely available firmware is strictly prohibited!**  
+---
 
 ## Acknowledgments 🤝  
 
@@ -262,6 +307,8 @@ Special thanks to these contributors for their invaluable work and support:
 - **[LukeSkyD](https://github.com/LukeSkyD)** – Maintains the [Nothing Phone (1) Repo](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/), which served as a key reference for earlier builds.
 - **[Re*Index.(ot_inc)](https://github.com/reindex-ot)** – Provided the Japanese translation, helping make the archive more accessible.
 - **[XelXen](https://github.com/XelXen)** - Designed the logo and banner for the project’s branding.
+
+---
 
 ## Support the Project ⭐ 
 
