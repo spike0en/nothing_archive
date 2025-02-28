@@ -36,6 +36,12 @@ jobs:
         for url in "${URLS[@]}"; do
           echo "$url"
         done | xargs ./dump.sh
+        
+    - name: Create tag
+      run: |
+        git fetch origin main
+        git tag "${{ inputs.name }}" 44daed30334f5bea826f828145128cdff1efe44c
+        git push origin "${{ inputs.name }}"        
 
     - name: Upload release assets
       uses: ncipollo/release-action@v1
