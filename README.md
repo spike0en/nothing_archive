@@ -33,7 +33,7 @@
 
 ## Overview 🔍  
 
-**Nothing Archive** is the most up-to-date Nothing OS firmware repository, offering official OTA updates, full firmware packages, and stock OTA images for **Nothing Phone (1), Phone (2), Phone (2a), Phone (2a) Plus**, and **CMF Phone (1)**, all sourced directly from official OEM servers. All files are [archived](https://archive.org/details/nothing-archive), ensuring easy access and long-term preservation.
+**Nothing Archive** is the most up-to-date Nothing OS firmware repository, offering official OTA updates, full firmware packages, and stock OTA images for **Nothing Phone (1), Phone (2), Phone (2a), Phone (2a) Plus, Phone (3a), Phone (3a) Pro**, and **CMF Phone (1)**, all sourced directly from official OEM servers. All files are [archived](https://archive.org/details/nothing-archive), ensuring easy access and long-term preservation.
 
 ### Features & Benefits: 
 
@@ -239,7 +239,16 @@ Select your **device model** from the dropdown list below to access it's **Relea
 | 2.6 | PacmanPro-U2.6-240924-2223 | PacmanPro_U2.6-240723-1102 -> [PacmanPro_U2.6-240924-2223](https://android.googleapis.com/packages/ota-api/package/b8d1f9e6b3de2f85bc2ca29632bb11b23686078f.zip) | [Here](https://archive.org/download/nothing-archive/full_ota/pacmanpro/PacmanPro_U2.6-240924-2223_2.6.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/2.6.0+pacmanpro.240924) |
 | 2.6 | PacmanPro-U2.6-240723-1102 | N/A | [Here](https://archive.org/download/nothing-archive/full_ota/pacmanpro/PacmanPro_U2.6-240723-1102.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/2.6.0+pacmanpro.240827) |
 
+</details>
+
+<details>
+  <summary>Nothing Phone (3a) & (3a) Pro - Asteroids</summary>
+  
 <br>
+
+| **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
+|------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
+| 3.1 | Asteroids-V3.1-250217-2235 | Asteroids_V3.1-250112-1904 -> [Asteroids-V3.1-250217-2235](https://android.googleapis.com/packages/ota-api/package/ced682b69a20c21a8359ede518813c6ded14a1c2.zip) // Asteroids_V3.1-241231-1753 -> [Asteroids-V3.1-250217-2235](https://android.googleapis.com/packages/ota-api/package/a201b6cb78c1fdabd65af36a122847fbfce77edb.zip)  | N/A | N/A |
 
 </details>
 
