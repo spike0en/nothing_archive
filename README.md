@@ -249,7 +249,7 @@ Select your **device model** from the dropdown list below to access it's **Relea
 
 | **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
-| 3.1 | Asteroids-V3.1-250302-1856 | Asteroids_V3.1-250217-2235 -> [Asteroids-V3.1-250302-1856](https://android.googleapis.com/packages/ota-api/package/4d1092626406b96e5f1e5e31d727b0d71ed4cbf3.zip) // Asteroids_V3.1-241231-1753 -> [Asteroids-V3.1-250302-1856](https://android.googleapis.com/packages/ota-api/package/9d8b54d1cb47c80c233319560d1720ccb5bd1c5e.zip) | N/A | N/A |
+| 3.1 | Asteroids-V3.1-250302-1856 | Asteroids_V3.1-250217-2235 -> [Asteroids-V3.1-250302-1856](https://android.googleapis.com/packages/ota-api/package/4d1092626406b96e5f1e5e31d727b0d71ed4cbf3.zip) // Asteroids_V3.1-241231-1753 -> [Asteroids-V3.1-250302-1856](https://android.googleapis.com/packages/ota-api/package/9d8b54d1cb47c80c233319560d1720ccb5bd1c5e.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.1.0+asteroids.250302)
 | 3.1 | Asteroids-V3.1-250217-2235 | Asteroids_V3.1-250112-1904 -> [Asteroids-V3.1-250217-2235](https://android.googleapis.com/packages/ota-api/package/ced682b69a20c21a8359ede518813c6ded14a1c2.zip) // Asteroids_V3.1-241231-1753 -> [Asteroids-V3.1-250217-2235](https://android.googleapis.com/packages/ota-api/package/a201b6cb78c1fdabd65af36a122847fbfce77edb.zip)  | N/A | N/A |
 
 </details>
