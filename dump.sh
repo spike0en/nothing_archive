@@ -102,12 +102,12 @@ for h in md5 sha1 sha256 xxh128; do
 done
 
 # Move the `boot` category image files from `ota` to `syn` directory
-for f in boot dtbo recovery vendor_boot vbmeta vbmeta_system vbmeta_vendor; do
+for f in boot init_boot dtbo recovery vendor_boot vbmeta vbmeta_system vbmeta_vendor; do
     mv ${f}.img ../syn
 done
 
 # Move the `logical` category image files from `ota` to `syn` directory
-for f in system system_ext product vendor vendor_dlkm odm; do
+for f in system system_ext product vendor system_dlkm vendor_dlkm odm; do
     mv ${f}.img ../dyn 
 done
 
