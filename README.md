@@ -25,6 +25,7 @@
 - [Notes](#notes-)
 - [Categorization](#categorization-)
 - [Downloads](#downloads-)
+- [Integrity](#integrity-check-)
 - [Flashing the Stock ROM Using Fastboot](#flashing-the-stock-rom-using-fastboot-)
 - [Acknowledgments](#acknowledgments-)
 - [Support the Project](#support-the-project-)
@@ -277,6 +278,20 @@ Select your **device model** from the dropdown list below to access it's **Relea
 <br>
 
 </details>
+
+---
+
+## Integrity Check ✅
+
+- You can check the downloaded OTA image file's integrity with one of the following commands :
+
+``` bash
+  md5sum -c *-hash.md5
+  sha1sum -c *-hash.sha1
+  sha256sum -c *-hash.sha256
+  xxh128sum -c *-hash.xxh128
+```
+- xxh128 is usually the fastest.
 
 ---
 
