@@ -1,6 +1,6 @@
 **English** | [日本語](/README_ja-JP.md)
 
-# Nothing Archive 
+# Nothing Archive
 
 <img src="assets/logo.png" width="96" alt="Nothing Archive Logo">
 
@@ -18,7 +18,7 @@
 
 ---
 
-## Index 📑  
+## Index 📑
 
 - [About the Project](#overview-)
 - [Disclaimer](#disclaimer-)
@@ -36,16 +36,16 @@
 
 ---
 
-## Overview 🔍  
+## Overview 🔍
 
 **Nothing Archive** is the most up-to-date Nothing OS firmware repository, offering official OTA updates, full firmware packages, and stock OTA images for **Nothing Phone (1), Phone (2), Phone (2a), Phone (2a) Plus, Phone (3a), Phone (3a) Pro**, and **CMF Phone (1)**, all sourced directly from official OEM servers. All files are [archived](https://archive.org/details/nothing-archive), ensuring easy access and long-term preservation.
 
-### Features & Benefits: 
+### Features & Benefits:
 
-- 📡 **Direct OTA Indexing** – Tracks **Nothing OS OTA update links** from official servers, providing access to **incremental and full updates** for Nothing and CMF devices.  
-- 🛠️ **Manual Installation (Sideloading)** – Install **Nothing OS firmware manually** during staged rollouts or when OTA updates fail using the inbuilt **offline Nothing OS offline updater or beta updater app** or via **ADB sideload** using a custom recovery when available. 
-- 📦 **Stock OTA Images** – Provides **unmodified OTA images** utilizing AOSP’s OTA extraction tool that allows extracting incremental OTA updates, thus enabling **upgrades, downgrades, and partition flashing** when **full firmware packages** are unavailable.  
-- 🔓 **Rooting & Unrooting Support** – Provides **stock boot images for Magisk, KernelSU, and Apatch**, while also allowing **unrooting** by flashing the original boot image to keep **OTA updates functional** when modified partitions are detected.  
+- 📡 **Direct OTA Indexing** – Tracks **Nothing OS OTA update links** from official servers, providing access to **incremental and full updates** for Nothing and CMF devices.
+- 🛠️ **Manual Installation (Sideloading)** – Install **Nothing OS firmware manually** during staged rollouts or when OTA updates fail using the inbuilt **offline Nothing OS offline updater or beta updater app** or via **ADB sideload** using a custom recovery when available.
+- 📦 **Stock OTA Images** – Provides **unmodified OTA images** utilizing AOSP’s OTA extraction tool that allows extracting incremental OTA updates, thus enabling **upgrades, downgrades, and partition flashing** when **full firmware packages** are unavailable.
+- 🔓 **Rooting & Unrooting Support** – Provides **stock boot images for Magisk, KernelSU, and Apatch**, while also allowing **unrooting** by flashing the original boot image to keep **OTA updates functional** when modified partitions are detected.
 - ⚡ **Flash Firmware & Unbrick Devices** – Provides **fastboot-flashable Nothing OS firmware** to help **resolve boot loops, recover soft-bricked devices, and restore the stock ROM**, as long as fastboot is accessible.
 
 ---
@@ -53,22 +53,22 @@
 ## Disclaimer 🚨
 
 By using this archive, users acknowledge and accept these terms:
-- **✅ Authenticity** – All firmware files in this archive are **unaltered, unmodified, and sourced directly from the OEM**.  
-- **⚠️ Flash at Your Own Risk** – Installing firmware on an **unlocked bootloader** device carries inherent risks. Follow instructions carefully to **avoid bricking your device**.  
+- **✅ Authenticity** – All firmware files in this archive are **unaltered, unmodified, and sourced directly from the OEM**.
+- **⚠️ Flash at Your Own Risk** – Installing firmware on an **unlocked bootloader** device carries inherent risks. Follow instructions carefully to **avoid bricking your device**.
 - **📌 Compatibility** – Ensure the firmware matches your **Nothing or CMF device variant** before installation.
-- **🚫 No Warranty or Official Support** – This is a **community-driven project, unaffiliated with [Nothing](https://nothing.tech)**. Any **update failures, software bugs, or device issues** remain the OEM’s responsibility. The author and contributors **are not liable for bricked devices** due to incorrect flashing, misuse, or firmware modifications. Always download firmware **directly from this archive** to ensure integrity.  
-- **🛡️ Open Source Integrity** – Redistribution is permitted **only with proper attribution**. Users are encouraged to support and share this project **to maintain its availability**. **Reselling freely available firmware is strictly prohibited!**  
+- **🚫 No Warranty or Official Support** – This is a **community-driven project, unaffiliated with [Nothing](https://nothing.tech)**. Any **update failures, software bugs, or device issues** remain the OEM’s responsibility. The author and contributors **are not liable for bricked devices** due to incorrect flashing, misuse, or firmware modifications. Always download firmware **directly from this archive** to ensure integrity.
+- **🛡️ Open Source Integrity** – Redistribution is permitted **only with proper attribution**. Users are encouraged to support and share this project **to maintain its availability**. **Reselling freely available firmware is strictly prohibited!**
 
 ---
 
 ## Notes 📝
 
 - Releases for OTA images are tagged and named using the format: `<NothingOS Version>`+`<Device Codename>`.`<Incremental Date>` and `<POST_OTA_VERSION>`_`<NothingOS Version>`, as shown [here](https://github.com/spike0en/nothing_archive/releases), respectively.
-- Region-specific releases are tagged using the format: `<NothingOS Version>`+`<G or E>`+`<Device Codename>`.`<Incremental Date>`, applicable to certain older [Spacewar](#nothing-phone-1) builds that are not unified. Here, G = GLO (Global), and E = EEA (European Economic Area).
+- Region-specific releases are tagged using the format: `<NothingOS Version>`-`<G or E>`+`<Device Codename>`.`<Incremental Date>`, applicable to certain older [Spacewar](#nothing-phone-1) builds that are not unified. Here, G = GLO (Global), and E = EEA (European Economic Area).
 - For releases with a Nothing OS version in the format X.Y.Za and X.Y, tags are renamed to X.Y.0-A and X.Y.0 respectively for proper sorting (e.g., `2.5.5A` → `2.5.5-A`, `2.6` → `2.6.0`, `3.0` → `3.0.0`).
 - Nothing OS Open Beta releases are denoted by `-OB` wherever applicable.
 - Android Developer preview releases are tagged as `0.0.0-dev`+`<Device Codename>`.`<Incremental Date>`.
-- Unless specifically stated otherwise in the release notes, the releases published here are compatible with all regional and color variants of the device.  
+- Unless specifically stated otherwise in the release notes, the releases published here are compatible with all regional and color variants of the device.
 - For detailed instructions on interpreting the required incremental OTA firmware, refer to this [OTA Sideloading Guide](https://telegra.ph/OTA-Sideloading-Guide-for-Nothing-Devices-01-17).
 
 ---
@@ -108,7 +108,7 @@ The **unmodified** stock OTA image files are archived in `.7z` format and catego
 
 ---
 
-## Downloads 📥  
+## Downloads 📥
 
 Select your **device model** from the dropdown list below to access it's **Release Index**:
 
@@ -147,18 +147,18 @@ Select your **device model** from the dropdown list below to access it's **Relea
 | 1.5.2​ | Spacewar-T1.5-230213-2131 | Spacewar_T1.5-230114-2357-GLO -> [Spacewar_T1.5-230213-2131](https://android.googleapis.com/packages/ota-api/package/e77cd22198a67cbed75b059470797a5dd66a3d5e.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/1.5.2+spacewar.230213) |
 | 1.5.1 OB-2 HOTFIX | Spacewar-T1.5-230114-2357 | Spacewar_T1.5-230111-0014 -> [Spacewar_T1.5-230114-2357](https://android.googleapis.com/packages/ota-api/package/0266138566534b1728271c1412fa152409bcc751.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/edit/1.5.1+spacewar.230114) |
 | 1.5.1 OB-2 | Spacewar-T1.5-230111-0014 | Spacewar_T1.5-221215-1313-GLO -> [Spacewar_T1.5-230111-0014](https://android.googleapis.com/packages/ota-api/package/e27879949aee0ad565b8e4790ec58a42a3b30303.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/edit/1.5.1+spacewar.230111) |
-| 1.5.0 OB-1 | Spacewar-T1.5-221215-1313 | Spacewar_S1.1-221121-2306-GLO -> [Spacewar_T1.5-221215-1313-GLO](https://android.googleapis.com/packages/ota-api/package/f23d049819ca42c0c455d1c36716cfa3bb386448.zip) // Spacewar_S1.1-221129-1525-EEA -> [Spacewar-T1.5-221215-1313-EEA](https://android.googleapis.com/packages/ota-api/package/66a78cc6105fb8182a3a07383756862655700192.zip) | N/A | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/1.5.0-G+spacewar.221215) // [EEA](https://github.com/spike0en/nothing_archive/releases/tag/1.5.0-E+spacewar.221215) | 
+| 1.5.0 OB-1 | Spacewar-T1.5-221215-1313 | Spacewar_S1.1-221121-2306-GLO -> [Spacewar_T1.5-221215-1313-GLO](https://android.googleapis.com/packages/ota-api/package/f23d049819ca42c0c455d1c36716cfa3bb386448.zip) // Spacewar_S1.1-221129-1525-EEA -> [Spacewar-T1.5-221215-1313-EEA](https://android.googleapis.com/packages/ota-api/package/66a78cc6105fb8182a3a07383756862655700192.zip) | N/A | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/1.5.0-G+spacewar.221215) // [EEA](https://github.com/spike0en/nothing_archive/releases/tag/1.5.0-E+spacewar.221215) |
 | 1.1.8 | Spacewar-S1.1-230112-1613 | Spacewar_S1.1_221129-1525-GLO -> [Spacewar_S1.1-230112-1613](https://android.googleapis.com/packages/ota-api/package/deeb8830c86e0f9b89ae3170ada164b64de02c2c.zip) // Spacewar_S1.1-221129-1525-EEA -> [Spacewar_S1.1-230112-1613](https://android.googleapis.com/packages/ota-api/package/c4313bd73c334c10db148217d3b9edffc2725077.zip) | N/A | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/1.1.8-G+spacewar.230112) // [EEA](https://github.com/spike0en/nothing_archive/releases/tag/1.1.8-E+spacewar.230112) |
 | 1.1.7.HOTFIX | Spacewar-S1.1-221129-1525-EEA | Spacewar_S1.1-221121-2306 -> [Spacewar_S1.1-221129-1525-EEA](https://android.googleapis.com/packages/ota-api/package/5a8a872c8fa2071424af6272bd78806f55d4aeda.zip) | N/A | [EEA](https://github.com/spike0en/nothing_archive/releases/tag/1.1.7-E+spacewar.221129) |
-| 1.1.7 | Spacewar-S1.1-221121-2306 | Spacewar_S1.1-221121-2306-GLO -> [Spacewar_S1.1-221121-2306-GLO](https://android.googleapis.com/packages/ota-api/package/6d5f9ec32b7c80e07859cdf74daaefd612ac652f.zip) // Spacewar_S1.1-221121-2306-EEA -> [Spacewar_S1.1-221121-2306-EEA](https://android.googleapis.com/packages/ota-api/package/9c41fd92080af076c6e3abddbaefc7eac75c3edc.zip) | [GLO](https://android.googleapis.com/packages/ota-api/package/254815bb72cdbddd5c9dd7cde6d10c95becc6542.zip) // [EEA](https://android.googleapis.com/packages/ota-api/package/0e6855d19dbcdf328449e4d06386a6257bb1aadd.zip) | [EEA](https://github.com/spike0en/nothing_archive/releases/tag/1.1.7-E+spacewar.221121) |  
+| 1.1.7 | Spacewar-S1.1-221121-2306 | Spacewar_S1.1-221121-2306-GLO -> [Spacewar_S1.1-221121-2306-GLO](https://android.googleapis.com/packages/ota-api/package/6d5f9ec32b7c80e07859cdf74daaefd612ac652f.zip) // Spacewar_S1.1-221121-2306-EEA -> [Spacewar_S1.1-221121-2306-EEA](https://android.googleapis.com/packages/ota-api/package/9c41fd92080af076c6e3abddbaefc7eac75c3edc.zip) | [GLO](https://android.googleapis.com/packages/ota-api/package/254815bb72cdbddd5c9dd7cde6d10c95becc6542.zip) // [EEA](https://android.googleapis.com/packages/ota-api/package/0e6855d19dbcdf328449e4d06386a6257bb1aadd.zip) | [EEA](https://github.com/spike0en/nothing_archive/releases/tag/1.1.7-E+spacewar.221121) |
 | 1.1.6 | Spacewar-S1.1-221022-1221 | Spacewar_S1.1-221008-1815-GLO -> [Spacewar_S1.1-221022-1221-GLO](https://android.googleapis.com/packages/ota-api/package/f63f3cc420a5a4af639dec4d25adcb865a9a235d.zip) // Spacewar_S1.1-220921-2238-EEA -> [Spacewar_S1.1-221022-1221-EEA](https://android.googleapis.com/packages/ota-api/package/10fefd93aaed7b4d478ebfcea69d789121ee859b.zip) | [GLO](https://android.googleapis.com/packages/ota-api/package/99a4c814632616b365017129fa9f7e9e0080fb59.zip) | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/1.1.6-G+spacewar.221022) |
 | 1.1.5 | Spacewar-S1.1-221008-1815-GLO | Spacewar_S1.1-220921-2238-GLO -> [Spacewar_S1.1-221008-1815-GLO](https://android.googleapis.com/packages/ota-api/package/97d10eb70f173b7ce5a223a8d1f6d6fd42cfed5c.zip) | N/A | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/1.1.5-G+spacewar.221008) |
 | 1.1.4.HOTFIX | Spacewar-S1.1-220921-2238 | Spacewar_S1.1-220913-2137-GLO -> [Spacewar_S1.1-220921-2238-GLO](https://android.googleapis.com/packages/ota-api/package/6cf1147321de57c159e26a0531760042d23c20ad.zip) // Spacewar_S1.1-220913-2137-EEA -> [Spacewar_S1.1-220921-2238-EEA](https://android.googleapis.com/packages/ota-api/package/288523074fe4af0c0680beee17b2df5a5dd84f7c.zip) | [GLO](https://android.googleapis.com/packages/ota-api/package/54b8dbd1c303be00ef156c602b756c76d8d9b6e1.zip) // [EEA](https://android.googleapis.com/packages/ota-api/package/4c0e18215e374ff95f733dedbd2ebc3f1824e1c8.zip) | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/1.1.4-G+spacewar.220921) // [EEA](https://github.com/spike0en/nothing_archive/releases/tag/1.1.4-E+spacewar.220921) |
 | 1.1.4 | Spacewar-S1.1-220913-2137 | Spacewar_S1.1-220813-1608-GLO -> [Spacewar_S1.1-220913-2137-GLO](https://android.googleapis.com/packages/ota-api/package/82ab3ed9150c788615767667c35568032bd81e66.zip) // Spacewar-S1.1-220813-1608-EEA -> [Spacewar_S1.1-220913-2137-EEA](https://android.googleapis.com/packages/ota-api/package/8841b46d4ec2df9c4c110a6af2e85a34460bba01.zip) | N/A | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/1.1.4-G+spacewar.220913) // [EEA](https://github.com/spike0en/nothing_archive/releases/tag/1.1.4-E+spacewar.220913) |
-| 1.1.3 | Spacewar-S1.1-220813-1608 | Spacewar_S1.1-220728-0051-GLO -> [Spacewar_S1.1-220813-1608-GLO](https://android.googleapis.com/packages/ota-api/package/d2e43b858fd93f46d136a424f3756ae2d5decbc3.zip) // Spacewar_S1.1-220728-0051-EEA -> [Spacewar_S1.1-220813-1608-EEA](https://android.googleapis.com/packages/ota-api/package/9441a6b477bf0a5ac205fa93ae37a341181b1341.zip) | [GLO](https://android.googleapis.com/packages/ota-api/package/ee4a8d890091f980aa40142d68f46abb1f08e0c5.zip) // [EEA](https://android.googleapis.com/packages/ota-api/package/a6f363b6709ec67910b4018526d9525ccb4075f9.zip) | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/1.1.3-G+spacewar.220813) // [EEA](https://github.com/spike0en/nothing_archive/releases/tag/1.1.3-E+spacewar.220813) | 
+| 1.1.3 | Spacewar-S1.1-220813-1608 | Spacewar_S1.1-220728-0051-GLO -> [Spacewar_S1.1-220813-1608-GLO](https://android.googleapis.com/packages/ota-api/package/d2e43b858fd93f46d136a424f3756ae2d5decbc3.zip) // Spacewar_S1.1-220728-0051-EEA -> [Spacewar_S1.1-220813-1608-EEA](https://android.googleapis.com/packages/ota-api/package/9441a6b477bf0a5ac205fa93ae37a341181b1341.zip) | [GLO](https://android.googleapis.com/packages/ota-api/package/ee4a8d890091f980aa40142d68f46abb1f08e0c5.zip) // [EEA](https://android.googleapis.com/packages/ota-api/package/a6f363b6709ec67910b4018526d9525ccb4075f9.zip) | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/1.1.3-G+spacewar.220813) // [EEA](https://github.com/spike0en/nothing_archive/releases/tag/1.1.3-E+spacewar.220813) |
 | 1.1.2 | Spacewar-S1.1-220728-0051 | Spacewar_S1.1-220716-0150-GLO -> [Spacewar_S1.1-220728-0051-GLO](https://android.googleapis.com/packages/ota-api/package/a85e848885537f271ed8e13cbb9d929e8a76463b.zip) // Spacewar_S1.1-220716-0150-EEA -> [Spacewar_S1.1-220728-0051-EEA](https://android.googleapis.com/packages/ota-api/package/449a23b112bfd5dcfe59a231500e732663cc3f3d.zip) | [GLO](https://android.googleapis.com/packages/ota-api/package/a244285dfb5aef198999463c2d55f353ed0e7b1b.zip) // [EEA](https://android.googleapis.com/packages/ota-api/package/0f77244380edcc46a4d60397f5c22ea911352bfe.zip) |  [GLO](https://github.com/spike0en/nothing_archive/releases/tag/1.1.2-G+spacewar.220728) // [EEA](https://github.com/spike0en/nothing_archive/releases/tag/1.1.2-E+spacewar.220728) |
-| 1.1.0 | Spacewar-S1.1-220716-0150 | Spacewar_S1.0-220705-2027-GLO -> [Spacewar_S1.1-220716-0150-GLO](https://android.googleapis.com/packages/ota-api/package/88765a64183594df6f06d23b57ef75107d38c9e2.zip) // Spacewar_S1.0-220705-2027-EEA -> [Spacewar_S1.1-220716-0150-EEA](https://android.googleapis.com/packages/ota-api/package/3b2975594ff4e5935d54a4f0b3125306af933d6c.zip) | [GLO](https://android.googleapis.com/packages/ota-api/package/e4c58031ffcd430294bd99cfb7df45a2645bef21.zip) // [EEA](https://android.googleapis.com/packages/ota-api/package/c9d6795361da9d8364c7a7fefd26ccebbc529fdf.zip) | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/1.1.0-G+spacewar.220716) // [EEA](https://github.com/spike0en/nothing_archive/releases/tag/1.1.0-E+spacewar.220716) | 
-| 1.0.2 | Spacewar-S1.0-220705-2027 | N/A | [GLO](https://android.googleapis.com/packages/ota-api/package/fad5d83167989dd71ef9adbb4243a8baa02956e6.zip) // [EEA](https://android.googleapis.com/packages/ota-api/package/09a261dea24fa76050bf9b03fff232dbab9b3a28.zip) | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/1.0.2-G+spacewar.220705) // [EEA](https://github.com/spike0en/nothing_archive/releases/tag/1.0.2-E+spacewar.220705) | 
+| 1.1.0 | Spacewar-S1.1-220716-0150 | Spacewar_S1.0-220705-2027-GLO -> [Spacewar_S1.1-220716-0150-GLO](https://android.googleapis.com/packages/ota-api/package/88765a64183594df6f06d23b57ef75107d38c9e2.zip) // Spacewar_S1.0-220705-2027-EEA -> [Spacewar_S1.1-220716-0150-EEA](https://android.googleapis.com/packages/ota-api/package/3b2975594ff4e5935d54a4f0b3125306af933d6c.zip) | [GLO](https://android.googleapis.com/packages/ota-api/package/e4c58031ffcd430294bd99cfb7df45a2645bef21.zip) // [EEA](https://android.googleapis.com/packages/ota-api/package/c9d6795361da9d8364c7a7fefd26ccebbc529fdf.zip) | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/1.1.0-G+spacewar.220716) // [EEA](https://github.com/spike0en/nothing_archive/releases/tag/1.1.0-E+spacewar.220716) |
+| 1.0.2 | Spacewar-S1.0-220705-2027 | N/A | [GLO](https://android.googleapis.com/packages/ota-api/package/fad5d83167989dd71ef9adbb4243a8baa02956e6.zip) // [EEA](https://android.googleapis.com/packages/ota-api/package/09a261dea24fa76050bf9b03fff232dbab9b3a28.zip) | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/1.0.2-G+spacewar.220705) // [EEA](https://github.com/spike0en/nothing_archive/releases/tag/1.0.2-E+spacewar.220705) |
 | 1.0.1 | Spacewar-S1.0-22 | N/A | [EEA](https://archive.org/download/nothing-archive/full_ota/spacewar/Spacewar_S1.0-22_1.0.1-EEA.zip) | [EEA](https://github.com/spike0en/nothing_archive/releases/tag/1.0.1-E+spacewar.220000) |
 
 <br>
@@ -167,7 +167,7 @@ Select your **device model** from the dropdown list below to access it's **Relea
 
 <details>
   <summary>Nothing Phone (2) - Pong</summary>
-  
+
 <br>
 
 | **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
@@ -201,7 +201,7 @@ Select your **device model** from the dropdown list below to access it's **Relea
 
 <details>
   <summary>Nothing Phone (2a) - Pacman</summary>
-  
+
 <br>
 
 **Note**: Versions 2.5.3 to 2.5.5A are compatible only with the Milk, White, and Black variants of the device. Versions 2.5.6 and higher support all color variants, including Blue and the Special Edition.
@@ -232,7 +232,7 @@ Select your **device model** from the dropdown list below to access it's **Relea
 
 <details>
   <summary>Nothing Phone (2a) Plus - PacmanPro</summary>
-  
+
 <br>
 
 | **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
@@ -249,7 +249,7 @@ Select your **device model** from the dropdown list below to access it's **Relea
 
 <details>
   <summary>Nothing Phone (3a) & (3a) Pro - Asteroids</summary>
-  
+
 <br>
 
 | **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
@@ -261,7 +261,7 @@ Select your **device model** from the dropdown list below to access it's **Relea
 
 <details>
   <summary>CMF Phone (1) - Tetris</summary>
-  
+
 <br>
 
 | **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
@@ -275,7 +275,7 @@ Select your **device model** from the dropdown list below to access it's **Relea
 | 2.6 | Tetris-U2.6-240910-1735 | Tetris_U2.6-240719-2323 -> [Tetris_U2.6-240910-1735](https://android.googleapis.com/packages/ota-api/package/fb3dc5e18523b52114448abf236be119fe561787.zip) | [Here](https://android.googleapis.com/packages/ota-api/package/adf8245c2d0cd50895ddece5f2366da80b2675c4.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/2.6.0+tetris.240910) |
 | 2.6 | Tetris-U2.6-240828-2341 | Tetris_U2.6-240813-2046 -> [Tetris-U2.6-240828-2341](https://android.googleapis.com/packages/ota-api/package/6140b9ee7974e0c531694f18f972243a5c48be6b.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/2.6.0+tetris.240828) |
 | 2.6 | Tetris-U2.6-240813-2046 | Tetris_U2.6-240729-1047 -> [Tetris_U2.6-240813-2046](https://android.googleapis.com/packages/ota-api/package/397fb089fe692ccbda135dcc8434d90add1388a5.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/2.6.0+tetris.240813) |
-| 2.6 | Tetris-U2.6-240729-1047 | Tetris_U2.6-240702-2200 -> [Tetris_U2.6-240729-1047](https://android.googleapis.com/packages/ota-api/package/48fe84d5164a62417debe07bfff5d7c3ba19046e.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/2.6.0+tetris.240729) | 
+| 2.6 | Tetris-U2.6-240729-1047 | Tetris_U2.6-240702-2200 -> [Tetris_U2.6-240729-1047](https://android.googleapis.com/packages/ota-api/package/48fe84d5164a62417debe07bfff5d7c3ba19046e.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/2.6.0+tetris.240729) |
 | 2.6 | Tetris-U2.6-240713-1955 | Tetris_U2.6-240702-2200 -> [Tetris-U2.6-240713-1955](https://android.googleapis.com/packages/ota-api/package/24c251bfc97dbe9a32777af2677e979e38bfcef2.zip) // Tetris_U2.6-240606-1805 -> [Tetris_U2.6-240713-1955](https://android.googleapis.com/packages/ota-api/package/d84e482fad907cef29a0de4dc344d18e61adf42a.zip) // Tetris_U2.6-240524-1536 -> [Tetris_U2.6-240713-1955](https://android.googleapis.com/packages/ota-api/package/72b82b535759b4559d0eb60c20e9ceabd303872a.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/2.6.0+tetris.240713) |
 | 2.6 | Tetris-U2.6-240702-2200 | N/A | [Here](https://archive.org/download/nothing-archive/full_ota/tetris/Tetris_U2.6-240702-2200_2.6.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/2.6.0+tetris.240702) |
 
@@ -304,26 +304,26 @@ Select your **device model** from the dropdown list below to access it's **Relea
 ### I. Unlocking Bootloader 🔓
 
 A. Prerequisites
-- **Backup your data** (unlocking will erase everything).  
-- **Install ADB & Fastboot tools** – [Download here](https://developer.android.com/studio/releases/platform-tools).  
-- **Install USB drivers** – [Google USB Drivers](https://developer.android.com/studio/run/win-usb).  
-- **Enable Developer Options**:  
-  - `Settings > About phone > Tap "Build number" 7 times.`  
-- **Enable USB Debugging & OEM Unlocking**:  
-  - `Settings > System > Developer options > Enable USB Debugging & OEM Unlocking.`  
+- **Backup your data** (unlocking will erase everything).
+- **Install ADB & Fastboot tools** – [Download here](https://developer.android.com/studio/releases/platform-tools).
+- **Install USB drivers** – [Google USB Drivers](https://developer.android.com/studio/run/win-usb).
+- **Enable Developer Options**:
+  - `Settings > About phone > Tap "Build number" 7 times.`
+- **Enable USB Debugging & OEM Unlocking**:
+  - `Settings > System > Developer options > Enable USB Debugging & OEM Unlocking.`
 - **Remove Screen Lock/PIN/Password and Logged-in Accounts (optional but recommended)**
   - Removing accounts before relocking the bootloader helps prevent Google FRP (Factory Reset Protection) lock. If FRP is triggered, the device will ask for the previously linked Google account after a factory reset. If you forget the credentials or can't access the account, you may be locked out of your device. To avoid this, it's recommended to remove all Google accounts before relocking.
 
-B. Unlocking Process  
-- **Connect your phone to a PC** via USB.  
-- **Open a command prompt** in the platform-tools folder:  
-  - Windows: `Shift + Right Click` > **Open Command Prompt/Powershell here**.  
-  - Mac/Linux: Open **Terminal** and navigate to platform-tools.  
-- **Verify device connection**: 
+B. Unlocking Process
+- **Connect your phone to a PC** via USB.
+- **Open a command prompt** in the platform-tools folder:
+  - Windows: `Shift + Right Click` > **Open Command Prompt/Powershell here**.
+  - Mac/Linux: Open **Terminal** and navigate to platform-tools.
+- **Verify device connection**:
   ```sh
   adb devices
   ```
-  If prompted, allow USB debugging on the phone. 
+  If prompted, allow USB debugging on the phone.
 
 - **Reboot to bootloader:**
    ```sh
@@ -339,7 +339,7 @@ B. Unlocking Process
 - **Unlock the bootloader:**
    ```sh
    fastboot flashing unlock
-   ```   
+   ```
 
 - **Confirm on your phone:**
   - Use **Volume Keys** to navigate and **Power Button** to confirm.
@@ -351,57 +351,57 @@ C. Post-Unlock
     ```sh
     Settings > System > Developer options > OEM Unlocking should be enabled.
     ```
-    
+
   - Bootloader is now unlocked and your device will show an Orange State warning at boot—this is normal.
 
 ---
 
-### II. Backing Up Essential Partitions After Unlocking Bootloader 💾 
+### II. Backing Up Essential Partitions After Unlocking Bootloader 💾
 
-A. Why Backup?  
-- After unlocking the bootloader, it is crucial to back up essential partitions such as `persist`, `modemst1`, `modemst2`, `fsg`, etc., **before** flashing custom ROMs or kernels.  
-- These partitions contain important data, including IMEI, network settings, and fingerprint sensor calibration.  
-- If lost or corrupted, your device may experience **loss of cellular connectivity, fingerprint issues, or even become bricked**.  
-- Creating backups ensures you can **restore your device** if something goes wrong.  
+A. Why Backup?
+- After unlocking the bootloader, it is crucial to back up essential partitions such as `persist`, `modemst1`, `modemst2`, `fsg`, etc., **before** flashing custom ROMs or kernels.
+- These partitions contain important data, including IMEI, network settings, and fingerprint sensor calibration.
+- If lost or corrupted, your device may experience **loss of cellular connectivity, fingerprint issues, or even become bricked**.
+- Creating backups ensures you can **restore your device** if something goes wrong.
 
-B. Requirements  
-- **Unlocked bootloader**  
-- **Root access** (via Magisk/KSU/Apatch)  
-- **Termux app** (install via F-Droid or Play Store)  
-- **Check Partition Paths:**  
-  - **QCom devices:** `/dev/block/bootdevice/by-name/`  
-  - **MTK devices:** `/dev/block/by-name/`  
+B. Requirements
+- **Unlocked bootloader**
+- **Root access** (via Magisk/KSU/Apatch)
+- **Termux app** (install via F-Droid or Play Store)
+- **Check Partition Paths:**
+  - **QCom devices:** `/dev/block/bootdevice/by-name/`
+  - **MTK devices:** `/dev/block/by-name/`
 
-C. Backup Instructions  
-- **For Qualcomm (QCom) Devices:**  
-  - Open **Termux** and grant root access using:  
+C. Backup Instructions
+- **For Qualcomm (QCom) Devices:**
+  - Open **Termux** and grant root access using:
     ```sh
     su
     ```
-    
-  - Copy and paste the following command in one go:  
+
+  - Copy and paste the following command in one go:
     ```sh
     mkdir -p /sdcard/partitions_backup
     ls -1 /dev/block/bootdevice/by-name | grep -v userdata | grep -v super | \
     while read f; do dd if=/dev/block/bootdevice/by-name/$f of=/sdcard/partitions_backup/${f}.img; done
-    ```  
+    ```
     This will create image files of **all partitions except `super` & `userdata`** in the **Internal Storage** inside a folder named **"partitions_backup"**.
-    
-  - **[Optional]** If the above command fails, try this alternative:  
+
+  - **[Optional]** If the above command fails, try this alternative:
     ```sh
     mkdir -p /sdcard/partitions_backup
     for partition in /dev/block/bootdevice/by-name/*; do \
     [[ "$(basename "$partition")" != "userdata" && "$(basename "$partition")" != "super" ]] && \
     cp -f "$partition" /sdcard/partitions_backup/; done
     ```
-    
-- **For MediaTek (MTK) Devices:**  
-  - Open **Termux** and grant root access using:  
+
+- **For MediaTek (MTK) Devices:**
+  - Open **Termux** and grant root access using:
     ```sh
     su
     ```
-    
-  - Copy and paste all the following commands in one go:  
+
+  - Copy and paste all the following commands in one go:
     ```sh
     mkdir -p /sdcard/partitions_backup/
     cd /sdcard/partitions_backup
@@ -413,98 +413,98 @@ C. Backup Instructions
     dd if=/dev/block/by-name/protect2 of=/sdcard/partitions_backup/protect2.img
     ```
 
-D. Storing Backup  
-  - Move the **"partitions_backup"** folder to your **PC or secure storage**.  
-  - **Do NOT share these backups!** They contain unique device data like IMEI.  
+D. Storing Backup
+  - Move the **"partitions_backup"** folder to your **PC or secure storage**.
+  - **Do NOT share these backups!** They contain unique device data like IMEI.
 
 E. Restoring Partitions
- - **MTK Devices:**  
+ - **MTK Devices:**
    ```sh
    fastboot flash nvram nvram.img
    fastboot flash nvdata nvdata.img
    fastboot flash nvcfg nvcfg.img
    fastboot flash persist persist.img
    ```
-   Reboot to **recovery mode** → Perform **factory reset** → Reboot to **system**.  
+   Reboot to **recovery mode** → Perform **factory reset** → Reboot to **system**.
 
- - **QCom Devices:**  
+ - **QCom Devices:**
    ```sh
    fastboot flash persist persist.img
    fastboot flash modemst1 modemst1.img
    fastboot flash modemst2 modemst2.img
-   ```  
-   **Factory reset is not mandatory in this case.**  
+   ```
+   **Factory reset is not mandatory in this case.**
 
 ---
 
-### III. Flashing the Stock ROM Using Fastboot ⚡  
+### III. Flashing the Stock ROM Using Fastboot ⚡
 
-A. **Preparation of Flashing Folder:**  
-  - Download the following files for your device model and firmware build and place them in a dedicated folder:  
-    - image-boot.7z  
-    - image-firmware.7z  
-    - image-logical.7z.001-00x  
+A. **Preparation of Flashing Folder:**
+  - Download the following files for your device model and firmware build and place them in a dedicated folder:
+    - image-boot.7z
+    - image-firmware.7z
+    - image-logical.7z.001-00x
 
-  - Install 7-Zip from [here](https://www.7-zip.org/).  
-  - Extract files:  
-    - Windows: Right-click → Extract to "*\"  
-    - Bash users:  
-      7za -y x "*7z*"  
+  - Install 7-Zip from [here](https://www.7-zip.org/).
+  - Extract files:
+    - Windows: Right-click → Extract to "*\"
+    - Bash users:
+      7za -y x "*7z*"
 
-B. **Proceeding with Flashing:**  
-  - Install compatible USB drivers from [here](https://developer.android.com/studio/run/win-usb).  
-  - Ensure that `Android Bootloader Interface` is visible in **Device Manager** when the device is in **bootloader mode**.  
-  - If the extraction script was used earlier, execute it directly. Otherwise:  
-    - Move all extracted image files into a single folder along with the [Fastboot Flashing Script](https://github.com/spike0en/nothing_fastboot_flasher/blob/main/README.md#-download).  
-    - Always download the latest script to ensure hotfixes are included.  
-  - Run the script while connected to the internet (to fetch latest `platform-tools`) and follow the prompts:  
-    - Answer the confirmation questionnaire.  
-    - Choose whether to wipe data: (Y/N)  
-    - Choose whether to flash to both slots: (Y/N)  
-    - Disable Android Verified Boot: (N)  
-  - Verify that all partitions have been successfully flashed.  
-    - If successful, choose to reboot to system: (Y)  
-    - If errors occur, reboot to bootloader and reflash after addressing the failure.  
+B. **Proceeding with Flashing:**
+  - Install compatible USB drivers from [here](https://developer.android.com/studio/run/win-usb).
+  - Ensure that `Android Bootloader Interface` is visible in **Device Manager** when the device is in **bootloader mode**.
+  - If the extraction script was used earlier, execute it directly. Otherwise:
+    - Move all extracted image files into a single folder along with the [Fastboot Flashing Script](https://github.com/spike0en/nothing_fastboot_flasher/blob/main/README.md#-download).
+    - Always download the latest script to ensure hotfixes are included.
+  - Run the script while connected to the internet (to fetch latest `platform-tools`) and follow the prompts:
+    - Answer the confirmation questionnaire.
+    - Choose whether to wipe data: (Y/N)
+    - Choose whether to flash to both slots: (Y/N)
+    - Disable Android Verified Boot: (N)
+  - Verify that all partitions have been successfully flashed.
+    - If successful, choose to reboot to system: (Y)
+    - If errors occur, reboot to bootloader and reflash after addressing the failure.
 
 ---
 
-### IV. Relocking Bootloader 🔒  
+### IV. Relocking Bootloader 🔒
 
-A. **Prerequisites**  
-  - Remove **Screen Lock/PIN/Password and Logged-in Accounts** (optional but recommended).  
-  - Clean-flash the **stock ROM** following [Flashing Guide](#iii-flashing-the-stock-rom-using-fastboot-). **Relocking the bootloader with modified partitions without flashing stock firmware may brick the device!**  
-  - Backup all data (relocking will **erase everything**).  
-  - Install **ADB & Fastboot tools** and USB drivers if not already set up.  
+A. **Prerequisites**
+  - Remove **Screen Lock/PIN/Password and Logged-in Accounts** (optional but recommended).
+  - Clean-flash the **stock ROM** following [Flashing Guide](#iii-flashing-the-stock-rom-using-fastboot-). **Relocking the bootloader with modified partitions without flashing stock firmware may brick the device!**
+  - Backup all data (relocking will **erase everything**).
+  - Install **ADB & Fastboot tools** and USB drivers if not already set up.
 
-B. **Relocking Process**  
+B. **Relocking Process**
   - If you are in the system, reboot to bootloader:
     ```sh
-    adb reboot bootloader  
+    adb reboot bootloader
     ```
-    
-  - Verify fastboot connection:  
-    ```sh
-    fastboot devices  
-    ```
-    
-  - Initiate bootloader relocking:  
-    ```sh 
-    fastboot flashing lock  
-    ```
-    
-  - Confirm on your phone:  
-    - Use **Volume Keys** to navigate and **Power Button** to confirm.  
-    - The device will be formatted and reboot with a locked bootloader.  
 
-C. **Post-Relock**  
-  - Set up your device again.  
+  - Verify fastboot connection:
+    ```sh
+    fastboot devices
+    ```
+
+  - Initiate bootloader relocking:
+    ```sh
+    fastboot flashing lock
+    ```
+
+  - Confirm on your phone:
+    - Use **Volume Keys** to navigate and **Power Button** to confirm.
+    - The device will be formatted and reboot with a locked bootloader.
+
+C. **Post-Relock**
+  - Set up your device again.
   - The bootloader is now locked!
- 
+
 ---
 
-## Acknowledgments 🤝  
+## Acknowledgments 🤝
 
-Special thanks to these contributors for their invaluable work and support:  
+Special thanks to these contributors for their invaluable work and support:
 - **[luk1337](https://github.com/luk1337/oplus_archive)** – Pioneered the use of AOSP’s OTA extraction tool, enabling the extraction of incremental OTA updates.
 - **[arter97](https://github.com/arter97/nothing_archive)** – Adapted the above project for **Nothing Phone (2)**.
 - **[LukeSkyD](https://github.com/LukeSkyD)** – Maintains the [Nothing Phone (1) Repo](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/), which served as a key reference for earlier builds.
@@ -513,9 +513,9 @@ Special thanks to these contributors for their invaluable work and support:
 
 ---
 
-## Support the Project ⭐ 
+## Support the Project ⭐
 
-If this archive has been helpful, please consider **[starring the repository](https://github.com/spike0en/nothing_archive/stargazers)**. Your support helps keep the project discoverable and active!  
+If this archive has been helpful, please consider **[starring the repository](https://github.com/spike0en/nothing_archive/stargazers)**. Your support helps keep the project discoverable and active!
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=spike0en/nothing_archive&type=Date&theme=dark" />
