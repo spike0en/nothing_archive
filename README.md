@@ -26,7 +26,11 @@
 - [Categorization](#categorization-)
 - [Downloads](#downloads-)
 - [Integrity](#integrity-check-)
-- [Guides](#guides-)
+- **Guides**
+  - [Unlocking Bootloader](#i-unlocking-bootloader-)
+  - [Backing Up Partitions](#ii-backing-up-essential-partitions-after-unlocking-bootloader-)
+  - [Flashing Stock ROM Using Fastboot](#iii-flashing-the-stock-rom-using-fastboot-)
+  - [Relocking Bootloader](#iv-relocking-bootloader-)
 - [Acknowledgments](#acknowledgments-)
 - [Support the Project](#support-the-project-)
 
