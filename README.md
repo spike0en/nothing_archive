@@ -26,7 +26,7 @@
 - [Categorization](#categorization-)
 - [Downloads](#downloads-)
 - [Integrity](#integrity-check-)
-- [Flashing the Stock ROM Using Fastboot](#flashing-the-stock-rom-using-fastboot-)
+- [Guides](#guides-)
 - [Acknowledgments](#acknowledgments-)
 - [Support the Project](#support-the-project-)
 
@@ -60,7 +60,7 @@ By using this archive, users acknowledge and accept these terms:
 ## Notes 📝
 
 - Releases for OTA images are tagged and named using the format: `<NothingOS Version>`+`<Device Codename>`.`<Incremental Date>` and `<POST_OTA_VERSION>`_`<NothingOS Version>`, as shown [here](https://github.com/spike0en/nothing_archive/releases), respectively.
-- Region-specific releases are tagged using the format: `<NothingOS Version>`-`<G or E>`+`<Device Codename>`.`<Incremental Date>`, applicable to certain older [Spacewar](#nothing-phone-1) builds that are not unified. Here, G = GLO (Global), and E = EEA (European Economic Area).
+- Region-specific releases are tagged using the format: `<NothingOS Version>`+`<G or E>`+`<Device Codename>`.`<Incremental Date>`, applicable to certain older [Spacewar](#nothing-phone-1) builds that are not unified. Here, G = GLO (Global), and E = EEA (European Economic Area).
 - For releases with a Nothing OS version in the format X.Y.Za and X.Y, tags are renamed to X.Y.0-A and X.Y.0 respectively for proper sorting (e.g., `2.5.5A` → `2.5.5-A`, `2.6` → `2.6.0`, `3.0` → `3.0.0`).
 - Nothing OS Open Beta releases are denoted by `-OB` wherever applicable.
 - Android Developer preview releases are tagged as `0.0.0-dev`+`<Device Codename>`.`<Incremental Date>`.
@@ -295,35 +295,207 @@ Select your **device model** from the dropdown list below to access it's **Relea
 
 ---
 
-## Flashing the Stock ROM Using Fastboot ⚡
+## Guides 📖
 
-### A. Preparation of Flashing Folder
-- Download the following files from the assets section of the releases for the corresponding device model and firmware build, and place them in a dedicated folder:
-   - `-image-boot.7z`
-   - `-image-firmware.7z`
-   - `image-logical.7z.001-00x`
-- Ensure that [7-Zip](https://www.7-zip.org/) is installed on the system.
-- For Windows users:
-   - Right-click on the downloaded files and select **Extract to** `"*\"`.
-   - Alternatively, use [this script](https://github.com/spike0en/nothing_archive/blob/main/scripts/extract.bat) by placing it in the same directory as the downloaded archive files and running it. The script will guide through the extraction process and download the flashing script directly to the flashing folder.
-- For bash users, use the following command to extract the files:
-   ```bash
-   7za -y x "*7z*"
+### I. Unlocking Bootloader 🔓
+
+A. Prerequisites
+- **Backup your data** (unlocking will erase everything).  
+- **Install ADB & Fastboot tools** – [Download here](https://developer.android.com/studio/releases/platform-tools).  
+- **Install USB drivers** – [Google USB Drivers](https://developer.android.com/studio/run/win-usb).  
+- **Enable Developer Options**:  
+  - `Settings > About phone > Tap "Build number" 7 times.`  
+- **Enable USB Debugging & OEM Unlocking**:  
+  - `Settings > System > Developer options > Enable USB Debugging & OEM Unlocking.`  
+- **Remove Screen Lock/PIN/Password and Logged-in Accounts (optional but recommended)**
+  - Removing accounts before relocking the bootloader helps prevent Google FRP (Factory Reset Protection) lock. If FRP is triggered, the device will ask for the previously linked Google account after a factory reset. If you forget the credentials or can't access the account, you may be locked out of your device. To avoid this, it's recommended to remove all Google accounts before relocking.
+
+B. Unlocking Process  
+- **Connect your phone to a PC** via USB.  
+- **Open a command prompt** in the platform-tools folder:  
+  - Windows: `Shift + Right Click` > **Open Command Prompt/Powershell here**.  
+  - Mac/Linux: Open **Terminal** and navigate to platform-tools.  
+- **Verify device connection**: 
+  ```sh
+  adb devices
+  ```
+  If prompted, allow USB debugging on the phone. 
+
+- **Reboot to bootloader:**
+   ```sh
+   adb reboot bootloader
    ```
 
-### B. Proceeding with Flashing
-- Install compatible USB drivers from [here](https://developer.android.com/studio/run/win-usb). Ensure that the `Android Bootloader Interface` is visible in the Device Manager when the device is in bootloader mode before starting the flashing process.
-- If the extraction script was used earlier for Windows, proceed by executing the script directly from the flashing folder. If not:
-   - Move all image files into a single folder along with the [Fastboot Flashing Script](https://github.com/spike0en/nothing_fastboot_flasher/blob/main/README.md#-download). Always download the latest version of the script to ensure the latest hotfixes are included.
-- Run the script while connected to the internet (to fetch the latest `platform-tools`) and follow the prompts:
-   - Answer the initial confirmation questionnaire.
-   - Choose whether to wipe data: `(Y/N)`
-   - Choose whether to flash to both slots: `(Y/N)`
-   - Disable Android Verified Boot: `(N)`
-- Verify that all partitions have been successfully flashed. 
-   - If successful, choose to reboot to system: `(Y)`
-   - If any errors occur, reboot to bootloader and flash again after addressing the cause of failure. Proceeding with `Reboot to system` in such cases may result in a soft or hard bricked device.
+- **Verify fastboot connection:**
+   ```sh
+   fastboot devices
+   ```
+   If no device is detected, reinstall USB drivers.
 
+- **Unlock the bootloader:**
+   ```sh
+   fastboot flashing unlock
+   ```   
+
+- **Confirm on your phone:**
+  - Use **Volume Keys** to navigate and **Power Button** to confirm.
+  - Your device will **erase all data** and reboot.
+
+C. Post-Unlock
+  - Set up your phone again.
+  - **Verify bootloader status**:
+    ```sh
+    Settings > System > Developer options > OEM Unlocking should be enabled.
+    ```
+    
+  - Bootloader is now unlocked and your device will show an Orange State warning at boot—this is normal.
+
+---
+
+### II. Backing Up Essential Partitions After Unlocking Bootloader 💾 
+
+A. Why Backup?  
+- After unlocking the bootloader, it is crucial to back up essential partitions such as `persist`, `modemst1`, `modemst2`, `fsg`, etc., **before** flashing custom ROMs or kernels.  
+- These partitions contain important data, including IMEI, network settings, and fingerprint sensor calibration.  
+- If lost or corrupted, your device may experience **loss of cellular connectivity, fingerprint issues, or even become bricked**.  
+- Creating backups ensures you can **restore your device** if something goes wrong.  
+
+B. Requirements  
+- **Unlocked bootloader**  
+- **Root access** (via Magisk/KSU/Apatch)  
+- **Termux app** (install via F-Droid or Play Store)  
+- **Check Partition Paths:**  
+  - **QCom devices:** `/dev/block/bootdevice/by-name/`  
+  - **MTK devices:** `/dev/block/by-name/`  
+
+C. Backup Instructions  
+- **For Qualcomm (QCom) Devices:**  
+  - Open **Termux** and grant root access using:  
+    ```sh
+    su
+    ```
+    
+  - Copy and paste the following command in one go:  
+    ```sh
+    mkdir -p /sdcard/partitions_backup
+    ls -1 /dev/block/bootdevice/by-name | grep -v userdata | grep -v super | \
+    while read f; do dd if=/dev/block/bootdevice/by-name/$f of=/sdcard/partitions_backup/${f}.img; done
+    ```  
+    This will create image files of **all partitions except `super` & `userdata`** in the **Internal Storage** inside a folder named **"partitions_backup"**.
+    
+  - **[Optional]** If the above command fails, try this alternative:  
+    ```sh
+    mkdir -p /sdcard/partitions_backup
+    for partition in /dev/block/bootdevice/by-name/*; do \
+    [[ "$(basename "$partition")" != "userdata" && "$(basename "$partition")" != "super" ]] && \
+    cp -f "$partition" /sdcard/partitions_backup/; done
+    ```
+    
+- **For MediaTek (MTK) Devices:**  
+  - Open **Termux** and grant root access using:  
+    ```sh
+    su
+    ```
+    
+  - Copy and paste all the following commands in one go:  
+    ```sh
+    mkdir -p /sdcard/partitions_backup/
+    cd /sdcard/partitions_backup
+    dd if=/dev/block/by-name/nvram of=/sdcard/partitions_backup/nvram.img
+    dd if=/dev/block/by-name/nvdata of=/sdcard/partitions_backup/nvdata.img
+    dd if=/dev/block/by-name/persist of=/sdcard/partitions_backup/persist.img
+    dd if=/dev/block/by-name/nvcfg of=/sdcard/partitions_backup/nvcfg.img
+    dd if=/dev/block/by-name/protect1 of=/sdcard/partitions_backup/protect1.img
+    dd if=/dev/block/by-name/protect2 of=/sdcard/partitions_backup/protect2.img
+    ```
+
+D. Storing Backup  
+  - Move the **"partitions_backup"** folder to your **PC or secure storage**.  
+  - **Do NOT share these backups!** They contain unique device data like IMEI.  
+
+E. Restoring Partitions
+ - **MTK Devices:**  
+   ```sh
+   fastboot flash nvram nvram.img
+   fastboot flash nvdata nvdata.img
+   fastboot flash nvcfg nvcfg.img
+   fastboot flash persist persist.img
+   ```
+   Reboot to **recovery mode** → Perform **factory reset** → Reboot to **system**.  
+
+ - **QCom Devices:**  
+   ```sh
+   fastboot flash persist persist.img
+   fastboot flash modemst1 modemst1.img
+   fastboot flash modemst2 modemst2.img
+   ```  
+   **Factory reset is not mandatory in this case.**  
+
+---
+
+### III. Flashing the Stock ROM Using Fastboot ⚡  
+
+A. **Preparation of Flashing Folder:**  
+  - Download the following files for your device model and firmware build and place them in a dedicated folder:  
+    - image-boot.7z  
+    - image-firmware.7z  
+    - image-logical.7z.001-00x  
+
+  - Install 7-Zip from [here](https://www.7-zip.org/).  
+  - Extract files:  
+    - Windows: Right-click → Extract to "*\"  
+    - Bash users:  
+      7za -y x "*7z*"  
+
+B. **Proceeding with Flashing:**  
+  - Install compatible USB drivers from [here](https://developer.android.com/studio/run/win-usb).  
+  - Ensure that `Android Bootloader Interface` is visible in **Device Manager** when the device is in **bootloader mode**.  
+  - If the extraction script was used earlier, execute it directly. Otherwise:  
+    - Move all extracted image files into a single folder along with the [Fastboot Flashing Script](https://github.com/spike0en/nothing_fastboot_flasher/blob/main/README.md#-download).  
+    - Always download the latest script to ensure hotfixes are included.  
+  - Run the script while connected to the internet (to fetch latest `platform-tools`) and follow the prompts:  
+    - Answer the confirmation questionnaire.  
+    - Choose whether to wipe data: (Y/N)  
+    - Choose whether to flash to both slots: (Y/N)  
+    - Disable Android Verified Boot: (N)  
+  - Verify that all partitions have been successfully flashed.  
+    - If successful, choose to reboot to system: (Y)  
+    - If errors occur, reboot to bootloader and reflash after addressing the failure.  
+
+---
+
+### IV. Relocking Bootloader 🔒  
+
+A. **Prerequisites**  
+  - Remove **Screen Lock/PIN/Password and Logged-in Accounts** (optional but recommended).  
+  - Clean-flash the **stock ROM** following [Flashing Guide](#iii-flashing-the-stock-rom-using-fastboot-). **Relocking the bootloader with modified partitions without flashing stock firmware may brick the device!**  
+  - Backup all data (relocking will **erase everything**).  
+  - Install **ADB & Fastboot tools** and USB drivers if not already set up.  
+
+B. **Relocking Process**  
+  - If you are in the system, reboot to bootloader:
+    ```sh
+    adb reboot bootloader  
+    ```
+    
+  - Verify fastboot connection:  
+    ```sh
+    fastboot devices  
+    ```
+    
+  - Initiate bootloader relocking:  
+    ```sh 
+    fastboot flashing lock  
+    ```
+    
+  - Confirm on your phone:  
+    - Use **Volume Keys** to navigate and **Power Button** to confirm.  
+    - The device will be formatted and reboot with a locked bootloader.  
+
+C. **Post-Relock**  
+  - Set up your device again.  
+  - The bootloader is now locked!
+ 
 ---
 
 ## Acknowledgments 🤝  
