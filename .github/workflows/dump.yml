@@ -9,6 +9,9 @@ on:
       name:
         description: 'Release tag'
         required: true
+      model:
+        description: 'Device model (e.g., asteroids, pacman, pong, spacewar, tetris)'
+        required: true
 
 jobs:
   dump:
@@ -34,7 +37,7 @@ jobs:
         IFS=',' read -ra URLS <<< "${{ inputs.urls }}"
         for url in "${URLS[@]}"; do
           echo "$url"
-        done | xargs ./scripts/dump.sh
+        done | xargs ./scripts/dump.sh "${{ inputs.model }}"
         
     - name: Create tag
       run: |

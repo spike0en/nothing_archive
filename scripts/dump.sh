@@ -11,6 +11,10 @@ set -ex
 # Set execute permissions for ota_extractor
 chmod +x ./bin/ota_extractor
 
+# Get the model name from the first argument and shift the remaining arguments
+MODEL="$1"
+shift
+
 # Download OTA firmware with aria2c or gdown based on the link format, renaming it to ota.zip
 download_with_gdown() {
     echo "Downloading with gdown: $1"
@@ -86,6 +90,45 @@ done
 # Append the final fingerprint to BODY after processing all incrementals
 BODY=$(printf "%s\n\n**Fingerprint:**\n%s" "$BODY" "${FINGERPRINT//|/$'\n'}")
 
+# Define partition schemes for different models
+declare -A BOOT_PARTITIONS_MAP
+declare -A LOGICAL_PARTITIONS_MAP
+
+BOOT_PARTITIONS_MAP=(
+    [asteroids]="boot dtbo init_boot recovery vendor_boot vbmeta vbmeta_system vbmeta_vendor"
+    [pacman]="boot dtbo init_boot vendor_boot vbmeta"
+    [pong]="boot dtbo recovery vendor_boot vbmeta vbmeta_system vbmeta_vendor"
+    [spacewar]="boot dtbo vendor_boot vbmeta"
+    [tetris]="boot dtbo init_boot vendor_boot vbmeta"
+)
+
+LOGICAL_PARTITIONS_MAP=(
+    [asteroids]="odm product system system_dlkm system_ext vendor vendor_dlkm"
+    [pacman]="odm odm_dlkm product system system_dlkm system_ext vbmeta_system vbmeta_vendor vendor vendor_dlkm"
+    [pong]="odm product system system_ext vendor vendor_dlkm"
+    [spacewar]="odm product system system_ext vbmeta_system vendor"
+    [tetris]="odm odm_dlkm product system system_dlkm system_ext vbmeta_system vbmeta_vendor vendor vendor_dlkm"
+)
+
+# Check if MODEL is set
+if [ -z "$MODEL" ]; then
+    echo "MODEL variable not set. Exiting."
+    exit 1
+fi
+
+# Get partitions based on the model
+BOOT_PARTITIONS=${BOOT_PARTITIONS_MAP[$MODEL]}
+LOGICAL_PARTITIONS=${LOGICAL_PARTITIONS_MAP[$MODEL]}
+echo "Selected model: $MODEL"
+echo "Boot Partitions: $BOOT_PARTITIONS"
+echo "Logical Partitions: $LOGICAL_PARTITIONS"
+
+# Ensure the model exists in the partition map
+if [[ ! ${BOOT_PARTITIONS_MAP[$MODEL]} ]] || [[ ! ${LOGICAL_PARTITIONS_MAP[$MODEL]} ]]; then
+    echo "Unknown or misconfigured model: $MODEL"
+    exit 1
+fi
+
 # Create required directories
 mkdir -p out dyn syn
 
@@ -102,13 +145,13 @@ for h in md5 sha1 sha256 xxh128; do
 done
 
 # Move the `boot` category image files from `ota` to `syn` directory
-for f in boot dtbo recovery vendor_boot vbmeta; do
+for f in $BOOT_PARTITIONS; do
     mv ${f}.img ../syn
 done
 
-# Move the `logical` category image files from `ota` to `syn` directory
-for f in system system_ext product vendor vendor_dlkm odm vbmeta_system vbmeta_vendor; do
-    mv ${f}.img ../dyn 
+# Move the `logical` category image files from `ota` to `dyn` directory
+for f in $LOGICAL_PARTITIONS; do
+    mv ${f}.img ../dyn
 done
 
 # Archive images in parallel and remove directories after success
