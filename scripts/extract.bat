@@ -185,7 +185,8 @@ echo Select your device model:
 echo [1] Nothing Phone (1)
 echo [2] Nothing Phone (2)
 echo [3] Nothing Phone (2a) Series
-echo [4] CMF Phone (1)
+echo [4] Nothing Phone (3a) Series
+echo [5] CMF Phone (1)
 echo [X] Exit
 echo =========================================================
 echo.
@@ -197,7 +198,8 @@ set "FLASH_SCRIPT_URL="
 if "%DEVICE_CHOICE%"=="1" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/spacewar/Windows/flash_all.bat"
 if "%DEVICE_CHOICE%"=="2" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/pong/Windows/flash_all.bat"
 if "%DEVICE_CHOICE%"=="3" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/pacman/Windows/flash_all.bat"
-if "%DEVICE_CHOICE%"=="4" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/tetris/Windows/flash_all.bat"
+if "%DEVICE_CHOICE%"=="4" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/asteroids/Windows/flash_all.bat"
+if "%DEVICE_CHOICE%"=="5" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/tetris/Windows/flash_all.bat"
 if /I "%DEVICE_CHOICE%"=="X" exit /b
 
 :: Validate selection
