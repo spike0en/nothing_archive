@@ -26,7 +26,7 @@ jobs:
         python3 -m pip install gdown
 
     - name: Set script permissions
-      run: chmod +x dump.sh
+      run: chmod +x scripts/dump.sh
 
     - name: Download & Process OTA Packages
       id: dump
@@ -34,7 +34,7 @@ jobs:
         IFS=',' read -ra URLS <<< "${{ inputs.urls }}"
         for url in "${URLS[@]}"; do
           echo "$url"
-        done | xargs ./dump.sh
+        done | xargs ./scripts/dump.sh
 
     - name: Upload release assets
       uses: ncipollo/release-action@v1
