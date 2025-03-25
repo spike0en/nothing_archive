@@ -27,10 +27,11 @@
 - [Downloads](#downloads-)
 - [Integrity](#integrity-check-)
 - **Guides**
-  - [Unlocking Bootloader](#i-unlocking-bootloader-)
-  - [Backing Up Partitions](#ii-backing-up-essential-partitions-after-unlocking-bootloader-)
-  - [Flashing Stock ROM Using Fastboot](#iii-flashing-the-stock-rom-using-fastboot-)
-  - [Relocking Bootloader](#iv-relocking-bootloader-)
+  - [OTA Sideloading](#i-ota-sideloading-)
+  - [Unlocking Bootloader](#ii-unlocking-bootloader-)
+  - [Backing Up Partitions](#iii-backing-up-essential-partitions-after-unlocking-bootloader-)
+  - [Flashing Stock ROM Using Fastboot](#iv-flashing-the-stock-rom-using-fastboot-)
+  - [Relocking Bootloader](#v-relocking-bootloader-)
 - [Acknowledgments](#acknowledgments-)
 - [Support the Project](#support-the-project-)
 
@@ -69,7 +70,7 @@ By using this archive, users acknowledge and accept these terms:
 - Nothing OS Open Beta releases are denoted by `-OB` wherever applicable.
 - Android Developer preview releases are tagged as `0.0.0-dev`+`<Device Codename>`.`<Incremental Date>`.
 - Unless specifically stated otherwise in the release notes, the releases published here are compatible with all regional and color variants of the device.
-- For detailed instructions on interpreting the required incremental OTA firmware, refer to this [OTA Sideloading Guide](https://telegra.ph/OTA-Sideloading-Guide-for-Nothing-Devices-01-17).
+- For detailed instructions on interpreting the required incremental OTA firmware, refer to [this section](#i-ota-sideloading-).
 
 ---
 
@@ -304,7 +305,104 @@ Select your **device model** from the dropdown list below to access it's **Relea
 
 ## Guides 📖
 
-### I. Unlocking Bootloader 🔓
+### I. OTA Sideloading 🔄
+
+> For visual references, please refer to [these images](https://github.com/spike0en/test/tree/main/assets/sideloading) in their respective order.
+
+<br>
+
+A. **Disclaimer**  
+  - Sideloading or manually installing official incremental OTA updates is **completely safe**, as long as you download them **directly from Spike’s Nothing Archive**.  
+  - **Do not use third-party sources**—all firmware from the Nothing Archive is sourced directly from the OEM’s official servers.  
+  - The **built-in Nothing OS offline updater tool** only accepts updates **signed by the OEM**, ensuring security.  
+  - The **updater verifies the hash** of the firmware before installation.  
+
+<br>
+
+B. **Restoring Stock Partitions (For Rooted Users Only)**  
+  > **If your bootloader is locked, skip directly to Point C!**  
+
+1. **Check your current Nothing OS version:**  
+   - Go to `Settings > About phone > Tap the device banner`.  
+   - Note down the build number.  
+
+2. **Fetch stock images for your current firmware build:**  
+   - Download the `-boot-image.7z` file.  
+   - Extract the archive to obtain `.img` files.  
+
+3. **Identify the required partitions:**  
+   - **Qualcomm Devices:** `boot`, `init_boot` `vendor_boot`, `recovery`, `vbmeta`  
+   - **MediaTek Devices:** `init_boot`, `recovery`, `vbmeta`  
+
+4. **Flash stock partitions** in bootloader mode:  
+   > Only modified partitions are required to be flashed. Also skip any missing partitions based on your SoC platform. 
+   ```sh
+   fastboot flash boot boot.img
+   fastboot flash recovery recovery.img
+   fastboot flash vendor_boot vendor_boot.img
+   fastboot flash vbmeta vbmeta.img
+   fastboot flash init_boot init_boot.img
+   ```
+
+5. **Reboot to system and update via System Updater:**
+   - If the update **fails**, proceed with **manual sideloading** in the next section.
+
+6. **Restoring Root (Optional):**
+   - After updating, you may re-root by **flashing a patched boot image** for the updated NOS version.
+   - **Modules will remain intact** after re-rooting.
+
+<br>
+
+C. **Proceed with Sideloading** 
+
+ - **Download the Correct Update Firmware File:**  
+   - Find the correct OTA firmware file for your device from [here](#downloads-).
+
+ - **How to Select the Right File?**  
+   - Navigate to the repository and select your device model.  
+   - Look for the Incremental OTA column.  
+   - **Verify your current OS Build Number**:  
+    - Go to: `Settings > System > About Phone`.  
+    - Tap the **device banner** and note the **Build Number**.
+
+ - **Example:**  
+   - Suppose your **Phone (2)** has the build number: `Pong_U2.6-241016-1700` 
+   - Assuming the latest available OTA update available being: `Pong_V3.0-241226-2001`
+   - The corresponding update pathway would be: `Pong_U2.6-241016-1700 -> Pong_V3.0-241226-2001`
+   - Ensure you select the correct pathway based on your device and OS version.
+    - Refer to [this](https://github.com/spike0en/nothing_archive/blob/main/assets/sideloading/3.1_ota_sideload.jpg) for better clarity.
+
+ - **Create the `ota` Folder:** 
+   - Create a folder named `ota` in your device's **internal storage**, full path being:  
+     ```
+     /sdcard/ota/
+     ```
+   - Move the downloaded `<firmware>.zip` file to this folder.
+
+ - **Access the Nothing Offline OTA Updater:**  
+    - Open the **Phone app** and dial:  
+      ```
+      *#*#682#*#*
+      ```
+   - This will launch the built-in offline updater tool.  
+   - The UI may show `NothingOfflineOtaUpdate` or `NOTHING BETA OTA UPDATE` — both work.
+
+ - **Apply the Update:**  
+   - The updater will automatically detect the update file.  
+   - If not detected, manually browse and import the OTA file.  
+   - Tap `Directly Apply OTA` or `Update` (based on the app UI).  
+   - Wait for the update to complete —your device will reboot automatically.
+
+- **Note:**  
+  - If the updater shows an **unknown error**, try using the **"Browse"** option instead of manually copying the file to the **"ota"** folder.
+  - **Full OTA firmware** can be sideloaded if incremental OTA fails.
+    - **Full OTA cannot be used to downgrade** — it can only update to the same or a higher build.
+    - **Unlocked bootloader users** can flash full OTA via custom recoveries (e.g., OrangeFox for Phone (2)).
+  - **Not every release has a Full OTA file** — use incrementals instead in such cases.
+
+---
+
+### II. Unlocking Bootloader 🔓
 
 A. Prerequisites
 - **Backup your data** (unlocking will erase everything).
@@ -359,7 +457,7 @@ C. Post-Unlock
 
 ---
 
-### II. Backing Up Essential Partitions After Unlocking Bootloader 💾
+### III. Backing Up Essential Partitions After Unlocking Bootloader 💾
 
 A. Why Backup?
 - After unlocking the bootloader, it is crucial to back up essential partitions such as `persist`, `modemst1`, `modemst2`, `fsg`, etc., **before** flashing custom ROMs or kernels.
@@ -372,7 +470,7 @@ B. Requirements
 - **Root access** (via Magisk/KSU/Apatch)
 - **Termux app** (install via F-Droid or Play Store)
 - **Check Partition Paths:**
-  - **QCom devices:** `/dev/block/bootdevice/by-name/`
+  - **Qcom devices:** `/dev/block/bootdevice/by-name/`
   - **MTK devices:** `/dev/block/by-name/`
 
 C. Backup Instructions
@@ -440,7 +538,7 @@ E. Restoring Partitions
 
 ---
 
-### III. Flashing the Stock ROM Using Fastboot ⚡
+### IV. Flashing the Stock ROM Using Fastboot ⚡
 
 A. **Preparation of Flashing Folder:**
   - Download the following files for your device model and firmware build and place them in a dedicated folder:
@@ -471,7 +569,7 @@ B. **Proceeding with Flashing:**
 
 ---
 
-### IV. Relocking Bootloader 🔒
+### V. Relocking Bootloader 🔒
 
 A. **Prerequisites**
   - Remove **Screen Lock/PIN/Password and Logged-in Accounts** (optional but recommended).
