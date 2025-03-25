@@ -1,8 +1,8 @@
-**English** | [日本語](/README_ja-JP.md)
+**English** | [日本語](README_ja-JP.md)
 
 # Nothing Archive
 
-<img src="assets/branding/logo.png" width="96" alt="Nothing Archive Logo">
+<img src="../assets/branding/logo.png" width="96" alt="Nothing Archive Logo">
 
 [![Total Downloads](https://img.shields.io/github/downloads/spike0en/nothing_archive/total?logo=github&logoColor=white&label=Total%20Downloads&color=007377)](https://github.com/spike0en/nothing_archive/releases)
 [![Latest Release](https://img.shields.io/github/release/spike0en/nothing_archive?label=Latest%20Release&logo=git&logoColor=white&color=1E6091)](https://github.com/spike0en/nothing_archive/releases/latest)

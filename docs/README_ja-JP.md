@@ -1,8 +1,8 @@
-[English](./README.md) | **日本語**
+[English](README.md) | **日本語**
 
 # Nothing Archive 
 
-<img src="assets/logo.png" width="96" alt="Nothing Archive Logo">
+<img src="../assets/branding/logo.png" width="96" alt="Nothing Archive Logo">
 
 [![Workflow Status](https://img.shields.io/github/actions/workflow/status/spike0en/nothing_archive/dump.yml?branch=main&label=Build&color=2DC653&logo=github)](https://github.com/spike0en/nothing_archive/actions/workflows/dump.yml)
 [![Total Downloads](https://img.shields.io/github/downloads/spike0en/nothing_archive/total?logo=github&logoColor=white&label=Total%20Downloads&color=007377)](#downloads-)
