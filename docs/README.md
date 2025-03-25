@@ -65,7 +65,7 @@ By using this archive, users acknowledge and accept these terms:
 ## Notes 📝
 
 - Releases for OTA images are tagged and named using the format: `<NothingOS Version>`+`<Device Codename>`.`<Incremental Date>` and `<POST_OTA_VERSION>`_`<NothingOS Version>`, as shown [here](https://github.com/spike0en/nothing_archive/releases), respectively.
-- Region-specific releases are tagged using the format: `<NothingOS Version>`-`<G or E>`+`<Device Codename>`.`<Incremental Date>`, applicable to certain older [Spacewar](#nothing-phone-1) builds that are not unified. Here, G = GLO (Global), and E = EEA (European Economic Area).
+- Region-specific releases are tagged using the format: `<NothingOS Version>`-`<G or E>`+`<Device Codename>`.`<Incremental Date>`, applicable to certain older `Spacewar` builds that are not unified. Here, G = GLO (Global), and E = EEA (European Economic Area).
 - For releases with a Nothing OS version in the format X.Y.Za and X.Y, tags are renamed to X.Y.0-A and X.Y.0 respectively for proper sorting (e.g., `2.5.5A` → `2.5.5-A`, `2.6` → `2.6.0`, `3.0` → `3.0.0`).
 - Nothing OS Open Beta releases are denoted by `-OB` wherever applicable.
 - Android Developer preview releases are tagged as `0.0.0-dev`+`<Device Codename>`.`<Incremental Date>`.
@@ -573,7 +573,7 @@ B. **Proceeding with Flashing:**
 
 A. **Prerequisites**
   - Remove **Screen Lock/PIN/Password and Logged-in Accounts** (optional but recommended).
-  - Clean-flash the **stock ROM** following [Flashing Guide](#iii-flashing-the-stock-rom-using-fastboot-). **Relocking the bootloader with modified partitions without flashing stock firmware may brick the device!**
+  - Clean-flash the **stock ROM** following [Flashing Guide](#iv-flashing-the-stock-rom-using-fastboot-). **Relocking the bootloader with modified partitions without flashing stock firmware may brick the device!**
   - Backup all data (relocking will **erase everything**).
   - Install **ADB & Fastboot tools** and USB drivers if not already set up.
 
