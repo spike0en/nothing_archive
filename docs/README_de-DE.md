@@ -410,8 +410,8 @@ Besonderer Dank geht an diese Mitwirkenden für ihre unschätzbare Arbeit und Un
 - **[luk1337](https://github.com/luk1337/oplus_archive)** – Pionierarbeit bei der Verwendung des OTA-Extraktionstools von AOSP, das die Extraktion inkrementeller OTA-Updates ermöglichte.
 - **[arter97](https://github.com/arter97/nothing_archive)** – Passte das obige Projekt für das **Nothing Phone (2)** an.
 - **[LukeSkyD](https://github.com/LukeSkyD)** – Pflegt das [Nothing Phone (1) Repo](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/), das als wichtige Referenz für frühere Builds diente.
-- **[Re*Index.(ot_inc)](https://github.com/reindex-ot)** – Stellte die japanische Übersetzung zur Verfügung und half dabei, das Archiv zugänglicher zu machen.
 - **[XelXen](https://github.com/XelXen)** - Entwarf das Logo und den Banner für das Branding des Projekts.
+- Personen, die zu den Lokalisierungsbemühungen beigetragen haben, um dieses Projekt einem breiteren Publikum zugänglich zu machen.
 
 ---
 

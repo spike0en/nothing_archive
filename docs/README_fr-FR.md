@@ -39,7 +39,7 @@
 
 ## Aperçu 🔍
 
-**Nothing Archive** est le dépôt de firmware Nothing OS le plus à jour, offrant des mises à jour OTA officielles, des paquets de firmware complets et des images OTA stock pour **Nothing Phone (1), Phone (2), Phone (2a), Phone (2a) Plus, Phone (3a), Phone (3a) Pro**, et **CMF Phone (1)**, tous provenant directement des serveurs OEM officiels. Tous les fichiers sont [archivés](https://archive.org/details/nothing-archive), garantissant un accès facile et une préservation à long terme.
+**Nothing Archive** est le dépôt de firmware Nothing OS le plus à jour, offrant des mises à jour OTA officielles, des paquets de firmware complets et des images OTA stock pour **Nothing Phone 1, Phone 2, Phone 2a, Phone 2a Plus, Phone 3a, Phone 3a Pro**, et **CMF Phone 1**, tous provenant directement des serveurs OEM officiels. Tous les fichiers sont [archivés](https://archive.org/details/nothing-archive), garantissant un accès facile et une préservation à long terme.
 
 ### Caractéristiques et avantages :
 
@@ -410,8 +410,8 @@ Un merci spécial à ces contributeurs pour leur travail et leur soutien inestim
 - **[luk1337](https://github.com/luk1337/oplus_archive)** – Pionnier de l'utilisation de l'outil d'extraction OTA d'AOSP, permettant l'extraction des mises à jour OTA incrémentielles.
 - **[arter97](https://github.com/arter97/nothing_archive)** – A adapté le projet ci-dessus pour le **Nothing Phone (2)**.
 - **[LukeSkyD](https://github.com/LukeSkyD)** – Maintient le [Dépôt Nothing Phone (1)](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/), qui a servi de référence clé pour les builds antérieures.
-- **[Re*Index.(ot_inc)](https://github.com/reindex-ot)** – A fourni la traduction japonaise, aidant à rendre l'archive plus accessible.
 - **[XelXen](https://github.com/XelXen)** - A conçu le logo et la bannière pour l'image de marque du projet.
+- Les personnes ayant contribué aux efforts de localisation, permettant de rendre ce projet accessible à un public plus large.
 
 ---
 

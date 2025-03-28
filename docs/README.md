@@ -39,7 +39,7 @@
 
 ## Overview 🔍
 
-**Nothing Archive** is the most up-to-date Nothing OS firmware repository, offering official OTA updates, full firmware packages, and stock OTA images for **Nothing Phone (1), Phone (2), Phone (2a), Phone (2a) Plus, Phone (3a), Phone (3a) Pro**, and **CMF Phone (1)**, all sourced directly from official OEM servers. All files are [archived](https://archive.org/details/nothing-archive), ensuring easy access and long-term preservation.
+**Nothing Archive** is the most up-to-date Nothing OS firmware repository, offering official OTA updates, full firmware packages, and stock OTA images for **Nothing Phone 1, Phone 2, Phone 2a, Phone 2a Plus, Phone 3a, Phone 3a Pro**, and **CMF Phone 1**, all sourced directly from official OEM servers. All files are [archived](https://archive.org/details/nothing-archive), ensuring easy access and long-term preservation.
 
 ### Features & Benefits:
 
@@ -212,7 +212,7 @@ Select your **device model** from the dropdown list below to access it's **Relea
 
 | **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
-| 3.0 | Pacman-V3.0-250304-1904 | Pacman_V3.0-250114-190 -> [Pacman-V3.0-250304-1904](https://android.googleapis.com/packages/ota-api/package/5872828e517f2a3c6fd69156d814e8e2df6d1115.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.0.0+pacman.250304) |
+| 3.0 | Pacman-V3.0-250304-1904 | Pacman_V3.0-250114-1909 -> [Pacman-V3.0-250304-1904](https://android.googleapis.com/packages/ota-api/package/5872828e517f2a3c6fd69156d814e8e2df6d1115.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.0.0+pacman.250304) |
 | 3.0 | Pacman-V3.0-250114-1909 | Pacman_V3.0-250103-1741 -> [Pacman_V3.0-250114-1909](https://android.googleapis.com/packages/ota-api/package/b087f08204adfcd5ef226f2559fc8c1d3e613dc9.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.0.0+pacman.250114) |
 | 3.0 | Pacman-V3.0-250103-1741 | Pacman_V3.0-241210-2057 -> [Pacman_V3.0-250103-1741](https://android.googleapis.com/packages/ota-api/package/34c43764d71f9df1c6c1575cc35134c68acebcb6.zip) | [Here](https://archive.org/download/nothing-archive/full_ota/pacman/Pacman_V3.0-241210-2057.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.0.0+pacman.250103) |
 | 3.0 | Pacman-V3.0-241210-2057 | Pacman-U2.6-241021_2253 -> [Pacman_V3.0-241210-2057](https://android.googleapis.com/packages/ota-api/package/7e81406e8f6908b1504620ca979cb8fa80dc84cb.zip) | N/A | [Here](https://android.googleapis.com/packages/ota-api/package/7e81406e8f6908b1504620ca979cb8fa80dc84cb.zip) |
@@ -609,8 +609,8 @@ Special thanks to these contributors for their invaluable work and support:
 - **[luk1337](https://github.com/luk1337/oplus_archive)** – Pioneered the use of AOSP’s OTA extraction tool, enabling the extraction of incremental OTA updates.
 - **[arter97](https://github.com/arter97/nothing_archive)** – Adapted the above project for **Nothing Phone (2)**.
 - **[LukeSkyD](https://github.com/LukeSkyD)** – Maintains the [Nothing Phone (1) Repo](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/), which served as a key reference for earlier builds.
-- **[Re*Index.(ot_inc)](https://github.com/reindex-ot)** – Provided the Japanese translation, helping make the archive more accessible.
 - **[XelXen](https://github.com/XelXen)** - Designed the logo and banner for the project’s branding.
+- Individuals who contributed to the localization efforts, helping to make this project accessible to a broader audience.
 
 ---
 

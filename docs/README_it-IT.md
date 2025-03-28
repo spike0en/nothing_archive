@@ -39,7 +39,7 @@
 
 ## Panoramica 🔍
 
-**Nothing Archive** è il repository di firmware Nothing OS più aggiornato, che offre aggiornamenti OTA ufficiali, pacchetti firmware completi e immagini OTA stock per **Nothing Phone (1), Phone (2), Phone (2a), Phone (2a) Plus, Phone (3a), Phone (3a) Pro** e **CMF Phone (1)**, tutti provenienti direttamente dai server OEM ufficiali. Tutti i file sono [archiviati](https://archive.org/details/nothing-archive), garantendo un facile accesso e una conservazione a lungo termine.
+**Nothing Archive** è il repository di firmware Nothing OS più aggiornato, che offre aggiornamenti OTA ufficiali, pacchetti firmware completi e immagini OTA stock per **Nothing Phone 1, Phone 2, Phone 2a, Phone 2a Plus, Phone 3a, Phone 3a Pro** e **CMF Phone 1**, tutti provenienti direttamente dai server OEM ufficiali. Tutti i file sono [archiviati](https://archive.org/details/nothing-archive), garantendo un facile accesso e una conservazione a lungo termine.
 
 ### Caratteristiche e Vantaggi:
 
@@ -410,8 +410,8 @@ Ringraziamenti speciali a questi contributori per il loro lavoro inestimabile e 
 - **[luk1337](https://github.com/luk1337/oplus_archive)** – **È stato un pioniere** nell'uso dello strumento di estrazione OTA di AOSP, abilitando l'estrazione degli aggiornamenti OTA incrementali.
 - **[arter97](https://github.com/arter97/nothing_archive)** – Ha adattato il progetto sopra per **Nothing Phone (2)**.
 - **[LukeSkyD](https://github.com/LukeSkyD)** – Mantiene la [Repo Nothing Phone (1)](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/), che è servita come riferimento chiave per le build precedenti.
-- **[Re*Index.(ot_inc)](https://github.com/reindex-ot)** – Ha fornito la traduzione giapponese, aiutando a rendere l'archivio più accessibile.
 - **[XelXen](https://github.com/XelXen)** - Ha progettato il logo e il banner per il branding del progetto.
+- Individui che hanno contribuito agli sforzi di localizzazione, aiutando a rendere questo progetto accessibile a un pubblico più ampio.
 
 ---
 

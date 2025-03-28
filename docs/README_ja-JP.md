@@ -39,7 +39,7 @@
 
 ## 概要 🔍
 
-**Nothing Archive** は、最新のNothing OSファームウェアリポジトリであり、**Nothing Phone (1)、Phone (2)、Phone (2a)、Phone (2a) Plus、Phone (3a)、Phone (3a) Pro**、および**CMF Phone (1)**向けの公式OTAアップデート、完全なファームウェアパッケージ、ストックOTAイメージを提供しています。これらはすべて公式OEMサーバーから直接取得されています。すべてのファイルは[アーカイブ](https://archive.org/details/nothing-archive)されており、簡単なアクセスと長期保存が保証されています。
+**Nothing Archive** は、最新のNothing OSファームウェアリポジトリであり、**Nothing Phone 1, Phone 2, Phone 2a, Phone 2a Plus, Phone 3a, Phone 3a Pro**、および**CMF Phone 1**向けの公式OTAアップデート、完全なファームウェアパッケージ、ストックOTAイメージを提供しています。これらはすべて公式OEMサーバーから直接取得されています。すべてのファイルは[アーカイブ](https://archive.org/details/nothing-archive)されており、簡単なアクセスと長期保存が保証されています。
 
 ### 特徴と利点:
 
@@ -410,8 +410,8 @@ C. **リロック後**
 - **[luk1337](https://github.com/luk1337/oplus_archive)** – AOSPのOTA抽出ツールの使用を開拓し、差分OTAアップデートの抽出を可能にしました。
 - **[arter97](https://github.com/arter97/nothing_archive)** – 上記のプロジェクトを**Nothing Phone (2)**向けに適合させました。
 - **[LukeSkyD](https://github.com/LukeSkyD)** – 初期のビルドの主要な参照元となった[Nothing Phone (1) Repo](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/)を維持しています。
-- **[Re*Index.(ot_inc)](https://github.com/reindex-ot)** – 日本語翻訳を提供し、アーカイブをよりアクセスしやすくするのに役立ちました。
 - **[XelXen](https://github.com/XelXen)** - プロジェクトのブランディングのためのロゴとバナーをデザインしました。
+- このプロジェクトをより広いオーディエンスにアクセス可能にするためのローカライズ努力に貢献した個人。
 
 ---
 

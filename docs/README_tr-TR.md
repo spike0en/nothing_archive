@@ -39,7 +39,7 @@
 
 ## Genel Bakış 🔍
 
-**Nothing Archive**, **Nothing Phone (1), Phone (2), Phone (2a), Phone (2a) Plus, Phone (3a), Phone (3a) Pro** ve **CMF Phone (1)** için resmi OTA güncellemeleri, tam aygıt yazılımı paketleri ve stok OTA imajları sunan en güncel Nothing OS aygıt yazılımı deposudur. Tüm dosyalar doğrudan resmi OEM sunucularından alınmıştır. Tüm dosyalar [arşivlenmiştir](https://archive.org/details/nothing-archive), kolay erişim ve uzun süreli koruma sağlar.
+**Nothing Archive**, **Nothing Phone 1, Phone 2, Phone 2a, Phone 2a Plus, Phone 3a, Phone 3a Pro** ve **CMF Phone 1** için resmi OTA güncellemeleri, tam aygıt yazılımı paketleri ve stok OTA imajları sunan en güncel Nothing OS aygıt yazılımı deposudur. Tüm dosyalar doğrudan resmi OEM sunucularından alınmıştır. Tüm dosyalar [arşivlenmiştir](https://archive.org/details/nothing-archive), kolay erişim ve uzun süreli koruma sağlar.
 
 ### Özellikler ve Faydalar:
 
@@ -410,8 +410,8 @@ Değerli çalışmaları ve destekleri için şu katkıda bulunanlara özel teş
 - **[luk1337](https://github.com/luk1337/oplus_archive)** – AOSP'nin OTA çıkarma aracının kullanımına öncülük ederek artımlı OTA güncellemelerinin çıkarılmasını sağladı.
 - **[arter97](https://github.com/arter97/nothing_archive)** – Yukarıdaki projeyi **Nothing Phone (2)** için uyarladı.
 - **[LukeSkyD](https://github.com/LukeSkyD)** – Daha önceki yapılar için önemli bir referans görevi gören [Nothing Phone (1) Deposu](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/)'nu sürdürüyor.
-- **[Re*Index.(ot_inc)](https://github.com/reindex-ot)** – Arşivi daha erişilebilir hale getirmeye yardımcı olan Japonca çeviriyi sağladı.
 - **[XelXen](https://github.com/XelXen)** - Projenin markalaşması için logo ve banner tasarladı.
+- Bu projeyi daha geniş bir kitleye erişilebilir kılmak için yerelleştirme çabalarına katkıda bulunan bireyler.
 
 ---
 

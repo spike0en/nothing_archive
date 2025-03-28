@@ -39,7 +39,7 @@
 
 ## Descripción General 🔍
 
-**Nothing Archive** es el repositorio de firmware de Nothing OS más actualizado, que ofrece actualizaciones OTA oficiales, paquetes completos de firmware e imágenes OTA de stock para **Nothing Phone (1), Phone (2), Phone (2a), Phone (2a) Plus, Phone (3a), Phone (3a) Pro** y **CMF Phone (1)**, todos obtenidos directamente de los servidores oficiales del OEM. Todos los archivos están [archivados](https://archive.org/details/nothing-archive), asegurando un fácil acceso y preservación a largo plazo.
+**Nothing Archive** es el repositorio de firmware de Nothing OS más actualizado, que ofrece actualizaciones OTA oficiales, paquetes completos de firmware e imágenes OTA de stock para **Nothing Phone 1, Phone 2, Phone 2a, Phone 2a Plus, Phone 3a, Phone 3a Pro** y **CMF Phone 1**, todos obtenidos directamente de los servidores oficiales del OEM. Todos los archivos están [archivados](https://archive.org/details/nothing-archive), asegurando un fácil acceso y preservación a largo plazo.
 
 ### Características y Beneficios:
 
@@ -410,8 +410,8 @@ Un agradecimiento especial a estos colaboradores por su invaluable trabajo y apo
 - **[luk1337](https://github.com/luk1337/oplus_archive)** – Pionero en el uso de la herramienta de extracción OTA de AOSP, permitiendo la extracción de actualizaciones OTA incrementales.
 - **[arter97](https://github.com/arter97/nothing_archive)** – Adaptó el proyecto anterior para el **Nothing Phone (2)**.
 - **[LukeSkyD](https://github.com/LukeSkyD)** – Mantiene el [Repositorio de Nothing Phone (1)](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/), que sirvió como referencia clave para compilaciones anteriores.
-- **[Re*Index.(ot_inc)](https://github.com/reindex-ot)** – Proporcionó la traducción al japonés, ayudando a hacer el archivo más accesible.
 - **[XelXen](https://github.com/XelXen)** - Diseñó el logo y el banner para la marca del proyecto.
+- Individuos que contribuyeron a los esfuerzos de localización, ayudando a hacer que este proyecto sea accesible a un público más amplio.
 
 ---
 
