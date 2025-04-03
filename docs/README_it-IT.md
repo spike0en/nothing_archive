@@ -11,7 +11,6 @@
 [![Stato del Flusso di Lavoro](https://img.shields.io/github/actions/workflow/status/spike0en/nothing_archive/dump.yml?branch=main&label=Build&color=2DC653&logo=github)](https://github.com/spike0en/nothing_archive/actions/workflows/dump.yml)
 [![Pull Request Chiuse](https://img.shields.io/github/issues-pr-closed/spike0en/nothing_archive?logo=github&color=E76F51)](https://github.com/spike0en/nothing_archive/pulls?q=is%3Apr+is%3Aclosed)
 
-
 [![Contributori](https://img.shields.io/github/contributors/spike0en/nothing_archive?logo=github&color=9B5DE5)](https://github.com/spike0en/nothing_archive/graphs/contributors)
 [![Stelle](https://img.shields.io/github/stars/spike0en/nothing_archive?logo=github&color=D4AF37)](#sostieni-il-progetto-)
 [![Fork](https://img.shields.io/github/forks/spike0en/nothing_archive?logo=github&color=468FAF)](https://github.com/spike0en/nothing_archive/network/members)
@@ -21,9 +20,10 @@
 ## Indice 📑
 
 - [Informazioni sul Progetto](#panoramica-)
-- [Avvertenza](#avvertenza-)
+- [Caratteristiche e Vantaggi](#caratteristiche-e-vantaggi-)
+- [Avvertenze](#avvertenze-)
 - [Note](#note-)
-- [Categorizzazione](#categorizzazione-)
+- [Catalogazione](#catalogazione-)
 - [Download](#download-)
 - [Verifica dell'Integrità](#verifica-dellintegrità-)
 - **Guide**
@@ -31,7 +31,7 @@
   - [Sblocco del Bootloader](#ii-sblocco-del-bootloader-)
   - [Backup delle Partizioni Essenziali](#iii-backup-delle-partizioni-essenziali-dopo-lo-sblocco-del-bootloader-)
   - [Flash della ROM Stock Tramite Fastboot](#iv-flash-della-rom-stock-tramite-fastboot-)
-  - [Riblocco del Bootloader](#v-riblocco-del-bootloader-)
+  - [Blocco del Bootloader](#v-Blocco-del-bootloader-)
 - [Ringraziamenti](#ringraziamenti-)
 - [Sostieni il Progetto](#sostieni-il-progetto-)
 
@@ -41,23 +41,23 @@
 
 **Nothing Archive** è il repository di firmware Nothing OS più aggiornato, che offre aggiornamenti OTA ufficiali, pacchetti firmware completi e immagini OTA stock per **Nothing Phone 1, Phone 2, Phone 2a, Phone 2a Plus, Phone 3a, Phone 3a Pro** e **CMF Phone 1**, tutti provenienti direttamente dai server OEM ufficiali. Tutti i file sono [archiviati](https://archive.org/details/nothing-archive), garantendo un facile accesso e una conservazione a lungo termine.
 
-### Caratteristiche e Vantaggi:
+### Caratteristiche e Vantaggi
 
 - 📡 **Indicizzazione Diretta OTA** – Traccia i **link degli aggiornamenti OTA di Nothing OS** dai server ufficiali, fornendo accesso ad **aggiornamenti incrementali e completi** per i dispositivi Nothing e CMF.
-- 🛠️ **Installazione Manuale (Sideloading)** – Installa il **firmware Nothing OS manualmente** durante i rollout graduali o quando gli aggiornamenti OTA falliscono utilizzando l'**updater offline integrato di Nothing OS o l'app beta updater** o tramite **sideload ADB** utilizzando una recovery personalizzata quando disponibile.
+- 🛠️ **Installazione Manuale (Sideloading)** – Installa manualmente il **firmware Nothing OS** durante i rollout graduali o quando gli aggiornamenti OTA falliscono utilizzando l'**updater offline integrato di Nothing OS o l'app beta updater** o tramite **sideload ADB** utilizzando una recovery personalizzata quando disponibile.
 - 📦 **Immagini OTA Stock** – Fornisce **immagini OTA non modificate** utilizzando lo strumento di estrazione OTA di AOSP che consente di estrarre aggiornamenti OTA incrementali, abilitando così **aggiornamenti, downgrade e flashing delle partizioni** quando i **pacchetti firmware completi** non sono disponibili.
 - 🔓 **Supporto Rooting e Unrooting** – Fornisce **immagini di boot stock per Magisk, KernelSU e Apatch**, consentendo anche l'**unrooting** flashando l'immagine di boot originale per mantenere **funzionali gli aggiornamenti OTA** quando vengono rilevate partizioni modificate.
 - ⚡ **Flash del Firmware e Recupero Dispositivi (Unbrick)** – Fornisce **firmware Nothing OS flashabile tramite fastboot** per aiutare a **risolvere boot loop, recuperare dispositivi in soft-brick e ripristinare la ROM stock**, purché fastboot sia accessibile.
 
 ---
 
-## Avvertenza 🚨
+## Avvertenze 🚨
 
 Utilizzando questo archivio, gli utenti riconoscono e accettano questi termini:
 - **✅ Autenticità** – Tutti i file firmware in questo archivio sono **inalterati, non modificati e provengono direttamente dall'OEM**.
 - **⚠️ Flash a Proprio Rischio** – L'installazione del firmware su un dispositivo con **bootloader sbloccato** comporta rischi intrinseci. Seguire attentamente le istruzioni per **evitare di bloccare (brick) il dispositivo**.
 - **📌 Compatibilità** – Assicurarsi che il firmware corrisponda alla **variante del proprio dispositivo Nothing o CMF** prima dell'installazione.
-- **🚫 Nessuna Garanzia o Supporto Ufficiale** – Questo è un **progetto guidato dalla comunità, non affiliato a [Nothing](https://nothing.tech)**. Eventuali **fallimenti di aggiornamento, bug software o problemi del dispositivo** rimangono responsabilità dell'OEM. L'autore e i contributori **non sono responsabili per dispositivi bloccati (bricked)** a causa di flashing errato, uso improprio o modifiche del firmware. Scaricare sempre il firmware **direttamente da questo archivio** per garantirne l'integrità.
+- **🚫 Nessuna Garanzia o Supporto Ufficiale** – Questo è un **progetto supportato dalla comunità, non affiliato a [Nothing](https://nothing.tech)**. Eventuali **fallimenti durante l'aggiornamento, bug software o problemi del dispositivo** rimangono responsabilità dell'OEM. L'autore e i contributori **non sono responsabili per dispositivi bloccati (brick)** a causa di flashing errato, uso improprio o modifiche del firmware. Scaricare sempre il firmware **direttamente da questo archivio** per garantirne l'integrità.
 - **🛡️ Integrità Open Source** – La ridistribuzione è consentita **solo con adeguata attribuzione**. Gli utenti sono incoraggiati a sostenere e condividere questo progetto **per mantenerne la disponibilità**. **La rivendita di firmware disponibile gratuitamente è severamente vietata!**
 
 ---
@@ -69,14 +69,14 @@ Utilizzando questo archivio, gli utenti riconoscono e accettano questi termini:
 - Per le release con una versione di Nothing OS nel formato X.Y.Za e X.Y, i tag vengono rinominati rispettivamente in X.Y.0-A e X.Y.0 per un corretto ordinamento (es., `2.5.5A` → `2.5.5-A`, `2.6` → `2.6.0`, `3.0` → `3.0.0`).
 - Le release Nothing OS Open Beta sono indicate con `-OB` dove applicabile.
 - Le release Android Developer Preview sono taggate come `0.0.0-dev`+`<NomeInCodiceDispositivo>`.`<DataIncrementale>`.
-- Salvo diversa indicazione specifica nelle note di rilascio, le release pubblicate qui sono compatibili con tutte le varianti regionali e di colore del dispositivo.
-- Per istruzioni dettagliate su come interpretare il firmware OTA incrementale richiesto, fare riferimento a [questa sezione](#i-sideloading-ota-).
+- Salvo diversa indicazione specificata nelle note di rilascio, le release pubblicate qui sono compatibili con tutte le varianti regionali e di colore del dispositivo.
+- Per istruzioni dettagliate su come installare il firmware OTA incrementale richiesto, fare riferimento a [questa sezione](#i-sideloading-ota-).
 
 ---
 
-## Categorizzazione 📂
+## Catalogazione 📂
 
-I file immagine OTA stock **non modificati** sono archiviati in formato `.7z` e categorizzati in tre gruppi distinti in base alla natura delle loro partizioni: **Boot**, **Firmware** e **Logical**, per i rispettivi modelli come segue:
+I file immagine OTA stock **non modificati** sono archiviati in formato `.7z` e catalogati in tre gruppi distinti in base alla natura delle loro partizioni: **Boot**, **Firmware** e **Logical**, per i rispettivi modelli come segue:
 
 Fare riferimento a [questa](https://github.com/spike0en/nothing_archive/tree/main/docs#categorization-) sezione.
 
@@ -136,7 +136,7 @@ B. **Ripristino delle Partizioni Stock (Solo per Utenti con Root)**
    - **Dispositivi MediaTek:** `init_boot`, `recovery`, `vbmeta`
 
 4. **Flasha le partizioni stock** in modalità bootloader:
-   > È richiesto flashare solo le partizioni modificate. Salta anche eventuali partizioni mancanti in base alla piattaforma SoC del tuo dispositivo.
+   > È richiesto flashare solo le partizioni modificate. Salta anche eventuali partizioni non presenti nell'archivio scaricato in base al tuo dispositivo.
    ```sh
    fastboot flash boot boot.img
    fastboot flash recovery recovery.img
@@ -269,7 +269,7 @@ A. Perché Eseguire il Backup?
 B. Requisiti
 - **Bootloader sbloccato**
 - **Accesso root** (tramite Magisk/KSU/Apatch)
-- **App Termux** (installa tramite F-Droid o Play Store)
+- **App Termux** (installa tramite F-Droid)
 - **Controlla Percorsi delle Partizioni:**
   - **Dispositivi Qcom:** `/dev/block/bootdevice/by-name/`
   - **Dispositivi MTK:** `/dev/block/by-name/`
@@ -370,12 +370,12 @@ B. **Procedere con il Flashing:**
 
 ---
 
-### V. Riblocco del Bootloader 🔒
+### V. Blocco del Bootloader 🔒
 
 A. **Prerequisiti**
   - Rimuovi **Blocco Schermo/PIN/Password e Account Collegati** (opzionale ma raccomandato).
   - Esegui un flash pulito della **ROM stock** seguendo la [Guida al Flashing](#iv-flash-della-rom-stock-tramite-fastboot-). **Ribloccare il bootloader con partizioni modificate senza prima flashare il firmware stock rischia di bloccare (brick) il dispositivo!**
-  - Esegui il backup di tutti i dati (il riblocco **cancellerà tutto**).
+  - Esegui il backup di tutti i dati (il blocco **cancellerà tutto**).
   - Installa gli **strumenti ADB e Fastboot** e i driver USB se non già configurati.
 
 B. **Processo di Riblocco**
@@ -389,7 +389,7 @@ B. **Processo di Riblocco**
     fastboot devices
     ```
 
-  - Avvia il riblocco del bootloader:
+  - Avvia il blocco del bootloader:
     ```sh
     fastboot flashing lock
     ```
@@ -398,7 +398,7 @@ B. **Processo di Riblocco**
     - Usa i **Tasti Volume** per navigare e il **Tasto Accensione** per confermare.
     - Il dispositivo verrà formattato e si riavvierà con un bootloader bloccato.
 
-C. **Post-Riblocco**
+C. **Post-blocco**
   - Configura nuovamente il tuo dispositivo.
   - Il bootloader è ora bloccato!
 
@@ -406,7 +406,7 @@ C. **Post-Riblocco**
 
 ## Ringraziamenti 🤝
 
-Ringraziamenti speciali a questi contributori per il loro lavoro inestimabile e supporto:
+Ringraziamenti speciali a questi contributori per il loro supporto e lavoro inestimabile:
 - **[luk1337](https://github.com/luk1337/oplus_archive)** – **È stato un pioniere** nell'uso dello strumento di estrazione OTA di AOSP, abilitando l'estrazione degli aggiornamenti OTA incrementali.
 - **[arter97](https://github.com/arter97/nothing_archive)** – Ha adattato il progetto sopra per **Nothing Phone (2)**.
 - **[LukeSkyD](https://github.com/LukeSkyD)** – Mantiene la [Repo Nothing Phone (1)](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/), che è servita come riferimento chiave per le build precedenti.
