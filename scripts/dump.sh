@@ -148,6 +148,12 @@ done
 # Format the final fingerprint for the release body
 BODY=$(printf "%s\n\n**Fingerprint:**\n%s" "$BODY" "${FINGERPRINT//|/$'\n'}")
 
+# Append the GitHub Actions run URL to the release body
+if [ -n "$GITHUB_RUN_ID" ]; then
+    RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+    BODY=$(printf "%s\n\n**Workflow Run**: [Here](%s)" "$BODY" "$RUN_URL")
+fi
+
 # === Fetch Partition Information ===
 echo "Fetching partition lists for model: $MODEL"
 
