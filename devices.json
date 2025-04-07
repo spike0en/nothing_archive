@@ -1,0 +1,44 @@
+{
+  "devices": {
+    "Asteroids": {
+      "boot_partitions": [
+        "boot", "dtbo", "init_boot", "recovery", "vendor_boot", "vbmeta", "vbmeta_system", "vbmeta_vendor"
+      ],
+      "logical_partitions": [
+        "odm", "product", "system", "system_dlkm", "system_ext", "vendor", "vendor_dlkm"
+      ]
+    },
+    "Pacman": {
+      "boot_partitions": [
+        "boot", "dtbo", "init_boot", "vendor_boot", "vbmeta"
+      ],
+      "logical_partitions": [
+        "odm", "odm_dlkm", "product", "system", "system_dlkm", "system_ext", "vbmeta_system", "vbmeta_vendor", "vendor", "vendor_dlkm"
+      ]
+    },
+    "Pong": {
+      "boot_partitions": [
+        "boot", "dtbo", "recovery", "vendor_boot", "vbmeta", "vbmeta_system", "vbmeta_vendor"
+      ],
+      "logical_partitions": [
+        "odm", "product", "system", "system_ext", "vendor", "vendor_dlkm"
+      ]
+    },
+    "Spacewar": {
+      "boot_partitions": [
+        "boot", "dtbo", "vendor_boot", "vbmeta"
+      ],
+      "logical_partitions": [
+        "odm", "product", "system", "system_ext", "vbmeta_system", "vendor"
+      ]
+    },
+    "Tetris": {
+      "boot_partitions": [
+        "boot", "dtbo", "init_boot", "vendor_boot", "vbmeta"
+      ],
+      "logical_partitions": [
+        "odm", "odm_dlkm", "product", "system", "system_dlkm", "system_ext", "vbmeta_system", "vbmeta_vendor", "vendor", "vendor_dlkm"
+      ]
+    }
+  }
+}

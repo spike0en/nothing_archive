@@ -5,27 +5,27 @@
 #
 # Modified by: spike0en
 
-# Print every command and exit immediately on failure
-set -ex 
+# === Configuration ===
+# Exit immediately if a command exits with a non-zero status.
+set -e
 
-# Set execute permissions for ota_extractor
+# Ensure the ota_extractor binary is executable
 chmod +x ./bin/ota_extractor
 
-# Get the model name from the first argument and shift the remaining arguments
-MODEL="$1"
-shift
-
-# Download OTA firmware with aria2c or gdown based on the link format, renaming it to ota.zip
+# === Helper Functions ===
+# Download ota file using gdown (for Google Drive links)
 download_with_gdown() {
     echo "Downloading with gdown: $1"
     gdown --fuzzy "$1" -O ota.zip
 }
 
+# Download ota file using aria2c (for other URLs)
 download_with_aria2c() {
     echo "Downloading with aria2c: $1"
     aria2c -x5 "$1" -o ota.zip
 }
 
+# Determine the correct download method based on URL and calls it
 download_file() {
     local url="$1"
     echo "Processing URL: $url"
@@ -36,26 +36,76 @@ download_file() {
     fi
 }
 
-# Exit if no URL is provided
+# === Initial Validation ===
+# Check if at least one URL is provided
 if [ -z "$1" ]; then
-    echo "No URL provided."
+    echo "Error: No OTA URL provided." >&2
     exit 1
 fi
-
-# Extract fingerprint info
+# Extract the post-build fingerprint string from metadata
 extract_fingerprint() {
     unzip -p ota.zip META-INF/com/android/metadata | grep "^post-build=" | cut -d'=' -f2 || echo "InvalidFingerprint"
 }
 
-# Extract POST_OTA_VERSION info
+# Extract the POST_OTA_VERSION from payload_properties.txt
 extract_version() {
     unzip -p ota.zip payload_properties.txt | grep "^POST_OTA_VERSION=" | cut -d'=' -f2 || echo "UnknownVersion"
 }
+# Detect the device model by searching metadata/properties for device model keywords from devices.json
+detect_model() {
+    local detected_model="UnknownModel"
+    local models=$(jq -r '.devices | keys[]' devices.json)
+    if [ -z "$models" ]; then
+        echo "Error: Could not read models from devices.json or jq is not installed." >&2
+        echo "$detected_model"
+        return
+    fi
 
-# Download the main OTA firmware
+    # Check metadata first
+    local metadata_content=$(unzip -p ota.zip META-INF/com/android/metadata 2>/dev/null || echo "")
+    if [ -n "$metadata_content" ]; then
+        for model in $models; do
+            # Use grep -qi for quiet, case-insensitive check
+            if echo "$metadata_content" | grep -qi "$model"; then
+                detected_model="$model"
+                echo "$detected_model"
+                return
+            fi
+        done
+    fi
+
+    # If not found in metadata, check payload_properties.txt
+    local properties_content=$(unzip -p ota.zip payload_properties.txt 2>/dev/null || echo "")
+     if [ -n "$properties_content" ]; then
+        for model in $models; do
+             if echo "$properties_content" | grep -qi "$model"; then # Use grep -qi
+                detected_model="$model"
+                echo "$detected_model"
+                return
+            fi
+        done
+    fi
+
+    echo "$detected_model" # Return "UnknownModel" if no match
+}
+
+# === Download and Model Detection ===
+echo "Downloading initial OTA package..."
 download_file "$1"
+echo "Download complete."
 
-# Extract and process payload
+echo "Detecting device model..."
+MODEL=$(detect_model)
+echo "Detected model: $MODEL"
+
+if [ "$MODEL" == "UnknownModel" ]; then
+    echo "Error: Auto model detection has failed!" >&2
+    rm -f ota.zip
+    exit 1
+fi
+
+# === Initial Payload Extraction ===
+echo "Extracting initial payload..."
 unzip ota.zip payload.bin || { echo "Failed to unzip payload"; exit 1; }
 mv payload.bin payload_working.bin
 TAG=$(extract_version)
@@ -63,15 +113,21 @@ FINGERPRINT=$(extract_fingerprint)
 BODY="[$TAG]($1) (full)"
 rm ota.zip
 
-# Create `ota` directory 
-mkdir -p ota
+# === Prepare Working Directories ===
+echo "Creating required directories..."
+mkdir -p ota out dyn syn
 
-# Perform extraction on payload_working.bin
-./bin/ota_extractor -output_dir ota -payload payload_working.bin || { echo "Failed to extract payload"; exit 1; }
+# Extract images from the main payload
+./bin/ota_extractor -output_dir ota -payload payload_working.bin || { echo "Error: Failed to extract initial payload"; exit 1; }
+echo "Initial payload extracted."
 rm payload_working.bin
 
-# Apply incrementals when available
-for i in "${@:2}"; do
+# === Incremental Updates ===
+# Shift arguments to remove the first URL which has been processed
+shift
+# Process remaining arguments (if any) as incremental URLs
+for i in "$@"; do
+    echo "Processing incremental OTA: $i"
     download_file "$i"
     unzip ota.zip payload.bin || { echo "Failed to unzip incremental payload"; exit 1; }
     mv payload.bin payload_working.bin
@@ -81,61 +137,42 @@ for i in "${@:2}"; do
     rm ota.zip
 
     mkdir ota_new
-    ./bin/ota_extractor -input-dir ota -output_dir ota_new -payload payload_working.bin || { echo "Failed to extract incremental payload"; exit 1; }
+    # Apply incremental update
+    ./bin/ota_extractor -input-dir ota -output_dir ota_new -payload payload_working.bin || { echo "Error: Failed to extract incremental payload for $i"; exit 1; }
     rm -rf ota
     mv ota_new ota
     rm payload_working.bin
 done
 
-# Append the final fingerprint to BODY after processing all incrementals
+# === Prepare Release Information ===
+# Format the final fingerprint for the release body
 BODY=$(printf "%s\n\n**Fingerprint:**\n%s" "$BODY" "${FINGERPRINT//|/$'\n'}")
 
-# Define partition schemes for different models
-declare -A BOOT_PARTITIONS_MAP
-declare -A LOGICAL_PARTITIONS_MAP
+# === Fetch Partition Information ===
+echo "Fetching partition lists for model: $MODEL"
 
-BOOT_PARTITIONS_MAP=(
-    [asteroids]="boot dtbo init_boot recovery vendor_boot vbmeta vbmeta_system vbmeta_vendor"
-    [pacman]="boot dtbo init_boot vendor_boot vbmeta"
-    [pong]="boot dtbo recovery vendor_boot vbmeta vbmeta_system vbmeta_vendor"
-    [spacewar]="boot dtbo vendor_boot vbmeta"
-    [tetris]="boot dtbo init_boot vendor_boot vbmeta"
-)
+# Get partition lists dynamically from devices.json using jq
+BOOT_PARTITIONS=$(jq -r --arg model "$MODEL" '.devices[$model].boot_partitions | join(" ")' devices.json)
+LOGICAL_PARTITIONS=$(jq -r --arg model "$MODEL" '.devices[$model].logical_partitions | join(" ")' devices.json)
 
-LOGICAL_PARTITIONS_MAP=(
-    [asteroids]="odm product system system_dlkm system_ext vendor vendor_dlkm"
-    [pacman]="odm odm_dlkm product system system_dlkm system_ext vbmeta_system vbmeta_vendor vendor vendor_dlkm"
-    [pong]="odm product system system_ext vendor vendor_dlkm"
-    [spacewar]="odm product system system_ext vbmeta_system vendor"
-    [tetris]="odm odm_dlkm product system system_dlkm system_ext vbmeta_system vbmeta_vendor vendor vendor_dlkm"
-)
-
-# Check if MODEL is set
-if [ -z "$MODEL" ]; then
-    echo "MODEL variable not set. Exiting."
+# Check if partitions were successfully retrieved
+if [ -z "$BOOT_PARTITIONS" ] || [ "$BOOT_PARTITIONS" == "null" ] || [ -z "$LOGICAL_PARTITIONS" ] || [ "$LOGICAL_PARTITIONS" == "null" ]; then
+    echo "Error: Could not find partition info for model '$MODEL' in devices.json or jq failed." >&2
+    # Clean up intermediate files if they exist
+    rm -f ota.zip payload_working.bin
     exit 1
 fi
 
-# Get partitions based on the model
-BOOT_PARTITIONS=${BOOT_PARTITIONS_MAP[$MODEL]}
-LOGICAL_PARTITIONS=${LOGICAL_PARTITIONS_MAP[$MODEL]}
-echo "Selected model: $MODEL"
+echo "Using dynamically fetched partitions for model: $MODEL"
 echo "Boot Partitions: $BOOT_PARTITIONS"
 echo "Logical Partitions: $LOGICAL_PARTITIONS"
 
-# Ensure the model exists in the partition map
-if [[ ! ${BOOT_PARTITIONS_MAP[$MODEL]} ]] || [[ ! ${LOGICAL_PARTITIONS_MAP[$MODEL]} ]]; then
-    echo "Unknown or misconfigured model: $MODEL"
-    exit 1
-fi
-
-# Create required directories
-mkdir -p out dyn syn
-
-# Switch to `ota` directory
+# === Generate Hashes ===
+echo "Generating file hashes..."
+# Switch to the directory containing extracted images
 cd ota
 
-# Generate hashes for all files in the `ota` directory and send them to `out` (tagged with `-hash`)
+# Generate hashes for all extracted image files
 for h in md5 sha1 sha256 xxh128; do
     if [ "$h" = "xxh128" ]; then
         ls * | parallel xxh128sum | sort -k2 -V > ../out/${TAG}-hash.$h
@@ -144,23 +181,30 @@ for h in md5 sha1 sha256 xxh128; do
     fi
 done
 
-# Move the `boot` category image files from `ota` to `syn` directory
+# === Organize Images ===
+echo "Organizing images..."
+# Move boot-related images to `syn` directory
 for f in $BOOT_PARTITIONS; do
     mv ${f}.img ../syn
 done
 
-# Move the `logical` category image files from `ota` to `dyn` directory
+# Move logical partition images to `dyn` directory
 for f in $LOGICAL_PARTITIONS; do
     mv ${f}.img ../dyn
 done
 
-# Archive images in parallel and remove directories after success
+# === Archive Images ===
+echo "Archiving images..."
+# Archive boot, firmware (remaining in ota), and logical images in parallel
+# Remove source directories after successful archiving
 cd ../syn && 7z a -mmt4 -mx6 ../out/${TAG}-image-boot.7z * && rm -rf ../syn &  
 cd ../ota && 7z a -mmt4 -mx6 ../out/${TAG}-image-firmware.7z * && rm -rf ../ota &  
 cd ../dyn && 7z a -mmt4 -mx6 -v1g ../out/${TAG}-image-logical.7z * && rm -rf ../dyn & 
 wait
 
-# Echo tag name, release body, and release history
+# === Set GitHub Actions Outputs ===
+echo "Setting GitHub Actions outputs..."
+# Output tag name and release body for the release action
 {
     echo "tag=$TAG"
     echo "release_name=$TAG" 

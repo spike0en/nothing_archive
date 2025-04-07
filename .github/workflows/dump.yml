@@ -9,9 +9,6 @@ on:
       name:
         description: 'Release tag'
         required: true
-      model:
-        description: 'Device model (e.g., asteroids, pacman, pong, spacewar, tetris)'
-        required: true
 
 jobs:
   dump:
@@ -25,7 +22,7 @@ jobs:
     - name: Setup environment
       run: |
         sudo apt update
-        sudo apt -y install aria2 zstd p7zip-full parallel openssl xxhash
+        sudo apt -y install aria2 zstd p7zip-full parallel openssl xxhash jq
         python3 -m pip install gdown
 
     - name: Set script permissions
@@ -37,7 +34,7 @@ jobs:
         IFS=',' read -ra URLS <<< "${{ inputs.urls }}"
         for url in "${URLS[@]}"; do
           echo "$url"
-        done | xargs ./scripts/dump.sh "${{ inputs.model }}"
+        done | xargs ./scripts/dump.sh
         
     - name: Create tag
       run: |
