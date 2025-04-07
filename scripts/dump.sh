@@ -175,9 +175,11 @@ cd ota
 # Generate hashes for all extracted image files
 for h in md5 sha1 sha256 xxh128; do
     if [ "$h" = "xxh128" ]; then
-        ls * | parallel xxh128sum | sort -k2 -V > ../out/${TAG}-hash.$h
+        echo "--- ${h^^} Hashes ---"
+        ls * | parallel xxh128sum 2>/dev/null | sort -k2 -V | tee ../out/${TAG}-hash.$h
     else
-        ls * | parallel "openssl dgst -${h} -r" | sort -k2 -V > ../out/${TAG}-hash.$h
+        echo "--- ${h^^} Hashes ---"
+        ls * | parallel "openssl dgst -${h} -r" 2>/dev/null | sort -k2 -V | tee ../out/${TAG}-hash.$h
     fi
 done
 
