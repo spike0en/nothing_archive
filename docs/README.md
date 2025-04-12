@@ -16,6 +16,8 @@
 [![Stars](https://img.shields.io/github/stars/spike0en/nothing_archive?logo=github&color=D4AF37)](#support-the-project-)
 [![Forks](https://img.shields.io/github/forks/spike0en/nothing_archive?logo=github&color=468FAF)](https://github.com/spike0en/nothing_archive/network/members)
 
+[![Support](https://img.shields.io/badge/Telegram-Unofficial%20Nothing%20Community-2CA5E0?logo=telegram&logoColor=white)](https://t.me/s/Nothing_Archive)
+
 ---
 
 ## Index 📑
