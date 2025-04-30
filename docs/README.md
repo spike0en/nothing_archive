@@ -278,6 +278,19 @@ Select your **device model** from the dropdown list below to access it's **Relea
 #### II. CMF by Nothing
 
 <details>
+  <summary>Phone (2) Pro - Galaga</summary>
+
+<br>
+
+| **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
+|------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
+| 3.2 | Galaga-V3.2-250425-1517 | Galaga_V3.2-250312-1750 -> [Galaga-V3.2-250425-1517](https://android.googleapis.com/packages/ota-api/package/e7e4b8e861c37de0460a8c95b358fbeb4e2a12d2.zip) | N/A | N/A |
+
+<br>
+
+</details> 
+
+<details>
   <summary>Phone (1) - Tetris</summary>
 
 <br>
