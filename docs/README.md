@@ -104,6 +104,7 @@ The **unmodified** stock OTA image files are archived in `.7z` format and catego
 | Device | Boot (`-image-boot.7z`) | Firmware (`-image-firmware.7z`) | Logical (`-image-logical.7z.001-00x`) |
 |--------|-------------------------|---------------------------------|---------------------------------------|
 | **Phone (1)**           | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta` **(Total: 5)** | `apusys`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `modem`, `mcupm`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` **(Total: 20)** | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product`, `vbmeta_system`, `vbmeta_vendor` **(Total: 10)** |
+| **Phone (2) Pro**       | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta` **(Total: 5)** | `apusys`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `modem`, `mcupm`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` **(Total: 20)** | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product`, `vbmeta_system`, `vbmeta_vendor` **(Total: 10)** |
 
 <br>
 
