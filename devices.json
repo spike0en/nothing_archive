@@ -8,6 +8,14 @@
         "odm", "product", "system", "system_dlkm", "system_ext", "vendor", "vendor_dlkm"
       ]
     },
+    "Galaga": {
+      "boot_partitions": [
+        "boot", "dtbo", "init_boot", "vendor_boot", "vbmeta"
+      ],
+      "logical_partitions": [
+        "odm", "odm_dlkm", "product", "system", "system_dlkm", "system_ext", "vbmeta_system", "vbmeta_vendor", "vendor", "vendor_dlkm"
+      ]
+    },
     "Pacman": {
       "boot_partitions": [
         "boot", "dtbo", "init_boot", "vendor_boot", "vbmeta"
