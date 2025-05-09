@@ -285,6 +285,7 @@ Select your **device model** from the dropdown list below to access it's **Relea
 
 | **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
+| 3.2 | Galaga_V3.2-250507-1139 | N/A | [Here](https://android.googleapis.com/packages/ota-api/package/2800780fa49032a870618ec026097f5a09aa805b.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/3.2.0+galaga.250507) | 
 | 3.2 | Galaga-V3.2-250425-1517 | Galaga_V3.2-250312-1750 -> [Galaga-V3.2-250425-1517](https://android.googleapis.com/packages/ota-api/package/e7e4b8e861c37de0460a8c95b358fbeb4e2a12d2.zip) | N/A | N/A |
 
 <br>
