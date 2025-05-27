@@ -4,17 +4,17 @@
 
 <img src="../assets/branding/logo.png" width="96" alt="Nothing Archive Logo">
 
-[![Total Downloads](https://img.shields.io/github/downloads/spike0en/nothing_archive/total?logo=github&logoColor=white&label=Total%20Downloads&color=007377)](https://github.com/spike0en/nothing_archive/releases)
-[![Latest Release](https://img.shields.io/github/release/spike0en/nothing_archive?label=Latest%20Release&logo=git&logoColor=white&color=1E6091)](https://github.com/spike0en/nothing_archive/releases/latest)
+[![Hits](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%23b02a37)](https://github.com/spike0en/nothing_archive)
 
-[![Open Pull Requests](https://img.shields.io/github/issues-pr/spike0en/nothing_archive?logo=github&color=F4A261)](https://github.com/spike0en/nothing_archive/pulls)
-[![Workflow Status](https://img.shields.io/github/actions/workflow/status/spike0en/nothing_archive/dump.yml?branch=main&label=Build&color=2DC653&logo=github)](https://github.com/spike0en/nothing_archive/actions/workflows/dump.yml)
-[![Closed Pull Requests](https://img.shields.io/github/issues-pr-closed/spike0en/nothing_archive?logo=github&color=E76F51)](https://github.com/spike0en/nothing_archive/pulls?q=is%3Apr+is%3Aclosed)
+[![Stars](https://img.shields.io/github/stars/spike0en/nothing_archive?label=Stars&logo=github&logoColor=white&color=fb481f&labelColor=1E1E2F&style=flat)](https://github.com/spike0en/nothing_archive/stargazers)
+[![Contributors](https://img.shields.io/github/contributors/spike0en/nothing_archive?label=Contributors&logo=github&logoColor=white&color=2b2a7b&labelColor=1E1E2F&style=flat)](https://github.com/spike0en/nothing_archive/graphs/contributors)
+[![Forks](https://img.shields.io/github/forks/spike0en/nothing_archive?label=Forks&logo=github&logoColor=white&color=eeb705&labelColor=1E1E2F&style=flat)](https://github.com/spike0en/nothing_archive/network/members)
 
+[![Total Downloads](https://img.shields.io/github/downloads/spike0en/nothing_archive/total?label=Downloads&logo=github&logoColor=white&color=9E9D10&labelColor=1E1E2F&style=flat)](https://github.com/spike0en/nothing_archive/releases)
+[![Latest Release](https://img.shields.io/github/release/spike0en/nothing_archive?label=Latest&logo=git&logoColor=white&color=18673F&labelColor=1E1E2F&style=flat)](https://github.com/spike0en/nothing_archive/releases/latest)
 
-[![Contributors](https://img.shields.io/github/contributors/spike0en/nothing_archive?logo=github&color=9B5DE5)](https://github.com/spike0en/nothing_archive/graphs/contributors)
-[![Stars](https://img.shields.io/github/stars/spike0en/nothing_archive?logo=github&color=D4AF37)](#projekt-unterstützen-)
-[![Forks](https://img.shields.io/github/forks/spike0en/nothing_archive?logo=github&color=468FAF)](https://github.com/spike0en/nothing_archive/network/members)
+[![Flashing Scripts](https://img.shields.io/badge/Fastboot%20Flashing%20Scripts-1E1E2F?logo=github&logoColor=white&labelColor=1E1E2F&color=67119E&style=flat)](https://github.com/spike0en/nothing_flasher)
+[![Support](https://img.shields.io/badge/Nothing%20Community-1E1E2F?style=flat&logo=telegram&logoColor=white&color=1986F2&labelColor=1E1E2F)](https://t.me/s/Nothing_Archive)
 
 ---
 
