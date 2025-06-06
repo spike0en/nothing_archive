@@ -93,14 +93,14 @@ chmod +x "$OTA_EXTRACTOR"
 # Download ota file using gdown (for Google Drive links)
 download_with_gdown() {
     echo "Downloading with gdown: $1"
-    gdown --fuzzy "$1" -O ota.zip > /dev/null
+    gdown --fuzzy "$1" -O ota.zip
 }
 
 # Download ota file using aria2c with proper connection limits
 download_with_aria2c() {
     echo "Downloading with aria2c using $ARIA2C_CONNECTIONS connections: $1"
     # Respect aria2c's max-connection-per-server limit of 16
-    aria2c -x$ARIA2C_CONNECTIONS -s$ARIA2C_CONNECTIONS "$1" -o ota.zip > /dev/null
+    aria2c -x$ARIA2C_CONNECTIONS -s$ARIA2C_CONNECTIONS "$1" -o ota.zip
 }
 
 # Determine the correct download method based on URL and calls it
@@ -140,9 +140,29 @@ cleanup_and_exit() {
     local exit_code=${1:-0}
     echo "Cleaning up temporary files..."
     
-    # Copy any output files back to original directory
-    if [ -d "out" ]; then
-        cp -r out/* "$OUTPUT_DIR/" 2>/dev/null || true
+    # Ensure we're in the temp directory
+    cd "$TEMP_DIR" 2>/dev/null || true
+    
+    # Copy any output files back to original directory with verification
+    if [ -d "out" ] && [ "$(ls -A out 2>/dev/null)" ]; then
+        echo "Copying $(ls out | wc -l) files from temp out/ to $OUTPUT_DIR/"
+        mkdir -p "$OUTPUT_DIR"
+        cp -v out/* "$OUTPUT_DIR/" 2>/dev/null || {
+            echo "Error: Failed to copy files to output directory"
+            exit_code=1
+        }
+        echo "Files successfully copied to $OUTPUT_DIR/"
+        ls -la "$OUTPUT_DIR/"
+    else
+        echo "No files found in temp out/ directory to copy"
+        echo "Current directory: $(pwd)"
+        echo "Contents of temp directory:"
+        ls -la 2>/dev/null || echo "Cannot list directory contents"
+        if [ -d "out" ]; then
+            echo "Out directory exists but is empty:"
+            ls -la out/ 2>/dev/null || echo "Cannot list out directory"
+        fi
+        exit_code=1
     fi
     
     # Return to original directory and cleanup temp
@@ -326,26 +346,49 @@ done
 # === Archive Images with Thread Optimization ===
 echo "Archiving images using optimized compression settings..."
 
-# Function for threaded tar creation (if needed)
-create_tar_archive() {
-    local source_dir="$1"
-    local output_file="$2"
-    echo "Creating tar archive: $output_file"
-    
-    if command -v pigz >/dev/null 2>&1; then
-        # Use pigz for parallel gzip compression
-        tar --use-compress-program="pigz -p $TAR_THREADS" -cf "$output_file" -C "$source_dir" .
-    else
-        # Fallback to standard tar with threading if available
-        tar -cf "$output_file" -C "$source_dir" .
-    fi
-}
+# Ensure we're in the temp directory and create out subdirectory
+cd "$TEMP_DIR"
+mkdir -p out
 
-# Archive with optimized 7z compression using proper thread limits
-cd ../syn && 7z a -mmt$COMPRESSION_THREADS -mx6 ../out/${TAG}-image-boot.7z * && rm -rf ../syn &  
-cd ../ota && 7z a -mmt$COMPRESSION_THREADS -mx6 ../out/${TAG}-image-firmware.7z * && rm -rf ../ota &  
-cd ../dyn && 7z a -mmt$COMPRESSION_THREADS -mx6 -v1g ../out/${TAG}-image-logical.7z * && rm -rf ../dyn & 
-wait
+# Archive with proper subshells to avoid directory confusion
+echo "Creating boot archive..."
+if [ -d "syn" ] && [ "$(ls -A syn 2>/dev/null)" ]; then
+    (cd syn && 7z a -mmt$COMPRESSION_THREADS -mx6 "../out/${TAG}-image-boot.7z" * && cd .. && rm -rf syn) &
+    BOOT_PID=$!
+else
+    echo "Warning: No boot partition files found in syn directory"
+fi
+
+echo "Creating firmware archive..."
+if [ -d "ota" ] && [ "$(ls -A ota 2>/dev/null)" ]; then
+    (cd ota && 7z a -mmt$COMPRESSION_THREADS -mx6 "../out/${TAG}-image-firmware.7z" * && cd .. && rm -rf ota) &
+    FIRMWARE_PID=$!
+else
+    echo "Warning: No firmware files found in ota directory"
+fi
+
+echo "Creating logical archive..."
+if [ -d "dyn" ] && [ "$(ls -A dyn 2>/dev/null)" ]; then
+    (cd dyn && 7z a -mmt$COMPRESSION_THREADS -mx6 -v1g "../out/${TAG}-image-logical.7z" * && cd .. && rm -rf dyn) &
+    LOGICAL_PID=$!
+else
+    echo "Warning: No logical partition files found in dyn directory"
+fi
+
+# Wait for all archiving processes to complete
+echo "Waiting for archiving processes to complete..."
+[ -n "$BOOT_PID" ] && wait $BOOT_PID
+[ -n "$FIRMWARE_PID" ] && wait $FIRMWARE_PID  
+[ -n "$LOGICAL_PID" ] && wait $LOGICAL_PID
+
+echo "Verifying created archives..."
+if [ -d "out" ] && [ "$(ls -A out 2>/dev/null)" ]; then
+    echo "Archives created successfully:"
+    ls -la out/
+else
+    echo "Error: No archive files were created"
+    cleanup_and_exit 1
+fi
 
 echo "All archives created successfully using optimized compression with thread limits."
 
