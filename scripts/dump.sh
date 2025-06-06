@@ -93,14 +93,14 @@ chmod +x "$OTA_EXTRACTOR"
 # Download ota file using gdown (for Google Drive links)
 download_with_gdown() {
     echo "Downloading with gdown: $1"
-    gdown --fuzzy "$1" -O ota.zip > /dev/null
+    gdown --fuzzy "$1" -O ota.zip
 }
 
 # Download ota file using aria2c with proper connection limits
 download_with_aria2c() {
     echo "Downloading with aria2c using $ARIA2C_CONNECTIONS connections: $1"
     # Respect aria2c's max-connection-per-server limit of 16
-    aria2c -x$ARIA2C_CONNECTIONS -s$ARIA2C_CONNECTIONS "$1" -o ota.zip > /dev/null
+    aria2c -x$ARIA2C_CONNECTIONS -s$ARIA2C_CONNECTIONS "$1" -o ota.zip
 }
 
 # Determine the correct download method based on URL and calls it
