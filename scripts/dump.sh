@@ -11,7 +11,7 @@ set -e
 
 # Get number of available CPU cores and limit to maximum of 32 for optimal performance
 DETECTED_CORES=$(nproc)
-CORES=$((DETECTED_CORES > 32 ? 32 : DETECTED_CORES))
+CORES=$((DETECTED_CORES > 44 ? 44 : DETECTED_CORES))
 echo "Detected $DETECTED_CORES CPU cores, using $CORES cores for parallel processing (max 32)"
 
 # Set thread limits for various operations
@@ -93,14 +93,14 @@ chmod +x "$OTA_EXTRACTOR"
 # Download ota file using gdown (for Google Drive links)
 download_with_gdown() {
     echo "Downloading with gdown: $1"
-    gdown --fuzzy "$1" -O ota.zip
+    gdown --fuzzy "$1" -O ota.zip > /dev/null
 }
 
 # Download ota file using aria2c with proper connection limits
 download_with_aria2c() {
     echo "Downloading with aria2c using $ARIA2C_CONNECTIONS connections: $1"
     # Respect aria2c's max-connection-per-server limit of 16
-    aria2c -x$ARIA2C_CONNECTIONS -s$ARIA2C_CONNECTIONS "$1" -o ota.zip
+    aria2c -x$ARIA2C_CONNECTIONS -s$ARIA2C_CONNECTIONS "$1" -o ota.zip > /dev/null
 }
 
 # Determine the correct download method based on URL and calls it
