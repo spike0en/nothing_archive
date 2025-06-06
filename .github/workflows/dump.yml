@@ -23,7 +23,7 @@ jobs:
       run: |
         sudo apt update
         sudo apt -y install aria2 zstd p7zip-full parallel openssl xxhash jq
-        python3 -m pip install gdown
+        python3 -m pip install gdown --break-system-packages
 
     - name: Set script permissions
       run: chmod +x scripts/dump.sh
