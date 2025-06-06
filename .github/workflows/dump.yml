@@ -7,8 +7,8 @@ on:
         description: 'URLs (comma or space separated)'
         required: true
       name:
-        description: 'Release tag'
-        required: true
+        description: 'Release tag (optional - will use extracted version if not provided)'
+        required: false
 
 jobs:
   dump:
@@ -18,6 +18,8 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch full history to avoid shallow clone issues
 
     - name: Set script permissions
       run: chmod +x scripts/dump.sh
@@ -25,16 +27,36 @@ jobs:
     - name: Download & Process OTA Packages
       id: dump
       run: |
-        IFS=',' read -ra URLS <<< "${{ inputs.urls }}"
-        for url in "${URLS[@]}"; do
-          echo "$url"
-        done | xargs ./scripts/dump.sh
-        
-    - name: Create tag
+        # Parse URLs and pass them to the script
+        urls="${{ inputs.urls }}"
+        # Replace commas with spaces and handle both comma and space separation
+        urls=$(echo "$urls" | tr ',' ' ')
+        echo "Processing URLs: $urls"
+        ./scripts/dump.sh $urls
+
+    - name: Create and push tag
       run: |
-        git fetch origin main
-        git tag "${{ inputs.name }}" 44daed30334f5bea826f828145128cdff1efe44c
-        git push origin "${{ inputs.name }}" 
+        # Use the tag from script output or fallback to user input
+        if [ -n "${{ steps.dump.outputs.tag }}" ]; then
+          TAG="${{ steps.dump.outputs.tag }}"
+        else
+          TAG="${{ inputs.name }}"
+        fi
+        
+        echo "Creating tag: $TAG"
+        
+        # Create tag pointing to current HEAD (the checked out commit)
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        
+        # Delete tag if it already exists locally
+        git tag -d "$TAG" 2>/dev/null || true
+        
+        # Create new tag pointing to HEAD
+        git tag "$TAG" HEAD
+        
+        # Push the tag
+        git push origin "$TAG"
 
     - name: Upload release assets
       uses: ncipollo/release-action@v1
@@ -42,6 +64,6 @@ jobs:
         artifacts: out/*
         artifactErrorsFailBuild: true
         body: ${{ steps.dump.outputs.body }}
-        tag: ${{ steps.dump.outputs.tag }}
-        name: ${{ steps.dump.outputs.tag }}
+        tag: ${{ steps.dump.outputs.tag || inputs.name }}
+        name: ${{ steps.dump.outputs.release_name || inputs.name }}
         token: ${{ secrets.GITHUB_TOKEN }}
