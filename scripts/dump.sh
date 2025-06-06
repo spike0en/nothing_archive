@@ -140,15 +140,25 @@ cleanup_and_exit() {
     local exit_code=${1:-0}
     echo "Cleaning up temporary files..."
     
-    # Copy any output files back to original directory
-    if [ -d "out" ]; then
-        cp -r out/* "$OUTPUT_DIR/" 2>/dev/null || true
+    # Ensure output directory exists in original location
+    mkdir -p "$OUTPUT_DIR"
+    
+    # Copy any output files back to original directory with verbose output
+    if [ -d "out" ] && [ "$(ls -A out/)" ]; then
+        echo "Copying files from temp out/ to $OUTPUT_DIR/"
+        cp -rv out/* "$OUTPUT_DIR/" || {
+            echo "Failed to copy files to output directory"
+            exit_code=1
+        }
+        echo "Files successfully copied to $OUTPUT_DIR/"
+        ls -la "$OUTPUT_DIR/"
+    else
+        echo "No files found in temp out/ directory to copy"
+        exit_code=1
     fi
     
-    # Return to original directory and cleanup temp
     cd "$ORIGINAL_DIR"
     rm -rf "$TEMP_DIR"
-    
     exit $exit_code
 }
 
