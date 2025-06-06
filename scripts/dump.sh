@@ -9,9 +9,10 @@
 # Exit immediately if a command exits with a non-zero status.
 set -e
 
-# Get number of available CPU cores for maximum performance
-CORES=$(nproc)
-echo "Using $CORES CPU cores for parallel processing"
+# Get number of available CPU cores and limit to maximum of 32
+DETECTED_CORES=$(nproc)
+CORES=$((DETECTED_CORES > 32 ? 32 : DETECTED_CORES))
+echo "Detected $DETECTED_CORES CPU cores, using $CORES cores for parallel processing"
 
 # Set environment variables for parallelism
 export MAKEFLAGS="-j$CORES"
