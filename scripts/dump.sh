@@ -9,14 +9,23 @@
 # Exit immediately if a command exits with a non-zero status.
 set -e
 
-# Get number of available CPU cores and limit to maximum of 32
+# Get number of available CPU cores and limit to maximum of 32 for optimal performance
 DETECTED_CORES=$(nproc)
 CORES=$((DETECTED_CORES > 32 ? 32 : DETECTED_CORES))
-echo "Detected $DETECTED_CORES CPU cores, using $CORES cores for parallel processing"
+echo "Detected $DETECTED_CORES CPU cores, using $CORES cores for parallel processing (max 32)"
+
+# Set thread limits for various operations
+ZIP_THREADS=$((CORES > 8 ? 8 : CORES))          # zip/unzip operations limited to 8 threads
+TAR_THREADS=$CORES                               # tar can use all available cores
+ARIA2C_CONNECTIONS=$((CORES > 16 ? 16 : CORES)) # aria2c max 16 connections per server
+PARALLEL_JOBS=$CORES                             # GNU parallel jobs
+COMPRESSION_THREADS=$CORES                       # 7z compression threads
+
+echo "Thread allocation - ZIP: $ZIP_THREADS, TAR: $TAR_THREADS, ARIA2C: $ARIA2C_CONNECTIONS, PARALLEL: $PARALLEL_JOBS, 7Z: $COMPRESSION_THREADS"
 
 # Set environment variables for parallelism
 export MAKEFLAGS="-j$CORES"
-export PARALLEL="-j$CORES"
+export PARALLEL="-j$PARALLEL_JOBS"
 
 # Store original working directory and create absolute paths
 ORIGINAL_DIR=$(pwd)
@@ -27,11 +36,16 @@ OUTPUT_DIR="$ORIGINAL_DIR/out"
 # Ensure output directory exists
 mkdir -p "$OUTPUT_DIR"
 
-# Optimize 7z memory usage for better performance
+# Optimize memory usage with 32GB RAM limit
 if command -v free >/dev/null 2>&1; then
     AVAILABLE_RAM=$(free -m | awk 'NR==2{print $7}')
-    export _7Z_MEMORY_LIMIT=$((AVAILABLE_RAM / 2))M
-    echo "Setting 7z memory limit to $_7Z_MEMORY_LIMIT"
+    MAX_RAM_LIMIT=32768  # 32GB in MB
+    
+    # Use either available RAM/2 or 32GB limit, whichever is smaller
+    MEMORY_LIMIT=$((AVAILABLE_RAM < MAX_RAM_LIMIT ? AVAILABLE_RAM / 2 : MAX_RAM_LIMIT / 2))
+    export _7Z_MEMORY_LIMIT="${MEMORY_LIMIT}M"
+    
+    echo "Available RAM: ${AVAILABLE_RAM}MB, Setting 7z memory limit to $_7Z_MEMORY_LIMIT"
 fi
 
 # Check tmpfs space and use it if sufficient (require at least 8GB free)
@@ -82,10 +96,11 @@ download_with_gdown() {
     gdown --fuzzy "$1" -O ota.zip
 }
 
-# Download ota file using aria2c (for other URLs) - optimized for max cores
+# Download ota file using aria2c with proper connection limits
 download_with_aria2c() {
-    echo "Downloading with aria2c using $CORES connections: $1"
-    aria2c -x$CORES -s$CORES "$1" -o ota.zip
+    echo "Downloading with aria2c using $ARIA2C_CONNECTIONS connections: $1"
+    # Respect aria2c's max-connection-per-server limit of 16
+    aria2c -x$ARIA2C_CONNECTIONS -s$ARIA2C_CONNECTIONS "$1" -o ota.zip
 }
 
 # Determine the correct download method based on URL and calls it
@@ -96,6 +111,20 @@ download_file() {
         download_with_gdown "$url"
     else
         download_with_aria2c "$url"
+    fi
+}
+
+# Optimized unzip function with thread limiting
+unzip_threaded() {
+    local archive="$1"
+    local target="$2"
+    echo "Extracting $archive using optimized extraction..."
+    
+    # Use parallel unzip if available, otherwise fallback to standard unzip
+    if command -v pigz >/dev/null 2>&1 && command -v parallel >/dev/null 2>&1; then
+        unzip -p "$archive" "$target" | parallel --pipe --round-robin -j $ZIP_THREADS 'cat'
+    else
+        unzip "$archive" "$target"
     fi
 }
 
@@ -267,7 +296,7 @@ echo "Boot Partitions: $BOOT_PARTITIONS"
 echo "Logical Partitions: $LOGICAL_PARTITIONS"
 
 # === Generate Hashes (Optimized for Parallel Processing) ===
-echo "Generating file hashes using $CORES cores..."
+echo "Generating file hashes using $PARALLEL_JOBS parallel jobs..."
 # Switch to the directory containing extracted images
 cd ota
 
@@ -275,10 +304,10 @@ cd ota
 for h in md5 sha1 sha256 xxh128; do
     if [ "$h" = "xxh128" ]; then
         echo "--- ${h^^} Hashes ---"
-        ls * | parallel -j $CORES xxh128sum 2>/dev/null | sort -k2 -V | tee ../out/${TAG}-hash.$h
+        ls * | parallel -j $PARALLEL_JOBS xxh128sum 2>/dev/null | sort -k2 -V | tee ../out/${TAG}-hash.$h
     else
         echo "--- ${h^^} Hashes ---"
-        ls * | parallel -j $CORES "openssl dgst -${h} -r" 2>/dev/null | sort -k2 -V | tee ../out/${TAG}-hash.$h
+        ls * | parallel -j $PARALLEL_JOBS "openssl dgst -${h} -r" 2>/dev/null | sort -k2 -V | tee ../out/${TAG}-hash.$h
     fi
 done
 
@@ -294,16 +323,31 @@ for f in $LOGICAL_PARTITIONS; do
     [ -f "${f}.img" ] && mv "${f}.img" ../dyn
 done
 
-# === Archive Images (Optimized for Maximum Performance) ===
-echo "Archiving images using $CORES cores..."
-# Archive boot, firmware (remaining in ota), and logical images in parallel
-# Use all available cores for compression and remove source directories after successful archiving
-cd ../syn && 7z a -mmt$CORES -mx6 ../out/${TAG}-image-boot.7z * && rm -rf ../syn &  
-cd ../ota && 7z a -mmt$CORES -mx6 ../out/${TAG}-image-firmware.7z * && rm -rf ../ota &  
-cd ../dyn && 7z a -mmt$CORES -mx6 -v1g ../out/${TAG}-image-logical.7z * && rm -rf ../dyn & 
+# === Archive Images with Thread Optimization ===
+echo "Archiving images using optimized compression settings..."
+
+# Function for threaded tar creation (if needed)
+create_tar_archive() {
+    local source_dir="$1"
+    local output_file="$2"
+    echo "Creating tar archive: $output_file"
+    
+    if command -v pigz >/dev/null 2>&1; then
+        # Use pigz for parallel gzip compression
+        tar --use-compress-program="pigz -p $TAR_THREADS" -cf "$output_file" -C "$source_dir" .
+    else
+        # Fallback to standard tar with threading if available
+        tar -cf "$output_file" -C "$source_dir" .
+    fi
+}
+
+# Archive with optimized 7z compression using proper thread limits
+cd ../syn && 7z a -mmt$COMPRESSION_THREADS -mx6 ../out/${TAG}-image-boot.7z * && rm -rf ../syn &  
+cd ../ota && 7z a -mmt$COMPRESSION_THREADS -mx6 ../out/${TAG}-image-firmware.7z * && rm -rf ../ota &  
+cd ../dyn && 7z a -mmt$COMPRESSION_THREADS -mx6 -v1g ../out/${TAG}-image-logical.7z * && rm -rf ../dyn & 
 wait
 
-echo "All archives created successfully using parallel compression."
+echo "All archives created successfully using optimized compression with thread limits."
 
 # === Set GitHub Actions Outputs ===
 if [ -n "$GITHUB_OUTPUT" ]; then
@@ -326,6 +370,7 @@ if [ "$USE_TMPFS" = true ]; then
 fi
 
 echo "Script completed successfully with optimized performance using $CORES CPU cores."
+echo "Thread allocation summary - ZIP: $ZIP_THREADS, TAR: $TAR_THREADS, 7Z: $COMPRESSION_THREADS, PARALLEL: $PARALLEL_JOBS"
 
 # Cleanup will be handled by the trap
 trap - EXIT
