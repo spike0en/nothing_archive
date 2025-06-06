@@ -21,6 +21,7 @@ jobs:
       with:
         fetch-depth: 0  # Fetch full history to avoid shallow clone issues
 
+
     - name: Set script permissions
       run: chmod +x scripts/dump.sh
 
