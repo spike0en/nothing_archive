@@ -9,6 +9,31 @@
 # Exit immediately if a command exits with a non-zero status.
 set -e
 
+# Get number of available CPU cores for maximum performance
+CORES=$(nproc)
+echo "Using $CORES CPU cores for parallel processing"
+
+# Set environment variables for parallelism
+export MAKEFLAGS="-j$CORES"
+export PARALLEL="-j$CORES"
+
+# Optimize 7z memory usage for better performance
+if command -v free >/dev/null 2>&1; then
+    export _7Z_MEMORY_LIMIT=$(($(free -m | awk 'NR==2{print $7}') / 2))M
+fi
+
+# Use tmpfs if available for temporary operations
+if [ -d "/dev/shm" ] && [ $(df /dev/shm --output=avail | tail -1) -gt 2097152 ]; then
+    TEMP_DIR="/dev/shm/ota_processing_$$"
+    mkdir -p "$TEMP_DIR"
+    echo "Using tmpfs for temporary storage: $TEMP_DIR"
+    cd "$TEMP_DIR"
+else
+    TEMP_DIR="./temp_$$"
+    mkdir -p "$TEMP_DIR"
+    echo "Using local temporary storage: $TEMP_DIR"
+fi
+
 # Ensure the ota_extractor binary is executable
 chmod +x ./bin/ota_extractor
 
@@ -19,10 +44,10 @@ download_with_gdown() {
     gdown --fuzzy "$1" -O ota.zip
 }
 
-# Download ota file using aria2c (for other URLs)
+# Download ota file using aria2c (for other URLs) - optimized for max cores
 download_with_aria2c() {
-    echo "Downloading with aria2c: $1"
-    aria2c -x5 "$1" -o ota.zip
+    echo "Downloading with aria2c using $CORES connections: $1"
+    aria2c -x$CORES -s$CORES "$1" -o ota.zip
 }
 
 # Determine the correct download method based on URL and calls it
@@ -42,6 +67,7 @@ if [ -z "$1" ]; then
     echo "Error: No OTA URL provided." >&2
     exit 1
 fi
+
 # Extract the post-build fingerprint string from metadata
 extract_fingerprint() {
     unzip -p ota.zip META-INF/com/android/metadata | grep "^post-build=" | cut -d'=' -f2 || echo "InvalidFingerprint"
@@ -51,6 +77,7 @@ extract_fingerprint() {
 extract_version() {
     unzip -p ota.zip payload_properties.txt | grep "^POST_OTA_VERSION=" | cut -d'=' -f2 || echo "UnknownVersion"
 }
+
 # Detect the device model by searching metadata/properties for device model keywords from devices.json
 detect_model() {
     local detected_model="UnknownModel"
@@ -101,6 +128,8 @@ echo "Detected model: $MODEL"
 if [ "$MODEL" == "UnknownModel" ]; then
     echo "Error: Auto model detection has failed!" >&2
     rm -f ota.zip
+    # Clean up temp directory
+    cd / && rm -rf "$TEMP_DIR"
     exit 1
 fi
 
@@ -166,6 +195,7 @@ if [ -z "$BOOT_PARTITIONS" ] || [ "$BOOT_PARTITIONS" == "null" ] || [ -z "$LOGIC
     echo "Error: Could not find partition info for model '$MODEL' in devices.json or jq failed." >&2
     # Clean up intermediate files if they exist
     rm -f ota.zip payload_working.bin
+    cd / && rm -rf "$TEMP_DIR"
     exit 1
 fi
 
@@ -173,19 +203,19 @@ echo "Using dynamically fetched partitions for model: $MODEL"
 echo "Boot Partitions: $BOOT_PARTITIONS"
 echo "Logical Partitions: $LOGICAL_PARTITIONS"
 
-# === Generate Hashes ===
-echo "Generating file hashes..."
+# === Generate Hashes (Optimized for Parallel Processing) ===
+echo "Generating file hashes using $CORES cores..."
 # Switch to the directory containing extracted images
 cd ota
 
-# Generate hashes for all extracted image files
+# Generate hashes for all extracted image files with parallel processing
 for h in md5 sha1 sha256 xxh128; do
     if [ "$h" = "xxh128" ]; then
         echo "--- ${h^^} Hashes ---"
-        ls * | parallel xxh128sum 2>/dev/null | sort -k2 -V | tee ../out/${TAG}-hash.$h
+        ls * | parallel -j $CORES xxh128sum 2>/dev/null | sort -k2 -V | tee ../out/${TAG}-hash.$h
     else
         echo "--- ${h^^} Hashes ---"
-        ls * | parallel "openssl dgst -${h} -r" 2>/dev/null | sort -k2 -V | tee ../out/${TAG}-hash.$h
+        ls * | parallel -j $CORES "openssl dgst -${h} -r" 2>/dev/null | sort -k2 -V | tee ../out/${TAG}-hash.$h
     fi
 done
 
@@ -201,14 +231,16 @@ for f in $LOGICAL_PARTITIONS; do
     mv ${f}.img ../dyn
 done
 
-# === Archive Images ===
-echo "Archiving images..."
+# === Archive Images (Optimized for Maximum Performance) ===
+echo "Archiving images using $CORES cores..."
 # Archive boot, firmware (remaining in ota), and logical images in parallel
-# Remove source directories after successful archiving
-cd ../syn && 7z a -mmt4 -mx6 ../out/${TAG}-image-boot.7z * && rm -rf ../syn &  
-cd ../ota && 7z a -mmt4 -mx6 ../out/${TAG}-image-firmware.7z * && rm -rf ../ota &  
-cd ../dyn && 7z a -mmt4 -mx6 -v1g ../out/${TAG}-image-logical.7z * && rm -rf ../dyn & 
+# Use all available cores for compression and remove source directories after successful archiving
+cd ../syn && 7z a -mmt$CORES -mx6 ../out/${TAG}-image-boot.7z * && rm -rf ../syn &  
+cd ../ota && 7z a -mmt$CORES -mx6 ../out/${TAG}-image-firmware.7z * && rm -rf ../ota &  
+cd ../dyn && 7z a -mmt$CORES -mx6 -v1g ../out/${TAG}-image-logical.7z * && rm -rf ../dyn & 
 wait
+
+echo "All archives created successfully using parallel compression."
 
 # === Set GitHub Actions Outputs ===
 echo "Setting GitHub Actions outputs..."
@@ -220,3 +252,14 @@ echo "Setting GitHub Actions outputs..."
     echo "$BODY"
     echo "EOF"
 } >> "$GITHUB_OUTPUT"
+
+# === Cleanup ===
+echo "Cleaning up temporary files..."
+# Move output files back to original directory if using tmpfs
+if [[ "$TEMP_DIR" == "/dev/shm"* ]]; then
+    mv out/* "$OLDPWD/"
+    cd "$OLDPWD"
+    rm -rf "$TEMP_DIR"
+fi
+
+echo "Script completed successfully with optimized performance using $CORES CPU cores."
