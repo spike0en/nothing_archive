@@ -36,7 +36,6 @@ jobs:
 
     - name: Create and push tag
       run: |
-        # Use the tag from script output or fallback to user input
         if [ -n "${{ steps.dump.outputs.tag }}" ]; then
           TAG="${{ steps.dump.outputs.tag }}"
         else
@@ -45,18 +44,21 @@ jobs:
         
         echo "Creating tag: $TAG"
         
-        # Create tag pointing to current HEAD (the checked out commit)
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
         
-        # Delete tag if it already exists locally
+        # Delete tag locally if it exists
         git tag -d "$TAG" 2>/dev/null || true
+        
+        # Delete tag on remote if it exists (this will not fail if tag doesn't exist)
+        git push --delete origin "$TAG" 2>/dev/null || true
         
         # Create new tag pointing to HEAD
         git tag "$TAG" HEAD
         
-        # Push the tag
+        # Push the new tag
         git push origin "$TAG"
+
 
     - name: Upload release assets
       uses: ncipollo/release-action@v1
