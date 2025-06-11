@@ -267,10 +267,19 @@ wait
 
 # === Set GitHub Actions Outputs ===
 echo "Setting GitHub Actions outputs..."
-# Output tag name and release body for the release action
+# Determine the release tag name: use input name if provided, otherwise use extracted tag
+RELEASE_TAG_NAME="$TAG" # Default to extracted tag
+if [ -n "$INPUT_NAME" ]; then
+    echo "Using provided input name '$INPUT_NAME' as release tag name."
+    RELEASE_TAG_NAME="$INPUT_NAME"
+else
+    echo "No input name provided, using extracted tag '$TAG' as release tag name."
+fi
+
+# Output tag name, release name, and release body for the release action
 if [ -n "$GITHUB_OUTPUT" ]; then
     {
-        echo "tag=$TAG"
+        echo "release_tag=$RELEASE_TAG_NAME"
         echo "release_name=$TAG"
         echo "body<<EOF"
         echo "$BODY"

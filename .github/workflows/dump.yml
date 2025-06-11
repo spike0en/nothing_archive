@@ -8,7 +8,7 @@ on:
         required: true
       name:
         description: 'Release tag'
-        required: true
+        required: false
 
 jobs:
   dump:
@@ -34,6 +34,7 @@ jobs:
       id: dump
       run: |
         IFS=',' read -ra URLS <<< "${{ inputs.urls }}"
+        export INPUT_NAME="${{ inputs.name }}" # Pass workflow input as environment variable
         for url in "${URLS[@]}"; do
           echo "$url"
         done | xargs ./scripts/dump.sh
@@ -41,8 +42,9 @@ jobs:
     - name: Create tag
       run: |
         git fetch origin main
-        git tag "${{ inputs.name }}" 44daed30334f5bea826f828145128cdff1efe44c
-        git push origin "${{ inputs.name }}" 
+        # Use the release_tag output for the git tag name
+        git tag "${{ steps.dump.outputs.release_tag }}" 44daed30334f5bea826f828145128cdff1efe44c
+        git push origin "${{ steps.dump.outputs.release_tag }}"
 
     - name: Upload release assets
       uses: ncipollo/release-action@v1
@@ -50,6 +52,6 @@ jobs:
         artifacts: out/*
         artifactErrorsFailBuild: true
         body: ${{ steps.dump.outputs.body }}
-        tag: ${{ steps.dump.outputs.tag }}
-        name: ${{ steps.dump.outputs.tag }}
+        tag: ${{ steps.dump.outputs.release_tag }}
+        name: ${{ steps.dump.outputs.release_name }}
         token: ${{ secrets.GITHUB_TOKEN }}
