@@ -14,12 +14,12 @@ jobs:
   dump:
     permissions: write-all
     runs-on: ubuntu-latest
-      with:
-        fetch-depth: 0
 
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Setup environment
       run: |
