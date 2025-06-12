@@ -64,9 +64,8 @@ Bu arşivi kullanarak, kullanıcılar şu şartları kabul eder ve onaylar:
 
 ## Notlar 📝
 
-- OTA imajları için sürümler, sırasıyla [burada](https://github.com/spike0en/nothing_archive/releases) gösterildiği gibi `<NothingOS Sürümü>`+`<Cihaz Kod Adı>`.`<Kademe Tarihi>` ve `<POST_OTA_VERSION>`_`<NothingOS Sürümü>` biçimi kullanılarak etiketlenir ve adlandırılır.
-- Bölgeye özgü sürümler, birleştirilmemiş belirli eski `Spacewar` yapıları için geçerli olan `<NothingOS Sürümü>`-`<G veya E>`+`<Cihaz Kod Adı>`.`<Kademe Tarihi>` biçimi kullanılarak etiketlenir. Burada G = GLO (Global) ve E = EEA (Avrupa Ekonomik Alanı) şeklindedir.
-- Nothing OS sürümü X.Y.Za ve X.Y biçiminde olan sürümler için, doğru sıralama amacıyla etiketler sırasıyla X.Y.0-A ve X.Y.0 olarak yeniden adlandırılır (ör. `2.5.5A` → `2.5.5-A`, `2.6` → `2.6.0`, `3.0` → `3.0.0`).
+- OTA imajları için sürümler, sırasıyla [burada](https://github.com/spike0en/nothing_archive/releases) gösterildiği gibi `<POST_OTA_VERSION>` ve `<POST_OTA_VERSION>`_`<NothingOS Sürümü>` biçimi kullanılarak etiketlenir ve adlandırılır.
+- Bölgeye özgü sürümler, birleştirilmemiş belirli eski `Spacewar` yapıları için geçerli olan `<POST_OTA_VERSION>`-`GLO/EEA` biçimi kullanılarak etiketlenir. Burada GLO = Global ve EEA = Avrupa Ekonomik Alanı şeklindedir.
 - Nothing OS Açık Beta sürümleri, uygun olan yerlerde `-OB` ile belirtilir.
 - Android Geliştirici Önizleme sürümleri `0.0.0-dev`+`<Cihaz Kod Adı>`.`<Kademe Tarihi>` olarak etiketlenir.
 - Sürüm notlarında özellikle aksi belirtilmedikçe, burada yayınlanan sürümler cihazın tüm bölgesel ve renk varyantlarıyla uyumludur.

@@ -64,9 +64,8 @@ En utilisant cette archive, les utilisateurs reconnaissent et acceptent ces term
 
 ## Notes 📝
 
-- Les versions pour les images OTA sont étiquetées et nommées en utilisant le format : `<VersionNothingOS>`+`<NomCodeAppareil>`.`<DateIncrémentielle>` et `<POST_OTA_VERSION>`_`<VersionNothingOS>`, comme indiqué [ici](https://github.com/spike0en/nothing_archive/releases), respectivement.
-- Les versions spécifiques à une région sont étiquetées en utilisant le format : `<VersionNothingOS>`-`<G ou E>`+`<NomCodeAppareil>`.`<DateIncrémentielle>`, applicable à certaines anciennes builds `Spacewar` qui ne sont pas unifiées. Ici, G = GLO (Global), et E = EEA (Espace Économique Européen).
-- Pour les versions avec une version Nothing OS au format X.Y.Za et X.Y, les étiquettes sont renommées en X.Y.0-A et X.Y.0 respectivement pour un tri correct (par ex., `2.5.5A` → `2.5.5-A`, `2.6` → `2.6.0`, `3.0` → `3.0.0`).
+- Les versions pour les images OTA sont étiquetées et nommées en utilisant le format : `<POST_OTA_VERSION>` et `<POST_OTA_VERSION>`_`<VersionNothingOS>`, comme indiqué [ici](https://github.com/spike0en/nothing_archive/releases), respectivement.
+- Les versions spécifiques à une région sont étiquetées en utilisant le format : `<POST_OTA_VERSION>`-`GLO/EEA`, applicable à certaines anciennes builds `Spacewar` qui ne sont pas unifiées. Ici, GLO = Global, et EEA = Espace Économique Européen.
 - Les versions Nothing OS Open Beta sont indiquées par `-OB` le cas échéant.
 - Les versions Android Developer Preview sont étiquetées comme `0.0.0-dev`+`<NomCodeAppareil>`.`<DateIncrémentielle>`.
 - Sauf indication contraire spécifique dans les notes de version, les versions publiées ici sont compatibles avec toutes les variantes régionales et de couleur de l'appareil.

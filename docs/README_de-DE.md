@@ -64,9 +64,8 @@ Durch die Nutzung dieses Archivs erkennen Benutzer diese Bedingungen an und akze
 
 ## Hinweise 📝
 
-- Releases für OTA-Images werden mit dem Format `<NothingOS-Version>`+`<Geräte-Codename>`.`<Inkrementelles Datum>` und `<POST_OTA_VERSION>`_`<NothingOS-Version>` getaggt und benannt, wie jeweils [hier](https://github.com/spike0en/nothing_archive/releases) gezeigt.
-- Regionsspezifische Releases werden mit dem Format `<NothingOS-Version>`-`<G oder E>`+`<Geräte-Codename>`.`<Inkrementelles Datum>` getaggt, was für bestimmte ältere `Spacewar`-Builds gilt, die nicht vereinheitlicht sind. Hier steht G = GLO (Global) und E = EEA (Europäischer Wirtschaftsraum).
-- Bei Releases mit einer Nothing OS-Version im Format X.Y.Za und X.Y werden die Tags zur korrekten Sortierung in X.Y.0-A bzw. X.Y.0 umbenannt (z. B. `2.5.5A` → `2.5.5-A`, `2.6` → `2.6.0`, `3.0` → `3.0.0`).
+- Releases für OTA-Images werden mit dem Format `<POST_OTA_VERSION>` und `<POST_OTA_VERSION>`_`<NothingOS-Version>` getaggt und benannt, wie jeweils [hier](https://github.com/spike0en/nothing_archive/releases) gezeigt.
+- Regionsspezifische Releases werden mit dem Format `<POST_OTA_VERSION>`-`GLO/EEA` getaggt, was für bestimmte ältere `Spacewar`-Builds gilt, die nicht vereinheitlicht sind. Hier steht GLO = Global und EEA = Europäischer Wirtschaftsraum.
 - Nothing OS Open Beta-Releases werden gegebenenfalls mit `-OB` gekennzeichnet.
 - Android Developer Preview-Releases werden als `0.0.0-dev`+`<Geräte-Codename>`.`<Inkrementelles Datum>` getaggt.
 - Sofern in den Versionshinweisen nicht ausdrücklich anders angegeben, sind die hier veröffentlichten Releases mit allen regionalen und Farbvarianten des Geräts kompatibel.
