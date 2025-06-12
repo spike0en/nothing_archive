@@ -34,7 +34,7 @@ jobs:
       id: dump
       run: |
         IFS=',' read -ra URLS <<< "${{ inputs.urls }}"
-        export INPUT_NAME="${{ inputs.name }}" # Pass workflow input as environment variable
+        export INPUT_NAME="${{ inputs.name }}"
         for url in "${URLS[@]}"; do
           echo "$url"
         done | xargs ./scripts/dump.sh
@@ -42,8 +42,7 @@ jobs:
     - name: Create tag
       run: |
         git fetch origin main
-        # Use the release_tag output for the git tag name
-        git tag "${{ steps.dump.outputs.release_tag }}" 44daed30334f5bea826f828145128cdff1efe44c
+        git tag "${{ steps.dump.outputs.release_tag }}" HEAD
         git push origin "${{ steps.dump.outputs.release_tag }}"
 
     - name: Upload release assets
