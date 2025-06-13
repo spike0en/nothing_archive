@@ -104,7 +104,7 @@ detect_model() {
     if [ -n "$metadata_content" ]; then
         for model in $models; do
             # Use grep -qi for quiet, case-insensitive check
-            if echo "$metadata_content" | grep -qi "$model"; then
+            if echo "$metadata_content" | grep -qi "\b$model\b"; then
                 detected_model="$model"
                 echo "$detected_model"
                 return
@@ -116,7 +116,7 @@ detect_model() {
     local properties_content=$(unzip -p ota.zip payload_properties.txt 2>/dev/null || echo "")
      if [ -n "$properties_content" ]; then
         for model in $models; do
-             if echo "$properties_content" | grep -qi "$model"; then # Use grep -qi
+             if echo "$properties_content" | grep -qi "\b$model\b"; then # Use grep -qi
                 detected_model="$model"
                 echo "$detected_model"
                 return
