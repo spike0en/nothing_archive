@@ -24,6 +24,14 @@
         "odm", "odm_dlkm", "product", "system", "system_dlkm", "system_ext", "vbmeta_system", "vbmeta_vendor", "vendor", "vendor_dlkm"
       ]
     },
+    "PacmanPro": {
+      "boot_partitions": [
+        "boot", "dtbo", "init_boot", "vendor_boot", "vbmeta"
+      ],
+      "logical_partitions": [
+        "odm", "odm_dlkm", "product", "system", "system_dlkm", "system_ext", "vbmeta_system", "vbmeta_vendor", "vendor", "vendor_dlkm"
+      ]
+    },    
     "Pong": {
       "boot_partitions": [
         "boot", "dtbo", "recovery", "vendor_boot", "vbmeta", "vbmeta_system", "vbmeta_vendor"
