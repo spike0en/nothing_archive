@@ -8,6 +8,14 @@
         "odm", "product", "system", "system_dlkm", "system_ext", "vendor", "vendor_dlkm"
       ]
     },
+    "AsteroidsPro": {
+      "boot_partitions": [
+        "boot", "dtbo", "init_boot", "recovery", "vendor_boot", "vbmeta", "vbmeta_system", "vbmeta_vendor"
+      ],
+      "logical_partitions": [
+        "odm", "product", "system", "system_dlkm", "system_ext", "vendor", "vendor_dlkm"
+      ]
+    },    
     "Galaga": {
       "boot_partitions": [
         "boot", "dtbo", "init_boot", "vendor_boot", "vbmeta"
