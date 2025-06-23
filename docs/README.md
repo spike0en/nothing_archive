@@ -289,8 +289,9 @@ Select your **device model** from the dropdown list below to access it's **Relea
 
 | **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
+| 3.2 | Galaga-V3.2-250616-1258 | Galaga_V3.2-250526-1427 -> [Galaga_V3.2-250616-1258](https://android.googleapis.com/packages/ota-api/package/0fcc224468e66ef3fcc4d7d776a32179e1af3710.zip) // Galaga_V3.2-250507-1139 -> [Galaga_V3.2-250616-1258](https://android.googleapis.com/packages/ota-api/package/e2c1e13e78416d6449e18f7e37e1f923ff0f838a.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Galaga_V3.2-250616-1258) |
 | 3.2 | Galaga-V3.2-250526-1427 | Galaga_V3.2-250507-1139 -> [Galaga_V3.2-250526-1427](https://android.googleapis.com/packages/ota-api/package/e6d8ab2dee0c6751bc5b806d316bf47b11ec2593.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Galaga_V3.2-250526-1427) | 
-| 3.2 | Galaga_V3.2-250507-1139 | N/A | [Here](https://android.googleapis.com/packages/ota-api/package/2800780fa49032a870618ec026097f5a09aa805b.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Galaga_V3.2-250507-1139) | 
+| 3.2 | Galaga-V3.2-250507-1139 | N/A | [Here](https://android.googleapis.com/packages/ota-api/package/2800780fa49032a870618ec026097f5a09aa805b.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Galaga_V3.2-250507-1139) | 
 | 3.2 | Galaga-V3.2-250425-1517 | Galaga_V3.2-250312-1750 -> [Galaga_V3.2-250425-1517](https://android.googleapis.com/packages/ota-api/package/e7e4b8e861c37de0460a8c95b358fbeb4e2a12d2.zip) | N/A | N/A |
 
 <br>
