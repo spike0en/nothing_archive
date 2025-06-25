@@ -345,7 +345,7 @@ Select your **device model** from the dropdown list below to access it's **Relea
 
 ### I. OTA Sideloading 🔄
 
-> For visual references, please refer to [these images](https://github.com/spike0en/test/tree/main/assets/sideloading) in their respective order.
+> For visual references, please refer to [these images](https://github.com/spike0en/nothing_archive/tree/main/assets/sideloading) in their respective order.
 
 <br>
 
