@@ -125,7 +125,7 @@ Select your **device model** from the dropdown list below to access it's **Relea
 
 | **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
-| 3.5 | Metroid-V3.5-250711-2047 | N/A | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Metroid_V3.5-250711-2047) |
+| 3.5 | Metroid-V3.5-250711-2047 | Metroid_V3.5-250626-1934 -> [Metroid-V3.5-250711-2047](https://android.googleapis.com/packages/ota-api/package/6096b0ce17b226e8b9707f9a911631fa3138d46f.zip) // Metroid_V3.5-250529-1404-> [Metroid_V3.5-250711-2047](https://android.googleapis.com/packages/ota-api/package/30545d507c2922f6d1e3da12b1782cdf175ff84a.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Metroid_V3.5-250711-2047) |
 
 </details>
 
