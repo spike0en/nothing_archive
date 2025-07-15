@@ -84,6 +84,7 @@ The **unmodified** stock OTA image files are archived in `.7z` format and catego
 
 | Device | Boot (`-image-boot.7z`) | Firmware (`-image-firmware.7z`) | Logical (`-image-logical.7z.001-00x`) |
 |--------|-------------------------|---------------------------------|---------------------------------------|
+| **Phone (3)** | `boot`, `dtbo`, `init_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` **(Total: 8)** | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `multiimgqti`, `pvmfw`, `qupfw`, `shrm`, `soccp_dcd`, `soccp_debug`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` **(Total: 26)** | `odm`, `product`, `system`, `system_dlkm`, `system_ext`, `vendor`, `vendor_dlkm` **(Total: 7)** |
 | **Phone (3a) / Phone (3a) Pro** | `boot`, `init_boot`, `dtbo`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` **(Total: 8)** | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `pvmfw`, `qupfw`, `shrm`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` **(Total: 23)** | `system`, `system_dlkm`, `system_ext`, `product`, `vendor`, `vendor_dlkm`, `odm` **(Total: 7)** |
 | **Phone (2a) / (2a) Plus** | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta` **(Total: 5)** | `apusys`, `audio_dsp`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `mcupm`, `md1img`, `mvpu_algo`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` **(Total: 22)** | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product`, `vbmeta_system`, `vbmeta_vendor` **(Total: 10)** |
 | **Phone (2)**       | `boot`, `dtbo`, `vendor_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor` **(Total: 7)** | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `multiimgqti`, `qupfw`, `qweslicstore`, `shrm`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` **(Total: 23)** | `system`, `system_ext`, `product`, `vendor`, `vendor_dlkm`, `odm` **(Total: 6)** |
@@ -116,6 +117,17 @@ Select your **device model** from the dropdown list below to access it's **Relea
 ---
 
 #### I. Nothing
+
+<details>
+  <summary>Phone (3) - Metroid</summary>
+
+<br>
+
+| **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
+|------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
+| 3.5 | Metroid-V3.5-250711-2047 | N/A | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Metroid_V3.5-250711-2047) |
+
+</details>
 
 <details>
   <summary>Phone (3a) & (3a) Pro - Asteroids</summary>
