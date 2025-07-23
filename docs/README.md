@@ -665,8 +665,9 @@ C. **Post-Relock**
 Special thanks to these contributors for their invaluable work and support:
 - **[luk1337](https://github.com/luk1337/oplus_archive)** – Pioneered the use of AOSP’s OTA extraction tool, enabling the extraction of incremental OTA updates.
 - **[arter97](https://github.com/arter97/nothing_archive)** – Adapted the above project for **Nothing Phone (2)**.
-- **[LukeSkyD](https://github.com/LukeSkyD)** – Maintains the [Nothing Phone (1) Repo](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/), which served as a key reference for earlier builds.
+- **[Phatty](https://github.com/PHATWalrus)** - Provides backend support and resources whenever needed.
 - **[XelXen](https://github.com/XelXen)** - Designed the logo and banner for the project’s branding.
+- **[LukeSkyD](https://github.com/LukeSkyD)** – Maintains the [Nothing Phone (1) Repo](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/), which served as a key reference for earlier builds.
 - Individuals who contributed to the localization efforts, helping to make this project accessible to a broader audience.
 
 ---
