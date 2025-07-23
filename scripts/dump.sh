@@ -146,6 +146,17 @@ fi
 echo "Extracting initial payload..."
 # Ensure the ota_extractor binary is executable using absolute path before first use
 chmod +x "$OTA_EXTRACTOR"
+
+# Patch RPATH for ota_extractor to include local /bin shared libraries
+if command -v patchelf >/dev/null; then
+    echo "Setting RPATH for ota_extractor..."
+    # Properly escape $ORIGIN for runtime linker
+    patchelf --set-rpath "\$ORIGIN:\$ORIGIN/../bin" "$OTA_EXTRACTOR"
+fi
+
+# Export LD_LIBRARY_PATH to help dynamic linker find bundled shared libraries
+export LD_LIBRARY_PATH="$ORIGINAL_DIR/bin:$LD_LIBRARY_PATH"
+
 unzip ota.zip payload.bin || { echo "Failed to unzip payload"; rm -f ota.zip; exit 1; } # Basic cleanup
 mv payload.bin payload_working.bin
 TAG=$(extract_version)

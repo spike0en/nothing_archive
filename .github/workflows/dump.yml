@@ -24,7 +24,7 @@ jobs:
     - name: Setup environment
       run: |
         sudo apt update
-        sudo apt -y install aria2 zstd p7zip-full parallel openssl xxhash jq
+        sudo apt -y install aria2 zstd p7zip-full parallel openssl xxhash jq patchelf
         python3 -m pip install gdown
 
     - name: Set script permissions
