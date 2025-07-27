@@ -1,4 +1,4 @@
-[Inglese](README.md) | [Tedesco](README_de-DE.md) | [Spagnolo](README_es-ES.md) | [Francese](README_fr-FR.md) | [Hindi](README_hi-IN.md) | **Italiano** | [Giapponese](README_ja-JP.md) | [Russo](README_ru-RU.md) | [Turco](README_tr-TR.md) |
+[Inglese](README.md) | [Tedesco](README_de-DE.md) | [Spagnolo](README_es-ES.md) | [Francese](README_fr-FR.md) | [Hindi](README_hi-IN.md) | **Italiano** | [Giapponese](README_ja-JP.md) | [Russo](README_ru-RU.md) | [Turco](README_tr-TR.md) | [Cinese semplificato](README_zh-CN.md)
 
 # Nothing Archive
 

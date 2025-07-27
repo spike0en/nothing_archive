@@ -1,4 +1,4 @@
-[English](README.md) | [Deutsch](README_de-DE.md) | **Español** | [Français](README_fr-FR.md) | [हिन्दी](README_hi-IN.md) | [Italiano](README_it-IT.md) | [日本語](README_ja-JP.md) | [Русский](README_ru-RU.md) | [Türkçe](README_tr-TR.md)
+[English](README.md) | [Deutsch](README_de-DE.md) | **Español** | [Français](README_fr-FR.md) | [हिन्दी](README_hi-IN.md) | [Italiano](README_it-IT.md) | [日本語](README_ja-JP.md) | [Русский](README_ru-RU.md) | [Türkçe](README_tr-TR.md) | [简体中文](README_zh-CN.md)
 
 # Nothing Archive
 
