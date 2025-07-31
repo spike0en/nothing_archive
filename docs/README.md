@@ -608,7 +608,7 @@ A. **Preparation of Flashing Folder:**
   - Extract files:
     - Windows: Right-click → Extract to "*\"
     - Bash users:
-      7za -y x "*7z*"
+      `7za -y x "*.7z*"`
 
 B. **Proceeding with Flashing:**
   - Install compatible USB drivers from [here](https://developer.android.com/studio/run/win-usb).
