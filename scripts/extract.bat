@@ -187,7 +187,7 @@ echo [2] Nothing Phone (2)
 echo [3] Nothing Phone (2a) Series
 echo [4] Nothing Phone (3a) Series
 echo [5] Nothing Phone (3)
-echo [6] CMF Phone (1) & Phone (2) Pro
+echo [6] CMF Phone (1) - Phone (2) Pro
 echo [X] Exit
 echo =========================================================
 echo.
