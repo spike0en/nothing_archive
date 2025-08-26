@@ -351,17 +351,20 @@ Select your **device model** from the dropdown list below to access it's **Relea
 
 ## Integrity Check ✅
 
-- You can check the downloaded OTA image file's integrity with one of the following commands :
+You can check the downloaded OTA image file's integrity using the following commands for both Bash (Linux/macOS) and Windows environments:
 
-``` bash
-  md5sum -c *-hash.md5
-  sha1sum -c *-hash.sha1
-  sha256sum -c *-hash.sha256
-  xxh128sum -c *-hash.xxh128
+### Bash (Linux/macOS)
+
+```bash
+sha256sum -c *-hash.sha256
 ```
-- xxh128 is usually the fastest.
 
----
+### Windows
+
+```bash
+certutil -hashfile <filename> SHA256
+```
+- Alternatively users can use open source utilites like [OpenHashTab](https://github.com/namazso/OpenHashTab)
 
 ## Guides 📖
 

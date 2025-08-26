@@ -218,18 +218,9 @@ echo "Generating file hashes using $PARALLEL_JOBS parallel jobs..."
 # Switch to the directory containing extracted images
 cd ota
 
-# Generate hashes for all extracted image files with parallel processing
-for h in md5 sha1 sha256 xxh128; do
-    if [ "$h" = "xxh128" ]; then
-        echo "--- ${h^^} Hashes ---"
-        # Explicitly use -j $PARALLEL_JOBS
-        ls * | parallel -j $PARALLEL_JOBS xxh128sum 2>/dev/null | sort -k2 -V | tee ../out/${TAG}-hash.$h
-    else
-        echo "--- ${h^^} Hashes ---"
-        # Explicitly use -j $PARALLEL_JOBS
-        ls * | parallel -j $PARALLEL_JOBS "openssl dgst -${h} -r" 2>/dev/null | sort -k2 -V | tee ../out/${TAG}-hash.$h
-    fi
-done
+# Generate SHA-256 hashes for all extracted image files with parallel processing
+echo "--- SHA256 Hashes ---"
+ls * | parallel -j $PARALLEL_JOBS "openssl dgst -sha256 -r" 2>/dev/null | sort -k2 -V | tee ../out/${TAG}-hash.sha256
 
 # === Organize Images ===
 echo "Organizing images..."
