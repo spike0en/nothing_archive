@@ -228,7 +228,7 @@ adb devices
 
 - **重启至 BootLoader**：
 ```sh
-adb restart bootloader
+adb reboot bootloader
 ```
 
 - **验证 fastboot 连接**：
@@ -382,7 +382,7 @@ A. **前提条件**
 B. **开始锁定 BootLoader**
 - 如果您已进入系统，请重启至 BootLoader ：
 ```sh
-adb restart bootloader
+adb reboot bootloader
 ```
 
 - 验证 fastboot 连接情况：
