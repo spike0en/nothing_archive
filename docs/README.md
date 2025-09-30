@@ -408,7 +408,7 @@ B. **Restoring Stock Partitions (For Rooted Users Only)**
 
 3. **Identify the required partitions:**  
    - **Qualcomm Devices:** `boot`, `init_boot` `vendor_boot`, `recovery`, `vbmeta`  
-   - **MediaTek Devices:** `init_boot`, `recovery`, `vbmeta`  
+   - **MediaTek Devices:** `init_boot`, `vbmeta`, `lk`
 
 4. **Flash stock partitions** in bootloader mode:  
    > Only modified partitions are required to be flashed. Also skip any missing partitions based on your SoC platform. 
@@ -418,6 +418,7 @@ B. **Restoring Stock Partitions (For Rooted Users Only)**
    fastboot flash vendor_boot vendor_boot.img
    fastboot flash vbmeta vbmeta.img
    fastboot flash init_boot init_boot.img
+   fastboot flash --slot=all lk lk.img
    ```
 
 5. **Reboot to system and update via System Updater:**
