@@ -64,7 +64,7 @@ By using this archive, users acknowledge and accept these terms:
 
 ## Notes 📝
 
-- Releases for OTA images are tagged and named using the format: `<POST_OTA_VERSION>` and `<POST_OTA_VERSION>`_`<NothingOS Version>`, as shown [here](https://github.com/spike0en/nothing_archive/releases), respectively.
+- Releases for OTA images are tagged and named using the format: `<POST_OTA_VERSION>` and `<POST_OTA_VERSION>`, as shown [here](https://github.com/spike0en/nothing_archive/releases), respectively.
 - Region-specific releases are tagged using the format: `<POST_OTA_VERSION>`-`<GLO/EEA>`, applicable to certain older `Spacewar` builds that are not unified. Here, G = GLO (Global), and E = EEA (European Economic Area).
 - Nothing OS Open Beta releases are denoted by `-OB` wherever applicable.
 - Android Developer preview releases are tagged as `0.0.0-dev`+`<Device Codename>`.`<Incremental Date>`.
