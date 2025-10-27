@@ -622,7 +622,7 @@ E. Restoring Partitions
 
 ### IV. Flashing the Stock ROM Using Fastboot ⚡
 
-> Visual guide by QZX Tech: [Here](https://www.youtube.com/watch?v=66H2MVElyAY)
+> **Visual Guides** : [The Nothing Lab](https://www.youtube.com/watch?v=l0P9gosl64s) | [QZX Tech](https://www.youtube.com/watch?v=66H2MVElyAY)
 
 A. **Preparation of Flashing Folder:**
   - Download the following files for your device model and firmware build and place them in a dedicated folder:
