@@ -251,7 +251,7 @@ if [ -d "../ota" ] && [ "$(ls -A ../ota 2>/dev/null)" ]; then
 fi
 
 if [ -d "../dyn" ] && [ "$(ls -A ../dyn 2>/dev/null)" ]; then
-    (cd ../dyn && 7z a -mmt$COMPRESSION_THREADS -mx6 -v1g ../out/${TAG}-image-logical.7z * && rm -rf ../dyn) &
+    (cd ../dyn && 7z a -mmt$COMPRESSION_THREADS -mx6 -v1900m ../out/${TAG}-image-logical.7z * && rm -rf ../dyn) &
 fi
 
 wait
