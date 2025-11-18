@@ -9,6 +9,11 @@ on:
       name:
         description: 'Release tag'
         required: false
+      run_maximize_build_space:
+        description: 'Run maximize-build-space?'
+        required: true
+        type: boolean
+        default: false        
 
 jobs:
   dump:
@@ -16,6 +21,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Run maximize-build-space
+      if: github.event.inputs.run_maximize_build_space == 'true'
+      uses: easimon/maximize-build-space@master
+      with:
+        remove-android: 'true'
+        remove-dotnet: 'true'
+        remove-haskell: 'true'
+        remove-codeql: 'true'
+        remove-docker-images: 'true'
+        
     - name: Checkout repo
       uses: actions/checkout@v4
       with:
