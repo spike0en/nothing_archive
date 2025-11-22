@@ -166,7 +166,7 @@ Select your **device model** from the dropdown list below to access it's **Relea
 
 | **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
-| 3.5 | Galaxian-V3.5-251029-1642 | N/A  | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Galaxian_V3.5-251029-1642) |
+| 3.5 | Galaxian-V3.5-251029-1642 | Galaxian_V3.5-251029-1642 -> [Galaxian_V3.5-251029-1642](https://android.googleapis.com/packages/ota-api/package/0b5b0e6d070dd8835fa6e80f4b5750d689d85152.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Galaxian_V3.5-251029-1642) |
 
 </details>
 
