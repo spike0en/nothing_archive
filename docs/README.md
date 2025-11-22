@@ -85,6 +85,7 @@ The **unmodified** stock OTA image files are archived in `.7z` format and catego
 |--------|-------------------------|---------------------------------|---------------------------------------|
 | **Phone (3)** | `boot`, `dtbo`, `init_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` **(Total: 8)** | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `multiimgqti`, `pvmfw`, `qupfw`, `shrm`, `soccp_dcd`, `soccp_debug`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` **(Total: 26)** | `odm`, `product`, `system`, `system_dlkm`, `system_ext`, `vendor`, `vendor_dlkm` **(Total: 7)** |
 | **Phone (3a) / Phone (3a) Pro** | `boot`, `init_boot`, `dtbo`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` **(Total: 8)** | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `pvmfw`, `qupfw`, `shrm`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` **(Total: 23)** | `system`, `system_dlkm`, `system_ext`, `product`, `vendor`, `vendor_dlkm`, `odm` **(Total: 7)** |
+| **Phone (3a) Lite** | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor` **(Total: 7)** | `apusys`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `modem`, `mcupm`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` **(Total: 20)** | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product` **(Total: 8)** |
 | **Phone (2a) / (2a) Plus** | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta` **(Total: 5)** | `apusys`, `audio_dsp`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `mcupm`, `md1img`, `mvpu_algo`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` **(Total: 22)** | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product`, `vbmeta_system`, `vbmeta_vendor` **(Total: 10)** |
 | **Phone (2)**       | `boot`, `dtbo`, `vendor_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor` **(Total: 7)** | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `multiimgqti`, `qupfw`, `qweslicstore`, `shrm`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` **(Total: 23)** | `system`, `system_ext`, `product`, `vendor`, `vendor_dlkm`, `odm` **(Total: 6)** |
 | **Phone (1)**       | `boot`, `dtbo`, `vendor_boot`, `vbmeta` **(Total: 4)** | `abl`, `aop`, `bluetooth`, `cpucp`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `qupfw`, `shrm`, `tz`, `uefisecapp`, `xbl`, `xbl_config` **(Total: 18)** | `system`, `system_ext`, `product`, `vendor`, `odm`, `vbmeta_system`, `vbmeta_vendor` **(Total: 7)** |
@@ -155,6 +156,17 @@ Select your **device model** from the dropdown list below to access it's **Relea
 | 3.1 | Asteroids-V3.1-250320-2319 | Asteroids_V3.1-250302-1856 -> [Asteroids_V3.1-250320-2319](https://android.googleapis.com/packages/ota-api/package/2d06383bd0ee5af9165156087167f2e86bbdffae.zip) // Asteroids_V3.1-241231-1753 -> [Asteroids_V3.1-250320-2319](https://android.googleapis.com/packages/ota-api/package/98084a85c4cebe2ff9c7e44e817c5053bdc26a4d.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Asteroids_V3.1-250320-2319)
 | 3.1 | Asteroids-V3.1-250302-1856 | Asteroids_V3.1-250217-2235 -> [Asteroids_V3.1-250302-1856](https://android.googleapis.com/packages/ota-api/package/4d1092626406b96e5f1e5e31d727b0d71ed4cbf3.zip) // Asteroids_V3.1-241231-1753 -> [Asteroids_V3.1-250302-1856](https://android.googleapis.com/packages/ota-api/package/9d8b54d1cb47c80c233319560d1720ccb5bd1c5e.zip) | [Here](https://android.googleapis.com/packages/ota-api/package/156adca4d6d6cf50e385a3ddf5b9569af62b1bef.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Asteroids_V3.1-250302-1856)
 | 3.1 | Asteroids-V3.1-250217-2235 | Asteroids_V3.1-250112-1904 -> [Asteroids_V3.1-250217-2235](https://android.googleapis.com/packages/ota-api/package/ced682b69a20c21a8359ede518813c6ded14a1c2.zip) // Asteroids_V3.1-241231-1753 -> [Asteroids_V3.1-250217-2235](https://android.googleapis.com/packages/ota-api/package/a201b6cb78c1fdabd65af36a122847fbfce77edb.zip)  | N/A | N/A |
+
+</details>
+
+<details>
+  <summary>Phone (3a) Lite - Galaxian</summary>
+
+<br>
+
+| **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
+|------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
+| 3.5 | Galaxian-V3.5-251029-1642 | N/A  | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Galaxian_V3.5-251029-1642) |
 
 </details>
 
