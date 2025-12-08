@@ -155,7 +155,7 @@ rm ota.zip
 
 # === Prepare Working Directories ===
 echo "Creating required directories..."
-mkdir -p ota out dyn syn
+mkdir -p ota out dyn boot
 
 # Extract images from the main payload using absolute path for ota_extractor
 "$OTA_EXTRACTOR" -output_dir ota -payload payload_working.bin || { echo "Error: Failed to extract initial payload"; rm -f payload_working.bin; exit 1; } # Basic cleanup
@@ -224,10 +224,10 @@ ls * | parallel -j $PARALLEL_JOBS "openssl dgst -sha256 -r" 2>/dev/null | sort -
 
 # === Organize Images ===
 echo "Organizing images..."
-# Move boot-related images to `syn` directory
+# Move boot-related images to `boot` directory
 for f in $BOOT_PARTITIONS; do
     # Check if file exists before moving
-    [ -f "${f}.img" ] && mv "${f}.img" ../syn
+    [ -f "${f}.img" ] && mv "${f}.img" ../boot
 done
 
 # Move logical partition images to `dyn` directory
@@ -242,8 +242,8 @@ echo "Archiving images using optimized compression settings..."
 # Archive boot, firmware (remaining in ota), and logical images in parallel
 # Remove source directories after successful archiving
 # Perform directory checks before attempting to archive
-if [ -d "../syn" ] && [ "$(ls -A ../syn 2>/dev/null)" ]; then
-    (cd ../syn && 7z a -mmt$COMPRESSION_THREADS -mx6 ../out/${TAG}-image-boot.7z * && rm -rf ../syn) &
+if [ -d "../boot" ] && [ "$(ls -A ../boot 2>/dev/null)" ]; then
+    (cd ../boot && 7z a -mmt$COMPRESSION_THREADS -mx6 ../out/${TAG}-image-boot.7z * && rm -rf ../boot) &
 fi
 
 if [ -d "../ota" ] && [ "$(ls -A ../ota 2>/dev/null)" ]; then
@@ -251,7 +251,7 @@ if [ -d "../ota" ] && [ "$(ls -A ../ota 2>/dev/null)" ]; then
 fi
 
 if [ -d "../dyn" ] && [ "$(ls -A ../dyn 2>/dev/null)" ]; then
-    (cd ../dyn && 7z a -mmt$COMPRESSION_THREADS -mx6 -v1900m ../out/${TAG}-image-logical.7z * && rm -rf ../dyn) &
+    (cd ../dyn && 7z a -mmt$COMPRESSION_THREADS -mx6 -v2000M ../out/${TAG}-image-logical.7z * && rm -rf ../dyn) &
 fi
 
 wait
