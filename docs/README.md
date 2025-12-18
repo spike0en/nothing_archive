@@ -1,122 +1,165 @@
-**English** | [Deutsch](README_de-DE.md) | [Español](README_es-ES.md) | [Français](README_fr-FR.md) | [हिन्दी](README_hi-IN.md) | [Italiano](README_it-IT.md) | [日本語](README_ja-JP.md) | [Русский](README_ru-RU.md) | [Türkçe](README_tr-TR.md) | [简体中文](README_zh-CN.md)
+<div align="center"> <img src="../assets/branding/logo.png" width="128" alt="Nothing Archive Logo"> <h1>Nothing Archive</h1> <p>Your ultimate source for Nothing OS firmware, stock OTA images, and comprehensive guides for Nothing & CMF by Nothing devices.</p>
+<br />
+  
+  [![Hits](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%23b02a37&labelColor=2E2E3F)](https://github.com/spike0en/nothing_archive)
 
-# Nothing Archive
+  [![Flashing Scripts](https://img.shields.io/badge/Nothing_Flasher-2E2E3F?logo=github&logoColor=white&labelColor=2E2E3F&color=67119E&style=flat)](https://github.com/spike0en/nothing_flasher)
+  [![Awesome Nothing Index](https://img.shields.io/badge/Awesome_Nothing_Index-0A95FF?style=flat&logo=github&logoColor=white&color=0A95FF&labelColor=24292F)](https://github.com/spike0en/awesome_nothing)
 
-<img src="../assets/branding/logo.png" width="96" alt="Nothing Archive Logo">
+  [![Latest Release](https://img.shields.io/github/release/spike0en/nothing_archive?label=Latest&logo=git&logoColor=white&color=18673F&labelColor=2E2E3F&style=flat)](https://github.com/spike0en/nothing_archive/releases/latest)
 
-[![Hits](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%23b02a37&labelColor=2E2E3F)](https://github.com/spike0en/nothing_archive)
+  [![Stars](https://img.shields.io/github/stars/spike0en/nothing_archive?label=Stars&logo=github&logoColor=white&color=fb481f&labelColor=2E2E3F&style=flat)](https://github.com/spike0en/nothing_archive/stargazers)
+  [![Contributors](https://img.shields.io/github/contributors/spike0en/nothing_archive?label=Contributors&logo=github&logoColor=white&color=2b2a7b&labelColor=2E2E3F&style=flat)](https://github.com/spike0en/nothing_archive/graphs/contributors)
+  [![Forks](https://img.shields.io/github/forks/spike0en/nothing_archive?label=Forks&logo=github&logoColor=white&color=eeb705&labelColor=2E2E3F&style=flat)](https://github.com/spike0en/nothing_archive/network/members)
 
-[![Flashing Scripts](https://img.shields.io/badge/Flasher-2E2E3F?logo=github&logoColor=white&labelColor=2E2E3F&color=67119E&style=flat)](https://github.com/spike0en/nothing_flasher)
-[![Support](https://img.shields.io/badge/Community-2E2E3F?style=flat&logo=telegram&logoColor=white&color=1986F2&labelColor=2E2E3F)](https://t.me/s/Nothing_Archive)
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
 
-[![Latest Release](https://img.shields.io/github/release/spike0en/nothing_archive?label=Latest&logo=git&logoColor=white&color=18673F&labelColor=2E2E3F&style=flat)](https://github.com/spike0en/nothing_archive/releases/latest)
+  <br />
 
-[![Stars](https://img.shields.io/github/stars/spike0en/nothing_archive?label=Stars&logo=github&logoColor=white&color=fb481f&labelColor=2E2E3F&style=flat)](https://github.com/spike0en/nothing_archive/stargazers)
-[![Contributors](https://img.shields.io/github/contributors/spike0en/nothing_archive?label=Contributors&logo=github&logoColor=white&color=2b2a7b&labelColor=2E2E3F&style=flat)](https://github.com/spike0en/nothing_archive/graphs/contributors)
-[![Forks](https://img.shields.io/github/forks/spike0en/nothing_archive?label=Forks&logo=github&logoColor=white&color=eeb705&labelColor=2E2E3F&style=flat)](https://github.com/spike0en/nothing_archive/network/members)
+  [English](README.md) • [Deutsch](README_de-DE.md) • [Español](README_es-ES.md) • [Français](README_fr-FR.md) • [हिन्दी](README_hi-IN.md) • [Italiano](README_it-IT.md) • [日本語](README_ja-JP.md) • [Русский](README_ru-RU.md) • [Türkçe](README_tr-TR.md) • [简体中文](README_zh-CN.md)
 
----
+  <br />
 
-## Index 📑
+  [**View Releases**](https://github.com/spike0en/nothing_archive/releases) • [**Discussion Space**](https://t.me/s/Nothing_Archive)
+</div>
 
-- [About the Project](#overview-)
-- [Disclaimer](#disclaimer-)
-- [Notes](#notes-)
-- [Categorization](#categorization-)
-- [Downloads](#downloads-)
-- [Integrity](#integrity-check-)
-- **Guides**
-  - [OTA Sideloading](#i-ota-sideloading-)
-  - [Unlocking Bootloader](#ii-unlocking-bootloader-)
-  - [Backing Up Partitions](#iii-backing-up-essential-partitions-after-unlocking-bootloader-)
-  - [Flashing Stock ROM Using Fastboot](#iv-flashing-the-stock-rom-using-fastboot-)
-  - [Relocking Bootloader](#v-relocking-bootloader-)
-- [Acknowledgments](#acknowledgments-)
-- [Support the Project](#support-the-project-)
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
 
----
+### Support the Project
 
-## Overview 🔍
+If this project helps you, please consider [starring ⭐ the repository](https://github.com/spike0en/nothing_archive/stargazers). It helps with discoverability and encourages maintenance. Thank you!
 
-**Nothing Archive** is the most up-to-date Nothing OS firmware repository, offering official OTA updates, full firmware packages, and stock OTA images for **Nothing** & **CMF by Nothing** phones, all sourced directly from official OEM servers. All files are [archived](https://archive.org/details/nothing-archive), ensuring easy access and long-term preservation.
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=spike0en/nothing_archive&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=spike0en/nothing_archive&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=spike0en/nothing_archive&type=Date" width="500" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);" />
+  </picture>
+</div>
 
-### Features & Benefits:
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
 
-- 📡 **Direct OTA Indexing** – Tracks **Nothing OS OTA update links** from official servers, providing access to **incremental and full updates** for Nothing and CMF devices.
-- 🛠️ **Manual Installation (Sideloading)** – Install **Nothing OS firmware manually** during staged rollouts or when OTA updates fail using the inbuilt **offline Nothing OS offline updater or beta updater app** or via **ADB sideload** using a custom recovery when available.
-- 📦 **Stock OTA Images** – Provides **unmodified OTA images** utilizing AOSP’s OTA extraction tool that allows extracting incremental OTA updates, thus enabling **upgrades, downgrades, and partition flashing** when **full firmware packages** are unavailable.
-- 🔓 **Rooting & Unrooting Support** – Provides **stock boot images for Magisk, KernelSU, and Apatch**, while also allowing **unrooting** by flashing the original boot image to keep **OTA updates functional** when modified partitions are detected.
-- ⚡ **Flash Firmware & Unbrick Devices** – Provides **fastboot-flashable Nothing OS firmware** to help **resolve boot loops, recover soft-bricked devices, and restore the stock ROM**, as long as fastboot is accessible.
+## Index
 
----
+<div align="center">
+  <table>
+    <tr>
+      <td>🔍 <a href="#overview">Overview</a></td>
+      <td>🚨 <a href="#disclaimer">Disclaimer</a></td>
+      <td>📂 <a href="#categorization">Categorization</a></td>
+      <td>⬇️ <a href="#downloads">Downloads</a></td>
+      <td>📜 <a href="#changelogs">OTA Changelogs</a></td>
+      <td>📖 <a href="#guides">Guides</a></td>
+      <td>🤝 <a href="#acknowledgments">Acknowledgments</a></td>
+    </tr>
+  </table>
+</div>
 
-## Disclaimer 🚨
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
+
+## Overview
+
+Nothing Archive is the most up-to-date Nothing OS firmware repository, offering official OTA updates, full firmware packages, and stock OTA images for Nothing and CMF by Nothing phones. All files are sourced directly from official OEM servers and [archived](https://archive.org/details/nothing-archive) for long-term preservation and easy access.
+
+### Features & Benefits
+
+- **Direct OTA Indexing**: Tracks Nothing OS OTA update links from official servers, providing access to incremental and full updates.
+- **Manual Installation**: Install firmware manually during staged rollouts or when updates fail using the built-in offline updater or via ADB sideload.
+- **Stock OTA Images**: Provides unmodified images for upgrades, downgrades, and partition flashing when full packages are unavailable.
+- **Rooting & Unrooting Support**: Provides stock boot images for Magisk, KernelSU, and Apatch, while allowing unrooting by flashing the original boot image.
+- **Device Recovery**: Provides fastboot-flashable Nothing OS firmware to resolve boot loops, recover soft-bricked devices, and restore stock ROM.
+
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
+
+## Disclaimer
 
 By using this archive, users acknowledge and accept these terms:
-- **✅ Authenticity** – All firmware files in this archive are **unaltered, unmodified, and sourced directly from the OEM**.
-- **⚠️ Flash at Your Own Risk** – Installing firmware on an **unlocked bootloader** device carries inherent risks. Follow instructions carefully to **avoid bricking your device**.
-- **📌 Compatibility** – Ensure the firmware matches your **Nothing or CMF device variant** before installation.
-- **🚫 No Warranty or Official Support** – This is a **community-driven project, unaffiliated with [Nothing](https://nothing.tech)**. Any **update failures, software bugs, or device issues** remain the OEM’s responsibility. The author and contributors **are not liable for bricked devices** due to incorrect flashing, misuse, or firmware modifications. Always download firmware **directly from this archive** to ensure integrity.
-- **🛡️ Open Source Integrity** – Redistribution is permitted **only with proper attribution**. Users are encouraged to support and share this project **to maintain its availability**. **Reselling freely available firmware is strictly prohibited!**
 
----
+- **Authenticity**: All firmware files are unaltered, unmodified, and sourced directly from the OEM.
+- **Flash at Your Own Risk**: Installing firmware on an unlocked bootloader carries inherent risks. Follow instructions carefully to avoid bricking your device.
+- **Compatibility**: Ensure the firmware matches your Nothing or CMF device variant before installation.
+- **No Warranty**: This is a community-driven project, unaffiliated with [Nothing](https://nothing.tech). The author and contributors are not liable for bricked devices due to misuse or firmware modifications.
+- **Integrity**: Redistribution is permitted only with proper attribution. Reselling freely available firmware is strictly prohibited.
 
-## Notes 📝
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
 
-- Releases for OTA images are tagged and named using the format: `<POST_OTA_VERSION>` and `<POST_OTA_VERSION>`, as shown [here](https://github.com/spike0en/nothing_archive/releases), respectively.
-- Region-specific releases are tagged using the format: `<POST_OTA_VERSION>`-`<GLO/EEA>`, applicable to certain older `Spacewar` builds that are not unified. Here, G = GLO (Global), and E = EEA (European Economic Area).
-- Nothing OS Open Beta Test releases are denoted by `OBT` wherever applicable.
-- Android Developer preview releases are tagged as `0.0.0-dev`+`<Device Codename>`.`<Incremental Date>`.
-- Unless specifically stated otherwise in the release notes, the releases published here are compatible with all regional and color variants of the device.
-- For detailed instructions on interpreting the required incremental OTA firmware, refer to [this section](#i-ota-sideloading-).
+## Notes
 
----
+- Releases for OTA images are tagged using the format `<POST_OTA_VERSION>`, as shown in the [releases](https://github.com/spike0en/nothing_archive/releases) section.
+- Region-specific releases are tagged as `<POST_OTA_VERSION>-<GLO/EEA>`, applicable to older Spacewar builds. GLO = Global; EEA = European Economic Area.
+- Nothing OS Open Beta Test releases are denoted by `OBT`.
+- Android Developer preview releases are tagged as `0.0.0-dev`+`<Device Codename>.<Incremental Date>`.
+- Unless stated otherwise, releases are compatible with all regional and color variants of the device.
 
-## Categorization 📂
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
 
-The **unmodified** stock OTA image files are archived in `.7z` format and categorized into three distinct groups based on the nature of their partitions: **Boot**, **Firmware**, and **Logical**, for the respective models as follows:
+## Categorization
+
+The unmodified stock OTA image files are archived in `.7z` format and categorized into three groups: Boot, Firmware, and Logical.
 
 <details>
-  <summary>Nothing</summary>
-
-<br>
+  <summary>Nothing Devices</summary>
 
 | Device | Boot (`-image-boot.7z`) | Firmware (`-image-firmware.7z`) | Logical (`-image-logical.7z.001-00x`) |
-|--------|-------------------------|---------------------------------|---------------------------------------|
-| **Phone (3)** | `boot`, `dtbo`, `init_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` **(Total: 8)** | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `multiimgqti`, `pvmfw`, `qupfw`, `shrm`, `soccp_dcd`, `soccp_debug`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` **(Total: 26)** | `odm`, `product`, `system`, `system_dlkm`, `system_ext`, `vendor`, `vendor_dlkm` **(Total: 7)** |
-| **Phone (3a) / Phone (3a) Pro** | `boot`, `init_boot`, `dtbo`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` **(Total: 8)** | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `pvmfw`, `qupfw`, `shrm`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` **(Total: 23)** | `system`, `system_dlkm`, `system_ext`, `product`, `vendor`, `vendor_dlkm`, `odm` **(Total: 7)** |
-| **Phone (3a) Lite** | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor` **(Total: 7)** | `apusys`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `modem`, `mcupm`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` **(Total: 20)** | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product` **(Total: 8)** |
-| **Phone (2a) / (2a) Plus** | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta` **(Total: 5)** | `apusys`, `audio_dsp`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `mcupm`, `md1img`, `mvpu_algo`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` **(Total: 22)** | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product`, `vbmeta_system`, `vbmeta_vendor` **(Total: 10)** |
-| **Phone (2)**       | `boot`, `dtbo`, `vendor_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor` **(Total: 7)** | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `multiimgqti`, `qupfw`, `qweslicstore`, `shrm`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` **(Total: 23)** | `system`, `system_ext`, `product`, `vendor`, `vendor_dlkm`, `odm` **(Total: 6)** |
-| **Phone (1)**       | `boot`, `dtbo`, `vendor_boot`, `vbmeta` **(Total: 4)** | `abl`, `aop`, `bluetooth`, `cpucp`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `qupfw`, `shrm`, `tz`, `uefisecapp`, `xbl`, `xbl_config` **(Total: 18)** | `system`, `system_ext`, `product`, `vendor`, `odm`, `vbmeta_system`, `vbmeta_vendor` **(Total: 7)** |
-
-<br>
+| :--- | :--- | :--- | :--- |
+| **Phone (3)** | `boot`, `dtbo`, `init_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` (Total: 8) | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `multiimgqti`, `pvmfw`, `qupfw`, `shrm`, `soccp_dcd`, `soccp_debug`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` (Total: 26) | `odm`, `product`, `system`, `system_dlkm`, `system_ext`, `vendor`, `vendor_dlkm` (Total: 7) |
+| **Phone (3a) / Pro** | `boot`, `init_boot`, `dtbo`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` (Total: 8) | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `pvmfw`, `qupfw`, `shrm`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` (Total: 23) | `system`, `system_dlkm`, `system_ext`, `product`, `vendor`, `vendor_dlkm`, `odm` (Total: 7) |
+| **Phone (3a) Lite** | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor` (Total: 7) | `apusys`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `modem`, `mcupm`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` (Total: 20) | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product` (Total: 8) |
+| **Phone (2a) / Plus** | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta` (Total: 5) | `apusys`, `audio_dsp`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `mcupm`, `md1img`, `mvpu_algo`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` (Total: 22) | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product`, `vbmeta_system`, `vbmeta_vendor` (Total: 10) |
+| **Phone (2)** | `boot`, `dtbo`, `vendor_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor` (Total: 7) | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `multiimgqti`, `qupfw`, `qweslicstore`, `shrm`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` (Total: 23) | `system`, `system_ext`, `product`, `vendor`, `vendor_dlkm`, `odm` (Total: 6) |
+| **Phone (1)** | `boot`, `dtbo`, `vendor_boot`, `vbmeta` (Total: 4) | `abl`, `aop`, `bluetooth`, `cpucp`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `qupfw`, `shrm`, `tz`, `uefisecapp`, `xbl`, `xbl_config` (Total: 18) | `system`, `system_ext`, `product`, `vendor`, `odm`, `vbmeta_system`, `vbmeta_vendor` (Total: 7) |
 
 </details>
 
 <details>
-  <summary>CMF by Nothing</summary>
-
-<br>
+  <summary>CMF by Nothing Devices</summary>
 
 | Device | Boot (`-image-boot.7z`) | Firmware (`-image-firmware.7z`) | Logical (`-image-logical.7z.001-00x`) |
-|--------|-------------------------|---------------------------------|---------------------------------------|
-| **Phone (1)**           | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta` **(Total: 5)** | `apusys`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `modem`, `mcupm`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` **(Total: 20)** | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product`, `vbmeta_system`, `vbmeta_vendor` **(Total: 10)** |
-| **Phone (2) Pro**       | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta` **(Total: 5)** | `apusys`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `modem`, `mcupm`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` **(Total: 20)** | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product`, `vbmeta_system`, `vbmeta_vendor` **(Total: 10)** |
-
-<br>
+| :--- | :--- | :--- | :--- |
+| **Phone (1)** | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta` (Total: 5) | `apusys`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `modem`, `mcupm`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` (Total: 20) | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product`, `vbmeta_system`, `vbmeta_vendor` (Total: 10) |
+| **Phone (2) Pro** | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta` (Total: 5) | `apusys`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `modem`, `mcupm`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` (Total: 20) | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product`, `vbmeta_system`, `vbmeta_vendor` (Total: 10) |
 
 </details>
 
----
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
 
-## Downloads 📥
+## Downloads
 
-Select your **device model** from the dropdown list below to access it's **Release Index**:
+Select your device model to access its Release Index.
 
----
-
-#### I. Nothing
+### I. Nothing
 
 <details>
   <summary>Phone (3) - Metroid</summary>
@@ -202,7 +245,7 @@ Select your **device model** from the dropdown list below to access it's **Relea
 
 <br>
 
-**Note**: Versions 2.5.3 to 2.5.5A are compatible only with the Milk, White, and Black variants of the device. Versions 2.5.6 and higher support all color variants, including Blue and the Special Edition.
+> **Note**: Versions 2.5.3 to 2.5.5A are compatible only with Milk, White, and Black variants. Versions 2.5.6 and higher support all color variants.
 
 <br>
 
@@ -283,7 +326,7 @@ Select your **device model** from the dropdown list below to access it's **Relea
 
 <br>
 
-**Note: Builds older than Nothing OS version 1.5.1 OBT-2 for Spacewar are region-specific. GLO = Global (including India) & EEA = European Economic Area**
+> **Note**: Builds older than 1.5.1 OBT-2 are region-specific. GLO = Global (including India); EEA = European Economic Area.
 
 <br>
 
@@ -336,9 +379,13 @@ Select your **device model** from the dropdown list below to access it's **Relea
 
 </details>
 
----
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
 
-#### II. CMF by Nothing
+### II. CMF by Nothing
 
 <details>
   <summary>Phone (2) Pro - Galaga</summary>
@@ -388,348 +435,208 @@ Select your **device model** from the dropdown list below to access it's **Relea
 
 </details>
 
----
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
 
-## Integrity Check ✅
+## Integrity Check
 
-You can check the downloaded OTA image file's integrity using the following commands for both Bash (Linux/macOS) and Windows environments:
+Verify the integrity of downloaded files using the following commands:
 
 ### Bash (Linux/macOS)
-
 ```bash
 sha256sum -c *-hash.sha256
 ```
 
 ### Windows
-
-```bash
+```powershell
 certutil -hashfile <filename> SHA256
 ```
-- Alternatively users can use open source utilites like [OpenHashTab](https://github.com/namazso/OpenHashTab)
+> Users can also use open-source utilities like [OpenHashTab](https://github.com/namazso/OpenHashTab).
 
-## Guides 📖
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
 
-### I. OTA Sideloading 🔄
+## Changelogs
 
-> For visual references, please refer to [these images](https://github.com/spike0en/nothing_archive/tree/main/assets/sideloading) in their respective order.
+Access detailed OTA update changelogs for each device, named after the corresponding Nothing OS build version number, below:
 
-<br>
+> **Note:**  
+Changelogs are only available for builds released on or after December 17, 2025.
 
-A. **Disclaimer**  
-  - Sideloading or manually installing official incremental OTA updates is **completely safe**, as long as you download them **directly from Spike’s Nothing Archive**.  
-  - **Do not use third-party sources**—all firmware from the Nothing Archive is sourced directly from the OEM’s official servers.  
-  - The **built-in Nothing OS offline updater tool** only accepts updates **signed by the OEM**, ensuring security.  
-  - The **updater verifies the hash** of the firmware before installation.  
+- [Nothing Phone (3)](../assets/changelogs/metroid/)
+- [Nothing Phone (3a) / (3a) Pro](../assets/changelogs/asteroids/)
+- [Nothing Phone (3a) Lite](../assets/changelogs/galaxian/)
+- [Nothing Phone (2a) / (2a) Plus](../assets/changelogs/pacman/)
+- [Nothing Phone (2)](../assets/changelogs/pong/)
+- [Nothing Phone (1)](../assets/changelogs/spacewar/)
+- [CMF Phone (1)](../assets/changelogs/tetris/)
+- [CMF Phone (2) Pro](../assets/changelogs/galaga/)
 
-<br>
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
 
-B. **Restoring Stock Partitions (For Rooted Users Only)**  
-  > **If your bootloader is locked, skip directly to Point C!**  
+## Guides
 
-1. **Check your current Nothing OS version:**  
-   - Go to `Settings > About phone > Tap the device banner`.  
-   - Note down the build number.  
+### I. OTA Sideloading
 
-2. **Fetch stock images for your current firmware build:**  
-   - Download the `-boot-image.7z` file.  
-   - Extract the archive to obtain `.img` files.  
+Visual references are available in the [assets/sideloading](https://github.com/spike0en/nothing_archive/tree/main/assets/sideloading) directory.
 
-3. **Identify the required partitions:**  
-   - **Qualcomm Devices:** `boot`, `init_boot` `vendor_boot`, `recovery`, `vbmeta`  
-   - **MediaTek Devices:** `init_boot`, `vbmeta`, `lk`
+#### A. Disclaimer
+*   Sideloading official incremental OTA updates is safe when downloaded directly from this archive.
+*   The built-in Nothing OS offline updater only accepts OEM-signed updates and verifies the hash before installation.
 
-4. **Flash stock partitions** in bootloader mode:  
-   > Only modified partitions are required to be flashed. Also skip any missing partitions based on your SoC platform. 
-   ```sh
-   fastboot flash boot boot.img
-   fastboot flash recovery recovery.img
-   fastboot flash vendor_boot vendor_boot.img
-   fastboot flash vbmeta vbmeta.img
-   fastboot flash init_boot init_boot.img
-   fastboot flash --slot=all lk lk.img
-   ```
+#### B. Restoring Stock Partitions (For Rooted Users)
+*If your bootloader is locked, skip to Section C.*
 
-5. **Reboot to system and update via System Updater:**
-   - If the update **fails**, proceed with **manual sideloading** in the next section.
+1.  **Check current version**: Go to `Settings > About phone > Device banner` and note the build number.
+2.  **Fetch stock images**: Download the `-boot-image.7z` file and extract the `.img` files.
+3.  **Identify required partitions**:
+    *   **Qualcomm**: `boot`, `init_boot`, `vendor_boot`, `recovery`, `vbmeta`
+    *   **MediaTek**: `init_boot`, `vbmeta`, `lk`
+4.  **Flash stock partitions**: (Skip any missing partitions based on your SoC platform).
 
-6. **Restoring Root (Optional):**
-   - After updating, you may re-root by **flashing a patched boot image** for the updated NOS version.
-   - **Modules will remain intact** after re-rooting.
-
-<br>
-
-C. **Proceed with Sideloading** 
-
- - **Download the Correct Update Firmware File:**  
-   - Find the correct OTA firmware file for your device from [here](#downloads-).
-
- - **How to Select the Right File?**  
-   - Navigate to the repository and select your device model.  
-   - Look for the Incremental OTA column.  
-   - **Verify your current OS Build Number**:  
-    - Go to: `Settings > System > About Phone`.  
-    - Tap the **device banner** and note the **Build Number**.
-
- - **Example:**  
-   - Suppose your **Phone (2)** has the build number: `Pong_U2.6-241016-1700` 
-   - Assuming the latest available OTA update available being: `Pong_V3.0-241226-2001`
-   - The corresponding update pathway would be: `Pong_U2.6-241016-1700 -> Pong_V3.0-241226-2001`
-   - Ensure you select the correct pathway based on your device and OS version.
-    - Refer to [this](https://github.com/spike0en/nothing_archive/blob/main/assets/sideloading/3.1_ota_sideload.jpg) for better clarity.
-
- - **Create the `ota` Folder:** 
-   - Create a folder named `ota` in your device's **internal storage**, full path being:  
-     ```
-     /sdcard/ota/
-     ```
-   - Move the downloaded `<firmware>.zip` file to this folder.
-
- - **Access the Nothing Offline OTA Updater:**  
-    - Open the **Phone app** and dial:  
-      ```
-      *#*#682#*#*
-      ```
-   - This will launch the built-in offline updater tool.  
-   - The UI may show `NothingOfflineOtaUpdate` or `NOTHING BETA OTA UPDATE` — both work.
-
- - **Apply the Update:**  
-   - The updater will automatically detect the update file.  
-   - If not detected, manually browse and import the OTA file.  
-   - Tap `Directly Apply OTA` or `Update` (based on the app UI).  
-   - Wait for the update to complete —your device will reboot automatically.
-
-- **Note:**  
-  - If the updater shows an **unknown error**, try using the **"Browse"** option instead of manually copying the file to the **"ota"** folder.
-  - **Full OTA firmware** can be sideloaded if incremental OTA fails.
-    - **Full OTA cannot be used to downgrade** — it can only update to the same or a higher build.
-    - **Unlocked bootloader users** can flash full OTA via custom recoveries (e.g., OrangeFox for Phone (2)).
-  - **Not every release has a Full OTA file** — use incrementals instead in such cases.
-
----
-
-### II. Unlocking Bootloader 🔓
-
-A. Prerequisites
-- **Backup your data** (unlocking will erase everything).
-- **Install ADB & Fastboot tools** – [Download here](https://developer.android.com/studio/releases/platform-tools).
-- **Install USB drivers** – [Google USB Drivers](https://developer.android.com/studio/run/win-usb).
-- **Enable Developer Options**:
-  - `Settings > About phone > Tap "Build number" 7 times.`
-- **Enable USB Debugging & OEM Unlocking**:
-  - `Settings > System > Developer options > Enable USB Debugging & OEM Unlocking.`
-- **Remove Screen Lock/PIN/Password and Logged-in Accounts (optional but recommended)**
-  - Removing accounts before relocking the bootloader helps prevent Google FRP (Factory Reset Protection) lock. If FRP is triggered, the device will ask for the previously linked Google account after a factory reset. If you forget the credentials or can't access the account, you may be locked out of your device. To avoid this, it's recommended to remove all Google accounts before relocking.
-
-B. Unlocking Process
-- **Connect your phone to a PC** via USB.
-- **Open a command prompt** in the platform-tools folder:
-  - Windows: `Shift + Right Click` > **Open Command Prompt/Powershell here**.
-  - Mac/Linux: Open **Terminal** and navigate to platform-tools.
-- **Verify device connection**:
-  ```sh
-  adb devices
-  ```
-  If prompted, allow USB debugging on the phone.
-
-- **Reboot to bootloader:**
-   ```sh
-   adb reboot bootloader
-   ```
-
-- **Verify fastboot connection:**
-   ```sh
-   fastboot devices
-   ```
-   If no device is detected, reinstall USB drivers.
-
-- **Unlock the bootloader:**
-   ```sh
-   fastboot flashing unlock
-   ```
-
-- **Confirm on your phone:**
-  - Use **Volume Keys** to navigate and **Power Button** to confirm.
-  - Your device will **erase all data** and reboot.
-
-C. Post-Unlock
-  - Set up your phone again.
-  - **Verify bootloader status**:
     ```sh
-    Settings > System > Developer options > OEM Unlocking should be enabled.
+    fastboot flash boot boot.img
+    fastboot flash recovery recovery.img
+    fastboot flash vendor_boot vendor_boot.img
+    fastboot flash vbmeta vbmeta.img
+    fastboot flash init_boot init_boot.img
+    fastboot flash --slot=all lk lk.img
     ```
+    
+5.  **Update**: Reboot to system and update via System Updater. If it fails, proceed with manual sideloading.
+6.  **Root (Optional)**: After updating, you may re-root by flashing a patched boot image. Modules will remain intact.
 
-  - Bootloader is now unlocked and your device will show an Orange State warning at boot—this is normal.
+#### C. Proceed with Sideloading
+1.  **Download**: Find the correct OTA firmware for your device.
+2.  **Selection**: Verify your current build number. Example:
+    *   Current: `Pong_U2.6-241016-1700`
+    *   Latest: `Pong_V3.0-241226-2001`
+    *   Pathway: `Pong_U2.6-241016-1700 -> Pong_V3.0-241226-2001`
+3.  **Folder Creation**: Create a folder named `ota` in internal storage (`/sdcard/ota/`) and move the zip file there.
+4.  **Access Updater**: Open the Phone app and dial `*#*#682#*#*`.
+5.  **Apply Update**: The tool should detect the file. If not, browse for it manually. Tap Update and wait for the automatic reboot.
 
----
+> **Note**: If "unknown error" occurs, use the "Browse" option. Full OTA can be used if incremental fails (upgrade only as downgrading is not possible with it).
 
-### III. Backing Up Essential Partitions After Unlocking Bootloader 💾
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
 
-A. Why Backup?
-- After unlocking the bootloader, it is crucial to back up essential partitions such as `persist`, `modemst1`, `modemst2`, `fsg`, etc., **before** flashing custom ROMs or kernels.
-- These partitions contain important data, including IMEI, network settings, and fingerprint sensor calibration.
-- If lost or corrupted, your device may experience **loss of cellular connectivity, fingerprint issues, or even become bricked**.
-- Creating backups ensures you can **restore your device** if something goes wrong.
+### II. Unlocking Bootloader
 
-B. Requirements
-- **Unlocked bootloader**
-- **Root access** (via Magisk/KSU/Apatch)
-- **Termux app** (install via F-Droid or Play Store)
-- **Check Partition Paths:**
-  - **Qcom devices:** `/dev/block/bootdevice/by-name/`
-  - **MTK devices:** `/dev/block/by-name/`
+#### A. Prerequisites
+*   Backup your data (this process erases everything).
+*   Install [Platform Tools](https://developer.android.com/studio/releases/platform-tools) and [USB Drivers](https://developer.android.com/studio/run/win-usb).
+*   Enable **USB Debugging** and **OEM Unlocking** in Developer Options.
+*   Recommended: Remove Google accounts to avoid FRP lock.
 
-C. Backup Instructions
-- **For Qualcomm (QCom) Devices:**
-  - Open **Termux** and grant root access using:
-    ```sh
-    su
-    ```
+#### B. Process
+1.  Connect phone to PC.
+2.  Reboot to bootloader: `adb reboot bootloader`.
+3.  Verify connection: `fastboot devices`.
+4.  Unlock: `fastboot flashing unlock`.
+5.  Confirm on phone using Volume Keys and Power Button.
 
-  - Copy and paste the following command in one go:
-    ```sh
-    mkdir -p /sdcard/partitions_backup
-    ls -1 /dev/block/bootdevice/by-name | grep -v userdata | grep -v super | \
-    while read f; do dd if=/dev/block/bootdevice/by-name/$f of=/sdcard/partitions_backup/${f}.img; done
-    ```
-    This will create image files of **all partitions except `super` & `userdata`** in the **Internal Storage** inside a folder named **"partitions_backup"**.
+#### C. Post-Unlock
+*   Your device will show an "Orange State" warning at boot; this is normal.
+*   Verify status in Developer Options.
 
-  - **[Optional]** If the above command fails, try this alternative:
-    ```sh
-    mkdir -p /sdcard/partitions_backup
-    for partition in /dev/block/bootdevice/by-name/*; do \
-    [[ "$(basename "$partition")" != "userdata" && "$(basename "$partition")" != "super" ]] && \
-    cp -f "$partition" /sdcard/partitions_backup/; done
-    ```
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
 
-- **For MediaTek (MTK) Devices:**
-  - Open **Termux** and grant root access using:
-    ```sh
-    su
-    ```
+### III. Backing Up Essential Partitions
 
-  - Copy and paste all the following commands in one go:
-    ```sh
-    mkdir -p /sdcard/partitions_backup/
-    cd /sdcard/partitions_backup
-    dd if=/dev/block/by-name/nvram of=/sdcard/partitions_backup/nvram.img
-    dd if=/dev/block/by-name/nvdata of=/sdcard/partitions_backup/nvdata.img
-    dd if=/dev/block/by-name/persist of=/sdcard/partitions_backup/persist.img
-    dd if=/dev/block/by-name/nvcfg of=/sdcard/partitions_backup/nvcfg.img
-    dd if=/dev/block/by-name/protect1 of=/sdcard/partitions_backup/protect1.img
-    dd if=/dev/block/by-name/protect2 of=/sdcard/partitions_backup/protect2.img
-    ```
+#### A. Why Backup?
+Critical partitions (IMEI, network settings, fingerprint calibration) should be backed up before flashing custom ROMs to avoid permanent device issues.
 
-D. Storing Backup
-  - Move the **"partitions_backup"** folder to your **PC or secure storage**.
-  - **Do NOT share these backups!** They contain unique device data like IMEI.
+#### B. Requirements
+*   Unlocked bootloader and Root access.
+*   [Termux](https://f-droid.org/packages/com.termux/) installed.
 
-E. Restoring Partitions
- - **MTK Devices:**
-   ```sh
-   fastboot flash nvram nvram.img
-   fastboot flash nvdata nvdata.img
-   fastboot flash nvcfg nvcfg.img
-   fastboot flash persist persist.img
-   ```
-   Reboot to **recovery mode** → Perform **factory reset** → Reboot to **system**.
+#### C. Instructions (Qualcomm)
+```sh
+su
+mkdir -p /sdcard/partitions_backup
+ls -1 /dev/block/bootdevice/by-name | grep -v userdata | grep -v super | \
+while read f; do dd if=/dev/block/bootdevice/by-name/$f of=/sdcard/partitions_backup/${f}.img; done
+```
 
- - **QCom Devices:**
-   ```sh
-   fastboot flash persist persist.img
-   fastboot flash modemst1 modemst1.img
-   fastboot flash modemst2 modemst2.img
-   ```
-   **Factory reset is not mandatory in this case.**
+#### D. Instructions (MediaTek)
+```sh
+su
+mkdir -p /sdcard/partitions_backup/
+cd /sdcard/partitions_backup
+dd if=/dev/block/by-name/nvram of=/sdcard/partitions_backup/nvram.img
+dd if=/dev/block/by-name/nvdata of=/sdcard/partitions_backup/nvdata.img
+dd if=/dev/block/by-name/persist of=/sdcard/partitions_backup/persist.img
+dd if=/dev/block/by-name/nvcfg of=/sdcard/partitions_backup/nvcfg.img
+dd if=/dev/block/by-name/protect1 of=/sdcard/partitions_backup/protect1.img
+dd if=/dev/block/by-name/protect2 of=/sdcard/partitions_backup/protect2.img
+```
 
----
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
 
-### IV. Flashing the Stock ROM Using Fastboot ⚡
+### IV. Flashing Stock ROM Using Fastboot
 
-> **Visual Guides** : [The Nothing Lab](https://www.youtube.com/watch?v=l0P9gosl64s) | [QZX Tech](https://www.youtube.com/watch?v=66H2MVElyAY)
+Refer to visual guides from [The Nothing Lab](https://www.youtube.com/watch?v=l0P9gosl64s) or [QZX Tech](https://www.youtube.com/watch?v=66H2MVElyAY).
 
-A. **Preparation of Flashing Folder:**
-  - Download the following files for your device model and firmware build and place them in a dedicated folder:
-    - image-boot.7z
-    - image-firmware.7z
-    - image-logical.7z.001-00x
+1.  **Preparation**: Download `image-boot.7z`, `image-firmware.7z`, and `image-logical.7z`. Extract them using 7-Zip.
+2.  **Setup**: Move all image files and the [Fastboot Flashing Script](https://github.com/spike0en/nothing_fastboot_flasher) into one folder.
+3.  **Execution**: Run the script and follow prompts. 
+    *   Wipe data: (Y/N)
+    *   Flash both slots: (Y/N)
+    *   Disable Android Verified Boot: (N)
+4.  **Reboot**: Once verified, reboot to system.
 
-  - Install 7-Zip from [here](https://www.7-zip.org/).
-  - Extract files:
-    - Windows: Right-click → Extract to "*\"
-    - Bash users:
-      `7za -y x "*.7z*"`
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
 
-B. **Proceeding with Flashing:**
-  - Install compatible USB drivers from [here](https://developer.android.com/studio/run/win-usb).
-  - Ensure that `Android Bootloader Interface` is visible in **Device Manager** when the device is in **bootloader mode**.
-  - If the extraction script was used earlier, execute it directly. Otherwise:
-    - Move all extracted image files into a single folder along with the [Fastboot Flashing Script](https://github.com/spike0en/nothing_fastboot_flasher/blob/main/README.md#-download).
-    - Always download the latest script to ensure hotfixes are included.
-  - Run the script while connected to the internet (to fetch latest `platform-tools`) and follow the prompts:
-    - Answer the confirmation questionnaire.
-    - Choose whether to wipe data: (Y/N)
-    - Choose whether to flash to both slots: (Y/N)
-    - Disable Android Verified Boot: (N)
-  - Verify that all partitions have been successfully flashed.
-    - If successful, choose to reboot to system: (Y)
-    - If errors occur, reboot to bootloader and reflash after addressing the failure.
+### V. Relocking Bootloader
 
----
+1.  **Prerequisites**: Ensure you have clean-flashed the stock ROM first. Relocking with modified partitions may brick the device.
+2.  **Reboot**: `adb reboot bootloader`.
+3.  **Lock**: `fastboot flashing lock`.
+4.  **Confirm**: Confirm on phone. Data will be erased.
 
-### V. Relocking Bootloader 🔒
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
 
-A. **Prerequisites**
-  - Remove **Screen Lock/PIN/Password and Logged-in Accounts** (optional but recommended).
-  - Clean-flash the **stock ROM** following [Flashing Guide](#iv-flashing-the-stock-rom-using-fastboot-). **Relocking the bootloader with modified partitions without flashing stock firmware may brick the device!**
-  - Backup all data (relocking will **erase everything**).
-  - Install **ADB & Fastboot tools** and USB drivers if not already set up.
+## Acknowledgments
 
-B. **Relocking Process**
-  - If you are in the system, reboot to bootloader:
-    ```sh
-    adb reboot bootloader
-    ```
+Special thanks to:
+*   **[luk1337](https://github.com/luk1337/oplus_archive)**: For the AOSP OTA extraction tool.
+*   **[arter97](https://github.com/arter97/nothing_archive)**: For adapting the archive for Phone (2).
+*   **[PhatWalrus](https://github.com/PHATWalrus)** & **[Daniel Springer](https://github.com/Daniel210191)**: For self-hosted runner instances.
+*   **[LukeSkyD](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/)**: For early build references.
+*   **[XelXen](../assets/branding)**: For project branding and design.
 
-  - Verify fastboot connection:
-    ```sh
-    fastboot devices
-    ```
-
-  - Initiate bootloader relocking:
-    ```sh
-    fastboot flashing lock
-    ```
-
-  - Confirm on your phone:
-    - Use **Volume Keys** to navigate and **Power Button** to confirm.
-    - The device will be formatted and reboot with a locked bootloader.
-
-C. **Post-Relock**
-  - Set up your device again.
-  - The bootloader is now locked!
-
----
-
-## Acknowledgments 🤝
-
-Special thanks to these contributors for their invaluable work and support:
-- **[luk1337](https://github.com/luk1337/oplus_archive)** – Pioneered the use of AOSP’s OTA extraction tool, enabling the extraction of incremental OTA updates.
-- **[arter97](https://github.com/arter97/nothing_archive)** – Adapted the above project for **Nothing Phone (2)**.
-- **[PhatWalrus](https://github.com/PHATWalrus)** & **[Daniel Springer](https://github.com/Daniel210191)** - Provided local runner instances for actions.
-- **[LukeSkyD](https://github.com/LukeSkyD)** – Maintains the [Nothing Phone (1) Repo](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/), which served as a key reference for earlier builds.
-- **[XelXen](https://github.com/XelXen)** - Designed the logo and banner for the project’s branding.
-- Individuals who contributed to the localization efforts, helping to make this project accessible to a broader audience.
-
----
-
-## Support the Project ⭐
-
-If this archive has been helpful, please consider **[starring the repository](https://github.com/spike0en/nothing_archive/stargazers)**. Your support helps keep the project discoverable and active!
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=spike0en/nothing_archive&type=Date&theme=dark" />
-  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=spike0en/nothing_archive&type=Date" />
-  <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=spike0en/nothing_archive&type=Date" />
-</picture>
-
----
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
