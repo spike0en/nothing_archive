@@ -498,45 +498,99 @@ Changelogs are only available for builds released on or after December 17, 2025.
 
 ### I. OTA Sideloading
 
-Visual references are available in the [assets/sideloading](https://github.com/spike0en/nothing_archive/tree/main/assets/sideloading) directory.
+> For visual references, please refer to [these images](https://github.com/spike0en/nothing_archive/tree/main/assets/sideloading) in their respective order.
 
-#### A. Disclaimer
-*   Sideloading official incremental OTA updates is safe when downloaded directly from this archive.
-*   The built-in Nothing OS offline updater only accepts OEM-signed updates and verifies the hash before installation.
+<br>
 
-#### B. Restoring Stock Partitions (For Rooted Users)
-*If your bootloader is locked, skip to Section C.*
+A. **Disclaimer**  
+  - Sideloading or manually installing official incremental OTA updates is **completely safe**, as long as you download them **directly from Spike’s Nothing Archive**.  
+  - **Do not use third-party sources**—all firmware from the Nothing Archive is sourced directly from the OEM’s official servers.  
+  - The **built-in Nothing OS offline updater tool** only accepts updates **signed by the OEM**, ensuring security.  
+  - The **updater verifies the hash** of the firmware before installation.  
 
-1.  **Check current version**: Go to `Settings > About phone > Device banner` and note the build number.
-2.  **Fetch stock images**: Download the `-boot-image.7z` file and extract the `.img` files.
-3.  **Identify required partitions**:
-    *   **Qualcomm**: `boot`, `init_boot`, `vendor_boot`, `recovery`, `vbmeta`
-    *   **MediaTek**: `init_boot`, `vbmeta`, `lk`
-4.  **Flash stock partitions**: (Skip any missing partitions based on your SoC platform).
+<br>
 
-    ```sh
-    fastboot flash boot boot.img
-    fastboot flash recovery recovery.img
-    fastboot flash vendor_boot vendor_boot.img
-    fastboot flash vbmeta vbmeta.img
-    fastboot flash init_boot init_boot.img
-    fastboot flash --slot=all lk lk.img
-    ```
-    
-5.  **Update**: Reboot to system and update via System Updater. If it fails, proceed with manual sideloading.
-6.  **Root (Optional)**: After updating, you may re-root by flashing a patched boot image. Modules will remain intact.
+B. **Restoring Stock Partitions (For Rooted Users Only)**  
+  > **If your bootloader is locked, skip directly to Point C!**  
 
-#### C. Proceed with Sideloading
-1.  **Download**: Find the correct OTA firmware for your device.
-2.  **Selection**: Verify your current build number. Example:
-    *   Current: `Pong_U2.6-241016-1700`
-    *   Latest: `Pong_V3.0-241226-2001`
-    *   Pathway: `Pong_U2.6-241016-1700 -> Pong_V3.0-241226-2001`
-3.  **Folder Creation**: Create a folder named `ota` in internal storage (`/sdcard/ota/`) and move the zip file there.
-4.  **Access Updater**: Open the Phone app and dial `*#*#682#*#*`.
-5.  **Apply Update**: The tool should detect the file. If not, browse for it manually. Tap Update and wait for the automatic reboot.
+1. **Check your current Nothing OS version:**  
+   - Go to `Settings > About phone > Tap the device banner`.  
+   - Note down the build number.  
 
-> **Note**: If "unknown error" occurs, use the "Browse" option. Full OTA can be used if incremental fails (upgrade only as downgrading is not possible with it).
+2. **Fetch stock images for your current firmware build:**  
+   - Download the `-boot-image.7z` file.  
+   - Extract the archive to obtain `.img` files.  
+
+3. **Identify the required partitions:**  
+   - **Qualcomm Devices:** `boot`, `init_boot` `vendor_boot`, `recovery`, `vbmeta`  
+   - **MediaTek Devices:** `init_boot`, `vbmeta`, `lk`
+
+4. **Flash stock partitions** in bootloader mode:  
+   > Only modified partitions are required to be flashed. Also skip any missing partitions based on your SoC platform. 
+   ```sh
+   fastboot flash boot boot.img
+   fastboot flash recovery recovery.img
+   fastboot flash vendor_boot vendor_boot.img
+   fastboot flash vbmeta vbmeta.img
+   fastboot flash init_boot init_boot.img
+   fastboot flash --slot=all lk lk.img
+   ```
+
+5. **Reboot to system and update via System Updater:**
+   - If the update **fails**, proceed with **manual sideloading** in the next section.
+
+6. **Restoring Root (Optional):**
+   - After updating, you may re-root by **flashing a patched boot image** for the updated NOS version.
+   - **Modules will remain intact** after re-rooting.
+
+<br>
+
+C. **Proceed with Sideloading** 
+
+ - **Download the Correct Update Firmware File:**  
+   - Find the correct OTA firmware file for your device from [here](#downloads-).
+
+ - **How to Select the Right File?**  
+   - Navigate to the repository and select your device model.  
+   - Look for the Incremental OTA column.  
+   - **Verify your current OS Build Number**:  
+    - Go to: `Settings > System > About Phone`.  
+    - Tap the **device banner** and note the **Build Number**.
+
+ - **Example:**  
+   - Suppose your **Phone (2)** has the build number: `Pong_U2.6-241016-1700` 
+   - Assuming the latest available OTA update available being: `Pong_V3.0-241226-2001`
+   - The corresponding update pathway would be: `Pong_U2.6-241016-1700 -> Pong_V3.0-241226-2001`
+   - Ensure you select the correct pathway based on your device and OS version.
+    - Refer to [this](https://github.com/spike0en/nothing_archive/blob/main/assets/sideloading/3.1_ota_sideload.jpg) for better clarity.
+
+ - **Create the `ota` Folder:** 
+   - Create a folder named `ota` in your device's **internal storage**, full path being:  
+     ```
+     /sdcard/ota/
+     ```
+   - Move the downloaded `<firmware>.zip` file to this folder.
+
+ - **Access the Nothing Offline OTA Updater:**  
+    - Open the **Phone app** and dial:  
+      ```
+      *#*#682#*#*
+      ```
+   - This will launch the built-in offline updater tool.  
+   - The UI may show `NothingOfflineOtaUpdate` or `NOTHING BETA OTA UPDATE` — both work.
+
+ - **Apply the Update:**  
+   - The updater will automatically detect the update file.  
+   - If not detected, manually browse and import the OTA file.  
+   - Tap `Directly Apply OTA` or `Update` (based on the app UI).  
+   - Wait for the update to complete —your device will reboot automatically.
+
+- **Note:**  
+  - If the updater shows an **unknown error**, try using the **"Browse"** option instead of manually copying the file to the **"ota"** folder.
+  - **Full OTA firmware** can be sideloaded if incremental OTA fails.
+    - **Full OTA cannot be used to downgrade** — it can only update to the same or a higher build.
+    - **Unlocked bootloader users** can flash full OTA via custom recoveries (e.g., OrangeFox for Phone (2)).
+  - **Not every release has a Full OTA file** — use incrementals instead in such cases.
 
 <div align="center">
   <br>
@@ -546,58 +600,56 @@ Visual references are available in the [assets/sideloading](https://github.com/s
 
 ### II. Unlocking Bootloader
 
-#### A. Prerequisites
-*   Backup your data (this process erases everything).
-*   Install [Platform Tools](https://developer.android.com/studio/releases/platform-tools) and [USB Drivers](https://developer.android.com/studio/run/win-usb).
-*   Enable **USB Debugging** and **OEM Unlocking** in Developer Options.
-*   Recommended: Remove Google accounts to avoid FRP lock.
+A. Prerequisites
+- **Backup your data** (unlocking will erase everything).
+- **Install ADB & Fastboot tools** – [Download here](https://developer.android.com/studio/releases/platform-tools).
+- **Install USB drivers** – [Google USB Drivers](https://developer.android.com/studio/run/win-usb).
+- **Enable Developer Options**:
+  - `Settings > About phone > Tap "Build number" 7 times.`
+- **Enable USB Debugging & OEM Unlocking**:
+  - `Settings > System > Developer options > Enable USB Debugging & OEM Unlocking.`
+- **Remove Screen Lock/PIN/Password and Logged-in Accounts (optional but recommended)**
+  - Removing accounts before relocking the bootloader helps prevent Google FRP (Factory Reset Protection) lock. If FRP is triggered, the device will ask for the previously linked Google account after a factory reset. If you forget the credentials or can't access the account, you may be locked out of your device. To avoid this, it's recommended to remove all Google accounts before relocking.
 
-#### B. Process
-1.  Connect phone to PC.
-2.  Reboot to bootloader: `adb reboot bootloader`.
-3.  Verify connection: `fastboot devices`.
-4.  Unlock: `fastboot flashing unlock`.
-5.  Confirm on phone using Volume Keys and Power Button.
+B. Unlocking Process
+- **Connect your phone to a PC** via USB.
+- **Open a command prompt** in the platform-tools folder:
+  - Windows: `Shift + Right Click` > **Open Command Prompt/Powershell here**.
+  - Mac/Linux: Open **Terminal** and navigate to platform-tools.
+- **Verify device connection**:
+  ```sh
+  adb devices
+  ```
+  If prompted, allow USB debugging on the phone.
 
-#### C. Post-Unlock
-*   Your device will show an "Orange State" warning at boot; this is normal.
-*   Verify status in Developer Options.
+- **Reboot to bootloader:**
+   ```sh
+   adb reboot bootloader
+   ```
 
-<div align="center">
-  <br>
-  <span style="font-size: 30px;">••••••••••••••••••••••</span>
-  <br>
-</div>
+- **Verify fastboot connection:**
+   ```sh
+   fastboot devices
+   ```
+   If no device is detected, reinstall USB drivers.
 
-### III. Backing Up Essential Partitions
+- **Unlock the bootloader:**
+   ```sh
+   fastboot flashing unlock
+   ```
 
-#### A. Why Backup?
-Critical partitions (IMEI, network settings, fingerprint calibration) should be backed up before flashing custom ROMs to avoid permanent device issues.
+- **Confirm on your phone:**
+  - Use **Volume Keys** to navigate and **Power Button** to confirm.
+  - Your device will **erase all data** and reboot.
 
-#### B. Requirements
-*   Unlocked bootloader and Root access.
-*   [Termux](https://f-droid.org/packages/com.termux/) installed.
+C. Post-Unlock
+  - Set up your phone again.
+  - **Verify bootloader status**:
+    ```sh
+    Settings > System > Developer options > OEM Unlocking should be enabled.
+    ```
 
-#### C. Instructions (Qualcomm)
-```sh
-su
-mkdir -p /sdcard/partitions_backup
-ls -1 /dev/block/bootdevice/by-name | grep -v userdata | grep -v super | \
-while read f; do dd if=/dev/block/bootdevice/by-name/$f of=/sdcard/partitions_backup/${f}.img; done
-```
-
-#### D. Instructions (MediaTek)
-```sh
-su
-mkdir -p /sdcard/partitions_backup/
-cd /sdcard/partitions_backup
-dd if=/dev/block/by-name/nvram of=/sdcard/partitions_backup/nvram.img
-dd if=/dev/block/by-name/nvdata of=/sdcard/partitions_backup/nvdata.img
-dd if=/dev/block/by-name/persist of=/sdcard/partitions_backup/persist.img
-dd if=/dev/block/by-name/nvcfg of=/sdcard/partitions_backup/nvcfg.img
-dd if=/dev/block/by-name/protect1 of=/sdcard/partitions_backup/protect1.img
-dd if=/dev/block/by-name/protect2 of=/sdcard/partitions_backup/protect2.img
-```
+  - Bootloader is now unlocked and your device will show an Orange State warning at boot—this is normal.
 
 <div align="center">
   <br>
@@ -605,17 +657,121 @@ dd if=/dev/block/by-name/protect2 of=/sdcard/partitions_backup/protect2.img
   <br>
 </div>
 
-### IV. Flashing Stock ROM Using Fastboot
+### III. Backing Up Essential Partitions After Unlocking Bootloader
 
-Refer to visual guides from [The Nothing Lab](https://www.youtube.com/watch?v=l0P9gosl64s) or [QZX Tech](https://www.youtube.com/watch?v=66H2MVElyAY).
+A. Why Backup?
+- After unlocking the bootloader, it is crucial to back up essential partitions such as `persist`, `modemst1`, `modemst2`, `fsg`, etc., **before** flashing custom ROMs or kernels.
+- These partitions contain important data, including IMEI, network settings, and fingerprint sensor calibration.
+- If lost or corrupted, your device may experience **loss of cellular connectivity, fingerprint issues, or even become bricked**.
+- Creating backups ensures you can **restore your device** if something goes wrong.
 
-1.  **Preparation**: Download `image-boot.7z`, `image-firmware.7z`, and `image-logical.7z`. Extract them using 7-Zip.
-2.  **Setup**: Move all image files and the [Fastboot Flashing Script](https://github.com/spike0en/nothing_fastboot_flasher) into one folder.
-3.  **Execution**: Run the script and follow prompts. 
-    *   Wipe data: (Y/N)
-    *   Flash both slots: (Y/N)
-    *   Disable Android Verified Boot: (N)
-4.  **Reboot**: Once verified, reboot to system.
+B. Requirements
+- **Unlocked bootloader**
+- **Root access** (via Magisk/KSU/Apatch)
+- **Termux app** (install via F-Droid or Play Store)
+- **Check Partition Paths:**
+  - **Qcom devices:** `/dev/block/bootdevice/by-name/`
+  - **MTK devices:** `/dev/block/by-name/`
+
+C. Backup Instructions
+- **For Qualcomm (QCom) Devices:**
+  - Open **Termux** and grant root access using:
+    ```sh
+    su
+    ```
+
+  - Copy and paste the following command in one go:
+    ```sh
+    mkdir -p /sdcard/partitions_backup
+    ls -1 /dev/block/bootdevice/by-name | grep -v userdata | grep -v super | \
+    while read f; do dd if=/dev/block/bootdevice/by-name/$f of=/sdcard/partitions_backup/${f}.img; done
+    ```
+    This will create image files of **all partitions except `super` & `userdata`** in the **Internal Storage** inside a folder named **"partitions_backup"**.
+
+  - **[Optional]** If the above command fails, try this alternative:
+    ```sh
+    mkdir -p /sdcard/partitions_backup
+    for partition in /dev/block/bootdevice/by-name/*; do \
+    [[ "$(basename "$partition")" != "userdata" && "$(basename "$partition")" != "super" ]] && \
+    cp -f "$partition" /sdcard/partitions_backup/; done
+    ```
+
+- **For MediaTek (MTK) Devices:**
+  - Open **Termux** and grant root access using:
+    ```sh
+    su
+    ```
+
+  - Copy and paste all the following commands in one go:
+    ```sh
+    mkdir -p /sdcard/partitions_backup/
+    cd /sdcard/partitions_backup
+    dd if=/dev/block/by-name/nvram of=/sdcard/partitions_backup/nvram.img
+    dd if=/dev/block/by-name/nvdata of=/sdcard/partitions_backup/nvdata.img
+    dd if=/dev/block/by-name/persist of=/sdcard/partitions_backup/persist.img
+    dd if=/dev/block/by-name/nvcfg of=/sdcard/partitions_backup/nvcfg.img
+    dd if=/dev/block/by-name/protect1 of=/sdcard/partitions_backup/protect1.img
+    dd if=/dev/block/by-name/protect2 of=/sdcard/partitions_backup/protect2.img
+    ```
+
+D. Storing Backup
+  - Move the **"partitions_backup"** folder to your **PC or secure storage**.
+  - **Do NOT share these backups!** They contain unique device data like IMEI.
+
+E. Restoring Partitions
+ - **MTK Devices:**
+   ```sh
+   fastboot flash nvram nvram.img
+   fastboot flash nvdata nvdata.img
+   fastboot flash nvcfg nvcfg.img
+   fastboot flash persist persist.img
+   ```
+   Reboot to **recovery mode** → Perform **factory reset** → Reboot to **system**.
+
+ - **QCom Devices:**
+   ```sh
+   fastboot flash persist persist.img
+   fastboot flash modemst1 modemst1.img
+   fastboot flash modemst2 modemst2.img
+   ```
+   **Factory reset is not mandatory in this case.**
+
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
+
+### IV. Flashing the Stock ROM Using Fastboot
+
+> **Visual Guides** : [The Nothing Lab](https://www.youtube.com/watch?v=l0P9gosl64s) | [QZX Tech](https://www.youtube.com/watch?v=66H2MVElyAY)
+
+A. **Preparation of Flashing Folder:**
+  - Download the following files for your device model and firmware build and place them in a dedicated folder:
+    - image-boot.7z
+    - image-firmware.7z
+    - image-logical.7z.001-00x
+
+  - Install 7-Zip from [here](https://www.7-zip.org/).
+  - Extract files:
+    - Windows: Right-click → Extract to "*\"
+    - Bash users:
+      `7za -y x "*.7z*"`
+
+B. **Proceeding with Flashing:**
+  - Install compatible USB drivers from [here](https://developer.android.com/studio/run/win-usb).
+  - Ensure that `Android Bootloader Interface` is visible in **Device Manager** when the device is in **bootloader mode**.
+  - If the extraction script was used earlier, execute it directly. Otherwise:
+    - Move all extracted image files into a single folder along with the [Fastboot Flashing Script](https://github.com/spike0en/nothing_fastboot_flasher/blob/main/README.md#-download).
+    - Always download the latest script to ensure hotfixes are included.
+  - Run the script while connected to the internet (to fetch latest `platform-tools`) and follow the prompts:
+    - Answer the confirmation questionnaire.
+    - Choose whether to wipe data: (Y/N)
+    - Choose whether to flash to both slots: (Y/N)
+    - Disable Android Verified Boot: (N)
+  - Verify that all partitions have been successfully flashed.
+    - If successful, choose to reboot to system: (Y)
+    - If errors occur, reboot to bootloader and reflash after addressing the failure.
 
 <div align="center">
   <br>
@@ -625,10 +781,35 @@ Refer to visual guides from [The Nothing Lab](https://www.youtube.com/watch?v=l0
 
 ### V. Relocking Bootloader
 
-1.  **Prerequisites**: Ensure you have clean-flashed the stock ROM first. Relocking with modified partitions may brick the device.
-2.  **Reboot**: `adb reboot bootloader`.
-3.  **Lock**: `fastboot flashing lock`.
-4.  **Confirm**: Confirm on phone. Data will be erased.
+A. **Prerequisites**
+  - Remove **Screen Lock/PIN/Password and Logged-in Accounts** (optional but recommended).
+  - Clean-flash the **stock ROM** following [Flashing Guide](#iv-flashing-the-stock-rom-using-fastboot-). **Relocking the bootloader with modified partitions without flashing stock firmware may brick the device!**
+  - Backup all data (relocking will **erase everything**).
+  - Install **ADB & Fastboot tools** and USB drivers if not already set up.
+
+B. **Relocking Process**
+  - If you are in the system, reboot to bootloader:
+    ```sh
+    adb reboot bootloader
+    ```
+
+  - Verify fastboot connection:
+    ```sh
+    fastboot devices
+    ```
+
+  - Initiate bootloader relocking:
+    ```sh
+    fastboot flashing lock
+    ```
+
+  - Confirm on your phone:
+    - Use **Volume Keys** to navigate and **Power Button** to confirm.
+    - The device will be formatted and reboot with a locked bootloader.
+
+C. **Post-Relock**
+  - Set up your device again.
+  - The bootloader is now locked!
 
 <div align="center">
   <br>
