@@ -498,20 +498,23 @@ Changelogs are only available for builds released on or after December 17, 2025.
 
 ### I. OTA Sideloading
 
-> For visual references, please refer to [these images](https://github.com/spike0en/nothing_archive/tree/main/assets/sideloading) in their respective order.
+> [!NOTE]
+> - Bootloader unlocking is **not mandatory** to sideload incremental OTA updates. Skip Step A unless you are a rooted user.
+> - Sideloading official incremental or full OTA updates is safe as long as they are downloaded directly from this archive.
+> - Do not use third-party sources. All firmware in the Nothing Archive is sourced directly from Nothing’s official OEM servers.  
+>   This can be verified by inspecting the download URL(s) in the incremental OTA section, which point to official server and not third-party file hosts.
+> - The built-in Nothing OS offline updater only accepts OEM-signed update packages.
+> - The updater verifies the firmware hash before installation and will fail if an incorrect or mismatched OTA zip is used.
+> - The same verification applies to full OTA packages; they will not install unless their integrity is intact.
+> - Because of these checks, it is not possible to brick your device by sideloading an official OTA zip on a locked bootloader.
+> - For Open Beta Test updates, sideload them via `Nothing Beta Updater Hub` (name might change in future) provided by the OEM if the dialer method does not work
+>   You can launch the interface from Settings. This happenes when you have installed the OEM's beta updater app which overrides the stock inbuilt version.
+> - For visual references, see the images [here](../assets/sideloading) in the listed order.
 
 <br>
 
-A. **Disclaimer**  
-  - Sideloading or manually installing official incremental OTA updates is **completely safe**, as long as you download them **directly from Spike’s Nothing Archive**.  
-  - **Do not use third-party sources**—all firmware from the Nothing Archive is sourced directly from the OEM’s official servers.  
-  - The **built-in Nothing OS offline updater tool** only accepts updates **signed by the OEM**, ensuring security.  
-  - The **updater verifies the hash** of the firmware before installation.  
-
-<br>
-
-B. **Restoring Stock Partitions (For Rooted Users Only)**  
-  > **If your bootloader is locked, skip directly to Point C!**  
+A. **Restoring Stock Partitions (For Rooted Users Only)**  
+  > **If your bootloader is locked, skip directly to Point B!**  
 
 1. **Check your current Nothing OS version:**  
    - Go to `Settings > About phone > Tap the device banner`.  
@@ -545,7 +548,7 @@ B. **Restoring Stock Partitions (For Rooted Users Only)**
 
 <br>
 
-C. **Proceed with Sideloading** 
+B. **Proceed with Sideloading** 
 
  - **Download the Correct Update Firmware File:**  
    - Find the correct OTA firmware file for your device from [here](#downloads-).
@@ -599,6 +602,13 @@ C. **Proceed with Sideloading**
 </div>
 
 ### II. Unlocking Bootloader
+
+> [!IMPORTANT]
+> - Unlocking the bootloader voids the OEM warranty. However, you can reflash the stock ROM and relock the bootloader to restore it.
+> - Regardless of other factors, you will lose Widevine L1/DRM certification, which will downgrade to L3.  
+>   This cannot be fixed unless the bootloader is locked again.
+> - You will lose [device integrity](https://developer.android.com/google/play/integrity/overview), which may cause apps relying on this to stop working unless fixed later with root access.  
+>   [This guide](https://github.com/yashaswee-exe/AndroidGuides/wiki/Fix-integrity-and-root-detection) may be helpful for resolving this issue. 
 
 A. Prerequisites
 - **Backup your data** (unlocking will erase everything).
@@ -659,13 +669,13 @@ C. Post-Unlock
 
 ### III. Backing Up Essential Partitions After Unlocking Bootloader
 
-A. Why Backup?
-- After unlocking the bootloader, it is crucial to back up essential partitions such as `persist`, `modemst1`, `modemst2`, `fsg`, etc., **before** flashing custom ROMs or kernels.
-- These partitions contain important data, including IMEI, network settings, and fingerprint sensor calibration.
-- If lost or corrupted, your device may experience **loss of cellular connectivity, fingerprint issues, or even become bricked**.
-- Creating backups ensures you can **restore your device** if something goes wrong.
+> [!IMPORTANT] 
+> - After unlocking the bootloader, it is crucial to back up essential partitions such as `persist`, `modemst1`, `modemst2`, `fsg`, etc., **before** flashing custom ROMs or kernels.
+> - These partitions contain important data, including IMEI, network settings, and fingerprint sensor calibration.
+> - If lost or corrupted, your device may experience **loss of cellular connectivity, fingerprint issues, or even become bricked**.
+> - Creating backups ensures you can **restore your device** if something goes wrong.
 
-B. Requirements
+A. Requirements
 - **Unlocked bootloader**
 - **Root access** (via Magisk/KSU/Apatch)
 - **Termux app** (install via F-Droid or Play Store)
@@ -673,7 +683,7 @@ B. Requirements
   - **Qcom devices:** `/dev/block/bootdevice/by-name/`
   - **MTK devices:** `/dev/block/by-name/`
 
-C. Backup Instructions
+B. Backup Instructions
 - **For Qualcomm (QCom) Devices:**
   - Open **Termux** and grant root access using:
     ```sh
@@ -714,11 +724,11 @@ C. Backup Instructions
     dd if=/dev/block/by-name/protect2 of=/sdcard/partitions_backup/protect2.img
     ```
 
-D. Storing Backup
+C. Storing Backup
   - Move the **"partitions_backup"** folder to your **PC or secure storage**.
   - **Do NOT share these backups!** They contain unique device data like IMEI.
 
-E. Restoring Partitions
+D. Restoring Partitions
  - **MTK Devices:**
    ```sh
    fastboot flash nvram nvram.img
@@ -744,13 +754,16 @@ E. Restoring Partitions
 
 ### IV. Flashing the Stock ROM Using Fastboot
 
-> **Visual Guides** : [The Nothing Lab](https://www.youtube.com/watch?v=l0P9gosl64s) | [QZX Tech](https://www.youtube.com/watch?v=66H2MVElyAY)
+> [!NOTE]
+> - This is the only recommended method for manually clean flashing to a newer version of stock firmware or downgrading.
+> - For a better understanding, refer to the visual guides linked alongside: [The Nothing Lab](https://www.youtube.com/watch?v=l0P9gosl64s) | [QZX Tech](https://www.youtube.com/watch?v=66H2MVElyAY)
 
 A. **Preparation of Flashing Folder:**
   - Download the following files for your device model and firmware build and place them in a dedicated folder:
     - image-boot.7z
     - image-firmware.7z
     - image-logical.7z.001-00x
+    - `-hash.sha256` - This is optional but recommended if you want to verify integrity of image files and also check for missing ones. 
 
   - Install 7-Zip from [here](https://www.7-zip.org/).
   - Extract files:
@@ -762,17 +775,19 @@ B. **Proceeding with Flashing:**
   - Install compatible USB drivers from [here](https://developer.android.com/studio/run/win-usb).
   - Ensure that `Android Bootloader Interface` is visible in **Device Manager** when the device is in **bootloader mode**.
   - If the extraction script was used earlier, execute it directly. Otherwise:
-    - Move all extracted image files into a single folder along with the [Fastboot Flashing Script](https://github.com/spike0en/nothing_fastboot_flasher/blob/main/README.md#-download).
+    - Move all extracted image files into a single folder along with the [Nothing Fastboot Flasher Script](https://github.com/spike0en/nothing_fastboot_flasher/blob/main/README.md#-download).
+    - Place the `-hash.sha256` file in the same directory. 
     - Always download the latest script to ensure hotfixes are included.
   - Run the script while connected to the internet (to fetch latest `platform-tools`) and follow the prompts:
     - Answer the confirmation questionnaire.
-    - Choose whether to wipe data: (Y/N)
+    - Skip or proceed with hash checks accordingly. 
+    - Choose whether to wipe data: (Y/N) [Clean Flash / Downgrade = `Y` | Dirty Flash / Upgrade = `N`]
     - Choose whether to flash to both slots: (Y/N)
-    - Disable Android Verified Boot: (N)
+    - Disable Android Verified Boot: (N) [Please note that if you choose `Y` here, bootloader cannot be unlocked later on!]
   - Verify that all partitions have been successfully flashed.
     - If successful, choose to reboot to system: (Y)
-    - If errors occur, reboot to bootloader and reflash after addressing the failure.
-
+    - If errors occur, reboot to bootloader and reflash after addressing the failure. Rebooting to system without doing so might result in soft/hard bricks.
+    
 <div align="center">
   <br>
   <span style="font-size: 30px;">••••••••••••••••••••••</span>
