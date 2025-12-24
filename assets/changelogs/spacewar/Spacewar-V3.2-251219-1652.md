@@ -1,12 +1,11 @@
 # Spacewar-V3.2-251219-1652
 
 ## Changelog:
-What's New in This Update
-General Improvements and Bug Fixes
+What's New in This Update  
+General Improvements and Bug Fixes  
 
-⚙️ Enhanced overall system stability.
- 
-🛡️ Updated to December security patch.
+⚙️ Enhanced overall system stability.  
+🛡️ Updated to December security patch.  
 
 ## Notes
 
