@@ -159,7 +159,7 @@ The unmodified stock OTA image files are archived in `.7z` format and categorize
 
 Select your device model to access its Release Index.
 
-### I. Nothing
+### Nothing Phones
 
 </details>
 
@@ -396,7 +396,7 @@ Select your device model to access its Release Index.
   <br>
 </div>
 
-### II. CMF by Nothing
+### CMF by Nothing Phones
 
 <details>
   <summary>Phone (1) - Tetris</summary>
@@ -477,15 +477,23 @@ certutil -hashfile <filename> SHA256
 
 Access detailed OTA update changelogs for each device, named after the corresponding Nothing OS build version number, below:
 
-> **Note:**  
-Changelogs are only available for builds released on or after December 17, 2025.
+> [!Note]
+> Changelogs are only available for builds released on or after December 17, 2025.
 
-- [Nothing Phone (3)](../assets/changelogs/metroid/)
-- [Nothing Phone (3a) / (3a) Pro](../assets/changelogs/asteroids/)
-- [Nothing Phone (3a) Lite](../assets/changelogs/galaxian/)
-- [Nothing Phone (2a) / (2a) Plus](../assets/changelogs/pacman/)
-- [Nothing Phone (2)](../assets/changelogs/pong/)
 - [Nothing Phone (1)](../assets/changelogs/spacewar/)
+- [Nothing Phone (2)](../assets/changelogs/pong/)
+- [Nothing Phone (2a)](../assets/changelogs/pacman/)
+- [Nothing Phone (2a) Plus](../assets/changelogs/pacmanpro/)
+- [Nothing Phone (3a) / (3a) Pro](../assets/changelogs/asteroids/)
+- [Nothing Phone (3)](../assets/changelogs/metroid/)
+- [Nothing Phone (3a) Lite](../assets/changelogs/galaxian/)
+
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
+
 - [CMF Phone (1)](../assets/changelogs/tetris/)
 - [CMF Phone (2) Pro](../assets/changelogs/galaga/)
 
