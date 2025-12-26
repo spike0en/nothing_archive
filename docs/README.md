@@ -405,6 +405,7 @@ Select your device model to access its Release Index.
 
 | **Nothing OS Version** | **Build No.**     | **Incremental OTA**                                | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
+| 4.0 | Tetris-B4.0-251216-1717 | Tetris_V3.2-250925-1843 -> [Tetris_B4.0-251216-1717](https://android.googleapis.com/packages/ota-api/package/248ea05642c639ea459e0d71c70bf9cbdfe48c74.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Tetris_B4.0-251216-1717) |
 | 3.2 | Tetris-V3.2-250925-1843 | Tetris_V3.2-250723-1800 -> [Tetris_V3.2-250925-1843](https://android.googleapis.com/packages/ota-api/package/d1a4c6895f2b59b0a0af0d7767676fa22ab853ca.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Tetris_V3.2-250925-1843) |
 | 3.2 | Tetris-V3.2-250723-1800 | Tetris_V3.2-250609-2111 -> [Tetris_V3.2-250723-1800](https://android.googleapis.com/packages/ota-api/package/37933617e6847e797acb24a1734fd17b1b43fd17.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Tetris_V3.2-250723-1800) | 
 | 3.2 | Tetris-V3.2-250609-2111 | Tetris_V3.0-250421-2015 -> [Tetris_V3.2-250609-2111](https://android.googleapis.com/packages/ota-api/package/9701916b6254b90a0e6353bb80fe719cff810f11.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Tetris_V3.2-250609-2111) | 
