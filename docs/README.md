@@ -770,7 +770,7 @@ D. Restoring Partitions
 
 > [!NOTE]
 > - This is the only recommended method for manually clean flashing to a newer version of stock firmware or downgrading.
-> - For a better understanding, refer to the visual guides linked alongside: [The Nothing Lab](https://www.youtube.com/watch?v=l0P9gosl64s) | [QZX Tech](https://www.youtube.com/watch?v=66H2MVElyAY)
+> - For a better understanding, refer to the visual guides linked alongside: [Droidwin](https://www.youtube.com/watch?v=YCYEjdC3oHM) | [The Nothing Lab](https://www.youtube.com/watch?v=l0P9gosl64s) | [QZX Tech](https://www.youtube.com/watch?v=66H2MVElyAY)
 
 A. **Preparation of Flashing Folder:**
   - Download the following files for your device model and firmware build and place them in a dedicated folder:
@@ -784,6 +784,7 @@ A. **Preparation of Flashing Folder:**
     - Windows: Right-click → Extract to "*\"
     - Bash users:
       `7za -y x "*.7z*"`
+    - In rare cases, download managers may change file extensions for split logical files. Rename `image-logical.7z.001.7z`, `image-logical.7z.002.7z`, etc., to `image-logical.7z.001`, `image-logical.7z.002`, and retry extraction.
 
 B. **Proceeding with Flashing:**
   - Install compatible USB drivers from [here](https://developer.android.com/studio/run/win-usb).
