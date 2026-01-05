@@ -510,7 +510,7 @@ Access detailed OTA update changelogs for each device, named after the correspon
 
 ## Guides
 
-### I. OTA Sideloading
+### OTA Sideloading
 
 > [!NOTE]
 > - Bootloader unlocking is **not mandatory** to sideload incremental OTA updates. Skip Step A unless you are a rooted user.
@@ -615,12 +615,11 @@ B. **Proceed with Sideloading**
   <br>
 </div>
 
-### II. Unlocking Bootloader
+### Unlocking Bootloader
 
 > [!IMPORTANT]
 > - Unlocking the bootloader voids the OEM warranty. However, you can reflash the stock ROM and relock the bootloader to restore it.
 > - Regardless of other factors, you will lose Widevine L1/DRM certification, which will downgrade to L3.  
->   This cannot be fixed unless the bootloader is locked again.
 > - You will lose [device integrity](https://developer.android.com/google/play/integrity/overview), which may cause apps relying on this to stop working unless fixed later with root access.  
 >   [This guide](https://github.com/yashaswee-exe/AndroidGuides/wiki/Fix-integrity-and-root-detection) may be helpful for resolving this issue. 
 
@@ -681,7 +680,106 @@ C. Post-Unlock
   <br>
 </div>
 
-### III. Backing Up Essential Partitions After Unlocking Bootloader
+### Rooting
+
+> [!IMPORTANT]
+> - Rooting **voids the OEM warranty** and may break OTA updates unless stock images are restored before updating.
+> - Always ensure the **boot / init_boot image exactly matches your current firmware build**.
+>   Flashing an incorrect or mismatched image **will cause bootloops**.
+> - **Always use `init_boot` over `boot` image for rooting if the partition exists**.
+> - Rooting requires an **unlocked bootloader**.
+> - Users can also refer to the visual guides linked alongside: [orailnoor](https://www.youtube.com/watch?v=v0i4rftKNWs) | [Droidwin](https://www.youtube.com/watch?v=4T1ZHDUCBsw) | [EpicDroid](https://www.youtube.com/watch?v=vXIBfyX7s-k).
+
+<br>
+
+A. **Prerequisites**
+- **Unlocked bootloader** with **USB Debugging enabled**
+- A **PC with ADB & Fastboot**  
+  *or* another Android phone with **USB-OTG + ADB app (e.g. [Bugjaeger](https://play.google.com/store/apps/details?id=eu.sisik.hackendebug&hl=en_IN))**  
+  *or* a **custom recovery (e.g. TWRP / OrangeFox / AOSP based recoveries)**
+- Basic familiarity with **ADB / Fastboot**
+- **Stock firmware** matching your current build (for extracting images)
+- Recommended root solutions:
+  - [Magisk](https://github.com/topjohnwu/Magisk/releases) | [Installation](https://topjohnwu.github.io/Magisk/install.html)
+  - [KernelSU (KSU)](https://github.com/tiann/KernelSU) | [Installation](https://kernelsu.org/guide/installation.html)
+  - [KernelSU Next (KSUN)](https://github.com/KernelSU-Next/KernelSU-Next) | [Installation](https://kernelsu-next.github.io/webpage/pages/installation.html)
+
+<br>
+
+B. **Check Current Software Version**
+- On your phone, navigate to: Settings > About phone > Tap the Nothing OS banner.
+- **Note down the Build Number**
+- Example: `Pong_B4.0-251119-1654`
+- Ignore any regional suffix like `IND`/`EEA`/`TUR` and so on.
+
+<br>
+
+C. Fetch Stock Boot / Init_boot Image
+- Navigate to the [release index](#downloads).
+- Select your **device model**
+- Open **OTA Images** for your exact build
+- Download the corresponding archive: `*-image-boot.img.7z` from release assets.
+
+- Extract the archive and locate:
+  - `init_boot.img` **(preferred, if present)**
+  - `boot.img` (only if `init_boot` does not exist)
+
+- **Transfer the image to your device**
+  ```sh
+  adb push init_boot.img /sdcard/Download/
+  # or
+  adb push boot.img /sdcard/Download/
+  ```
+
+<br>
+
+D. Patch the Image  
+
+**Magisk**
+- Install the latest Magisk APK on your device.
+- Open Magisk → Install → Select and Patch a File.
+- Choose the transferred `init_boot` (preferred) / `boot` image. 
+- Magisk will generate: `magisk_patched-XXXXX.img`
+
+<br>
+
+**KernelSU / KernelSU Next**  
+
+> [!NOTE]
+> - For Nothing Phone (2): KSU based root method is supported with stock `boot.img`. But KSUN or SUSFS support requires a custom compiled kernel with the patches added.
+> - Known pre-patched custom kernel options available include: 
+>  [arter97 kernel](https://xdaforums.com/t/r44-arter97-kernel-for-nothing-phone-2.4631313/) - KSU prepatched. Does not support NOS 4.0+ yet.
+>  [Meteoric Kernel (EOL)](https://github.com/HELLBOY017/kernel_nothing_sm8475) - KSUN + SUSFS prepatched. Does not support NOS 4.0+.
+   [Wild Kernel fork](https://github.com/MiguVT/Meteoric_KernelSU_SUSFS) - KSU + SUSFS prepatched.
+   [Wild Kernel](https://github.com/WildKernels/GKI_KernelSU_SUSFS) - KSUN + SUSFS prepatched. Supports 5.10-android12.
+> - Nothing models with Android 13+ vendors out of box i.e, ones launched after Phone (2) will support KSUN patching method.
+
+- Patching method is similar to that of magisk. From the KSU/KSUN manager tap on not installed > patch the `init_boot.img` and transfer the patched image to PC.
+
+- Reboot to bootloader:
+  ```sh
+  adb reboot bootloader
+  ```
+
+- Flash the patched image
+  ```bash
+  fastboot flash init_boot <drag and drop patched_init_boot.img>
+  ```
+
+- Reboot to system:
+  ```bash
+  fastboot reboot
+  ``` 
+
+- The device should be rooted with KSU/KSUN.
+
+<div align="center">
+  <br>
+  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+  <br>
+</div>
+
+### Backing Up Essential Partitions After Unlocking Bootloader
 
 > [!IMPORTANT] 
 > - After unlocking the bootloader, it is crucial to back up essential partitions such as `persist`, `modemst1`, `modemst2`, `fsg`, etc., **before** flashing custom ROMs or kernels.
@@ -766,7 +864,7 @@ D. Restoring Partitions
   <br>
 </div>
 
-### IV. Flashing the Stock ROM Using Fastboot
+### Flashing the Stock ROM Using Fastboot
 
 > [!NOTE]
 > - This is the only recommended method for manually clean flashing to a newer version of stock firmware or downgrading.
@@ -809,7 +907,7 @@ B. **Proceeding with Flashing:**
   <br>
 </div>
 
-### V. Relocking Bootloader
+### Relocking Bootloader
 
 A. **Prerequisites**
   - Remove **Screen Lock/PIN/Password and Logged-in Accounts** (optional but recommended).
