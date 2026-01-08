@@ -748,10 +748,10 @@ D. Patch the Image
 > [!NOTE]
 > - For Nothing Phone (2): KSU based root method is supported with stock `boot.img`. But KSUN or SUSFS support requires a custom compiled kernel with the patches added.
 > - Known pre-patched custom kernel options available include: 
->  [arter97 kernel](https://xdaforums.com/t/r44-arter97-kernel-for-nothing-phone-2.4631313/) - KSU prepatched. Does not support NOS 4.0+ yet.
->  [Meteoric Kernel (EOL)](https://github.com/HELLBOY017/kernel_nothing_sm8475) - KSUN + SUSFS prepatched. Does not support NOS 4.0+.
-   [Wild Kernel fork](https://github.com/MiguVT/Meteoric_KernelSU_SUSFS) - KSU + SUSFS prepatched.
-   [Wild Kernel](https://github.com/WildKernels/GKI_KernelSU_SUSFS) - KSUN + SUSFS prepatched. Supports 5.10-android12.
+>  [arter97 kernel](https://xdaforums.com/t/r44-arter97-kernel-for-nothing-phone-2.4631313/) - KSU prepatched. Does not support NOS 4.0+ yet | 
+>  [Meteoric Kernel (EOL)](https://github.com/HELLBOY017/kernel_nothing_sm8475) - KSUN + SUSFS prepatched. Does not support NOS 4.0+. |
+   [Wild Kernel fork](https://github.com/MiguVT/Meteoric_KernelSU_SUSFS) - KSU + SUSFS prepatched. | 
+   [Wild Kernel](https://github.com/WildKernels/GKI_KernelSU_SUSFS) - KSUN + SUSFS prepatched. Supports 5.10-android12. 
 > - Nothing models with Android 13+ vendors out of box i.e, ones launched after Phone (2) will support KSUN patching method.
 
 - Patching method is similar to that of magisk. From the KSU/KSUN manager tap on not installed > patch the `init_boot.img` and transfer the patched image to PC.
