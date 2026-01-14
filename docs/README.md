@@ -35,7 +35,7 @@
 
 ### Support the Project
 
-If this project helps you, please consider [starring ⭐ the repository](https://github.com/spike0en/nothing_archive/stargazers). It helps with discoverability and encourages maintenance. Thank you!
+If this project helps you, please consider [starring <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Star.png" alt="Star" width="20" height="20" /> the repository](https://github.com/spike0en/nothing_archive/stargazers). It helps with discoverability and encourages maintenance. Thank you!
 
 <div align="center">
   <picture>
