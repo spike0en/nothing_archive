@@ -35,7 +35,7 @@
   [English](README.md) • [Deutsch](README_de-DE.md) • [Español](README_es-ES.md) •
   [Français](README_fr-FR.md) • [हिन्दी](README_hi-IN.md) • [Italiano](README_it-IT.md) •
   [日本語](README_ja-JP.md) • [Русский](README_ru-RU.md) • [Türkçe](README_tr-TR.md) •
-  [简体中文](README_zh-CN.md)
+  [简体中文](README_zh-CN.md) • [繁體中文](README_zh-TW.md)
   </div>
 
 <div align="center">
@@ -850,6 +850,9 @@ D. Restoring Partitions
    fastboot flash persist persist.img
    ```
    Reboot to **recovery mode** → Perform **factory reset** → Reboot to **system**.
+   - Ref link: [Nothing Phone (2a) DVT Engineering Sample: Recovering Baseband and IMEI Records](https://bluehomewu.github.io/posts/Restoring-Baseband-and-IMEI-on-Nothing-Phone-2a-DVT/)
+   - Post was written with Chinese(Traditional) language but can be translated to English using browser translation features.
+
 
  - **QCom Devices:**
    ```sh
