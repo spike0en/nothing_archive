@@ -32,6 +32,7 @@ Complete catalog of Nothing & CMF by Nothing products with model numbers, codena
 | Ear (a) | B162 | Cleffa | April 2024 |
 | Ear (open) | B182 | Flaaffy | September 2024 |
 | Headphone (1) | B170 | Elekid | July 2025 |
+| Ear (3) | B173 | Feraligatr | Sept 2025 |
 
 ## CMF by Nothing Phones
 
