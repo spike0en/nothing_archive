@@ -120,6 +120,7 @@ Stay updated with custom ROMs, kernels, and development projects.
 | Phone (2a) Series | [Updates](https://t.me/s/NothingPhone2aUpdates) |
 | Phone (3a) Series | [Updates](https://t.me/s/NothingPhone3aUpdates) |
 | Phone (3) | [Updates](https://t.me/s/Phone3Updates) |
+| Phone (4a) Series| [Updates](https://t.me/Phone4aUpdates) |
 
 **CMF by Nothing:**
 | Device | Channel |
