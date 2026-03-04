@@ -21,10 +21,10 @@ If this index is helpful, please consider [starring <img src="https://raw.github
 ## Contents
 
 - **[Devices](https://spike0en.github.io/awesome_nothing/docs/devices)** — Complete catalog of Nothing & CMF products
-- **[Community Apps](https://spike0en.github.io/awesome_nothing/docs/apps)** — Glyph-powered apps, productivity tools, and utilities
-- **[Projects](https://spike0en.github.io/awesome_nothing/docs/projects)** — Glyph tools, Matrix toys, modules, and more
+- **[Community Apps](https://spike0en.github.io/awesome_nothing/docs/apps)** — Glyph-powered apps, Glyph Matrix toys, productivity tools, and utilities
+- **[Projects](https://spike0en.github.io/awesome_nothing/docs/projects)** — Glyph tools, modules, and more
 - **[Official Resources](https://spike0en.github.io/awesome_nothing/docs/official)** — OEM apps, SDKs, wallpapers, and fonts
-- **[Photography](https://spike0en.github.io/awesome_nothing/docs/photography)** — GCAM ports, configs, and camera presets
+- **[Photography](https://spike0en.github.io/awesome_nothing/docs/photography)** — GCAM ports, configs, and stock camera presets
 - **[Guides](https://spike0en.github.io/awesome_nothing/docs/guides)** — Tutorials regarding several aspects
 
 ## Acknowledgements
