@@ -66,6 +66,16 @@ Guides for remapping the Essential Key on Phone (3):
 | [XDA Guide](https://xdaforums.com/t/how-to-disable-or-remap-the-essentials-button.4755184/) | rwilco12 |
 | [GitHub Guide](https://github.com/z3phydev/How-to-remap-or-disable-the-Essential-Key) | z3phydev |
 
+### Dialer Codes
+
+Dialer codes (USSD) that you can dial to access hidden menus and diagnostics.
+
+| Code | Function |
+|-------|--------|
+| *#*#9#*#* | Opens the Nothing Diagnostics menu |
+| *#*#682#*#* | Opens the Offline OTA Updater (won't work if you have Nothing Beta Hub installed) |
+
+
 ---
 
 ## Advanced Guides
