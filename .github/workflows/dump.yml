@@ -9,63 +9,80 @@ on:
       name:
         description: 'Release tag'
         required: false
+      runner_type:
+        description: 'Runner type'
+        required: true
+        type: choice
+        default: 'self-hosted'
+        options:
+          - github
+          - self-hosted
       run_maximize_build_space:
-        description: 'Run maximize-build-space?'
+        description: 'Maximize build space? (GitHub runner only)'
         required: true
         type: boolean
-        default: false        
+        default: false
 
 jobs:
   dump:
     permissions: write-all
-    runs-on: ubuntu-latest
+
+    runs-on: >-
+      ${{
+        inputs.runner_type == 'self-hosted'
+        && fromJSON('["self-hosted", "Linux", "X64"]')
+        || 'ubuntu-latest'
+      }}
 
     steps:
-    - name: Run maximize-build-space
-      if: github.event.inputs.run_maximize_build_space == 'true'
-      uses: easimon/maximize-build-space@master
-      with:
-        remove-android: 'true'
-        remove-dotnet: 'true'
-        remove-haskell: 'true'
-        remove-codeql: 'true'
-        remove-docker-images: 'true'
-        
-    - name: Checkout repo
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      - name: Maximize build space
+        if: >-
+          inputs.runner_type == 'github' &&
+          inputs.run_maximize_build_space == 'true'
+        uses: easimon/maximize-build-space@master
+        with:
+          remove-android: 'true'
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
 
-    - name: Setup environment
-      run: |
-        sudo apt update
-        sudo apt -y install aria2 zstd p7zip-full parallel openssl xxhash jq
-        python3 -m pip install gdown
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-    - name: Set script permissions
-      run: chmod +x scripts/dump.sh
+      - name: Setup environment
+        if: inputs.runner_type == 'github'
+        run: |
+          sudo apt update
+          sudo apt -y install aria2 zstd p7zip-full parallel openssl xxhash jq
+          python3 -m pip install gdown
 
-    - name: Download & Process OTA Packages
-      id: dump
-      run: |
-        IFS=',' read -ra URLS <<< "${{ inputs.urls }}"
-        export INPUT_NAME="${{ inputs.name }}"
-        for url in "${URLS[@]}"; do
-          echo "$url"
-        done | xargs ./scripts/dump.sh
-        
-    - name: Create tag
-      run: |
-        git fetch origin main
-        git tag "${{ steps.dump.outputs.release_tag }}" HEAD
-        git push origin "${{ steps.dump.outputs.release_tag }}"
+      - name: Set script permissions
+        run: chmod +x scripts/dump.sh
 
-    - name: Upload release assets
-      uses: ncipollo/release-action@v1
-      with:
-        artifacts: out/*
-        artifactErrorsFailBuild: true
-        body: ${{ steps.dump.outputs.body }}
-        tag: ${{ steps.dump.outputs.release_tag }}
-        name: ${{ steps.dump.outputs.release_name }}
-        token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Download & Process OTA Packages
+        id: dump
+        run: |
+          IFS=',' read -ra URLS <<< "${{ inputs.urls }}"
+          export INPUT_NAME="${{ inputs.name }}"
+          for url in "${URLS[@]}"; do
+            echo "$url"
+          done | xargs ./scripts/dump.sh
+
+      - name: Create tag
+        run: |
+          git fetch origin main
+          git tag "${{ steps.dump.outputs.release_tag }}" HEAD
+          git push origin "${{ steps.dump.outputs.release_tag }}"
+
+      - name: Upload release assets
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: out/*
+          artifactErrorsFailBuild: true
+          body: ${{ steps.dump.outputs.body }}
+          tag: ${{ steps.dump.outputs.release_tag }}
+          name: ${{ steps.dump.outputs.release_name }}
+          token: ${{ secrets.GITHUB_TOKEN }}
