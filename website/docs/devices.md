@@ -19,7 +19,7 @@ Complete catalog of Nothing & CMF by Nothing products with model numbers, codena
 | Phone (3a) / (3a) Pro | A059 / A059P | Asteroids | Arcanine | March 2025 |
 | Phone (3) | A024 | Metroid | Arbok | July 2025 |
 | Phone (3a) Lite | A001T | Galaxian | Bulbasaur | October 2025 |
-| Phone (4a) / (4a) Pro | A069 / A069P | Frogger / FroggerPro | Bellsprout | TBA |
+| Phone (4a) / (4a) Pro | A069 / A069P | Frogger / FroggerPro | Bellsprout | March 2026 |
 
 ## Nothing Audio
 
@@ -33,6 +33,7 @@ Complete catalog of Nothing & CMF by Nothing products with model numbers, codena
 | Ear (open) | B182 | Flaaffy | September 2024 |
 | Headphone (1) | B170 | Elekid | July 2025 |
 | Ear (3) | B173 | Feraligatr | Sept 2025 |
+| Headphone (a) | B186 | Hoppip | March 2026 |
 
 ## CMF by Nothing Phones
 
