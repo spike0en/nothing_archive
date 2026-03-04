@@ -72,8 +72,8 @@ Dialer codes (USSD) that you can dial to access hidden menus and diagnostics.
 
 | Code | Function |
 |-------|--------|
-| *#*#9#*#* | Opens the Nothing Diagnostics menu |
-| *#*#682#*#* | Opens the Offline OTA Updater (won't work if you have Nothing Beta Hub installed) |
+| `*#*#9#*#*` | Opens the Nothing Diagnostics menu |
+| `*#*#682#*#*` | Opens the Offline OTA Updater (won't work if you have Nothing Beta Hub installed) |
 
 
 ---
