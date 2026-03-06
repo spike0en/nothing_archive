@@ -116,6 +116,8 @@ Official `.glb` files for device models.
 | Phone (3a) Pro | [Grey](https://cdn.sanity.io/files/gtd4w1cq/production/24ce4b3c91a382d4575aef2f86c0bf5edbd3616d.glb) · [Black](https://cdn.sanity.io/files/gtd4w1cq/production/4ae88c1b5ad184f3b3c122736fce86b3337902ba.glb) |
 | Phone (3a) Lite | [White](https://cdn.sanity.io/files/gtd4w1cq/production/c00cd7815c04b82583895591dcf6266c3ef41ead.glb) · [Black](https://cdn.sanity.io/files/gtd4w1cq/production/2f7c746bb7322c33c1b62378312cf3d9851d4490.glb) |
 | Phone (3) | [White](https://cdn.sanity.io/files/gtd4w1cq/production/0b736072a221b655bd719b579b5bef594209ff51.glb) · [Black](https://cdn.sanity.io/files/gtd4w1cq/production/33caf1c9600cc1f66fc5d06a9db420ad2df7edbe.glb) |
+| Phone (4a) | [White](https://cdn.sanity.io/files/gtd4w1cq/production/d65ff6f2d0ea8c16068c9f3a6a39727ba2832fbb.glb) · [Black](https://cdn.sanity.io/files/gtd4w1cq/production/18e6e295eae0a611005b55870bfcabf8ddbe3ed3.glb) · [Pink](https://cdn.sanity.io/files/gtd4w1cq/production/84f427b1219bd66ae5153a8d3a48b05179fec127.glb) · [Blue](https://cdn.sanity.io/files/gtd4w1cq/production/03ea3ce1ca3b486997b81661b190569c1921d68a.glb) |
+| Phone (4a) Pro | [Silver](https://cdn.sanity.io/files/gtd4w1cq/production/0ab0aab2653e4f45cd9435145a3f936834e67cd2.glb) · [Black](https://cdn.sanity.io/files/gtd4w1cq/production/9b93f1ad6cd3ed81cdb51ea89974473f54b62afa.glb) · [Pink](https://cdn.sanity.io/files/gtd4w1cq/production/5000880af271c65200de52b3b00e1fc5eadb2e61.glb) |
 
 ### CMF by Nothing
 
