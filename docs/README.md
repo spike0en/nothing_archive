@@ -396,6 +396,19 @@ Select your device model to access its Release Index.
 
 </details>
 
+<details>
+  <summary>Phone (4a) - Frogger</summary>
+
+<br>
+
+| **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
+|------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
+| 4.1 | Frogger-B4.1-260204-2218 | Frogger_B4.1-260115-2109 -> [Frogger_B4.1-260204-2218](https://android.googleapis.com/packages/ota-api/package/e86d32f2e060d9b2ea13680c571b78ecf632ac2b.zip) | N/A | N/A |
+
+<br>
+
+</details>
+
 <div align="center">
   <br>
   <span style="font-size: 30px;">••••••••••••••••••••••</span>
@@ -497,6 +510,7 @@ Access detailed OTA update changelogs for each device, named after the correspon
 - [Nothing Phone (3a) / (3a) Pro](../assets/changelogs/asteroids/)
 - [Nothing Phone (3)](../assets/changelogs/metroid/)
 - [Nothing Phone (3a) Lite](../assets/changelogs/galaxian/)
+- [Nothing Phone (4a)](../assets/changelogs/frogger/)
 
 <div align="center">
   <br>
