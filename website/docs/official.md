@@ -31,9 +31,20 @@ APK mirrors available at [APKMirror](https://www.apkmirror.com/apk/nothing-techn
 
 ## Wallpapers
 
-Archived wallpapers organized by device codename:
+### Nothing
 
-- [Download Archive](https://archive.org/download/nothing-archive/spike0en/walls/)
+- [Phone (1)](https://archive.org/download/nothing-archive/spike0en/walls/spacewar/)
+- [Phone (2)](https://archive.org/download/nothing-archive/spike0en/walls/pong/)
+- [Phone (2a) / (2a) Plus / CE](https://archive.org/download/nothing-archive/spike0en/walls/pacman%28pro%29/)
+- [Phone (3)](https://archive.org/download/nothing-archive/spike0en/walls/metroid/)
+- [Phone (3a) / (3a) Pro / CE](https://archive.org/download/nothing-archive/spike0en/walls/asteroids/)
+- [Phone (3a) Lite](https://archive.org/download/nothing-archive/spike0en/walls/galaxian/)
+- [Phone (4a) / (4a) Pro](https://archive.org/download/nothing-archive/spike0en/walls/frogger%28pro%29/)
+
+### CMF by Nothing
+
+- [Phone (1)](https://archive.org/download/nothing-archive/spike0en/walls/tetris/)
+- [Phone (2a) Pro](https://archive.org/download/nothing-archive/spike0en/walls/galaga/)
 
 ---
 
