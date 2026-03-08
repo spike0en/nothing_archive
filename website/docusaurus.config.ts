@@ -49,6 +49,13 @@ const config: Config = {
         content: 'Nothing Phone, Nothing OS, CMF by Nothing, Glyph, Nothing community, Nothing apps, awesome list',
       },
     },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'google-site-verification',
+        content: 'uOAgNLHc6NGiyCOctf3TIBH8WxWK5heN8RpUNFCEK1Y',
+      },
+    },
   ],
 
   themeConfig: {
