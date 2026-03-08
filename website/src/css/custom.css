@@ -22,6 +22,7 @@
   --ifm-background-color: #f3f2ec;
   --ifm-navbar-background-color: #f3f2ec;
   --ifm-footer-background-color: #1a1a1a;
+  --ifm-card-background-color: #ffffff;
 
   --docusaurus-highlighted-code-line-bg: rgba(215, 25, 33, 0.1);
 
@@ -589,14 +590,25 @@ a:hover {
 
 /* Cards - Nothing geometric */
 .card {
+  background-color: var(--ifm-card-background-color);
   border: 1px solid var(--nothing-border);
   border-radius: 0;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
   border-color: var(--ifm-color-primary);
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme='dark'] .card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] .card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 /* Admonitions - Nothing geometric */
