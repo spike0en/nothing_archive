@@ -88,14 +88,14 @@ const config: Config = {
           position: 'right',
           className: 'header-badge header-github-hits',
           'aria-label': 'GitHub Hits',
-          html: `<img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fawesome_nothing&label=Hits&icon=github&color=%2324292e&labelColor=333333" alt="GitHub Hits" />`,
+          html: `<img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fawesome_nothing&label=Hits&icon=github&color=%2324292e&labelColor=333333" width="107" height="20" alt="GitHub Hits" />`,
         },
         {
           href: 'https://github.com/spike0en/awesome_nothing/stargazers',
           position: 'right',
           className: 'header-badge header-github-stars',
           'aria-label': 'GitHub Stars',
-          html: `<img src="https://img.shields.io/github/stars/spike0en/awesome_nothing?logo=github&color=24292e" alt="GitHub Stars" />`,
+          html: `<img src="https://img.shields.io/github/stars/spike0en/awesome_nothing?logo=github&color=24292e" width="80" height="20" alt="GitHub Stars" />`,
         },
         {
           href: 'https://github.com/spike0en/awesome_nothing',
