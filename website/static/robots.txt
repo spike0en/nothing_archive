@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://spike0en.github.io/awesome_nothing/sitemap.xml

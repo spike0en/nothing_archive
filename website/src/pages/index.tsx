@@ -3,6 +3,9 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import { FaTelegramPlane, FaDiscord, FaRedditAlien, FaYoutube, FaInstagram, FaGithub, FaTerminal } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+import { TbMessageCircle } from 'react-icons/tb';
 
 import styles from './index.module.css';
 import { JSX } from 'react';
@@ -104,24 +107,24 @@ function HomepageFeatures() {
 
 function HomepageSocials() {
   const links = [
-    { label: 'Telegram', href: 'https://t.me/s/Nothing_Archive' },
-    { label: 'Community', href: 'https://nothing.community' },
-    { label: 'Discord', href: 'https://discord.com/invite/nothingtech' },
-    { label: 'Reddit', href: 'https://www.reddit.com/r/NothingTech' },
-    { label: 'XDA', href: 'https://xdaforums.com/c/nothing.12583/' },
-    { label: 'YouTube', href: 'https://www.youtube.com/@NothingTechnology' },
-    { label: 'X', href: 'https://x.com/nothing' },
-    { label: 'Instagram', href: 'https://instagram.com/nothing' },
-    { label: 'NothingOSS', href: 'https://github.com/NothingOSS' },
+    { label: 'Telegram', href: 'https://t.me/s/Nothing_Archive', icon: <FaTelegramPlane size={24} /> },
+    { label: 'Community', href: 'https://nothing.community', icon: <TbMessageCircle size={24} /> },
+    { label: 'Discord', href: 'https://discord.com/invite/nothingtech', icon: <FaDiscord size={24} /> },
+    { label: 'Reddit', href: 'https://www.reddit.com/r/NothingTech', icon: <FaRedditAlien size={24} /> },
+    { label: 'XDA', href: 'https://xdaforums.com/c/nothing.12583/', icon: <FaTerminal size={24} /> },
+    { label: 'YouTube', href: 'https://www.youtube.com/@NothingTechnology', icon: <FaYoutube size={24} /> },
+    { label: 'X', href: 'https://x.com/nothing', icon: <FaXTwitter size={24} /> },
+    { label: 'Instagram', href: 'https://instagram.com/nothing', icon: <FaInstagram size={24} /> },
+    { label: 'NothingOSS', href: 'https://github.com/NothingOSS', icon: <FaGithub size={24} /> },
   ];
   return (
     <section className={styles.socials}>
       <div className="container">
         <Heading as="h2" className={styles.sectionLabel}>Connect</Heading>
         <div className={styles.socialLinks}>
-          {links.map(({ label, href }) => (
-            <a key={label} href={href} target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-              {label}
+          {links.map(({ label, href, icon }) => (
+            <a key={label} href={href} aria-label={label} target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+              {icon}
             </a>
           ))}
         </div>

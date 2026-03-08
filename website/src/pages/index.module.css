@@ -221,7 +221,10 @@
 }
 
 .socialLink {
-  padding: 0.6rem 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
   font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: -0.01em;
