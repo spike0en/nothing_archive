@@ -29,7 +29,7 @@ function HomepageHeader() {
             </div>
           </div>
           <div className={styles.heroImage}>
-            <img src="img/logo.png" alt="Awesome Nothing" width={280} height={280} className={styles.heroLogo} />
+            <img src="img/logo.png" alt="Awesome Nothing" width={280} height={280} fetchPriority="high" loading="eager" className={styles.heroLogo} />
           </div>
         </div>
       </div>

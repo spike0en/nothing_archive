@@ -56,6 +56,21 @@ const config: Config = {
         content: 'uOAgNLHc6NGiyCOctf3TIBH8WxWK5heN8RpUNFCEK1Y',
       },
     },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossorigin: 'anonymous',
+      },
+    },
   ],
 
   themeConfig: {
