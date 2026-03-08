@@ -3,6 +3,7 @@ sidebar_position: 1
 slug: /intro
 title: Introduction
 description: A curated list of everything related to Nothing & CMF by Nothing ecosystem — apps, tools, guides, and resources.
+keywords: [nothing, cmf by nothing, nothing ecosystem, nothing apps, nothing customisation, nothing phone, glyph interface]
 ---
 
 # Awesome Nothing

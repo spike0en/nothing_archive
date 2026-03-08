@@ -2,6 +2,7 @@
 sidebar_position: 6
 title: Photography
 description: GCAM ports, camera configs, stock presets, and audio EQ profiles for Nothing devices.
+keywords: [nothing gcam, nothing phone camera configs, nothing camera presets, nothing photography, nothing eq profiles]
 ---
 
 # Photography Resources

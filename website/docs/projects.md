@@ -2,6 +2,7 @@
 sidebar_position: 4
 title: Projects
 description: Glyph tools, Matrix toys, root modules, and other community-maintained projects for Nothing devices.
+keywords: [nothing projects, glyph tools, nothing root, nothing magisk, nothing matrix toys, better glyph composer]
 ---
 
 # Community Projects

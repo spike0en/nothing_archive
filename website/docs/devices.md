@@ -2,6 +2,7 @@
 sidebar_position: 2
 title: Devices
 description: Complete catalog of Nothing & CMF phones, earbuds, watches, and accessories with model numbers, codenames, and release dates.
+keywords: [nothing phone 1, nothing phone 2, nothing phone 2a, cmf phone 1, nothing ear, nothing codenames, nothing release dates]
 ---
 
 # Device Catalog
