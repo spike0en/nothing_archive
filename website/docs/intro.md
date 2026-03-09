@@ -22,6 +22,6 @@ If this index is helpful, please consider [starring the repository](https://gith
 
 ## Acknowledgements
 
-- [Adbo](https://discord.com/users/168006441318350848) and [Siemens NX](https://discord.com/users/150299184426123273) for their noteworthy contributions to the index.
+- [Project Contributors](https://github.com/spike0en/awesome_nothing/graphs/contributors) for their invaluable contributions and insights.
 - [Shiki](https://github.com/guptavishal-xm1) for all help with crafting the website for the repo.
 - All the **creators, project maintainers, and community members** working behind the scenes on various Nothing-related projects. Their efforts, whether direct or indirect, have helped make this project possible.
