@@ -43,7 +43,7 @@ Apps that integrate with the Glyph interface on Nothing phones.
 
 ## Glyph Matrix-Powered
 
-Interactive toys and games for the Phone (3) Glyph Matrix.
+Interactive toys and games for the Glyph Matrix.
 
 :::note
 Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) for official toys.
@@ -71,6 +71,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [HA-Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistant entity toggle |
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | Gyroscopic level tool |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | Classic Magic 8 Ball |
+| [NonoGotchi (Beta)](https://www.jkn.me/pet) | Jkn | Tamagotchi-styled virtual pet |
 | [Pomodoro Timer](https://github.com/PzmuV1517/GlyphPomodoroTimer) | pzmuV1517 | Pomodoro timer toy |
 | [GlyphNexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Notifications, timers, visualizer |
 | [Timepiece](https://play.google.com/store/apps/details?id=com.arunk140.timepiece) | Arun Khanchandani | Always-On clock utility |
