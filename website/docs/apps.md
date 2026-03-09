@@ -126,6 +126,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Nothing Desk Clock](https://play.google.com/store/apps/details?id=com.ApexCreator.deskclock) | Apex Creators | Desk clock app |
 | [Nothing Gallery](https://github.com/jerichoi224/Nothing-Gallery) | jerichoi224 | Gallery app |
 | [Nothing LED Banner](https://play.google.com/store/apps/details?id=com.ApexCreator.thebannerapp) | Apex Creators | LED banner creator |
+| [Nothing Wallpaper Changer](https://github.com/NineCSdev/nothing-wallpaper-changer) | NineCSdev | Lockscreen wallpaper changer for Nothing Phone (1) |
 | [Nothing Weather](https://play.google.com/store/apps/details?id=com.ApexCreator.nothing_weather) | Apex Creators | Weather app |
 | [NothingK](https://github.com/cuadratico/NothingK) | cuadratico | Password vault |
 | [NothingQuickTools](https://github.com/DylanAkp/NothingQuickTools) | DylanAkp | Quick tiles for Phone (2) |
