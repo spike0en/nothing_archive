@@ -38,7 +38,7 @@ Other interesting projects by the community.
 | [Dotmatrixify](https://github.com/szelszabi/dotmatrixify) | szelszabi | Transform pixel art to dot matrix |
 | [Ear (web)](https://earweb.bttl.xyz/) | RapidZapper | Control earbuds from web |
 | [EssentialSpaceWeb](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Minimalist notespace |
-| [Essential-Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Chrome extension |
+| [Essential-Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing-themed browser New Tab extension |
 | [GlyphMatrixEditor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Pixel art editor for Phone (3) |
 | [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | Image to glyph pattern converter |
 | [HomePage](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal-inspired homepage |
