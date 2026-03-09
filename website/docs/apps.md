@@ -67,6 +67,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [GlyphCade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Arcade games on Glyph Matrix |
 | [Glypheyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | Playful tilting pupil toy |
 | [Glyphify (Toys)](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Ball maze, quick dial, Tamagotchi |
+| [GlyphInvaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | Space Invaders game |
 | [Hamon](https://github.com/yuk1-kondo/GlyphToys-hamon) | yuk1-kondo | Physical wave propagation |
 | [HA-Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistant entity toggle |
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | Gyroscopic level tool |
