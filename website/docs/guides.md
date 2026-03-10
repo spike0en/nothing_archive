@@ -71,17 +71,17 @@ Guides for remapping the Essential Key on Phone (3):
 
 Dialer codes (USSD) that you can dial to access hidden menus and diagnostics.
 
-| Code | Function | Warning |
-|------|-------------|---------|
-| `*#06#` | Shows IMEI and Serial Number | Safe |
-| `*#07#` | Displays SAR levels and regulatory info | Safe |
-| `*#*#569#*#*` | Opens Nothing Feedback / Log tool | Safe |
-| `*#*#0#*#*` | Hardware test menu (screen, sensors, touch) | Safe |
-| `*#*#9#*#*` | Opens Nothing Diagnostics menu | Safe |
-| `*#*#225#*#*` | Shows Calendar storage info | Safe |
-| `*#*#426#*#*` | Google Play / Firebase diagnostic info | Safe |
-| `*#*#4636#*#*` | Testing menu (phone, battery, usage stats, Wi-Fi) | Safe |
-| `*#*#682#*#*` | Opens Offline OTA Updater (won't work if Nothing Beta Hub is installed) | Medium |
+| Code | Function |
+|------|----------|
+| `*#06#` | Shows IMEI and Serial Number |
+| `*#07#` | Displays SAR levels and regulatory info |
+| `*#*#569#*#*` | Opens Nothing Feedback / Log tool |
+| `*#*#0#*#*` | Hardware test menu (screen, sensors, touch) |
+| `*#*#9#*#*` | Opens Nothing Diagnostics menu |
+| `*#*#225#*#*` | Shows Calendar storage info |
+| `*#*#426#*#*` | Google Play / Firebase diagnostic info |
+| `*#*#4636#*#*` | Testing menu (phone, battery, usage stats, Wi-Fi) |
+| `*#*#682#*#*` | Opens Offline OTA Updater (won't work if Nothing Beta Hub is installed) |
 
 ---
 
