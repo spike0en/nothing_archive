@@ -112,13 +112,19 @@
 @media (max-width: 996px) {
   .navbar__items--right {
     display: flex !important;
-    gap: 0.25rem;
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  .navbar__items--right>* {
+    flex-shrink: 0;
+    /* Prevent squishing/overlapping */
   }
 
   .navbar__items--right .navbar__item {
     display: inline-flex !important;
     align-items: center;
-    padding: 0.35rem 0.5rem;
+    padding: 0.2rem 0.4rem;
   }
 
   .navbar__items--right .header-badge img {
@@ -130,9 +136,30 @@
     display: none !important;
   }
 
-  /* Compact GitHub text link on mobile */
-  .navbar__items--right .navbar__link:not(.header-badge) {
-    font-size: 0.85rem;
+  /* The docusaurus search container is absolutely positioned by default and ignores flex layout. 
+     We need to explicitly make it relative so it stacks horizontally with the badges. */
+  div[class*="navbarSearchContainer"] {
+    position: relative !important;
+    right: auto !important;
+    margin-left: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+
+  /* On very small screens, hide the GitHub Stars badge and show the text link instead */
+  .navbar__items--right .header-github-stars {
+    display: none !important;
+  }
+
+  .navbar__items--right .header-github-link {
+    display: inline-flex !important;
+    background: var(--ifm-color-primary);
+    color: white !important;
+    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
   }
 }
 

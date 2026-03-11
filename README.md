@@ -26,6 +26,10 @@ If this index is helpful, please consider [starring <img src="https://raw.github
 - **[Official Resources](https://spike0en.github.io/awesome_nothing/docs/official)** — OEM apps, SDKs, wallpapers, and fonts
 - **[Photography](https://spike0en.github.io/awesome_nothing/docs/photography)** — GCAM ports, configs, and stock camera presets
 - **[Guides](https://spike0en.github.io/awesome_nothing/docs/guides)** — Tutorials regarding several aspects
+## How to Contribute
+
+We welcome community contributions! The easiest way to add a new app, project, or resource to this list is to **[open a new Issue using our submission form](https://github.com/spike0en/awesome_nothing/issues/new/choose)**. 
+
 
 ## Acknowledgements
 

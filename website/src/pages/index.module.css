@@ -58,6 +58,7 @@
 .heroLogo {
   width: 280px;
   height: 280px;
+  border-radius: 24px;
   filter: drop-shadow(0 0 24px rgba(215, 25, 33, 0.15));
 }
 
@@ -118,12 +119,13 @@
 }
 
 .sectionLabel {
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   opacity: 0.7;
   margin-bottom: 2.5rem;
+  text-align: center;
 }
 
 .featureRow {
@@ -132,13 +134,16 @@
 
 .featureCol {
   margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .featureLink {
   text-decoration: none !important;
   color: inherit;
-  display: block;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .featureCard {
@@ -147,7 +152,9 @@
   background-color: var(--ifm-card-background-color);
   border: 1px solid var(--nothing-border);
   border-radius: 0;
-  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   min-height: 160px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
   transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
@@ -205,6 +212,47 @@
   opacity: 0.7;
   line-height: 1.5;
   letter-spacing: -0.01em;
+}
+
+/* --- Star History --- */
+.starsGraphSection {
+  padding: 3rem 0;
+  border-top: 1px solid var(--nothing-border);
+}
+
+.starsGraphText {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.05rem;
+  opacity: 0.85;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+.starsGraphText p {
+  margin-bottom: 0.5rem;
+}
+
+.chartContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.starChartImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--nothing-border);
+}
+
+[data-theme='dark'] .starChartImage {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* --- Socials --- */

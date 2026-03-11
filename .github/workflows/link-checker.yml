@@ -1,0 +1,15 @@
+name: Link Checker
+on:
+  schedule:
+    - cron: "0 0 1 * *" # Runs monthly on the 1st
+  workflow_dispatch:
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lychee Link Checker
+        uses: lycheeverse/lychee-action@v1.9.3
+        with:
+          args: --accept 200,429 --verbose --no-progress './**/*.md'

@@ -25,6 +25,16 @@ const config: Config = {
     locales: ['en'],
   },
 
+  themes: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        language: ['en'],
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
@@ -116,6 +126,7 @@ const config: Config = {
           href: 'https://github.com/spike0en/awesome_nothing',
           label: 'GitHub',
           position: 'right',
+          className: 'header-github-link',
         },
 
       ],

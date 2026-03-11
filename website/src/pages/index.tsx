@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { useColorMode } from '@docusaurus/theme-common';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import { FaTelegramPlane, FaDiscord, FaRedditAlien, FaYoutube, FaInstagram, FaGithub, FaTerminal } from 'react-icons/fa';
@@ -133,6 +134,30 @@ function HomepageSocials() {
   );
 }
 
+function HomepageStarsGraph() {
+  const { colorMode } = useColorMode();
+  const isDarkTheme = colorMode === 'dark';
+
+  return (
+    <section className={styles.starsGraphSection}>
+      <div className="container">
+        <Heading as="h2" className={styles.sectionLabel}>Support the Project</Heading>
+        <div className={styles.starsGraphText}>
+          <p>If you find this index helpful, please consider <b>starring the repository</b> on GitHub.</p>
+          <p>It helps with discoverability, encourages maintenance, and makes the community grow!</p>
+        </div>
+        <div className={styles.chartContainer}>
+          <img
+            alt="Star History Chart"
+            src={`https://api.star-history.com/svg?repos=spike0en/awesome_nothing&type=Date${isDarkTheme ? '&theme=dark' : ''}`}
+            className={styles.starChartImage}
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
@@ -143,6 +168,7 @@ export default function Home(): JSX.Element {
       <HomepageHeader />
       <main className={styles.main}>
         <HomepageFeatures />
+        <HomepageStarsGraph />
         <HomepageSocials />
       </main>
     </Layout>
