@@ -32,6 +32,7 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | [GlyphGlow](https://github.com/fgiering/GlyphGlow) | fgiering | Minimal app to control Glyph interface |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Advanced Glyph controls, mini-games, compositions. Supports Phone (3) |
 | [GlyphNexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Advanced notification control including Glyph Timer |
+| [GlyphPom](https://github.com/ArushCodes/GlyphPom) | ArushCodes | Pomodoro timer for Phone (3a) & (3a) Pro |
 | [GlyphPort](https://github.com/SebiAi/GlyphPort) | SebiAi | Port Glyph composition made for one Nothing device to another |
 | [GlyphSaber](https://github.com/Norbinarius/glyphsaber) | Norbinarius | Glyph control for Nothing OS 4.0+ |
 | [GlyphSharge](https://github.com/Leekawaii666/GlyphSharge) | bleelblep | Advanced glyph interface management |
