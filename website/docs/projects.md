@@ -39,6 +39,7 @@ Other interesting projects by the community.
 | [Ear (web)](https://earweb.bttl.xyz/) | RapidZapper | Control earbuds from web |
 | [EssentialSpaceWeb](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Minimalist notespace |
 | [Essential-Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing-themed browser New Tab extension |
+| [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | PoC exploit that spoofs the device's lock state as locked, allowing bypass of strong integrity checks while unlocked on the Nothing Phone (2a) Series and CMF Phone (1) |
 | [GlyphMatrixEditor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Pixel art editor for Phone (3) |
 | [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | Image to glyph pattern converter |
 | [HomePage](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal-inspired homepage |
