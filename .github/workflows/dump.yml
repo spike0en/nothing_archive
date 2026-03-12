@@ -9,6 +9,10 @@ on:
       name:
         description: 'Release tag'
         required: false
+      fallback_model:
+        description: 'Fallback device model (if auto-detection fails)'
+        required: false
+        type: string
       runner_type:
         description: 'Runner type'
         required: true
@@ -56,7 +60,7 @@ jobs:
         if: inputs.runner_type == 'github'
         run: |
           sudo apt update
-          sudo apt -y install aria2 zstd p7zip-full parallel openssl xxhash jq
+          sudo apt -y install python3-pip aria2 zstd p7zip-full parallel openssl xxhash jq
           python3 -m pip install gdown
 
       - name: Set script permissions
@@ -64,12 +68,11 @@ jobs:
 
       - name: Download & Process OTA Packages
         id: dump
+        env:
+          FALLBACK_MODEL: ${{ inputs.fallback_model }}
         run: |
-          IFS=',' read -ra URLS <<< "${{ inputs.urls }}"
           export INPUT_NAME="${{ inputs.name }}"
-          for url in "${URLS[@]}"; do
-            echo "$url"
-          done | xargs ./scripts/dump.sh
+          echo "${{ inputs.urls }}" | tr ',' ' ' | xargs ./scripts/dump.sh
 
       - name: Create tag
         run: |
