@@ -1,0 +1,52 @@
+# Frogger-B4.1-260309-1830
+
+## Update changelogs:  
+Welcome to Nothing Phone (4a)  
+
+Hi there. We’re glad to finally introduce the Nothing Phone (4a).  
+From the design to the operating system, this model continues the soul of the Phone (a) series while introducing new inspirations that move the experience meaningfully forward. We’ve tried to blend familiar reliability with fresh breakthroughs to create something both playful and refined.  
+
+We hope you enjoy using it. Here is what’s new in NOS 4.1:  
+
+### New Features
+🧘‍♀️ Breathing Break widgets are now available in the widget drawer, offering guided exercises to help you follow a breathing pace and relax.  
+📡 Live Updates now work across various scenes, such as the lock screen, notification panel, and Glyph Interface, tracking real-time progress from apps, like Google Maps, just at a glance.  
+🎧 The status bar now displays the dedicated icon of Nothing headphones when connected.  
+
+Notes  
+Live Updates compatibility with apps depends on local availability and specific app integration.  
+
+### Glyph Interface
+💬 Essential Notifications settings UI has been reworked with a cleaner look and descriptions for easier use.  
+🔔 Generative ringtone is now available, offering more unique sounds and Glyph patterns for Ringtones and Notifications.  
+
+### Essential AI Tools
+🪀 Essential Apps now features a recommendation section in the widget drawer, providing quicker access to the Nothing Playground to discover AI-powered community creations.  
+🎇 The Essential Space interface has been refined for a cleaner look and better accessibility, featuring newly introduced For You and Library sections.  
+📇 Introducing Events in Essential Space: a fresh way to organise and categorise actions you need to take.  
+🔍 Added search functionality within Essential Space to help you find content more quickly.  
+
+Notes  
+To access the latest Essential Space features, please stay tuned for the new update in Google Play, available soon.  
+
+### Visual Enhancements
+⏲️ Introduced the lock screen clock face from Phone (3a) Community Edition, co-created with the community member Jad Zock, featuring an exclusive typeface style and unique waking-up effect.  
+🪄 Lock screen customisation now supports Depth effect (Beta) and adjustable clock face sizes and alignments.  
+🎴 Updated the lock screen password page with wallpaper blur effect.  
+📶 Dual network signals are now integrated into a single status bar icon for a cleaner look.  
+
+### Camera Enhancements
+🛝 Playground Sync: One-tap import of presets from Playground directly into the Camera app.  
+🎨 New Preset: Added 'Amber' portrait preset, featuring subtle amber tones and fine grain for a cinematic portrait look.  
+🔋 Power saving recording: Screen auto-dims during idle video recording to save battery life, toggleable in Camera settings.  
+🌈 Image Quality: Enhanced exposure, colour accuracy, and HDR processing.   
+
+### General Improvements and Bug Fixes
+📖 Optimised dual-SIM instructions for better clarity and ease of use.  
+📶 Enhanced overall network stability.  
+⚙️ Enhanced overall system stability and smoothness.  
+📱 Fixed some abnormal display issues in Quick Settings and the status bar.  
+🛡️ Updated to March 2026 security patch.  
+
+## Notes
+Your device may use more power and feel warmer during installation. Performance will return to normal after the update is complete.  
