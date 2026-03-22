@@ -1,0 +1,8 @@
+# Dependencies
+website/node_modules/
+
+# Build output
+website/build/
+
+# Docusaurus local cache
+website/.docusaurus/

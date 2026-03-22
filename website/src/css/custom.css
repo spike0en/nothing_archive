@@ -1,0 +1,808 @@
+/**
+ * Nothing-inspired theme for Awesome Nothing
+ * Minimal, monochrome, geometric — Nothing Tech aesthetic
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --ifm-color-primary: #d71921;
+  --ifm-color-primary-dark: #c1161d;
+  --ifm-color-primary-darker: #b6151b;
+  --ifm-color-primary-darkest: #961117;
+  --ifm-color-primary-light: #e32a32;
+  --ifm-color-primary-lighter: #e53940;
+  --ifm-color-primary-lightest: #ea5b61;
+
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', monospace;
+  --ifm-code-font-size: 90%;
+  --ifm-heading-font-weight: 600;
+
+  --ifm-background-color: #f3f2ec;
+  --ifm-navbar-background-color: #f3f2ec;
+  --ifm-footer-background-color: #1a1a1a;
+  --ifm-card-background-color: #ffffff;
+
+  --docusaurus-highlighted-code-line-bg: rgba(215, 25, 33, 0.1);
+
+  /* Nothing design tokens */
+  --nothing-border: rgba(0, 0, 0, 0.16);
+  --nothing-border-strong: rgba(0, 0, 0, 0.35);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #ff3b3b;
+  --ifm-color-primary-dark: #ff1f1f;
+  --ifm-color-primary-darker: #ff1111;
+  --ifm-color-primary-darkest: #e60000;
+  --ifm-color-primary-light: #ff5757;
+  --ifm-color-primary-lighter: #ff6565;
+  --ifm-color-primary-lightest: #ff8989;
+
+  --ifm-background-color: #0a0a0a;
+  --ifm-navbar-background-color: #0a0a0a;
+  --ifm-footer-background-color: #0d0d0d;
+  --ifm-card-background-color: #141414;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 59, 59, 0.15);
+
+  --nothing-border: rgba(255, 255, 255, 0.08);
+  --nothing-border-strong: rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================================
+   NAVBAR - Nothing aesthetic
+   ========================================== */
+.navbar {
+  border-bottom: 1px solid var(--nothing-border);
+  padding: 0.5rem 1rem;
+  min-height: 56px;
+  box-shadow: none;
+}
+
+.navbar__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.navbar__brand {
+  gap: 0.75rem;
+}
+
+.navbar__logo {
+  height: 28px;
+}
+
+.navbar__title {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: -0.03em;
+}
+
+.navbar__link {
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0;
+  transition: color 0.2s ease;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--ifm-color-primary);
+}
+
+.navbar-sidebar__backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile navbar toggle (hamburger) */
+.navbar__toggle {
+  margin-right: 0.5rem;
+}
+
+.navbar__toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Show Stars & GitHub in navbar on mobile (Nothing Phone , etc.) - override Infima hide */
+@media (max-width: 996px) {
+  .navbar__items--right {
+    display: flex !important;
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  .navbar__items--right>* {
+    flex-shrink: 0;
+    /* Prevent squishing/overlapping */
+  }
+
+  .navbar__items--right .navbar__item {
+    display: inline-flex !important;
+    align-items: center;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .navbar__items--right .header-badge img {
+    height: 18px;
+  }
+
+  /* Hide Hits badge on mobile to prioritize Stars & GitHub */
+  .navbar__items--right .header-github-hits {
+    display: none !important;
+  }
+
+  /* The docusaurus search container is absolutely positioned by default and ignores flex layout. 
+     We need to explicitly make it relative so it stacks horizontally with the badges. */
+  div[class*="navbarSearchContainer"] {
+    position: relative !important;
+    right: auto !important;
+    margin-left: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+
+  /* On very small screens, hide the GitHub Stars badge and show the text link instead */
+  .navbar__items--right .header-github-stars {
+    display: none !important;
+  }
+
+  .navbar__items--right .header-github-link {
+    display: inline-flex !important;
+    background: var(--ifm-color-primary);
+    color: white !important;
+    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+}
+
+/* GitHub stars badge */
+.header-github-stars {
+  display: flex;
+  align-items: center;
+}
+
+.header-github-stars img {
+  height: 22px;
+  border-radius: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.header-github-stars:hover img {
+  opacity: 0.85;
+}
+
+.header-github-stars:hover {
+  text-decoration: none;
+}
+
+/* ==========================================
+   SIDEBAR - Proper UX
+   ========================================== */
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--nothing-border);
+  width: 280px;
+  min-width: 280px;
+}
+
+.theme-doc-sidebar-menu {
+  padding: 1rem 0;
+}
+
+.menu__list {
+  padding: 0;
+}
+
+.menu__list-item {
+  margin: 0;
+}
+
+/* Category headers (e.g. "Resources") */
+.menu__list-item-collapsible .menu__link {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.8;
+  padding: 0.75rem 1.25rem 0.5rem;
+}
+
+.menu__list-item-collapsible .menu__link:hover {
+  opacity: 1;
+}
+
+/* Doc links */
+.menu__link {
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0;
+  border-left: 3px solid transparent;
+  margin-left: 0;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.menu__link:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.menu__link--active {
+  font-weight: 600;
+  border-left-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+.menu__link--active:hover {
+  background: rgba(215, 25, 33, 0.06);
+}
+
+[data-theme='dark'] .menu__link:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+[data-theme='dark'] .menu__link--active:hover {
+  background: rgba(255, 59, 59, 0.08);
+}
+
+/* Nested items under category */
+.menu__list-item .menu__list-item .menu__link {
+  padding-left: 1.5rem;
+  font-size: 0.85rem;
+}
+
+/* Mobile sidebar drawer */
+.navbar-sidebar {
+  background: var(--ifm-background-color);
+  border-right: 1px solid var(--nothing-border);
+  width: min(320px, 85vw);
+}
+
+.navbar-sidebar__brand {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--nothing-border);
+}
+
+.navbar-sidebar__close {
+  padding: 0.5rem;
+  border-radius: 0;
+}
+
+.navbar-sidebar__close svg {
+  width: 20px;
+  height: 20px;
+}
+
+.navbar-sidebar__items {
+  padding: 1rem 0;
+}
+
+.navbar-sidebar__item {
+  padding: 0.25rem 1.25rem;
+}
+
+.navbar-sidebar__item .menu__link {
+  padding: 0.6rem 1rem;
+}
+
+/* ==========================================
+   LAYOUT - Main wrapper & doc pages
+   ========================================== */
+.main-wrapper {
+  min-height: 100vh;
+}
+
+.docs-wrapper .main {
+  padding: 2rem 0;
+}
+
+.theme-doc-markdown {
+  max-width: 100%;
+}
+
+/* Content styling */
+article h1,
+article h2,
+article h3 {
+  letter-spacing: -0.02em;
+}
+
+/* Doc sidebar responsive - mobile drawer */
+@media screen and (max-width: 996px) {
+  .theme-doc-sidebar-container {
+    border-right: none;
+    border-bottom: 1px solid var(--nothing-border);
+  }
+
+  .navbar-sidebar {
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
+    width: min(300px, 90vw);
+  }
+
+  [data-theme='dark'] .navbar-sidebar {
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Doc sidebar toggle button - make it prominent on mobile */
+  .theme-doc-sidebar-mobile-menu button {
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* ==========================================
+   TABLE STYLING - MOBILE RESPONSIVE
+   ========================================== */
+
+/* Scrollable table container */
+.markdown,
+.theme-doc-markdown,
+article {
+  overflow-x: visible;
+}
+
+/* Table wrapper div injected by Docusaurus or natural overflow */
+div[class*="tableWrapper"],
+.tableWrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+}
+
+/* Base table styling - keep as table display */
+table {
+  display: table !important;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 0.9rem;
+}
+
+/* Ensure proper table structure */
+table thead {
+  display: table-header-group;
+}
+
+table tbody {
+  display: table-row-group;
+}
+
+table tr {
+  display: table-row;
+}
+
+table th,
+table td {
+  display: table-cell;
+}
+
+/* Table header styling */
+table th {
+  background-color: rgba(128, 128, 128, 0.1);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.2);
+}
+
+[data-theme='dark'] table th {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Table cell styling */
+table td {
+  vertical-align: middle;
+  padding: 0.75rem 1rem;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.12);
+}
+
+[data-theme='dark'] table td {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Zebra striping */
+table tbody tr:nth-child(even) {
+  background-color: rgba(128, 128, 128, 0.03);
+}
+
+[data-theme='dark'] table tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Row hover */
+table tbody tr:hover {
+  background-color: rgba(128, 128, 128, 0.06);
+}
+
+[data-theme='dark'] table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Mobile: Make parent scrollable, not the table */
+@media screen and (max-width: 996px) {
+
+  .markdown,
+  .theme-doc-markdown {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    font-size: 0.85rem;
+    min-width: 600px;
+  }
+
+  table th,
+  table td {
+    padding: 0.6rem 0.75rem;
+  }
+
+  table th {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  table {
+    font-size: 0.8rem;
+    min-width: 500px;
+  }
+
+  table th,
+  table td {
+    padding: 0.5rem 0.65rem;
+  }
+
+  table th {
+    font-size: 0.65rem;
+  }
+}
+
+/* Custom scrollbar for tables */
+.markdown::-webkit-scrollbar,
+.theme-doc-markdown::-webkit-scrollbar {
+  height: 6px;
+}
+
+.markdown::-webkit-scrollbar-track,
+.theme-doc-markdown::-webkit-scrollbar-track {
+  background: rgba(128, 128, 128, 0.1);
+  border-radius: 3px;
+}
+
+.markdown::-webkit-scrollbar-thumb,
+.theme-doc-markdown::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.3);
+  border-radius: 3px;
+}
+
+.markdown::-webkit-scrollbar-thumb:hover,
+.theme-doc-markdown::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.5);
+}
+
+/* Code blocks */
+pre {
+  border: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+code {
+  border-radius: 4px;
+}
+
+/* Navbar Badges */
+.header-badge {
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  transition: opacity 0.2s ease;
+}
+
+.header-badge:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.header-badge img {
+  height: 20px;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================
+   FOOTER - Nothing aesthetic
+   ========================================== */
+.footer {
+  border-top: 1px solid var(--nothing-border);
+  padding: 1.5rem 1rem;
+  background: var(--ifm-footer-background-color);
+  color: #ffffff;
+}
+
+.footer__copyright {
+  margin-bottom: 0;
+  opacity: 0.8;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.footer__title {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  opacity: 0.8;
+}
+
+/* Hero section (fallback for non-home pages) */
+.hero {
+  background: var(--ifm-background-color);
+}
+
+.hero__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.hero__subtitle {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+/* Buttons - Nothing geometric, sharp */
+.button {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  border-radius: 0;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.button--primary {
+  background-color: var(--ifm-color-primary);
+  border: none;
+  color: #ffffff !important;
+}
+
+.button--primary:hover {
+  background-color: var(--ifm-color-primary-dark);
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.button--secondary {
+  background-color: transparent;
+  border: 1px solid var(--nothing-border-strong);
+  color: inherit !important;
+}
+
+.button--secondary:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary) !important;
+}
+
+/* Dot separator style */
+.dot-separator {
+  text-align: center;
+  letter-spacing: 0.5em;
+  opacity: 0.6;
+  margin: 2rem 0;
+}
+
+/* Cards - Nothing geometric */
+.card {
+  background-color: var(--ifm-card-background-color);
+  border: 1px solid var(--nothing-border);
+  border-radius: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme='dark'] .card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] .card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Admonitions - Nothing geometric */
+.admonition {
+  border-radius: 0;
+  border-left-width: 4px;
+}
+
+/* Breadcrumbs */
+.breadcrumbs__link {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Pagination (prev/next) */
+.pagination-nav__link {
+  border: 1px solid var(--nothing-border);
+  border-radius: 0;
+  transition: border-color 0.2s ease;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.5);
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE STYLES
+   ========================================== */
+
+/* General mobile content adjustments */
+@media screen and (max-width: 996px) {
+  .hero__title {
+    font-size: 2.25rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.1rem;
+  }
+
+  article h1 {
+    font-size: 1.75rem;
+  }
+
+  article h2 {
+    font-size: 1.4rem;
+  }
+
+  article h3 {
+    font-size: 1.15rem;
+  }
+
+  .footer__links {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hero__title {
+    font-size: 1.85rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  article h1 {
+    font-size: 1.5rem;
+  }
+
+  article h2 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  article h3 {
+    font-size: 1.1rem;
+  }
+
+  /* Better content padding on mobile */
+  .markdown {
+    padding: 0;
+  }
+
+  .markdown>* {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  /* Navbar adjustments - mobile */
+  .navbar {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .navbar__title {
+    font-size: 0.9rem;
+  }
+
+  .navbar__logo {
+    height: 24px;
+  }
+
+  .navbar__item {
+    padding: 0.25rem 0;
+  }
+
+  /* Footer mobile */
+  .footer {
+    padding: 0.5rem 1rem;
+  }
+
+  .footer__title {
+    font-size: 0.7rem;
+  }
+
+  .footer__item {
+    font-size: 0.85rem;
+  }
+
+  /* Button sizing */
+  .button--lg {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  /* Cards on mobile */
+  .card {
+    border-radius: 8px;
+  }
+
+  /* Admonitions */
+  .admonition {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Fix doc page content width on mobile */
+@media screen and (max-width: 996px) {
+  main[class*="docMainContainer"] {
+    padding: 0 0.5rem;
+  }
+}
+
+/* Docs sidebar toggle button */
+@media screen and (max-width: 996px) {
+  .theme-doc-sidebar-menu {
+    padding: 0.5rem;
+  }
+}
