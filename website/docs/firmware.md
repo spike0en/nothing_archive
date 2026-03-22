@@ -1,18 +1,20 @@
-﻿---
+---
 sidebar_label: Nothing OS Firmware Archive
 title: Nothing OS Firmware Archive
-description: Complete release index for Nothing OS firmware, OTA updates, and stock images for Nothing and CMF devices.
+description: Complete release index for Nothing OS firmware, OTA updates, and factory images for Nothing and CMF devices.
 sidebar_position: 3
 ---
 
-:::caution Disclaimer
+# Nothing OS Firmware Archive
+
+## Disclaimer
+
 By using this archive, users acknowledge and accept these terms:
 - **Authenticity**: All firmware files are unaltered, unmodified, and sourced directly from the OEM.
 - **Flash at Your Own Risk**: Installing firmware on an unlocked bootloader carries inherent risks. Follow instructions carefully to avoid bricking your device.
 - **Compatibility**: Ensure the firmware matches your Nothing or CMF device variant before installation.
 - **No Warranty**: This is a community-driven project, unaffiliated with [Nothing](https://nothing.tech). The author and contributors are not liable for bricked devices due to misuse or firmware modifications.
 - **Integrity**: Redistribution is permitted only with proper attribution. Reselling freely available firmware is strictly prohibited.
-:::
 
 ### Features & Benefits
 
