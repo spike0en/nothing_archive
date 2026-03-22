@@ -1,4 +1,4 @@
-import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   mainSidebar: [
@@ -7,7 +7,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Resources',
       collapsed: false,
-      items: ['devices', 'apps', 'projects', 'official', 'photography', 'guides'],
+      items: ['devices', 'firmware', 'guides', 'official', 'apps', 'projects', 'photography'],
     },
   ],
 };

@@ -1,6 +1,6 @@
 /**
- * Nothing-inspired theme for Awesome Nothing
- * Minimal, monochrome, geometric — Nothing Tech aesthetic
+ * Custom CSS for Nothing Archive
+ * Implements a minimal, monochrome aesthetic inspired by Nothing Tech.
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
@@ -136,8 +136,7 @@
     display: none !important;
   }
 
-  /* The docusaurus search container is absolutely positioned by default and ignores flex layout. 
-     We need to explicitly make it relative so it stacks horizontally with the badges. */
+  /* Override absolute positioning of search container to allow flex stacking */
   div[class*="navbarSearchContainer"] {
     position: relative !important;
     right: auto !important;
@@ -147,7 +146,7 @@
 
 @media (max-width: 576px) {
 
-  /* On very small screens, hide the GitHub Stars badge and show the text link instead */
+  /* Fallback: hide Stars badge and show text link on extra small screens */
   .navbar__items--right .header-github-stars {
     display: none !important;
   }
@@ -348,7 +347,7 @@ article {
   overflow-x: visible;
 }
 
-/* Table wrapper div injected by Docusaurus or natural overflow */
+/* Horizontal scrolling for wide tables */
 div[class*="tableWrapper"],
 .tableWrapper {
   overflow-x: auto;
@@ -436,23 +435,49 @@ table tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* Mobile: Make parent scrollable, not the table */
+/* Hyperlink styling within tables */
+table td a {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  background-color: rgba(128, 128, 128, 0.1);
+  color: var(--ifm-color-primary) !important;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+table td a:hover {
+  background-color: rgba(128, 128, 128, 0.2);
+  transform: translateY(-1px);
+}
+
+[data-theme='dark'] table td a {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='dark'] table td a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile adjustments */
 @media screen and (max-width: 996px) {
 
-  .markdown,
-  .theme-doc-markdown {
+  /* Force tables to be scrollable blocks on mobile to prevent breaking details layouts */
+  table {
+    display: block !important;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-  }
-
-  table {
+    width: 100%;
     font-size: 0.85rem;
-    min-width: 600px;
   }
 
+  /* Force content minimum widths so it scrolls instead of squishing */
   table th,
   table td {
     padding: 0.6rem 0.75rem;
+    white-space: nowrap;
   }
 
   table th {
@@ -463,7 +488,6 @@ table tbody tr:hover {
 @media screen and (max-width: 576px) {
   table {
     font-size: 0.8rem;
-    min-width: 500px;
   }
 
   table th,
@@ -805,4 +829,42 @@ a:hover {
   .theme-doc-sidebar-menu {
     padding: 0.5rem;
   }
+}
+
+details {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  /* Remove all margins to fix large spacing */
+}
+
+details summary {
+  position: relative;
+  background-color: transparent !important;
+  color: inherit !important;
+  font-weight: 500 !important;
+  /* Slightly lighter for a cleaner look */
+  padding: 0.4rem 0 0.4rem 1.25rem !important;
+  /* Comfortable inline padding */
+  border: none !important;
+  transition: color 0.2s ease;
+  line-height: 1.5 !important;
+}
+
+details summary:hover {
+  background-color: transparent !important;
+  color: var(--ifm-color-primary) !important;
+}
+
+/* Force perfect vertical centering of the Docusaurus arrow */
+details summary::before {
+  top: 50% !important;
+  margin-top: 0 !important;
+  transform: translateY(-50%) !important;
+}
+
+/* Open state rotation fix */
+details[open] summary::before {
+  transform: translateY(-50%) rotate(90deg) !important;
 }

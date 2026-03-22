@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 6
 title: Community Apps
 description: Community-built apps for Nothing phones — Glyph-powered, productivity, utilities, and more.
 keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, nothing widgets, nothing productivity]

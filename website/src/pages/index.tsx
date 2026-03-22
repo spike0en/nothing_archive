@@ -30,7 +30,7 @@ function HomepageHeader() {
             </div>
           </div>
           <div className={styles.heroImage}>
-            <img src="img/logo.png" alt="Awesome Nothing" width={280} height={280} fetchPriority="high" loading="eager" className={styles.heroLogo} />
+            <img src="img/logo.png" alt="Nothing Archive" width={280} height={280} fetchPriority="high" loading="eager" className={styles.heroLogo} />
           </div>
         </div>
       </div>
@@ -51,6 +51,21 @@ const FeatureList: FeatureItem[] = [
     link: '/docs/devices',
   },
   {
+    title: 'Nothing OS Firmware Archive',
+    description: 'Complete firmware release index for all Nothing and CMF devices.',
+    link: '/docs/firmware',
+  },
+  {
+    title: 'Guides',
+    description: 'Step-by-step guides for bootloader, rooting, and device customization.',
+    link: '/docs/guides',
+  },
+  {
+    title: 'Official Resources',
+    description: 'Apps, wallpapers, fonts, kernel sources, and developer SDKs from Nothing.',
+    link: '/docs/official',
+  },
+  {
     title: 'Community Apps',
     description: 'Glyph-powered apps, productivity tools, and utilities built by the community.',
     link: '/docs/apps',
@@ -61,19 +76,9 @@ const FeatureList: FeatureItem[] = [
     link: '/docs/projects',
   },
   {
-    title: 'Official Resources',
-    description: 'Apps, wallpapers, fonts, kernel sources, and developer SDKs from Nothing.',
-    link: '/docs/official',
-  },
-  {
     title: 'Photography',
     description: 'GCAM ports, configs, and camera presets for Nothing devices.',
     link: '/docs/photography',
-  },
-  {
-    title: 'Guides',
-    description: 'Step-by-step guides for bootloader, rooting, and device customization.',
-    link: '/docs/guides',
   },
 ];
 
@@ -149,7 +154,7 @@ function HomepageStarsGraph() {
         <div className={styles.chartContainer}>
           <img
             alt="Star History Chart"
-            src={`https://api.star-history.com/svg?repos=spike0en/awesome_nothing&type=Date${isDarkTheme ? '&theme=dark' : ''}`}
+            src={`https://api.star-history.com/svg?repos=spike0en/nothing_archive&type=Date${isDarkTheme ? '&theme=dark' : ''}`}
             className={styles.starChartImage}
           />
         </div>

@@ -1,10 +1,18 @@
+/**
+ * Docusaurus Configuration
+ * 
+ * Defines site metadata, navigation, plugins, and theme configuration
+ * for the Nothing Archive documentation website.
+ */
+
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+
 const config: Config = {
-  title: 'Awesome Nothing',
-  tagline: 'A curated list of everything related to Nothing & CMF by Nothing ecosystem',
+  title: 'Nothing Archive',
+  tagline: 'Your ultimate source for Nothing OS firmware, community resources, and guides',
   favicon: 'img/logo.png',
 
   future: {
@@ -12,13 +20,20 @@ const config: Config = {
   },
 
   url: 'https://spike0en.github.io',
-  baseUrl: '/awesome_nothing/',
+  baseUrl: '/nothing_archive/',
 
   organizationName: 'spike0en',
-  projectName: 'awesome_nothing',
+  projectName: 'nothing_archive',
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
+
+  markdown: {
+    format: 'mdx',
+    mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    },
+  },
 
   i18n: {
     defaultLocale: 'en',
@@ -27,6 +42,7 @@ const config: Config = {
 
   themes: [
     [
+      // Offline local search plugin
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
         hashed: true,
@@ -41,7 +57,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/spike0en/awesome_nothing/tree/main/website/',
+          editUrl: 'https://github.com/spike0en/nothing_archive/tree/main/website/',
         },
         blog: false,
         theme: {
@@ -91,9 +107,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Awesome Nothing',
+      title: 'Nothing Archive',
       logo: {
-        alt: 'Awesome Nothing Logo',
+        alt: 'Nothing Archive Logo',
         src: 'img/logo.png',
       },
       items: [
@@ -109,21 +125,21 @@ const config: Config = {
           label: 'Docs',
         },
         {
-          href: 'https://github.com/spike0en/awesome_nothing',
+          href: 'https://github.com/spike0en/nothing_archive',
           position: 'right',
           className: 'header-badge header-github-hits',
           'aria-label': 'GitHub Hits',
-          html: `<img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fawesome_nothing&label=Hits&icon=github&color=%2324292e&labelColor=333333" width="107" height="20" alt="GitHub Hits" />`,
+          html: `<img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%2324292e&labelColor=333333" width="107" height="20" alt="GitHub Hits" />`,
         },
         {
-          href: 'https://github.com/spike0en/awesome_nothing/stargazers',
+          href: 'https://github.com/spike0en/nothing_archive/stargazers',
           position: 'right',
           className: 'header-badge header-github-stars',
           'aria-label': 'GitHub Stars',
-          html: `<img src="https://img.shields.io/github/stars/spike0en/awesome_nothing?logo=github&color=24292e" width="80" height="20" alt="GitHub Stars" />`,
+          html: `<img src="https://img.shields.io/github/stars/spike0en/nothing_archive?logo=github&color=24292e" width="80" height="20" alt="GitHub Stars" />`,
         },
         {
-          href: 'https://github.com/spike0en/awesome_nothing',
+          href: 'https://github.com/spike0en/nothing_archive',
           label: 'GitHub',
           position: 'right',
           className: 'header-github-link',
