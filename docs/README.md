@@ -66,30 +66,26 @@ If this project helps you, please consider [starring <img src="https://raw.githu
 
 ## Overview
 
-Nothing Archive is the most up-to-date Nothing OS firmware repository, offering official OTA updates, full firmware packages, and stock OTA images for Nothing and CMF by Nothing phones. All files are sourced directly from official OEM servers and [archived](https://archive.org/details/nothing-archive) for long-term preservation and easy access.
+Nothing Archive is the most up-to-date Nothing OS firmware repository, offering official OTA updates, full firmware packages, and stock OTA images for Nothing and CMF by Nothing phones. All files are sourced directly from official OEM servers and [archived](https://archive.org/details/nothing-archive) for long-term preservation and easy access. 
 
-In addition to the above, the project also indexes community-made apps, tools, projects, and official resources for Nothing devices.
+Beyond firmware, the project indexes community-made apps, tools, projects, official resources, aftermarket development initiatives, and more, thus serving as an all-in-one curated hub for everything related to the Nothing & CMF ecosystem.
 
 <div align="center">
-  <br>
-  <span style="font-size: 30px;">••••••••••••••••••••••</span>
-  <br>
+  <span style="font-size: 28px;">••••••••••••••••••••••</span>
 </div>
 
 ## Contents
 
-- **[Devices](https://spike0en.github.io/nothing_archive/docs/devices)** — Complete catalog of Nothing & CMF products
-- **[Nothing OS Firmware Archive](https://spike0en.github.io/nothing_archive/docs/firmware)** — Nothing OS OTA and Stock images
-- **[Guides](https://spike0en.github.io/nothing_archive/docs/guides)** — Comprehensive step-by-step tutorials
-- **[Official Resources](https://spike0en.github.io/nothing_archive/docs/official)** — OEM apps, SDKs, wallpapers, and fonts
-- **[Community Apps](https://spike0en.github.io/nothing_archive/docs/apps)** — Glyph-powered apps, productivity tools, and utilities
-- **[Projects](https://spike0en.github.io/nothing_archive/docs/projects)** — Glyph tools, modules, and more
-- **[Photography](https://spike0en.github.io/nothing_archive/docs/photography)** — GCAM ports, configs, and stock camera presets
+- **[Devices](https://spike0en.github.io/nothing_archive/docs/devices)**: Complete catalog of Nothing & CMF products
+- **[Nothing OS Firmware Archive](https://spike0en.github.io/nothing_archive/docs/firmware)**: Nothing OS OTA updates and unmodified factory images
+- **[Guides](https://spike0en.github.io/nothing_archive/docs/guides)**: Comprehensive step-by-step tutorials
+- **[Official Resources](https://spike0en.github.io/nothing_archive/docs/official)**: OEM apps, SDKs, wallpapers, and fonts
+- **[Community Apps](https://spike0en.github.io/nothing_archive/docs/apps)**: Glyph-powered apps, productivity tools, and utilities
+- **[Projects](https://spike0en.github.io/nothing_archive/docs/projects)**: Glyph tools, modules, and more
+- **[Photography](https://spike0en.github.io/nothing_archive/docs/photography)**: GCAM ports, configs, and stock camera presets
 
 <div align="center">
-  <br>
-  <span style="font-size: 30px;">••••••••••••••••••••••</span>
-  <br>
+  <span style="font-size: 28px;">••••••••••••••••••••••</span>
 </div>
 
 ## Acknowledgements
@@ -103,10 +99,6 @@ Special thanks to:
 - **[XelXen](https://github.com/spike0en/nothing_archive/tree/main/assets/branding)** for project branding and design.
 - **[Project Contributors](https://github.com/spike0en/nothing_archive/graphs/contributors)** for their invaluable contributions and insights.
 
-- All the **creators, project maintainers, and community members** working behind the scenes. Their efforts, whether direct or indirect, have helped make this project possible.
-
 <div align="center">
-  <br>
-  <span style="font-size: 30px;">••••••••••••••••••••••</span>
-  <br>
+  <span style="font-size: 28px;">••••••••••••••••••••••</span>
 </div>
