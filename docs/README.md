@@ -403,6 +403,7 @@ Select your device model to access its Release Index.
 
 | **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
+| 4.1 | Frogger-B4.1-260317-2043 | Frogger_B4.1-260309-1830 -> [Frogger_B4.1-260317-2043](https://android.googleapis.com/packages/ota-api/package/379e92cee0f50410f662a6a27fed24b84e1294fd.zip) | N/A | N/A |
 | 4.1 | Frogger-B4.1-260309-1830 | Frogger_B4.1-260204-2218 -> [Frogger_B4.1-260309-1830](https://android.googleapis.com/packages/ota-api/package/6080372e63d2457ef8947525eb00a20184d7c748.zip) <br> Frogger_B4.1-260115-2109 -> [Frogger_B4.1-260309-1830](https://android.googleapis.com/packages/ota-api/package/02d3a4e54d0a00987f5d632aec75ab3c7e0373a1.zip) | N/A | N/A | 
 | 4.1 | Frogger-B4.1-260204-2218 | Frogger_B4.1-260115-2109 -> [Frogger_B4.1-260204-2218](https://android.googleapis.com/packages/ota-api/package/e86d32f2e060d9b2ea13680c571b78ecf632ac2b.zip) | N/A | N/A |
 
