@@ -6,14 +6,14 @@
 
 <div align="center">
 
-[![Downloads](https://img.shields.io/badge/Release_Index-B23131?style=for-the-badge&logo=github&logoColor=white)](#downloads)
-
-[![Guides](https://img.shields.io/badge/Guides-18673F?style=for-the-badge&logo=readthedocs&logoColor=white)](#guides)
-[![OTA Changelogs](https://img.shields.io/badge/OTA_Changelogs-008080?style=for-the-badge&logo=github&logoColor=white)](#changelogs)
+[![Website](https://img.shields.io/badge/Website-7D00FF?style=for-the-badge&logo=Stellar&logoColor=white)](https://spike0en.github.io/nothing_archive/)
 
 [![Discussion](https://img.shields.io/badge/Discussion-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/s/Nothing_Archive)
 [![Nothing Flasher](https://img.shields.io/badge/Nothing_Flasher-67119E?style=for-the-badge&logo=github&logoColor=white)](https://github.com/spike0en/nothing_flasher)
-[![Awesome Nothing Index](https://img.shields.io/badge/Nothing_Index-B06676?style=for-the-badge&logo=github&logoColor=white)](https://github.com/spike0en/awesome_nothing)
+
+[![Guides](https://img.shields.io/badge/Guides-18673F?style=for-the-badge&logo=readthedocs&logoColor=white)](https://spike0en.github.io/nothing_archive/docs/guides)
+[![OTA Changelogs](https://img.shields.io/badge/OTA_Changelogs-008080?style=for-the-badge&logo=github&logoColor=white)](https://spike0en.github.io/nothing_archive/docs/firmware#changelogs)
+[![Downloads](https://img.shields.io/badge/Release_Index-B23131?style=for-the-badge&logo=github&logoColor=white)](https://spike0en.github.io/nothing_archive/docs/firmware#downloads)
 
 [![Hits](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%23b02a37&labelColor=2E2E3F&message=&style=for-the-badge)](https://github.com/spike0en/nothing_archive)
 [![Stars](https://img.shields.io/github/stars/spike0en/nothing_archive?style=for-the-badge&logo=github&logoColor=white)](https://github.com/spike0en/nothing_archive/stargazers)
