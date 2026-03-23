@@ -83,6 +83,13 @@ const config: Config = {
       },
     },
     {
+      tagName: 'meta',
+      attributes: {
+        name: 'msvalidate.01',
+        content: '9A91D8D4ED9FB1AF08C3344E84B33661',
+      },
+    }, 
+    {
       tagName: 'link',
       attributes: {
         rel: 'preconnect',
