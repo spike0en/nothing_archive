@@ -153,6 +153,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | App | Developer | Description |
 |-----|-----------|-------------|
 | [365-Days](https://github.com/dipin-bot/365-Days) | dipin-bot | Live wallpaper countdown |
+| [Atmo Engine](https://github.com/saad-khan-rind/NOSAtmosphereEffect) | saad-khan-rind | Atmosphere wallpaper effect |
 | [Dot Battery](https://play.google.com/store/apps/details?id=com.lisra.dotbattery) | RapidZapper | Battery level wallpaper |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Lentlay](https://lentlay.framer.website/) | Omkar Mangalekar | Lenticular effect for images |
@@ -161,5 +162,6 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | Mobile app for nothing.community |
 | [Nothing News](https://play.google.com/store/apps/details?id=com.nothing.news) | Mirko_ddd | Community news |
 | [NothingLand](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Dynamic Island for Nothing OS |
+| [Tetris](https://github.com/ItsCR24/tetris-m3) | ItsCR24 | Material You & Nothing OS inspired Tetris game|
 | [Widgets Pro](https://play.google.com/store/apps/details?id=com.tpk.widgetspro) | Preethamkmr3 | Additional widgets |
-| [Atmo Engine](https://github.com/saad-khan-rind/NOSAtmosphereEffect) | saad-khan-rind | Atmosphere wallpaper effect |
+
