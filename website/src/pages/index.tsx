@@ -11,6 +11,9 @@ import { TbMessageCircle } from 'react-icons/tb';
 import styles from './index.module.css';
 import { JSX } from 'react';
 
+/**
+ * Renders the top hero section of the homepage with the site title, tagline, and call-to-action button.
+ */
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
@@ -82,6 +85,9 @@ const FeatureList: FeatureItem[] = [
   },
 ];
 
+/**
+ * Renders an individual feature card in the resources grid.
+ */
 function Feature({ title, description, link }: FeatureItem) {
   return (
     <div className={clsx('col col--4', styles.featureCol)}>
@@ -96,6 +102,9 @@ function Feature({ title, description, link }: FeatureItem) {
   );
 }
 
+/**
+ * Renders the main grid of documentation categories and resources.
+ */
 function HomepageFeatures() {
   return (
     <section className={styles.features}>
@@ -111,6 +120,9 @@ function HomepageFeatures() {
   );
 }
 
+/**
+ * Renders a row of social media icons and community links.
+ */
 function HomepageSocials() {
   const links = [
     { label: 'Telegram', href: 'https://t.me/s/Nothing_Archive', icon: <FaTelegramPlane size={24} /> },
@@ -139,6 +151,10 @@ function HomepageSocials() {
   );
 }
 
+/**
+ * Renders a call-to-action section asking users to star the GitHub repository,
+ * complete with a dynamic Star History chart.
+ */
 function HomepageStarsGraph() {
   const { colorMode } = useColorMode();
   const isDarkTheme = colorMode === 'dark';
@@ -163,11 +179,14 @@ function HomepageStarsGraph() {
   );
 }
 
+/**
+ * Main application entry point for the homepage.
+ */
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title="Home"
+      title="Nothing OS Firmware & Resources"
       description={siteConfig.tagline}
     >
       <HomepageHeader />
