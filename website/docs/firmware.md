@@ -7,7 +7,7 @@ sidebar_position: 3
 
 # Nothing OS Firmware Archive
 
-## Disclaimer
+:::warning Disclaimer
 
 By using this archive, users acknowledge and accept these terms:
 - **Authenticity**: All firmware files are unaltered, unmodified, and sourced directly from the OEM.
@@ -15,6 +15,8 @@ By using this archive, users acknowledge and accept these terms:
 - **Compatibility**: Ensure the firmware matches your Nothing or CMF device variant before installation.
 - **No Warranty**: This is a community-driven project, unaffiliated with [Nothing](https://nothing.tech). The author and contributors are not liable for bricked devices due to misuse or firmware modifications.
 - **Integrity**: Redistribution is permitted only with proper attribution. Reselling freely available firmware is strictly prohibited.
+
+:::
 
 ### Features & Benefits
 
@@ -24,13 +26,15 @@ By using this archive, users acknowledge and accept these terms:
 - **Rooting & Unrooting Support**: Provides stock boot images for Magisk, KernelSU, and Apatch, while allowing unrooting by flashing the original boot image.
 - **Device Recovery**: Provides fastboot-flashable Nothing OS firmware to resolve boot loops, recover soft-bricked devices, and restore stock ROM.
 
-## Notes
+:::info
 
 - Releases for OTA images are tagged using the format `<POST_OTA_VERSION>`, as shown in the [releases](https://github.com/spike0en/nothing_archive/releases) section.
 - Region-specific releases are tagged as `<POST_OTA_VERSION>-<GLO/EEA>`, applicable to older Spacewar builds. GLO = Global; EEA = European Economic Area.
 - Nothing OS Open Beta Test releases are denoted by `OBT`.
 - Android Developer preview releases are tagged as `0.0.0-dev`+`<Device Codename>.<Incremental Date>`.
 - Unless stated otherwise, releases are compatible with all regional and color variants of the device.
+
+:::
 
 <hr />
 
@@ -409,8 +413,11 @@ certutil -hashfile <filename> SHA256
 
 Access detailed OTA update changelogs for each device, named after the corresponding Nothing OS build version number, below:
 
-> [!Note]
-> Changelogs are only available for builds released on or after December 17, 2025.
+:::note
+
+Changelogs are only available for builds released on or after December 17, 2025.
+
+:::
 
 - [Nothing Phone (1)](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/spacewar/)
 - [Nothing Phone (2)](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/pong/)
