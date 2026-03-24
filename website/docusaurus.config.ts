@@ -12,9 +12,9 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Nothing Archive',
-  tagline: 'Your ultimate source for Nothing OS firmware, community resources, and guides',
+  tagline: 'Download official Nothing OS firmware & OTA updates for Nothing & CMF Phones. Explore apps, glyph tools, widgets & community projects in one hub.',
   favicon: 'img/logo.png',
-
+  
   future: {
     v4: true,
   },
