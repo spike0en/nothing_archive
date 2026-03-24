@@ -152,5 +152,5 @@ Official `.glb` files for device models.
 | Nothing Support (X) | [@nothingsupport](https://x.com/nothingsupport) |
 | Product Guide | [nothing.tech](https://nothing.tech/pages/support-product-help) |
 | Product Status | [nothing.tech/imei](https://nothing.tech/pages/imei) |
-| Service Centre | [nothing.tech](https://nothing.tech/pages/service-center) |
+| Service Centre (IN) | [in.nothing.tech](https://in.nothing.tech/pages/service-center) |
 | Troubleshooting | [support.nothing.tech](https://support.nothing.tech/hc/en-us/categories/7455115681041-Troubleshooting) |
