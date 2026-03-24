@@ -43,6 +43,8 @@ if defined SEVENZIP (
 echo.
 echo =========================================================
 echo Current working directory:
+set "ORIGINAL_DIR=%~dp0.."
+cd /d "%ORIGINAL_DIR%"
 echo %CD%
 echo =========================================================
 
@@ -112,7 +114,7 @@ set /p choice=Proceed with default extraction directory? (Y/N):
 
 if /I "%choice%"=="Y" (
     :: Generate timestamp-based folder name using PowerShell
-    for /f %%I in ('powershell -command "Get-Date -Format 'yyyyMMdd_HHmmss'"') do set "EXTRACT_DIR=%CD%\flash_%%I"
+    for /f %%I in ('powershell -command "Get-Date -Format 'yyyyMMdd_HHmmss'"') do set "EXTRACT_DIR=%ORIGINAL_DIR%\flash_%%I"
 ) else (
     echo.
     set /p EXTRACT_DIR=Enter custom extraction directory path: 

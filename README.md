@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="../website/static/assets/branding/logo.png" width="128" alt="Nothing Archive Logo">
+  <img src="website/static/assets/branding/logo.png" width="128" alt="Nothing Archive Logo">
   <h1>Nothing Archive</h1>
   <p>Your ultimate source for Nothing OS firmware, stock OTA images, and comprehensive guides for Nothing & CMF by Nothing devices.</p>
   <br>
@@ -20,23 +20,6 @@
 [![Total Downloads](https://img.shields.io/github/downloads/spike0en/nothing_archive/total?style=for-the-badge&logo=github&logoColor=white)](https://github.com/spike0en/nothing_archive/releases)
 
 </div>
-
-<div align="center">
-  <br>
-  <span style="font-size: 30px;">••••••••••••••••••••••</span>
-  <br>
-</div>
-
-<div align="center">
-  <br>
-  🌍 <strong>Available languages</strong><br />
-  <br>
-  
-  [English](README.md) • [Deutsch](README_de-DE.md) • [Español](README_es-ES.md) •
-  [Français](README_fr-FR.md) • [हिन्दी](README_hi-IN.md) • [Italiano](README_it-IT.md) •
-  [日本語](README_ja-JP.md) • [Русский](README_ru-RU.md) • [Türkçe](README_tr-TR.md) •
-  [简体中文](README_zh-CN.md) • [繁體中文](README_zh-TW.md)
-  </div>
 
 <div align="center">
   <br>
@@ -88,6 +71,14 @@ Beyond firmware, the project indexes community-made apps, tools, projects, offic
   <span style="font-size: 28px;">••••••••••••••••••••••</span>
 </div>
 
+## Contributing
+
+We welcome community contributions! If you'd like to help improve the documentation, add new apps, or write guides, please read our [Contributing Guidelines](CONTRIBUTING.md) to get started.
+
+<div align="center">
+  <span style="font-size: 28px;">••••••••••••••••••••••</span>
+</div>
+
 ## Acknowledgements
 
 Special thanks to:
@@ -96,7 +87,7 @@ Special thanks to:
 - **[Daniel Springer](https://github.com/Daniel210191)** for providing self-hosted runner instances.
 - **[Shiki](https://github.com/guptavishal-xm1)** for crafting the initial website for the repo.
 - **[LukeSkyD](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/)** for early build references.
-- **[XelXen](https://github.com/spike0en/nothing_archive/tree/main/assets/branding)** for project branding and design.
+- **[XelXen](https://github.com/spike0en/nothing_archive/tree/main/website/static/assets/branding)** for project branding and design.
 - **[Project Contributors](https://github.com/spike0en/nothing_archive/graphs/contributors)** for their invaluable contributions and insights.
 
 <div align="center">

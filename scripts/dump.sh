@@ -7,7 +7,8 @@
 
 # === Configuration ===
 set -e
-export LD_LIBRARY_PATH="$(pwd)/bin:$LD_LIBRARY_PATH"
+ORIGINAL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+export LD_LIBRARY_PATH="$ORIGINAL_DIR/bin:$LD_LIBRARY_PATH"
 
 DETECTED_CORES=$(nproc)
 CORES=$((DETECTED_CORES > 44 ? 44 : DETECTED_CORES))
@@ -21,9 +22,9 @@ echo "Thread allocation - ARIA2C: $ARIA2C_CONNECTIONS, PARALLEL: $PARALLEL_JOBS,
 
 export PARALLEL="-j$PARALLEL_JOBS"
 
-ORIGINAL_DIR=$(pwd)
+
 OTA_EXTRACTOR="$ORIGINAL_DIR/bin/ota_extractor"
-DEVICES_JSON="$ORIGINAL_DIR/devices.json"
+DEVICES_JSON="$ORIGINAL_DIR/scripts/devices.json"
 OUTPUT_DIR="$ORIGINAL_DIR/out"
 
 mkdir -p "$OUTPUT_DIR"

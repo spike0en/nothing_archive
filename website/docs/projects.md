@@ -19,7 +19,6 @@ A collection of tools for creating custom Glyph tones and compositions.
 | [Better Nothing Glyph Visualizer](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | alekslevet | Enhanced music visualization |
 | [Cassette](https://github.com/Chipik0/Cassette) | Chipik0 | Create glyph compositions |
 | [Custom Nothing Glyph Tools](https://github.com/SebiAi/custom-nothing-glyph-tools) | SebiAi | Create custom tones with Audacity |
-| [Glyphify v1](https://github.com/Fr4nKB/Glyphify) | Fr4nKB | Advanced Glyph control (v3 on Play Store) |
 | [Glyphtones project](https://github.com/firu11/nothing-glyphtones) | Firu11 | Open-source repo for Glyphtones website |
 | [Glyphtones website](https://glyphtones.is-a.dev/) | Firu11 | Collection of community Glyph tones |
 | [GlyphVisualizer](https://github.com/SebiAi/GlyphVisualizer) | SebiAi | Desktop visualizer for .ogg compositions |

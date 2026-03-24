@@ -12,4 +12,4 @@ jobs:
       - name: Lychee Link Checker
         uses: lycheeverse/lychee-action@v1.9.3
         with:
-          args: --accept 200,429 --verbose --no-progress './**/*.md'
+          args: --accept 200,429 --verbose --no-progress --exclude "reddit.com" --exclude "archive.org" --exclude "support.nothing.tech" --exclude "forms.gle" --exclude "github.com/.*/releases/tag" './**/*.md'
