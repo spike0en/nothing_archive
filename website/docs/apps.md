@@ -131,6 +131,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Nothing Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | AI-powered browser |
 | [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | World clock, timer, stopwatch |
 | [Nothing Desk Clock](https://play.google.com/store/apps/details?id=com.ApexCreator.deskclock) | Apex Creators | Desk clock app |
+| [Nothing Files](https://github.com/Mo-Array/Nothing-Files) | Mo-Array | Nothing OS themed file manager app |
 | [Nothing Gallery](https://github.com/jerichoi224/Nothing-Gallery) | jerichoi224 | Gallery app |
 | [Nothing LED Banner](https://play.google.com/store/apps/details?id=com.ApexCreator.thebannerapp) | Apex Creators | LED banner creator |
 | [Nothing Wallpaper Changer](https://github.com/NineCSdev/nothing-wallpaper-changer) | NineCSdev | Lockscreen wallpaper changer for Nothing Phone (1) |
