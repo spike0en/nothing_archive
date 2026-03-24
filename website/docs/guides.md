@@ -464,18 +464,28 @@ D. **Restoring Partitions**
 :::
 
 A. **Preparation of Flashing Folder:**
-  - Download the following files for your device model and firmware build and place them in a dedicated folder:
+  - Download the following files for your device model and firmware build, and place them in a dedicated folder:
     - image-boot.7z
     - image-firmware.7z
     - image-logical.7z.001-00x
-    - `-hash.sha256` - This is optional but recommended if you want to verify integrity of image files and also check for missing ones. 
+    - `-hash.sha256` - This is optional but recommended for verifying file integrity and detecting missing parts.
 
-  - Install 7-Zip from [here](https://www.7-zip.org/).
+  - Install 7-Zip from https://www.7-zip.org/
+
+  - Optional (**recommended**): You can use extraction scripts instead of manual steps:
+    - [Windows](https://github.com/spike0en/nothing_archive/blob/main/scripts/extract.bat)
+    - [Bash](https://github.com/spike0en/nothing_archive/blob/main/scripts/extract.sh)
+    - Run the script from the same folder where the downloaded files are located.
+
   - Extract files:
     - Windows: Right-click → Extract to "*\"
-    - Bash users:
-      `7za -y x "*.7z*"`
-    - In rare cases, download managers may change file extensions for split logical files. Rename `image-logical.7z.001.7z`, `image-logical.7z.002.7z`, etc., to `image-logical.7z.001`, `image-logical.7z.002`, and retry extraction.
+    - Bash users: `7za -y x "*.7z*"`
+
+  - In rare cases, download managers may modify the extensions of split logical files.
+  - Rename:
+    - `-image-logical.7z.001.7z` → `-image-logical.7z.001`
+    - `-image-logical.7z.002.7z` → `-image-logical.7z.002`
+  - Then retry the extraction.
 
 B. **Proceeding with Flashing:**
   - Install compatible USB drivers from [here](https://developer.android.com/studio/run/win-usb).
