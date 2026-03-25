@@ -145,7 +145,8 @@ echo [2] Nothing Phone (2)
 echo [3] Nothing Phone (2a) Series
 echo [4] Nothing Phone (3a) Series
 echo [5] Nothing Phone (3)
-echo [6] CMF Phone (1) - Phone (2) Pro
+echo [6] Nothing Phone (4a)
+echo [7] CMF Phone (1) - Phone (2) Pro
 echo [X] Exit
 echo.
 
@@ -157,7 +158,8 @@ if "%DEVICE_CHOICE%"=="2" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.co
 if "%DEVICE_CHOICE%"=="3" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/pacman/Windows/flash_all.bat"
 if "%DEVICE_CHOICE%"=="4" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/asteroids/Windows/flash_all.bat"
 if "%DEVICE_CHOICE%"=="5" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/metroid/Windows/flash_all.bat"
-if "%DEVICE_CHOICE%"=="6" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/galaga-tetris/Windows/flash_all.bat"
+if "%DEVICE_CHOICE%"=="6" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/frogger/Windows/flash_all.bat"
+if "%DEVICE_CHOICE%"=="7" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/galaga-tetris/Windows/flash_all.bat"
 if /I "%DEVICE_CHOICE%"=="X" exit /b 0
 
 if "%FLASH_SCRIPT_URL%"=="" (
