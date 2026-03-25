@@ -214,45 +214,68 @@
   letter-spacing: -0.01em;
 }
 
-/* --- Star History --- */
-.starsGraphSection {
+/* --- Support the Project --- */
+.supportSection {
   padding: 3rem 0;
   border-top: 1px solid var(--nothing-border);
 }
 
-.starsGraphText {
+.supportText {
   text-align: center;
   max-width: 600px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 1.5rem;
   font-size: 1.05rem;
   opacity: 0.85;
   line-height: 1.6;
   letter-spacing: -0.01em;
 }
 
-.starsGraphText p {
-  margin-bottom: 0.5rem;
+.supportText p {
+  margin-bottom: 0;
 }
 
-.chartContainer {
+.supportActions {
   display: flex;
   justify-content: center;
+}
+
+.starButton {
+  display: inline-flex;
   align-items: center;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
+  gap: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #fff !important;
+  background: var(--ifm-color-primary);
+  border: none;
+  border-radius: 0;
+  text-decoration: none !important;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
 
-.starChartImage {
-  width: 100%;
+.starButton:hover {
+  background: var(--ifm-color-primary-dark);
+  color: #fff !important;
+  transform: translateY(-1px);
+  text-decoration: none !important;
+}
+
+/* --- Contributors --- */
+.contributorsSection {
+  padding: 3rem 0;
+  border-top: 1px solid var(--nothing-border);
+}
+
+.contributorGrid {
+  display: flex;
+  justify-content: center;
+}
+
+.contribImage {
+  max-width: 100%;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--nothing-border);
-}
-
-[data-theme='dark'] .starChartImage {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* --- Socials --- */

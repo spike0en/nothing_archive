@@ -1,10 +1,9 @@
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { useColorMode } from '@docusaurus/theme-common';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
-import { FaTelegramPlane, FaDiscord, FaRedditAlien, FaYoutube, FaInstagram, FaGithub, FaTerminal } from 'react-icons/fa';
+import { FaTelegramPlane, FaDiscord, FaRedditAlien, FaYoutube, FaInstagram, FaGithub, FaTerminal, FaStar } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { TbMessageCircle } from 'react-icons/tb';
 
@@ -152,30 +151,59 @@ function HomepageSocials() {
 }
 
 /**
- * Renders a call-to-action section asking users to star the GitHub repository,
- * complete with a dynamic Star History chart.
+ * Renders a compact call-to-action encouraging users to star the repository on GitHub.
  */
-function HomepageStarsGraph() {
-  const { colorMode } = useColorMode();
-  const isDarkTheme = colorMode === 'dark';
-
+function HomepageSupport() {
   return (
-    <section className={styles.starsGraphSection}>
+    <section className={styles.supportSection}>
       <div className="container">
         <Heading as="h2" className={styles.sectionLabel}>Support the Project</Heading>
-        <div className={styles.starsGraphText}>
-          <p>If you find this index helpful, please consider <b>starring the repository</b> on GitHub.</p>
-          <p>It helps with discoverability, encourages maintenance, and makes the community grow!</p>
+        <div className={styles.supportText}>
+          <p>
+            If you find this index helpful, please consider starring the repository on GitHub.
+            It helps with discoverability, encourages maintenance, and makes the community grow!
+          </p>
         </div>
-        <div className={styles.chartContainer}>
-          <img
-            alt="Star History Chart"
-            src={`https://api.star-history.com/svg?repos=spike0en/nothing_archive&type=Date${isDarkTheme ? '&theme=dark' : ''}`}
-            className={styles.starChartImage}
-            loading="lazy"
-            width={800}
-            height={400}
-          />
+        <div className={styles.supportActions}>
+          <a
+            href="https://github.com/spike0en/nothing_archive/stargazers"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.starButton}
+            aria-label="Star Nothing Archive on GitHub"
+          >
+            <FaStar size={16} />
+            Star on GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/**
+ * Renders contributor avatars using the contrib.rocks service.
+ * Links to the GitHub contributors graph for the full list.
+ */
+function HomepageContributors() {
+  return (
+    <section className={styles.contributorsSection}>
+      <div className="container">
+        <Heading as="h2" className={styles.sectionLabel}>Project Contributors</Heading>
+        <div className={styles.contributorGrid}>
+          <a
+            href="https://github.com/spike0en/nothing_archive/graphs/contributors"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View all contributors on GitHub"
+          >
+            <img
+              src="https://contrib.rocks/image?repo=spike0en/nothing_archive"
+              alt="Nothing Archive Contributors"
+              className={styles.contribImage}
+              loading="lazy"
+            />
+          </a>
         </div>
       </div>
     </section>
@@ -195,7 +223,8 @@ export default function Home(): JSX.Element {
       <HomepageHeader />
       <main className={styles.main}>
         <HomepageFeatures />
-        <HomepageStarsGraph />
+        <HomepageSupport />
+        <HomepageContributors />
         <HomepageSocials />
       </main>
     </Layout>

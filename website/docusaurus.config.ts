@@ -190,7 +190,7 @@ const config: Config = {
     footer: {
       style: 'dark',
       links: [],
-      copyright: `Crafted with ❤️ by Spike & Shiki for the Nothing Community.`,
+      copyright: `A community-driven initiative led by <a href="https://github.com/spike0en" target="_blank" rel="noopener noreferrer">Spike</a>. Not affiliated with <a href="https://nothing.tech" target="_blank" rel="noopener noreferrer">Nothing</a>.`,
     },
     prism: {
       theme: prismThemes.github,
