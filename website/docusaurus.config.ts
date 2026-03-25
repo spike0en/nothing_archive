@@ -12,7 +12,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Nothing Archive',
-  tagline: 'The most comprehensive Nothing OS firmware archive — official OTA updates, stock images, and resources for Nothing & CMF by Nothing devices.',
+  tagline: 'A curated list of everything related to the Nothing ecosystem.',
   favicon: 'favicon.ico',
 
   future: {
