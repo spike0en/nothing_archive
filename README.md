@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="website/static/assets/branding/logo.png" width="128" alt="Nothing Archive Logo">
+  <img src="assets/branding/logo.png" width="128" alt="Nothing Archive Logo">
   <h1>Nothing Archive</h1>
   <p>Your ultimate source for Nothing OS firmware, stock OTA images, and comprehensive guides for Nothing & CMF by Nothing devices.</p>
   <br>
@@ -87,7 +87,7 @@ Special thanks to:
 - **[Daniel Springer](https://github.com/Daniel210191)** for providing self-hosted runner instances.
 - **[Shiki](https://github.com/guptavishal-xm1)** for crafting the initial website for the repo.
 - **[LukeSkyD](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/)** for early build references.
-- **[XelXen](https://github.com/spike0en/nothing_archive/tree/main/website/static/assets/branding)** for project branding and design.
+- **[XelXen](https://github.com/spike0en/nothing_archive/tree/main/assets/branding)** for project branding and design.
 - **[Project Contributors](https://github.com/spike0en/nothing_archive/graphs/contributors)** for their invaluable contributions and insights.
 
 <div align="center">

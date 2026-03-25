@@ -111,8 +111,8 @@ function HomepageFeatures() {
       <div className="container">
         <Heading as="h2" className={styles.sectionLabel}>Resources</Heading>
         <div className={clsx('row', styles.featureRow)}>
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+          {FeatureList.map((props) => (
+            <Feature key={props.link} {...props} />
           ))}
         </div>
       </div>
@@ -172,6 +172,9 @@ function HomepageStarsGraph() {
             alt="Star History Chart"
             src={`https://api.star-history.com/svg?repos=spike0en/nothing_archive&type=Date${isDarkTheme ? '&theme=dark' : ''}`}
             className={styles.starChartImage}
+            loading="lazy"
+            width={800}
+            height={400}
           />
         </div>
       </div>

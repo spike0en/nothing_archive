@@ -744,6 +744,16 @@ a:hover {
     flex-direction: column;
     gap: 2rem;
   }
+
+  /* Doc page content width */
+  main[class*="docMainContainer"] {
+    padding: 0 0.5rem;
+  }
+
+  /* Docs sidebar toggle button */
+  .theme-doc-sidebar-menu {
+    padding: 0.5rem;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -827,19 +837,6 @@ a:hover {
   }
 }
 
-/* Fix doc page content width on mobile */
-@media screen and (max-width: 996px) {
-  main[class*="docMainContainer"] {
-    padding: 0 0.5rem;
-  }
-}
-
-/* Docs sidebar toggle button */
-@media screen and (max-width: 996px) {
-  .theme-doc-sidebar-menu {
-    padding: 0.5rem;
-  }
-}
 
 details {
   background-color: transparent !important;

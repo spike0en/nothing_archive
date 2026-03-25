@@ -12,9 +12,9 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Nothing Archive',
-  tagline: 'Download official Nothing OS firmware & OTA updates for Nothing & CMF Phones. Explore apps, glyph tools, widgets & community projects in one hub.',
-  favicon: 'img/logo.png',
-  
+  tagline: 'The most comprehensive Nothing OS firmware archive — official OTA updates, stock images, and resources for Nothing & CMF by Nothing devices.',
+  favicon: 'favicon.ico',
+
   future: {
     v4: true,
   },
@@ -26,6 +26,7 @@ const config: Config = {
   projectName: 'nothing_archive',
 
   onBrokenLinks: 'throw',
+  onBrokenAnchors: 'throw',
 
   markdown: {
     format: 'mdx',
@@ -68,13 +69,15 @@ const config: Config = {
   ],
 
   headTags: [
+    // SEO: Primary keyword meta tag for search engine indexing
     {
       tagName: 'meta',
       attributes: {
         name: 'keywords',
-        content: 'Nothing Phone, Nothing OS, CMF by Nothing, Glyph, Nothing community, Nothing apps, awesome list',
+        content: 'Nothing Phone, Nothing OS, Nothing OS firmware, Nothing OTA update, CMF by Nothing, Nothing Phone firmware download, Nothing archive, Glyph interface, Nothing community apps',
       },
     },
+    // Search engine verification tokens
     {
       tagName: 'meta',
       attributes: {
@@ -88,7 +91,26 @@ const config: Config = {
         name: 'msvalidate.01',
         content: '9A91D8D4ED9FB1AF08C3344E84B33661',
       },
-    }, 
+    },
+    // Explicit favicon declaration for Google Search favicon display
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/nothing_archive/favicon.ico',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: '/nothing_archive/img/logo.png',
+      },
+    },
+    // Font preconnect hints for performance
     {
       tagName: 'link',
       attributes: {
@@ -109,9 +131,12 @@ const config: Config = {
   themeConfig: {
     image: 'img/banner.png',
     metadata: [
+      { property: 'og:type', content: 'website' },
+      { property: 'og:site_name', content: 'Nothing Archive' },
       { property: 'og:image:width', content: '1200' },
       { property: 'og:image:height', content: '630' },
-      { property: 'og:image:alt', content: 'Nothing OS Firmware Archive Banner' },
+      { property: 'og:image:alt', content: 'Nothing Archive — Nothing OS Firmware & Community Resources' },
+      { name: 'twitter:card', content: 'summary_large_image' },
     ],
     colorMode: {
       defaultMode: 'dark',
