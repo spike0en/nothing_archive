@@ -148,6 +148,8 @@ const config: Config = {
       logo: {
         alt: 'Nothing Archive Logo',
         src: 'img/logo.png',
+        width: 32,
+        height: 32,
       },
       items: [
         {
@@ -167,14 +169,14 @@ const config: Config = {
           position: 'right',
           className: 'header-badge header-github-hits',
           'aria-label': 'GitHub Hits',
-          html: `<img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%2324292e&labelColor=333333" width="107" height="20" alt="GitHub Hits" />`,
+          html: `<img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%2324292e&labelColor=333333" alt="GitHub Hits" />`,
         },
         {
           href: 'https://github.com/spike0en/nothing_archive/stargazers',
           position: 'right',
           className: 'header-badge header-github-stars',
           'aria-label': 'GitHub Stars',
-          html: `<img src="https://img.shields.io/github/stars/spike0en/nothing_archive?logo=github&color=24292e" width="80" height="20" alt="GitHub Stars" />`,
+          html: `<img src="https://img.shields.io/github/stars/spike0en/nothing_archive?logo=github&color=24292e" alt="GitHub Stars" />`,
         },
         {
           href: 'https://github.com/spike0en/nothing_archive',
