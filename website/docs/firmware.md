@@ -333,6 +333,19 @@ Select your device model to access its Release Index.
 
 </details>
 
+<details>
+  <summary>Phone (4a) Pro - FroggerPro</summary>
+
+<br />
+
+| **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
+|------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
+| 4.1 | FroggerPro-B4.1-260323-1635 | FroggerPro_B4.1-260204-2215 -> [FroggerPro_B4.1-260323-1635](https://android.googleapis.com/packages/ota-api/package/1b8de932f02eb999b111aafa3807f2de5de8db7c.zip) | N/A | N/A|
+
+<br />
+
+</details>
+
 <hr />
 
 ### CMF by Nothing Phones
