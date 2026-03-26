@@ -1,8 +1,8 @@
 ---
 sidebar_position: 6
 title: Community Apps
-description: Community-built apps for Nothing phones — Glyph-powered, productivity, utilities, and more.
-keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, nothing widgets, nothing productivity]
+description: Community-built apps for Nothing phones — Glyph-powered, productivity, icon packs, utilities, and more.
+keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, nothing widgets, icon packs, productivity tools]
 ---
 
 # Community Apps
@@ -81,6 +81,20 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Pomodoro Timer](https://github.com/PzmuV1517/GlyphPomodoroTimer) | pzmuV1517 | Pomodoro timer toy |
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | Face reflecting the daily screen on time |
 | [Timepiece](https://play.google.com/store/apps/details?id=com.arunk140.timepiece) | Arun Khanchandani | Always-On clock utility |
+
+---
+
+## Icon Packs
+
+| App | Developer |
+|-----------|-----------|
+| [AlphaOne Line](https://play.google.com/store/apps/details?id=com.alphaone.line.nothing.iconpack) | AlphaOne |
+| [Dots Adaptive](https://play.google.com/store/apps/details?id=com.jndapp.dots.adaptive.iconpack) | JustNewDesigns |
+| [Jimtendo (1)](https://play.google.com/store/apps/details?id=com.jimtendo.nothingiconpack1) | Jimtendo |
+| [Jimtendo (3)](https://play.google.com/store/apps/details?id=com.jimtendo.nothingiconpack3) | Jimtendo |
+| [Jimtendo Lite](https://play.google.com/store/apps/details?id=com.jimtendo.nothingiconpacklite) | Jimtendo |
+| [Jimtendo Transparent](https://play.google.com/store/apps/details?id=com.jimtendo.nothingiconpacktransparent) | Jimtendo |
+| [N-thing Adaptive](https://play.google.com/store/apps/details?id=com.nothing.icon.free) | JustNewDesigns |
 
 ---
 
