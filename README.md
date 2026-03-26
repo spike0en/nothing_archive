@@ -12,7 +12,7 @@
 [![Nothing Flasher](https://img.shields.io/badge/Nothing_Flasher-67119E?style=for-the-badge&logo=github&logoColor=white)](https://github.com/spike0en/nothing_flasher)
 
 [![Guides](https://img.shields.io/badge/Guides-18673F?style=for-the-badge&logo=readthedocs&logoColor=white)](https://spike0en.github.io/nothing_archive/docs/guides)
-[![OTA Changelogs](https://img.shields.io/badge/OTA_Changelogs-008080?style=for-the-badge&logo=github&logoColor=white)](https://spike0en.github.io/nothing_archive/docs/firmware#changelogs)
+[![OTA Changelogs](https://img.shields.io/badge/OTA_Changelogs-008080?style=for-the-badge&logo=github&logoColor=white)](https://spike0en.github.io/nothing_archive/docs/changelogs)
 [![Downloads](https://img.shields.io/badge/Release_Index-B23131?style=for-the-badge&logo=github&logoColor=white)](https://spike0en.github.io/nothing_archive/docs/firmware#downloads)
 
 [![Hits](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%23b02a37&labelColor=2E2E3F&message=&style=for-the-badge)](https://github.com/spike0en/nothing_archive)
