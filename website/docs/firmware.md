@@ -409,27 +409,3 @@ certutil -hashfile <filename> SHA256
 > Users can also use open-source utilities like [OpenHashTab](https://github.com/namazso/OpenHashTab).
 
 <hr />
-
-## Changelogs
-
-Access detailed OTA update changelogs for each device, named after the corresponding Nothing OS build version number, below:
-
-:::note
-
-Changelogs are only available for builds released on or after December 17, 2025.
-
-:::
-
-- [Nothing Phone (1)](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/spacewar/)
-- [Nothing Phone (2)](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/pong/)
-- [Nothing Phone (2a)](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/pacman/)
-- [Nothing Phone (2a) Plus](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/pacmanpro/)
-- [Nothing Phone (3a) / (3a) Pro](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/asteroids/)
-- [Nothing Phone (3)](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/metroid/)
-- [Nothing Phone (3a) Lite](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/galaxian/)
-- [Nothing Phone (4a)](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/frogger/)
-
-<hr />
-
-- [CMF Phone (1)](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/tetris/)
-- [CMF Phone (2) Pro](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/galaga/)

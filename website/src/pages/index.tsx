@@ -49,37 +49,42 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Devices',
-    description: 'Complete catalog of Nothing & CMF phones, earbuds, watches, and accessories.',
+    description: 'Explore the complete catalog of Nothing & CMF devices—phones, audio gear, wearables, and accessories in one place.',
     link: '/docs/devices',
   },
   {
-    title: 'Nothing OS Firmware Archive',
-    description: 'Complete firmware release index for all Nothing and CMF devices.',
+    title: 'Firmware Archive',
+    description: 'Download official Nothing OS firmware, stock factory images, and delta OTA files for easy flashing, restoring, and sideloading updates.',
     link: '/docs/firmware',
   },
   {
+    title: 'OTA Changelogs',
+    description: 'Read official Nothing OS update changelogs, feature updates, bug fixes, and version history for all devices.',
+    link: '/docs/changelogs',
+  },
+  {
     title: 'Guides',
-    description: 'Step-by-step guides for bootloader, rooting, and device customization.',
+    description: 'Step-by-step guides for bootloader unlocking, rooting, and device customization for both Nothing and CMF.',
     link: '/docs/guides',
   },
   {
     title: 'Official Resources',
-    description: 'Apps, wallpapers, fonts, kernel sources, and developer SDKs from Nothing.',
+    description: 'Access official Nothing apps, wallpapers, fonts, kernel sources, and developer tools in one organized hub.',
     link: '/docs/official',
   },
   {
     title: 'Community Apps',
-    description: 'Glyph-powered apps, productivity tools, and utilities built by the community.',
+    description: 'Discover community-built apps, Glyph tools, productivity utilities, and more for Nothing & CMF devices.',
     link: '/docs/apps',
   },
   {
     title: 'Projects',
-    description: 'Glyph tools, Matrix toys, modules, and other community projects.',
+    description: 'Discover community projects, creative tools, and unique software designed for the Nothing ecosystem.',
     link: '/docs/projects',
   },
   {
     title: 'Photography',
-    description: 'GCAM ports, configs, and camera presets for Nothing devices.',
+    description: 'Get the best camera experience with GCAM ports, configs, and presets optimized for Nothing & CMF devices.',
     link: '/docs/photography',
   },
 ];

@@ -203,8 +203,8 @@
   margin: 0;
 }
 
-/* Category headers: Bold and Uppercase, but color stays neutral even if child is active */
-.menu__list-item-collapsible .menu__link {
+/* Category headers (Top level): Bold and Uppercase, but color stays neutral even if child is active */
+.theme-doc-sidebar-menu>.menu__list>.menu__list-item>.menu__list-item-collapsible>.menu__link {
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -215,10 +215,19 @@
   color: inherit !important;
 }
 
-.menu__list-item-collapsible .menu__link--active {
+.theme-doc-sidebar-menu>.menu__list>.menu__list-item>.menu__list-item-collapsible>.menu__link--active {
   opacity: 1;
   border-left-color: var(--nothing-border-strong) !important;
   /* Visual cue but not red */
+}
+
+/* Ensure nested collapsible categories match regular doc links */
+.menu__list .menu__list .menu__list-item-collapsible>.menu__link {
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  opacity: 1;
 }
 
 /* Only highlight the actual child documents in red */
@@ -227,6 +236,7 @@
   font-size: 0.9rem;
   letter-spacing: -0.01em;
   padding: 0.5rem 1.25rem;
+  /* Level 1 default */
   border-radius: 0;
   border-left: 3px solid transparent;
   transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
@@ -261,9 +271,22 @@
   background: rgba(255, 59, 59, 0.08);
 }
 
-/* Nested items under category */
-.menu__list-item .menu__list-item .menu__link {
-  padding-left: 1.5rem;
+/* Sidebar hierarchical indentation */
+.menu__list .menu__list>.menu__list-item>.menu__link,
+.menu__list .menu__list>.menu__list-item>.menu__list-item-collapsible>.menu__link {
+  padding-left: 1.5rem !important;
+  font-size: 0.85rem;
+}
+
+.menu__list .menu__list .menu__list>.menu__list-item>.menu__link,
+.menu__list .menu__list .menu__list>.menu__list-item>.menu__list-item-collapsible>.menu__link {
+  padding-left: 2.25rem !important;
+  font-size: 0.85rem;
+}
+
+.menu__list .menu__list .menu__list .menu__list>.menu__list-item>.menu__link,
+.menu__list .menu__list .menu__list .menu__list>.menu__list-item>.menu__list-item-collapsible>.menu__link {
+  padding-left: 3rem !important;
   font-size: 0.85rem;
 }
 

@@ -1,0 +1,8 @@
+{
+  "label": "OTA Changelogs",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Nothing OS and CMF OTA Update Changelogs for all devices."
+  }
+}
