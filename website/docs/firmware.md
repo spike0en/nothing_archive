@@ -54,6 +54,7 @@ The unmodified stock OTA image files are archived in `.7z` format and categorize
 | **Phone (3)** | `boot`, `dtbo`, `init_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` (Total: 8) | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `multiimgqti`, `pvmfw`, `qupfw`, `shrm`, `soccp_dcd`, `soccp_debug`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` (Total: 26) | `odm`, `product`, `system`, `system_dlkm`, `system_ext`, `vendor`, `vendor_dlkm` (Total: 7) |
 | **Phone (3a) Lite** | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor` (Total: 7) | `apusys`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `modem`, `mcupm`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` (Total: 20) | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product` (Total: 8) |
 | **Phone (4a)** | `boot`, `dtbo`, `init_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` (Total: 8) | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `pvmfw`, `qupfw`, `shrm`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` (Total: 23) | `odm`, `product`, `system`, `system_dlkm`, `system_ext`, `vendor`, `vendor_dlkm` (Total: 7) |
+| **Phone (4a) Pro** | `boot`, `dtbo`, `init_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` (Total: 8) | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `multiimgqti`, `pvmfw`, `qupfw`, `shrm`, `soccp_dcd`, `soccp_debug`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` (Total: 26) | `odm`, `product`, `system`, `system_dlkm`, `system_ext`, `vendor`, `vendor_dlkm` (Total: 7) |
 
 </details>
 
@@ -339,7 +340,7 @@ Select your device model to access its Release Index.
 
 | **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
-| 4.1 | FroggerPro-B4.1-260323-1635 | FroggerPro_B4.1-260204-2215 -> [FroggerPro_B4.1-260323-1635](https://android.googleapis.com/packages/ota-api/package/1b8de932f02eb999b111aafa3807f2de5de8db7c.zip) | N/A | N/A|
+| 4.1 | FroggerPro-B4.1-260323-1635 | FroggerPro_B4.1-260204-2215 -> [FroggerPro_B4.1-260323-1635](https://android.googleapis.com/packages/ota-api/package/1b8de932f02eb999b111aafa3807f2de5de8db7c.zip) | [Here](https://archive.org/download/nothing-archive/spike0en/fullota/froggerpro/FroggerPro_B4.1-260323-1635.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/FroggerPro_B4.1-260323-1635) |
 
 <br />
 
