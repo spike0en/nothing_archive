@@ -67,6 +67,7 @@ const config: Config = {
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
+          ignorePatterns: ['/search'],
           filename: 'sitemap.xml',
         }
       } satisfies Preset.Options,
