@@ -21,6 +21,7 @@ A collection of tools for creating custom Glyph tones and compositions.
 | [Custom Nothing Glyph Tools](https://github.com/SebiAi/custom-nothing-glyph-tools) | SebiAi | Create custom tones with Audacity |
 | [Glyphtones project](https://github.com/firu11/nothing-glyphtones) | Firu11 | Open-source repo for Glyphtones website |
 | [Glyphtones website](https://glyphtones.is-a.dev/) | Firu11 | Collection of community Glyph tones |
+| [Glyph Utils](https://github.com/pgsk33/Glyph-Utils) | pgsk33 | Java helper for frame-based Glyph Interface animations |
 | [GlyphVisualizer](https://github.com/SebiAi/GlyphVisualizer) | SebiAi | Desktop visualizer for .ogg compositions |
 | [Haptificator](https://github.com/Fr4nKB/Haptificator) | Fr4nKB | Add haptics to Phone (1) compositions |
 | [pyglyph](https://github.com/Snakehater/pyglyph) | Snakehater | Python script for audio visualization |
