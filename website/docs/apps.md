@@ -1,8 +1,8 @@
 ---
 sidebar_position: 6
 title: Community Apps
-description: Community-built apps for Nothing phones — Glyph-powered, productivity, icon packs, utilities, and more.
-keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, nothing widgets, icon packs, productivity tools]
+description: Community-built apps for Nothing OS — featuring Glyph-powered tools, productivity apps, customization packs, widgets, and wallpapers.
+keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, nothing widgets, icon packs, productivity tools, wallpapers, visual effects, customization]
 ---
 
 # Community Apps
@@ -26,9 +26,9 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | [blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | Tech detox phone blocking app with Glyph integration |
 | [Glyph Compass](https://play.google.com/store/apps/details?id=com.JayKayCooperations.glyph_compass) | JayKayCooperations | Use your Glyph interface as a compass |
 | [Glyph Essentials](https://play.google.com/store/apps/details?id=com.tldc.essentials) | GlyphLab | Advanced customisation for Glyph notifications |
-| [Glyph Unlock Pulse](https://play.google.com/store/apps/details?id=com.singularityux.glyphunlockpulse) | Singularity Design | Enhance device unlock with animated glyphs |
 | [Glyph Initiator](https://github.com/lowqualitysoarin/Glyph-Initiator/releases) | lowqualitysoarin | Control glyph interface via intents |
 | [Glyph Studio](https://github.com/SyedAhkam/glyph-studio) | SyedAhkam | Playground for everything Glyphs |
+| [Glyph Unlock Pulse](https://play.google.com/store/apps/details?id=com.singularityux.glyphunlockpulse) | Singularity Design | Enhance device unlock with animated glyphs |
 | [GlyphGlow](https://github.com/fgiering/GlyphGlow) | fgiering | Minimal app to control Glyph interface |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Advanced Glyph controls, mini-games, compositions. Supports Phone (3) |
 | [GlyphNexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Advanced notification control including Glyph Timer |
@@ -37,8 +37,8 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | [GlyphSaber](https://github.com/Norbinarius/glyphsaber) | Norbinarius | Glyph control for Nothing OS 4.0+ |
 | [GlyphSharge](https://github.com/Leekawaii666/GlyphSharge) | bleelblep | Advanced glyph interface management |
 | [GlyphZen](https://github.com/bleelblep/Glyph-Zen/releases/tag/v1.1) | bleelblep | Calming breathing app with Glyph |
-| [Nothing Glyph Gyroscope](https://github.com/gawdam/nothingGyro) | gawdam | Bubble level using accelerometer and gyroscope |
 | [MorseGlyphs](https://github.com/roxe12345/MorseGlyphs) | roxe12345 | Morse code displayed in glyph lights |
+| [Nothing Glyph Gyroscope](https://github.com/gawdam/nothingGyro) | gawdam | Bubble level using accelerometer and gyroscope |
 | [Simone](https://play.google.com/store/apps/details?id=com.lisra.simone) | RapidZapper | Classic memory game with Glyph interface |
 
 ---
@@ -84,7 +84,13 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 
 ---
 
-## Icon Packs
+## Customization
+
+Personalize your Nothing device with icon packs, widgets, and custom wallpapers.
+
+### Icon Packs
+
+A selection of community-made icon packs designed to match the Nothing aesthetic.
 
 | App | Developer |
 |-----------|-----------|
@@ -95,6 +101,28 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Jimtendo Lite](https://play.google.com/store/apps/details?id=com.jimtendo.nothingiconpacklite) | Jimtendo |
 | [Jimtendo Transparent](https://play.google.com/store/apps/details?id=com.jimtendo.nothingiconpacktransparent) | Jimtendo |
 | [N-thing Adaptive](https://play.google.com/store/apps/details?id=com.nothing.icon.free) | JustNewDesigns |
+
+### Widgets
+
+Custom widgets for the home screen, from system monitors to minimalist tools.
+
+| App | Developer | Description |
+|-----|-----------|-------------|
+| [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Minimal widgets |
+| [RTMON](https://github.com/n1th1n-19/RTMON) | n1th1n-19 | Real-time system monitoring widget |
+| [Widgets Pro](https://play.google.com/store/apps/details?id=com.tpk.widgetspro) | Preethamkmr3 | Additional widgets |
+
+### Wallpapers & Visual Effects
+
+Dynamic wallpapers and visual enhancements to elevate your device's look.
+
+| App | Developer | Description |
+|-----|-----------|-------------|
+| [365-Days](https://github.com/dipin-bot/365-Days) | dipin-bot | Live wallpaper countdown |
+| [Atmo Engine](https://github.com/saad-khan-rind/NOSAtmosphereEffect) | saad-khan-rind | Atmosphere wallpaper effect |
+| [Dot Battery](https://play.google.com/store/apps/details?id=com.lisra.dotbattery) | RapidZapper | Battery level wallpaper |
+| [Lentlay](https://lentlay.framer.website/) | Omkar Mangalekar | Lenticular effect for images |
+| [Nothing Wallpaper Changer](https://github.com/NineCSdev/nothing-wallpaper-changer) | NineCSdev | Lockscreen wallpaper changer for Nothing Phone (1) |
 
 ---
 
@@ -127,7 +155,6 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [CMF Custom Volume Controller](https://github.com/alirezafarghadani999/CMF_CustomVolumeControl) | AlirezaFarghadani | Custom volume controller for CMF |
 | [Compass](https://github.com/Earendel-lab/Compass) | Earendel | Simple compass |
 | [Currency](https://curency.pages.dev/) | Earendel | Currency converter web app |
-| [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Minimal widgets |
 | [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | Dino game inspired |
 | [GeoTorch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Flashlight app with widgets |
 | [HeyBattery](https://github.com/ghostyapps/HeyBattery) | Candan | Battery usage tracker |
@@ -148,7 +175,6 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Nothing Files](https://github.com/Mo-Array/Nothing-Files) | Mo-Array | Nothing OS themed file manager app |
 | [Nothing Gallery](https://github.com/jerichoi224/Nothing-Gallery) | jerichoi224 | Gallery app |
 | [Nothing LED Banner](https://play.google.com/store/apps/details?id=com.ApexCreator.thebannerapp) | Apex Creators | LED banner creator |
-| [Nothing Wallpaper Changer](https://github.com/NineCSdev/nothing-wallpaper-changer) | NineCSdev | Lockscreen wallpaper changer for Nothing Phone (1) |
 | [Nothing Weather](https://play.google.com/store/apps/details?id=com.ApexCreator.nothing_weather) | Apex Creators | Weather app |
 | [NothingK](https://github.com/cuadratico/NothingK) | cuadratico | Password vault |
 | [NothingQuickTools](https://github.com/DylanAkp/NothingQuickTools) | DylanAkp | Quick tiles for Phone (2) |
@@ -156,7 +182,6 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [NxCalculator](https://github.com/montybytes/nxcalculator) | montybytes | Simple calculator |
 | [OpenCalc](https://github.com/drrnb/OpenCalc/releases/tag/v3.0.0-beta4-nothing) | drrnb | Themed calculator |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Recording light control for Phone (3) |
-| [RTMON](https://github.com/n1th1n-19/RTMON) | n1th1n-19 | Real-time system monitoring widget |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Device insights tool |
 | [The Everything Key](https://play.google.com/store/apps/details?id=com.spandone.everythingkey) | spandone | Essential key remapper |
 | [Voidcaller](https://play.google.com/store/apps/details?id=com.voidware.voidcaller) | VoidwareLabs | Minimalist dialer |
@@ -164,20 +189,17 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 
 ---
 
-## Miscellaneous
+## Other Community Apps
+
+A collection of various community-made apps including news hubs, social tools, and games.
 
 | App | Developer | Description |
 |-----|-----------|-------------|
-| [365-Days](https://github.com/dipin-bot/365-Days) | dipin-bot | Live wallpaper countdown |
-| [Atmo Engine](https://github.com/saad-khan-rind/NOSAtmosphereEffect) | saad-khan-rind | Atmosphere wallpaper effect |
-| [Dot Battery](https://play.google.com/store/apps/details?id=com.lisra.dotbattery) | RapidZapper | Battery level wallpaper |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
-| [Lentlay](https://lentlay.framer.website/) | Omkar Mangalekar | Lenticular effect for images |
 | [MissingCore Music](https://play.google.com/store/apps/details?id=com.cyanchill.missingcore.music) | MissingCore | Offline music player |
 | [Noid](https://play.google.com/store/apps/details?id=com.techsip.noid) | TechSip Studios | File management |
 | [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | Mobile app for nothing.community |
 | [Nothing News](https://play.google.com/store/apps/details?id=com.nothing.news) | Mirko_ddd | Community news |
 | [NothingLand](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Dynamic Island for Nothing OS |
 | [Tetris](https://github.com/ItsCR24/tetris-m3) | ItsCR24 | Material You & Nothing OS inspired Tetris game|
-| [Widgets Pro](https://play.google.com/store/apps/details?id=com.tpk.widgetspro) | Preethamkmr3 | Additional widgets |
 
