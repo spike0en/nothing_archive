@@ -47,12 +47,13 @@ Other interesting projects by the community.
 | [Matrices](https://udaign.github.io/matrices/) | Uday | Glyph Matrix design tool |
 | [nKWGT](https://github.com/avnishkt2783/nKWGT) | avnishkt2783 | Nothing-style widgets |
 | [Notes (Windows)](https://github.com/rohankishore/Notes-1) | rohankishore | Nothing themed notepad for Windows |
-| [nothing.wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | Reddit wiki |
+| [nothing.wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | r/NothingTech wiki |
 | [Ntype JP](https://github.com/Nothing-Japanese-font-project/Ntype-JP/releases) | shibadogcap | Japanese font |
 | [Nothing Archive](https://github.com/spike0en/nothing_archive) | spike0en | OTA links and firmware archive |
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | macOS menu bar app |
 | [Nothing Flasher](https://github.com/spike0en/nothing_flasher) | spike0en & Hellboy017 | Fastboot flashing scripts |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Browser New Tab extension |
+| [Nothing KDE Widgets](https://github.com/jaxparrow07/nothing-kde-widgets) | jaxparrow07 | Nothing OS themed widgets for KDE Plasma |
 | [Nothing KWGT](https://github.com/AumGupta/KWGT-Widgets) | aaumgupta | KWGT widgets |
 | [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | News and resources hub |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome extension |
