@@ -85,6 +85,8 @@ APK mirrors available at [APKMirror](https://www.apkmirror.com/apk/nothing-techn
 
 ## Kernel Sources
 
+### Nothing
+
 | Device | Repository |
 |--------|------------|
 | Phone (1) | [android_kernel_msm-5.4_nothing_sm7325](https://github.com/NothingOSS/android_kernel_msm-5.4_nothing_sm7325) |
@@ -92,9 +94,15 @@ APK mirrors available at [APKMirror](https://www.apkmirror.com/apk/nothing-techn
 | Phone (2a) Series | [android_kernel_5.15_nothing_mt6886](https://github.com/NothingOSS/android_kernel_5.15_nothing_mt6886) |
 | Phone (3a) / (3a) Pro | [android_kernel_msm-6.1_nothing_sm7635](https://github.com/NothingOSS/android_kernel_msm-6.1_nothing_sm7635) |
 | Phone (3) | [android_kernel_msm-6.6_nothing_sm8735](https://github.com/NothingOSS/android_kernel_msm-6.6_nothing_sm8735) |
+| Phone (3a) Lite | [android_kernel_modules_nothing_mt6878](https://github.com/NothingOSS/android_kernel_modules_nothing_mt6878/tree/mt6878/Galaxian/v) |
+| Phone (4a) | [android_kernel_msm-6.1_nothing_sm7635](https://github.com/NothingOSS/android_kernel_msm-6.1_nothing_sm7635/tree/sm7635/b/mr_Frogger)
+
+### CMF by Nothing
+
+| Device | Repository |
+|--------|------------|
 | CMF Phone (1) | [android_kernel_6.1_nothing_mt6878](https://github.com/NothingOSS/android_kernel_6.1_nothing_mt6878) |
 | CMF Phone (2) Pro | [android_kernel_modules_nothing_mt6878](https://github.com/NothingOSS/android_kernel_modules_nothing_mt6878/tree/mt6878/Galaga/v) |
-| Phone (3a) Lite | [android_kernel_modules_nothing_mt6878](https://github.com/NothingOSS/android_kernel_modules_nothing_mt6878/tree/mt6878/Galaxian/v) |
 
 ---
 
