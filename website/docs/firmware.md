@@ -1,5 +1,5 @@
 ---
-sidebar_label: Nothing OS Firmware Archive
+sidebar_label: Firmware Archive
 title: Nothing OS Firmware Archive
 description: Complete release index for Nothing OS firmware, OTA updates, and factory images for Nothing and CMF devices.
 sidebar_position: 3

@@ -1,9 +1,8 @@
 /**
  * Custom CSS for Nothing Archive
  * Implements a minimal, monochrome aesthetic inspired by Nothing Tech.
+ * Fonts are loaded via <link> tags in docusaurus.config.ts headTags.
  */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
   --ifm-color-primary: #d71921;
@@ -23,6 +22,16 @@
   --ifm-navbar-background-color: #f3f2ec;
   --ifm-footer-background-color: #1a1a1a;
   --ifm-card-background-color: #ffffff;
+
+  /* Global Infima Border Radius Overrides to match new rounded aesthetic */
+  --ifm-global-radius: 8px;
+  --ifm-button-border-radius: 999px;
+  --ifm-card-border-radius: 24px;
+  --ifm-alert-border-radius: 12px;
+  --ifm-pre-border-radius: 12px;
+  --ifm-code-border-radius: 6px;
+  --ifm-toggle-border-radius: 999px;
+  --ifm-dropdown-border-radius: 12px;
 
   --docusaurus-highlighted-code-line-bg: rgba(215, 25, 33, 0.1);
 
@@ -85,8 +94,8 @@
   font-size: 0.9rem;
   letter-spacing: -0.01em;
   padding: 0.5rem 0.75rem;
-  border-radius: 0;
-  transition: color 0.2s ease;
+  border-radius: 6px;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .navbar__link:hover,
@@ -237,7 +246,7 @@
   letter-spacing: -0.01em;
   padding: 0.5rem 1.25rem;
   /* Level 1 default */
-  border-radius: 0;
+  border-radius: 6px;
   border-left: 3px solid transparent;
   transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
@@ -506,6 +515,27 @@ table td a:hover {
     font-size: 0.85rem;
   }
 
+  /* Scroll affordance — right-edge fade to indicate scrollable content */
+  div[class*="tableWrapper"],
+  .tableWrapper {
+    position: relative;
+  }
+
+  div[class*="tableWrapper"]::after,
+  .tableWrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 32px;
+    background: linear-gradient(to right, transparent, var(--ifm-background-color));
+    pointer-events: none;
+    opacity: 0.9;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+  }
+
   /* Force content minimum widths so it scrolls instead of squishing */
   table th,
   table td {
@@ -617,6 +647,16 @@ a:hover {
   opacity: 0.8;
 }
 
+/* Footer link contrast fix — brighter red for WCAG AA compliance */
+.footer a {
+  color: var(--ifm-color-primary-lighter) !important;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: var(--ifm-color-primary-lightest) !important;
+}
+
 /* Hero section (fallback for non-home pages) */
 .hero {
   background: var(--ifm-background-color);
@@ -633,11 +673,11 @@ a:hover {
   opacity: 0.8;
 }
 
-/* Buttons - Nothing geometric, sharp */
+/* Buttons - Nothing geometric, sharp -> now rounded */
 .button {
   font-weight: 600;
   letter-spacing: -0.02em;
-  border-radius: 0;
+  border-radius: 999px;
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }
 
@@ -672,11 +712,11 @@ a:hover {
   margin: 2rem 0;
 }
 
-/* Cards - Nothing geometric */
+/* Cards */
 .card {
   background-color: var(--ifm-card-background-color);
   border: 1px solid var(--nothing-border);
-  border-radius: 0;
+  border-radius: 24px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
   transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -695,9 +735,9 @@ a:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* Admonitions - Nothing geometric */
+/* Admonitions */
 .admonition {
-  border-radius: 0;
+  border-radius: 8px;
   border-left-width: 4px;
 }
 
@@ -710,7 +750,7 @@ a:hover {
 /* Pagination (prev/next) */
 .pagination-nav__link {
   border: 1px solid var(--nothing-border);
-  border-radius: 0;
+  border-radius: 12px;
   transition: border-color 0.2s ease;
 }
 

@@ -3,7 +3,7 @@
    Minimal, geometric, glyph-inspired
    ========================================== */
 
-/* --- Hero --- */
+/* --- Hero Section --- */
 .heroBanner {
   padding: 8rem 1.5rem 7rem;
   text-align: left;
@@ -13,9 +13,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Subtle radial glow behind the logo area */
+  background: radial-gradient(ellipse 60% 50% at 70% 50%,
+      rgba(215, 25, 33, 0.03) 0%,
+      transparent 70%);
 }
 
-/* Glyph-inspired dot grid background */
+[data-theme='dark'] .heroBanner {
+  background: radial-gradient(ellipse 60% 50% at 70% 50%,
+      rgba(255, 59, 59, 0.04) 0%,
+      transparent 70%);
+}
+
+/* Glyph-inspired dot grid background with subtle pulse */
 .glyphGrid {
   position: absolute;
   inset: 0;
@@ -24,12 +34,25 @@
       transparent 0);
   background-size: 24px 24px;
   pointer-events: none;
+  animation: glyphPulse 6s ease-in-out infinite;
 }
 
 [data-theme='dark'] .glyphGrid {
   background-image: radial-gradient(circle at 1px 1px,
       rgba(255, 255, 255, 0.15) 1px,
       transparent 0);
+}
+
+@keyframes glyphPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
 }
 
 .heroContent {
@@ -83,6 +106,7 @@
   line-height: 1.5;
 }
 
+/* --- CTA Buttons --- */
 .buttons {
   display: flex;
   align-items: center;
@@ -90,6 +114,7 @@
   gap: 1rem;
 }
 
+/* Primary CTA (filled) */
 .ctaButton {
   display: inline-flex;
   align-items: center;
@@ -101,7 +126,7 @@
   background: var(--ifm-color-primary);
   color: #fff !important;
   border: none;
-  border-radius: 0;
+  border-radius: 999px !important;
   text-decoration: none !important;
   transition: background 0.2s ease, transform 0.15s ease;
 }
@@ -113,11 +138,37 @@
   text-decoration: none !important;
 }
 
-/* --- Features --- */
+/* Secondary CTA (ghost / outline) */
+.ctaButtonSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  background: transparent;
+  color: inherit !important;
+  border: 1px solid var(--nothing-border-strong) !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.ctaButtonSecondary:hover {
+  border-color: var(--ifm-color-primary) !important;
+  color: var(--ifm-color-primary) !important;
+  transform: translateY(-1px);
+  text-decoration: none !important;
+}
+
+/* --- Feature Cards (Resources Grid) --- */
 .features {
   padding: 5rem 0;
 }
 
+/* Uppercase section label shared across all homepage sections */
 .sectionLabel {
   font-size: 0.85rem;
   font-weight: 600;
@@ -129,13 +180,60 @@
 }
 
 .featureRow {
-  --ifm-col-gap: 1.5rem;
+  --ifm-col-gap: 1.25rem;
 }
 
 .featureCol {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   display: flex;
   flex-direction: column;
+  /* Staggered entrance animation */
+  animation: fadeInUp 0.4s ease both;
+}
+
+/* Staggered delays for each card (1–8) */
+.featureCol:nth-child(1) {
+  animation-delay: 0.0s;
+}
+
+.featureCol:nth-child(2) {
+  animation-delay: 0.05s;
+}
+
+.featureCol:nth-child(3) {
+  animation-delay: 0.1s;
+}
+
+.featureCol:nth-child(4) {
+  animation-delay: 0.15s;
+}
+
+.featureCol:nth-child(5) {
+  animation-delay: 0.2s;
+}
+
+.featureCol:nth-child(6) {
+  animation-delay: 0.25s;
+}
+
+.featureCol:nth-child(7) {
+  animation-delay: 0.3s;
+}
+
+.featureCol:nth-child(8) {
+  animation-delay: 0.35s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .featureLink {
@@ -146,21 +244,29 @@
   flex: 1;
 }
 
+/* Keyboard focus indicator — visible outline on tab navigation */
+.featureLink:focus-visible .featureCard {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
 .featureCard {
   position: relative;
   padding: 1.75rem;
   background-color: var(--ifm-card-background-color);
   border: 1px solid var(--nothing-border);
-  border-radius: 0;
+  border-radius: 24px !important;
   flex: 1;
   display: flex;
   flex-direction: column;
   min-height: 160px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease,
+    transform 0.2s ease, box-shadow 0.2s ease;
   overflow: hidden;
 }
 
+/* Left-edge accent bar — animates from 0 to full height on hover */
 .featureCard::before {
   content: '';
   position: absolute;
@@ -190,13 +296,31 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-.featureDot {
-  display: block;
-  width: 6px;
-  height: 6px;
-  background: var(--ifm-color-primary);
-  margin-bottom: 1rem;
-  opacity: 0.8;
+/* Icon container — tinted square with primary color */
+.featureIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: rgba(215, 25, 33, 0.08);
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.75rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.featureCard:hover .featureIcon {
+  background: rgba(215, 25, 33, 0.15);
+  transform: scale(1.05);
+}
+
+[data-theme='dark'] .featureIcon {
+  background: rgba(255, 59, 59, 0.1);
+}
+
+[data-theme='dark'] .featureCard:hover .featureIcon {
+  background: rgba(255, 59, 59, 0.2);
 }
 
 .featureTitle {
@@ -214,8 +338,8 @@
   letter-spacing: -0.01em;
 }
 
-/* --- Support the Project --- */
-.supportSection {
+/* --- Community Section (merged Support + Contributors) --- */
+.communitySection {
   padding: 3rem 0;
   border-top: 1px solid var(--nothing-border);
 }
@@ -223,7 +347,7 @@
 .supportText {
   text-align: center;
   max-width: 600px;
-  margin: 0 auto 1.5rem;
+  margin: 1.5rem auto 1.5rem;
   font-size: 1.05rem;
   opacity: 0.85;
   line-height: 1.6;
@@ -250,7 +374,7 @@
   color: #fff !important;
   background: var(--ifm-color-primary);
   border: none;
-  border-radius: 0;
+  border-radius: 999px !important;
   text-decoration: none !important;
   transition: background 0.2s ease, transform 0.15s ease;
 }
@@ -262,12 +386,7 @@
   text-decoration: none !important;
 }
 
-/* --- Contributors --- */
-.contributorsSection {
-  padding: 3rem 0;
-  border-top: 1px solid var(--nothing-border);
-}
-
+/* Contributor avatar grid */
 .contributorGrid {
   display: flex;
   justify-content: center;
@@ -278,7 +397,7 @@
   height: auto;
 }
 
-/* --- Socials --- */
+/* --- Social Links (Connect) --- */
 .socials {
   padding: 5rem 0 6rem;
   border-top: 1px solid var(--nothing-border);
@@ -301,10 +420,11 @@
   letter-spacing: -0.01em;
   background-color: var(--ifm-card-background-color);
   border: 1px solid var(--nothing-border-strong);
-  border-radius: 0;
+  border-radius: 16px !important;
   color: inherit;
   text-decoration: none !important;
-  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease,
+    background-color 0.2s ease, transform 0.2s ease;
 }
 
 .socialLink:hover {
@@ -319,20 +439,44 @@
   background-color: rgba(255, 59, 59, 0.08);
 }
 
-/* --- Main --- */
+/* --- Focus-Visible Accessibility --- */
+.ctaButton:focus-visible,
+.ctaButtonSecondary:focus-visible,
+.starButton:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.socialLink:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* --- Main Content Wrapper --- */
 .main {
   background: var(--ifm-background-color);
 }
 
 /* ==========================================
-   RESPONSIVE
+   RESPONSIVE BREAKPOINTS
    ========================================== */
 
+/* Tablet (≤996px) */
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 5rem 1rem 4rem;
     min-height: auto;
     text-align: center;
+    /* Reset gradient for centered layout */
+    background: radial-gradient(ellipse 80% 60% at 50% 40%,
+        rgba(215, 25, 33, 0.03) 0%,
+        transparent 70%);
+  }
+
+  [data-theme='dark'] .heroBanner {
+    background: radial-gradient(ellipse 80% 60% at 50% 40%,
+        rgba(255, 59, 59, 0.04) 0%,
+        transparent 70%);
   }
 
   .heroContent {
@@ -355,12 +499,14 @@
 
   .buttons {
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .features {
     padding: 3rem 0;
   }
 
+  /* 2-column grid on tablet */
   .featureRow .col {
     flex: 0 0 50%;
     max-width: 50%;
@@ -385,6 +531,7 @@
   }
 }
 
+/* Mobile (≤576px) */
 @media screen and (max-width: 576px) {
   .heroBanner {
     padding: 3rem 1rem 2.5rem;
@@ -398,9 +545,11 @@
 
   .buttons {
     width: 100%;
+    flex-direction: column;
   }
 
-  .ctaButton {
+  .ctaButton,
+  .ctaButtonSecondary {
     width: 100%;
     padding: 0.875rem 1.5rem;
   }
@@ -413,6 +562,7 @@
     margin-bottom: 1.5rem;
   }
 
+  /* Single-column grid on mobile */
   .featureRow .col {
     flex: 0 0 100%;
     max-width: 100%;
@@ -428,11 +578,22 @@
   }
 
   .socialLinks {
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .socialLink {
     padding: 0.5rem 0.85rem;
     font-size: 0.8rem;
+  }
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .featureCol {
+    animation: none;
+  }
+
+  .glyphGrid {
+    animation: none;
   }
 }
