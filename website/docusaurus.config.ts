@@ -73,6 +73,18 @@ const config: Config = {
           priority: 0.5,
           ignorePatterns: ['/search'],
           filename: 'sitemap.xml',
+          async createSitemapItems({ defaultCreateSitemapItems, ...params }) {
+            const items = await defaultCreateSitemapItems(params);
+            return items.map((item) => {
+              if (item.url.includes('/docs/firmware')) {
+                return { ...item, changefreq: 'daily' as const, priority: 0.8 };
+              }
+              if (item.url.includes('/docs/intro') || item.url.endsWith('/nothing_archive/')) {
+                return { ...item, priority: 0.9 };
+              }
+              return item;
+            });
+          },
         }
       } satisfies Preset.Options,
     ],
@@ -144,6 +156,23 @@ const config: Config = {
         href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap',
       },
     },
+    // SEO: JSON-LD structured data for rich snippets
+    {
+      tagName: 'script',
+      attributes: { type: 'application/ld+json' },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'Nothing Archive',
+        url: 'https://spike0en.github.io/nothing_archive/',
+        description: 'A curated list of everything related to the Nothing ecosystem — firmware, guides, apps, and community resources.',
+        publisher: {
+          '@type': 'Organization',
+          name: 'Nothing Archive',
+          url: 'https://github.com/spike0en/nothing_archive',
+        },
+      }),
+    },
   ],
 
   themeConfig: {
@@ -187,14 +216,14 @@ const config: Config = {
           position: 'right',
           className: 'header-badge header-github-hits',
           'aria-label': 'GitHub Hits',
-          html: `<img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%2324292e&labelColor=333333" alt="GitHub Hits" />`,
+          html: `<img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%2324292e&labelColor=333333" alt="GitHub Hits" width="100" height="20" loading="lazy" />`,
         },
         {
           href: 'https://github.com/spike0en/nothing_archive/stargazers',
           position: 'right',
           className: 'header-badge header-github-stars',
           'aria-label': 'GitHub Stars',
-          html: `<img src="https://img.shields.io/github/stars/spike0en/nothing_archive?logo=github&color=24292e" alt="GitHub Stars" />`,
+          html: `<img src="https://img.shields.io/github/stars/spike0en/nothing_archive?logo=github&color=24292e" alt="GitHub Stars" width="80" height="20" loading="lazy" />`,
         },
         {
           href: 'https://github.com/spike0en/nothing_archive',

@@ -3,6 +3,10 @@
     "message": "Next",
     "description": "The label for version current"
   },
+  "sidebar.mainSidebar.doc.Firmware Archive": {
+    "message": "韌體儲存庫",
+    "description": "The label for the doc item 'Firmware Archive' in sidebar 'mainSidebar', linking to the doc firmware"
+  },
   "sidebar.mainSidebar.category.Resources": {
     "message": "資源",
     "description": "The label for category 'Resources' in sidebar 'mainSidebar'"
@@ -58,5 +62,8 @@
   "sidebar.mainSidebar.category.Tetris": {
     "message": "Tetris",
     "description": "The label for category 'Tetris' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Firmware Archive": {
+    "message": "韌體儲存庫"
   }
 }

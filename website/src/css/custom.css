@@ -649,12 +649,12 @@ a:hover {
 
 /* Footer link contrast fix — brighter red for WCAG AA compliance */
 .footer a {
-  color: var(--ifm-color-primary-lighter) !important;
+  color: var(--ifm-color-primary-lightest) !important;
   transition: color 0.2s ease;
 }
 
 .footer a:hover {
-  color: var(--ifm-color-primary-lightest) !important;
+  color: #ff8080 !important;
 }
 
 /* Hero section (fallback for non-home pages) */

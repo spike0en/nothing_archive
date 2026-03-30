@@ -16,7 +16,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -37,6 +37,19 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Cache Docusaurus build
+        uses: actions/cache@v4
+        with:
+          path: |
+            website/.docusaurus
+            website/node_modules/.cache
+          key: docusaurus-${{ hashFiles('website/package-lock.json') }}-${{ hashFiles('website/docs/**', 'website/src/**') }}
+          restore-keys: |
+            docusaurus-${{ hashFiles('website/package-lock.json') }}-
+
+      - name: Type check
+        run: npm run typecheck
 
       - name: Build website
         run: npm run build
