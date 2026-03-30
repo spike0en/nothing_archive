@@ -1,0 +1,22 @@
+{
+  "title": {
+    "message": "Nothing Archive",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Nothing Archive 標誌",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Home": {
+    "message": "首頁",
+    "description": "Navbar item with label Home"
+  },
+  "item.label.Docs": {
+    "message": "文件",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}

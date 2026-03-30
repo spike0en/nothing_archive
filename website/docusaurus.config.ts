@@ -38,7 +38,11 @@ const config: Config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'zh-TW'],
+    localeConfigs: {
+      en: { label: 'English' },
+      'zh-TW': { label: '繁體中文' },
+    },
   },
 
   themes: [
@@ -47,7 +51,7 @@ const config: Config = {
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
         hashed: true,
-        language: ['en'],
+        language: ['en', 'zh'],
       },
     ],
   ],
@@ -198,7 +202,10 @@ const config: Config = {
           position: 'right',
           className: 'header-github-link',
         },
-
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
       ],
     },
     footer: {
