@@ -153,43 +153,43 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | App | Developer | Description |
 |-----|-----------|-------------|
 | [Battery Health](https://play.google.com/store/apps/details?id=com.monospace.battery) | monospace | Battery health monitoring |
+| [HeyBattery](https://github.com/ghostyapps/HeyBattery) | Candan | Battery usage tracker |
+| [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Device insights tool |
+| [GeoTorch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Flashlight app with widgets |
+| [Currency](https://curency.pages.dev/) | Earendel | Currency converter web app |
 | [Calories Are Nothing](https://play.google.com/store/apps/details?id=can.wearemobilefirst.com) | WeAreMobileFirst | Meal logging app |
-| [CMF Custom Volume Controller](https://github.com/alirezafarghadani999/CMF_CustomVolumeControl) | AlirezaFarghadani | Custom volume controller for CMF |
+| [MateApp](https://github.com/shahriaravi/MateApp) | shahriaravi | Offline finance tracker |
+| [WhispCal](https://play.google.com/store/apps/details?id=com.thomasmorice.whispcal) | Thomas Morice | Calorie tracking app for Android and [iOS](https://apps.apple.com/in/app/whispcal/id6757860582) |
+| [n-recipe](https://play.google.com/store/apps/details?id=com.a3chron.nrecipe) | a3chron | Offline recipebook |
 | [Compass](https://github.com/Earendel-lab/Compass) | Earendel | Simple compass |
 | [Nothing-Compass](https://github.com/ISO53/Nothing-Compass) | ISO53 | Compass and Inclinometer in Nothing aesthetics |
-| [Currency](https://curency.pages.dev/) | Earendel | Currency converter web app |
 | [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | Dino game inspired |
-| [GeoTorch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Flashlight app with widgets |
-| [HeyBattery](https://github.com/ghostyapps/HeyBattery) | Candan | Battery usage tracker |
-| [HeyCam](https://github.com/ghostyapps/HeyCam) | Candan | Minimalist camera with Glyph Matrix support |
-| [MateApp](https://github.com/shahriaravi/MateApp) | shahriaravi | Offline finance tracker |
 | [Minimal Browser](https://github.com/aaswani-v/Minimal-Browser) | aaswani-v | Browser with AI summarization |
-| [n-recipe](https://play.google.com/store/apps/details?id=com.a3chron.nrecipe) | a3chron | Offline recipebook |
-| [NBoard](https://github.com/MathieuDvv/Nboard) | MathieuDvv | Nothing-inspired keyboard with AI tools |
-| [NCalc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Calculator with Nothing style |
-| [NDial](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ndial) | Hearthborn | Phone dialer and contacts |
-| [NeoCalc](https://play.google.com/store/apps/details?id=com.lended.neocalc) | Creepsmile | Nothing OS inspired calculator |
-| [NKeyboard](https://github.com/arunk140/nth-kbd) | arunk14 | Themed keyboard |
-| [NoCalendar](https://play.google.com/store/apps/details?id=com.calendar.nocalendar) | NoAppsStudio | Calendar with Google sync |
-| [Nothing Audio Recorder](https://play.google.com/store/apps/details?id=com.service.rare.audio.recorder) | Cloud Nine Labs | Audio recorder |
 | [Nothing Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | AI-powered browser |
-| [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | World clock, timer, stopwatch |
-| [Nothing Desk Clock](https://play.google.com/store/apps/details?id=com.ApexCreator.deskclock) | Apex Creators | Desk clock app |
-| [Nothing Files](https://github.com/Mo-Array/Nothing-Files) | Mo-Array | Nothing OS themed file manager app |
+| [HeyCam](https://github.com/ghostyapps/HeyCam) | Candan | Minimalist camera with Glyph Matrix support |
+| [Nothing Audio Recorder](https://play.google.com/store/apps/details?id=com.service.rare.audio.recorder) | Cloud Nine Labs | Audio recorder |
 | [Nothing Gallery](https://github.com/jerichoi224/Nothing-Gallery) | jerichoi224 | Gallery app |
-| [Nothing LED Banner](https://play.google.com/store/apps/details?id=com.ApexCreator.thebannerapp) | Apex Creators | LED banner creator |
-| [Nothing Weather](https://play.google.com/store/apps/details?id=com.ApexCreator.nothing_weather) | Apex Creators | Weather app |
-| [NothingK](https://github.com/cuadratico/NothingK) | cuadratico | Password vault |
-| [NothingQuickTools](https://github.com/DylanAkp/NothingQuickTools) | DylanAkp | Quick tiles for Phone (2) |
-| [NoVolume](https://play.google.com/store/apps/details?id=com.nostudio.novolume) | NoAppsStudio | Customisable volume slider |
+| [NBoard](https://github.com/MathieuDvv/Nboard) | MathieuDvv | Nothing-inspired keyboard with AI tools |
+| [NKeyboard](https://github.com/arunk140/nth-kbd) | arunk14 | Themed keyboard |
+| [NCalc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Calculator with Nothing style |
+| [NeoCalc](https://play.google.com/store/apps/details?id=com.lended.neocalc) | Creepsmile | Nothing OS inspired calculator |
 | [NothingCalculator](https://github.com/git-jamesfrench/NothingCalculator) | git-jamesfrench | Community made Nothing calculator |
 | [NxCalculator](https://github.com/montybytes/nxcalculator) | montybytes | Simple calculator |
 | [OpenCalc](https://github.com/drrnb/OpenCalc/releases/tag/v3.0.0-beta4-nothing) | drrnb | Themed calculator |
-| [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Recording light control for Phone (3) |
-| [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Device insights tool |
-| [The Everything Key](https://play.google.com/store/apps/details?id=com.spandone.everythingkey) | spandone | Essential key remapper |
+| [NDial](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ndial) | Hearthborn | Phone dialer and contacts |
 | [Voidcaller](https://play.google.com/store/apps/details?id=com.voidware.voidcaller) | VoidwareLabs | Minimalist dialer |
-| [WhispCal](https://play.google.com/store/apps/details?id=com.thomasmorice.whispcal) | Thomas Morice | Calorie tracking app for Android and [iOS](https://apps.apple.com/in/app/whispcal/id6757860582) | 
+| [NoCalendar](https://play.google.com/store/apps/details?id=com.calendar.nocalendar) | NoAppsStudio | Calendar with Google sync |
+| [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | World clock, timer, stopwatch |
+| [Nothing Desk Clock](https://play.google.com/store/apps/details?id=com.ApexCreator.deskclock) | Apex Creators | Desk clock app |
+| [Nothing Weather](https://play.google.com/store/apps/details?id=com.ApexCreator.nothing_weather) | Apex Creators | Weather app |
+| [Nothing Files](https://github.com/Mo-Array/Nothing-Files) | Mo-Array | Nothing OS themed file manager app |
+| [NothingK](https://github.com/cuadratico/NothingK) | cuadratico | Password vault |
+| [CMF Custom Volume Controller](https://github.com/alirezafarghadani999/CMF_CustomVolumeControl) | AlirezaFarghadani | Custom volume controller for CMF |
+| [NothingQuickTools](https://github.com/DylanAkp/NothingQuickTools) | DylanAkp | Quick tiles for Phone (2) |
+| [NoVolume](https://play.google.com/store/apps/details?id=com.nostudio.novolume) | NoAppsStudio | Customisable volume slider |
+| [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Recording light control for Phone (3) |
+| [The Everything Key](https://play.google.com/store/apps/details?id=com.spandone.everythingkey) | spandone | Essential key remapper |
+| [Nothing LED Banner](https://play.google.com/store/apps/details?id=com.ApexCreator.thebannerapp) | Apex Creators | LED banner creator |
 
 ---
 
