@@ -138,6 +138,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [NDot Notes](https://github.com/AzhamProdLive/Notes_App_Nothing) | AzhamProdLive | Notes app with NDot font theme |
 | [Notes](https://play.google.com/store/apps/details?id=com.monospace.notes) | monospace | Notes app with built-in security |
 | [Nothing Notes](https://play.google.com/store/apps/details?id=com.ApexCreator.nothingnotes) | Apex Creator | Minimal notepad |
+| [Nothing Notes](https://github.com/ThriveEngineer/nothing.notes) | ThriveEngineer | Nothing themed notes app |
 | [Noting](https://play.google.com/store/apps/details?id=com.hearthborn.studios.notingnotes) | Hearthborn | Notes and tasks with cloud backup |
 | [Seton](https://github.com/arijit4/Seton) | arijit4 | Pin and edit notes with widget |
 | [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | Minimalist launcher |
@@ -154,6 +155,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Calories Are Nothing](https://play.google.com/store/apps/details?id=can.wearemobilefirst.com) | WeAreMobileFirst | Meal logging app |
 | [CMF Custom Volume Controller](https://github.com/alirezafarghadani999/CMF_CustomVolumeControl) | AlirezaFarghadani | Custom volume controller for CMF |
 | [Compass](https://github.com/Earendel-lab/Compass) | Earendel | Simple compass |
+| [Nothing-Compass](https://github.com/ISO53/Nothing-Compass) | ISO53 | Compass and Inclinometer in Nothing aesthetics |
 | [Currency](https://curency.pages.dev/) | Earendel | Currency converter web app |
 | [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | Dino game inspired |
 | [GeoTorch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Flashlight app with widgets |
@@ -179,6 +181,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [NothingK](https://github.com/cuadratico/NothingK) | cuadratico | Password vault |
 | [NothingQuickTools](https://github.com/DylanAkp/NothingQuickTools) | DylanAkp | Quick tiles for Phone (2) |
 | [NoVolume](https://play.google.com/store/apps/details?id=com.nostudio.novolume) | NoAppsStudio | Customisable volume slider |
+| [NothingCalculator](https://github.com/git-jamesfrench/NothingCalculator) | git-jamesfrench | Community made Nothing calculator |
 | [NxCalculator](https://github.com/montybytes/nxcalculator) | montybytes | Simple calculator |
 | [OpenCalc](https://github.com/drrnb/OpenCalc/releases/tag/v3.0.0-beta4-nothing) | drrnb | Themed calculator |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Recording light control for Phone (3) |
