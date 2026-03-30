@@ -1,6 +1,7 @@
 {
   "name": "website",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Nothing Archive documentation website — firmware, guides, and community resources for Nothing & CMF devices",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",

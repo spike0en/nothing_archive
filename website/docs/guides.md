@@ -7,109 +7,36 @@ keywords: [nothing bootloader unlock, root nothing phone, nothing fastboot, noth
 
 # How-to Guides
 
-Step-by-step guides for Nothing device owners.
-
-## Prerequisites & Tools
-
-Essential tools for advanced guides below.
-
-### USB Drivers
-
-Essential drivers for USB file transfers and device recognition.
-
-- [Google USB Drivers for Windows](https://dl.google.com/android/repository/usb_driver_r13-windows.zip)
-- Installation guides: [USB](https://droidwin.com/android-usb-drivers) | [Fastboot](https://droidwin.com/how-to-install-fastboot-drivers-in-windows-11/)
-
-### Platform Tools (ADB & Fastboot)
-
-Download Android SDK Platform-Tools:
-- [Windows / Linux / macOS](https://developer.android.com/studio/releases/platform-tools)
-- [Installation Guide](https://www.xda-developers.com/install-adb-windows-macos-linux/)
-
-**Windows (winget):**
-```cmd
-winget install --id=Google.PlatformTools -e
-```
-
-**macOS/Linux (Homebrew):**
-```bash
-brew install --cask android-platform-tools
-```
-
----
+Step-by-step guides on several aspects.
 
 ## General Guides
 
 Tips, tricks, and general guides for everyone.
 
-### Manual OTA Updates
-
-Skip step I.(B) if your device is not rooted or has a locked bootloader (stock partitions unmodified). For locked bootloader devices, use the dialer method. For open beta updates, use the `Beta Updater Hub` app as the dialer code won't work.
-
-- [Manual OTA Sideloading Guide](https://github.com/spike0en/nothing_archive?tab=readme-ov-file#i-ota-sideloading-) by spike0en
-
-### Safe Mode
-
-- [Rebooting to Safe Mode](https://www.hardreset.info/devices/nothing/nothing-phone-2/safe-mode/)
-
-### Phone (2a) SE Hidden Feature
-
-- [Unlock Hidden Feature](https://nothing.community/d/11058-hidden-feature-of-phone-2a-special-edition) by RapidZapper
-
-### Essential Key Remapping
-
-Guides for remapping the Essential Key on Phone (3):
-
-| Guide | Author |
-|-------|--------|
-| [Reddit Guide](https://www.reddit.com/r/NothingTech/comments/1jzljrf/guide_how_to_remap_the_essential_key_on_the_phone/) | acruzjumper, McKeviin, DKmarc & Pealoaf |
-| [Quick Remap Guide](https://www.reddit.com/r/NothingTech/comments/1jv6gea/quick_guide_to_remap_the_essential_space_button/) | David_Ign |
-| [XDA Guide](https://xdaforums.com/t/how-to-disable-or-remap-the-essentials-button.4755184/) | rwilco12 |
-| [GitHub Guide](https://github.com/z3phydev/How-to-remap-or-disable-the-Essential-Key) | z3phydev |
-
-### Dialer Codes
-
-Dialer codes (USSD) that you can dial to access hidden menus and diagnostics.
-
-| Code | Function |
-|------|----------|
-| `*#06#` | Shows IMEI and Serial Number |
-| `*#07#` | Displays SAR levels and regulatory info |
-| `*#*#569#*#*` | Opens Nothing Feedback / Log tool |
-| `*#*#0#*#*` | Hardware test menu (screen, sensors, touch) |
-| `*#*#9#*#*` | Opens Nothing Diagnostics menu |
-| `*#*#225#*#*` | Shows Calendar storage info |
-| `*#*#426#*#*` | Google Play / Firebase diagnostic info |
-| `*#*#4636#*#*` | Testing menu (phone, battery, usage stats, Wi-Fi) |
-| `*#*#682#*#*` | Opens Offline OTA Updater (won't work if Nothing Beta Hub is installed) |
-
----
-
-## Advanced Guides
-
-:::warning
-Recommended for power users only. These procedures can brick your device or void warranty if done incorrectly.
-:::
-
 ### OTA Sideloading
 
-> [!NOTE]
-> - Bootloader unlocking is **not mandatory** to sideload incremental OTA updates. Skip Step A unless you are a rooted user.
-> - Sideloading official incremental or full OTA updates is safe as long as they are downloaded directly from this archive.
-> - Do not use third-party sources. All firmware in the Nothing Archive is sourced directly from Nothing’s official OEM servers.  
->   This can be verified by inspecting the download URL(s) in the incremental OTA section, which point to official server and not third-party file hosts.
-> - The built-in Nothing OS offline updater only accepts OEM-signed update packages.
-> - The updater verifies the firmware hash before installation and will fail if an incorrect or mismatched OTA zip is used.
-> - The same verification applies to full OTA packages; they will not install unless their integrity is intact.
-> - Because of these checks, it is not possible to brick your device by sideloading an official OTA zip on a locked bootloader.
-> - For Open Beta Test updates, sideload them via `Nothing Beta Updater Hub` (name might change in future) provided by the OEM if the dialer method does not work
->   You can launch the interface from Settings. This happenes when you have installed the OEM's beta updater app which overrides the stock inbuilt version.
-> - For visual references, see the images [here](https://github.com/spike0en/nothing_archive/tree/main/assets/sideloading) in the listed order.
+:::note
+
+- Bootloader unlocking is **not mandatory** to sideload incremental OTA updates. Skip Step A unless you are a rooted user.
+- Sideloading official incremental or full OTA updates is safe as long as they are downloaded directly from this archive.
+- Do not use third-party sources. All firmware in the Nothing Archive is sourced directly from Nothing’s official OEM servers.  
+  This can be verified by inspecting the download URL(s) in the incremental OTA section, which point to official server and not third-party file hosts.
+- The built-in Nothing OS offline updater only accepts OEM-signed update packages.
+- The updater verifies the firmware hash before installation and will fail if an incorrect or mismatched OTA zip is used.
+- The same verification applies to full OTA packages; they will not install unless their integrity is intact.
+- Because of these checks, it is not possible to brick your device by sideloading an official OTA zip on a locked bootloader.
+- For Open Beta Test updates, sideload them via `Nothing Beta Updater Hub` (name might change in future) provided by the OEM if the dialer method does not work
+  You can launch the interface from Settings. This happens when you have installed the OEM's beta updater app which overrides the stock inbuilt version.
+- For visual references, see the images [here](https://github.com/spike0en/nothing_archive/tree/main/assets/sideloading) in the listed order.
+
+:::
 
 <br />
 
 A. **Restoring Stock Partitions (For Rooted Users Only)**  
-  > **If your bootloader is locked, skip directly to Point B!**  
+  :::tip
+  If your bootloader is locked, skip directly to Point B!
+  :::
 
 1. **Check your current Nothing OS version:**  
    - Go to `Settings > About phone > Tap the device banner`.  
@@ -120,11 +47,13 @@ A. **Restoring Stock Partitions (For Rooted Users Only)**
    - Extract the archive to obtain `.img` files.  
 
 3. **Identify the required partitions:**  
-   - **Qualcomm Devices:** `boot`, `init_boot` `vendor_boot`, `recovery`, `vbmeta`  
+   - **Qualcomm Devices:** `boot`, `init_boot`, `vendor_boot`, `recovery`, `vbmeta`  
    - **MediaTek Devices:** `init_boot`, `vbmeta`, `lk`
 
 4. **Flash stock partitions** in bootloader mode:  
-   > Only modified partitions are required to be flashed. Also skip any missing partitions based on your SoC platform. 
+   :::note
+   Only modified partitions are required to be flashed. Also skip any missing partitions based on your SoC platform. 
+   :::
    ```sh
    fastboot flash boot boot.img
    fastboot flash recovery recovery.img
@@ -157,21 +86,21 @@ B. **Proceed with Sideloading**
 
  - **Example:**  
    - Suppose your **Phone (2)** has the build number: `Pong_U2.6-241016-1700` 
-   - Assuming the latest available OTA update available being: `Pong_V3.0-241226-2001`
-   - The corresponding update pathway would be: `Pong_U2.6-241016-1700 -> Pong_V3.0-241226-2001`
+    - Assuming the latest available OTA update is: `Pong_V3.0-241226-2001`
+    - The corresponding update pathway would be: `Pong_U2.6-241016-1700` -> `Pong_V3.0-241226-2001`
    - Ensure you select the correct pathway based on your device and OS version.
     - Refer to [this](https://github.com/spike0en/nothing_archive/blob/main/assets/sideloading/3.1_ota_sideload.jpg) for better clarity.
 
  - **Create the `ota` Folder:** 
    - Create a folder named `ota` in your device's **internal storage**, full path being:  
-     ```
+     ```text
      /sdcard/ota/
      ```
    - Move the downloaded `<firmware>.zip` file to this folder.
 
  - **Access the Nothing Offline OTA Updater:**  
     - Open the **Phone app** and dial:  
-      ```
+      ```text
       *#*#682#*#*
       ```
    - This will launch the built-in offline updater tool.  
@@ -183,22 +112,106 @@ B. **Proceed with Sideloading**
    - Tap `Directly Apply OTA` or `Update` (based on the app UI).  
    - Wait for the update to complete —your device will reboot automatically.
 
-- **Note:**  
-  - If the updater shows an **unknown error**, try using the **"Browse"** option instead of manually copying the file to the **"ota"** folder.
-  - **Full OTA firmware** can be sideloaded if incremental OTA fails.
-    - **Full OTA cannot be used to downgrade** — it can only update to the same or a higher build.
-    - **Unlocked bootloader users** can flash full OTA via custom recoveries (e.g., OrangeFox for Phone (2)).
-  - **Not every release has a Full OTA file** — use incrementals instead in such cases.
+:::note
+
+- If the updater shows an **unknown error**, try using the **"Browse"** option instead of manually copying the file to the **"ota"** folder.
+- **Full OTA firmware** can be sideloaded if incremental OTA fails.
+- **Full OTA cannot be used to downgrade** — it can only update to the same or a higher build.
+- **Unlocked bootloader users** can flash full OTA via custom recoveries (e.g., OrangeFox for Phone (2)).
+- **Not every release has a Full OTA file** — use incrementals instead in such cases.
+
+:::
 
 <hr />
 
+### Safe Mode
+
+- [Rebooting to Safe Mode](https://www.hardreset.info/devices/nothing/nothing-phone-2/safe-mode/)
+
+<hr />
+
+### Phone (2a) SE Hidden Feature
+
+- [Unlock Hidden Feature](https://nothing.community/d/11058-hidden-feature-of-phone-2a-special-edition) by RapidZapper
+
+<hr />
+
+### Dialer Codes
+
+Dialer codes (USSD) that you can dial to access hidden menus and diagnostics.
+
+| Code | Function |
+|------|----------|
+| `*#06#` | Shows IMEI and Serial Number |
+| `*#07#` | Displays SAR levels and regulatory info |
+| `*#*#569#*#*` | Opens Nothing Feedback / Log tool |
+| `*#*#0#*#*` | Hardware test menu (screen, sensors, touch) |
+| `*#*#9#*#*` | Opens Nothing Diagnostics menu |
+| `*#*#225#*#*` | Shows Calendar storage info |
+| `*#*#426#*#*` | Google Play / Firebase diagnostic info |
+| `*#*#4636#*#*` | Testing menu (phone, battery, usage stats, Wi-Fi) |
+| `*#*#682#*#*` | Opens Offline OTA Updater (won't work if Nothing Beta Hub is installed) |
+
+---
+
+## Advanced Guides
+
+:::warning
+Recommended for power users only. These procedures can brick your device or void warranty if done incorrectly.
+:::
+
+### Prerequisites & Tools
+
+Essential tools for advanced guides below.
+
+#### USB Drivers
+
+Essential drivers for USB file transfers and device recognition.
+
+- [Google USB Drivers for Windows](https://dl.google.com/android/repository/usb_driver_r13-windows.zip)
+- Installation guides: [USB](https://droidwin.com/android-usb-drivers) | [Fastboot](https://droidwin.com/how-to-install-fastboot-drivers-in-windows-11/)
+
+#### Platform Tools (ADB & Fastboot)
+
+Download Android SDK Platform-Tools:
+- [Windows / Linux / macOS](https://developer.android.com/studio/releases/platform-tools)
+- [Installation Guide](https://www.xda-developers.com/install-adb-windows-macos-linux/)
+
+**Windows (winget):**
+```cmd
+winget install --id=Google.PlatformTools -e
+```
+
+**macOS/Linux (Homebrew):**
+```bash
+brew install --cask android-platform-tools
+```
+
+---
+
+### Essential Key Remapping
+
+Guides for remapping the Essential Key on Phone (3):
+
+| Guide | Author |
+|-------|--------|
+| [Reddit Guide](https://www.reddit.com/r/NothingTech/comments/1jzljrf/guide_how_to_remap_the_essential_key_on_the_phone/) | acruzjumper, McKeviin, DKmarc & Pealoaf |
+| [Quick Remap Guide](https://www.reddit.com/r/NothingTech/comments/1jv6gea/quick_guide_to_remap_the_essential_space_button/) | David_Ign |
+| [XDA Guide](https://xdaforums.com/t/how-to-disable-or-remap-the-essentials-button.4755184/) | rwilco12 |
+| [GitHub Guide](https://github.com/z3phydev/How-to-remap-or-disable-the-Essential-Key) | z3phydev |
+
+---
+
 ### Unlocking Bootloader
 
-> [!IMPORTANT]
-> - Unlocking the bootloader voids the OEM warranty. However, you can reflash the stock ROM and relock the bootloader to restore it.
-> - Regardless of other factors, you will lose Widevine L1/DRM certification, which will downgrade to L3.  
-> - You will lose [device integrity](https://developer.android.com/google/play/integrity/overview), which may cause apps relying on this to stop working unless fixed later with root access.  
->   [This guide](https://github.com/yashaswee-exe/AndroidGuides/wiki/Fix-integrity-and-root-detection) may be helpful for resolving this issue. 
+:::info
+
+- Unlocking the bootloader voids the OEM warranty. However, you can reflash the stock ROM and relock the bootloader to restore it.
+- Regardless of other factors, you will lose Widevine L1/DRM certification, which will downgrade to L3.  
+- You will lose [device integrity](https://developer.android.com/google/play/integrity/overview), which may cause apps relying on this to stop working unless fixed later with root access.  
+  [This guide](https://github.com/yashaswee-exe/AndroidGuides/wiki/Fix-integrity-and-root-detection) may be helpful for resolving this issue. 
+
+:::
 
 A. **Prerequisites**
 - **Backup your data** (unlocking will erase everything).
@@ -255,13 +268,16 @@ C. **Post-Unlock**
 
 ### Rooting
 
-> [!IMPORTANT]
-> - Rooting **voids the OEM warranty** and may break OTA updates unless stock images are restored before updating.
-> - Always ensure the **boot / init_boot image exactly matches your current firmware build**.
->   Flashing an incorrect or mismatched image **will cause bootloops**.
-> - **Always use `init_boot` over `boot` image for rooting if the partition exists**.
-> - Rooting requires an **unlocked bootloader**.
-> - Users can also refer to the visual guides linked alongside: [orailnoor](https://www.youtube.com/watch?v=v0i4rftKNWs) | [Droidwin](https://www.youtube.com/watch?v=4T1ZHDUCBsw) | [EpicDroid](https://www.youtube.com/watch?v=vXIBfyX7s-k).
+:::info
+
+- Rooting **voids the OEM warranty** and may break OTA updates unless stock images are restored before updating.
+- Always ensure the **boot / init_boot image exactly matches your current firmware build**.
+  Flashing an incorrect or mismatched image **will cause bootloops**.
+- **Always use `init_boot` over `boot` image for rooting if the partition exists**.
+- Rooting requires an **unlocked bootloader**.
+- Users can also refer to the visual guides linked alongside: [orailnoor](https://www.youtube.com/watch?v=v0i4rftKNWs) | [Droidwin](https://www.youtube.com/watch?v=4T1ZHDUCBsw) | [EpicDroid](https://www.youtube.com/watch?v=vXIBfyX7s-k).
+
+:::
 
 <br />
 
@@ -318,14 +334,17 @@ D. **Patch the Image**
 
 **KernelSU / KernelSU Next**  
 
-> [!NOTE]
-> - For Nothing Phone (2): KSU based root method is supported with stock `boot.img`. But KSUN or SUSFS support requires a custom compiled kernel with the patches added.
-> - Known pre-patched custom kernel options available include: 
->  [arter97 kernel](https://xdaforums.com/t/r44-arter97-kernel-for-nothing-phone-2.4631313/) - KSU prepatched. Does not support NOS 4.0+ yet | 
->  [Meteoric Kernel (EOL)](https://github.com/HELLBOY017/kernel_nothing_sm8475) - KSUN + SUSFS prepatched. Does not support NOS 4.0+. |
->    [Wild Kernel fork](https://github.com/MiguVT/Meteoric_KernelSU_SUSFS) - KSU + SUSFS prepatched. | 
->    [Wild Kernel](https://github.com/WildKernels/GKI_KernelSU_SUSFS) - KSUN + SUSFS prepatched. Supports 5.10-android12. 
-> - Nothing models with Android 13+ vendors out of box i.e, ones launched after Phone (2) will support KSUN patching method.
+:::note
+
+- For Nothing Phone (2): KSU based root method is supported with stock `boot.img`. But KSUN or SUSFS support requires a custom compiled kernel with the patches added.
+- Known pre-patched custom kernel options available include: 
+  [arter97 kernel](https://xdaforums.com/t/r44-arter97-kernel-for-nothing-phone-2.4631313/) - KSU prepatched. Does not support NOS 4.0+ yet | 
+  [Meteoric Kernel (EOL)](https://github.com/HELLBOY017/kernel_nothing_sm8475) - KSUN + SUSFS prepatched. Does not support NOS 4.0+. |
+  [Wild Kernel fork](https://github.com/MiguVT/Meteoric_KernelSU_SUSFS) - KSU + SUSFS prepatched. | 
+  [Wild Kernel](https://github.com/WildKernels/GKI_KernelSU_SUSFS) - KSUN + SUSFS prepatched. Supports 5.10-android12. 
+- Nothing models with Android 13+ vendors out of box i.e, ones launched after Phone (2) will support KSUN patching method.
+
+:::
 
 - Patching method is similar to that of magisk. From the KSU/KSUN manager tap on not installed > patch the `init_boot.img` and transfer the patched image to PC.
 
@@ -350,11 +369,14 @@ D. **Patch the Image**
 
 ### Backing Up Essential Partitions
 
-> [!IMPORTANT] 
-> - After unlocking the bootloader, it is crucial to back up essential partitions such as `persist`, `modemst1`, `modemst2`, `fsg`, etc., **before** flashing custom ROMs or kernels.
-> - These partitions contain important data, including IMEI, network settings, and fingerprint sensor calibration.
-> - If lost or corrupted, your device may experience **loss of cellular connectivity, fingerprint issues, or even become bricked**.
-> - Creating backups ensures you can **restore your device** if something goes wrong.
+:::info
+
+- After unlocking the bootloader, it is crucial to back up essential partitions such as `persist`, `modemst1`, `modemst2`, `fsg`, etc., **before** flashing custom ROMs or kernels.
+- These partitions contain important data, including IMEI, network settings, and fingerprint sensor calibration.
+- If lost or corrupted, your device may experience **loss of cellular connectivity, fingerprint issues, or even become bricked**.
+- Creating backups ensures you can **restore your device** if something goes wrong.
+
+:::
 
 A. **Requirements**
 - **Unlocked bootloader**
@@ -434,23 +456,36 @@ D. **Restoring Partitions**
 
 ### Flashing Stock ROM (Unbrick / Downgrade)
 
-> [!NOTE]
-> - This is the only recommended method for manually clean flashing to a newer version of stock firmware or downgrading.
-> - For a better understanding, refer to the visual guides linked alongside: [Droidwin](https://www.youtube.com/watch?v=YCYEjdC3oHM) | [The Nothing Lab](https://www.youtube.com/watch?v=l0P9gosl64s) | [QZX Tech](https://www.youtube.com/watch?v=66H2MVElyAY)
+:::note
+
+- This is the only recommended method for manually clean flashing to a newer version of stock firmware or downgrading.
+- For a better understanding, refer to the visual guides linked alongside: [Droidwin](https://www.youtube.com/watch?v=YCYEjdC3oHM) | [The Nothing Lab](https://www.youtube.com/watch?v=l0P9gosl64s) | [QZX Tech](https://www.youtube.com/watch?v=66H2MVElyAY)
+
+:::
 
 A. **Preparation of Flashing Folder:**
-  - Download the following files for your device model and firmware build and place them in a dedicated folder:
+  - Download the following files for your device model and firmware build, and place them in a dedicated folder:
     - image-boot.7z
     - image-firmware.7z
     - image-logical.7z.001-00x
-    - `-hash.sha256` - This is optional but recommended if you want to verify integrity of image files and also check for missing ones. 
+    - `-hash.sha256` - This is optional but recommended for verifying file integrity and detecting missing parts.
 
-  - Install 7-Zip from [here](https://www.7-zip.org/).
+  - Install 7-Zip from https://www.7-zip.org/
+
+  - Optional (**recommended**): You can use extraction scripts instead of manual steps:
+    - [Windows](https://github.com/spike0en/nothing_archive/blob/main/scripts/extract.bat)
+    - [Bash](https://github.com/spike0en/nothing_archive/blob/main/scripts/extract.sh)
+    - Run the script from the same folder where the downloaded files are located.
+
   - Extract files:
     - Windows: Right-click → Extract to "*\"
-    - Bash users:
-      `7za -y x "*.7z*"`
-    - In rare cases, download managers may change file extensions for split logical files. Rename `image-logical.7z.001.7z`, `image-logical.7z.002.7z`, etc., to `image-logical.7z.001`, `image-logical.7z.002`, and retry extraction.
+    - Bash users: `7za -y x "*.7z*"`
+
+  - In rare cases, download managers may modify the extensions of split logical files.
+  - Rename:
+    - `-image-logical.7z.001.7z` → `-image-logical.7z.001`
+    - `-image-logical.7z.002.7z` → `-image-logical.7z.002`
+  - Then retry the extraction.
 
 B. **Proceeding with Flashing:**
   - Install compatible USB drivers from [here](https://developer.android.com/studio/run/win-usb).

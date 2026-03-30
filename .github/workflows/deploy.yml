@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - import-awesome-nothing
     paths:
       - 'website/**'
       - '.github/workflows/deploy.yml'
@@ -32,7 +31,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 20  # Must match engines.node in package.json
           cache: npm
           cache-dependency-path: website/package-lock.json
 

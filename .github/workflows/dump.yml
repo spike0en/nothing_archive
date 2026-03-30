@@ -29,7 +29,9 @@ on:
 
 jobs:
   dump:
-    permissions: write-all
+    permissions:
+      contents: write
+      pull-requests: write
 
     runs-on: >-
       ${{

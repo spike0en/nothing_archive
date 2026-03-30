@@ -1,0 +1,8 @@
+{
+  "label": "OTA Changelogs",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Official Nothing OS Update Changelogs for Respective Phone Models"
+  }
+}

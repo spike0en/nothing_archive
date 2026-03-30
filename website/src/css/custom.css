@@ -1,9 +1,8 @@
 /**
  * Custom CSS for Nothing Archive
  * Implements a minimal, monochrome aesthetic inspired by Nothing Tech.
+ * Fonts are loaded via <link> tags in docusaurus.config.ts headTags.
  */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
   --ifm-color-primary: #d71921;
@@ -23,6 +22,16 @@
   --ifm-navbar-background-color: #f3f2ec;
   --ifm-footer-background-color: #1a1a1a;
   --ifm-card-background-color: #ffffff;
+
+  /* Global Infima Border Radius Overrides to match new rounded aesthetic */
+  --ifm-global-radius: 8px;
+  --ifm-button-border-radius: 999px;
+  --ifm-card-border-radius: 24px;
+  --ifm-alert-border-radius: 12px;
+  --ifm-pre-border-radius: 12px;
+  --ifm-code-border-radius: 6px;
+  --ifm-toggle-border-radius: 999px;
+  --ifm-dropdown-border-radius: 12px;
 
   --docusaurus-highlighted-code-line-bg: rgba(215, 25, 33, 0.1);
 
@@ -85,8 +94,8 @@
   font-size: 0.9rem;
   letter-spacing: -0.01em;
   padding: 0.5rem 0.75rem;
-  border-radius: 0;
-  transition: color 0.2s ease;
+  border-radius: 6px;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .navbar__link:hover,
@@ -203,29 +212,42 @@
   margin: 0;
 }
 
-/* Category headers (e.g. "Resources") */
-.menu__list-item-collapsible .menu__link {
-  font-size: 0.7rem;
-  font-weight: 600;
+/* Category headers (Top level): Bold and Uppercase, but color stays neutral even if child is active */
+.theme-doc-sidebar-menu>.menu__list>.menu__list-item>.menu__list-item-collapsible>.menu__link {
+  font-size: 0.75rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  opacity: 0.8;
-  padding: 0.75rem 1.25rem 0.5rem;
+  opacity: 0.7;
+  padding: 0.85rem 1.25rem 0.65rem;
+  border-left: 3px solid transparent !important;
+  color: inherit !important;
 }
 
-.menu__list-item-collapsible .menu__link:hover {
+.theme-doc-sidebar-menu>.menu__list>.menu__list-item>.menu__list-item-collapsible>.menu__link--active {
+  opacity: 1;
+  border-left-color: var(--nothing-border-strong) !important;
+  /* Visual cue but not red */
+}
+
+/* Ensure nested collapsible categories match regular doc links */
+.menu__list .menu__list .menu__list-item-collapsible>.menu__link {
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: -0.01em;
+  text-transform: none;
   opacity: 1;
 }
 
-/* Doc links */
+/* Only highlight the actual child documents in red */
 .menu__link {
   font-weight: 500;
   font-size: 0.9rem;
   letter-spacing: -0.01em;
   padding: 0.5rem 1.25rem;
-  border-radius: 0;
+  /* Level 1 default */
+  border-radius: 6px;
   border-left: 3px solid transparent;
-  margin-left: 0;
   transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
@@ -233,10 +255,17 @@
   background: rgba(0, 0, 0, 0.04);
 }
 
+/* Base active style for all links */
 .menu__link--active {
   font-weight: 600;
   border-left-color: var(--ifm-color-primary);
   color: var(--ifm-color-primary);
+}
+
+/* Specifically prevent category headers from turning red when children are active */
+.menu__list-item-collapsible>.menu__link--active {
+  color: inherit !important;
+  border-left-color: transparent !important;
 }
 
 .menu__link--active:hover {
@@ -251,9 +280,22 @@
   background: rgba(255, 59, 59, 0.08);
 }
 
-/* Nested items under category */
-.menu__list-item .menu__list-item .menu__link {
-  padding-left: 1.5rem;
+/* Sidebar hierarchical indentation */
+.menu__list .menu__list>.menu__list-item>.menu__link,
+.menu__list .menu__list>.menu__list-item>.menu__list-item-collapsible>.menu__link {
+  padding-left: 1.5rem !important;
+  font-size: 0.85rem;
+}
+
+.menu__list .menu__list .menu__list>.menu__list-item>.menu__link,
+.menu__list .menu__list .menu__list>.menu__list-item>.menu__list-item-collapsible>.menu__link {
+  padding-left: 2.25rem !important;
+  font-size: 0.85rem;
+}
+
+.menu__list .menu__list .menu__list .menu__list>.menu__list-item>.menu__link,
+.menu__list .menu__list .menu__list .menu__list>.menu__list-item>.menu__list-item-collapsible>.menu__link {
+  padding-left: 3rem !important;
   font-size: 0.85rem;
 }
 
@@ -473,6 +515,27 @@ table td a:hover {
     font-size: 0.85rem;
   }
 
+  /* Scroll affordance — right-edge fade to indicate scrollable content */
+  div[class*="tableWrapper"],
+  .tableWrapper {
+    position: relative;
+  }
+
+  div[class*="tableWrapper"]::after,
+  .tableWrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 32px;
+    background: linear-gradient(to right, transparent, var(--ifm-background-color));
+    pointer-events: none;
+    opacity: 0.9;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+  }
+
   /* Force content minimum widths so it scrolls instead of squishing */
   table th,
   table td {
@@ -584,6 +647,16 @@ a:hover {
   opacity: 0.8;
 }
 
+/* Footer link contrast fix — brighter red for WCAG AA compliance */
+.footer a {
+  color: var(--ifm-color-primary-lighter) !important;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: var(--ifm-color-primary-lightest) !important;
+}
+
 /* Hero section (fallback for non-home pages) */
 .hero {
   background: var(--ifm-background-color);
@@ -600,11 +673,11 @@ a:hover {
   opacity: 0.8;
 }
 
-/* Buttons - Nothing geometric, sharp */
+/* Buttons - Nothing geometric, sharp -> now rounded */
 .button {
   font-weight: 600;
   letter-spacing: -0.02em;
-  border-radius: 0;
+  border-radius: 999px;
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }
 
@@ -639,11 +712,11 @@ a:hover {
   margin: 2rem 0;
 }
 
-/* Cards - Nothing geometric */
+/* Cards */
 .card {
   background-color: var(--ifm-card-background-color);
   border: 1px solid var(--nothing-border);
-  border-radius: 0;
+  border-radius: 24px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
   transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -662,9 +735,9 @@ a:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* Admonitions - Nothing geometric */
+/* Admonitions */
 .admonition {
-  border-radius: 0;
+  border-radius: 8px;
   border-left-width: 4px;
 }
 
@@ -677,7 +750,7 @@ a:hover {
 /* Pagination (prev/next) */
 .pagination-nav__link {
   border: 1px solid var(--nothing-border);
-  border-radius: 0;
+  border-radius: 12px;
   transition: border-color 0.2s ease;
 }
 
@@ -733,6 +806,16 @@ a:hover {
   .footer__links {
     flex-direction: column;
     gap: 2rem;
+  }
+
+  /* Doc page content width */
+  main[class*="docMainContainer"] {
+    padding: 0 0.5rem;
+  }
+
+  /* Docs sidebar toggle button */
+  .theme-doc-sidebar-menu {
+    padding: 0.5rem;
   }
 }
 
@@ -817,19 +900,6 @@ a:hover {
   }
 }
 
-/* Fix doc page content width on mobile */
-@media screen and (max-width: 996px) {
-  main[class*="docMainContainer"] {
-    padding: 0 0.5rem;
-  }
-}
-
-/* Docs sidebar toggle button */
-@media screen and (max-width: 996px) {
-  .theme-doc-sidebar-menu {
-    padding: 0.5rem;
-  }
-}
 
 details {
   background-color: transparent !important;

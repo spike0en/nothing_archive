@@ -1,5 +1,5 @@
 ---
-sidebar_label: Nothing OS Firmware Archive
+sidebar_label: Firmware Archive
 title: Nothing OS Firmware Archive
 description: Complete release index for Nothing OS firmware, OTA updates, and factory images for Nothing and CMF devices.
 sidebar_position: 3
@@ -7,7 +7,7 @@ sidebar_position: 3
 
 # Nothing OS Firmware Archive
 
-## Disclaimer
+:::warning Disclaimer
 
 By using this archive, users acknowledge and accept these terms:
 - **Authenticity**: All firmware files are unaltered, unmodified, and sourced directly from the OEM.
@@ -15,6 +15,8 @@ By using this archive, users acknowledge and accept these terms:
 - **Compatibility**: Ensure the firmware matches your Nothing or CMF device variant before installation.
 - **No Warranty**: This is a community-driven project, unaffiliated with [Nothing](https://nothing.tech). The author and contributors are not liable for bricked devices due to misuse or firmware modifications.
 - **Integrity**: Redistribution is permitted only with proper attribution. Reselling freely available firmware is strictly prohibited.
+
+:::
 
 ### Features & Benefits
 
@@ -24,13 +26,15 @@ By using this archive, users acknowledge and accept these terms:
 - **Rooting & Unrooting Support**: Provides stock boot images for Magisk, KernelSU, and Apatch, while allowing unrooting by flashing the original boot image.
 - **Device Recovery**: Provides fastboot-flashable Nothing OS firmware to resolve boot loops, recover soft-bricked devices, and restore stock ROM.
 
-## Notes
+:::info
 
 - Releases for OTA images are tagged using the format `<POST_OTA_VERSION>`, as shown in the [releases](https://github.com/spike0en/nothing_archive/releases) section.
 - Region-specific releases are tagged as `<POST_OTA_VERSION>-<GLO/EEA>`, applicable to older Spacewar builds. GLO = Global; EEA = European Economic Area.
 - Nothing OS Open Beta Test releases are denoted by `OBT`.
 - Android Developer preview releases are tagged as `0.0.0-dev`+`<Device Codename>.<Incremental Date>`.
 - Unless stated otherwise, releases are compatible with all regional and color variants of the device.
+
+:::
 
 <hr />
 
@@ -50,6 +54,7 @@ The unmodified stock OTA image files are archived in `.7z` format and categorize
 | **Phone (3)** | `boot`, `dtbo`, `init_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` (Total: 8) | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `multiimgqti`, `pvmfw`, `qupfw`, `shrm`, `soccp_dcd`, `soccp_debug`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` (Total: 26) | `odm`, `product`, `system`, `system_dlkm`, `system_ext`, `vendor`, `vendor_dlkm` (Total: 7) |
 | **Phone (3a) Lite** | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor` (Total: 7) | `apusys`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `modem`, `mcupm`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` (Total: 20) | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product` (Total: 8) |
 | **Phone (4a)** | `boot`, `dtbo`, `init_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` (Total: 8) | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `pvmfw`, `qupfw`, `shrm`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` (Total: 23) | `odm`, `product`, `system`, `system_dlkm`, `system_ext`, `vendor`, `vendor_dlkm` (Total: 7) |
+| **Phone (4a) Pro** | `boot`, `dtbo`, `init_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` (Total: 8) | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `multiimgqti`, `pvmfw`, `qupfw`, `shrm`, `soccp_dcd`, `soccp_debug`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` (Total: 26) | `odm`, `product`, `system`, `system_dlkm`, `system_ext`, `vendor`, `vendor_dlkm` (Total: 7) |
 
 </details>
 
@@ -118,10 +123,10 @@ Select your device model to access its Release Index.
 | 1.1.8 | Spacewar-S1.1-230112-1613 | Spacewar_S1.1_221129-1525-GLO -> [Spacewar_S1.1-230112-1613](https://android.googleapis.com/packages/ota-api/package/deeb8830c86e0f9b89ae3170ada164b64de02c2c.zip) <br /> Spacewar_S1.1-221129-1525-EEA -> [Spacewar_S1.1-230112-1613](https://android.googleapis.com/packages/ota-api/package/c4313bd73c334c10db148217d3b9edffc2725077.zip) | N/A | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.1-230112-1613-GLO) <br /> [EEA](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.1-230112-1613-EEA) |
 | 1.1.7.HOTFIX | Spacewar-S1.1-221129-1525 | Spacewar_S1.1-221121-2306 -> [Spacewar_S1.1-221129-1525-EEA](https://android.googleapis.com/packages/ota-api/package/5a8a872c8fa2071424af6272bd78806f55d4aeda.zip) | N/A | [EEA](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.1-221129-1525-EEA) |
 | 1.1.7 | Spacewar-S1.1-221121-2306 | Spacewar_S1.1-221121-2306-GLO -> [Spacewar_S1.1-221121-2306-GLO](https://android.googleapis.com/packages/ota-api/package/6d5f9ec32b7c80e07859cdf74daaefd612ac652f.zip) <br /> Spacewar_S1.1-221121-2306-EEA -> [Spacewar_S1.1-221121-2306-EEA](https://android.googleapis.com/packages/ota-api/package/9c41fd92080af076c6e3abddbaefc7eac75c3edc.zip) | [GLO](https://android.googleapis.com/packages/ota-api/package/254815bb72cdbddd5c9dd7cde6d10c95becc6542.zip) <br /> [EEA](https://android.googleapis.com/packages/ota-api/package/0e6855d19dbcdf328449e4d06386a6257bb1aadd.zip) | [EEA](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.1-221121-2306-EEA) |
-| 1.1.6 | Spacewar-S1.1-221022-1221 | Spacewar_S1.1-221008-1815-GLO -> [Spacewar_S1.1-221022-1221-GLO](https://android.googleapis.com/packages/ota-api/package/f63f3cc420a5a4af639dec4d25adcb865a9a235d.zip) <br /> Spacewar_S1.1-220921-2238-EEA -> [Spacewar_S1.1-221022-1221-EEA](https://android.googleapis.com/packages/ota-api/package/10fefd93aaed7b4d478ebfcea69d789121ee859b.zip) | [GLO](https://android.googleapis.com/packages/ota-api/package/99a4c814632616b365017129fa9f7e9e0080fb59.zip) | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.1-221022-1221-EEA) |
+| 1.1.6 | Spacewar-S1.1-221022-1221 | Spacewar_S1.1-221008-1815-GLO -> [Spacewar_S1.1-221022-1221-GLO](https://android.googleapis.com/packages/ota-api/package/f63f3cc420a5a4af639dec4d25adcb865a9a235d.zip) <br /> Spacewar_S1.1-220921-2238-EEA -> [Spacewar_S1.1-221022-1221-EEA](https://android.googleapis.com/packages/ota-api/package/10fefd93aaed7b4d478ebfcea69d789121ee859b.zip) | [GLO](https://android.googleapis.com/packages/ota-api/package/99a4c814632616b365017129fa9f7e9e0080fb59.zip) | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.1-221022-1221-GLO) |
 | 1.1.5 | Spacewar-S1.1-221008-1815 | Spacewar_S1.1-220921-2238-GLO -> [Spacewar_S1.1-221008-1815-GLO](https://android.googleapis.com/packages/ota-api/package/97d10eb70f173b7ce5a223a8d1f6d6fd42cfed5c.zip) | N/A | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.1-221008-1815-GLO) |
 | 1.1.4.HOTFIX | Spacewar-S1.1-220921-2238 | Spacewar_S1.1-220913-2137-GLO -> [Spacewar_S1.1-220921-2238-GLO](https://android.googleapis.com/packages/ota-api/package/6cf1147321de57c159e26a0531760042d23c20ad.zip) <br /> Spacewar_S1.1-220913-2137-EEA -> [Spacewar_S1.1-220921-2238-EEA](https://android.googleapis.com/packages/ota-api/package/288523074fe4af0c0680beee17b2df5a5dd84f7c.zip) | [GLO](https://android.googleapis.com/packages/ota-api/package/54b8dbd1c303be00ef156c602b756c76d8d9b6e1.zip) <br /> [EEA](https://android.googleapis.com/packages/ota-api/package/4c0e18215e374ff95f733dedbd2ebc3f1824e1c8.zip) | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.1-220921-2238-GLO) <br /> [EEA](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.1-220921-2238-EEA) |
-| 1.1.4 | Spacewar-S1.1-220913-2137 | Spacewar_S1.1-220813-1608-GLO -> [Spacewar_S1.1-220913-2137-GLO](https://android.googleapis.com/packages/ota-api/package/82ab3ed9150c788615767667c35568032bd81e66.zip) <br /> Spacewar-S1.1-220813-1608-EEA -> [Spacewar_S1.1-220913-2137-EEA](https://android.googleapis.com/packages/ota-api/package/8841b46d4ec2df9c4c110a6af2e85a34460bba01.zip) | N/A | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.1-220913-2137-GLO) <br /> [EEA](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar-S1.1-220913-2137-EEA) |
+| 1.1.4 | Spacewar-S1.1-220913-2137 | Spacewar_S1.1-220813-1608-GLO -> [Spacewar_S1.1-220913-2137-GLO](https://android.googleapis.com/packages/ota-api/package/82ab3ed9150c788615767667c35568032bd81e66.zip) <br /> Spacewar-S1.1-220813-1608-EEA -> [Spacewar_S1.1-220913-2137-EEA](https://android.googleapis.com/packages/ota-api/package/8841b46d4ec2df9c4c110a6af2e85a34460bba01.zip) | N/A | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.1-220913-2137-GLO) <br /> [EEA](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.1-220913-2137-EEA) |
 | 1.1.3 | Spacewar-S1.1-220813-1608 | Spacewar_S1.1-220728-0051-GLO -> [Spacewar_S1.1-220813-1608-GLO](https://android.googleapis.com/packages/ota-api/package/d2e43b858fd93f46d136a424f3756ae2d5decbc3.zip) <br /> Spacewar_S1.1-220728-0051-EEA -> [Spacewar_S1.1-220813-1608-EEA](https://android.googleapis.com/packages/ota-api/package/9441a6b477bf0a5ac205fa93ae37a341181b1341.zip) | [GLO](https://android.googleapis.com/packages/ota-api/package/ee4a8d890091f980aa40142d68f46abb1f08e0c5.zip) <br /> [EEA](https://android.googleapis.com/packages/ota-api/package/a6f363b6709ec67910b4018526d9525ccb4075f9.zip) | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.1-220813-1608-GLO) <br /> [EEA](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.1-220813-1608-EEA) |
 | 1.1.2 | Spacewar-S1.1-220728-0051 | Spacewar_S1.1-220716-0150-GLO -> [Spacewar_S1.1-220728-0051-GLO](https://android.googleapis.com/packages/ota-api/package/a85e848885537f271ed8e13cbb9d929e8a76463b.zip) <br /> Spacewar_S1.1-220716-0150-EEA -> [Spacewar_S1.1-220728-0051-EEA](https://android.googleapis.com/packages/ota-api/package/449a23b112bfd5dcfe59a231500e732663cc3f3d.zip) | [GLO](https://android.googleapis.com/packages/ota-api/package/a244285dfb5aef198999463c2d55f353ed0e7b1b.zip) <br /> [EEA](https://android.googleapis.com/packages/ota-api/package/0f77244380edcc46a4d60397f5c22ea911352bfe.zip) |  [GLO](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.1-220728-0051-GLO) <br /> [EEA](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.1-220728-0051-EEA) |
 | 1.1.0 | Spacewar-S1.1-220716-0150 | Spacewar_S1.0-220705-2027-GLO -> [Spacewar_S1.1-220716-0150-GLO](https://android.googleapis.com/packages/ota-api/package/88765a64183594df6f06d23b57ef75107d38c9e2.zip) <br /> Spacewar_S1.0-220705-2027-EEA -> [Spacewar_S1.1-220716-0150-EEA](https://android.googleapis.com/packages/ota-api/package/3b2975594ff4e5935d54a4f0b3125306af933d6c.zip) | [GLO](https://android.googleapis.com/packages/ota-api/package/e4c58031ffcd430294bd99cfb7df45a2645bef21.zip) <br /> [EEA](https://android.googleapis.com/packages/ota-api/package/c9d6795361da9d8364c7a7fefd26ccebbc529fdf.zip) | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.1-220716-0150-GLO) <br /> [EEA](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.1-220716-0150-EEA) |
@@ -139,7 +144,7 @@ Select your device model to access its Release Index.
 
 | **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
-| 4.0 | Pong-B4.0-260226-0955 | Pong_B4.0-251226-1110 -> [Pong_B4.0-260226-0955](https://android.googleapis.com/packages/ota-api/package/cc660b6ab512c95beff6e5e30d6a9573e8a14647.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Pong_B4.0-260226-0955) |
+| 4.0 | Pong-B4.0-260226-0955 | Pong_B4.0-251226-1110 -> [Pong_B4.0-260226-0955](https://android.googleapis.com/packages/ota-api/package/cc660b6ab512c95beff6e5e30d6a9573e8a14647.zip) | [Here](https://archive.org/download/nothing-archive/spike0en/fullota/pong/Pong_B4.0-260226-0955.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Pong_B4.0-260226-0955) |
 | 4.0 | Pong-B4.0-251226-1110 | Pong_B4.0-251119-1654 -> [Pong_B4.0-251226-1110](https://android.googleapis.com/packages/ota-api/package/cc72bd378d5c87ddc5c4e5d6ecee074f5c6d5886.zip) <br /> Pong_V3.2-250917-1451 -> [Pong_B4.0-251226-1110](https://android.googleapis.com/packages/ota-api/package/b24f00fb58ac92ab437ecd4006133303be5ac970.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Pong_B4.0-251226-1110) |
 | 4.0 | Pong-B4.0-251119-1654 | Pong_V3.2-250917-1451 -> [Pong_B4.0-251119-1654](https://android.googleapis.com/packages/ota-api/package/0b1a9c638a70e7454e46a6459d9f20e6cd5953b8.zip) <br /> Pong_B4.0-250928-2003 -> [Pong_B4.0-251119-1654](https://android.googleapis.com/packages/ota-api/package/90245a90f85f0046dbfce45edb06c0f5f8d2b5b4.zip) | [Here](https://archive.org/download/nothing-archive/spike0en/fullota/pong/Pong_B4.0-251119-1654.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Pong_B4.0-251119-1654) |
 | 4.0 OBT-1 | Pong-B4.0-250928-2003 | Pong_V3.2-250917-1451 -> [Pong_B4.0-250928-2003](https://android.googleapis.com/packages/ota-api/package/5435cd3144ed3835c7c27a6e65eb2cd3dda1a03c.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Pong_B4.0-250928-2003) |
@@ -282,7 +287,6 @@ Select your device model to access its Release Index.
 | 4.0 | Metroid-B4.0-260206-1135 | Metroid_B4.0-251224-1229 -> [Metroid_B4.0-260206-1135](https://android.googleapis.com/packages/ota-api/package/1758dbc5f0beabfbb31b3ebf042121be7f98af14.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Metroid_B4.0-260206-1135) |
 | 4.0 | Metroid-B4.0-251224-1229 | Metroid_B4.0-251117-1909 -> [Metroid_B4.0-251224-1229](https://android.googleapis.com/packages/ota-api/package/8b96a9ad74c44a089a86c213103c624ee74088ae.zip)| N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Metroid_B4.0-251224-1229) |
 | 4.0 | Metroid-B4.0-251117-1909 | Metroid_V3.5-250923-1421 -> [Metroid_B4.0-251117-1909](https://android.googleapis.com/packages/ota-api/package/f276b64163f41969ebdc98a19f9b172c6c845828.zip) <br /> Metroid_B4.0-250917-1218 -> [Metroid_B4.0-251117-1909](https://android.googleapis.com/packages/ota-api/package/6bf2aeba7156bfba319cd9eef3ebd572b6c75416.zip) | [Here](https://archive.org/download/nothing-archive/spike0en/fullota/metroid/Metroid_B4.0-251117-1909.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Metroid_B4.0-251117-1909) |
-| 4.0 | Metroid-B4.0-251117-1909 | Metroid_V3.5-250923-1421 -> [Metroid_B4.0-251117-1909](https://android.googleapis.com/packages/ota-api/package/f276b64163f41969ebdc98a19f9b172c6c845828.zip) <br /> Metroid_B4.0-250917-1218 -> [Metroid_B4.0-251117-1909](https://android.googleapis.com/packages/ota-api/package/6bf2aeba7156bfba319cd9eef3ebd572b6c75416.zip) | [Here](https://archive.org/download/nothing-archive/spike0en/fullota/metroid/Metroid_B4.0-251117-1909.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Metroid_B4.0-251117-1909) |
 | 3.5 | Metroid-V3.5-250923-1421 | Metroid_V3.5-250911-2112 -> [Metroid_V3.5-250923-1421](https://android.googleapis.com/packages/ota-api/package/532c1bbbbfdd19968ec20d03737fae84dfc493c8.zip) <br /> Metroid_V3.5-250829-1700 -> [Metroid_V3.5-250923-1421](https://android.googleapis.com/packages/ota-api/package/366bed6e3522d281d66cad74fca25ce75b7e79d2.zip) <br /> Metroid_V3.5-250808-1022 -> [Metroid_V3.5-250923-1421](https://android.googleapis.com/packages/ota-api/package/3ea0b949a855369b673ad59758cf73e078596ed7.zip) <br /> Metroid_V3.5-250801-1847 -> [Metroid_V3.5-250923-1421](https://android.googleapis.com/packages/ota-api/package/be40070e17d94a3cee56b126fff5146053fff314.zip) <br /> Metroid_V3.5-250719-1646 -> [Metroid_V3.5-250923-1421](https://android.googleapis.com/packages/ota-api/package/b03a94cba2e9813ff9e4a88eb436d07f9c193ddb.zip) | [Here](https://archive.org/download/nothing-archive/spike0en/fullota/metroid/Metroid_V3.5-250923-1421.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Metroid_V3.5-250923-1421) |
 | 4.0 OBT-1 | Metroid-B4.0-250917-1218 | Metroid_V3.5-250911-2112 -> [Metroid_B4.0-250917-1218](https://android.googleapis.com/packages/ota-api/package/53f6a536fde478009c529eaa48d176c02da93177.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Metroid_B4.0-250917-1218) |
 | 3.5 | Metroid-V3.5-250911-2112 | Metroid_V3.5-250829-1700 -> [Metroid_V3.5-250911-2112](https://android.googleapis.com/packages/ota-api/package/c57a7b2a7de6971cc97a0e769cc7909beccc5f25.zip) <br /> Metroid_V3.5-250808-1022 -> [Metroid_V3.5-250911-2112](https://android.googleapis.com/packages/ota-api/package/9f779d3361a0f08cf0865f13874919051413be81.zip) <br /> Metroid_V3.5-250801-1847 -> [Metroid_V3.5-250911-2112](https://android.googleapis.com/packages/ota-api/package/78628297b74161ea5161c4cb61da8fde3ccc6a2e.zip) <br /> Metroid_V3.5-250719-1646 -> [Metroid_V3.5-250911-2112](https://android.googleapis.com/packages/ota-api/package/5fb1c328dfd5886966c56fb05ae9d4d1ad429ec4.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Metroid_V3.5-250911-2112) |
@@ -303,6 +307,7 @@ Select your device model to access its Release Index.
 
 | **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
+| 4.0 | Galaxian-B4.0-260303-1710 | Galaxian_B4.0-260116-1904 -> [Galaxian_B4.0-260303-1710](https://android.googleapis.com/packages/ota-api/package/1446a64eb217791d25c437cdc14af231c6811dad.zip) <br /> Galaxian_V3.5-251222-1801 -> [Galaxian_B4.0-260303-1710](https://android.googleapis.com/packages/ota-api/package/3767d3f791867fe175488dab29fb3574f71f2b81.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Galaxian_B4.0-260303-1710) |
 | 4.0 | Galaxian-B4.0-260116-1904 | Galaxian_V3.5-251222-1801 -> [Galaxian_B4.0-260116-1904](https://android.googleapis.com/packages/ota-api/package/2fc06239e0a38f2e2a61eb158fd827851e183095.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Galaxian_B4.0-260116-1904) |
 | 3.5 | Galaxian-V3.5-251222-1801 | Galaxian_V3.5-251212-1008 -> [Galaxian_V3.5-251222-1801](https://android.googleapis.com/packages/ota-api/package/1146f774dcd2c969f3f401b14029b60d9364c0c6.zip) <br /> Galaxian_V3.5-251122-0841 -> [Galaxian_V3.5-251222-1801](https://android.googleapis.com/packages/ota-api/package/cf0340177f293ec3787792424e0d922b88025804.zip) <br /> Galaxian_V3.5-251029-1642 -> [Galaxian_V3.5-251222-1801](https://android.googleapis.com/packages/ota-api/package/8bf2f433bd8834f1e4f02b017fbec475ec42d21f.zip) <br /> Galaxian_V3.5-250829-1700 -> [Galaxian_V3.5-251222-1801](https://android.googleapis.com/packages/ota-api/package/d8f1e8e610889705a16abaee16a6615e3e25aa3d.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Galaxian_V3.5-251222-1801) |
 | 3.5 | Galaxian-V3.5-251212-1008 | Galaxian_V3.5-251122-0841 -> [Galaxian_V3.5-251212-1008](https://android.googleapis.com/packages/ota-api/package/420976e40caeaae5806fd56ab1e238cb0c13b605.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Galaxian_V3.5-251212-1008) |
@@ -320,9 +325,22 @@ Select your device model to access its Release Index.
 
 | **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
-| 4.1 | Frogger-B4.1-260317-2043 | Frogger_B4.1-260309-1830 -> [Frogger_B4.1-260317-2043](https://android.googleapis.com/packages/ota-api/package/379e92cee0f50410f662a6a27fed24b84e1294fd.zip) | [Here](https://archive.org/download/nothing-archive/spike0en/fullota/frogger/Frogger_B4.1-260317-2043.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Frogger_B4.1-260317-2043) |
-| 4.1 | Frogger-B4.1-260309-1830 | Frogger_B4.1-260204-2218 -> [Frogger_B4.1-260309-1830](https://android.googleapis.com/packages/ota-api/package/6080372e63d2457ef8947525eb00a20184d7c748.zip) <br /> Frogger_B4.1-260115-2109 -> [Frogger_B4.1-260309-1830](https://android.googleapis.com/packages/ota-api/package/02d3a4e54d0a00987f5d632aec75ab3c7e0373a1.zip) | N/A | N/A | 
+| 4.1 | Frogger-B4.1-260317-2043 | Frogger_B4.1-260309-1830 -> [Frogger_B4.1-260317-2043](https://android.googleapis.com/packages/ota-api/package/379e92cee0f50410f662a6a27fed24b84e1294fd.zip) | N/A | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Frogger_B4.1-260317-2043) |
+| 4.1 | Frogger-B4.1-260309-1830 | Frogger_B4.1-260204-2218 -> [Frogger_B4.1-260309-1830](https://android.googleapis.com/packages/ota-api/package/6080372e63d2457ef8947525eb00a20184d7c748.zip) <br /> Frogger_B4.1-260115-2109 -> [Frogger_B4.1-260309-1830](https://android.googleapis.com/packages/ota-api/package/02d3a4e54d0a00987f5d632aec75ab3c7e0373a1.zip) | [Here](https://archive.org/download/nothing-archive/spike0en/fullota/frogger/Frogger_B4.1-260309-1830.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/Frogger_B4.1-260309-1830) |
 | 4.1 | Frogger-B4.1-260204-2218 | Frogger_B4.1-260115-2109 -> [Frogger_B4.1-260204-2218](https://android.googleapis.com/packages/ota-api/package/e86d32f2e060d9b2ea13680c571b78ecf632ac2b.zip) | N/A | N/A |
+
+<br />
+
+</details>
+
+<details>
+  <summary>Phone (4a) Pro - FroggerPro</summary>
+
+<br />
+
+| **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
+|------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
+| 4.1 | FroggerPro-B4.1-260323-1635 | FroggerPro_B4.1-260204-2215 -> [FroggerPro_B4.1-260323-1635](https://android.googleapis.com/packages/ota-api/package/1b8de932f02eb999b111aafa3807f2de5de8db7c.zip) | [Here](https://archive.org/download/nothing-archive/spike0en/fullota/froggerpro/FroggerPro_B4.1-260323-1635.zip) | [Here](https://github.com/spike0en/nothing_archive/releases/tag/FroggerPro_B4.1-260323-1635) |
 
 <br />
 
@@ -404,24 +422,3 @@ certutil -hashfile <filename> SHA256
 > Users can also use open-source utilities like [OpenHashTab](https://github.com/namazso/OpenHashTab).
 
 <hr />
-
-## Changelogs
-
-Access detailed OTA update changelogs for each device, named after the corresponding Nothing OS build version number, below:
-
-> [!Note]
-> Changelogs are only available for builds released on or after December 17, 2025.
-
-- [Nothing Phone (1)](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/spacewar/)
-- [Nothing Phone (2)](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/pong/)
-- [Nothing Phone (2a)](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/pacman/)
-- [Nothing Phone (2a) Plus](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/pacmanpro/)
-- [Nothing Phone (3a) / (3a) Pro](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/asteroids/)
-- [Nothing Phone (3)](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/metroid/)
-- [Nothing Phone (3a) Lite](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/galaxian/)
-- [Nothing Phone (4a)](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/frogger/)
-
-<hr />
-
-- [CMF Phone (1)](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/tetris/)
-- [CMF Phone (2) Pro](https://github.com/spike0en/nothing_archive/tree/main/assets/changelogs/galaga/)
