@@ -40,7 +40,7 @@ Community-built widgets inspired by Nothing OS for various plaforms and desktop 
 |---------|-----------|-------------|
 | [nKWGT](https://github.com/avnishkt2783/nKWGT) | avnishkt2783 | Nothing-style widgets |
 | [Nothing KDE Widgets](https://github.com/jaxparrow07/nothing-kde-widgets) | jaxparrow07 | Nothing OS themed widgets for KDE Plasma |
-| [Nothing KWGT](https://github.com/AumGupta/KWGT-Widgets) | aaumgupta | KWGT widgets |
+| [Nothing KWGT](https://github.com/AumGupta/KWGT-Widgets) | AumGupta | KWGT widgets |
 | [NotWidgets](https://github.com/GXX0T/NotWidgets) | GXX0T | Rainmeter widgets |
 | [NThing-UI](https://github.com/Runixe786/NThing-UI) | Runixe786 | Rainmeter widgets |
 
@@ -54,6 +54,7 @@ Themes and rices for Arch Linux, VS Code, and other development environments fol
 | [nothing-rice](https://github.com/Adhil-ka/nothing-rice) | Adhil-ka | Nothing OS inspired Arch Hyprland desktop rice |
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | macOS menu bar app |
 | [Nothing VSCode Theme](https://github.com/shahriaravi/nothing-vscode-theme) | shahriaravi | VS Code theme |
+| [Obsidian Nothing Theme](https://github.com/saulojoab/obsidian-nothing-theme) | saulojoab |Obsidian theme based on Nothing|
 | [NothingOS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | GNOME desktop build |
 
 ### Fonts & Style
@@ -81,6 +82,7 @@ Assets and tools designed to help other developers build Nothing-inspired projec
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
+| [DotFrame](https://github.com/NyxLumen/DotFrame) | NyxLumen | Video to Ascii convertor with a nothing accent |
 | [Dotify Client](https://github.com/PATEL96/dotify-client) | PATEL96 | Dot Matrix image generator |
 | [Dotmatrixify](https://github.com/szelszabi/dotmatrixify) | szelszabi | Transform pixel art to dot matrix |
 | [GlyphMatrixEditor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Pixel art editor for Phone (3) |
