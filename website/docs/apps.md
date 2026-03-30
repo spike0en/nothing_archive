@@ -135,6 +135,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [DotNotes](https://github.com/shubh72010/DotNotes) | shubh72010 | AI-powered notes app |
 | [nNotes](https://play.google.com/store/apps/details?id=com.bhavukverma.nNotes) | Bhavuk Verma | Open source Nothing OS style notes |
 | [No Things To Do List](https://play.google.com/store/apps/details?id=com.todo.nothingwidgets) | Martin Diermayr | Task/to-do app with widgets |
+| [NothingToDo](https://github.com/amriths04/NothingToDo) | amriths04 | Nothing to do android app |
 | [NDot Notes](https://github.com/AzhamProdLive/Notes_App_Nothing) | AzhamProdLive | Notes app with NDot font theme |
 | [Notes](https://play.google.com/store/apps/details?id=com.monospace.notes) | monospace | Notes app with built-in security |
 | [Nothing Notes](https://play.google.com/store/apps/details?id=com.ApexCreator.nothingnotes) | Apex Creator | Minimal notepad |
