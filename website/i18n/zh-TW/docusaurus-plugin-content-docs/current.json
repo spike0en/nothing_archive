@@ -1,0 +1,62 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.mainSidebar.category.Resources": {
+    "message": "資源",
+    "description": "The label for category 'Resources' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.OTA Changelogs": {
+    "message": "OTA 更新日誌",
+    "description": "The label for category 'OTA Changelogs' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.OTA Changelogs.link.generated-index.description": {
+    "message": "各手機型號的官方 Nothing OS 更新日誌。",
+    "description": "The generated-index page description for category 'OTA Changelogs' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Asteroids": {
+    "message": "Asteroids",
+    "description": "The label for category 'Asteroids' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Frogger": {
+    "message": "Frogger",
+    "description": "The label for category 'Frogger' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.FroggerPro": {
+    "message": "FroggerPro",
+    "description": "The label for category 'FroggerPro' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Galaga": {
+    "message": "Galaga",
+    "description": "The label for category 'Galaga' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Galaxian": {
+    "message": "Galaxian",
+    "description": "The label for category 'Galaxian' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Metroid": {
+    "message": "Metroid",
+    "description": "The label for category 'Metroid' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Pacman": {
+    "message": "Pacman",
+    "description": "The label for category 'Pacman' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.PacmanPro": {
+    "message": "PacmanPro",
+    "description": "The label for category 'PacmanPro' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Pong": {
+    "message": "Pong",
+    "description": "The label for category 'Pong' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Spacewar": {
+    "message": "Spacewar",
+    "description": "The label for category 'Spacewar' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Tetris": {
+    "message": "Tetris",
+    "description": "The label for category 'Tetris' in sidebar 'mainSidebar'"
+  }
+}
