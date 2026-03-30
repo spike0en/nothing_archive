@@ -14,7 +14,7 @@ Complete catalog of Nothing & CMF by Nothing products with model numbers, codena
 | Device Name | Model | Codename | Pokémon Name | Release Date |
 |-------------|-------|----------|--------------|--------------|
 | Phone (1) | A063 | Spacewar | Abra | July 2022 |
-| Phone (2) | A065 | Pong | Alakazam | July 2023 |
+| Phone (2) | A065 / AIN065 | Pong | Alakazam | July 2023 |
 | Phone (2a) | A142 | Pacman | Aerodactyl | March 2024 |
 | Phone (2a) Plus | A142P | PacmanPro | Mega Aerodactyl | August 2024 |
 | Phone (3a) / (3a) Pro | A059 / A059P | Asteroids | Arcanine | March 2025 |
