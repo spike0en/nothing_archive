@@ -20,6 +20,10 @@ Your ultimate source for Nothing OS firmware, stock OTA images, community apps, 
 
 If this index is helpful, please consider [starring the repository](https://github.com/spike0en/nothing_archive/stargazers). It helps with discoverability and encourages maintenance.
 
+## Contributing
+
+Nothing Archive is a community-driven project. We welcome and encourage contributions, whether it's adding a new app, updating a guide, or reporting a bug. Please refer to our [Contributing Guidelines](https://github.com/spike0en/nothing_archive/blob/main/CONTRIBUTING.md) for more details on how to get started.
+
 ## Acknowledgements
 
 - **[luk1337](https://github.com/luk1337/oplus_archive)** for the AOSP OTA extraction tool.

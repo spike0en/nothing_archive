@@ -15,8 +15,8 @@ Official apps, resources, and developer tools from Nothing Technology Limited.
 |-----|-------|
 | CMF Watch | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.cmf.watch) · [iOS](https://apps.apple.com/us/app/cmf-watch/id6447500890) |
 | Community Widgets | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.communitywidgets) |
-| Essential Space | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.ntessentialspace) |
 | Essential Search | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.essential.search) |
+| Essential Space | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.ntessentialspace) |
 | Gallery | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.gallery) |
 | Glyph Composer | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.glyph.composer) |
 | Icon Pack | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.icon) |

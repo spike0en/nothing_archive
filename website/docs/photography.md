@@ -13,10 +13,10 @@ GCAM ports, configs, and camera presets for Nothing devices.
 
 | Port | Developer |
 |------|-----------|
+| [BSG & MGC](https://www.celsoazevedo.com/files/android/google-camera/dev-bsg/) | BSG |
 | [AGC](https://www.celsoazevedo.com/files/android/google-camera/dev-BigKaka/) | Bigkaka |
 | [LMC](https://www.celsoazevedo.com/files/android/google-camera/dev-hasli/) | hasli |
 | [SGCam](https://www.celsoazevedo.com/files/android/google-camera/dev-shamim/) | Shamim |
-| [BSG & MGC](https://www.celsoazevedo.com/files/android/google-camera/dev-bsg/) | BSG |
 
 ### GCAM Configs
 

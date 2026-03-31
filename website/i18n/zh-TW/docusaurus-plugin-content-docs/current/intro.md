@@ -20,6 +20,10 @@ Nothing 與 CMF by Nothing 裝置的 Nothing OS 韌體、原廠 OTA 映像、社
 
 如果這個索引對你有所幫助，歡迎[為儲存庫標星](https://github.com/spike0en/nothing_archive/stargazers)。這有助於提升曝光度，並鼓勵持續維護。
 
+## 貢獻
+
+Nothing Archive 是由社群驅動的專案。我們歡迎並鼓勵各種形式的貢獻，無論是新增應用程式、更新指南或回報錯誤。請參閱我們的[貢獻指南](https://github.com/spike0en/nothing_archive/blob/main/CONTRIBUTING.md)以了解詳情及如何開始。
+
 ## 致謝
 
 - **[luk1337](https://github.com/luk1337/oplus_archive)** — 提供 AOSP OTA 提取工具。

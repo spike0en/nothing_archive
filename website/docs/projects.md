@@ -19,12 +19,12 @@ A collection of tools for creating custom Glyph tones and compositions.
 | [Better Nothing Glyph Visualizer](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | alekslevet | Enhanced music visualization |
 | [Cassette](https://github.com/Chipik0/Cassette) | Chipik0 | Create glyph compositions |
 | [Custom Nothing Glyph Tools](https://github.com/SebiAi/custom-nothing-glyph-tools) | SebiAi | Create custom tones with Audacity |
+| [Glyph Tones](https://glyphtones.is-a.dev/) | Firu11 | Collection of community Glyph tones. ([Repo](https://github.com/firu11/nothing-glyphtones)) |
 | [Glyph Utils](https://github.com/pgsk33/Glyph-Utils) | pgsk33 | Java helper for frame-based Glyph Interface animations |
-| [Glyphtones](https://glyphtones.is-a.dev/) | Firu11 | Collection of community Glyph tones. ([Repo](https://github.com/firu11/nothing-glyphtones)) |
-| [GlyphVisualizer](https://github.com/SebiAi/GlyphVisualizer) | SebiAi | Desktop visualizer for .ogg compositions |
+| [Glyph Visualizer](https://github.com/SebiAi/GlyphVisualizer) | SebiAi | Desktop visualizer for .ogg compositions |
 | [Haptificator](https://github.com/Fr4nKB/Haptificator) | Fr4nKB | Add haptics to Phone (1) compositions |
-| [osu-to-glyph](https://github.com/taiixu/osu-to-glyph) | taiixu | Convert osu! beatmaps to Nothing Phone glyph ringtones |
-| [pyglyph](https://github.com/Snakehater/pyglyph) | Snakehater | Python script for audio visualization |
+| [Osu-to-glyph](https://github.com/taiixu/osu-to-glyph) | taiixu | Convert osu! beatmaps to Nothing Phone glyph ringtones |
+| [Pyglyph](https://github.com/Snakehater/pyglyph) | Snakehater | Python script for audio visualization |
 
 ---
 
@@ -38,11 +38,11 @@ Community-built widgets inspired by Nothing OS for various platforms and desktop
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
-| [nKWGT](https://github.com/avnishkt2783/nKWGT) | avnishkt2783 | Nothing-style widgets |
+| [N KWGT](https://github.com/avnishkt2783/nKWGT) | avnishkt2783 | Nothing-style widgets |
+| [N Thing UI](https://github.com/Runixe786/NThing-UI) | Runixe786 | Rainmeter widgets |
+| [Not Widgets](https://github.com/GXX0T/NotWidgets) | GXX0T | Rainmeter widgets |
 | [Nothing KDE Widgets](https://github.com/jaxparrow07/nothing-kde-widgets) | jaxparrow07 | Nothing OS themed widgets for KDE Plasma |
 | [Nothing KWGT](https://github.com/AumGupta/KWGT-Widgets) | AumGupta | KWGT widgets |
-| [NotWidgets](https://github.com/GXX0T/NotWidgets) | GXX0T | Rainmeter widgets |
-| [NThing-UI](https://github.com/Runixe786/NThing-UI) | Runixe786 | Rainmeter widgets |
 
 ### Desktop & IDE Themes
 
@@ -51,11 +51,11 @@ Themes and rices for Arch Linux, VS Code, and other development environments fol
 | Project | Developer | Description |
 |---------|-----------|-------------|
 | [Notes (Windows)](https://github.com/rohankishore/Notes-1) | rohankishore | Nothing themed notepad for Windows |
-| [nothing-rice](https://github.com/Adhil-ka/nothing-rice) | Adhil-ka | Nothing OS inspired Arch Hyprland desktop rice |
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | macOS menu bar app |
-| [Nothing VSCode Theme](https://github.com/shahriaravi/nothing-vscode-theme) | shahriaravi | VS Code theme |
+| [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | GNOME desktop build |
+| [Nothing Rice](https://github.com/Adhil-ka/nothing-rice) | Adhil-ka | Nothing OS inspired Arch Hyprland desktop rice |
+| [Nothing VS Code Theme](https://github.com/shahriaravi/nothing-vscode-theme) | shahriaravi | VS Code theme |
 | [Obsidian Nothing Theme](https://github.com/saulojoab/obsidian-nothing-theme) | saulojoab | Obsidian theme based on Nothing |
-| [NothingOS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | GNOME desktop build |
 
 ### Fonts & Style
 
@@ -71,7 +71,7 @@ Utilities for creating and generating Nothing-style wallpapers.
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
-| [nothing-glass](https://github.com/Vauth/nothing-glass) | Vauth | Nothing OS glass effect wallpaper creator |
+| [Nothing Glass](https://github.com/Vauth/nothing-glass) | Vauth | Nothing OS glass effect wallpaper creator |
 | [Wallpaper Studio Pro](https://wallpaperstudiopro.netlify.app/) | Ifham9 | AI wallpaper generator |
 
 ---
@@ -82,10 +82,10 @@ Assets and tools designed to help other developers build Nothing-inspired projec
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
-| [DotFrame](https://github.com/NyxLumen/DotFrame) | NyxLumen | Video to Ascii converter with a nothing accent |
+| [Dot Frame](https://github.com/NyxLumen/DotFrame) | NyxLumen | Video to Ascii converter with a nothing accent |
+| [Dot Matrixify](https://github.com/szelszabi/dotmatrixify) | szelszabi | Transform pixel art to dot matrix |
 | [Dotify Client](https://github.com/PATEL96/dotify-client) | PATEL96 | Dot Matrix image generator |
-| [Dotmatrixify](https://github.com/szelszabi/dotmatrixify) | szelszabi | Transform pixel art to dot matrix |
-| [GlyphMatrixEditor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Pixel art editor for Phone (3) |
+| [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Pixel art editor for Phone (3) |
 | [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | Image to glyph pattern converter |
 | [Matrices](https://udaign.github.io/matrices/) | Uday | Glyph Matrix design tool |
 
@@ -97,13 +97,13 @@ Browser extensions and web-based applications inspired by Nothing OS.
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
-| [Ear (web)](https://earweb.bttl.xyz/) | RapidZapper | Control earbuds from web |
-| [Essential-Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing-themed browser New Tab extension |
-| [EssentialSpaceWeb](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Minimalist notespace |
-| [HomePage](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal-inspired homepage |
-| [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Browser New Tab extension |
-| [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome extension |
-| [NothingOS Weather WebApp](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Nothing OS inspired weather web app |
+| [Ear (Web)](https://ear-web.pages.dev/) | Earendel | Web-based controls for Nothing Ear devices |
+| [Essential Space Web](https://essential-space.pages.dev/) | Earendel | Web-based space for Nothing device owners |
+| [Essential Tab](https://essential-tab.pages.dev/) | Earendel | New tab browser extension |
+| [Home Page](https://nothing.community/d/14838-nothing-phone-style-browser-homepage) | ramesv | Minimalist browser homepage |
+| [Nothing Home](https://nothinghome.pages.dev/) | Earendel | Community home page |
+| [Nothing News Extension](https://github.com/MathieuDvv/Nothing-News-Extension) | MathieuDvv | Browser extension for Nothing news |
+| [Nothing OS Weather Web App](https://nos-weather.pages.dev/) | shahriaravi | Web-based Nothing weather app |
 
 ---
 
@@ -115,12 +115,12 @@ Essential resources including wikis, firmware archives, and system repair tools.
 |---------|-----------|-------------|
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | Integrity check bypass PoC for Phone (2a) & CMF Phone (1) |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid macros |
-| [nothing.wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | r/NothingTech wiki |
-| [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Curated hub for official Nothing & CMF firmware, community apps, projects, resources and aftermarket development.([Repo](https://github.com/spike0en/nothing_archive)) |
-| [Nothing Flasher](https://github.com/spike0en/nothing_flasher) | spike0en & Hellboy017 | Fastboot flashing scripts |
-| [NothingOS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | Tool to patch/disable Logkit via ADB |
-| [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | News and resources hub |
-| [Nothing Space](https://nothingtools.github.io/) | ROHit | Community hub ([Repo](https://github.com/nothingtools/nothingtools.github.io)) |
+| [Nothing Archive](https://archive.nothing.community/) | Nothing Archive | Community-maintained archival mirror |
+| [Nothing Flasher](https://github.com/NothingOSS/Nothing-Flasher) | NothingOSS | Flash images to Nothing devices |
+| [Nothing News Hub](https://github.com/MathieuDvv/Nothing-News-Hub) | MathieuDvv | Centralized news for Nothing community |
+| [Nothing OS Logkit Softfix](https://github.com/NothingOSS/NothingOS-Logkit-Softfix) | NothingOSS | Re-enable Logkit on Nothing OS for various builds |
+| [Nothing Space](https://nothing-space-web.vercel.app/) | shahriaravi | Community web app |
+| [Nothing Wiki](https://nothing.wiki/) | nothing.wiki | Unofficial community wiki |
 
 ---
 
@@ -142,8 +142,8 @@ These require root access (KernelSU or Magisk). Proceed with caution!
 
 | Module | Author | Description |
 |--------|--------|-------------|
+| [N OS Aura Killer](https://github.com/reindex-ot/NOS_AuraKiller/) | reindex-ot | Debloat Aura services on NOS 4.0 |
 | [Nothing AI Changer](https://github.com/Martmists-GH/Nothing-AI-Changer) | Martmists-GH | Replace ChatGPT integration with another app |
 | [Nothing Battery Fix](https://github.com/Farpathan/Nothing-Battery-Fix) | Farpathan | Restore classic battery percentage style |
 | [Nothing Phone Patch](https://github.com/reindex-ot/magisk-module-nothing) | reindex-ot | System tweaks and enhancements |
-| [NothingXpert](https://github.com/Rares6567/NothingXpert/) | Rares6567 | LSPosed module with extra features |
-| [NOS Aura Killer](https://github.com/reindex-ot/NOS_AuraKiller/) | reindex-ot | Debloat Aura services on NOS 4.0 |
+| [Nothing Xpert](https://github.com/Rares6567/NothingXpert/) | Rares6567 | LSPosed module with extra features |
