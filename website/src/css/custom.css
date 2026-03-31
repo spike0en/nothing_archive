@@ -155,19 +155,34 @@
 
 @media (max-width: 576px) {
 
-  /* Fallback: hide Stars badge and show text link on extra small screens */
+  /* Hide the site title text to save space, keeping only the Nothing logo */
+  .navbar__title {
+    display: none;
+  }
+
+  /* Hide the logo on mobile since the large logo in the hero is right below it */
+  .navbar__logo {
+    display: none;
+  }
+
+  /* Compact the right side to fix the large gap between translate and search */
+  .navbar__items--right {
+    justify-content: flex-end !important;
+    gap: 0.2rem !important;
+  }
+
+  div[class*="navbarSearchContainer"] {
+    margin-left: 0 !important;
+  }
+
+  /* Hide the Stars badge to save space */
   .navbar__items--right .header-github-stars {
     display: none !important;
   }
 
+  /* Hide the extra GitHub link/button entirely on mobile to reduce clutter */
   .navbar__items--right .header-github-link {
-    display: inline-flex !important;
-    background: var(--ifm-color-primary);
-    color: white !important;
-    border-radius: 4px;
-    padding: 0.2rem 0.5rem;
-    font-size: 0.75rem;
-    font-weight: 600;
+    display: none !important;
   }
 }
 
