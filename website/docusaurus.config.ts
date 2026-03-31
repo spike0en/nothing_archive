@@ -12,7 +12,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Nothing Archive',
-  tagline: 'A curated list of everything related to the Nothing ecosystem.',
+  tagline: 'A curated hub for everything related to the Nothing ecosystem.',
   favicon: 'favicon.ico',
 
   future: {
