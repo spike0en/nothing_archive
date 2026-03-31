@@ -135,8 +135,8 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Dothing](https://play.google.com/store/apps/details?id=com.firstyogi.dothing) | FirstYogi | Minimalist tasks app with cloud backup |
 | [N Dot Notes](https://github.com/AzhamProdLive/Notes_App_Nothing) | AzhamProdLive | Notes app with NDot font theme |
 | [N Notes](https://play.google.com/store/apps/details?id=com.bhavukverma.nNotes) | Bhavuk Verma | Open source Nothing OS style notes |
-| [Nothing To Do](https://github.com/amriths04/NothingToDo) | amriths04 | Nothing to do android app |
 | [No Things To Do List](https://play.google.com/store/apps/details?id=com.todo.nothingwidgets) | Martin Diermayr | Task/to-do app with widgets |
+| [Nothing To Do](https://github.com/amriths04/NothingToDo) | amriths04 | Nothing to do android app |
 | [Notes](https://play.google.com/store/apps/details?id=com.monospace.notes) | monospace | Notes app with built-in security |
 | [Nothing Notes](https://play.google.com/store/apps/details?id=com.ApexCreator.nothingnotes) | Apex Creator | Minimal notepad |
 | [Nothing Notes](https://github.com/ThriveEngineer/nothing.notes) | ThriveEngineer | Nothing themed notes app |
