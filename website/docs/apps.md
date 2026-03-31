@@ -23,7 +23,7 @@ Apps that integrate with the Glyph interface on Nothing phones.
 
 | App | Developer | Description |
 |-----|-----------|-------------|
-| [blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | Tech detox phone blocking app with Glyph integration |
+| [Blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | Tech detox phone blocking app with Glyph integration |
 | [Glyph Compass](https://play.google.com/store/apps/details?id=com.JayKayCooperations.glyph_compass) | JayKayCooperations | Use your Glyph interface as a compass |
 | [Glyph Essentials](https://play.google.com/store/apps/details?id=com.tldc.essentials) | GlyphLab | Advanced customisation for Glyph notifications |
 | [Glyph Glow](https://github.com/fgiering/GlyphGlow) | fgiering | Minimal app to control Glyph interface |
@@ -136,6 +136,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [N Dot Notes](https://github.com/AzhamProdLive/Notes_App_Nothing) | AzhamProdLive | Notes app with NDot font theme |
 | [N Notes](https://play.google.com/store/apps/details?id=com.bhavukverma.nNotes) | Bhavuk Verma | Open source Nothing OS style notes |
 | [No Things To Do List](https://play.google.com/store/apps/details?id=com.todo.nothingwidgets) | Martin Diermayr | Task/to-do app with widgets |
+| [Nothing To Do](https://github.com/amriths04/NothingToDo) | amriths04 | Nothing to do android app |
 | [Notes](https://play.google.com/store/apps/details?id=com.monospace.notes) | monospace | Notes app with built-in security |
 | [Nothing Notes](https://play.google.com/store/apps/details?id=com.ApexCreator.nothingnotes) | Apex Creator | Minimal notepad |
 | [Nothing Notes](https://github.com/ThriveEngineer/nothing.notes) | ThriveEngineer | Nothing themed notes app |

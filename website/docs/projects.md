@@ -23,7 +23,7 @@ A collection of tools for creating custom Glyph tones and compositions.
 | [Glyph Utils](https://github.com/pgsk33/Glyph-Utils) | pgsk33 | Java helper for frame-based Glyph Interface animations |
 | [Glyph Visualizer](https://github.com/SebiAi/GlyphVisualizer) | SebiAi | Desktop visualizer for .ogg compositions |
 | [Haptificator](https://github.com/Fr4nKB/Haptificator) | Fr4nKB | Add haptics to Phone (1) compositions |
-| [Osu-to-glyph](https://github.com/taiixu/osu-to-glyph) | taiixu | Convert osu! beatmaps to Nothing Phone glyph ringtones |
+| [Osu To Glyph](https://github.com/taiixu/osu-to-glyph) | taiixu | Convert osu! beatmaps to Nothing Phone glyph ringtones |
 | [Pyglyph](https://github.com/Snakehater/pyglyph) | Snakehater | Python script for audio visualization |
 
 ---
@@ -38,6 +38,7 @@ Community-built widgets inspired by Nothing OS for various platforms and desktop
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
+| [KWGT Widgets](https://github.com/rjwarrier/KWGT-Widgets) | rjwarrier | KWGT Widgets inspired by Ndot |
 | [N KWGT](https://github.com/avnishkt2783/nKWGT) | avnishkt2783 | Nothing-style widgets |
 | [N Thing UI](https://github.com/Runixe786/NThing-UI) | Runixe786 | Rainmeter widgets |
 | [Not Widgets](https://github.com/GXX0T/NotWidgets) | GXX0T | Rainmeter widgets |
@@ -101,6 +102,7 @@ Browser extensions and web-based applications inspired by Nothing OS.
 | [Essential Space Web](https://essential-space.pages.dev/) | Earendel | Web-based space for Nothing device owners |
 | [Essential Tab](https://essential-tab.pages.dev/) | Earendel | New tab browser extension |
 | [Home Page](https://nothing.community/d/14838-nothing-phone-style-browser-homepage) | ramesv | Minimalist browser homepage |
+| [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | GNOME extension for ANC control on Nothing Ear |
 | [Nothing Home](https://nothinghome.pages.dev/) | Earendel | Community home page |
 | [Nothing News Extension](https://github.com/MathieuDvv/Nothing-News-Extension) | MathieuDvv | Browser extension for Nothing news |
 | [Nothing OS Weather Web App](https://nos-weather.pages.dev/) | shahriaravi | Web-based Nothing weather app |
@@ -142,8 +144,8 @@ These require root access (KernelSU or Magisk). Proceed with caution!
 
 | Module | Author | Description |
 |--------|--------|-------------|
-| [N OS Aura Killer](https://github.com/reindex-ot/NOS_AuraKiller/) | reindex-ot | Debloat Aura services on NOS 4.0 |
 | [Nothing AI Changer](https://github.com/Martmists-GH/Nothing-AI-Changer) | Martmists-GH | Replace ChatGPT integration with another app |
+| [Nothing OS Aura Killer](https://github.com/reindex-ot/NOS_AuraKiller/) | reindex-ot | Debloat Aura services on NOS 4.0 |
 | [Nothing Battery Fix](https://github.com/Farpathan/Nothing-Battery-Fix) | Farpathan | Restore classic battery percentage style |
 | [Nothing Phone Patch](https://github.com/reindex-ot/magisk-module-nothing) | reindex-ot | System tweaks and enhancements |
 | [Nothing Xpert](https://github.com/Rares6567/NothingXpert/) | Rares6567 | LSPosed module with extra features |
