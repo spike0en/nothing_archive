@@ -41,6 +41,7 @@ Community-built widgets inspired by Nothing OS for various platforms and desktop
 | [nKWGT](https://github.com/avnishkt2783/nKWGT) | avnishkt2783 | Nothing-style widgets |
 | [Nothing KDE Widgets](https://github.com/jaxparrow07/nothing-kde-widgets) | jaxparrow07 | Nothing OS themed widgets for KDE Plasma |
 | [Nothing KWGT](https://github.com/AumGupta/KWGT-Widgets) | AumGupta | KWGT widgets |
+| [KWGT Widgets](https://github.com/rjwarrier/KWGT-Widgets) | rjwarrier | KWGT Widgets inspired by Ndot |
 | [NotWidgets](https://github.com/GXX0T/NotWidgets) | GXX0T | Rainmeter widgets |
 | [NThing-UI](https://github.com/Runixe786/NThing-UI) | Runixe786 | Rainmeter widgets |
 
@@ -101,6 +102,7 @@ Browser extensions and web-based applications inspired by Nothing OS.
 | [Essential-Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing-themed browser New Tab extension |
 | [EssentialSpaceWeb](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Minimalist notespace |
 | [HomePage](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal-inspired homepage |
+| [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | GNOME extension for ANC control on Nothing Ear |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Browser New Tab extension |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome extension |
 | [NothingOS Weather WebApp](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Nothing OS inspired weather web app |
