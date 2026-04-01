@@ -80,6 +80,19 @@ We welcome community contributions! If you'd like to help improve the documentat
   <span style="font-size: 28px;">••••••••••••••••••••••</span>
 </div>
 
+## Licensing
+
+The Nothing Archive project is multi-licensed to protect both the code and community contributions:
+
+- **Automation & Website Code**: [MIT](LICENSE-MIT)
+- **Documentation & Translations**: [CC BY-NC 4.0](LICENSE-CC-BY-NC-4.0) (All `.md` files)
+- **Project Branding**: CC BY-NC-ND 4.0
+- **Third-party Tools**: See [bin/README.md](bin/README.md) for attribution.
+
+For a detailed breakdown of what each license covers, please refer to the [LICENSE](LICENSE) file.
+
+---
+
 ## Acknowledgements
 
 Special thanks to:

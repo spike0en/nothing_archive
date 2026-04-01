@@ -1,0 +1,30 @@
+# Licensing Information
+
+The Nothing Archive project is a multi-licensed repository. Depending on the component you are using, different licenses apply.
+
+## 1. Automation Scripts & Website Engine
+All automation scripts in `/scripts`, GitHub Action workflows in `.github/workflows`, and the website source code in `/website` (excluding documentation content) are licensed under the **MIT License**.
+
+- **Primary License**: [LICENSE-MIT](LICENSE-MIT)
+- **Acknowledgments**:
+  - `scripts/dump.sh` and `.github/workflows/dump.yml`: Contains contributions from **luk1337** and **spike0en**.
+  - All other scripts and core website code: **spike0en**.
+
+## 2. Documentation & Translations
+All documentation files (`.md`), guides, and translations (in `/website/docs` and `/website/i18n`) are licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license.
+
+- **Primary License**: [LICENSE-CC-BY-NC-4.0](LICENSE-CC-BY-NC-4.0)
+- **Requirement**: You must give appropriate credit and you may not use the material for commercial purposes.
+
+## 3. Project Branding
+The project logo, banner, and other branding assets located in `website/static/img/` are licensed under **CC BY-NC-ND 4.0** (Attribution-NonCommercial-NoDerivatives). 
+
+- This ensures that while you can share the branding, you cannot modify the project's visual identity or use it for commercial gain.
+
+## 4. Media Assets
+Guide images and other media assets in `assets/` are licensed under **CC BY-NC 4.0**, consistent with the documentation.
+
+## 5. Third-party Tools (Binaries)
+The binaries located in the `bin/` directory are third-party tools provided for convenience in the OTA extraction process. These are not owned by the Nothing Archive project and are subject to their own respective licenses (typically **Apache 2.0** or **BSD**).
+
+- Refer to [bin/README.md](bin/README.md) for details on origins and attribution.

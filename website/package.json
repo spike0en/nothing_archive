@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Nothing Archive documentation website — firmware, guides, and community resources for Nothing & CMF devices",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
