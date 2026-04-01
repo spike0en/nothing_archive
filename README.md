@@ -86,7 +86,7 @@ The Nothing Archive project is multi-licensed to protect both the code and commu
 
 - **Automation & Website Code**: [MIT](LICENSE-MIT)
 - **Documentation & Translations**: [CC BY-NC 4.0](LICENSE-CC-BY-NC-4.0) (All `.md` files)
-- **Project Branding**: CC BY-NC-ND 4.0
+- **Project Branding**: CC BY-NC-ND 4.0 (All image files under `website/static/img`)
 - **Third-party Tools**: See [bin/README.md](bin/README.md) for attribution.
 
 For a detailed breakdown of what each license covers, please refer to the [LICENSE](LICENSE) file.
