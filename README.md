@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/branding/logo.png" width="128" alt="Nothing Archive Logo">
+  <img src="website/static/img/logo.png" width="128" alt="Nothing Archive Logo">
   <h1>Nothing Archive</h1>
   <p>Your ultimate source for Nothing OS firmware, stock OTA images, and comprehensive guides for Nothing & CMF by Nothing devices.</p>
   <br>
