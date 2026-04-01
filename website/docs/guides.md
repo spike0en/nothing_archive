@@ -152,6 +152,13 @@ Dialer codes (USSD) that you can dial to access hidden menus and diagnostics.
 | `*#*#4636#*#*` | Testing menu (phone, battery, usage stats, Wi-Fi) |
 | `*#*#682#*#*` | Opens Offline OTA Updater (won't work if Nothing Beta Hub is installed) |
 
+<hr />
+
+### Gadgetbridge Related
+
+- [Supported Models and features](https://gadgetbridge.org/gadgets/wearables/nothing/)
+- [Nothing CMF server pairing](https://gadgetbridge.org/basics/pairing/nothing-cmf-server/)
+
 ---
 
 ## Advanced Guides
