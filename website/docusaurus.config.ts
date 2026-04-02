@@ -212,6 +212,7 @@ const config: Config = {
           position: 'left',
           label: 'Home',
           exact: true,
+          className: 'header-home-link',
         },
         {
           type: 'doc',

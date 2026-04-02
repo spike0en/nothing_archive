@@ -119,6 +119,33 @@
 
 /* Show Stars & GitHub in navbar on mobile (Nothing Phone , etc.) - override Infima hide */
 @media (max-width: 996px) {
+
+  /* Hide the default brand on mobile, we use our custom morphing Home link instead */
+  .navbar__brand {
+    display: none !important;
+  }
+
+  /* Show the Home text link on mobile in the top navbar */
+  .navbar__item.header-home-link {
+    display: inline-flex !important;
+    align-items: center;
+    margin-left: 0.75rem;
+    /* Added spacing between hamburger icon and link */
+  }
+
+  /* Morph 'Home' link into the site title on doc pages */
+  html.plugin-docs .navbar__item.header-home-link {
+    font-size: 0 !important;
+  }
+
+  html.plugin-docs .navbar__item.header-home-link::after {
+    content: "Nothing Archive";
+    font-size: 1.05rem;
+    /* Size of brand title */
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
   .navbar__items--right {
     display: flex !important;
     gap: 0.4rem;
@@ -154,16 +181,6 @@
 }
 
 @media (max-width: 576px) {
-
-  /* Hide the site title text to save space, keeping only the Nothing logo */
-  .navbar__title {
-    display: none;
-  }
-
-  /* Hide the logo on mobile since the large logo in the hero is right below it */
-  .navbar__logo {
-    display: none;
-  }
 
   /* Compact the right side to fix the large gap between translate and search */
   .navbar__items--right {
@@ -525,7 +542,7 @@ table td a:hover {
   table {
     display: block !important;
     overflow-x: auto;
-  
+
     width: 100%;
     font-size: 0.85rem;
   }
