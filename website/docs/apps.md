@@ -109,6 +109,7 @@ Custom widgets for the home screen, from system monitors to minimalist tools.
 | App | Developer | Description |
 |-----|-----------|-------------|
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Minimal widgets |
+| [Essential Widgets](https://github.com/Essential-Dots/Essential-Widgets) | Apheff | Personalized widgets made by the community | 
 | [RTMON](https://github.com/n1th1n-19/RTMON) | n1th1n-19 | Real-time system monitoring widget |
 | [Widgets Pro](https://play.google.com/store/apps/details?id=com.tpk.widgetspro) | Preethamkmr3 | Additional widgets |
 
