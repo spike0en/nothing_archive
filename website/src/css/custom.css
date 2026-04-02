@@ -408,7 +408,7 @@ article {
 div[class*="tableWrapper"],
 .tableWrapper {
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+
   margin: 1rem 0;
 }
 
@@ -525,7 +525,7 @@ table td a:hover {
   table {
     display: block !important;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+  
     width: 100%;
     font-size: 0.85rem;
   }
