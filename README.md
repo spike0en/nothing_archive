@@ -91,7 +91,9 @@ The Nothing Archive project is multi-licensed to protect both the code and commu
 
 For a detailed breakdown of what each license covers, please refer to the [LICENSE](LICENSE) file.
 
----
+<div align="center">
+  <span style="font-size: 28px;">••••••••••••••••••••••</span>
+</div>
 
 ## Acknowledgements
 
