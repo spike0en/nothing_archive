@@ -115,7 +115,6 @@ const config: Config = {
         content: '9A91D8D4ED9FB1AF08C3344E84B33661',
       },
     },
-    // Explicit favicon declaration for Google Search favicon display
     {
       tagName: 'link',
       attributes: {
@@ -130,6 +129,13 @@ const config: Config = {
         rel: 'icon',
         type: 'image/png',
         sizes: '32x32',
+        href: '/nothing_archive/img/logo.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'apple-touch-icon',
         href: '/nothing_archive/img/logo.png',
       },
     },
@@ -165,12 +171,17 @@ const config: Config = {
         '@context': 'https://schema.org',
         '@type': 'WebSite',
         name: 'Nothing Archive',
+        alternateName: ['Nothing OS Firmware'],
         url: 'https://spike0en.github.io/nothing_archive/',
         description: 'A curated list of everything related to the Nothing ecosystem — firmware, guides, apps, and community resources.',
         publisher: {
           '@type': 'Organization',
           name: 'Nothing Archive',
-          url: 'https://github.com/spike0en/nothing_archive',
+          url: 'https://spike0en.github.io/nothing_archive/',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://spike0en.github.io/nothing_archive/img/logo.png'
+          }
         },
       }),
     },
