@@ -24,6 +24,10 @@ If this index is helpful, please consider [starring the repository](https://gith
 
 Nothing Archive is a community-driven project. We welcome and encourage contributions, whether it's adding a new app, updating a guide, or reporting a bug. Please refer to our [Contributing Guidelines](https://github.com/spike0en/nothing_archive/blob/main/CONTRIBUTING.md) for more details on how to get started.
 
+## Licensing
+
+The Nothing Archive project is multi-licensed to protect both the code and community contributions. For a detailed breakdown of what each license covers, please refer to the [LICENSE](https://github.com/spike0en/nothing_archive/blob/main/LICENSE) file.
+
 ## Acknowledgements
 
 - **[luk1337](https://github.com/luk1337/oplus_archive)** for the AOSP OTA extraction tool.
