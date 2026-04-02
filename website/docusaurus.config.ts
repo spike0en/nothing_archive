@@ -21,6 +21,7 @@ const config: Config = {
 
   url: 'https://spike0en.github.io',
   baseUrl: '/nothing_archive/',
+  trailingSlash: false,
 
   organizationName: 'spike0en',
   projectName: 'nothing_archive',
