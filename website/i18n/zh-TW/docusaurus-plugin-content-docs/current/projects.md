@@ -97,13 +97,13 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 
 | 專案 | 開發者 | 說明 |
 |------|--------|------|
-| [Ear (Web)](https://ear-web.pages.dev/) | Earendel | Web-based controls for Nothing Ear devices |
-| [Essential Space Web](https://essential-space.pages.dev/) | Earendel | Web-based space for Nothing device owners |
-| [Essential Tab](https://essential-tab.pages.dev/) | Earendel | New tab browser extension |
-| [Home Page](https://nothing.community/d/14838-nothing-phone-style-browser-homepage) | ramesv | Minimalist browser homepage |
-| [Nothing Home](https://nothinghome.pages.dev/) | Earendel | Community home page |
+| [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Web-based controls for Nothing Ear devices |
+| [Essential Space Web]((https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Minimalist notespace |
+| [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing-themed browser New Tab extension |
+| [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal-inspired homepage |
+| [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Browser New Tab extension |
 | [Nothing News Extension](https://github.com/MathieuDvv/Nothing-News-Extension) | MathieuDvv | Browser extension for Nothing news |
-| [Nothing OS Weather Web App](https://nos-weather.pages.dev/) | shahriaravi | Web-based Nothing weather app |
+| [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Nothing OS inspired weather web app |
 
 ---
 

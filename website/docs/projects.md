@@ -98,14 +98,14 @@ Browser extensions and web-based applications inspired by Nothing OS.
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
-| [Ear (Web)](https://ear-web.pages.dev/) | Earendel | Web-based controls for Nothing Ear devices |
-| [Essential Space Web](https://essential-space.pages.dev/) | Earendel | Web-based space for Nothing device owners |
-| [Essential Tab](https://essential-tab.pages.dev/) | Earendel | New tab browser extension |
-| [Home Page](https://nothing.community/d/14838-nothing-phone-style-browser-homepage) | ramesv | Minimalist browser homepage |
+| [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Control earbuds from web |
+| [Essential Space Web](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Minimalist notespace |
+| [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing-themed browser New Tab extension |
+| [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal-inspired homepage |
 | [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | GNOME extension for ANC control on Nothing Ear |
-| [Nothing Home](https://nothinghome.pages.dev/) | Earendel | Community home page |
-| [Nothing News Extension](https://github.com/MathieuDvv/Nothing-News-Extension) | MathieuDvv | Browser extension for Nothing news |
-| [Nothing OS Weather Web App](https://nos-weather.pages.dev/) | shahriaravi | Web-based Nothing weather app |
+| [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Browser New Tab extension |
+| [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome extension |
+| [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Nothing OS inspired weather web app |
 
 ---
 
@@ -117,12 +117,12 @@ Essential resources including wikis, firmware archives, and system repair tools.
 |---------|-----------|-------------|
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | Integrity check bypass PoC for Phone (2a) & CMF Phone (1) |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid macros |
-| [Nothing Archive](https://archive.nothing.community/) | Nothing Archive | Community-maintained archival mirror |
-| [Nothing Flasher](https://github.com/NothingOSS/Nothing-Flasher) | NothingOSS | Flash images to Nothing devices |
-| [Nothing News Hub](https://github.com/MathieuDvv/Nothing-News-Hub) | MathieuDvv | Centralized news for Nothing community |
-| [Nothing OS Logkit Softfix](https://github.com/NothingOSS/NothingOS-Logkit-Softfix) | NothingOSS | Re-enable Logkit on Nothing OS for various builds |
-| [Nothing Space](https://nothing-space-web.vercel.app/) | shahriaravi | Community web app |
-| [Nothing Wiki](https://nothing.wiki/) | nothing.wiki | Unofficial community wiki |
+| [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Curated hub for official Nothing & CMF firmware, community apps, projects, resources and aftermarket development.([Repo](https://github.com/spike0en/nothing_archive)) |
+| [Nothing Flasher](https://github.com/spike0en/nothing_flasher) | spike0en & Hellboy017 | Fastboot flashing scripts |
+| [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | News and resources hub |
+| [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | Tool to patch/disable Logkit via ADB |
+| [Nothing Space](https://nothingtools.github.io/) | ROHit | Community hub ([Repo](https://github.com/nothingtools/nothingtools.github.io)) |
+| [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | r/NothingTech wiki |
 
 ---
 

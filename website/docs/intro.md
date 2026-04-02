@@ -32,10 +32,11 @@ The Nothing Archive project is multi-licensed to protect both the code and commu
 
 - **[luk1337](https://github.com/luk1337/oplus_archive)** for the AOSP OTA extraction tool.
 - **[arter97](https://github.com/arter97/nothing_archive)** for adapting the archive for Phone (2).
-- **[Daniel Springer](https://github.com/Daniel210191)** for providing self-hosted runner instances.
 - **[Shiki](https://github.com/guptavishal-xm1)** for crafting the initial website for the repo.
+- **[EdwardWu](https://github.com/bluehomewu)** for zh‑TW translations and maintenance of the [docs](https://github.com/spike0en/nothing_archive/tree/main/website/i18n/zh-TW/docusaurus-plugin-content-docs/current).
+- **[Daniel Springer](https://github.com/Daniel210191)** for providing self-hosted runner instances.
+- **[XelXen](https://github.com/XelXen) & [Tor](https://github.com/torharrington)** for helping with [project branding and design](https://github.com/spike0en/nothing_archive/tree/main/website/static/img).
 - **[LukeSkyD](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/)** for early build references.
-- **[XelXen](https://github.com/spike0en/nothing_archive/tree/main/assets/branding)** for project branding and design.
 - **[Project Contributors](https://github.com/spike0en/nothing_archive/graphs/contributors)** for their invaluable contributions and insights.
 
 A big shoutout to all the **creators, project maintainers, and Nothing community members** working behind the scenes. Their support, whether direct or indirect, has helped make this project possible.
