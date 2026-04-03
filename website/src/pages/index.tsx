@@ -161,7 +161,7 @@ function HomepageHeader() {
           </div>
           <div className={styles.heroImage}>
             <img
-              src="img/logo.png"
+              src="img/logo.webp"
               alt="Nothing Archive"
               width={280}
               height={280}
@@ -240,6 +240,8 @@ function HomepageCommunity() {
               src="https://contrib.rocks/image?repo=spike0en/nothing_archive"
               alt="Grid of GitHub contributor avatars for Nothing Archive"
               className={styles.contribImage}
+              width={800}
+              height={42}
               loading="lazy"
             />
           </a>

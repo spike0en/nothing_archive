@@ -773,6 +773,19 @@ a:hover {
   border-left-width: 4px;
 }
 
+/* Accessibility: Underline footer links so they aren't distinguishable by color alone */
+.footer a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  color: var(--ifm-color-primary-lightest) !important;
+  /* Passes 4.5:1 against the dark footer */
+}
+
+.footer a:hover {
+  text-decoration-thickness: 2px;
+}
+
 /* Breadcrumbs */
 .breadcrumbs__link {
   font-weight: 500;

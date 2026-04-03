@@ -127,16 +127,26 @@ const config: Config = {
       tagName: 'link',
       attributes: {
         rel: 'icon',
-        type: 'image/png',
+        type: 'image/webp',
         sizes: '32x32',
-        href: '/nothing_archive/img/logo.png',
+        href: '/nothing_archive/img/logo.webp',
       },
     },
     {
       tagName: 'link',
       attributes: {
         rel: 'apple-touch-icon',
-        href: '/nothing_archive/img/logo.png',
+        href: '/nothing_archive/img/logo.webp',
+      },
+    },
+    // Preload hero LCP image
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        as: 'image',
+        href: '/nothing_archive/img/logo.webp',
+        fetchpriority: 'high',
       },
     },
     // Font preconnect hints for performance
@@ -180,7 +190,7 @@ const config: Config = {
           url: 'https://spike0en.github.io/nothing_archive/',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://spike0en.github.io/nothing_archive/img/logo.png'
+            url: 'https://spike0en.github.io/nothing_archive/img/logo.webp'
           }
         },
       }),
@@ -214,7 +224,7 @@ const config: Config = {
       title: 'Nothing Archive',
       logo: {
         alt: 'Nothing Archive Logo',
-        src: 'img/logo.png',
+        src: 'img/logo.webp',
         width: 32,
         height: 32,
       },
@@ -237,14 +247,14 @@ const config: Config = {
           position: 'right',
           className: 'header-badge header-github-hits',
           'aria-label': 'GitHub Hits',
-          html: `<img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%2324292e&labelColor=333333" alt="GitHub Hits" width="100" height="20" loading="lazy" />`,
+          html: `<img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%2324292e&labelColor=333333" alt="GitHub Hits" width="133" height="20" style="width: auto; height: 20px;" loading="lazy" />`,
         },
         {
           href: 'https://github.com/spike0en/nothing_archive/stargazers',
           position: 'right',
           className: 'header-badge header-github-stars',
           'aria-label': 'GitHub Stars',
-          html: `<img src="https://img.shields.io/github/stars/spike0en/nothing_archive?logo=github&color=24292e" alt="GitHub Stars" width="80" height="20" loading="lazy" />`,
+          html: `<img src="https://img.shields.io/github/stars/spike0en/nothing_archive?logo=github&color=24292e" alt="GitHub Stars" width="94" height="20" style="width: auto; height: 20px;" loading="lazy" />`,
         },
         {
           href: 'https://github.com/spike0en/nothing_archive',
