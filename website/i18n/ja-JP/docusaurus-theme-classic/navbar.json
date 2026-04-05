@@ -1,0 +1,17 @@
+{
+    "link.title.Introduction": {
+        "message": "はじめに"
+    },
+    "link.title.Device Catalog": {
+        "message": "デバイスカタログ"
+    },
+    "link.title.Firmware Repository": {
+        "message": "ファームウェアアーカイブ"
+    },
+    "link.title.Community Apps": {
+        "message": "コミュニティアプリ"
+    },
+    "link.title.Official Resources": {
+        "message": "公式リソース"
+    }
+}

@@ -1,0 +1,439 @@
+{
+    "feature.devices.title": {
+        "message": "デバイス"
+    },
+    "feature.devices.description": {
+        "message": "NothingとCMFの全デバイスカタログをご覧ください。スマートフォン、オーディオ、ウェアラブル、アクセサリーまで網羅しています。"
+    },
+    "feature.firmware.title": {
+        "message": "ファームウェアアーカイブ"
+    },
+    "feature.firmware.description": {
+        "message": "公式Nothing OSファームウェア、ファクトリーイメージ、差分OTAファイルをダウンロード。簡単にフラッシュ、復元、サイドロードが可能です。"
+    },
+    "feature.changelogs.title": {
+        "message": "OTA変更ログ"
+    },
+    "feature.changelogs.description": {
+        "message": "Nothing OSの公式変更ログ、バグ修正、すべてのデバイスのバージョン履歴を確認できます。"
+    },
+    "feature.guides.title": {
+        "message": "ガイド"
+    },
+    "feature.guides.description": {
+        "message": "NothingおよびCMFデバイスのブートローダー解除、ルート化、カスタマイズに関するステップバイステップの手順を提供。"
+    },
+    "feature.official.title": {
+        "message": "公式リソース"
+    },
+    "feature.official.description": {
+        "message": "公式Nothingアプリ、壁紙、フォント、カーネルソース、開発者ツールに一括アクセス。"
+    },
+    "feature.apps.title": {
+        "message": "コミュニティアプリ"
+    },
+    "feature.apps.description": {
+        "message": "コミュニティが開発したアプリ、Glyphツール、生産性向上ユーティリティなど、NothingとCMFデバイス専用コンテンツをご覧ください。"
+    },
+    "feature.projects.title": {
+        "message": "コミュニティプロジェクト"
+    },
+    "feature.projects.description": {
+        "message": "Nothingエコシステム向けに設計されたコミュニティプロジェクト、クリエイティブツール、独自ソフトウェアを探索。"
+    },
+    "feature.photography.title": {
+        "message": "写真"
+    },
+    "feature.photography.description": {
+        "message": "NothingとCMFデバイス向けに最適化されたGCAMポート、設定、プリセットを入手して、最高のカメラ体験を。"
+    },
+    "homepage.hero.exploreResources": {
+        "message": "リソースを探索"
+    },
+    "homepage.hero.viewOnGitHub": {
+        "message": "GitHubで表示"
+    },
+    "homepage.section.resources": {
+        "message": "リソース"
+    },
+    "homepage.section.community": {
+        "message": "コミュニティ"
+    },
+    "homepage.community.starText": {
+        "message": "このインデックスが役に立ったら、リポジトリにスターをお願いします。可視性が高まり、コミュニティの持続的な成長に繋がります。"
+    },
+    "homepage.community.starButton": {
+        "message": "GitHubでスター"
+    },
+    "homepage.section.connect": {
+        "message": "お問い合わせ"
+    },
+    "homepage.tagline": {
+        "message": "Nothingエコシステムに関連するすべてを網羅した厳選リソースインデックス。"
+    },
+    "homepage.title": {
+        "message": "Nothing OSファームウェアとリソース"
+    },
+    "theme.ErrorPageContent.title": {
+        "message": "このページはクラッシュしました。",
+        "description": "The title of the fallback page when the page crashed"
+    },
+    "theme.BackToTopButton.buttonAriaLabel": {
+        "message": "先頭に戻る",
+        "description": "The ARIA label for the back to top button"
+    },
+    "theme.blog.archive.title": {
+        "message": "アーカイブ",
+        "description": "The page & hero title of the blog archive page"
+    },
+    "theme.blog.archive.description": {
+        "message": "アーカイブ",
+        "description": "The page & hero description of the blog archive page"
+    },
+    "theme.blog.paginator.navAriaLabel": {
+        "message": "ブログ一覧ナビゲーション",
+        "description": "The ARIA label for the blog pagination"
+    },
+    "theme.blog.paginator.newerEntries": {
+        "message": "新しい記事",
+        "description": "The label used to navigate to the newer blog posts page (previous page)"
+    },
+    "theme.blog.paginator.olderEntries": {
+        "message": "古い記事",
+        "description": "The label used to navigate to the older blog posts page (next page)"
+    },
+    "theme.blog.post.paginator.navAriaLabel": {
+        "message": "ブログ記事ナビゲーション",
+        "description": "The ARIA label for the blog posts pagination"
+    },
+    "theme.blog.post.paginator.newerPost": {
+        "message": "新しい投稿",
+        "description": "The blog post button label to navigate to the newer/previous post"
+    },
+    "theme.blog.post.paginator.olderPost": {
+        "message": "古い投稿",
+        "description": "The blog post button label to navigate to the older/next post"
+    },
+    "theme.tags.tagsPageLink": {
+        "message": "すべてのタグを表示",
+        "description": "The label of the link targeting the tag list page"
+    },
+    "theme.colorToggle.ariaLabel.mode.system": {
+        "message": "システムモード",
+        "description": "The name for the system color mode"
+    },
+    "theme.colorToggle.ariaLabel.mode.light": {
+        "message": "ライトモード",
+        "description": "The name for the light color mode"
+    },
+    "theme.colorToggle.ariaLabel.mode.dark": {
+        "message": "ダークモード",
+        "description": "The name for the dark color mode"
+    },
+    "theme.colorToggle.ariaLabel": {
+        "message": "ライト/ダークモードを切り替え（現在は{mode}）",
+        "description": "The ARIA label for the color mode toggle"
+    },
+    "theme.docs.breadcrumbs.navAriaLabel": {
+        "message": "パンくずリスト",
+        "description": "The ARIA label for the breadcrumbs"
+    },
+    "theme.docs.DocCard.categoryDescription.plurals": {
+        "message": "{count} 個の項目",
+        "description": "The default description for a category card in the generated index about how many items this category includes"
+    },
+    "theme.docs.paginator.navAriaLabel": {
+        "message": "ドキュメントナビゲーション",
+        "description": "The ARIA label for the docs pagination"
+    },
+    "theme.docs.paginator.previous": {
+        "message": "戻る",
+        "description": "The label used to navigate to the previous doc"
+    },
+    "theme.docs.paginator.next": {
+        "message": "次へ",
+        "description": "The label used to navigate to the next doc"
+    },
+    "theme.docs.tagDocListPageTitle.nDocsTagged": {
+        "message": "{count} 個のドキュメントにタグ付けされています",
+        "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+    },
+    "theme.docs.tagDocListPageTitle": {
+        "message": "{nDocsTagged} タグ「{tagName}」",
+        "description": "The title of the page for a docs tag"
+    },
+    "theme.docs.versionBadge.label": {
+        "message": "バージョン: {versionLabel}"
+    },
+    "theme.docs.versions.unreleasedVersionLabel": {
+        "message": "これは {siteTitle} {versionLabel} バージョンの未リリースドキュメントです。",
+        "description": "The label used to tell the user that he's browsing an unreleased doc version"
+    },
+    "theme.docs.versions.unmaintainedVersionLabel": {
+        "message": "これは {siteTitle} {versionLabel} バージョンのドキュメントであり、現在は積極的にメンテナンスされていません。",
+        "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+    },
+    "theme.docs.versions.latestVersionSuggestionLabel": {
+        "message": "最新のドキュメントについては、{latestVersionLink} ({versionLabel}) を参照してください。",
+        "description": "The label used to tell the user to check the latest version"
+    },
+    "theme.docs.versions.latestVersionLinkLabel": {
+        "message": "最新バージョン",
+        "description": "The label used for the latest version suggestion link label"
+    },
+    "theme.common.editThisPage": {
+        "message": "このページを編集",
+        "description": "The link label to edit the current page"
+    },
+    "theme.common.headingLinkTitle": {
+        "message": "{heading}へのダイレクトリンク",
+        "description": "Title for link to heading"
+    },
+    "theme.lastUpdated.atDate": {
+        "message": " {date} ",
+        "description": "The words used to describe on which date a page has been last updated"
+    },
+    "theme.lastUpdated.byUser": {
+        "message": " {user} により ",
+        "description": "The words used to describe by who the page has been last updated"
+    },
+    "theme.lastUpdated.lastUpdatedAtBy": {
+        "message": "最終更新: {byUser}{atDate}",
+        "description": "The sentence used to display when a page has been last updated, and by who"
+    },
+    "theme.navbar.mobileVersionsDropdown.label": {
+        "message": "バージョンを選択",
+        "description": "The label for the navbar versions dropdown on mobile view"
+    },
+    "theme.NotFound.title": {
+        "message": "ページが見つかりません",
+        "description": "The title of the 404 page"
+    },
+    "theme.tags.tagsListLabel": {
+        "message": "タグ:",
+        "description": "The label alongside a tag list"
+    },
+    "theme.admonition.caution": {
+        "message": "注意",
+        "description": "The default label used for the Caution admonition (:::caution)"
+    },
+    "theme.admonition.danger": {
+        "message": "危険",
+        "description": "The default label used for the Danger admonition (:::danger)"
+    },
+    "theme.admonition.info": {
+        "message": "情報",
+        "description": "The default label used for the Info admonition (:::info)"
+    },
+    "theme.admonition.note": {
+        "message": "注記",
+        "description": "The default label used for the Note admonition (:::note)"
+    },
+    "theme.admonition.tip": {
+        "message": "ヒント",
+        "description": "The default label used for the Tip admonition (:::tip)"
+    },
+    "theme.admonition.warning": {
+        "message": "警告",
+        "description": "The default label used for the Warning admonition (:::warning)"
+    },
+    "theme.AnnouncementBar.closeButtonAriaLabel": {
+        "message": "閉じる",
+        "description": "The ARIA label for close button of announcement bar"
+    },
+    "theme.blog.sidebar.navAriaLabel": {
+        "message": "最近のブログ投稿ナビゲーション",
+        "description": "The ARIA label for recent posts in the blog sidebar"
+    },
+    "theme.DocSidebarItem.expandCategoryAriaLabel": {
+        "message": "サイドバーカテゴリ '{label}' を展開",
+        "description": "The ARIA label to expand the sidebar category"
+    },
+    "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+        "message": "サイドバーカテゴリ '{label}' を折りたたむ",
+        "description": "The ARIA label to collapse the sidebar category"
+    },
+    "theme.IconExternalLink.ariaLabel": {
+        "message": "（新しいタブで開く）",
+        "description": "The ARIA label for the external link icon"
+    },
+    "theme.NavBar.navAriaLabel": {
+        "message": "メインナビゲーション",
+        "description": "The ARIA label for the main navigation"
+    },
+    "theme.navbar.mobileLanguageDropdown.label": {
+        "message": "言語を選択",
+        "description": "The label for the mobile language switcher dropdown"
+    },
+    "theme.NotFound.p1": {
+        "message": "お探しのページは見つかりませんでした。",
+        "description": "The first paragraph of the 404 page"
+    },
+    "theme.NotFound.p2": {
+        "message": "リンク元の管理者へ連絡し、リンクが切れていることを伝えてください。",
+        "description": "The 2nd paragraph of the 404 page"
+    },
+    "theme.TOCCollapsible.toggleButtonLabel": {
+        "message": "このページの内容",
+        "description": "The label used by the button on the collapsible TOC component"
+    },
+    "theme.blog.post.readMore": {
+        "message": "続きを読む",
+        "description": "The label used in blog post item excerpts to link to full blog posts"
+    },
+    "theme.blog.post.readMoreLabel": {
+        "message": "{title} の全文を読む",
+        "description": "The ARIA label for the link to full blog posts from excerpts"
+    },
+    "theme.blog.post.readingTime.plurals": {
+        "message": "読了時間: 約 {readingTime} 分",
+        "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+    },
+    "theme.CodeBlock.copy": {
+        "message": "コピー",
+        "description": "The copy button label on code blocks"
+    },
+    "theme.CodeBlock.copied": {
+        "message": "コピー完了",
+        "description": "The copied button label on code blocks"
+    },
+    "theme.CodeBlock.copyButtonAriaLabel": {
+        "message": "コードをクリップボードにコピー",
+        "description": "The ARIA label for copy code blocks button"
+    },
+    "theme.CodeBlock.wordWrapToggle": {
+        "message": "折り返し表示を切り替え",
+        "description": "The title attribute for toggle word wrapping button of code block lines"
+    },
+    "theme.docs.breadcrumbs.home": {
+        "message": "ホーム",
+        "description": "The ARIA label for the home page in the breadcrumbs"
+    },
+    "theme.docs.sidebar.collapseButtonTitle": {
+        "message": "サイドバーを折りたたむ",
+        "description": "The title attribute for collapse button of doc sidebar"
+    },
+    "theme.docs.sidebar.collapseButtonAriaLabel": {
+        "message": "サイドバーを折りたたむ",
+        "description": "The title attribute for collapse button of doc sidebar"
+    },
+    "theme.docs.sidebar.navAriaLabel": {
+        "message": "ドキュメントサイドバー",
+        "description": "The ARIA label for the sidebar navigation"
+    },
+    "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+        "message": "ナビゲーションを閉じる",
+        "description": "The ARIA label for close button of mobile sidebar"
+    },
+    "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+        "message": "← メインメニューに戻る",
+        "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+    },
+    "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+        "message": "ナビゲーションを切り替え",
+        "description": "The ARIA label for hamburger menu button of mobile navigation"
+    },
+    "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+        "message": "ドロップダウン項目を展開",
+        "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+    },
+    "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+        "message": "ドロップダウン項目を折りたたむ",
+        "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+    },
+    "theme.docs.sidebar.expandButtonTitle": {
+        "message": "サイドバーを展開",
+        "description": "The ARIA label and title attribute for expand button of doc sidebar"
+    },
+    "theme.docs.sidebar.expandButtonAriaLabel": {
+        "message": "サイドバーを展開",
+        "description": "The ARIA label and title attribute for expand button of doc sidebar"
+    },
+    "theme.SearchPage.existingResultsTitle": {
+        "message": "「{query}」の検索結果",
+        "description": "The search page title for non-empty query"
+    },
+    "theme.SearchPage.emptyResultsTitle": {
+        "message": "ドキュメントを検索",
+        "description": "The search page title for empty query"
+    },
+    "theme.SearchPage.searchContext.everywhere": {
+        "message": "すべての場所"
+    },
+    "theme.SearchPage.documentsFound.plurals": {
+        "message": "{count} 個のドキュメントが見つかりました",
+        "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+    },
+    "theme.SearchPage.noResultsText": {
+        "message": "ドキュメントが見つかりませんでした",
+        "description": "The paragraph for empty search result"
+    },
+    "theme.SearchBar.noResultsText": {
+        "message": "結果なし"
+    },
+    "theme.SearchBar.seeAllOutsideContext": {
+        "message": "「{context}」以外のすべての結果を表示"
+    },
+    "theme.SearchBar.searchInContext": {
+        "message": "「{context}」内のすべての結果を表示"
+    },
+    "theme.SearchBar.seeAll": {
+        "message": "すべての結果を表示"
+    },
+    "theme.SearchBar.label": {
+        "message": "検索",
+        "description": "The ARIA label and placeholder for search button"
+    },
+    "theme.blog.post.plurals": {
+        "message": "{count} 個の記事",
+        "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+    },
+    "theme.blog.tagTitle": {
+        "message": "{nPosts} タグ「{tagName}」",
+        "description": "The title of the page for a blog tag"
+    },
+    "theme.blog.author.pageTitle": {
+        "message": "{authorName} - {nPosts}",
+        "description": "The title of the page for a blog author"
+    },
+    "theme.blog.authorsList.pageTitle": {
+        "message": "著者一覧",
+        "description": "The title of the authors page"
+    },
+    "theme.blog.authorsList.viewAll": {
+        "message": "すべての著者をみる",
+        "description": "The label of the link targeting the blog authors page"
+    },
+    "theme.blog.author.noPosts": {
+        "message": "この著者の記事はまだありません。",
+        "description": "The text for authors with 0 blog post"
+    },
+    "theme.contentVisibility.unlistedBanner.title": {
+        "message": "限定公開ページ",
+        "description": "The unlisted content banner title"
+    },
+    "theme.contentVisibility.unlistedBanner.message": {
+        "message": "このページは限定公開です。検索エンジンにはインデックスされず、ダイレクトリンクを持つユーザーのみがアクセスできます。",
+        "description": "The unlisted content banner message"
+    },
+    "theme.contentVisibility.draftBanner.title": {
+        "message": "下書きページ",
+        "description": "The draft content banner title"
+    },
+    "theme.contentVisibility.draftBanner.message": {
+        "message": "これは下書きです。開発環境でのみ表示され、本番サイトには含まれません。",
+        "description": "The draft content banner message"
+    },
+    "theme.ErrorPageContent.tryAgain": {
+        "message": "再試行",
+        "description": "The label of the button to try again rendering when the React error boundary captures an error"
+    },
+    "theme.common.skipToMainContent": {
+        "message": "メインコンテンツへスキップ",
+        "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+    },
+    "theme.tags.tagsPageTitle": {
+        "message": "タグ",
+        "description": "The title of the tag list page"
+    }
+}

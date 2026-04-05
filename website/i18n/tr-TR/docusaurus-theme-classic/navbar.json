@@ -1,0 +1,17 @@
+{
+    "link.title.Introduction": {
+        "message": "Giriş"
+    },
+    "link.title.Device Catalog": {
+        "message": "Cihaz Kataloğu"
+    },
+    "link.title.Firmware Repository": {
+        "message": "Donanım Yazılımı Arşivi"
+    },
+    "link.title.Community Apps": {
+        "message": "Topluluk Uygulamaları"
+    },
+    "link.title.Official Resources": {
+        "message": "Resmi Kaynaklar"
+    }
+}
