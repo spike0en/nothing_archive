@@ -118,7 +118,7 @@
 }
 
 /* Show Stars & GitHub in navbar on mobile (Nothing Phone , etc.) - override Infima hide */
-@media (max-width: 996px) {
+@media (max-width: 200px) {
 
   /* Hide the default brand on mobile, we use our custom morphing Home link instead */
   .navbar__brand {
@@ -395,7 +395,7 @@ article h3 {
 }
 
 /* Doc sidebar responsive - mobile drawer */
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 200px) {
   .theme-doc-sidebar-container {
     border-right: none;
     border-bottom: 1px solid var(--nothing-border);
@@ -543,7 +543,7 @@ table td a:hover {
 }
 
 /* Mobile adjustments */
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 200px) {
 
   /* Force tables to be scrollable blocks on mobile to prevent breaking details layouts */
   table {
@@ -834,7 +834,7 @@ a:hover {
    ========================================== */
 
 /* General mobile content adjustments */
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 200px) {
   .hero__title {
     font-size: 2.25rem;
   }
