@@ -338,6 +338,13 @@
   width: min(320px, 85vw);
 }
 
+/* Hide right-side navbar items (locale dropdown, search, badges) when mobile sidebar is open */
+.navbar-sidebar--show .navbar__items--right {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .navbar-sidebar__brand {
   padding: 1rem 1.25rem;
   border-bottom: 1px solid var(--nothing-border);
