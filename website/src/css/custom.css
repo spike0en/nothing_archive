@@ -991,7 +991,7 @@ details[open] summary::before {
   transform: translateY(-50%) rotate(90deg) !important;
 }
 
-/* Sidebar ka horizontal swipe Locked */
+/* Sidebar horizontal swipe Locked */
 .navbar-sidebar {
     touch-action: pan-y !important; 
     overflow-x: hidden !important;
