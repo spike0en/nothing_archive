@@ -990,3 +990,15 @@ details summary::before {
 details[open] summary::before {
   transform: translateY(-50%) rotate(90deg) !important;
 }
+
+/* Sidebar horizontal swipe Locked */
+.navbar-sidebar {
+    touch-action: pan-y !important; 
+    overflow-x: hidden !important;
+}
+
+/* Arrow container fixed pixel */
+.navbar-sidebar .menu__list-item-collapsible {
+    width: 230px !important;
+    max-width: 230px !important;
+}
