@@ -196,6 +196,22 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 
 ---
 
+## Ported Apps
+
+Unofficial ports of Nothing OS apps for all devices.
+
+:::note
+It is advised to refer to the documentation and release notes from the linked Telegram channels for the respective port apps for information regarding installation, usage, and supported functionality, including considerations from the respective app port developers.
+:::
+
+| Developer | Sources |
+|-----------|---------|
+| Ayra Hikari | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://t.me/s/AyraProject?q=nothing) |
+| Android Port World | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://t.me/s/AndroidPortWorld?q=nothing) |
+| El Pong | [Telegram](https://t.me/s/LigmaCore?q=nothing) |
+
+---
+
 ## Other Community Apps
 
 A collection of various community-made apps including news hubs, social tools, and games.

@@ -196,6 +196,23 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 
 ---
 
+## Port Edilmiş Uygulamalar
+
+Tüm cihazlar için Nothing OS uygulamalarının resmi olmayan portları.
+
+:::note
+Kurulum, kullanım ve desteklenen işlevlerle ilgili bilgilerin yanı sıra ilgili uygulama portu geliştiricilerinin düşünceleri için bağlantılı Telegram kanallarındaki belgelere ve sürüm notlarına başvurmanız önerilir.
+:::
+
+| Geliştirici | Kaynaklar |
+|-----------|---------|
+| Ayra Hikari | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://t.me/s/AyraProject?q=nothing) |
+| Android Port World | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://t.me/s/AndroidPortWorld?q=nothing) |
+| El Pong | [Telegram](https://t.me/s/LigmaCore?q=nothing) |
+
+---
+
+
 ## Diğer Topluluk Uygulamaları
 
 Haber merkezlerinden sosyal araçlara ve oyunlara kadar topluluk tarafından oluşturulmuş çeşitli uygulamalar koleksiyonu.

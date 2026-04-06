@@ -191,6 +191,23 @@ Glyph Matrix 的互動玩具和遊戲。
 
 ---
 
+## 移植版應用程式
+
+適用於所有裝置的 Nothing OS 應用程式非官方移植版。
+
+:::note
+建議參考連結的各移植版 Telegram 頻道中的說明文件和版本資訊，以獲取有關安裝、使用和支援功能的資訊，以及各應用程式移植版開發者的注意事項。
+:::
+
+| 開發者 | 來源 |
+|-----------|---------|
+| Ayra Hikari | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://t.me/s/AyraProject?q=nothing) |
+| Android Port World | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://t.me/s/AndroidPortWorld?q=nothing) |
+| El Pong | [Telegram](https://t.me/s/LigmaCore?q=nothing) |
+
+---
+
+
 ## 其他社群應用程式
 
 各類社群製作的應用程式，包括新聞中心、社交工具和遊戲。

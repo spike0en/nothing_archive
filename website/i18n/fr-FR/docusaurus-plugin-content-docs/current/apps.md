@@ -196,6 +196,23 @@ Fonds d'écran dynamiques et améliorations visuelles pour sublimer l'apparence 
 
 ---
 
+## Applications portées
+
+Ports non officiels d'applications Nothing OS pour tous les appareils.
+
+:::note
+Il est conseillé de se référer à la documentation et aux notes de version des canaux Telegram liés pour chaque portage d'application afin d'obtenir des informations concernant l'installation, l'utilisation et les fonctionnalités prises en charge, ainsi que les considérations des développeurs respectifs.
+:::
+
+| Développeur | Sources |
+|-----------|---------|
+| Ayra Hikari | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://t.me/s/AyraProject?q=nothing) |
+| Android Port World | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://t.me/s/AndroidPortWorld?q=nothing) |
+| El Pong | [Telegram](https://t.me/s/LigmaCore?q=nothing) |
+
+---
+
+
 ## Autres applications de la communauté
 
 Une collection d'applications diverses créées par la communauté, incluant des hubs de nouvelles, des outils sociaux et des jeux.
