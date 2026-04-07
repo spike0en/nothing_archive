@@ -126,6 +126,7 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | 透過 ADB 修補／停用 Logkit 的工具 |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | 社群平台（[Repo](https://github.com/nothingtools/nothingtools.github.io)） |
 | [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | r/NothingTech 維基 |
+| [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | 用於 Nothing 與 CMF 耳機的 macOS 配套應用程式 |
 
 ---
 

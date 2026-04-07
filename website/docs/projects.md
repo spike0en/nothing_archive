@@ -126,6 +126,7 @@ Essential resources including wikis, firmware archives, and system repair tools.
 | [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | Tool to patch/disable Logkit via ADB |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | Community hub ([Repo](https://github.com/nothingtools/nothingtools.github.io)) |
 | [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | r/NothingTech wiki |
+| [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | macOS companion app for Nothing and CMF earbuds |
 
 ---
 
