@@ -65,6 +65,7 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Jeux d'arcade sur la matrice Glyph |
 | [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | Fan-game de collection de Pokémon |
 | [Glyph Eyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | Jouet de pupille inclinable ludique |
+| [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | Application Android qui affiche les données des capteurs de Home Assistant sur la Nothing Glyph Matrix. |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | Jeu Space Invaders |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Messages textuels défilants |
 | [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | Test de code via le web |

@@ -65,6 +65,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Glyph matrisi üzerinde atari oyunları |
 | [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | Pokémon yakalama fan oyunu |
 | [Glyph Eyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | Eğlenceli eğilebilir göz bebeği oyuncağı |
+| [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | Home Assistant sensör verilerini Nothing Glyph Matrix üzerinde görüntüleyen Android uygulaması. |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | Space Invaders oyunu |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Kayan metin mesajları |
 | [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | Web üzerinden kod testi |

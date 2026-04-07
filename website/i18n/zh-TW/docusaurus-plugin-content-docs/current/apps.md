@@ -64,6 +64,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Glyph Matrix 上的街機遊戲 |
 | [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | 寶可夢收集同人遊戲 |
 | [Glyph Eyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | 互動傾斜瞳孔玩具 |
+| [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | 在 Nothing Glyph Matrix 上顯示 Home Assistant 感測器數據的 Android 應用程式。 |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | 太空侵略者遊戲 |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | 跑馬燈文字訊息 |
 | [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | 網頁版程式碼測試工具 |

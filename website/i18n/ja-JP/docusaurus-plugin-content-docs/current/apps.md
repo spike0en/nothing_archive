@@ -65,6 +65,7 @@ Glyphマトリックス向けのインタラクティブなトイとゲーム。
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Glyphマトリックス上でのアーケードゲーム |
 | [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | ポケモン収集ファンゲーム |
 | [Glyph Eyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | 傾斜する瞳の楽しいトイ |
+| [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | Nothing Glyph Matrix上にHome Assistantのセンサーデータを表示するAndroidアプリ。 |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | スペースインベーダーゲーム |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | スクロールテキストメッセージ |
 | [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | ウェブ経由でのコードテスト |
