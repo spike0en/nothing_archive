@@ -112,6 +112,7 @@ Sistem monitörlerinden minimal araçlara kadar ana ekran için özel widget'lar
 |-----|-----------|-------------|
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Minimal widget'lar |
 | [Essential Widgets](https://github.com/Essential-Dots/Essential-Widgets) | Apheff | Topluluk tarafından oluşturulmuş özel widget'lar |
+| [Quick Contacts](https://play.google.com/store/apps/details?id=com.nihilapplications.quickcontactlist) | Martin Diermayr | Ana ekranda kişi widget'ları oluşturun ve ayarlayın. |
 | [RTMON](https://github.com/n1th1n-19/RTMON) | n1th1n-19 | Gerçek zamanlı sistem izleme widget'ı |
 | [Widgets Pro](https://play.google.com/store/apps/details?id=com.tpk.widgetspro) | Preethamkmr3 | Ek widget'lar |
 

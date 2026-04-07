@@ -110,6 +110,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | 應用程式 | 開發者 | 說明 |
 |---------|--------|------|
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | 簡約小工具 |
+| [Quick Contacts](https://play.google.com/store/apps/details?id=com.nihilapplications.quickcontactlist) | Martin Diermayr | 在主畫面上建立並設定聯絡人小工具。 |
 | [RTMON](https://github.com/n1th1n-19/RTMON) | n1th1n-19 | 即時系統監控小工具 |
 | [Widgets Pro](https://play.google.com/store/apps/details?id=com.tpk.widgetspro) | Preethamkmr3 | 額外小工具 |
 

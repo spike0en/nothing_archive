@@ -112,6 +112,7 @@ Widgets personnalisés pour l'écran d'accueil, allant des moniteurs système au
 |-----|-----------|-------------|
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Widgets minimaux |
 | [Essential Widgets](https://github.com/Essential-Dots/Essential-Widgets) | Apheff | Widgets personnalisés créés par la communauté |
+| [Quick Contacts](https://play.google.com/store/apps/details?id=com.nihilapplications.quickcontactlist) | Martin Diermayr | Créer et placer des widgets de contacts sur l'écran d'accueil. |
 | [RTMON](https://github.com/n1th1n-19/RTMON) | n1th1n-19 | Widget de surveillance système en temps réel |
 | [Widgets Pro](https://play.google.com/store/apps/details?id=com.tpk.widgetspro) | Preethamkmr3 | Widgets supplémentaires |
 
