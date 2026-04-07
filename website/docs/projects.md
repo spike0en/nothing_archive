@@ -23,6 +23,7 @@ A collection of tools for creating custom Glyph tones and compositions.
 | [Glyph Utils](https://github.com/pgsk33/Glyph-Utils) | pgsk33 | Java helper for frame-based Glyph Interface animations |
 | [Glyph Visualizer](https://github.com/SebiAi/GlyphVisualizer) | SebiAi | Desktop visualizer for .ogg compositions |
 | [Haptificator](https://github.com/Fr4nKB/Haptificator) | Fr4nKB | Add haptics to Phone (1) compositions |
+| [Nothing Phone Battery Notification](https://github.com/f3bruary/nothing-phone-battery-notification) | f3bruary | Blink the red glyph in a custom pattern when the battery is low |
 | [Osu To Glyph](https://github.com/taiixu/osu-to-glyph) | taiixu | Convert osu! beatmaps to Nothing Phone glyph ringtones |
 | [Pyglyph](https://github.com/Snakehater/pyglyph) | Snakehater | Python script for audio visualization |
 
