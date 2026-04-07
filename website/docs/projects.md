@@ -55,6 +55,7 @@ Themes and rices for Arch Linux, VS Code, and other development environments fol
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | macOS menu bar app |
 | [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | GNOME desktop build |
 | [Nothing Rice](https://github.com/Adhil-ka/nothing-rice) | Adhil-ka | Nothing OS inspired Arch Hyprland desktop rice |
+| [Nothing Telegram Theme](https://github.com/Costeer/Nothing-Telegram-Theme) | Costeer | Nothing inspired theme for Telegram |
 | [Nothing VS Code Theme](https://github.com/shahriaravi/nothing-vscode-theme) | shahriaravi | VS Code theme |
 | [Obsidian Nothing Theme](https://github.com/saulojoab/obsidian-nothing-theme) | saulojoab | Obsidian theme based on Nothing |
 

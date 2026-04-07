@@ -55,6 +55,7 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | macOS 選單列應用程式 |
 | [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | GNOME 桌面建置 |
 | [Nothing Rice](https://github.com/Adhil-ka/nothing-rice) | Adhil-ka | 受 Nothing OS 啟發的 Arch Hyprland 桌面美化 |
+| [Nothing Telegram Theme](https://github.com/Costeer/Nothing-Telegram-Theme) | Costeer | 受 Nothing 啟發的 Telegram 主題。 |
 | [Nothing VS Code Theme](https://github.com/shahriaravi/nothing-vscode-theme) | shahriaravi | VS Code 主題 |
 | [Obsidian Nothing Theme](https://github.com/saulojoab/obsidian-nothing-theme) | saulojoab | 基於 Nothing 的 Obsidian 主題 |
 

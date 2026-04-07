@@ -55,6 +55,7 @@ Nothing'in tasarım diline uygun Arch Linux, VS Code ve diğer geliştirme ortam
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | macOS menü çubuğu uygulaması |
 | [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | GNOME masaüstü yapısı |
 | [Nothing Rice](https://github.com/Adhil-ka/nothing-rice) | Adhil-ka | Nothing OS esintili Arch Hyprland masaüstü kurulumu |
+| [Nothing Telegram Theme](https://github.com/Costeer/Nothing-Telegram-Theme) | Costeer | Telegram için Nothing esintili tema. |
 | [Nothing VS Code Theme](https://github.com/shahriaravi/nothing-vscode-theme) | shahriaravi | VS Code teması |
 | [Obsidian Nothing Theme](https://github.com/saulojoab/obsidian-nothing-theme) | saulojoab | Nothing tabanlı Obsidian teması |
 

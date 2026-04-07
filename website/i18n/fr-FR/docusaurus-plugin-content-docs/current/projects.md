@@ -55,6 +55,7 @@ Thèmes et configurations pour Arch Linux, VS Code et d'autres environnements de
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | Application de barre de menu macOS |
 | [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | Build de bureau GNOME |
 | [Nothing Rice](https://github.com/Adhil-ka/nothing-rice) | Adhil-ka | Configuration de bureau Arch Hyprland inspirée par Nothing OS |
+| [Nothing Telegram Theme](https://github.com/Costeer/Nothing-Telegram-Theme) | Costeer | Thème inspiré par Nothing pour Telegram. |
 | [Nothing VS Code Theme](https://github.com/shahriaravi/nothing-vscode-theme) | shahriaravi | Thème VS Code |
 | [Obsidian Nothing Theme](https://github.com/saulojoab/obsidian-nothing-theme) | saulojoab | Thème Obsidian basé sur Nothing |
 
