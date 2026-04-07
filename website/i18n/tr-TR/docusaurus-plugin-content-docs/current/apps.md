@@ -191,6 +191,7 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Phone (3) için kayıt ışığı kontrolü |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Cihaz bilgisi aracı |
 | [The Everything Key](https://play.google.com/store/apps/details?id=com.spandone.everythingkey) | spandone | Essential tuşu remappar |
+| [Void](https://play.google.com/store/apps/details?id=com.thevoid.focus) | vmcreate | Nothing OS tasarım diline dayalı minimal uygulama engelleyici |
 | [Voidcaller](https://play.google.com/store/apps/details?id=com.voidware.voidcaller) | VoidwareLabs | Minimalist arayıcı |
 | [WhispCal](https://play.google.com/store/apps/details?id=com.thomasmorice.whispcal) | Thomas Morice | Android ve [iOS](https://apps.apple.com/in/app/whispcal/id6757860582) için kalori takibi uygulaması |
 
@@ -211,7 +212,6 @@ Kurulum, kullanım ve desteklenen işlevlerle ilgili bilgilerin yanı sıra ilgi
 | El Pong | [Telegram](https://t.me/s/LigmaCore?q=nothing) |
 
 ---
-
 
 ## Diğer Topluluk Uygulamaları
 
