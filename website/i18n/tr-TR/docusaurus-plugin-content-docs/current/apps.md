@@ -115,6 +115,7 @@ Sistem monitörlerinden minimal araçlara kadar ana ekran için özel widget'lar
 | [n0w](https://github.com/codewec/n0w) | codewec | Takvim widget'ı uygulaması. |
 | [Quick Contacts](https://play.google.com/store/apps/details?id=com.nihilapplications.quickcontactlist) | Martin Diermayr | Ana ekranda kişi widget'ları oluşturun ve ayarlayın. |
 | [RTMON](https://github.com/n1th1n-19/RTMON) | n1th1n-19 | Gerçek zamanlı sistem izleme widget'ı |
+| [Something KWGT](https://play.google.com/store/apps/details?id=something.nothing.kwgt.widgets.pro.pack) | Pickerry Apps | Nothing esintili KWGT paketi. | 
 | [Widgets Pro](https://play.google.com/store/apps/details?id=com.tpk.widgetspro) | Preethamkmr3 | Ek widget'lar |
 
 ### Duvar Kağıtları ve Görsel Efektler

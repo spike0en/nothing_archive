@@ -115,6 +115,7 @@ Custom widgets for the home screen, from system monitors to minimalist tools.
 | [n0w](https://github.com/codewec/n0w) | codewec | Calendar widget app |
 | [Quick Contacts](https://play.google.com/store/apps/details?id=com.nihilapplications.quickcontactlist) | Martin Diermayr | Create and set contacts widgets on the homescreen |
 | [RTMON](https://github.com/n1th1n-19/RTMON) | n1th1n-19 | Real-time system monitoring widget |
+| [Something KWGT](https://play.google.com/store/apps/details?id=something.nothing.kwgt.widgets.pro.pack) | Pickerry Apps | Nothing inspired KWGT pack | 
 | [Widgets Pro](https://play.google.com/store/apps/details?id=com.tpk.widgetspro) | Preethamkmr3 | Additional widgets |
 
 ### Wallpapers & Visual Effects

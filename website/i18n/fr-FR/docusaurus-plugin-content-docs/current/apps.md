@@ -115,6 +115,7 @@ Widgets personnalisés pour l'écran d'accueil, allant des moniteurs système au
 | [n0w](https://github.com/codewec/n0w) | codewec | Application de widget de calendrier. |
 | [Quick Contacts](https://play.google.com/store/apps/details?id=com.nihilapplications.quickcontactlist) | Martin Diermayr | Créer et placer des widgets de contacts sur l'écran d'accueil. |
 | [RTMON](https://github.com/n1th1n-19/RTMON) | n1th1n-19 | Widget de surveillance système en temps réel |
+| [Something KWGT](https://play.google.com/store/apps/details?id=something.nothing.kwgt.widgets.pro.pack) | Pickerry Apps | Pack KWGT inspiré par Nothing. | 
 | [Widgets Pro](https://play.google.com/store/apps/details?id=com.tpk.widgetspro) | Preethamkmr3 | Widgets supplémentaires |
 
 ### Fonds d'écran et effets visuels

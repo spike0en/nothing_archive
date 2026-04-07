@@ -113,6 +113,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [n0w](https://github.com/codewec/n0w) | codewec | 行事曆小工具應用程式。 |
 | [Quick Contacts](https://play.google.com/store/apps/details?id=com.nihilapplications.quickcontactlist) | Martin Diermayr | 在主畫面上建立並設定聯絡人小工具。 |
 | [RTMON](https://github.com/n1th1n-19/RTMON) | n1th1n-19 | 即時系統監控小工具 |
+| [Something KWGT](https://play.google.com/store/apps/details?id=something.nothing.kwgt.widgets.pro.pack) | Pickerry Apps | 受 Nothing 啟發的 KWGT 套件。 | 
 | [Widgets Pro](https://play.google.com/store/apps/details?id=com.tpk.widgetspro) | Preethamkmr3 | 額外小工具 |
 
 ### 桌布與視覺效果
