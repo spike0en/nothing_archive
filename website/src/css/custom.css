@@ -1,7 +1,7 @@
 /**
- * Custom CSS for Nothing Archive
- * Implements a minimal, monochrome aesthetic inspired by Nothing Tech.
- * Fonts are loaded via <link> tags in docusaurus.config.ts headTags.
+ * Global CSS Overrides
+ * Establishes root design tokens, theming variables, and core layout modifications.
+ * Typography loading is deferred to asynchronous `<link>` directives in Docusaurus configuration.
  */
 
 :root {
@@ -23,7 +23,7 @@
   --ifm-footer-background-color: #1a1a1a;
   --ifm-card-background-color: #ffffff;
 
-  /* Global Infima Border Radius Overrides to match new rounded aesthetic */
+  /* Core border radius tokens */
   --ifm-global-radius: 8px;
   --ifm-button-border-radius: 999px;
   --ifm-card-border-radius: 24px;
@@ -35,7 +35,7 @@
 
   --docusaurus-highlighted-code-line-bg: rgba(215, 25, 33, 0.1);
 
-  /* Nothing design tokens */
+  /* Supplementary border tokens */
   --nothing-border: rgba(0, 0, 0, 0.16);
   --nothing-border-strong: rgba(0, 0, 0, 0.35);
 }
@@ -61,7 +61,7 @@
 }
 
 /* ==========================================
-   NAVBAR - Nothing aesthetic
+   NAVIGATION BAR
    ========================================== */
 .navbar {
   border-bottom: 1px solid var(--nothing-border);
@@ -107,7 +107,7 @@
   background: rgba(0, 0, 0, 0.5);
 }
 
-/* Mobile navbar toggle (hamburger) */
+/* Mobile navigation toggle */
 .navbar__toggle {
   margin-right: 0.5rem;
 }
@@ -117,7 +117,7 @@
   height: 20px;
 }
 
-/* Show Stars & GitHub in navbar on mobile (Nothing Phone , etc.) - override Infima hide */
+/* Mobile navigation overrides */
 @media (max-width: 996px) {
 
   /* Hide the default brand on mobile, we use our custom morphing Home link instead */
@@ -125,7 +125,7 @@
     display: none !important;
   }
 
-  /* Show the Home text link on mobile in the top navbar */
+  /* Enable text-based navigation link on mobile */
   .navbar__item.header-home-link {
     display: inline-flex !important;
     align-items: center;
@@ -133,7 +133,7 @@
     /* Added spacing between hamburger icon and link */
   }
 
-  /* Morph 'Home' link into the site title on doc pages */
+  /* Responsive title morphing for document pages */
   html.plugin-docs .navbar__item.header-home-link {
     font-size: 0 !important;
   }
@@ -172,7 +172,7 @@
     display: none !important;
   }
 
-  /* Override absolute positioning of search container to allow flex stacking */
+  /* Resolve search container positioning conflicts */
   div[class*="navbarSearchContainer"] {
     position: relative !important;
     right: auto !important;
@@ -224,7 +224,7 @@
 }
 
 /* ==========================================
-   SIDEBAR - Proper UX
+   SIDEBAR
    ========================================== */
 .theme-doc-sidebar-container {
   border-right: 1px solid var(--nothing-border);
@@ -244,7 +244,7 @@
   margin: 0;
 }
 
-/* Category headers (Top level): Bold and Uppercase, but color stays neutral even if child is active */
+/* First-level category headers */
 .theme-doc-sidebar-menu>.menu__list>.menu__list-item>.menu__list-item-collapsible>.menu__link {
   font-size: 0.75rem;
   font-weight: 700;
@@ -262,7 +262,7 @@
   /* Visual cue but not red */
 }
 
-/* Ensure nested collapsible categories match regular doc links */
+/* Nested collapsible category overrides */
 .menu__list .menu__list .menu__list-item-collapsible>.menu__link {
   font-weight: 500;
   font-size: 0.85rem;
@@ -294,7 +294,7 @@
   color: var(--ifm-color-primary);
 }
 
-/* Specifically prevent category headers from turning red when children are active */
+/* Isolation for nested active categories */
 .menu__list-item-collapsible>.menu__link--active {
   color: inherit !important;
   border-left-color: transparent !important;
@@ -366,7 +366,7 @@
 }
 
 /* ==========================================
-   LAYOUT - Main wrapper & doc pages
+   LAYOUT
    ========================================== */
 .main-wrapper {
   min-height: 100vh;
@@ -411,7 +411,7 @@ article h3 {
 }
 
 /* ==========================================
-   TABLE STYLING - MOBILE RESPONSIVE
+   TABLE STYLING
    ========================================== */
 
 /* Scrollable table container */

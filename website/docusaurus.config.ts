@@ -1,8 +1,6 @@
 /**
- * Docusaurus Configuration
- * 
- * Defines site metadata, navigation, plugins, and theme configuration
- * for the Nothing Archive documentation website.
+ * Primary Docusaurus configuration.
+ * Defines site metadata, internationalization, static routing, and theme parameters.
  */
 
 import { themes as prismThemes } from 'prism-react-renderer';
@@ -51,7 +49,7 @@ const config: Config = {
 
   themes: [
     [
-      // Offline local search plugin
+      // Local offline search provider
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
         hashed: true,
@@ -95,7 +93,7 @@ const config: Config = {
   ],
 
   headTags: [
-    // SEO: Primary keyword meta tag for search engine indexing
+    // Core SEO keywords for global indexation
     {
       tagName: 'meta',
       attributes: {
@@ -142,7 +140,7 @@ const config: Config = {
         href: '/nothing_archive/img/logo.webp',
       },
     },
-    // Preload hero LCP image
+    // Preload Largest Contentful Paint (LCP) hero graphic
     {
       tagName: 'link',
       attributes: {
@@ -152,7 +150,7 @@ const config: Config = {
         fetchpriority: 'high',
       },
     },
-    // Font preconnect hints for performance
+    // Preconnect directives for external font domains to reduce latency
     {
       tagName: 'link',
       attributes: {
@@ -168,7 +166,7 @@ const config: Config = {
         crossorigin: 'anonymous',
       },
     },
-    // Non-render-blocking font stylesheet (replaces CSS @import)
+    // Typography stylesheet loaded asynchronously to prevent render-blocking
     {
       tagName: 'link',
       attributes: {
@@ -183,6 +181,8 @@ const config: Config = {
     metadata: [
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'Nothing Archive' },
+      // Note: Docusaurus auto-generates page-specific Open Graph and Twitter metadata.
+      // Avoid hardcoding global fallbacks here to prevent canonical SEO conflicts across localizations.
       { property: 'og:image', content: 'https://spike0en.github.io/nothing_archive/img/banner.png' },
       { property: 'og:image:width', content: '2160' },
       { property: 'og:image:height', content: '1080' },

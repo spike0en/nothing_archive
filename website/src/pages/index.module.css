@@ -1,7 +1,7 @@
-/* ==========================================
-   NOTHING TECH AESTHETIC - HOME PAGE
-   Minimal, geometric, glyph-inspired
-   ========================================== */
+/**
+ * Homepage Styling
+ * Implements a geometric, high-contrast aesthetic.
+ */
 
 /* --- Hero Section --- */
 .heroBanner {
@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Subtle radial glow behind the logo area */
+  /* Ambient radial highlight establishing focal depth */
   background: radial-gradient(ellipse 60% 50% at 70% 50%,
       rgba(215, 25, 33, 0.03) 0%,
       transparent 70%);
@@ -25,7 +25,7 @@
       transparent 70%);
 }
 
-/* Glyph-inspired dot grid background with subtle pulse */
+/* Animated structural dot grid simulating device LEDs */
 .glyphGrid {
   position: absolute;
   inset: 0;
@@ -106,7 +106,7 @@
   line-height: 1.5;
 }
 
-/* --- CTA Buttons --- */
+/* --- Call to Action Buttons --- */
 .buttons {
   display: flex;
   align-items: center;
@@ -123,7 +123,7 @@
   font-size: 0.9rem;
   letter-spacing: -0.02em;
   background: #cc0000;
-  /* Darker red (Ruby) to guarantee 4.58:1 contrast with white text */
+  /* Guaranteed 4.5:1 minimum contrast ratio */
   color: #fff !important;
   border: none;
   border-radius: 999px !important;
@@ -138,7 +138,6 @@
   text-decoration: none !important;
 }
 
-/* Secondary CTA (ghost / outline) */
 .ctaButtonSecondary {
   display: inline-flex;
   align-items: center;
@@ -163,12 +162,12 @@
   text-decoration: none !important;
 }
 
-/* --- Feature Cards (Resources Grid) --- */
+/* --- Feature Cards Grid --- */
 .features {
   padding: 5rem 0;
 }
 
-/* Uppercase section label shared across all homepage sections */
+/* Global section header styling */
 .sectionLabel {
   font-size: 0.85rem;
   font-weight: 600;
@@ -187,11 +186,10 @@
   margin-bottom: 1.25rem;
   display: flex;
   flex-direction: column;
-  /* Staggered entrance animation */
+  /* Sequential entrance animation */
   animation: fadeInUp 0.4s ease both;
 }
 
-/* Staggered delays for each card (1–8) */
 .featureCol:nth-child(1) {
   animation-delay: 0.0s;
 }
@@ -244,7 +242,7 @@
   flex: 1;
 }
 
-/* Keyboard focus indicator — visible outline on tab navigation */
+/* Visible focus outline for keyboard accessibility */
 .featureLink:focus-visible .featureCard {
   outline: 2px solid var(--ifm-color-primary);
   outline-offset: 2px;
@@ -266,7 +264,7 @@
   overflow: hidden;
 }
 
-/* Left-edge accent bar — animates from 0 to full height on hover */
+/* Dynamic hover state indicator */
 .featureCard::before {
   content: '';
   position: absolute;
@@ -296,7 +294,7 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* Icon container — tinted square with primary color */
+/* Icon container */
 .featureIcon {
   display: flex;
   align-items: center;
@@ -338,7 +336,7 @@
   letter-spacing: -0.01em;
 }
 
-/* --- Community Section (merged Support + Contributors) --- */
+/* --- Community Section --- */
 .communitySection {
   padding: 3rem 0;
   border-top: 1px solid var(--nothing-border);
@@ -372,7 +370,7 @@
   letter-spacing: -0.02em;
   color: #fff !important;
   background: #cc0000;
-  /* Darker red for WCAG contrast */
+  /* WCAG compliant background contrast */
   border: none;
   border-radius: 999px !important;
   text-decoration: none !important;

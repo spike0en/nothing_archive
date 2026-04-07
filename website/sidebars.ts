@@ -1,8 +1,6 @@
 /**
- * Sidebar Configuration
- *
- * Defines the documentation sidebar structure.
- * Doc IDs must match filenames in /docs (without .md extension).
+ * Defines the hierarchical structure of the documentation sidebar.
+ * Document IDs referenced here must map directly to Markdown filenames within `/docs`.
  */
 import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 

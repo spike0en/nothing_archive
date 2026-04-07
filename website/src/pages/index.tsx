@@ -17,7 +17,7 @@ import styles from './index.module.css';
 import { JSX } from 'react';
 
 /* ============================================================
-   DATA — Feature cards, social links
+   STATIC DATA
    ============================================================ */
 
 type FeatureItem = {
@@ -28,9 +28,8 @@ type FeatureItem = {
 };
 
 /**
- * Resource cards displayed in the homepage grid.
- * Each card links to a top-level documentation page.
- * Defined as a function so translate() runs inside React render context.
+ * Returns the collection of feature cards for the resources grid.
+ * Wrapped in a function to ensure `translate()` executes within the React render lifecycle.
  */
 function getFeatureList(): FeatureItem[] {
   return [
@@ -109,7 +108,7 @@ function getFeatureList(): FeatureItem[] {
   ];
 }
 
-/** Social/community links rendered in the Connect section. */
+/** External community platform links. */
 const socialLinks = [
   { label: 'Telegram', href: 'https://t.me/s/Nothing_Archive', icon: <FaTelegramPlane size={24} /> },
   { label: 'Community', href: 'https://nothing.community', icon: <TbMessageCircle size={24} /> },
@@ -127,8 +126,8 @@ const socialLinks = [
    ============================================================ */
 
 /**
- * Hero section — site title, tagline, dual CTA buttons, and logo.
- * Includes a glyph-inspired dot grid background for visual depth.
+ * Primary landing page hero.
+ * Renders the brand identity, primary call-to-actions, and a dynamic glyph-pattern background.
  */
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -177,8 +176,8 @@ function HomepageHeader() {
 }
 
 /**
- * Individual feature card with icon, title, and description.
- * Entire card is wrapped in a link for full-surface click target.
+ * Interactive feature card component.
+ * Wraps the entire surface in a navigation link for an expanded click target area.
  */
 function Feature({ title, description, link, icon }: FeatureItem) {
   return (
@@ -195,7 +194,7 @@ function Feature({ title, description, link, icon }: FeatureItem) {
 }
 
 /**
- * Resource cards grid — 4-column layout on desktop (4+4 = 8 cards).
+ * Responsive grid container for resource feature cards.
  */
 function HomepageFeatures() {
   const featureList = getFeatureList();
@@ -216,9 +215,8 @@ function HomepageFeatures() {
 }
 
 /**
- * Community section — combines contributors display and GitHub star CTA.
- * Merges the previously separate "Support" and "Contributors" sections
- * into a single cohesive block to reduce vertical fragmentation.
+ * Community engagement section.
+ * Aggregates contributor avatars and GitHub repository support calls to action.
  */
 function HomepageCommunity() {
   return (
@@ -228,7 +226,7 @@ function HomepageCommunity() {
           <Translate id="homepage.section.community">Community</Translate>
         </Heading>
 
-        {/* Contributor avatars */}
+        {/* Dynamic contributor graph sourced from contrib.rocks */}
         <div className={styles.contributorGrid}>
           <a
             href="https://github.com/spike0en/nothing_archive/graphs/contributors"
@@ -247,7 +245,7 @@ function HomepageCommunity() {
           </a>
         </div>
 
-        {/* Star CTA */}
+        {/* Repository support action */}
         <div className={styles.supportText}>
           <p>
             <Translate id="homepage.community.starText">
@@ -274,7 +272,8 @@ function HomepageCommunity() {
 }
 
 /**
- * Social links section — icon buttons linking to community platforms.
+ * Social connectivity footer.
+ * Renders a flexible grid of outbound links to external platforms.
  */
 function HomepageSocials() {
   return (
@@ -307,8 +306,8 @@ function HomepageSocials() {
    ============================================================ */
 
 /**
- * Main homepage entry point.
- * Section order: Hero → Resources → Community → Social Links
+ * Homepage route component.
+ * Composes the layout wrapper and primary landing sections sequentially.
  */
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();

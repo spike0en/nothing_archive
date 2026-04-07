@@ -1,8 +1,11 @@
 {
-  // This file is not used in compilation. It is here just for a nice editor experience.
+  // Restricts compiler to type-checking for IDE intellisense; Docusaurus handles active compilation.
   "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
     "baseUrl": "."
   },
-  "exclude": [".docusaurus", "build"]
+  "exclude": [
+    ".docusaurus",
+    "build"
+  ]
 }
