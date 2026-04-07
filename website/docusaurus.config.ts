@@ -176,28 +176,6 @@ const config: Config = {
         href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap',
       },
     },
-    // SEO: JSON-LD structured data for rich snippets
-    {
-      tagName: 'script',
-      attributes: { type: 'application/ld+json' },
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'WebSite',
-        name: 'Nothing Archive',
-        alternateName: ['Nothing OS Firmware'],
-        url: 'https://spike0en.github.io/nothing_archive/',
-        description: 'A curated list of everything related to the Nothing ecosystem — firmware, guides, apps, and community resources.',
-        publisher: {
-          '@type': 'Organization',
-          name: 'Nothing Archive',
-          url: 'https://spike0en.github.io/nothing_archive/',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://spike0en.github.io/nothing_archive/img/logo.webp'
-          }
-        },
-      }),
-    },
   ],
 
   themeConfig: {
@@ -205,17 +183,12 @@ const config: Config = {
     metadata: [
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'Nothing Archive' },
-      { property: 'og:title', content: 'Nothing Archive — Nothing OS Firmware & Community Resources' },
-      { property: 'og:description', content: 'A curated hub for everything related to the Nothing ecosystem — firmware, guides, apps, and community resources.' },
-      { property: 'og:url', content: 'https://spike0en.github.io/nothing_archive/' },
       { property: 'og:image', content: 'https://spike0en.github.io/nothing_archive/img/banner.png' },
       { property: 'og:image:width', content: '2160' },
       { property: 'og:image:height', content: '1080' },
       { property: 'og:image:type', content: 'image/png' },
       { property: 'og:image:alt', content: 'Nothing Archive — Nothing OS Firmware & Community Resources' },
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'Nothing Archive — Nothing OS Firmware & Community Resources' },
-      { name: 'twitter:description', content: 'A curated hub for everything related to the Nothing ecosystem — firmware, guides, apps, and community resources.' },
       { name: 'twitter:image', content: 'https://spike0en.github.io/nothing_archive/img/banner.png' },
     ],
     colorMode: {
