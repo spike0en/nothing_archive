@@ -72,6 +72,7 @@ Nothingスタイルの壁紙を作成するためのユーティリティ。
 
 | プロジェクト | 開発者 | 説明 |
 |---------|-----------|-------------|
+| [Atmosphere](https://atmospherewallpaper.com) | Mxtechz | 高精細な「Glass & Light」壁紙を生成・ダウンロード。 | 
 | [Nothing Glass](https://github.com/Vauth/nothing-glass) | Vauth | ガラスエフェクト壁紙ジェネレーター |
 | [Wallpaper Studio Pro](https://wallpaperstudiopro.netlify.app/) | Ifham9 | AI壁紙ジェネレーター |
 

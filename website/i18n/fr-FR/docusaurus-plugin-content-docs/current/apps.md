@@ -112,6 +112,7 @@ Widgets personnalisés pour l'écran d'accueil, allant des moniteurs système au
 |-----|-----------|-------------|
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Widgets minimaux |
 | [Essential Widgets](https://github.com/Essential-Dots/Essential-Widgets) | Apheff | Widgets personnalisés créés par la communauté |
+| [n0w](https://github.com/codewec/n0w) | codewec | Application de widget de calendrier. |
 | [Quick Contacts](https://play.google.com/store/apps/details?id=com.nihilapplications.quickcontactlist) | Martin Diermayr | Créer et placer des widgets de contacts sur l'écran d'accueil. |
 | [RTMON](https://github.com/n1th1n-19/RTMON) | n1th1n-19 | Widget de surveillance système en temps réel |
 | [Widgets Pro](https://play.google.com/store/apps/details?id=com.tpk.widgetspro) | Preethamkmr3 | Widgets supplémentaires |
@@ -160,7 +161,9 @@ Fonds d'écran dynamiques et améliorations visuelles pour sublimer l'apparence 
 | [Calories Are Nothing](https://play.google.com/store/apps/details?id=can.wearemobilefirst.com) | WeAreMobileFirst | Application de suivi alimentaire |
 | [CMF Custom Volume Controller](https://github.com/alirezafarghadani999/CMF_CustomVolumeControl) | AlirezaFarghadani | Contrôleur de volume personnalisé pour CMF |
 | [Compass](https://github.com/Earendel-lab/Compass) | Earendel | Boussole simple |
+| [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Copie « vibe coded » de l'application Essential Space de Nothing. |
 | [Currency](https://curency.pages.dev/) | Earendel | Application web de conversion de devises |
+| [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Application de calculatrice avec des polices à matrice de points. |
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | Utilisez des wearables Bluetooth sans applications OEM ni compte cloud |
 | [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | Inspiré par le jeu Dino |
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Application de lampe torche avec widgets |

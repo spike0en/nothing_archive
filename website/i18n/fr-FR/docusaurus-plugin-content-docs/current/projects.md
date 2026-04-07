@@ -72,6 +72,7 @@ Utilitaires pour créer et générer des fonds d'écran style Nothing.
 
 | Projet | Développeur | Description |
 |---------|-----------|-------------|
+| [Atmosphere](https://atmospherewallpaper.com) | Mxtechz | Générez et téléchargez des fonds d'écran "glass & light" en haute fidélité. | 
 | [Nothing Glass](https://github.com/Vauth/nothing-glass) | Vauth | Créateur de fonds d'écran à effet de verre Nothing OS |
 | [Wallpaper Studio Pro](https://wallpaperstudiopro.netlify.app/) | Ifham9 | Générateur de fonds d'écran par IA |
 

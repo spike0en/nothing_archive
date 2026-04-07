@@ -112,6 +112,7 @@ Sistem monitörlerinden minimal araçlara kadar ana ekran için özel widget'lar
 |-----|-----------|-------------|
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Minimal widget'lar |
 | [Essential Widgets](https://github.com/Essential-Dots/Essential-Widgets) | Apheff | Topluluk tarafından oluşturulmuş özel widget'lar |
+| [n0w](https://github.com/codewec/n0w) | codewec | Takvim widget'ı uygulaması. |
 | [Quick Contacts](https://play.google.com/store/apps/details?id=com.nihilapplications.quickcontactlist) | Martin Diermayr | Ana ekranda kişi widget'ları oluşturun ve ayarlayın. |
 | [RTMON](https://github.com/n1th1n-19/RTMON) | n1th1n-19 | Gerçek zamanlı sistem izleme widget'ı |
 | [Widgets Pro](https://play.google.com/store/apps/details?id=com.tpk.widgetspro) | Preethamkmr3 | Ek widget'lar |
@@ -160,7 +161,9 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 | [Calories Are Nothing](https://play.google.com/store/apps/details?id=can.wearemobilefirst.com) | WeAreMobileFirst | Yemek takibi uygulaması |
 | [CMF Custom Volume Controller](https://github.com/alirezafarghadani999/CMF_CustomVolumeControl) | AlirezaFarghadani | CMF için özel ses kontrolcüsü |
 | [Compass](https://github.com/Earendel-lab/Compass) | Earendel | Basit pusula |
+| [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Nothing'in Essential Space uygulamasının "vibe coded" kopyası. |
 | [Currency](https://curency.pages.dev/) | Earendel | Birim dönüştürücü web uygulaması |
+| [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Nokta matrisli yazı tiplerine sahip hesap makinesi uygulaması. |
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | OEM uygulamaları veya bulut hesabı olmadan giyilebilir cihazları kullanın |
 | [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | Dino oyunundan esinlenildi |
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Widget destekli el feneri uygulaması |

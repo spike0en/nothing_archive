@@ -72,6 +72,7 @@ Nothing tarzı duvar kağıtları oluşturmak için yardımcı araçlar.
 
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
+| [Atmosphere](https://atmospherewallpaper.com) | Mxtechz | Yüksek kaliteli cam ve ışık duvar kağıtları oluşturun ve indirin. | 
 | [Nothing Glass](https://github.com/Vauth/nothing-glass) | Vauth | Nothing OS cam efektli duvar kağıdı oluşturucu |
 | [Wallpaper Studio Pro](https://wallpaperstudiopro.netlify.app/) | Ifham9 | Yapay zeka duvar kağıdı oluşturucu |
 

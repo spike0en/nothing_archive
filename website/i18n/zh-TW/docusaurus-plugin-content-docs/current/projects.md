@@ -72,6 +72,7 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
+| [Atmosphere](https://atmospherewallpaper.com) | Mxtechz | 生成並下載高品質的「Glass & Light」風格桌布。 | 
 | [Nothing Glass](https://github.com/Vauth/nothing-glass) | Vauth | Nothing OS 玻璃效果桌布生成工具 |
 | [Wallpaper Studio Pro](https://wallpaperstudiopro.netlify.app/) | Ifham9 | AI 桌布生成器 |
 

@@ -72,6 +72,7 @@ Utilities for creating and generating Nothing-style wallpapers.
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
+| [Atmosphere](https://atmospherewallpaper.com) | Mxtechz | Generate and download high-fidelity glass & light wallpapers | 
 | [Nothing Glass](https://github.com/Vauth/nothing-glass) | Vauth | Nothing OS glass effect wallpaper creator |
 | [Wallpaper Studio Pro](https://wallpaperstudiopro.netlify.app/) | Ifham9 | AI wallpaper generator |
 

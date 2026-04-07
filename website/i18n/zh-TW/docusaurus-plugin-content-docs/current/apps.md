@@ -110,6 +110,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | 應用程式 | 開發者 | 說明 |
 |---------|--------|------|
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | 簡約小工具 |
+| [n0w](https://github.com/codewec/n0w) | codewec | 行事曆小工具應用程式。 |
 | [Quick Contacts](https://play.google.com/store/apps/details?id=com.nihilapplications.quickcontactlist) | Martin Diermayr | 在主畫面上建立並設定聯絡人小工具。 |
 | [RTMON](https://github.com/n1th1n-19/RTMON) | n1th1n-19 | 即時系統監控小工具 |
 | [Widgets Pro](https://play.google.com/store/apps/details?id=com.tpk.widgetspro) | Preethamkmr3 | 額外小工具 |
@@ -156,7 +157,9 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Calories Are Nothing](https://play.google.com/store/apps/details?id=can.wearemobilefirst.com) | WeAreMobileFirst | 餐點記錄應用程式 |
 | [CMF Custom Volume Controller](https://github.com/alirezafarghadani999/CMF_CustomVolumeControl) | AlirezaFarghadani | CMF 自訂音量控制器 |
 | [Compass](https://github.com/Earendel-lab/Compass) | Earendel | 簡易指南針 |
+| [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Nothing 的 Essential Space 應用程式的「Vibe coded」版本。 |
 | [Currency](https://curency.pages.dev/) | Earendel | 貨幣換算網頁應用程式 |
+| [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | 採用點陣字體的計算機應用程式。 |
 | [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | 恐龍遊戲靈感作品 |
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | 附小工具的手電筒應用程式 |
 | [Hey Battery](https://github.com/ghostyapps/HeyBattery) | Candan | 電池使用追蹤器 |

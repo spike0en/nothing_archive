@@ -112,6 +112,7 @@ Custom widgets for the home screen, from system monitors to minimalist tools.
 |-----|-----------|-------------|
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Minimal widgets |
 | [Essential Widgets](https://github.com/Essential-Dots/Essential-Widgets) | Apheff | Personalized widgets made by the community | 
+| [n0w](https://github.com/codewec/n0w) | codewec | Calendar widget app |
 | [Quick Contacts](https://play.google.com/store/apps/details?id=com.nihilapplications.quickcontactlist) | Martin Diermayr | Create and set contacts widgets on the homescreen |
 | [RTMON](https://github.com/n1th1n-19/RTMON) | n1th1n-19 | Real-time system monitoring widget |
 | [Widgets Pro](https://play.google.com/store/apps/details?id=com.tpk.widgetspro) | Preethamkmr3 | Additional widgets |
@@ -160,7 +161,9 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Calories Are Nothing](https://play.google.com/store/apps/details?id=can.wearemobilefirst.com) | WeAreMobileFirst | Meal logging app |
 | [CMF Custom Volume Controller](https://github.com/alirezafarghadani999/CMF_CustomVolumeControl) | AlirezaFarghadani | Custom volume controller for CMF |
 | [Compass](https://github.com/Earendel-lab/Compass) | Earendel | Simple compass |
+| [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Vibe coded copy of Nothing's essential space app |
 | [Currency](https://curency.pages.dev/) | Earendel | Currency converter web app |
+| [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Calculator app with dot matrix fonts | 
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | Use Bluetooth wearables without OEM apps, accounts, or cloud |
 | [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | Dino game inspired |
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Flashlight app with widgets |
