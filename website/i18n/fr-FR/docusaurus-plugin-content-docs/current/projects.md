@@ -117,6 +117,7 @@ Ressources essentielles incluant des wikis, des archives de firmware et des outi
 
 | Projet | Développeur | Description |
 |---------|-----------|-------------|
+| [CMF Wiki](https://www.reddit.com/r/CMFTech/wiki/index/) | guidomelvin | Wiki de r/CMFTech |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | PoC de contournement du test d'intégrité pour Phone (2a) et CMF Phone (1) |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macros Macrodroid |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Hub de sources officielles pour le firmware Nothing et CMF, applications, ressources et développement tiers.([Dépôt](https://github.com/spike0en/nothing_archive)) |

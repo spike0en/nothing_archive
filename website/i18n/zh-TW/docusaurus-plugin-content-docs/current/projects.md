@@ -117,6 +117,7 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
+| [CMF Wiki](https://www.reddit.com/r/CMFTech/wiki/index/) | guidomelvin | r/CMFTech 維基 |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | 用於 Phone (2a) 與 CMF Phone (1) 的完整性檢查繞過 PoC |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid 巨集 |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | 整合官方 Nothing 與 CMF 韌體、社群應用、專案與資源的精選平台。（[Repo](https://github.com/spike0en/nothing_archive)） |
