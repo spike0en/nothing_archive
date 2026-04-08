@@ -39,6 +39,7 @@ AI 生成的高度個人化迷你應用程式，延伸 Nothing OS 生態系。
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | 進階 Glyph 控制、迷你遊戲、音效組合。支援 Phone (3) |
 | [Morse Glyphs](https://github.com/roxe12345/MorseGlyphs) | roxe12345 | 以 Glyph 燈光顯示摩斯密碼 |
 | [Nothing Glyph Gyroscope](https://github.com/gawdam/nothingGyro) | gawdam | 使用加速度計和陀螺儀的氣泡水平儀 |
+| [Nothing Phone Battery Notification](https://github.com/f3bruary/nothing-phone-battery-notification) | f3bruary | Phone (4a) 專用的紅色 Glyph LED 電池通知工具，支援自定義低電量指示模式 |
 | [Simone](https://play.google.com/store/apps/details?id=com.lisra.simone) | RapidZapper | 整合 Glyph 介面的經典記憶遊戲 |
 
 ---

@@ -40,6 +40,7 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Advanced Glyph controls, mini-games, compositions. Supports Phone (3) |
 | [Morse Glyphs](https://github.com/roxe12345/MorseGlyphs) | roxe12345 | Morse code displayed in glyph lights |
 | [Nothing Glyph Gyroscope](https://github.com/gawdam/nothingGyro) | gawdam | Bubble level using accelerometer and gyroscope |
+| [Nothing Phone Battery Notification](https://github.com/f3bruary/nothing-phone-battery-notification) | f3bruary | Red Glyph LED notifier with customizable low battery patterns for Phone (4a) |
 | [Simone](https://play.google.com/store/apps/details?id=com.lisra.simone) | RapidZapper | Classic memory game with Glyph interface |
 
 ---

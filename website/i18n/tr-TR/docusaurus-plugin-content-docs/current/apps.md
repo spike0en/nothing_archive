@@ -40,6 +40,7 @@ Nothing telefonlarının Glyph arayüzüyle entegre olan uygulamalar.
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Gelişmiş Glyph kontrolleri, mini oyunlar, kompozisyonlar. Phone (3) destekler |
 | [Morse Glyphs](https://github.com/roxe12345/MorseGlyphs) | roxe12345 | Glyph ışıkları aracılığıyla Mors alfabesi |
 | [Nothing Glyph Gyroscope](https://github.com/gawdam/nothingGyro) | gawdam | Akselerometre ve jiroskop kullanan su terazisi |
+| [Nothing Phone Battery Notification](https://github.com/f3bruary/nothing-phone-battery-notification) | f3bruary | Phone (4a) için özelleştirilebilir düşük pil desenlerine sahip kırmızı Glyph LED bildirim aracı |
 | [Simone](https://play.google.com/store/apps/details?id=com.lisra.simone) | RapidZapper | Glyph arayüzü ile klasik hafıza oyunu |
 
 ---
