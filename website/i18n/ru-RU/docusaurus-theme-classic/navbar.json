@@ -1,0 +1,22 @@
+{
+  "title": {
+    "message": "Архив Nothing",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Логотип архива Nothing",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Home": {
+    "message": "Главная",
+    "description": "Navbar item with label Home"
+  },
+  "item.label.Docs": {
+    "message": "Документация",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}
