@@ -198,6 +198,7 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 | [Open Calc](https://github.com/drrnb/OpenCalc/releases/tag/v3.0.0-beta4-nothing) | drrnb | Temalı hesap makinesi |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Phone (3) için kayıt ışığı kontrolü |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Cihaz bilgisi aracı |
+| [Sound Stream Now](https://play.google.com/store/apps/details?id=go.ssn) | Moworks | Glyph Matrisini destekleyen müzik çalar |
 | [The Everything Key](https://play.google.com/store/apps/details?id=com.spandone.everythingkey) | spandone | Essential tuşu remappar |
 | [Void](https://play.google.com/store/apps/details?id=com.thevoid.focus) | vmcreate | Nothing OS tasarım diline dayalı minimal uygulama engelleyici |
 | [Voidcaller](https://play.google.com/store/apps/details?id=com.voidware.voidcaller) | VoidwareLabs | Minimalist arayıcı |

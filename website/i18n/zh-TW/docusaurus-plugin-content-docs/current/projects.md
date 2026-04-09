@@ -90,7 +90,8 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | [Dotify Client](https://github.com/PATEL96/dotify-client) | PATEL96 | 點陣圖影像生成工具 |
 | [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | 適用於 Phone (3) 的像素藝術編輯器 |
 | [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | 將圖片轉換為 Glyph 圖樣 |
-| [Matrices](https://udaign.github.io/matrices/) | Uday | Glyph Matrix 設計工具 |
+| [Matrices](https://udaign.github.io/matrices/) | Uday | Glyph Matrix 設計工具 ([Repo](https://github.com/udaign/matrices)) |
+| [Vizmatrices](https://udaign.github.io/vizmatrices/) | udaign | 即時音訊反應視覺化工具 ([Repo](https://github.com/udaign/vizmatrices)) |
 
 ---
 
@@ -118,6 +119,7 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | Project | Developer | Description |
 |---------|-----------|-------------|
 | [CMF Wiki](https://www.reddit.com/r/CMFTech/wiki/index/) | guidomelvin | r/CMFTech 維基 |
+| [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | 基於 Rust 的 Linux 應用程式，用於控制 Nothing 耳機的 ANC 模式 |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | 用於 Phone (2a) 與 CMF Phone (1) 的完整性檢查繞過 PoC |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid 巨集 |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | 整合官方 Nothing 與 CMF 韌體、社群應用、專案與資源的精選平台。（[Repo](https://github.com/spike0en/nothing_archive)） |

@@ -90,7 +90,8 @@ Diğer geliştiricilerin Nothing'den ilham alan projeler oluşturmasına yardım
 | [Dotify Client](https://github.com/PATEL96/dotify-client) | PATEL96 | Nokta matrisi imaj oluşturucu |
 | [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Phone (3) için pixel art düzenleyici |
 | [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | İmajdan Glyph desenine dönüştürücü |
-| [Matrices](https://udaign.github.io/matrices/) | Uday | Glyph matris tasarım aracı |
+| [Matrices](https://udaign.github.io/matrices/) | Uday | Glyph matris tasarım aracı ([Depo](https://github.com/udaign/matrices)) |
+| [Vizmatrices](https://udaign.github.io/vizmatrices/) | udaign | Gerçek zamanlı sese duyarlı görselleştirici ([Depo](https://github.com/udaign/vizmatrices)) |
 
 ---
 
@@ -118,6 +119,7 @@ Vikiler, donanım yazılımı arşivleri ve sistem onarım araçları dahil teme
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
 | [CMF Wiki](https://www.reddit.com/r/CMFTech/wiki/index/) | guidomelvin | r/CMFTech wikisi |
+| [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Nothing kulaklıkların ANC modlarını kontrol etmek için Rust tabanlı Linux uygulaması |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | Phone (2a) ve CMF Phone (1) için Integrity Bypass PoC |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid macroları |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Resmi Nothing ve CMF donanım yazılımları, uygulamalar ve kaynaklar için kaynak merkezi. ([Depo](https://github.com/spike0en/nothing_archive)) |

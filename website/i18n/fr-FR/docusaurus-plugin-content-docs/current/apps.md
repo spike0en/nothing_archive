@@ -198,6 +198,7 @@ Fonds d'écran dynamiques et améliorations visuelles pour sublimer l'apparence 
 | [Open Calc](https://github.com/drrnb/OpenCalc/releases/tag/v3.0.0-beta4-nothing) | drrnb | Calculatrice à thème |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Contrôle de la lumière d'enregistrement pour le Phone (3) |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Outil d'informations sur l'appareil |
+| [Sound Stream Now](https://play.google.com/store/apps/details?id=go.ssn) | Moworks | Lecteur de musique prenant en charge la matrice Glyph |
 | [The Everything Key](https://play.google.com/store/apps/details?id=com.spandone.everythingkey) | spandone | Remappeur de touche essentiel |
 | [Void](https://play.google.com/store/apps/details?id=com.thevoid.focus) | vmcreate | Bloqueur d'applications minimaliste basé sur le langage de design de Nothing OS |
 | [Voidcaller](https://play.google.com/store/apps/details?id=com.voidware.voidcaller) | VoidwareLabs | Numéroteur minimaliste |

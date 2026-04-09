@@ -90,7 +90,8 @@ Ressources et outils conçus pour aider d'autres développeurs à créer des pro
 | [Dotify Client](https://github.com/PATEL96/dotify-client) | PATEL96 | Générateur d'images en matrice de points |
 | [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Éditeur de pixel art pour Phone (3) |
 | [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | Convertisseur d'image en motif glyph |
-| [Matrices](https://udaign.github.io/matrices/) | Uday | Outil de conception de matrice Glyph |
+| [Matrices](https://udaign.github.io/matrices/) | Uday | Outil de conception de matrice Glyph ([Dépôt](https://github.com/udaign/matrices)) |
+| [Vizmatrices](https://udaign.github.io/vizmatrices/) | udaign | Visualiseur audio réactif en temps réel ([Dépôt](https://github.com/udaign/vizmatrices)) |
 
 ---
 
@@ -118,6 +119,7 @@ Ressources essentielles incluant des wikis, des archives de firmware et des outi
 | Projet | Développeur | Description |
 |---------|-----------|-------------|
 | [CMF Wiki](https://www.reddit.com/r/CMFTech/wiki/index/) | guidomelvin | Wiki de r/CMFTech |
+| [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Application Linux en Rust pour contrôler les modes ANC des écouteurs Nothing |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | PoC de contournement du test d'intégrité pour Phone (2a) et CMF Phone (1) |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macros Macrodroid |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Hub de sources officielles pour le firmware Nothing et CMF, applications, ressources et développement tiers.([Dépôt](https://github.com/spike0en/nothing_archive)) |

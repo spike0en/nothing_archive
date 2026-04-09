@@ -90,7 +90,8 @@ Assets and tools designed to help other developers build Nothing-inspired projec
 | [Dotify Client](https://github.com/PATEL96/dotify-client) | PATEL96 | Dot Matrix image generator |
 | [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Pixel art editor for Phone (3) |
 | [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | Image to glyph pattern converter |
-| [Matrices](https://udaign.github.io/matrices/) | Uday | Glyph Matrix design tool |
+| [Matrices](https://udaign.github.io/matrices/) | Uday | Glyph Matrix design tool ([Repo](https://github.com/udaign/matrices)) |
+| [Vizmatrices](https://udaign.github.io/vizmatrices/) | udaign | Real time audio reactive visualizer ([Repo](https://github.com/udaign/vizmatrices)) |
 
 ---
 
@@ -118,6 +119,7 @@ Essential resources including wikis, firmware archives, and system repair tools.
 | Project | Developer | Description |
 |---------|-----------|-------------|
 | [CMF Wiki](https://www.reddit.com/r/CMFTech/wiki/index/) | guidomelvin | r/CMFTech Wiki |
+| [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Rust based linux app to control Nothing earbuds’ ANC modes |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | Integrity check bypass PoC for Phone (2a) & CMF Phone (1) |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid macros |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Curated hub for official Nothing & CMF firmware, community apps, projects, resources and aftermarket development.([Repo](https://github.com/spike0en/nothing_archive)) |

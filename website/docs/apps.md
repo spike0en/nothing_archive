@@ -198,6 +198,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Open Calc](https://github.com/drrnb/OpenCalc/releases/tag/v3.0.0-beta4-nothing) | drrnb | Themed calculator |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Recording light control for Phone (3) |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Device insights tool |
+| [Sound Stream Now](https://play.google.com/store/apps/details?id=go.ssn) | Moworks | Music player supporting the Glyph Matrix |
 | [The Everything Key](https://play.google.com/store/apps/details?id=com.spandone.everythingkey) | spandone | Essential key remapper |
 | [Void](https://play.google.com/store/apps/details?id=com.thevoid.focus) | vmcreate | Minimal app blocker based on Nothing OS design language |
 | [Voidcaller](https://play.google.com/store/apps/details?id=com.voidware.voidcaller) | VoidwareLabs | Minimalist dialer |
