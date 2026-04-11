@@ -112,6 +112,7 @@ Sistem monitörlerinden minimal araçlara kadar ana ekran için özel widget'lar
 
 | Uygulama | Geliştirici | Açıklama |
 |-----|-----------|-------------|
+| [Dot Widgets](https://play.google.com/store/apps/details?id=com.lended.widjets) | Creepsmile | Nothing'in nokta matrisinden ilham alan günlük araçlar |
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Minimal widget'lar |
 | [Essential Widgets](https://github.com/Essential-Dots/Essential-Widgets) | Apheff | Topluluk tarafından oluşturulmuş özel widget'lar |
 | [n0w](https://github.com/codewec/n0w) | codewec | Takvim widget'ı uygulaması. |

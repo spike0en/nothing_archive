@@ -112,6 +112,7 @@ Custom widgets for the home screen, from system monitors to minimalist tools.
 
 | App | Developer | Description |
 |-----|-----------|-------------|
+| [Dot Widgets](https://play.google.com/store/apps/details?id=com.lended.widjets) | Creepsmile | Nothing-inspired dot-matrix everyday tools |
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Minimal widgets |
 | [Essential Widgets](https://github.com/Essential-Dots/Essential-Widgets) | Apheff | Personalized widgets made by the community | 
 | [n0w](https://github.com/codewec/n0w) | codewec | Calendar widget app |

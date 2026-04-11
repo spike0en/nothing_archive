@@ -112,6 +112,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 
 | Приложение | Разработчик | Описание |
 |-----|-----------|-------------|
+| [Dot Widgets](https://play.google.com/store/apps/details?id=com.lended.widjets) | Creepsmile | Инструменты на каждый день, вдохновленные матричным дизайном Nothing |
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Минималистичные виджеты |
 | [Essential Widgets](https://github.com/Essential-Dots/Essential-Widgets) | Apheff | Персонализированные виджеты, созданные сообществом | 
 | [n0w](https://github.com/codewec/n0w) | codewec | Приложение-виджет календаря |

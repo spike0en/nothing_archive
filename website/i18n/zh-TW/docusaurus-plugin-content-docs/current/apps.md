@@ -111,6 +111,7 @@ Glyph Matrix 的互動玩具和遊戲。
 
 | 應用程式 | 開發者 | 說明 |
 |---------|--------|------|
+| [Dot Widgets](https://play.google.com/store/apps/details?id=com.lended.widjets) | Creepsmile | Nothing 點陣風格啟發的日常工具 |
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | 簡約小工具 |
 | [n0w](https://github.com/codewec/n0w) | codewec | 行事曆小工具應用程式。 |
 | [Quick Contacts](https://play.google.com/store/apps/details?id=com.nihilapplications.quickcontactlist) | Martin Diermayr | 在主畫面上建立並設定聯絡人小工具。 |
