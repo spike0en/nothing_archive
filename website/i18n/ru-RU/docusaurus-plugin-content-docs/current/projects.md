@@ -151,7 +151,8 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 | Модуль | Разработчик | Описание |
 |--------|--------|-------------|
 | [Nothing AI Changer](https://github.com/Martmists-GH/Nothing-AI-Changer) | Martmists-GH | Замена интеграции ChatGPT другим приложением |
-| [Nothing OS Aura Killer](https://github.com/reindex-ot/NOS_AuraKiller/) | reindex-ot | Отключение сервисов Aura в NOS 4.0 |
 | [Nothing Battery Fix](https://github.com/Farpathan/Nothing-Battery-Fix) | Farpathan | Восстановление классического стиля процента заряда батареи |
+| [Nothing eUICC](https://github.com/reindex-ot/nothing-euicc) | reindex-ot | Принудительное включение функций eSIM на устройствах Nothing, которые их не поддерживают |
+| [Nothing OS Aura Killer](https://github.com/reindex-ot/NOS_AuraKiller/) | reindex-ot | Отключение сервисов Aura в NOS 4.0 |
 | [Nothing Phone Patch](https://github.com/reindex-ot/magisk-module-nothing) | reindex-ot | Твики и улучшения системы |
 | [Nothing Xpert](https://github.com/Rares6567/NothingXpert/) | Rares6567 | Модуль LSPosed с дополнительными функциями |

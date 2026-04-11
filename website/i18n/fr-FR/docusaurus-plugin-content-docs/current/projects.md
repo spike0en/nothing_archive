@@ -151,7 +151,8 @@ Ceux-ci nécessitent un accès root (KernelSU ou Magisk). Procédez avec prudenc
 | Module | Auteur | Description |
 |--------|--------|-------------|
 | [Nothing AI Changer](https://github.com/Martmists-GH/Nothing-AI-Changer) | Martmists-GH | Remplace l'intégration ChatGPT par une autre application |
-| [Nothing OS Aura Killer](https://github.com/reindex-ot/NOS_AuraKiller/) | reindex-ot | Supprime les services Aura sur NOS 4.0 |
 | [Nothing Battery Fix](https://github.com/Farpathan/Nothing-Battery-Fix) | Farpathan | Restaure le style classique du pourcentage de batterie |
+| [Nothing eUICC](https://github.com/reindex-ot/nothing-euicc) | reindex-ot | Active de force les fonctionnalités eSIM sur les appareils Nothing qui ne les prennent pas en charge |
+| [Nothing OS Aura Killer](https://github.com/reindex-ot/NOS_AuraKiller/) | reindex-ot | Supprime les services Aura sur NOS 4.0 |
 | [Nothing Phone Patch](https://github.com/reindex-ot/magisk-module-nothing) | reindex-ot | Tweaks et améliorations système |
 | [Nothing Xpert](https://github.com/Rares6567/NothingXpert/) | Rares6567 | Module LSPosed avec fonctionnalités supplémentaires |

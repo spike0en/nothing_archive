@@ -151,7 +151,8 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | Module | Author | Description |
 |--------|--------|-------------|
 | [Nothing AI Changer](https://github.com/Martmists-GH/Nothing-AI-Changer) | Martmists-GH | 將 ChatGPT 整合替換為其他應用程式 |
-| [Nothing OS Aura Killer](https://github.com/reindex-ot/NOS_AuraKiller/) | reindex-ot | 在 NOS 4.0 上移除 Aura 服務 |
 | [Nothing Battery Fix](https://github.com/Farpathan/Nothing-Battery-Fix) | Farpathan | 還原經典電池百分比樣式 |
+| [Nothing eUICC](https://github.com/reindex-ot/nothing-euicc) | reindex-ot | 在不支援的 Nothing 裝置上強制啟用 eSIM 功能 |
+| [Nothing OS Aura Killer](https://github.com/reindex-ot/NOS_AuraKiller/) | reindex-ot | 在 NOS 4.0 上移除 Aura 服務 |
 | [Nothing Phone Patch](https://github.com/reindex-ot/magisk-module-nothing) | reindex-ot | 系統調整與強化 |
 | [Nothing Xpert](https://github.com/Rares6567/NothingXpert/) | Rares6567 | 具備額外功能的 LSPosed 模組 |
