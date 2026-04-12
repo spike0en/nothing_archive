@@ -23,6 +23,7 @@ Une collection d'outils pour créer des tonalités et des compositions Glyph per
 | [Glyph Utils](https://github.com/pgsk33/Glyph-Utils) | pgsk33 | Aide Java pour les animations Glyph Interface basées sur des frames |
 | [Glyph Visualizer](https://github.com/SebiAi/GlyphVisualizer) | SebiAi | Visualiseur de bureau pour les compositions .ogg |
 | [Haptificator](https://github.com/Fr4nKB/Haptificator) | Fr4nKB | Ajoutez des retours haptiques aux compositions du Phone (1) |
+| [Nothing Glyph Composer](https://itssveennn.github.io/Nothing-Glyph-Composer/) | itssveennn | Outil web pour créer des animations Glyph 13x13, préparer l'audio et exporter des fichiers OGG prêts pour les sonneries du Phone (4a) Pro. |
 | [Osu To Glyph](https://github.com/taiixu/osu-to-glyph) | taiixu | Convertissez les beatmaps osu! en sonneries Glyph pour Nothing Phone |
 | [Pyglyph](https://github.com/Snakehater/pyglyph) | Snakehater | Script Python pour la visualisation audio |
 

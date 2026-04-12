@@ -23,6 +23,7 @@ Nothing topluluğu tarafında sürdürülen projeler.
 | [Glyph Utils](https://github.com/pgsk33/Glyph-Utils) | pgsk33 | Frame tabanlı Glyph Arayüzü animasyonları için Java yardımcısı |
 | [Glyph Visualizer](https://github.com/SebiAi/GlyphVisualizer) | SebiAi | .ogg kompozisyonları için masaüstü görselleştirici |
 | [Haptificator](https://github.com/Fr4nKB/Haptificator) | Fr4nKB | Phone (1) kompozisyonlarına dokunsal geri bildirim ekleyin |
+| [Nothing Glyph Composer](https://itssveennn.github.io/Nothing-Glyph-Composer/) | itssveennn | Phone (4a) Pro için 13x13 Glyph animasyonları oluşturmak, ses hazırlamak ve zil sesine hazır OGG dosyalarını dışa aktarmak için web araç kiti. |
 | [Osu To Glyph](https://github.com/taiixu/osu-to-glyph) | taiixu | osu! beatmap'lerini Nothing Phone zil seslerine dönüştürün |
 | [Pyglyph](https://github.com/Snakehater/pyglyph) | Snakehater | Ses görselleştirme için Python betiği |
 

@@ -23,6 +23,7 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 | [Glyph Utils](https://github.com/pgsk33/Glyph-Utils) | pgsk33 | Помощник на Java для покадровой анимации интерфейса Glyph |
 | [Glyph Visualizer](https://github.com/SebiAi/GlyphVisualizer) | SebiAi | Десктопный визуализатор для композиций .ogg |
 | [Haptificator](https://github.com/Fr4nKB/Haptificator) | Fr4nKB | Добавление тактильной отдачи в композиции Phone (1) |
+| [Nothing Glyph Composer](https://itssveennn.github.io/Nothing-Glyph-Composer/) | itssveennn | Веб-инструментарий для создания анимаций Glyph 13x13, подготовки аудио и экспорта файлов OGG, готовых для использования в качестве рингтонов для Phone (4a) Pro. |
 | [Osu To Glyph](https://github.com/taiixu/osu-to-glyph) | taiixu | Конвертация битмапов osu! в рингтоны Glyph для Nothing Phone |
 | [Pyglyph](https://github.com/Snakehater/pyglyph) | Snakehater | Python-скрипт для визуализации аудио |
 

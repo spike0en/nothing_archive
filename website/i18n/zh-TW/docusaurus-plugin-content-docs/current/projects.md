@@ -23,6 +23,7 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | [Glyph Utils](https://github.com/pgsk33/Glyph-Utils) | pgsk33 | 用於基於幀的 Glyph 介面動畫的 Java 輔助工具 |
 | [Glyph Visualizer](https://github.com/SebiAi/GlyphVisualizer) | SebiAi | 用於 .ogg 組合的桌面視覺化工具 |
 | [Haptificator](https://github.com/Fr4nKB/Haptificator) | Fr4nKB | 為 Phone (1) 組合加入觸覺回饋 |
+| [Nothing Glyph Composer](https://itssveennn.github.io/Nothing-Glyph-Composer/) | itssveennn | 專為 Phone (4a) Pro 打造，用於製作 13x13 Glyph 動畫、準備音訊並匯出可用於鈴聲的 OGG 檔案的網頁工具包。 |
 | [Osu To Glyph](https://github.com/taiixu/osu-to-glyph) | taiixu | 將 osu! 節奏圖轉換為 Nothing Phone 的 Glyph 鈴聲 |
 | [Pyglyph](https://github.com/Snakehater/pyglyph) | Snakehater | 用於音訊視覺化的 Python 腳本 |
 
