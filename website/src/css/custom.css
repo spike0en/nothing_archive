@@ -80,7 +80,7 @@
 }
 
 .navbar__logo {
-  height: 28px;
+  display: none !important;
 }
 
 .navbar__title {
