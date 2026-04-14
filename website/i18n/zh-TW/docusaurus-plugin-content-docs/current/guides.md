@@ -19,14 +19,14 @@ keywords: [nothing 解鎖開機載入程式, nothing root, nothing fastboot, not
 
 - 側載增量 OTA 更新 **並非必須** 解鎖開機載入程式 (bootloader)。除非你是 root 用戶，否則請跳過步驟 A。
 - 只要直接從此存檔下載，側載官方增量或完整 OTA 更新都是安全的。
-- 請勿使用第三方來源。Nothing 存檔中的所有韌體均直接源自 Nothing 的官方 OEM 服務器。  
-  這可以透過檢查增量 OTA 部分中的下載 URL 來驗證，這些 URL 指向官方服務器，而非第三方檔案託管商。
-- Nothing OS 內置的離線更新程式僅接受 OEM 簽名的更新包。
+- 請勿使用第三方來源。Nothing 存檔中的所有韌體均直接源自 Nothing 的官方 OEM 伺服器。  
+  這可以透過檢查增量 OTA 部分中的下載 URL 來驗證，這些 URL 指向官方伺服器，而非第三方檔案託管商。
+- Nothing OS 內建的離線更新程式僅接受 OEM 簽名的更新包。
 - 更新程式在安裝前會驗證韌體雜湊值，如果使用了錯誤或不匹配的 OTA zip 檔案，則會失敗。
 - 同樣的驗證也適用於完整 OTA 包；除非其完整性完好無損，否則不會安裝。
 - 由於這些檢查，在鎖定的開機載入程式上側載官方 OTA zip 檔案是不可能導致裝置損壞（brick）的。
 - 對於公開測試版 (Open Beta) 更新，如果撥號器方法無效，請透過 OEM 提供的 `Nothing Beta Updater Hub`（名稱將來可能會更改）進行側載。
-  你可以從「設定」中啟動該介面。當你安裝了 OEM 的測試版更新程式應用（會覆蓋系統內置版本）時，就會出現這種情況。
+  你可以從「設定」中啟動該介面。當你安裝了 OEM 的測試版更新程式應用（會覆蓋系統內建版本）時，就會出現這種情況。
 - 視覺參考請按所列順序查看 [這裡](https://github.com/spike0en/nothing_archive/tree/main/assets/sideloading) 的圖片。
 
 :::
@@ -91,8 +91,8 @@ B. **繼續進行側載**
    - 請務必根據你的裝置和系統版本選擇正確的路徑。
      - 欲了解更多詳情，請參考 [此圖](https://github.com/spike0en/nothing_archive/blob/main/assets/sideloading/3.1_ota_sideload.jpg)。
 
- - **創建 `ota` 資料夾：** 
-   - 在裝置的 **內部儲存空間** 中創建一個名為 `ota` 的資料夾，完整路徑為：  
+ - **建立 `ota` 資料夾：** 
+   - 在裝置的 **內部儲存空間** 中建立一個名為 `ota` 的資料夾，完整路徑為：  
      ```text
      /sdcard/ota/
      ```
@@ -103,7 +103,7 @@ B. **繼續進行側載**
       ```text
       *#*#682#*#*
       ```
-   - 這將啟動內置的離線更新工具。  
+   - 這將啟動內建的離線更新工具。  
    - 介面可能會顯示 `NothingOfflineOtaUpdate` 或 `NOTHING BETA OTA UPDATE` —— 兩者皆可。
 
  - **應用更新：**  
@@ -139,12 +139,12 @@ B. **繼續進行側載**
 | 代碼 | 功能 |
 |------|----------|
 | `*#06#` | 顯示 IMEI 和序列號 |
-| `*#07#` | 顯示 SAR 等級和法規信息 |
+| `*#07#` | 顯示 SAR 等級和法規資訊 |
 | `*#*#569#*#*` | 開啟 Nothing 反饋 / 日誌工具 |
-| `*#*#0#*#*` | 硬件測試選單（螢幕、傳感器、觸摸） |
+| `*#*#0#*#*` | 硬體測試選單（螢幕、感測器、觸摸） |
 | `*#*#9#*#*` | 開啟 Nothing 診斷選單 |
-| `*#*#225#*#*` | 顯示日曆儲存信息 |
-| `*#*#426#*#*` | Google Play / Firebase 診斷信息 |
+| `*#*#225#*#*` | 顯示日曆儲存資訊 |
+| `*#*#426#*#*` | Google Play / Firebase 診斷資訊 |
 | `*#*#4636#*#*` | 測試選單（手機、電池、使用統計、Wi-Fi） |
 | `*#*#682#*#*` | 開啟離線 OTA 更新程式（如果安裝了 Nothing Beta Hub 則無效） |
 
@@ -153,7 +153,7 @@ B. **繼續進行側載**
 
 ## 裝置功能與配件
 
-特定硬件調整和配對指南。
+特定硬體調整和配對指南。
 
 ### 解鎖 Bauhaus 主題
 
@@ -212,7 +212,7 @@ Phone (3) 上 Essential 按鍵重新映射指南：
 ### Gadgetbridge 相關
 
 - [支援的型號和功能](https://gadgetbridge.org/gadgets/wearables/nothing/)
-- [Nothing CMF 服務器配對](https://gadgetbridge.org/basics/pairing/nothing-cmf-server/)
+- [Nothing CMF 伺服器配對](https://gadgetbridge.org/basics/pairing/nothing-cmf-server/)
 
 
 ---
@@ -338,7 +338,7 @@ C. **解鎖後**
 A. **先決條件**
 - **已解鎖開機載入程式** 並 **啟用了 USB 除錯**
 - **配備 ADB & Fastboot 的電腦**  
-  *或* 另一部安裝了 **USB-OTG + ADB 應用程式（例如 [Bugjaeger](https://play.google.com/store/apps/details?id=eu.sisik.hackendebug&hl=en_IN)）** 的Android手機  
+  *或* 另一部安裝了 **USB-OTG + ADB 應用程式（例如 [Bugjaeger](https://play.google.com/store/apps/details?id=eu.sisik.hackendebug&hl=en_IN)）** 的 Android 手機  
   *或* **自訂 recovery（例如 TWRP / OrangeFox / 基於 AOSP 的 recovery）**
 - 對 **ADB / Fastboot** 的基本了解
 - 與你當前版本匹配的 **原廠韌體**（用於提取映像）
@@ -436,9 +436,9 @@ D. **修補映像**
 :::info
 
 - 在解鎖開機載入程式後，在刷入自訂 ROM 或核心 **之前**，備份核心分區（如 `persist`, `modemst1`, `modemst2`, `fsg` 等）至關重要。
-- 這些分區包含重要資料，包括 IMEI、網絡設定和指紋傳感器校準。
-- 如果丟失或損壞，你的裝置可能會 **失去移動網絡連接、指紋識別問題，甚至損壞 (brick)**。
-- 創建備份可確保你在出現問題時可以 **還原裝置**。
+- 這些分區包含重要資料，包括 IMEI、網路設定和指紋感測器校準。
+- 如果丟失或損壞，你的裝置可能會 **失去移動網路連接、指紋識別問題，甚至損壞 (brick)**。
+- 建立備份可確保你在出現問題時可以 **還原裝置**。
 
 :::
 
@@ -463,7 +463,7 @@ B. **備份說明**
     ls -1 /dev/block/bootdevice/by-name | grep -v userdata | grep -v super | \
     while read f; do dd if=/dev/block/bootdevice/by-name/$f of=/sdcard/partitions_backup/${f}.img; done
     ```
-    這將在 **內部儲存空間** 的「partitions_backup」資料夾中創建 **除 `super` 和 `userdata` 以外的所有分區** 的映像檔案。
+    這將在 **內部儲存空間** 的「partitions_backup」資料夾中建立 **除 `super` 和 `userdata` 以外的所有分區** 的映像檔案。
 
   - **[可選]** 如果上述指令失敗，請嘗試此替代方案：
     ```sh
@@ -629,7 +629,7 @@ C. **重新鎖定後**
 
 :::danger 免責聲明
 
-- 以下列出的工具是流傳於網絡上的**官方服務工具**。**使用風險自負。**
+- 以下列出的工具是流傳於網路上的**官方服務工具**。**使用風險自負。**
 - 專案作者與貢獻者對使用這些工具導致的任何意外後果或損害**不承擔任何責任**。
 - 這些工具可能會隨着未來的韌體更新隨時失效。
 - 它們**不適用於**常規的原廠 ROM 刷入。僅在以下**最後手段**的情況下使用：
