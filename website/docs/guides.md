@@ -156,12 +156,42 @@ Dialer codes (USSD) that you can dial to access hidden menus and diagnostics.
 
 Guides for specific hardware tweaks and pairings.
 
-### Phone (2a) SE Hidden Feature
+### Unlocking Bauhaus Theme
 
+The Bauhaus-inspired theme is a special edition feature that can be unlocked across various Nothing phone models.
+
+#### Phone (2a) Special Edition
 - [Unlock Hidden Feature](https://nothing.community/d/11058-hidden-feature-of-phone-2a-special-edition) by RapidZapper
 
+#### Other Nothing Models
 
-<hr />
+**Requirements:**
+- PC with ADB & Fastboot
+- [SetEdit App](https://github.com/MuntashirAkon/SetEdit)
+
+**Steps:**
+
+1. **Enable Developer Options:** Go to `Settings > About phone > Tap "Build number" 7 times`.
+2. **Enable USB Debugging:** Go to `Settings > System > Developer options > Enable USB Debugging`.
+3. **Install SetEdit via ADB:**
+   - Rename the downloaded APK to `SetEdit.apk`.
+   - Run the following command:
+     ```sh
+     adb install --bypass-low-target-sdk-block SetEdit.apk
+     ```
+4. **Unlock the Theme:**
+   - Open SetEdit and grant any requested permissions.
+   - In the **System Table**, look for `theme_bauhaus_enable`.
+   - Set the value to `1` (Set it back to `0` to disable).
+5. **Apply the Theme:**
+   - Go to Nothing Launcher Settings and apply the new theme.
+
+:::warning
+
+- **Do NOT modify any other values in SetEdit!!**
+- Changing random system settings may cause instability or system issues.
+
+:::
 
 ### Essential Key Remapping
 

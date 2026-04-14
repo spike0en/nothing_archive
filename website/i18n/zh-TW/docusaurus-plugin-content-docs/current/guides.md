@@ -155,9 +155,42 @@ B. **繼續進行側載**
 
 特定硬件調整和配對指南。
 
-### Phone (2a) SE 隱藏功能
+### 解鎖 Bauhaus 主題
 
+以 Bauhaus 為靈感的主題是一項特殊版本功能，可以在多款 Nothing 手機型號上解鎖。
+
+#### Phone (2a) Special Edition
 - [解鎖隱藏功能](https://nothing.community/d/11058-hidden-feature-of-phone-2a-special-edition)（由 RapidZapper 提供）
+
+#### 其他 Nothing 型號
+
+**要求：**
+- 配備 ADB & Fastboot 的電腦
+- [SetEdit 應用程序](https://github.com/MuntashirAkon/SetEdit)
+
+**步驟：**
+
+1. **啟用開發者選項：** 前往 `設置 > 關於手機 > 點擊「版本號」7 次`。
+2. **啟用 USB 調試：** 前往 `設置 > 系統 > 開發者選項 > 啟用 USB 調試`。
+3. **通過 ADB 安裝 SetEdit：**
+   - 將下載的 APK 重命名為 `SetEdit.apk`。
+   - 運行以下命令：
+     ```sh
+     adb install --bypass-low-target-sdk-block SetEdit.apk
+     ```
+4. **解鎖主題：**
+   - 打開 SetEdit 並授予所有要求的權限。
+   - 在 **System Table** 中尋找 `theme_bauhaus_enable`。
+   - 將值設置為 `1`（設置回 `0` 即可禁用）。
+5. **應用主題：**
+   - 前往 Nothing Launcher 設置並應用新主題。
+
+:::warning
+
+- **請勿修改 SetEdit 中的任何其他值！！**
+- 隨意更改系統設置可能會導致系統不穩定或出現問題。
+
+:::
 
 
 <hr />

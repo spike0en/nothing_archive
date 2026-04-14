@@ -155,9 +155,42 @@ Gizli menülere ve tanılamalara erişmek için tuşlayabileceğiniz çevirici k
 
 Belirli donanım ince ayarları ve eşleştirmeler için rehberler.
 
-### Phone (2a) SE Gizli Özelliği
+### Bauhaus Temasının Kilidini Açma
 
+Bauhaus'tan ilham alan tema, çeşitli Nothing telefon modellerinde kilidi açılabilen özel bir sürüm özelliğidir.
+
+#### Phone (2a) Special Edition
 - [Gizli Özelliğin Kilidini Aç](https://nothing.community/d/11058-hidden-feature-of-phone-2a-special-edition) - Yazan: RapidZapper
+
+#### Diğer Nothing Modelleri
+
+**Gereksinimler:**
+- ADB ve Fastboot yüklü bir PC
+- [SetEdit Uygulaması](https://github.com/MuntashirAkon/SetEdit)
+
+**Adımlar:**
+
+1. **Geliştirici Seçeneklerini Etkinleştirin:** `Ayarlar > Telefon hakkında > "Yapı numarası"na 7 kez dokunun`.
+2. **USB Hata Ayıklamayı Etkinleştirin:** `Ayarlar > Sistem > Geliştirici seçenekleri > USB Hata Ayıklamayı etkinleştirin`.
+3. **SetEdit'i ADB Üzerinden Yükleyin:**
+   - İndirilen APK dosyasının adını `SetEdit.apk` olarak değiştirin.
+   - Şu komutu çalıştırın:
+     ```sh
+     adb install --bypass-low-target-sdk-block SetEdit.apk
+     ```
+4. **Temanın Kilidini Açın:**
+   - SetEdit'i açın ve istenen tüm izinleri verin.
+   - **Sistem Tablosunda** (System Table), `theme_bauhaus_enable` parametresini bulun.
+   - Değeri `1` olarak ayarlayın (Devre dışı bırakmak için tekrar `0` yapın).
+5. **Temayı Uygulayın:**
+   - Nothing Launcher Ayarlarına gidin ve yeni temayı uygulayın.
+
+:::warning
+
+- **SetEdit'teki diğer hiçbir değeri DEĞİŞTİRMEYİN!!**
+- Rastgele sistem ayarlarını değiştirmek kararsızlığa veya sistem sorunlarına neden olabilir.
+
+:::
 
 
 <hr />

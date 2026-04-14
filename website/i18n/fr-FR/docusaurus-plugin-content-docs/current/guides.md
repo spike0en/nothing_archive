@@ -155,9 +155,42 @@ Codes composeur (USSD) que vous pouvez composer pour accéder aux menus cachés 
 
 Guides pour des modifications matérielles spécifiques et appairages.
 
-### Fonctionnalité cachée du Phone (2a) SE
+### Débloquer le Thème Bauhaus
 
+Le thème inspiré de Bauhaus est une fonctionnalité d'édition spéciale qui peut être débloquée sur plusieurs modèles de téléphones Nothing.
+
+#### Phone (2a) Special Edition
 - [Débloquer la fonctionnalité cachée](https://nothing.community/d/11058-hidden-feature-of-phone-2a-special-edition) par RapidZapper
+
+#### Autres Modèles Nothing
+
+**Prérequis :**
+- Un PC avec ADB & Fastboot
+- [Application SetEdit](https://github.com/MuntashirAkon/SetEdit)
+
+**Étapes :**
+
+1. **Activer les Options pour les développeurs :** Allez dans `Paramètres > À propos du téléphone > Appuyez sur le "Numéro de build" 7 fois`.
+2. **Activer le débogage USB :** Allez dans `Paramètres > Système > Options pour les développeurs > Activez le débogage USB`.
+3. **Installer SetEdit via ADB :**
+   - Renommez l'APK téléchargé en `SetEdit.apk`.
+   - Exécutez la commande suivante :
+     ```sh
+     adb install --bypass-low-target-sdk-block SetEdit.apk
+     ```
+4. **Débloquer le Thème :**
+   - Ouvrez SetEdit et accordez toutes les autorisations demandées.
+   - Dans la **Table Système** (System Table), cherchez `theme_bauhaus_enable`.
+   - Réglez la valeur sur `1` (Remettez à `0` pour désactiver).
+5. **Appliquer le Thème :**
+   - Allez dans les paramètres du Lanceur Nothing (Nothing Launcher) et appliquez le nouveau thème.
+
+:::warning
+
+- **Ne modifiez AUCUNE autre valeur dans SetEdit !!**
+- Modifier des paramètres système au hasard peut provoquer une instabilité ou des problèmes système.
+
+:::
 
 
 <hr />

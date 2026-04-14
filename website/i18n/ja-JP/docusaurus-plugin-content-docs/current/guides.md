@@ -155,9 +155,42 @@ B. **サイドロードの続行**
 
 特定のハードウェア微調整やペアリングに関するガイド。
 
-### Phone (2a) SEの隠し機能
+### Bauhausテーマの解除
 
+Bauhausにインスパイアされたテーマは、Nothing Phoneの様々なモデルで解除可能なスペシャルエディション機能です。
+
+#### Phone (2a) Special Edition
 - [隠し機能を解除する](https://nothing.community/d/11058-hidden-feature-of-phone-2a-special-edition)（RapidZapper氏による）
+
+#### その他のNothingモデル
+
+**要件：**
+- ADBおよびFastbootを備えたPC
+- [SetEditアプリ](https://github.com/MuntashirAkon/SetEdit)
+
+**手順：**
+
+1. **開発者向けオプションを有効にする：** `設定 > デバイス情報 > 「ビルド番号」を7回タップ`します。
+2. **USBデバッグを有効にする：** `設定 > システム > 開発者向けオプション > USBデバッグを有効にする`をオンにします。
+3. **ADB経由でSetEditをインストールする：**
+   - ダウンロードしたAPKの名前を`SetEdit.apk`に変更します。
+   - 次のコマンドを実行します：
+     ```sh
+     adb install --bypass-low-target-sdk-block SetEdit.apk
+     ```
+4. **テーマを解除する：**
+   - SetEditを開き、要求された権限を許可します。
+   - **System Table**で、`theme_bauhaus_enable`を探します。
+   - 値を`1`に設定します（`0`に戻すと無効になります）。
+5. **テーマを適用する：**
+   - Nothingランチャーの設定に移動し、新しいテーマを適用します。
+
+:::warning
+
+- **SetEditで他の値を変更しないでください！！**
+- 無闇にシステム設定を変更すると、不安定になったりシステム上の問題が発生したりする可能性があります。
+
+:::
 
 
 <hr />
