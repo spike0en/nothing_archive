@@ -602,9 +602,71 @@ B. **Yeniden Kilitleme İşlemi**
 C. **Kilitleme Sonrası**
   - Cihazınızı yeniden kurun.
   - Önyükleyici artık kilitli!
+---
+
+## Tam Kurtarma (Hard Unbrick)
+
+:::note
+
+Bu bölüme yalnızca, [stok ROM flaşlama rehberi](#stok-rom-flaşlama-brick-kurtarma--sürüm-düşürme) kullanılarak cihazı kurtarmak için başka hiçbir seçenek kalmadığında başvurulmalıdır.
+
+:::
+
+### Sürücüler
+
+Cihazınızın SoC üreticisine uygun sürücüleri yükleyin.
+
+- **Qualcomm HS-USB 9008 Sürücüsü:** [OneDrive](https://itraps-my.sharepoint.com/personal/public_builds_itraps_onmicrosoft_com/_layouts/15/onedrive.aspx?viewid=fce5f287%2D4883%2D4f5a%2Daf37%2D29642c53cfdf&id=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers%2FQualcomm%2DHS%2DUSB%2DQDLoader%2D9008%2DDriver%2Ezip&parent=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers) // [Microsoft Update Kataloğu](https://catalog.update.microsoft.com/Search.aspx?q=qualcomm%20hs-usb)
+- **MediaTek Sürücüsü:** [MediaFire](https://www.mediafire.com/file/w0z94wwe4lkka7q/MTK-Driver-v5.2307.zip/file) // [OneDrive](https://itraps-my.sharepoint.com/personal/public_builds_itraps_onmicrosoft_com/_layouts/15/onedrive.aspx?viewid=fce5f287%2D4883%2D4f5a%2Daf37%2D29642c53cfdf&id=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers%2FQualcomm%2DHS%2DUSB%2DQDLoader%2D9008%2DDriver%2Ezip&parent=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers)
+
+### EDL Kablosu (Qualcomm)
+
+- Snapdragon tabanlı cihazların, sürücüler yüklü olsa bile flaşlama aracının cihazı tanıması için bir **Hydra v2 kablosu** gerektirebileceğini unutmayın.
+- **Doğrulama:** Cihaz kapalıyken, kabloyu PC'ye bağlarken **Ses +** ve **Ses -** düğmelerinin her ikisini de basılı tutun. Hydra v2 kablosu kullanıyorsanız bağlanırken kablodaki düğmeye basın.
+- Kendi EDL kablonuzu yapmak için **DIY yöntemi** arıyorsanız, bunun yerine [bu rehbere](https://xdaforums.com/t/edl-cable-for-nothing-phone-2.4654742/) başvurun.
+
+### Resmi Flaşlama Araçları
+
+:::danger Sorumluluk Reddi
+
+- Aşağıda listelenen araçlar, açık web'de sızdırılmış **resmi servis araçlarıdır**. **Kullanım riski size aittir.**
+- Proje yazarı ve katkıda bulunanlar, kullanım sonucunda doğabilecek istenmeyen sonuçlar veya hasarlar için **hiçbir sorumluluk kabul etmez**.
+- Bu araçlar, gelecekteki ürün yazılımı güncellemeleriyle herhangi bir zamanda çalışmayı durdurabilir.
+- Normal stok ROM flaşlama işlemleri için **tasarlanmamıştır**. Yalnızca şu durumlarda **son çare olarak** kullanın:
+  - Cihazınız hiçbir şekilde yanıt vermiyorsa (hard brick, siyah ekran).
+  - Fastboot moduna (uygun sürücüleri yükledikten sonra bile) erişilemiyorsa.
+  - Bölgenizde resmi servis desteği yoksa ve cihazınızın garantisi bitmişse.
+- Bu araçlar için sürekli destek garanti edilmez ve gelecekteki sürümler için herhangi bir talep dikkate alınmayacaktır.
+
+:::
+
+#### Nothing Cihazları:
+- [Phone (1)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgDVNZLx9PuARKU5ZYHxTw1RAesDD6ZYA9ncgyk_6jpU3_M?e=RnzUwd)
+- [Phone (2)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA-PysiaC16Qow4EA9_CfP0AbYCgxOlahRyJjB7LQw8RZo?e=4jK0yh)
+- [Phone (2a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgCYxRHWxndKRLFNcO9zLhjcAQunpBStuG-OAetxx1hvsQs?e=mqYlE8)
+- [Phone (2a) Plus](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgBuoaxqlNkYR63Fa_z0tGl-AVHKWsuj27LeyhMoXtghwJc?e=fOQp2m)
+- [Phone (3a) Serisi](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgBcJ6YHDfGhSL_TZ8P0WfJXAfKNm7BoxC_uMe071vRmhsM?e=El0x5j)
+- [Phone (3)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgCDb2UqoryZSIBDYMu52jjjAQ5Uq5INNOnhOHbH2jr0EpY?e=h8lKHX)
+- [Phone (3a) Lite](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA33YYMKQxUTZplrWoGIji5AfviLdYkUHlh4H2LjQ0_FQQ?e=rBIZ3y)
+- [Phone (4a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgAhqokf-Be4SY2YdeeOr9mrAT-5OsO2Ay-x6UqaAynpKHU?e=X4mojq)
+
+#### CMF by Nothing Cihazları:
+- [Phone (1)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA4tWOkyg4WRqsTmrbNiKECAX3M-2SCUeDFiJ1eraslW7c?e=4mDouI)
+- [Phone (2a) Pro](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgDUePBy5E6TS5zgqO0MqkVEAQ9C7aMdohvQ6FpMr-RxWdQ?e=sebyob)
+
+### Çeşitli Kaynaklar
+
+Araştırma veya gelişmiş kullanım durumları için ek rehberler ve projeler:
+
+- [Resmi Olmayan Qualcomm Firehose / Sahara / Streaming / Diag Araçları](https://github.com/bkerler/edl) - Yazan: bkerler
+- [NTPI Dumper](https://github.com/AaronXenos/ntpi_dumper) - Yazan: AaronXenos
+- [Phone (2a) Serisi Tam Kurtarma Yardımcısı](https://github.com/mistrmochov/nothing-pacman-hardbrick) - Yazan: mistrmochov
+- [Phone (2a) Serisi Flaşlama Aracı](https://github.com/R0rt1z2/pacman-flash-tool) - Yazan: R0rt1z2
+- [Nothing Telefonları için Firehose Kimlik Doğrulama Dosyaları](https://github.com/plusonsoy/nothing_edl) - Yazan: plusonsoy
 
 
 ---
+
 
 ## Satış Sonrası Geliştirme
 

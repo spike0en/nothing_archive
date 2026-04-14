@@ -602,9 +602,71 @@ B. **重新鎖定過程**
 C. **重新鎖定後**
   - 重新設置你的設備。
   - 啟動加載程序現已鎖定！
+---
+
+## 深度救磚 (Hard Unbrick)
+
+:::note
+
+僅當無法使用 [刷入原廠 ROM 指南](#刷入原廠-rom修復救磚--降級) 恢復設備時，才應參考本部分。
+
+:::
+
+### 驅動程序
+
+安裝適合您設備 SoC 製造商的驅動程序。
+
+- **Qualcomm HS-USB 9008 驅動程序：** [OneDrive](https://itraps-my.sharepoint.com/personal/public_builds_itraps_onmicrosoft_com/_layouts/15/onedrive.aspx?viewid=fce5f287%2D4883%2D4f5a%2Daf37%2D29642c53cfdf&id=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers%2FQualcomm%2DHS%2DUSB%2DQDLoader%2D9008%2DDriver%2Ezip&parent=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers) // [Microsoft Update 目錄](https://catalog.update.microsoft.com/Search.aspx?q=qualcomm%20hs-usb)
+- **MediaTek 驅動程序：** [MediaFire](https://www.mediafire.com/file/w0z94wwe4lkka7q/MTK-Driver-v5.2307.zip/file) // [OneDrive](https://itraps-my.sharepoint.com/personal/public_builds_itraps_onmicrosoft_com/_layouts/15/onedrive.aspx?viewid=fce5f287%2D4883%2D4f5a%2Daf37%2D29642c53cfdf&id=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers%2FQualcomm%2DHS%2DUSB%2DQDLoader%2D9008%2DDriver%2Ezip&parent=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers)
+
+### EDL 數據線 (Qualcomm)
+
+- 請注意，如果在使用原裝數據線且已安裝開發者驅動的情況下，刷機工具仍無法識別設備，則基於 Snapdragon 的設備可能需要 **Hydra v2 數據線**。
+- **驗證：** 在關機狀態下，同時按住 **音量 +** 和 **音量 -** 鍵，然後將數據線連接到電腦。如果使用 Hydra v2 數據線，請在連接時按下線上的按鈕。
+- 有關製作 EDL 數據線的 **DIY 方法**，請參閱[此指南](https://xdaforums.com/t/edl-cable-for-nothing-phone-2.4654742/)。
+
+### 官方刷機工具
+
+:::danger 免責聲明
+
+- 以下列出的工具是流傳於網絡上的**官方服務工具**。**使用風險自負。**
+- 項目作者和貢獻者對使用這些工具導致的任何意外後果或損害**不承擔任何責任**。
+- 這些工具可能會隨着未來的固件更新隨時失效。
+- 它們**不適用於**常規的原廠 ROM 刷入。僅在以下**最後手段**的情況下使用：
+  - 設備完全沒有反應（深度磚機，黑屏）。
+  - 無法進入 Fastboot 模式（即使安裝了正確的驅動）。
+  - 您所在地區沒有官方服務支持，且設備已過保修期。
+- 不保證對這些工具的後續支持，也不會受理獲取未來版本的請求。
+
+:::
+
+#### Nothing 設備：
+- [Phone (1)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgDVNZLx9PuARKU5ZYHxTw1RAesDD6ZYA9ncgyk_6jpU3_M?e=RnzUwd)
+- [Phone (2)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA-PysiaC16Qow4EA9_CfP0AbYCgxOlahRyJjB7LQw8RZo?e=4jK0yh)
+- [Phone (2a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgCYxRHWxndKRLFNcO9zLhjcAQunpBStuG-OAetxx1hvsQs?e=mqYlE8)
+- [Phone (2a) Plus](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgBuoaxqlNkYR63Fa_z0tGl-AVHKWsuj27LeyhMoXtghwJc?e=fOQp2m)
+- [Phone (3a) 系列](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgBcJ6YHDfGhSL_TZ8P0WfJXAfKNm7BoxC_uMe071vRmhsM?e=El0x5j)
+- [Phone (3)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgCDb2UqoryZSIBDYMu52jjjAQ5Uq5INNOnhOHbH2jr0EpY?e=h8lKHX)
+- [Phone (3a) Lite](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA33YYMKQxUTZplrWoGIji5AfviLdYkUHlh4H2LjQ0_FQQ?e=rBIZ3y)
+- [Phone (4a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgAhqokf-Be4SY2YdeeOr9mrAT-5OsO2Ay-x6UqaAynpKHU?e=X4mojq)
+
+#### CMF by Nothing 設備：
+- [Phone (1)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA4tWOkyg4WRqsTmrbNiKECAX3M-2SCUeDFiJ1eraslW7c?e=4mDouI)
+- [Phone (2a) Pro](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgDUePBy5E6TS5zgqO0MqkVEAQ9C7aMdohvQ6FpMr-RxWdQ?e=sebyob)
+
+### 其他資源
+
+可用於研究或高級用途的其他指南和項目：
+
+- [非官方 Qualcomm Firehose / Sahara / Streaming / Diag 工具](https://github.com/bkerler/edl)（由 bkerler 提供）
+- [NTPI Dumper](https://github.com/AaronXenos/ntpi_dumper)（由 AaronXenos 提供）
+- [Phone (2a) 系列深度救磚助手](https://github.com/mistrmochov/nothing-pacman-hardbrick)（由 mistrmochov 提供）
+- [Phone (2a) 系列刷機工具](https://github.com/R0rt1z2/pacman-flash-tool)（由 R0rt1z2 提供）
+- [Nothing 手機 Firehose 驗證文件](https://github.com/plusonsoy/nothing_edl)（由 plusonsoy 提供）
 
 
 ---
+
 
 ## 售後開發
 

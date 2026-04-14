@@ -603,9 +603,71 @@ B. **Processus de Reverrouillage**
 C. **Post-Reverrouillage**
   - Configurez à nouveau votre appareil.
   - Le chargeur de démarrage est maintenant verrouillé !
+---
+
+## Débricage complet (Hard Unbrick)
+
+:::note
+
+Cette section ne doit être consultée que lorsqu'aucune autre option n'est possible pour récupérer l'appareil à l'aide du [guide de flashage de la ROM d'origine](#flasher-la-rom-dorigine-unbrick--downgrade).
+
+:::
+
+### Pilotes
+
+Installez les pilotes appropriés pour le fabricant du processeur (SoC) de votre appareil.
+
+- **Pilote Qualcomm HS-USB 9008 :** [OneDrive](https://itraps-my.sharepoint.com/personal/public_builds_itraps_onmicrosoft_com/_layouts/15/onedrive.aspx?viewid=fce5f287%2D4883%2D4f5a%2Daf37%2D29642c53cfdf&id=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers%2FQualcomm%2DHS%2DUSB%2DQDLoader%2D9008%2DDriver%2Ezip&parent=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers) // [Catalogue Microsoft Update](https://catalog.update.microsoft.com/Search.aspx?q=qualcomm%20hs-usb)
+- **Pilote MediaTek :** [MediaFire](https://www.mediafire.com/file/w0z94wwe4lkka7q/MTK-Driver-v5.2307.zip/file) // [OneDrive](https://itraps-my.sharepoint.com/personal/public_builds_itraps_onmicrosoft_com/_layouts/15/onedrive.aspx?viewid=fce5f287%2D4883%2D4f5a%2Daf37%2D29642c53cfdf&id=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers%2FQualcomm%2DHS%2DUSB%2DQDLoader%2D9008%2DDriver%2Ezip&parent=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers)
+
+### Câble EDL (Qualcomm)
+
+- Notez que les appareils basés sur Snapdragon peuvent nécessiter un **câble Hydra v2** si le câble d'origine ne permet pas à l'outil de flashage de reconnaître l'appareil, même avec les pilotes installés. 
+- **Vérification :** L'appareil étant éteint, maintenez les deux boutons **Volume +** et **Volume -** enfoncés tout en connectant le câble au PC. Si vous utilisez un câble Hydra v2, appuyez sur le bouton du câble lors de la connexion.
+- Pour une **méthode DIY** afin de fabriquer un câble EDL, reportez-vous plutôt à [ce guide](https://xdaforums.com/t/edl-cable-for-nothing-phone-2.4654742/).
+
+### Outils de Flashage Officiels
+
+:::danger Avis de non-responsabilité
+
+- Les outils répertoriés ci-dessous sont des **outils de service officiels** ayant fuité sur le web. **Utilisez-les à vos propres risques.**
+- L'auteur du projet et les contributeurs déclinent **toute responsabilité** en cas de conséquences imprévues ou de dommages résultant de leur utilisation.
+- Ces outils peuvent cesser de fonctionner à tout moment suite à de futures mises à jour du micrologiciel.
+- Ils ne sont **pas** destinés au flashage régulier de la ROM d'origine. Utilisez-les **uniquement en dernier recours** si :
+  - Votre appareil ne répond plus du tout (brique matérielle, écran noir).
+  - Le mode Fastboot est inaccessible (même après l'installation des pilotes appropriés).
+  - Vous n'avez pas de service officiel dans votre région et votre appareil n'est plus sous garantie.
+- La maintenance de ces outils n'est pas garantie et aucune demande pour de futures versions ne sera acceptée.
+
+:::
+
+#### Appareils Nothing :
+- [Phone (1)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgDVNZLx9PuARKU5ZYHxTw1RAesDD6ZYA9ncgyk_6jpU3_M?e=RnzUwd)
+- [Phone (2)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA-PysiaC16Qow4EA9_CfP0AbYCgxOlahRyJjB7LQw8RZo?e=4jK0yh)
+- [Phone (2a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgCYxRHWxndKRLFNcO9zLhjcAQunpBStuG-OAetxx1hvsQs?e=mqYlE8)
+- [Phone (2a) Plus](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgBuoaxqlNkYR63Fa_z0tGl-AVHKWsuj27LeyhMoXtghwJc?e=fOQp2m)
+- [Phone (3a) Series](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgBcJ6YHDfGhSL_TZ8P0WfJXAfKNm7BoxC_uMe071vRmhsM?e=El0x5j)
+- [Phone (3)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgCDb2UqoryZSIBDYMu52jjjAQ5Uq5INNOnhOHbH2jr0EpY?e=h8lKHX)
+- [Phone (3a) Lite](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA33YYMKQxUTZplrWoGIji5AfviLdYkUHlh4H2LjQ0_FQQ?e=rBIZ3y)
+- [Phone (4a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgAhqokf-Be4SY2YdeeOr9mrAT-5OsO2Ay-x6UqaAynpKHU?e=X4mojq)
+
+#### Appareils CMF by Nothing :
+- [Phone (1)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA4tWOkyg4WRqsTmrbNiKECAX3M-2SCUeDFiJ1eraslW7c?e=4mDouI)
+- [Phone (2a) Pro](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgDUePBy5E6TS5zgqO0MqkVEAQ9C7aMdohvQ6FpMr-RxWdQ?e=sebyob)
+
+### Ressources Diverses
+
+Guides et projets supplémentaires pour la recherche ou les cas d'utilisation avancés :
+
+- [Outils non officiels Qualcomm Firehose / Sahara / Streaming / Diag](https://github.com/bkerler/edl) par bkerler
+- [NTPI Dumper](https://github.com/AaronXenos/ntpi_dumper) par AaronXenos
+- [Aide au débricage complet (Hard Brick Helper) pour la série Phone (2a)](https://github.com/mistrmochov/nothing-pacman-hardbrick) par mistrmochov
+- [Outil de flashage pour la série Phone (2a)](https://github.com/R0rt1z2/pacman-flash-tool) par R0rt1z2
+- [Fichiers d'authentification Firehose pour les téléphones Nothing](https://github.com/plusonsoy/nothing_edl) par plusonsoy
 
 
 ---
+
 
 ## Développement Après-vente
 

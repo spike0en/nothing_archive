@@ -602,9 +602,71 @@ B. **再ロック手順**
 C. **再ロック後**
   - デバイスを再度セットアップします。
   - ブートローダーがロックされました！
+---
+
+## ハードアンブリック (Hard Unbrick)
+
+:::note
+
+このセクションは、[純正ROMのフラッシュガイド](#純正romのフラッシュアンブリック--ダウングレード)を使用してもデバイスを復旧できない場合にのみ参照してください。
+
+:::
+
+### ドライバー
+
+デバイスのSoCメーカーに適したドライバーをインストールしてください。
+
+- **Qualcomm HS-USB 9008 ドライバー：** [OneDrive](https://itraps-my.sharepoint.com/personal/public_builds_itraps_onmicrosoft_com/_layouts/15/onedrive.aspx?viewid=fce5f287%2D4883%2D4f5a%2Daf37%2D29642c53cfdf&id=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers%2FQualcomm%2DHS%2DUSB%2DQDLoader%2D9008%2DDriver%2Ezip&parent=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers) // [Microsoft Updateカタログ](https://catalog.update.microsoft.com/Search.aspx?q=qualcomm%20hs-usb)
+- **MediaTek ドライバー：** [MediaFire](https://www.mediafire.com/file/w0z94wwe4lkka7q/MTK-Driver-v5.2307.zip/file) // [OneDrive](https://itraps-my.sharepoint.com/personal/public_builds_itraps_onmicrosoft_com/_layouts/15/onedrive.aspx?viewid=fce5f287%2D4883%2D4f5a%2Daf37%2D29642c53cfdf&id=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers%2FQualcomm%2DHS%2DUSB%2DQDLoader%2D9008%2DDriver%2Ezip&parent=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers)
+
+### EDLケーブル (Qualcomm)
+
+- Snapdragonベースのデバイスでは、純正ケーブルを使用し、ドライバーをインストールしてもフラッシュツールがデバイスを認識しない場合、**Hydra v2ケーブル**が必要になることがあります。
+- **確認手順：** デバイスの電源を切った状態で、**音量+**と**音量-**ボタンの両方を押し続けながら、ケーブルをPCに接続します。Hydra v2ケーブルを使用する場合は、接続時にケーブルのボタンを押してください。
+- EDLケーブルを自作する**DIY方法**については、代わりに[こちらのガイド](https://xdaforums.com/t/edl-cable-for-nothing-phone-2.4654742/)を参照してください。
+
+### 公式フラッシュツール
+
+:::danger 免責事項
+
+- 以下にリストされているツールは、ウェブ上に流出した**公式サービスツール**です。**自己責任で使用してください。**
+- プロジェクトの作者および貢献者は、ツールの使用によって生じたいかなる意図しない結果や損害についても**一切の責任を負いません**。
+- これらのツールは、将来のファームウェアアップデートにより、いつでも動作しなくなる可能性があります。
+- これらは通常の純正ROMフラッシュを目的としたものではありません。以下の**最終手段としてのみ**使用してください：
+  - デバイスが完全に無反応な場合（ハードブリック、画面が真っ暗）。
+  - Fastbootモードにアクセスできない場合（適切なドライバーをインストールした後でも）。
+  - お住まいの地域に公式サービスサポートがなく、デバイスが保証対象外で修理の目処が立たない場合。
+- これらのツールの継続的なサポートは保証されず、将来のバージョンに関するリクエストも受け付けられません。
+
+:::
+
+#### Nothingデバイス：
+- [Phone (1)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgDVNZLx9PuARKU5ZYHxTw1RAesDD6ZYA9ncgyk_6jpU3_M?e=RnzUwd)
+- [Phone (2)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA-PysiaC16Qow4EA9_CfP0AbYCgxOlahRyJjB7LQw8RZo?e=4jK0yh)
+- [Phone (2a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgCYxRHWxndKRLFNcO9zLhjcAQunpBStuG-OAetxx1hvsQs?e=mqYlE8)
+- [Phone (2a) Plus](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgBuoaxqlNkYR63Fa_z0tGl-AVHKWsuj27LeyhMoXtghwJc?e=fOQp2m)
+- [Phone (3a) シリーズ](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgBcJ6YHDfGhSL_TZ8P0WfJXAfKNm7BoxC_uMe071vRmhsM?e=El0x5j)
+- [Phone (3)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgCDb2UqoryZSIBDYMu52jjjAQ5Uq5INNOnhOHbH2jr0EpY?e=h8lKHX)
+- [Phone (3a) Lite](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA33YYMKQxUTZplrWoGIji5AfviLdYkUHlh4H2LjQ0_FQQ?e=rBIZ3y)
+- [Phone (4a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgAhqokf-Be4SY2YdeeOr9mrAT-5OsO2Ay-x6UqaAynpKHU?e=X4mojq)
+
+#### CMF by Nothingデバイス：
+- [Phone (1)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA4tWOkyg4WRqsTmrbNiKECAX3M-2SCUeDFiJ1eraslW7c?e=4mDouI)
+- [Phone (2a) Pro](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgDUePBy5E6TS5zgqO0MqkVEAQ9C7aMdohvQ6FpMr-RxWdQ?e=sebyob)
+
+### その他のリソース
+
+研究や高度なユースケースに役立つ追加のガイドやプロジェクト：
+
+- [非公式 Qualcomm Firehose / Sahara / Streaming / Diag ツール](https://github.com/bkerler/edl)（bkerler氏による）
+- [NTPI Dumper](https://github.com/AaronXenos/ntpi_dumper)（AaronXenos氏による）
+- [Phone (2a) シリーズ ハードブリックヘルパー](https://github.com/mistrmochov/nothing-pacman-hardbrick)（mistrmochov氏による）
+- [Phone (2a) シリーズ フラッシュツール](https://github.com/R0rt1z2/pacman-flash-tool)（R0rt1z2氏による）
+- [Nothing Phone用 Firehose 認証ファイル](https://github.com/plusonsoy/nothing_edl)（plusonsoy氏による）
 
 
 ---
+
 
 ## アフターマーケット開発
 

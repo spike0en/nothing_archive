@@ -602,9 +602,71 @@ B. **Процесс повторной блокировки**
 C. **После блокировки**
   - Снова настройте устройство.
   - Теперь загрузчик заблокирован!
+---
+
+## Полное восстановление («раскирпичивание»)
+
+:::note
+
+К этому разделу следует обращаться только в том случае, если не осталось других вариантов восстановления устройства с помощью [руководства по прошивке стоковой ROM](#прошивка-стоковой-rom-восстановление--даунгрейд).
+
+:::
+
+### Драйверы
+
+Установите соответствующие драйверы для производителя процессора (SoC) вашего устройства.
+
+- **Драйвер Qualcomm HS-USB 9008:** [OneDrive](https://itraps-my.sharepoint.com/personal/public_builds_itraps_onmicrosoft_com/_layouts/15/onedrive.aspx?viewid=fce5f287%2D4883%2D4f5a%2Daf37%2D29642c53cfdf&id=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers%2FQualcomm%2DHS%2DUSB%2DQDLoader%2D9008%2DDriver%2Ezip&parent=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers) // [Каталог Центра обновления Microsoft](https://catalog.update.microsoft.com/Search.aspx?q=qualcomm%20hs-usb)
+- **Драйвер MediaTek:** [MediaFire](https://www.mediafire.com/file/w0z94wwe4lkka7q/MTK-Driver-v5.2307.zip/file) // [OneDrive](https://itraps-my.sharepoint.com/personal/public_builds_itraps_onmicrosoft_com/_layouts/15/onedrive.aspx?viewid=fce5f287%2D4883%2D4f5a%2Daf37%2D29642c53cfdf&id=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers%2FQualcomm%2DHS%2DUSB%2DQDLoader%2D9008%2DDriver%2Ezip&parent=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers)
+
+### Кабель EDL (Qualcomm)
+
+- Обратите внимание, что устройствам на базе Snapdragon может потребоваться **кабель Hydra v2**, если обычный кабель не позволяет прошивочному инструменту распознать устройство даже при установленных драйверах.
+- **Проверка:** В выключенном состоянии удерживайте обе кнопки **Громкость +** и **Громкость -** при подключении кабеля к ПК. Если вы используете кабель Hydra v2, во время подключения нажмите кнопку на кабеле.
+- Инструкции по **изготовлению кабеля EDL своими руками** см. в [этом руководстве](https://xdaforums.com/t/edl-cable-for-nothing-phone-2.4654742/).
+
+### Официальные инструменты для прошивки
+
+:::danger Дисклеймер
+
+- Перечисленные ниже инструменты являются **утекшими официальными сервисными инструментами**, доступными в открытой сети. **Используйте их на свой страх и риск.**
+- Автор проекта и его участники не несут **никакой ответственности** за любые непредвиденные последствия или ущерб, возникшие в результате их использования.
+- Эти инструменты могут перестать работать в любое время после будущих обновлений прошивки.
+- Они **не предназначены** для обычной прошивки стоковой ROM. Используйте их **только в крайнем случае**, если:
+  - Ваше устройство полностью не реагирует (состояние «кирпича», черный экран).
+  - Режим Fastboot недоступен (даже после установки соответствующих драйверов).
+  - В вашем регионе нет официальной сервисной поддержки или ваше устройство не подлежит гарантийному обслуживанию.
+- Дальнейшая поддержка этих инструментов не гарантируется, и запросы на предоставление будущих версий рассматриваться не будут.
+
+:::
+
+#### Устройства Nothing:
+- [Phone (1)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgDVNZLx9PuARKU5ZYHxTw1RAesDD6ZYA9ncgyk_6jpU3_M?e=RnzUwd)
+- [Phone (2)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA-PysiaC16Qow4EA9_CfP0AbYCgxOlahRyJjB7LQw8RZo?e=4jK0yh)
+- [Phone (2a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgCYxRHWxndKRLFNcO9zLhjcAQunpBStuG-OAetxx1hvsQs?e=mqYlE8)
+- [Phone (2a) Plus](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgBuoaxqlNkYR63Fa_z0tGl-AVHKWsuj27LeyhMoXtghwJc?e=fOQp2m)
+- [Серия Phone (3a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgBcJ6YHDfGhSL_TZ8P0WfJXAfKNm7BoxC_uMe071vRmhsM?e=El0x5j)
+- [Phone (3)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgCDb2UqoryZSIBDYMu52jjjAQ5Uq5INNOnhOHbH2jr0EpY?e=h8lKHX)
+- [Phone (3a) Lite](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA33YYMKQxUTZplrWoGIji5AfviLdYkUHlh4H2LjQ0_FQQ?e=rBIZ3y)
+- [Phone (4a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgAhqokf-Be4SY2YdeeOr9mrAT-5OsO2Ay-x6UqaAynpKHU?e=X4mojq)
+
+#### Устройства CMF by Nothing:
+- [Phone (1)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA4tWOkyg4WRqsTmrbNiKECAX3M-2SCUeDFiJ1eraslW7c?e=4mDouI)
+- [Phone (2a) Pro](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgDUePBy5E6TS5zgqO0MqkVEAQ9C7aMdohvQ6FpMr-RxWdQ?e=sebyob)
+
+### Прочие ресурсы
+
+Дополнительные руководства и проекты для исследований или расширенных сценариев использования:
+
+- [Неофициальные инструменты Qualcomm Firehose / Sahara / Streaming / Diag](https://github.com/bkerler/edl) от bkerler
+- [NTPI Dumper](https://github.com/AaronXenos/ntpi_dumper) от AaronXenos
+- [Утилита для восстановления («раскирпичивания») серии Phone (2a)](https://github.com/mistrmochov/nothing-pacman-hardbrick) от mistrmochov
+- [Инструмент для прошивки серии Phone (2a)](https://github.com/R0rt1z2/pacman-flash-tool) от R0rt1z2
+- [Файлы авторизации Firehose для телефонов Nothing](https://github.com/plusonsoy/nothing_edl) от plusonsoy
 
 
 ---
+
 
 ## Сторонняя разработка
 
