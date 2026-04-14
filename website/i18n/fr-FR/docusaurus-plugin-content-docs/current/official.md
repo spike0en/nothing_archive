@@ -14,16 +14,17 @@ Applications officielles, ressources et outils pour développeurs de Nothing Tec
 | Application | Liens |
 |-----|-------|
 | CMF Watch | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.cmf.watch) · [iOS](https://apps.apple.com/us/app/cmf-watch/id6447500890) |
-| Widgets de la communauté | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.communitywidgets) |
-| Recherche essentielle | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.essential.search) |
-| Espace essentiel | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.ntessentialspace) |
-| Galerie | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.gallery) |
+| Community Widgets | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.communitywidgets) |
+| Essential Search | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.essential.search) |
+| Essential Space | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.ntessentialspace) |
+| Gallery | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.gallery) |
 | Glyph Composer | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.glyph.composer) |
-| Pack d'icônes | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.icon) |
+| Icon Pack | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.icon) |
 | Launcher | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.launcher) |
 | Nothing X | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.smartcenter) · [iOS](https://apps.apple.com/us/app/nothing-x/id1568033706) |
-| Fond d'écran | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.wallpaper) |
-| Météo | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.weather) |
+| Wallpaper | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.wallpaper) |
+| Warp | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.rotom) · [Chrome Web Extension](https://chromewebstore.google.com/detail/nothing-warp/giginmkkobiioddannfahhhleccgggaj) |
+| Weather | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.weather) |
 | Widgets | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.hearthstone) |
 
 Miroirs APK disponibles sur [APKMirror](https://www.apkmirror.com/apk/nothing-technology-limited/)

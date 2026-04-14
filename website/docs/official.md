@@ -23,6 +23,7 @@ Official apps, resources, and developer tools from Nothing Technology Limited.
 | Launcher | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.launcher) |
 | Nothing X | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.smartcenter) · [iOS](https://apps.apple.com/us/app/nothing-x/id1568033706) |
 | Wallpaper | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.wallpaper) |
+| Warp | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.rotom) · [Chrome Web Extension](https://chromewebstore.google.com/detail/nothing-warp/giginmkkobiioddannfahhhleccgggaj) |
 | Weather | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.weather) |
 | Widgets | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.hearthstone) |
 

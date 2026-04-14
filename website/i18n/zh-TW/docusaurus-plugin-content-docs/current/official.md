@@ -13,18 +13,19 @@ Nothing Technology Limited 的官方應用程式、資源及開發者工具。
 
 | 應用程式 | 連結 |
 |---------|------|
-| CMF Watch | [Play 商店](https://play.google.com/store/apps/details?id=com.nothing.cmf.watch) · [iOS](https://apps.apple.com/us/app/cmf-watch/id6447500890) |
-| Community Widgets | [Play 商店](https://play.google.com/store/apps/details?id=com.nothing.communitywidgets) |
-| Essential Space | [Play 商店](https://play.google.com/store/apps/details?id=com.nothing.ntessentialspace) |
-| Essential Search | [Play 商店](https://play.google.com/store/apps/details?id=com.nothing.essential.search) |
-| Gallery | [Play 商店](https://play.google.com/store/apps/details?id=com.nothing.gallery) |
-| Glyph Composer | [Play 商店](https://play.google.com/store/apps/details?id=com.nothing.glyph.composer) |
-| Icon Pack | [Play 商店](https://play.google.com/store/apps/details?id=com.nothing.icon) |
-| Launcher | [Play 商店](https://play.google.com/store/apps/details?id=com.nothing.launcher) |
-| Nothing X | [Play 商店](https://play.google.com/store/apps/details?id=com.nothing.smartcenter) · [iOS](https://apps.apple.com/us/app/nothing-x/id1568033706) |
-| Wallpaper | [Play 商店](https://play.google.com/store/apps/details?id=com.nothing.wallpaper) |
-| Weather | [Play 商店](https://play.google.com/store/apps/details?id=com.nothing.weather) |
-| Widgets | [Play 商店](https://play.google.com/store/apps/details?id=com.nothing.hearthstone) |
+| CMF Watch | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.cmf.watch) · [iOS](https://apps.apple.com/us/app/cmf-watch/id6447500890) |
+| Community Widgets | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.communitywidgets) |
+| Essential Search | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.essential.search) |
+| Essential Space | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.ntessentialspace) |
+| Gallery | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.gallery) |
+| Glyph Composer | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.glyph.composer) |
+| Icon Pack | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.icon) |
+| Launcher | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.launcher) |
+| Nothing X | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.smartcenter) · [iOS](https://apps.apple.com/us/app/nothing-x/id1568033706) |
+| Wallpaper | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.wallpaper) |
+| Warp | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.rotom) · [Chrome Web Extension](https://chromewebstore.google.com/detail/nothing-warp/giginmkkobiioddannfahhhleccgggaj) |
+| Weather | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.weather) |
+| Widgets | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.hearthstone) |
 
 APK 備用來源：[APKMirror](https://www.apkmirror.com/apk/nothing-technology-limited/)
 
