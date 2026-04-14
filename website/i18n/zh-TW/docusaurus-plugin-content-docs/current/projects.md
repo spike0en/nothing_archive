@@ -16,7 +16,7 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | 專案 | 開發者 | 說明 |
 |------|--------|------|
 | [Better Nothing Glyph Composer](https://better-nothing-glyph-composer.pages.dev/) | Krishnagopal Sinha | 用於建立自訂 Glyph 音效的視覺化工具。支援 Phone (3) Matrix |
-| [Better Nothing Glyph Visualizer](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | alekslevet | 增強的音樂視覺化 |
+| [Better Nothing Music Visualizer](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | alekslevet | 增強的音樂視覺化 |
 | [Cassette](https://github.com/Chipik0/Cassette) | Chipik0 | 建立 Glyph 組合 |
 | [Custom Nothing Glyph Tools](https://github.com/SebiAi/custom-nothing-glyph-tools) | SebiAi | 使用 Audacity 建立自訂音效 |
 | [Glyph Tones](https://glyphtones.is-a.dev/) | Firu11 | 社群 Glyph 音效合集。（[Repo](https://github.com/firu11/nothing-glyphtones)） |

@@ -16,7 +16,7 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 | Проект | Разработчик | Описание |
 |---------|-----------|-------------|
 | [Better Nothing Glyph Composer](https://better-nothing-glyph-composer.pages.dev/) | Krishnagopal Sinha | Визуальный инструмент для создания пользовательских мелодий Glyph. Поддерживает матрицу Phone (3) |
-| [Better Nothing Glyph Visualizer](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | alekslevet | Улучшенная визуализация музыки |
+| [Better Nothing Music Visualizer](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | alekslevet | Улучшенная визуализация музыки |
 | [Cassette](https://github.com/Chipik0/Cassette) | Chipik0 | Создание композиций Glyph |
 | [Custom Nothing Glyph Tools](https://github.com/SebiAi/custom-nothing-glyph-tools) | SebiAi | Создание пользовательских тонов с помощью Audacity |
 | [Glyph Tones](https://glyphtones.is-a.dev/) | Firu11 | Коллекция мелодий Glyph от сообщества. ([Репозиторий](https://github.com/firu11/nothing-glyphtones)) |

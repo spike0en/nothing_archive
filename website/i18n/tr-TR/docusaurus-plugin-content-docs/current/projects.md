@@ -16,7 +16,7 @@ Nothing topluluğu tarafında sürdürülen projeler.
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
 | [Better Nothing Glyph Composer](https://better-nothing-glyph-composer.pages.dev/) | Krishnagopal Sinha | Glyph tonları oluşturmak için görsel araç. Phone (3) matrisini destekler |
-| [Better Nothing Glyph Visualizer](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | alekslevet | Geliştirilmiş müzik görselleştirme |
+| [Better Nothing Music Visualizer](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | alekslevet | Geliştirilmiş müzik görselleştirme |
 | [Cassette](https://github.com/Chipik0/Cassette) | Chipik0 | Glyph kompozisyonları oluşturun |
 | [Custom Nothing Glyph Tools](https://github.com/SebiAi/custom-nothing-glyph-tools) | SebiAi | Audacity kullanarak tonlar oluşturun |
 | [Glyph Tones](https://glyphtones.is-a.dev/) | Firu11 | Topluluk Glyph tonları koleksiyonu. ([Depo](https://github.com/firu11/nothing-glyphtones)) |
