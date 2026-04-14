@@ -2,13 +2,19 @@
  * Root.tsx — Locale preference persistence via cookie.
  *
  * Behaviour:
- *  - On every page, saves the current locale to a cookie so the preference
- *    survives browser restarts.
- *  - On the very first render of a session, if the visitor lands on the
- *    default (English) locale but has a non-English cookie, they are
- *    transparently redirected to the equivalent page in their saved locale.
- *  - When a user explicitly switches back to English, the cookie is updated
- *    and no redirect occurs on subsequent visits.
+ *  - On a non-default locale: the cookie is updated to the current locale
+ *    immediately, preserving the user's preference across sessions.
+ *  - On the default (English) locale:
+ *      a) If the referrer is a non-default locale page on this site, the user
+ *         explicitly switched to English via the locale dropdown — update the
+ *         cookie to English so future visits stay in English.
+ *      b) Otherwise (fresh visit, external link, bookmark, typed URL, etc.):
+ *         read the cookie; if a non-default preference is stored, redirect to
+ *         the equivalent page in that locale WITHOUT touching the cookie.
+ *
+ * This design avoids the "overwrite then redirect" race that previously caused
+ * the cookie to be reset to English whenever the user navigated to the default
+ * locale root URL.
  */
 
 import React, { useEffect, useRef } from 'react';
@@ -44,47 +50,60 @@ export default function Root({ children }: RootProps): React.JSX.Element {
   const { currentLocale, defaultLocale, locales } = i18n;
   const { baseUrl } = siteConfig;
 
-  // Guard against double-redirect within the same page lifecycle.
   const hasRedirected = useRef(false);
 
-  // Persist locale to cookie on every locale change (including explicit
-  // switches back to English).
   useEffect(() => {
-    setLocaleCookie(currentLocale);
-  }, [currentLocale]);
+    if (typeof window === 'undefined') return;
 
-  // On first mount only: redirect to saved locale if the visitor arrived on
-  // the default locale but has a different preference stored in the cookie.
-  useEffect(() => {
-    if (typeof window === 'undefined' || hasRedirected.current) return;
-
-    const saved = getLocaleCookie();
-
-    // Nothing to do if: no cookie, already on the right locale,
-    // saved locale is unknown, or saved preference is the default.
-    if (
-      !saved ||
-      saved === currentLocale ||
-      !locales.includes(saved) ||
-      saved === defaultLocale
-    ) {
+    // ── Non-default locale ────────────────────────────────────────────────
+    // Always persist the current locale; nothing else to do.
+    if (currentLocale !== defaultLocale) {
+      setLocaleCookie(currentLocale);
       return;
     }
 
-    // Only redirect visitors who landed on the default locale.
-    if (currentLocale !== defaultLocale) return;
+    // ── Default (English) locale ──────────────────────────────────────────
 
-    hasRedirected.current = true;
+    // Determine whether the user arrived here from a non-default locale page
+    // on this same site (i.e. they clicked the locale dropdown to pick English).
+    const referrer = document.referrer;
+    const nonDefaultLocales = locales.filter(l => l !== defaultLocale);
+    const cameFromNonDefault = nonDefaultLocales.some(l => {
+      // Match paths like /nothing_archive/zh-TW/ or /nothing_archive/zh-TW
+      const prefix = `${baseUrl}${l}`;
+      return referrer.includes(prefix + '/') || referrer.endsWith(prefix);
+    });
 
-    // Build the equivalent URL in the saved locale.
-    // e.g. /nothing_archive/docs/intro  →  /nothing_archive/zh-TW/docs/intro
-    const { origin, pathname } = window.location;
-    const pathAfterBase = pathname.startsWith(baseUrl)
-      ? pathname.slice(baseUrl.length) // e.g. "docs/intro" or ""
-      : pathname.slice(1);
+    if (cameFromNonDefault) {
+      // User explicitly chose English — record the new preference.
+      setLocaleCookie(defaultLocale);
+      return;
+    }
 
-    const target = `${origin}${baseUrl}${saved}/${pathAfterBase}`;
-    window.location.replace(target);
+    // Fresh arrival on the English page: check for a saved non-default preference.
+    const saved = getLocaleCookie();
+
+    if (
+      saved &&
+      saved !== defaultLocale &&
+      locales.includes(saved) &&
+      !hasRedirected.current
+    ) {
+      hasRedirected.current = true;
+
+      // Redirect to the equivalent page in the saved locale.
+      // e.g. /nothing_archive/docs/intro → /nothing_archive/zh-TW/docs/intro
+      const { origin, pathname } = window.location;
+      const pathAfterBase = pathname.startsWith(baseUrl)
+        ? pathname.slice(baseUrl.length)
+        : pathname.slice(1);
+
+      window.location.replace(`${origin}${baseUrl}${saved}/${pathAfterBase}`);
+      return; // Do NOT overwrite the cookie.
+    }
+
+    // No saved preference (or already English): persist English.
+    setLocaleCookie(defaultLocale);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return <>{children}</>;
