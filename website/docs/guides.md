@@ -9,9 +9,10 @@ keywords: [nothing bootloader unlock, root nothing phone, nothing fastboot, noth
 
 Step-by-step guides on several aspects.
 
-## General Guides
 
-Tips, tricks, and general guides for everyone.
+## General Use & Troubleshooting
+
+Tips, tricks, and general guides for everyday use.
 
 ### OTA Sideloading
 
@@ -122,17 +123,13 @@ B. **Proceed with Sideloading**
 
 :::
 
+
 <hr />
 
 ### Safe Mode
 
 - [Rebooting to Safe Mode](https://www.hardreset.info/devices/nothing/nothing-phone-2/safe-mode/)
 
-<hr />
-
-### Phone (2a) SE Hidden Feature
-
-- [Unlock Hidden Feature](https://nothing.community/d/11058-hidden-feature-of-phone-2a-special-edition) by RapidZapper
 
 <hr />
 
@@ -152,12 +149,39 @@ Dialer codes (USSD) that you can dial to access hidden menus and diagnostics.
 | `*#*#4636#*#*` | Testing menu (phone, battery, usage stats, Wi-Fi) |
 | `*#*#682#*#*` | Opens Offline OTA Updater (won't work if Nothing Beta Hub is installed) |
 
+
+---
+
+## Device Features & Accessories
+
+Guides for specific hardware tweaks and pairings.
+
+### Phone (2a) SE Hidden Feature
+
+- [Unlock Hidden Feature](https://nothing.community/d/11058-hidden-feature-of-phone-2a-special-edition) by RapidZapper
+
+
+<hr />
+
+### Essential Key Remapping
+
+Guides for remapping the Essential Key on Phone (3):
+
+| Guide | Author |
+|-------|--------|
+| [Reddit Guide](https://www.reddit.com/r/NothingTech/comments/1jzljrf/guide_how_to_remap_the_essential_key_on_the_phone/) | acruzjumper, McKeviin, DKmarc & Pealoaf |
+| [Quick Remap Guide](https://www.reddit.com/r/NothingTech/comments/1jv6gea/quick_guide_to_remap_the_essential_space_button/) | David_Ign |
+| [XDA Guide](https://xdaforums.com/t/how-to-disable-or-remap-the-essentials-button.4755184/) | rwilco12 |
+| [GitHub Guide](https://github.com/z3phydev/How-to-remap-or-disable-the-Essential-Key) | z3phydev |
+
+
 <hr />
 
 ### Gadgetbridge Related
 
 - [Supported Models and features](https://gadgetbridge.org/gadgets/wearables/nothing/)
 - [Nothing CMF server pairing](https://gadgetbridge.org/basics/pairing/nothing-cmf-server/)
+
 
 ---
 
@@ -166,6 +190,8 @@ Dialer codes (USSD) that you can dial to access hidden menus and diagnostics.
 :::warning
 Recommended for power users only. These procedures can brick your device or void warranty if done incorrectly.
 :::
+
+These guides are ordered chronologically. It is highly recommended to follow this exact sequence.
 
 ### Prerequisites & Tools
 
@@ -194,20 +220,8 @@ winget install --id=Google.PlatformTools -e
 brew install --cask android-platform-tools
 ```
 
----
 
-### Essential Key Remapping
-
-Guides for remapping the Essential Key on Phone (3):
-
-| Guide | Author |
-|-------|--------|
-| [Reddit Guide](https://www.reddit.com/r/NothingTech/comments/1jzljrf/guide_how_to_remap_the_essential_key_on_the_phone/) | acruzjumper, McKeviin, DKmarc & Pealoaf |
-| [Quick Remap Guide](https://www.reddit.com/r/NothingTech/comments/1jv6gea/quick_guide_to_remap_the_essential_space_button/) | David_Ign |
-| [XDA Guide](https://xdaforums.com/t/how-to-disable-or-remap-the-essentials-button.4755184/) | rwilco12 |
-| [GitHub Guide](https://github.com/z3phydev/How-to-remap-or-disable-the-Essential-Key) | z3phydev |
-
----
+<hr />
 
 ### Unlocking Bootloader
 
@@ -270,6 +284,7 @@ C. **Post-Unlock**
     ```
 
   - Bootloader is now unlocked and your device will show an Orange State warning at boot—this is normal.
+
 
 <hr />
 
@@ -372,6 +387,16 @@ D. **Patch the Image**
 
 - The device should be rooted with KSU/KSUN.
 
+
+<hr />
+
+### Play Integrity
+
+| Guide | Link |
+|-------|------|
+| Fix Play Integrity & Root Detection | [Wiki](https://github.com/yashaswee-exe/AndroidGuides/wiki/Fix-integrity-and-root-detection) |
+
+
 <hr />
 
 ### Backing Up Essential Partitions
@@ -459,6 +484,7 @@ D. **Restoring Partitions**
    ```
    **Factory reset is not mandatory in this case.**
 
+
 <hr />
 
 ### Flashing Stock ROM (Unbrick / Downgrade)
@@ -511,6 +537,7 @@ B. **Proceeding with Flashing:**
     - If successful, choose to reboot to system: (Y)
     - If errors occur, reboot to bootloader and reflash after addressing the failure. Rebooting to system without doing so might result in soft/hard bricks.
 
+
 <hr />
 
 ### Relocking Bootloader
@@ -545,13 +572,6 @@ C. **Post-Relock**
   - Set up your device again.
   - The bootloader is now locked!
 
-<hr />
-
-### Play Integrity
-
-| Guide | Link |
-|-------|------|
-| Fix Play Integrity & Root Detection | [Wiki](https://github.com/yashaswee-exe/AndroidGuides/wiki/Fix-integrity-and-root-detection) |
 
 ---
 
@@ -580,3 +600,5 @@ Stay updated with custom ROMs, kernels, and development projects.
 |--------|---------|
 | Phone (1) | [Updates](https://t.me/s/CMFPhone1Updates) |
 | Phone (2) Pro / Phone (3a) Lite | [Updates](https://t.me/s/CMFPhone2GlobalUpdates) |
+
+

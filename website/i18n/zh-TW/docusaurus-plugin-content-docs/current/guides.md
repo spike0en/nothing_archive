@@ -1,58 +1,58 @@
 ---
 sidebar_position: 4
-title: 教學指南
-description: Bootloader 解鎖、Root 取得、OTA 更新及 Nothing 裝置自訂化的逐步操作指南。
-keywords: [nothing bootloader 解鎖, root nothing phone, nothing fastboot, nothing ota 更新, nothing 撥號代碼, 重新對應 essential key]
+title: 指南
+description: 關於解鎖啟動加載程序、獲獲取 root 權限、OTA 更新以及 Nothing 設備自定義的逐步指南。
+keywords: [nothing 解鎖啟動加載程序, nothing root, nothing fastboot, nothing ota 更新, nothing 撥號代碼, 自定義 essential 按鍵]
 ---
 
 # 操作指南
 
-各種主題的逐步操作指南。
+關於各個方面的逐步操作指南。
 
-## 一般指南
+## 一般使用與故障排除
 
-適合所有人的實用技巧與通用指南。
+日常生活使用的秘訣、技巧以及通用指南。
 
-### OTA 側載
+### OTA 側載 (Sideloading)
 
 :::note
 
-- 側載增量 OTA 更新**不需要**解鎖 Bootloader。除非你是已 Root 的使用者，否則請跳過步驟 A。
-- 只要直接從本儲存庫下載，側載官方增量或完整 OTA 更新是安全的。
-- 請勿使用第三方來源。Nothing Archive 中的所有韌體均直接取自 Nothing 官方 OEM 伺服器。
-  你可以透過檢查增量 OTA 區段中的下載網址來驗證，這些網址指向官方伺服器，而非第三方檔案托管服務。
-- Nothing OS 內建的離線更新程式僅接受 OEM 簽署的更新套件。
-- 更新程式在安裝前會驗證韌體雜湊值，若使用不正確或不相符的 OTA zip 檔，將會失敗。
-- 完整 OTA 套件也適用相同的驗證機制；若完整性有問題，將無法安裝。
-- 由於上述驗證機制，在已鎖定 Bootloader 的裝置上側載官方 OTA zip，不可能造成磚機。
-- 對於 Open Beta Test 更新，若撥號方式無效，請透過 OEM 提供的 `Nothing Beta Updater Hub`（名稱未來可能變更）進行側載。
-  你可以從設定中啟動此介面。當你安裝了 OEM 的 Beta 更新程式應用程式（覆蓋了內建原廠版本）時，便會發生此情況。
-- 如需視覺參考，請依序查看[這裡](https://github.com/spike0en/nothing_archive/tree/main/assets/sideloading)的圖片。
+- 側載增量 OTA 更新 **並非必須** 解鎖啟動加載程序 (bootloader)。除非你是 root 用戶，否則請跳過步驟 A。
+- 只要直接從此存檔下載，側載官方增量或完整 OTA 更新都是安全的。
+- 請勿使用第三方來源。Nothing 存檔中的所有固件均直接源自 Nothing 的官方 OEM 服務器。  
+  這可以通過檢查增量 OTA 部分中的下載 URL 來驗證，這些 URL 指向官方服務器，而非第三方文件託管商。
+- Nothing OS 內置的離線更新程序僅接受 OEM 簽名的更新包。
+- 更新程序在安裝前會驗證固件哈希值，如果使用了錯誤或不匹配的 OTA zip 文件，則會失敗。
+- 同樣的驗證也適用於完整 OTA 包；除非其完整性完好無損，否則不會安裝。
+- 由於這些檢查，在鎖定的啟動加載程序上側載官方 OTA zip 文件是不可能導致設備損壞（brick）的。
+- 對於公開測試版 (Open Beta) 更新，如果撥號器方法無效，請通過 OEM 提供的 `Nothing Beta Updater Hub`（名稱將來可能會更改）進行側載。
+  你可以從「設置」中啟動該界面。當你安裝了 OEM 的測試版更新程序應用（會覆蓋系統內置版本）時，就會出現這種情況。
+- 視覺參考請按所列順序查看 [這裡](https://github.com/spike0en/nothing_archive/tree/main/assets/sideloading) 的圖片。
 
 :::
 
 <br />
 
-A. **還原原廠分割區（僅限已 Root 的使用者）**
+A. **恢復原廠分區（僅限 Root 用戶）**  
   :::tip
-  若你的 Bootloader 已鎖定，請直接跳到步驟 B！
+  如果你的啟動加載程序已鎖定，請直接跳到 B 點！
   :::
 
-1. **確認目前的 Nothing OS 版本：**
-   - 前往 `設定 > 關於手機 > 點擊裝置橫幅`。
-   - 記下版本號碼。
+1. **檢查當前 Nothing OS 版本：**  
+   - 前往 `設置 > 關於手機 > 點擊設備橫幅`。  
+   - 記下版本號。  
 
-2. **取得目前韌體版本的原廠映像：**
-   - 下載 `-boot-image.7z` 檔案。
-   - 解壓縮封存檔以取得 `.img` 檔案。
+2. **獲取當前固件版本的原廠鏡像：**  
+   - 下載 `-boot-image.7z` 文件。  
+   - 解壓存檔以獲取 `.img` 文件。  
 
-3. **確認所需分割區：**
-   - **高通（Qualcomm）裝置：** `boot`、`init_boot`、`vendor_boot`、`recovery`、`vbmeta`
-   - **聯發科（MediaTek）裝置：** `init_boot`、`vbmeta`、`lk`
+3. **識別所需分區：**  
+   - **Qualcomm 設備：** `boot`, `init_boot`, `vendor_boot`, `recovery`, `vbmeta`  
+   - **MediaTek 設備：** `init_boot`, `vbmeta`, `lk`
 
-4. 在 Bootloader 模式下**刷入原廠分割區：**
+4. **在啟動加載程序模式下刷入原廠分區：**  
    :::note
-   僅需刷入已修改的分割區。此外，請根據你的 SoC 平台跳過不存在的分割區。
+   僅需刷入修改過的分區。此外，請根據你的 SoC 平台跳過任何缺失的分區。 
    :::
    ```sh
    fastboot flash boot boot.img
@@ -63,257 +63,278 @@ A. **還原原廠分割區（僅限已 Root 的使用者）**
    fastboot flash --slot=all lk lk.img
    ```
 
-5. **重新開機進入系統並透過系統更新程式更新：**
-   - 若更新**失敗**，請繼續下一節的**手動側載**步驟。
+5. **重啟至系統並通過系統更新程序進行更新：**
+   - 如果更新 **失敗**，請繼續執行下一節中的 **手動側載**。
 
-6. **恢復 Root 權限（選用）：**
-   - 更新後，你可以透過**刷入已更新 NOS 版本的修補 Boot 映像**來重新取得 Root 權限。
-   - 重新 Root 後，**模組將保持完整**。
+6. **恢復 Root（可選）：**
+   - 更新後，你可以通過為更新後的 NOS 版本 **刷入已修補的引導鏡像** 來重新獲取 root 權限。
+   - 重新獲取 root 後，**模塊將保持不變**。
 
 <br />
 
-B. **進行側載**
+B. **繼續進行側載** 
 
- - **下載正確的更新韌體檔案：**
-   - 從[這裡](/docs/firmware)找到適合你裝置的 OTA 韌體檔案。
+ - **下載正確的更新固件文件：**  
+   - 從 [這裡](/docs/firmware) 找到適用於你設備的正確 OTA 固件文件。
 
- - **如何選擇正確的檔案？**
-   - 前往儲存庫並選擇你的裝置型號。
-   - 找到增量 OTA 欄位。
-   - **確認目前的 OS 版本號碼**：
-    - 前往：`設定 > 系統 > 關於手機`。
-    - 點擊**裝置橫幅**並記下**版本號碼**。
+ - **如何選擇正確的文件？**  
+   - 導航到存儲庫並選擇你的設備型號。  
+   - 查看「增量 OTA (Incremental OTA)」列。  
+   - **驗證你當前的手機系統版本號**:  
+     - 前往：`設置 > 系統 > 關於手機`。  
+     - 點擊 **設備橫幅** 並記下 **版本號**。
 
- - **範例：**
-   - 假設你的 **Phone (2)** 版本號碼為：`Pong_U2.6-241016-1700`
-    - 假設最新可用的 OTA 更新為：`Pong_V3.0-241226-2001`
-    - 對應的更新路徑為：`Pong_U2.6-241016-1700` -> `Pong_V3.0-241226-2001`
-   - 請根據你的裝置和 OS 版本選擇正確的更新路徑。
-    - 參考[此圖](https://github.com/spike0en/nothing_archive/blob/main/assets/sideloading/3.1_ota_sideload.jpg)以獲得更清楚的說明。
+ - **範例：**  
+   - 假設你的 **Phone (2)** 版本號為：`Pong_U2.6-241016-1700` 
+     - 假設最新可用的 OTA 更新為：`Pong_V3.0-241226-2001`
+     - 對應的更新路徑為：`Pong_U2.6-241016-1700` -> `Pong_V3.0-241226-2001`
+   - 請務必根據你的設備和系統版本選擇正確的路徑。
+     - 欲了解更多詳情，請參考 [此圖](https://github.com/spike0en/nothing_archive/blob/main/assets/sideloading/3.1_ota_sideload.jpg)。
 
- - **建立 `ota` 資料夾：**
-   - 在裝置的**內部儲存空間**建立一個名為 `ota` 的資料夾，完整路徑為：
+ - **創建 `ota` 文件夾：** 
+   - 在設備的 **內部存儲** 中創建一個名為 `ota` 的文件夾，完整路徑為：  
      ```text
      /sdcard/ota/
      ```
-   - 將下載的 `<韌體>.zip` 檔案移動到此資料夾。
+   - 將下載的 `<firmware>.zip` 文件移動到此文件夾中。
 
- - **存取 Nothing 離線 OTA 更新程式：**
-    - 開啟**電話應用程式**並撥號：
+ - **訪問 Nothing 離線 OTA 更新程序：**  
+    - 打開 **電話應用** 並撥打：  
       ```text
       *#*#682#*#*
       ```
-   - 這將啟動內建的離線更新工具。
-   - UI 可能顯示 `NothingOfflineOtaUpdate` 或 `NOTHING BETA OTA UPDATE`——兩者均可使用。
+   - 這將啟動內置的離線更新工具。  
+   - 界面可能會顯示 `NothingOfflineOtaUpdate` 或 `NOTHING BETA OTA UPDATE` —— 兩者皆可。
 
- - **套用更新：**
-   - 更新程式將自動偵測更新檔案。
-   - 若未自動偵測到，請手動瀏覽並匯入 OTA 檔案。
-   - 點擊 `直接套用 OTA` 或 `更新`（依應用程式 UI 而定）。
-   - 等待更新完成——裝置將自動重新開機。
+ - **應用更新：**  
+   - 更新程序將自動檢測更新文件。  
+   - 如果未檢測到，請手動瀏覽並導入 OTA 文件。  
+   - 點擊 `Directly Apply OTA` 或 `Update`（根據應用界面而定）。  
+   - 等待更新完成 —— 你的設備將自動重啟。
 
 :::note
 
-- 若更新程式顯示**未知錯誤**，請嘗試使用**「瀏覽」**選項，而非手動複製檔案到 **"ota"** 資料夾。
-- 若增量 OTA 失敗，可以側載**完整 OTA 韌體**。
-- **完整 OTA 無法用於降級**——只能更新至相同或更高版本。
-- **已解鎖 Bootloader 的使用者**可透過自訂 Recovery（如 Phone (2) 的 OrangeFox）刷入完整 OTA。
-- **並非每個版本都有完整 OTA 檔案**——此類情況請改用增量更新。
+- 如果更新程序顯示 **未知錯誤**，請嘗試使用 **「瀏覽 (Browse)」** 選項，而不是手動將文件複製到 **「ota」** 文件夾。
+- 如果增量 OTA 失敗，可以側載 **完整 OTA 固件**。
+- **完整 OTA 不能用於降級** —— 它只能更新到相同或更高的版本。
+- **已解鎖啟動加載程序的用戶** 可以通過自定義 recovery（例如各型號適用之 OrangeFox 或 TWRP）刷入完整 OTA。
+- **並非每個版本都有完整 OTA 文件** —— 在這種情況下請使用增量更新。
 
 :::
+
 
 <hr />
 
 ### 安全模式
 
-- [重新開機進入安全模式](https://www.hardreset.info/devices/nothing/nothing-phone-2/safe-mode/)
+- [重啟至安全模式](https://www.hardreset.info/devices/nothing/nothing-phone-2/safe-mode/)
 
-<hr />
-
-### Phone (2a) SE 隱藏功能
-
-- [解鎖隱藏功能](https://nothing.community/d/11058-hidden-feature-of-phone-2a-special-edition)，作者：RapidZapper
 
 <hr />
 
 ### 撥號代碼
 
-你可以撥打以下撥號代碼（USSD）以存取隱藏選單和診斷工具。
+你可以撥打撥號代碼 (USSD) 來訪問隱藏菜單和診斷程序。
 
 | 代碼 | 功能 |
-|------|------|
-| `*#06#` | 顯示 IMEI 和序號 |
-| `*#07#` | 顯示 SAR 值和法規資訊 |
-| `*#*#569#*#*` | 開啟 Nothing 回饋 / 日誌工具 |
-| `*#*#0#*#*` | 硬體測試選單（螢幕、感應器、觸控） |
-| `*#*#9#*#*` | 開啟 Nothing 診斷選單 |
-| `*#*#225#*#*` | 顯示行事曆儲存資訊 |
-| `*#*#426#*#*` | Google Play / Firebase 診斷資訊 |
-| `*#*#4636#*#*` | 測試選單（電話、電池、使用統計、Wi-Fi） |
-| `*#*#682#*#*` | 開啟離線 OTA 更新程式（若已安裝 Nothing Beta Hub 則無效） |
+|------|----------|
+| `*#06#` | 顯示 IMEI 和序列號 |
+| `*#07#` | 顯示 SAR 等級和法規信息 |
+| `*#*#569#*#*` | 打開 Nothing 反饋 / 日誌工具 |
+| `*#*#0#*#*` | 硬件測試菜單（屏幕、傳感器、觸摸） |
+| `*#*#9#*#*` | 打開 Nothing 診斷菜單 |
+| `*#*#225#*#*` | 顯示日曆存儲信息 |
+| `*#*#426#*#*` | Google Play / Firebase 診斷信息 |
+| `*#*#4636#*#*` | 測試菜單（手機、電池、使用統計、Wi-Fi） |
+| `*#*#682#*#*` | 打開離線 OTA 更新程序（如果安裝了 Nothing Beta Hub 則無效） |
+
 
 ---
 
-## 進階指南
+## 設備功能與配件
+
+特定硬件調整和配對指南。
+
+### Phone (2a) SE 隱藏功能
+
+- [解鎖隱藏功能](https://nothing.community/d/11058-hidden-feature-of-phone-2a-special-edition)（由 RapidZapper 提供）
+
+
+<hr />
+
+### Essential 按鍵重新映射
+
+Phone (3) 上 Essential 按鍵重新映射指南：
+
+| 指南 | 作者 |
+|-------|--------|
+| [Reddit 指南](https://www.reddit.com/r/NothingTech/comments/1jzljrf/guide_how_to_remap_the_essential_key_on_the_phone/) | acruzjumper, McKeviin, DKmarc & Pealoaf |
+| [快速映射指南](https://www.reddit.com/r/NothingTech/comments/1jv6gea/quick_guide_to_remap_the_essential_space_button/) | David_Ign |
+| [XDA 指南](https://xdaforums.com/t/how-to-disable-or-remap-the-essentials-button.4755184/) | rwilco12 |
+| [GitHub 指南](https://github.com/z3phydev/How-to-remap-or-disable-the-Essential-Key) | z3phydev |
+
+
+<hr />
+
+### Gadgetbridge 相關
+
+- [支持的型號和功能](https://gadgetbridge.org/gadgets/wearables/nothing/)
+- [Nothing CMF 服務器配對](https://gadgetbridge.org/basics/pairing/nothing-cmf-server/)
+
+
+---
+
+## 高級指南
 
 :::warning
-僅建議進階使用者操作。若操作不當，以下程序可能導致磚機或使保固失效。
+僅建議高級用戶使用。如果操作不當，這些步驟可能會導致設備損壞（brick）或使保修失效。
 :::
 
-### 必要工具
+這些指南按時間順序排列。強烈建議嚴格遵守此順序。
 
-以下進階指南所需的基本工具。
+### 先決條件與工具
 
-#### USB 驅動程式
+以下高級指南所需的必備工具。
 
-用於 USB 檔案傳輸和裝置辨識的必要驅動程式。
+#### USB 驅動程序
 
-- [適用於 Windows 的 Google USB 驅動程式](https://dl.google.com/android/repository/usb_driver_r13-windows.zip)
+USB 文件傳輸和設備識別所需的必備驅動程序。
+
+- [適用於 Windows 的 Google USB 驅動程序](https://dl.google.com/android/repository/usb_driver_r13-windows.zip)
 - 安裝指南：[USB](https://droidwin.com/android-usb-drivers) | [Fastboot](https://droidwin.com/how-to-install-fastboot-drivers-in-windows-11/)
 
-#### Platform Tools（ADB 與 Fastboot）
+#### 平台工具 (ADB & Fastboot)
 
 下載 Android SDK Platform-Tools：
 - [Windows / Linux / macOS](https://developer.android.com/studio/releases/platform-tools)
 - [安裝指南](https://www.xda-developers.com/install-adb-windows-macos-linux/)
 
-**Windows（winget）：**
+**Windows (winget):**
 ```cmd
 winget install --id=Google.PlatformTools -e
 ```
 
-**macOS/Linux（Homebrew）：**
+**macOS/Linux (Homebrew):**
 ```bash
 brew install --cask android-platform-tools
 ```
 
----
-
-### Essential Key 重新對應
-
-Phone (3) Essential Key 重新對應指南：
-
-| 指南 | 作者 |
-|------|------|
-| [Reddit 指南](https://www.reddit.com/r/NothingTech/comments/1jzljrf/guide_how_to_remap_the_essential_key_on_the_phone/) | acruzjumper、McKeviin、DKmarc 與 Pealoaf |
-| [快速重新對應指南](https://www.reddit.com/r/NothingTech/comments/1jv6gea/quick_guide_to_remap_the_essential_space_button/) | David_Ign |
-| [XDA 指南](https://xdaforums.com/t/how-to-disable-or-remap-the-essentials-button.4755184/) | rwilco12 |
-| [GitHub 指南](https://github.com/z3phydev/How-to-remap-or-disable-the-Essential-Key) | z3phydev |
-
----
-
-### 解鎖 Bootloader
-
-:::info
-
-- 解鎖 Bootloader 將使 OEM 保固失效。但你可以重新刷入原廠 ROM 並鎖定 Bootloader 來恢復保固。
-- 無論其他因素如何，你都將失去 Widevine L1/DRM 認證，降級至 L3。
-- 你將失去[裝置完整性](https://developer.android.com/google/play/integrity/overview)，可能導致依賴此機制的應用程式停止運作，除非事後透過 Root 權限修復。
-  [此指南](https://github.com/yashaswee-exe/AndroidGuides/wiki/Fix-integrity-and-root-detection)可能有助於解決此問題。
-
-:::
-
-A. **前提條件**
-- **備份資料**（解鎖將清除所有資料）。
-- **安裝 ADB 與 Fastboot 工具** – [點此下載](https://developer.android.com/studio/releases/platform-tools)。
-- **安裝 USB 驅動程式** – [Google USB 驅動程式](https://developer.android.com/studio/run/win-usb)。
-- **啟用開發者選項**：
-  - `設定 > 關於手機 > 連點「版本號碼」7 次`
-- **啟用 USB 偵錯與 OEM 解鎖**：
-  - `設定 > 系統 > 開發者選項 > 啟用 USB 偵錯與 OEM 解鎖`
-- **移除螢幕鎖定/PIN/密碼及已登入帳號（選用，但建議執行）**
-  - 在重新鎖定 Bootloader 前移除帳號，有助於防止 Google FRP（原廠重置保護）鎖定。若觸發 FRP，裝置在原廠重置後將要求輸入先前綁定的 Google 帳號。若忘記登入資訊或無法存取帳號，可能被鎖定在裝置外。為避免此情況，建議在重新鎖定前移除所有 Google 帳號。
-
-B. **解鎖流程**
-- 透過 USB 將手機連接至電腦。
-- 在 platform-tools 資料夾中開啟命令提示字元：
-  - Windows：`Shift + 右鍵` > **在此處開啟命令提示字元/PowerShell**。
-  - Mac/Linux：開啟**終端機**並切換至 platform-tools 目錄。
-- **驗證裝置連線**：
-  ```sh
-  adb devices
-  ```
-  若出現提示，請在手機上允許 USB 偵錯。
-
-- **重新開機進入 Bootloader：**
-   ```sh
-   adb reboot bootloader
-   ```
-
-- **驗證 Fastboot 連線：**
-   ```sh
-   fastboot devices
-   ```
-   若未偵測到裝置，請重新安裝 USB 驅動程式。
-
-- **解鎖 Bootloader：**
-   ```sh
-   fastboot flashing unlock
-   ```
-
-- **在手機上確認：**
-  - 使用**音量鍵**導覽並用**電源鍵**確認。
-  - 裝置將**清除所有資料**並重新開機。
-
-C. **解鎖後續步驟**
-  - 重新設定手機。
-  - **確認 Bootloader 狀態**：
-    ```sh
-    設定 > 系統 > 開發者選項 > 應已啟用 OEM 解鎖
-    ```
-
-  - Bootloader 現已解鎖，裝置開機時將顯示橘色狀態警告——這是正常現象。
 
 <hr />
 
-### 取得 Root 權限
+### 解鎖啟動加載程序 (Bootloader)
 
 :::info
 
-- Root **將使 OEM 保固失效**，且可能在更新前若未還原原廠映像的情況下中斷 OTA 更新。
-- 請確保 **boot / init_boot 映像與目前的韌體版本完全相符**。
-  刷入不正確或不相符的映像**將導致開機迴圈**。
-- **若該分割區存在，請優先使用 `init_boot` 而非 `boot` 映像來取得 Root**。
-- 取得 Root 需要**已解鎖的 Bootloader**。
-- 使用者也可以參考以下影片視覺指南：[orailnoor](https://www.youtube.com/watch?v=v0i4rftKNWs) | [Droidwin](https://www.youtube.com/watch?v=4T1ZHDUCBsw) | [EpicDroid](https://www.youtube.com/watch?v=vXIBfyX7s-k)。
+- 解鎖啟動加載程序會使 OEM 保修失效。但是，你可以重新刷入原廠 ROM 並重新鎖定啟動加載程序以恢復保修。
+- 無論其他因素如何，你都將失去 Widevine L1/DRM 認證，這將降級為 L3。  
+- 你將失去 [設備完整性 (device integrity)](https://developer.android.com/google/play/integrity/overview)，這可能導致依賴此認證的應用程序停止工作，除非稍後通過 root 權限進行修復。  
+  [此指南](https://github.com/yashaswee-exe/AndroidGuides/wiki/Fix-integrity-and-root-detection) 可能對解決此問題有所幫助。 
+
+:::
+
+A. **先決條件**
+- **備份你的數據**（解鎖將擦除所有內容）。
+- **安裝 ADB & Fastboot 工具** —— [點此下載](https://developer.android.com/studio/releases/platform-tools)。
+- **安裝 USB 驅動程序** —— [Google USB 驅動程序](https://developer.android.com/studio/run/win-usb)。
+- **啟用開發者選項**：
+  - `設置 > 關於手機 > 點擊「版本號」7 次。`
+- **啟用 USB 調試和 OEM 解鎖**：
+  - `設置 > 系統 > 開發者選項 > 啟用 USB 調試和 OEM 解鎖。`
+- **移除屏幕鎖/PIN/密碼和已登錄的帳戶（可選但建議）**
+  - 在重新鎖定啟動加載程序之前移除帳戶有助於防止 Google FRP (出廠重置保護) 鎖定。如果觸發了 FRP，設備在出廠重置後將要求提供之前鏈接的 Google 帳戶。如果你忘記了憑據或無法訪問該帳戶，你可能會被鎖在設備之外。為了避免這種情況，建議在重新鎖定之前移除所有 Google 帳戶。
+
+B. **解鎖過程**
+- **通過 USB 將手機連接到電腦**。
+- **在 platform-tools 文件夾中打開命令提示符**：
+  - Windows：`Shift + 右鍵點擊` > **在此處打開命令提示符/Powershell**。
+  - Mac/Linux：打開 **終端 (Terminal)** 並導航到 platform-tools。
+- **驗證設備連接**：
+  ```sh
+  adb devices
+  ```
+  如果彈出提示，請在手機上允許 USB 調試。
+
+- **重啟至啟動加載程序：**
+    ```sh
+    adb reboot bootloader
+    ```
+
+- **驗證 fastboot 連接：**
+    ```sh
+    fastboot devices
+    ```
+    如果未檢測到設備，請重新安裝 USB 驅動程序。
+
+- **解鎖啟動加載程序：**
+    ```sh
+    fastboot flashing unlock
+    ```
+
+- **在手機上確認：**
+  - 使用 **音量鍵** 導航，使用 **電源鍵** 確認。
+  - 你的設備將 **擦除所有數據** 並重啟。
+
+C. **解鎖後**
+  - 重新設置你的手機。
+  - **驗證啟動加載程序狀態**：
+    ```sh
+    設置 > 系統 > 開發者選項 > OEM 解鎖應為已啟用。
+    ```
+
+  - 啟動加載程序現在已解鎖，你的設備在啟動時將顯示 Orange State 警告 —— 這是正常現象。
+
+
+<hr />
+
+### Root
+
+:::info
+
+- Root 會 **使 OEM 保修失效**，並且除非在更新前恢復原廠鏡像，否則可能會破壞 OTA 更新。
+- 務必確保 **boot / init_boot 鏡像與你當前的固件版本完全匹配**。
+  刷入錯誤或不匹配的鏡像 **會導致無限重啟 (bootloops)**。
+- **如果分區存在，請務必使用 `init_boot` 而非 `boot` 鏡像進行 root**。
+- Root 需要 **已解鎖的啟動加載程序**。
+- 用戶也可以參考並排鏈接的視覺指南：[orailnoor](https://www.youtube.com/watch?v=v0i4rftKNWs) | [Droidwin](https://www.youtube.com/watch?v=4T1ZHDUCBsw) | [EpicDroid](https://www.youtube.com/watch?v=vXIBfyX7s-k)。
 
 :::
 
 <br />
 
-A. **前提條件**
-- **已解鎖的 Bootloader** 且**已啟用 USB 偵錯**
-- 已安裝 **ADB 與 Fastboot 的電腦**
-  *或* 另一台 Android 手機，搭配 **USB-OTG + ADB 應用程式（如 [Bugjaeger](https://play.google.com/store/apps/details?id=eu.sisik.hackendebug&hl=en_IN)）**
-  *或* **自訂 Recovery（如 TWRP / OrangeFox / AOSP 系 Recovery）**
-- 熟悉 **ADB / Fastboot** 基本操作
-- 與目前版本相符的**原廠韌體**（用於提取映像）
-- 推薦的 Root 解決方案：
-  - [Magisk](https://github.com/topjohnwu/Magisk/releases) | [安裝說明](https://topjohnwu.github.io/Magisk/install.html)
-  - [KernelSU (KSU)](https://github.com/tiann/KernelSU) | [安裝說明](https://kernelsu.org/guide/installation.html)
-  - [KernelSU Next (KSUN)](https://github.com/KernelSU-Next/KernelSU-Next) | [安裝說明](https://kernelsu-next.github.io/webpage/pages/installation.html)
+A. **先決條件**
+- **已解鎖啟動加載程序** 並 **啟用了 USB 調試**
+- **配備 ADB & Fastboot 的電腦**  
+  *或* 另一部安裝了 **USB-OTG + ADB 應用程序（例如 [Bugjaeger](https://play.google.com/store/apps/details?id=eu.sisik.hackendebug&hl=en_IN)）** 的安卓手機  
+  *或* **自定義 recovery（例如 TWRP / OrangeFox / 基於 AOSP 的 recovery）**
+- 對 **ADB / Fastboot** 的基本了解
+- 與你當前版本匹配的 **原廠固件**（用於提取鏡像）
+- 推薦的 root 解決方案：
+  - [Magisk](https://github.com/topjohnwu/Magisk/releases) | [安裝指南](https://topjohnwu.github.io/Magisk/install.html)
+  - [KernelSU (KSU)](https://github.com/tiann/KernelSU) | [安裝指南](https://kernelsu.org/guide/installation.html)
+  - [KernelSU Next (KSUN)](https://github.com/KernelSU-Next/KernelSU-Next) | [安裝指南](https://kernelsu-next.github.io/webpage/pages/installation.html)
 
 <br />
 
-B. **確認目前的軟體版本**
-- 在手機上前往：設定 > 關於手機 > 點擊 Nothing OS 橫幅。
-- **記下版本號碼**
+B. **檢查當前軟件版本**
+- 在手機上，導航至：設置 > 關於手機 > 點擊 Nothing OS 橫幅。
+- **記下版本號 (Build Number)**
 - 範例：`Pong_B4.0-251119-1654`
-- 忽略地區後綴，如 `IND`/`EEA`/`TUR` 等。
+- 忽略任何區域後綴，如 `IND` / `EEA` / `TUR` 等。
 
 <br />
 
-C. **取得原廠 Boot / Init_boot 映像**
-- 前往[版本索引](/docs/firmware)。
-- 選擇你的**裝置型號**
-- 開啟對應版本的 **OTA 映像**
-- 從版本資源中下載對應的封存檔：`*-image-boot.img.7z`。
+C. **獲取原廠 Boot / Init_boot 鏡像**
+- 導航到 [發布索引](/docs/firmware)。
+- 選擇你的 **設備型號**
+- 打開適用於你確切版本的 **OTA 鏡像**
+- 從發布資源中下載對應的存檔：`*-image-boot.img.7z`。
 
-- 解壓縮封存檔並找到：
-  - `init_boot.img` **（優先使用，若存在）**
-  - `boot.img`（僅在 `init_boot` 不存在時使用）
+- 解壓存檔並找到：
+  - `init_boot.img` **（如果存在，優先選用）**
+  - `boot.img`（僅在 `init_boot` 不存在時選用）
 
-- **將映像傳輸到裝置**
+- **將鏡像傳輸到你的設備**
   ```sh
   adb push init_boot.img /sdcard/Download/
   # 或
@@ -322,86 +343,96 @@ C. **取得原廠 Boot / Init_boot 映像**
 
 <br />
 
-D. **修補映像**
+D. **修補鏡像**
 
 **Magisk**
-- 在裝置上安裝最新的 Magisk APK。
-- 開啟 Magisk → 安裝 → 選擇並修補檔案。
-- 選擇已傳輸的 `init_boot`（優先）/ `boot` 映像。
+- 在設備上安裝最新的 Magisk APK。
+- 打開 Magisk → 安裝 → 選擇並修補一個文件。
+- 選擇傳輸的 `init_boot`（優先）/ `boot` 鏡像。 
 - Magisk 將生成：`magisk_patched-XXXXX.img`
 
 <br />
 
-**KernelSU / KernelSU Next**
+**KernelSU / KernelSU Next**  
 
 :::note
 
-- 對於 Nothing Phone (2)：KSU 系 Root 方法支援使用原廠 `boot.img`。但 KSUN 或 SUSFS 支援需要已加入修補的自訂編譯核心。
-- 已知可用的預先修補自訂核心選項包括：
-  [arter97 核心](https://xdaforums.com/t/r44-arter97-kernel-for-nothing-phone-2.4631313/) - 已預先修補 KSU。尚不支援 NOS 4.0+。 |
-  [Meteoric Kernel（已停止維護）](https://github.com/HELLBOY017/kernel_nothing_sm8475) - 已預先修補 KSUN + SUSFS。不支援 NOS 4.0+。 |
-  [Wild Kernel fork](https://github.com/MiguVT/Meteoric_KernelSU_SUSFS) - 已預先修補 KSU + SUSFS。 |
-  [Wild Kernel](https://github.com/WildKernels/GKI_KernelSU_SUSFS) - 已預先修補 KSUN + SUSFS。支援 5.10-android12。
-- 出廠搭載 Android 13+ 供應商的 Nothing 型號（即 Phone (2) 之後發布的型號）將支援 KSUN 修補方法。
+- 對於 Nothing Phone (2)：原廠 `boot.img` 支持基於 KSU 的 root 方法。但 KSUN 或 SUSFS 支持需要帶有修補程序的自定義編譯內核。
+- 已知的預修補自定義內核選項包括： 
+  [arter97 內核](https://xdaforums.com/t/r44-arter97-kernel-for-nothing-phone-2.4631313/) - KSU 預修補。尚不支持 NOS 4.0+ | 
+  [Meteoric 內核 (EOL)](https://github.com/HELLBOY017/kernel_nothing_sm8475) - KSUN + SUSFS 預修補。不支持 NOS 4.0+。 |
+  [Wild 內核分支](https://github.com/MiguVT/Meteoric_KernelSU_SUSFS) - KSU + SUSFS 預修補。 | 
+  [Wild 內核](https://github.com/WildKernels/GKI_KernelSU_SUSFS) - KSUN + SUSFS 預修補。支持 5.10-android12。 
+- 出廠自帶 Android 13+ 供應商的 Nothing 型號（即 Phone (2) 之後發布的型號）將支持 KSUN 修補方法。
 
 :::
 
-- 修補方法與 Magisk 類似。在 KSU/KSUN 管理員中點擊「未安裝」> 修補 `init_boot.img` 並將修補後的映像傳輸至電腦。
+- 修補方法與 Magisk 類似。在 KSU/KSUN 管理器中點擊「未安裝」> 修補 `init_boot.img` 並將修補後的鏡像傳輸到電腦。
 
-- 重新開機進入 Bootloader：
+- 重啟至啟動加載程序：
   ```sh
   adb reboot bootloader
   ```
 
-- 刷入修補後的映像
+- 刷入修補後的鏡像
   ```bash
-  fastboot flash init_boot <拖曳並放入 patched_init_boot.img>
+  fastboot flash init_boot <拖放修補後的鏡像文件>
   ```
 
-- 重新開機進入系統：
+- 重啟至系統：
   ```bash
   fastboot reboot
-  ```
+  ``` 
 
-- 裝置現在應已透過 KSU/KSUN 取得 Root 權限。
+- 設備應已通過 KSU/KSUN 獲取 root 權限。
+
 
 <hr />
 
-### 備份重要分割區
+### Play Integrity
+
+| 指南 | 鏈接 |
+|-------|------|
+| 修復 Play Integrity 和 Root 檢測 | [Wiki](https://github.com/yashaswee-exe/AndroidGuides/wiki/Fix-integrity-and-root-detection) |
+
+
+<hr />
+
+### 備份核心分區
 
 :::info
 
-- 解鎖 Bootloader 後，在刷入自訂 ROM 或核心**之前**，備份 `persist`、`modemst1`、`modemst2`、`fsg` 等重要分割區至關重要。
-- 這些分割區包含重要資料，包括 IMEI、網路設定及指紋感應器校準資料。
-- 若遺失或損毀，你的裝置可能出現**行動網路中斷、指紋問題，甚至磚機**。
-- 建立備份確保出現問題時能**還原裝置**。
+- 在解鎖啟動加載程序後，在刷入自定義 ROM 或內核 **之前**，備份核心分區（如 `persist`, `modemst1`, `modemst2`, `fsg` 等）至關重要。
+- 這些分區包含重要數據，包括 IMEI、網絡設置和指紋傳感器校準。
+- 如果丟失或損壞，你的設備可能會 **失去移動網絡連接、指紋識別問題，甚至損壞 (brick)**。
+- 創建備份可確保你在出現問題時可以 **恢復設備**。
 
 :::
 
-A. **需求**
-- **已解鎖的 Bootloader**
-- **Root 權限**（透過 Magisk/KSU/Apatch）
-- **Termux 應用程式**（透過 F-Droid 或 Play 商店安裝）
-- **確認分割區路徑：**
-  - **高通（Qcom）裝置：** `/dev/block/bootdevice/by-name/`
-  - **聯發科（MTK）裝置：** `/dev/block/by-name/`
+A. **要求**
+- **已解鎖啟動加載程序**
+- **Root 權限**（通過 Magisk/KSU/Apatch）
+- **Termux 應用**（通過 F-Droid 或 Play 商店安裝）
+- **檢查分區路徑：**
+  - **高通 (Qcom) 設備：** `/dev/block/bootdevice/by-name/`
+  - **聯發科 (MTK) 設備：** `/dev/block/by-name/`
 
 B. **備份說明**
-- **高通（QCom）裝置：**
-  - 開啟 **Termux** 並使用以下指令取得 Root 存取權：
+- **對於高通 (Qualcomm/QCom) 設備：**
+  - 打開 **Termux** 並使用以下命令授予 root 權限：
     ```sh
     su
     ```
 
-  - 一次複製並貼上以下指令：
+  - 一次性複製並粘貼以下命令：
     ```sh
     mkdir -p /sdcard/partitions_backup
     ls -1 /dev/block/bootdevice/by-name | grep -v userdata | grep -v super | \
     while read f; do dd if=/dev/block/bootdevice/by-name/$f of=/sdcard/partitions_backup/${f}.img; done
     ```
-    這將在**內部儲存空間**的 **"partitions_backup"** 資料夾中建立**除 `super` 與 `userdata` 之外所有分割區**的映像檔。
+    這將在 **內部存儲** 的「partitions_backup」文件夾中創建 **除 `super` 和 `userdata` 以外的所有分區** 的鏡像文件。
 
-  - **[選用]** 若上述指令失敗，請嘗試以下替代方案：
+  - **[可選]** 如果上述命令失敗，請嘗試此替代方案：
     ```sh
     mkdir -p /sdcard/partitions_backup
     for partition in /dev/block/bootdevice/by-name/*; do \
@@ -409,13 +440,13 @@ B. **備份說明**
     cp -f "$partition" /sdcard/partitions_backup/; done
     ```
 
-- **聯發科（MTK）裝置：**
-  - 開啟 **Termux** 並使用以下指令取得 Root 存取權：
+- **對於聯發科 (MediaTek/MTK) 設備：**
+  - 打開 **Termux** 並使用以下命令授予 root 權限：
     ```sh
     su
     ```
 
-  - 一次複製並貼上以下所有指令：
+  - 一次性複製並粘貼以下所有命令：
     ```sh
     mkdir -p /sdcard/partitions_backup/
     cd /sdcard/partitions_backup
@@ -427,148 +458,143 @@ B. **備份說明**
     dd if=/dev/block/by-name/protect2 of=/sdcard/partitions_backup/protect2.img
     ```
 
-C. **儲存備份**
-  - 將 **"partitions_backup"** 資料夾移動至**電腦或安全儲存空間**。
-  - **請勿分享這些備份！** 它們包含裝置的唯一資料，例如 IMEI。
+C. **存儲備份**
+  - 將「partitions_backup」文件夾移動到你的 **電腦或安全存儲設備**。
+  - **請勿分享這些備份！** 它們包含 IMEI 等唯一的設備數據。
 
-D. **還原分割區**
- - **聯發科（MTK）裝置：**
-   ```sh
-   fastboot flash nvram nvram.img
-   fastboot flash nvdata nvdata.img
-   fastboot flash nvcfg nvcfg.img
-   fastboot flash persist persist.img
-   ```
-   重新開機進入 **Recovery 模式** → 執行**原廠重置** → 重新開機進入**系統**。
-   - 參考連結：[Nothing Phone (2a) DVT 工程機：還原基頻與 IMEI 紀錄](https://bluehomewu.github.io/posts/Restoring-Baseband-and-IMEI-on-Nothing-Phone-2a-DVT/)
-   - 文章以繁體中文撰寫，可使用瀏覽器翻譯功能翻譯成英文。
+D. **恢復分區**
+ - **MTK 設備：**
+    ```sh
+    fastboot flash nvram nvram.img
+    fastboot flash nvdata nvdata.img
+    fastboot flash nvcfg nvcfg.img
+    fastboot flash persist persist.img
+    ```
+    重啟至 **recovery 模式** → 執行 **出廠重置 (factory reset)** → 重啟至 **系統**。
+    - 參考鏈接：[Nothing Phone (2a) DVT 工程樣機：恢復基帶和 IMEI 記錄](https://bluehomewu.github.io/posts/Restoring-Baseband-and-IMEI-on-Nothing-Phone-2a-DVT/)
+    - 該帖子以繁體中文撰寫，可以使用瀏覽器翻譯功能翻譯。
 
- - **高通（QCom）裝置：**
-   ```sh
-   fastboot flash persist persist.img
-   fastboot flash modemst1 modemst1.img
-   fastboot flash modemst2 modemst2.img
-   ```
-   **此情況下不需要進行原廠重置。**
+ - **QCom 設備：**
+    ```sh
+    fastboot flash persist persist.img
+    fastboot flash modemst1 modemst1.img
+    fastboot flash modemst2 modemst2.img
+    ```
+    **在這種情況下，出廠重置並非必須。**
+
 
 <hr />
 
-### 刷入原廠 ROM（救磚 / 降級）
+### 刷入原廠 ROM（修復救磚 / 降級）
 
 :::note
 
-- 這是手動乾淨刷機至較新版本原廠韌體或進行降級的唯一推薦方法。
-- 如需更好地理解操作步驟，請參考以下影片視覺指南：[Droidwin](https://www.youtube.com/watch?v=YCYEjdC3oHM) | [The Nothing Lab](https://www.youtube.com/watch?v=l0P9gosl64s) | [QZX Tech](https://www.youtube.com/watch?v=66H2MVElyAY)
+- 這是手動全新刷入較新版本原廠固件或降級的唯一推薦方法。
+- 欲深入了解，請參考並排鏈接的視覺指南：[Droidwin](https://www.youtube.com/watch?v=YCYEjdC3oHM) | [The Nothing Lab](https://www.youtube.com/watch?v=l0P9gosl64s) | [QZX Tech](https://www.youtube.com/watch?v=66H2MVElyAY)
 
 :::
 
-A. **準備刷機資料夾：**
-  - 為你的裝置型號和韌體版本下載以下檔案，並將其放入專用資料夾：
+A. **準備刷機文件夾：**
+  - 下載適用於你設備型號和固件版本的以下文件，並將它們放在一個專用文件夾中：
     - image-boot.7z
     - image-firmware.7z
     - image-logical.7z.001-00x
-    - `-hash.sha256` - 這是選用的，但建議用於驗證檔案完整性和偵測缺失部分。
+    - `-hash.sha256` —— 這是可選的，但建議用於驗證文件完整性和檢測缺失部分。
 
-  - 從 https://www.7-zip.org/ 安裝 7-Zip
+  - 從 https://www.7-zip.org/ 安裝 7-Zip。
 
-  - 選用（**建議**）：你可以使用提取腳本代替手動步驟：
+  - 可選（**推薦**）：你可以使用提取腳本而不是手動步驟：
     - [Windows](https://github.com/spike0en/nothing_archive/blob/main/scripts/extract.bat)
     - [Bash](https://github.com/spike0en/nothing_archive/blob/main/scripts/extract.sh)
-    - 請從下載檔案所在的資料夾執行腳本。
+    - 在下載文件所在的文件夾中運行腳本。
 
-  - 解壓縮檔案：
-    - Windows：右鍵 → 解壓縮到 "*\"
-    - Bash 使用者：`7za -y x "*.7z*"`
+  - 提取文件：
+    - Windows：右鍵點擊 → 「提取到 "*\"」
+    - Bash 用戶：`7za -y x "*.7z*"`
 
-  - 在少數情況下，下載管理員可能會修改分割邏輯檔案的副檔名。
-  - 重新命名：
+  - 在極少數情況下，下載管理器可能會修改分段邏輯文件的擴展名。
+  - 重命名：
     - `-image-logical.7z.001.7z` → `-image-logical.7z.001`
     - `-image-logical.7z.002.7z` → `-image-logical.7z.002`
-  - 然後重試解壓縮。
+  - 然後重試提取。
 
 B. **進行刷機：**
-  - 從[這裡](https://developer.android.com/studio/run/win-usb)安裝相容的 USB 驅動程式。
-  - 確保裝置在 **Bootloader 模式**下，**裝置管理員**中可看到 `Android Bootloader Interface`。
-  - 若先前已使用提取腳本，請直接執行。否則：
-    - 將所有提取的映像檔與 [Nothing Fastboot 刷機腳本](https://github.com/spike0en/nothing_fastboot_flasher/blob/main/README.md#-download)放入同一資料夾。
-    - 將 `-hash.sha256` 檔案放在同一目錄中。
-    - 請始終下載最新版腳本以確保包含最新修補。
-  - 連線至網際網路執行腳本（以取得最新 `platform-tools`），並依照提示操作：
+  - 從 [這裡](https://developer.android.com/studio/run/win-usb) 安裝兼容的 USB 驅動程序。
+  - 確保設備處於 **啟動加載程序模式** 時，**設備管理器** 中可見「Android Bootloader Interface」。
+  - 如果之前使用了提取腳本，請直接執行它。否則：
+    - 將所有提取的鏡像文件移動到一個文件夾中，連同 [Nothing Fastboot Flasher 腳本](https://github.com/spike0en/nothing_fastboot_flasher/blob/main/README.md#-download)。
+    - 將 `-hash.sha256` 文件放在同一目錄中。 
+    - 務必下載最新腳本以確保包含熱修復程序。
+  - 在聯網狀態下運行腳本（以獲取最新的 `platform-tools`）並按照提示操作：
     - 回答確認問卷。
-    - 依需求跳過或進行雜湊值檢查。
-    - 選擇是否清除資料：(Y/N)【乾淨刷機 / 降級 = `Y` | 髒刷 / 升級 = `N`】
+    - 根據情況跳過或進行哈希檢查。 
+    - 選擇是否清除數據：(Y/N) [全新刷機 / 降級 = `Y` | 覆蓋刷機 / 升級 = `N`]
     - 選擇是否刷入兩個插槽：(Y/N)
-    - 停用 Android 驗證啟動：(N)【請注意，若選擇 `Y`，之後將無法解鎖 Bootloader！】
-  - 確認所有分割區已成功刷入。
-    - 若成功，選擇重新開機進入系統：(Y)
-    - 若發生錯誤，請重新開機進入 Bootloader 並在解決錯誤後重新刷機。未解決錯誤就重新開機進入系統可能導致軟磚或硬磚。
+    - 禁用安卓驗證啟動 (Android Verified Boot)：(N) [請注意，如果你在此處選擇 `Y`，以後將無法解鎖啟動加載程序！]
+  - 驗證所有分區是否已成功刷入。
+    - 如果成功，選擇重啟至系統：(Y)
+    - 如果出現錯誤，請在解決故障後重啟至啟動加載程序並重新刷入。在未解決問題的情況下重啟至系統可能會導致設備損壞 (brick)。
+
 
 <hr />
 
-### 重新鎖定 Bootloader
+### 重新鎖定啟動加載程序 (Bootloader)
 
-A. **前提條件**
-  - 移除**螢幕鎖定/PIN/密碼及已登入帳號**（選用，但建議執行）。
-  - 依照[刷機指南](#刷入原廠-rom救磚--降級)乾淨刷入**原廠 ROM**。**在未刷入原廠韌體的情況下以修改過的分割區重新鎖定 Bootloader 可能導致磚機！**
-  - 備份所有資料（重新鎖定將**清除所有資料**）。
-  - 若尚未設定，請安裝 **ADB 與 Fastboot 工具**及 USB 驅動程式。
+A. **先決條件**
+  - 移除 **屏幕鎖/PIN/密碼和已登錄的帳戶**（可選但建議）。
+  - 按照 [刷機指南](#刷入原廠-rom修復救磚--降級) 全新刷入 **原廠 ROM**。**在未刷入原廠固件的情況下，使用修改過的分區重新鎖定啟動加載程序可能會損壞設備！**
+  - 備備份所有數據（重新鎖定將 **擦除所有內容**）。
+  - 如果尚未設置，請安裝 **ADB & Fastboot 工具** 和 USB 驅動程序。
 
-B. **重新鎖定流程**
-  - 若你在系統中，重新開機進入 Bootloader：
+B. **重新鎖定過程**
+  - 如果你在系統中，重啟至啟動加載程序：
     ```sh
     adb reboot bootloader
     ```
 
-  - 驗證 Fastboot 連線：
+  - 驗證 fastboot 連接：
     ```sh
     fastboot devices
     ```
 
-  - 開始重新鎖定 Bootloader：
+  - 下達重新鎖定指令：
     ```sh
     fastboot flashing lock
     ```
 
   - 在手機上確認：
-    - 使用**音量鍵**導覽並用**電源鍵**確認。
-    - 裝置將被格式化並以已鎖定的 Bootloader 重新開機。
+    - 使用 **音量鍵** 導航，使用 **電源鍵** 確認。
+    - 設備將被格式化並以鎖定的啟動加載程序重啟。
 
-C. **重新鎖定後續步驟**
-  - 重新設定你的裝置。
-  - Bootloader 現已鎖定！
+C. **重新鎖定後**
+  - 重新設置你的設備。
+  - 啟動加載程序現已鎖定！
 
-<hr />
-
-### Play 完整性
-
-| 指南 | 連結 |
-|------|------|
-| 修復 Play 完整性與 Root 偵測 | [Wiki](https://github.com/yashaswee-exe/AndroidGuides/wiki/Fix-integrity-and-root-detection) |
 
 ---
 
 ## 售後開發
 
 :::note
-此章節由社群管理，與 Nothing 官方無關。解鎖 Bootloader 將使 OEM 保固失效。
+此部分由社區管理，不隸屬於 Nothing。解鎖啟動加載程序將使你的 OEM 保修失效。
 :::
 
-獲取自訂 ROM、核心及開發專案的最新資訊。
+隨時了解自定義 ROM、內核和開發項目的最新動態。
 
-### 裝置更新頻道（Telegram）
+### 設備更新頻道 (Telegram)
 
-**Nothing：**
-| 裝置 | 頻道 |
-|------|------|
+**Nothing:**
+| 設備 | 頻道 |
+|--------|---------|
 | Phone (1) | [更新](https://t.me/s/NothingPhone1Updates) |
 | Phone (2) | [更新](https://t.me/s/NothingPhone2updates) |
 | Phone (2a) 系列 | [更新](https://t.me/s/NothingPhone2aUpdates) |
 | Phone (3a) 系列 | [更新](https://t.me/s/NothingPhone3aUpdates) |
 | Phone (3) | [更新](https://t.me/s/Phone3Updates) |
-| Phone (4a) 系列 | [更新](https://t.me/s/Phone4aUpdates) |
+| Phone (4a) 系列| [更新](https://t.me/s/Phone4aUpdates) |
 
-**CMF by Nothing：**
-| 裝置 | 頻道 |
-|------|------|
+**CMF by Nothing:**
+| 設備 | 頻道 |
+|--------|---------|
 | Phone (1) | [更新](https://t.me/s/CMFPhone1Updates) |
 | Phone (2) Pro / Phone (3a) Lite | [更新](https://t.me/s/CMFPhone2GlobalUpdates) |
