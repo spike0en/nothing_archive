@@ -160,7 +160,7 @@ function HomepageHeader() {
           </div>
           <div className={styles.heroImage}>
             <img
-              src="img/logo.webp"
+              src="img/logo.png"
               alt="Nothing Archive"
               width={280}
               height={280}

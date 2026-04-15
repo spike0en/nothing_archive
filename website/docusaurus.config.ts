@@ -129,16 +129,16 @@ const config: Config = {
       tagName: 'link',
       attributes: {
         rel: 'icon',
-        type: 'image/webp',
+        type: 'image/png',
         sizes: '32x32',
-        href: '/nothing_archive/img/logo.webp',
+        href: '/nothing_archive/img/logo.png',
       },
     },
     {
       tagName: 'link',
       attributes: {
         rel: 'apple-touch-icon',
-        href: '/nothing_archive/img/logo.webp',
+        href: '/nothing_archive/img/logo.png',
       },
     },
     // Preload Largest Contentful Paint (LCP) hero graphic
@@ -147,7 +147,7 @@ const config: Config = {
       attributes: {
         rel: 'preload',
         as: 'image',
-        href: '/nothing_archive/img/logo.webp',
+        href: '/nothing_archive/img/logo.png',
         fetchpriority: 'high',
       },
     },
@@ -201,7 +201,7 @@ const config: Config = {
       title: 'Nothing Archive',
       logo: {
         alt: 'Nothing Archive Logo',
-        src: 'img/logo.webp',
+        src: 'img/logo.png',
         width: 32,
         height: 32,
       },
