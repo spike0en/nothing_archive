@@ -22,7 +22,16 @@ Nothing 裝置的 GCAM 移植版本、設定檔及相機預設值。
 
 依裝置名稱分類封存的設定檔（`xml`），附有創作者署名：
 
-- [下載儲存庫](https://archive.org/download/nothing-archive/spike0en/photography/)
+#### Nothing
+- [Phone (1)](https://archive.org/download/nothing-archive/spike0en/photography/phone-1/)
+- [Phone (2)](https://archive.org/download/nothing-archive/spike0en/photography/phone-2/)
+- [Phone (2a) Series](https://archive.org/download/nothing-archive/spike0en/photography/phone-2a-series/)
+- [Phone (3a) & (3a) Pro](https://archive.org/download/nothing-archive/spike0en/photography/phone-3a-series/)
+- [Phone (3)](https://archive.org/download/nothing-archive/spike0en/photography/phone-3/)
+
+#### CMF by Nothing
+- [Phone (1)](https://archive.org/download/nothing-archive/spike0en/photography/cmf-1/)
+- [Phone (2) Pro](https://archive.org/download/nothing-archive/spike0en/photography/cmf-2pro/)
 
 ---
 

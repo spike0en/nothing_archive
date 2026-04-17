@@ -22,7 +22,16 @@ Nothing cihazları için GCAM portları, yapılandırmalar ve kamera presetleri.
 
 Cihaz adına göre arşivlenmiş ve oluşturucu atıfı içeren yapılandırma dosyaları (`xml`):
 
-- [Arşivi İndir](https://archive.org/download/nothing-archive/spike0en/photography/)
+#### Nothing
+- [Phone (1)](https://archive.org/download/nothing-archive/spike0en/photography/phone-1/)
+- [Phone (2)](https://archive.org/download/nothing-archive/spike0en/photography/phone-2/)
+- [Phone (2a) Series](https://archive.org/download/nothing-archive/spike0en/photography/phone-2a-series/)
+- [Phone (3a) & (3a) Pro](https://archive.org/download/nothing-archive/spike0en/photography/phone-3a-series/)
+- [Phone (3)](https://archive.org/download/nothing-archive/spike0en/photography/phone-3/)
+
+#### CMF by Nothing
+- [Phone (1)](https://archive.org/download/nothing-archive/spike0en/photography/cmf-1/)
+- [Phone (2) Pro](https://archive.org/download/nothing-archive/spike0en/photography/cmf-2pro/)
 
 ---
 
