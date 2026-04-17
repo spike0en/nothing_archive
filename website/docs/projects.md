@@ -124,6 +124,7 @@ Essential resources including wikis, firmware archives, and system repair tools.
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | Integrity check bypass PoC for Phone (2a) & CMF Phone (1) |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid macros |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Curated hub for official Nothing & CMF firmware, community apps, projects, resources and aftermarket development.([Repo](https://github.com/spike0en/nothing_archive)) |
+| [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | PWA-style web app that indexes community apps, using a foundational database sourced from [Nothing Archive](https://github.com/spike0en/nothing_archive) |
 | [Nothing Flasher](https://github.com/spike0en/nothing_flasher) | spike0en & Hellboy017 | Fastboot flashing scripts |
 | [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | News and resources hub |
 | [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | Tool to patch/disable Logkit via ADB |

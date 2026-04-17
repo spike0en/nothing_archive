@@ -124,6 +124,7 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | PoC для обхода проверки целостности для Phone (2a) и CMF Phone (1) |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Макросы для приложения Macrodroid |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Курируемый хаб для официальных прошивок Nothing и CMF, проектов сообщества, ресурсов и кастомных разработок. ([Репозиторий](https://github.com/spike0en/nothing_archive)) |
+| [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | Веб-приложение в стиле PWA, индексирующее приложения сообщества, использующее базовую базу данных из [Nothing Archive](https://github.com/spike0en/nothing_archive) |
 | [Nothing Flasher](https://github.com/spike0en/nothing_flasher) | spike0en & Hellboy017 | Скрипты для прошивки через Fastboot |
 | [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | Хаб новостей и ресурсов |
 | [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | Инструмент для патчинга/отключения Logkit через ADB |

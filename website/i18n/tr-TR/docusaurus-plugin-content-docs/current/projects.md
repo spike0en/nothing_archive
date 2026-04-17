@@ -124,6 +124,7 @@ Vikiler, donanım yazılımı arşivleri ve sistem onarım araçları dahil teme
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | Phone (2a) ve CMF Phone (1) için Integrity Bypass PoC |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid macroları |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Resmi Nothing ve CMF donanım yazılımları, uygulamalar ve kaynaklar için kaynak merkezi. ([Depo](https://github.com/spike0en/nothing_archive)) |
+| [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | Topluluk uygulamalarını dizine ekleyen PWA tarzı web uygulaması; [Nothing Archive](https://github.com/spike0en/nothing_archive) kaynaklı temel bir veritabanı kullanır |
 | [Nothing Flasher](https://github.com/spike0en/nothing_flasher) | spike0en & Hellboy017 | Fastboot flaşlama betikleri |
 | [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | Haber ve kaynak merkezi |
 | [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | ADB aracılığıyla Logkit'i yamama/devre dışı bırakma aracı |
