@@ -79,6 +79,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistant varlık değiştirme |
 | [Hamon](https://github.com/yuk1-kondo/GlyphToys-hamon) | yuk1-kondo | Fiziksel dalga yayılımı |
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | Jiroskopik su terazisi aracı |
+| [Live Bridge](https://github.com/appsfolder/livebridge) | appsfolder | Desteklenmeyen ilerleme bildirimlerini Canlı Bildirimlere dönüştürerek Nothing'in Glyph ilerleme göstergeleriyle uyumlu hale getirir |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | Klasik Sihirli 8 Top |
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Minecraft piksel sanatı |
 | [Nono Gotchi (Beta)](https://www.jkn.me/pet) | Jkn | Tamagotchi tarzı sanal evcil hayvan |

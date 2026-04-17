@@ -79,6 +79,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Переключатель объектов Home Assistant |
 | [Hamon](https://github.com/yuk1-kondo/GlyphToys-hamon) | yuk1-kondo | Физическое распространение волн |
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | Гироскопический уровень |
+| [Live Bridge](https://github.com/appsfolder/livebridge) | appsfolder | Преобразует неподдерживаемые уведомления о прогрессе в живые уведомления, делая их совместимыми с индикаторами прогресса Glyph от Nothing |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | Классический магический шар предсказаний |
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Пиксель-арт в стиле Minecraft |
 | [Nono Gotchi (Beta)](https://www.jkn.me/pet) | Jkn | Виртуальный питомец в стиле Тамагочи |

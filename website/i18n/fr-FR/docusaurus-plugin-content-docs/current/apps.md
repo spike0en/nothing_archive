@@ -79,6 +79,7 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Commutation d'entité Home Assistant |
 | [Hamon](https://github.com/yuk1-kondo/GlyphToys-hamon) | yuk1-kondo | Propagation d'ondes physiques |
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | Outil de niveau gyroscopique |
+| [Live Bridge](https://github.com/appsfolder/livebridge) | appsfolder | Convertit les notifications de progression non supportées en notifications en direct pour les rendre compatibles avec les indicateurs de progression Glyph de Nothing |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | Magic 8 Ball classique |
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Pixel art Minecraft |
 | [Nono Gotchi (Beta)](https://www.jkn.me/pet) | Jkn | Animal virtuel style Tamagotchi |

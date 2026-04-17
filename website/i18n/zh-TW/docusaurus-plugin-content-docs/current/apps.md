@@ -78,6 +78,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistant 實體切換 |
 | [Hamon](https://github.com/yuk1-kondo/GlyphToys-hamon) | yuk1-kondo | 物理波紋傳播 |
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | 陀螺儀水平工具 |
+| [Live Bridge](https://github.com/appsfolder/livebridge) | appsfolder | 將不支援的進度通知轉換為即時通知，使其與 Nothing 的 Glyph 進度指示器相容 |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | 經典神奇八號球 |
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Minecraft 像素藝術 |
 | [Nono Gotchi（測試版）](https://www.jkn.me/pet) | Jkn | 電子雞風格虛擬寵物 |

@@ -79,6 +79,7 @@ Glyphマトリックス向けのインタラクティブなトイとゲーム。
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistantのエンティティ切り替え |
 | [Hamon](https://github.com/yuk1-kondo/GlyphToys-hamon) | yuk1-kondo | 物理的な波の伝播 |
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | ジャイロスコープ水準器ツール |
+| [Live Bridge](https://github.com/appsfolder/livebridge) | appsfolder | 未サポートの進捗通知をライブ通知に変換し、NothingのGlyph進捗インジケーターと互換性を持たせます |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | 古典的なマジック8ボール |
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Minecraftピクセルアート |
 | [Nono Gotchi (Beta)](https://www.jkn.me/pet) | Jkn | たまごっちスタイルの仮想ペット |
