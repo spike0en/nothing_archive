@@ -2,18 +2,18 @@
 sidebar_position: 1
 slug: /intro
 title: Giriş
-description: Nothing ve CMF by Nothing ekosistemine dair her şey için küratörlü bir kaynak listesi — uygulamalar, donanım yazılımı, araçlar, kılavuzlar ve kaynaklar.
-keywords: [nothing, cmf by nothing, nothing ekosistemi, root, nothing donanım yazılımı, nothing uygulamaları, nothing özelleştirme, nothing phone, glyph arayüzü]
+description: Nothing ve CMF by Nothing ekosistemine dair her şey için toparlanmış bir kaynak listesi — uygulamalar, yazılımlar, araçlar, kılavuzlar ve kaynaklar.
+keywords: [nothing, cmf by nothing, nothing ekosistemi, root, nothing yazılım, nothing uygulamaları, nothing özelleştirme, nothing phone, glyph arayüzü]
 ---
 
 # Nothing Archive
 
-Nothing OS donanım yazılımları, orijinal OTA imajları, topluluk uygulamaları, projeler, kaynaklar, kapsamlı kılavuzlar ve daha fazlası için en güncel kaynağınız.
+Nothing OS yazılımları, orijinal OTA imajları, topluluk uygulamaları, projeler, kaynaklar, kapsamlı kılavuzlar ve daha fazlası için en güncel kaynağınız.
 
 ## Nedir ?
 
-- Nothing Archive, Nothing ve CMF by Nothing telefonları için resmi OTA güncellemelerini, tam donanım yazılımı paketlerini ve orijinal OTA imajlarını barındıran en güncel depo projesidir. Tüm dosyalar doğrudan üreticinin resmi sunucularından temin edilir ve uzun süreli koruma ve kolay erişim için [arşivlenir](https://archive.org/details/nothing-archive).
-- Donanım yazılımının ötesinde, proje topluluk tarafından oluşturulmuş uygulamaları, araçları, projeleri, resmi kaynakları, üçüncü taraf geliştirme girişimlerini ve Nothing ekosistemiyle ilgili her şeyi bir araya getiren merkezi bir ağ geçididir.
+- Nothing Archive, Nothing ve CMF by Nothing telefonları için resmi OTA güncellemelerini, tam yazılım paketlerini ve orijinal OTA imajlarını barındıran en güncel depo projesidir. Tüm dosyalar doğrudan üreticinin resmi sunucularından temin edilir ve uzun süreli koruma ve kolay erişim için [arşivlenir](https://archive.org/details/nothing-archive).
+- Yazılımının ötesinde, proje topluluk tarafından oluşturulmuş uygulamaları, araçları, projeleri, resmi kaynakları, üçüncü taraf geliştirme girişimlerini ve Nothing ekosistemiyle ilgili her şeyi bir araya getiren merkezi bir ağ geçididir.
 - Kategorilere göre gezinmek için **yan menüyü** kullanın veya bağlantıda kalmak için aşağıdaki bağlantılara göz atın.
 
 ## Destek Olun
