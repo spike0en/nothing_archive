@@ -131,11 +131,12 @@ Ressources essentielles incluant des wikis, des archives de firmware et des outi
 | [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Application Linux en Rust pour contrôler les modes ANC des écouteurs Nothing |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | PoC de contournement du test d'intégrité pour Phone (2a) et CMF Phone (1) |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macros Macrodroid |
-| [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Hub de sources officielles pour le firmware Nothing et CMF, applications, ressources et développement tiers.([Dépôt](https://github.com/spike0en/nothing_archive)) |
+| [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Hub de sources officielles pour le firmware Nothing et CMF, applications, ressources et développement tiers. ([Dépôt](https://github.com/spike0en/nothing_archive)) |
 | [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | Application web de style PWA qui indexe les applications de la communauté, utilisant une base de données de base provenant de [Nothing Archive](https://github.com/spike0en/nothing_archive) |
 | [Nothing Flasher](https://github.com/spike0en/nothing_flasher) | spike0en et Hellboy017 | Scripts de flashage fastboot |
 | [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | Hub de nouvelles et de ressources |
 | [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | Outil pour patcher/désactiver Logkit via ADB |
+| [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | Une galerie sélectionnée des widgets préférés de la communauté Nothing |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | Hub de la communauté ([Dépôt](https://github.com/nothingtools/nothingtools.github.io)) |
 | [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | Wiki de r/NothingTech |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | Application compagnon macOS pour les écouteurs Nothing et CMF |

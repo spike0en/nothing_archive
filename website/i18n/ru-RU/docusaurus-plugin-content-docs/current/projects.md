@@ -136,6 +136,7 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 | [Nothing Flasher](https://github.com/spike0en/nothing_flasher) | spike0en & Hellboy017 | Скрипты для прошивки через Fastboot |
 | [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | Хаб новостей и ресурсов |
 | [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | Инструмент для патчинга/отключения Logkit через ADB |
+| [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | Курируемая галерея любимых виджетов сообщества Nothing |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | Хаб сообщества ([Репозиторий](https://github.com/nothingtools/nothingtools.github.io)) |
 | [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | Вики r/NothingTech |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | Приложение-компаньон для macOS для наушников Nothing и CMF |

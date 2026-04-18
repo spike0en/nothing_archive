@@ -136,6 +136,7 @@ Vikiler, donanım yazılımı arşivleri ve sistem onarım araçları dahil teme
 | [Nothing Flasher](https://github.com/spike0en/nothing_flasher) | spike0en & Hellboy017 | Fastboot flaşlama betikleri |
 | [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | Haber ve kaynak merkezi |
 | [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | ADB aracılığıyla Logkit'i yamama/devre dışı bırakma aracı |
+| [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | Nothing topluluğunun favori widget'larından oluşan küratörlü bir galeri |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | Topluluk merkezi ([Depo](https://github.com/nothingtools/nothingtools.github.io)) |
 | [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | r/NothingTech wikisi |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | Nothing ve CMF kulaklıklar için macOS yardımcı uygulaması |

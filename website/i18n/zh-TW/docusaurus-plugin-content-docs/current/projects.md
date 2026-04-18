@@ -136,6 +136,7 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | [Nothing Flasher](https://github.com/spike0en/nothing_flasher) | spike0en & Hellboy017 | Fastboot 刷機腳本 |
 | [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | 新聞與資源平台 |
 | [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | 透過 ADB 修補／停用 Logkit 的工具 |
+| [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | Nothing 社群精選小工具藝廊 |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | 社群平台（[Repo](https://github.com/nothingtools/nothingtools.github.io)） |
 | [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | r/NothingTech 維基 |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | 用於 Nothing 與 CMF 耳機的 macOS 配套應用程式 |
