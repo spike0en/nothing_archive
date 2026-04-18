@@ -390,8 +390,8 @@ D. **Imajı Yamalayın**
 
 :::note
 
-- Nothing Phone (2) için: KSU tabanlı root yöntemi stok `boot.img` ile desteklenir. Ancak KSUN veya SUSFS desteği, yamaların eklendiği özel olarak derlenmiş bir çekirdek (kernel) gerektirir.
-- Mevcut önceden yamalanmış özel çekirdek seçenekleri şunlardır: 
+- Nothing Phone (2) için: KSU tabanlı root yöntemi stok `boot.img` ile desteklenir. Ancak KSUN veya SUSFS desteği, yamaların eklendiği özel olarak derlenmiş bir kernel gerektirir.
+- Mevcut önceden yamalanmış özel kernel seçenekleri şunlardır: 
   [arter97 kernel](https://xdaforums.com/t/r44-arter97-kernel-for-nothing-phone-2.4631313/) - KSU önceden yamalı. Henüz NOS 4.0+ sürümünü desteklemiyor | 
   [Meteoric Kernel (EOL)](https://github.com/HELLBOY017/kernel_nothing_sm8475) - KSUN + SUSFS önceden yamalı. NOS 4.0+ sürümünü desteklemiyor. |
   [Wild Kernel fork](https://github.com/MiguVT/Meteoric_KernelSU_SUSFS) - KSU + SUSFS önceden yamalı. | 
@@ -435,7 +435,7 @@ D. **Imajı Yamalayın**
 
 :::info
 
-- Önyükleyici kilidini açtıktan sonra, özel ROM'lar veya çekirdekler (kernels) flaşlamadan **önce** `persist`, `modemst1`, `modemst2`, `fsg` gibi temel bölümleri yedeklemek çok önemlidir.
+- Önyükleyici kilidini açtıktan sonra, özel ROM'lar veya kernel'ler flaşlamadan **önce** `persist`, `modemst1`, `modemst2`, `fsg` gibi temel bölümleri yedeklemek çok önemlidir.
 - Bu bölümler IMEI, ağ ayarları ve parmak izi sensörü kalibrasyonu dahil olmak üzere önemli veriler içerir.
 - Kaybolmaları veya bozulmaları durumunda cihazınızda **hücresel bağlantı kaybı, parmak izi sorunları oluşabilir veya cihazınız kullanılmaz hale (brick) gelebilir**.
 - Yedek oluşturmak, bir şeyler ters giderse **cihazınızı geri yükleyebilmenizi** sağlar.
@@ -674,7 +674,7 @@ Araştırma veya gelişmiş kullanım durumları için ek rehberler ve projeler:
 Bu bölüm topluluk tarafından yönetilmektedir ve Nothing ile bağlantılı değildir. Önyükleyici kilidini açmak OEM garantinizi geçersiz kılacaktır.
 :::
 
-Özel ROM'lar, çekirdekler ve geliştirme projeleri ile güncel kalın.
+Özel ROM'lar, kernel'ler ve geliştirme projeleri ile güncel kalın.
 
 ### Cihaz Güncelleme Kanalları (Telegram)
 
