@@ -15,7 +15,7 @@ Nothing topluluğu tarafında sürdürülen projeler.
 
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
-| [Better Nothing Glyph Composer](https://better-nothing-glyph-composer.pages.dev/) | Krishnagopal Sinha | Glyph tonları oluşturmak için görsel araç. Phone (3) matrisini destekler |
+| [Better Nothing Glyph Composer](https://better-nothing-glyph-composer.pages.dev/) | Krishnagopal Sinha | Glyph tonları oluşturmak için görsel araç. Phone (3) matrixi destekler |
 | [Better Nothing Music Visualizer](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | alekslevet | Geliştirilmiş müzik görselleştirme |
 | [Cassette](https://github.com/Chipik0/Cassette) | Chipik0 | Glyph kompozisyonları oluşturun |
 | [Custom Nothing Glyph Tools](https://github.com/SebiAi/custom-nothing-glyph-tools) | SebiAi | Audacity kullanarak tonlar oluşturun |
@@ -91,7 +91,7 @@ Diğer geliştiricilerin Nothing'den ilham alan projeler oluşturmasına yardım
 | [Dotify Client](https://github.com/PATEL96/dotify-client) | PATEL96 | Nokta matrisi imaj oluşturucu |
 | [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Phone (3) için pixel art düzenleyici |
 | [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | İmajdan Glyph desenine dönüştürücü |
-| [Matrices](https://udaign.github.io/matrices/) | Uday | Glyph matris tasarım aracı ([Depo](https://github.com/udaign/matrices)) |
+| [Matrices](https://udaign.github.io/matrices/) | Uday | Glyph Matrix tasarım aracı ([Depo](https://github.com/udaign/matrices)) |
 | [Vizmatrices](https://udaign.github.io/vizmatrices/) | udaign | Gerçek zamanlı sese duyarlı görselleştirici ([Depo](https://github.com/udaign/vizmatrices)) |
 
 ---
@@ -123,7 +123,7 @@ Nothing kulaklıkları için topluluk yapımı EQ profilleri:
 
 ## Kaynaklar ve Yardımcı Araçlar
 
-Vikiler, donanım yazılımı arşivleri ve sistem onarım araçları dahil temel kaynaklar.
+Vikiler, yazılım arşivleri ve sistem onarım araçları dahil temel kaynaklar.
 
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
@@ -131,12 +131,12 @@ Vikiler, donanım yazılımı arşivleri ve sistem onarım araçları dahil teme
 | [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Nothing kulaklıkların ANC modlarını kontrol etmek için Rust tabanlı Linux uygulaması |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | Phone (2a) ve CMF Phone (1) için Integrity Bypass PoC |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid macroları |
-| [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Resmi Nothing ve CMF donanım yazılımları, uygulamalar ve kaynaklar için kaynak merkezi. ([Depo](https://github.com/spike0en/nothing_archive)) |
+| [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Resmi Nothing ve CMF yazılımları, uygulamalar ve kaynaklar için kaynak merkezi. ([Depo](https://github.com/spike0en/nothing_archive)) |
 | [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | Topluluk uygulamalarını dizine ekleyen PWA tarzı web uygulaması; [Nothing Archive](https://github.com/spike0en/nothing_archive) kaynaklı temel bir veritabanı kullanır |
 | [Nothing Flasher](https://github.com/spike0en/nothing_flasher) | spike0en & Hellboy017 | Fastboot flaşlama betikleri |
 | [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | Haber ve kaynak merkezi |
 | [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | ADB aracılığıyla Logkit'i yamama/devre dışı bırakma aracı |
-| [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | Nothing topluluğunun favori widget'larından oluşan küratörlü bir galeri |
+| [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | Nothing topluluğunun favori widget'larından oluşan bir galeri |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | Topluluk merkezi ([Depo](https://github.com/nothingtools/nothingtools.github.io)) |
 | [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | r/NothingTech wikisi |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | Nothing ve CMF kulaklıklar için macOS yardımcı uygulaması |
