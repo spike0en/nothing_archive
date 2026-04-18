@@ -1,8 +1,8 @@
 ---
 sidebar_position: 7
 title: Projects
-description: Community-maintained tools and projects for Nothing devices — including Glyph tools, customization mods, web apps, and developer resources.
-keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customization, desktop themes, browser extensions, nothing logkit fix, developer tools, developer assets]
+description: Community-maintained tools and projects for Nothing devices, including Glyph tools, customization mods, audio EQ profiles, web apps, and developer resources.
+keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customization, desktop themes, browser extensions, nothing eq profiles, nothing logkit fix, developer tools, developer assets]
 ---
 
 # Community Projects
@@ -110,6 +110,14 @@ Browser extensions and web-based applications inspired by Nothing OS.
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Browser New Tab extension |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome extension |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Nothing OS inspired weather web app |
+
+---
+
+## Sound & Audio
+
+Community-made EQ profiles for Nothing earphones and headphones:
+
+- [Stock EQ Profiles](https://playground.nothing.tech/eqs) — Compatible with Advanced Equaliser via [Nothing X](https://play.google.com/store/apps/details?id=com.nothing.smartcenter)
 
 ---
 

@@ -1,8 +1,8 @@
 ---
 sidebar_position: 8
 title: Photographie
-description: Ports GCAM, configurations de caméra, préréglages d'origine et profils d'égalisation audio pour les appareils Nothing.
-keywords: [nothing gcam, configurations caméra nothing phone, préréglages caméra nothing, photographie nothing, profils eq nothing]
+description: Ports GCAM, configurations de caméra et préréglages d'origine pour les appareils Nothing.
+keywords: [nothing gcam, configurations caméra nothing phone, préréglages caméra nothing, photographie nothing]
 ---
 
 # Ressources de photographie
@@ -18,9 +18,34 @@ Ports GCAM, configurations et préréglages de caméra pour les appareils Nothin
 | [LMC](https://www.celsoazevedo.com/files/android/google-camera/dev-hasli/) | hasli |
 | [SGCam](https://www.celsoazevedo.com/files/android/google-camera/dev-shamim/) | Shamim |
 
-### Configurations GCAM
+### Configs GCAM
 
-Fichiers de configuration (`xml`) archivés par nom d'appareil avec attribution du créateur :
+:::note
+- "**Best**" est subjectif. Essayez toutes les configurations et variantes disponibles pour déterminer celle qui vous convient le mieux !
+- Pour les appareils basés sur Snapdragon et MTK, il est généralement recommandé d'utiliser respectivement les variantes **Snap** et **Aweme**.
+- L'installation d'une variante aléatoire de l'application GCAM seule ne suffit pas pour obtenir les meilleurs résultats ; ce sont les fichiers de configuration réglés par un créateur de configuration en fonction du capteur/des lentilles de l'appareil qui la rendent utilisable et performante.
+:::
+
+#### Importation de la configuration
+
+1. Téléchargez le fichier de configuration (`.xml`) via les liens ci-dessous.
+2. Ouvrez l'application GCAM téléchargée au moins une fois. Assurez-vous d'accorder l'accès aux fichiers, au stockage, à la caméra et aux autres permissions nécessaires.
+3. Le dossier pour la variante de caméra respective sera créé automatiquement à la racine du stockage interne. Le chemin peut varier mais suit généralement les suivants :
+- **AGC** → `Stockage interne/Download/AGC/AGC X.Y/configs/`  
+- **LMC** → `Stockage interne/LMCX.Y/`  
+- **SGCAM** → `Stockage interne/SGCAM/X.Y.Z/XML/`
+
+> `X.Y` ou `X.Y.Z` représente la version de l'application (ex: `9.2` ou `9.2.114`).
+
+4. Déplacez le fichier de configuration `.xml` ou `.agc` téléchargé vers le chemin mentionné à l'étape 3.
+5. Ouvrez à nouveau l'application GCAM et chargez le fichier de configuration comme suit :
+- Pour AGC : Icône Plus de paramètres > Accorder les permissions d'accès à tous les fichiers > revenir > Allez dans **Settings → Load Config**, puis sélectionnez le fichier `.agc` que vous avez enregistré sous le dossier AGC Configs, puis **Save**.
+- LMC : Appuyez deux fois sur la zone vide entre le **bouton de l'obturateur** et l'**icône de changement de caméra**, sélectionnez la configuration, et appuyez sur **Import**. Accordez les permissions si demandé.
+6. La configuration sera appliquée automatiquement. Basculez entre les profils (si disponibles) depuis la barre supérieure.
+
+#### Télécharger les configurations
+
+Les fichiers de configuration (`xml` ou `.agc`) ont été archivés ci-dessous par nom d'appareil avec l'attribution du créateur :
 
 #### Nothing
 - [Phone (1)](https://archive.org/download/nothing-archive/spike0en/photography/phone-1/)
@@ -54,10 +79,3 @@ Ressources pour les préréglages de la caméra Nothing :
 
 - [Shot With Nothing](https://shotwithnothing.crd.co/) par Ali — Un espace pour la communauté afin de partager leurs clichés et célébrer la photographie.
 
----
-
-## Son et audio
-
-Profils d'égalisation créés par la communauté pour les écouteurs et casques Nothing :
-
-- [Profils EQ d'origine](https://playground.nothing.tech/eqs) — Compatibles avec l'égaliseur avancé via [Nothing X](https://play.google.com/store/apps/details?id=com.nothing.smartcenter)

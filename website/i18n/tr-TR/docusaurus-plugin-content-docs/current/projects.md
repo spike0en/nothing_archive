@@ -1,8 +1,8 @@
 ---
 sidebar_position: 7
 title: Projeler
-description: Nothing cihazları için topluluk tarafından sürdürülen araçlar ve projeler — Glyph araçları, özelleştirme modları, web uygulamaları ve geliştirici kaynaklarını içerir.
-keywords: [nothing projeleri, glyph araçları, nothing root, nothing magisk, özelleştirme, masaüstü temaları, tarayıcı eklentileri, nothing logkit fix, geliştirici araçları, geliştirici kaynakları]
+description: Nothing cihazları için topluluk tarafından sürdürülen araçlar ve projeler; Glyph araçları, özelleştirme modları, ses EQ profilleri, web uygulamaları ve geliştirici kaynaklarını içerir.
+keywords: [nothing projeleri, glyph araçları, nothing root, nothing magisk, özelleştirme, masaüstü temaları, tarayıcı eklentileri, nothing eq profilleri, nothing logkit fix, geliştirici araçları, geliştirici kaynakları]
 ---
 
 # Topluluk Projeleri
@@ -110,6 +110,14 @@ Nothing OS'tan ilham alan tarayıcı eklentileri ve web tabanlı uygulamalar.
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Tarayıcı "Yeni Sekme" eklentisi |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome eklentisi |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Nothing OS esintili web hava durumu uygulaması |
+
+---
+
+## Ses
+
+Nothing kulaklıkları için topluluk yapımı EQ profilleri:
+
+- [Stok EQ Profilleri](https://playground.nothing.tech/eqs) — [Nothing X](https://play.google.com/store/apps/details?id=com.nothing.smartcenter) aracılığıyla Gelişmiş Ekolayzır ile uyumludur.
 
 ---
 

@@ -1,8 +1,8 @@
 ---
 sidebar_position: 7
 title: 社群專案
-description: Nothing 裝置的社群維護工具與專案——包含 Glyph 工具、自訂化模組、網頁應用程式及開發者資源。
-keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化, 桌面主題, 瀏覽器擴充套件, nothing logkit 修復, 開發者工具, 開發者素材]
+description: Nothing 裝置的社群維護工具與專案，包含 Glyph 工具、自訂化模組、音訊 EQ 配置、網頁應用程式及開發者資源。
+keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化, 桌面主題, 瀏覽器擴充套件, nothing eq 配置, nothing logkit 修復, 開發者工具, 開發者素材]
 ---
 
 # 社群專案
@@ -110,6 +110,14 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | 瀏覽器新分頁擴充 |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome 擴充 |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | 受 Nothing OS 啟發的天氣網頁應用程式 |
+
+---
+
+## 音效與音訊
+
+社群製作的 Nothing 耳機與耳罩式耳機 EQ 配置：
+
+- [原廠 EQ 配置](https://playground.nothing.tech/eqs) — 透過 [Nothing X](https://play.google.com/store/apps/details?id=com.nothing.smartcenter) 的進階等化器相容使用
 
 ---
 

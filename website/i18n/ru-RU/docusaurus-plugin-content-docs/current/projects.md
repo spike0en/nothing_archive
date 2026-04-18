@@ -1,8 +1,8 @@
 ---
 sidebar_position: 7
 title: Проекты
-description: Инструменты и проекты для устройств Nothing, поддерживаемые сообществом — инструменты Glyph, моды, веб-приложения и ресурсы для разработчиков.
-keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customization, desktop themes, browser extensions, nothing logkit fix, developer tools, developer assets]
+description: "Инструменты и проекты для устройств Nothing, поддерживаемые сообществом: инструменты Glyph, моды, профили эквалайзера (EQ), веб-приложения и ресурсы для разработчиков."
+keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customization, desktop themes, browser extensions, nothing eq profiles, nothing logkit fix, developer tools, developer assets]
 ---
 
 # Проекты от сообщества
@@ -110,6 +110,14 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Расширение для браузера «Новая вкладка» |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Расширение для Chrome |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Веб-приложение погоды в стиле Nothing OS |
+
+---
+
+## Звук и Аудио
+
+Созданные сообществом профили эквалайзера для наушников Nothing:
+
+- [Стоковые профили EQ](https://playground.nothing.tech/eqs) — Совместимо с расширенным эквалайзером через [Nothing X](https://play.google.com/store/apps/details?id=com.nothing.smartcenter)
 
 ---
 

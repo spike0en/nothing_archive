@@ -1,8 +1,8 @@
 ---
 sidebar_position: 7
 title: Projets
-description: Outils et projets maintenus par la communauté pour les appareils Nothing — incluant des outils Glyph, des mods de personnalisation, des applications web et des ressources pour développeurs.
-keywords: [projets nothing, outils glyph, root nothing, magisk nothing, personnalisation, thèmes de bureau, extensions de navigateur, correctif logkit nothing, outils de développement, ressources de développement]
+description: Outils et projets maintenus par la communauté pour les appareils Nothing, incluant des outils Glyph, des mods de personnalisation, des profils d'égalisation audio, des applications web et des ressources pour développeurs.
+keywords: [projets nothing, outils glyph, root nothing, magisk nothing, personnalisation, thèmes de bureau, extensions de navigateur, profils eq nothing, correctif logkit nothing, outils de développement, ressources de développement]
 ---
 
 # Projets de la communauté
@@ -110,6 +110,14 @@ Extensions de navigateur et applications basées sur le web inspirées par Nothi
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Extension "Nouvel onglet" pour navigateur |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Extension Chrome |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Application météo web inspirée par Nothing OS |
+
+---
+
+## Son et audio
+
+Profils d'égalisation créés par la communauté pour les écouteurs et casques Nothing :
+
+- [Profils EQ d'origine](https://playground.nothing.tech/eqs) — Compatibles avec l'égaliseur avancé via [Nothing X](https://play.google.com/store/apps/details?id=com.nothing.smartcenter)
 
 ---
 
