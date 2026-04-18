@@ -22,7 +22,7 @@ Model numaraları, kod adları ve çıkış tarihleriyle birlikte Nothing ve CMF
 | Phone (3a) Lite | A001T | Galaxian | Bulbasaur | Ekim 2025 |
 | Phone (4a) / (4a) Pro | A069 / A069P | Frogger / FroggerPro | Bellsprout | Mart 2026 |
 
-## Nothing Ses
+## Nothing Ses Ürünleri
 
 | Cihaz Adı | Model | Pokémon Adı | Çıkış Tarihi |
 |-------------------|--------|-------------|----------------|
@@ -43,7 +43,7 @@ Model numaraları, kod adları ve çıkış tarihleriyle birlikte Nothing ve CMF
 | Phone (1) | A015 | Tetris | Beedrill | Temmuz 2024 |
 | Phone (2) Pro | A001 | Galaga | Bulbasaur | Nisan 2025 |
 
-## CMF by Nothing Ses
+## CMF by Nothing Ses Ürünleri
 
 | Cihaz Adı | Model | Pokémon Adı | Çıkış Tarihi |
 |-------------------|--------|-------------|----------------|
