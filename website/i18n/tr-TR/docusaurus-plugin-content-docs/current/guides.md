@@ -155,6 +155,34 @@ Gizli menülere ve tanılamalara erişmek için tuşlayabileceğiniz çevirici k
 
 Belirli donanım ince ayarları ve eşleştirmeler için rehberler.
 
+### Pil Bilgisi Kontrolü
+
+:::info
+- Nothing Phone (3a), Phone (3) ve Phone (4a) serilerinde test edilmiştir.
+- Diğer cihazlarda veya gelecekteki Nothing OS sürümlerinde (4.0 / 4.1+) çalışmayabilir.
+- Bu sadece mevcut sistem verilerini görüntülemenizi sağlar ve stok Nothing OS yazılımı ile çalışır.
+- Hiçbir şeyi değiştirmez ve garantinizi etkilemez.
+:::
+
+Bu kılavuz, Nothing OS'de genellikle AB modelleriyle sınırlı olan ancak bu yöntem kullanılarak diğer bölgesel modellerde de erişilebilen gizli **Pil Bilgisi** sayfasının nasıl açılacağını gösterir.
+
+#### Gereksinimler
+- [Shizuku (Fork)](https://github.com/thedjchi/Shizuku)
+- [Root Activity Launcher](https://sourceforge.net/projects/androidsage/files/Root%20Activity%20Launcher/)
+
+#### Adımlar
+1. Her iki uygulamayı da yükleyin.
+2. Aşağıdaki [kılavuzu](https://shizuku.rikka.app/guide/setup/) izleyerek Shizuku'yu kurun.
+3. Shizuku iznini Root Activity Launcher'a verin.
+4. Root Activity Launcher'ı açın ve **Settings** (Ayarlar) öğesini arayın.
+5. Ayarlar girişini genişletin ve şu şekilde listelenen **Battery Information** alt etkinliğini başlatın:
+   ```
+   com.android.settings/com.nothing.settings.NtSettings$BatteryInformationActivity
+   ```
+6. Artık fabrikada takılan pilin **Maksimum kapasitesini**, **Döngü sayısını**, **Üretim tarihini** ve **İlk kullanım tarihini** gösteren **Pil Bilgisi** sayfasını görmelisiniz.
+
+<hr />
+
 ### Bauhaus Temasının Kilidini Açma
 
 Bauhaus'tan ilham alan tema, çeşitli Nothing telefon modellerinde kilidi açılabilen özel bir sürüm özelliğidir.

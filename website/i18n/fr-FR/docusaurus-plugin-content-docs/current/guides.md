@@ -155,6 +155,34 @@ Codes composeur (USSD) que vous pouvez composer pour accéder aux menus cachés 
 
 Guides pour des modifications matérielles spécifiques et appairages.
 
+### Vérification des Informations de Batterie
+
+:::info
+- Testé sur les séries Nothing Phone (3a), Phone (3) et Phone (4a).
+- Peut ne pas fonctionner sur d'autres appareils ou les futures versions de Nothing OS (4.0 / 4.1+).
+- Cela permet uniquement de consulter les données système existantes et fonctionne avec le micrologiciel d’origine Nothing OS.
+- Cela ne modifie rien et n’affectera pas votre garantie.
+:::
+
+Ce guide explique comment ouvrir la page masquée **Informations sur la batterie** dans Nothing OS, qui est généralement limitée aux variantes de l'UE mais qui peut être consultée sur d'autres variantes régionales à l'aide de cette méthode.
+
+#### Prérequis
+- [Shizuku (Fork)](https://github.com/thedjchi/Shizuku)
+- [Root Activity Launcher](https://sourceforge.net/projects/androidsage/files/Root%20Activity%20Launcher/)
+
+#### Étapes
+1. Installez les deux applications.
+2. Configurez Shizuku en suivant le [guide](https://shizuku.rikka.app/guide/setup/) suivant.
+3. Accordez à Shizuku l'autorisation pour Root Activity Launcher.
+4. Ouvrez Root Activity Launcher et recherchez **Settings** (Paramètres).
+5. Développez l'entrée Settings et lancez la sous-activité **Battery Information** répertoriée comme suit :
+   ```
+   com.android.settings/com.nothing.settings.NtSettings$BatteryInformationActivity
+   ```
+6. Vous devriez maintenant voir la page **Battery Information** affichant la **Capacité maximale**, le **Nombre de cycles**, la **Date de fabrication** et la **Date de première utilisation** de la batterie installée en usine.
+
+<hr />
+
 ### Débloquer le Thème Bauhaus
 
 Le thème inspiré de Bauhaus est une fonctionnalité d'édition spéciale qui peut être débloquée sur plusieurs modèles de téléphones Nothing.

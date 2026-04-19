@@ -155,6 +155,34 @@ B. **繼續進行側載**
 
 特定硬體調整和配對指南。
 
+### 電池資訊檢查
+
+:::info
+- 已在 Nothing Phone (3a)、Phone (3) 和 Phone (4a) 系列上測試。
+- 可能不適用於其他裝置或未來的 Nothing OS 版本 (4.0 / 4.1+)。
+- 這僅允許您查看現有的系統數據，並適用於原廠 Nothing OS 韌體。
+- 它不會修改任何內容，也不會影響您的保固。
+:::
+
+本指南說明如何開啟 Nothing OS 中隱藏的 **電池資訊** 頁面，該頁面通常僅限於歐盟版本，但可以使用此方法在其他地區版本上存取。
+
+#### 要求
+- [Shizuku (Fork)](https://github.com/thedjchi/Shizuku)
+- [Root Activity Launcher](https://sourceforge.net/projects/androidsage/files/Root%20Activity%20Launcher/)
+
+#### 步驟
+1. 安裝這兩個應用程式。
+2. 按照以下 [指南](https://shizuku.rikka.app/guide/setup/) 設定 Shizuku。
+3. 授予 Shizuku 對 Root Activity Launcher 的權限。
+4. 開啟 Root Activity Launcher 並搜尋 **Settings** (設定)。
+5. 展開 Settings 項目並啟動列為以下的 **Battery Information** 子活動：
+   ```
+   com.android.settings/com.nothing.settings.NtSettings$BatteryInformationActivity
+   ```
+6. 您現在應該會看到 **電池資訊** 頁面，顯示原廠安裝電池的**最大容量**、**循環次數**、**生產日期**和**首次使用日期**。
+
+<hr />
+
 ### 解鎖 Bauhaus 主題
 
 以 Bauhaus 為靈感的主題是一項特殊版本功能，可以在多款 Nothing 手機型號上解鎖。

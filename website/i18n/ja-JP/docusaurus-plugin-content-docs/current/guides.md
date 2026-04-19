@@ -155,6 +155,34 @@ B. **サイドロードの続行**
 
 特定のハードウェア微調整やペアリングに関するガイド。
 
+### バッテリー情報の確認
+
+:::info
+- Nothing Phone (3a)、Phone (3)、および Phone (4a) シリーズでテスト済み。
+- 他のデバイスや将来の Nothing OS バージョン (4.0 / 4.1+) では動作しない可能性があります。
+- これは既存のシステムデータを表示するだけで、純正の Nothing OS ファームウェアで動作します。
+- 何も変更せず、保証に影響を与えません。
+:::
+
+このガイドでは、Nothing OS の隠れた **バッテリー情報** ページを開く方法を説明します。これは通常 EU バリアントに限定されていますが、この方法を使用すると他のリージョンのバリアントでもアクセスできます。
+
+#### 要件
+- [Shizuku (Fork)](https://github.com/thedjchi/Shizuku)
+- [Root Activity Launcher](https://sourceforge.net/projects/androidsage/files/Root%20Activity%20Launcher/)
+
+#### 手順
+1. 両方のアプリをインストールします。
+2. 次の [ガイド](https://shizuku.rikka.app/guide/setup/) に従って Shizuku をセットアップします。
+3. Shizuku の権限を Root Activity Launcher に付与します。
+4. Root Activity Launcher を開き、**Settings** (設定) を検索します。
+5. Settings のエントリを展開し、以下のようにリストされている **Battery Information** サブアクティビティを起動します：
+   ```
+   com.android.settings/com.nothing.settings.NtSettings$BatteryInformationActivity
+   ```
+6. 工場出荷時に取り付けられたバッテリーの**最大容量**、**サイクル数**、**製造日**、および**初回使用日**を示す **Battery Information** ページが表示されます。
+
+<hr />
+
 ### Bauhausテーマの解除
 
 Bauhausにインスパイアされたテーマは、Nothing Phoneの様々なモデルで解除可能なスペシャルエディション機能です。

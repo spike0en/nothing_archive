@@ -156,6 +156,34 @@ Dialer codes (USSD) that you can dial to access hidden menus and diagnostics.
 
 Guides for specific hardware tweaks and pairings.
 
+### Battery Information Check
+
+:::info
+- Tested on Nothing Phone (3a), Phone (3), and Phone (4a) series.
+- May not work on other devices or future Nothing OS versions (4.0 / 4.1+).
+- This only lets you view existing system data and works with the stock Nothing OS firmware.
+- It does not modify anything and will not affect your warranty.
+:::
+
+This guide shows how to open the hidden **Battery Information** page in Nothing OS, which is usually limited to EU variants but can be accessed on other regional variants using this method.
+
+#### Requirements
+- [Shizuku (Fork)](https://github.com/thedjchi/Shizuku)
+- [Root Activity Launcher](https://sourceforge.net/projects/androidsage/files/Root%20Activity%20Launcher/)
+
+#### Steps
+1. Install both apps.
+2. Set up Shizuku using the following [guide](https://shizuku.rikka.app/guide/setup/)
+3. Grant Shizuku permission to Root Activity Launcher.
+4. Open Root Activity Launcher and search for **Settings**.
+5. Expand the Settings entry and launch the **Battery Information** sub-activity listed as:
+   ```
+   com.android.settings/com.nothing.settings.NtSettings$BatteryInformationActivity
+   ```
+6. You should now see the **Battery Information** page showing **Maximum capacity**, **Cycle count**, **Production date**, and **First use date** of the factory-installed battery.
+
+-- 
+
 ### Unlocking Bauhaus Theme
 
 The Bauhaus-inspired theme is a special edition feature that can be unlocked across various Nothing phone models.
