@@ -6,10 +6,10 @@
         "message": "Tüm Nothing ve CMF cihaz kataloğunu keşfedin — telefonlar, ses, giyilebilir cihazlar ve aksesuarlar."
     },
     "feature.firmware.title": {
-        "message": "Donanım Yazılımı Arşivi"
+        "message": "Yazılım Arşivi"
     },
     "feature.firmware.description": {
-        "message": "Resmi Nothing OS donanım yazıılımlarını, fabrika imajlarını ve fark OTA dosyalarını indirin. Kolayca flaşlayın, geri yükleyin ve güncelleyin."
+        "message": "Resmi Nothing OS yazıılımlarını, fabrika imajlarını ve incremental OTA dosyalarını indirin. Kolayca flaşlayın, geri yükleyin ve güncelleyin."
     },
     "feature.changelogs.title": {
         "message": "OTA Değişiklik Günlükleri"
@@ -27,7 +27,7 @@
         "message": "Resmi Kaynaklar"
     },
     "feature.official.description": {
-        "message": "Resmi Nothing uygulamalarına, duvar kağıtlarına, yazı tiplerine, çekirdek kaynak kodlarına ve geliştirici araçlarına erişin."
+        "message": "Resmi Nothing uygulamalarına, duvar kağıtlarına, yazı tiplerine, kernel kaynak kodlarına ve geliştirici araçlarına erişin."
     },
     "feature.apps.title": {
         "message": "Topluluk Uygulamaları"
@@ -69,10 +69,10 @@
         "message": "İletişime Geçin"
     },
     "homepage.tagline": {
-        "message": "Nothing ekosistemiyle ilgili her şey için küratörlü bir dizin."
+        "message": "Nothing ekosistemiyle ilgili her şey için toparlanmış bir dizin."
     },
     "homepage.title": {
-        "message": "Nothing OS Donanım Yazılımı ve Kaynakları"
+        "message": "Nothing OS Yazılımı ve Kaynakları"
     },
     "theme.ErrorPageContent.title": {
         "message": "Bu sayfa çöktü.",

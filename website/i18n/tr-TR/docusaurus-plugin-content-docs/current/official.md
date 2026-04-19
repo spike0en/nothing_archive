@@ -1,8 +1,8 @@
 ---
 sidebar_position: 5
 title: Resmi Kaynaklar
-description: Resmi Nothing OEM uygulamaları, duvar kağıtları, yazı tipleri, çekirdek kaynakları, geliştirici SDK'ları ve destek bağlantıları.
-keywords: [nothing resmi uygulamalar, nothing duvar kağıtları, nothing yazı tipleri, nothing çekirdek kaynakları, glyph developer kit, cmf watch uygulaması]
+description: Resmi Nothing OEM uygulamaları, duvar kağıtları, yazı tipleri, kernel kaynakları, geliştirici SDK'ları ve destek bağlantıları.
+keywords: [nothing resmi uygulamalar, nothing duvar kağıtları, nothing yazı tipleri, nothing kernel kaynakları, glyph developer kit, cmf watch uygulaması]
 ---
 
 # Resmi OEM Kaynakları
@@ -84,7 +84,7 @@ APK mirorları [APKMirror](https://www.apkmirror.com/apk/nothing-technology-limi
 
 ---
 
-## Çekirdek Kaynakları
+## Kernel Kaynakları
 
 ### Nothing
 
