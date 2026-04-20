@@ -699,26 +699,33 @@ Guides et projets supplémentaires pour la recherche ou les cas d'utilisation av
 
 ## Développement Après-vente
 
-:::note
-Cette section est gérée par la communauté et n'est pas affiliée à Nothing. Le déverrouillage du chargeur de démarrage annulera votre garantie OEM.
-:::
-
 Restez à jour avec les ROMs personnalisées, les noyaux et les projets de développement.
+
+:::note
+
+- Cette section est gérée par la communauté sur [Telegram](https://t.me/Nothing_Archive) et n'est pas affiliée à Nothing.
+- Les liens ci-dessous fournissent des résultats de recherche filtrés à partir des canaux Telegram sans qu'il soit nécessaire de s'inscrire. Cependant, il est recommandé de le faire pour interagir et rejoindre les chats de discussion des appareils respectifs, demander de l'aide ou s'engager avec la communauté des passionnés si vous êtes intéressé par le bidouillage, l'optimisation du potentiel de votre appareil ou pour rester à jour avec toutes les publications.
+- Parfois, les liens ci-dessous peuvent ne donner aucun résultat, ce qui signifie que certaines catégories de contenu ne sont pas encore disponibles, développées ou maintenues par un mainteneur fiable pour ce modèle particulier.
+- Le déverrouillage du chargeur de démarrage et le flashage de micrologiciels personnalisés annuleront votre garantie OEM. Veuillez lire tous les guides de flashage s'ils sont indiqués dans les messages correspondants et vous référer au chat d'assistance s'il est lié ou au groupe de discussion du modèle.
+
+:::
 
 ### Canaux de mise à jour des appareils (Telegram)
 
 **Nothing :**
-| Appareil | Canal |
-|--------|---------|
-| Phone (1) | [Mises à jour](https://t.me/s/NothingPhone1Updates) |
-| Phone (2) | [Mises à jour](https://t.me/s/NothingPhone2updates) |
-| Phone (2a) Series | [Mises à jour](https://t.me/s/NothingPhone2aUpdates) |
-| Phone (3a) Series | [Mises à jour](https://t.me/s/NothingPhone3aUpdates) |
-| Phone (3) | [Mises à jour](https://t.me/s/Phone3Updates) |
-| Phone (4a) Series| [Mises à jour](https://t.me/s/Phone4aUpdates) |
+
+| Appareil | ROM | Recovery | Kernel | Updates |
+|----------|-----|----------|--------|---------|
+| Phone (1) | [Ici](https://t.me/s/NothingPhone1Updates?q=%23ROM) | [Ici](https://t.me/s/NothingPhone1Updates?q=%23Recovery) | [Ici](https://t.me/s/NothingPhone1Updates?q=%23Kernel) | [Ici](https://t.me/s/NothingPhone1Updates?q=%23OTA) |
+| Phone (2) | [Ici](https://t.me/s/NothingPhone2updates?q=%23ROM) | [Ici](https://t.me/s/NothingPhone2updates?q=%23Recovery) | [Ici](https://t.me/s/NothingPhone2updates?q=%23Kernel) | [Ici](https://t.me/s/NothingPhone2updates?q=%23OTA) |
+| Phone (2a) Series | [Ici](https://t.me/s/NothingPhone2aUpdates?q=%23ROM) | [Ici](https://t.me/s/NothingPhone2aUpdates?q=%23Recovery) | [Ici](https://t.me/s/NothingPhone2aUpdates?q=%23Kernel) | [Ici](https://t.me/s/NothingPhone2aUpdates?q=%23OTA) |
+| Phone (3a) Series | [Ici](https://t.me/s/NothingPhone3aUpdates?q=%23ROM) | [Ici](https://t.me/s/NothingPhone3aUpdates?q=%23Recovery) | [Ici](https://t.me/s/NothingPhone3aUpdates?q=%23Kernel) | [Ici](https://t.me/s/NothingPhone3aUpdates?q=%23OTA) |
+| Phone (3) | [Ici](https://t.me/s/Phone3Updates?q=%23ROM) | [Ici](https://t.me/s/Phone3Updates?q=%23Recovery) | [Ici](https://t.me/s/Phone3Updates?q=%23Kernel) | [Ici](https://t.me/s/Phone3Updates?q=%23OTA) |
+| Phone (4a) Series | [Ici](https://t.me/s/Phone4aUpdates?q=%23ROM) | [Ici](https://t.me/s/Phone4aUpdates?q=%23Recovery) | [Ici](https://t.me/s/Phone4aUpdates?q=%23Kernel) | [Ici](https://t.me/s/Phone4aUpdates?q=%23OTA) |
 
 **CMF by Nothing :**
-| Appareil | Canal |
-|--------|---------|
-| Phone (1) | [Mises à jour](https://t.me/s/CMFPhone1Updates) |
-| Phone (2) Pro / Phone (3a) Lite | [Mises à jour](https://t.me/s/CMFPhone2GlobalUpdates) |
+
+| Appareil | ROM | Recovery | Kernel | Updates |
+|----------|-----|----------|--------|---------|
+| Phone (1) | [Ici](https://t.me/s/CMFPhone1Updates?q=%23ROM) | [Ici](https://t.me/s/CMFPhone1Updates?q=%23Recovery) | [Ici](https://t.me/s/CMFPhone1Updates?q=%23Kernel) | [Ici](https://t.me/s/CMFPhone1Updates?q=%23OTA) |
+| Phone (2) Pro / Phone (3a) Lite | [Ici](https://t.me/s/CMFPhone2GlobalUpdates?q=%23ROM) | [Ici](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Recovery) | [Ici](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Kernel) | [Ici](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA) |

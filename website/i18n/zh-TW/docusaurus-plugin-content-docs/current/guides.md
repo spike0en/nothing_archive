@@ -698,26 +698,35 @@ C. **重新鎖定後**
 
 ## 售後開發
 
-:::note
-此部分由社群管理，不隸屬於 Nothing。解鎖開機載入程式將使你的 OEM 保固失效。
-:::
+## 售後開發
 
 隨時了解自訂 ROM、核心和開發項目的最新動態。
+
+:::note
+
+- 此部分由 [Telegram](https://t.me/Nothing_Archive) 社群管理，不隸屬於 Nothing。
+- 下方的連結提供了來自 Telegram 頻道的篩選搜尋結果，無需註冊即可查看。但是，如果你對修補系統、發揮裝置的最大潛力或保持獲取最新發布感興趣，建議你註冊並參與各個裝置的討論聊天室以尋求支援或與愛好者社群交流。
+- 有時下方的連結可能沒有任何結果，這意味著某些類別的內容尚未推出、開發或尚未由該型號的可靠維護者維護。
+- 解鎖開機載入程式並刷入自訂韌體將使你的 OEM 保固失效。如果相關貼文中有所提及，請閱讀所有刷機指南，並參考隨附的支援聊天室或該型號的討論群組。
+
+:::
 
 ### 裝置更新頻道 (Telegram)
 
 **Nothing:**
-| 裝置 | 頻道 |
-|--------|---------|
-| Phone (1) | [更新](https://t.me/s/NothingPhone1Updates) |
-| Phone (2) | [更新](https://t.me/s/NothingPhone2updates) |
-| Phone (2a) 系列 | [更新](https://t.me/s/NothingPhone2aUpdates) |
-| Phone (3a) 系列 | [更新](https://t.me/s/NothingPhone3aUpdates) |
-| Phone (3) | [更新](https://t.me/s/Phone3Updates) |
-| Phone (4a) 系列| [更新](https://t.me/s/Phone4aUpdates) |
+
+| 裝置 | ROM | Recovery | Kernel | Updates |
+|------|-----|----------|--------|---------|
+| Phone (1) | [此處](https://t.me/s/NothingPhone1Updates?q=%23ROM) | [此處](https://t.me/s/NothingPhone1Updates?q=%23Recovery) | [此處](https://t.me/s/NothingPhone1Updates?q=%23Kernel) | [此處](https://t.me/s/NothingPhone1Updates?q=%23OTA) |
+| Phone (2) | [此處](https://t.me/s/NothingPhone2updates?q=%23ROM) | [此處](https://t.me/s/NothingPhone2updates?q=%23Recovery) | [此處](https://t.me/s/NothingPhone2updates?q=%23Kernel) | [此處](https://t.me/s/NothingPhone2updates?q=%23OTA) |
+| Phone (2a) 系列 | [此處](https://t.me/s/NothingPhone2aUpdates?q=%23ROM) | [此處](https://t.me/s/NothingPhone2aUpdates?q=%23Recovery) | [此處](https://t.me/s/NothingPhone2aUpdates?q=%23Kernel) | [此處](https://t.me/s/NothingPhone2aUpdates?q=%23OTA) |
+| Phone (3a) 系列 | [此處](https://t.me/s/NothingPhone3aUpdates?q=%23ROM) | [此處](https://t.me/s/NothingPhone3aUpdates?q=%23Recovery) | [此處](https://t.me/s/NothingPhone3aUpdates?q=%23Kernel) | [此處](https://t.me/s/NothingPhone3aUpdates?q=%23OTA) |
+| Phone (3) | [此處](https://t.me/s/Phone3Updates?q=%23ROM) | [此處](https://t.me/s/Phone3Updates?q=%23Recovery) | [此處](https://t.me/s/Phone3Updates?q=%23Kernel) | [此處](https://t.me/s/Phone3Updates?q=%23OTA) |
+| Phone (4a) 系列 | [此處](https://t.me/s/Phone4aUpdates?q=%23ROM) | [此處](https://t.me/s/Phone4aUpdates?q=%23Recovery) | [此處](https://t.me/s/Phone4aUpdates?q=%23Kernel) | [此處](https://t.me/s/Phone4aUpdates?q=%23OTA) |
 
 **CMF by Nothing:**
-| 裝置 | 頻道 |
-|--------|---------|
-| Phone (1) | [更新](https://t.me/s/CMFPhone1Updates) |
-| Phone (2) Pro / Phone (3a) Lite | [更新](https://t.me/s/CMFPhone2GlobalUpdates) |
+
+| 裝置 | ROM | Recovery | Kernel | Updates |
+|------|-----|----------|--------|---------|
+| Phone (1) | [此處](https://t.me/s/CMFPhone1Updates?q=%23ROM) | [此處](https://t.me/s/CMFPhone1Updates?q=%23Recovery) | [此處](https://t.me/s/CMFPhone1Updates?q=%23Kernel) | [此處](https://t.me/s/CMFPhone1Updates?q=%23OTA) |
+| Phone (2) Pro / Phone (3a) Lite | [此處](https://t.me/s/CMFPhone2GlobalUpdates?q=%23ROM) | [此處](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Recovery) | [此處](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Kernel) | [此處](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA) |

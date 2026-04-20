@@ -698,26 +698,33 @@ C. **再ロック後**
 
 ## アフターマーケット開発
 
-:::note
-このセクションはコミュニティによって管理されており、Nothingとは提携していません。ブートローダーをアンロックすると、OEM保証が無効になります。
-:::
-
 カスタムROM、カーネル、開発プロジェクトの最新情報を入手してください。
+
+:::note
+
+- このセクションは[Telegram](https://t.me/Nothing_Archive)のコミュニティによって管理されており、Nothingとは提携していません。
+- 以下のリンクは、サインアップしなくてもTelegramチャンネルからのフィルタリングされた検索結果を提供します。ただし、それぞれのデバイスのディスカッションチャットに参加してやり取りしたり、サポートを求めたり、改造に興味がある場合やデバイスの可能性を最大限に引き出したい場合、あるいはすべてのリリースを最新の状態に保ちたい場合に、愛好家コミュニティと交流することをお勧めします。
+- 以下のリンクに結果が表示されない場合がありますが、これは特定のカテゴリのコンテンツがまだ利用できないか、開発されていないか、その特定のモデルに対して信頼できるメンテナーによって維持されていないことを意味します。
+- ブートローダーをアンロックしてカスタムファームウェアをフラッシュすると、OEM保証が無効になります。対応する投稿に記載されている場合はすべてのフラッシュガイドを読み、リンクされている場合はサポートチャットまたはモデルのディスカッショングループを参照してください。
+
+:::
 
 ### デバイスアップデートチャンネル (Telegram)
 
 **Nothing:**
-| デバイス | チャンネル |
-|--------|---------|
-| Phone (1) | [アップデート](https://t.me/s/NothingPhone1Updates) |
-| Phone (2) | [アップデート](https://t.me/s/NothingPhone2updates) |
-| Phone (2a) シリーズ | [アップデート](https://t.me/s/NothingPhone2aUpdates) |
-| Phone (3a) シリーズ | [アップデート](https://t.me/s/NothingPhone3aUpdates) |
-| Phone (3) | [アップデート](https://t.me/s/Phone3Updates) |
-| Phone (4a) シリーズ | [アップデート](https://t.me/s/Phone4aUpdates) |
+
+| デバイス | ROM | Recovery | Kernel | Updates |
+|----------|-----|----------|--------|---------|
+| Phone (1) | [こちら](https://t.me/s/NothingPhone1Updates?q=%23ROM) | [こちら](https://t.me/s/NothingPhone1Updates?q=%23Recovery) | [こちら](https://t.me/s/NothingPhone1Updates?q=%23Kernel) | [こちら](https://t.me/s/NothingPhone1Updates?q=%23OTA) |
+| Phone (2) | [こちら](https://t.me/s/NothingPhone2updates?q=%23ROM) | [こちら](https://t.me/s/NothingPhone2updates?q=%23Recovery) | [こちら](https://t.me/s/NothingPhone2updates?q=%23Kernel) | [こちら](https://t.me/s/NothingPhone2updates?q=%23OTA) |
+| Phone (2a) シリーズ | [こちら](https://t.me/s/NothingPhone2aUpdates?q=%23ROM) | [こちら](https://t.me/s/NothingPhone2aUpdates?q=%23Recovery) | [こちら](https://t.me/s/NothingPhone2aUpdates?q=%23Kernel) | [こちら](https://t.me/s/NothingPhone2aUpdates?q=%23OTA) |
+| Phone (3a) シリーズ | [こちら](https://t.me/s/NothingPhone3aUpdates?q=%23ROM) | [こちら](https://t.me/s/NothingPhone3aUpdates?q=%23Recovery) | [こちら](https://t.me/s/NothingPhone3aUpdates?q=%23Kernel) | [こちら](https://t.me/s/NothingPhone3aUpdates?q=%23OTA) |
+| Phone (3) | [こちら](https://t.me/s/Phone3Updates?q=%23ROM) | [こちら](https://t.me/s/Phone3Updates?q=%23Recovery) | [こちら](https://t.me/s/Phone3Updates?q=%23Kernel) | [こちら](https://t.me/s/Phone3Updates?q=%23OTA) |
+| Phone (4a) シリーズ | [こちら](https://t.me/s/Phone4aUpdates?q=%23ROM) | [こちら](https://t.me/s/Phone4aUpdates?q=%23Recovery) | [こちら](https://t.me/s/Phone4aUpdates?q=%23Kernel) | [こちら](https://t.me/s/Phone4aUpdates?q=%23OTA) |
 
 **CMF by Nothing:**
-| デバイス | チャンネル |
-|--------|---------|
-| Phone (1) | [アップデート](https://t.me/s/CMFPhone1Updates) |
-| Phone (2) Pro / Phone (3a) Lite | [アップデート](https://t.me/s/CMFPhone2GlobalUpdates) |
+
+| デバイス | ROM | Recovery | Kernel | Updates |
+|----------|-----|----------|--------|---------|
+| Phone (1) | [こちら](https://t.me/s/CMFPhone1Updates?q=%23ROM) | [こちら](https://t.me/s/CMFPhone1Updates?q=%23Recovery) | [こちら](https://t.me/s/CMFPhone1Updates?q=%23Kernel) | [こちら](https://t.me/s/CMFPhone1Updates?q=%23OTA) |
+| Phone (2) Pro / Phone (3a) Lite | [こちら](https://t.me/s/CMFPhone2GlobalUpdates?q=%23ROM) | [こちら](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Recovery) | [こちら](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Kernel) | [こちら](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA) |

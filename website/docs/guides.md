@@ -698,28 +698,35 @@ Additional guides and projects for research or advanced use-cases:
 
 ## Aftermarket Development
 
-:::note
-This section is community-managed and not affiliated with Nothing. Unlocking the bootloader will void your OEM warranty.
-:::
-
 Stay updated with custom ROMs, kernels, and development projects.
+
+:::note
+
+- This section is community-managed in [Telegram](https://t.me/Nothing_Archive) and is not affiliated with Nothing.
+- The links below provide filtered search results from Telegram channels without the need to sign up. However, it is recommended to do so to interact and join discussion chats for respective devices, seek support, or engage with the enthusiast community if you are interested in tinkering, maximizing your device's potential, or staying up to date with all releases.
+- At times, the links below might return no results, which means that certain categories of content are not yet available, developed, or maintained by a reliable maintainer for that particular model.
+- Unlocking the bootloader and flashing custom firmware will void your OEM warranty. Please read all flashing guides if stated in the corresponding posts and refer to the support chat if linked or the discussion group for the model.
+
+:::
 
 ### Device Update Channels (Telegram)
 
 **Nothing:**
-| Device | Channel |
-|--------|---------|
-| Phone (1) | [Updates](https://t.me/s/NothingPhone1Updates) |
-| Phone (2) | [Updates](https://t.me/s/NothingPhone2updates) |
-| Phone (2a) Series | [Updates](https://t.me/s/NothingPhone2aUpdates) |
-| Phone (3a) Series | [Updates](https://t.me/s/NothingPhone3aUpdates) |
-| Phone (3) | [Updates](https://t.me/s/Phone3Updates) |
-| Phone (4a) Series| [Updates](https://t.me/s/Phone4aUpdates) |
+
+| Device | ROM | Recovery | Kernel | Updates |
+|--------|-----|----------|--------|---------|
+| Phone (1) | [Here](https://t.me/s/NothingPhone1Updates?q=%23ROM) | [Here](https://t.me/s/NothingPhone1Updates?q=%23Recovery) | [Here](https://t.me/s/NothingPhone1Updates?q=%23Kernel) | [Here](https://t.me/s/NothingPhone1Updates?q=%23OTA) |
+| Phone (2) | [Here](https://t.me/s/NothingPhone2updates?q=%23ROM) | [Here](https://t.me/s/NothingPhone2updates?q=%23Recovery) | [Here](https://t.me/s/NothingPhone2updates?q=%23Kernel) | [Here](https://t.me/s/NothingPhone2updates?q=%23OTA) |
+| Phone (2a) Series | [Here](https://t.me/s/NothingPhone2aUpdates?q=%23ROM) | [Here](https://t.me/s/NothingPhone2aUpdates?q=%23Recovery) | [Here](https://t.me/s/NothingPhone2aUpdates?q=%23Kernel) | [Here](https://t.me/s/NothingPhone2aUpdates?q=%23OTA) |
+| Phone (3a) Series | [Here](https://t.me/s/NothingPhone3aUpdates?q=%23ROM) | [Here](https://t.me/s/NothingPhone3aUpdates?q=%23Recovery) | [Here](https://t.me/s/NothingPhone3aUpdates?q=%23Kernel) | [Here](https://t.me/s/NothingPhone3aUpdates?q=%23OTA) |
+| Phone (3) | [Here](https://t.me/s/Phone3Updates?q=%23ROM) | [Here](https://t.me/s/Phone3Updates?q=%23Recovery) | [Here](https://t.me/s/Phone3Updates?q=%23Kernel) | [Here](https://t.me/s/Phone3Updates?q=%23OTA) |
+| Phone (4a) Series | [Here](https://t.me/s/Phone4aUpdates?q=%23ROM) | [Here](https://t.me/s/Phone4aUpdates?q=%23Recovery) | [Here](https://t.me/s/Phone4aUpdates?q=%23Kernel) | [Here](https://t.me/s/Phone4aUpdates?q=%23OTA) |
 
 **CMF by Nothing:**
-| Device | Channel |
-|--------|---------|
-| Phone (1) | [Updates](https://t.me/s/CMFPhone1Updates) |
-| Phone (2) Pro / Phone (3a) Lite | [Updates](https://t.me/s/CMFPhone2GlobalUpdates) |
+
+| Device | ROM | Recovery | Kernel | Updates |
+|--------|-----|----------|--------|---------|
+| Phone (1) | [Here](https://t.me/s/CMFPhone1Updates?q=%23ROM) | [Here](https://t.me/s/CMFPhone1Updates?q=%23Recovery) | [Here](https://t.me/s/CMFPhone1Updates?q=%23Kernel) | [Here](https://t.me/s/CMFPhone1Updates?q=%23OTA) |
+| Phone (2) Pro / Phone (3a) Lite | [Here](https://t.me/s/CMFPhone2GlobalUpdates?q=%23ROM) | [Here](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Recovery) | [Here](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Kernel) | [Here](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA) |
 
 

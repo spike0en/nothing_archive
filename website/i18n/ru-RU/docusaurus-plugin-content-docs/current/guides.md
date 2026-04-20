@@ -698,26 +698,35 @@ C. **После блокировки**
 
 ## Сторонняя разработка
 
-:::note
-Этот раздел поддерживается сообществом и не связан с Nothing. Разблокировка загрузчика аннулирует заводскую гарантию.
-:::
+## Сторонняя разработка
 
 Будьте в курсе кастомных прошивок (ROM), ядер и проектов разработки.
+
+:::note
+
+- Этот раздел поддерживается сообществом в [Telegram](https://t.me/Nothing_Archive) и не связан с Nothing.
+- Приведенные ниже ссылки обеспечивают отфильтрованные результаты поиска в каналах Telegram без необходимости регистрации. Однако рекомендуется зарегистрироваться, чтобы взаимодействовать и присоединяться к чатам для соответствующих устройств, обращаться за поддержкой или общаться с сообществом энтузиастов, если вы заинтересованы в настройке, максимальном использовании потенциала вашего устройства или желаете быть в курсе всех выпусков.
+- Иногда по ссылкам ниже результат может отсутствовать, что означает, что определенные категории контента еще не доступны, не разработаны или не поддерживаются надежным мейнтейнером для данной модели.
+- Разблокировка загрузчика и прошивка кастомного ПО аннулируют заводскую гарантию. Пожалуйста, прочитайте все руководства по прошивке, если они указаны в соответствующих сообщениях, и обращайтесь в чат поддержки, если он указан, или в группу обсуждения модели.
+
+:::
 
 ### Каналы обновлений устройств (Telegram)
 
 **Nothing:**
-| Устройство | Канал |
-|--------|---------|
-| Phone (1) | [Обновления](https://t.me/s/NothingPhone1Updates) |
-| Phone (2) | [Обновления](https://t.me/s/NothingPhone2updates) |
-| Серия Phone (2a) | [Обновления](https://t.me/s/NothingPhone2aUpdates) |
-| Серия Phone (3a) | [Обновления](https://t.me/s/NothingPhone3aUpdates) |
-| Phone (3) | [Обновления](https://t.me/s/Phone3Updates) |
-| Серия Phone (4a) | [Обновления](https://t.me/s/Phone4aUpdates) |
+
+| Устройство | ROM | Recovery | Kernel | Updates |
+|------------|-----|----------|--------|---------|
+| Phone (1) | [Здесь](https://t.me/s/NothingPhone1Updates?q=%23ROM) | [Здесь](https://t.me/s/NothingPhone1Updates?q=%23Recovery) | [Здесь](https://t.me/s/NothingPhone1Updates?q=%23Kernel) | [Здесь](https://t.me/s/NothingPhone1Updates?q=%23OTA) |
+| Phone (2) | [Здесь](https://t.me/s/NothingPhone2updates?q=%23ROM) | [Здесь](https://t.me/s/NothingPhone2updates?q=%23Recovery) | [Здесь](https://t.me/s/NothingPhone2updates?q=%23Kernel) | [Здесь](https://t.me/s/NothingPhone2updates?q=%23OTA) |
+| Серия Phone (2a) | [Здесь](https://t.me/s/NothingPhone2aUpdates?q=%23ROM) | [Здесь](https://t.me/s/NothingPhone2aUpdates?q=%23Recovery) | [Здесь](https://t.me/s/NothingPhone2aUpdates?q=%23Kernel) | [Здесь](https://t.me/s/NothingPhone2aUpdates?q=%23OTA) |
+| Серия Phone (3a) | [Здесь](https://t.me/s/NothingPhone3aUpdates?q=%23ROM) | [Здесь](https://t.me/s/NothingPhone3aUpdates?q=%23Recovery) | [Здесь](https://t.me/s/NothingPhone3aUpdates?q=%23Kernel) | [Здесь](https://t.me/s/NothingPhone3aUpdates?q=%23OTA) |
+| Phone (3) | [Здесь](https://t.me/s/Phone3Updates?q=%23ROM) | [Здесь](https://t.me/s/Phone3Updates?q=%23Recovery) | [Здесь](https://t.me/s/Phone3Updates?q=%23Kernel) | [Здесь](https://t.me/s/Phone3Updates?q=%23OTA) |
+| Серия Phone (4a) | [Здесь](https://t.me/s/Phone4aUpdates?q=%23ROM) | [Здесь](https://t.me/s/Phone4aUpdates?q=%23Recovery) | [Здесь](https://t.me/s/Phone4aUpdates?q=%23Kernel) | [Здесь](https://t.me/s/Phone4aUpdates?q=%23OTA) |
 
 **CMF by Nothing:**
-| Устройство | Канал |
-|--------|---------|
-| Phone (1) | [Обновления](https://t.me/s/CMFPhone1Updates) |
-| Phone (2) Pro / Phone (3a) Lite | [Обновления](https://t.me/s/CMFPhone2GlobalUpdates) |
+
+| Устройство | ROM | Recovery | Kernel | Updates |
+|------------|-----|----------|--------|---------|
+| Phone (1) | [Здесь](https://t.me/s/CMFPhone1Updates?q=%23ROM) | [Здесь](https://t.me/s/CMFPhone1Updates?q=%23Recovery) | [Здесь](https://t.me/s/CMFPhone1Updates?q=%23Kernel) | [Здесь](https://t.me/s/CMFPhone1Updates?q=%23OTA) |
+| Phone (2) Pro / Phone (3a) Lite | [Здесь](https://t.me/s/CMFPhone2GlobalUpdates?q=%23ROM) | [Здесь](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Recovery) | [Здесь](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Kernel) | [Здесь](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA) |

@@ -698,26 +698,35 @@ Araştırma veya gelişmiş kullanım durumları için ek rehberler ve projeler:
 
 ## Satış Sonrası Geliştirme
 
-:::note
-Bu bölüm topluluk tarafından yönetilmektedir ve Nothing ile bağlantılı değildir. Önyükleyici kilidini açmak OEM garantinizi geçersiz kılacaktır.
-:::
+## Satış Sonrası Geliştirme
 
 Özel ROM'lar, kernel'ler ve geliştirme projeleri ile güncel kalın.
+
+:::note
+
+- Bu bölüm [Telegram](https://t.me/Nothing_Archive)'daki topluluk tarafından yönetilmektedir ve Nothing ile bağlantılı değildir.
+- Aşağıdaki bağlantılar, kaydolmaya gerek kalmadan Telegram kanallarından filtrelenmiş arama sonuçları sağlar. Ancak, ilgili cihazlar için tartışma sohbetlerine katılarak etkileşimde bulunmak, destek istemek veya cihazınızın potansiyelini en üst düzeye çıkarmak, kurcalamak veya tüm sürümlerden haberdar olmak istiyorsanız meraklı topluluğuyla etkileşime geçmek için kaydolmanız önerilir.
+- Zaman zaman aşağıdaki bağlantılar hiçbir sonuç vermeyebilir; bu, belirli içerik kategorilerinin henüz mevcut olmadığını, geliştirilmediğini veya o model için güvenilir bir geliştirici tarafından sürdürülmediğini gösterir.
+- Önyükleyicinin kilidini açmak ve özel donanım yazılımı yüklemek OEM garantinizi geçersiz kılacaktır. Lütfen ilgili gönderilerde belirtilmişse tüm kurulum kılavuzlarını okun ve bağlıysa destek sohbetine veya modelin tartışma grubuna başvurun.
+
+:::
 
 ### Cihaz Güncelleme Kanalları (Telegram)
 
 **Nothing:**
-| Cihaz | Kanal |
-|--------|---------|
-| Phone (1) | [Güncellemeler](https://t.me/s/NothingPhone1Updates) |
-| Phone (2) | [Güncellemeler](https://t.me/s/NothingPhone2updates) |
-| Phone (2a) Serisi | [Güncellemeler](https://t.me/s/NothingPhone2aUpdates) |
-| Phone (3a) Serisi | [Güncellemeler](https://t.me/s/NothingPhone3aUpdates) |
-| Phone (3) | [Güncellemeler](https://t.me/s/Phone3Updates) |
-| Phone (4a) Serisi| [Güncellemeler](https://t.me/s/Phone4aUpdates) |
+
+| Cihaz | ROM | Recovery | Kernel | Updates |
+|-------|-----|----------|--------|---------|
+| Phone (1) | [Burada](https://t.me/s/NothingPhone1Updates?q=%23ROM) | [Burada](https://t.me/s/NothingPhone1Updates?q=%23Recovery) | [Burada](https://t.me/s/NothingPhone1Updates?q=%23Kernel) | [Burada](https://t.me/s/NothingPhone1Updates?q=%23OTA) |
+| Phone (2) | [Burada](https://t.me/s/NothingPhone2updates?q=%23ROM) | [Burada](https://t.me/s/NothingPhone2updates?q=%23Recovery) | [Burada](https://t.me/s/NothingPhone2updates?q=%23Kernel) | [Burada](https://t.me/s/NothingPhone2updates?q=%23OTA) |
+| Phone (2a) Serisi | [Burada](https://t.me/s/NothingPhone2aUpdates?q=%23ROM) | [Burada](https://t.me/s/NothingPhone2aUpdates?q=%23Recovery) | [Burada](https://t.me/s/NothingPhone2aUpdates?q=%23Kernel) | [Burada](https://t.me/s/NothingPhone2aUpdates?q=%23OTA) |
+| Phone (3a) Serisi | [Burada](https://t.me/s/NothingPhone3aUpdates?q=%23ROM) | [Burada](https://t.me/s/NothingPhone3aUpdates?q=%23Recovery) | [Burada](https://t.me/s/NothingPhone3aUpdates?q=%23Kernel) | [Burada](https://t.me/s/NothingPhone3aUpdates?q=%23OTA) |
+| Phone (3) | [Burada](https://t.me/s/Phone3Updates?q=%23ROM) | [Burada](https://t.me/s/Phone3Updates?q=%23Recovery) | [Burada](https://t.me/s/Phone3Updates?q=%23Kernel) | [Burada](https://t.me/s/Phone3Updates?q=%23OTA) |
+| Phone (4a) Serisi | [Burada](https://t.me/s/Phone4aUpdates?q=%23ROM) | [Burada](https://t.me/s/Phone4aUpdates?q=%23Recovery) | [Burada](https://t.me/s/Phone4aUpdates?q=%23Kernel) | [Burada](https://t.me/s/Phone4aUpdates?q=%23OTA) |
 
 **CMF by Nothing:**
-| Cihaz | Kanal |
-|--------|---------|
-| Phone (1) | [Güncellemeler](https://t.me/s/CMFPhone1Updates) |
-| Phone (2) Pro / Phone (3a) Lite | [Güncellemeler](https://t.me/s/CMFPhone2GlobalUpdates) |
+
+| Cihaz | ROM | Recovery | Kernel | Updates |
+|-------|-----|----------|--------|---------|
+| Phone (1) | [Burada](https://t.me/s/CMFPhone1Updates?q=%23ROM) | [Burada](https://t.me/s/CMFPhone1Updates?q=%23Recovery) | [Burada](https://t.me/s/CMFPhone1Updates?q=%23Kernel) | [Burada](https://t.me/s/CMFPhone1Updates?q=%23OTA) |
+| Phone (2) Pro / Phone (3a) Lite | [Burada](https://t.me/s/CMFPhone2GlobalUpdates?q=%23ROM) | [Burada](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Recovery) | [Burada](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Kernel) | [Burada](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA) |
