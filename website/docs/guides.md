@@ -654,39 +654,20 @@ Install the appropriate drivers for your device's SoC manufacturer.
 - **Verification:** With the device switched off, hold both **Volume +** and **Volume -** buttons while connecting the cable to the PC. If using a Hydra v2 cable, press the button on the cable while connecting.
 - For a **DIY method** to make an EDL cable, refer to [this guide](https://xdaforums.com/t/edl-cable-for-nothing-phone-2.4654742/) instead.
 
-### Official Flash Tools
+### Tools & Resources
 
-:::danger Disclaimer
+:::danger Disclaimer & Notice
 
-- The tools listed below are **leaked official service tools** available on the open web. **Use them at your own risk.**
-- The project author and contributors take **no responsibility** for any unintended consequences or damage resulting from their use.
-- These tools may stop working at any time with future firmware updates.
-- They are **not** intended for routine stock ROM flashing. Use them **only as a last resort** if:
-  - Your device is completely unresponsive (hard bricked, black screen).
-  - Fastboot mode is inaccessible (even after installing proper drivers).
-  - You have no official service support in your region and your device is out of warranty.
-- Continued support for these tools is not guaranteed, and requests for future versions will not be entertained.
+- This section serves solely as a reference index for resources already publicly available on the open web. This project does not host, store, or distribute any of the proprietary tools or binary files listed below.
+- All links provided point to external, third-party repositories and file hosts over which we have no control. We do not guarantee the security, integrity, or legality of these external resources.
+- These are leaked official service tools. The project authors and contributors assume no responsibility for any device damage, data loss, or unintended consequences resulting from their use.
+- This project is independent and is not affiliated with, authorized by, or endorsed by Nothing Technology Limited.
+- Tools in this section are intended for emergency recovery (hard brick) only and should not be used for routine flashing.
+- If you are a copyright holder and wish to request the removal of a reference link, please [file a GitHub issue](https://github.com/spike0en/nothing_archive/issues).
 
 :::
 
-#### Nothing Devices:
-- [Phone (1)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgDVNZLx9PuARKU5ZYHxTw1RAesDD6ZYA9ncgyk_6jpU3_M?e=RnzUwd)
-- [Phone (2)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA-PysiaC16Qow4EA9_CfP0AbYCgxOlahRyJjB7LQw8RZo?e=4jK0yh)
-- [Phone (2a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgCYxRHWxndKRLFNcO9zLhjcAQunpBStuG-OAetxx1hvsQs?e=mqYlE8)
-- [Phone (2a) Plus](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgBuoaxqlNkYR63Fa_z0tGl-AVHKWsuj27LeyhMoXtghwJc?e=fOQp2m)
-- [Phone (3a) Series](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgBcJ6YHDfGhSL_TZ8P0WfJXAfKNm7BoxC_uMe071vRmhsM?e=El0x5j)
-- [Phone (3)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgCDb2UqoryZSIBDYMu52jjjAQ5Uq5INNOnhOHbH2jr0EpY?e=h8lKHX)
-- [Phone (3a) Lite](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA33YYMKQxUTZplrWoGIji5AfviLdYkUHlh4H2LjQ0_FQQ?e=rBIZ3y)
-- [Phone (4a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgAhqokf-Be4SY2YdeeOr9mrAT-5OsO2Ay-x6UqaAynpKHU?e=X4mojq)
-
-#### CMF by Nothing Devices:
-- [Phone (1)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA4tWOkyg4WRqsTmrbNiKECAX3M-2SCUeDFiJ1eraslW7c?e=4mDouI)
-- [Phone (2) Pro](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgDUePBy5E6TS5zgqO0MqkVEAQ9C7aMdohvQ6FpMr-RxWdQ?e=sebyob)
-
-### Miscellaneous Resources
-
-Additional guides and projects for research or advanced use-cases:
-
+- [Official Unbrick Tools](https://t.me/Edward_ROMs/360) by EdwardWu
 - [Unofficial Qualcomm Firehose / Sahara / Streaming / Diag Tools](https://github.com/bkerler/edl) by bkerler
 - [NTPI Dumper](https://github.com/AaronXenos/ntpi_dumper) by AaronXenos
 - [Phone (2a) Series Hard Brick Helper](https://github.com/mistrmochov/nothing-pacman-hardbrick) by mistrmochov

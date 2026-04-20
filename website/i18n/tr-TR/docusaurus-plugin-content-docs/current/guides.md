@@ -653,44 +653,25 @@ Cihazınızın SoC üreticisine uygun sürücüleri yükleyin.
 - **Doğrulama:** Cihaz kapalıyken, kabloyu PC'ye bağlarken **Ses +** ve **Ses -** düğmelerinin her ikisini de basılı tutun. Hydra v2 kablosu kullanıyorsanız bağlanırken kablodaki düğmeye basın.
 - Kendi EDL kablonuzu yapmak için **DIY yöntemi** arıyorsanız, bunun yerine [bu rehbere](https://xdaforums.com/t/edl-cable-for-nothing-phone-2.4654742/) başvurun.
 
-### Resmi Flaşlama Araçları
+### Araçlar ve Kaynaklar
 
-:::danger Sorumluluk Reddi
+:::danger Sorumluluk Reddi ve Bildirim
 
-- Aşağıda listelenen araçlar, açık web'de sızdırılmış **resmi servis araçlarıdır**. **Kullanım riski size aittir.**
-- Proje yazarı ve katkıda bulunanlar, kullanım sonucunda doğabilecek istenmeyen sonuçlar veya hasarlar için **hiçbir sorumluluk kabul etmez**.
-- Bu araçlar, gelecekteki ürün yazılımı güncellemeleriyle herhangi bir zamanda çalışmayı durdurabilir.
-- Normal stok ROM flaşlama işlemleri için **tasarlanmamıştır**. Yalnızca şu durumlarda **son çare olarak** kullanın:
-  - Cihazınız hiçbir şekilde yanıt vermiyorsa (hard brick, siyah ekran).
-  - Fastboot moduna (uygun sürücüleri yükledikten sonra bile) erişilemiyorsa.
-  - Bölgenizde resmi servis desteği yoksa ve cihazınızın garantisi bitmişse.
-- Bu araçlar için sürekli destek garanti edilmez ve gelecekteki sürümler için herhangi bir talep dikkate alınmayacaktır.
+- Bu bölüm, yalnızca açık web'de halihazırda kamuya açık olan kaynaklar için bir referans dizini görevi görür. Bu proje, aşağıda listelenen mülki araçları veya ikili dosyaları barındırmaz, saklamaz veya dağıtmaz.
+- Sağlanan tüm bağlantılar, kontrolümüz dışında olan harici, üçüncü taraf depoları ve dosya ana makinelerini işaret eder. Bu harici kaynakların güvenliğini, bütünlüğünü veya yasallığını garanti etmiyoruz.
+- Bunlar sızdırılmış resmi servis araçlarıdır. Proje yazarları ve katkıda bulunanlar, kullanımlarından kaynaklanan herhangi bir cihaz hasarı, veri kaybı veya istenmeyen sonuçlar için sorumluluk kabul etmez.
+- Bu proje bağımsızdır ve Nothing Technology Limited ile bağlantılı değildir, yetkilendirilmemiştir veya onaylanmamıştır.
+- Bu bölümdeki araçlar yalnızca acil durum kurtarma (hard brick) içindir ve rutin yazılım yükleme işlemleri için kullanılmamalıdır.
+- Telif hakkı sahibiyseniz ve bir referans bağlantısının kaldırılmasını talep etmek istiyorsanız, lütfen [GitHub üzerinden bir sorun bildirin](https://github.com/spike0en/nothing_archive/issues).
 
 :::
 
-#### Nothing Cihazları:
-- [Phone (1)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgDVNZLx9PuARKU5ZYHxTw1RAesDD6ZYA9ncgyk_6jpU3_M?e=RnzUwd)
-- [Phone (2)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA-PysiaC16Qow4EA9_CfP0AbYCgxOlahRyJjB7LQw8RZo?e=4jK0yh)
-- [Phone (2a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgCYxRHWxndKRLFNcO9zLhjcAQunpBStuG-OAetxx1hvsQs?e=mqYlE8)
-- [Phone (2a) Plus](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgBuoaxqlNkYR63Fa_z0tGl-AVHKWsuj27LeyhMoXtghwJc?e=fOQp2m)
-- [Phone (3a) Serisi](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgBcJ6YHDfGhSL_TZ8P0WfJXAfKNm7BoxC_uMe071vRmhsM?e=El0x5j)
-- [Phone (3)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgCDb2UqoryZSIBDYMu52jjjAQ5Uq5INNOnhOHbH2jr0EpY?e=h8lKHX)
-- [Phone (3a) Lite](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA33YYMKQxUTZplrWoGIji5AfviLdYkUHlh4H2LjQ0_FQQ?e=rBIZ3y)
-- [Phone (4a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgAhqokf-Be4SY2YdeeOr9mrAT-5OsO2Ay-x6UqaAynpKHU?e=X4mojq)
-
-#### CMF by Nothing Cihazları:
-- [Phone (1)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA4tWOkyg4WRqsTmrbNiKECAX3M-2SCUeDFiJ1eraslW7c?e=4mDouI)
-- [Phone (2) Pro](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgDUePBy5E6TS5zgqO0MqkVEAQ9C7aMdohvQ6FpMr-RxWdQ?e=sebyob)
-
-### Çeşitli Kaynaklar
-
-Araştırma veya gelişmiş kullanım durumları için ek rehberler ve projeler:
-
-- [Resmi Olmayan Qualcomm Firehose / Sahara / Streaming / Diag Araçları](https://github.com/bkerler/edl) - Yazan: bkerler
-- [NTPI Dumper](https://github.com/AaronXenos/ntpi_dumper) - Yazan: AaronXenos
-- [Phone (2a) Serisi Tam Kurtarma Yardımcısı](https://github.com/mistrmochov/nothing-pacman-hardbrick) - Yazan: mistrmochov
-- [Phone (2a) Serisi Flaşlama Aracı](https://github.com/R0rt1z2/pacman-flash-tool) - Yazan: R0rt1z2
-- [Nothing Telefonları için Firehose Kimlik Doğrulama Dosyaları](https://github.com/plusonsoy/nothing_edl) - Yazan: plusonsoy
+- [Official Unbrick Tools](https://t.me/Edward_ROMs/360) (EdwardWu tarafından)
+- [Unofficial Qualcomm Firehose / Sahara / Streaming / Diag Tools](https://github.com/bkerler/edl) (bkerler tarafından)
+- [NTPI Dumper](https://github.com/AaronXenos/ntpi_dumper) (AaronXenos tarafından)
+- [Phone (2a) Series Hard Brick Helper](https://github.com/mistrmochov/nothing-pacman-hardbrick) (mistrmochov tarafından)
+- [Phone (2a) Series Flash Tool](https://github.com/R0rt1z2/pacman-flash-tool) (R0rt1z2 tarafından)
+- [Firehose Auth Files for Nothing Phones](https://github.com/plusonsoy/nothing_edl) (plusonsoy tarafından)
 
 
 ---
@@ -698,7 +679,7 @@ Araştırma veya gelişmiş kullanım durumları için ek rehberler ve projeler:
 
 ## Satış Sonrası Geliştirme
 
-## Satış Sonrası Geliştirme
+
 
 Özel ROM'lar, kernel'ler ve geliştirme projeleri ile güncel kalın.
 

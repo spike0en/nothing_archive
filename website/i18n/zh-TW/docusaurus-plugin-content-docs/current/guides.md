@@ -653,44 +653,25 @@ C. **重新鎖定後**
 - **驗證：** 在關機狀態下，同時按住 **音量 +** 和 **音量 -** 鍵，然後將資料線連接到電腦。如果使用 Hydra v2 資料線，請在連接時按下線上的按鈕。
 - 有關製作 EDL 資料線的 **DIY 方法**，請參閱[此指南](https://xdaforums.com/t/edl-cable-for-nothing-phone-2.4654742/)。
 
-### 官方刷機工具
+### 工具與資源
 
-:::danger 免責聲明
+:::danger 免責聲明與通知
 
-- 以下列出的工具是流傳於網路上的**官方服務工具**。**使用風險自負。**
-- 專案作者與貢獻者對使用這些工具導致的任何意外後果或損害**不承擔任何責任**。
-- 這些工具可能會隨着未來的韌體更新隨時失效。
-- 它們**不適用於**常規的原廠 ROM 刷入。僅在以下**最後手段**的情況下使用：
-  - 裝置完全沒有反應（深度磚機，黑屏）。
-  - 無法進入 Fastboot 模式（即使安裝了正確的驅動）。
-  - 您所在地區沒有官方服務支援，且裝置已過保固期。
-- 不保證對這些工具的後續支援，也不會受理取得未來版本的請求。
+- 本章節僅作為公開網路上已有資源的引用索引。本專案不託管、儲存或散佈下方列出的任何專有工具或二進位檔案。
+- 提供的所有連結皆指向外部第三方存儲庫或檔案託管網站，我們無法控制其內容。我們不保證這些外部資源的安全性、完整性或合法性。
+- 這些是外流的官方維修工具。專案作者及貢獻者對於因使用這些工具而導致的任何設備損壞、資料遺失或意外後果不承擔任何責任。
+- 本專案是獨立的，不隸屬於 Nothing Technology Limited，亦未獲得其授權或背書。
+- 本章節中的工具僅用於緊急修復（救磚），不應於日常刷機使用。
+- 若您是版權所有者並希望申請移除引用連結，請[在 GitHub 提交 Issue](https://github.com/spike0en/nothing_archive/issues)。
 
 :::
 
-#### Nothing 裝置：
-- [Phone (1)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgDVNZLx9PuARKU5ZYHxTw1RAesDD6ZYA9ncgyk_6jpU3_M?e=RnzUwd)
-- [Phone (2)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA-PysiaC16Qow4EA9_CfP0AbYCgxOlahRyJjB7LQw8RZo?e=4jK0yh)
-- [Phone (2a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgCYxRHWxndKRLFNcO9zLhjcAQunpBStuG-OAetxx1hvsQs?e=mqYlE8)
-- [Phone (2a) Plus](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgBuoaxqlNkYR63Fa_z0tGl-AVHKWsuj27LeyhMoXtghwJc?e=fOQp2m)
-- [Phone (3a) 系列](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgBcJ6YHDfGhSL_TZ8P0WfJXAfKNm7BoxC_uMe071vRmhsM?e=El0x5j)
-- [Phone (3)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgCDb2UqoryZSIBDYMu52jjjAQ5Uq5INNOnhOHbH2jr0EpY?e=h8lKHX)
-- [Phone (3a) Lite](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA33YYMKQxUTZplrWoGIji5AfviLdYkUHlh4H2LjQ0_FQQ?e=rBIZ3y)
-- [Phone (4a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgAhqokf-Be4SY2YdeeOr9mrAT-5OsO2Ay-x6UqaAynpKHU?e=X4mojq)
-
-#### CMF by Nothing 裝置：
-- [Phone (1)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA4tWOkyg4WRqsTmrbNiKECAX3M-2SCUeDFiJ1eraslW7c?e=4mDouI)
-- [Phone (2) Pro](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgDUePBy5E6TS5zgqO0MqkVEAQ9C7aMdohvQ6FpMr-RxWdQ?e=sebyob)
-
-### 其他資源
-
-可用於研究或高級用途的其他指南和項目：
-
-- [非官方 Qualcomm Firehose / Sahara / Streaming / Diag 工具](https://github.com/bkerler/edl)（由 bkerler 提供）
-- [NTPI Dumper](https://github.com/AaronXenos/ntpi_dumper)（由 AaronXenos 提供）
-- [Phone (2a) 系列深度救磚助手](https://github.com/mistrmochov/nothing-pacman-hardbrick)（由 mistrmochov 提供）
-- [Phone (2a) 系列刷機工具](https://github.com/R0rt1z2/pacman-flash-tool)（由 R0rt1z2 提供）
-- [Nothing 手機 Firehose 驗證檔案](https://github.com/plusonsoy/nothing_edl)（由 plusonsoy 提供）
+- [Official Unbrick Tools](https://t.me/Edward_ROMs/360) (由 EdwardWu 提供)
+- [Unofficial Qualcomm Firehose / Sahara / Streaming / Diag Tools](https://github.com/bkerler/edl) (由 bkerler 提供)
+- [NTPI Dumper](https://github.com/AaronXenos/ntpi_dumper) (由 AaronXenos 提供)
+- [Phone (2a) Series Hard Brick Helper](https://github.com/mistrmochov/nothing-pacman-hardbrick) (由 mistrmochov 提供)
+- [Phone (2a) Series Flash Tool](https://github.com/R0rt1z2/pacman-flash-tool) (由 R0rt1z2 提供)
+- [Firehose Auth Files for Nothing Phones](https://github.com/plusonsoy/nothing_edl) (由 plusonsoy 提供)
 
 
 ---
@@ -698,7 +679,7 @@ C. **重新鎖定後**
 
 ## 售後開發
 
-## 售後開發
+
 
 隨時了解自訂 ROM、核心和開發項目的最新動態。
 

@@ -653,50 +653,29 @@ C. **После блокировки**
 - **Проверка:** В выключенном состоянии удерживайте обе кнопки **Громкость +** и **Громкость -** при подключении кабеля к ПК. Если вы используете кабель Hydra v2, во время подключения нажмите кнопку на кабеле.
 - Инструкции по **изготовлению кабеля EDL своими руками** см. в [этом руководстве](https://xdaforums.com/t/edl-cable-for-nothing-phone-2.4654742/).
 
-### Официальные инструменты для прошивки
+### Инструменты и ресурсы
 
-:::danger Дисклеймер
+:::danger Дисклеймер и уведомление
 
-- Перечисленные ниже инструменты являются **утекшими официальными сервисными инструментами**, доступными в открытой сети. **Используйте их на свой страх и риск.**
-- Автор проекта и его участники не несут **никакой ответственности** за любые непредвиденные последствия или ущерб, возникшие в результате их использования.
-- Эти инструменты могут перестать работать в любое время после будущих обновлений прошивки.
-- Они **не предназначены** для обычной прошивки стоковой ROM. Используйте их **только в крайнем случае**, если:
-  - Ваше устройство полностью не реагирует (состояние «кирпича», черный экран).
-  - Режим Fastboot недоступен (даже после установки соответствующих драйверов).
-  - В вашем регионе нет официальной сервисной поддержки или ваше устройство не подлежит гарантийному обслуживанию.
-- Дальнейшая поддержка этих инструментов не гарантируется, и запросы на предоставление будущих версий рассматриваться не будут.
+- Этот раздел служит исключительно справочным индексом для ресурсов, уже общедоступных в открытой сети. Этот проект не размещает, не хранит и не распространяет какие-либо проприетарные инструменты или бинарные файлы, перечисленные ниже.
+- Все предоставленные ссылки указывают на внешние сторонние репозитории и файловые хостинги, которые мы не контролируем. Мы не гарантируем безопасность, целостность или законность этих внешних ресурсов.
+- Это утекшие официальные сервисные инструменты. Авторы и участники проекта не несут ответственности за любое повреждение устройства, потерю данных или непредвиденные последствия, возникшие в результате их использования.
+- Этот проект является независимым и не связан с Nothing Technology Limited, не авторизован и не одобрен ею.
+- Инструменты в этом разделе предназначены только для экстренного восстановления («раскирпичивания») и не должны использоваться для обычной прошивки.
+- Если вы являетесь правообладателем и хотите запросить удаление справочной ссылки, пожалуйста, [создайте обращение на GitHub](https://github.com/spike0en/nothing_archive/issues).
 
 :::
 
-#### Устройства Nothing:
-- [Phone (1)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgDVNZLx9PuARKU5ZYHxTw1RAesDD6ZYA9ncgyk_6jpU3_M?e=RnzUwd)
-- [Phone (2)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA-PysiaC16Qow4EA9_CfP0AbYCgxOlahRyJjB7LQw8RZo?e=4jK0yh)
-- [Phone (2a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgCYxRHWxndKRLFNcO9zLhjcAQunpBStuG-OAetxx1hvsQs?e=mqYlE8)
-- [Phone (2a) Plus](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgBuoaxqlNkYR63Fa_z0tGl-AVHKWsuj27LeyhMoXtghwJc?e=fOQp2m)
-- [Серия Phone (3a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgBcJ6YHDfGhSL_TZ8P0WfJXAfKNm7BoxC_uMe071vRmhsM?e=El0x5j)
-- [Phone (3)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgCDb2UqoryZSIBDYMu52jjjAQ5Uq5INNOnhOHbH2jr0EpY?e=h8lKHX)
-- [Phone (3a) Lite](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA33YYMKQxUTZplrWoGIji5AfviLdYkUHlh4H2LjQ0_FQQ?e=rBIZ3y)
-- [Phone (4a)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgAhqokf-Be4SY2YdeeOr9mrAT-5OsO2Ay-x6UqaAynpKHU?e=X4mojq)
-
-#### Устройства CMF by Nothing:
-- [Phone (1)](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgA4tWOkyg4WRqsTmrbNiKECAX3M-2SCUeDFiJ1eraslW7c?e=4mDouI)
-- [Phone (2) Pro](https://itraps-my.sharepoint.com/:f:/g/personal/public_builds_itraps_onmicrosoft_com/IgDUePBy5E6TS5zgqO0MqkVEAQ9C7aMdohvQ6FpMr-RxWdQ?e=sebyob)
-
-### Прочие ресурсы
-
-Дополнительные руководства и проекты для исследований или расширенных сценариев использования:
-
-- [Неофициальные инструменты Qualcomm Firehose / Sahara / Streaming / Diag](https://github.com/bkerler/edl) от bkerler
+- [Official Unbrick Tools](https://t.me/Edward_ROMs/360) от EdwardWu
+- [Unofficial Qualcomm Firehose / Sahara / Streaming / Diag Tools](https://github.com/bkerler/edl) от bkerler
 - [NTPI Dumper](https://github.com/AaronXenos/ntpi_dumper) от AaronXenos
-- [Утилита для восстановления («раскирпичивания») серии Phone (2a)](https://github.com/mistrmochov/nothing-pacman-hardbrick) от mistrmochov
-- [Инструмент для прошивки серии Phone (2a)](https://github.com/R0rt1z2/pacman-flash-tool) от R0rt1z2
-- [Файлы авторизации Firehose для телефонов Nothing](https://github.com/plusonsoy/nothing_edl) от plusonsoy
+- [Phone (2a) Series Hard Brick Helper](https://github.com/mistrmochov/nothing-pacman-hardbrick) от mistrmochov
+- [Phone (2a) Series Flash Tool](https://github.com/R0rt1z2/pacman-flash-tool) от R0rt1z2
+- [Firehose Auth Files for Nothing Phones](https://github.com/plusonsoy/nothing_edl) от plusonsoy
 
 
 ---
 
-
-## Сторонняя разработка
 
 ## Сторонняя разработка
 
