@@ -178,6 +178,7 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 | [Minimal Browser](https://github.com/aaswani-v/Minimal-Browser) | aaswani-v | Yapay zeka özetlemeli tarayıcı |
 | [N Board](https://github.com/MathieuDvv/Nboard) | MathieuDvv | Yapay zeka araçlı Nothing esintili klavye |
 | [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Nothing tarzı hesap makinesi |
+| [N Clock](https://play.google.com/store/apps/details?id=de.nostream.nclock) | nostream | Nothing tasarım dilinden ilham alan minimalist saat uygulaması |
 | [N Dial](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ndial) | Hearthborn | Telefon arayıcı ve kişiler |
 | [N Keyboard](https://github.com/arunk140/nth-kbd) | arunk14 | Temalı klavye |
 | [N Recipe](https://play.google.com/store/apps/details?id=com.a3chron.nrecipe) | a3chron | Çevrimdışı yemek tarifi kitabı |

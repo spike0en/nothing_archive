@@ -178,6 +178,7 @@ Fonds d'écran dynamiques et améliorations visuelles pour sublimer l'apparence 
 | [Minimal Browser](https://github.com/aaswani-v/Minimal-Browser) | aaswani-v | Navigateur avec résumé par IA |
 | [N Board](https://github.com/MathieuDvv/Nboard) | MathieuDvv | Clavier inspiré par Nothing avec outils IA |
 | [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Calculatrice style Nothing |
+| [N Clock](https://play.google.com/store/apps/details?id=de.nostream.nclock) | nostream | Application d'horloge minimaliste inspirée par le langage de design de Nothing |
 | [N Dial](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ndial) | Hearthborn | Numéroteur téléphonique et contacts |
 | [N Keyboard](https://github.com/arunk140/nth-kbd) | arunk14 | Clavier à thème |
 | [N Recipe](https://play.google.com/store/apps/details?id=com.a3chron.nrecipe) | a3chron | Livre de recettes hors ligne |

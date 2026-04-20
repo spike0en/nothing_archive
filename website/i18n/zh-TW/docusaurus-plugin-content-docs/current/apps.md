@@ -173,6 +173,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Minimal Browser](https://github.com/aaswani-v/Minimal-Browser) | aaswani-v | 附 AI 摘要功能的瀏覽器 |
 | [N Board](https://github.com/MathieuDvv/Nboard) | MathieuDvv | 附 AI 工具的 Nothing 風格鍵盤 |
 | [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Nothing 風格計算機 |
+| [N Clock](https://play.google.com/store/apps/details?id=de.nostream.nclock) | nostream | 受 Nothing 設計語言啟發的極簡時鐘應用程序 |
 | [N Dial](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ndial) | Hearthborn | 電話撥號器與聯絡人 |
 | [N Keyboard](https://github.com/arunk140/nth-kbd) | arunk14 | 主題鍵盤 |
 | [N Recipe](https://play.google.com/store/apps/details?id=com.a3chron.nrecipe) | a3chron | 離線食譜書 |

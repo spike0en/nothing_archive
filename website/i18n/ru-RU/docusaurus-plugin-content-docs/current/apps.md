@@ -178,6 +178,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Minimal Browser](https://github.com/aaswani-v/Minimal-Browser) | aaswani-v | Браузер с ИИ-саммаризацией |
 | [N Board](https://github.com/MathieuDvv/Nboard) | MathieuDvv | Клавиатура в стиле Nothing с инструментами ИИ |
 | [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Калькулятор в стиле Nothing |
+| [N Clock](https://play.google.com/store/apps/details?id=de.nostream.nclock) | nostream | Минималистичное приложение для часов, вдохновленное языком дизайна Nothing |
 | [N Dial](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ndial) | Hearthborn | Набор номера и контакты |
 | [N Keyboard](https://github.com/arunk140/nth-kbd) | arunk14 | Тематическая клавиатура |
 | [N Recipe](https://play.google.com/store/apps/details?id=com.a3chron.nrecipe) | a3chron | Офлайн-книга рецептов |
