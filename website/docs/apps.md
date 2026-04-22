@@ -152,7 +152,6 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Nothing Notes](https://github.com/ThriveEngineer/nothing.notes) | ThriveEngineer | Nothing themed notes app |
 | [Noting](https://play.google.com/store/apps/details?id=com.hearthborn.studios.notingnotes) | Hearthborn | Notes and tasks with cloud backup |
 | [Seton](https://github.com/arijit4/Seton) | arijit4 | Pin and edit notes with widget |
-| [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | Minimalist launcher |
 | [Spend Notes](https://play.google.com/store/apps/details?id=com.cmlabs.spendflow.spendflow) | Coder monk labs | Expense tracking |
 | [The Circle](https://play.google.com/store/apps/details?id=com.quivaconnect.thecircle) | Quiva Connect | Language learning app |
 
@@ -201,7 +200,9 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Open Calc](https://github.com/drrnb/OpenCalc/releases/tag/v3.0.0-beta4-nothing) | drrnb | Themed calculator |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Recording light control for Phone (3) |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Device insights tool |
+| [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | Minimalist launcher |
 | [Sound Stream Now](https://play.google.com/store/apps/details?id=go.ssn) | Moworks | Music player supporting the Glyph Matrix |
+| [Stario Launcher](https://play.google.com/store/apps/details?id=com.stario.launcher) | tariqamarneh | Minimal dot-grid launcher inspired by the Nothing OS aesthetic |
 | [The Everything Key](https://play.google.com/store/apps/details?id=com.spandone.everythingkey) | spandone | Essential key remapper |
 | [Void](https://play.google.com/store/apps/details?id=com.thevoid.focus) | vmcreate | Minimal app blocker based on Nothing OS design language |
 | [Voidcaller](https://play.google.com/store/apps/details?id=com.voidware.voidcaller) | VoidwareLabs | Minimalist dialer |

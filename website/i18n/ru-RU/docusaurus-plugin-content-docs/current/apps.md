@@ -152,7 +152,6 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Nothing Notes](https://github.com/ThriveEngineer/nothing.notes) | ThriveEngineer | Приложение для заметок в тематике Nothing |
 | [Noting](https://play.google.com/store/apps/details?id=com.hearthborn.studios.notingnotes) | Hearthborn | Заметки и задачи с облачным бэкапом |
 | [Seton](https://github.com/arijit4/Seton) | arijit4 | Закрепление и редактирование заметок с помощью виджета |
-| [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | Минималистичный лаунчер |
 | [Spend Notes](https://play.google.com/store/apps/details?id=com.cmlabs.spendflow.spendflow) | Coder monk labs | Отслеживание расходов |
 | [The Circle](https://play.google.com/store/apps/details?id=com.quivaconnect.thecircle) | Quiva Connect | Приложение для изучения языков |
 
@@ -201,7 +200,9 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Open Calc](https://github.com/drrnb/OpenCalc/releases/tag/v3.0.0-beta4-nothing) | drrnb | Тематический калькулятор |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Управление индикатором записи для Phone (3) |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Инструмент для анализа устройства |
+| [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | Минималистичный лаунчер |
 | [Sound Stream Now](https://play.google.com/store/apps/details?id=go.ssn) | Moworks | Музыкальный плеер с поддержкой Glyph Matrix |
+| [Stario Launcher](https://play.google.com/store/apps/details?id=com.stario.launcher) | tariqamarneh | Минималистичный ланчер с точечной сеткой, вдохновленный эстетикой Nothing OS |
 | [The Everything Key](https://play.google.com/store/apps/details?id=com.spandone.everythingkey) | spandone | Базовый переназначитель клавиш |
 | [Void](https://play.google.com/store/apps/details?id=com.thevoid.focus) | vmcreate | Минималистичный блокировщик приложений на языке дизайна Nothing OS |
 | [Voidcaller](https://play.google.com/store/apps/details?id=com.voidware.voidcaller) | VoidwareLabs | Минималистичный диалер |

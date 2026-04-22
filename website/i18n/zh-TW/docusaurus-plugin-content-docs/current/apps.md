@@ -149,7 +149,6 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Nothing Notes](https://github.com/ThriveEngineer/nothing.notes) | ThriveEngineer | Nothing 主題筆記應用程式 |
 | [Noting](https://play.google.com/store/apps/details?id=com.hearthborn.studios.notingnotes) | Hearthborn | 附雲端備份的筆記與任務 |
 | [Seton](https://github.com/arijit4/Seton) | arijit4 | 附小工具的釘選與編輯筆記 |
-| [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | 簡約啟動器 |
 | [Spend Notes](https://play.google.com/store/apps/details?id=com.cmlabs.spendflow.spendflow) | Coder monk labs | 支出追蹤 |
 
 ---
@@ -196,7 +195,9 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Open Calc](https://github.com/drrnb/OpenCalc/releases/tag/v3.0.0-beta4-nothing) | drrnb | 主題計算機 |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Phone (3) 錄製指示燈控制 |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | 裝置資訊工具 |
+| [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | 簡約啟動器 |
 | [Sound Stream Now](https://play.google.com/store/apps/details?id=go.ssn) | Moworks | 支援 Glyph Matrix 的音樂播放器 |
+| [Stario Launcher](https://play.google.com/store/apps/details?id=com.stario.launcher) | tariqamarneh | 受 Nothing OS 美學啟發的極簡點陣式啟動器 |
 | [The Everything Key](https://play.google.com/store/apps/details?id=com.spandone.everythingkey) | spandone | Essential Key 重新對應工具 |
 | [Void](https://play.google.com/store/apps/details?id=com.thevoid.focus) | vmcreate | 基於 Nothing OS 設計語言的簡約應用程式阻擋器 |
 | [Voidcaller](https://play.google.com/store/apps/details?id=com.voidware.voidcaller) | VoidwareLabs | 簡約撥號器 |

@@ -152,7 +152,6 @@ Fonds d'écran dynamiques et améliorations visuelles pour sublimer l'apparence 
 | [Nothing Notes](https://github.com/ThriveEngineer/nothing.notes) | ThriveEngineer | Application de notes au thème Nothing |
 | [Noting](https://play.google.com/store/apps/details?id=com.hearthborn.studios.notingnotes) | Hearthborn | Notes et tâches avec sauvegarde cloud |
 | [Seton](https://github.com/arijit4/Seton) | arijit4 | Épinglez et éditez des notes via un widget |
-| [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | Lanceur minimaliste |
 | [Spend Notes](https://play.google.com/store/apps/details?id=com.cmlabs.spendflow.spendflow) | Coder monk labs | Suivi des dépenses |
 | [The Circle](https://play.google.com/store/apps/details?id=com.quivaconnect.thecircle) | Quiva Connect | Application d'apprentissage des langues |
 
@@ -201,7 +200,9 @@ Fonds d'écran dynamiques et améliorations visuelles pour sublimer l'apparence 
 | [Open Calc](https://github.com/drrnb/OpenCalc/releases/tag/v3.0.0-beta4-nothing) | drrnb | Calculatrice à thème |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Contrôle de la lumière d'enregistrement pour le Phone (3) |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Outil d'informations sur l'appareil |
+| [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | Lanceur minimaliste |
 | [Sound Stream Now](https://play.google.com/store/apps/details?id=go.ssn) | Moworks | Lecteur de musique prenant en charge la matrice Glyph |
+| [Stario Launcher](https://play.google.com/store/apps/details?id=com.stario.launcher) | tariqamarneh | Lanceur minimaliste en grille de points inspiré par l'esthétique de Nothing OS |
 | [The Everything Key](https://play.google.com/store/apps/details?id=com.spandone.everythingkey) | spandone | Remappeur de touche essentiel |
 | [Void](https://play.google.com/store/apps/details?id=com.thevoid.focus) | vmcreate | Bloqueur d'applications minimaliste basé sur le langage de design de Nothing OS |
 | [Voidcaller](https://play.google.com/store/apps/details?id=com.voidware.voidcaller) | VoidwareLabs | Numéroteur minimaliste |

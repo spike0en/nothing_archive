@@ -152,7 +152,6 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 | [Nothing Notes](https://github.com/ThriveEngineer/nothing.notes) | ThriveEngineer | Nothing temalı not uygulaması |
 | [Noting](https://play.google.com/store/apps/details?id=com.hearthborn.studios.notingnotes) | Hearthborn | Bulut yedeklemeli notlar ve görevler |
 | [Seton](https://github.com/arijit4/Seton) | arijit4 | Widget aracılığıyla not iğneleyin ve düzenleyin |
-| [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | Minimalist başlatıcı |
 | [Spend Notes](https://play.google.com/store/apps/details?id=com.cmlabs.spendflow.spendflow) | Coder monk labs | Harcama takibi |
 | [The Circle](https://play.google.com/store/apps/details?id=com.quivaconnect.thecircle) | Quiva Connect | Dil öğrenme uygulaması |
 
@@ -201,7 +200,9 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 | [Open Calc](https://github.com/drrnb/OpenCalc/releases/tag/v3.0.0-beta4-nothing) | drrnb | Temalı hesap makinesi |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Phone (3) için kayıt ışığı kontrolü |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Cihaz bilgisi aracı |
+| [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | Minimalist başlatıcı |
 | [Sound Stream Now](https://play.google.com/store/apps/details?id=go.ssn) | Moworks | Glyph Matrisini destekleyen müzik çalar |
+| [Stario Launcher](https://play.google.com/store/apps/details?id=com.stario.launcher) | tariqamarneh | Nothing OS estetiğinden ilham alan minimalist nokta ızgaralı başlatıcı |
 | [The Everything Key](https://play.google.com/store/apps/details?id=com.spandone.everythingkey) | spandone | Essential tuşu remappar |
 | [Void](https://play.google.com/store/apps/details?id=com.thevoid.focus) | vmcreate | Nothing OS tasarım diline dayalı minimal uygulama engelleyici |
 | [Voidcaller](https://play.google.com/store/apps/details?id=com.voidware.voidcaller) | VoidwareLabs | Minimalist arayıcı |
