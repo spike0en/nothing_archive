@@ -68,6 +68,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | 在 Nothing Glyph Matrix 上顯示 Home Assistant 感測器數據的 Android 應用程式。 |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | 太空侵略者遊戲 |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | 跑馬燈文字訊息 |
+| [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | 用於為 Nothing Phone (4a) Pro 建立並智慧顯示自訂 Glyph Matrix 視覺效果的工具包 |
 | [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | 網頁版程式碼測試工具 |
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | 創作與展示 Glyph 藝術 |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | 通知、計時器、視覺化器 |

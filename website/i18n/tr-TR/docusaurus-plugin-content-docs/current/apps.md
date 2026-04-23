@@ -69,6 +69,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | Home Assistant sensör verilerini Nothing Glyph Matrix üzerinde görüntüleyen Android uygulaması. |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | Space Invaders oyunu |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Kayan metin mesajları |
+| [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Nothing Phone (4a) Pro için özel Glyph Matrix görselleri oluşturma ve akıllıca görüntüleme araç takımı |
 | [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | Web üzerinden kod testi |
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | Glyph sanatı oluşturun ve sergileyin |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Bildirimler, zamanlayıcılar, görselleştirici |

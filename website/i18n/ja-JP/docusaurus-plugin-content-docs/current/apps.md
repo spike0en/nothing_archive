@@ -69,6 +69,7 @@ Glyphマトリックス向けのインタラクティブなトイとゲーム。
 | [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | Nothing Glyph Matrix上にHome Assistantのセンサーデータを表示するAndroidアプリ。 |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | スペースインベーダーゲーム |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | スクロールテキストメッセージ |
+| [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Nothing Phone (4a) Pro 向けのカスタム集約 Glyph マトリックス ビジュアルを作成し、インテリジェントに表示するツールキット |
 | [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | ウェブ経由でのコードテスト |
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | Glyphアートの作成と展示 |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | 通知、タイマー、ビジュアライザー |
