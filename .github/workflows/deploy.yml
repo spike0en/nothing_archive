@@ -20,7 +20,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: [self-hosted, Linux, X64]
+    runs-on: [self-hosted, Linux]
     defaults:
       run:
         working-directory: website
