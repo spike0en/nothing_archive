@@ -1,6 +1,6 @@
-# NothingOS 4.1 (Tetris-B4.1-260415-1709-IND)
+# Tetris-B4.1-260415-1709
 
-## Update changelogs:
+## Update changelogs
 Nothing OS 4.1  
 Hi there. You’re now upgrading to Nothing OS 4.1, powered by Android 16. We'll be rolling out even more features for Nothing OS 4.1 in the future, so please stay tuned.  
 Take a look at what's included in this update:  
