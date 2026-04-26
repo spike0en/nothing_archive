@@ -425,8 +425,13 @@ sha256sum -c *-hash.sha256
 ```
 
 ### Windows
-```powershell
+#### With command prompt(cmd)
+```cmd
 certutil -hashfile <filename> SHA256
+```
+#### With PowerShell 5+
+```powerShell
+Get-FileHash -Path <filename> -Algorithm SHA256
 ```
 > Users can also use open-source utilities like [OpenHashTab](https://github.com/namazso/OpenHashTab).
 
