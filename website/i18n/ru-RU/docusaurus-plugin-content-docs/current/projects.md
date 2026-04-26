@@ -19,13 +19,18 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 | [Better Nothing Music Visualizer](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | alekslevet | Улучшенная визуализация музыки |
 | [Cassette](https://github.com/Chipik0/Cassette) | Chipik0 | Создание композиций Glyph |
 | [Custom Nothing Glyph Tools](https://github.com/SebiAi/custom-nothing-glyph-tools) | SebiAi | Создание пользовательских тонов с помощью Audacity |
+| [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Редактор пиксель-арта для Phone (3) |
+| [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | Конвертер изображений в паттерны Glyph |
 | [Glyph Tones](https://glyphtones.is-a.dev/) | Firu11 | Коллекция мелодий Glyph от сообщества. ([Репозиторий](https://github.com/firu11/nothing-glyphtones)) |
 | [Glyph Utils](https://github.com/pgsk33/Glyph-Utils) | pgsk33 | Помощник на Java для покадровой анимации интерфейса Glyph |
 | [Glyph Visualizer](https://github.com/SebiAi/GlyphVisualizer) | SebiAi | Десктопный визуализатор для композиций .ogg |
 | [Haptificator](https://github.com/Fr4nKB/Haptificator) | Fr4nKB | Добавление тактильной отдачи в композиции Phone (1) |
+| [Matrices](https://udaign.github.io/matrices/) | Uday | Инструмент для дизайна матриц Glyph ([Репозиторий](https://github.com/udaign/matrices)) |
 | [Nothing Glyph Composer](https://itssveennn.github.io/Nothing-Glyph-Composer/) | itssveennn | Веб-инструментарий для создания анимаций Glyph 13x13, подготовки аудио и экспорта файлов OGG, готовых для использования в качестве рингтонов для Phone (4a) Pro. |
+| [Nothing Toyph Notifications](https://antonvidishchev.github.io/nothing-toyph-notifications/) | antonvidishchev | Инструмент для создания значков уведомлений для экрана Glyph в Nothing Phone (4a) Pro [Repo](https://github.com/antonvidishchev/nothing-toyph-notifications) |
 | [Osu To Glyph](https://github.com/taiixu/osu-to-glyph) | taiixu | Конвертация битмапов osu! в рингтоны Glyph для Nothing Phone |
 | [Pyglyph](https://github.com/Snakehater/pyglyph) | Snakehater | Python-скрипт для визуализации аудио |
+| [Vizmatrices](https://udaign.github.io/vizmatrices/) | udaign | Визуализатор аудио в реальном времени ([Репозиторий](https://github.com/udaign/vizmatrices)) |
 
 ---
 
@@ -89,10 +94,6 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 | [Dot Frame](https://github.com/NyxLumen/DotFrame) | NyxLumen | Конвертер видео в ASCII в стиле Nothing |
 | [Dot Matrixify](https://github.com/szelszabi/dotmatrixify) | szelszabi | Преобразование пиксель-арта в матричный вид |
 | [Dotify Client](https://github.com/PATEL96/dotify-client) | PATEL96 | Генератор точечных матричных изображений |
-| [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Редактор пиксель-арта для Phone (3) |
-| [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | Конвертер изображений в паттерны Glyph |
-| [Matrices](https://udaign.github.io/matrices/) | Uday | Инструмент для дизайна матриц Glyph ([Репозиторий](https://github.com/udaign/matrices)) |
-| [Vizmatrices](https://udaign.github.io/vizmatrices/) | udaign | Визуализатор аудио в реальном времени ([Репозиторий](https://github.com/udaign/vizmatrices)) |
 
 ---
 

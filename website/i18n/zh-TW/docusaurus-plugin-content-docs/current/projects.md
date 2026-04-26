@@ -19,13 +19,18 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | [Better Nothing Music Visualizer](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | alekslevet | 增強的音樂視覺化 |
 | [Cassette](https://github.com/Chipik0/Cassette) | Chipik0 | 建立 Glyph 組合 |
 | [Custom Nothing Glyph Tools](https://github.com/SebiAi/custom-nothing-glyph-tools) | SebiAi | 使用 Audacity 建立自訂音效 |
+| [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | 適用於 Phone (3) 的像素藝術編輯器 |
+| [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | 將圖片轉換為 Glyph 圖樣 |
 | [Glyph Tones](https://glyphtones.is-a.dev/) | Firu11 | 社群 Glyph 音效合集。（[Repo](https://github.com/firu11/nothing-glyphtones)） |
 | [Glyph Utils](https://github.com/pgsk33/Glyph-Utils) | pgsk33 | 用於基於幀的 Glyph 介面動畫的 Java 輔助工具 |
 | [Glyph Visualizer](https://github.com/SebiAi/GlyphVisualizer) | SebiAi | 用於 .ogg 組合的桌面視覺化工具 |
 | [Haptificator](https://github.com/Fr4nKB/Haptificator) | Fr4nKB | 為 Phone (1) 組合加入觸覺回饋 |
+| [Matrices](https://udaign.github.io/matrices/) | Uday | Glyph Matrix 設計工具 ([Repo](https://github.com/udaign/matrices)) |
 | [Nothing Glyph Composer](https://itssveennn.github.io/Nothing-Glyph-Composer/) | itssveennn | 專為 Phone (4a) Pro 打造，用於製作 13x13 Glyph 動畫、準備音訊並匯出可用於鈴聲的 OGG 檔案的網頁工具包。 |
+| [Nothing Toyph Notifications](https://antonvidishchev.github.io/nothing-toyph-notifications/) | antonvidishchev | 用於為 Nothing Phone (4a) Pro Glyph 螢幕建立通知圖標的工具 [Repo](https://github.com/antonvidishchev/nothing-toyph-notifications) |
 | [Osu To Glyph](https://github.com/taiixu/osu-to-glyph) | taiixu | 將 osu! 節奏圖轉換為 Nothing Phone 的 Glyph 鈴聲 |
 | [Pyglyph](https://github.com/Snakehater/pyglyph) | Snakehater | 用於音訊視覺化的 Python 腳本 |
+| [Vizmatrices](https://udaign.github.io/vizmatrices/) | udaign | 即時音訊反應視覺化工具 ([Repo](https://github.com/udaign/vizmatrices)) |
 
 ---
 
@@ -89,10 +94,6 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | [Dot Frame](https://github.com/NyxLumen/DotFrame) | NyxLumen | 帶有 Nothing 風格的影片轉 ASCII 轉換器 |
 | [Dot Matrixify](https://github.com/szelszabi/dotmatrixify) | szelszabi | 將像素藝術轉換為點陣圖 |
 | [Dotify Client](https://github.com/PATEL96/dotify-client) | PATEL96 | 點陣圖影像生成工具 |
-| [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | 適用於 Phone (3) 的像素藝術編輯器 |
-| [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | 將圖片轉換為 Glyph 圖樣 |
-| [Matrices](https://udaign.github.io/matrices/) | Uday | Glyph Matrix 設計工具 ([Repo](https://github.com/udaign/matrices)) |
-| [Vizmatrices](https://udaign.github.io/vizmatrices/) | udaign | 即時音訊反應視覺化工具 ([Repo](https://github.com/udaign/vizmatrices)) |
 
 ---
 

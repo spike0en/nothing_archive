@@ -19,13 +19,18 @@ Nothing topluluğu tarafında sürdürülen projeler.
 | [Better Nothing Music Visualizer](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | alekslevet | Geliştirilmiş müzik görselleştirme |
 | [Cassette](https://github.com/Chipik0/Cassette) | Chipik0 | Glyph kompozisyonları oluşturun |
 | [Custom Nothing Glyph Tools](https://github.com/SebiAi/custom-nothing-glyph-tools) | SebiAi | Audacity kullanarak tonlar oluşturun |
+| [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Phone (3) için pixel art düzenleyici |
+| [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | İmajdan Glyph desenine dönüştürücü |
 | [Glyph Tones](https://glyphtones.is-a.dev/) | Firu11 | Topluluk Glyph tonları koleksiyonu. ([Depo](https://github.com/firu11/nothing-glyphtones)) |
 | [Glyph Utils](https://github.com/pgsk33/Glyph-Utils) | pgsk33 | Frame tabanlı Glyph Arayüzü animasyonları için Java yardımcısı |
 | [Glyph Visualizer](https://github.com/SebiAi/GlyphVisualizer) | SebiAi | .ogg kompozisyonları için masaüstü görselleştirici |
 | [Haptificator](https://github.com/Fr4nKB/Haptificator) | Fr4nKB | Phone (1) kompozisyonlarına dokunsal geri bildirim ekleyin |
+| [Matrices](https://udaign.github.io/matrices/) | Uday | Glyph Matrix tasarım aracı ([Depo](https://github.com/udaign/matrices)) |
 | [Nothing Glyph Composer](https://itssveennn.github.io/Nothing-Glyph-Composer/) | itssveennn | Phone (4a) Pro için 13x13 Glyph animasyonları oluşturmak, ses hazırlamak ve zil sesine hazır OGG dosyalarını dışa aktarmak için web araç kiti. |
+| [Nothing Toyph Notifications](https://antonvidishchev.github.io/nothing-toyph-notifications/) | antonvidishchev | Nothing Phone (4a) Pro Glyph ekranı için bildirim simgeleri oluşturma aracı [Repo](https://github.com/antonvidishchev/nothing-toyph-notifications) |
 | [Osu To Glyph](https://github.com/taiixu/osu-to-glyph) | taiixu | osu! beatmap'lerini Nothing Phone zil seslerine dönüştürün |
 | [Pyglyph](https://github.com/Snakehater/pyglyph) | Snakehater | Ses görselleştirme için Python betiği |
+| [Vizmatrices](https://udaign.github.io/vizmatrices/) | udaign | Gerçek zamanlı sese duyarlı görselleştirici ([Depo](https://github.com/udaign/vizmatrices)) |
 
 ---
 
@@ -89,10 +94,6 @@ Diğer geliştiricilerin Nothing'den ilham alan projeler oluşturmasına yardım
 | [Dot Frame](https://github.com/NyxLumen/DotFrame) | NyxLumen | Nothing odaklı videodan ASCII'ye dönüştürücü |
 | [Dot Matrixify](https://github.com/szelszabi/dotmatrixify) | szelszabi | Pixel art'ı nokta matrisine dönüştürür |
 | [Dotify Client](https://github.com/PATEL96/dotify-client) | PATEL96 | Nokta matrisi imaj oluşturucu |
-| [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Phone (3) için pixel art düzenleyici |
-| [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | İmajdan Glyph desenine dönüştürücü |
-| [Matrices](https://udaign.github.io/matrices/) | Uday | Glyph Matrix tasarım aracı ([Depo](https://github.com/udaign/matrices)) |
-| [Vizmatrices](https://udaign.github.io/vizmatrices/) | udaign | Gerçek zamanlı sese duyarlı görselleştirici ([Depo](https://github.com/udaign/vizmatrices)) |
 
 ---
 

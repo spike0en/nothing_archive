@@ -19,13 +19,18 @@ A collection of tools for creating custom Glyph tones and compositions.
 | [Better Nothing Music Visualizer](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | alekslevet | Enhanced music visualization |
 | [Cassette](https://github.com/Chipik0/Cassette) | Chipik0 | Create glyph compositions |
 | [Custom Nothing Glyph Tools](https://github.com/SebiAi/custom-nothing-glyph-tools) | SebiAi | Create custom tones with Audacity |
+| [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Pixel art editor for Phone (3) |
+| [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | Image to glyph pattern converter |
 | [Glyph Tones](https://glyphtones.is-a.dev/) | Firu11 | Collection of community Glyph tones. ([Repo](https://github.com/firu11/nothing-glyphtones)) |
 | [Glyph Utils](https://github.com/pgsk33/Glyph-Utils) | pgsk33 | Java helper for frame-based Glyph Interface animations |
 | [Glyph Visualizer](https://github.com/SebiAi/GlyphVisualizer) | SebiAi | Desktop visualizer for .ogg compositions |
 | [Haptificator](https://github.com/Fr4nKB/Haptificator) | Fr4nKB | Add haptics to Phone (1) compositions |
+| [Matrices](https://udaign.github.io/matrices/) | Uday | Glyph Matrix design tool ([Repo](https://github.com/udaign/matrices)) |
 | [Nothing Glyph Composer](https://itssveennn.github.io/Nothing-Glyph-Composer/) | itssveennn | Web toolkit to create 13x13 glyph animations, prepare audio, and export ringtone-ready OGG files for Phone (4a) Pro. |
+| [Nothing Toyph Notifications](https://antonvidishchev.github.io/nothing-toyph-notifications/) | antonvidishchev | A tool for creating notification icons for Nothing phone 4(a) Pro glyph screen [Repo](https://github.com/antonvidishchev/nothing-toyph-notifications) |
 | [Osu To Glyph](https://github.com/taiixu/osu-to-glyph) | taiixu | Convert osu! beatmaps to Nothing Phone glyph ringtones |
 | [Pyglyph](https://github.com/Snakehater/pyglyph) | Snakehater | Python script for audio visualization |
+| [Vizmatrices](https://udaign.github.io/vizmatrices/) | udaign | Real time audio reactive visualizer ([Repo](https://github.com/udaign/vizmatrices)) |
 
 ---
 
@@ -89,10 +94,6 @@ Assets and tools designed to help other developers build Nothing-inspired projec
 | [Dot Frame](https://github.com/NyxLumen/DotFrame) | NyxLumen | Video to Ascii converter with a nothing accent |
 | [Dot Matrixify](https://github.com/szelszabi/dotmatrixify) | szelszabi | Transform pixel art to dot matrix |
 | [Dotify Client](https://github.com/PATEL96/dotify-client) | PATEL96 | Dot Matrix image generator |
-| [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Pixel art editor for Phone (3) |
-| [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | Image to glyph pattern converter |
-| [Matrices](https://udaign.github.io/matrices/) | Uday | Glyph Matrix design tool ([Repo](https://github.com/udaign/matrices)) |
-| [Vizmatrices](https://udaign.github.io/vizmatrices/) | udaign | Real time audio reactive visualizer ([Repo](https://github.com/udaign/vizmatrices)) |
 
 ---
 
