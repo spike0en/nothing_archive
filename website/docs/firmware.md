@@ -36,7 +36,7 @@ By using this archive, users acknowledge and accept these terms:
 
 :::
 
-<hr />
+---
 
 ## Categorization
 
@@ -68,7 +68,7 @@ The unmodified stock OTA image files are archived in `.7z` format and categorize
 
 </details>
 
-<hr />
+---
 
 ## Downloads
 
@@ -353,7 +353,7 @@ Select your device model to access its Release Index.
 
 </details>
 
-<hr />
+---
 
 ### CMF by Nothing Phones
 
@@ -411,9 +411,9 @@ Select your device model to access its Release Index.
 
 <br />
 
-</details> 
+</details>
 
-<hr />
+---
 
 ## Integrity Check
 
@@ -435,4 +435,5 @@ Get-FileHash -Path <filename> -Algorithm SHA256
 ```
 > Users can also use open-source utilities like [OpenHashTab](https://github.com/namazso/OpenHashTab).
 
-<hr />
+---
+

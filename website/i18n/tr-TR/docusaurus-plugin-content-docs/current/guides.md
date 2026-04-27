@@ -122,15 +122,13 @@ B. **Sideloading İşlemine Devam Etme**
 
 :::
 
-
-<hr />
+---
 
 ### Güvenli Mod
 
 - [Güvenli Modda Başlatma](https://www.hardreset.info/devices/nothing/nothing-phone-2/safe-mode/)
 
-
-<hr />
+---
 
 ### Çevirici Kodları
 
@@ -181,7 +179,7 @@ Bu kılavuz, Nothing OS'de genellikle AB modelleriyle sınırlı olan ancak bu y
    ```
 6. Artık fabrikada takılan pilin **Maksimum kapasitesini**, **Döngü sayısını**, **Üretim tarihini** ve **İlk kullanım tarihini** gösteren **Pil Bilgisi** sayfasını görmelisiniz.
 
-<hr />
+---
 
 ### Bauhaus Temasının Kilidini Açma
 
@@ -220,8 +218,7 @@ Bauhaus'tan ilham alan tema, çeşitli Nothing telefon modellerinde kilidi açı
 
 :::
 
-
-<hr />
+---
 
 ### Essential Tuşu Yeniden Atama
 
@@ -234,8 +231,7 @@ Phone (3) üzerindeki Essential Tuşunu yeniden atamak için rehberler:
 | [XDA Rehberi](https://xdaforums.com/t/how-to-disable-or-remap-the-essentials-button.4755184/) | rwilco12 |
 | [GitHub Rehberi](https://github.com/z3phydev/How-to-remap-or-disable-the-Essential-Key) | z3phydev |
 
-
-<hr />
+---
 
 ### Gadgetbridge İle İlgili
 
@@ -280,8 +276,7 @@ winget install --id=Google.PlatformTools -e
 brew install --cask android-platform-tools
 ```
 
-
-<hr />
+---
 
 ### Önyükleyici Kilidini Açma
 
@@ -345,8 +340,7 @@ C. **Kilit Açma Sonrası**
 
   - Önyükleyici artık açık ve cihazınız açılışta "Orange State" uyarısı gösterecektir; bu normaldir.
 
-
-<hr />
+---
 
 ### Root Atma
 
@@ -447,8 +441,7 @@ D. **Imajı Yamalayın**
 
 - Cihaz KSU/KSUN ile root'lanmış olmalıdır.
 
-
-<hr />
+---
 
 ### Play Integrity
 
@@ -456,8 +449,7 @@ D. **Imajı Yamalayın**
 |-------|------|
 | Play Integrity & Root Algılama Sorununu Çözme | [Wiki](https://github.com/yashaswee-exe/AndroidGuides/wiki/Fix-integrity-and-root-detection) |
 
-
-<hr />
+---
 
 ### Temel Bölümleri Yedekleme
 
@@ -543,8 +535,7 @@ D. **Bölümleri Geri Yükleme**
     ```
     **Bu durumda fabrika ayarlarına sıfırlama zorunlu değildir.**
 
-
-<hr />
+---
 
 ### Stok ROM Flaşlama (Brick Kurtarma / Sürüm Düşürme)
 
@@ -596,8 +587,7 @@ B. **Flaşlama İşlemine Geçmek:**
     - Başarılıysa sistemi yeniden başlatmayı seçin: (Y)
     - Hata oluşursa, önyükleyiciyi yeniden başlatın ve hatayı giderdikten sonra tekrar flaşlayın. Bunu yapmadan sistemi yeniden başlatmak, cihazın "soft/hard brick" olmasına neden olabilir.
 
-
-<hr />
+---
 
 ### Önyükleyiciyi Yeniden Kilitleme
 

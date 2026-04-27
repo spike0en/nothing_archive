@@ -122,15 +122,13 @@ B. **サイドロードの続行**
 
 :::
 
-
-<hr />
+---
 
 ### セーフモード
 
 - [セーフモードへの再起動](https://www.hardreset.info/devices/nothing/nothing-phone-2/safe-mode/)
 
-
-<hr />
+---
 
 ### ダイヤルコード
 
@@ -181,7 +179,7 @@ B. **サイドロードの続行**
    ```
 6. 工場出荷時に取り付けられたバッテリーの**最大容量**、**サイクル数**、**製造日**、および**初回使用日**を示す **Battery Information** ページが表示されます。
 
-<hr />
+---
 
 ### Bauhausテーマの解除
 
@@ -220,8 +218,7 @@ Bauhausにインスパイアされたテーマは、Nothing Phoneの様々なモ
 
 :::
 
-
-<hr />
+---
 
 ### Essentialキーの割り当て変更
 
@@ -234,8 +231,7 @@ Phone (3)のEssentialキーの割り当てを変更するためのガイド：
 | [XDAガイド](https://xdaforums.com/t/how-to-disable-or-remap-the-essentials-button.4755184/) | rwilco12 |
 | [GitHubガイド](https://github.com/z3phydev/How-to-remap-or-disable-the-Essential-Key) | z3phydev |
 
-
-<hr />
+---
 
 ### Gadgetbridge関連
 
@@ -280,8 +276,7 @@ winget install --id=Google.PlatformTools -e
 brew install --cask android-platform-tools
 ```
 
-
-<hr />
+---
 
 ### ブートローダーのアンロック
 
@@ -345,8 +340,7 @@ C. **アンロック後**
 
   - ブートローダーがアンロックされ、起動時に「Orange State」の警告が表示されますが、これは正常です。
 
-
-<hr />
+---
 
 ### ルート化
 
@@ -447,8 +441,7 @@ D. **イメージへのパッチ適用**
 
 - デバイスがKSU/KSUNでルート化されます。
 
-
-<hr />
+---
 
 ### Play Integrity
 
@@ -456,8 +449,7 @@ D. **イメージへのパッチ適用**
 |-------|------|
 | Play Integrityとルート検出の修正 | [Wiki](https://github.com/yashaswee-exe/AndroidGuides/wiki/Fix-integrity-and-root-detection) |
 
-
-<hr />
+---
 
 ### 必須パーティションのバックアップ
 
@@ -543,8 +535,7 @@ D. **パーティションの復元**
     ```
     **この場合、工場出荷時設定へのリセットは必須ではありません。**
 
-
-<hr />
+---
 
 ### 純正ROMのフラッシュ（アンブリック / ダウングレード）
 
@@ -596,8 +587,7 @@ B. **フラッシュの実行：**
     - 成功した場合は、システムへの再起動を選択します：(Y)
     - エラーが発生した場合は、ブートローダーに再起動し、失敗の原因に対処した後に再度フラッシュしてください。これを行わずにシステムに再起動すると、ソフト/ハードブリックの結果を招く可能性があります。
 
-
-<hr />
+---
 
 ### ブートローダーの再ロック
 

@@ -122,15 +122,13 @@ B. **Procéder au Sideloading**
 
 :::
 
-
-<hr />
+---
 
 ### Mode Sans Échec
 
 - [Redémarrage en mode sans échec](https://www.hardreset.info/devices/nothing/nothing-phone-2/safe-mode/)
 
-
-<hr />
+---
 
 ### Codes Composeur
 
@@ -181,7 +179,7 @@ Ce guide explique comment ouvrir la page masquée **Informations sur la batterie
    ```
 6. Vous devriez maintenant voir la page **Battery Information** affichant la **Capacité maximale**, le **Nombre de cycles**, la **Date de fabrication** et la **Date de première utilisation** de la batterie installée en usine.
 
-<hr />
+---
 
 ### Débloquer le Thème Bauhaus
 
@@ -220,8 +218,7 @@ Le thème inspiré de Bauhaus est une fonctionnalité d'édition spéciale qui p
 
 :::
 
-
-<hr />
+---
 
 ### Réassignation de la Touche Essential
 
@@ -234,8 +231,7 @@ Guides pour réassigner la touche Essential sur le Phone (3) :
 | [Guide XDA](https://xdaforums.com/t/how-to-disable-or-remap-the-essentials-button.4755184/) | rwilco12 |
 | [Guide GitHub](https://github.com/z3phydev/How-to-remap-or-disable-the-Essential-Key) | z3phydev |
 
-
-<hr />
+---
 
 ### Lié à Gadgetbridge
 
@@ -280,8 +276,7 @@ winget install --id=Google.PlatformTools -e
 brew install --cask android-platform-tools
 ```
 
-
-<hr />
+---
 
 ### Déverrouillage du Chargeur de Démarrage (Bootloader)
 
@@ -345,8 +340,7 @@ C. **Post-Déverrouillage**
 
   - Le chargeur de démarrage est maintenant déverrouillé et votre appareil affichera un avertissement "Orange State" au démarrage — c'est normal.
 
-
-<hr />
+---
 
 ### Root
 
@@ -447,8 +441,7 @@ D. **Patchez l'image**
 
 - L'appareil devrait être rooté avec KSU/KSUN.
 
-
-<hr />
+---
 
 ### Play Integrity
 
@@ -456,8 +449,7 @@ D. **Patchez l'image**
 |-------|------|
 | Corriger Play Integrity et la détection du Root | [Wiki](https://github.com/yashaswee-exe/AndroidGuides/wiki/Fix-integrity-and-root-detection) |
 
-
-<hr />
+---
 
 ### Sauvegarde des Partitions Essentielles
 
@@ -544,8 +536,7 @@ D. **Restauration des Partitions**
     ```
     **La réinitialisation d'usine n'est pas obligatoire dans ce cas.**
 
-
-<hr />
+---
 
 ### Flasher la ROM d'origine (Unbrick / Downgrade)
 
@@ -597,8 +588,7 @@ B. **Procéder au Flashage :**
     - Si c'est le cas, choisissez de redémarrer le système : (Y)
     - En cas d'erreurs, redémarrez en mode bootloader et reflashez après avoir corrigé l'échec. Redémarrer le système sans le faire pourrait entraîner des briques logicielles ou matérielles.
 
-
-<hr />
+---
 
 ### Reverrouillage du Chargeur de Démarrage (Bootloader)
 

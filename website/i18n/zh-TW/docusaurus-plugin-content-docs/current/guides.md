@@ -122,15 +122,13 @@ B. **繼續進行側載**
 
 :::
 
-
-<hr />
+---
 
 ### 安全模式
 
 - [重啟至安全模式](https://www.hardreset.info/devices/nothing/nothing-phone-2/safe-mode/)
 
-
-<hr />
+---
 
 ### 撥號碼
 
@@ -181,7 +179,7 @@ B. **繼續進行側載**
    ```
 6. 您現在應該會看到 **電池資訊** 頁面，顯示原廠安裝電池的**最大容量**、**循環次數**、**生產日期**和**首次使用日期**。
 
-<hr />
+---
 
 ### 解鎖 Bauhaus 主題
 
@@ -220,8 +218,7 @@ B. **繼續進行側載**
 
 :::
 
-
-<hr />
+---
 
 ### Essential 按鍵重新映射
 
@@ -234,8 +231,7 @@ Phone (3) 上 Essential 按鍵重新映射指南：
 | [XDA 指南](https://xdaforums.com/t/how-to-disable-or-remap-the-essentials-button.4755184/) | rwilco12 |
 | [GitHub 指南](https://github.com/z3phydev/How-to-remap-or-disable-the-Essential-Key) | z3phydev |
 
-
-<hr />
+---
 
 ### Gadgetbridge 相關
 
@@ -280,8 +276,7 @@ winget install --id=Google.PlatformTools -e
 brew install --cask android-platform-tools
 ```
 
-
-<hr />
+---
 
 ### 解鎖開機載入程式 (Bootloader)
 
@@ -345,8 +340,7 @@ C. **解鎖後**
 
   - 開機載入程式現在已解鎖，你的裝置在啟動時將顯示 Orange State 警告 —— 這是正常現象。
 
-
-<hr />
+---
 
 ### Root
 
@@ -447,8 +441,7 @@ D. **修補映像**
 
 - 裝置應已透過 KSU/KSUN 取得 root 權限。
 
-
-<hr />
+---
 
 ### Play Integrity
 
@@ -456,8 +449,7 @@ D. **修補映像**
 |-------|------|
 | 修復 Play Integrity 和 Root 檢測 | [Wiki](https://github.com/yashaswee-exe/AndroidGuides/wiki/Fix-integrity-and-root-detection) |
 
-
-<hr />
+---
 
 ### 備份核心分區
 
@@ -543,8 +535,7 @@ D. **還原分區**
     ```
     **在這種情況下，還原出廠設定並非必須。**
 
-
-<hr />
+---
 
 ### 刷入原廠 ROM（修復救磚 / 降級）
 
@@ -596,8 +587,7 @@ B. **進行刷機：**
     - 如果成功，選擇重啟至系統：(Y)
     - 如果出現錯誤，請在解決故障後重啟至開機載入程式並重新刷入。在未解決問題的情況下重啟至系統可能會導致裝置損壞 (brick)。
 
-
-<hr />
+---
 
 ### 重新鎖定開機載入程式 (Bootloader)
 

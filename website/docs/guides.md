@@ -123,15 +123,13 @@ B. **Proceed with Sideloading**
 
 :::
 
-
-<hr />
+---
 
 ### Safe Mode
 
 - [Rebooting to Safe Mode](https://www.hardreset.info/devices/nothing/nothing-phone-2/safe-mode/)
 
-
-<hr />
+---
 
 ### Dialer Codes
 
@@ -182,7 +180,7 @@ This guide shows how to open the hidden **Battery Information** page in Nothing 
    ```
 6. You should now see the **Battery Information** page showing **Maximum capacity**, **Cycle count**, **Production date**, and **First use date** of the factory-installed battery.
 
--- 
+---
 
 ### Unlocking Bauhaus Theme
 
@@ -221,6 +219,8 @@ The Bauhaus-inspired theme is a special edition feature that can be unlocked acr
 
 :::
 
+---
+
 ### Essential Key Remapping
 
 Guides for remapping the Essential Key on Phone (3):
@@ -232,8 +232,7 @@ Guides for remapping the Essential Key on Phone (3):
 | [XDA Guide](https://xdaforums.com/t/how-to-disable-or-remap-the-essentials-button.4755184/) | rwilco12 |
 | [GitHub Guide](https://github.com/z3phydev/How-to-remap-or-disable-the-Essential-Key) | z3phydev |
 
-
-<hr />
+---
 
 ### Gadgetbridge Related
 
@@ -278,8 +277,7 @@ winget install --id=Google.PlatformTools -e
 brew install --cask android-platform-tools
 ```
 
-
-<hr />
+---
 
 ### Unlocking Bootloader
 
@@ -343,8 +341,7 @@ C. **Post-Unlock**
 
   - Bootloader is now unlocked and your device will show an Orange State warning at boot—this is normal.
 
-
-<hr />
+---
 
 ### Rooting
 
@@ -445,8 +442,7 @@ D. **Patch the Image**
 
 - The device should be rooted with KSU/KSUN.
 
-
-<hr />
+---
 
 ### Play Integrity
 
@@ -454,8 +450,7 @@ D. **Patch the Image**
 |-------|------|
 | Fix Play Integrity & Root Detection | [Wiki](https://github.com/yashaswee-exe/AndroidGuides/wiki/Fix-integrity-and-root-detection) |
 
-
-<hr />
+---
 
 ### Backing Up Essential Partitions
 
@@ -542,8 +537,7 @@ D. **Restoring Partitions**
    ```
    **Factory reset is not mandatory in this case.**
 
-
-<hr />
+---
 
 ### Flashing Stock ROM (Unbrick / Downgrade)
 
@@ -595,8 +589,7 @@ B. **Proceeding with Flashing:**
     - If successful, choose to reboot to system: (Y)
     - If errors occur, reboot to bootloader and reflash after addressing the failure. Rebooting to system without doing so might result in soft/hard bricks.
 
-
-<hr />
+---
 
 ### Relocking Bootloader
 
