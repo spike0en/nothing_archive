@@ -26,6 +26,7 @@ Nothing telefonlarının Glyph arayüzüyle entegre olan uygulamalar.
 | [Blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | Glyph entegrasyonu ile dijital detoks uygulaması |
 | [Delivery Glyph](https://github.com/Goktug-Dusunen/Glyph-Developer-Kit/tree/main/DeliveryGlyph) | Goktug-Dusunen | Özellikle Türk servisleri için optimize edilmiş teslimat takip uygulaması |
 | [Glyph Bar Composer](https://github.com/BhuvaneshwarMarri/GlyphBarComposer-4a) | BhuvaneshwarMarri | Nothing Phone (4a) için özel Glyph aydınlatma desenleri oluşturun, senkronize edin ve görselleştirin |
+| [Glyph Battery](https://github.com/0x91m0n/NothingGlyphBattery) | 0x91m0n | Glyph Arayüzü üzerinden pil seviyesi görselleştirme |
 | [Glyph Compass](https://play.google.com/store/apps/details?id=com.JayKayCooperations.glyph_compass) | JayKayCooperations | Glyph arayüzünüzü pusula olarak kullanın |
 | [Glyph Essentials](https://play.google.com/store/apps/details?id=com.tldc.essentials) | GlyphLab | Gelişmiş Glyph bildirim özelleştirmesi |
 | [Glyph Glow](https://github.com/fgiering/GlyphGlow) | fgiering | Glyph arayüzünü kontrol etmek için minimal uygulama |
@@ -170,6 +171,7 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Nothing'in Essential Space uygulamasının "vibe coded" kopyası. |
 | [Currency](https://curency.pages.dev/) | Earendel | Birim dönüştürücü web uygulaması |
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Nokta matrisli yazı tiplerine sahip hesap makinesi uygulaması. |
+| [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Hızlı ekran görüntüleri, notlar, sesli notlar ve daha fazlasını içeren, tüm cihazlar için Nothing'den ilham alan temel Essential Space deneyimi |
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | OEM uygulamaları veya bulut hesabı olmadan giyilebilir cihazları kullanın |
 | [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | Dino oyunundan esinlenildi |
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Widget destekli el feneri uygulaması |

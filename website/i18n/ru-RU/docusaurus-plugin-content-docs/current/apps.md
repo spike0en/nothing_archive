@@ -26,6 +26,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | Приложение для цифрового детокса с блокировкой телефона и интеграцией Glyph |
 | [Delivery Glyph](https://github.com/Goktug-Dusunen/Glyph-Developer-Kit/tree/main/DeliveryGlyph) | Goktug-Dusunen | Приложение для отслеживания доставки, оптимизированное для турецких сервисов |
 | [Glyph Bar Composer](https://github.com/BhuvaneshwarMarri/GlyphBarComposer-4a) | BhuvaneshwarMarri | Создание, синхронизация и визуализация пользовательских световых паттернов Glyph для Nothing Phone (4a) |
+| [Glyph Battery](https://github.com/0x91m0n/NothingGlyphBattery) | 0x91m0n | Визуализация уровня заряда батареи через интерфейс Glyph |
 | [Glyph Compass](https://play.google.com/store/apps/details?id=com.JayKayCooperations.glyph_compass) | JayKayCooperations | Используйте интерфейс Glyph в качестве компаса |
 | [Glyph Essentials](https://play.google.com/store/apps/details?id=com.tldc.essentials) | GlyphLab | Продвинутая настройка уведомлений Glyph |
 | [Glyph Glow](https://github.com/fgiering/GlyphGlow) | fgiering | Минималистичное приложение для управления интерфейсом Glyph |
@@ -169,6 +170,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Compass](https://github.com/Earendel-lab/Compass) | Earendel | Простой компас |
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Стилизованная копия приложения «Essential space» от Nothing |
 | [Currency](https://curency.pages.dev/) | Earendel | Веб-приложение для конвертации валют |
+| [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Основной функционал Essential Space в стиле Nothing для всех устройств: быстрые скриншоты, заметки, голосовые заметки и многое другое |
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Калькулятор со шрифтами в стиле dot matrix | 
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | Используйте носимые Bluetooth-устройства без OEM-приложений, аккаунтов или облака |
 | [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | Вдохновлено игрой про динозаврика |

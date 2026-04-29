@@ -26,6 +26,7 @@ Applications s'intégrant à l'interface Glyph des téléphones Nothing.
 | [Blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | Application de détox numérique avec intégration Glyph |
 | [Delivery Glyph](https://github.com/Goktug-Dusunen/Glyph-Developer-Kit/tree/main/DeliveryGlyph) | Goktug-Dusunen | Application de suivi de livraison, spécialement optimisée pour les services turcs |
 | [Glyph Bar Composer](https://github.com/BhuvaneshwarMarri/GlyphBarComposer-4a) | BhuvaneshwarMarri | Composez, synchronisez et visualisez des motifs lumineux Glyph personnalisés pour le Nothing Phone (4a) |
+| [Glyph Battery](https://github.com/0x91m0n/NothingGlyphBattery) | 0x91m0n | Visualisation du niveau de batterie via l'interface Glyph |
 | [Glyph Compass](https://play.google.com/store/apps/details?id=com.JayKayCooperations.glyph_compass) | JayKayCooperations | Utilisez votre interface Glyph comme une boussole |
 | [Glyph Essentials](https://play.google.com/store/apps/details?id=com.tldc.essentials) | GlyphLab | Personnalisation avancée des notifications Glyph |
 | [Glyph Glow](https://github.com/fgiering/GlyphGlow) | fgiering | Application minimale pour contrôler l'interface Glyph |
@@ -170,6 +171,7 @@ Fonds d'écran dynamiques et améliorations visuelles pour sublimer l'apparence 
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Copie « vibe coded » de l'application Essential Space de Nothing. |
 | [Currency](https://curency.pages.dev/) | Earendel | Application web de conversion de devises |
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Application de calculatrice avec des polices à matrice de points. |
+| [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Expérience Essential Space de base inspirée par Nothing pour tous les appareils, avec captures d'écran rapides, notes, mémos vocaux, et plus encore |
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | Utilisez des wearables Bluetooth sans applications OEM ni compte cloud |
 | [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | Inspiré par le jeu Dino |
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Application de lampe torche avec widgets |

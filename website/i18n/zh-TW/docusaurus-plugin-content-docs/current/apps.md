@@ -26,6 +26,7 @@ AI 生成的高度個人化迷你應用程式，延伸 Nothing OS 生態系。
 | [blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | 整合 Glyph 的數位排毒手機封鎖應用程式 |
 | [Delivery Glyph](https://github.com/Goktug-Dusunen/Glyph-Developer-Kit/tree/main/DeliveryGlyph) | Goktug-Dusunen | 特別針對土耳其服務優化的配送追蹤應用程式 |
 | [Glyph Bar Composer](https://github.com/BhuvaneshwarMarri/GlyphBarComposer-4a) | BhuvaneshwarMarri | 為 Nothing Phone (4a) 撰寫、同步並視覺化自訂 Glyph 燈光圖樣 |
+| [Glyph Battery](https://github.com/0x91m0n/NothingGlyphBattery) | 0x91m0n | 透過 Glyph 介面進行電池電量視覺化 |
 | [Glyph Compass](https://play.google.com/store/apps/details?id=com.JayKayCooperations.glyph_compass) | JayKayCooperations | 將 Glyph 介面作為指南針使用 |
 | [Glyph Essentials](https://play.google.com/store/apps/details?id=com.tldc.essentials) | GlyphLab | 進階 Glyph 通知自訂化 |
 | [Glyph Glow](https://github.com/fgiering/GlyphGlow) | fgiering | 控制 Glyph 介面的簡約應用程式 |
@@ -167,6 +168,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Nothing 的 Essential Space 應用程式的「Vibe coded」版本。 |
 | [Currency](https://curency.pages.dev/) | Earendel | 貨幣換算網頁應用程式 |
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | 採用點陣字體的計算機應用程式。 |
+| [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | 受 Nothing 啟發的跨裝置核心 Essential Space 體驗，具備快速截圖、筆記、語音備忘錄等功能 |
 | [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | 恐龍遊戲靈感作品 |
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | 附小工具的手電筒應用程式 |
 | [Hey Battery](https://github.com/ghostyapps/HeyBattery) | Candan | 電池使用追蹤器 |

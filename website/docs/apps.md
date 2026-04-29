@@ -26,6 +26,7 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | [Blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | Tech detox phone blocking app with Glyph integration |
 | [Delivery Glyph](https://github.com/Goktug-Dusunen/Glyph-Developer-Kit/tree/main/DeliveryGlyph) | Goktug-Dusunen | Delivery tracking app, specially optimized for Turkish services |
 | [Glyph Bar Composer](https://github.com/BhuvaneshwarMarri/GlyphBarComposer-4a) | BhuvaneshwarMarri | Compose, synchronize, and visualize custom Glyph lighting patterns for Nothing Phone (4a) |
+| [Glyph Battery](https://github.com/0x91m0n/NothingGlyphBattery) | 0x91m0n | Battery level visualization through the Glyph Interface |
 | [Glyph Compass](https://play.google.com/store/apps/details?id=com.JayKayCooperations.glyph_compass) | JayKayCooperations | Use your Glyph interface as a compass |
 | [Glyph Essentials](https://play.google.com/store/apps/details?id=com.tldc.essentials) | GlyphLab | Advanced customisation for Glyph notifications |
 | [Glyph Glow](https://github.com/fgiering/GlyphGlow) | fgiering | Minimal app to control Glyph interface |
@@ -170,6 +171,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Vibe coded copy of Nothing's essential space app |
 | [Currency](https://curency.pages.dev/) | Earendel | Currency converter web app |
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Calculator app with dot matrix fonts | 
+| [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Nothing-inspired core Essential Space experience for all devices, featuring quick screenshots, notes, voice memos, and more |
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | Use Bluetooth wearables without OEM apps, accounts, or cloud |
 | [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | Dino game inspired |
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Flashlight app with widgets |
