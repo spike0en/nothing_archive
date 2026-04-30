@@ -151,6 +151,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Notes](https://play.google.com/store/apps/details?id=com.monospace.notes) | monospace | 附內建安全功能的筆記應用程式 |
 | [Nothing Notes](https://play.google.com/store/apps/details?id=com.ApexCreator.nothingnotes) | Apex Creator | 記事本應用程式 |
 | [Nothing Notes](https://github.com/ThriveEngineer/nothing.notes) | ThriveEngineer | Nothing 主題筆記應用程式 |
+| [Nothiq](https://play.google.com/store/apps/details?id=com.rontag.nothiq) | Rontag | 受 Nothing 啟發的筆記與任務管理應用程式 |
 | [Noting](https://play.google.com/store/apps/details?id=com.hearthborn.studios.notingnotes) | Hearthborn | 附雲端備份的筆記與任務 |
 | [Seton](https://github.com/arijit4/Seton) | arijit4 | 附小工具的釘選與編輯筆記 |
 | [Spend Notes](https://play.google.com/store/apps/details?id=com.cmlabs.spendflow.spendflow) | Coder monk labs | 支出追蹤 |
@@ -199,6 +200,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Nx Calculator](https://github.com/montybytes/nxcalculator) | montybytes | 簡易計算機 |
 | [Open Calc](https://github.com/drrnb/OpenCalc/releases/tag/v3.0.0-beta4-nothing) | drrnb | 主題計算機 |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Phone (3) 錄製指示燈控制 |
+| [Redrop Music](https://play.google.com/store/apps/details?id=re.tag.redrop) | Tagrelate | 結合 Material 3 與 Nothing 美學的離線音樂播放器 |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | 裝置資訊工具 |
 | [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | 簡約啟動器 |
 | [Sound Stream Now](https://play.google.com/store/apps/details?id=go.ssn) | Moworks | 支援 Glyph Matrix 的音樂播放器 |

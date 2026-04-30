@@ -153,6 +153,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Notes](https://play.google.com/store/apps/details?id=com.monospace.notes) | monospace | Приложение для заметок со встроенной защитой |
 | [Nothing Notes](https://play.google.com/store/apps/details?id=com.ApexCreator.nothingnotes) | Apex Creator | Минималистичный блокнот |
 | [Nothing Notes](https://github.com/ThriveEngineer/nothing.notes) | ThriveEngineer | Приложение для заметок в тематике Nothing |
+| [Nothiq](https://play.google.com/store/apps/details?id=com.rontag.nothiq) | Rontag | Приложение для управления заметками и задачами в стиле Nothing |
 | [Noting](https://play.google.com/store/apps/details?id=com.hearthborn.studios.notingnotes) | Hearthborn | Заметки и задачи с облачным бэкапом |
 | [Seton](https://github.com/arijit4/Seton) | arijit4 | Закрепление и редактирование заметок с помощью виджета |
 | [Spend Notes](https://play.google.com/store/apps/details?id=com.cmlabs.spendflow.spendflow) | Coder monk labs | Отслеживание расходов |
@@ -203,6 +204,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Nx Calculator](https://github.com/montybytes/nxcalculator) | montybytes | Простой калькулятор |
 | [Open Calc](https://github.com/drrnb/OpenCalc/releases/tag/v3.0.0-beta4-nothing) | drrnb | Тематический калькулятор |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Управление индикатором записи для Phone (3) |
+| [Redrop Music](https://play.google.com/store/apps/details?id=re.tag.redrop) | Tagrelate | Оффлайн-музыкальный плеер, сочетающий эстетику Material 3 и Nothing |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Инструмент для анализа устройства |
 | [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | Минималистичный лаунчер |
 | [Sound Stream Now](https://play.google.com/store/apps/details?id=go.ssn) | Moworks | Музыкальный плеер с поддержкой Glyph Matrix |

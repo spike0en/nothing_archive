@@ -153,6 +153,7 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 | [Notes](https://play.google.com/store/apps/details?id=com.monospace.notes) | monospace | Entegre güvenlikli not uygulaması |
 | [Nothing Notes](https://play.google.com/store/apps/details?id=com.ApexCreator.nothingnotes) | Apex Creator | Minimalist not defteri |
 | [Nothing Notes](https://github.com/ThriveEngineer/nothing.notes) | ThriveEngineer | Nothing temalı not uygulaması |
+| [Nothiq](https://play.google.com/store/apps/details?id=com.rontag.nothiq) | Rontag | Nothing'den ilham alan notlar ve görev yönetimi uygulaması |
 | [Noting](https://play.google.com/store/apps/details?id=com.hearthborn.studios.notingnotes) | Hearthborn | Bulut yedeklemeli notlar ve görevler |
 | [Seton](https://github.com/arijit4/Seton) | arijit4 | Widget aracılığıyla not iğneleyin ve düzenleyin |
 | [Spend Notes](https://play.google.com/store/apps/details?id=com.cmlabs.spendflow.spendflow) | Coder monk labs | Harcama takibi |
@@ -203,6 +204,7 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 | [Nx Calculator](https://github.com/montybytes/nxcalculator) | montybytes | Basit hesap makinesi |
 | [Open Calc](https://github.com/drrnb/OpenCalc/releases/tag/v3.0.0-beta4-nothing) | drrnb | Temalı hesap makinesi |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Phone (3) için kayıt ışığı kontrolü |
+| [Redrop Music](https://play.google.com/store/apps/details?id=re.tag.redrop) | Tagrelate | Material 3 ve Nothing estetiğini birleştiren çevrimdışı müzik çalar |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Cihaz bilgisi aracı |
 | [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | Minimalist başlatıcı |
 | [Sound Stream Now](https://play.google.com/store/apps/details?id=go.ssn) | Moworks | Glyph Matrisini destekleyen müzik çalar |

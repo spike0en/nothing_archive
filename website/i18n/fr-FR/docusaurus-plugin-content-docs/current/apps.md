@@ -153,6 +153,7 @@ Fonds d'écran dynamiques et améliorations visuelles pour sublimer l'apparence 
 | [Notes](https://play.google.com/store/apps/details?id=com.monospace.notes) | monospace | Application de notes avec sécurité intégrée |
 | [Nothing Notes](https://play.google.com/store/apps/details?id=com.ApexCreator.nothingnotes) | Apex Creator | Bloc-notes minimaliste |
 | [Nothing Notes](https://github.com/ThriveEngineer/nothing.notes) | ThriveEngineer | Application de notes au thème Nothing |
+| [Nothiq](https://play.google.com/store/apps/details?id=com.rontag.nothiq) | Rontag | Application de gestion de notes et de tâches inspirée par Nothing |
 | [Noting](https://play.google.com/store/apps/details?id=com.hearthborn.studios.notingnotes) | Hearthborn | Notes et tâches avec sauvegarde cloud |
 | [Seton](https://github.com/arijit4/Seton) | arijit4 | Épinglez et éditez des notes via un widget |
 | [Spend Notes](https://play.google.com/store/apps/details?id=com.cmlabs.spendflow.spendflow) | Coder monk labs | Suivi des dépenses |
@@ -203,6 +204,7 @@ Fonds d'écran dynamiques et améliorations visuelles pour sublimer l'apparence 
 | [Nx Calculator](https://github.com/montybytes/nxcalculator) | montybytes | Calculatrice simple |
 | [Open Calc](https://github.com/drrnb/OpenCalc/releases/tag/v3.0.0-beta4-nothing) | drrnb | Calculatrice à thème |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Contrôle de la lumière d'enregistrement pour le Phone (3) |
+| [Redrop Music](https://play.google.com/store/apps/details?id=re.tag.redrop) | Tagrelate | Lecteur de musique hors ligne combinant l'esthétique Material 3 et Nothing |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Outil d'informations sur l'appareil |
 | [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | Lanceur minimaliste |
 | [Sound Stream Now](https://play.google.com/store/apps/details?id=go.ssn) | Moworks | Lecteur de musique prenant en charge la matrice Glyph |
