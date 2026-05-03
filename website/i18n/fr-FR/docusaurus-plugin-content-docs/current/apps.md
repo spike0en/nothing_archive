@@ -60,6 +60,7 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Aero Glyph Weather](https://github.com/poorneshadhithya/Aeroglyph-Weather) | poorneshadhithya | Station météo rétro-futuriste |
 | [Better Battery](https://github.com/PzmuV1517/BetterBatery) | pzmuV1517 | Visualisation avancée de la batterie |
 | [Better Clock](https://github.com/Snakehater/betterclock) | Snakehater | Affichage multifonctionnel |
+| [Clock AOD Glyph](https://github.com/Aureliink/Clock-AOD-Glyph-Toy) | Aureliink | Un jouet d'horloge de style vertical pour la matrice Glyph du Nothing Phone (3) |
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | Compteur allant de 0 à 9999 |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | Visualiseur, boussole, dés, compteur |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Intégration de flashcards Anki |
@@ -77,6 +78,7 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Notifications, minuteurs, visualiseur |
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | Un pendule oscillant interactif |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | Un jeu d'arcade d'empilement |
+| [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Contrôleur d'affichage Glyph Matrix toujours activé et réactif au son |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | Pile ou face, mode sonnerie, flux de batterie |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Labyrinthe à bille, numérotation rapide, Tamagotchi |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Commutation d'entité Home Assistant |
@@ -85,6 +87,7 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Live Bridge](https://github.com/appsfolder/livebridge) | appsfolder | Convertit les notifications de progression non supportées en notifications en direct pour les rendre compatibles avec les indicateurs de progression Glyph de Nothing |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | Magic 8 Ball classique |
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Pixel art Minecraft |
+| [Morse Glyph](https://github.com/Reyiannonn/MorseGlyph) | Reyiannonn | Traduit du texte en code Morse et le transmet via la matrice Glyph du Nothing Phone |
 | [Nono Gotchi (Beta)](https://www.jkn.me/pet) | Jkn | Animal virtuel style Tamagotchi |
 | [Pomodoro Timer](https://github.com/PzmuV1517/GlyphPomodoroTimer) | pzmuV1517 | Jouet minuteur Pomodoro |
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | Visage reflétant le temps d'écran quotidien |

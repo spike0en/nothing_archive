@@ -60,6 +60,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Aero Glyph Weather](https://github.com/poorneshadhithya/Aeroglyph-Weather) | poorneshadhithya | 復古未來感氣象站 |
 | [Better Battery](https://github.com/PzmuV1517/BetterBatery) | pzmuV1517 | 進階電池視覺化 |
 | [Better Clock](https://github.com/Snakehater/betterclock) | Snakehater | 多功能顯示器 |
+| [Clock AOD Glyph](https://github.com/Aureliink/Clock-AOD-Glyph-Toy) | Aureliink | 專為 Nothing Phone (3) 的 Glyph Matrix 設計的垂直風格時鐘玩具 |
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | 0–9999 計數器 |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | 視覺化器、指南針、骰子、計數器 |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Anki 單字卡整合 |
@@ -77,6 +78,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | 通知、計時器、視覺化器 |
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | 互動擺錘動畫 |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | 疊疊樂街機遊戲 |
+| [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | 常亮且具備音訊反應功能的 Glyph Matrix 顯示控制器 |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | 丟硬幣、鈴聲模式、電池流量 |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | 滾珠迷宮、快速撥號、電子雞 |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistant 實體切換 |
@@ -85,6 +87,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Live Bridge](https://github.com/appsfolder/livebridge) | appsfolder | 將不支援的進度通知轉換為即時通知，使其與 Nothing 的 Glyph 進度指示器相容 |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | 經典神奇八號球 |
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Minecraft 像素藝術 |
+| [Morse Glyph](https://github.com/Reyiannonn/MorseGlyph) | Reyiannonn | 將文本轉換為摩斯密碼並透過 Nothing Phone 的 Glyph Matrix 發送 |
 | [Nono Gotchi（測試版）](https://www.jkn.me/pet) | Jkn | 電子雞風格虛擬寵物 |
 | [Pomodoro Timer](https://github.com/PzmuV1517/GlyphPomodoroTimer) | pzmuV1517 | 番茄鐘計時器玩具 |
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | 反映每日螢幕使用時間的臉部表情 |

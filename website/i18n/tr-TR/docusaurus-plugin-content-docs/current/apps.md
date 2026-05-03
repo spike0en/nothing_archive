@@ -60,6 +60,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Aero Glyph Weather](https://github.com/poorneshadhithya/Aeroglyph-Weather) | poorneshadhithya | Retro-fütüristik hava durumu istasyonu |
 | [Better Battery](https://github.com/PzmuV1517/BetterBatery) | pzmuV1517 | Gelişmiş pil görselleştirme |
 | [Better Clock](https://github.com/Snakehater/betterclock) | Snakehater | Çok fonksiyonlu saat ekranı |
+| [Clock AOD Glyph](https://github.com/Aureliink/Clock-AOD-Glyph-Toy) | Aureliink | Nothing Phone (3) Glyph Matrisi için dikey tarzda bir saat oyuncağı |
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | 0'dan 9999'a kadar sayaç |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | Görselleştirici, pusula, zar, sayaç |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Anki bilgi kartı entegrasyonu |
@@ -77,6 +78,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Bildirimler, zamanlayıcılar, görselleştirici |
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | Etkileşimli sallanan sarkaç |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | Atari tarzı istifleme oyunu |
+| [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Sese duyarlı ve her zaman açık Glyph Matrisi ekran denetleyicisi |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | Yazı tura, zil sesi modu, pil akışı |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Top labirenti, hızlı arama, Tamagotchi |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistant varlık değiştirme |
@@ -85,6 +87,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Live Bridge](https://github.com/appsfolder/livebridge) | appsfolder | Desteklenmeyen ilerleme bildirimlerini Canlı Bildirimlere dönüştürerek Nothing'in Glyph ilerleme göstergeleriyle uyumlu hale getirir |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | Klasik Sihirli 8 Top |
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Minecraft piksel sanatı |
+| [Morse Glyph](https://github.com/Reyiannonn/MorseGlyph) | Reyiannonn | Metni Mors alfabesine çevirir ve Nothing Phone'un Glyph Matrisi aracılığıyla iletir |
 | [Nono Gotchi (Beta)](https://www.jkn.me/pet) | Jkn | Tamagotchi tarzı sanal evcil hayvan |
 | [Pomodoro Timer](https://github.com/PzmuV1517/GlyphPomodoroTimer) | pzmuV1517 | Pomodoro zamanlayıcı oyuncağı |
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | Günlük ekran süresini yansıtan yüz |

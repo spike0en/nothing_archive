@@ -60,6 +60,7 @@ Glyphマトリックス向けのインタラクティブなトイとゲーム。
 | [Aero Glyph Weather](https://github.com/poorneshadhithya/Aeroglyph-Weather) | poorneshadhithya | レトロフューチャーな気象観測所 |
 | [Better Battery](https://github.com/PzmuV1517/BetterBatery) | pzmuV1517 | 高度なバッテリー可視化 |
 | [Better Clock](https://github.com/Snakehater/betterclock) | Snakehater | 多機能時計表示 |
+| [Clock AOD Glyph](https://github.com/Aureliink/Clock-AOD-Glyph-Toy) | Aureliink | Nothing Phone (3)のGlyphマトリックス用の垂直スタイルの時計トイ |
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | 0から9999までのカウンター |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | ビジュアライザー、コンパス、ダイス、カウンター |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Anki単語帳の統合 |
@@ -77,6 +78,7 @@ Glyphマトリックス向けのインタラクティブなトイとゲーム。
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | 通知、タイマー、ビジュアライザー |
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | インタラクティブに揺れる振り子 |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | アーケードスタイルのスタッキングゲーム |
+| [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | 常にオンでオーディオに反応するGlyphマトリックスディスプレイコントローラー |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | コイントス、着信モード、バッテリーフロー |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | ボール迷路、スピードダイヤル、たまごっち |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistantのエンティティ切り替え |
@@ -85,6 +87,7 @@ Glyphマトリックス向けのインタラクティブなトイとゲーム。
 | [Live Bridge](https://github.com/appsfolder/livebridge) | appsfolder | 未サポートの進捗通知をライブ通知に変換し、NothingのGlyph進捗インジケーターと互換性を持たせます |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | 古典的なマジック8ボール |
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Minecraftピクセルアート |
+| [Morse Glyph](https://github.com/Reyiannonn/MorseGlyph) | Reyiannonn | テキストをモールス信号に変換し、Nothing PhoneのGlyphマトリックスを介して送信します |
 | [Nono Gotchi (Beta)](https://www.jkn.me/pet) | Jkn | たまごっちスタイルの仮想ペット |
 | [Pomodoro Timer](https://github.com/PzmuV1517/GlyphPomodoroTimer) | pzmuV1517 | ポモドーロタイマートイ |
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | 毎日の画面使用時間を反映するフェイス |
