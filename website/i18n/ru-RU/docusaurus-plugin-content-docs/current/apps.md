@@ -68,6 +68,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Glyph Bike](https://play.google.com/store/apps/details?id=com.ofishialdigital.glyphbike) | Ofishial Digital | Игра с прокруткой на мотоцикле |
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Аркадные игры на Glyph Matrix |
 | [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | Фанатская игра по сбору покемонов |
+| [Glyp Clocks](https://bleelblep.github.io/disclaimer/glyphclocks/) | bleelblep | 16 часов для Glyph Matrix Phone (3) ([Репозиторий](https://github.com/bleelblep/glyphclocks)) |
 | [Glyph Eyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | Игривый зрачок, реагирующий на наклон |
 | [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | Приложение для Android, которое отображает данные датчиков Home Assistant на Nothing Glyph Matrix |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | Игра Space Invaders |

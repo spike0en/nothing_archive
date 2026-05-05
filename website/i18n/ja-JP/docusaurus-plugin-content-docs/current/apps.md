@@ -68,6 +68,7 @@ Glyphマトリックス向けのインタラクティブなトイとゲーム。
 | [Glyph Bike](https://play.google.com/store/apps/details?id=com.ofishialdigital.glyphbike) | Ofishial Digital | 横スクロールバイクゲーム |
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Glyphマトリックス上でのアーケードゲーム |
 | [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | ポケモン収集ファンゲーム |
+| [Glyp Clocks](https://bleelblep.github.io/disclaimer/glyphclocks/) | bleelblep | Phone (3)のGlyph Matrix用16種類の時計 ([リポジトリ](https://github.com/bleelblep/glyphclocks)) |
 | [Glyph Eyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | 傾斜する瞳の楽しいトイ |
 | [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | Nothing Glyph Matrix上にHome Assistantのセンサーデータを表示するAndroidアプリ。 |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | スペースインベーダーゲーム |
