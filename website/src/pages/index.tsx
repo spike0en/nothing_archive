@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
+import { useColorMode } from '@docusaurus/theme-common';
 import Heading from '@theme/Heading';
 import Translate, { translate } from '@docusaurus/Translate';
 import {
@@ -131,6 +132,8 @@ const socialLinks = [
  */
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
+  const { colorMode } = useColorMode();
+  const heroLogoSrc = colorMode === 'dark' ? 'img/logo_dark.png' : 'img/logo_light.png';
   return (
     <header className={clsx('hero', styles.heroBanner)}>
       <div className={styles.glyphGrid} aria-hidden="true" />
@@ -160,7 +163,7 @@ function HomepageHeader() {
           </div>
           <div className={styles.heroImage}>
             <img
-              src="img/logo.png"
+              src={heroLogoSrc}
               alt="Nothing Archive"
               width={280}
               height={280}
