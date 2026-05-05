@@ -82,6 +82,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Всегда активный контроллер дисплея Glyph Matrix, реагирующий на звук |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | Подбрасывание монеты, режим звонка, поток заряда батареи |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Шариковый лабиринт, быстрый набор, Тамагочи |
+| [Glyphix](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | Эмбиент AOD для Glyph Matrix |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Переключатель объектов Home Assistant |
 | [Hamon](https://github.com/yuk1-kondo/GlyphToys-hamon) | yuk1-kondo | Физическое распространение волн |
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | Гироскопический уровень |

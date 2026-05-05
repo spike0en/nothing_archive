@@ -82,6 +82,7 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Contrôleur d'affichage Glyph Matrix toujours activé et réactif au son |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | Pile ou face, mode sonnerie, flux de batterie |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Labyrinthe à bille, numérotation rapide, Tamagotchi |
+| [Glyphix](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | AOD d'ambiance pour la matrice Glyph |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Commutation d'entité Home Assistant |
 | [Hamon](https://github.com/yuk1-kondo/GlyphToys-hamon) | yuk1-kondo | Propagation d'ondes physiques |
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | Outil de niveau gyroscopique |

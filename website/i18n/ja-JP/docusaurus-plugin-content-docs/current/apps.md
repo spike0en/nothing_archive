@@ -82,6 +82,7 @@ Glyphマトリックス向けのインタラクティブなトイとゲーム。
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | 常にオンでオーディオに反応するGlyphマトリックスディスプレイコントローラー |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | コイントス、着信モード、バッテリーフロー |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | ボール迷路、スピードダイヤル、たまごっち |
+| [Glyphix](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | Glyph Matrix用アンビエントAOD |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistantのエンティティ切り替え |
 | [Hamon](https://github.com/yuk1-kondo/GlyphToys-hamon) | yuk1-kondo | 物理的な波の伝播 |
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | ジャイロスコープ水準器ツール |
