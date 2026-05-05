@@ -93,6 +93,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Pomodoro Timer](https://github.com/PzmuV1517/GlyphPomodoroTimer) | pzmuV1517 | Таймер Pomodoro в стиле Glyph Toy |
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | Смайлик, отражающий время активного экрана за день |
 | [Timepiece](https://play.google.com/store/apps/details?id=com.arunk140.timepiece) | Arun Khanchandani | Утилита часов Always-On |
+| [Toyph](https://github.com/antonvidishchev/toyph) | antonvidishchev | JSON-управляемая игрушка Glyph для Nothing Phone (4a) Pro |
 
 ---
 

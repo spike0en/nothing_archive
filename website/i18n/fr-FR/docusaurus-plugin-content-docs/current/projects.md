@@ -27,7 +27,7 @@ Une collection d'outils pour créer des tonalités et des compositions Glyph per
 | [Haptificator](https://github.com/Fr4nKB/Haptificator) | Fr4nKB | Ajoutez des retours haptiques aux compositions du Phone (1) |
 | [Matrices](https://udaign.github.io/matrices/) | Uday | Outil de conception de matrice Glyph ([Dépôt](https://github.com/udaign/matrices)) |
 | [Nothing Glyph Composer](https://itssveennn.github.io/Nothing-Glyph-Composer/) | itssveennn | Outil web pour créer des animations Glyph 13x13, préparer l'audio et exporter des fichiers OGG prêts pour les sonneries du Phone (4a) Pro. |
-| [Nothing Toyph Notifications](https://antonvidishchev.github.io/nothing-toyph-notifications/) | antonvidishchev | Un outil pour créer des icônes de notification pour l'écran Glyph du Nothing Phone (4a) Pro [Dépôt](https://github.com/antonvidishchev/nothing-toyph-notifications) |
+| [Nothing Toyph Notifications](https://antonvidishchev.github.io/nothing-toyph-notifications/) | antonvidishchev | Un outil pour créer des icônes de notification pour la matrice Glyph du Nothing Phone (4a) Pro ([Dépôt](https://github.com/antonvidishchev/nothing-toyph-notifications)) |
 | [Osu To Glyph](https://github.com/taiixu/osu-to-glyph) | taiixu | Convertissez les beatmaps osu! en sonneries Glyph pour Nothing Phone |
 | [Pyglyph](https://github.com/Snakehater/pyglyph) | Snakehater | Script Python pour la visualisation audio |
 | [Vizmatrices](https://udaign.github.io/vizmatrices/) | udaign | Visualiseur audio réactif en temps réel ([Dépôt](https://github.com/udaign/vizmatrices)) |

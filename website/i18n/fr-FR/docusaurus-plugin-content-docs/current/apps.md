@@ -93,6 +93,7 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Pomodoro Timer](https://github.com/PzmuV1517/GlyphPomodoroTimer) | pzmuV1517 | Jouet minuteur Pomodoro |
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | Visage reflétant le temps d'écran quotidien |
 | [Timepiece](https://play.google.com/store/apps/details?id=com.arunk140.timepiece) | Arun Khanchandani | Utilitaire d'horloge Always-On |
+| [Toyph](https://github.com/antonvidishchev/toyph) | antonvidishchev | Un jouet Glyph piloté par JSON pour le Nothing Phone (4a) Pro |
 
 ---
 

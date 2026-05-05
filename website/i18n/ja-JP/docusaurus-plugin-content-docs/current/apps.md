@@ -93,6 +93,7 @@ Glyphマトリックス向けのインタラクティブなトイとゲーム。
 | [Pomodoro Timer](https://github.com/PzmuV1517/GlyphPomodoroTimer) | pzmuV1517 | ポモドーロタイマートイ |
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | 毎日の画面使用時間を反映するフェイス |
 | [Timepiece](https://play.google.com/store/apps/details?id=com.arunk140.timepiece) | Arun Khanchandani | Always-On時計ユーティリティ |
+| [Toyph](https://github.com/antonvidishchev/toyph) | antonvidishchev | Nothing Phone (4a) Pro用のJSON型Glyphトイ |
 
 ---
 

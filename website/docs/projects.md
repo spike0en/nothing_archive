@@ -27,7 +27,7 @@ A collection of tools for creating custom Glyph tones and compositions.
 | [Haptificator](https://github.com/Fr4nKB/Haptificator) | Fr4nKB | Add haptics to Phone (1) compositions |
 | [Matrices](https://udaign.github.io/matrices/) | Uday | Glyph Matrix design tool ([Repo](https://github.com/udaign/matrices)) |
 | [Nothing Glyph Composer](https://itssveennn.github.io/Nothing-Glyph-Composer/) | itssveennn | Web toolkit to create 13x13 glyph animations, prepare audio, and export ringtone-ready OGG files for Phone (4a) Pro. |
-| [Nothing Toyph Notifications](https://antonvidishchev.github.io/nothing-toyph-notifications/) | antonvidishchev | A tool for creating notification icons for Nothing phone 4(a) Pro glyph screen [Repo](https://github.com/antonvidishchev/nothing-toyph-notifications) |
+| [Nothing Toyph Notifications](https://antonvidishchev.github.io/nothing-toyph-notifications/) | antonvidishchev | A tool for creating notification icons for the Nothing Phone (4a) Pro Glyph Matrix ([Repo](https://github.com/antonvidishchev/nothing-toyph-notifications)) |
 | [Osu To Glyph](https://github.com/taiixu/osu-to-glyph) | taiixu | Convert osu! beatmaps to Nothing Phone glyph ringtones |
 | [Pyglyph](https://github.com/Snakehater/pyglyph) | Snakehater | Python script for audio visualization |
 | [Vizmatrices](https://udaign.github.io/vizmatrices/) | udaign | Real time audio reactive visualizer ([Repo](https://github.com/udaign/vizmatrices)) |

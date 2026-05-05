@@ -93,6 +93,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Pomodoro Timer](https://github.com/PzmuV1517/GlyphPomodoroTimer) | pzmuV1517 | 番茄鐘計時器玩具 |
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | 反映每日螢幕使用時間的臉部表情 |
 | [Timepiece](https://play.google.com/store/apps/details?id=com.arunk140.timepiece) | Arun Khanchandani | 常駐時鐘工具 |
+| [Toyph](https://github.com/antonvidishchev/toyph) | antonvidishchev | 適用於 Nothing Phone (4a) Pro 的 JSON 驅動 Glyph 玩具 |
 
 ---
 

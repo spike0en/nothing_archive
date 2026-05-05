@@ -93,6 +93,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Pomodoro Timer](https://github.com/PzmuV1517/GlyphPomodoroTimer) | pzmuV1517 | Pomodoro zamanlayıcı oyuncağı |
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | Günlük ekran süresini yansıtan yüz |
 | [Timepiece](https://play.google.com/store/apps/details?id=com.arunk140.timepiece) | Arun Khanchandani | Always-On saat yardımcısı |
+| [Toyph](https://github.com/antonvidishchev/toyph) | antonvidishchev | Nothing Phone (4a) Pro için JSON tabanlı Glyph Oyuncağı |
 
 ---
 

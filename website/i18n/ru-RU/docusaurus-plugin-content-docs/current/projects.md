@@ -27,7 +27,7 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 | [Haptificator](https://github.com/Fr4nKB/Haptificator) | Fr4nKB | Добавление тактильной отдачи в композиции Phone (1) |
 | [Matrices](https://udaign.github.io/matrices/) | Uday | Инструмент для дизайна матриц Glyph ([Репозиторий](https://github.com/udaign/matrices)) |
 | [Nothing Glyph Composer](https://itssveennn.github.io/Nothing-Glyph-Composer/) | itssveennn | Веб-инструментарий для создания анимаций Glyph 13x13, подготовки аудио и экспорта файлов OGG, готовых для использования в качестве рингтонов для Phone (4a) Pro. |
-| [Nothing Toyph Notifications](https://antonvidishchev.github.io/nothing-toyph-notifications/) | antonvidishchev | Инструмент для создания значков уведомлений для экрана Glyph в Nothing Phone (4a) Pro [Repo](https://github.com/antonvidishchev/nothing-toyph-notifications) |
+| [Nothing Toyph Notifications](https://antonvidishchev.github.io/nothing-toyph-notifications/) | antonvidishchev | Инструмент для создания иконок уведомлений для Glyph Matrix Phone (4a) Pro ([Репозиторий](https://github.com/antonvidishchev/nothing-toyph-notifications)) |
 | [Osu To Glyph](https://github.com/taiixu/osu-to-glyph) | taiixu | Конвертация битмапов osu! в рингтоны Glyph для Nothing Phone |
 | [Pyglyph](https://github.com/Snakehater/pyglyph) | Snakehater | Python-скрипт для визуализации аудио |
 | [Vizmatrices](https://udaign.github.io/vizmatrices/) | udaign | Визуализатор аудио в реальном времени ([Репозиторий](https://github.com/udaign/vizmatrices)) |
