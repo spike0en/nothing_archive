@@ -75,6 +75,7 @@ Glyphマトリックス向けのインタラクティブなトイとゲーム。
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | スクロールテキストメッセージ |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Nothing Phone (4a) Pro 向けのカスタム集約 Glyph マトリックス ビジュアルを作成し、インテリジェントに表示するツールキット |
 | [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | ウェブ経由でのコードテスト |
+| [Glyph Matrix Tasker Plugin](https://github.com/Gennadiyev/GlyphMatrixTaskerPlugin) | Gennadiyev | Nothing Phone (3)のGlyph Matrixを制御するためのTaskerプラグイン。 |
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | Glyphアートの作成と展示 |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | 通知、タイマー、ビジュアライザー |
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | インタラクティブに揺れる振り子 |
