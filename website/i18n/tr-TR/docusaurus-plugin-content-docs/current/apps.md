@@ -80,6 +80,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | Etkileşimli sallanan sarkaç |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | Atari tarzı istifleme oyunu |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Sese duyarlı ve her zaman açık Glyph Matrisi ekran denetleyicisi |
+| [Glyph Text Animator](https://github.com/deepudxd/GlyphTextAnimator) | deepudxd | Nothing Phone (4a) Pro'nun 13×13 Glyph Matrix'i için metni kayan nokta matris animasyonlarına dönüştürür |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | Yazı tura, zil sesi modu, pil akışı |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Top labirenti, hızlı arama, Tamagotchi |
 | [Glyphix](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | Glyph Matrix için ambiyans AOD |

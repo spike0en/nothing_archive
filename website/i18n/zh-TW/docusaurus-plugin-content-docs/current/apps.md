@@ -80,6 +80,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | 互動擺錘動畫 |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | 疊疊樂街機遊戲 |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | 常亮且具備音訊反應功能的 Glyph Matrix 顯示控制器 |
+| [Glyph Text Animator](https://github.com/deepudxd/GlyphTextAnimator) | deepudxd | 將文本轉換為 Nothing Phone (4a) Pro 13×13 Glyph Matrix 的滾動點陣動畫 |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | 丟硬幣、鈴聲模式、電池流量 |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | 滾珠迷宮、快速撥號、電子雞 |
 | [Glyphix](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | Glyph Matrix 的環境 AOD |

@@ -80,6 +80,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | Интерактивный качающийся маятник |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | Аркадная игра-стекер |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Всегда активный контроллер дисплея Glyph Matrix, реагирующий на звук |
+| [Glyph Text Animator](https://github.com/deepudxd/GlyphTextAnimator) | deepudxd | Преобразует текст в бегущую строку для 13×13 Glyph Matrix в Nothing Phone (4a) Pro |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | Подбрасывание монеты, режим звонка, поток заряда батареи |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Шариковый лабиринт, быстрый набор, Тамагочи |
 | [Glyphix](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | Эмбиент AOD для Glyph Matrix |

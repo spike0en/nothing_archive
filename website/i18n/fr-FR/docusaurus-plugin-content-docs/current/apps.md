@@ -80,6 +80,7 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | Un pendule oscillant interactif |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | Un jeu d'arcade d'empilement |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Contrôleur d'affichage Glyph Matrix toujours activé et réactif au son |
+| [Glyph Text Animator](https://github.com/deepudxd/GlyphTextAnimator) | deepudxd | Convertit du texte en animations de matrice de points défilantes pour la matrice Glyph 13×13 du Nothing Phone (4a) Pro |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | Pile ou face, mode sonnerie, flux de batterie |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Labyrinthe à bille, numérotation rapide, Tamagotchi |
 | [Glyphix](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | AOD d'ambiance pour la matrice Glyph |

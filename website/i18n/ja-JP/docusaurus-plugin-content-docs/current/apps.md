@@ -80,6 +80,7 @@ Glyphマトリックス向けのインタラクティブなトイとゲーム。
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | インタラクティブに揺れる振り子 |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | アーケードスタイルのスタッキングゲーム |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | 常にオンでオーディオに反応するGlyphマトリックスディスプレイコントローラー |
+| [Glyph Text Animator](https://github.com/deepudxd/GlyphTextAnimator) | deepudxd | Nothing Phone (4a) Proの13×13 Glyph Matrix用テキストスクロール点滅アニメーション変換ツール |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | コイントス、着信モード、バッテリーフロー |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | ボール迷路、スピードダイヤル、たまごっち |
 | [Glyphix](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | Glyph Matrix用アンビエントAOD |
