@@ -248,6 +248,7 @@ A collection of various community-made apps including news hubs, social tools, a
 |-----|-----------|-------------|
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Missing Core Music](https://play.google.com/store/apps/details?id=com.cyanchill.missingcore.music) | MissingCore | Offline music player |
+| [N Music](https://github.com/alimohsenmaruf/N-Music) | alimohsenmaruf | Simple Yt music wrapper Nothing OS styled Music player |
 | [Noid](https://play.google.com/store/apps/details?id=com.techsip.noid) | TechSip Studios | File management |
 | [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | Mobile app for nothing.community |
 | [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Dynamic Island for Nothing OS |
