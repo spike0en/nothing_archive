@@ -73,6 +73,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph GeekBox](https://github.com/danissomo/GlyphMatrix-AODGeekBox) | danissomo | Some geek stuff on GlyphMatrix. Nothing Phone 4(a) pro targeted |
 | [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | Android app that displays Home Assistant sensor data on the Nothing Glyph Matrix |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | Space Invaders game |
+| [Glyph Lab](https://play.google.com/store/apps/details?id=com.projectkriya.glyphlab) | Vimanam Studio | Interactive glyph matrix toys designed for Nothing devices |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Scrolling text messages |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Toolkit for creating and intelligently displaying custom Glyph Matrix visuals for Nothing Phone (4a) Pro |
 | [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | Web-based code testing |
