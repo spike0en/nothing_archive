@@ -69,10 +69,12 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Glyph matrisi üzerinde atari oyunları |
 | [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | Pokémon yakalama fan oyunu |
 | [Glyp Clocks](https://bleelblep.github.io/disclaimer/glyphclocks/) | bleelblep | Phone (3) Glyph Matrix için 16 Saat ([Repo](https://github.com/bleelblep/glyphclocks)) |
+| [Glyph Draw](https://github.com/kaelvalen/open-glyph) | kaelvalen | Özel piksel sanatı çizmenize olanak tanıyan Nothing Phone (3) için Glyph Oyuncağı |
 | [Glyph Eyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | Eğlenceli eğilebilir göz bebeği oyuncağı |
 | [Glyph GeekBox](https://github.com/danissomo/GlyphMatrix-AODGeekBox) | danissomo | Glyph Matrix üzerinde bazı geek araçları. Nothing Phone 4(a) Pro hedefli |
 | [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | Home Assistant sensör verilerini Nothing Glyph Matrix üzerinde görüntüleyen Android uygulaması. |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | Space Invaders oyunu |
+| [Glyph Lab](https://play.google.com/store/apps/details?id=com.projectkriya.glyphlab) | Vimanam Studio | Nothing cihazları için tasarlanmış etkileşimli Glyph Matrix oyuncakları |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Kayan metin mesajları |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Nothing Phone (4a) Pro için özel Glyph Matrix görselleri oluşturma ve akıllıca görüntüleme araç takımı |
 | [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | Web üzerinden kod testi |

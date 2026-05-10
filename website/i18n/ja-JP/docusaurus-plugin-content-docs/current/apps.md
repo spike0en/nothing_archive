@@ -69,10 +69,12 @@ Glyphマトリックス向けのインタラクティブなトイとゲーム。
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Glyphマトリックス上でのアーケードゲーム |
 | [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | ポケモン収集ファンゲーム |
 | [Glyp Clocks](https://bleelblep.github.io/disclaimer/glyphclocks/) | bleelblep | Phone (3)のGlyph Matrix用16種類の時計 ([リポジトリ](https://github.com/bleelblep/glyphclocks)) |
+| [Glyph Draw](https://github.com/kaelvalen/open-glyph) | kaelvalen | カスタムピクセルアートを描くことができるNothing Phone (3)用Glyphトイ |
 | [Glyph Eyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | 傾斜する瞳の楽しいトイ |
 | [Glyph GeekBox](https://github.com/danissomo/GlyphMatrix-AODGeekBox) | danissomo | Glyphマトリックス上のギークな機能。Nothing Phone 4(a) Pro向け |
 | [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | Nothing Glyph Matrix上にHome Assistantのセンサーデータを表示するAndroidアプリ。 |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | スペースインベーダーゲーム |
+| [Glyph Lab](https://play.google.com/store/apps/details?id=com.projectkriya.glyphlab) | Vimanam Studio | Nothingデバイス向けに設計されたインタラクティブなGlyphマトリックス・トイ |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | スクロールテキストメッセージ |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Nothing Phone (4a) Pro 向けのカスタム集約 Glyph マトリックス ビジュアルを作成し、インテリジェントに表示するツールキット |
 | [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | ウェブ経由でのコードテスト |

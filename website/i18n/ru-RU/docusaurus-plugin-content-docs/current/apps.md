@@ -69,10 +69,12 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Аркадные игры на Glyph Matrix |
 | [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | Фанатская игра по сбору покемонов |
 | [Glyp Clocks](https://bleelblep.github.io/disclaimer/glyphclocks/) | bleelblep | 16 часов для Glyph Matrix Phone (3) ([Репозиторий](https://github.com/bleelblep/glyphclocks)) |
+| [Glyph Draw](https://github.com/kaelvalen/open-glyph) | kaelvalen | Игрушка Glyph для Nothing Phone (3), позволяющая рисовать кастомный пиксель-арт |
 | [Glyph Eyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | Игривый зрачок, реагирующий на наклон |
 | [Glyph GeekBox](https://github.com/danissomo/GlyphMatrix-AODGeekBox) | danissomo | Различные гиковские штуки для Glyph Matrix. Ориентировано на Nothing Phone (4a) pro |
 | [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | Приложение для Android, которое отображает данные датчиков Home Assistant на Nothing Glyph Matrix |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | Игра Space Invaders |
+| [Glyph Lab](https://play.google.com/store/apps/details?id=com.projectkriya.glyphlab) | Vimanam Studio | Интерактивные игрушки для Glyph Matrix, разработанные для устройств Nothing |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Бегущая строка для текстовых сообщений |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Инструментарий для создания и интеллектуального отображения кастомных визуализаций Glyph Matrix для Nothing Phone (4a) Pro |
 | [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | Веб-инструмент для тестирования кода |

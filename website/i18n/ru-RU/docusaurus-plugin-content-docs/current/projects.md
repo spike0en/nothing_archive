@@ -128,8 +128,9 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 
 | Проект | Разработчик | Описание |
 |---------|-----------|-------------|
-| [CMF Wiki](https://www.reddit.com/r/CMFTech/wiki/index/) | guidomelvin | Вики r/CMFTech |
-| [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Приложение для Linux на языке Rust для управления режимами шумоподавления наушников Nothing |
+| [CMF Wiki](https://www.reddit.com/r/CMFTech/wiki/index/) | guidomelvin | r/CMFTech Wiki |
+| [Disable Essential Space](https://github.com/AntonDevia/Disable-Essential-Space) | AntonDevia | ADB-скрипт для полного отключения Essential Space и блокировки клавиши Essential на Nothing OS |
+| [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Linux-приложение на Rust для управления режимами ANC наушников Nothing |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | PoC для обхода проверки целостности для Phone (2a) и CMF Phone (1) |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Макросы для приложения Macrodroid |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Курируемый хаб для официальных прошивок Nothing и CMF, проектов сообщества, ресурсов и кастомных разработок. ([Репозиторий](https://github.com/spike0en/nothing_archive)) |

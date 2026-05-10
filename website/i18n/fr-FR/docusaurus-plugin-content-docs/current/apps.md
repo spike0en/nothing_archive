@@ -69,10 +69,12 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Jeux d'arcade sur la matrice Glyph |
 | [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | Fan-game de collection de Pokémon |
 | [Glyp Clocks](https://bleelblep.github.io/disclaimer/glyphclocks/) | bleelblep | 16 horloges pour la matrice Glyph du Phone (3) ([Repo](https://github.com/bleelblep/glyphclocks)) |
+| [Glyph Draw](https://github.com/kaelvalen/open-glyph) | kaelvalen | Jouet Glyph pour le Nothing Phone (3) qui vous permet de dessiner du pixel art personnalisé |
 | [Glyph Eyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | Jouet de pupille inclinable ludique |
 | [Glyph GeekBox](https://github.com/danissomo/GlyphMatrix-AODGeekBox) | danissomo | Quelques outils de geek sur la matrice Glyph. Destiné au Nothing Phone 4(a) Pro |
 | [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | Application Android qui affiche les données des capteurs de Home Assistant sur la Nothing Glyph Matrix. |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | Jeu Space Invaders |
+| [Glyph Lab](https://play.google.com/store/apps/details?id=com.projectkriya.glyphlab) | Vimanam Studio | Jouets interactifs à matrice Glyph conçus pour les appareils Nothing |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Messages textuels défilants |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Boîte à outils pour créer et afficher intelligemment des visuels personnalisés pour la matrice Glyph du Nothing Phone (4a) Pro |
 | [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | Test de code via le web |
