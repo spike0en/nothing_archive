@@ -70,6 +70,7 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | Fan-game de collection de Pokémon |
 | [Glyp Clocks](https://bleelblep.github.io/disclaimer/glyphclocks/) | bleelblep | 16 horloges pour la matrice Glyph du Phone (3) ([Repo](https://github.com/bleelblep/glyphclocks)) |
 | [Glyph Eyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | Jouet de pupille inclinable ludique |
+| [Glyph GeekBox](https://github.com/danissomo/GlyphMatrix-AODGeekBox) | danissomo | Quelques outils de geek sur la matrice Glyph. Destiné au Nothing Phone 4(a) Pro |
 | [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | Application Android qui affiche les données des capteurs de Home Assistant sur la Nothing Glyph Matrix. |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | Jeu Space Invaders |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Messages textuels défilants |
@@ -248,6 +249,7 @@ Une collection d'applications diverses créées par la communauté, incluant des
 |-----|-----------|-------------|
 | [Flow](https://flowpo.pages.dev/) | Earendel | Application web de minuteur Pomodoro |
 | [Missing Core Music](https://play.google.com/store/apps/details?id=com.cyanchill.missingcore.music) | MissingCore | Lecteur de musique hors ligne |
+| [N Music](https://github.com/alimohsenmaruf/N-Music) | alimohsenmaruf | Lecteur de musique simple au style Nothing OS, wrapper YouTube Music |
 | [Noid](https://play.google.com/store/apps/details?id=com.techsip.noid) | TechSip Studios | Gestion de fichiers |
 | [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | Application mobile pour nothing.community |
 | [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Dynamic Island pour Nothing OS |

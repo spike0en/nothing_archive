@@ -70,6 +70,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | Pokémon yakalama fan oyunu |
 | [Glyp Clocks](https://bleelblep.github.io/disclaimer/glyphclocks/) | bleelblep | Phone (3) Glyph Matrix için 16 Saat ([Repo](https://github.com/bleelblep/glyphclocks)) |
 | [Glyph Eyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | Eğlenceli eğilebilir göz bebeği oyuncağı |
+| [Glyph GeekBox](https://github.com/danissomo/GlyphMatrix-AODGeekBox) | danissomo | Glyph Matrix üzerinde bazı geek araçları. Nothing Phone 4(a) Pro hedefli |
 | [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | Home Assistant sensör verilerini Nothing Glyph Matrix üzerinde görüntüleyen Android uygulaması. |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | Space Invaders oyunu |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Kayan metin mesajları |
@@ -248,6 +249,7 @@ Haber merkezlerinden sosyal araçlara ve oyunlara kadar topluluk tarafından olu
 |-----|-----------|-------------|
 | [Flow](https://flowpo.pages.dev/) | Earendel | Web tabanlı Pomodoro zamanlayıcı uygulaması |
 | [Missing Core Music](https://play.google.com/store/apps/details?id=com.cyanchill.missingcore.music) | MissingCore | Çevrimdışı müzik çalar |
+| [N Music](https://github.com/alimohsenmaruf/N-Music) | alimohsenmaruf | Nothing OS tarzında basit bir YT Music sarmalayıcı müzik çalar |
 | [Noid](https://play.google.com/store/apps/details?id=com.techsip.noid) | TechSip Studios | Dosya yönetimi |
 | [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | nothing.community için mobil uygulama |
 | [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Nothing OS için Dynamic Island |

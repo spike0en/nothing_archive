@@ -70,6 +70,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | Фанатская игра по сбору покемонов |
 | [Glyp Clocks](https://bleelblep.github.io/disclaimer/glyphclocks/) | bleelblep | 16 часов для Glyph Matrix Phone (3) ([Репозиторий](https://github.com/bleelblep/glyphclocks)) |
 | [Glyph Eyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | Игривый зрачок, реагирующий на наклон |
+| [Glyph GeekBox](https://github.com/danissomo/GlyphMatrix-AODGeekBox) | danissomo | Различные гиковские штуки для Glyph Matrix. Ориентировано на Nothing Phone (4a) pro |
 | [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | Приложение для Android, которое отображает данные датчиков Home Assistant на Nothing Glyph Matrix |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | Игра Space Invaders |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Бегущая строка для текстовых сообщений |
@@ -248,6 +249,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 |-----|-----------|-------------|
 | [Flow](https://flowpo.pages.dev/) | Earendel | Веб-приложение таймера Pomodoro |
 | [Missing Core Music](https://play.google.com/store/apps/details?id=com.cyanchill.missingcore.music) | MissingCore | Офлайн-музыкальный плеер |
+| [N Music](https://github.com/alimohsenmaruf/N-Music) | alimohsenmaruf | Простой музыкальный плеер в стиле Nothing OS, обертка для YouTube Music |
 | [Noid](https://play.google.com/store/apps/details?id=com.techsip.noid) | TechSip Studios | Управление файлами |
 | [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | Мобильное приложение для nothing.community |
 | [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Dynamic Island для Nothing OS |

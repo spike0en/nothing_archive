@@ -70,6 +70,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | 寶可夢收集同人遊戲 |
 | [Glyp Clocks](https://bleelblep.github.io/disclaimer/glyphclocks/) | bleelblep | 適用於 Phone (3) Glyph Matrix 的 16 種時鐘 ([原始碼](https://github.com/bleelblep/glyphclocks)) |
 | [Glyph Eyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | 互動傾斜瞳孔玩具 |
+| [Glyph GeekBox](https://github.com/danissomo/GlyphMatrix-AODGeekBox) | danissomo | Glyph Matrix 上的一些極客工具。針對 Nothing Phone (4a) Pro 設計 |
 | [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | 在 Nothing Glyph Matrix 上顯示 Home Assistant 感測器數據的 Android 應用程式。 |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | 太空侵略者遊戲 |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | 跑馬燈文字訊息 |
@@ -244,6 +245,7 @@ Glyph Matrix 的互動玩具和遊戲。
 |---------|--------|------|
 | [Flow](https://flowpo.pages.dev/) | Earendel | 番茄鐘網頁應用程式 |
 | [Missing Core Music](https://play.google.com/store/apps/details?id=com.cyanchill.missingcore.music) | MissingCore | 離線音樂播放器 |
+| [N Music](https://github.com/alimohsenmaruf/N-Music) | alimohsenmaruf | Nothing OS 風格的簡約 YouTube Music 封裝器播放器 |
 | [Noid](https://play.google.com/store/apps/details?id=com.techsip.noid) | TechSip Studios | 檔案管理 |
 | [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | nothing.community 的行動應用程式 |
 | [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | 適用於 Nothing OS 的靈動島功能 |
