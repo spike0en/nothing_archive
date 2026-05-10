@@ -254,6 +254,5 @@ A collection of various community-made apps including news hubs, social tools, a
 | [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | Mobile app for nothing.community |
 | [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Dynamic Island for Nothing OS |
 | [Nothing News](https://play.google.com/store/apps/details?id=com.nothing.news) | Mirko_ddd | Community news |
-| [Redrop Music](https://play.google.com/store/apps/details?id=re.tag.redrop) | Tagrelate | Offline music player inspired from Material 3 and Nothing design |
 | [Tetris](https://github.com/ItsCR24/tetris-m3) | ItsCR24 | Material You & Nothing OS inspired Tetris game |
 
