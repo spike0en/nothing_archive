@@ -217,6 +217,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Управление индикатором записи для Phone (3) |
 | [Redrop Music](https://play.google.com/store/apps/details?id=re.tag.redrop) | Tagrelate | Оффлайн-музыкальный плеер, сочетающий эстетику Material 3 и Nothing |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Инструмент для анализа устройства |
+| [Side Dock](https://play.google.com/store/apps/details?id=com.sidedock.app) | Quiva Connect | Боковая панель для быстрого многозадачного режима, быстрого доступа к инструментам и плавного рабочего процесса |
 | [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | Минималистичный лаунчер |
 | [Sound Stream Now](https://play.google.com/store/apps/details?id=go.ssn) | Moworks | Музыкальный плеер с поддержкой Glyph Matrix |
 | [Stario Launcher](https://play.google.com/store/apps/details?id=com.stario.launcher) | tariqamarneh | Минималистичный ланчер с точечной сеткой, вдохновленный эстетикой Nothing OS |

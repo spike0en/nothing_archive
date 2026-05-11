@@ -96,7 +96,8 @@ keywords: [nothing official apps, nothing wallpapers, nothing fonts, nothing ker
 | Phone (3a) / (3a) Pro | [android_kernel_msm-6.1_nothing_sm7635](https://github.com/NothingOSS/android_kernel_msm-6.1_nothing_sm7635) |
 | Phone (3) | [android_kernel_msm-6.6_nothing_sm8735](https://github.com/NothingOSS/android_kernel_msm-6.6_nothing_sm8735) |
 | Phone (3a) Lite | [android_kernel_modules_nothing_mt6878](https://github.com/NothingOSS/android_kernel_modules_nothing_mt6878/tree/mt6878/Galaxian/v) |
-| Phone (4a) | [android_kernel_msm-6.1_nothing_sm7635](https://github.com/NothingOSS/android_kernel_msm-6.1_nothing_sm7635/tree/sm7635/b/mr_Frogger)
+| Phone (4a) | [android_kernel_msm-6.1_nothing_sm7635](https://github.com/NothingOSS/android_kernel_msm-6.1_nothing_sm7635/tree/sm7635/b/mr_Frogger) |
+| Phone (4a) Pro | [android_kernel_msm-6.6_nothing_sm7750](https://github.com/NothingOSS/android_kernel_msm-6.6_nothing_sm7750) |
 
 ### CMF by Nothing
 
