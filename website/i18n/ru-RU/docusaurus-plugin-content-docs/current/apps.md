@@ -26,6 +26,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | Приложение для цифрового детокса с блокировкой телефона и интеграцией Glyph |
 | [Delivery Glyph](https://github.com/Goktug-Dusunen/Glyph-Developer-Kit/tree/main/DeliveryGlyph) | Goktug-Dusunen | Приложение для отслеживания доставки, оптимизированное для турецких сервисов |
 | [Glyph Bar Composer](https://github.com/BhuvaneshwarMarri/GlyphBarComposer-4a) | BhuvaneshwarMarri | Создание, синхронизация и визуализация пользовательских световых паттернов Glyph для Nothing Phone (4a) |
+| [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | Приложение для визуализации Glyph, сочетающее интерфейсы в стиле Nothing и Material 3 |
 | [Glyph Battery](https://github.com/0x91m0n/NothingGlyphBattery) | 0x91m0n | Визуализация уровня заряда батареи через интерфейс Glyph |
 | [Glyph Compass](https://play.google.com/store/apps/details?id=com.JayKayCooperations.glyph_compass) | JayKayCooperations | Используйте интерфейс Glyph в качестве компаса |
 | [Glyph Essentials](https://play.google.com/store/apps/details?id=com.tldc.essentials) | GlyphLab | Продвинутая настройка уведомлений Glyph |
@@ -64,6 +65,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | Счетчик от 0 до 9999 |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | Визуализатор, компас, кости, счетчик |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Интеграция с карточками Anki |
+| [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | Приложение для визуализации Glyph, сочетающее интерфейсы в стиле Nothing и Material 3 |
 | [Glyph Beat](https://play.google.com/store/apps/details?id=com.pauwma.glyphbeat) | pauwma | Визуализатор медиа с темами |
 | [Glyph Bike](https://play.google.com/store/apps/details?id=com.ofishialdigital.glyphbike) | Ofishial Digital | Игра с прокруткой на мотоцикле |
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Аркадные игры на Glyph Matrix |

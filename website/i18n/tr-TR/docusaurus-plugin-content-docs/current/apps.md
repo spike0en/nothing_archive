@@ -26,6 +26,7 @@ Nothing telefonlarının Glyph arayüzüyle entegre olan uygulamalar.
 | [Blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | Glyph entegrasyonu ile dijital detoks uygulaması |
 | [Delivery Glyph](https://github.com/Goktug-Dusunen/Glyph-Developer-Kit/tree/main/DeliveryGlyph) | Goktug-Dusunen | Özellikle Türk servisleri için optimize edilmiş teslimat takip uygulaması |
 | [Glyph Bar Composer](https://github.com/BhuvaneshwarMarri/GlyphBarComposer-4a) | BhuvaneshwarMarri | Nothing Phone (4a) için özel Glyph aydınlatma desenleri oluşturun, senkronize edin ve görselleştirin |
+| [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | Hem Nothing'den ilham alan hem de Material 3 kullanıcı arayüzlerini içeren Glyph görselleştirici uygulaması |
 | [Glyph Battery](https://github.com/0x91m0n/NothingGlyphBattery) | 0x91m0n | Glyph Arayüzü üzerinden pil seviyesi görselleştirme |
 | [Glyph Compass](https://play.google.com/store/apps/details?id=com.JayKayCooperations.glyph_compass) | JayKayCooperations | Glyph arayüzünüzü pusula olarak kullanın |
 | [Glyph Essentials](https://play.google.com/store/apps/details?id=com.tldc.essentials) | GlyphLab | Gelişmiş Glyph bildirim özelleştirmesi |
@@ -64,6 +65,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | 0'dan 9999'a kadar sayaç |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | Görselleştirici, pusula, zar, sayaç |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Anki bilgi kartı entegrasyonu |
+| [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | Hem Nothing'den ilham alan hem de Material 3 kullanıcı arayüzlerini içeren Glyph görselleştirici uygulaması |
 | [Glyph Beat](https://play.google.com/store/apps/details?id=com.pauwma.glyphbeat) | pauwma | Temalı medya görselleştirici |
 | [Glyph Bike](https://play.google.com/store/apps/details?id=com.ofishialdigital.glyphbike) | Ofishial Digital | Yandan görünümlü motosiklet oyunu |
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Glyph matrisi üzerinde atari oyunları |

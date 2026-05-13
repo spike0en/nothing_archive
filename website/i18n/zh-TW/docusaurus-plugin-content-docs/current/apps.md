@@ -26,6 +26,7 @@ AI 生成的高度個人化迷你應用程式，延伸 Nothing OS 生態系。
 | [blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | 整合 Glyph 的數位排毒手機封鎖應用程式 |
 | [Delivery Glyph](https://github.com/Goktug-Dusunen/Glyph-Developer-Kit/tree/main/DeliveryGlyph) | Goktug-Dusunen | 特別針對土耳其服務優化的配送追蹤應用程式 |
 | [Glyph Bar Composer](https://github.com/BhuvaneshwarMarri/GlyphBarComposer-4a) | BhuvaneshwarMarri | 為 Nothing Phone (4a) 撰寫、同步並視覺化自訂 Glyph 燈光圖樣 |
+| [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | 結合 Nothing 風格與 Material 3 使用者介面的 Glyph 視覺化應用程式 |
 | [Glyph Battery](https://github.com/0x91m0n/NothingGlyphBattery) | 0x91m0n | 透過 Glyph 介面進行電池電量視覺化 |
 | [Glyph Compass](https://play.google.com/store/apps/details?id=com.JayKayCooperations.glyph_compass) | JayKayCooperations | 將 Glyph 介面作為指南針使用 |
 | [Glyph Essentials](https://play.google.com/store/apps/details?id=com.tldc.essentials) | GlyphLab | 進階 Glyph 通知自訂化 |
@@ -64,6 +65,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | 0–9999 計數器 |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | 視覺化器、指南針、骰子、計數器 |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Anki 單字卡整合 |
+| [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | 結合 Nothing 風格與 Material 3 使用者介面的 Glyph 視覺化應用程式 |
 | [Glyph Beat](https://play.google.com/store/apps/details?id=com.pauwma.glyphbeat) | pauwma | 附主題的媒體視覺化器 |
 | [Glyph Bike](https://play.google.com/store/apps/details?id=com.ofishialdigital.glyphbike) | Ofishial Digital | 橫向捲動摩托車遊戲 |
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Glyph Matrix 上的街機遊戲 |

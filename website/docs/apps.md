@@ -26,6 +26,7 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | [Blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | Tech detox phone blocking app with Glyph integration |
 | [Delivery Glyph](https://github.com/Goktug-Dusunen/Glyph-Developer-Kit/tree/main/DeliveryGlyph) | Goktug-Dusunen | Delivery tracking app, specially optimized for Turkish services |
 | [Glyph Bar Composer](https://github.com/BhuvaneshwarMarri/GlyphBarComposer-4a) | BhuvaneshwarMarri | Compose, synchronize, and visualize custom Glyph lighting patterns for Nothing Phone (4a) |
+| [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | Glyph visualizer app incorporating both Nothing-inspired and Material 3 UI interfaces |
 | [Glyph Battery](https://github.com/0x91m0n/NothingGlyphBattery) | 0x91m0n | Battery level visualization through the Glyph Interface |
 | [Glyph Compass](https://play.google.com/store/apps/details?id=com.JayKayCooperations.glyph_compass) | JayKayCooperations | Use your Glyph interface as a compass |
 | [Glyph Essentials](https://play.google.com/store/apps/details?id=com.tldc.essentials) | GlyphLab | Advanced customisation for Glyph notifications |
@@ -64,6 +65,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | Counter ranging 0-9999 |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | Visualizer, compass, dice, counter |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Anki flashcard integration |
+| [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | Glyph visualizer app incorporating both Nothing-inspired and Material 3 UI interfaces |
 | [Glyph Beat](https://play.google.com/store/apps/details?id=com.pauwma.glyphbeat) | pauwma | Media visualizer with themes |
 | [Glyph Bike](https://play.google.com/store/apps/details?id=com.ofishialdigital.glyphbike) | Ofishial Digital | Scrolling motorcycle game |
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Arcade games on Glyph Matrix |

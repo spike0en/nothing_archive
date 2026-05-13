@@ -26,6 +26,7 @@ Applications s'intégrant à l'interface Glyph des téléphones Nothing.
 | [Blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | Application de détox numérique avec intégration Glyph |
 | [Delivery Glyph](https://github.com/Goktug-Dusunen/Glyph-Developer-Kit/tree/main/DeliveryGlyph) | Goktug-Dusunen | Application de suivi de livraison, spécialement optimisée pour les services turcs |
 | [Glyph Bar Composer](https://github.com/BhuvaneshwarMarri/GlyphBarComposer-4a) | BhuvaneshwarMarri | Composez, synchronisez et visualisez des motifs lumineux Glyph personnalisés pour le Nothing Phone (4a) |
+| [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | Application de visualisation Glyph intégrant les interfaces utilisateur Nothing et Material 3 |
 | [Glyph Battery](https://github.com/0x91m0n/NothingGlyphBattery) | 0x91m0n | Visualisation du niveau de batterie via l'interface Glyph |
 | [Glyph Compass](https://play.google.com/store/apps/details?id=com.JayKayCooperations.glyph_compass) | JayKayCooperations | Utilisez votre interface Glyph comme une boussole |
 | [Glyph Essentials](https://play.google.com/store/apps/details?id=com.tldc.essentials) | GlyphLab | Personnalisation avancée des notifications Glyph |
@@ -64,6 +65,7 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | Compteur allant de 0 à 9999 |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | Visualiseur, boussole, dés, compteur |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Intégration de flashcards Anki |
+| [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | Application de visualisation Glyph intégrant les interfaces utilisateur Nothing et Material 3 |
 | [Glyph Beat](https://play.google.com/store/apps/details?id=com.pauwma.glyphbeat) | pauwma | Visualiseur de médias avec thèmes |
 | [Glyph Bike](https://play.google.com/store/apps/details?id=com.ofishialdigital.glyphbike) | Ofishial Digital | Jeu de moto à défilement |
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Jeux d'arcade sur la matrice Glyph |
