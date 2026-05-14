@@ -187,19 +187,19 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/banner.png',
+    image: 'https://spike0en.github.io/nothing_archive/img/banner.png?v=2',
     metadata: [
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'Nothing Archive' },
       // Note: Docusaurus auto-generates page-specific Open Graph and Twitter metadata.
       // Avoid hardcoding global fallbacks here to prevent canonical SEO conflicts across localizations.
-      { property: 'og:image', content: 'https://spike0en.github.io/nothing_archive/img/banner.png' },
+      { property: 'og:image', content: 'https://spike0en.github.io/nothing_archive/img/banner.png?v=2' },
       { property: 'og:image:width', content: '2160' },
       { property: 'og:image:height', content: '1080' },
       { property: 'og:image:type', content: 'image/png' },
       { property: 'og:image:alt', content: 'Nothing Archive — Nothing OS Firmware & Community Resources' },
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:image', content: 'https://spike0en.github.io/nothing_archive/img/banner.png' },
+      { name: 'twitter:image', content: 'https://spike0en.github.io/nothing_archive/img/banner.png?v=2' },
     ],
     colorMode: {
       defaultMode: 'dark',
