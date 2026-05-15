@@ -95,6 +95,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | Gyroscopic level tool |
 | [Live Bridge](https://github.com/appsfolder/livebridge) | appsfolder | Convert unsupported progress notifications into Live Notifications to make them compatible with Nothing's Glyph progress indicators |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | Classic Magic 8 Ball |
+| [Matrix Dice](https://github.com/Snakehater/matrixdice/) | Snakehater | Glyph matrix dice toy |
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Minecraft pixel art |
 | [Morse Glyph](https://github.com/Reyiannonn/MorseGlyph) | Reyiannonn | Translates text into Morse code and transmits it through the Nothing Phone's Glyph Matrix |
 | [Nono Gotchi (Beta)](https://www.jkn.me/pet) | Jkn | Tamagotchi-styled virtual pet |

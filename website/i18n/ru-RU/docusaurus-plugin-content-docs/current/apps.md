@@ -95,6 +95,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | Гироскопический уровень |
 | [Live Bridge](https://github.com/appsfolder/livebridge) | appsfolder | Преобразует неподдерживаемые уведомления о прогрессе в живые уведомления, делая их совместимыми с индикаторами прогресса Glyph от Nothing |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | Классический магический шар предсказаний |
+| [Matrix Dice](https://github.com/Snakehater/matrixdice/) | Snakehater | Игрушка-кости для Glyph Matrix |
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Пиксель-арт в стиле Minecraft |
 | [Morse Glyph](https://github.com/Reyiannonn/MorseGlyph) | Reyiannonn | Переводит текст в азбуку Морзе и передает его через Glyph Matrix на Nothing Phone |
 | [Nono Gotchi (Beta)](https://www.jkn.me/pet) | Jkn | Виртуальный питомец в стиле Тамагочи |

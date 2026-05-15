@@ -95,6 +95,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | Jiroskopik su terazisi aracı |
 | [Live Bridge](https://github.com/appsfolder/livebridge) | appsfolder | Desteklenmeyen ilerleme bildirimlerini Canlı Bildirimlere dönüştürerek Nothing'in Glyph ilerleme göstergeleriyle uyumlu hale getirir |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | Klasik Sihirli 8 Top |
+| [Matrix Dice](https://github.com/Snakehater/matrixdice/) | Snakehater | Glyph matrisi zar oyuncağı |
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Minecraft piksel sanatı |
 | [Morse Glyph](https://github.com/Reyiannonn/MorseGlyph) | Reyiannonn | Metni Mors alfabesine çevirir ve Nothing Phone'un Glyph Matrisi aracılığıyla iletir |
 | [Nono Gotchi (Beta)](https://www.jkn.me/pet) | Jkn | Tamagotchi tarzı sanal evcil hayvan |

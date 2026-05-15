@@ -95,6 +95,7 @@ Glyphマトリックス向けのインタラクティブなトイとゲーム。
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | ジャイロスコープ水準器ツール |
 | [Live Bridge](https://github.com/appsfolder/livebridge) | appsfolder | 未サポートの進捗通知をライブ通知に変換し、NothingのGlyph進捗インジケーターと互換性を持たせます |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | 古典的なマジック8ボール |
+| [Matrix Dice](https://github.com/Snakehater/matrixdice/) | Snakehater | Glyphマトリックス用のサイコロトイ |
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Minecraftピクセルアート |
 | [Morse Glyph](https://github.com/Reyiannonn/MorseGlyph) | Reyiannonn | テキストをモールス信号に変換し、Nothing PhoneのGlyphマトリックスを介して送信します |
 | [Nono Gotchi (Beta)](https://www.jkn.me/pet) | Jkn | たまごっちスタイルの仮想ペット |

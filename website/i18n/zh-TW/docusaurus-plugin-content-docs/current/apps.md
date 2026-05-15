@@ -95,6 +95,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | 陀螺儀水平工具 |
 | [Live Bridge](https://github.com/appsfolder/livebridge) | appsfolder | 將不支援的進度通知轉換為即時通知，使其與 Nothing 的 Glyph 進度指示器相容 |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | 經典神奇八號球 |
+| [Matrix Dice](https://github.com/Snakehater/matrixdice/) | Snakehater | Glyph Matrix 骰子玩具 |
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Minecraft 像素藝術 |
 | [Morse Glyph](https://github.com/Reyiannonn/MorseGlyph) | Reyiannonn | 將文本轉換為摩斯密碼並透過 Nothing Phone 的 Glyph Matrix 發送 |
 | [Nono Gotchi（測試版）](https://www.jkn.me/pet) | Jkn | 電子雞風格虛擬寵物 |
