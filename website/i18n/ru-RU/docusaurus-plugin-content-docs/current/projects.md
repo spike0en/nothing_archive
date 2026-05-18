@@ -57,6 +57,7 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 
 | Проект | Разработчик | Описание |
 |---------|-----------|-------------|
+| [Glyph SDDM](https://github.com/xCaptaiN09/glyph-sddm) | xCaptaiN09 | Минималистичная тема SDDM, вдохновленная языком дизайна Nothing |
 | [Notes (Windows)](https://github.com/rohankishore/Notes-1) | rohankishore | Блокнот в стиле Nothing для Windows |
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | Приложение для строки меню macOS |
 | [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | Сборка рабочего стола GNOME |

@@ -57,6 +57,7 @@ Thèmes et configurations pour Arch Linux, VS Code et d'autres environnements de
 
 | Projet | Développeur | Description |
 |---------|-----------|-------------|
+| [Glyph SDDM](https://github.com/xCaptaiN09/glyph-sddm) | xCaptaiN09 | Thème SDDM minimaliste inspiré par le langage de conception de Nothing |
 | [Notes (Windows)](https://github.com/rohankishore/Notes-1) | rohankishore | Bloc-notes au thème Nothing pour Windows |
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | Application de barre de menu macOS |
 | [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | Build de bureau GNOME |

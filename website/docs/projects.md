@@ -57,6 +57,7 @@ Themes and rices for Arch Linux, VS Code, and other development environments fol
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
+| [Glyph SDDM](https://github.com/xCaptaiN09/glyph-sddm) | xCaptaiN09 | Minimalist SDDM theme inspired by Nothing's design language |
 | [Notes (Windows)](https://github.com/rohankishore/Notes-1) | rohankishore | Nothing themed notepad for Windows |
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | macOS menu bar app |
 | [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | GNOME desktop build |

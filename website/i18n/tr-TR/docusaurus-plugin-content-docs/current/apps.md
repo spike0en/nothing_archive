@@ -23,6 +23,7 @@ Nothing telefonlarının Glyph arayüzüyle entegre olan uygulamalar.
 
 | Uygulama | Geliştirici | Açıklama |
 |-----|-----------|-------------|
+| [BeatFlare](https://github.com/stilkin/beatflare) | stilkin | Nothing Phone (3a) glyph'leri için ham ses tabanlı görselleştirme |
 | [Blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | Glyph entegrasyonu ile dijital detoks uygulaması |
 | [Delivery Glyph](https://github.com/Goktug-Dusunen/Glyph-Developer-Kit/tree/main/DeliveryGlyph) | Goktug-Dusunen | Özellikle Türk servisleri için optimize edilmiş teslimat takip uygulaması |
 | [Glyph Bar Composer](https://github.com/BhuvaneshwarMarri/GlyphBarComposer-4a) | BhuvaneshwarMarri | Nothing Phone (4a) için özel Glyph aydınlatma desenleri oluşturun, senkronize edin ve görselleştirin |
@@ -71,12 +72,14 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Glyph matrisi üzerinde atari oyunları |
 | [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | Pokémon yakalama fan oyunu |
 | [Glyp Clocks](https://bleelblep.github.io/disclaimer/glyphclocks/) | bleelblep | Phone (3) Glyph Matrix için 16 Saat ([Repo](https://github.com/bleelblep/glyphclocks)) |
+| [Glyph Decibel Meter](https://github.com/iama2z/Glyph-Decibel-Meter) | iama2z | Nothing Phone (4a) Pro'nun Glyph Matrisinde dolum efektiyle desibel seviyelerini gösterir |
 | [Glyph Draw](https://github.com/kaelvalen/open-glyph) | kaelvalen | Özel piksel sanatı çizmenize olanak tanıyan Nothing Phone (3) için Glyph Oyuncağı |
 | [Glyph Eyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | Eğlenceli eğilebilir göz bebeği oyuncağı |
 | [Glyph GeekBox](https://github.com/danissomo/GlyphMatrix-AODGeekBox) | danissomo | Glyph Matrix üzerinde bazı geek araçları. Nothing Phone 4(a) Pro hedefli |
 | [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | Home Assistant sensör verilerini Nothing Glyph Matrix üzerinde görüntüleyen Android uygulaması. |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | Space Invaders oyunu |
 | [Glyph Lab](https://play.google.com/store/apps/details?id=com.projectkriya.glyphlab) | Vimanam Studio | Nothing cihazları için tasarlanmış etkileşimli Glyph Matrix oyuncakları |
+| [Glyph Life](https://github.com/Yuma-Eimymk2/glyph-life) | Yuma-Eimymk2 | Nothing Phone (4a) Pro'nun Glyph Matrisi için Conway's Game of Life oyuncağı |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Kayan metin mesajları |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Nothing Phone (4a) Pro için özel Glyph Matrix görselleri oluşturma ve akıllıca görüntüleme araç takımı |
 | [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | Web üzerinden kod testi |
@@ -84,6 +87,8 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | Glyph sanatı oluşturun ve sergileyin |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Bildirimler, zamanlayıcılar, görselleştirici |
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | Etkileşimli sallanan sarkaç |
+| [Glyph Pong](https://github.com/codester007/glyph-pong) | codester007 | Nothing Phone (4a) Pro'nun Glyph Matrisi için Pong oyunu |
+| [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | Bekleyen bildirimleri Glyph Matrisi üzerinde bir bakışta görülebilir bir ekrana dönüştürür |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | Atari tarzı istifleme oyunu |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Sese duyarlı ve her zaman açık Glyph Matrisi ekran denetleyicisi |
 | [Glyph Text Animator](https://github.com/deepudxd/GlyphTextAnimator) | deepudxd | Nothing Phone (4a) Pro'nun 13×13 Glyph Matrix'i için metni kayan nokta matris animasyonlarına dönüştürür |
@@ -103,6 +108,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | Günlük ekran süresini yansıtan yüz |
 | [Timepiece](https://play.google.com/store/apps/details?id=com.arunk140.timepiece) | Arun Khanchandani | Always-On saat yardımcısı |
 | [Toyph](https://github.com/antonvidishchev/toyph) | antonvidishchev | Nothing Phone (4a) Pro için JSON tabanlı Glyph Oyuncağı |
+| [V Pet](https://github.com/uzugu/V-pet-Glyph-Matrix) | uzugu | Nothing Phone (3)'ün Glyph Matrisi için Digimon V-pet emülatörü adaptasyonu |
 
 ---
 

@@ -23,6 +23,7 @@ Apps that integrate with the Glyph interface on Nothing phones.
 
 | App | Developer | Description |
 |-----|-----------|-------------|
+| [BeatFlare](https://github.com/stilkin/beatflare) | stilkin | Raw audio-based visualization for Nothing Phone (3a) Glyphs |
 | [Blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | Tech detox phone blocking app with Glyph integration |
 | [Delivery Glyph](https://github.com/Goktug-Dusunen/Glyph-Developer-Kit/tree/main/DeliveryGlyph) | Goktug-Dusunen | Delivery tracking app, specially optimized for Turkish services |
 | [Glyph Bar Composer](https://github.com/BhuvaneshwarMarri/GlyphBarComposer-4a) | BhuvaneshwarMarri | Compose, synchronize, and visualize custom Glyph lighting patterns for Nothing Phone (4a) |
@@ -71,12 +72,14 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Arcade games on Glyph Matrix |
 | [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | Pokémon collecting fan-game |
 | [Glyp Clocks](https://bleelblep.github.io/disclaimer/glyphclocks/) | bleelblep | 16 Clocks for Phone (3)'s Glyph Matrix ([Repo](https://github.com/bleelblep/glyphclocks)) |
+| [Glyph Decibel Meter](https://github.com/iama2z/Glyph-Decibel-Meter) | iama2z | Displays decibel levels with a filling effect on the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Draw](https://github.com/kaelvalen/open-glyph) | kaelvalen | Glyph Toy for Nothing Phone (3) that lets you draw custom pixel art |
 | [Glyph Eyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | Playful tilting pupil toy |
 | [Glyph GeekBox](https://github.com/danissomo/GlyphMatrix-AODGeekBox) | danissomo | Some geek stuff on GlyphMatrix. Nothing Phone 4(a) pro targeted |
 | [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | Android app that displays Home Assistant sensor data on the Nothing Glyph Matrix |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | Space Invaders game |
 | [Glyph Lab](https://play.google.com/store/apps/details?id=com.projectkriya.glyphlab) | Vimanam Studio | Interactive glyph matrix toys designed for Nothing devices |
+| [Glyph Life](https://github.com/Yuma-Eimymk2/glyph-life) | Yuma-Eimymk2 | Conway's Game of Life toy for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Scrolling text messages |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Toolkit for creating and intelligently displaying custom Glyph Matrix visuals for Nothing Phone (4a) Pro |
 | [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | Web-based code testing |
@@ -84,6 +87,8 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | Create and showcase Glyph art |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Notifications, timers, visualizer |
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | An interactive swinging pendulum |
+| [Glyph Pong](https://github.com/codester007/glyph-pong) | codester007 | Pong game for the Nothing Phone (4a) Pro's Glyph Matrix |
+| [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | Turns pending notifications into a glanceable display on the Glyph Matrix |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | A stacker arcade game |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Always-on, audio-reactive Glyph Matrix display controller |
 | [Glyph Text Animator](https://github.com/deepudxd/GlyphTextAnimator) | deepudxd | Converts text into scrolling dot-matrix animations for the Nothing Phone (4a) Pro's 13×13 Glyph Matrix |
@@ -103,6 +108,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | Face reflecting the daily screen on time |
 | [Timepiece](https://play.google.com/store/apps/details?id=com.arunk140.timepiece) | Arun Khanchandani | Always-On clock utility |
 | [Toyph](https://github.com/antonvidishchev/toyph) | antonvidishchev | A JSON-driven Glyph Toy for the Nothing Phone (4a) Pro |
+| [V Pet](https://github.com/uzugu/V-pet-Glyph-Matrix) | uzugu | Digimon V-pet emulator adaptation for the Nothing Phone (3)'s Glyph Matrix |
 
 ---
 

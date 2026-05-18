@@ -57,6 +57,7 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 
 | 專案 | 開發者 | 說明 |
 |------|--------|------|
+| [Glyph SDDM](https://github.com/xCaptaiN09/glyph-sddm) | xCaptaiN09 | 受 Nothing 設計語言啟發的極簡 SDDM 主題 |
 | [Notes (Windows)](https://github.com/rohankishore/Notes-1) | rohankishore | 適用於 Windows 的 Nothing 主題記事本 |
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | macOS 選單列應用程式 |
 | [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | GNOME 桌面建置 |

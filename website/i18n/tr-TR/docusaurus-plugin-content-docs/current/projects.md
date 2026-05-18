@@ -57,6 +57,7 @@ Nothing'in tasarım diline uygun Arch Linux, VS Code ve diğer geliştirme ortam
 
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
+| [Glyph SDDM](https://github.com/xCaptaiN09/glyph-sddm) | xCaptaiN09 | Nothing'in tasarım dilinden ilham alan minimalist SDDM teması |
 | [Notes (Windows)](https://github.com/rohankishore/Notes-1) | rohankishore | Windows için Nothing temalı not defteri |
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | macOS menü çubuğu uygulaması |
 | [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | GNOME masaüstü yapısı |

@@ -23,6 +23,7 @@ AI 生成的高度個人化迷你應用程式，延伸 Nothing OS 生態系。
 
 | 應用程式 | 開發者 | 說明 |
 |---------|--------|------|
+| [BeatFlare](https://github.com/stilkin/beatflare) | stilkin | 適用於 Nothing Phone (3a) Glyph 的原始音訊視覺化 |
 | [blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | 整合 Glyph 的數位排毒手機封鎖應用程式 |
 | [Delivery Glyph](https://github.com/Goktug-Dusunen/Glyph-Developer-Kit/tree/main/DeliveryGlyph) | Goktug-Dusunen | 特別針對土耳其服務優化的配送追蹤應用程式 |
 | [Glyph Bar Composer](https://github.com/BhuvaneshwarMarri/GlyphBarComposer-4a) | BhuvaneshwarMarri | 為 Nothing Phone (4a) 撰寫、同步並視覺化自訂 Glyph 燈光圖樣 |
@@ -71,12 +72,14 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Glyph Matrix 上的街機遊戲 |
 | [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | 寶可夢收集同人遊戲 |
 | [Glyp Clocks](https://bleelblep.github.io/disclaimer/glyphclocks/) | bleelblep | 適用於 Phone (3) Glyph Matrix 的 16 種時鐘 ([原始碼](https://github.com/bleelblep/glyphclocks)) |
+| [Glyph Decibel Meter](https://github.com/iama2z/Glyph-Decibel-Meter) | iama2z | 在 Nothing Phone (4a) Pro 的 Glyph Matrix 上顯示具備填充效果的分貝值 |
 | [Glyph Draw](https://github.com/kaelvalen/open-glyph) | kaelvalen | 讓你繪製自訂像素藝術的 Nothing Phone (3) Glyph 玩具 |
 | [Glyph Eyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | 互動傾斜瞳孔玩具 |
 | [Glyph GeekBox](https://github.com/danissomo/GlyphMatrix-AODGeekBox) | danissomo | Glyph Matrix 上的一些極客工具。針對 Nothing Phone (4a) Pro 設計 |
 | [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | 在 Nothing Glyph Matrix 上顯示 Home Assistant 感測器數據的 Android 應用程式。 |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | 太空侵略者遊戲 |
 | [Glyph Lab](https://play.google.com/store/apps/details?id=com.projectkriya.glyphlab) | Vimanam Studio | 專為 Nothing 裝置設計的互動式 Glyph Matrix 玩具 |
+| [Glyph Life](https://github.com/Yuma-Eimymk2/glyph-life) | Yuma-Eimymk2 | 適用於 Nothing Phone (4a) Pro Glyph Matrix 的康威生命遊戲玩具 |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | 跑馬燈文字訊息 |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | 用於為 Nothing Phone (4a) Pro 建立並智慧顯示自訂 Glyph Matrix 視覺效果的工具包 |
 | [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | 網頁版程式碼測試工具 |
@@ -84,6 +87,8 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | 創作與展示 Glyph 藝術 |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | 通知、計時器、視覺化器 |
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | 互動擺錘動畫 |
+| [Glyph Pong](https://github.com/codester007/glyph-pong) | codester007 | 適用於 Nothing Phone (4a) Pro Glyph Matrix 的 Pong 遊戲 |
+| [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | 將待處理通知轉換為 Glyph Matrix 上一目了然的顯示 |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | 疊疊樂街機遊戲 |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | 常亮且具備音訊反應功能的 Glyph Matrix 顯示控制器 |
 | [Glyph Text Animator](https://github.com/deepudxd/GlyphTextAnimator) | deepudxd | 將文本轉換為 Nothing Phone (4a) Pro 13×13 Glyph Matrix 的滾動點陣動畫 |
@@ -103,6 +108,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | 反映每日螢幕使用時間的臉部表情 |
 | [Timepiece](https://play.google.com/store/apps/details?id=com.arunk140.timepiece) | Arun Khanchandani | 常駐時鐘工具 |
 | [Toyph](https://github.com/antonvidishchev/toyph) | antonvidishchev | 適用於 Nothing Phone (4a) Pro 的 JSON 驅動 Glyph 玩具 |
+| [V Pet](https://github.com/uzugu/V-pet-Glyph-Matrix) | uzugu | 專為 Nothing Phone (3) Glyph Matrix 適配的數碼寶貝 V-pet 模擬器 |
 
 ---
 
