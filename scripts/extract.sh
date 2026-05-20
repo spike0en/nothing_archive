@@ -133,7 +133,8 @@ else
     echo "[4] Nothing Phone (3a) Series"
     echo "[5] Nothing Phone (3)"
     echo "[6] Nothing Phone (4a)"
-    echo "[7] CMF Phone (1) - Phone (2) Pro"
+    echo "[7] Nothing Phone (4a) Pro"	
+    echo "[8] CMF Phone (1) - Phone (2) Pro - Phone (3a) Lite"
     echo "[X] Exit"
     echo ""
     
@@ -146,8 +147,9 @@ else
         3) FLASH_SCRIPT_URL="https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/pacman/Linux/flash_all.sh" ;;
         4) FLASH_SCRIPT_URL="https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/asteroids/Linux/flash_all.sh" ;;
         5) FLASH_SCRIPT_URL="https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/metroid/Linux/flash_all.sh" ;;
-        6) FLASH_SCRIPT_URL="https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/frogger/Linux/flash_all.sh" ;;		
-        7) FLASH_SCRIPT_URL="https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/galaga-tetris/Linux/flash_all.sh" ;;
+        6) FLASH_SCRIPT_URL="https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/frogger/Linux/flash_all.sh" ;;
+        7) FLASH_SCRIPT_URL="https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/froggerpro/Linux/flash_all.sh" ;;		
+        8) FLASH_SCRIPT_URL="https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/galaga-tetris/Linux/flash_all.sh" ;;
         [xX]) exit 0 ;;
         *)
             echo "[ERROR] Invalid selection. Exiting..."
