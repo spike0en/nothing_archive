@@ -142,6 +142,7 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | Nothing 社群精選小工具藝廊 |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | 社群平台（[Repo](https://github.com/nothingtools/nothingtools.github.io)） |
 | [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | r/NothingTech 維基 |
+| [Nothing X (DMS)](https://github.com/Bestello/dms-nothingx/) | Bestello | 適用於 Dank Material Shell 的 Nothing 與 CMF 音訊裝置控制器外掛程式 |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | 用於 Nothing 與 CMF 耳機的 macOS 配套應用程式 |
 
 ---

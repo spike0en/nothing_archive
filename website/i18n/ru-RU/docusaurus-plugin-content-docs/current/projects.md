@@ -142,6 +142,7 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 | [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | Курируемая галерея любимых виджетов сообщества Nothing |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | Хаб сообщества ([Репозиторий](https://github.com/nothingtools/nothingtools.github.io)) |
 | [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | Вики r/NothingTech |
+| [Nothing X (DMS)](https://github.com/Bestello/dms-nothingx/) | Bestello | Плагин контроллера аудиоустройств Nothing и CMF для Dank Material Shell |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | Приложение-компаньон для macOS для наушников Nothing и CMF |
 
 ---

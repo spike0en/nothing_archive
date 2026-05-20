@@ -142,6 +142,7 @@ Essential resources including wikis, firmware archives, and system repair tools.
 | [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | A curated gallery of the Nothing community's favourite widgets |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | Community hub ([Repo](https://github.com/nothingtools/nothingtools.github.io)) |
 | [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | r/NothingTech wiki |
+| [Nothing X (DMS)](https://github.com/Bestello/dms-nothingx/) | Bestello | Nothing and CMF audio device controller plugin for Dank Material Shell |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | macOS companion app for Nothing and CMF earbuds |
 
 ---

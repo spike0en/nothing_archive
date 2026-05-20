@@ -142,6 +142,7 @@ Ressources essentielles incluant des wikis, des archives de firmware et des outi
 | [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | Une galerie sélectionnée des widgets préférés de la communauté Nothing |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | Hub de la communauté ([Dépôt](https://github.com/nothingtools/nothingtools.github.io)) |
 | [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | Wiki de r/NothingTech |
+| [Nothing X (DMS)](https://github.com/Bestello/dms-nothingx/) | Bestello | Plugin de contrôle pour les appareils audio Nothing et CMF pour Dank Material Shell |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | Application compagnon macOS pour les écouteurs Nothing et CMF |
 
 ---

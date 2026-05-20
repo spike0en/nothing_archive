@@ -142,6 +142,7 @@ Vikiler, yazılım arşivleri ve sistem onarım araçları dahil temel kaynaklar
 | [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | Nothing topluluğunun favori widget'larından oluşan bir galeri |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | Topluluk merkezi ([Depo](https://github.com/nothingtools/nothingtools.github.io)) |
 | [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | r/NothingTech wikisi |
+| [Nothing X (DMS)](https://github.com/Bestello/dms-nothingx/) | Bestello | Dank Material Shell için Nothing ve CMF ses cihazları kontrolcü eklentisi |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | Nothing ve CMF kulaklıklar için macOS yardımcı uygulaması |
 
 ---
