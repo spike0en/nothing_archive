@@ -74,13 +74,42 @@ keywords: [nothing official apps, nothing wallpapers, nothing fonts, nothing ker
 
 ---
 
+## Системные дампы
+
+### Nothing
+
+| Устройство | Дамп Tadiphone |
+|--------|----------------|
+| Phone (1) | [Здесь](https://dumps.tadiphone.dev/dumps/nothing/spacewar/) |
+| Phone (2) | [Здесь](https://dumps.tadiphone.dev/dumps/nothing/pong/) |
+| Phone (2a) | [Здесь](https://dumps.tadiphone.dev/dumps/nothing/pacman/) |
+| Phone (2a) Plus | [Здесь](https://dumps.tadiphone.dev/dumps/nothing/pacmanpro/) |
+| Phone (3a) / (3a) Pro | [Здесь](https://dumps.tadiphone.dev/dumps/nothing/asteroids/) |
+| Phone (3) | [Здесь](https://dumps.tadiphone.dev/dumps/nothing/metroid/) |
+| Phone (3a) Lite | [Здесь](https://dumps.tadiphone.dev/dumps/nothing/galaxian/) |
+| Phone (4a) | [Здесь](https://dumps.tadiphone.dev/dumps/nothing/frogger/) |
+| Phone (4a) Pro | [Здесь](https://dumps.tadiphone.dev/dumps/nothing/froggerpro/) |
+
+### CMF by Nothing
+
+| Устройство | Дамп Tadiphone |
+|--------|----------------|
+| CMF Phone (1) | [Здесь](https://dumps.tadiphone.dev/dumps/nothing/tetris/) |
+| CMF Phone (2) Pro | [Здесь](https://dumps.tadiphone.dev/dumps/nothing/galaga/) |
+
+---
+
 ## Системные звуки
 
-| Тип | Ссылка |
-|------|------|
-| Будильники | [tadiphone dump](https://dumps.tadiphone.dev/dumps/nothing/metroid/-/tree/qssi_64-user-15-AQ3A.250226.002-2507191646-release-keys/vendor/product/media/audio/alarms) |
-| Уведомления | [tadiphone dump](https://dumps.tadiphone.dev/dumps/nothing/metroid/-/tree/qssi_64-user-15-AQ3A.250226.002-2507191646-release-keys/vendor/product/media/audio/notifications) |
-| Рингтоны | [tadiphone dump](https://dumps.tadiphone.dev/dumps/nothing/metroid/-/tree/qssi_64-user-15-AQ3A.250226.002-2507191646-release-keys/vendor/product/media/audio/ringtones) |
+Системные звуки и рингтоны можно скачать по ссылкам на дампы выше.  
+Файлы находятся по следующим путям в зависимости от чипсета:
+
+| Категория | Путь Qualcomm | Путь MediaTek |
+|----------|---------------|---------------|
+| Будильники | `vendor/product/media/audio/alarms` | `product/media/audio/alarms` |
+| Уведомления | `vendor/product/media/audio/notifications` | `product/media/audio/notifications` |
+| Рингтоны | `vendor/product/media/audio/ringtones` | `product/media/audio/ringtones` |
+| Звуки интерфейса | `vendor/product/media/audio/ui` | `product/media/audio/ui` |
 
 ---
 

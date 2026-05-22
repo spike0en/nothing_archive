@@ -74,13 +74,42 @@ APK mirorları [APKMirror](https://www.apkmirror.com/apk/nothing-technology-limi
 
 ---
 
+## Sistem Dökümleri
+
+### Nothing
+
+| Cihaz | Tadiphone Dökümü |
+|--------|----------------|
+| Phone (1) | [Buraya](https://dumps.tadiphone.dev/dumps/nothing/spacewar/) |
+| Phone (2) | [Buraya](https://dumps.tadiphone.dev/dumps/nothing/pong/) |
+| Phone (2a) | [Buraya](https://dumps.tadiphone.dev/dumps/nothing/pacman/) |
+| Phone (2a) Plus | [Buraya](https://dumps.tadiphone.dev/dumps/nothing/pacmanpro/) |
+| Phone (3a) / (3a) Pro | [Buraya](https://dumps.tadiphone.dev/dumps/nothing/asteroids/) |
+| Phone (3) | [Buraya](https://dumps.tadiphone.dev/dumps/nothing/metroid/) |
+| Phone (3a) Lite | [Buraya](https://dumps.tadiphone.dev/dumps/nothing/galaxian/) |
+| Phone (4a) | [Buraya](https://dumps.tadiphone.dev/dumps/nothing/frogger/) |
+| Phone (4a) Pro | [Buraya](https://dumps.tadiphone.dev/dumps/nothing/froggerpro/) |
+
+### CMF by Nothing
+
+| Cihaz | Tadiphone Dökümü |
+|--------|----------------|
+| CMF Phone (1) | [Buraya](https://dumps.tadiphone.dev/dumps/nothing/tetris/) |
+| CMF Phone (2) Pro | [Buraya](https://dumps.tadiphone.dev/dumps/nothing/galaga/) |
+
+---
+
 ## Sistem Sesleri
 
-| Tür | Bağlantı |
-|------|------|
-| Alarmlar | [tadiphone dump](https://dumps.tadiphone.dev/dumps/nothing/metroid/-/tree/qssi_64-user-15-AQ3A.250226.002-2507191646-release-keys/vendor/product/media/audio/alarms) |
-| Bildirimler | [tadiphone dump](https://dumps.tadiphone.dev/dumps/nothing/metroid/-/tree/qssi_64-user-15-AQ3A.250226.002-2507191646-release-keys/vendor/product/media/audio/notifications) |
-| Zil Sesleri | [tadiphone dump](https://dumps.tadiphone.dev/dumps/nothing/metroid/-/tree/qssi_64-user-15-AQ3A.250226.002-2507191646-release-keys/vendor/product/media/audio/ringtones) |
+Sistem sesleri ve zil sesleri yukarıdaki döküm bağlantılarından indirilebilir.  
+Dosyalar, yonga setine bağlı olarak aşağıdaki yollarda bulunur:
+
+| Kategori | Qualcomm Yolu | MediaTek Yolu |
+|----------|---------------|---------------|
+| Alarmlar | `vendor/product/media/audio/alarms` | `product/media/audio/alarms` |
+| Bildirimler | `vendor/product/media/audio/notifications` | `product/media/audio/notifications` |
+| Zil Sesleri | `vendor/product/media/audio/ringtones` | `product/media/audio/ringtones` |
+| Arayüz Sesleri | `vendor/product/media/audio/ui` | `product/media/audio/ui` |
 
 ---
 

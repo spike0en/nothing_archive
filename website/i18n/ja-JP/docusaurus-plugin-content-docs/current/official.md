@@ -74,13 +74,42 @@ APKミラーは [APKMirror](https://www.apkmirror.com/apk/nothing-technology-lim
 
 ---
 
+## システムダンプ
+
+### Nothing
+
+| デバイス | Tadiphone ダンプ |
+|--------|----------------|
+| Phone (1) | [こちら](https://dumps.tadiphone.dev/dumps/nothing/spacewar/) |
+| Phone (2) | [こちら](https://dumps.tadiphone.dev/dumps/nothing/pong/) |
+| Phone (2a) | [こちら](https://dumps.tadiphone.dev/dumps/nothing/pacman/) |
+| Phone (2a) Plus | [こちら](https://dumps.tadiphone.dev/dumps/nothing/pacmanpro/) |
+| Phone (3a) / (3a) Pro | [こちら](https://dumps.tadiphone.dev/dumps/nothing/asteroids/) |
+| Phone (3) | [こちら](https://dumps.tadiphone.dev/dumps/nothing/metroid/) |
+| Phone (3a) Lite | [こちら](https://dumps.tadiphone.dev/dumps/nothing/galaxian/) |
+| Phone (4a) | [こちら](https://dumps.tadiphone.dev/dumps/nothing/frogger/) |
+| Phone (4a) Pro | [こちら](https://dumps.tadiphone.dev/dumps/nothing/froggerpro/) |
+
+### CMF by Nothing
+
+| デバイス | Tadiphone ダンプ |
+|--------|----------------|
+| CMF Phone (1) | [こちら](https://dumps.tadiphone.dev/dumps/nothing/tetris/) |
+| CMF Phone (2) Pro | [こちら](https://dumps.tadiphone.dev/dumps/nothing/galaga/) |
+
+---
+
 ## システムサウンド
 
-| タイプ | リンク |
-|------|------|
-| アラーム | [tadiphone dump](https://dumps.tadiphone.dev/dumps/nothing/metroid/-/tree/qssi_64-user-15-AQ3A.250226.002-2507191646-release-keys/vendor/product/media/audio/alarms) |
-| 通知 | [tadiphone dump](https://dumps.tadiphone.dev/dumps/nothing/metroid/-/tree/qssi_64-user-15-AQ3A.250226.002-2507191646-release-keys/vendor/product/media/audio/notifications) |
-| 着信音 | [tadiphone dump](https://dumps.tadiphone.dev/dumps/nothing/metroid/-/tree/qssi_64-user-15-AQ3A.250226.002-2507191646-release-keys/vendor/product/media/audio/ringtones) |
+システムサウンドと着信音は、上記のダンプリンクからダウンロードできます。  
+ファイルはチップセットに応じて以下のパスにあります：
+
+| カテゴリ | Qualcomm パス | MediaTek パス |
+|----------|---------------|---------------|
+| アラーム | `vendor/product/media/audio/alarms` | `product/media/audio/alarms` |
+| 通知 | `vendor/product/media/audio/notifications` | `product/media/audio/notifications` |
+| 着信音 | `vendor/product/media/audio/ringtones` | `product/media/audio/ringtones` |
+| UI サウンド | `vendor/product/media/audio/ui` | `product/media/audio/ui` |
 
 ---
 

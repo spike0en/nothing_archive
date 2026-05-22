@@ -74,13 +74,42 @@ APK mirrors available at [APKMirror](https://www.apkmirror.com/apk/nothing-techn
 
 ---
 
+## System Dumps
+
+### Nothing
+
+| Device | Tadiphone Dump |
+|--------|----------------|
+| Phone (1) | [Here](https://dumps.tadiphone.dev/dumps/nothing/spacewar/) |
+| Phone (2) | [Here](https://dumps.tadiphone.dev/dumps/nothing/pong/) |
+| Phone (2a) | [Here](https://dumps.tadiphone.dev/dumps/nothing/pacman/) |
+| Phone (2a) Plus | [Here](https://dumps.tadiphone.dev/dumps/nothing/pacmanpro/) |
+| Phone (3a) / (3a) Pro | [Here](https://dumps.tadiphone.dev/dumps/nothing/asteroids/) |
+| Phone (3) | [Here](https://dumps.tadiphone.dev/dumps/nothing/metroid/) |
+| Phone (3a) Lite | [Here](https://dumps.tadiphone.dev/dumps/nothing/galaxian/) |
+| Phone (4a) | [Here](https://dumps.tadiphone.dev/dumps/nothing/frogger/) |
+| Phone (4a) Pro | [Here](https://dumps.tadiphone.dev/dumps/nothing/froggerpro/) |
+
+### CMF by Nothing
+
+| Device | Tadiphone Dump |
+|--------|----------------|
+| CMF Phone (1) | [Here](https://dumps.tadiphone.dev/dumps/nothing/tetris/) |
+| CMF Phone (2) Pro | [Here](https://dumps.tadiphone.dev/dumps/nothing/galaga/) |
+
+---
+
 ## System Sounds
 
-| Type | Link |
-|------|------|
-| Alarms | [tadiphone dump](https://dumps.tadiphone.dev/dumps/nothing/metroid/-/tree/qssi_64-user-15-AQ3A.250226.002-2507191646-release-keys/vendor/product/media/audio/alarms) |
-| Notifications | [tadiphone dump](https://dumps.tadiphone.dev/dumps/nothing/metroid/-/tree/qssi_64-user-15-AQ3A.250226.002-2507191646-release-keys/vendor/product/media/audio/notifications) |
-| Ringtones | [tadiphone dump](https://dumps.tadiphone.dev/dumps/nothing/metroid/-/tree/qssi_64-user-15-AQ3A.250226.002-2507191646-release-keys/vendor/product/media/audio/ringtones) |
+System sounds and ringtones can be downloaded from the dump links above.  
+The files are located in the following paths depending on the chipset:
+
+| Category | Qualcomm Path | MediaTek Path |
+|----------|---------------|---------------|
+| Alarms | `vendor/product/media/audio/alarms` | `product/media/audio/alarms` |
+| Notifications | `vendor/product/media/audio/notifications` | `product/media/audio/notifications` |
+| Ringtones | `vendor/product/media/audio/ringtones` | `product/media/audio/ringtones` |
+| UI Sounds | `vendor/product/media/audio/ui` | `product/media/audio/ui` |
 
 ---
 

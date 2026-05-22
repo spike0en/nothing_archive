@@ -74,13 +74,42 @@ APK 備用來源：[APKMirror](https://www.apkmirror.com/apk/nothing-technology-
 
 ---
 
+## 系統轉儲
+
+### Nothing
+
+| 裝置 | Tadiphone 轉儲 |
+|--------|----------------|
+| Phone (1) | [這裡](https://dumps.tadiphone.dev/dumps/nothing/spacewar/) |
+| Phone (2) | [這裡](https://dumps.tadiphone.dev/dumps/nothing/pong/) |
+| Phone (2a) | [這裡](https://dumps.tadiphone.dev/dumps/nothing/pacman/) |
+| Phone (2a) Plus | [這裡](https://dumps.tadiphone.dev/dumps/nothing/pacmanpro/) |
+| Phone (3a) / (3a) Pro | [這裡](https://dumps.tadiphone.dev/dumps/nothing/asteroids/) |
+| Phone (3) | [這裡](https://dumps.tadiphone.dev/dumps/nothing/metroid/) |
+| Phone (3a) Lite | [這裡](https://dumps.tadiphone.dev/dumps/nothing/galaxian/) |
+| Phone (4a) | [這裡](https://dumps.tadiphone.dev/dumps/nothing/frogger/) |
+| Phone (4a) Pro | [這裡](https://dumps.tadiphone.dev/dumps/nothing/froggerpro/) |
+
+### CMF by Nothing
+
+| 裝置 | Tadiphone 轉儲 |
+|--------|----------------|
+| CMF Phone (1) | [這裡](https://dumps.tadiphone.dev/dumps/nothing/tetris/) |
+| CMF Phone (2) Pro | [這裡](https://dumps.tadiphone.dev/dumps/nothing/galaga/) |
+
+---
+
 ## 系統音效
 
-| 類型 | 連結 |
-|------|------|
-| 鬧鐘 | [tadiphone dump](https://dumps.tadiphone.dev/dumps/nothing/metroid/-/tree/qssi_64-user-15-AQ3A.250226.002-2507191646-release-keys/vendor/product/media/audio/alarms) |
-| 通知 | [tadiphone dump](https://dumps.tadiphone.dev/dumps/nothing/metroid/-/tree/qssi_64-user-15-AQ3A.250226.002-2507191646-release-keys/vendor/product/media/audio/notifications) |
-| 鈴聲 | [tadiphone dump](https://dumps.tadiphone.dev/dumps/nothing/metroid/-/tree/qssi_64-user-15-AQ3A.250226.002-2507191646-release-keys/vendor/product/media/audio/ringtones) |
+系統音效和鈴聲可從上方的轉儲連結下載。  
+檔案依晶片組不同位於以下路徑：
+
+| 類別 | Qualcomm 路徑 | MediaTek 路徑 |
+|----------|---------------|---------------|
+| 鬧鐘 | `vendor/product/media/audio/alarms` | `product/media/audio/alarms` |
+| 通知 | `vendor/product/media/audio/notifications` | `product/media/audio/notifications` |
+| 鈴聲 | `vendor/product/media/audio/ringtones` | `product/media/audio/ringtones` |
+| 介面音效 | `vendor/product/media/audio/ui` | `product/media/audio/ui` |
 
 ---
 
