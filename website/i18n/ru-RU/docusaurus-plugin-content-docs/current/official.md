@@ -18,6 +18,7 @@ keywords: [nothing official apps, nothing wallpapers, nothing fonts, nothing ker
 | Essential Search | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.essential.search) |
 | Essential Space | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.ntessentialspace) |
 | Gallery | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.gallery) |
+| Games | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.games) |
 | Glyph Composer | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.glyph.composer) |
 | Icon Pack | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.icon) |
 | Launcher | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.launcher) |
