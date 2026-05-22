@@ -141,9 +141,15 @@ keywords: [nothing official apps, nothing wallpapers, nothing fonts, nothing ker
 
 Программный инструментарий для создания пользовательских эффектов Glyph.
 
+:::note[Требование API-ключа]
+Начиная с Android 16 (Nothing OS 4.0), API-ключ GDK **больше не требуется**. Phone (1) — единственное устройство, которому по-прежнему нужен ключ, так как оно не получило обновление до Android 16. Разработчики, желающие поддерживать все устройства, включая ещё не обновлённые, могут запросить ключ.
+
+Для запроса ключа отправьте письмо на [GDKsupport@nothing.tech](mailto:GDKsupport@nothing.tech) с указанием причины запроса, имени пакета вашего приложения и SHA1 ключа подписи (production/release).
+:::
+
 | Ресурс | Ссылка |
 |----------|------|
-| Заявка на API-ключ | [Google Form](https://forms.gle/mriKRPdYJtgseCZS6) |
+| Заявка на API-ключ | [Google Form](https://forms.gle/mriKRPdYJtgseCZS6) · [Email](mailto:GDKsupport@nothing.tech) |
 | Glyph Developer Kit (SDK) | [GitHub](https://github.com/Nothing-Developer-Programme/Glyph-Developer-Kit) |
 | GlyphMatrix Sample Project | [GitHub](https://github.com/Nothing-Developer-Programme/GlyphMatrix-Example-Project) |
 | GlyphMatrix Developer Kit | [GitHub](https://github.com/Nothing-Developer-Programme/GlyphMatrix-Developer-Kit) |

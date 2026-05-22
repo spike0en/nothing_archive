@@ -141,9 +141,15 @@ APKミラーは [APKMirror](https://www.apkmirror.com/apk/nothing-technology-lim
 
 独自のGlyph体験を作成するためのツールキット。
 
+:::note[APIキーの要件]
+Android 16（Nothing OS 4.0）以降、GDK APIキーは**不要**になりました。Phone (1) はAndroid 16アップデートを受けていないため、キーが必要な唯一のデバイスです。まだ更新されていないデバイスを含むすべてのデバイスをサポートしたい開発者は、引き続きキーをリクエストできます。
+
+キーをリクエストするには、[GDKsupport@nothing.tech](mailto:GDKsupport@nothing.tech) にリクエストの理由、アプリのパッケージ名、署名キーのプロダクション/リリースSHA1を記載してメールを送信してください。
+:::
+
 | リソース | リンク |
 |----------|------|
-| APIキー申請 | [Google Form](https://forms.gle/mriKRPdYJtgseCZS6) |
+| APIキー申請 | [Google Form](https://forms.gle/mriKRPdYJtgseCZS6) · [Email](mailto:GDKsupport@nothing.tech) |
 | Glyph Developer Kit (SDK) | [GitHub](https://github.com/Nothing-Developer-Programme/Glyph-Developer-Kit) |
 | GlyphMatrix Example Project | [GitHub](https://github.com/Nothing-Developer-Programme/GlyphMatrix-Example-Project) |
 | GlyphMatrix Developer Kit | [GitHub](https://github.com/Nothing-Developer-Programme/GlyphMatrix-Developer-Kit) |

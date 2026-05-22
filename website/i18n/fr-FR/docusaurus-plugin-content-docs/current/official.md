@@ -141,9 +141,15 @@ Les fichiers se trouvent aux chemins suivants selon le chipset :
 
 Outils logiciels pour créer des expériences Glyph personnalisées.
 
+:::note[Exigence de clé API]
+À partir d'Android 16 (Nothing OS 4.0), une clé API GDK n'est **plus nécessaire**. Le Phone (1) est le seul appareil qui nécessite encore une clé, car il n'a pas reçu la mise à jour Android 16. Les développeurs souhaitant prendre en charge tous les appareils, y compris ceux pas encore mis à jour, peuvent toujours demander une clé.
+
+Pour demander une clé, envoyez un e-mail à [GDKsupport@nothing.tech](mailto:GDKsupport@nothing.tech) en indiquant la raison de votre demande, le nom du package de votre application et le SHA1 de production/release de votre clé de signature.
+:::
+
 | Ressource | Lien |
 |----------|------|
-| Demande de clé API | [Google Form](https://forms.gle/mriKRPdYJtgseCZS6) |
+| Demande de clé API | [Google Form](https://forms.gle/mriKRPdYJtgseCZS6) · [Email](mailto:GDKsupport@nothing.tech) |
 | Glyph Developer Kit (SDK) | [GitHub](https://github.com/Nothing-Developer-Programme/Glyph-Developer-Kit) |
 | Projet exemple GlyphMatrix | [GitHub](https://github.com/Nothing-Developer-Programme/GlyphMatrix-Example-Project) |
 | GlyphMatrix Developer Kit | [GitHub](https://github.com/Nothing-Developer-Programme/GlyphMatrix-Developer-Kit) |

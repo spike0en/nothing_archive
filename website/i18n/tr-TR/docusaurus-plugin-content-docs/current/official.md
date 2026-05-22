@@ -141,9 +141,15 @@ Dosyalar, yonga setine bağlı olarak aşağıdaki yollarda bulunur:
 
 Özel Glyph deneyimleri oluşturmak için yazılım araç seti.
 
+:::note[API Anahtarı Gereksinimi]
+Android 16 (Nothing OS 4.0) ile birlikte GDK API anahtarı **artık gerekli değildir**. Phone (1), Android 16 güncellemesini almadığı için hâlâ anahtar gerektiren tek cihazdır. Henüz güncellenmemiş olanlar dahil tüm cihazları desteklemek isteyen geliştiriciler yine de bir anahtar talep edebilir.
+
+Anahtar talep etmek için [GDKsupport@nothing.tech](mailto:GDKsupport@nothing.tech) adresine talebinizin nedenini, uygulamanızın paket adını ve imza anahtarınızın üretim/yayın SHA1 değerini içeren bir e-posta gönderin.
+:::
+
 | Kaynak | Bağlantı |
 |----------|------|
-| API Anahtarı Başvurusu | [Google Form](https://forms.gle/mriKRPdYJtgseCZS6) |
+| API Anahtarı Başvurusu | [Google Form](https://forms.gle/mriKRPdYJtgseCZS6) · [Email](mailto:GDKsupport@nothing.tech) |
 | Glyph Developer Kit (SDK) | [GitHub](https://github.com/Nothing-Developer-Programme/Glyph-Developer-Kit) |
 | GlyphMatrix Örnek Proje | [GitHub](https://github.com/Nothing-Developer-Programme/GlyphMatrix-Example-Project) |
 | GlyphMatrix Developer Kit | [GitHub](https://github.com/Nothing-Developer-Programme/GlyphMatrix-Developer-Kit) |

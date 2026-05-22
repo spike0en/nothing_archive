@@ -141,9 +141,15 @@ APK 備用來源：[APKMirror](https://www.apkmirror.com/apk/nothing-technology-
 
 用於建立自訂 Glyph 體驗的軟體工具包。
 
+:::note[API 金鑰要求]
+自 Android 16（Nothing OS 4.0）起，GDK API 金鑰**不再需要**。Phone (1) 是唯一仍需要金鑰的裝置，因為它未獲得 Android 16 更新。希望支援所有裝置（包括尚未更新的裝置）的開發者仍可申請金鑰。
+
+如需申請金鑰，請發送電子郵件至 [GDKsupport@nothing.tech](mailto:GDKsupport@nothing.tech)，說明申請原因、應用程式的套件名稱，以及簽署金鑰的正式版/發行版 SHA1。
+:::
+
 | 資源 | 連結 |
 |------|------|
-| API 金鑰申請 | [Google 表單](https://forms.gle/mriKRPdYJtgseCZS6) |
+| API 金鑰申請 | [Google 表單](https://forms.gle/mriKRPdYJtgseCZS6) · [Email](mailto:GDKsupport@nothing.tech) |
 | Glyph 開發者套件（SDK） | [GitHub](https://github.com/Nothing-Developer-Programme/Glyph-Developer-Kit) |
 | GlyphMatrix 範例專案 | [GitHub](https://github.com/Nothing-Developer-Programme/GlyphMatrix-Example-Project) |
 | GlyphMatrix 開發者套件 | [GitHub](https://github.com/Nothing-Developer-Programme/GlyphMatrix-Developer-Kit) |

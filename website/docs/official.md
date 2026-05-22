@@ -141,9 +141,15 @@ The files are located in the following paths depending on the chipset:
 
 Software toolkit for creating custom Glyph experiences.
 
+:::note[API Key Requirement]
+Starting with Android 16 (Nothing OS 4.0), a GDK API key is **no longer required**. Phone (1) is the only device that still requires a key, as it did not receive the Android 16 update. Developers who want to support all devices, including those not yet updated, may still request a key.
+
+To request a key, send an email to [GDKsupport@nothing.tech](mailto:GDKsupport@nothing.tech) with the reason for your request, your app's package name, and the production/release SHA1 of your signing key.
+:::
+
 | Resource | Link |
 |----------|------|
-| API Key Application | [Google Form](https://forms.gle/mriKRPdYJtgseCZS6) |
+| API Key Application | [Google Form](https://forms.gle/mriKRPdYJtgseCZS6) · [Email](mailto:GDKsupport@nothing.tech) |
 | Glyph Developer Kit (SDK) | [GitHub](https://github.com/Nothing-Developer-Programme/Glyph-Developer-Kit) |
 | GlyphMatrix Sample Project | [GitHub](https://github.com/Nothing-Developer-Programme/GlyphMatrix-Example-Project) |
 | GlyphMatrix Developer Kit | [GitHub](https://github.com/Nothing-Developer-Programme/GlyphMatrix-Developer-Kit) |
