@@ -187,17 +187,17 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/banner.png',
+    image: 'img/banner-v2.png',
     metadata: [
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'Nothing Archive' },
-      { property: 'og:image', content: 'https://spike0en.github.io/nothing_archive/img/banner.png' },
+      { property: 'og:image', content: 'https://spike0en.github.io/nothing_archive/img/banner-v2.png' },
       { property: 'og:image:width', content: '2160' },
       { property: 'og:image:height', content: '1080' },
       { property: 'og:image:type', content: 'image/png' },
       { property: 'og:image:alt', content: 'Nothing Archive — Nothing OS Firmware & Community Resources' },
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:image', content: 'https://spike0en.github.io/nothing_archive/img/banner.png' },
+      { name: 'twitter:image', content: 'https://spike0en.github.io/nothing_archive/img/banner-v2.png' },
     ],
     colorMode: {
       defaultMode: 'dark',
