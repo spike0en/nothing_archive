@@ -149,6 +149,7 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 |---------|-----------|-------------|
 | [CMF Wiki](https://www.reddit.com/r/CMFTech/wiki/index/) | guidomelvin | r/CMFTech 維基 |
 | [Disable Essential Space](https://github.com/AntonDevia/Disable-Essential-Space) | AntonDevia | 用於完全停用 Nothing OS 上的 Essential Space 並封鎖 Essential 鍵的 ADB 腳本 |
+| [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | 適用於 Nothing 與 CMF 音訊裝置的原生 Rust 桌面用戶端 |
 | [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | 基於 Rust 的 Linux 應用程式，用於控制 Nothing 耳機的 ANC 模式 |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | 用於 Phone (2a) 系列 與 CMF Phone (1) 的完整性檢查繞過 PoC |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid 巨集 |

@@ -149,6 +149,7 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 |---------|-----------|-------------|
 | [CMF Wiki](https://www.reddit.com/r/CMFTech/wiki/index/) | guidomelvin | r/CMFTech Wiki |
 | [Disable Essential Space](https://github.com/AntonDevia/Disable-Essential-Space) | AntonDevia | ADB-скрипт для полного отключения Essential Space и блокировки клавиши Essential на Nothing OS |
+| [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | Нативный настольный клиент на Rust для аудиоустройств Nothing и CMF |
 | [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Linux-приложение на Rust для управления режимами ANC наушников Nothing |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | PoC для обхода проверки целостности для Phone (2a) Ряд и CMF Phone (1) |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Макросы для приложения Macrodroid |

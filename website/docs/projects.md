@@ -134,6 +134,7 @@ Essential resources including wikis, firmware archives, and system repair tools.
 |---------|-----------|-------------|
 | [CMF Wiki](https://www.reddit.com/r/CMFTech/wiki/index/) | guidomelvin | r/CMFTech Wiki |
 | [Disable Essential Space](https://github.com/AntonDevia/Disable-Essential-Space) | AntonDevia | ADB script to completely disable Essential Space and block the Essential Key on Nothing OS |
+| [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | Native Rust desktop client for Nothing and CMF audio devices |
 | [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Rust based linux app to control Nothing earbuds’ ANC modes |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | Integrity check bypass PoC for Phone (2a) Series & CMF Phone (1) |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid macros |

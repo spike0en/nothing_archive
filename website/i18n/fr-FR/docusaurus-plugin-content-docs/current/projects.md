@@ -149,6 +149,7 @@ Ressources essentielles incluant des wikis, des archives de firmware et des outi
 |---------|-----------|-------------|
 | [CMF Wiki](https://www.reddit.com/r/CMFTech/wiki/index/) | guidomelvin | Wiki r/CMFTech |
 | [Disable Essential Space](https://github.com/AntonDevia/Disable-Essential-Space) | AntonDevia | Script ADB pour désactiver complètement Essential Space et bloquer la touche Essential sur Nothing OS |
+| [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | Client de bureau natif en Rust pour les appareils audio Nothing et CMF |
 | [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Application Linux basée sur Rust pour contrôler les modes ANC des Nothing Ear |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | PoC de contournement du test d'intégrité pour Phone (2a) Série et CMF Phone (1) |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macros Macrodroid |

@@ -149,6 +149,7 @@ Vikiler, yazılım arşivleri ve sistem onarım araçları dahil temel kaynaklar
 |---------|-----------|-------------|
 | [CMF Wiki](https://www.reddit.com/r/CMFTech/wiki/index/) | guidomelvin | r/CMFTech wikisi |
 | [Disable Essential Space](https://github.com/AntonDevia/Disable-Essential-Space) | AntonDevia | Nothing OS'ta Essential Space'i tamamen devre dışı bırakmak ve Essential Key'i engellemek için ADB betiği |
+| [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | Nothing ve CMF ses cihazları için yerel Rust masaüstü istemcisi |
 | [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Nothing kulaklıkların ANC modlarını kontrol etmek için Rust tabanlı Linux uygulaması |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | Phone (2a) Seri ve CMF Phone (1) için Integrity Bypass PoC |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid macroları |
