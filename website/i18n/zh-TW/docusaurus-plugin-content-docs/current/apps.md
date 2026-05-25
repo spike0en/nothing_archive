@@ -191,6 +191,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Nothing 的 Essential Space 應用程式的「Vibe coded」版本。 |
 | [Currency](https://curency.pages.dev/) | Earendel | 貨幣換算網頁應用程式 |
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | 採用點陣字體的計算機應用程式。 |
+| [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | AI 驅動瀏覽器 |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | 受 Nothing 啟發的跨裝置核心 Essential Space 體驗，具備快速截圖、筆記、語音備忘錄等功能 |
 | [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | 恐龍遊戲靈感作品 |
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | 附小工具的手電筒應用程式 |
@@ -208,7 +209,6 @@ Glyph Matrix 的互動玩具和遊戲。
 | [No Calendar](https://play.google.com/store/apps/details?id=com.calendar.nocalendar) | NoAppsStudio | 附 Google 同步的行事曆 |
 | [No Volume](https://play.google.com/store/apps/details?id=com.nostudio.novolume) | NoAppsStudio | 可自訂音量滑桿 |
 | [Nothing Audio Recorder](https://play.google.com/store/apps/details?id=com.service.rare.audio.recorder) | Cloud Nine Labs | 錄音機 |
-| [Nothing Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | AI 驅動瀏覽器 |
 | [Nothing Calculator](https://github.com/git-jamesfrench/NothingCalculator) | git-jamesfrench | 社群製作的 Nothing 計算機 |
 | [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | 世界時鐘、計時器、碼錶 |
 | [Nothing Compass](https://github.com/ISO53/Nothing-Compass) | ISO53 | Nothing 美學風格的指南針與傾斜計 |

@@ -193,8 +193,9 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Compass](https://github.com/Earendel-lab/Compass) | Earendel | Простой компас |
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Стилизованная копия приложения «Essential space» от Nothing |
 | [Currency](https://curency.pages.dev/) | Earendel | Веб-приложение для конвертации валют |
-| [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Основной функционал Essential Space в стиле Nothing для всех устройств: быстрые скриншоты, заметки, голосовые заметки и многое другое |
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Калькулятор со шрифтами в стиле dot matrix | 
+| [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | Браузер на базе ИИ |
+| [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Основной функционал Essential Space в стиле Nothing для всех устройств: быстрые скриншоты, заметки, голосовые заметки и многое другое |
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | Используйте носимые Bluetooth-устройства без OEM-приложений, аккаунтов или облака |
 | [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | Вдохновлено игрой про динозаврика |
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Приложение для фонарика с виджетами |
@@ -212,7 +213,6 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [No Calendar](https://play.google.com/store/apps/details?id=com.calendar.nocalendar) | NoAppsStudio | Календарь с синхронизацией Google |
 | [No Volume](https://play.google.com/store/apps/details?id=com.nostudio.novolume) | NoAppsStudio | Настраиваемый слайдер громкости |
 | [Nothing Audio Recorder](https://play.google.com/store/apps/details?id=com.service.rare.audio.recorder) | Cloud Nine Labs | Диктофон |
-| [Nothing Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | Браузер на базе ИИ |
 | [Nothing Calculator](https://github.com/git-jamesfrench/NothingCalculator) | git-jamesfrench | Калькулятор Nothing от сообщества |
 | [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | Мировое время, таймер, секундомер |
 | [Nothing Compass](https://github.com/ISO53/Nothing-Compass) | ISO53 | Компас и инклинометр в эстетике Nothing |
