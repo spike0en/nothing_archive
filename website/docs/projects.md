@@ -109,7 +109,7 @@ Browser extensions and web-based applications inspired by Nothing OS.
 | [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing-themed browser New Tab extension |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal-inspired homepage |
-| [Ndot Logo Generator](https://github.com/Lovinoes/ndot-logo-generator) | Lovinoes | HTML logo generator using the Nothing fonts |
+| [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | HTML logo generator using the Nothing fonts ([Repo](https://github.com/Lovinoes/ndot-logo-generator)) |
 | [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | GNOME extension for ANC control on Nothing Ear |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Browser New Tab extension |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome extension |

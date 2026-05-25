@@ -118,7 +118,7 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 | [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Расширение для браузера «Новая вкладка» в стиле Nothing |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Домашняя страница в терминальном стиле |
-| [Ndot Logo Generator](https://github.com/Lovinoes/ndot-logo-generator) | Lovinoes | Генератор HTML-логотипов с использованием шрифтов Nothing |
+| [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | Генератор HTML-логотипов с использованием шрифтов Nothing ([Repo](https://github.com/Lovinoes/ndot-logo-generator)) |
 | [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | Расширение GNOME для управления ANC на Nothing Ear |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Расширение для браузера «Новая вкладка» |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Расширение для Chrome |

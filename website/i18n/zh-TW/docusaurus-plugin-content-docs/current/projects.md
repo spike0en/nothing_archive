@@ -118,7 +118,7 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing 主題的瀏覽器新分頁擴充 |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | 終端機風格首頁 |
-| [Ndot Logo Generator](https://github.com/Lovinoes/ndot-logo-generator) | Lovinoes | 使用 Nothing 字型的 HTML 標誌產生器 |
+| [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | 使用 Nothing 字型的 HTML 標誌產生器 ([Repo](https://github.com/Lovinoes/ndot-logo-generator)) |
 | [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | 用於控制 Nothing Ear ANC 的 GNOME 擴充 |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | 瀏覽器新分頁擴充 |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome 擴充 |

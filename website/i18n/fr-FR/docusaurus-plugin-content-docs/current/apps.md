@@ -18,11 +18,6 @@ Mini-applications hyper-personnalisées générées par IA qui étendent l'écos
 
 ---
 
-
-- [Nothing Playground](https://playground.nothing.tech/apps)
-
----
-
 ## Utilisant le Glyph
 
 Applications s'intégrant à l'interface Glyph des téléphones Nothing.
@@ -290,5 +285,3 @@ Il est conseillé de se référer à la documentation et aux notes de version de
 | Ayra Hikari | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://t.me/s/AyraProject?q=nothing) |
 | Android Port World | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://t.me/s/AndroidPortWorld?q=nothing) |
 | El Pong | [Telegram](https://t.me/s/LigmaCore?q=nothing) |
-
-
