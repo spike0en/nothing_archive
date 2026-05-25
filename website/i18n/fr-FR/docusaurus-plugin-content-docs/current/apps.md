@@ -137,6 +137,7 @@ Widgets personnalisés pour l'écran d'accueil, allant des moniteurs système au
 
 | Application | Développeur | Description |
 |-----|-----------|-------------|
+| [Dot Matrix Widget](https://github.com/Swapnil41/DotMatrixWidget) | Swapnil41 | Widget d'horloge à matrice de points avec fond transparent |
 | [Dot Widgets](https://play.google.com/store/apps/details?id=com.lended.widjets) | Creepsmile | Outils du quotidien inspirés par la matrice de points de Nothing |
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Widgets minimaux |
 | [Essential Widgets](https://github.com/Essential-Dots/Essential-Widgets) | Apheff | Widgets personnalisés créés par la communauté |

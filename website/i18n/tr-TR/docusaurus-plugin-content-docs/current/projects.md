@@ -108,6 +108,7 @@ Nothing OS'tan ilham alan tarayıcı eklentileri ve web tabanlı uygulamalar.
 | [Essential Space Web](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Minimalist not alanı |
 | [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing temalı "Yeni Sekme" eklentisi |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal esintili ana sayfa |
+| [Ndot Logo Generator](https://github.com/Lovinoes/ndot-logo-generator) | Lovinoes | Nothing yazı tiplerini kullanan HTML logo oluşturucu |
 | [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | Nothing Ear ANC kontrolü için GNOME eklentisi |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Tarayıcı "Yeni Sekme" eklentisi |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome eklentisi |

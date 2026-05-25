@@ -137,6 +137,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 
 | Приложение | Разработчик | Описание |
 |-----|-----------|-------------|
+| [Dot Matrix Widget](https://github.com/Swapnil41/DotMatrixWidget) | Swapnil41 | Виджет часов Dot Matrix с прозрачным фоном |
 | [Dot Widgets](https://play.google.com/store/apps/details?id=com.lended.widjets) | Creepsmile | Инструменты на каждый день, вдохновленные матричным дизайном Nothing |
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Минималистичные виджеты |
 | [Essential Widgets](https://github.com/Essential-Dots/Essential-Widgets) | Apheff | Персонализированные виджеты, созданные сообществом | 

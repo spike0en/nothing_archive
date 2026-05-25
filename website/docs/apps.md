@@ -137,6 +137,7 @@ Custom widgets for the home screen, from system monitors to minimalist tools.
 
 | App | Developer | Description |
 |-----|-----------|-------------|
+| [Dot Matrix Widget](https://github.com/Swapnil41/DotMatrixWidget) | Swapnil41 | Dot matrix clock widget with transparent background |
 | [Dot Widgets](https://play.google.com/store/apps/details?id=com.lended.widjets) | Creepsmile | Nothing-inspired dot-matrix everyday tools |
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Minimal widgets |
 | [Essential Widgets](https://github.com/Essential-Dots/Essential-Widgets) | Apheff | Personalized widgets made by the community | 

@@ -108,6 +108,7 @@ Extensions de navigateur et applications basées sur le web inspirées par Nothi
 | [Essential Space Web](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Espace de notes minimaliste |
 | [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Extension "Nouvel onglet" au thème Nothing |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Page d'accueil inspirée par le terminal |
+| [Ndot Logo Generator](https://github.com/Lovinoes/ndot-logo-generator) | Lovinoes | Générateur de logo HTML utilisant les polices de Nothing |
 | [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | Extension GNOME pour le contrôle de l'ANC sur Nothing Ear |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Extension "Nouvel onglet" pour navigateur |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Extension Chrome |
