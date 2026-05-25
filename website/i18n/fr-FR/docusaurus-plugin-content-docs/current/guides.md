@@ -662,7 +662,7 @@ Installez les pilotes appropriés pour le fabricant du processeur (SoC) de votre
 - [NTPI Dumper](https://github.com/AaronXenos/ntpi_dumper) par AaronXenos
 - [Phone (2a) Series Hard Brick Helper](https://github.com/mistrmochov/nothing-pacman-hardbrick) par mistrmochov
 - [Phone (2a) Series Flash Tool](https://github.com/R0rt1z2/pacman-flash-tool) par R0rt1z2
-- [Firehose Auth Files for Nothing Phones](https://github.com/plusonsoy/nothing_edl) par plusonsoy
+- [Firehose Auth Files for Nothing Phones](https://github.com/Vagelis1608/nothing_edl) par plusonsoy
 
 
 ---

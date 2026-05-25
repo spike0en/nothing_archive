@@ -661,7 +661,7 @@ Cihazınızın SoC üreticisine uygun sürücüleri yükleyin.
 - [NTPI Dumper](https://github.com/AaronXenos/ntpi_dumper) (AaronXenos tarafından)
 - [Phone (2a) Series Hard Brick Helper](https://github.com/mistrmochov/nothing-pacman-hardbrick) (mistrmochov tarafından)
 - [Phone (2a) Series Flash Tool](https://github.com/R0rt1z2/pacman-flash-tool) (R0rt1z2 tarafından)
-- [Firehose Auth Files for Nothing Phones](https://github.com/plusonsoy/nothing_edl) (plusonsoy tarafından)
+- [Firehose Auth Files for Nothing Phones](https://github.com/Vagelis1608/nothing_edl) (plusonsoy tarafından)
 
 
 ---

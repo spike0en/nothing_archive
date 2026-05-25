@@ -661,7 +661,7 @@ C. **После блокировки**
 - [NTPI Dumper](https://github.com/AaronXenos/ntpi_dumper) от AaronXenos
 - [Phone (2a) Series Hard Brick Helper](https://github.com/mistrmochov/nothing-pacman-hardbrick) от mistrmochov
 - [Phone (2a) Series Flash Tool](https://github.com/R0rt1z2/pacman-flash-tool) от R0rt1z2
-- [Firehose Auth Files for Nothing Phones](https://github.com/plusonsoy/nothing_edl) от plusonsoy
+- [Firehose Auth Files for Nothing Phones](https://github.com/Vagelis1608/nothing_edl) от plusonsoy
 
 
 ---

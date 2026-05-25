@@ -661,7 +661,7 @@ C. **重新鎖定後**
 - [NTPI Dumper](https://github.com/AaronXenos/ntpi_dumper) (由 AaronXenos 提供)
 - [Phone (2a) Series Hard Brick Helper](https://github.com/mistrmochov/nothing-pacman-hardbrick) (由 mistrmochov 提供)
 - [Phone (2a) Series Flash Tool](https://github.com/R0rt1z2/pacman-flash-tool) (由 R0rt1z2 提供)
-- [Firehose Auth Files for Nothing Phones](https://github.com/plusonsoy/nothing_edl) (由 plusonsoy 提供)
+- [Firehose Auth Files for Nothing Phones](https://github.com/Vagelis1608/nothing_edl) (由 plusonsoy 提供)
 
 
 ---

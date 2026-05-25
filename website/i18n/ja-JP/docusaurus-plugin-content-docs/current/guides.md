@@ -661,7 +661,7 @@ C. **再ロック後**
 - [NTPI Dumper](https://github.com/AaronXenos/ntpi_dumper) by AaronXenos
 - [Phone (2a) Series Hard Brick Helper](https://github.com/mistrmochov/nothing-pacman-hardbrick) by mistrmochov
 - [Phone (2a) Series Flash Tool](https://github.com/R0rt1z2/pacman-flash-tool) by R0rt1z2
-- [Firehose Auth Files for Nothing Phones](https://github.com/plusonsoy/nothing_edl) by plusonsoy
+- [Firehose Auth Files for Nothing Phones](https://github.com/Vagelis1608/nothing_edl) by plusonsoy
 
 
 ---
