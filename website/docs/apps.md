@@ -171,10 +171,10 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [N Dot Notes](https://github.com/AzhamProdLive/Notes_App_Nothing) | AzhamProdLive | Notes app with NDot font theme |
 | [N Notes](https://play.google.com/store/apps/details?id=com.bhavukverma.nNotes) | Bhavuk Verma | Open source Nothing OS style notes |
 | [No Things To Do List](https://play.google.com/store/apps/details?id=com.todo.nothingwidgets) | Martin Diermayr | Task/to-do app with widgets |
-| [Nothing To Do](https://github.com/amriths04/NothingToDo) | amriths04 | Nothing to do android app |
 | [Notes](https://play.google.com/store/apps/details?id=com.monospace.notes) | monospace | Notes app with built-in security |
 | [Nothing Notes](https://play.google.com/store/apps/details?id=com.ApexCreator.nothingnotes) | Apex Creator | Minimal notepad |
 | [Nothing Notes](https://github.com/ThriveEngineer/nothing.notes) | ThriveEngineer | Nothing themed notes app |
+| [Nothing To Do](https://github.com/amriths04/NothingToDo) | amriths04 | Nothing to do android app |
 | [Nothiq](https://play.google.com/store/apps/details?id=com.rontag.nothiq) | Rontag | Nothing-inspired notes and task management app |
 | [Noting](https://play.google.com/store/apps/details?id=com.hearthborn.studios.notingnotes) | Hearthborn | Notes and tasks with cloud backup |
 | [Seton](https://github.com/arijit4/Seton) | arijit4 | Pin and edit notes with widget |
@@ -193,34 +193,39 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Compass](https://github.com/Earendel-lab/Compass) | Earendel | Simple compass |
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Vibe coded copy of Nothing's essential space app |
 | [Currency](https://curency.pages.dev/) | Earendel | Currency converter web app |
-| [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Calculator app with dot matrix fonts | 
+| [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Calculator app with dot matrix fonts |
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | AI-powered browser |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Nothing-inspired core Essential Space experience for all devices, featuring quick screenshots, notes, voice memos, and more |
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | Use Bluetooth wearables without OEM apps, accounts, or cloud |
-| [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | Dino game inspired |
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Flashlight app with widgets |
 | [Hey Battery](https://github.com/ghostyapps/HeyBattery) | Candan | Battery usage tracker |
 | [Hey Cam](https://github.com/ghostyapps/HeyCam) | Candan | Minimalist camera with Glyph Matrix support |
 | [Mate App](https://github.com/shahriaravi/MateApp) | shahriaravi | Offline finance tracker |
 | [Minimal Browser](https://github.com/aaswani-v/Minimal-Browser) | aaswani-v | Browser with AI summarization |
+| [Missing Core Music](https://play.google.com/store/apps/details?id=com.cyanchill.missingcore.music) | MissingCore | Offline music player |
 | [N Board](https://github.com/MathieuDvv/Nboard) | MathieuDvv | Nothing-inspired keyboard with AI tools |
 | [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Calculator with Nothing style |
 | [N Clock](https://play.google.com/store/apps/details?id=de.nostream.nclock) | nostream | Minimalist clock app inspired by the Nothing design language |
 | [N Dial](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ndial) | Hearthborn | Phone dialer and contacts |
 | [N Keyboard](https://github.com/arunk140/nth-kbd) | arunk14 | Themed keyboard |
+| [N Music](https://github.com/alimohsenmaruf/N-Music) | alimohsenmaruf | Simple Yt music wrapper Nothing OS styled Music player |
 | [N Recipe](https://play.google.com/store/apps/details?id=com.a3chron.nrecipe) | a3chron | Offline recipebook |
 | [Neo Calc](https://play.google.com/store/apps/details?id=com.lended.neocalc) | Creepsmile | Nothing OS inspired calculator |
 | [No Calendar](https://play.google.com/store/apps/details?id=com.calendar.nocalendar) | NoAppsStudio | Calendar with Google sync |
 | [No Volume](https://play.google.com/store/apps/details?id=com.nostudio.novolume) | NoAppsStudio | Customisable volume slider |
+| [Noid](https://play.google.com/store/apps/details?id=com.techsip.noid) | TechSip Studios | File management |
 | [Nothing Audio Recorder](https://play.google.com/store/apps/details?id=com.service.rare.audio.recorder) | Cloud Nine Labs | Audio recorder |
 | [Nothing Calculator](https://github.com/git-jamesfrench/NothingCalculator) | git-jamesfrench | Community made Nothing calculator |
 | [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | World clock, timer, stopwatch |
+| [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | Mobile app for nothing.community |
 | [Nothing Compass](https://github.com/ISO53/Nothing-Compass) | ISO53 | Compass and Inclinometer in Nothing aesthetics |
 | [Nothing Desk Clock](https://play.google.com/store/apps/details?id=com.ApexCreator.deskclock) | Apex Creators | Desk clock app |
 | [Nothing Files](https://github.com/Mo-Array/Nothing-Files) | Mo-Array | Nothing OS themed file manager app |
 | [Nothing Gallery](https://github.com/jerichoi224/Nothing-Gallery) | jerichoi224 | Gallery app |
 | [Nothing K](https://github.com/cuadratico/NothingK) | cuadratico | Password vault |
+| [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Dynamic Island for Nothing OS |
 | [Nothing LED Banner](https://play.google.com/store/apps/details?id=com.ApexCreator.thebannerapp) | Apex Creators | LED banner creator |
+| [Nothing News](https://play.google.com/store/apps/details?id=com.nothing.news) | Mirko_ddd | Community news |
 | [Nothing Quick Tools](https://github.com/DylanAkp/NothingQuickTools) | DylanAkp | Quick tiles for Phone (2) |
 | [Nothing Weather](https://play.google.com/store/apps/details?id=com.ApexCreator.nothing_weather) | Apex Creators | Weather app |
 | [Nx Calculator](https://github.com/montybytes/nxcalculator) | montybytes | Simple calculator |
@@ -239,6 +244,17 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 
 ---
 
+## Games
+
+General games inspired by the Nothing design language.
+
+| App | Developer | Description |
+|-----|-----------|-------------|
+| [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | Dino game inspired |
+| [Tetris](https://github.com/ItsCR24/tetris-m3) | ItsCR24 | Material You & Nothing OS inspired Tetris game |
+
+---
+
 ## Ported Apps
 
 Unofficial ports of Nothing OS apps for all devices.
@@ -253,20 +269,4 @@ It is advised to refer to the documentation and release notes from the linked Te
 | Android Port World | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://t.me/s/AndroidPortWorld?q=nothing) |
 | El Pong | [Telegram](https://t.me/s/LigmaCore?q=nothing) |
 
----
-
-## Other Community Apps
-
-A collection of various community-made apps including news hubs, social tools, and games.
-
-| App | Developer | Description |
-|-----|-----------|-------------|
-| [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
-| [Missing Core Music](https://play.google.com/store/apps/details?id=com.cyanchill.missingcore.music) | MissingCore | Offline music player |
-| [N Music](https://github.com/alimohsenmaruf/N-Music) | alimohsenmaruf | Simple Yt music wrapper Nothing OS styled Music player |
-| [Noid](https://play.google.com/store/apps/details?id=com.techsip.noid) | TechSip Studios | File management |
-| [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | Mobile app for nothing.community |
-| [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Dynamic Island for Nothing OS |
-| [Nothing News](https://play.google.com/store/apps/details?id=com.nothing.news) | Mirko_ddd | Community news |
-| [Tetris](https://github.com/ItsCR24/tetris-m3) | ItsCR24 | Material You & Nothing OS inspired Tetris game |
 

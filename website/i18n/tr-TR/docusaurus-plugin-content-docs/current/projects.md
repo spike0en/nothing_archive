@@ -9,9 +9,11 @@ keywords: [nothing projeleri, glyph araçları, nothing root, nothing magisk, ö
 
 Nothing topluluğu tarafında sürdürülen projeler.
 
+
 ## Glyph Araçları
 
 Özel Glyph tonları ve kompozisyonları oluşturmak için araçlar koleksiyonu.
+
 
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
@@ -38,9 +40,11 @@ Nothing topluluğu tarafında sürdürülen projeler.
 
 Masaüstü kurulumları, widget'lar ve çeşitli platformlar için temalar dahil özelleştirme projeleri.
 
+
 ### Widget'lar
 
 Various platformlar ve masaüstü ortamları için Nothing OS'tan ilham alan topluluk yapımı widget'lar.
+
 
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
@@ -54,6 +58,7 @@ Various platformlar ve masaüstü ortamları için Nothing OS'tan ilham alan top
 ### Masaüstü ve IDE Temaları
 
 Nothing'in tasarım diline uygun Arch Linux, VS Code ve diğer geliştirme ortamları için temalar ve rices.
+
 
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
@@ -70,6 +75,7 @@ Nothing'in tasarım diline uygun Arch Linux, VS Code ve diğer geliştirme ortam
 
 Nothing esintili kurulumunuzu tamamlamak için özel yazı tipleri ve stil araçları.
 
+
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
 | [Ntype JP](https://github.com/Nothing-Japanese-font-project/Ntype-JP/releases) | shibadogcap | Japonca yazı tipi |
@@ -77,6 +83,7 @@ Nothing esintili kurulumunuzu tamamlamak için özel yazı tipleri ve stil araç
 ### Duvar Kağıtları
 
 Nothing tarzı duvar kağıtları oluşturmak için yardımcı araçlar.
+
 
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
@@ -90,6 +97,7 @@ Nothing tarzı duvar kağıtları oluşturmak için yardımcı araçlar.
 
 Diğer geliştiricilerin Nothing'den ilham alan projeler oluşturmasına yardımcı olmak için tasarlanmış kaynaklar ve araçlar.
 
+
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
 | [Dot Frame](https://github.com/NyxLumen/DotFrame) | NyxLumen | Nothing odaklı videodan ASCII'ye dönüştürücü |
@@ -102,17 +110,20 @@ Diğer geliştiricilerin Nothing'den ilham alan projeler oluşturmasına yardım
 
 Nothing OS'tan ilham alan tarayıcı eklentileri ve web tabanlı uygulamalar.
 
+
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Web üzerinden kulaklık kontrolü |
 | [Essential Space Web](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Minimalist not alanı |
 | [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing temalı "Yeni Sekme" eklentisi |
+| [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal esintili ana sayfa |
 | [Ndot Logo Generator](https://github.com/Lovinoes/ndot-logo-generator) | Lovinoes | Nothing yazı tiplerini kullanan HTML logo oluşturucu |
 | [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | Nothing Ear ANC kontrolü için GNOME eklentisi |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Tarayıcı "Yeni Sekme" eklentisi |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome eklentisi |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Nothing OS esintili web hava durumu uygulaması |
+| [Spin The Bottle](https://dotmatrix-beerbottle.vercel.app/) | MadGlacierRunner | Şişe çevirmece oyun simülatörü |
 
 ---
 
@@ -124,9 +135,15 @@ Nothing kulaklıkları için topluluk yapımı EQ profilleri:
 
 ---
 
+
+- [Stok EQ Profilleri](https://playground.nothing.tech/eqs) — [Nothing X](https://play.google.com/store/apps/details?id=com.nothing.smartcenter) aracılığıyla Gelişmiş Ekolayzır ile uyumludur.
+
+---
+
 ## Kaynaklar ve Yardımcı Araçlar
 
 Vikiler, yazılım arşivleri ve sistem onarım araçları dahil temel kaynaklar.
+
 
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
@@ -148,23 +165,16 @@ Vikiler, yazılım arşivleri ve sistem onarım araçları dahil temel kaynaklar
 
 ---
 
-## Diğer Projeler
-
-Topluluktan çeşitli eğlenceli ve deneysel projeler.
-
-| Proje | Geliştirici | Açıklama |
-|---------|-----------|-------------|
-| [Spin The Bottle](https://dotmatrix-beerbottle.vercel.app/) | MadGlacierRunner | Şişe çevirmece oyun simülatörü |
-
----
-
 ## Root Modülleri
 
 :::warning
 Bunlar root erişimi (KernelSU veya Magisk) gerektirir. Dikkatli ilerleyin!
 :::
 
-| Modül | Yazar | Açıklama |
+:::warning
+:::
+
+| Module | Author | Açıklama |
 |--------|--------|-------------|
 | [Nothing AI Changer](https://github.com/Martmists-GH/Nothing-AI-Changer) | Martmists-GH | ChatGPT entegrasyonunu başka bir uygulama ile değiştirir |
 | [Nothing Battery Fix](https://github.com/Farpathan/Nothing-Battery-Fix) | Farpathan | Klasik pil yüzdesi stilini geri yükler |

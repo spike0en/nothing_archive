@@ -9,9 +9,11 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 
 Проекты, поддерживаемые сообществом Nothing.
 
+
 ## Инструменты Glyph
 
 Различные инструменты для создания настраиваемых мелодий и эффектов Glyph.
+
 
 | Проект | Разработчик | Описание |
 |---------|-----------|-------------|
@@ -38,9 +40,11 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 
 Проекты по персонализации, включая настройки рабочего стола, виджеты и темы для разных платформ.
 
+
 ### Виджеты
 
 Виджеты, созданные сообществом и вдохновленные Nothing OS, для различных платформ и рабочих сред.
+
 
 | Проект | Разработчик | Описание |
 |---------|-----------|-------------|
@@ -54,6 +58,7 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 ### Темы рабочего стола и сред разработки (IDE)
 
 Темы для Arch Linux, VS Code и других сред разработки в стиле дизайна Nothing.
+
 
 | Проект | Разработчик | Описание |
 |---------|-----------|-------------|
@@ -70,6 +75,7 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 
 Пользовательские шрифты и инструменты для стилизации визуального интерфейса.
 
+
 | Проект | Разработчик | Описание |
 |---------|-----------|-------------|
 | [Ntype JP](https://github.com/Nothing-Japanese-font-project/Ntype-JP/releases) | shibadogcap | Японский шрифт |
@@ -77,6 +83,7 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 ### Обои
 
 Утилиты для создания и генерации обоев в стиле Nothing.
+
 
 | Проект | Разработчик | Описание |
 |---------|-----------|-------------|
@@ -90,6 +97,7 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 
 Ресурсы и утилиты, созданные в помощь разработчикам для проектов в стиле Nothing.
 
+
 | Проект | Разработчик | Описание |
 |---------|-----------|-------------|
 | [Dot Frame](https://github.com/NyxLumen/DotFrame) | NyxLumen | Конвертер видео в ASCII в стиле Nothing |
@@ -102,17 +110,20 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 
 Расширения для браузеров и веб-приложения в стиле Nothing OS.
 
+
 | Проект | Разработчик | Описание |
 |---------|-----------|-------------|
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Управление наушниками через веб |
 | [Essential Space Web](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Минималистичное пространство для заметок |
 | [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Расширение для браузера «Новая вкладка» в стиле Nothing |
+| [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Домашняя страница в терминальном стиле |
 | [Ndot Logo Generator](https://github.com/Lovinoes/ndot-logo-generator) | Lovinoes | Генератор HTML-логотипов с использованием шрифтов Nothing |
 | [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | Расширение GNOME для управления ANC на Nothing Ear |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Расширение для браузера «Новая вкладка» |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Расширение для Chrome |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Веб-приложение погоды в стиле Nothing OS |
+| [Spin The Bottle](https://dotmatrix-beerbottle.vercel.app/) | MadGlacierRunner | Симулятор игры в бутылочку |
 
 ---
 
@@ -124,9 +135,15 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 
 ---
 
+
+- [Стоковые профили EQ](https://playground.nothing.tech/eqs) — Совместимо с расширенным эквалайзером через [Nothing X](https://play.google.com/store/apps/details?id=com.nothing.smartcenter)
+
+---
+
 ## Ресурсы и утилиты
 
 Полезные ресурсы, включая базы знаний, архивы прошивок и инструменты для восстановления системы.
+
 
 | Проект | Разработчик | Описание |
 |---------|-----------|-------------|
@@ -148,23 +165,16 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 
 ---
 
-## Другие проекты
-
-Развлекательные и экспериментальные проекты от сообщества.
-
-| Проект | Разработчик | Описание |
-|---------|-----------|-------------|
-| [Spin The Bottle](https://dotmatrix-beerbottle.vercel.app/) | MadGlacierRunner | Симулятор игры в бутылочку |
-
----
-
 ## Модули Root
 
 :::warning
 Эти модули требуют прав Root (KernelSU или Magisk). Действуйте на свой страх и риск!
 :::
 
-| Модуль | Разработчик | Описание |
+:::warning
+:::
+
+| Module | Author | Описание |
 |--------|--------|-------------|
 | [Nothing AI Changer](https://github.com/Martmists-GH/Nothing-AI-Changer) | Martmists-GH | Замена интеграции ChatGPT другим приложением |
 | [Nothing Battery Fix](https://github.com/Farpathan/Nothing-Battery-Fix) | Farpathan | Восстановление классического стиля процента заряда батареи |

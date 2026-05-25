@@ -9,6 +9,7 @@ keywords: [nothing uygulamaları, topluluk uygulamaları, glyph uygulamaları, g
 
 Nothing'in tasarım diline sadık kalınarak topluluk tarafından oluşturulan veya ilham alınan uygulamalar.
 
+
 ## Temel Uygulamalar
 
 Nothing OS ekosistemini genişleten, yapay zeka tarafından oluşturulmuş hiper-kişiselleştirilmiş mini uygulamalar.
@@ -17,9 +18,15 @@ Nothing OS ekosistemini genişleten, yapay zeka tarafından oluşturulmuş hiper
 
 ---
 
+
+- [Nothing Playground](https://playground.nothing.tech/apps)
+
+---
+
 ## Glyph Destekli
 
 Nothing telefonlarının Glyph arayüzüyle entegre olan uygulamalar.
+
 
 | Uygulama | Geliştirici | Açıklama |
 |-----|-----------|-------------|
@@ -33,7 +40,7 @@ Nothing telefonlarının Glyph arayüzüyle entegre olan uygulamalar.
 | [Glyph Essentials](https://play.google.com/store/apps/details?id=com.tldc.essentials) | GlyphLab | Gelişmiş Glyph bildirim özelleştirmesi |
 | [Glyph Glow](https://github.com/fgiering/GlyphGlow) | fgiering | Glyph arayüzünü kontrol etmek için minimal uygulama |
 | [Glyph Initiator](https://github.com/lowqualitysoarin/Glyph-Initiator/releases) | lowqualitysoarin | Intent'ler aracılığıyla Glyph arayüzü kontrolü |
-| [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Glyph Zamanlayıcı dahil gelişmiş bildirim kontrolü |
+| [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Bildirimler, zamanlayıcılar, görselleştirici |
 | [Glyph Pom](https://github.com/ArushCodes/GlyphPom) | ArushCodes | Phone (3a) ve (3a) Pro için Pomodoro zamanlayıcı |
 | [Glyph Port](https://github.com/SebiAi/GlyphPort) | SebiAi | Bir Nothing cihazından diğerine Glyph kompozisyonu taşıyın |
 | [Glyph Saber](https://github.com/Norbinarius/glyphsaber) | Norbinarius | Nothing OS 4.0+ için Glyph kontrolü |
@@ -41,7 +48,7 @@ Nothing telefonlarının Glyph arayüzüyle entegre olan uygulamalar.
 | [Glyph Studio](https://github.com/SyedAhkam/glyph-studio) | SyedAhkam | Glyph ile ilgili her şey için deneme alanı |
 | [Glyph Unlock Pulse](https://play.google.com/store/apps/details?id=com.singularityux.glyphunlockpulse) | Singularity Design | Glyph animasyonlarıyla cihaz kilit açmayı geliştirir |
 | [Glyph Zen](https://github.com/bleelblep/Glyph-Zen/releases/tag/v1.1) | bleelblep | Glyph ile rahatlatıcı nefes uygulaması |
-| [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Gelişmiş Glyph kontrolleri, mini oyunlar, kompozisyonlar. Phone (3) destekler |
+| [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Top labirenti, hızlı arama, Tamagotchi |
 | [Morse Glyphs](https://github.com/roxe12345/MorseGlyphs) | roxe12345 | Glyph ışıkları aracılığıyla Mors alfabesi |
 | [Nothing Glyph Gyroscope](https://github.com/gawdam/nothingGyro) | gawdam | İvmeölçer ve jiroskop kullanan su terazisi |
 | [Nothing Phone Battery Notification](https://github.com/f3bruary/nothing-phone-battery-notification) | f3bruary | Phone (4a) için özelleştirilebilir düşük pil desenlerine sahip kırmızı Glyph LED bildirim aracı |
@@ -57,7 +64,12 @@ Glyph Matrix için etkileşimli oyuncaklar ve oyunlar.
 Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) sayfasına bakın.
 :::
 
-| Proje | Geliştirici | Açıklama |
+
+:::note
+Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) sayfasına bakın.
+:::
+
+| Project | Geliştirici | Açıklama |
 |---------|-----------|-------------|
 | [Aero Glyph Weather](https://github.com/poorneshadhithya/Aeroglyph-Weather) | poorneshadhithya | Retro-fütüristik hava durumu istasyonu |
 | [Better Battery](https://github.com/PzmuV1517/BetterBatery) | pzmuV1517 | Gelişmiş pil görselleştirme |
@@ -117,9 +129,11 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 
 Nothing cihazınızı ikon paketleri, widget'lar ve özel duvar kağıtlarıyla kişiselleştirin.
 
+
 ### İkon Paketleri
 
 Nothing estetiğine uygun olarak topluluk tarafından oluşturulmuş ikon paketleri seçkisi.
+
 
 | Uygulama | Geliştirici |
 |-----------|-----------|
@@ -134,6 +148,7 @@ Nothing estetiğine uygun olarak topluluk tarafından oluşturulmuş ikon paketl
 ### Widget'lar
 
 Sistem monitörlerinden minimal araçlara kadar ana ekran için özel widget'lar.
+
 
 | Uygulama | Geliştirici | Açıklama |
 |-----|-----------|-------------|
@@ -150,6 +165,7 @@ Sistem monitörlerinden minimal araçlara kadar ana ekran için özel widget'lar
 ### Duvar Kağıtları ve Görsel Efektler
 
 Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve görsel iyileştirmeler.
+
 
 | Uygulama | Geliştirici | Açıklama |
 |-----|-----------|-------------|
@@ -171,10 +187,10 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 | [N Dot Notes](https://github.com/AzhamProdLive/Notes_App_Nothing) | AzhamProdLive | NDot yazı tipi temalı not uygulaması |
 | [N Notes](https://play.google.com/store/apps/details?id=com.bhavukverma.nNotes) | Bhavuk Verma | Açık kaynaklı Nothing OS tarzı notlar |
 | [No Things To Do List](https://play.google.com/store/apps/details?id=com.todo.nothingwidgets) | Martin Diermayr | Widget destekli görev uygulaması |
-| [Nothing To Do](https://github.com/amriths04/NothingToDo) | amriths04 | "Nothing to do" Android uygulaması |
 | [Notes](https://play.google.com/store/apps/details?id=com.monospace.notes) | monospace | Entegre güvenlikli not uygulaması |
 | [Nothing Notes](https://play.google.com/store/apps/details?id=com.ApexCreator.nothingnotes) | Apex Creator | Minimalist not defteri |
 | [Nothing Notes](https://github.com/ThriveEngineer/nothing.notes) | ThriveEngineer | Nothing temalı not uygulaması |
+| [Nothing To Do](https://github.com/amriths04/NothingToDo) | amriths04 | "Nothing to do" Android uygulaması |
 | [Nothiq](https://play.google.com/store/apps/details?id=com.rontag.nothiq) | Rontag | Nothing'den ilham alan notlar ve görev yönetimi uygulaması |
 | [Noting](https://play.google.com/store/apps/details?id=com.hearthborn.studios.notingnotes) | Hearthborn | Bulut yedeklemeli notlar ve görevler |
 | [Seton](https://github.com/arijit4/Seton) | arijit4 | Widget aracılığıyla not iğneleyin ve düzenleyin |
@@ -197,30 +213,35 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | Yapay zeka destekli tarayıcı |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Hızlı ekran görüntüleri, notlar, sesli notlar ve daha fazlasını içeren, tüm cihazlar için Nothing'den ilham alan temel Essential Space deneyimi |
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | OEM uygulamaları veya bulut hesabı olmadan giyilebilir cihazları kullanın |
-| [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | Dino oyunundan esinlenildi |
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Widget destekli el feneri uygulaması |
 | [Hey Battery](https://github.com/ghostyapps/HeyBattery) | Candan | Pil kullanım takibi |
 | [Hey Cam](https://github.com/ghostyapps/HeyCam) | Candan | Glyph matris destekli minimal kamera |
 | [Mate App](https://github.com/shahriaravi/MateApp) | shahriaravi | Çevrimdışı finans takibi |
 | [Minimal Browser](https://github.com/aaswani-v/Minimal-Browser) | aaswani-v | Yapay zeka özetlemeli tarayıcı |
+| [Missing Core Music](https://play.google.com/store/apps/details?id=com.cyanchill.missingcore.music) | MissingCore | Çevrimdışı müzik çalar |
 | [N Board](https://github.com/MathieuDvv/Nboard) | MathieuDvv | Yapay zeka araçlı Nothing esintili klavye |
 | [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Nothing tarzı hesap makinesi |
 | [N Clock](https://play.google.com/store/apps/details?id=de.nostream.nclock) | nostream | Nothing tasarım dilinden ilham alan minimalist saat uygulaması |
 | [N Dial](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ndial) | Hearthborn | Telefon arayıcı ve kişiler |
 | [N Keyboard](https://github.com/arunk140/nth-kbd) | arunk14 | Temalı klavye |
+| [N Music](https://github.com/alimohsenmaruf/N-Music) | alimohsenmaruf | Nothing OS tarzında basit bir YT Music sarmalayıcı müzik çalar |
 | [N Recipe](https://play.google.com/store/apps/details?id=com.a3chron.nrecipe) | a3chron | Çevrimdışı yemek tarifi kitabı |
 | [Neo Calc](https://play.google.com/store/apps/details?id=com.lended.neocalc) | Creepsmile | Nothing OS esintili hesap makinesi |
 | [No Calendar](https://play.google.com/store/apps/details?id=com.calendar.nocalendar) | NoAppsStudio | Google senkronizasyonlu takvim |
 | [No Volume](https://play.google.com/store/apps/details?id=com.nostudio.novolume) | NoAppsStudio | Özelleştirilebilir ses silders |
+| [Noid](https://play.google.com/store/apps/details?id=com.techsip.noid) | TechSip Studios | Dosya yönetimi |
 | [Nothing Audio Recorder](https://play.google.com/store/apps/details?id=com.service.rare.audio.recorder) | Cloud Nine Labs | Ses kaydedici |
 | [Nothing Calculator](https://github.com/git-jamesfrench/NothingCalculator) | git-jamesfrench | Topluluk yapımı Nothing Hesap Makinesi |
 | [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | Dünya saati, zamanlayıcı, kronometre |
+| [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | nothing.community için mobil uygulama |
 | [Nothing Compass](https://github.com/ISO53/Nothing-Compass) | ISO53 | Nothing estetiğine sahip pusula ve eğimölçer |
 | [Nothing Desk Clock](https://play.google.com/store/apps/details?id=com.ApexCreator.deskclock) | Apex Creators | Masa saati uygulaması |
 | [Nothing Files](https://github.com/Mo-Array/Nothing-Files) | Mo-Array | Nothing OS temalı dosya yöneticisi |
 | [Nothing Gallery](https://github.com/jerichoi224/Nothing-Gallery) | jerichoi224 | Galeri uygulaması |
 | [Nothing K](https://github.com/cuadratico/NothingK) | cuadratico | Şifre kasası |
+| [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Nothing OS için Dynamic Island |
 | [Nothing LED Banner](https://play.google.com/store/apps/details?id=com.ApexCreator.thebannerapp) | Apex Creators | LED banner oluşturucu |
+| [Nothing News](https://play.google.com/store/apps/details?id=com.nothing.news) | Mirko_ddd | Topluluk haberleri |
 | [Nothing Quick Tools](https://github.com/DylanAkp/NothingQuickTools) | DylanAkp | Phone (2) için hızlı ayarlar karoları |
 | [Nothing Weather](https://play.google.com/store/apps/details?id=com.ApexCreator.nothing_weather) | Apex Creators | Hava durumu uygulaması |
 | [Nx Calculator](https://github.com/montybytes/nxcalculator) | montybytes | Basit hesap makinesi |
@@ -239,6 +260,18 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 
 ---
 
+## Oyunlar
+
+Nothing tasarım dilinden ilham alan genel oyunlar.
+
+
+| Uygulama | Geliştirici | Açıklama |
+|-----|-----------|-------------|
+| [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | Dino oyunundan esinlenildi |
+| [Tetris](https://github.com/ItsCR24/tetris-m3) | ItsCR24 | Material You ve Nothing OS'tan esinlenen Tetris oyunu |
+
+---
+
 ## Port Edilmiş Uygulamalar
 
 Tüm cihazlar için Nothing OS uygulamalarının resmi olmayan portları.
@@ -247,25 +280,15 @@ Tüm cihazlar için Nothing OS uygulamalarının resmi olmayan portları.
 Kurulum, kullanım ve desteklenen işlevlerle ilgili bilgilerin yanı sıra ilgili uygulama portu geliştiricilerinin düşünceleri için bağlantılı Telegram kanallarındaki belgelere ve sürüm notlarına başvurmanız önerilir.
 :::
 
-| Geliştirici | Kaynaklar |
+
+:::note
+Kurulum, kullanım ve desteklenen işlevlerle ilgili bilgilerin yanı sıra ilgili uygulama portu geliştiricilerinin düşünceleri için bağlantılı Telegram kanallarındaki belgelere ve sürüm notlarına başvurmanız önerilir.
+:::
+
+| Geliştirici | Sources |
 |-----------|---------|
 | Ayra Hikari | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://t.me/s/AyraProject?q=nothing) |
 | Android Port World | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://t.me/s/AndroidPortWorld?q=nothing) |
 | El Pong | [Telegram](https://t.me/s/LigmaCore?q=nothing) |
 
----
 
-## Diğer Topluluk Uygulamaları
-
-Haber merkezlerinden sosyal araçlara ve oyunlara kadar topluluk tarafından oluşturulmuş çeşitli uygulamalar koleksiyonu.
-
-| Uygulama | Geliştirici | Açıklama |
-|-----|-----------|-------------|
-| [Flow](https://flowpo.pages.dev/) | Earendel | Web tabanlı Pomodoro zamanlayıcı uygulaması |
-| [Missing Core Music](https://play.google.com/store/apps/details?id=com.cyanchill.missingcore.music) | MissingCore | Çevrimdışı müzik çalar |
-| [N Music](https://github.com/alimohsenmaruf/N-Music) | alimohsenmaruf | Nothing OS tarzında basit bir YT Music sarmalayıcı müzik çalar |
-| [Noid](https://play.google.com/store/apps/details?id=com.techsip.noid) | TechSip Studios | Dosya yönetimi |
-| [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | nothing.community için mobil uygulama |
-| [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Nothing OS için Dynamic Island |
-| [Nothing News](https://play.google.com/store/apps/details?id=com.nothing.news) | Mirko_ddd | Topluluk haberleri |
-| [Tetris](https://github.com/ItsCR24/tetris-m3) | ItsCR24 | Material You ve Nothing OS'tan esinlenen Tetris oyunu |

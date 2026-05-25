@@ -9,6 +9,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 
 Приложения, созданные сообществом и вдохновленные языком дизайна Nothing.
 
+
 ## Основные приложения
 
 Мини-приложения, генерируемые ИИ и гиперперсонализируемые, расширяющие экосистему Nothing OS.
@@ -17,9 +18,15 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 
 ---
 
+
+- [Nothing Playground](https://playground.nothing.tech/apps)
+
+---
+
 ## С поддержкой Glyph
 
 Приложения, которые интегрируются с интерфейсом Glyph на телефонах Nothing.
+
 
 | Приложение | Разработчик | Описание |
 |-----|-----------|-------------|
@@ -33,7 +40,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Glyph Essentials](https://play.google.com/store/apps/details?id=com.tldc.essentials) | GlyphLab | Продвинутая настройка уведомлений Glyph |
 | [Glyph Glow](https://github.com/fgiering/GlyphGlow) | fgiering | Минималистичное приложение для управления интерфейсом Glyph |
 | [Glyph Initiator](https://github.com/lowqualitysoarin/Glyph-Initiator/releases) | lowqualitysoarin | Управление интерфейсом Glyph через интенты |
-| [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Улучшенное управление уведомлениями, включая таймер Glyph |
+| [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Уведомления, таймеры, визуализатор |
 | [Glyph Pom](https://github.com/ArushCodes/GlyphPom) | ArushCodes | Таймер Pomodoro для Phone (3a) и (3a) Pro |
 | [Glyph Port](https://github.com/SebiAi/GlyphPort) | SebiAi | Перенос композиций Glyph с одного устройства Nothing на другое |
 | [Glyph Saber](https://github.com/Norbinarius/glyphsaber) | Norbinarius | Управление Glyph для Nothing OS 4.0+ |
@@ -41,7 +48,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Glyph Studio](https://github.com/SyedAhkam/glyph-studio) | SyedAhkam | Площадка для экспериментов с Glyph |
 | [Glyph Unlock Pulse](https://play.google.com/store/apps/details?id=com.singularityux.glyphunlockpulse) | Singularity Design | Улучшение разблокировки устройства с анимированным Glyph |
 | [Glyph Zen](https://github.com/bleelblep/Glyph-Zen/releases/tag/v1.1) | bleelblep | Успокаивающее приложение для дыхания с поддержкой Glyph |
-| [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Продвинутое управление Glyph, мини-игры, композиции. Поддерживает Phone (3) |
+| [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Шариковый лабиринт, быстрый набор, Тамагочи |
 | [Morse Glyphs](https://github.com/roxe12345/MorseGlyphs) | roxe12345 | Отображение азбуки Морзе с помощью подсветки Glyph |
 | [Nothing Glyph Gyroscope](https://github.com/gawdam/nothingGyro) | gawdam | Пузырьковый уровень на основе акселерометра и гироскопа |
 | [Nothing Phone Battery Notification](https://github.com/f3bruary/nothing-phone-battery-notification) | f3bruary | Уведомление через красный светодиод Glyph с настраиваемыми паттернами низкого заряда для Phone (4a) |
@@ -57,7 +64,12 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 Обратите внимание на [Официальные игрушки Nothing Playground Glyph](https://playground.nothing.tech/toys).
 :::
 
-| Проект | Разработчик | Описание |
+
+:::note
+Обратите внимание на [Официальные игрушки Nothing Playground Glyph](https://playground.nothing.tech/toys).
+:::
+
+| Project | Разработчик | Описание |
 |---------|-----------|-------------|
 | [Aero Glyph Weather](https://github.com/poorneshadhithya/Aeroglyph-Weather) | poorneshadhithya | Ретро-футуристическая метеостанция |
 | [Better Battery](https://github.com/PzmuV1517/BetterBatery) | pzmuV1517 | Продвинутая визуализация заряда батареи |
@@ -117,9 +129,11 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 
 Персонализируйте свое устройство Nothing с помощью наборов иконок, виджетов и пользовательских обоев.
 
+
 ### Наборы иконок
 
 Подборка созданных сообществом наборов иконок, соответствующих эстетике Nothing.
+
 
 | Приложение | Разработчик |
 |-----------|-----------|
@@ -134,6 +148,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 ### Виджеты
 
 Пользовательские виджеты для главного экрана, от системных мониторов до минималистичных инструментов.
+
 
 | Приложение | Разработчик | Описание |
 |-----|-----------|-------------|
@@ -150,6 +165,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 ### Обои и визуальные эффекты
 
 Динамические обои и визуальные эффекты для улучшения внешнего вида вашего устройства.
+
 
 | Приложение | Разработчик | Описание |
 |-----|-----------|-------------|
@@ -171,10 +187,10 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [N Dot Notes](https://github.com/AzhamProdLive/Notes_App_Nothing) | AzhamProdLive | Приложение для заметок в стиле шрифта NDot |
 | [N Notes](https://play.google.com/store/apps/details?id=com.bhavukverma.nNotes) | Bhavuk Verma | Заметки в стиле Nothing OS с открытым исходным кодом |
 | [No Things To Do List](https://play.google.com/store/apps/details?id=com.todo.nothingwidgets) | Martin Diermayr | Приложение для задач/списков дел с виджетами |
-| [Nothing To Do](https://github.com/amriths04/NothingToDo) | amriths04 | Приложение «Nothing to do» для Android |
 | [Notes](https://play.google.com/store/apps/details?id=com.monospace.notes) | monospace | Приложение для заметок со встроенной защитой |
 | [Nothing Notes](https://play.google.com/store/apps/details?id=com.ApexCreator.nothingnotes) | Apex Creator | Минималистичный блокнот |
 | [Nothing Notes](https://github.com/ThriveEngineer/nothing.notes) | ThriveEngineer | Приложение для заметок в тематике Nothing |
+| [Nothing To Do](https://github.com/amriths04/NothingToDo) | amriths04 | Приложение «Nothing to do» для Android |
 | [Nothiq](https://play.google.com/store/apps/details?id=com.rontag.nothiq) | Rontag | Приложение для управления заметками и задачами в стиле Nothing |
 | [Noting](https://play.google.com/store/apps/details?id=com.hearthborn.studios.notingnotes) | Hearthborn | Заметки и задачи с облачным бэкапом |
 | [Seton](https://github.com/arijit4/Seton) | arijit4 | Закрепление и редактирование заметок с помощью виджета |
@@ -197,30 +213,35 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | Браузер на базе ИИ |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Основной функционал Essential Space в стиле Nothing для всех устройств: быстрые скриншоты, заметки, голосовые заметки и многое другое |
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | Используйте носимые Bluetooth-устройства без OEM-приложений, аккаунтов или облака |
-| [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | Вдохновлено игрой про динозаврика |
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Приложение для фонарика с виджетами |
 | [Hey Battery](https://github.com/ghostyapps/HeyBattery) | Candan | Трекер использования батареи |
 | [Hey Cam](https://github.com/ghostyapps/HeyCam) | Candan | Минималистичная камера с поддержкой Glyph Matrix |
 | [Mate App](https://github.com/shahriaravi/MateApp) | shahriaravi | Офлайн-трекер финансов |
 | [Minimal Browser](https://github.com/aaswani-v/Minimal-Browser) | aaswani-v | Браузер с ИИ-саммаризацией |
+| [Missing Core Music](https://play.google.com/store/apps/details?id=com.cyanchill.missingcore.music) | MissingCore | Офлайн-музыкальный плеер |
 | [N Board](https://github.com/MathieuDvv/Nboard) | MathieuDvv | Клавиатура в стиле Nothing с инструментами ИИ |
 | [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Калькулятор в стиле Nothing |
 | [N Clock](https://play.google.com/store/apps/details?id=de.nostream.nclock) | nostream | Минималистичное приложение для часов, вдохновленное языком дизайна Nothing |
 | [N Dial](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ndial) | Hearthborn | Набор номера и контакты |
 | [N Keyboard](https://github.com/arunk140/nth-kbd) | arunk14 | Тематическая клавиатура |
+| [N Music](https://github.com/alimohsenmaruf/N-Music) | alimohsenmaruf | Простой музыкальный плеер в стиле Nothing OS, обертка для YouTube Music |
 | [N Recipe](https://play.google.com/store/apps/details?id=com.a3chron.nrecipe) | a3chron | Офлайн-книга рецептов |
 | [Neo Calc](https://play.google.com/store/apps/details?id=com.lended.neocalc) | Creepsmile | Калькулятор, вдохновленный Nothing OS |
 | [No Calendar](https://play.google.com/store/apps/details?id=com.calendar.nocalendar) | NoAppsStudio | Календарь с синхронизацией Google |
 | [No Volume](https://play.google.com/store/apps/details?id=com.nostudio.novolume) | NoAppsStudio | Настраиваемый слайдер громкости |
+| [Noid](https://play.google.com/store/apps/details?id=com.techsip.noid) | TechSip Studios | Управление файлами |
 | [Nothing Audio Recorder](https://play.google.com/store/apps/details?id=com.service.rare.audio.recorder) | Cloud Nine Labs | Диктофон |
 | [Nothing Calculator](https://github.com/git-jamesfrench/NothingCalculator) | git-jamesfrench | Калькулятор Nothing от сообщества |
 | [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | Мировое время, таймер, секундомер |
+| [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | Мобильное приложение для nothing.community |
 | [Nothing Compass](https://github.com/ISO53/Nothing-Compass) | ISO53 | Компас и инклинометр в эстетике Nothing |
 | [Nothing Desk Clock](https://play.google.com/store/apps/details?id=com.ApexCreator.deskclock) | Apex Creators | Настольные часы |
 | [Nothing Files](https://github.com/Mo-Array/Nothing-Files) | Mo-Array | Файловый менеджер в стиле Nothing OS |
 | [Nothing Gallery](https://github.com/jerichoi224/Nothing-Gallery) | jerichoi224 | Галерея |
 | [Nothing K](https://github.com/cuadratico/NothingK) | cuadratico | Хранилище паролей |
+| [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Dynamic Island для Nothing OS |
 | [Nothing LED Banner](https://play.google.com/store/apps/details?id=com.ApexCreator.thebannerapp) | Apex Creators | Создание светодиодных баннеров |
+| [Nothing News](https://play.google.com/store/apps/details?id=com.nothing.news) | Mirko_ddd | Новости сообщества |
 | [Nothing Quick Tools](https://github.com/DylanAkp/NothingQuickTools) | DylanAkp | Быстрые настройки (Tiles) для Phone (2) |
 | [Nothing Weather](https://play.google.com/store/apps/details?id=com.ApexCreator.nothing_weather) | Apex Creators | Погода |
 | [Nx Calculator](https://github.com/montybytes/nxcalculator) | montybytes | Простой калькулятор |
@@ -239,6 +260,18 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 
 ---
 
+## Игры
+
+Обычные игры в стиле дизайна Nothing.
+
+
+| Приложение | Разработчик | Описание |
+|-----|-----------|-------------|
+| [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | Вдохновлено игрой про динозаврика |
+| [Tetris](https://github.com/ItsCR24/tetris-m3) | ItsCR24 | Игра Тетрис, вдохновленная Material You и Nothing OS |
+
+---
+
 ## Портированные приложения
 
 Неофициальные порты приложений Nothing OS для всех устройств.
@@ -247,26 +280,15 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 Рекомендуется ознакомиться с документацией и примечаниями к выпуску из связанных каналов Telegram для соответствующих портированных приложений. Там представлена информация об установке, использовании, поддерживаемых функциях и соображениях разработчиков.
 :::
 
-| Разработчик | Источники |
+
+:::note
+Рекомендуется ознакомиться с документацией и примечаниями к выпуску из связанных каналов Telegram для соответствующих портированных приложений. Там представлена информация об установке, использовании, поддерживаемых функциях и соображениях разработчиков.
+:::
+
+| Разработчик | Sources |
 |-----------|---------|
 | Ayra Hikari | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://t.me/s/AyraProject?q=nothing) |
 | Android Port World | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://t.me/s/AndroidPortWorld?q=nothing) |
 | El Pong | [Telegram](https://t.me/s/LigmaCore?q=nothing) |
 
----
-
-## Другие приложения от сообщества
-
-Коллекция различных приложений, созданных сообществом, от новостных порталов и социальных утилит до игр.
-
-| Приложение | Разработчик | Описание |
-|-----|-----------|-------------|
-| [Flow](https://flowpo.pages.dev/) | Earendel | Веб-приложение таймера Pomodoro |
-| [Missing Core Music](https://play.google.com/store/apps/details?id=com.cyanchill.missingcore.music) | MissingCore | Офлайн-музыкальный плеер |
-| [N Music](https://github.com/alimohsenmaruf/N-Music) | alimohsenmaruf | Простой музыкальный плеер в стиле Nothing OS, обертка для YouTube Music |
-| [Noid](https://play.google.com/store/apps/details?id=com.techsip.noid) | TechSip Studios | Управление файлами |
-| [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | Мобильное приложение для nothing.community |
-| [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Dynamic Island для Nothing OS |
-| [Nothing News](https://play.google.com/store/apps/details?id=com.nothing.news) | Mirko_ddd | Новости сообщества |
-| [Tetris](https://github.com/ItsCR24/tetris-m3) | ItsCR24 | Игра Тетрис, вдохновленная Material You и Nothing OS |
 

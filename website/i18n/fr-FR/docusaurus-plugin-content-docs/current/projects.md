@@ -9,9 +9,11 @@ keywords: [projets nothing, outils glyph, root nothing, magisk nothing, personna
 
 Projets maintenus par la communauté Nothing.
 
+
 ## Outils Glyph
 
 Une collection d'outils pour créer des tonalités et des compositions Glyph personnalisées.
+
 
 | Projet | Développeur | Description |
 |---------|-----------|-------------|
@@ -38,9 +40,11 @@ Une collection d'outils pour créer des tonalités et des compositions Glyph per
 
 Projets de personnalisation incluant des configurations de bureau, des widgets et des thèmes pour diverses plateformes.
 
+
 ### Widgets
 
 Widgets créés par la communauté et inspirés par Nothing OS pour diverses plateformes et environnements de bureau.
+
 
 | Projet | Développeur | Description |
 |---------|-----------|-------------|
@@ -54,6 +58,7 @@ Widgets créés par la communauté et inspirés par Nothing OS pour diverses pla
 ### Thèmes de bureau et d'IDE
 
 Thèmes et configurations pour Arch Linux, VS Code et d'autres environnements de développement respectant le langage de design de Nothing.
+
 
 | Projet | Développeur | Description |
 |---------|-----------|-------------|
@@ -70,6 +75,7 @@ Thèmes et configurations pour Arch Linux, VS Code et d'autres environnements de
 
 Polices personnalisées et outils de style pour compléter votre installation inspirée par Nothing.
 
+
 | Projet | Développeur | Description |
 |---------|-----------|-------------|
 | [Ntype JP](https://github.com/Nothing-Japanese-font-project/Ntype-JP/releases) | shibadogcap | Police japonaise |
@@ -77,6 +83,7 @@ Polices personnalisées et outils de style pour compléter votre installation in
 ### Fonds d'écran
 
 Utilitaires pour créer et générer des fonds d'écran style Nothing.
+
 
 | Projet | Développeur | Description |
 |---------|-----------|-------------|
@@ -90,6 +97,7 @@ Utilitaires pour créer et générer des fonds d'écran style Nothing.
 
 Ressources et outils conçus pour aider d'autres développeurs à créer des projets inspirés par Nothing.
 
+
 | Projet | Développeur | Description |
 |---------|-----------|-------------|
 | [Dot Frame](https://github.com/NyxLumen/DotFrame) | NyxLumen | Convertisseur vidéo vers ASCII avec un accent Nothing |
@@ -102,17 +110,20 @@ Ressources et outils conçus pour aider d'autres développeurs à créer des pro
 
 Extensions de navigateur et applications basées sur le web inspirées par Nothing OS.
 
+
 | Projet | Développeur | Description |
 |---------|-----------|-------------|
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Contrôle des écouteurs via le web |
 | [Essential Space Web](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Espace de notes minimaliste |
 | [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Extension "Nouvel onglet" au thème Nothing |
+| [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Page d'accueil inspirée par le terminal |
 | [Ndot Logo Generator](https://github.com/Lovinoes/ndot-logo-generator) | Lovinoes | Générateur de logo HTML utilisant les polices de Nothing |
 | [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | Extension GNOME pour le contrôle de l'ANC sur Nothing Ear |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Extension "Nouvel onglet" pour navigateur |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Extension Chrome |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Application météo web inspirée par Nothing OS |
+| [Spin The Bottle](https://dotmatrix-beerbottle.vercel.app/) | MadGlacierRunner | Simulateur de jeu de la bouteille |
 
 ---
 
@@ -124,9 +135,15 @@ Profils d'égalisation créés par la communauté pour les écouteurs et casques
 
 ---
 
+
+- [Profils EQ d'origine](https://playground.nothing.tech/eqs) — Compatibles avec l'égaliseur avancé via [Nothing X](https://play.google.com/store/apps/details?id=com.nothing.smartcenter)
+
+---
+
 ## Ressources et utilitaires
 
 Ressources essentielles incluant des wikis, des archives de firmware et des outils de réparation système.
+
 
 | Projet | Développeur | Description |
 |---------|-----------|-------------|
@@ -148,23 +165,16 @@ Ressources essentielles incluant des wikis, des archives de firmware et des outi
 
 ---
 
-## Autres projets
-
-Divers projets ludiques et expérimentaux de la communauté.
-
-| Projet | Développeur | Description |
-|---------|-----------|-------------|
-| [Spin The Bottle](https://dotmatrix-beerbottle.vercel.app/) | MadGlacierRunner | Simulateur de jeu de la bouteille |
-
----
-
 ## Modules Root
 
 :::warning
 Ceux-ci nécessitent un accès root (KernelSU ou Magisk). Procédez avec prudence !
 :::
 
-| Module | Auteur | Description |
+:::warning
+:::
+
+| Module | Author | Description |
 |--------|--------|-------------|
 | [Nothing AI Changer](https://github.com/Martmists-GH/Nothing-AI-Changer) | Martmists-GH | Remplace l'intégration ChatGPT par une autre application |
 | [Nothing Battery Fix](https://github.com/Farpathan/Nothing-Battery-Fix) | Farpathan | Restaure le style classique du pourcentage de batterie |

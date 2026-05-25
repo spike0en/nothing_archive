@@ -9,12 +9,14 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 
 由 Nothing 社群維護的專案。
 
+
 ## Glyph 工具
 
 一組用於建立自訂 Glyph 音效與組合的工具集合。
 
+
 | 專案 | 開發者 | 說明 |
-|------|--------|------|
+|---------|-----------|-------------|
 | [Better Nothing Glyph Composer](https://better-nothing-glyph-composer.pages.dev/) | Krishnagopal Sinha | 用於建立自訂 Glyph 音效的視覺化工具。支援 Phone (3) Matrix |
 | [Better Nothing Music Visualizer](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | alekslevet | 增強的音樂視覺化 |
 | [Cassette](https://github.com/Chipik0/Cassette) | Chipik0 | 建立 Glyph 組合 |
@@ -38,12 +40,14 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 
 個人化專案，包括桌面美化（rice）、小工具與各種平台的主題。
 
+
 ### 小工具
 
 由社群打造、靈感來自 Nothing OS 的各種平台與桌面環境小工具。
 
+
 | 專案 | 開發者 | 說明 |
-|------|--------|------|
+|---------|-----------|-------------|
 | [KWGT Widgets](https://github.com/rjwarrier/KWGT-Widgets) | rjwarrier | 受 Ndot 啟發的 KWGT 小工具 |
 | [N KWGT](https://github.com/avnishkt2783/nKWGT) | avnishkt2783 | Nothing 風格小工具 |
 | [N Thing UI](https://github.com/Runixe786/NThing-UI) | Runixe786 | Rainmeter 小工具 |
@@ -55,8 +59,9 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 
 適用於 Arch Linux、VS Code 與其他開發環境的主題與桌面美化，遵循 Nothing 設計語言。
 
+
 | 專案 | 開發者 | 說明 |
-|------|--------|------|
+|---------|-----------|-------------|
 | [Glyph SDDM](https://github.com/xCaptaiN09/glyph-sddm) | xCaptaiN09 | 受 Nothing 設計語言啟發的極簡 SDDM 主題 |
 | [Notes (Windows)](https://github.com/rohankishore/Notes-1) | rohankishore | 適用於 Windows 的 Nothing 主題記事本 |
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | macOS 選單列應用程式 |
@@ -70,16 +75,18 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 
 用於搭配 Nothing 風格設定的自訂字型與樣式工具。
 
+
 | 專案 | 開發者 | 說明 |
-|------|--------|------|
+|---------|-----------|-------------|
 | [Ntype JP](https://github.com/Nothing-Japanese-font-project/Ntype-JP/releases) | shibadogcap | 日文字型 |
 
 ### 桌布
 
 用於建立與生成 Nothing 風格桌布的工具。
 
+
 | 專案 | 開發者 | 說明 |
-|------|--------|------|
+|---------|-----------|-------------|
 | [Atmosphere](https://atmospherewallpaper.com) | Mxtechz | 生成並下載高品質的「Glass & Light」風格桌布。 | 
 | [Nothing Glass](https://github.com/Vauth/nothing-glass) | Vauth | Nothing OS 玻璃效果桌布生成工具 |
 | [Wallpaper Studio Pro](https://wallpaperstudiopro.netlify.app/) | Ifham9 | AI 桌布生成器 |
@@ -90,8 +97,9 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 
 協助開發者打造 Nothing 風格專案的資源與工具。
 
+
 | 專案 | 開發者 | 說明 |
-|------|--------|------|
+|---------|-----------|-------------|
 | [Dot Frame](https://github.com/NyxLumen/DotFrame) | NyxLumen | 帶有 Nothing 風格的影片轉 ASCII 轉換器 |
 | [Dot Matrixify](https://github.com/szelszabi/dotmatrixify) | szelszabi | 將像素藝術轉換為點陣圖 |
 | [Dotify Client](https://github.com/PATEL96/dotify-client) | PATEL96 | 點陣圖影像生成工具 |
@@ -102,17 +110,20 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 
 受 Nothing OS 啟發的瀏覽器擴充與網頁應用程式。
 
+
 | 專案 | 開發者 | 說明 |
-|------|--------|------|
+|---------|-----------|-------------|
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | 透過網頁控制耳機 |
 | [Essential Space Web](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | 極簡筆記空間 |
 | [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing 主題的瀏覽器新分頁擴充 |
+| [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | 終端機風格首頁 |
 | [Ndot Logo Generator](https://github.com/Lovinoes/ndot-logo-generator) | Lovinoes | 使用 Nothing 字型的 HTML 標誌產生器 |
 | [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | 用於控制 Nothing Ear ANC 的 GNOME 擴充 |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | 瀏覽器新分頁擴充 |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome 擴充 |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | 受 Nothing OS 啟發的天氣網頁應用程式 |
+| [Spin The Bottle](https://dotmatrix-beerbottle.vercel.app/) | MadGlacierRunner | 轉瓶子模擬器 |
 
 ---
 
@@ -124,12 +135,18 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 
 ---
 
+
+- [原廠 EQ 配置](https://playground.nothing.tech/eqs) — 透過 [Nothing X](https://play.google.com/store/apps/details?id=com.nothing.smartcenter) 的進階等化器相容使用
+
+---
+
 ## 資源與工具
 
 包含維基、韌體存檔與系統修復工具等重要資源。
 
+
 | 專案 | 開發者 | 說明 |
-|------|--------|------|
+|---------|-----------|-------------|
 | [CMF Wiki](https://www.reddit.com/r/CMFTech/wiki/index/) | guidomelvin | r/CMFTech 維基 |
 | [Disable Essential Space](https://github.com/AntonDevia/Disable-Essential-Space) | AntonDevia | 用於完全停用 Nothing OS 上的 Essential Space 並封鎖 Essential 鍵的 ADB 腳本 |
 | [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | 基於 Rust 的 Linux 應用程式，用於控制 Nothing 耳機的 ANC 模式 |
@@ -148,24 +165,17 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 
 ---
 
-## 其他專案
-
-來自社群的各種有趣與實驗性專案。
-
-| 專案 | 開發者 | 說明 |
-|------|--------|------|
-| [Spin The Bottle](https://dotmatrix-beerbottle.vercel.app/) | MadGlacierRunner | 轉瓶子模擬器 |
-
----
-
 ## Root 模組
 
 :::warning
 這些需要 root 權限（KernelSU 或 Magisk），請謹慎操作！
 :::
 
-| 模組 | 作者 | 說明 |
-|------|------|------|
+:::warning
+:::
+
+| Module | Author | 說明 |
+|--------|--------|-------------|
 | [Nothing AI Changer](https://github.com/Martmists-GH/Nothing-AI-Changer) | Martmists-GH | 將 ChatGPT 整合替換為其他應用程式 |
 | [Nothing Battery Fix](https://github.com/Farpathan/Nothing-Battery-Fix) | Farpathan | 還原經典電池百分比樣式 |
 | [Nothing eUICC](https://github.com/reindex-ot/nothing-euicc) | reindex-ot | 在不支援的 Nothing 裝置上強制啟用 eSIM 功能 |

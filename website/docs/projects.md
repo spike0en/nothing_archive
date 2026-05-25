@@ -107,12 +107,14 @@ Browser extensions and web-based applications inspired by Nothing OS.
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Control earbuds from web |
 | [Essential Space Web](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Minimalist notespace |
 | [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing-themed browser New Tab extension |
+| [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal-inspired homepage |
 | [Ndot Logo Generator](https://github.com/Lovinoes/ndot-logo-generator) | Lovinoes | HTML logo generator using the Nothing fonts |
 | [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | GNOME extension for ANC control on Nothing Ear |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Browser New Tab extension |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome extension |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Nothing OS inspired weather web app |
+| [Spin The Bottle](https://dotmatrix-beerbottle.vercel.app/) | MadGlacierRunner | Spin the bottle simulator |
 
 ---
 
@@ -145,16 +147,6 @@ Essential resources including wikis, firmware archives, and system repair tools.
 | [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | r/NothingTech wiki |
 | [Nothing X (DMS)](https://github.com/Bestello/dms-nothingx/) | Bestello | Nothing and CMF audio device controller plugin for Dank Material Shell |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | macOS companion app for Nothing and CMF earbuds |
-
----
-
-## Other Projects
-
-Miscellaneous fun and experimental projects from the community.
-
-| Project | Developer | Description |
-|---------|-----------|-------------|
-| [Spin The Bottle](https://dotmatrix-beerbottle.vercel.app/) | MadGlacierRunner | Spin the bottle simulator |
 
 ---
 
