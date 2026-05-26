@@ -162,9 +162,11 @@ Pour demander une clé, envoyez un e-mail à [GDKsupport@nothing.tech](mailto:GD
 
 ## Modèles 3D
 
-Fichiers `.glb` officiels des modèles d'appareils.
+Fichiers `.glb` officiels pour les produits Nothing.
 
-### Nothing
+### Téléphones
+
+#### Nothing
 
 | Appareil | Couleurs |
 |--------|--------|
@@ -177,12 +179,20 @@ Fichiers `.glb` officiels des modèles d'appareils.
 | Phone (4a) | [Blanc](https://cdn.sanity.io/files/gtd4w1cq/production/d65ff6f2d0ea8c16068c9f3a6a39727ba2832fbb.glb) · [Noir](https://cdn.sanity.io/files/gtd4w1cq/production/18e6e295eae0a611005b55870bfcabf8ddbe3ed3.glb) · [Rose](https://cdn.sanity.io/files/gtd4w1cq/production/84f427b1219bd66ae5153a8d3a48b05179fec127.glb) · [Bleu](https://cdn.sanity.io/files/gtd4w1cq/production/03ea3ce1ca3b486997b81661b190569c1921d68a.glb) |
 | Phone (4a) Pro | [Argent](https://cdn.sanity.io/files/gtd4w1cq/production/0ab0aab2653e4f45cd9435145a3f936834e67cd2.glb) · [Noir](https://cdn.sanity.io/files/gtd4w1cq/production/9b93f1ad6cd3ed81cdb51ea89974473f54b62afa.glb) · [Rose](https://cdn.sanity.io/files/gtd4w1cq/production/5000880af271c65200de52b3b00e1fc5eadb2e61.glb) |
 
-### CMF by Nothing
+#### CMF by Nothing
 
 | Appareil | Couleurs |
 |--------|--------|
 | Phone (1) | [Vert clair](https://cdn.sanity.io/files/gtd4w1cq/production/cdbaddc958359556191101ba3b049782b0c618ae.glb) · [Orange](https://cdn.sanity.io/files/gtd4w1cq/production/94a4ddd97cac31d7676845ab2942849471e2d1a3.glb) · [Noir](https://cdn.sanity.io/files/gtd4w1cq/production/de67e4ed8b864d9f05da3a3a01839069cf79ad8b.glb) |
 | Phone (2) Pro | [Vert clair](https://cdn.sanity.io/files/gtd4w1cq/production/b54cdec768b611a7af4c166b10e617f8caf11204.glb) · [Orange](https://cdn.sanity.io/files/gtd4w1cq/production/540e40a622cc01c73edddfeb4283cfe1109820b7.glb) · [Blanc](https://cdn.sanity.io/files/gtd4w1cq/production/c7ca3faffb239aac1b1e711086ab43f49f0e3a31.glb) · [Noir](https://cdn.sanity.io/files/gtd4w1cq/production/3fe749a61a1c98b3c6473d57e8f3a17d8c1aaba0.glb) |
+
+### Montres
+
+#### CMF by Nothing
+
+| Appareil | Couleurs |
+|--------|--------|
+| Watch 3 Pro | [Vert clair](https://cdn.sanity.io/files/gtd4w1cq/production/81021cb98904dfc82e2c546bd9c82022c2a71aa0.glb) · [Orange](https://cdn.sanity.io/files/gtd4w1cq/production/9ac120222f97b7cb2cf02d26a91cf93d2e3c5639.glb) · [Gris clair](https://cdn.sanity.io/files/gtd4w1cq/production/940208a1ba1a079cebaebb96e868130c82b81fc1.glb) · [Noir](https://cdn.sanity.io/files/gtd4w1cq/production/7eaca26163a0202091cd94228c980c7dcdf8b08d.glb) |
 
 ---
 
