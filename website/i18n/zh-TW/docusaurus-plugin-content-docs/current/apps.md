@@ -210,6 +210,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Nothing 的 Essential Space 應用程式的「Vibe coded」版本。 |
 | [Currency](https://curency.pages.dev/) | Earendel | 貨幣換算網頁應用程式 |
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | 採用點陣字體的計算機應用程式。 |
+| [Dot Player](https://play.google.com/store/apps/details?id=com.creepsmile.dotplayer) | Creepsmile | 極簡本地音樂播放器 |
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | AI 驅動瀏覽器 |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | 受 Nothing 啟發的跨裝置核心 Essential Space 體驗，具備快速截圖、筆記、語音備忘錄等功能 |
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | Use Bluetooth wearables without OEM apps, accounts, or cloud |

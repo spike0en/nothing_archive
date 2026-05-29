@@ -210,6 +210,7 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Nothing'in Essential Space uygulamasının "vibe coded" kopyası. |
 | [Currency](https://curency.pages.dev/) | Earendel | Birim dönüştürücü web uygulaması |
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Nokta matrisli yazı tiplerine sahip hesap makinesi uygulaması. |
+| [Dot Player](https://play.google.com/store/apps/details?id=com.creepsmile.dotplayer) | Creepsmile | Minimal yerel müzik çalar |
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | Yapay zeka destekli tarayıcı |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Hızlı ekran görüntüleri, notlar, sesli notlar ve daha fazlasını içeren, tüm cihazlar için Nothing'den ilham alan temel Essential Space deneyimi |
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | OEM uygulamaları veya bulut hesabı olmadan giyilebilir cihazları kullanın |

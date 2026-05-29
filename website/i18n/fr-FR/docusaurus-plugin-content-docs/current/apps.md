@@ -205,6 +205,7 @@ Fonds d'écran dynamiques et améliorations visuelles pour sublimer l'apparence 
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Copie « vibe coded » de l'application Essential Space de Nothing. |
 | [Currency](https://curency.pages.dev/) | Earendel | Application web de conversion de devises |
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Application de calculatrice avec des polices à matrice de points. |
+| [Dot Player](https://play.google.com/store/apps/details?id=com.creepsmile.dotplayer) | Creepsmile | Lecteur de musique local minimaliste |
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | Navigateur propulsé par l'IA |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Expérience Essential Space de base inspirée par Nothing pour tous les appareils, avec captures d'écran rapides, notes, mémos vocaux, et plus encore |
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | Utilisez des wearables Bluetooth sans applications OEM ni compte cloud |
