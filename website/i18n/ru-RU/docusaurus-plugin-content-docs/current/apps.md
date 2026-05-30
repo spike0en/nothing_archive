@@ -94,7 +94,6 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Glyph Life](https://github.com/Yuma-Eimymk2/glyph-life) | Yuma-Eimymk2 | Игрушка «Жизнь» Конвея для Glyph Matrix на Nothing Phone (4a) Pro |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Бегущая строка для текстовых сообщений |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Инструментарий для создания и интеллектуального отображения кастомных визуализаций Glyph Matrix для Nothing Phone (4a) Pro |
-| [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | Веб-инструмент для тестирования кода |
 | [Glyph Matrix Tasker Plugin](https://github.com/Gennadiyev/GlyphMatrixTaskerPlugin) | Gennadiyev | Плагин Tasker для управления Glyph Matrix на Nothing Phone (3). |
 | [Glyph Mo](https://github.com/anamite/GlyphMo) | anamite | Приложение для управления Glyph Matrix, разработанное исключительно для Nothing Phone (4a) Pro. |
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | Создание и демонстрация искусства Glyph |
@@ -104,8 +103,8 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | Превращает ожидающие уведомления в краткую сводку на Glyph Matrix |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | Аркадная игра-стекер |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Всегда активный контроллер дисплея Glyph Matrix, реагирующий на звук |
-| [Glyph Text Animator](https://github.com/deepudxd/GlyphTextAnimator) | deepudxd | Преобразует текст в бегущую строку для 13×13 Glyph Matrix в Nothing Phone (4a) Pro |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | Подбрасывание монеты, режим звонка, поток заряда батареи |
+| [Glyph Type](https://github.com/deepudxd/GlyphType) | deepudxd | Преобразует текст в бегущую строку для 13×13 Glyph Matrix в Nothing Phone (4a) Pro |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Шариковый лабиринт, быстрый набор, Тамагочи |
 | [Glyphix](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | Эмбиент AOD для Glyph Matrix |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Переключатель объектов Home Assistant |

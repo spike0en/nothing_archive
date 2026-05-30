@@ -28,7 +28,6 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | [Glyph Visualizer](https://github.com/SebiAi/GlyphVisualizer) | SebiAi | 用於 .ogg 組合的桌面視覺化工具 |
 | [Haptificator](https://github.com/Fr4nKB/Haptificator) | Fr4nKB | 為 Phone (1) 組合加入觸覺回饋 |
 | [Matrices](https://udaign.github.io/matrices/) | Uday | Glyph Matrix 設計工具 ([Repo](https://github.com/udaign/matrices)) |
-| [Nothing Glyph Composer](https://itssveennn.github.io/Nothing-Glyph-Composer/) | itssveennn | 專為 Phone (4a) Pro 打造，用於製作 13x13 Glyph 動畫、準備音訊並匯出可用於鈴聲的 OGG 檔案的網頁工具包。 |
 | [Nothing Toyph Notifications](https://antonvidishchev.github.io/nothing-toyph-notifications/) | antonvidishchev | 用於在 Nothing Phone (4a) Pro Glyph Matrix 上建立通知圖示的工具 ([原始碼](https://github.com/antonvidishchev/nothing-toyph-notifications)) |
 | [Osu To Glyph](https://github.com/taiixu/osu-to-glyph) | taiixu | 將 osu! 節奏圖轉換為 Nothing Phone 的 Glyph 鈴聲 |
 | [Pyglyph](https://github.com/Snakehater/pyglyph) | Snakehater | 用於音訊視覺化的 Python 腳本 |

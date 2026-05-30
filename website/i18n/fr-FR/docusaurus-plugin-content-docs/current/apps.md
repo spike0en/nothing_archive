@@ -89,7 +89,6 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Life](https://github.com/Yuma-Eimymk2/glyph-life) | Yuma-Eimymk2 | Jouet Conway's Game of Life pour la matrice Glyph du Nothing Phone (4a) Pro |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Messages textuels défilants |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Boîte à outils pour créer et afficher intelligemment des visuels personnalisés pour la matrice Glyph du Nothing Phone (4a) Pro |
-| [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | Test de code via le web |
 | [Glyph Matrix Tasker Plugin](https://github.com/Gennadiyev/GlyphMatrixTaskerPlugin) | Gennadiyev | Plugin Tasker pour contrôler la matrice Glyph du Nothing Phone (3). |
 | [Glyph Mo](https://github.com/anamite/GlyphMo) | anamite | Application de contrôle de la matrice Glyph conçue exclusivement pour le Nothing Phone (4a) Pro. |
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | Créez et exposez de l'art Glyph |
@@ -99,8 +98,8 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | Transforme les notifications en attente en un affichage consultable sur la matrice Glyph |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | Un jeu d'arcade d'empilement |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Contrôleur d'affichage Glyph Matrix toujours activé et réactif au son |
-| [Glyph Text Animator](https://github.com/deepudxd/GlyphTextAnimator) | deepudxd | Convertit du texte en animations de matrice de points défilantes pour la matrice Glyph 13×13 du Nothing Phone (4a) Pro |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | Pile ou face, mode sonnerie, flux de batterie |
+| [Glyph Type](https://github.com/deepudxd/GlyphType) | deepudxd | Convertit du texte en animations de matrice de points défilantes pour la matrice Glyph 13×13 du Nothing Phone (4a) Pro |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Labyrinthe à bille, numérotation rapide, Tamagotchi |
 | [Glyphix](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | AOD d'ambiance pour la matrice Glyph |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Commutation d'entité Home Assistant |

@@ -94,7 +94,6 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Glyph Life](https://github.com/Yuma-Eimymk2/glyph-life) | Yuma-Eimymk2 | Nothing Phone (4a) Pro'nun Glyph Matrisi için Conway's Game of Life oyuncağı |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Kayan metin mesajları |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Nothing Phone (4a) Pro için özel Glyph Matrix görselleri oluşturma ve akıllıca görüntüleme araç takımı |
-| [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | Web üzerinden kod testi |
 | [Glyph Matrix Tasker Plugin](https://github.com/Gennadiyev/GlyphMatrixTaskerPlugin) | Gennadiyev | Nothing Phone (3) üzerindeki Glyph Matrix'i kontrol etmek için Tasker eklentisi. |
 | [Glyph Mo](https://github.com/anamite/GlyphMo) | anamite | Yalnızca Nothing Phone (4a) Pro için tasarlanmış Glyph Matrix kontrol uygulaması. |
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | Glyph sanatı oluşturun ve sergileyin |
@@ -104,8 +103,8 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | Bekleyen bildirimleri Glyph Matrisi üzerinde bir bakışta görülebilir bir ekrana dönüştürür |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | Atari tarzı istifleme oyunu |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Sese duyarlı ve her zaman açık Glyph Matrisi ekran denetleyicisi |
-| [Glyph Text Animator](https://github.com/deepudxd/GlyphTextAnimator) | deepudxd | Nothing Phone (4a) Pro'nun 13×13 Glyph Matrix'i için metni kayan nokta matris animasyonlarına dönüştürür |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | Yazı tura, zil sesi modu, pil akışı |
+| [Glyph Type](https://github.com/deepudxd/GlyphType) | deepudxd | Nothing Phone (4a) Pro'nun 13×13 Glyph Matrix'i için metni kayan nokta matris animasyonlarına dönüştürür |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Top labirenti, hızlı arama, Tamagotchi |
 | [Glyphix](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | Glyph Matrix için ambiyans AOD |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistant varlık değiştirme |

@@ -94,7 +94,6 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Glyph Life](https://github.com/Yuma-Eimymk2/glyph-life) | Yuma-Eimymk2 | 適用於 Nothing Phone (4a) Pro Glyph Matrix 的康威生命遊戲玩具 |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | 跑馬燈文字訊息 |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | 用於為 Nothing Phone (4a) Pro 建立並智慧顯示自訂 Glyph Matrix 視覺效果的工具包 |
-| [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | 網頁版程式碼測試工具 |
 | [Glyph Matrix Tasker Plugin](https://github.com/Gennadiyev/GlyphMatrixTaskerPlugin) | Gennadiyev | 用於控制 Nothing Phone (3) Glyph Matrix 的 Tasker 外掛程式。 |
 | [Glyph Mo](https://github.com/anamite/GlyphMo) | anamite | 專為 Nothing Phone (4a) Pro 設計的 Glyph Matrix 控制應用程式。 |
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | 創作與展示 Glyph 藝術 |
@@ -104,8 +103,8 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | 將待處理通知轉換為 Glyph Matrix 上一目了然的顯示 |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | 疊疊樂街機遊戲 |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | 常亮且具備音訊反應功能的 Glyph Matrix 顯示控制器 |
-| [Glyph Text Animator](https://github.com/deepudxd/GlyphTextAnimator) | deepudxd | 將文本轉換為 Nothing Phone (4a) Pro 13×13 Glyph Matrix 的滾動點陣動畫 |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | 丟硬幣、鈴聲模式、電池流量 |
+| [Glyph Type](https://github.com/deepudxd/GlyphType) | deepudxd | 將文本轉換為 Nothing Phone (4a) Pro 13×13 Glyph Matrix 的滾動點陣動畫 |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | 滾珠迷宮、快速撥號、電子雞 |
 | [Glyphix](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | Glyph Matrix 的環境 AOD |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistant 實體切換 |

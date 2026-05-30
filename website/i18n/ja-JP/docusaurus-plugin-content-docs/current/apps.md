@@ -94,7 +94,6 @@ Glyphマトリックス向けのインタラクティブなトイとゲーム。
 | [Glyph Life](https://github.com/Yuma-Eimymk2/glyph-life) | Yuma-Eimymk2 | Nothing Phone (4a) Pro の Glyph マトリックス用のライフゲームトイ |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | スクロールテキストメッセージ |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Nothing Phone (4a) Pro 向けのカスタム集約 Glyph マトリックス ビジュアルを作成し、インテリジェントに表示するツールキット |
-| [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | ウェブ経由でのコードテスト |
 | [Glyph Matrix Tasker Plugin](https://github.com/Gennadiyev/GlyphMatrixTaskerPlugin) | Gennadiyev | Nothing Phone (3)のGlyph Matrixを制御するためのTaskerプラグイン。 |
 | [Glyph Mo](https://github.com/anamite/GlyphMo) | anamite | Nothing Phone (4a) Pro 専用に設計された Glyph マトリックス制御アプリケーション。 |
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | Glyphアートの作成と展示 |
@@ -104,8 +103,8 @@ Glyphマトリックス向けのインタラクティブなトイとゲーム。
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | 保留中の通知を Glyph マトリックス上の一目でわかる表示に変換 |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | アーケードスタイルのスタッキングゲーム |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | 常にオンでオーディオに反応するGlyphマトリックスディスプレイコントローラー |
-| [Glyph Text Animator](https://github.com/deepudxd/GlyphTextAnimator) | deepudxd | Nothing Phone (4a) Proの13×13 Glyph Matrix用テキストスクロール点滅アニメーション変換ツール |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | コイントス、着信モード、バッテリーフロー |
+| [Glyph Type](https://github.com/deepudxd/GlyphType) | deepudxd | Nothing Phone (4a) Proの13×13 Glyph Matrix用テキストスクロール点滅アニメーション変換ツール |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | ボール迷路、スピードダイヤル、たまごっち |
 | [Glyphix](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | Glyph Matrix用アンビエントAOD |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistantのエンティティ切り替え |

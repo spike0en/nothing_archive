@@ -82,7 +82,6 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Life](https://github.com/Yuma-Eimymk2/glyph-life) | Yuma-Eimymk2 | Conway's Game of Life toy for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Scrolling text messages |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Toolkit for creating and intelligently displaying custom Glyph Matrix visuals for Nothing Phone (4a) Pro |
-| [Glyph Matrix Simulator](http://glyph.andreibanu.com/) | pzmuV1517 | Web-based code testing |
 | [Glyph Matrix Tasker Plugin](https://github.com/Gennadiyev/GlyphMatrixTaskerPlugin) | Gennadiyev | Tasker plugin for controlling the Glyph Matrix on Nothing Phone (3). |
 | [Glyph Mo](https://github.com/anamite/GlyphMo) | anamite | Glyph Matrix control application designed exclusively for the Nothing Phone (4a) Pro. |
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | Create and showcase Glyph art |
@@ -92,8 +91,8 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | Turns pending notifications into a glanceable display on the Glyph Matrix |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | A stacker arcade game |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Always-on, audio-reactive Glyph Matrix display controller |
-| [Glyph Text Animator](https://github.com/deepudxd/GlyphTextAnimator) | deepudxd | Converts text into scrolling dot-matrix animations for the Nothing Phone (4a) Pro's 13×13 Glyph Matrix |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | Coin flip, ringer mode, battery flow |
+| [Glyph Type](https://github.com/deepudxd/GlyphType) | deepudxd | Converts text into scrolling dot-matrix animations for the Nothing Phone (4a) Pro's 13×13 Glyph Matrix |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Ball maze, quick dial, Tamagotchi |
 | [Glyphix](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | Ambiental AOD for the Glyph Matrix |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistant entity toggle |
