@@ -231,6 +231,7 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 | [No Volume](https://play.google.com/store/apps/details?id=com.nostudio.novolume) | NoAppsStudio | Özelleştirilebilir ses silders |
 | [Noid](https://play.google.com/store/apps/details?id=com.techsip.noid) | TechSip Studios | Dosya yönetimi |
 | [Nothing Audio Recorder](https://play.google.com/store/apps/details?id=com.service.rare.audio.recorder) | Cloud Nine Labs | Ses kaydedici |
+| [Nothing Calculator](https://play.google.com/store/apps/details?id=com.anoobav.calculator) | Anubhav | Nothing tasarımlarından esinlenen; canlı hesaplamalar, bilimsel işlevler ve geçmişe sahip minimalist hesap makinesi |
 | [Nothing Calculator](https://github.com/git-jamesfrench/NothingCalculator) | git-jamesfrench | Topluluk yapımı Nothing Hesap Makinesi |
 | [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | Dünya saati, zamanlayıcı, kronometre |
 | [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | nothing.community için mobil uygulama |

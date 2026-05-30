@@ -231,6 +231,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [No Volume](https://play.google.com/store/apps/details?id=com.nostudio.novolume) | NoAppsStudio | Настраиваемый слайдер громкости |
 | [Noid](https://play.google.com/store/apps/details?id=com.techsip.noid) | TechSip Studios | Управление файлами |
 | [Nothing Audio Recorder](https://play.google.com/store/apps/details?id=com.service.rare.audio.recorder) | Cloud Nine Labs | Диктофон |
+| [Nothing Calculator](https://play.google.com/store/apps/details?id=com.anoobav.calculator) | Anubhav | Минималистичный калькулятор в стиле Nothing с вычислениями в реальном времени, научными функциями и историей |
 | [Nothing Calculator](https://github.com/git-jamesfrench/NothingCalculator) | git-jamesfrench | Калькулятор Nothing от сообщества |
 | [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | Мировое время, таймер, секундомер |
 | [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | Мобильное приложение для nothing.community |

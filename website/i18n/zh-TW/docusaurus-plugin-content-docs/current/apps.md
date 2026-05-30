@@ -231,6 +231,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [No Volume](https://play.google.com/store/apps/details?id=com.nostudio.novolume) | NoAppsStudio | 可自訂音量滑桿 |
 | [Noid](https://play.google.com/store/apps/details?id=com.techsip.noid) | TechSip Studios | 檔案管理 |
 | [Nothing Audio Recorder](https://play.google.com/store/apps/details?id=com.service.rare.audio.recorder) | Cloud Nine Labs | 錄音機 |
+| [Nothing Calculator](https://play.google.com/store/apps/details?id=com.anoobav.calculator) | Anubhav | 受 Nothing 設計啟發的極簡計算機，具備即時計算、科學功能和歷史記錄 |
 | [Nothing Calculator](https://github.com/git-jamesfrench/NothingCalculator) | git-jamesfrench | 社群製作的 Nothing 計算機 |
 | [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | 世界時鐘、計時器、碼錶 |
 | [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | nothing.community 的行動應用程式 |

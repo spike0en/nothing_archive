@@ -226,6 +226,7 @@ Fonds d'écran dynamiques et améliorations visuelles pour sublimer l'apparence 
 | [No Volume](https://play.google.com/store/apps/details?id=com.nostudio.novolume) | NoAppsStudio | Curseur de volume personnalisable |
 | [Noid](https://play.google.com/store/apps/details?id=com.techsip.noid) | TechSip Studios | Gestion de fichiers |
 | [Nothing Audio Recorder](https://play.google.com/store/apps/details?id=com.service.rare.audio.recorder) | Cloud Nine Labs | Enregistreur audio |
+| [Nothing Calculator](https://play.google.com/store/apps/details?id=com.anoobav.calculator) | Anubhav | Calculatrice minimale inspirée du design de Nothing avec calculs en temps réel, fonctions scientifiques et historique |
 | [Nothing Calculator](https://github.com/git-jamesfrench/NothingCalculator) | git-jamesfrench | Calculatrice Nothing faite par la communauté |
 | [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | Horloge mondiale, minuteur, chronomètre |
 | [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | Application mobile pour nothing.community |

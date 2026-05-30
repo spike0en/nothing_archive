@@ -215,6 +215,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [No Volume](https://play.google.com/store/apps/details?id=com.nostudio.novolume) | NoAppsStudio | Customisable volume slider |
 | [Noid](https://play.google.com/store/apps/details?id=com.techsip.noid) | TechSip Studios | File management |
 | [Nothing Audio Recorder](https://play.google.com/store/apps/details?id=com.service.rare.audio.recorder) | Cloud Nine Labs | Audio recorder |
+| [Nothing Calculator](https://play.google.com/store/apps/details?id=com.anoobav.calculator) | Anubhav | Nothing's design-inspired minimal calculator with live calculations, scientific functions, and history |
 | [Nothing Calculator](https://github.com/git-jamesfrench/NothingCalculator) | git-jamesfrench | Community made Nothing calculator |
 | [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | World clock, timer, stopwatch |
 | [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | Mobile app for nothing.community |
