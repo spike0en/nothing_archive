@@ -21,6 +21,7 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | [Better Nothing Music Visualizer](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | alekslevet | 增強的音樂視覺化 |
 | [Cassette](https://github.com/Chipik0/Cassette) | Chipik0 | 建立 Glyph 組合 |
 | [Custom Nothing Glyph Tools](https://github.com/SebiAi/custom-nothing-glyph-tools) | SebiAi | 使用 Audacity 建立自訂音效 |
+| [Glyph Ctrl](https://github.com/Nonta72/glyph_ctrl) | Nonta72 | 用於 Nothing Phone (1) 上 Ubuntu Touch 的 Glyphs Lights 應用程式的簡單輔助工具 |
 | [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | 適用於 Phone (3) 的像素藝術編輯器 |
 | [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | 將圖片轉換為 Glyph 圖樣 |
 | [Glyph Tones](https://glyphtones.is-a.dev/) | Firu11 | 社群 Glyph 音效合集。（[Repo](https://github.com/firu11/nothing-glyphtones)） |
@@ -118,7 +119,9 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | 終端機風格首頁 |
 | [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | 使用 Nothing 字型的 HTML 標誌產生器 ([Repo](https://github.com/Lovinoes/ndot-logo-generator)) |
+| [Nothing Clone](https://github.com/Jivan-Patel/nothing-clone) | Jivan-Patel | 受 Nothing 品牌產品頁面啟發的多頁面靜態 UI 仿製專案 |
 | [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | 用於控制 Nothing Ear ANC 的 GNOME 擴充 |
+| [Nothing History](https://ironstike.github.io/nothing-history/) | Ironstike | 關於 Nothing 手機歷史的網站 ([Repo](https://github.com/Ironstike/nothing-history)) |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | 瀏覽器新分頁擴充 |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome 擴充 |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | 受 Nothing OS 啟發的天氣網頁應用程式 |
@@ -151,14 +154,17 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | 適用於 Nothing 與 CMF 音訊裝置的原生 Rust 桌面用戶端 |
 | [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | 基於 Rust 的 Linux 應用程式，用於控制 Nothing 耳機的 ANC 模式 |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | 用於 Phone (2a) 系列 與 CMF Phone (1) 的完整性檢查繞過 PoC |
+| [Glyph Adapter](https://github.com/frogfile/GlyphAdapter) | frogfile | 一個 Root Android 服務，可讓使用 Nothing 的 Glyph SDK 的第三方應用程式在刷機後的裝置上運行 |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid 巨集 |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | 整合官方 Nothing 與 CMF 韌體、社群應用、專案與資源的精選平台。（[Repo](https://github.com/spike0en/nothing_archive)） |
 | [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | 索引社群應用程式的 PWA 風格網頁應用程式，使用來自 [Nothing Archive](https://github.com/spike0en/nothing_archive) 的基礎資料庫 |
 | [Nothing Flasher](https://github.com/spike0en/nothing_flasher) | spike0en & Hellboy017 | Fastboot 刷機腳本 |
+| [Nothing Glyph Interface Research](https://github.com/ThatOneCheat/nothing-glyph-interface-research) | ThatOneCheat | Nothing Phone Glyph SDK 及系統服務的反向工程筆記，已與反編譯程式碼進行驗證 |
 | [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | 新聞與資源平台 |
 | [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | 透過 ADB 修補／停用 Logkit 的工具 |
 | [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | Nothing 社群精選小工具藝廊 |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | 社群平台（[Repo](https://github.com/nothingtools/nothingtools.github.io)） |
+| [Nothing Termux Voice Control](https://github.com/abdular721-lgtm/nothing-archives) | abdular721-lgtm | 適用於 Nothing Phone (2a) Plus 的 Termux 語音控制指令碼 |
 | [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | r/NothingTech 維基 |
 | [Nothing X (DMS)](https://github.com/Bestello/dms-nothingx/) | Bestello | 適用於 Dank Material Shell 的 Nothing 與 CMF 音訊裝置控制器外掛程式 |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | 用於 Nothing 與 CMF 耳機的 macOS 配套應用程式 |
@@ -176,9 +182,15 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 
 | Module | Author | 說明 |
 |--------|--------|-------------|
+| [Dirac Audio Nothing Phone 1 Magisk Module](https://github.com/reiryuki/Dirac-Audio-Nothing-Phone-1-Magisk-Module) | reiryuki | 從 Nothing Phone (1) 移植到其他裝置的 Dirac 音訊模組 |
+| [Glyph CLI](https://github.com/mahdi-salmanzade/glyph-cli) | mahdi-salmanzade | 直接從終端機控制 137 個 LED。免 SDK。無應用程式沙盒。純 sysfs。 |
+| [NetHunter Spacewar](https://github.com/ExTV/nethunter-spacewar) | ExTV | 適用於 Nothing Phone (1) 的 Kali NetHunter Magisk 模組 |
 | [Nothing AI Changer](https://github.com/Martmists-GH/Nothing-AI-Changer) | Martmists-GH | 將 ChatGPT 整合替換為其他應用程式 |
 | [Nothing Battery Fix](https://github.com/Farpathan/Nothing-Battery-Fix) | Farpathan | 還原經典電池百分比樣式 |
 | [Nothing eUICC](https://github.com/reindex-ot/nothing-euicc) | reindex-ot | 在不支援的 Nothing 裝置上強制啟用 eSIM 功能 |
 | [Nothing OS Aura Killer](https://github.com/reindex-ot/NOS_AuraKiller/) | reindex-ot | 在 NOS 4.0 上移除 Aura 服務 |
 | [Nothing Phone Patch](https://github.com/reindex-ot/magisk-module-nothing) | reindex-ot | 系統調整與強化 |
 | [Nothing Xpert](https://github.com/Rares6567/NothingXpert/) | Rares6567 | 具備額外功能的 LSPosed 模組 |
+| [Phone 2a APU Unlock](https://github.com/Peterc3-dev/phone2a-apu-unlock) | Peterc3-dev | KernelSU sepolicy 模組 + Rust ABI 探針，在 Nothing Phone (2a) 上向使用者空間開放 /dev/apusys |
+| [Premium Vibrator Nothing 2a](https://github.com/polymath-void/premium-vibrator-nothing2a) | polymath-void | 一個極簡且開機安全的模組，開機後透過直接寫入核心 sysfs 節點，在 Nothing Phone (2a) 上套用持久的自訂震動強度 |
+| [Soft Volume Curve For Nothing 2a](https://github.com/GNU-MGR/Soft-Volume-Curve-For-Nothing-2a) | GNU-MGR | 專為 Nothing Phone (2a) 設計的音量曲線優化模組 |

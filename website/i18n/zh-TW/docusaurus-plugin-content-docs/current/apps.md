@@ -40,6 +40,8 @@ AI 生成的高度個人化迷你應用程式，延伸 Nothing OS 生態系。
 | [Glyph Essentials](https://play.google.com/store/apps/details?id=com.tldc.essentials) | GlyphLab | 進階 Glyph 通知自訂化 |
 | [Glyph Glow](https://github.com/fgiering/GlyphGlow) | fgiering | 控制 Glyph 介面的簡約應用程式 |
 | [Glyph Initiator](https://github.com/lowqualitysoarin/Glyph-Initiator/releases) | lowqualitysoarin | 透過 Intent 控制 Glyph 介面 |
+| [Glyph Lights](https://github.com/Nonta72/glyph-lights.nonta) | Nonta72 | 用於開啟/關閉 Nothing Phone (1) 上的 Glyph 燈效的簡單 UT 應用程式 |
+| [Glyph Manager](https://github.com/SthrNilshaaa/package_apps_nglyph) | SthrNilshaaa | Nothing Phone (1) Glyph 管理器 |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | 通知、計時器、視覺化器 |
 | [Glyph Pom](https://github.com/ArushCodes/GlyphPom) | ArushCodes | 適用於 Phone (3a) 與 (3a) Pro 的番茄鐘計時器 |
 | [Glyph Port](https://github.com/SebiAi/GlyphPort) | SebiAi | 將一款 Nothing 裝置的 Glyph 作品移植到另一款裝置 |
@@ -50,6 +52,7 @@ AI 生成的高度個人化迷你應用程式，延伸 Nothing OS 生態系。
 | [Glyph Zen](https://github.com/bleelblep/Glyph-Zen/releases/tag/v1.1) | bleelblep | 搭配 Glyph 的舒緩呼吸練習應用程式 |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | 滾珠迷宮、快速撥號、電子雞 |
 | [Morse Glyphs](https://github.com/roxe12345/MorseGlyphs) | roxe12345 | 以 Glyph 燈光顯示摩斯密碼 |
+| [Nothing Charging Meter](https://github.com/BroCoder007/NothiNGChargingMeter) | BroCoder007 | 適用於 Nothing Phone (3a) 的極簡充電指示器 |
 | [Nothing Glyph Gyroscope](https://github.com/gawdam/nothingGyro) | gawdam | 使用加速度計和陀螺儀的氣泡水平儀 |
 | [Nothing Phone Battery Notification](https://github.com/f3bruary/nothing-phone-battery-notification) | f3bruary | Phone (4a) 專用的紅色 Glyph LED 電池通知工具，支援自定義低電量指示模式 |
 | [Simone](https://play.google.com/store/apps/details?id=com.lisra.simone) | RapidZapper | 整合 Glyph 介面的經典記憶遊戲 |
@@ -78,6 +81,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | 0–9999 計數器 |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | 視覺化器、指南針、骰子、計數器 |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Anki 單字卡整合 |
+| [Glyph Aquarium](https://github.com/chriskenhall-tech/Glyph-Aquarium) | chriskenhall-tech | 一項動態 AOD 水族箱模擬，為 Phone (3) 後置燈光矩陣利用 Nothing Glyph SDK |
 | [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | 結合 Nothing 風格與 Material 3 使用者介面的 Glyph 視覺化應用程式 |
 | [Glyph Beat](https://play.google.com/store/apps/details?id=com.pauwma.glyphbeat) | pauwma | 附主題的媒體視覺化器 |
 | [Glyph Bike](https://play.google.com/store/apps/details?id=com.ofishialdigital.glyphbike) | Ofishial Digital | 橫向捲動摩托車遊戲 |
@@ -102,13 +106,17 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Glyph Pong](https://github.com/codester007/glyph-pong) | codester007 | 適用於 Nothing Phone (4a) Pro Glyph Matrix 的 Pong 遊戲 |
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | 將待處理通知轉換為 Glyph Matrix 上一目了然的顯示 |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | 疊疊樂街機遊戲 |
+| [Glyph Stopwatch](https://github.com/Sturdy7435/GlyphStopwatch) | Sturdy7435 | 適用於 Nothing Phone (4a) Pro Glyph Matrix 的簡單秒錶 |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | 常亮且具備音訊反應功能的 Glyph Matrix 顯示控制器 |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | 丟硬幣、鈴聲模式、電池流量 |
 | [Glyph Type](https://github.com/deepudxd/GlyphType) | deepudxd | 將文本轉換為 Nothing Phone (4a) Pro 13×13 Glyph Matrix 的滾動點陣動畫 |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | 滾珠迷宮、快速撥號、電子雞 |
 | [Glyphix](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | Glyph Matrix 的環境 AOD |
+| [Glyphs](https://github.com/Rorenheim/glyphs) | Rorenheim | 適用於 Nothing Phone (3) 的心形 Glyph 玩具，會爆炸成灑花並顯示「luv u」 |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistant 實體切換 |
 | [Hamon](https://github.com/yuk1-kondo/GlyphToys-hamon) | yuk1-kondo | 物理波紋傳播 |
+| [ISS Glyph Tracker](https://github.com/TheophileJacquot/ISS-Glyph-Tracker) | TheophileJacquot | 在 Nothing Phone (4a) Pro 上使用 Glyph Matrix 即時追蹤國際太空站（ISS） |
+| [Kubeats](https://github.com/Kuberwastaken/kubeats) | Kuberwastaken | 具備額外功能的 [Glyph Beat](https://github.com/pauwma/GlyphBeat) 分支版本 |
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | 陀螺儀水平工具 |
 | [Live Bridge](https://github.com/appsfolder/livebridge) | appsfolder | 將不支援的進度通知轉換為即時通知，使其與 Nothing 的 Glyph 進度指示器相容 |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | 經典神奇八號球 |
@@ -116,6 +124,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Minecraft 像素藝術 |
 | [Morse Glyph](https://github.com/Reyiannonn/MorseGlyph) | Reyiannonn | 將文本轉換為摩斯密碼並透過 Nothing Phone 的 Glyph Matrix 發送 |
 | [Nono Gotchi (Beta)](https://www.jkn.me/pet) | Jkn | Tamagotchi-styled virtual pet |
+| [Pikachu Glyph](https://github.com/nadigchinnu/pikachu-glyph) | nadigchinnu | 適用於 Nothing Phone (3) 的皮卡丘 Glyph Matrix 玩具 |
 | [Pomodoro Timer](https://github.com/PzmuV1517/GlyphPomodoroTimer) | pzmuV1517 | 番茄鐘計時器玩具 |
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | 反映每日螢幕使用時間的臉部表情 |
 | [Timepiece](https://play.google.com/store/apps/details?id=com.arunk140.timepiece) | Arun Khanchandani | 常駐時鐘工具 |
@@ -236,6 +245,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | 世界時鐘、計時器、碼錶 |
 | [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | nothing.community 的行動應用程式 |
 | [Nothing Compass](https://github.com/ISO53/Nothing-Compass) | ISO53 | Nothing 美學風格的指南針與傾斜計 |
+| [Nothing Dashcam](https://github.com/amitskamboj/nothing-dashcam) | amitskamboj | 適用於 Nothing Phone (2) 的行行車記錄器應用程式，支援循環錄影、碰撞偵測、通話暫停/恢復、GPS 疊加和 MediaStore 輸出 |
 | [Nothing Desk Clock](https://play.google.com/store/apps/details?id=com.ApexCreator.deskclock) | Apex Creators | 桌面時鐘應用程式 |
 | [Nothing Files](https://github.com/Mo-Array/Nothing-Files) | Mo-Array | Nothing OS 主題檔案管理員 |
 | [Nothing Gallery](https://github.com/jerichoi224/Nothing-Gallery) | jerichoi224 | 相簿應用程式 |

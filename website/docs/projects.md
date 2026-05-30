@@ -19,6 +19,7 @@ A collection of tools for creating custom Glyph tones and compositions.
 | [Better Nothing Music Visualizer](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | alekslevet | Enhanced music visualization |
 | [Cassette](https://github.com/Chipik0/Cassette) | Chipik0 | Create glyph compositions |
 | [Custom Nothing Glyph Tools](https://github.com/SebiAi/custom-nothing-glyph-tools) | SebiAi | Create custom tones with Audacity |
+| [Glyph Ctrl](https://github.com/Nonta72/glyph_ctrl) | Nonta72 | Simple helper used by the Glyphs Lights Click app for Ubuntu Touch on the Nothing Phone (1) |
 | [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Pixel art editor for Phone (3) |
 | [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | Image to glyph pattern converter |
 | [Glyph Tones](https://glyphtones.is-a.dev/) | Firu11 | Collection of community Glyph tones. ([Repo](https://github.com/firu11/nothing-glyphtones)) |
@@ -109,7 +110,9 @@ Browser extensions and web-based applications inspired by Nothing OS.
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal-inspired homepage |
 | [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | HTML logo generator using the Nothing fonts ([Repo](https://github.com/Lovinoes/ndot-logo-generator)) |
+| [Nothing Clone](https://github.com/Jivan-Patel/nothing-clone) | Jivan-Patel | A multi-page static UI clone inspired by Nothing brand product pages |
 | [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | GNOME extension for ANC control on Nothing Ear |
+| [Nothing History](https://ironstike.github.io/nothing-history/) | Ironstike | A website about the history of Nothing's phones ([Repo](https://github.com/Ironstike/nothing-history)) |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Browser New Tab extension |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome extension |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Nothing OS inspired weather web app |
@@ -136,14 +139,17 @@ Essential resources including wikis, firmware archives, and system repair tools.
 | [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | Native Rust desktop client for Nothing and CMF audio devices |
 | [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Rust based linux app to control Nothing earbuds’ ANC modes |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | Integrity check bypass PoC for Phone (2a) Series & CMF Phone (1) |
+| [Glyph Adapter](https://github.com/frogfile/GlyphAdapter) | frogfile | A root Android service that lets third-party apps using Nothing's Glyph SDK work on flashed phones |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid macros |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Curated hub for official Nothing & CMF firmware, community apps, projects, resources and aftermarket development. ([Repo](https://github.com/spike0en/nothing_archive)) |
 | [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | PWA-style web app that indexes community apps, using a foundational database sourced from [Nothing Archive](https://github.com/spike0en/nothing_archive) |
 | [Nothing Flasher](https://github.com/spike0en/nothing_flasher) | spike0en & Hellboy017 | Fastboot flashing scripts |
+| [Nothing Glyph Interface Research](https://github.com/ThatOneCheat/nothing-glyph-interface-research) | ThatOneCheat | Reverse-engineering notes on the Nothing Phone Glyph SDK and system service, verified against decompiled code |
 | [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | News and resources hub |
 | [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | Tool to patch/disable Logkit via ADB |
 | [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | A curated gallery of the Nothing community's favourite widgets |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | Community hub ([Repo](https://github.com/nothingtools/nothingtools.github.io)) |
+| [Nothing Termux Voice Control](https://github.com/abdular721-lgtm/nothing-archives) | abdular721-lgtm | Termux voice-control scripts for the Nothing Phone (2a) Plus |
 | [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | r/NothingTech wiki |
 | [Nothing X (DMS)](https://github.com/Bestello/dms-nothingx/) | Bestello | Nothing and CMF audio device controller plugin for Dank Material Shell |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | macOS companion app for Nothing and CMF earbuds |
@@ -158,9 +164,15 @@ These require root access (KernelSU or Magisk). Proceed with caution!
 
 | Module | Author | Description |
 |--------|--------|-------------|
+| [Dirac Audio Nothing Phone 1 Magisk Module](https://github.com/reiryuki/Dirac-Audio-Nothing-Phone-1-Magisk-Module) | reiryuki | Dirac Audio module ported from the Nothing Phone (1) for other devices |
+| [Glyph CLI](https://github.com/mahdi-salmanzade/glyph-cli) | mahdi-salmanzade | Control 137 LEDs directly from your terminal. No SDK. No app sandbox. Pure sysfs. |
+| [NetHunter Spacewar](https://github.com/ExTV/nethunter-spacewar) | ExTV | Kali NetHunter Magisk module for the Nothing Phone (1) |
 | [Nothing AI Changer](https://github.com/Martmists-GH/Nothing-AI-Changer) | Martmists-GH | Replace ChatGPT integration with another app |
 | [Nothing Battery Fix](https://github.com/Farpathan/Nothing-Battery-Fix) | Farpathan | Restore classic battery percentage style |
 | [Nothing eUICC](https://github.com/reindex-ot/nothing-euicc) | reindex-ot | Force eSIM features to be enabled on Nothing devices that don't support it |
 | [Nothing OS Aura Killer](https://github.com/reindex-ot/NOS_AuraKiller/) | reindex-ot | Debloat Aura services on NOS 4.0 |
 | [Nothing Phone Patch](https://github.com/reindex-ot/magisk-module-nothing) | reindex-ot | System tweaks and enhancements |
 | [Nothing Xpert](https://github.com/Rares6567/NothingXpert/) | Rares6567 | LSPosed module with extra features |
+| [Phone 2a APU Unlock](https://github.com/Peterc3-dev/phone2a-apu-unlock) | Peterc3-dev | KernelSU sepolicy module + Rust ABI probe that opens /dev/apusys to userspace on Nothing Phone (2a) |
+| [Premium Vibrator Nothing 2a](https://github.com/polymath-void/premium-vibrator-nothing2a) | polymath-void | A minimal, boot-safe module that applies a persistent custom vibrator strength on the Nothing Phone (2a) by writing directly to the kernel sysfs node after boot |
+| [Soft Volume Curve For Nothing 2a](https://github.com/GNU-MGR/Soft-Volume-Curve-For-Nothing-2a) | GNU-MGR | A volume curve optimization module specifically for the Nothing Phone (2a) |

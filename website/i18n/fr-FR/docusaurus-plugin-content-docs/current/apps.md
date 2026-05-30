@@ -35,6 +35,8 @@ Applications s'intégrant à l'interface Glyph des téléphones Nothing.
 | [Glyph Essentials](https://play.google.com/store/apps/details?id=com.tldc.essentials) | GlyphLab | Personnalisation avancée des notifications Glyph |
 | [Glyph Glow](https://github.com/fgiering/GlyphGlow) | fgiering | Application minimale pour contrôler l'interface Glyph |
 | [Glyph Initiator](https://github.com/lowqualitysoarin/Glyph-Initiator/releases) | lowqualitysoarin | Contrôle de l'interface Glyph via des intents |
+| [Glyph Lights](https://github.com/Nonta72/glyph-lights.nonta) | Nonta72 | Application UT simple pour allumer/éteindre les lumières des glyphes sur le Nothing Phone (1) |
+| [Glyph Manager](https://github.com/SthrNilshaaa/package_apps_nglyph) | SthrNilshaaa | Gestionnaire de glyphes pour le Nothing Phone (1) |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Notifications, minuteurs, visualiseur |
 | [Glyph Pom](https://github.com/ArushCodes/GlyphPom) | ArushCodes | Minuteur Pomodoro pour Phone (3a) et (3a) Pro |
 | [Glyph Port](https://github.com/SebiAi/GlyphPort) | SebiAi | Portez une composition Glyph d'un appareil Nothing vers un autre |
@@ -45,6 +47,7 @@ Applications s'intégrant à l'interface Glyph des téléphones Nothing.
 | [Glyph Zen](https://github.com/bleelblep/Glyph-Zen/releases/tag/v1.1) | bleelblep | Application de respiration apaisante avec le Glyph |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Labyrinthe à bille, numérotation rapide, Tamagotchi |
 | [Morse Glyphs](https://github.com/roxe12345/MorseGlyphs) | roxe12345 | Code Morse affiché via les lumières Glyph |
+| [Nothing Charging Meter](https://github.com/BroCoder007/NothiNGChargingMeter) | BroCoder007 | Indicateur de charge minimaliste pour le Nothing Phone (3a) |
 | [Nothing Glyph Gyroscope](https://github.com/gawdam/nothingGyro) | gawdam | Niveau à bulle utilisant l'accéléromètre et le gyroscope |
 | [Nothing Phone Battery Notification](https://github.com/f3bruary/nothing-phone-battery-notification) | f3bruary | Notifications de batterie par LED Glyph rouge avec motifs personnalisables pour Phone (4a) |
 | [Simone](https://play.google.com/store/apps/details?id=com.lisra.simone) | RapidZapper | Jeu de mémoire classique avec l'interface Glyph |
@@ -73,6 +76,7 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | Compteur allant de 0 à 9999 |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | Visualiseur, boussole, dés, compteur |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Intégration de flashcards Anki |
+| [Glyph Aquarium](https://github.com/chriskenhall-tech/Glyph-Aquarium) | chriskenhall-tech | Une simulation d'aquarium AOD dynamique utilisant le SDK Glyph de Nothing pour la matrice lumineuse arrière du Phone (3) |
 | [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | Application de visualisation Glyph intégrant les interfaces utilisateur Nothing et Material 3 |
 | [Glyph Beat](https://play.google.com/store/apps/details?id=com.pauwma.glyphbeat) | pauwma | Visualiseur de médias avec thèmes |
 | [Glyph Bike](https://play.google.com/store/apps/details?id=com.ofishialdigital.glyphbike) | Ofishial Digital | Jeu de moto à défilement |
@@ -97,13 +101,17 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Pong](https://github.com/codester007/glyph-pong) | codester007 | Jeu de Pong pour la matrice Glyph du Nothing Phone (4a) Pro |
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | Transforme les notifications en attente en un affichage consultable sur la matrice Glyph |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | Un jeu d'arcade d'empilement |
+| [Glyph Stopwatch](https://github.com/Sturdy7435/GlyphStopwatch) | Sturdy7435 | Un chronomètre simple pour la matrice Glyph du Nothing Phone (4a) Pro |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Contrôleur d'affichage Glyph Matrix toujours activé et réactif au son |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | Pile ou face, mode sonnerie, flux de batterie |
 | [Glyph Type](https://github.com/deepudxd/GlyphType) | deepudxd | Convertit du texte en animations de matrice de points défilantes pour la matrice Glyph 13×13 du Nothing Phone (4a) Pro |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Labyrinthe à bille, numérotation rapide, Tamagotchi |
 | [Glyphix](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | AOD d'ambiance pour la matrice Glyph |
+| [Glyphs](https://github.com/Rorenheim/glyphs) | Rorenheim | Jouet Glyph cœur pour le Nothing Phone (3) qui explose en éclats et dit "luv u" |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Commutation d'entité Home Assistant |
 | [Hamon](https://github.com/yuk1-kondo/GlyphToys-hamon) | yuk1-kondo | Propagation d'ondes physiques |
+| [ISS Glyph Tracker](https://github.com/TheophileJacquot/ISS-Glyph-Tracker) | TheophileJacquot | Suivez l'ISS en temps réel avec la matrice Glyph sur le Nothing Phone (4a) Pro |
+| [Kubeats](https://github.com/Kuberwastaken/kubeats) | Kuberwastaken | Fork de [Glyph Beat](https://github.com/pauwma/GlyphBeat) avec des fonctionnalités supplémentaires |
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | Outil de niveau gyroscopique |
 | [Live Bridge](https://github.com/appsfolder/livebridge) | appsfolder | Convertit les notifications de progression non supportées en notifications en direct pour les rendre compatibles avec les indicateurs de progression Glyph de Nothing |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | Magic 8 Ball classique |
@@ -111,6 +119,7 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Pixel art Minecraft |
 | [Morse Glyph](https://github.com/Reyiannonn/MorseGlyph) | Reyiannonn | Traduit du texte en code Morse et le transmet via la matrice Glyph du Nothing Phone |
 | [Nono Gotchi (Beta)](https://www.jkn.me/pet) | Jkn | Animal virtuel style Tamagotchi |
+| [Pikachu Glyph](https://github.com/nadigchinnu/pikachu-glyph) | nadigchinnu | Jouet de matrice Glyph Pikachu pour le Nothing Phone (3) |
 | [Pomodoro Timer](https://github.com/PzmuV1517/GlyphPomodoroTimer) | pzmuV1517 | Jouet minuteur Pomodoro |
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | Visage reflétant le temps d'écran quotidien |
 | [Timepiece](https://play.google.com/store/apps/details?id=com.arunk140.timepiece) | Arun Khanchandani | Utilitaire d'horloge Always-On |
@@ -231,6 +240,7 @@ Fonds d'écran dynamiques et améliorations visuelles pour sublimer l'apparence 
 | [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | Horloge mondiale, minuteur, chronomètre |
 | [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | Application mobile pour nothing.community |
 | [Nothing Compass](https://github.com/ISO53/Nothing-Compass) | ISO53 | Boussole et inclinomètre à l'esthétique Nothing |
+| [Nothing Dashcam](https://github.com/amitskamboj/nothing-dashcam) | amitskamboj | Application Dashcam pour Nothing Phone (2) avec prise en charge de l'enregistrement en boucle, détection d'impact, pause/reprise d'appel, superposition GPS et sortie MediaStore |
 | [Nothing Desk Clock](https://play.google.com/store/apps/details?id=com.ApexCreator.deskclock) | Apex Creators | Application d'horloge de bureau |
 | [Nothing Files](https://github.com/Mo-Array/Nothing-Files) | Mo-Array | Gestionnaire de fichiers au thème Nothing OS |
 | [Nothing Gallery](https://github.com/jerichoi224/Nothing-Gallery) | jerichoi224 | Application de galerie |

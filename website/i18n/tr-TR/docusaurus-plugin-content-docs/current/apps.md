@@ -40,6 +40,8 @@ Nothing telefonlarının Glyph arayüzüyle entegre olan uygulamalar.
 | [Glyph Essentials](https://play.google.com/store/apps/details?id=com.tldc.essentials) | GlyphLab | Gelişmiş Glyph bildirim özelleştirmesi |
 | [Glyph Glow](https://github.com/fgiering/GlyphGlow) | fgiering | Glyph arayüzünü kontrol etmek için minimal uygulama |
 | [Glyph Initiator](https://github.com/lowqualitysoarin/Glyph-Initiator/releases) | lowqualitysoarin | Intent'ler aracılığıyla Glyph arayüzü kontrolü |
+| [Glyph Lights](https://github.com/Nonta72/glyph-lights.nonta) | Nonta72 | Nothing Phone (1) üzerindeki glyph ışıklarını açıp kapatmak için basit UT uygulaması |
+| [Glyph Manager](https://github.com/SthrNilshaaa/package_apps_nglyph) | SthrNilshaaa | Nothing Phone (1) Glyph Yöneticisi |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Bildirimler, zamanlayıcılar, görselleştirici |
 | [Glyph Pom](https://github.com/ArushCodes/GlyphPom) | ArushCodes | Phone (3a) ve (3a) Pro için Pomodoro zamanlayıcı |
 | [Glyph Port](https://github.com/SebiAi/GlyphPort) | SebiAi | Bir Nothing cihazından diğerine Glyph kompozisyonu taşıyın |
@@ -50,6 +52,7 @@ Nothing telefonlarının Glyph arayüzüyle entegre olan uygulamalar.
 | [Glyph Zen](https://github.com/bleelblep/Glyph-Zen/releases/tag/v1.1) | bleelblep | Glyph ile rahatlatıcı nefes uygulaması |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Top labirenti, hızlı arama, Tamagotchi |
 | [Morse Glyphs](https://github.com/roxe12345/MorseGlyphs) | roxe12345 | Glyph ışıkları aracılığıyla Mors alfabesi |
+| [Nothing Charging Meter](https://github.com/BroCoder007/NothiNGChargingMeter) | BroCoder007 | Nothing Phone (3a) için minimalist şarj göstergesi |
 | [Nothing Glyph Gyroscope](https://github.com/gawdam/nothingGyro) | gawdam | İvmeölçer ve jiroskop kullanan su terazisi |
 | [Nothing Phone Battery Notification](https://github.com/f3bruary/nothing-phone-battery-notification) | f3bruary | Phone (4a) için özelleştirilebilir düşük pil desenlerine sahip kırmızı Glyph LED bildirim aracı |
 | [Simone](https://play.google.com/store/apps/details?id=com.lisra.simone) | RapidZapper | Glyph arayüzü ile klasik hafıza oyunu |
@@ -78,6 +81,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | 0'dan 9999'a kadar sayaç |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | Görselleştirici, pusula, zar, sayaç |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Anki bilgi kartı entegrasyonu |
+| [Glyph Aquarium](https://github.com/chriskenhall-tech/Glyph-Aquarium) | chriskenhall-tech | Phone (3) arka ışık matrisi için Nothing Glyph SDK'sını kullanan dinamik bir AOD akvaryum simülasyonu |
 | [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | Hem Nothing'den ilham alan hem de Material 3 kullanıcı arayüzlerini içeren Glyph görselleştirici uygulaması |
 | [Glyph Beat](https://play.google.com/store/apps/details?id=com.pauwma.glyphbeat) | pauwma | Temalı medya görselleştirici |
 | [Glyph Bike](https://play.google.com/store/apps/details?id=com.ofishialdigital.glyphbike) | Ofishial Digital | Yandan görünümlü motosiklet oyunu |
@@ -102,13 +106,17 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Glyph Pong](https://github.com/codester007/glyph-pong) | codester007 | Nothing Phone (4a) Pro'nun Glyph Matrisi için Pong oyunu |
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | Bekleyen bildirimleri Glyph Matrisi üzerinde bir bakışta görülebilir bir ekrana dönüştürür |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | Atari tarzı istifleme oyunu |
+| [Glyph Stopwatch](https://github.com/Sturdy7435/GlyphStopwatch) | Sturdy7435 | Nothing Phone (4a) Pro'nun Glyph Matrisi için basit bir kronometre |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Sese duyarlı ve her zaman açık Glyph Matrisi ekran denetleyicisi |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | Yazı tura, zil sesi modu, pil akışı |
 | [Glyph Type](https://github.com/deepudxd/GlyphType) | deepudxd | Nothing Phone (4a) Pro'nun 13×13 Glyph Matrix'i için metni kayan nokta matris animasyonlarına dönüştürür |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Top labirenti, hızlı arama, Tamagotchi |
 | [Glyphix](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | Glyph Matrix için ambiyans AOD |
+| [Glyphs](https://github.com/Rorenheim/glyphs) | Rorenheim | Nothing Phone (3) için serpintilere ayrışan ve "luv u" diyen Kalp Glyph Oyuncağı |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistant varlık değiştirme |
 | [Hamon](https://github.com/yuk1-kondo/GlyphToys-hamon) | yuk1-kondo | Fiziksel dalga yayılımı |
+| [ISS Glyph Tracker](https://github.com/TheophileJacquot/ISS-Glyph-Tracker) | TheophileJacquot | Nothing Phone (4a) Pro'da Glyph Matrisi ile ISS'yi gerçek zamanlı olarak takip edin |
+| [Kubeats](https://github.com/Kuberwastaken/kubeats) | Kuberwastaken | Ek özelliklere sahip [Glyph Beat](https://github.com/pauwma/GlyphBeat) çatalı |
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | Jiroskopik su terazisi aracı |
 | [Live Bridge](https://github.com/appsfolder/livebridge) | appsfolder | Desteklenmeyen ilerleme bildirimlerini Canlı Bildirimlere dönüştürerek Nothing'in Glyph ilerleme göstergeleriyle uyumlu hale getirir |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | Klasik Sihirli 8 Top |
@@ -116,6 +124,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Minecraft piksel sanatı |
 | [Morse Glyph](https://github.com/Reyiannonn/MorseGlyph) | Reyiannonn | Metni Mors alfabesine çevirir ve Nothing Phone'un Glyph Matrisi aracılığıyla iletir |
 | [Nono Gotchi (Beta)](https://www.jkn.me/pet) | Jkn | Tamagotchi tarzı sanal evcil hayvan |
+| [Pikachu Glyph](https://github.com/nadigchinnu/pikachu-glyph) | nadigchinnu | Nothing Phone (3) için Pikachu Glyph Matrix oyuncağı |
 | [Pomodoro Timer](https://github.com/PzmuV1517/GlyphPomodoroTimer) | pzmuV1517 | Pomodoro zamanlayıcı oyuncağı |
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | Günlük ekran süresini yansıtan yüz |
 | [Timepiece](https://play.google.com/store/apps/details?id=com.arunk140.timepiece) | Arun Khanchandani | Always-On saat yardımcısı |
@@ -236,6 +245,7 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 | [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | Dünya saati, zamanlayıcı, kronometre |
 | [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | nothing.community için mobil uygulama |
 | [Nothing Compass](https://github.com/ISO53/Nothing-Compass) | ISO53 | Nothing estetiğine sahip pusula ve eğimölçer |
+| [Nothing Dashcam](https://github.com/amitskamboj/nothing-dashcam) | amitskamboj | Döngüsel kayıt, darbe algılama, arama duraklatma/devam ettirme, GPS katmanı ve MediaStore çıktısı desteği ile Nothing Phone (2) için araç kamerası uygulaması |
 | [Nothing Desk Clock](https://play.google.com/store/apps/details?id=com.ApexCreator.deskclock) | Apex Creators | Masa saati uygulaması |
 | [Nothing Files](https://github.com/Mo-Array/Nothing-Files) | Mo-Array | Nothing OS temalı dosya yöneticisi |
 | [Nothing Gallery](https://github.com/jerichoi224/Nothing-Gallery) | jerichoi224 | Galeri uygulaması |
