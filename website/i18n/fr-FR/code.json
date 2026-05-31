@@ -3,49 +3,49 @@
         "message": "Appareils"
     },
     "feature.devices.description": {
-        "message": "Consultez le catalogue complet des appareils Nothing et CMF — téléphones, audio, wearables et accessoires, le tout au même endroit."
+        "message": "Explorez le catalogue complet des appareils Nothing et CMF, incluant les téléphones, l'audio, les wearables et les accessoires."
     },
     "feature.firmware.title": {
-        "message": "Dépôt de firmware"
+        "message": "Archive des firmwares"
     },
     "feature.firmware.description": {
-        "message": "Téléchargez les firmwares officiels de Nothing OS, les images d'usine et les fichiers OTA incrémentiels pour un flashage, une restauration et un chargement latéral faciles."
+        "message": "Téléchargez les firmwares officiels Nothing OS, les images d'usine et les mises à jour OTA incrémentielles pour flasher, rétrograder, restaurer, rooter ou installer manuellement des mises à jour afin de contourner les déploiements régionaux progressifs."
     },
     "feature.changelogs.title": {
-        "message": "Changelogs OTA"
+        "message": "Journaux des modifications OTA"
     },
     "feature.changelogs.description": {
-        "message": "Consultez les changelogs officiels de Nothing OS, incluant les mises à jour de fonctionnalités, les corrections de bugs et l'historique des versions pour tous les appareils."
+        "message": "Accédez aux journaux des modifications officiels de Nothing OS, aux corrections de bugs et à l'historique des versions."
     },
     "feature.guides.title": {
         "message": "Guides et tutoriels"
     },
     "feature.guides.description": {
-        "message": "Guides étape par étape pour déverrouiller le bootloader, rooter et personnaliser vos appareils Nothing et CMF."
+        "message": "Instructions étape par étape pour déverrouiller le chargeur de démarrage (bootloader), rooter et personnaliser les appareils Nothing et CMF."
     },
     "feature.official.title": {
         "message": "Ressources officielles"
     },
     "feature.official.description": {
-        "message": "Accès centralisé aux applications officielles Nothing, fonds d'écran, polices, code source du kernel et outils de développement."
+        "message": "Retrouvez les applications officielles Nothing, fonds d'écran, polices, codes sources du noyau (kernel) et outils de développement."
     },
     "feature.apps.title": {
         "message": "Applications de la communauté"
     },
     "feature.apps.description": {
-        "message": "Découvrez des applications développées par la communauté, des outils Glyph, des utilitaires de productivité et plus encore, conçus pour les appareils Nothing et CMF."
+        "message": "Découvrez les applications, outils Glyph et utilitaires de productivité créés par la communauté."
     },
     "feature.projects.title": {
         "message": "Projets de la communauté"
     },
     "feature.projects.description": {
-        "message": "Explorez des projets communautaires, des outils créatifs et des logiciels uniques conçus pour l'écosystème Nothing."
+        "message": "Explorez les logiciels créatifs, outils et projets conçus pour l'écosystème Nothing."
     },
     "feature.photography.title": {
         "message": "Photographie"
     },
     "feature.photography.description": {
-        "message": "Obtenez des versions portées de GCAM, des fichiers de configuration et des préréglages optimisés pour les appareils Nothing et CMF pour une expérience photo optimale."
+        "message": "Améliorez vos photos grâce aux portages GCam, configurations personnalisées et préréglages adaptés aux téléphones Nothing et CMF."
     },
     "homepage.hero.exploreResources": {
         "message": "Explorer les ressources"
@@ -60,7 +60,7 @@
         "message": "Communauté"
     },
     "homepage.community.starText": {
-        "message": "Si cet index vous est utile, n'hésitez pas à mettre une étoile au dépôt — cela aide à améliorer sa visibilité et à faire grandir la communauté."
+        "message": "Si ce projet vous est utile, merci de penser à ajouter une étoile au dépôt. Cela améliore sa visibilité et soutient la croissance de la communauté."
     },
     "homepage.community.starButton": {
         "message": "Mettre une étoile sur GitHub"

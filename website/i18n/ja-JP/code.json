@@ -3,49 +3,49 @@
         "message": "デバイス"
     },
     "feature.devices.description": {
-        "message": "NothingとCMFの全デバイスカタログをご覧ください。スマートフォン、オーディオ、ウェアラブル、アクセサリーまで網羅しています。"
+        "message": "NothingおよびCMFの全デバイス（スマートフォン、オーディオ、ウェアラブル、アクセサリー）を網羅した製品カタログ。"
     },
     "feature.firmware.title": {
         "message": "ファームウェアアーカイブ"
     },
     "feature.firmware.description": {
-        "message": "公式Nothing OSファームウェア、ファクトリーイメージ、差分OTAファイルをダウンロード。簡単にフラッシュ、復元、サイドロードが可能です。"
+        "message": "公式Nothing OSファームウェア、ファクトリーイメージ、差分OTAアップデートをダウンロードして、フラッシュ、ダウングレード、復元、Root化、または手動でのアップデート適用を行い、段階的な地域限定配信をスキップできます。"
     },
     "feature.changelogs.title": {
         "message": "OTA変更ログ"
     },
     "feature.changelogs.description": {
-        "message": "Nothing OSの公式変更ログ、バグ修正、すべてのデバイスのバージョン履歴を確認できます。"
+        "message": "Nothing OSの公式変更ログ、アップデート内容、バグ修正、およびバージョン履歴を確認できます。"
     },
     "feature.guides.title": {
         "message": "ガイド"
     },
     "feature.guides.description": {
-        "message": "NothingおよびCMFデバイスのブートローダー解除、ルート化、カスタマイズに関するステップバイステップの手順を提供。"
+        "message": "ブートローダー解除、ルート化、NothingおよびCMFデバイスのカスタマイズ手順を分かりやすく解説。"
     },
     "feature.official.title": {
         "message": "公式リソース"
     },
     "feature.official.description": {
-        "message": "公式Nothingアプリ、壁紙、フォント、カーネルソース、開発者ツールに一括アクセス。"
+        "message": "公式のNothingアプリ、壁紙、フォント、カーネルソース、および開発者ツールをまとめて提供します。"
     },
     "feature.apps.title": {
         "message": "コミュニティアプリ"
     },
     "feature.apps.description": {
-        "message": "コミュニティが開発したアプリ、Glyphツール、生産性向上ユーティリティなど、NothingとCMFデバイス専用コンテンツをご覧ください。"
+        "message": "有志によって開発されたアプリ、Glyphツール、各種ユーティリティを紹介します。"
     },
     "feature.projects.title": {
         "message": "コミュニティプロジェクト"
     },
     "feature.projects.description": {
-        "message": "Nothingエコシステム向けに設計されたコミュニティプロジェクト、クリエイティブツール、独自ソフトウェアを探索。"
+        "message": "Nothingエコシステム向けに開発されたクリエイティブなツールや独自のソフトウェア、プロジェクトを探索。"
     },
     "feature.photography.title": {
         "message": "写真"
     },
     "feature.photography.description": {
-        "message": "NothingとCMFデバイス向けに最適化されたGCAMポート、設定、プリセットを入手して、最高のカメラ体験を。"
+        "message": "NothingおよびCMFスマートフォン向けに調整されたGCam移植版、カスタム設定、プリセットを利用して、写真をより美しく撮影できます。"
     },
     "homepage.hero.exploreResources": {
         "message": "リソースを探索"
@@ -60,7 +60,7 @@
         "message": "コミュニティ"
     },
     "homepage.community.starText": {
-        "message": "このインデックスが役に立ったら、リポジトリにスターをお願いします。可視性が高まり、コミュニティの持続的な成長に繋がります。"
+        "message": "このプロジェクトが役に立った場合は、ぜひリポジトリへのスターをご検討ください。プロジェクトの認知度向上とコミュニティの成長に繋がります。"
     },
     "homepage.community.starButton": {
         "message": "GitHubでスター"

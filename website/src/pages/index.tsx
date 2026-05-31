@@ -38,7 +38,7 @@ function getFeatureList(): FeatureItem[] {
       title: translate({ id: 'feature.devices.title', message: 'Devices' }),
       description: translate({
         id: 'feature.devices.description',
-        message: 'Explore the complete catalog of Nothing & CMF devices—phones, audio gear, wearables, and accessories in one place.',
+        message: 'Explore the full catalog of Nothing and CMF devices, including phones, audio gear, wearables, and accessories.',
       }),
       link: '/docs/devices',
       icon: <FaMobileAlt size={20} />,
@@ -47,7 +47,7 @@ function getFeatureList(): FeatureItem[] {
       title: translate({ id: 'feature.firmware.title', message: 'Firmware Archive' }),
       description: translate({
         id: 'feature.firmware.description',
-        message: 'Download official Nothing OS firmware, stock factory images, and delta OTA files for easy flashing, restoring, and sideloading updates.',
+        message: 'Download official Nothing OS firmware, stock factory images, and delta OTA updates to flash, downgrade, restore, root, or manually sideload updates on your phones to skip staggered regional rollouts.',
       }),
       link: '/docs/firmware',
       icon: <FaDownload size={20} />,
@@ -56,7 +56,7 @@ function getFeatureList(): FeatureItem[] {
       title: translate({ id: 'feature.changelogs.title', message: 'OTA Changelogs' }),
       description: translate({
         id: 'feature.changelogs.description',
-        message: 'Read official Nothing OS update changelogs, feature updates, bug fixes, and version history for all devices.',
+        message: 'Browse official Nothing OS changelogs, system updates, bug fixes, and version histories.',
       }),
       link: '/docs/changelogs',
       icon: <FaClipboardList size={20} />,
@@ -65,7 +65,7 @@ function getFeatureList(): FeatureItem[] {
       title: translate({ id: 'feature.guides.title', message: 'Guides' }),
       description: translate({
         id: 'feature.guides.description',
-        message: 'Step-by-step guides for bootloader unlocking, rooting, and device customization for both Nothing and CMF.',
+        message: 'Step-by-step instructions to unlock bootloaders, root, and customize Nothing and CMF devices.',
       }),
       link: '/docs/guides',
       icon: <FaBook size={20} />,
@@ -74,7 +74,7 @@ function getFeatureList(): FeatureItem[] {
       title: translate({ id: 'feature.official.title', message: 'Official Resources' }),
       description: translate({
         id: 'feature.official.description',
-        message: 'Access official Nothing apps, wallpapers, fonts, kernel sources, and developer tools in one organized hub.',
+        message: 'Find official Nothing apps, wallpapers, custom fonts, kernel sources, and developer tools.',
       }),
       link: '/docs/official',
       icon: <FaBoxOpen size={20} />,
@@ -83,7 +83,7 @@ function getFeatureList(): FeatureItem[] {
       title: translate({ id: 'feature.apps.title', message: 'Community Apps' }),
       description: translate({
         id: 'feature.apps.description',
-        message: 'Discover community-built apps, Glyph tools, productivity utilities, and more for Nothing & CMF devices.',
+        message: 'Explore custom apps, Glyph tools, and productivity utilities made by the community.',
       }),
       link: '/docs/apps',
       icon: <FaRocket size={20} />,
@@ -92,7 +92,7 @@ function getFeatureList(): FeatureItem[] {
       title: translate({ id: 'feature.projects.title', message: 'Projects' }),
       description: translate({
         id: 'feature.projects.description',
-        message: 'Discover community projects, creative tools, and unique software designed for the Nothing ecosystem.',
+        message: 'Browse creative software, tools, and custom projects built for the Nothing ecosystem.',
       }),
       link: '/docs/projects',
       icon: <FaCode size={20} />,
@@ -101,7 +101,7 @@ function getFeatureList(): FeatureItem[] {
       title: translate({ id: 'feature.photography.title', message: 'Photography' }),
       description: translate({
         id: 'feature.photography.description',
-        message: 'Get the best camera experience with GCAM ports, configs, and presets optimized for Nothing & CMF devices.',
+        message: 'Improve your photos with GCAM ports, custom configurations, and presets tuned for Nothing and CMF phones.',
       }),
       link: '/docs/photography',
       icon: <FaCameraRetro size={20} />,
@@ -253,8 +253,7 @@ function HomepageCommunity() {
         <div className={styles.supportText}>
           <p>
             <Translate id="homepage.community.starText">
-              If you find this index helpful, consider starring the repository —
-              it helps with discoverability and keeps the community growing.
+              If you find this project helpful, please consider starring the repository. This helps with discoverability and keeps the community growing.
             </Translate>
           </p>
         </div>

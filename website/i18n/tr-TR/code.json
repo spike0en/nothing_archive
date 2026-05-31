@@ -3,49 +3,49 @@
         "message": "Cihazlar"
     },
     "feature.devices.description": {
-        "message": "Tüm Nothing ve CMF cihaz kataloğunu keşfedin — telefonlar, ses, giyilebilir cihazlar ve aksesuarlar."
+        "message": "Telefonlar, ses cihazları ve aksesuarlar dahil olmak üzere tüm Nothing ve CMF ürün kataloğunu inceleyin."
     },
     "feature.firmware.title": {
         "message": "Yazılım Arşivi"
     },
     "feature.firmware.description": {
-        "message": "Resmi Nothing OS yazıılımlarını, fabrika imajlarını ve incremental OTA dosyalarını indirin. Kolayca flaşlayın, geri yükleyin ve güncelleyin."
+        "message": "Aşamalı bölgesel dağıtımları beklememek için resmi Nothing OS yazılımlarını, fabrika imajlarını ve delta OTA güncellemelerini indirerek cihazınızı manuel olarak flaşlayın, sürümünü düşürün, kurtarın, rootlayın veya güncelleyin."
     },
     "feature.changelogs.title": {
         "message": "OTA Değişiklik Günlükleri"
     },
     "feature.changelogs.description": {
-        "message": "Tüm cihazlar için Nothing OS'un resmi değişiklik günlüklerini, hata düzeltmelerini ve sürüm geçmişini görüntüleyin."
+        "message": "Resmi Nothing OS güncelleme notları, hata düzeltmeleri ve sistem sürüm geçmişleri."
     },
     "feature.guides.title": {
         "message": "Kılavuzlar"
     },
     "feature.guides.description": {
-        "message": "Nothing ve CMF cihazları için bootloader kilidi açma, root atma ve özelleştirme konusunda adım adım kılavuzlar."
+        "message": "Nothing ve CMF cihazlarında bootloader kilidi açma, root yetkisi alma ve kişiselleştirme için adım adım yönergeler."
     },
     "feature.official.title": {
         "message": "Resmi Kaynaklar"
     },
     "feature.official.description": {
-        "message": "Resmi Nothing uygulamalarına, duvar kağıtlarına, yazı tiplerine, kernel kaynak kodlarına ve geliştirici araçlarına erişin."
+        "message": "Resmi Nothing uygulamaları, duvar kağıtları, yazı tipleri, çekirdek (kernel) kaynak kodları ve geliştirici araçları."
     },
     "feature.apps.title": {
         "message": "Topluluk Uygulamaları"
     },
     "feature.apps.description": {
-        "message": "Nothing ve CMF cihazları için topluluk tarafından geliştirilen uygulamaları, Glyph araçlarını ve üretkenlik yardımcılarını keşfedin."
+        "message": "Topluluk tarafından Nothing ve CMF için geliştirilen özel uygulamaları, Glyph araçlarını ve verimlilik yazılımlarını keşfedin."
     },
     "feature.projects.title": {
         "message": "Topluluk Projeleri"
     },
     "feature.projects.description": {
-        "message": "Nothing ekosistemi için tasarlanmış topluluk projelerini, yaratıcı araçları ve benzersiz yazılımları keşfedin."
+        "message": "Nothing ekosistemi için geliştirilen yaratıcı yazılımlar, araçlar ve topluluk projeleri."
     },
     "feature.photography.title": {
         "message": "Fotoğrafçılık"
     },
     "feature.photography.description": {
-        "message": "Nothing ve CMF cihazları için optimize edilmiş GCAM portlarını, yapılandırmalarını ve presetlerini edinin."
+        "message": "Nothing ve CMF telefonları için özel olarak ayarlanan GCam portları, yapılandırmalar ve hazır profillerle fotoğraf kalitenizi artırın."
     },
     "homepage.hero.exploreResources": {
         "message": "Kaynakları Keşfedin"
@@ -60,7 +60,7 @@
         "message": "Topluluk"
     },
     "homepage.community.starText": {
-        "message": "Bu dizin size yardımcı olduysa, lütfen depoyu yıldızlayın — bu, görünürlüğü artırmaya ve topluluğu büyütmeye yardımcı olur."
+        "message": "Bu projeyi yararlı bulduysanız lütfen depoya yıldız vermeyi düşünün. Bu, projenin görünürlüğünü artırır ve topluluğun büyümesini sağlar."
     },
     "homepage.community.starButton": {
         "message": "GitHub'da Yıldızla"
