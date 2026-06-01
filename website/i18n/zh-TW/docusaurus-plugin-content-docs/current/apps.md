@@ -253,6 +253,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Nothing K](https://github.com/cuadratico/NothingK) | cuadratico | 密碼保管庫 |
 | [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | 適用於 Nothing OS 的靈動島功能 |
 | [Nothing LED Banner](https://play.google.com/store/apps/details?id=com.ApexCreator.thebannerapp) | Apex Creators | LED 跑馬燈建立工具 |
+| [Nothing Mixer](https://github.com/farizanjum/mixer-1) | farizanjum | 採用 Nothing OS 美學設計的單一應用程式音量控制 App |
 | [Nothing News](https://play.google.com/store/apps/details?id=com.nothing.news) | Mirko_ddd | 社群新聞 |
 | [Nothing Quick Tools](https://github.com/DylanAkp/NothingQuickTools) | DylanAkp | Phone (2) 快速設定磚 |
 | [Nothing Weather](https://play.google.com/store/apps/details?id=com.ApexCreator.nothing_weather) | Apex Creators | 天氣應用程式 |

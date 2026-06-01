@@ -253,6 +253,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Nothing K](https://github.com/cuadratico/NothingK) | cuadratico | Хранилище паролей |
 | [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Dynamic Island для Nothing OS |
 | [Nothing LED Banner](https://play.google.com/store/apps/details?id=com.ApexCreator.thebannerapp) | Apex Creators | Создание светодиодных баннеров |
+| [Nothing Mixer](https://github.com/farizanjum/mixer-1) | farizanjum | Приложение для управления громкостью отдельных приложений, разработанное в эстетике Nothing OS |
 | [Nothing News](https://play.google.com/store/apps/details?id=com.nothing.news) | Mirko_ddd | Новости сообщества |
 | [Nothing Quick Tools](https://github.com/DylanAkp/NothingQuickTools) | DylanAkp | Быстрые настройки (Tiles) для Phone (2) |
 | [Nothing Weather](https://play.google.com/store/apps/details?id=com.ApexCreator.nothing_weather) | Apex Creators | Погода |

@@ -253,6 +253,7 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 | [Nothing K](https://github.com/cuadratico/NothingK) | cuadratico | Şifre kasası |
 | [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Nothing OS için Dynamic Island |
 | [Nothing LED Banner](https://play.google.com/store/apps/details?id=com.ApexCreator.thebannerapp) | Apex Creators | LED banner oluşturucu |
+| [Nothing Mixer](https://github.com/farizanjum/mixer-1) | farizanjum | Nothing OS estetiğiyle tasarlanmış, uygulama başına ses kontrolü uygulaması |
 | [Nothing News](https://play.google.com/store/apps/details?id=com.nothing.news) | Mirko_ddd | Topluluk haberleri |
 | [Nothing Quick Tools](https://github.com/DylanAkp/NothingQuickTools) | DylanAkp | Phone (2) için hızlı ayarlar karoları |
 | [Nothing Weather](https://play.google.com/store/apps/details?id=com.ApexCreator.nothing_weather) | Apex Creators | Hava durumu uygulaması |

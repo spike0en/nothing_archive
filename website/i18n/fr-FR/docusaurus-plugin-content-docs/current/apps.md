@@ -248,6 +248,7 @@ Fonds d'écran dynamiques et améliorations visuelles pour sublimer l'apparence 
 | [Nothing K](https://github.com/cuadratico/NothingK) | cuadratico | Coffre-fort de mots de passe |
 | [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Dynamic Island pour Nothing OS |
 | [Nothing LED Banner](https://play.google.com/store/apps/details?id=com.ApexCreator.thebannerapp) | Apex Creators | Créateur de bannières LED |
+| [Nothing Mixer](https://github.com/farizanjum/mixer-1) | farizanjum | Application de contrôle du volume par application conçue avec l'esthétique de Nothing OS |
 | [Nothing News](https://play.google.com/store/apps/details?id=com.nothing.news) | Mirko_ddd | Nouvelles de la communauté |
 | [Nothing Quick Tools](https://github.com/DylanAkp/NothingQuickTools) | DylanAkp | Tuiles rapides pour le Phone (2) |
 | [Nothing Weather](https://play.google.com/store/apps/details?id=com.ApexCreator.nothing_weather) | Apex Creators | Application météo |
