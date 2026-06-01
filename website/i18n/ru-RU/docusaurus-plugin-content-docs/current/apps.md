@@ -160,6 +160,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 
 | Приложение | Разработчик | Описание |
 |-----|-----------|-------------|
+| [!Thing Widgets](https://bleelblep.github.io/disclaimer/not-thing-widgets/) | bleelblep | Пользовательские виджеты для Nothing OS 4.1+, которые отображаются на AOD, экране блокировки и главном экране |
 | [Dot Matrix Widget](https://github.com/Swapnil41/DotMatrixWidget) | Swapnil41 | Виджет часов Dot Matrix с прозрачным фоном |
 | [Dot Widgets](https://play.google.com/store/apps/details?id=com.lended.widjets) | Creepsmile | Инструменты на каждый день, вдохновленные матричным дизайном Nothing |
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Минималистичные виджеты |

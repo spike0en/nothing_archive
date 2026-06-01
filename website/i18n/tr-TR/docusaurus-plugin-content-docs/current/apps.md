@@ -160,6 +160,7 @@ Sistem monitörlerinden minimal araçlara kadar ana ekran için özel widget'lar
 
 | Uygulama | Geliştirici | Açıklama |
 |-----|-----------|-------------|
+| [!Thing Widgets](https://bleelblep.github.io/disclaimer/not-thing-widgets/) | bleelblep | Nothing OS 4.1+ için AOD, kilit ekranı ve ana ekranda görünen özel widget'lar |
 | [Dot Matrix Widget](https://github.com/Swapnil41/DotMatrixWidget) | Swapnil41 | Şeffaf arka planlı nokta matrisli saat widget'ı |
 | [Dot Widgets](https://play.google.com/store/apps/details?id=com.lended.widjets) | Creepsmile | Nothing'in nokta matrisinden ilham alan günlük araçlar |
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Minimal widget'lar |

@@ -145,6 +145,7 @@ Custom widgets for the home screen, from system monitors to minimalist tools.
 
 | App | Developer | Description |
 |-----|-----------|-------------|
+| [!Thing Widgets](https://bleelblep.github.io/disclaimer/not-thing-widgets/) | bleelblep | Custom widgets for Nothing OS 4.1+ that show up on the AOD, lock screen, and home screen |
 | [Dot Matrix Widget](https://github.com/Swapnil41/DotMatrixWidget) | Swapnil41 | Dot matrix clock widget with transparent background |
 | [Dot Widgets](https://play.google.com/store/apps/details?id=com.lended.widjets) | Creepsmile | Nothing-inspired dot-matrix everyday tools |
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Minimal widgets |

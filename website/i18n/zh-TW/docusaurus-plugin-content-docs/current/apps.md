@@ -160,6 +160,7 @@ Glyph Matrix 的互動玩具和遊戲。
 
 | 應用程式 | 開發者 | 說明 |
 |-----|-----------|-------------|
+| [!Thing Widgets](https://bleelblep.github.io/disclaimer/not-thing-widgets/) | bleelblep | 適用於 Nothing OS 4.1+ 的自訂小工具，可顯示於 AOD、鎖定畫面及主畫面 |
 | [Dot Matrix Widget](https://github.com/Swapnil41/DotMatrixWidget) | Swapnil41 | 具備透明背景的點陣時鐘小工具 |
 | [Dot Widgets](https://play.google.com/store/apps/details?id=com.lended.widjets) | Creepsmile | Nothing 點陣風格啟發的日常工具 |
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | 簡約小工具 |
