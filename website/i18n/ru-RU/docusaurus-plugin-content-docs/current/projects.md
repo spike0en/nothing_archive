@@ -106,26 +106,35 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 
 ---
 
-## Интернет и расширения
+## Веб-приложения
 
-Расширения для браузеров и веб-приложения в стиле Nothing OS.
-
+Веб-приложения в стиле Nothing OS.
 
 | Проект | Разработчик | Описание |
 |---------|-----------|-------------|
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Управление наушниками через веб |
 | [Essential Space Web](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Минималистичное пространство для заметок |
-| [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Расширение для браузера «Новая вкладка» в стиле Nothing |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Домашняя страница в терминальном стиле |
+| [Invo](https://dibyajyotikabi.github.io/Nothing-OS-Inspired-Invoice-App) | Dibyajyotikabi | Веб-приложение для выставления счетов в стиле Nothing OS ([Репозиторий](https://github.com/Dibyajyotikabi/Nothing-OS-Inspired-Invoice-App)) |
 | [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | Генератор HTML-логотипов с использованием шрифтов Nothing ([Repo](https://github.com/Lovinoes/ndot-logo-generator)) |
 | [Nothing Clone](https://github.com/Jivan-Patel/nothing-clone) | Jivan-Patel | Многостраничный статический клон интерфейса, вдохновленный страницами продуктов бренда Nothing |
-| [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | Расширение GNOME для управления ANC на Nothing Ear |
 | [Nothing History](https://ironstike.github.io/nothing-history/) | Ironstike | Сайт об истории телефонов Nothing ([Repo](https://github.com/Ironstike/nothing-history)) |
-| [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Расширение для браузера «Новая вкладка» |
-| [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Расширение для Chrome |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Веб-приложение погоды в стиле Nothing OS |
 | [Spin The Bottle](https://dotmatrix-beerbottle.vercel.app/) | MadGlacierRunner | Симулятор игры в бутылочку |
+
+---
+
+## Расширения
+
+Браузерные расширения и другие дополнения в стиле Nothing OS.
+
+| Проект | Разработчик | Описание |
+|---------|-----------|-------------|
+| [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Расширение для браузера «Новая вкладка» в стиле Nothing |
+| [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | Расширение GNOME для управления ANC на Nothing Ear |
+| [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Расширение для браузера «Новая вкладка» |
+| [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Расширение для Chrome |
 
 ---
 

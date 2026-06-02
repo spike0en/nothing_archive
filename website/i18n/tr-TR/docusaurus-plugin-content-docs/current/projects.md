@@ -106,26 +106,35 @@ Diğer geliştiricilerin Nothing'den ilham alan projeler oluşturmasına yardım
 
 ---
 
-## Web ve Eklentiler
+## Web Uygulamaları
 
-Nothing OS'tan ilham alan tarayıcı eklentileri ve web tabanlı uygulamalar.
-
+Nothing OS'tan ilham alan web tabanlı uygulamalar.
 
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Web üzerinden kulaklık kontrolü |
 | [Essential Space Web](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Minimalist not alanı |
-| [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing temalı "Yeni Sekme" eklentisi |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal esintili ana sayfa |
+| [Invo](https://dibyajyotikabi.github.io/Nothing-OS-Inspired-Invoice-App) | Dibyajyotikabi | Nothing OS esintili fatura web uygulaması ([Depo](https://github.com/Dibyajyotikabi/Nothing-OS-Inspired-Invoice-App)) |
 | [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | Nothing yazı tiplerini kullanan HTML logo oluşturucu ([Repo](https://github.com/Lovinoes/ndot-logo-generator)) |
 | [Nothing Clone](https://github.com/Jivan-Patel/nothing-clone) | Jivan-Patel | Nothing markasının ürün sayfalarından ilham alan çok sayfalı statik bir kullanıcı arayüzü kopyası |
-| [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | Nothing Ear ANC kontrolü için GNOME eklentisi |
 | [Nothing History](https://ironstike.github.io/nothing-history/) | Ironstike | Nothing telefonlarının tarihi hakkında bir web sitesi ([Repo](https://github.com/Ironstike/nothing-history)) |
-| [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Tarayıcı "Yeni Sekme" eklentisi |
-| [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome eklentisi |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Nothing OS esintili web hava durumu uygulaması |
 | [Spin The Bottle](https://dotmatrix-beerbottle.vercel.app/) | MadGlacierRunner | Şişe çevirmece oyun simülatörü |
+
+---
+
+## Eklentiler
+
+Nothing OS'tan ilham alan tarayıcı eklentileri ve diğer eklentiler.
+
+| Proje | Geliştirici | Açıklama |
+|---------|-----------|-------------|
+| [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing temalı "Yeni Sekme" eklentisi |
+| [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | Nothing Ear ANC kontrolü için GNOME eklentisi |
+| [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Tarayıcı "Yeni Sekme" eklentisi |
+| [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome eklentisi |
 
 ---
 

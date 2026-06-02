@@ -106,26 +106,35 @@ Nothingスタイルの壁紙を作成するためのユーティリティ。
 
 ---
 
-## ウェブおよび拡張機能
+## ウェブアプリ
 
-Nothing OSに着想を得たブラウザ拡張機能やウェブベースのアプリケーション。
-
+Nothing OSに着想を得たウェブベースのアプリケーション。
 
 | プロジェクト | 開発者 | 説明 |
 |---------|-----------|-------------|
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | ウェブ経由でのイヤホン制御 |
 | [Essential Space Web](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | ミニマリストノートスペース |
-| [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothingテーマの「新しいタブ」拡張機能 |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | ターミナル風ホームページ |
+| [Invo](https://dibyajyotikabi.github.io/Nothing-OS-Inspired-Invoice-App) | Dibyajyotikabi | Nothing OS風請求書ウェブアプリ ([Repo](https://github.com/Dibyajyotikabi/Nothing-OS-Inspired-Invoice-App)) |
 | [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | Nothingフォントを使用したHTMLロゴジェネレーター ([Repo](https://github.com/Lovinoes/ndot-logo-generator)) |
 | [Nothing Clone](https://github.com/Jivan-Patel/nothing-clone) | Jivan-Patel | Nothingブランド of 製品ページにインスパイアされた、マルチページの静的UIクローン |
-| [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | Nothing EarのANC制御用GNOME拡張機能 |
 | [Nothing History](https://ironstike.github.io/nothing-history/) | Ironstike | Nothingスマートフォンの歴史に関するウェブサイト ([Repo](https://github.com/Ironstike/nothing-history)) |
-| [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | ブラウザの新しいタブ拡張機能 |
-| [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome拡張機能 |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Nothing OS風ウェブ天気アプリ |
 | [Spin The Bottle](https://dotmatrix-beerbottle.vercel.app/) | MadGlacierRunner | 瓶回しゲームシミュレーター |
+
+---
+
+## 拡張機能
+
+Nothing OSに着想を得たブラウザ拡張機能やその他のアドオン。
+
+| プロジェクト | 開発者 | 説明 |
+|---------|-----------|-------------|
+| [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothingテーマの「新しいタブ」拡張機能 |
+| [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | Nothing EarのANC制御用GNOME拡張機能 |
+| [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | ブラウザの新しいタブ拡張機能 |
+| [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome拡張機能 |
 
 ---
 

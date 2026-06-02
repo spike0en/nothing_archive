@@ -106,26 +106,35 @@ Ressources et outils conçus pour aider d'autres développeurs à créer des pro
 
 ---
 
-## Web et extensions
+## Applications web
 
-Extensions de navigateur et applications basées sur le web inspirées par Nothing OS.
-
+Applications basées sur le web inspirées par Nothing OS.
 
 | Projet | Développeur | Description |
 |---------|-----------|-------------|
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Contrôle des écouteurs via le web |
 | [Essential Space Web](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Espace de notes minimaliste |
-| [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Extension "Nouvel onglet" au thème Nothing |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Page d'accueil inspirée par le terminal |
+| [Invo](https://dibyajyotikabi.github.io/Nothing-OS-Inspired-Invoice-App) | Dibyajyotikabi | Application web de facturation inspirée par Nothing OS ([Dépôt](https://github.com/Dibyajyotikabi/Nothing-OS-Inspired-Invoice-App)) |
 | [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | Générateur de logo HTML utilisant les polices de Nothing ([Repo](https://github.com/Lovinoes/ndot-logo-generator)) |
 | [Nothing Clone](https://github.com/Jivan-Patel/nothing-clone) | Jivan-Patel | Un clone d'interface utilisateur statique multi-page inspiré des pages produits de la marque Nothing |
-| [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | Extension GNOME pour le contrôle de l'ANC sur Nothing Ear |
 | [Nothing History](https://ironstike.github.io/nothing-history/) | Ironstike | Un site web sur l'histoire des téléphones de Nothing ([Repo](https://github.com/Ironstike/nothing-history)) |
-| [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Extension "Nouvel onglet" pour navigateur |
-| [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Extension Chrome |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Application météo web inspirée par Nothing OS |
 | [Spin The Bottle](https://dotmatrix-beerbottle.vercel.app/) | MadGlacierRunner | Simulateur de jeu de la bouteille |
+
+---
+
+## Extensions
+
+Extensions de navigateur et autres modules complémentaires inspirés par Nothing OS.
+
+| Projet | Développeur | Description |
+|---------|-----------|-------------|
+| [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Extension "Nouvel onglet" au thème Nothing |
+| [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | Extension GNOME pour le contrôle de l'ANC sur Nothing Ear |
+| [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Extension "Nouvel onglet" pour navigateur |
+| [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Extension Chrome |
 
 ---
 
