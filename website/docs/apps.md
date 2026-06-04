@@ -138,6 +138,7 @@ A selection of community-made icon packs designed to match the Nothing aesthetic
 | [Jimtendo Lite](https://play.google.com/store/apps/details?id=com.jimtendo.nothingiconpacklite) | Jimtendo |
 | [Jimtendo Transparent](https://play.google.com/store/apps/details?id=com.jimtendo.nothingiconpacktransparent) | Jimtendo |
 | [N Thing Adaptive](https://play.google.com/store/apps/details?id=com.nothing.icon.free) | JustNewDesigns |
+| [Nothing Much](https://github.com/TeamNothingMuch/NothingMuch) | TeamNothingMuch |
 
 ### Widgets
 
