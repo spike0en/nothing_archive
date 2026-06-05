@@ -1,0 +1,15 @@
+# Tetris-V3.0-250409-1734
+
+## Changelog
+
+### What's new in this update
+
+🖼 Introducing Nothing Gallery. The perfect blend of simplicity and elegance.  
+👆 You can now long-press and swipe up in Recent Apps to quickly Clear All.  
+📳 Use the touch feedback toggle in Settings to disable the unlock vibration for the lock screen.  
+🖼 Optimised design of pop-up view.  
+📶 Fixed the issue of delayed data network switching in extremely rare cases.  
+📲 Supports the transfer of lock screen widget data when transferring data to another phone.  
+📱 Fixed the issue of emergency dialing failure in extremely rare cases in certain areas.  
+🛡 Updated to April security patch .  
+⚙️ Enhanced system stability.  
