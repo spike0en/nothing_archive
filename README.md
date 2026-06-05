@@ -23,7 +23,7 @@
 
 <div align="center">
   <br>
-  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+
   <br>
 </div>
 
@@ -43,7 +43,7 @@ If this project helps you, please consider [starring the repository](https://git
 
 <div align="center">
   <br>
-  <span style="font-size: 30px;">••••••••••••••••••••••</span>
+
   <br>
 </div>
 
@@ -54,7 +54,7 @@ Nothing Archive is the most up-to-date Nothing OS firmware repository, offering 
 Beyond firmware, the project indexes community-made apps, tools, projects, official resources, aftermarket development initiatives, and more, thus serving as an all-in-one curated hub for everything related to the Nothing & CMF ecosystem.
 
 <div align="center">
-  <span style="font-size: 28px;">••••••••••••••••••••••</span>
+
 </div>
 
 ## Contents
@@ -69,7 +69,7 @@ Beyond firmware, the project indexes community-made apps, tools, projects, offic
 - **[Photography](https://spike0en.github.io/nothing_archive/docs/photography)**: GCAM ports, configs, and stock camera presets
 
 <div align="center">
-  <span style="font-size: 28px;">••••••••••••••••••••••</span>
+
 </div>
 
 ## Contributing
@@ -77,7 +77,7 @@ Beyond firmware, the project indexes community-made apps, tools, projects, offic
 We welcome community contributions! If you'd like to help improve the documentation, add new apps, or write guides, please read our [Contributing Guidelines](CONTRIBUTING.md) to get started.
 
 <div align="center">
-  <span style="font-size: 28px;">••••••••••••••••••••••</span>
+
 </div>
 
 ## Licensing
@@ -92,7 +92,7 @@ The Nothing Archive project is multi-licensed to protect both the code and commu
 For a detailed breakdown of what each license covers, please refer to the [LICENSE](LICENSE) file.
 
 <div align="center">
-  <span style="font-size: 28px;">••••••••••••••••••••••</span>
+
 </div>
 
 ## Acknowledgements
@@ -108,5 +108,5 @@ Special thanks to:
 - **[Project Contributors](https://github.com/spike0en/nothing_archive/graphs/contributors)** for their invaluable contributions and insights.
 
 <div align="center">
-  <span style="font-size: 28px;">••••••••••••••••••••••</span>
+
 </div>
