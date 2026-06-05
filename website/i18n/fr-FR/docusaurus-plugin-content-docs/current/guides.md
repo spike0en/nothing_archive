@@ -260,6 +260,10 @@ Pilotes essentiels pour les transferts de fichiers USB et la reconnaissance de l
 - [Pilotes USB Google pour Windows](https://dl.google.com/android/repository/usb_driver_r13-windows.zip)
 - Guides d'installation : [USB](https://droidwin.com/android-usb-drivers) | [Fastboot](https://droidwin.com/how-to-install-fastboot-drivers-in-windows-11/)
 
+:::note
+Les utilisateurs de macOS et Linux n'ont pas besoin d'installer de pilotes USB externes. ADB et Fastboot fonctionneront directement une fois les Platform Tools installés.
+:::
+
 #### Platform Tools (ADB & Fastboot)
 
 Téléchargez Android SDK Platform-Tools :

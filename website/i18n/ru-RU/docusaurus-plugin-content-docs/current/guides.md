@@ -260,6 +260,10 @@ B. **Продолжение прошивки Sideload**
 - [Драйверы Google USB для Windows](https://dl.google.com/android/repository/usb_driver_r13-windows.zip)
 - Руководства по установке: [USB](https://droidwin.com/android-usb-drivers) | [Fastboot](https://droidwin.com/how-to-install-fastboot-drivers-in-windows-11/)
 
+:::note
+Пользователям macOS и Linux не требуется устанавливать сторонние драйверы USB. ADB и Fastboot будут работать сразу после установки Platform Tools.
+:::
+
 #### Platform Tools (ADB и Fastboot)
 
 Загрузите Android SDK Platform-Tools:

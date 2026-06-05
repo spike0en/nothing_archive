@@ -261,6 +261,10 @@ Essential drivers for USB file transfers and device recognition.
 - [Google USB Drivers for Windows](https://dl.google.com/android/repository/usb_driver_r13-windows.zip)
 - Installation guides: [USB](https://droidwin.com/android-usb-drivers) | [Fastboot](https://droidwin.com/how-to-install-fastboot-drivers-in-windows-11/)
 
+:::note
+macOS and Linux users do not need to install any external USB drivers. ADB and Fastboot will work out of the box once Platform Tools are installed.
+:::
+
 #### Platform Tools (ADB & Fastboot)
 
 Download Android SDK Platform-Tools:

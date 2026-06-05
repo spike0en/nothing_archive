@@ -260,6 +260,10 @@ USB dosya transferleri ve cihaz tanıma için temel sürücüler.
 - [Windows için Google USB Sürücüleri](https://dl.google.com/android/repository/usb_driver_r13-windows.zip)
 - Kurulum rehberleri: [USB](https://droidwin.com/android-usb-drivers) | [Fastboot](https://droidwin.com/how-to-install-fastboot-drivers-in-windows-11/)
 
+:::note
+macOS ve Linux kullanıcılarının herhangi bir harici USB sürücüsü yüklemesine gerek yoktur. Platform Tools kurulduktan sonra ADB ve Fastboot doğrudan çalışacaktır.
+:::
+
 #### Platform Araçları (ADB & Fastboot)
 
 Android SDK Platform-Tools'u indirin:

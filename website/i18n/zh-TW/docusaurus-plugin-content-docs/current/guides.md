@@ -260,6 +260,10 @@ USB 檔案傳輸和裝置識別所需的必備驅動程式。
 - [適用於 Windows 的 Google USB 驅動程式](https://dl.google.com/android/repository/usb_driver_r13-windows.zip)
 - 安裝指南：[USB](https://droidwin.com/android-usb-drivers) | [Fastboot](https://droidwin.com/how-to-install-fastboot-drivers-in-windows-11/)
 
+:::note
+macOS 和 Linux 用戶不需要安裝任何外部 USB 驅動程式。安裝 Platform Tools 後，ADB 和 Fastboot 即可直接使用。
+:::
+
 #### 平台工具 (ADB & Fastboot)
 
 下載 Android SDK Platform-Tools：
