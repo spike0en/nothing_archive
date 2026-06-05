@@ -7,6 +7,123 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+/**
+ * Maps Android version codename letters to their chronological ranks.
+ * Add new letters here (e.g., D: 6 for Android 18) to explicitly define them if needed.
+ */
+const androidOrder: Record<string, number> = {
+  T: 1, // Android 13 (Tiramisu)
+  U: 2, // Android 14 (Upside Down Cake)
+  V: 3, // Android 15 (Vanilla)
+  B: 4, // Android 16 (Baklava)
+  C: 5, // Android 17 (Cinnamon Bun)
+  // Custom rank for a future Android version letter can be set here if needed in same format
+};
+
+/**
+ * Resolves the chronological rank of an Android codename letter.
+ * Checks the explicit lookup map first, then dynamically falls back to alphabetical rank for B-Z.
+ * 
+ * @param letter The Android version letter (e.g. 'B', 'V', 'T')
+ * @returns Numerical rank representing chronological order (higher is newer)
+ */
+function getAndroidLetterRank(letter: string): number {
+  const upper = letter.toUpperCase();
+  const knownRank = androidOrder[upper];
+  if (knownRank !== undefined) {
+    return knownRank;
+  }
+  // Dynamic fallback for B-Z (B starts at rank 4, C is 5, etc.) using ASCII char code
+  const code = upper.charCodeAt(0);
+  if (code >= 66 && code <= 90) { // 'B' (66) through 'Z' (90)
+    return code - 66 + 4;
+  }
+  return 0;
+}
+
+function compareVersions(vAStr: string, vBStr: string): number {
+  const partsA = vAStr.split('.');
+  const partsB = vBStr.split('.');
+  const maxLen = Math.max(partsA.length, partsB.length);
+
+  for (let i = 0; i < maxLen; i++) {
+    const partA = partsA[i] || '';
+    const partB = partsB[i] || '';
+
+    if (partA !== partB) {
+      const numA = Number(partA);
+      const numB = Number(partB);
+      if (!isNaN(numA) && !isNaN(numB)) {
+        return numB - numA;
+      }
+      return partB.localeCompare(partA, undefined, { numeric: true, sensitivity: 'base' });
+    }
+  }
+  return 0;
+}
+
+function compareChangelogs(idA: string, idB: string): number {
+  const nameA = (idA.split('/').pop() || '').replace(/\.mdx?$/i, '');
+  const nameB = (idB.split('/').pop() || '').replace(/\.mdx?$/i, '');
+
+  const matchA = nameA.match(/-([a-z])([\d.a-z]+)-(\d{6})-(\d{4})$/i);
+  const matchB = nameB.match(/-([a-z])([\d.a-z]+)-(\d{6})-(\d{4})$/i);
+
+  if (matchA && matchB) {
+    const rankA = getAndroidLetterRank(matchA[1]);
+    const rankB = getAndroidLetterRank(matchB[1]);
+    if (rankA !== rankB) {
+      return rankB - rankA;
+    }
+
+    const versionCompare = compareVersions(matchA[2], matchB[2]);
+    if (versionCompare !== 0) {
+      return versionCompare;
+    }
+
+    const dateA = matchA[3];
+    const dateB = matchB[3];
+    if (dateA !== dateB) {
+      return dateB.localeCompare(dateA);
+    }
+
+    const timeA = matchA[4];
+    const timeB = matchB[4];
+    if (timeA !== timeB) {
+      return timeB.localeCompare(timeA);
+    }
+  }
+
+  return nameB.localeCompare(nameA);
+}
+
+function sortChangelogItems(items: any[]): any[] {
+  return items.map((item) => {
+    if (item.type === 'category') {
+      const sortedSubItems = sortChangelogItems(item.items);
+      const isChangelogCategory = sortedSubItems.some(
+        (subItem) => subItem.type === 'doc' && subItem.id.startsWith('changelogs/')
+      );
+
+      if (isChangelogCategory) {
+        sortedSubItems.sort((a, b) => {
+          if (a.type !== 'doc' || b.type !== 'doc') {
+            if (a.type === 'doc' && b.type !== 'doc') return -1;
+            if (a.type !== 'doc' && b.type === 'doc') return 1;
+            return 0;
+          }
+          return compareChangelogs(a.id, b.id);
+        });
+      }
+      return {
+        ...item,
+        items: sortedSubItems,
+      };
+    }
+    return item;
+  });
+}
+
 
 const config: Config = {
   title: 'Nothing Archive',
@@ -66,6 +183,10 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           editUrl: 'https://github.com/spike0en/nothing_archive/tree/main/website/',
+          async sidebarItemsGenerator({ defaultSidebarItemsGenerator, ...args }) {
+            const sidebarItems = await defaultSidebarItemsGenerator(args);
+            return sortChangelogItems(sidebarItems);
+          },
         },
         blog: false,
         theme: {
