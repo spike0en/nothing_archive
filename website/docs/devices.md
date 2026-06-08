@@ -74,9 +74,9 @@ Complete catalog of Nothing & CMF by Nothing products with model numbers, codena
 
 | Device Name | Model | Pokémon Name | Release Date |
 |-------------|-------|--------------|--------------|
-| [Watch Pro](https://nothing.wiki/cmf/cmf_watch_pro) | D395 | Empoleon | September 2023 |
-| [Watch Pro 2](https://nothing.wiki/cmf/cmf_watch_pro_2) | D398 | Buizel | October 2024 |
-| [Watch 3 Pro](https://nothing.wiki/cmf/cmf_watch_3_pro) | D399 | Buneary | July 2025 |
+| [Watch Pro](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro) | D395 | Empoleon | September 2023 |
+| [Watch Pro 2](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro_2) | D398 | Buizel | October 2024 |
+| [Watch 3 Pro](https://nothing.wiki/cmf/cmf_watch#cmf_watch_3_pro) | D399 | Buneary | July 2025 |
 
 ### Accessories
 

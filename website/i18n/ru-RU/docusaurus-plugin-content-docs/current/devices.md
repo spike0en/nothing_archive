@@ -64,9 +64,9 @@ keywords: [nothing phone 1, nothing phone 2, nothing phone 2a, cmf phone 1, noth
 
 | Название устройства | Модель | Имя Pokémon | Дата выпуска |
 |-------------|-------|--------------|--------------|
-| [Watch Pro](https://nothing.wiki/cmf/cmf_watch_pro) | D395 | Empoleon | Сентябрь 2023 |
-| [Watch Pro 2](https://nothing.wiki/cmf/cmf_watch_pro_2) | D398 | Buizel | Октябрь 2024 |
-| [Watch 3 Pro](https://nothing.wiki/cmf/cmf_watch_3_pro) | D399 | Buneary | Июль 2025 |
+| [Watch Pro](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro) | D395 | Empoleon | Сентябрь 2023 |
+| [Watch Pro 2](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro_2) | D398 | Buizel | Октябрь 2024 |
+| [Watch 3 Pro](https://nothing.wiki/cmf/cmf_watch#cmf_watch_3_pro) | D399 | Buneary | Июль 2025 |
 
 ### Аксессуары
 

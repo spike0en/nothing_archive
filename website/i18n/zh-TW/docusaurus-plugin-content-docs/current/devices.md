@@ -64,9 +64,9 @@ keywords: [nothing phone 1, nothing phone 2, nothing phone 2a, cmf phone 1, noth
 
 | 裝置名稱 | 型號 | 寶可夢名稱 | 發布日期 |
 |---------|------|-----------|---------|
-| [Watch Pro](https://nothing.wiki/cmf/cmf_watch_pro) | D395 | Empoleon | 2023 年 9 月 |
-| [Watch Pro 2](https://nothing.wiki/cmf/cmf_watch_pro_2) | D398 | Buizel | 2024 年 10 月 |
-| [Watch 3 Pro](https://nothing.wiki/cmf/cmf_watch_3_pro) | D399 | Buneary | 2025 年 7 月 |
+| [Watch Pro](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro) | D395 | Empoleon | 2023 年 9 月 |
+| [Watch Pro 2](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro_2) | D398 | Buizel | 2024 年 10 月 |
+| [Watch 3 Pro](https://nothing.wiki/cmf/cmf_watch#cmf_watch_3_pro) | D399 | Buneary | 2025 年 7 月 |
 
 ### 配件
 

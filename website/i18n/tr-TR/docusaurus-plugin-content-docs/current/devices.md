@@ -64,9 +64,9 @@ Model numaraları, kod adları ve çıkış tarihleriyle birlikte Nothing ve CMF
 
 | Cihaz Adı | Model | Pokémon Adı | Çıkış Tarihi |
 |-------------------|--------|-------------|----------------|
-| [Watch Pro](https://nothing.wiki/cmf/cmf_watch_pro) | D395 | Empoleon | Eylül 2023 |
-| [Watch Pro 2](https://nothing.wiki/cmf/cmf_watch_pro_2) | D398 | Buizel | Ekim 2024 |
-| [Watch 3 Pro](https://nothing.wiki/cmf/cmf_watch_3_pro) | D399 | Buneary | Temmuz 2025 |
+| [Watch Pro](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro) | D395 | Empoleon | Eylül 2023 |
+| [Watch Pro 2](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro_2) | D398 | Buizel | Ekim 2024 |
+| [Watch 3 Pro](https://nothing.wiki/cmf/cmf_watch#cmf_watch_3_pro) | D399 | Buneary | Temmuz 2025 |
 
 ### Aksesuarlar
 
