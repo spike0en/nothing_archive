@@ -244,6 +244,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Nothing Weather](https://play.google.com/store/apps/details?id=com.ApexCreator.nothing_weather) | Apex Creators | Weather app |
 | [Nx Calculator](https://github.com/montybytes/nxcalculator) | montybytes | Simple calculator |
 | [Open Calc](https://github.com/drrnb/OpenCalc/releases/tag/v3.0.0-beta4-nothing) | drrnb | Themed calculator |
+| [Origin Launcher](https://github.com/rKyzen/Origin-Launcher) | rKyzen | Android launcher built on Lawnchair |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Recording light control for Phone (3) |
 | [Redrop Music](https://play.google.com/store/apps/details?id=re.tag.redrop) | Tagrelate | Offline music player combining Material 3 and Nothing aesthetics |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Device insights tool |
