@@ -93,6 +93,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | An interactive swinging pendulum |
 | [Glyph Pong](https://github.com/codester007/glyph-pong) | codester007 | Pong game for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | Turns pending notifications into a glanceable display on the Glyph Matrix |
+| [Glyph Shot](https://github.com/shaibu54/glyph-shot) | shaibu54 | Hold to charge artillery game for the Nothing Phone 3 Glyph Matrix |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | A stacker arcade game |
 | [Glyph Stopwatch](https://github.com/Sturdy7435/GlyphStopwatch) | Sturdy7435 | A simple stopwatch for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Always-on, audio-reactive Glyph Matrix display controller |
