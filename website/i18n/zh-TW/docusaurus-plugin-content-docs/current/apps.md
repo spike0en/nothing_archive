@@ -105,6 +105,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | 互動擺錘動畫 |
 | [Glyph Pong](https://github.com/codester007/glyph-pong) | codester007 | 適用於 Nothing Phone (4a) Pro Glyph Matrix 的 Pong 遊戲 |
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | 將待處理通知轉換為 Glyph Matrix 上一目了然的顯示 |
+| [Glyph Shot](https://github.com/shaibu54/glyph-shot) | shaibu54 | 適用於 Nothing Phone (3) Glyph Matrix 的按住蓄力火砲遊戲 |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | 疊疊樂街機遊戲 |
 | [Glyph Stopwatch](https://github.com/Sturdy7435/GlyphStopwatch) | Sturdy7435 | 適用於 Nothing Phone (4a) Pro Glyph Matrix 的簡單秒錶 |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | 常亮且具備音訊反應功能的 Glyph Matrix 顯示控制器 |

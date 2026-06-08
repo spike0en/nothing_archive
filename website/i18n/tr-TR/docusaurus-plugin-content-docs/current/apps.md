@@ -105,6 +105,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | Etkileşimli sallanan sarkaç |
 | [Glyph Pong](https://github.com/codester007/glyph-pong) | codester007 | Nothing Phone (4a) Pro'nun Glyph Matrisi için Pong oyunu |
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | Bekleyen bildirimleri Glyph Matrisi üzerinde bir bakışta görülebilir bir ekrana dönüştürür |
+| [Glyph Shot](https://github.com/shaibu54/glyph-shot) | shaibu54 | Nothing Phone (3) Glyph Matrisi için basılı tutarak şarj etmeli topçu oyunu |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | Atari tarzı istifleme oyunu |
 | [Glyph Stopwatch](https://github.com/Sturdy7435/GlyphStopwatch) | Sturdy7435 | Nothing Phone (4a) Pro'nun Glyph Matrisi için basit bir kronometre |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Sese duyarlı ve her zaman açık Glyph Matrisi ekran denetleyicisi |

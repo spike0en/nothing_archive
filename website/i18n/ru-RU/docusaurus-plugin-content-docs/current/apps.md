@@ -105,6 +105,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | Интерактивный качающийся маятник |
 | [Glyph Pong](https://github.com/codester007/glyph-pong) | codester007 | Игра Понг для Glyph Matrix на Nothing Phone (4a) Pro |
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | Превращает ожидающие уведомления в краткую сводку на Glyph Matrix |
+| [Glyph Shot](https://github.com/shaibu54/glyph-shot) | shaibu54 | Артиллерийская игра с накоплением заряда удержанием для Glyph Matrix Nothing Phone (3) |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | Аркадная игра-стекер |
 | [Glyph Stopwatch](https://github.com/Sturdy7435/GlyphStopwatch) | Sturdy7435 | Простой секундомер для Glyph Matrix на Nothing Phone (4a) Pro |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Всегда активный контроллер дисплея Glyph Matrix, реагирующий на звук |

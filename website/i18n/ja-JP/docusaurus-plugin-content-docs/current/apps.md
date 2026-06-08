@@ -105,6 +105,7 @@ Glyphマトリックス向けのインタラクティブなトイとゲーム。
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | インタラクティブに揺れる振り子 |
 | [Glyph Pong](https://github.com/codester007/glyph-pong) | codester007 | Nothing Phone (4a) Pro の Glyph マトリックス用ポンゲーム |
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | 保留中の通知を Glyph マトリックス上の一目でわかる表示に変換 |
+| [Glyph Shot](https://github.com/shaibu54/glyph-shot) | shaibu54 | Nothing Phone (3)のGlyphマトリックス用の長押しでチャージするアーティラリーゲーム |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | アーケードスタイルのスタッキングゲーム |
 | [Glyph Stopwatch](https://github.com/Sturdy7435/GlyphStopwatch) | Sturdy7435 | Nothing Phone (4a) ProのGlyph Matrix用シンプルストップウォッチ |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | 常にオンでオーディオに反応するGlyphマトリックスディスプレイコントローラー |

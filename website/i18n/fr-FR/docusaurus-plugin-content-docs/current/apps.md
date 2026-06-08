@@ -100,6 +100,7 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | Un pendule oscillant interactif |
 | [Glyph Pong](https://github.com/codester007/glyph-pong) | codester007 | Jeu de Pong pour la matrice Glyph du Nothing Phone (4a) Pro |
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | Transforme les notifications en attente en un affichage consultable sur la matrice Glyph |
+| [Glyph Shot](https://github.com/shaibu54/glyph-shot) | shaibu54 | Jeu d'artillerie à charger par maintien pour la matrice Glyph du Nothing Phone (3) |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | Un jeu d'arcade d'empilement |
 | [Glyph Stopwatch](https://github.com/Sturdy7435/GlyphStopwatch) | Sturdy7435 | Un chronomètre simple pour la matrice Glyph du Nothing Phone (4a) Pro |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Contrôleur d'affichage Glyph Matrix toujours activé et réactif au son |
