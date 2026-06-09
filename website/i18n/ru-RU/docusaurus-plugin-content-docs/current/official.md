@@ -196,6 +196,48 @@ keywords: [nothing official apps, nothing wallpapers, nothing fonts, nothing ker
 
 ---
 
+## Руководства пользователя
+
+:::note[Примечание о языке]
+Английские версии руководств пользователя приведены ниже. Дополнительную информацию на других языках и региональную документацию для соответствующей модели можно найти [здесь](https://nothing.tech/pages/support-product-help).
+:::
+
+### Телефоны
+
+#### Nothing
+- [Phone (1)](https://d2rdy6aa46gzl0.cloudfront.net/Phone+(1)+User+guide_EN.pdf)
+- [Phone (2)](https://cdn.shopify.com/s/files/1/0583/0072/7462/files/Phone_2_User_Guide.pdf?v=1690533753)
+- [Phone (2a)](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Phone_2a_User_Guide.pdf?v=1720764665)
+- [Phone (2a) Plus](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Nothing_Phone_2a_Plus_User_Guide.pdf?v=1722415114)
+- [Phone (3a)](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Phone_3a_Lite_User_Guide_EN.pdf?v=1761711354)
+- [Phone (3a) Pro](https://cdn.shopify.com/s/files/1/0585/5258/2321/files/Nothing_Phone_3a_Pro_User_Guide_-_EN.pdf?v=1745468065)
+- [Phone (3)](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/00_Nothing_Phone_3_User_Guide_-ROW_-_EN_d596e44f-f9dd-44bd-847b-def29f7bada3.pdf?v=1752749086)
+- [Phone (3a) Lite](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Phone_3a_Lite_User_Guide_EN.pdf?v=1761711354)
+- [Phone (4a)](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Phone_4a_User_Guide_Global_en_2e38a5da-9c79-4ba5-ace9-51c408466e63.pdf?v=1773115876)
+- [Phone (4a) Pro](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Phone_4a_Pro_User_Guide_Global_en_7d9167f4-802c-473f-88a0-f0b28b63b0d4.pdf?v=1773115876)
+
+#### CMF by Nothing
+- [Phone (1)](https://cdn.shopify.com/s/files/1/0583/0072/7462/files/CMF_by_Nothing_Phone_1_User_Guide_v1.2.pdf?v=1748403752)
+- [Phone (2) Pro](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/CMF_by_Nothing_Phone_2_Pro_User_Guide_-_ROW_-_EN.pdf)
+
+### Audio
+- [Ear (2)](https://cdn.shopifycdn.net/s/files/1/0583/2871/1328/files/Product-Guide-EN.pdf?v=1679563481)
+- [Ear](https://cdn.shopify.com/s/files/1/0586/3270/0077/files/ear_EN.pdf?v=1714993847)
+- [Ear (a)](https://cdn.shopify.com/s/files/1/0586/3270/0077/files/ear_a_EN.pdf?v=1714993262)
+- [Ear (open)](https://cdn.shopify.com/s/files/1/0582/6242/1665/files/Ear_open.pdf?v=1730429599)
+- [Headphone (1)](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Nothing_Headphone_1_Quick_Start_Guide.pdf?v=1757401105)
+- [Ear (3)](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Nothing_Ear_3_Quick_Start_Guide_Safety_Warranty_Information.pdf?v=1758509694)
+- [Headphone (a)](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Headphone_a_Quick_Start_Guide_Safety_Warranty_Information.pdf?v=1772185946)
+
+### Часы
+
+#### CMF by Nothing
+- [Watch Pro](https://cdn.shopify.com/s/files/1/0797/8739/3316/files/CMF_Watch_Pro_User_Manual_English_French_German_Arabic_Indian_Hindi_Japanese.pdf?v=1696608947)
+- [Watch Pro 2](https://cdn.shopify.com/s/files/1/0797/8739/3316/files/CMF_Watch_Pro_User_Manual_English_French_German_Arabic_Indian_Hindi_Japanese.pdf?v=1696608947)
+- [Watch 3 Pro](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/User_guide_English_German_French_Japanese_Arabic_Hindi_Korean_Traditional_Chinese_Simplified_Chinese.pdf?v=1753343095)
+
+---
+
 ## Ссылки на поддержку
 
 | Ресурс | Ссылка |
@@ -210,3 +252,4 @@ keywords: [nothing official apps, nothing wallpapers, nothing fonts, nothing ker
 | Статус продукта | [nothing.tech/imei](https://nothing.tech/pages/imei) |
 | Сервисный центр (Индия) | [in.nothing.tech](https://in.nothing.tech/pages/service-center) |
 | Устранение неполадок | [support.nothing.tech](https://support.nothing.tech/hc/en-us/categories/7455115681041-Troubleshooting) |
+| Отчет об уязвимости | [nothing.tech](https://nothing.tech/pages/vulnerability-report) |
