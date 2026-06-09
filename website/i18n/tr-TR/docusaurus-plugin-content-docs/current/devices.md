@@ -13,75 +13,85 @@ Model numaraları, kod adları ve çıkış tarihleriyle birlikte Nothing ve CMF
 
 ### Telefonlar
 
-| Cihaz Adı | Model | Kod Adı | Pokémon Adı | Çıkış Tarihi |
-|-------------------|--------|------------|-------------|----------------|
-| [Phone (1)](https://nothing.wiki/hardware/phone_1) | A063 | Spacewar | Abra | Temmuz 2022 |
-| [Phone (2)](https://nothing.wiki/hardware/phone_2) | A065 / AIN065 | Pong | Alakazam | Temmuz 2023 |
-| [Phone (2a)](https://nothing.wiki/hardware/phone_2a_series) | A142 | Pacman | Aerodactyl | Mart 2024 |
-| [Phone (2a) Plus](https://nothing.wiki/hardware/phone_2a_series) | A142P | PacmanPro | Mega Aerodactyl | Ağustos 2024 |
-| [Phone (3a) / (3a) Pro](https://nothing.wiki/hardware/phone_3a_series) | A059 / A059P | Asteroids | Arcanine | Mart 2025 |
-| [Phone (3)](https://nothing.wiki/hardware/phone_3) | A024 | Metroid | Arbok | Temmuz 2025 |
-| [Phone (3a) Lite](https://nothing.wiki/hardware/phone_3a_lite) | A001T | Galaxian | Bulbasaur | Ekim 2025 |
-| [Phone (4a) / (4a) Pro](https://nothing.wiki/hardware/phone_4a_series) | A069 / A069P | Frogger / FroggerPro | Bellsprout | Mart 2026 |
+| Cihaz Adı | Model | Cihaz Kod Adı | Wiki Sayfası | Çıkış Tarihi |
+|-----------|-------|---------------|--------------|--------------|
+| [Phone (1)](https://nothing.tech/products/phone-1) | A063 | Spacewar / Abra | [Here](https://nothing.wiki/hardware/phone_1) | 12 Temmuz 2022 |
+| [Phone (2)](https://nothing.tech/products/phone-2) | A065 / AIN065 | Pong / Alakazam | [Here](https://nothing.wiki/hardware/phone_2) | 11 Temmuz 2023 |
+| [Phone (2a)](https://nothing.tech/products/phone-2a) | A142 | Pacman / Aerodactyl | [Here](https://nothing.wiki/hardware/phone_2a_series) | 05 Mart 2024 |
+| [Phone (2a) Plus](https://nothing.tech/products/phone-2a-plus) | A142P | PacmanPro / Mega Aerodactyl | [Here](https://nothing.wiki/hardware/phone_2a_series) | 31 Temmuz 2024 |
+| [Phone (3a)](https://nothing.tech/products/phone-3a) / [Phone (3a) Pro](https://nothing.tech/products/phone-3a-pro) | A059 / A059P | Asteroids / Arcanine | [Here](https://nothing.wiki/hardware/phone_3a_series) | 04 Mart 2025 |
+| [Phone (3)](https://nothing.tech/products/phone-3) | A024 | Metroid / Arbok | [Here](https://nothing.wiki/hardware/phone_3) | 01 Temmuz 2025 |
+| [Phone (3a) Lite](https://nothing.tech/products/phone-3a-lite) | A001T | Galaxian / Bulbasaur | [Here](https://nothing.wiki/hardware/phone_3a_lite) | 29 Ekim 2025 |
+| [Phone (4a)](https://nothing.tech/products/phone-4a) / [Phone (4a) Pro](https://nothing.tech/products/phone-4a-pro) | A069 / A069P | Frogger / FroggerPro / Bellsprout | [Here](https://nothing.wiki/hardware/phone_4a_series) | 05 Mart 2026 |
 
 ### Ses Ürünleri
 
-| Cihaz Adı | Model | Pokémon Adı | Çıkış Tarihi |
-|-------------------|--------|-------------|----------------|
-| [Ear (1)](https://nothing.wiki/hardware/ear_series#ear_1) | B181 | Aipom | Temmuz 2021 |
-| [Ear (stick)](https://nothing.wiki/hardware/ear_series#ear_stick) | B157 | Bellossom | Kasım 2022 |
-| [Ear (2)](https://nothing.wiki/hardware/ear_series#ear_2) | B155 | Azumarill | Mars 2023 |
-| [Ear](https://nothing.wiki/hardware/ear_series#ear) | B171 | Entei | Nisan 2024 |
-| [Ear (a)](https://nothing.wiki/hardware/ear_series#ear_a) | B162 | Cleffa | Nisan 2024 |
-| [Ear (open)](https://nothing.wiki/hardware/ear_series#ear_open) | B182 | Flaaffy | Eylül 2024 |
-| [Headphone (1)](https://nothing.wiki/hardware/headphone_1) | B170 | Elekid | Temmuz 2025 |
-| [Ear (3)](https://nothing.wiki/hardware/ear_series#ear_3) | B173 | Feraligatr | Eylül 2025 |
-| [Headphone (a)](https://nothing.wiki/hardware/headphone_a) | B186 | Hoppip | Mart 2026 |
+| Cihaz Adı | Model | Cihaz Kod Adı | Wiki Sayfası | Çıkış Tarihi |
+|-----------|-------|---------------|--------------|--------------|
+| [Ear (1)](https://nothing.tech/products/ear-1) | B181 | Aipom | [Here](https://nothing.wiki/hardware/ear_series#ear_1) | 27 Temmuz 2021 |
+| [Ear (stick)](https://nothing.tech/products/ear-stick) | B157 | Bellossom | [Here](https://nothing.wiki/hardware/ear_series#ear_stick) | 26 Ekim 2022 |
+| [Ear (2)](https://nothing.tech/products/ear-2) | B155 | Azumarill | [Here](https://nothing.wiki/hardware/ear_series#ear_2) | 22 Mart 2023 |
+| [Ear](https://nothing.tech/products/ear) | B171 | Entei | [Here](https://nothing.wiki/hardware/ear_series#ear) | 18 Nisan 2024 |
+| [Ear (a)](https://nothing.tech/products/ear-a) | B162 | Cleffa | [Here](https://nothing.wiki/hardware/ear_series#ear_a) | 18 Nisan 2024 |
+| [Ear (open)](https://nothing.tech/products/ear-open) | B182 | Flaaffy | [Here](https://nothing.wiki/hardware/ear_series#ear_open) | 24 Eylül 2024 |
+| [Headphone (1)](https://nothing.tech/products/headphone-1) | B170 | Elekid | [Here](https://nothing.wiki/hardware/headphone_1) | 01 Temmuz 2025 |
+| [Ear (3)](https://nothing.tech/products/ear-3) | B173 | Feraligatr | [Here](https://nothing.wiki/hardware/ear_series#ear_3) | 18 Eylül 2025 |
+| [Headphone (a)](https://nothing.wiki/download/headphone_a_user_guide.pdf) | B186 | Hoppip | [Here](https://nothing.wiki/hardware/headphone_a) | 05 Mart 2026 |
+
+### Giyim
+
+| Ad | Wiki Sayfası | Çıkış Tarihi |
+|----|--------------|--------------|
+| [Labcoat](https://nothing.tech/products/nothing-labcoat) | [Here](https://nothing.wiki/merchandise/apparel#drop_1_transparency) | 07 Aralık 2023 |
+| [Cap](https://nothing.tech/products/nothing-cap) | [Here](https://nothing.wiki/merchandise/apparel#drop_1_transparency) | 07 Aralık 2023 |
+| [Heavy Hoodie](https://nothing.tech/products/nothing-hoodie) | [Here](https://nothing.wiki/merchandise/apparel#drop_2_comfort) | 21 Kasım 2024 |
+| [Ripstop Tracksuit Jacket](https://nothing.tech/products/nothing-tracksuit-jacket) | [Here](https://nothing.wiki/merchandise/apparel#drop_2_comfort) | 21 Kasım 2024 |
+| [Ripstop Tracksuit Trousers](https://nothing.tech/products/nothing-tracksuit-trousers) | [Here](https://nothing.wiki/merchandise/apparel#drop_2_comfort) | 21 Kasım 2024 |
+| [Ripstop Overall](https://nothing.tech/products/nothing-overall) | [Here](https://nothing.wiki/merchandise/apparel#drop_2_comfort) | 21 Kasım 2024 |
+
+### Diğer Ürünler
+
+| Ürün / Cihaz Adı | Wiki Sayfası | Çıkış Tarihi |
+|------------------|--------------|--------------|
+| Beer (5.1%) | [Here](https://nothing.wiki/merchandise/beer) | 05 Ekim 2023 (Sınırlı) |
+| Coffee (spaceboy) | [Here](https://nothing.wiki/merchandise/coffee) | Yayınlanmadı |
+| Power (1) power bank & charger | [Here](https://nothing.wiki/merchandise/power_1) | Yayınlanmadı |
+
 
 ## CMF by Nothing
 
 ### Telefonlar
 
-| Cihaz Adı | Model | Kod Adı | Pokémon Adı | Çıkış Tarihi |
-|-------------------|--------|------------|-------------|----------------|
-| [Phone (1)](https://nothing.wiki/cmf/cmf_phone_1) | A015 | Tetris | Beedrill | Temmuz 2024 |
-| [Phone (2) Pro](https://nothing.wiki/cmf/cmf_phone_2_pro) | A001 | Galaga | Bulbasaur | Nisan 2025 |
+| Cihaz Adı | Model | Cihaz Kod Adı | Wiki Sayfası | Çıkış Tarihi |
+|-----------|-------|---------------|--------------|--------------|
+| [Phone (1)](https://nothing.tech/products/cmf-phone-1) | A015 | Tetris / Beedrill | [Here](https://nothing.wiki/cmf/cmf_phone_1) | 08 Temmuz 2024 |
+| [Phone (2) Pro](http://nothing.tech/products/cmf-phone-2-pro) | A001 | Galaga / Bulbasaur | [Here](https://nothing.wiki/cmf/cmf_phone_2_pro) | 28 Nisan 2025 |
 
-### Ses Ürünleri
+### Audio
 
-| Cihaz Adı | Model | Pokémon Adı | Çıkış Tarihi |
-|-------------------|--------|-------------|----------------|
-| [Buds Pro](https://nothing.wiki/cmf/cmf_buds_pro) | B168 | Corsola | Eylül 2023 |
-| [Buds](https://nothing.wiki/cmf/cmf_buds) | B232 | Donphan | Mart 2024 |
-| [Neckband Pro](https://nothing.wiki/cmf/cmf_neckband_pro) | B164 | Crobat | Mart 2024 |
-| [Buds Pro 2](https://nothing.wiki/cmf/cmf_buds_pro_2) | B172 / B187 | Espeon | Haziran 2024 |
-| [Buds 2](https://nothing.wiki/cmf/cmf_buds_2) | B179 | Girafarig | Nisan 2025 |
-| [Buds 2 Plus](https://nothing.wiki/cmf/cmf_buds_2_plus) | B184 | Gligar | Nisan 2025 |
-| [Buds 2a](https://nothing.wiki/cmf/cmf_buds_2a) | B185 | Hoothoot | Nisan 2025 |
-| [Headphone Pro](https://nothing.wiki/cmf/cmf_headphone_pro) | B205 | Forretress | Eylül 2025 |
+| Cihaz Adı | Model | Cihaz Kod Adı | Wiki Sayfası | Çıkış Tarihi |
+|-----------|-------|---------------|--------------|--------------|
+| [Buds Pro](https://nothing.tech/products/cmf-buds-pro) | B168 | Corsola | [Here](https://nothing.wiki/cmf/cmf_buds_pro) | 26 Eylül 2023 |
+| [Buds](https://nothing.tech/products/cmf-buds) | B232 | Donphan | [Here](https://nothing.wiki/cmf/cmf_buds) | 05 Mart 2024 |
+| [Neckband Pro](https://nothing.tech/products/cmf-neckband-pro) | B164 | Crobat | [Here](https://nothing.wiki/cmf/cmf_neckband_pro) | 05 Mart 2024 |
+| [Buds Pro 2](https://nothing.tech/products/cmf-buds-pro-2) | B172 / B187 | Espeon | [Here](https://nothing.wiki/cmf/cmf_buds_pro_2) | 08 Temmuz 2024 |
+| [Buds 2](https://nothing.tech/products/cmf-buds-2) | B179 | Girafarig | [Here](https://nothing.wiki/cmf/cmf_buds_2) | 28 Nisan 2025 |
+| [Buds 2 Plus](https://nothing.tech/products/cmf-buds-2-plus) | B184 | Gligar | [Here](https://nothing.wiki/cmf/cmf_buds_2_plus) | 28 Nisan 2025 |
+| [Buds 2a](https://nothing.tech/products/cmf-buds-2a) | B185 | Hoothoot | [Here](https://nothing.wiki/cmf/cmf_buds_2a) | 28 Nisan 2025 |
+| [Headphone Pro](https://nothing.tech/products/cmf-headphone-pro) | B205 | Forretress | [Here](https://nothing.wiki/cmf/cmf_headphone_pro) | 29 Eylül 2025 |
 
 ### Saatler
 
-| Cihaz Adı | Model | Pokémon Adı | Çıkış Tarihi |
-|-------------------|--------|-------------|----------------|
-| [Watch Pro](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro) | D395 | Empoleon | Eylül 2023 |
-| [Watch Pro 2](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro_2) | D398 | Buizel | Ekim 2024 |
-| [Watch 3 Pro](https://nothing.wiki/cmf/cmf_watch#cmf_watch_3_pro) | D399 | Buneary | Temmuz 2025 |
+| Cihaz Adı | Model | Cihaz Kod Adı | Wiki Sayfası | Çıkış Tarihi |
+|-----------|-------|---------------|--------------|--------------|
+| [Watch Pro](https://nothing.tech/products/cmf-watch-pro) | D395 | Empoleon | [Here](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro) | 26 Eylül 2023 |
+| [Watch Pro 2](https://nothing.tech/products/cmf-watch-pro-2) | D398 | Buizel | [Here](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro_2) | 08 Temmuz 2024 |
+| [Watch 3 Pro](https://nothing.tech/products/cmf-watch-3-pro) | D399 | Buneary | [Here](https://nothing.wiki/cmf/cmf_watch#cmf_watch_3_pro) | 22 Temmuz 2025 |
 
 ### Aksesuarlar
 
-| Cihaz Adı | Model | Çıkış Tarihi |
-|-------------------|--------|--------------|
-| [Power 65W GaN](https://nothing.wiki/cmf/accessories#cmf_power_65w_gan) | C332 | Eylül 2023 |
-| [Power 100W GaN](https://nothing.wiki/cmf/accessories#cmf_power_100w_gan) | C269 | Eylül 2024 |
-| [Power 140W GaN](https://nothing.wiki/cmf/accessories#cmf_power_140w_gan) | C362 | Eylül 2024 |
-
-### Diğer Ürünler
-
-| Ürün / Cihaz Adı | Çıkış Tarihi |
-|------------------|--------------|
-| [Beer (5.1%)](https://nothing.wiki/merchandise/beer) | Ekim 2023 (Sınırlı) |
-| [Apparel](https://nothing.wiki/merchandise/apparel) | Aralık 2023 |
-| [Coffee (spaceboy)](https://nothing.wiki/merchandise/coffee) | Yayınlanmadı |
-| [Power (1) power bank & charger](https://nothing.wiki/merchandise/power_1) | Yayınlanmadı |
-
+| Cihaz Adı | Model | Wiki Sayfası | Çıkış Tarihi |
+|-----------|-------|--------------|--------------|
+| [Power 65W GaN](https://nothing.tech/products/cmf-power-65w-gan) | C332 | [Here](https://nothing.wiki/cmf/accessories#cmf_power_65w_gan) | 26 Eylül 2023 |
+| [Power 100W GaN](https://nothing.tech/products/cmf-power-100w-gan) | C269 | [Here](https://nothing.wiki/cmf/accessories#cmf_power_100w_gan) | 26 Eylül 2024 |
+| [Power 140W GaN](https://nothing.tech/products/cmf-power-140w-gan) | C362 | [Here](https://nothing.wiki/cmf/accessories#cmf_power_140w_gan) | 26 Eylül 2024 |
