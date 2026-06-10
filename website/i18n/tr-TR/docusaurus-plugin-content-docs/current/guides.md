@@ -541,6 +541,227 @@ D. **Bölümleri Geri Yükleme**
 
 ---
 
+### Özel ROM (Custom ROM) Yükleme
+
+:::warning
+Devam etmeden önce önyükleyici (bootloader) kilidinizin açık olduğundan emin olun. Henüz yapmadıysanız, [Önyükleyici Kilidini Açma](#önyükleyici-kilidini-açma) rehberine bakın.
+:::
+
+:::danger Sorumluluk Reddi ve Uyarı
+- **Genel Rehber:** Bu, çoğu senaryoda çalışması hedeflenen genel bir rehberdir. Her zaman ROM geliştiricisi veya sürdürücüsü tarafından sağlanan özel talimatları çapraz kontrol edin ve bunlara uyun.
+- **Veri Kaybı:** İlk kez özel bir ROM flaşlamak veya temiz kurulum (clean flash) yapmak **tüm kullanıcı verilerini silecektir**. Devam etmeden önce verilerinizi yedekleyin (örn. Google One yedeklemesi, `adb pull` veya FTP ile klasörleri manuel kopyalama veya cihazınız zaten root'luysa Swift Backup gibi root yedekleme çözümleri kullanarak).
+- **Sürücü ve Araç Kurulumu:** Açık bir önyükleyiciye ve PC'nizde düzgün şekilde yapılandırılmış USB, ADB ve Fastboot sürücülerine sahip olmalısınız.
+- **Cihaz Güvenliği:** Özel ROM'lar flaşlamak veya deneysel sürümler kullanmak, cihazınızın bootloop'a girmesi veya kullanılmaz hale gelmesi (brick) riskini taşır. Sorumluluk tamamen size aittir. Proje yazarları ve katkıda bulunanlar, cihazınızda meydana gelebilecek hiçbir hasardan sorumlu değildir.
+:::
+
+:::info
+- Bir **temiz kurulum (clean flash)** tüm kullanıcı verilerini siler ve ilk kez özel bir ROM flaşlarken veya başka bir ROM'a geçiş yaparken zorunludur.
+- Bir **üzerine yazarak kurulum (dirty flash)** (verileri silmeden güncelleme yapmak), genellikle yalnızca aynı ROM'un küçük güncellemeleri için desteklenir. Büyük sürüm yükseltmelerinde (örn. Nothing OS veya Android sürüm geçişleri) genellikle desteklenmez.
+- **Fastboot vs. Recovery ROM'ları:** ROM paketinin içeriğini kontrol ederek ikisi arasındaki farkı anlayabilirsiniz:
+  - Zip dosyası bir `payload.bin` dosyası içeriyorsa, bu **Recovery/Sideload** tabanlı bir ROM'dur (veya OTA zip dosyasıdır).
+  - Birden fazla bağımsız bölüm `.img` dosyası içeriyorsa, bu **Fastboot** tabanlı bir ROM'dur.
+:::
+
+<br />
+
+#### Recovery / Sideload Tabanlı ROM'lar
+
+:::note Önemli Hususlar
+- **Sideload İlerlemesi ve PC Durumu:** `adb sideload` çalıştırırken, PC'nizdeki ilerleme göstergesi genellikle **%47** civarında duraklar ve `Total xfer: 1.00x` veya `adb: failed to read command: Success`, `No error`, `Undefined error: 0` gibi hata mesajları bildirebilir. Bu normal bir durumdur ve transferin başarılı olduğunu gösterir. Kurulumun tamamlandığını doğrulamak için her zaman telefonunuzun ekranına bakın (`exit status 0` ifadesini arayın). PC'de %47'de kalması ve formatlama sonrasında cihaz ekranında `/metadata/ota` hatalarının görünmesi beklenen durumlardır.
+- **Özel Kurtarma Modları ile Flaşlama:** Recovery tabanlı yapıları (`ROM.zip`) TWRP veya OrangeFox gibi özel kurtarma modları aracılığıyla doğrudan flaşlamak genellikle mümkündür. Ancak, bu özelliğin bozuk olmadığından emin olmak için geliştirici notlarını kontrol edin. Bunu yapmanın, otomatik OTA güncellemelerini devre dışı bırakabileceğini unutmayın; çünkü OTA'lar genellikle ROM ile birlikte gelen orijinal kurtarma imajına ihtiyaç duyar.
+- **Hata 7 (kInstallDeviceOpenError):** Stok ROM'dan veya başka bir özel ROM'dan geçiş yapıyorsanız ve `Error Applying update: 7 (ErrorCode: kInstallDeviceOpenError)` hatasıyla karşılaşıyorsanız (veya kurtarma modu üzerinden flaşlama başarısız oluyorsa), `super_empty.img` bölüm imajını flaşlamanız gerekir. Bu dosyayı cihaz modelinize özel Telegram tartışma grubundan edinebilirsiniz.
+- **Sideload Hatalarını Giderme:** Sideloading başarısız olmaya devam ederse, cihazı kurmak için önce mevcut herhangi bir ROM'un Fastboot sürümünü flaşlayın. Bundan sonra, istediğiniz AOSP/CLO ROM'a karşılık gelen kurtarma imajını flaşlayın ve ROM zip dosyasını bunun üzerinden sideload ile yükleyin. Başarıyla tamamlanması gerekir.
+- **Eksik Bölüm İmajları:** Bazı durumlarda geliştirici, yayınlanan dosyalar arasında ayrı `boot`, `recovery` veya `vendor_boot` bölüm imajlarını sağlamayabilir. Bu gibi durumlarda, [otaripper](https://github.com/syedinsaf/otaripper) gibi araçları kullanarak bu imajları ROM zip dosyasının içindeki `payload.bin` dosyasından çıkarabilirsiniz.
+:::
+
+##### Temiz Kurulum (Clean Flash)
+
+A. **Ön Koşullar**
+- **USB Hata Ayıklama** etkinleştirilmiş ve **önyükleyici kilidi açılmış** bir cihaz.
+- **ADB ve Fastboot** kurulu bir PC (bkz. [Platform Araçları](#platform-araçları-adb--fastboot)).
+- İndirilen gerekli dosyalar (bazı bölüm imajları cihaz modeline göre değişiklik gösterebilir):
+  - `boot.img`
+  - `vendor_boot.img`
+  - `recovery.img`
+  - `super_empty.img` *（sadece stok ROM'dan flaşlarken gereklidir; başka bir özel ROM'dan geçiş yapıyorsanız atlayın）*
+  - `rom.zip`
+  - `GApps paketi` *（isteğe bağlı, yalnızca "Vanilla" yapılar için）*
+
+:::tip
+Terminal komutlarını basitleştirmek için indirilen tüm `.img` dosyalarını doğrudan `platform-tools` klasörünün içine yerleştirin. Aksi takdirde, flaş komutlarını çalıştırırken her imajın tam dosya yolunu terminale sürükleyip bırakmanız gerekecektir.
+:::
+
+B. **Önyükleyici Modunda Yeniden Başlatma**
+1. Telefonunuzu önyükleyici modunda yeniden başlatın:
+   ```sh
+   adb reboot bootloader
+   ```
+2. Cihazın algılandığını doğrulayın:
+   ```sh
+   fastboot devices
+   ```
+   :::note
+   Cihazınız `<serial> fastboot` olarak görünmelidir. Hiçbir şey görünmüyorsa, [USB Sürücüleri](#usb-sürücüleri) kılavuzuna başvurarak bağlantınızı kontrol edin veya USB sürücülerinizi güncelleyin.
+   :::
+
+C. **Gerekli İmajları Flaşlama**
+İndirilen bölüm imajlarını ilgili yuvalara flaşlayın:
+```sh
+fastboot flash boot boot.img
+fastboot flash vendor_boot vendor_boot.img
+fastboot flash recovery recovery.img
+```
+
+D. **Kullanıcı Alanı Fastboot Modunda (Fastbootd) Yeniden Başlatma**
+Kullanıcı alanı fastboot moduna (fastbootd) ön yükleme yapın:
+```sh
+fastboot reboot fastboot
+```
+
+E. **Super Bölümünü Silme (Sadece Stok → Özel ROM Geçişinde)**
+:::warning
+- Başka bir özel ROM'dan geçiş yapıyorsanız bu adımı atlayın.
+- Şu anda özel ROM'un fastbootd arayüzünde değilseniz **bu komutu çalıştırmayın**.
+- Bu komutu çalıştırırsanız, tam bir sistem ROM'unu başarıyla flaşlayana kadar **cihazınızı yeniden başlatmayın**.
+:::
+Boş süper imajını kullanarak super bölümünü silin:
+```sh
+fastboot wipe-super super_empty.img
+```
+
+F. **Kurtarma Modunda (Recovery) Yeniden Başlatma**
+Yeni flaşladığınız kurtarma modunda cihazı başlatın:
+```sh
+fastboot reboot recovery
+```
+
+G. **Verileri Biçimlendirme (Format Data)**
+Kurtarma arayüzünde şuraya gidin:
+**Factory Reset** → **Format data / factory reset**
+
+Alternatif olarak, kullanıcı verilerini Fastboot üzerinden silebilirsiniz:
+```sh
+fastboot erase userdata
+fastboot erase metadata
+```
+
+H. **ROM'u Sideload ile Yükleme**
+1. Kurtarma menüsünde **Apply Update** → **Apply from ADB** seçeneğini belirleyin.
+2. PC'nizde ADB sideload bağlantısını doğrulayın:
+   ```sh
+   adb devices
+   ```
+   *Beklenen çıktı:* `<serial>   sideload`
+   :::note
+   Cihazınız algılanmazsa veya `unauthorized` (yetkisiz) olarak görünürse:
+   - USB kablosunu çıkarıp tekrar takın.
+   - USB sürücülerinizi yükleyin veya güncelleyin (bkz. [USB Sürücüleri](#usb-sürücüleri) / [USB Sürücüleri](#usb-sürücüleri)).
+   :::
+3. Sideload kurulumunu başlatın:
+   ```sh
+   adb sideload rom.zip
+   ```
+   :::note
+   Terminalinizdeki ilerleme çubuğu **%47**'de duraklayabilir ve `Total xfer: 1.00x` gösterebilir. Bu beklenen bir durumdur; ROM başarıyla flaşlanmıştır. Onaylamak için telefonunuzun ekranını kontrol edin.
+   :::
+
+I. **GApps & Ek Paketler**
+Sideload tamamlandığında, kurtarma modu ek paketler yüklemek isteyip istemediğinizi soracaktır:
+- **Vanilla Yapılar:** **YES** seçeneğini belirleyin, kurtarma modunda yeniden başlatın ve GApps paketinizi sideload ile yükleyin:
+  ```sh
+  adb sideload gapps.zip
+  ```
+- **GMS Yapılar:** **NO** seçeneğini belirleyin (Google Uygulamaları zaten dahildir).
+
+J. **Son Silme ve Önyükleme**
+1. Şifrelemeyi temizlemek için son bir kez daha **Factory Reset** → **Format data / factory reset** bölümüne gidin.
+2. **Reboot system now** seçeneğini belirleyin.
+
+<br />
+
+##### Üzerine Yazarak Kurulum (Dirty Flash)
+
+:::info
+- Magisk/KernelSU root erişimi ve modülleri genellikle üzerine yazarak kurulumdan sonra korunur.
+- Üzerine yazarak kurulum desteği **ROM'a ve geliştiriciye göre değişiklik gösterir**. Denemeden önce her zaman sürüm notlarını veya değişiklik günlüğünü (changelog) kontrol edin.
+- Sürdürücü üzerine yazarak kurulumun desteklendiğini açıkça belirtmediyse, **temiz kurulum yapmalısınız**.
+:::
+
+:::note
+- **Nothing Phone (2a) Plus (pacmanpro) Kullanıcıları:** Cihazınıza Fenrir flaşladıysanız üzerine yazarak kurulum **desteklenmez**. Bunu yapmak cihazınızı brick edebilir veya açılış döngüsüne (bootloop) neden olabilir. ROM'u her güncellediğinizde veya değiştirdiğinizde temiz kurulum yapılması gerekir.
+- Fenrir flaşlamadıysanız, hem OTA hem de kurtarma modu üzerinden sideload yöntemleri sorunsuz çalışacaktır.
+:::
+
+A. **Yöntem 1: OTA Güncellemesi**
+1. **Ayarlar** → **Sistem** → **Sistem güncellemeleri** bölümüne gidin.
+2. Mevcut en son OTA güncellemesini indirin.
+3. İndirme ve doğrulama işlemleri tamamlandıktan sonra **Yeniden Başlat**'a dokunun.
+4. Cihazınız güncellemeyi yükleyecek ve otomatik olarak yeniden başlayacaktır.
+
+B. **Yöntem 2: Kurtarma Modu Üzerinden Sideload**
+1. Cihazı kurtarma modunda yeniden başlatın:
+   ```sh
+   adb reboot recovery
+   ```
+2. **Apply Update** → **Apply from ADB** bölümüne gidin.
+3. PC'nizde bağlantıyı doğrulayın:
+   ```sh
+   adb devices
+   ```
+   *Beklenen çıktı:* `<serial>   sideload`
+   :::note
+   Cihazınız algılanmazsa veya `unauthorized` olarak görünürse:
+   - USB kablosunu çıkarıp tekrar takın.
+   - USB Sürücülerinizi yükleyin veya güncelleyin (bkz. [USB Sürücüleri](#usb-sürücüleri) / [USB Sürücüleri](#usb-sürücüleri)).
+   :::
+4. ROM zip dosyasını sideload ile yükleyin:
+   ```sh
+   adb sideload rom.zip
+   ```
+5. Ek paketleri yüklemeniz istendiğinde, **NO** seçeneğini belirleyin *(GApps'i yeniden flaşlamanız gerekmediği sürece)*.
+6. **Reboot system now** seçeneğini belirleyin.
+
+<br />
+
+#### Fastboot Tabanlı ROM'lar
+
+:::note
+- **Bellenim Gereksinimi:** Fastboot tabanlı ROM'lar, kurulumdan önce genellikle belirli bir stok Nothing OS bellenimi sürümünde olmanızı gerektirir. Lütfen geliştiricinin sürüm notlarına başvurun. Temel bellenim imajlarını [bellenim veritabanı](/docs/firmware) altındaki `image-firmware.7z` arşivinden edinebilirsiniz.
+:::
+
+A. **Ön Koşullar**
+- **USB Hata Ayıklama** etkinleştirilmiş ve **önyükleyici kilidi açılmış** bir cihaz.
+- **ADB ve Fastboot** kurulu bir PC (bkz. [Platform Araçları](#platform-araçları-adb--fastboot)).
+- İndirilen Fastboot ROM paketi (zorunlu olmamakla birlikte genellikle dosya adında `image` veya `fastboot` içerir).
+
+B. **Önyükleyici Modunda Yeniden Başlatma**
+1. Telefonunuzu önyükleyici modunda yeniden başlatın:
+   ```sh
+   adb reboot bootloader
+   ```
+2. Cihazın algılandığını doğrulayın:
+   ```sh
+   fastboot devices
+   ```
+   :::note
+   Cihazınız `<serial> fastboot` olarak listelenmelidir. Cihaz algılanmazsa [USB Sürücüleri](#usb-sürücüleri) kılavuzuna başvurun.
+   :::
+
+C. **ROM Flaşlama**
+Yapmak istediğiniz flaşlama türüne göre aşağıdaki komutu çalıştırın:
+
+- **Temiz Kurulum İçin (tüm kullanıcı verilerini siler):**
+  ```sh
+  fastboot -w update <rom_zip_yolu>
+  ```
+
+- **Üzerine Yazarak Kurulum İçin (kullanıcı verilerini korur):**
+  ```sh
+  fastboot update <rom_zip_yolu>
+  ```
+
+---
+
 ### Stok ROM Flaşlama (Brick Kurtarma / Sürüm Düşürme)
 
 :::note

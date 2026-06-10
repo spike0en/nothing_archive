@@ -534,12 +534,232 @@ D. **Restoring Partitions**
 
 
  - **QCom Devices:**
+```sh
+    fastboot flash persist persist.img
+    fastboot flash modemst1 modemst1.img
+    fastboot flash modemst2 modemst2.img
+    ```
+    **Factory reset is not mandatory in this case.**
+
+---
+
+### Flashing Custom ROM
+
+:::warning
+Ensure your bootloader is unlocked before proceeding. Refer to the [Unlocking Bootloader](#unlocking-bootloader) guide if you have not done so.
+:::
+
+:::danger Disclaimer & Warning
+- **General Guide:** This is a generic guide designed to work in most scenarios. Always cross-reference and follow any specific instructions provided by the ROM developer or maintainer.
+- **Data Loss:** Flashing a custom ROM for the first time or performing a clean flash **will erase all user data**. Back up your data before proceeding (e.g., using Google One, copying folders manually via `adb pull` or FTP, or using root backup tools like Swift Backup if your device is already rooted).
+- **Driver and Tool Setup:** You must have an unlocked bootloader and properly configured USB, ADB, and Fastboot drivers on your PC.
+- **Device Safety:** Flashing custom ROMs or using experimental builds carries the risk of bootlooping or bricking your device. Proceed at your own risk. The project authors and contributors are not responsible for any damage to your device.
+:::
+
+:::info
+- A **clean flash** wipes all user data and is mandatory when flashing a custom ROM for the first time or switching to a different ROM.
+- A **dirty flash** (updating without wiping data) is generally supported only for minor updates of the same ROM. It is typically not supported for major version upgrades (e.g., Nothing OS/Android version transitions).
+- **Fastboot vs. Recovery ROMs:** You can distinguish between the two by checking the contents of the ROM package:
+  - If the zip contains a `payload.bin` file, it is a **Recovery/Sideload** based ROM (or OTA zip).
+  - If it contains multiple individual partition `.img` files, it is a **Fastboot** based ROM.
+:::
+
+<br />
+
+#### Recovery / Sideload Based ROMs
+
+:::note Key Considerations
+- **Sideload Progress & PC Status:** When running `adb sideload`, the progress indicator on your PC will often pause at around **47%** and may report `Total xfer: 1.00x` or error messages such as `adb: failed to read command: Success`, `No error`, or `Undefined error: 0`. This is normal behavior and indicates a successful transfer. Always refer to your phone's screen to verify that the installation completed (look for `exit status 0`). Reaching 47% on the PC and seeing `/metadata/ota` errors on the device screen after formatting are expected.
+- **Flashing via Custom Recoveries:** Directly flashing recovery-based custom ROM builds using custom recoveries like TWRP or OrangeFox is generally possible. However, check developer notes to ensure functionality is not broken. Note that doing so may disable automatic OTA updates, as OTAs typically rely on the stock recovery image shipped with the ROM.
+- **Error 7 (kInstallDeviceOpenError):** If you are switching from the stock ROM or another custom ROM and encounter `Error Applying update: 7 (ErrorCode: kInstallDeviceOpenError)` (or if flashing fails via recovery), you must flash the `super_empty.img` partition image. You can obtain this file from the Telegram discussion group for your specific device model.
+- **Troubleshooting Sideload Failures:** If sideloading continues to fail, flash a Fastboot-based version of any available ROM first to set up the device. After that, flash the recovery image corresponding to your desired AOSP/CLO ROM, and sideload the ROM zip through it. It should complete successfully.
+:::
+
+##### Clean Flash
+
+A. **Prerequisites**
+- An **unlocked bootloader** with **USB Debugging** enabled.
+- A **PC with ADB and Fastboot** configured (refer to [Platform Tools](#platform-tools-adb--fastboot)).
+- The required files downloaded (some partition images may vary depending on the device model):
+  - `boot.img`
+  - `vendor_boot.img`
+  - `recovery.img`
+  - `super_empty.img` *(only required when flashing from stock ROM; skip if migrating from another custom ROM)*
+  - `rom.zip`
+  - `GApps package` *(optional, only for ROM builds labeled "Vanilla")*
+
+:::tip
+Place all downloaded `.img` files directly inside your `platform-tools` folder to simplify terminal commands. Otherwise, you will need to drag and drop the full file path of each image into the terminal.
+:::
+
+B. **Reboot to Bootloader**
+1. Reboot your phone into bootloader mode:
    ```sh
-   fastboot flash persist persist.img
-   fastboot flash modemst1 modemst1.img
-   fastboot flash modemst2 modemst2.img
+   adb reboot bootloader
    ```
-   **Factory reset is not mandatory in this case.**
+2. Verify that the device is recognized:
+   ```sh
+   fastboot devices
+   ```
+   :::note
+   Your device should be listed as `<serial> fastboot`. If no device appears, check your connection or update your USB drivers by referring to the [USB Drivers](#usb-drivers) guide.
+   :::
+
+C. **Flash Required Images**
+Flash the downloaded partition images to their respective slots:
+```sh
+fastboot flash boot boot.img
+fastboot flash vendor_boot vendor_boot.img
+fastboot flash recovery recovery.img
+```
+
+D. **Reboot to Userspace Fastboot (Fastbootd)**
+Boot into userspace fastboot mode (fastbootd):
+```sh
+fastboot reboot fastboot
+```
+
+E. **Wipe Super Partition (Stock → Custom Only)**
+:::warning
+- Skip this step if you are migrating from another custom ROM.
+- **Do not run this command** if you are not currently in the custom ROM's fastbootd interface.
+- If you execute this command, **do not reboot your device** until you have successfully flashed a full system ROM.
+:::
+Wipe the super partition using the empty super image:
+```sh
+fastboot wipe-super super_empty.img
+```
+
+F. **Reboot to Recovery**
+Boot into your newly flashed recovery:
+```sh
+fastboot reboot recovery
+```
+
+G. **Format Data**
+In the recovery user interface, navigate to:
+**Factory Reset** → **Format data / factory reset**
+
+Alternatively, you can wipe user data via Fastboot:
+```sh
+fastboot erase userdata
+fastboot erase metadata
+```
+
+H. **Sideload the ROM**
+1. In the recovery menu, select **Apply Update** → **Apply from ADB**.
+2. Verify the ADB sideload connection on your PC:
+   ```sh
+   adb devices
+   ```
+   *Expected output:* `<serial>   sideload`
+   :::note
+   If your device is not detected or shows as `unauthorized`:
+   - Reconnect the USB cable.
+   - Install or update your USB drivers (see [USB Drivers](#usb-drivers)).
+   :::
+3. Start the sideload installation:
+   ```sh
+   adb sideload rom.zip
+   ```
+   :::note
+   The progress bar in your terminal may pause at **47%** and display `Total xfer: 1.00x`. This is expected; the ROM has successfully flashed. Check your phone's screen to confirm.
+   :::
+
+I. **GApps & Additional Packages**
+Once the sideload completes, the recovery will ask if you want to install additional packages:
+- **Vanilla Builds:** Select **YES**, reboot to recovery, and sideload your GApps package:
+  ```sh
+  adb sideload gapps.zip
+  ```
+- **GMS Builds:** Select **NO** (Google Apps are already included).
+
+J. **Final Wipe and Boot**
+1. Navigate to **Factory Reset** → **Format data / factory reset** one final time to clear encryption.
+2. Select **Reboot system now**.
+
+<br />
+
+##### Dirty Flash
+
+:::info
+- Magisk/KernelSU root access and modules typically survive a dirty flash.
+- Support for dirty flashing **varies depending on the ROM and maintainer**. Always check the release notes or changelog before attempting.
+- If the maintainer does not explicitly state that dirty flashing is supported, **you must perform a clean flash**.
+:::
+
+:::note
+- **Nothing Phone (2a) Plus (pacmanpro) Users:** If you have flashed Fenrir on your device, dirty flashing is **not supported**. Doing so may brick your device or cause a bootloop. A clean flash is required every time you update or switch ROMs.
+- If you have not flashed Fenrir, both the OTA and sideload dirty flash methods will work normally.
+:::
+
+A. **Method 1: OTA Update**
+1. Navigate to **Settings** → **System** → **System updates**.
+2. Download the latest available OTA update.
+3. Tap **Reboot** once the download and verification processes are complete.
+4. Your device will install the update and reboot automatically.
+
+B. **Method 2: Recovery Sideload**
+1. Reboot the device to recovery mode:
+   ```sh
+   adb reboot recovery
+   ```
+2. Navigate to **Apply Update** → **Apply from ADB**.
+3. Verify the connection on your PC:
+   ```sh
+   adb devices
+   ```
+   *Expected output:* `<serial>   sideload`
+   :::note
+   If your device is not detected or shows as `unauthorized`:
+   - Disconnect and reconnect the USB cable.
+   - Install or update your USB drivers (see [USB Drivers](#usb-drivers)).
+   :::
+4. Sideload the ROM zip file:
+   ```sh
+   adb sideload rom.zip
+   ```
+5. When prompted to install additional packages, select **NO** *(unless you need to reflash GApps)*.
+6. Select **Reboot system now**.
+
+<br />
+
+#### Fastboot-Based ROMs
+
+:::note
+- **Firmware Requirement:** Fastboot-based ROMs often require a specific version of the base Nothing OS firmware before installation. Please consult the maintainer's release notes. You can obtain base firmware images from the `image-firmware.7z` archive from the OTA releases section in the [firmware archive](/docs/firmware).
+:::
+
+A. **Prerequisites**
+- An **unlocked bootloader** with **USB Debugging** enabled.
+- A **PC with ADB and Fastboot** configured (refer to [Platform Tools](#platform-tools-adb--fastboot)).
+- The Fastboot ROM package downloaded (typically contains `image` or `fastboot` in the file name, though this is not mandatory).
+
+B. **Reboot to Bootloader**
+1. Reboot your phone into bootloader mode:
+   ```sh
+   adb reboot bootloader
+   ```
+2. Verify that the device is recognized:
+   ```sh
+   fastboot devices
+   ```
+   :::note
+   Your device should be listed as `<serial> fastboot`. If no device is detected, refer to the [USB Drivers](#usb-drivers) guide.
+   :::
+
+C. **Flash the ROM**
+Run the following command depending on the type of flash you want to perform:
+
+- **For a Clean Flash (wipes all user data):**
+  ```sh
+  fastboot -w update <path/to/rom_zip>
+  ```
+
+- **For a Dirty Flash (retains user data):**
+  ```sh
+  fastboot update <path/to/rom_zip>
+  ```
 
 ---
 

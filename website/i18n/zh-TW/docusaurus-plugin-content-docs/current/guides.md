@@ -541,6 +541,227 @@ D. **還原分區**
 
 ---
 
+### 刷入客製化 ROM
+
+:::warning
+在繼續操作之前，請確保您的開機載入程式 (bootloader) 已經解鎖。如果您尚未解鎖，請參考 [解鎖開機載入程式](#解鎖開機載入程式-bootloader) 指南。
+:::
+
+:::danger 免責聲明與警告
+- **通用指南:** 這是一份通用指南，適用於大多數情況。請務必交叉比對並遵循 ROM 開發者或維護者提供的具體說明。
+- **資料遺失:** 首次刷入客製化 ROM 或執行全新刷機 (clean flash) **將會清除所有使用者資料**。請在繼續之前備份您的資料（例如：使用 Google One 備份、透過 `adb pull` 或 FTP 手動複製資料夾，或者如果裝置已經取得 root 權限，則使用 Swift Backup 等 root 備份工具）。
+- **驅動程式與工具設定:** 您的裝置必須已解鎖開機載入程式，且電腦上必須正確設定了 USB、ADB 和 Fastboot 驅動程式。
+- **裝置安全:** 刷入客製化 ROM 或使用實驗性版本存在導致裝置無限重啟 (bootloop) 或損壞（brick，俗稱變磚）的風險。請自行承擔風險。專案作者及貢獻者對裝置的任何損壞概不負責。
+:::
+
+:::info
+- **全新刷機 (clean flash)** 會清除所有使用者資料，當您首次刷入客製化 ROM 或切換到不同的 ROM 時，這是必須執行的步驟。
+- **覆蓋刷機 (dirty flash)**（不清除資料直接更新）通常僅支援同一款 ROM 的小版本更新。一般不支援大版本升級（例如：Nothing OS 或 Android 系統版本轉換）。
+- **Fastboot 刷機包 vs. Recovery 側載包:** 您可以透過檢查 ROM 檔案包的內容來區分這兩者：
+  - 如果 zip 檔案中包含 `payload.bin` 檔案，則為基於 **Recovery/Sideload** 的 ROM（或 OTA zip 包）。
+  - 如果檔案包中包含多個獨立的分區 `.img` 檔案，則為基於 **Fastboot** 的 ROM。
+:::
+
+<br />
+
+#### 基於 Recovery / Sideload 的 ROM
+
+:::note 關鍵注意事項
+- **側載進度與電腦狀態:** 執行 `adb sideload` 時，電腦上的進度條通常會停在 **47%** 左右，並可能回報 `Total xfer: 1.00x` 或出現 `adb: failed to read command: Success`、`No error` 或 `Undefined error: 0` 等錯誤訊息。這是正常現象，表示傳輸已成功完成。請務必查看手機螢幕以確認安裝是否已完成（尋找 `exit status 0`）。電腦端停在 47% 以及手機在格式化後螢幕顯示 `/metadata/ota` 錯誤都是正常且符合預期的行為。
+- **透過自訂 Recovery 刷入:** 通常可以使用 TWRP 或 OrangeFox 等自訂 recovery 直接刷入 recovery 格式的安裝包 (`ROM.zip`)。但是，請查閱開發者說明以確保該功能沒有受損。請注意，這樣做可能會使自動 OTA 更新失效，因為 OTA 更新通常需要 ROM 內建的原廠 recovery 映像。
+- **錯誤 7 (kInstallDeviceOpenError):** 如果您是從原廠 ROM 切換，或是從其他客製化 ROM 切換時遇到 `Error Applying update: 7 (ErrorCode: kInstallDeviceOpenError)`（或者透過 recovery 直接刷入失敗），您必須刷入 `super_empty.img` 分區映像。您可以從適用於您裝置型號的 Telegram 討論群組中取得此檔案。
+- **解決側載失敗問題:** 如果側載持續失敗，請先刷入任何可用 ROM 的 Fastboot 版本以初始化裝置。之後，刷入與您想要的 AOSP/CLO ROM 相對應的 recovery 映像，然後透過該 recovery 側載 ROM zip 包。這應該可以順利完成。
+- **缺失分區映像:** 在某些情況下，維護者可能未在發布資源中提供獨立的 `boot`、`recovery` 或 `vendor_boot` 分區映像。如果遇到這種情況，您可以使用 [otaripper](https://github.com/syedinsaf/otaripper) 等工具，從 ROM zip 檔案內的 `payload.bin` 中提取這些映像。
+:::
+
+##### 全新刷機 (Clean Flash)
+
+A. **先決條件**
+- 已**解鎖開機載入程式**且已**啟用 USB 除錯**的裝置。
+- 已配置 **ADB 和 Fastboot** 的電腦（請參考 [平台工具 (ADB & Fastboot)](#平台工具-adb--fastboot)）。
+- 已下載所需的檔案（某些分區映像可能會根據裝置型號而有所不同）：
+  - `boot.img`
+  - `vendor_boot.img`
+  - `recovery.img`
+  - `super_empty.img` *（僅在從原廠 ROM 刷入時需要；如果是從其他客製化 ROM 遷移則跳過此步驟）*
+  - `rom.zip`
+  - `GApps 套件` *（選填，僅適用於標註為 "Vanilla" 的 ROM 版本）*
+
+:::tip
+將所有下載的 `.img` 檔案直接放入 `platform-tools` 資料夾中，以簡化終端機指令。否則，在執行刷機指令時，您需要將每個映像的完整檔案路徑拖放到終端機中。
+:::
+
+B. **重啟至開機載入程式 (Bootloader)**
+1. 將手機重啟至開機載入程式模式：
+   ```sh
+   adb reboot bootloader
+   ```
+2. 驗證裝置是否已正確連接與識別：
+   ```sh
+   fastboot devices
+   ```
+   :::note
+   您的裝置應顯示為 `<serial> fastboot`。如果沒有顯示任何內容，請參考 [USB 驅動程式](#usb-驅動程式) 指南檢查連接或更新 USB 驅動程式。
+   :::
+
+C. **刷入所需的映像**
+將下載的分區映像刷入對應的插槽：
+```sh
+fastboot flash boot boot.img
+fastboot flash vendor_boot vendor_boot.img
+fastboot flash recovery recovery.img
+```
+
+D. **重啟至使用者空間 Fastboot (Fastbootd)**
+啟動至使用者空間 fastboot 模式 (fastbootd)：
+```sh
+fastboot reboot fastboot
+```
+
+E. **清除 Super 分區（僅限原廠 → 客製化 ROM）**
+:::warning
+- 如果您是從其他客製化 ROM 遷移，請跳過此步驟。
+- 如果您目前**未處於**客製化 ROM 的 fastbootd 介面中，請勿執行此指令。
+- 如果您執行了此指令，在成功刷入完整的系統 ROM 之前，**請勿重啟裝置**。
+:::
+使用空白的 super 映像清除 super分區：
+```sh
+fastboot wipe-super super_empty.img
+```
+
+F. **重啟至 Recovery**
+啟動至您新刷入的 recovery：
+```sh
+fastboot reboot recovery
+```
+
+G. **格式化資料 (Format Data)**
+在 recovery 介面中，導航至：
+**Factory Reset** → **Format data / factory reset**
+
+或者，您可以透過 Fastboot 清除使用者資料：
+```sh
+fastboot erase userdata
+fastboot erase metadata
+```
+
+H. **側載 ROM**
+1. 在 recovery 選單中，選擇 **Apply Update** → **Apply from ADB**。
+2. 在電腦上驗證 ADB 側載連接：
+   ```sh
+   adb devices
+   ```
+   *預期輸出:* `<serial>   sideload`
+   :::note
+   如果未檢測到裝置或顯示為 `unauthorized`（未授權）：
+   - 重新連接 USB 傳輸線。
+   - 安裝或更新您的 USB 驅動程式（請參考 [USB 驅動程式](#usb-驅動程式)）。
+   :::
+3. 開始側載安裝：
+   ```sh
+   adb sideload rom.zip
+   ```
+   :::note
+   終端機中的進度條可能會停在 **47%** 並顯示 `Total xfer: 1.00x`。這是正常現象，代表 ROM 已成功刷入。請查看手機螢幕以進行確認。
+   :::
+
+I. **GApps 與其他套件**
+側載完成後，recovery 會詢問您是否要安裝其他套件：
+- **Vanilla 版本:** 選擇 **YES**，重啟至 recovery，然後側載您的 GApps 套件：
+  ```sh
+  adb sideload gapps.zip
+  ```
+- **GMS 版本:** 選擇 **NO**（已預先包含 Google 應用程式）。
+
+J. **最後清除與開機**
+1. 最後一次導航至 **Factory Reset** → **Format data / factory reset** 以清除加密。
+2. 選擇 **Reboot system now**。
+
+<br />
+
+##### 覆蓋刷機 (Dirty Flash)
+
+:::info
+- Magisk/KernelSU root 權限與模組通常會在覆蓋刷機後保留。
+- 是否支援覆蓋刷機**取決於 ROM 和維護者**。在嘗試之前，請務必閱讀發布說明或變更日誌 (changelog)。
+- 如果維護者未明確說明支援覆蓋刷機，**您必須執行全新刷機**。
+:::
+
+:::note
+- **Nothing Phone (2a) Plus (pacmanpro) 用戶:** 如果您的裝置上刷入了 Fenrir，則**不支援**覆蓋刷機。這樣做可能會導致裝置損壞（brick）或陷入無限重啟（bootloop）。每次更新或切換 ROM 時都必須執行全新刷機。
+- 如果您沒有刷入 Fenrir，則 OTA 和 recovery 側載兩種覆蓋刷機方法皆可正常運作。
+:::
+
+A. **方法 1：OTA 更新**
+1. 前往 **設定** → **系統** → **系統更新**。
+2. 下載最新可用的 OTA 更新。
+3. 下載並驗證完成後，點擊 **重啟**。
+4. 裝置將自動安裝更新並重新啟動。
+
+B. **方法 2：Recovery 側載**
+1. 將裝置重啟至 recovery 模式：
+   ```sh
+   adb reboot recovery
+   ```
+2. 導航至 **Apply Update** → **Apply from ADB**。
+3. 在電腦上驗證連接狀態：
+   ```sh
+   adb devices
+   ```
+   *預期輸出:* `<serial>   sideload`
+   :::note
+   如果未檢測到裝置或顯示為 `unauthorized`：
+   - 拔掉並重新連接 USB 傳輸線。
+   - 安裝或更新您的 USB 驅動程式（請參考 [USB 驅動程式](#usb-驅動程式)）。
+   :::
+4. 側載 ROM zip 檔案：
+   ```sh
+   adb sideload rom.zip
+   ```
+5. 當系統提示安裝其他套件時，選擇 **NO** *（除非您需要重新刷入 GApps）*。
+6. 選擇 **Reboot system now**。
+
+<br />
+
+#### 基於 Fastboot 的 ROM
+
+:::note
+- **韌體版本要求:** 基於 Fastboot 的 ROM 通常要求您的裝置在安裝前處於特定版本的原廠 Nothing OS 韌體。請參閱維護者的發布說明。您可以從 [韌體資料庫](/docs/firmware) 下的 `image-firmware.7z` 存檔中取得原廠底包韌體映像。
+:::
+
+A. **先決條件**
+- 已**解鎖開機載入程式**且已**啟用 USB 除錯**的裝置。
+- 已配置 **ADB 和 Fastboot** 的電腦（請參考 [平台工具 (ADB & Fastboot)](#平台工具-adb--fastboot)）。
+- 已下載 Fastboot ROM 安裝包（通常檔案名中會包含 `image` 或 `fastboot`，但這並非強制要求）。
+
+B. **重啟至開機載入程式 (Bootloader)**
+1. 將手機重啟至開機載入程式模式：
+   ```sh
+   adb reboot bootloader
+   ```
+2. 驗證裝置是否已正確連接與識別：
+   ```sh
+   fastboot devices
+   ```
+   :::note
+   您的裝置應顯示為 `<serial> fastboot`。如果未檢測到裝置，請參考 [USB 驅動程式](#usb-驅動程式) 指南。
+   :::
+
+C. **刷入 ROM**
+根據您要執行的刷機類型執行以下對應的指令：
+
+- **全新刷機（清除所有使用者資料）：**
+  ```sh
+  fastboot -w update <ROM_zip_路徑>
+  ```
+
+- **覆蓋刷機（保留使用者資料）：**
+  ```sh
+  fastboot update <ROM_zip_路徑>
+  ```
+
+---
+
 ### 刷入原廠 ROM（修復救磚 / 降級）
 
 :::note
