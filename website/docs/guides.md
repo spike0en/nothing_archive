@@ -542,6 +542,203 @@ D. **Restoring Partitions**
    **Factory reset is not mandatory in this case.**
 
 ---
+### Flashing Custom ROM
+
+:::warning
+Ensure your bootloader is already unlocked before proceeding. Refer to the [Unlocking Bootloader](#unlocking-bootloader) guide if you haven't done so.
+:::
+
+:::info
+- A **clean flash** will wipe all user data. Back up anything important before proceeding.
+- A **dirty flash** is not supported for major version upgrades (e.g., `1.x → 2.x`). Perform a clean flash instead.
+:::
+
+<br />
+
+#### Clean Flash
+
+A. **Prerequisites**
+- **Unlocked bootloader** with **USB Debugging enabled**
+- **PC with ADB & Fastboot** installed
+- Required files downloaded:
+  - `boot.img`
+  - `vendor_boot.img`
+  - `super_empty.img` *(only if coming from stock)*
+  - `rom.zip`
+  - `GApps package` *(optional, Vanilla builds only)*
+
+:::tip
+Place all `.img` files inside your `platform-tools` folder before starting. If not, you will need to drag and drop the full file path into the terminal when running flash commands.
+:::
+
+---
+
+B. **Reboot to Bootloader**
+
+```sh
+adb reboot bootloader
+```
+
+Verify the device is recognised:
+
+```sh
+fastboot devices
+```
+
+:::note
+Your device should appear as `<serial> fastboot`. If nothing shows, check your cable or install and update your USB drivers. Refer to the [USB Drivers](#usb-drivers) guide.
+:::
+
+---
+
+C. **Flash Required Images**
+
+```sh
+fastboot flash boot boot.img
+fastboot flash vendor_boot vendor_boot.img
+```
+
+---
+
+D. **Wipe Super Partition (Stock → Custom Only)**
+
+:::tip
+Skip this step if you are already on a custom ROM.
+:::
+
+```sh
+fastboot wipe-super super_empty.img
+```
+
+---
+
+E. **Reboot to Recovery**
+
+```sh
+fastboot reboot recovery
+```
+
+---
+
+F. **Format Data**
+
+In the recovery UI, navigate to:
+
+**Factory Reset → Format data / factory reset**
+
+Or via fastboot:
+
+```sh
+fastboot erase userdata
+fastboot erase metadata
+```
+
+---
+
+G. **Sideload the ROM**
+
+In recovery, navigate to **Apply Update → Apply from ADB**.
+
+Verify your connection — the device should now appear as `sideload`:
+
+```sh
+adb devices
+# Expected: <serial>   sideload
+```
+
+:::note
+If your device does not appear or shows as `unauthorized`, try the following:
+- Disconnect and reconnect the USB cable.
+- Install or update your USB drivers. Refer to the [USB Drivers](#usb-drivers) guide.
+:::
+
+Then sideload the ROM package:
+
+```sh
+adb sideload rom.zip
+```
+
+:::note
+ADB sideload may appear to stall at **47%** and report `Total xfer: 1.00x`. This is completely normal — the flash completed successfully.
+:::
+
+---
+
+H. **GApps & Additional Packages**
+
+After sideload completes, the recovery will prompt whether you want to install additional packages.
+
+| Build Type | Action |
+|---|---|
+| **Vanilla** (no GApps included) | Select **YES** → reboot to recovery → sideload your GApps package |
+| **GMS** (GApps pre-included) | Select **NO** |
+
+---
+
+I. **Final Wipe & Boot**
+
+- Navigate to **Factory Reset → Format data / factory reset** one final time to clear encryption.
+- Select **Reboot system now**.
+
+<br />
+
+---
+
+#### Dirty Flash
+
+:::info
+- Root access and modules will survive a dirty flash.
+- Dirty flash support **varies per ROM and maintainer** — always check the release notes or changelog before proceeding.
+- If the maintainer does not explicitly state dirty flash is supported, **perform a clean flash instead**.
+:::
+
+:::note
+- **Only for Nothing Phone (2a) Plus (pacmanpro) users:** If you have flashed fenrir on your device, dirty flash is not supported — it may brick your device or cause bootloop. A clean flash is required every time you update or switch ROMs.
+- If you have not flashed fenrir, both OTA and sideload dirty flash methods will work without any issues.
+:::
+
+A. **Method 1: OTA Update**
+
+1. Go to **Settings → System → System updates**.
+2. Download the latest available build.
+3. Tap **Reboot** once download and verification completes.
+4. The device will install the update and reboot automatically.
+
+---
+
+B. **Method 2: Recovery Sideload**
+
+1. Reboot to recovery:
+
+```sh
+   adb reboot recovery
+```
+
+2. Navigate to **Apply Update → Apply from ADB**.
+
+3. Verify your connection — the device should appear as `sideload`:
+
+```sh
+   adb devices
+   # Expected: <serial>   sideload
+```
+
+   :::note
+   If your device does not appear or shows as `unauthorized`, try the following:
+   - Disconnect and reconnect the USB cable.
+   - Install or update your USB drivers. Refer to the [USB Drivers](#usb-drivers) guide.
+   :::
+
+4. Sideload the ROM package:
+
+```sh
+   adb sideload rom.zip
+```
+
+5. When prompted for additional packages, select **NO** *(unless you need to reflash GApps)*.
+6. Select **Reboot system now**.
+
+---
 
 ### Flashing Stock ROM (Unbrick / Downgrade)
 
