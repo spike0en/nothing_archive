@@ -916,14 +916,17 @@ Restez à jour avec les ROMs personnalisées, les noyaux et les projets de déve
 |----------|-----|----------|--------|---------|
 | Phone (1) | [Ici](https://t.me/s/NothingPhone1Updates?q=%23ROM) | [Ici](https://t.me/s/NothingPhone1Updates?q=%23Recovery) | [Ici](https://t.me/s/NothingPhone1Updates?q=%23Kernel) | [Ici](https://t.me/s/NothingPhone1Updates?q=%23OTA) |
 | Phone (2) | [Ici](https://t.me/s/NothingPhone2updates?q=%23ROM) | [Ici](https://t.me/s/NothingPhone2updates?q=%23Recovery) | [Ici](https://t.me/s/NothingPhone2updates?q=%23Kernel) | [Ici](https://t.me/s/NothingPhone2updates?q=%23OTA) |
-| Phone (2a) Series | [Ici](https://t.me/s/NothingPhone2aUpdates?q=%23ROM) | [Ici](https://t.me/s/NothingPhone2aUpdates?q=%23Recovery) | [Ici](https://t.me/s/NothingPhone2aUpdates?q=%23Kernel) | [Ici](https://t.me/s/NothingPhone2aUpdates?q=%23OTA) |
+| Phone (2a) | [Ici](https://t.me/s/NothingPhone2aUpdates?q=%23ROM+%23Pacman) | [Ici](https://t.me/s/NothingPhone2aUpdates?q=%23Recovery+%23Pacman) | [Ici](https://t.me/s/NothingPhone2aUpdates?q=%23Kernel+%23Pacman) | [Ici](https://t.me/s/NothingPhone2aUpdates?q=%23OTA+%23Pacman) |
+| Phone (2a) Plus | [Ici](https://t.me/s/NothingPhone2aUpdates?q=%23ROM+%23PacmanPro) | [Ici](https://t.me/s/NothingPhone2aUpdates?q=%23Recovery+%23PacmanPro) | [Ici](https://t.me/s/NothingPhone2aUpdates?q=%23Kernel+%23PacmanPro) | [Ici](https://t.me/s/NothingPhone2aUpdates?q=%23OTA+%23PacmanPro) |
 | Phone (3a) Series | [Ici](https://t.me/s/NothingPhone3aUpdates?q=%23ROM) | [Ici](https://t.me/s/NothingPhone3aUpdates?q=%23Recovery) | [Ici](https://t.me/s/NothingPhone3aUpdates?q=%23Kernel) | [Ici](https://t.me/s/NothingPhone3aUpdates?q=%23OTA) |
+| Phone (3a) Lite | [Ici](https://t.me/s/CMFPhone2GlobalUpdates?q=%23ROM+%23Galaxian) | [Ici](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Recovery+%23Galaxian) | [Ici](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Kernel+%23Galaxian) | [Ici](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaxian) |
 | Phone (3) | [Ici](https://t.me/s/Phone3Updates?q=%23ROM) | [Ici](https://t.me/s/Phone3Updates?q=%23Recovery) | [Ici](https://t.me/s/Phone3Updates?q=%23Kernel) | [Ici](https://t.me/s/Phone3Updates?q=%23OTA) |
-| Phone (4a) Series | [Ici](https://t.me/s/Phone4aUpdates?q=%23ROM) | [Ici](https://t.me/s/Phone4aUpdates?q=%23Recovery) | [Ici](https://t.me/s/Phone4aUpdates?q=%23Kernel) | [Ici](https://t.me/s/Phone4aUpdates?q=%23OTA) |
+| Phone (4a) | [Ici](https://t.me/s/Phone4aUpdates?q=%23ROM+%23Frogger) | [Ici](https://t.me/s/Phone4aUpdates?q=%23Recovery+%23Frogger) | [Ici](https://t.me/s/Phone4aUpdates?q=%23Kernel+%23Frogger) | [Ici](https://t.me/s/Phone4aUpdates?q=%23OTA+%23Frogger) |
+| Phone (4a) Pro | [Ici](https://t.me/s/Phone4aUpdates?q=%23ROM+%23FroggerPro) | [Ici](https://t.me/s/Phone4aUpdates?q=%23Recovery+%23FroggerPro) | [Ici](https://t.me/s/Phone4aUpdates?q=%23Kernel+%23FroggerPro) | [Ici](https://t.me/s/Phone4aUpdates?q=%23OTA+%23FroggerPro) |
 
 **CMF by Nothing :**
 
 | Appareil | ROM | Recovery | Kernel | Updates |
 |----------|-----|----------|--------|---------|
 | Phone (1) | [Ici](https://t.me/s/CMFPhone1Updates?q=%23ROM) | [Ici](https://t.me/s/CMFPhone1Updates?q=%23Recovery) | [Ici](https://t.me/s/CMFPhone1Updates?q=%23Kernel) | [Ici](https://t.me/s/CMFPhone1Updates?q=%23OTA) |
-| Phone (2) Pro / Phone (3a) Lite | [Ici](https://t.me/s/CMFPhone2GlobalUpdates?q=%23ROM) | [Ici](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Recovery) | [Ici](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Kernel) | [Ici](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA) |
+| Phone (2) Pro | [Ici](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [Ici](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [Ici](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [Ici](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) |

@@ -915,14 +915,17 @@ C. **再ロック後**
 |----------|-----|----------|--------|---------|
 | Phone (1) | [こちら](https://t.me/s/NothingPhone1Updates?q=%23ROM) | [こちら](https://t.me/s/NothingPhone1Updates?q=%23Recovery) | [こちら](https://t.me/s/NothingPhone1Updates?q=%23Kernel) | [こちら](https://t.me/s/NothingPhone1Updates?q=%23OTA) |
 | Phone (2) | [こちら](https://t.me/s/NothingPhone2updates?q=%23ROM) | [こちら](https://t.me/s/NothingPhone2updates?q=%23Recovery) | [こちら](https://t.me/s/NothingPhone2updates?q=%23Kernel) | [こちら](https://t.me/s/NothingPhone2updates?q=%23OTA) |
-| Phone (2a) シリーズ | [こちら](https://t.me/s/NothingPhone2aUpdates?q=%23ROM) | [こちら](https://t.me/s/NothingPhone2aUpdates?q=%23Recovery) | [こちら](https://t.me/s/NothingPhone2aUpdates?q=%23Kernel) | [こちら](https://t.me/s/NothingPhone2aUpdates?q=%23OTA) |
+| Phone (2a) | [こちら](https://t.me/s/NothingPhone2aUpdates?q=%23ROM+%23Pacman) | [こちら](https://t.me/s/NothingPhone2aUpdates?q=%23Recovery+%23Pacman) | [こちら](https://t.me/s/NothingPhone2aUpdates?q=%23Kernel+%23Pacman) | [こちら](https://t.me/s/NothingPhone2aUpdates?q=%23OTA+%23Pacman) |
+| Phone (2a) Plus | [こちら](https://t.me/s/NothingPhone2aUpdates?q=%23ROM+%23PacmanPro) | [こちら](https://t.me/s/NothingPhone2aUpdates?q=%23Recovery+%23PacmanPro) | [こちら](https://t.me/s/NothingPhone2aUpdates?q=%23Kernel+%23PacmanPro) | [こちら](https://t.me/s/NothingPhone2aUpdates?q=%23OTA+%23PacmanPro) |
 | Phone (3a) シリーズ | [こちら](https://t.me/s/NothingPhone3aUpdates?q=%23ROM) | [こちら](https://t.me/s/NothingPhone3aUpdates?q=%23Recovery) | [こちら](https://t.me/s/NothingPhone3aUpdates?q=%23Kernel) | [こちら](https://t.me/s/NothingPhone3aUpdates?q=%23OTA) |
+| Phone (3a) Lite | [こちら](https://t.me/s/CMFPhone2GlobalUpdates?q=%23ROM+%23Galaxian) | [こちら](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Recovery+%23Galaxian) | [こちら](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Kernel+%23Galaxian) | [こちら](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaxian) |
 | Phone (3) | [こちら](https://t.me/s/Phone3Updates?q=%23ROM) | [こちら](https://t.me/s/Phone3Updates?q=%23Recovery) | [こちら](https://t.me/s/Phone3Updates?q=%23Kernel) | [こちら](https://t.me/s/Phone3Updates?q=%23OTA) |
-| Phone (4a) シリーズ | [こちら](https://t.me/s/Phone4aUpdates?q=%23ROM) | [こちら](https://t.me/s/Phone4aUpdates?q=%23Recovery) | [こちら](https://t.me/s/Phone4aUpdates?q=%23Kernel) | [こちら](https://t.me/s/Phone4aUpdates?q=%23OTA) |
+| Phone (4a) | [こちら](https://t.me/s/Phone4aUpdates?q=%23ROM+%23Frogger) | [こちら](https://t.me/s/Phone4aUpdates?q=%23Recovery+%23Frogger) | [こちら](https://t.me/s/Phone4aUpdates?q=%23Kernel+%23Frogger) | [こちら](https://t.me/s/Phone4aUpdates?q=%23OTA+%23Frogger) |
+| Phone (4a) Pro | [こちら](https://t.me/s/Phone4aUpdates?q=%23ROM+%23FroggerPro) | [こちら](https://t.me/s/Phone4aUpdates?q=%23Recovery+%23FroggerPro) | [こちら](https://t.me/s/Phone4aUpdates?q=%23Kernel+%23FroggerPro) | [こちら](https://t.me/s/Phone4aUpdates?q=%23OTA+%23FroggerPro) |
 
 **CMF by Nothing:**
 
 | デバイス | ROM | Recovery | Kernel | Updates |
 |----------|-----|----------|--------|---------|
 | Phone (1) | [こちら](https://t.me/s/CMFPhone1Updates?q=%23ROM) | [こちら](https://t.me/s/CMFPhone1Updates?q=%23Recovery) | [こちら](https://t.me/s/CMFPhone1Updates?q=%23Kernel) | [こちら](https://t.me/s/CMFPhone1Updates?q=%23OTA) |
-| Phone (2) Pro / Phone (3a) Lite | [こちら](https://t.me/s/CMFPhone2GlobalUpdates?q=%23ROM) | [こちら](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Recovery) | [こちら](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Kernel) | [こちら](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA) |
+| Phone (2) Pro | [こちら](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [こちら](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [こちら](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [こちら](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) |
