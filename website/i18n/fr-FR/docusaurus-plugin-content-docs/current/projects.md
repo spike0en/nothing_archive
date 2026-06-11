@@ -158,25 +158,28 @@ Ressources essentielles incluant des wikis, des archives de firmware et des outi
 
 | Projet | Développeur | Description |
 |---------|-----------|-------------|
-| [CMF Wiki](https://www.reddit.com/r/CMFTech/wiki/index/) | guidomelvin | Wiki r/CMFTech |
 | [Disable Essential Space](https://github.com/AntonDevia/Disable-Essential-Space) | AntonDevia | Script ADB pour désactiver complètement Essential Space et bloquer la touche Essential sur Nothing OS |
+| [Ear Battery CLI](https://github.com/pedrordgs/nothing-ear) | pedrordgs | Outil en ligne de commande pour vérifier les niveaux de batterie des écouteurs sans fil Nothing Ear via Bluetooth |
 | [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | Client de bureau natif en Rust pour les appareils audio Nothing et CMF |
 | [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Application Linux basée sur Rust pour contrôler les modes ANC des Nothing Ear |
+| [Earctl](https://github.com/xhain/earctl) | xhain | Workflow Alfred pour contrôler les écouteurs Bluetooth Nothing Ear (2) depuis macOS |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | PoC de contournement du test d'intégrité pour Phone (2a) Série et CMF Phone (1) |
 | [Glyph Adapter](https://github.com/frogfile/GlyphAdapter) | frogfile | Un service Android root qui permet aux applications tierces utilisant le SDK Glyph de Nothing de fonctionner sur des téléphones flashés |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macros Macrodroid |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Hub de sources officielles pour le firmware Nothing et CMF, applications, ressources et développement tiers. ([Dépôt](https://github.com/spike0en/nothing_archive)) |
 | [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | Application web de style PWA qui indexe les applications de la communauté, utilisant une base de données de base provenant de [Nothing Archive](https://github.com/spike0en/nothing_archive) |
-| [Nothing Flasher](https://github.com/spike0en/nothing_flasher) | spike0en et Hellboy017 | Scripts de flashage fastboot |
+| [Nothing Desktop](https://github.com/sowahq/nothing-desktop) | sowahq | Application de barre de menu pour contrôler la batterie, l'ANC et les paramètres d'égalisation (EQ) des écouteurs Nothing |
+| [Nothing Flasher](https://github.com/spike0en/nothing-flasher) | spike0en et Hellboy017 | Scripts de flashage fastboot |
 | [Nothing Glyph Interface Research](https://github.com/ThatOneCheat/nothing-glyph-interface-research) | ThatOneCheat | Notes de rétro-ingénierie sur le SDK Glyph et le service système du Nothing Phone, vérifiées par rapport au code décompilé |
 | [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | Hub de nouvelles et de ressources |
 | [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | Outil pour patcher/désactiver Logkit via ADB |
 | [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | Une galerie sélectionnée des widgets préférés de la communauté Nothing |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | Hub de la communauté ([Dépôt](https://github.com/nothingtools/nothingtools.github.io)) |
 | [Nothing Termux Voice Control](https://github.com/abdular721-lgtm/nothing-archives) | abdular721-lgtm | Scripts de contrôle vocal Termux pour le Nothing Phone (2a) Plus |
-| [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | Wiki de r/NothingTech |
+| [Nothing Wiki](https://nothing.wiki) | adbo | Wiki non officiel pour Nothing maintenu par la communauté |
 | [Nothing X (DMS)](https://github.com/Bestello/dms-nothingx/) | Bestello | Plugin de contrôle pour les appareils audio Nothing et CMF pour Dank Material Shell |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | Application compagnon macOS pour les écouteurs Nothing et CMF |
+| [Something X](https://github.com/SoaOaoS/something-x) | SoaOaoS | Application Nothing X pour Linux, testée pour fonctionner sur [Omarchy](https://omarchy.org/) |
 
 ---
 

@@ -158,25 +158,28 @@ Vikiler, yazılım arşivleri ve sistem onarım araçları dahil temel kaynaklar
 
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
-| [CMF Wiki](https://www.reddit.com/r/CMFTech/wiki/index/) | guidomelvin | r/CMFTech wikisi |
 | [Disable Essential Space](https://github.com/AntonDevia/Disable-Essential-Space) | AntonDevia | Nothing OS'ta Essential Space'i tamamen devre dışı bırakmak ve Essential Key'i engellemek için ADB betiği |
+| [Ear Battery CLI](https://github.com/pedrordgs/nothing-ear) | pedrordgs | Nothing Ear kablosuz kulaklıklarının pil seviyelerini Bluetooth üzerinden kontrol etmek için komut satırı aracı |
 | [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | Nothing ve CMF ses cihazları için yerel Rust masaüstü istemcisi |
 | [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Nothing kulaklıkların ANC modlarını kontrol etmek için Rust tabanlı Linux uygulaması |
+| [Earctl](https://github.com/xhain/earctl) | xhain | macOS'tan Nothing Ear (2) Bluetooth kulaklıklarını kontrol etmek için Alfred iş akışı |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | Phone (2a) Seri ve CMF Phone (1) için Integrity Bypass PoC |
 | [Glyph Adapter](https://github.com/frogfile/GlyphAdapter) | frogfile | Nothing'in glyph-sdk'sını kullanan üçüncü taraf uygulamaların yüklü telefonlarda çalışmasını sağlayan root android hizmeti |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid macroları |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Resmi Nothing ve CMF yazılımları, uygulamalar ve kaynaklar için kaynak merkezi. ([Depo](https://github.com/spike0en/nothing_archive)) |
 | [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | Topluluk uygulamalarını dizine ekleyen PWA tarzı web uygulaması; [Nothing Archive](https://github.com/spike0en/nothing_archive) kaynaklı temel bir veritabanı kullanır |
-| [Nothing Flasher](https://github.com/spike0en/nothing_flasher) | spike0en & Hellboy017 | Fastboot flaşlama betikleri |
+| [Nothing Desktop](https://github.com/sowahq/nothing-desktop) | sowahq | Nothing kulaklıklarının pilini, ANC'sini ve EQ ayarlarını kontrol etmek için menü çubuğu uygulaması |
+| [Nothing Flasher](https://github.com/spike0en/nothing-flasher) | spike0en & Hellboy017 | Fastboot flaşlama betikleri |
 | [Nothing Glyph Interface Research](https://github.com/ThatOneCheat/nothing-glyph-interface-research) | ThatOneCheat | Nothing Phone Glyph SDK'sı ve sistem hizmeti üzerine tersine mühendislik notları, kaynak kodundan doğrulanmış |
 | [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | Haber ve kaynak merkezi |
 | [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | ADB aracılığıyla Logkit'i yamama/devre dışı bırakma aracı |
 | [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | Nothing topluluğunun favori widget'larından oluşan bir galeri |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | Topluluk merkezi ([Depo](https://github.com/nothingtools/nothingtools.github.io)) |
 | [Nothing Termux Voice Control](https://github.com/abdular721-lgtm/nothing-archives) | abdular721-lgtm | Nothing Phone (2a) Plus için Termux sesle kontrol betikleri |
-| [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | r/NothingTech wikisi |
+| [Nothing Wiki](https://nothing.wiki) | adbo | Nothing için topluluk tarafından sürdürülen resmi olmayan wiki |
 | [Nothing X (DMS)](https://github.com/Bestello/dms-nothingx/) | Bestello | Dank Material Shell için Nothing ve CMF ses cihazları kontrolcü eklentisi |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | Nothing ve CMF kulaklıklar için macOS yardımcı uygulaması |
+| [Something X](https://github.com/SoaOaoS/something-x) | SoaOaoS | Linux için Nothing X uygulaması, [Omarchy](https://omarchy.org/) üzerinde çalışacak şekilde test edilmiştir |
 
 ---
 

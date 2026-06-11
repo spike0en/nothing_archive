@@ -158,15 +158,17 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 
 | Проект | Разработчик | Описание |
 |---------|-----------|-------------|
-| [CMF Wiki](https://www.reddit.com/r/CMFTech/wiki/index/) | guidomelvin | r/CMFTech Wiki |
 | [Disable Essential Space](https://github.com/AntonDevia/Disable-Essential-Space) | AntonDevia | ADB-скрипт для полного отключения Essential Space и блокировки клавиши Essential на Nothing OS |
+| [Ear Battery CLI](https://github.com/pedrordgs/nothing-ear) | pedrordgs | Консольная утилита для проверки уровня заряда батареи беспроводных наушников Nothing Ear по Bluetooth |
 | [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | Нативный настольный клиент на Rust для аудиоустройств Nothing и CMF |
 | [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Linux-приложение на Rust для управления режимами ANC наушников Nothing |
+| [Earctl](https://github.com/xhain/earctl) | xhain | Сценарий Alfred для управления Bluetooth-наушниками Nothing Ear (2) в macOS |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | PoC для обхода проверки целостности для Phone (2a) Ряд и CMF Phone (1) |
 | [Glyph Adapter](https://github.com/frogfile/GlyphAdapter) | frogfile | Служба Android с root-доступом, позволяющая сторонним приложениям, использующим Nothing Glyph SDK, работать на кастомных прошивках |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Макросы для приложения Macrodroid |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Курируемый хаб для официальных прошивок Nothing и CMF, проектов сообщества, ресурсов и кастомных разработок. ([Репозиторий](https://github.com/spike0en/nothing_archive)) |
 | [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | Веб-приложение в стиле PWA, индексирующее приложения сообщества, использующее базовую базу данных из [Nothing Archive](https://github.com/spike0en/nothing_archive) |
+| [Nothing Desktop](https://github.com/sowahq/nothing-desktop) | sowahq | Приложение для строки меню, позволяющее управлять батареей, ANC и настройками эквалайзера для наушников Nothing |
 | [Nothing Flasher](https://github.com/spike0en/nothing_flasher) | spike0en & Hellboy017 | Скрипты для прошивки через Fastboot |
 | [Nothing Glyph Interface Research](https://github.com/ThatOneCheat/nothing-glyph-interface-research) | ThatOneCheat | Заметки по реверс-инжинирингу Glyph SDK и системной службы Nothing Phone, проверенные на основе декомпилированного кода |
 | [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | Хаб новостей и ресурсов |
@@ -174,9 +176,10 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 | [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | Курируемая галерея любимых виджетов сообщества Nothing |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | Хаб сообщества ([Репозиторий](https://github.com/nothingtools/nothingtools.github.io)) |
 | [Nothing Termux Voice Control](https://github.com/abdular721-lgtm/nothing-archives) | abdular721-lgtm | Скрипты голосового управления Termux для Nothing Phone (2a) Plus |
-| [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | Вики r/NothingTech |
+| [Nothing Wiki](https://nothing.wiki) | adbo | Неофициальная вики для Nothing, поддерживаемая сообществом |
 | [Nothing X (DMS)](https://github.com/Bestello/dms-nothingx/) | Bestello | Плагин контроллера аудиоустройств Nothing и CMF для Dank Material Shell |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | Приложение-компаньон для macOS для наушников Nothing и CMF |
+| [Something X](https://github.com/SoaOaoS/something-x) | SoaOaoS | Приложение Nothing X для Linux, протестированное на [Omarchy](https://omarchy.org/) |
 
 ---
 

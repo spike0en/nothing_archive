@@ -158,15 +158,17 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 
 | 專案 | 開發者 | 說明 |
 |---------|-----------|-------------|
-| [CMF Wiki](https://www.reddit.com/r/CMFTech/wiki/index/) | guidomelvin | r/CMFTech 維基 |
 | [Disable Essential Space](https://github.com/AntonDevia/Disable-Essential-Space) | AntonDevia | 用於完全停用 Nothing OS 上的 Essential Space 並封鎖 Essential 鍵的 ADB 腳本 |
+| [Ear Battery CLI](https://github.com/pedrordgs/nothing-ear) | pedrordgs | 透過 Bluetooth 檢查 Nothing Ear 無線耳機電量的命令列工具 |
 | [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | 適用於 Nothing 與 CMF 音訊裝置的原生 Rust 桌面用戶端 |
 | [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | 基於 Rust 的 Linux 應用程式，用於控制 Nothing 耳機的 ANC 模式 |
+| [Earctl](https://github.com/xhain/earctl) | xhain | 從 macOS 控制 Nothing Ear (2) Bluetooth 耳機的 Alfred 工作流 |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | 用於 Phone (2a) 系列 與 CMF Phone (1) 的完整性檢查繞過 PoC |
 | [Glyph Adapter](https://github.com/frogfile/GlyphAdapter) | frogfile | 一個 Root Android 服務，可讓使用 Nothing 的 Glyph SDK 的第三方應用程式在刷機後的裝置上運行 |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid 巨集 |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | 整合官方 Nothing 與 CMF 韌體、社群應用、專案與資源的精選平台。（[Repo](https://github.com/spike0en/nothing_archive)） |
 | [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | 索引社群應用程式的 PWA 風格網頁應用程式，使用來自 [Nothing Archive](https://github.com/spike0en/nothing_archive) 的基礎資料庫 |
+| [Nothing Desktop](https://github.com/sowahq/nothing-desktop) | sowahq | 用於控制 Nothing 耳機電量、ANC 和 EQ 設定的選單列應用程式 |
 | [Nothing Flasher](https://github.com/spike0en/nothing_flasher) | spike0en & Hellboy017 | Fastboot 刷機腳本 |
 | [Nothing Glyph Interface Research](https://github.com/ThatOneCheat/nothing-glyph-interface-research) | ThatOneCheat | Nothing Phone Glyph SDK 及系統服務的反向工程筆記，已與反編譯程式碼進行驗證 |
 | [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | 新聞與資源平台 |
@@ -174,9 +176,10 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | Nothing 社群精選小工具藝廊 |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | 社群平台（[Repo](https://github.com/nothingtools/nothingtools.github.io)） |
 | [Nothing Termux Voice Control](https://github.com/abdular721-lgtm/nothing-archives) | abdular721-lgtm | 適用於 Nothing Phone (2a) Plus 的 Termux 語音控制指令碼 |
-| [Nothing Wiki](https://www.reddit.com/r/NothingTech/wiki/index) | adbo | r/NothingTech 維基 |
+| [Nothing Wiki](https://nothing.wiki) | adbo | 由社群維護的 Nothing 非官方維基 |
 | [Nothing X (DMS)](https://github.com/Bestello/dms-nothingx/) | Bestello | 適用於 Dank Material Shell 的 Nothing 與 CMF 音訊裝置控制器外掛程式 |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | 用於 Nothing 與 CMF 耳機的 macOS 配套應用程式 |
+| [Something X](https://github.com/SoaOaoS/something-x) | SoaOaoS | 適用於 Linux 的 Nothing X 應用程式，經測試可在 [Omarchy](https://omarchy.org/) 上運行 |
 
 ---
 
