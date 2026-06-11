@@ -106,11 +106,11 @@ Web-based applications inspired by Nothing OS.
 | Project | Developer | Description |
 |---------|-----------|-------------|
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Control earbuds from web |
-| [Essential Space Web](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Minimalist notespace |
+| [Essential Space Web](https://prostmitwein.github.io/EssentialSpaceWeb/) | CorruptPriest | Minimalist notespace ([Repo]((https://github.com/CorruptPriest/EssentialSpaceWeb))) |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal-inspired homepage |
 | [Invo](https://dibyajyotikabi.github.io/Nothing-OS-Inspired-Invoice-App) | Dibyajyotikabi | Nothing OS Inspired Invoice Web App ([Repo](https://github.com/Dibyajyotikabi/Nothing-OS-Inspired-Invoice-App)) |
-| [Lutai](https://github.com/Vauth/lutai) | Vauth | Create lut filters (.cube) for nothing phone |
+| [Lutai](https://vauth.github.io/lutai) | Vauth | Create lut filters (.cube) for Nothing phone ([Repo](https://github.com/Vauth/lutai)) |
 | [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | HTML logo generator using the Nothing fonts ([Repo](https://github.com/Lovinoes/ndot-logo-generator)) |
 | [Nothing Clone](https://github.com/Jivan-Patel/nothing-clone) | Jivan-Patel | A multi-page static UI clone inspired by Nothing brand product pages |
 | [Nothing History](https://ironstike.github.io/nothing-history/) | Ironstike | A website about the history of Nothing's phones ([Repo](https://github.com/Ironstike/nothing-history)) |
