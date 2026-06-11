@@ -48,6 +48,7 @@ Widgets créés par la communauté et inspirés par Nothing OS pour diverses pla
 
 | Projet | Développeur | Description |
 |---------|-----------|-------------|
+| [Everything UI](https://github.com/Prince-1652/EveryThing-UI) | Prince-1652 | Widget Rainmeter inspiré par Nothing OS |
 | [KWGT Widgets](https://github.com/rjwarrier/KWGT-Widgets) | rjwarrier | Widgets KWGT inspirés par NDot |
 | [N KWGT](https://github.com/avnishkt2783/nKWGT) | avnishkt2783 | Widgets style Nothing |
 | [N Thing UI](https://github.com/Runixe786/NThing-UI) | Runixe786 | Widgets Rainmeter |
@@ -113,10 +114,11 @@ Applications basées sur le web inspirées par Nothing OS.
 | Projet | Développeur | Description |
 |---------|-----------|-------------|
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Contrôle des écouteurs via le web |
-| [Essential Space Web](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Espace de notes minimaliste |
+| [Essential Space Web](https://prostmitwein.github.io/EssentialSpaceWeb/) | CorruptPriest | Espace de notes minimaliste ([Dépôt](https://github.com/CorruptPriest/EssentialSpaceWeb)) |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Page d'accueil inspirée par le terminal |
 | [Invo](https://dibyajyotikabi.github.io/Nothing-OS-Inspired-Invoice-App) | Dibyajyotikabi | Application web de facturation inspirée par Nothing OS ([Dépôt](https://github.com/Dibyajyotikabi/Nothing-OS-Inspired-Invoice-App)) |
+| [Lutai](https://vauth.github.io/lutai) | Vauth | Créer des filtres lut (.cube) pour téléphone Nothing ([Dépôt](https://github.com/Vauth/lutai)) |
 | [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | Générateur de logo HTML utilisant les polices de Nothing ([Repo](https://github.com/Lovinoes/ndot-logo-generator)) |
 | [Nothing Clone](https://github.com/Jivan-Patel/nothing-clone) | Jivan-Patel | Un clone d'interface utilisateur statique multi-page inspiré des pages produits de la marque Nothing |
 | [Nothing History](https://ironstike.github.io/nothing-history/) | Ironstike | Un site web sur l'histoire des téléphones de Nothing ([Repo](https://github.com/Ironstike/nothing-history)) |
@@ -132,6 +134,7 @@ Extensions de navigateur et autres modules complémentaires inspirés par Nothin
 | Projet | Développeur | Description |
 |---------|-----------|-------------|
 | [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Extension "Nouvel onglet" au thème Nothing |
+| [Glyph Ktx](https://github.com/RyuNen344/GlyphKtx) | RyuNen344 | Extensions Kotlin pour le SDK Glyph |
 | [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | Extension GNOME pour le contrôle de l'ANC sur Nothing Ear |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Extension "Nouvel onglet" pour navigateur |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Extension Chrome |

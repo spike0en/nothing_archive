@@ -48,6 +48,7 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 
 | 專案 | 開發者 | 說明 |
 |---------|-----------|-------------|
+| [Everything UI](https://github.com/Prince-1652/EveryThing-UI) | Prince-1652 | 受 Nothing OS 啟發的 Rainmeter 小工具 |
 | [KWGT Widgets](https://github.com/rjwarrier/KWGT-Widgets) | rjwarrier | 受 Ndot 啟發的 KWGT 小工具 |
 | [N KWGT](https://github.com/avnishkt2783/nKWGT) | avnishkt2783 | Nothing 風格小工具 |
 | [N Thing UI](https://github.com/Runixe786/NThing-UI) | Runixe786 | Rainmeter 小工具 |
@@ -113,11 +114,12 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | 專案 | 開發者 | 說明 |
 |---------|-----------|-------------|
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | 透過網頁控制耳機 |
-| [Essential Space Web](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | 極簡筆記空間 |
+| [Essential Space Web](https://prostmitwein.github.io/EssentialSpaceWeb/) | CorruptPriest | 極簡筆記空間 ([Repo](https://github.com/CorruptPriest/EssentialSpaceWeb)) |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | 終端機風格首頁 |
 | [Invo](https://dibyajyotikabi.github.io/Nothing-OS-Inspired-Invoice-App) | Dibyajyotikabi | 受 Nothing OS 啟發的發票網頁應用程式 ([Repo](https://github.com/Dibyajyotikabi/Nothing-OS-Inspired-Invoice-App)) |
-| [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | 使用 Nothing 字型的 HTML 標誌產生器 ([Repo](https://github.com/Lovinoes/ndot-logo-generator)) |
+| [Lutai](https://vauth.github.io/lutai) | Vauth | 為 Nothing 手機建立 lut 濾鏡 (.cube) ([Repo](https://github.com/Vauth/lutai)) |
+| [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | 使用 Nothing 字型的 HTML 商標產生器 ([Repo](https://github.com/Lovinoes/ndot-logo-generator)) |
 | [Nothing Clone](https://github.com/Jivan-Patel/nothing-clone) | Jivan-Patel | 受 Nothing 品牌產品頁面啟發的多頁面靜態 UI 仿製專案 |
 | [Nothing History](https://ironstike.github.io/nothing-history/) | Ironstike | 關於 Nothing 手機歷史的網站 ([Repo](https://github.com/Ironstike/nothing-history)) |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | 受 Nothing OS 啟發的天氣網頁應用程式 |
@@ -132,7 +134,8 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | 專案 | 開發者 | 說明 |
 |---------|-----------|-------------|
 | [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing 主題的瀏覽器新分頁擴充 |
-| [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | 用於控制 Nothing Ear ANC 的 GNOME 擴充 |
+| [Glyph Ktx](https://github.com/RyuNen344/GlyphKtx) | RyuNen344 | Glyph SDK Kotlin 擴充功能 |
+| [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | 適用於 Nothing Ear 的 GNOME ANC 控制擴充功能 |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | 瀏覽器新分頁擴充 |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome 擴充 |
 

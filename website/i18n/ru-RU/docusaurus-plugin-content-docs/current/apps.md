@@ -80,6 +80,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Clock AOD Glyph](https://github.com/Aureliink/Clock-AOD-Glyph-Toy) | Aureliink | Вертикальные часы для Glyph Matrix на Nothing Phone (3) |
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | Счетчик от 0 до 9999 |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | Визуализатор, компас, кости, счетчик |
+| [Figly](https://github.com/psygos/figly) | psygos | Гербарий для Glyph Matrix на Nothing Phone (4a) Pro |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Интеграция с карточками Anki |
 | [Glyph Aquarium](https://github.com/chriskenhall-tech/Glyph-Aquarium) | chriskenhall-tech | Динамическая AOD-симуляция аквариума с использованием Nothing Glyph SDK для матрицы задней подсветки Phone (3) |
 | [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | Приложение для визуализации Glyph, сочетающее интерфейсы в стиле Nothing и Material 3 |
@@ -103,6 +104,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | Создание и демонстрация искусства Glyph |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Уведомления, таймеры, визуализатор |
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | Интерактивный качающийся маятник |
+| [Glyph Pomodoro](https://github.com/itsmixu/glyph-pomo) | itsmixu | Таймер Pomodoro для Glyph Matrix на Nothing Phone (4a) Pro |
 | [Glyph Pong](https://github.com/codester007/glyph-pong) | codester007 | Игра Понг для Glyph Matrix на Nothing Phone (4a) Pro |
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | Превращает ожидающие уведомления в краткую сводку на Glyph Matrix |
 | [Glyph Shot](https://github.com/shaibu54/glyph-shot) | shaibu54 | Артиллерийская игра с накоплением заряда удержанием для Glyph Matrix Nothing Phone (3) |
@@ -221,6 +223,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Стилизованная копия приложения «Essential space» от Nothing |
 | [Currency](https://curency.pages.dev/) | Earendel | Веб-приложение для конвертации валют |
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Калькулятор со шрифтами в стиле dot matrix | 
+| [Dot Files](https://play.google.com/store/apps/details?id=com.dotfiles.app) | Dotfield Studio | Чистый, быстрый, локальный файловый менеджер |
 | [Dot Player](https://play.google.com/store/apps/details?id=com.creepsmile.dotplayer) | Creepsmile | Минималистичный локальный музыкальный плеер |
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | Браузер на базе ИИ |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Основной функционал Essential Space в стиле Nothing для всех устройств: быстрые скриншоты, заметки, голосовые заметки и многое другое |
@@ -235,6 +238,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Калькулятор в стиле Nothing |
 | [N Clock](https://play.google.com/store/apps/details?id=de.nostream.nclock) | nostream | Минималистичное приложение для часов, вдохновленное языком дизайна Nothing |
 | [N Dial](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ndial) | Hearthborn | Набор номера и контакты |
+| [N Files](https://play.google.com/store/apps/details?id=com.hearthborn.studios.nfiles) | Hearthborn | Файловый менеджер, разработанный для скорости, простоты и полного контроля |
 | [N Keyboard](https://github.com/arunk140/nth-kbd) | arunk14 | Тематическая клавиатура |
 | [N Music](https://github.com/alimohsenmaruf/N-Music) | alimohsenmaruf | Простой музыкальный плеер в стиле Nothing OS, обертка для YouTube Music |
 | [N Recipe](https://play.google.com/store/apps/details?id=com.a3chron.nrecipe) | a3chron | Офлайн-книга рецептов |

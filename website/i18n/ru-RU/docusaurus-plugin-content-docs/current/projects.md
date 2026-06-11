@@ -48,6 +48,7 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 
 | Проект | Разработчик | Описание |
 |---------|-----------|-------------|
+| [Everything UI](https://github.com/Prince-1652/EveryThing-UI) | Prince-1652 | Виджет Rainmeter в стиле Nothing OS |
 | [KWGT Widgets](https://github.com/rjwarrier/KWGT-Widgets) | rjwarrier | Виджеты KWGT, вдохновленные шрифтом Ndot |
 | [N KWGT](https://github.com/avnishkt2783/nKWGT) | avnishkt2783 | Виджеты в стиле Nothing |
 | [N Thing UI](https://github.com/Runixe786/NThing-UI) | Runixe786 | Виджеты Rainmeter |
@@ -113,11 +114,12 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 | Проект | Разработчик | Описание |
 |---------|-----------|-------------|
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Управление наушниками через веб |
-| [Essential Space Web](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Минималистичное пространство для заметок |
+| [Essential Space Web](https://prostmitwein.github.io/EssentialSpaceWeb/) | CorruptPriest | Минималистичное пространство для заметок ([Репозиторий](https://github.com/CorruptPriest/EssentialSpaceWeb)) |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Домашняя страница в терминальном стиле |
 | [Invo](https://dibyajyotikabi.github.io/Nothing-OS-Inspired-Invoice-App) | Dibyajyotikabi | Веб-приложение для выставления счетов в стиле Nothing OS ([Репозиторий](https://github.com/Dibyajyotikabi/Nothing-OS-Inspired-Invoice-App)) |
-| [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | Генератор HTML-логотипов с использованием шрифтов Nothing ([Repo](https://github.com/Lovinoes/ndot-logo-generator)) |
+| [Lutai](https://vauth.github.io/lutai) | Vauth | Создание lut-фильтров (.cube) для телефона Nothing ([Репозиторий](https://github.com/Vauth/lutai)) |
+| [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | HTML-генератор логотипов на основе шрифтов Nothing ([Репозиторий](https://github.com/Lovinoes/ndot-logo-generator)) |
 | [Nothing Clone](https://github.com/Jivan-Patel/nothing-clone) | Jivan-Patel | Многостраничный статический клон интерфейса, вдохновленный страницами продуктов бренда Nothing |
 | [Nothing History](https://ironstike.github.io/nothing-history/) | Ironstike | Сайт об истории телефонов Nothing ([Repo](https://github.com/Ironstike/nothing-history)) |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Веб-приложение погоды в стиле Nothing OS |
@@ -132,7 +134,8 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 | Проект | Разработчик | Описание |
 |---------|-----------|-------------|
 | [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Расширение для браузера «Новая вкладка» в стиле Nothing |
-| [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | Расширение GNOME для управления ANC на Nothing Ear |
+| [Glyph Ktx](https://github.com/RyuNen344/GlyphKtx) | RyuNen344 | Расширения Kotlin для Glyph SDK |
+| [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | Расширение GNOME для контроля ANC на Nothing Ear |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Расширение для браузера «Новая вкладка» |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Расширение для Chrome |
 

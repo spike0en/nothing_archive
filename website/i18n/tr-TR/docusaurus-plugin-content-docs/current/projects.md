@@ -48,6 +48,7 @@ Various platformlar ve masaüstü ortamları için Nothing OS'tan ilham alan top
 
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
+| [Everything UI](https://github.com/Prince-1652/EveryThing-UI) | Prince-1652 | Nothing OS esintili Rainmeter widget'ı |
 | [KWGT Widgets](https://github.com/rjwarrier/KWGT-Widgets) | rjwarrier | NDot'tan ilham alan KWGT widget'ları |
 | [N KWGT](https://github.com/avnishkt2783/nKWGT) | avnishkt2783 | Nothing tarzı widget'lar |
 | [N Thing UI](https://github.com/Runixe786/NThing-UI) | Runixe786 | Rainmeter widget'ları |
@@ -113,11 +114,12 @@ Nothing OS'tan ilham alan web tabanlı uygulamalar.
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Web üzerinden kulaklık kontrolü |
-| [Essential Space Web](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Minimalist not alanı |
+| [Essential Space Web](https://prostmitwein.github.io/EssentialSpaceWeb/) | CorruptPriest | Minimalist not alanı ([Depo](https://github.com/CorruptPriest/EssentialSpaceWeb)) |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal esintili ana sayfa |
 | [Invo](https://dibyajyotikabi.github.io/Nothing-OS-Inspired-Invoice-App) | Dibyajyotikabi | Nothing OS esintili fatura web uygulaması ([Depo](https://github.com/Dibyajyotikabi/Nothing-OS-Inspired-Invoice-App)) |
-| [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | Nothing yazı tiplerini kullanan HTML logo oluşturucu ([Repo](https://github.com/Lovinoes/ndot-logo-generator)) |
+| [Lutai](https://vauth.github.io/lutai) | Vauth | Nothing telefonu için lut filtreleri (.cube) oluşturun ([Depo](https://github.com/Vauth/lutai)) |
+| [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | Nothing yazı tiplerini kullanan HTML logo oluşturucu ([Depo](https://github.com/Lovinoes/ndot-logo-generator)) |
 | [Nothing Clone](https://github.com/Jivan-Patel/nothing-clone) | Jivan-Patel | Nothing markasının ürün sayfalarından ilham alan çok sayfalı statik bir kullanıcı arayüzü kopyası |
 | [Nothing History](https://ironstike.github.io/nothing-history/) | Ironstike | Nothing telefonlarının tarihi hakkında bir web sitesi ([Repo](https://github.com/Ironstike/nothing-history)) |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Nothing OS esintili web hava durumu uygulaması |
@@ -132,7 +134,8 @@ Nothing OS'tan ilham alan tarayıcı eklentileri ve diğer eklentiler.
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
 | [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing temalı "Yeni Sekme" eklentisi |
-| [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | Nothing Ear ANC kontrolü için GNOME eklentisi |
+| [Glyph Ktx](https://github.com/RyuNen344/GlyphKtx) | RyuNen344 | Glyph SDK Kotlin Uzantıları |
+| [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | Nothing Ear üzerinde ANC kontrolü için GNOME eklentisi |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Tarayıcı "Yeni Sekme" eklentisi |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome eklentisi |
 

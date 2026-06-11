@@ -75,6 +75,7 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Clock AOD Glyph](https://github.com/Aureliink/Clock-AOD-Glyph-Toy) | Aureliink | Un jouet d'horloge de style vertical pour la matrice Glyph du Nothing Phone (3) |
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | Compteur allant de 0 à 9999 |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | Visualiseur, boussole, dés, compteur |
+| [Figly](https://github.com/psygos/figly) | psygos | Un herbier de matrice Glyph pour le Nothing Phone (4a) Pro |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Intégration de flashcards Anki |
 | [Glyph Aquarium](https://github.com/chriskenhall-tech/Glyph-Aquarium) | chriskenhall-tech | Une simulation d'aquarium AOD dynamique utilisant le SDK Glyph de Nothing pour la matrice lumineuse arrière du Phone (3) |
 | [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | Application de visualisation Glyph intégrant les interfaces utilisateur Nothing et Material 3 |
@@ -98,6 +99,7 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | Créez et exposez de l'art Glyph |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Notifications, minuteurs, visualiseur |
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | Un pendule oscillant interactif |
+| [Glyph Pomodoro](https://github.com/itsmixu/glyph-pomo) | itsmixu | Minuteur Pomodoro pour la matrice Glyph du Nothing Phone (4a) Pro |
 | [Glyph Pong](https://github.com/codester007/glyph-pong) | codester007 | Jeu de Pong pour la matrice Glyph du Nothing Phone (4a) Pro |
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | Transforme les notifications en attente en un affichage consultable sur la matrice Glyph |
 | [Glyph Shot](https://github.com/shaibu54/glyph-shot) | shaibu54 | Jeu d'artillerie à charger par maintien pour la matrice Glyph du Nothing Phone (3) |
@@ -216,6 +218,7 @@ Fonds d'écran dynamiques et améliorations visuelles pour sublimer l'apparence 
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Copie « vibe coded » de l'application Essential Space de Nothing. |
 | [Currency](https://curency.pages.dev/) | Earendel | Application web de conversion de devises |
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Application de calculatrice avec des polices à matrice de points. |
+| [Dot Files](https://play.google.com/store/apps/details?id=com.dotfiles.app) | Dotfield Studio | Gestionnaire de fichiers propre, rapide et local-first |
 | [Dot Player](https://play.google.com/store/apps/details?id=com.creepsmile.dotplayer) | Creepsmile | Lecteur de musique local minimaliste |
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | Navigateur propulsé par l'IA |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Expérience Essential Space de base inspirée par Nothing pour tous les appareils, avec captures d'écran rapides, notes, mémos vocaux, et plus encore |
@@ -230,6 +233,7 @@ Fonds d'écran dynamiques et améliorations visuelles pour sublimer l'apparence 
 | [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Calculatrice style Nothing |
 | [N Clock](https://play.google.com/store/apps/details?id=de.nostream.nclock) | nostream | Application d'horloge minimaliste inspirée par le langage de design de Nothing |
 | [N Dial](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ndial) | Hearthborn | Numéroteur téléphonique et contacts |
+| [N Files](https://play.google.com/store/apps/details?id=com.hearthborn.studios.nfiles) | Hearthborn | Gestionnaire de fichiers conçu pour la vitesse, la simplicité et un contrôle total |
 | [N Keyboard](https://github.com/arunk140/nth-kbd) | arunk14 | Clavier à thème |
 | [N Music](https://github.com/alimohsenmaruf/N-Music) | alimohsenmaruf | Lecteur de musique simple au style Nothing OS, wrapper YouTube Music |
 | [N Recipe](https://play.google.com/store/apps/details?id=com.a3chron.nrecipe) | a3chron | Livre de recettes hors ligne |

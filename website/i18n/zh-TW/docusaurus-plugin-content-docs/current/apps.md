@@ -80,6 +80,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Clock AOD Glyph](https://github.com/Aureliink/Clock-AOD-Glyph-Toy) | Aureliink | 專為 Nothing Phone (3) 的 Glyph Matrix 設計的垂直風格時鐘玩具 |
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | 0–9999 計數器 |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | 視覺化器、指南針、骰子、計數器 |
+| [Figly](https://github.com/psygos/figly) | psygos | 適用於 Nothing Phone (4a) Pro 的 Glyph 矩陣植物標本館 |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Anki 單字卡整合 |
 | [Glyph Aquarium](https://github.com/chriskenhall-tech/Glyph-Aquarium) | chriskenhall-tech | 一項動態 AOD 水族箱模擬，為 Phone (3) 後置燈光矩陣利用 Nothing Glyph SDK |
 | [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | 結合 Nothing 風格與 Material 3 使用者介面的 Glyph 視覺化應用程式 |
@@ -103,6 +104,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | 創作與展示 Glyph 藝術 |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | 通知、計時器、視覺化器 |
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | 互動擺錘動畫 |
+| [Glyph Pomodoro](https://github.com/itsmixu/glyph-pomo) | itsmixu | 適用於 Nothing Phone (4a) Pro Glyph Matrix 的番茄鐘計時器 |
 | [Glyph Pong](https://github.com/codester007/glyph-pong) | codester007 | 適用於 Nothing Phone (4a) Pro Glyph Matrix 的 Pong 遊戲 |
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | 將待處理通知轉換為 Glyph Matrix 上一目了然的顯示 |
 | [Glyph Shot](https://github.com/shaibu54/glyph-shot) | shaibu54 | 適用於 Nothing Phone (3) Glyph Matrix 的按住蓄力火砲遊戲 |
@@ -221,6 +223,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Nothing 的 Essential Space 應用程式的「Vibe coded」版本。 |
 | [Currency](https://curency.pages.dev/) | Earendel | 貨幣換算網頁應用程式 |
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | 採用點陣字體的計算機應用程式。 |
+| [Dot Files](https://play.google.com/store/apps/details?id=com.dotfiles.app) | Dotfield Studio | 乾淨、快速、本地優先的檔案管理器 |
 | [Dot Player](https://play.google.com/store/apps/details?id=com.creepsmile.dotplayer) | Creepsmile | 極簡本地音樂播放器 |
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | AI 驅動瀏覽器 |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | 受 Nothing 啟發的跨裝置核心 Essential Space 體驗，具備快速截圖、筆記、語音備忘錄等功能 |
@@ -235,6 +238,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Nothing 風格計算機 |
 | [N Clock](https://play.google.com/store/apps/details?id=de.nostream.nclock) | nostream | 受 Nothing 設計語言啟發的極簡時鐘應用程序 |
 | [N Dial](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ndial) | Hearthborn | 電話撥號器與聯絡人 |
+| [N Files](https://play.google.com/store/apps/details?id=com.hearthborn.studios.nfiles) | Hearthborn | 專為速度、簡單和完全控制而設計的檔案管理器 |
 | [N Keyboard](https://github.com/arunk140/nth-kbd) | arunk14 | 主題鍵盤 |
 | [N Music](https://github.com/alimohsenmaruf/N-Music) | alimohsenmaruf | Nothing OS 風格的簡約 YouTube Music 封裝器播放器 |
 | [N Recipe](https://play.google.com/store/apps/details?id=com.a3chron.nrecipe) | a3chron | 離線食譜書 |

@@ -80,6 +80,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Clock AOD Glyph](https://github.com/Aureliink/Clock-AOD-Glyph-Toy) | Aureliink | Nothing Phone (3) Glyph Matrisi için dikey tarzda bir saat oyuncağı |
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | 0'dan 9999'a kadar sayaç |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | Görselleştirici, pusula, zar, sayaç |
+| [Figly](https://github.com/psygos/figly) | psygos | Nothing Phone (4a) Pro için bir glyph matris herbaryumu |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Anki bilgi kartı entegrasyonu |
 | [Glyph Aquarium](https://github.com/chriskenhall-tech/Glyph-Aquarium) | chriskenhall-tech | Phone (3) arka ışık matrisi için Nothing Glyph SDK'sını kullanan dinamik bir AOD akvaryum simülasyonu |
 | [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | Hem Nothing'den ilham alan hem de Material 3 kullanıcı arayüzlerini içeren Glyph görselleştirici uygulaması |
@@ -103,6 +104,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | Glyph sanatı oluşturun ve sergileyin |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Bildirimler, zamanlayıcılar, görselleştirici |
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | Etkileşimli sallanan sarkaç |
+| [Glyph Pomodoro](https://github.com/itsmixu/glyph-pomo) | itsmixu | Nothing Phone (4a) Pro'nun Glyph Matrisi için Pomodoro zamanlayıcı |
 | [Glyph Pong](https://github.com/codester007/glyph-pong) | codester007 | Nothing Phone (4a) Pro'nun Glyph Matrisi için Pong oyunu |
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | Bekleyen bildirimleri Glyph Matrisi üzerinde bir bakışta görülebilir bir ekrana dönüştürür |
 | [Glyph Shot](https://github.com/shaibu54/glyph-shot) | shaibu54 | Nothing Phone (3) Glyph Matrisi için basılı tutarak şarj etmeli topçu oyunu |
@@ -221,6 +223,7 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Nothing'in Essential Space uygulamasının "vibe coded" kopyası. |
 | [Currency](https://curency.pages.dev/) | Earendel | Birim dönüştürücü web uygulaması |
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Nokta matrisli yazı tiplerine sahip hesap makinesi uygulaması. |
+| [Dot Files](https://play.google.com/store/apps/details?id=com.dotfiles.app) | Dotfield Studio | Temiz, hızlı, yerel öncelikli dosya yöneticisi |
 | [Dot Player](https://play.google.com/store/apps/details?id=com.creepsmile.dotplayer) | Creepsmile | Minimal yerel müzik çalar |
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | Yapay zeka destekli tarayıcı |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Hızlı ekran görüntüleri, notlar, sesli notlar ve daha fazlasını içeren, tüm cihazlar için Nothing'den ilham alan temel Essential Space deneyimi |
@@ -235,6 +238,7 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 | [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Nothing tarzı hesap makinesi |
 | [N Clock](https://play.google.com/store/apps/details?id=de.nostream.nclock) | nostream | Nothing tasarım dilinden ilham alan minimalist saat uygulaması |
 | [N Dial](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ndial) | Hearthborn | Telefon arayıcı ve kişiler |
+| [N Files](https://play.google.com/store/apps/details?id=com.hearthborn.studios.nfiles) | Hearthborn | Hız, basitlik ve tam kontrol için tasarlanmış dosya yöneticisi |
 | [N Keyboard](https://github.com/arunk140/nth-kbd) | arunk14 | Temalı klavye |
 | [N Music](https://github.com/alimohsenmaruf/N-Music) | alimohsenmaruf | Nothing OS tarzında basit bir YT Music sarmalayıcı müzik çalar |
 | [N Recipe](https://play.google.com/store/apps/details?id=com.a3chron.nrecipe) | a3chron | Çevrimdışı yemek tarifi kitabı |
