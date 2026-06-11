@@ -44,6 +44,7 @@ Community-built widgets inspired by Nothing OS for various platforms and desktop
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
+| [Everything UI](https://github.com/Prince-1652/EveryThing-UI) | Prince-1652 | Nothing OS Inspired Rainmeter Widget |
 | [KWGT Widgets](https://github.com/rjwarrier/KWGT-Widgets) | rjwarrier | KWGT Widgets inspired by Ndot |
 | [N KWGT](https://github.com/avnishkt2783/nKWGT) | avnishkt2783 | Nothing-style widgets |
 | [N Thing UI](https://github.com/Runixe786/NThing-UI) | Runixe786 | Rainmeter widgets |
@@ -105,10 +106,11 @@ Web-based applications inspired by Nothing OS.
 | Project | Developer | Description |
 |---------|-----------|-------------|
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Control earbuds from web |
-| [Essential Space Web](https://github.com/CorruptPriest/EssentialSpaceWeb) | CorruptPriest | Minimalist notespace |
+| [Essential Space Web](https://prostmitwein.github.io/EssentialSpaceWeb/) | CorruptPriest | Minimalist notespace ([Repo]((https://github.com/CorruptPriest/EssentialSpaceWeb))) |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal-inspired homepage |
 | [Invo](https://dibyajyotikabi.github.io/Nothing-OS-Inspired-Invoice-App) | Dibyajyotikabi | Nothing OS Inspired Invoice Web App ([Repo](https://github.com/Dibyajyotikabi/Nothing-OS-Inspired-Invoice-App)) |
+| [Lutai](https://vauth.github.io/lutai) | Vauth | Create lut filters (.cube) for Nothing phone ([Repo](https://github.com/Vauth/lutai)) |
 | [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | HTML logo generator using the Nothing fonts ([Repo](https://github.com/Lovinoes/ndot-logo-generator)) |
 | [Nothing Clone](https://github.com/Jivan-Patel/nothing-clone) | Jivan-Patel | A multi-page static UI clone inspired by Nothing brand product pages |
 | [Nothing History](https://ironstike.github.io/nothing-history/) | Ironstike | A website about the history of Nothing's phones ([Repo](https://github.com/Ironstike/nothing-history)) |
@@ -123,7 +125,8 @@ Browser extensions and other add-ons inspired by Nothing OS.
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
-| [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing-themed browser New Tab extension |
+| [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing-themed browser New Tab extension | 
+| [Glyph Ktx](https://github.com/RyuNen344/GlyphKtx) | RyuNen344 | Glyph SDK Kotlin Extensions |
 | [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | GNOME extension for ANC control on Nothing Ear |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Browser New Tab extension |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome extension |

@@ -68,6 +68,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Clock AOD Glyph](https://github.com/Aureliink/Clock-AOD-Glyph-Toy) | Aureliink | A vertical-style clock toy for Nothing Phone (3)'s Glyph Matrix |
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | Counter ranging 0-9999 |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | Visualizer, compass, dice, counter |
+| [Figly](https://github.com/psygos/figly) | psygos | A glyph matrix herbarium for the Nothing Phone (4a) Pro |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Anki flashcard integration |
 | [Glyph Aquarium](https://github.com/chriskenhall-tech/Glyph-Aquarium) | chriskenhall-tech | A dynamic AOD aquarium simulation utilizing the Nothing Glyph SDK for the Phone (3) rear light matrix |
 | [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | Glyph visualizer app incorporating both Nothing-inspired and Material 3 UI interfaces |
@@ -91,6 +92,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | Create and showcase Glyph art |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Notifications, timers, visualizer |
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | An interactive swinging pendulum |
+| [Glyph Pomodoro](https://github.com/itsmixu/glyph-pomo) | itsmixu | Pomodoro timer for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Pong](https://github.com/codester007/glyph-pong) | codester007 | Pong game for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | Turns pending notifications into a glanceable display on the Glyph Matrix |
 | [Glyph Shot](https://github.com/shaibu54/glyph-shot) | shaibu54 | Hold to charge artillery game for the Nothing Phone 3 Glyph Matrix |
@@ -205,6 +207,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Vibe coded copy of Nothing's essential space app |
 | [Currency](https://curency.pages.dev/) | Earendel | Currency converter web app |
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Calculator app with dot matrix fonts |
+| [Dot Files](https://play.google.com/store/apps/details?id=com.dotfiles.app) | Dotfield Studio | Clean, fast, local-first file manager |
 | [Dot Player](https://play.google.com/store/apps/details?id=com.creepsmile.dotplayer) | Creepsmile | Minimal local music player |
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | AI-powered browser |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Nothing-inspired core Essential Space experience for all devices, featuring quick screenshots, notes, voice memos, and more |
@@ -219,6 +222,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Calculator with Nothing style |
 | [N Clock](https://play.google.com/store/apps/details?id=de.nostream.nclock) | nostream | Minimalist clock app inspired by the Nothing design language |
 | [N Dial](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ndial) | Hearthborn | Phone dialer and contacts |
+| [N Files](https://play.google.com/store/apps/details?id=com.hearthborn.studios.nfiles) | Hearthborn | File manager designed for speed, simplicity and complete control |
 | [N Keyboard](https://github.com/arunk140/nth-kbd) | arunk14 | Themed keyboard |
 | [N Music](https://github.com/alimohsenmaruf/N-Music) | alimohsenmaruf | Simple Yt music wrapper Nothing OS styled Music player |
 | [N Recipe](https://play.google.com/store/apps/details?id=com.a3chron.nrecipe) | a3chron | Offline recipebook |
