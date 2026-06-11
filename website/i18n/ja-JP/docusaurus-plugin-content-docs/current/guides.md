@@ -605,12 +605,14 @@ B. **ブートローダーに再起動する**
    :::
 
 C. **必要なイメージをフラッシュする**
-ダウンロードしたパーティションイメージをそれぞれのスロットにフラッシュします：
-```sh
-fastboot flash boot boot.img
-fastboot flash vendor_boot vendor_boot.img
-fastboot flash recovery recovery.img
-```
+デバイスのコードネームに応じて、必要なパーティションイメージのみをフラッシュします：
+
+| デバイスのコードネーム | 必要なイメージ | フラッシュコマンド |
+| :--- | :--- | :--- |
+| **Pong** | `boot.img`<br />`vendor_boot.img`<br />`recovery.img`<br />`vbmeta.img` *(LineageOSのみ)* | `fastboot flash boot boot.img`<br />`fastboot flash vendor_boot vendor_boot.img`<br />`fastboot flash recovery recovery.img`<br />`fastboot flash vbmeta vbmeta.img` |
+| **Pacman, PacmanPro** | `boot.img`<br />`vendor_boot.img` | `fastboot flash boot boot.img`<br />`fastboot flash vendor_boot vendor_boot.img` |
+| **Asteroids, Metroid, Frogger, FroggerPro** | `recovery.img` *(純正ROMから移行するAsteroidsの場合、6.1カーネルベースのリカバリを使用)* | `fastboot flash recovery recovery.img` |
+| **Spacewar, Tetris, Galaga, Galaxian** | `vendor_boot.img` | `fastboot flash vendor_boot vendor_boot.img` |
 
 D. **ユーザー空間Fastboot（Fastbootd）に再起動する**
 ユーザー空間Fastbootモード（fastbootd）に起動します：

@@ -606,12 +606,14 @@ B. **Redémarrer en mode Bootloader**
    :::
 
 C. **Flasher les images requises**
-Flashez les images de partition téléchargées sur leurs emplacements respectifs :
-```sh
-fastboot flash boot boot.img
-fastboot flash vendor_boot vendor_boot.img
-fastboot flash recovery recovery.img
-```
+Flashez uniquement les images de partition requises en fonction du nom de code de votre appareil :
+
+| Nom de code de l'appareil | Image(s) requise(s) | Commandes de flashage |
+| :--- | :--- | :--- |
+| **Pong** | `boot.img`<br />`vendor_boot.img`<br />`recovery.img`<br />`vbmeta.img` *(pour LineageOS uniquement)* | `fastboot flash boot boot.img`<br />`fastboot flash vendor_boot vendor_boot.img`<br />`fastboot flash recovery recovery.img`<br />`fastboot flash vbmeta vbmeta.img` |
+| **Pacman, PacmanPro** | `boot.img`<br />`vendor_boot.img` | `fastboot flash boot boot.img`<br />`fastboot flash vendor_boot vendor_boot.img` |
+| **Asteroids, Metroid, Frogger, FroggerPro** | `recovery.img` *(utiliser une recovery basée sur le noyau 6.1 pour Asteroids si vous venez de la ROM d'origine)* | `fastboot flash recovery recovery.img` |
+| **Spacewar, Tetris, Galaga, Galaxian** | `vendor_boot.img` | `fastboot flash vendor_boot vendor_boot.img` |
 
 D. **Redémarrer en mode Fastboot d'espace utilisateur (Fastbootd)**
 Démarrez en mode fastboot d'espace utilisateur (fastbootd) :

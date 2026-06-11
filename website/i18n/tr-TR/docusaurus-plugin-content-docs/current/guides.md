@@ -605,12 +605,14 @@ B. **Önyükleyici Modunda Yeniden Başlatma**
    :::
 
 C. **Gerekli İmajları Flaşlama**
-İndirilen bölüm imajlarını ilgili yuvalara flaşlayın:
-```sh
-fastboot flash boot boot.img
-fastboot flash vendor_boot vendor_boot.img
-fastboot flash recovery recovery.img
-```
+Cihazınızın kod adına göre yalnızca gerekli bölüm imajlarını flaşlayın:
+
+| Cihaz Kod Adı | Gerekli İmaj(lar) | Flaşlama Komutları |
+| :--- | :--- | :--- |
+| **Pong** | `boot.img`<br />`vendor_boot.img`<br />`recovery.img`<br />`vbmeta.img` *(yalnızca LineageOS için)* | `fastboot flash boot boot.img`<br />`fastboot flash vendor_boot vendor_boot.img`<br />`fastboot flash recovery recovery.img`<br />`fastboot flash vbmeta vbmeta.img` |
+| **Pacman, PacmanPro** | `boot.img`<br />`vendor_boot.img` | `fastboot flash boot boot.img`<br />`fastboot flash vendor_boot vendor_boot.img` |
+| **Asteroids, Metroid, Frogger, FroggerPro** | `recovery.img` *(stok ROM'dan geçiş yapıyorsanız Asteroids için 6.1 çekirdek tabanlı recovery kullanın)* | `fastboot flash recovery recovery.img` |
+| **Spacewar, Tetris, Galaga, Galaxian** | `vendor_boot.img` | `fastboot flash vendor_boot vendor_boot.img` |
 
 D. **Kullanıcı Alanı Fastboot Modunda (Fastbootd) Yeniden Başlatma**
 Kullanıcı alanı fastboot moduna (fastbootd) ön yükleme yapın:

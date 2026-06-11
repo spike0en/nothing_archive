@@ -605,12 +605,14 @@ B. **Перезагрузка в загрузчик**
    :::
 
 C. **Прошивка необходимых образов**
-Прошейте скачанные образы разделов в соответствующие слоты:
-```sh
-fastboot flash boot boot.img
-fastboot flash vendor_boot vendor_boot.img
-fastboot flash recovery recovery.img
-```
+Прошивайте только те образы разделов, которые требуются для кодового имени вашего устройства:
+
+| Кодовое имя устройства | Необходимые образы | Команды прошивки |
+| :--- | :--- | :--- |
+| **Pong** | `boot.img`<br />`vendor_boot.img`<br />`recovery.img`<br />`vbmeta.img` *(только для LineageOS)* | `fastboot flash boot boot.img`<br />`fastboot flash vendor_boot vendor_boot.img`<br />`fastboot flash recovery recovery.img`<br />`fastboot flash vbmeta vbmeta.img` |
+| **Pacman, PacmanPro** | `boot.img`<br />`vendor_boot.img` | `fastboot flash boot boot.img`<br />`fastboot flash vendor_boot vendor_boot.img` |
+| **Asteroids, Metroid, Frogger, FroggerPro** | `recovery.img` *(используйте рекавери на базе ядра 6.1 для Asteroids при переходе со стоковой ROM)* | `fastboot flash recovery recovery.img` |
+| **Spacewar, Tetris, Galaga, Galaxian** | `vendor_boot.img` | `fastboot flash vendor_boot vendor_boot.img` |
 
 D. **Перезагрузка в режим Fastbootd (Fastboot пространства пользователя)**
 Загрузитесь в режим Fastbootd:

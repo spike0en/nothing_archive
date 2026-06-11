@@ -606,12 +606,14 @@ B. **Reboot to Bootloader**
    :::
 
 C. **Flash Required Images**
-Flash the downloaded partition images to their respective slots:
-```sh
-fastboot flash boot boot.img
-fastboot flash vendor_boot vendor_boot.img
-fastboot flash recovery recovery.img
-```
+Flash only the required partition images based on your device's codename:
+
+| Device Codename | Required Image(s) | Flashing Command |
+| :--- | :--- | :--- |
+| **Pong** | `boot.img`<br />`vendor_boot.img`<br />`recovery.img`<br />`vbmeta.img` *(for LineageOS only)* | `fastboot flash boot boot.img`<br />`fastboot flash vendor_boot vendor_boot.img`<br />`fastboot flash recovery recovery.img`<br />`fastboot flash vbmeta vbmeta.img` |
+| **Pacman, PacmanPro** | `boot.img`<br />`vendor_boot.img` | `fastboot flash boot boot.img`<br />`fastboot flash vendor_boot vendor_boot.img` |
+| **Asteroids, Metroid, Frogger, FroggerPro** | `recovery.img` *(use 6.1 kernel-based recovery for Asteroids if coming from stock)* | `fastboot flash recovery recovery.img` |
+| **Spacewar, Tetris, Galaga, Galaxian** | `vendor_boot.img` | `fastboot flash vendor_boot vendor_boot.img` |
 
 D. **Reboot to Userspace Fastboot (Fastbootd)**
 Boot into userspace fastboot mode (fastbootd):

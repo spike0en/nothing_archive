@@ -605,12 +605,14 @@ B. **重啟至開機載入程式 (Bootloader)**
    :::
 
 C. **刷入所需的映像**
-將下載的分區映像刷入對應的插槽：
-```sh
-fastboot flash boot boot.img
-fastboot flash vendor_boot vendor_boot.img
-fastboot flash recovery recovery.img
-```
+根據您裝置的開發代號，僅刷入所需的分割區映像：
+
+| 裝置代號 | 所需映像 | 刷機指令 |
+| :--- | :--- | :--- |
+| **Pong** | `boot.img`<br />`vendor_boot.img`<br />`recovery.img`<br />`vbmeta.img` *(僅限 LineageOS)* | `fastboot flash boot boot.img`<br />`fastboot flash vendor_boot vendor_boot.img`<br />`fastboot flash recovery recovery.img`<br />`fastboot flash vbmeta vbmeta.img` |
+| **Pacman, PacmanPro** | `boot.img`<br />`vendor_boot.img` | `fastboot flash boot boot.img`<br />`fastboot flash vendor_boot vendor_boot.img` |
+| **Asteroids, Metroid, Frogger, FroggerPro** | `recovery.img` *(若從原廠 ROM 刷入，Asteroids 請使用基於 6.1 核心的 recovery)* | `fastboot flash recovery recovery.img` |
+| **Spacewar, Tetris, Galaga, Galaxian** | `vendor_boot.img` | `fastboot flash vendor_boot vendor_boot.img` |
 
 D. **重啟至使用者空間 Fastboot (Fastbootd)**
 啟動至使用者空間 fastboot 模式 (fastbootd)：
