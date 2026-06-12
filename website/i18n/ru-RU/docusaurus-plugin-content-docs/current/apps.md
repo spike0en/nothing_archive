@@ -80,6 +80,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Clock AOD Glyph](https://github.com/Aureliink/Clock-AOD-Glyph-Toy) | Aureliink | Вертикальные часы для Glyph Matrix на Nothing Phone (3) |
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | Счетчик от 0 до 9999 |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | Визуализатор, компас, кости, счетчик |
+| [Endless Life](https://github.com/the-ivan/endless-life) | the-ivan | Медитативная бесконечная игра «Жизнь» для Glyph Matrix телефона Nothing Phone (3) |
 | [Figly](https://github.com/psygos/figly) | psygos | Гербарий для Glyph Matrix на Nothing Phone (4a) Pro |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Интеграция с карточками Anki |
 | [Glyph Aquarium](https://github.com/chriskenhall-tech/Glyph-Aquarium) | chriskenhall-tech | Динамическая AOD-симуляция аквариума с использованием Nothing Glyph SDK для матрицы задней подсветки Phone (3) |
@@ -118,6 +119,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Glyphs](https://github.com/Rorenheim/glyphs) | Rorenheim | Игрушка Heart Glyph для Nothing Phone (3), которая взрывается брызгами и пишет «luv u» |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Переключатель объектов Home Assistant |
 | [Hamon](https://github.com/yuk1-kondo/GlyphToys-hamon) | yuk1-kondo | Физическое распространение волн |
+| [Hi Glyph](https://github.com/alexmicuplusfour/hi-glyph) | alexmicuplusfour | Android-приложение и ретрансляционный сервер для дисплея Glyph Matrix на Nothing Phone (4a) Pro |
 | [ISS Glyph Tracker](https://github.com/TheophileJacquot/ISS-Glyph-Tracker) | TheophileJacquot | Отслеживание МКС в реальном времени с помощью Glyph Matrix на Nothing Phone (4a) Pro |
 | [Kubeats](https://github.com/Kuberwastaken/kubeats) | Kuberwastaken | Форк [Glyph Beat](https://github.com/pauwma/GlyphBeat) с дополнительными функциями |
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | Гироскопический уровень |
@@ -127,6 +129,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Пиксель-арт в стиле Minecraft |
 | [Morse Glyph](https://github.com/Reyiannonn/MorseGlyph) | Reyiannonn | Переводит текст в азбуку Морзе и передает его через Glyph Matrix на Nothing Phone |
 | [Nono Gotchi (Beta)](https://www.jkn.me/pet) | Jkn | Виртуальный питомец в стиле Тамагочи |
+| [Nothing Dot](https://github.com/kavastore/nothing-dot#english) | kavastore | Игрушечное приложение для Glyph Matrix с пиксельным редактором, игрушками для AOD и мини-игрой в стиле Arkanoid с поддержкой клавиши Essential |
 | [Pikachu Glyph](https://github.com/nadigchinnu/pikachu-glyph) | nadigchinnu | Игрушка Pikachu для Glyph Matrix на Nothing Phone (3) |
 | [Pomodoro Timer](https://github.com/PzmuV1517/GlyphPomodoroTimer) | pzmuV1517 | Таймер Pomodoro в стиле Glyph Toy |
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | Смайлик, отражающий время активного экрана за день |
@@ -169,6 +172,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Dot Widgets](https://play.google.com/store/apps/details?id=com.lended.widjets) | Creepsmile | Инструменты на каждый день, вдохновленные матричным дизайном Nothing |
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Минималистичные виджеты |
 | [Essential Widgets](https://github.com/Essential-Dots/Essential-Widgets) | Apheff | Персонализированные виджеты, созданные сообществом | 
+| [N Deck](https://play.google.com/store/apps/details?id=com.rszczotka.ndeck) | rszczotka | Музыкальный виджет в стиле Nothing для Android, который превращает обложку альбома в чистый персональный плеер на главном экране |
 | [n0w](https://github.com/codewec/n0w) | codewec | Приложение-виджет календаря |
 | [Quick Contacts](https://play.google.com/store/apps/details?id=com.nihilapplications.quickcontactlist) | Martin Diermayr | Создание и установка виджетов контактов на главный экран |
 | [RTMON](https://github.com/n1th1n-19/RTMON) | n1th1n-19 | Виджет мониторинга системы в реальном времени |
@@ -227,6 +231,7 @@ keywords: [nothing apps, nothing community apps, glyph apps, glyph interface, no
 | [Dot Player](https://play.google.com/store/apps/details?id=com.creepsmile.dotplayer) | Creepsmile | Минималистичный локальный музыкальный плеер |
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | Браузер на базе ИИ |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Основной функционал Essential Space в стиле Nothing для всех устройств: быстрые скриншоты, заметки, голосовые заметки и многое другое |
+| [Flip To Glyph Quick Tile](https://github.com/trup40/QuickTileForFlip2GlyphNP) | trup40 | Простая плитка быстрых настроек для переключения функции «Flip to Glyph» на телефонах Nothing |
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | Используйте носимые Bluetooth-устройства без OEM-приложений, аккаунтов или облака |
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Приложение для фонарика с виджетами |
 | [Hey Battery](https://github.com/ghostyapps/HeyBattery) | Candan | Трекер использования батареи |

@@ -66,6 +66,7 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | [Glyph SDDM](https://github.com/xCaptaiN09/glyph-sddm) | xCaptaiN09 | 受 Nothing 設計語言啟發的極簡 SDDM 主題 |
 | [Notes (Windows)](https://github.com/rohankishore/Notes-1) | rohankishore | 適用於 Windows 的 Nothing 主題記事本 |
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | macOS 選單列應用程式 |
+| [Nothing Cursor Pack](https://discord.com/channels/930878214237200394/1513976039335002192) | farinhajorge | 受 Nothing 設計語言啟發的游標包 |
 | [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | GNOME 桌面建置 |
 | [Nothing Rice](https://github.com/Adhil-ka/nothing-rice) | Adhil-ka | 受 Nothing OS 啟發的 Arch Hyprland 桌面美化 |
 | [Nothing Telegram Theme](https://github.com/Costeer/Nothing-Telegram-Theme) | Costeer | 受 Nothing 啟發的 Telegram 主題。 |
@@ -113,6 +114,7 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 
 | 專案 | 開發者 | 說明 |
 |---------|-----------|-------------|
+| [Airi Forecasts](https://github.com/the3dmslobj/airi-forcasts) | the3dmslobj | 一款使用 Expo 和 React Native 構建的天氣應用程式，包裹在 Nothing 風格的單色點矩陣介面中 |
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | 透過網頁控制耳機 |
 | [Essential Space Web](https://prostmitwein.github.io/EssentialSpaceWeb/) | CorruptPriest | 極簡筆記空間 ([Repo](https://github.com/CorruptPriest/EssentialSpaceWeb)) |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
@@ -168,6 +170,7 @@ keywords: [nothing 專案, glyph 工具, nothing root, nothing magisk, 自訂化
 | [Earctl](https://github.com/xhain/earctl) | xhain | 從 macOS 控制 Nothing Ear (2) Bluetooth 耳機的 Alfred 工作流 |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | 用於 Phone (2a) 系列 與 CMF Phone (1) 的完整性檢查繞過 PoC |
 | [Glyph Adapter](https://github.com/frogfile/GlyphAdapter) | frogfile | 一個 Root Android 服務，可讓使用 Nothing 的 Glyph SDK 的第三方應用程式在刷機後的裝置上運行 |
+| [Kairo](https://github.com/nikitawebdeg-debug/-kairo) | nikitawebdeg-debug | 搭載受 Nothing OS 啟發的點矩陣顯示器之 ESP32 桌上型系統監視器 |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid 巨集 |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | 整合官方 Nothing 與 CMF 韌體、社群應用、專案與資源的精選平台。（[Repo](https://github.com/spike0en/nothing_archive)） |
 | [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | 索引社群應用程式的 PWA 風格網頁應用程式，使用來自 [Nothing Archive](https://github.com/spike0en/nothing_archive) 的基礎資料庫 |

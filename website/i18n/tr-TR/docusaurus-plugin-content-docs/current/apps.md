@@ -80,6 +80,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Clock AOD Glyph](https://github.com/Aureliink/Clock-AOD-Glyph-Toy) | Aureliink | Nothing Phone (3) Glyph Matrisi için dikey tarzda bir saat oyuncağı |
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | 0'dan 9999'a kadar sayaç |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | Görselleştirici, pusula, zar, sayaç |
+| [Endless Life](https://github.com/the-ivan/endless-life) | the-ivan | Nothing Phone (3)'ün Glyph Matrisi için ortam odaklı, sonsuz bir Game of Life oyunu |
 | [Figly](https://github.com/psygos/figly) | psygos | Nothing Phone (4a) Pro için bir glyph matris herbaryumu |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Anki bilgi kartı entegrasyonu |
 | [Glyph Aquarium](https://github.com/chriskenhall-tech/Glyph-Aquarium) | chriskenhall-tech | Phone (3) arka ışık matrisi için Nothing Glyph SDK'sını kullanan dinamik bir AOD akvaryum simülasyonu |
@@ -118,6 +119,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Glyphs](https://github.com/Rorenheim/glyphs) | Rorenheim | Nothing Phone (3) için serpintilere ayrışan ve "luv u" diyen Kalp Glyph Oyuncağı |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistant varlık değiştirme |
 | [Hamon](https://github.com/yuk1-kondo/GlyphToys-hamon) | yuk1-kondo | Fiziksel dalga yayılımı |
+| [Hi Glyph](https://github.com/alexmicuplusfour/hi-glyph) | alexmicuplusfour | Nothing Phone (4a) Pro'nun Glyph Matrisi ekranı için Android uygulaması ve röle sunucusu |
 | [ISS Glyph Tracker](https://github.com/TheophileJacquot/ISS-Glyph-Tracker) | TheophileJacquot | Nothing Phone (4a) Pro'da Glyph Matrisi ile ISS'yi gerçek zamanlı olarak takip edin |
 | [Kubeats](https://github.com/Kuberwastaken/kubeats) | Kuberwastaken | Ek özelliklere sahip [Glyph Beat](https://github.com/pauwma/GlyphBeat) çatalı |
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | Jiroskopik su terazisi aracı |
@@ -127,6 +129,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Minecraft piksel sanatı |
 | [Morse Glyph](https://github.com/Reyiannonn/MorseGlyph) | Reyiannonn | Metni Mors alfabesine çevirir ve Nothing Phone'un Glyph Matrisi aracılığıyla iletir |
 | [Nono Gotchi (Beta)](https://www.jkn.me/pet) | Jkn | Tamagotchi tarzı sanal evcil hayvan |
+| [Nothing Dot](https://github.com/kavastore/nothing-dot#english) | kavastore | Piksel düzenleyici, AOD oyuncakları ve Essential Tuşu desteğine sahip mini Arkanoid tarzı bir oyun içeren Glyph Matrisi oyuncak uygulaması |
 | [Pikachu Glyph](https://github.com/nadigchinnu/pikachu-glyph) | nadigchinnu | Nothing Phone (3) için Pikachu Glyph Matrix oyuncağı |
 | [Pomodoro Timer](https://github.com/PzmuV1517/GlyphPomodoroTimer) | pzmuV1517 | Pomodoro zamanlayıcı oyuncağı |
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | Günlük ekran süresini yansıtan yüz |
@@ -169,6 +172,7 @@ Sistem monitörlerinden minimal araçlara kadar ana ekran için özel widget'lar
 | [Dot Widgets](https://play.google.com/store/apps/details?id=com.lended.widjets) | Creepsmile | Nothing'in nokta matrisinden ilham alan günlük araçlar |
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Minimal widget'lar |
 | [Essential Widgets](https://github.com/Essential-Dots/Essential-Widgets) | Apheff | Topluluk tarafından oluşturulmuş özel widget'lar |
+| [N Deck](https://play.google.com/store/apps/details?id=com.rszczotka.ndeck) | rszczotka | Albüm kapağını ana ekranınızda temiz, kişisel bir oynatıcıya dönüştüren Nothing esintili bir Android müzik widget'ı |
 | [n0w](https://github.com/codewec/n0w) | codewec | Takvim widget'ı uygulaması. |
 | [Quick Contacts](https://play.google.com/store/apps/details?id=com.nihilapplications.quickcontactlist) | Martin Diermayr | Ana ekranda kişi widget'ları oluşturun ve ayarlayın. |
 | [RTMON](https://github.com/n1th1n-19/RTMON) | n1th1n-19 | Gerçek zamanlı sistem izleme widget'ı |
@@ -227,6 +231,7 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 | [Dot Player](https://play.google.com/store/apps/details?id=com.creepsmile.dotplayer) | Creepsmile | Minimal yerel müzik çalar |
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | Yapay zeka destekli tarayıcı |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Hızlı ekran görüntüleri, notlar, sesli notlar ve daha fazlasını içeren, tüm cihazlar için Nothing'den ilham alan temel Essential Space deneyimi |
+| [Flip To Glyph Quick Tile](https://github.com/trup40/QuickTileForFlip2GlyphNP) | trup40 | Nothing telefonlarında Flip to Glyph ayarını açıp kapatmak için temel bir hızlı ayar karosu |
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | OEM uygulamaları veya bulut hesabı olmadan giyilebilir cihazları kullanın |
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Widget destekli el feneri uygulaması |
 | [Hey Battery](https://github.com/ghostyapps/HeyBattery) | Candan | Pil kullanım takibi |

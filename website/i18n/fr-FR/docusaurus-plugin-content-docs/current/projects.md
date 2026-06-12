@@ -65,7 +65,8 @@ Thèmes et configurations pour Arch Linux, VS Code et d'autres environnements de
 |---------|-----------|-------------|
 | [Glyph SDDM](https://github.com/xCaptaiN09/glyph-sddm) | xCaptaiN09 | Thème SDDM minimaliste inspiré par le langage de conception de Nothing |
 | [Notes (Windows)](https://github.com/rohankishore/Notes-1) | rohankishore | Bloc-notes au thème Nothing pour Windows |
-| [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | Application de barre de menu macOS |
+| [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | macOS menu bar app |
+| [Nothing Cursor Pack](https://discord.com/channels/930878214237200394/1513976039335002192) | farinhajorge | Un pack de curseurs inspiré du langage de design de Nothing |
 | [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | Build de bureau GNOME |
 | [Nothing Rice](https://github.com/Adhil-ka/nothing-rice) | Adhil-ka | Configuration de bureau Arch Hyprland inspirée par Nothing OS |
 | [Nothing Telegram Theme](https://github.com/Costeer/Nothing-Telegram-Theme) | Costeer | Thème inspiré par Nothing pour Telegram. |
@@ -113,6 +114,7 @@ Applications basées sur le web inspirées par Nothing OS.
 
 | Projet | Développeur | Description |
 |---------|-----------|-------------|
+| [Airi Forecasts](https://github.com/the3dmslobj/airi-forcasts) | the3dmslobj | Une application météo conçue avec Expo et React Native, enveloppée dans une interface matricielle monochrome de style Nothing |
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Contrôle des écouteurs via le web |
 | [Essential Space Web](https://prostmitwein.github.io/EssentialSpaceWeb/) | CorruptPriest | Espace de notes minimaliste ([Dépôt](https://github.com/CorruptPriest/EssentialSpaceWeb)) |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
@@ -168,6 +170,7 @@ Ressources essentielles incluant des wikis, des archives de firmware et des outi
 | [Earctl](https://github.com/xhain/earctl) | xhain | Workflow Alfred pour contrôler les écouteurs Bluetooth Nothing Ear (2) depuis macOS |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | PoC de contournement du test d'intégrité pour Phone (2a) Série et CMF Phone (1) |
 | [Glyph Adapter](https://github.com/frogfile/GlyphAdapter) | frogfile | Un service Android root qui permet aux applications tierces utilisant le SDK Glyph de Nothing de fonctionner sur des téléphones flashés |
+| [Kairo](https://github.com/nikitawebdeg-debug/-kairo) | nikitawebdeg-debug | Moniteur système de bureau alimenté par ESP32 avec un affichage matriciel inspiré de Nothing OS |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macros Macrodroid |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Hub de sources officielles pour le firmware Nothing et CMF, applications, ressources et développement tiers. ([Dépôt](https://github.com/spike0en/nothing_archive)) |
 | [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | Application web de style PWA qui indexe les applications de la communauté, utilisant une base de données de base provenant de [Nothing Archive](https://github.com/spike0en/nothing_archive) |

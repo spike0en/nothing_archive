@@ -66,6 +66,7 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 | [Glyph SDDM](https://github.com/xCaptaiN09/glyph-sddm) | xCaptaiN09 | Минималистичная тема SDDM, вдохновленная языком дизайна Nothing |
 | [Notes (Windows)](https://github.com/rohankishore/Notes-1) | rohankishore | Блокнот в стиле Nothing для Windows |
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | Приложение для строки меню macOS |
+| [Nothing Cursor Pack](https://discord.com/channels/930878214237200394/1513976039335002192) | farinhajorge | Набор курсоров, вдохновленный языком дизайна Nothing |
 | [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | Сборка рабочего стола GNOME |
 | [Nothing Rice](https://github.com/Adhil-ka/nothing-rice) | Adhil-ka | Конфигурация Arch Hyprland в стиле Nothing OS |
 | [Nothing Telegram Theme](https://github.com/Costeer/Nothing-Telegram-Theme) | Costeer | Тема для Telegram в стиле Nothing |
@@ -113,6 +114,7 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 
 | Проект | Разработчик | Описание |
 |---------|-----------|-------------|
+| [Airi Forecasts](https://github.com/the3dmslobj/airi-forcasts) | the3dmslobj | Приложение погоды, созданное на Expo и React Native, в монохромном матричном интерфейсе в стиле Nothing |
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Управление наушниками через веб |
 | [Essential Space Web](https://prostmitwein.github.io/EssentialSpaceWeb/) | CorruptPriest | Минималистичное пространство для заметок ([Репозиторий](https://github.com/CorruptPriest/EssentialSpaceWeb)) |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
@@ -168,6 +170,7 @@ keywords: [nothing projects, glyph tools, nothing root, nothing magisk, customiz
 | [Earctl](https://github.com/xhain/earctl) | xhain | Сценарий Alfred для управления Bluetooth-наушниками Nothing Ear (2) в macOS |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | PoC для обхода проверки целостности для Phone (2a) Ряд и CMF Phone (1) |
 | [Glyph Adapter](https://github.com/frogfile/GlyphAdapter) | frogfile | Служба Android с root-доступом, позволяющая сторонним приложениям, использующим Nothing Glyph SDK, работать на кастомных прошивках |
+| [Kairo](https://github.com/nikitawebdeg-debug/-kairo) | nikitawebdeg-debug | Монитор системных ресурсов на базе ESP32 с матричным дисплеем в стиле Nothing OS |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Макросы для приложения Macrodroid |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Курируемый хаб для официальных прошивок Nothing и CMF, проектов сообщества, ресурсов и кастомных разработок. ([Репозиторий](https://github.com/spike0en/nothing_archive)) |
 | [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | Веб-приложение в стиле PWA, индексирующее приложения сообщества, использующее базовую базу данных из [Nothing Archive](https://github.com/spike0en/nothing_archive) |

@@ -66,6 +66,7 @@ Nothing'in tasarım diline uygun Arch Linux, VS Code ve diğer geliştirme ortam
 | [Glyph SDDM](https://github.com/xCaptaiN09/glyph-sddm) | xCaptaiN09 | Nothing'in tasarım dilinden ilham alan minimalist SDDM teması |
 | [Notes (Windows)](https://github.com/rohankishore/Notes-1) | rohankishore | Windows için Nothing temalı not defteri |
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | macOS menü çubuğu uygulaması |
+| [Nothing Cursor Pack](https://discord.com/channels/930878214237200394/1513976039335002192) | farinhajorge | Nothing'in tasarım dilinden esinlenmiş bir imleç paketi |
 | [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | GNOME masaüstü yapısı |
 | [Nothing Rice](https://github.com/Adhil-ka/nothing-rice) | Adhil-ka | Nothing OS esintili Arch Hyprland masaüstü kurulumu |
 | [Nothing Telegram Theme](https://github.com/Costeer/Nothing-Telegram-Theme) | Costeer | Telegram için Nothing esintili tema. |
@@ -113,6 +114,7 @@ Nothing OS'tan ilham alan web tabanlı uygulamalar.
 
 | Proje | Geliştirici | Açıklama |
 |---------|-----------|-------------|
+| [Airi Forecasts](https://github.com/the3dmslobj/airi-forcasts) | the3dmslobj | Expo ve React Native ile oluşturulmuş, Nothing tarzı monokrom nokta matris arayüzüne sahip bir hava durumu uygulaması |
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Web üzerinden kulaklık kontrolü |
 | [Essential Space Web](https://prostmitwein.github.io/EssentialSpaceWeb/) | CorruptPriest | Minimalist not alanı ([Depo](https://github.com/CorruptPriest/EssentialSpaceWeb)) |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
@@ -168,6 +170,7 @@ Vikiler, yazılım arşivleri ve sistem onarım araçları dahil temel kaynaklar
 | [Earctl](https://github.com/xhain/earctl) | xhain | macOS'tan Nothing Ear (2) Bluetooth kulaklıklarını kontrol etmek için Alfred iş akışı |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | Phone (2a) Seri ve CMF Phone (1) için Integrity Bypass PoC |
 | [Glyph Adapter](https://github.com/frogfile/GlyphAdapter) | frogfile | Nothing'in glyph-sdk'sını kullanan üçüncü taraf uygulamaların yüklü telefonlarda çalışmasını sağlayan root android hizmeti |
+| [Kairo](https://github.com/nikitawebdeg-debug/-kairo) | nikitawebdeg-debug | Nothing OS esintili nokta matris ekrana sahip ESP32 tabanlı masaüstü sistem monitörü |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid macroları |
 | [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Resmi Nothing ve CMF yazılımları, uygulamalar ve kaynaklar için kaynak merkezi. ([Depo](https://github.com/spike0en/nothing_archive)) |
 | [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | Topluluk uygulamalarını dizine ekleyen PWA tarzı web uygulaması; [Nothing Archive](https://github.com/spike0en/nothing_archive) kaynaklı temel bir veritabanı kullanır |

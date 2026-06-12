@@ -80,6 +80,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Clock AOD Glyph](https://github.com/Aureliink/Clock-AOD-Glyph-Toy) | Aureliink | 專為 Nothing Phone (3) 的 Glyph Matrix 設計的垂直風格時鐘玩具 |
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | 0–9999 計數器 |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | 視覺化器、指南針、骰子、計數器 |
+| [Endless Life](https://github.com/the-ivan/endless-life) | the-ivan | 適用於 Nothing Phone (3) Glyph 矩陣的環境、無盡「生命遊戲」（Game of Life） |
 | [Figly](https://github.com/psygos/figly) | psygos | 適用於 Nothing Phone (4a) Pro 的 Glyph 矩陣植物標本館 |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Anki 單字卡整合 |
 | [Glyph Aquarium](https://github.com/chriskenhall-tech/Glyph-Aquarium) | chriskenhall-tech | 一項動態 AOD 水族箱模擬，為 Phone (3) 後置燈光矩陣利用 Nothing Glyph SDK |
@@ -118,6 +119,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Glyphs](https://github.com/Rorenheim/glyphs) | Rorenheim | 適用於 Nothing Phone (3) 的心形 Glyph 玩具，會爆炸成灑花並顯示「luv u」 |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistant 實體切換 |
 | [Hamon](https://github.com/yuk1-kondo/GlyphToys-hamon) | yuk1-kondo | 物理波紋傳播 |
+| [Hi Glyph](https://github.com/alexmicuplusfour/hi-glyph) | alexmicuplusfour | 適用於 Nothing Phone (4a) Pro 的 Glyph 矩陣顯示器的 Android 應用程式和中繼伺服器 |
 | [ISS Glyph Tracker](https://github.com/TheophileJacquot/ISS-Glyph-Tracker) | TheophileJacquot | 在 Nothing Phone (4a) Pro 上使用 Glyph Matrix 即時追蹤國際太空站（ISS） |
 | [Kubeats](https://github.com/Kuberwastaken/kubeats) | Kuberwastaken | 具備額外功能的 [Glyph Beat](https://github.com/pauwma/GlyphBeat) 分支版本 |
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | 陀螺儀水平工具 |
@@ -127,6 +129,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Minecraft 像素藝術 |
 | [Morse Glyph](https://github.com/Reyiannonn/MorseGlyph) | Reyiannonn | 將文本轉換為摩斯密碼並透過 Nothing Phone 的 Glyph Matrix 發送 |
 | [Nono Gotchi (Beta)](https://www.jkn.me/pet) | Jkn | Tamagotchi-styled virtual pet |
+| [Nothing Dot](https://github.com/kavastore/nothing-dot#english) | kavastore | 具有像素編輯器、AOD 玩具以及支援 Essential 鍵的迷你打磚塊（Arkanoid）風格遊戲的 Glyph 矩陣玩具應用程式 |
 | [Pikachu Glyph](https://github.com/nadigchinnu/pikachu-glyph) | nadigchinnu | 適用於 Nothing Phone (3) 的皮卡丘 Glyph Matrix 玩具 |
 | [Pomodoro Timer](https://github.com/PzmuV1517/GlyphPomodoroTimer) | pzmuV1517 | 番茄鐘計時器玩具 |
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | 反映每日螢幕使用時間的臉部表情 |
@@ -168,7 +171,8 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Dot Matrix Widget](https://github.com/Swapnil41/DotMatrixWidget) | Swapnil41 | 具備透明背景的點陣時鐘小工具 |
 | [Dot Widgets](https://play.google.com/store/apps/details?id=com.lended.widjets) | Creepsmile | Nothing 點陣風格啟發的日常工具 |
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | 簡約小工具 |
-| [Essential Widgets](https://github.com/Essential-Dots/Essential-Widgets) | Apheff | Personalized widgets made by the community | 
+| [Essential Widgets](https://github.com/Essential-Dots/Essential-Widgets) | Apheff | Personalized widgets made by the community |
+| [N Deck](https://play.google.com/store/apps/details?id=com.rszczotka.ndeck) | rszczotka | 一款受 Nothing 啟發的 Android 音樂小工具，可將專輯封面轉化為首頁畫面上乾淨且個人化的播放器 |
 | [n0w](https://github.com/codewec/n0w) | codewec | 行事曆小工具應用程式。 |
 | [Quick Contacts](https://play.google.com/store/apps/details?id=com.nihilapplications.quickcontactlist) | Martin Diermayr | 在主畫面上建立並設定聯絡人小工具。 |
 | [RTMON](https://github.com/n1th1n-19/RTMON) | n1th1n-19 | 即時系統監控小工具 |
@@ -227,6 +231,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Dot Player](https://play.google.com/store/apps/details?id=com.creepsmile.dotplayer) | Creepsmile | 極簡本地音樂播放器 |
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | AI 驅動瀏覽器 |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | 受 Nothing 啟發的跨裝置核心 Essential Space 體驗，具備快速截圖、筆記、語音備忘錄等功能 |
+| [Flip To Glyph Quick Tile](https://github.com/trup40/QuickTileForFlip2GlyphNP) | trup40 | 一個用於切換 Nothing 手機上「Flip to Glyph」設定的基本快速設定方塊 |
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | Use Bluetooth wearables without OEM apps, accounts, or cloud |
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | 附小工具的手電筒應用程式 |
 | [Hey Battery](https://github.com/ghostyapps/HeyBattery) | Candan | 電池使用追蹤器 |
