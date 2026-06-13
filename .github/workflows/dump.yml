@@ -56,7 +56,7 @@ jobs:
         if: inputs.runner_type == 'github'
         run: |
           sudo apt update
-          sudo apt -y install python3-pip aria2 zstd p7zip-full parallel openssl xxhash jq
+          sudo apt -y install python3-pip aria2 zstd p7zip-full parallel openssl xxhash jq curl wget
           python3 -m pip install gdown
 
       - name: Set script permissions

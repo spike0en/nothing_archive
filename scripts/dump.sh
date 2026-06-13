@@ -38,7 +38,20 @@ download_with_gdown() {
 
 download_with_aria2c() {
     echo "Downloading with aria2c using $ARIA2C_CONNECTIONS connections: $1"
-    aria2c -x$ARIA2C_CONNECTIONS -s$ARIA2C_CONNECTIONS "$1" -o ota.zip
+    if ! aria2c -x$ARIA2C_CONNECTIONS -s$ARIA2C_CONNECTIONS --max-tries=5 --retry-wait=5 "$1" -o ota.zip; then
+        echo "aria2c download failed. Cleaning up and falling back..."
+        rm -f ota.zip ota.zip.aria2
+        if command -v wget &> /dev/null; then
+            echo "Downloading with wget..."
+            wget -O ota.zip "$1"
+        elif command -v curl &> /dev/null; then
+            echo "Downloading with curl..."
+            curl -L -o ota.zip "$1"
+        else
+            echo "Error: Neither wget nor curl is installed as a fallback." >&2
+            exit 1
+        fi
+    fi
 }
 
 download_file() {
