@@ -268,7 +268,7 @@ const config: Config = {
       attributes: {
         rel: 'preload',
         as: 'image',
-        href: '/nothing_archive/img/logo_dark.png',
+        href: '/nothing_archive/img/logo_dark.gif',
         fetchpriority: 'high',
       },
     },
@@ -277,7 +277,7 @@ const config: Config = {
       attributes: {
         rel: 'preload',
         as: 'image',
-        href: '/nothing_archive/img/logo_light.png',
+        href: '/nothing_archive/img/logo_light.gif',
         fetchpriority: 'high',
       },
     },
@@ -329,8 +329,8 @@ const config: Config = {
       title: 'Nothing Archive',
       logo: {
         alt: 'Nothing Archive Logo',
-        src: 'img/logo_light.png',
-        srcDark: 'img/logo_dark.png',
+        src: 'img/logo_light.gif',
+        srcDark: 'img/logo_dark.gif',
         width: 32,
         height: 32,
       },

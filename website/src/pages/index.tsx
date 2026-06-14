@@ -134,7 +134,7 @@ const socialLinks = [
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   const { colorMode } = useColorMode();
-  const heroLogoSrc = colorMode === 'dark' ? 'img/logo_dark.png' : 'img/logo_light.png';
+  const heroLogoSrc = colorMode === 'dark' ? 'img/logo_dark.gif' : 'img/logo_light.gif';
   return (
     <header className={clsx('hero', styles.heroBanner)}>
       <div className={styles.glyphGrid} aria-hidden="true" />
