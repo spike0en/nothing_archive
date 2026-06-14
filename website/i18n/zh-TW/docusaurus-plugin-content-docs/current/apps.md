@@ -99,6 +99,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Glyph Lab](https://play.google.com/store/apps/details?id=com.projectkriya.glyphlab) | Vimanam Studio | 專為 Nothing 裝置設計的互動式 Glyph Matrix 玩具 |
 | [Glyph Life](https://github.com/Yuma-Eimymk2/glyph-life) | Yuma-Eimymk2 | 適用於 Nothing Phone (4a) Pro Glyph Matrix 的康威生命遊戲玩具 |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | 跑馬燈文字訊息 |
+| [Glyph Matrix Bridge](https://github.com/StanSNS/glyph-matrix-bridge/) | StanSNS | 透過主畫面小工具，在 Nothing Phone 的 Glyph Matrix 上播放自訂圖片與 GIF |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | 用於為 Nothing Phone (4a) Pro 建立並智慧顯示自訂 Glyph Matrix 視覺效果的工具包 |
 | [Glyph Matrix Tasker Plugin](https://github.com/Gennadiyev/GlyphMatrixTaskerPlugin) | Gennadiyev | 用於控制 Nothing Phone (3) Glyph Matrix 的 Tasker 外掛程式。 |
 | [Glyph Mo](https://github.com/anamite/GlyphMo) | anamite | 專為 Nothing Phone (4a) Pro 設計的 Glyph Matrix 控制應用程式。 |
@@ -239,6 +240,7 @@ Glyph Matrix 的互動玩具和遊戲。
 | [Mate App](https://github.com/shahriaravi/MateApp) | shahriaravi | 離線財務追蹤器 |
 | [Minimal Browser](https://github.com/aaswani-v/Minimal-Browser) | aaswani-v | 附 AI 摘要功能的瀏覽器 |
 | [Missing Core Music](https://play.google.com/store/apps/details?id=com.cyanchill.missingcore.music) | MissingCore | 離線音樂播放器 |
+| [Moon in Pixels](https://play.google.com/store/apps/details?id=com.indie6403.mooninpixels) | Archit Verma | 月相日曆與月球追蹤器 |
 | [N Board](https://github.com/MathieuDvv/Nboard) | MathieuDvv | 附 AI 工具的 Nothing 風格鍵盤 |
 | [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Nothing 風格計算機 |
 | [N Clock](https://play.google.com/store/apps/details?id=de.nostream.nclock) | nostream | 受 Nothing 設計語言啟發的極簡時鐘應用程序 |

@@ -99,6 +99,7 @@ Resmi oyuncaklar için [Nothing Playground Glyph Toys](https://playground.nothin
 | [Glyph Lab](https://play.google.com/store/apps/details?id=com.projectkriya.glyphlab) | Vimanam Studio | Nothing cihazları için tasarlanmış etkileşimli Glyph Matrix oyuncakları |
 | [Glyph Life](https://github.com/Yuma-Eimymk2/glyph-life) | Yuma-Eimymk2 | Nothing Phone (4a) Pro'nun Glyph Matrisi için Conway's Game of Life oyuncağı |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Kayan metin mesajları |
+| [Glyph Matrix Bridge](https://github.com/StanSNS/glyph-matrix-bridge/) | StanSNS | Ana ekran widget'ından Nothing Phone Glyph Matrisi üzerinde özel görüntüler ve GIF'ler oynatın |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Nothing Phone (4a) Pro için özel Glyph Matrix görselleri oluşturma ve akıllıca görüntüleme araç takımı |
 | [Glyph Matrix Tasker Plugin](https://github.com/Gennadiyev/GlyphMatrixTaskerPlugin) | Gennadiyev | Nothing Phone (3) üzerindeki Glyph Matrix'i kontrol etmek için Tasker eklentisi. |
 | [Glyph Mo](https://github.com/anamite/GlyphMo) | anamite | Yalnızca Nothing Phone (4a) Pro için tasarlanmış Glyph Matrix kontrol uygulaması. |
@@ -239,6 +240,7 @@ Cihazınızın görünümünü geliştirmek için dinamik duvar kağıtları ve 
 | [Mate App](https://github.com/shahriaravi/MateApp) | shahriaravi | Çevrimdışı finans takibi |
 | [Minimal Browser](https://github.com/aaswani-v/Minimal-Browser) | aaswani-v | Yapay zeka özetlemeli tarayıcı |
 | [Missing Core Music](https://play.google.com/store/apps/details?id=com.cyanchill.missingcore.music) | MissingCore | Çevrimdışı müzik çalar |
+| [Moon in Pixels](https://play.google.com/store/apps/details?id=com.indie6403.mooninpixels) | Archit Verma | Ay evresi takvimi ve ay takibi |
 | [N Board](https://github.com/MathieuDvv/Nboard) | MathieuDvv | Yapay zeka araçlı Nothing esintili klavye |
 | [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Nothing tarzı hesap makinesi |
 | [N Clock](https://play.google.com/store/apps/details?id=de.nostream.nclock) | nostream | Nothing tasarım dilinden ilham alan minimalist saat uygulaması |

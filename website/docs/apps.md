@@ -87,6 +87,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Lab](https://play.google.com/store/apps/details?id=com.projectkriya.glyphlab) | Vimanam Studio | Interactive glyph matrix toys designed for Nothing devices |
 | [Glyph Life](https://github.com/Yuma-Eimymk2/glyph-life) | Yuma-Eimymk2 | Conway's Game of Life toy for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Scrolling text messages |
+| [Glyph Matrix Bridge](https://github.com/StanSNS/glyph-matrix-bridge/) | StanSNS | Play custom images and GIFs on the Nothing Phone's Glyph Matrix from a home screen widget |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Toolkit for creating and intelligently displaying custom Glyph Matrix visuals for Nothing Phone (4a) Pro |
 | [Glyph Matrix Tasker Plugin](https://github.com/Gennadiyev/GlyphMatrixTaskerPlugin) | Gennadiyev | Tasker plugin for controlling the Glyph Matrix on Nothing Phone (3). |
 | [Glyph Mo](https://github.com/anamite/GlyphMo) | anamite | Glyph Matrix control application designed exclusively for the Nothing Phone (4a) Pro. |
@@ -223,6 +224,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Mate App](https://github.com/shahriaravi/MateApp) | shahriaravi | Offline finance tracker |
 | [Minimal Browser](https://github.com/aaswani-v/Minimal-Browser) | aaswani-v | Browser with AI summarization |
 | [Missing Core Music](https://play.google.com/store/apps/details?id=com.cyanchill.missingcore.music) | MissingCore | Offline music player |
+| [Moon in Pixels](https://play.google.com/store/apps/details?id=com.indie6403.mooninpixels) | Archit Verma | Moon phase calendar and lunar tracker |
 | [N Board](https://github.com/MathieuDvv/Nboard) | MathieuDvv | Nothing-inspired keyboard with AI tools |
 | [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Calculator with Nothing style |
 | [N Clock](https://play.google.com/store/apps/details?id=de.nostream.nclock) | nostream | Minimalist clock app inspired by the Nothing design language |

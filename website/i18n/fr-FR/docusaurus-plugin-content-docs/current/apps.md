@@ -94,6 +94,7 @@ Consultez [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Lab](https://play.google.com/store/apps/details?id=com.projectkriya.glyphlab) | Vimanam Studio | Jouets interactifs à matrice Glyph conçus pour les appareils Nothing |
 | [Glyph Life](https://github.com/Yuma-Eimymk2/glyph-life) | Yuma-Eimymk2 | Jouet Conway's Game of Life pour la matrice Glyph du Nothing Phone (4a) Pro |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Messages textuels défilants |
+| [Glyph Matrix Bridge](https://github.com/StanSNS/glyph-matrix-bridge/) | StanSNS | Affichez des images et des GIF personnalisés sur la matrice Glyph du Nothing Phone depuis un widget de l'écran d'accueil |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Boîte à outils pour créer et afficher intelligemment des visuels personnalisés pour la matrice Glyph du Nothing Phone (4a) Pro |
 | [Glyph Matrix Tasker Plugin](https://github.com/Gennadiyev/GlyphMatrixTaskerPlugin) | Gennadiyev | Plugin Tasker pour contrôler la matrice Glyph du Nothing Phone (3). |
 | [Glyph Mo](https://github.com/anamite/GlyphMo) | anamite | Application de contrôle de la matrice Glyph conçue exclusivement pour le Nothing Phone (4a) Pro. |
@@ -234,6 +235,7 @@ Fonds d'écran dynamiques et améliorations visuelles pour sublimer l'apparence 
 | [Mate App](https://github.com/shahriaravi/MateApp) | shahriaravi | Suivi financier hors ligne |
 | [Minimal Browser](https://github.com/aaswani-v/Minimal-Browser) | aaswani-v | Navigateur avec résumé par IA |
 | [Missing Core Music](https://play.google.com/store/apps/details?id=com.cyanchill.missingcore.music) | MissingCore | Lecteur de musique hors ligne |
+| [Moon in Pixels](https://play.google.com/store/apps/details?id=com.indie6403.mooninpixels) | Archit Verma | Calendrier des phases de la Lune et suivi lunaire |
 | [N Board](https://github.com/MathieuDvv/Nboard) | MathieuDvv | Clavier inspiré par Nothing avec outils IA |
 | [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Calculatrice style Nothing |
 | [N Clock](https://play.google.com/store/apps/details?id=de.nostream.nclock) | nostream | Application d'horloge minimaliste inspirée par le langage de design de Nothing |
