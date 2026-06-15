@@ -32,10 +32,9 @@ keywords: [nothing, cmf by nothing, nothing ecosystem, rooting, nothing firmware
 
 - **[luk1337](https://github.com/luk1337/oplus_archive)** за инструмент извлечения OTA AOSP.
 - **[arter97](https://github.com/arter97/nothing_archive)** за адаптацию архива для Phone (2).
-- **[Shiki](https://github.com/guptavishal-xm1)** за создание первоначального веб-сайта для репозитория.
-- **[EdwardWu](https://github.com/bluehomewu)** за перевод на zh‑TW и поддержку [документации](https://github.com/spike0en/nothing_archive/tree/main/website/i18n/zh-TW/docusaurus-plugin-content-docs/current).
-- **[Daniel Springer](https://github.com/Daniel210191)** за предоставление собственных инстансов раннера.
-- **[XelXen](https://github.com/XelXen) & [Tor](https://github.com/torharrington)** за помощь с [брендингом проекта и дизайном](https://github.com/spike0en/nothing_archive/tree/main/website/static/img).
+- **[Shiki](https://github.com/guptavishal-xm1)** за создание первоначального веб-сайта для репозитория и предоставление собственного инстанса раннера.
+- **[EdwardWu](https://github.com/bluehomewu)** за первоначальный [перевод на zh‑TW](https://github.com/spike0en/nothing_archive/tree/main/website/i18n/zh-TW/docusaurus-plugin-content-docs/current).
+- **[XelXen](https://github.com/XelXen)** за помощь с первоначальным [брендингом проекта и дизайном](https://github.com/spike0en/nothing_archive/tree/main/website/static/img).
 - **[LukeSkyD](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/)** за ссылки на ранние сборки.
 - **[Соавторам проекта](https://github.com/spike0en/nothing_archive/graphs/contributors)** за их неоценимый вклад и идеи.
 

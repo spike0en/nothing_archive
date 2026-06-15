@@ -32,10 +32,9 @@ Nothing Archive projesi, hem kodu hem de topluluk katkılarını korumak için b
 
 - **[luk1337](https://github.com/luk1337/oplus_archive)**: AOSP OTA çıkarma aracı için.
 - **[arter97](https://github.com/arter97/nothing_archive)**: Arşivi Phone (2) için uyarladığı için.
-- **[Shiki](https://github.com/guptavishal-xm1)**: Deponun ilk web sitesini tasarladığı için.
-- **[EdwardWu](https://github.com/bluehomewu)**: zh-TW çevirileri ve [dokümantasyonun](https://github.com/spike0en/nothing_archive/tree/main/website/i18n/zh-TW/docusaurus-plugin-content-docs/current) bakımı için.
-- **[Daniel Springer](https://github.com/Daniel210191)**: Kendi barındırdığı runner örneklerini sağladığı için.
-- **[XelXen](https://github.com/XelXen) & [Tor](https://github.com/torharrington)**: Projenin [marka ve tasarımıyla](https://github.com/spike0en/nothing_archive/tree/main/website/static/img) ilgili yardımları için.
+- **[Shiki](https://github.com/guptavishal-xm1)**: Deponun ilk web sitesini tasarladığı ve kendi barındırdığı runner örneğini sağladığı için.
+- **[EdwardWu](https://github.com/bluehomewu)**: İlk [zh-TW çevirileri](https://github.com/spike0en/nothing_archive/tree/main/website/i18n/zh-TW/docusaurus-plugin-content-docs/current) için.
+- **[XelXen](https://github.com/XelXen)**: İlk [proje markası ve tasarımına](https://github.com/spike0en/nothing_archive/tree/main/website/static/img) yardım ettiği için.
 - **[LukeSkyD](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/)**: Erken build referansları için.
 - **[Proje Katkıda Bulunanları](https://github.com/spike0en/nothing_archive/graphs/contributors)**: Paha biçilemez analizleri ve katkıları için.
 

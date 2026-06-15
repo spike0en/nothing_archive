@@ -32,10 +32,9 @@ Le projet Nothing Archive est sous plusieurs licences pour protéger à la fois 
 
 - **[luk1337](https://github.com/luk1337/oplus_archive)** pour l'outil d'extraction AOSP OTA.
 - **[arter97](https://github.com/arter97/nothing_archive)** pour l'adaptation de l'archive pour le Phone (2).
-- **[Shiki](https://github.com/guptavishal-xm1)** pour avoir conçu le site web initial du dépôt.
-- **[EdwardWu](https://github.com/bluehomewu)** pour les traductions zh‑TW et la maintenance de la [documentation](https://github.com/spike0en/nothing_archive/tree/main/website/i18n/zh-TW/docusaurus-plugin-content-docs/current).
-- **[Daniel Springer](https://github.com/Daniel210191)** pour la mise à disposition d'instances de runner auto-hébergées.
-- **[XelXen](https://github.com/XelXen) & [Tor](https://github.com/torharrington)** pour l'aide sur l'[image de marque et le design du projet](https://github.com/spike0en/nothing_archive/tree/main/website/static/img).
+- **[Shiki](https://github.com/guptavishal-xm1)** pour avoir conçu le site web initial du dépôt et pour la mise à disposition d'instances de runner auto-hébergées.
+- **[EdwardWu](https://github.com/bluehomewu)** pour les [traductions initiales en zh‑TW](https://github.com/spike0en/nothing_archive/tree/main/website/i18n/zh-TW/docusaurus-plugin-content-docs/current).
+- **[XelXen](https://github.com/XelXen)** pour l'aide sur l'[image de marque et le design du projet initial](https://github.com/spike0en/nothing_archive/tree/main/website/static/img).
 - **[LukeSkyD](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/)** pour les références de builds précoces.
 - **[Project Contributors](https://github.com/spike0en/nothing_archive/graphs/contributors)** pour leurs contributions et analyses inestimables.
 
