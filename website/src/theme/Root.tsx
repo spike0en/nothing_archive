@@ -19,6 +19,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import CopyButtonSetup from '../components/CopyButton';
 
 const COOKIE_NAME = 'preferred-locale';
 const COOKIE_MAX_AGE = 365 * 24 * 60 * 60; // 1 year in seconds
@@ -106,5 +107,11 @@ export default function Root({ children }: RootProps): React.JSX.Element {
     setLocaleCookie(defaultLocale);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+      <CopyButtonSetup />
+    </>
+  );
 }
+

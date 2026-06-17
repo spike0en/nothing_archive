@@ -1196,3 +1196,139 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
   color: var(--ifm-color-primary) !important;
   font-weight: 700 !important;
 }
+
+/* ==========================================
+   TABLE COPY BUTTONS & TOOLTIPS
+   ========================================== */
+.table-copy-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.table-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid var(--nothing-border);
+  background-color: var(--ifm-card-background-color);
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Make sure the copy button appears when hovering over the cell or the link wrapper */
+td:hover .table-copy-btn,
+.table-copy-wrapper:hover .table-copy-btn {
+  opacity: 0.8;
+}
+
+.table-copy-btn:hover {
+  opacity: 1 !important;
+  background-color: var(--nothing-border-strong);
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+.table-copy-btn svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* Tooltip bubble using CSS pseudo-elements */
+.table-copy-btn::after {
+  content: 'Copied!';
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translate(-50%, 4px) scale(0.8);
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-family: var(--ifm-font-family-monospace);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+[data-theme='dark'] .table-copy-btn::after {
+  background-color: #f3f2ec;
+  color: #080808;
+}
+
+.table-copy-btn.copied::after {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+
+.table-copy-btn.copied {
+  color: #10b981 !important; /* Premium green */
+  border-color: #10b981 !important;
+  opacity: 1 !important;
+}
+
+/* ==========================================
+   LAST UPDATED TIMESTAMP
+   ========================================== */
+.theme-last-updated {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.75rem;
+  color: var(--ifm-color-secondary-text, #666);
+  opacity: 0.7;
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+[data-theme='dark'] .theme-last-updated {
+  color: #888;
+}
+
+/* ==========================================
+   BACK TO TOP BUTTON
+   ========================================== */
+.theme-back-to-top-button {
+  background-color: var(--ifm-color-primary) !important;
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  width: 44px !important;
+  height: 44px !important;
+  box-shadow: 0 4px 16px rgba(215, 25, 33, 0.3) !important;
+  border: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.theme-back-to-top-button:hover {
+  background-color: var(--ifm-color-primary-dark) !important;
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: 0 6px 20px rgba(215, 25, 33, 0.45) !important;
+}
+
+.theme-back-to-top-button:active {
+  transform: translateY(0) scale(0.95) !important;
+}
+
+[data-theme='dark'] .theme-back-to-top-button {
+  box-shadow: 0 4px 16px rgba(255, 59, 59, 0.3) !important;
+}
+
+[data-theme='dark'] .theme-back-to-top-button:hover {
+  background-color: var(--ifm-color-primary-light) !important;
+  box-shadow: 0 6px 20px rgba(255, 59, 59, 0.45) !important;
+}

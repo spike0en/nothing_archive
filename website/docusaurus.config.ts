@@ -185,6 +185,8 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           editUrl: 'https://github.com/spike0en/nothing_archive/tree/main/website/',
+          showLastUpdateTime: true,
+          showLastUpdateAuthor: false,
           async sidebarItemsGenerator({ defaultSidebarItemsGenerator, ...args }) {
             const sidebarItems = await defaultSidebarItemsGenerator(args);
             return sortChangelogItems(sidebarItems);
