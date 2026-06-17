@@ -172,6 +172,7 @@ const config: Config = {
       {
         hashed: true,
         language: ['en', 'zh', 'fr', 'tr', 'ja', 'ru'],
+        fuzzyMatchingDistance: 0,
       },
     ],
   ],
