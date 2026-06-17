@@ -356,6 +356,11 @@
   .consoleBody {
     max-height: 180px;
   }
+
+  .messageText {
+    white-space: normal;
+    word-break: break-word;
+  }
 }
 
 @media screen and (max-width: 576px) {
