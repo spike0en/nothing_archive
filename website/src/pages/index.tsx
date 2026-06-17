@@ -16,6 +16,7 @@ import { TbMessageCircle } from 'react-icons/tb';
 
 import styles from './index.module.css';
 import { JSX } from 'react';
+import CommitMatrix from '../components/CommitMatrix';
 
 /* ============================================================
    STATIC DATA
@@ -321,6 +322,13 @@ export default function Home(): JSX.Element {
     >
       <HomepageHeader />
       <main className={styles.main}>
+        <div className="container margin-vert--lg">
+          <div className="row">
+            <div className="col col--12">
+              <CommitMatrix />
+            </div>
+          </div>
+        </div>
         <HomepageFeatures />
         <HomepageCommunity />
         <HomepageSocials />
