@@ -179,7 +179,7 @@
 .ctaButton:hover {
   background: var(--ifm-color-primary-darkest);
   color: #fff !important;
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(215, 25, 33, 0.3);
   text-decoration: none !important;
 }
@@ -204,7 +204,7 @@
 .ctaButtonSecondary:hover {
   border-color: var(--ifm-color-primary) !important;
   color: var(--ifm-color-primary) !important;
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(128, 128, 128, 0.05);
   text-decoration: none !important;
 }
@@ -349,7 +349,7 @@
 
 .featureCard:hover {
   border-color: rgba(215, 25, 33, 0.25);
-  transform: translateY(-3px) scale(1.01);
+  transform: translateY(-3px);
   box-shadow: 0 12px 32px rgba(215, 25, 33, 0.04);
 }
 
@@ -462,7 +462,7 @@
 .starButton:hover {
   background: var(--ifm-color-primary-darkest);
   color: #fff !important;
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(215, 25, 33, 0.25);
   text-decoration: none !important;
 }
