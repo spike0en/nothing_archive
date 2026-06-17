@@ -44,9 +44,9 @@ jobs:
           path: |
             website/.docusaurus
             website/node_modules/.cache
-          key: docusaurus-${{ hashFiles('website/package-lock.json') }}-${{ hashFiles('website/docs/**', 'website/src/**') }}
+          key: docusaurus-build-${{ hashFiles('website/package-lock.json') }}-${{ github.run_id }}
           restore-keys: |
-            docusaurus-${{ hashFiles('website/package-lock.json') }}-
+            docusaurus-build-${{ hashFiles('website/package-lock.json') }}-
 
       - name: Type check
         run: npm run typecheck

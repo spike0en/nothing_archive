@@ -132,6 +132,7 @@ const config: Config = {
 
   future: {
     v4: true,
+    experimental_faster: true,
   },
 
   url: 'https://spike0en.github.io',
