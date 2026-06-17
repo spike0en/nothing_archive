@@ -18,9 +18,7 @@ Essential Innovations
 🛝 Introducing Playground (Alpha) — come to experience unique creations from the Community, including Essential Apps, Camera Presets, and EQ Profiles.  
 🪀 Essential Apps (Alpha) are now open for download. Enjoy the AI-powered, community-crafted apps that blend creativity with efficiency.  
 
-## Notes:
-
-For more details of Playground & Essential Apps, please visit <a href="https://playground.nothing.tech">https://playground.nothing.tech</a>.  
+For more details of Playground & Essential Apps, please visit [playground.nothing.tech](https://playground.nothing.tech).  
 
 Visual Enhancements  
 🌠 Nothing app icons have been redesigned with an all-new, fresh look.  
