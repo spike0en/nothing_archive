@@ -1,6 +1,6 @@
 /**
- * Styles for the Nothing OS Repository Live Activity Tracker.
- * Emulates the retro-futuristic, high-contrast Nothing OS hardware aesthetic.
+ * Styles for the Nothing Archive Repository Live Activity Tracker.
+ * Clean telemetry feed: header → stats strip → full-width recent changes.
  */
 
 .container {
@@ -28,7 +28,7 @@
   justify-content: space-between;
   border-bottom: 1px dashed var(--nothing-border-strong);
   padding-bottom: 0.75rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .systemLabel {
@@ -85,192 +85,79 @@
 }
 
 @keyframes telemetryPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.3;
     transform: scale(0.9);
   }
+
   50% {
     opacity: 1;
     transform: scale(1.1);
   }
 }
 
-/* --- Dashboard Grid --- */
-.dashboard {
+/* --- Stats Strip --- */
+.statsStrip {
   display: grid;
-  grid-template-columns: 140px 1fr 440px;
-  gap: 2rem;
-  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background-color: var(--nothing-border);
+  border: 1px solid var(--nothing-border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
 }
 
-/* --- Glyph Matrix (Left) --- */
-.glyphPanel {
+.statItem {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid var(--nothing-border);
-  padding-right: 1.5rem;
+  padding: 0.85rem 1rem;
+  gap: 0.3rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: background-color 0.2s ease;
 }
 
-.glyphGrid {
-  display: grid;
-  grid-template-columns: repeat(10, 8px);
-  grid-template-rows: repeat(10, 8px);
-  gap: 3px;
+[data-theme='dark'] .statItem {
+  background-color: rgba(255, 255, 255, 0.03);
 }
 
-.glyphDot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.05);
-  transition: background-color 0.1s ease, box-shadow 0.1s ease;
+.statItem:hover {
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
-[data-theme='dark'] .glyphDot {
+[data-theme='dark'] .statItem:hover {
   background-color: rgba(255, 255, 255, 0.06);
 }
 
-.glyphDotActive {
-  background-color: var(--ifm-color-primary);
-  box-shadow: 0 0 6px var(--ifm-color-primary);
-}
-
-.glyphLabel {
-  margin-top: 0.75rem;
+.statValue {
   font-family: var(--ifm-font-family-monospace);
-  font-size: 0.65rem;
-  opacity: 0.5;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  letter-spacing: -0.02em;
+  line-height: 1;
 }
 
-/* --- Frequency Graph (Center) --- */
-.graphPanel {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.graphTitle {
-  font-family: var(--ifm-font-family-base);
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
+.statLabel {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.6rem;
   letter-spacing: 0.1em;
-  margin-bottom: 1rem;
-  opacity: 0.8;
+  opacity: 0.45;
+  text-transform: uppercase;
 }
 
-.matrixGrid {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  height: 110px;
-  padding: 0 0.5rem;
-}
-
-.matrixColumn {
-  display: flex;
-  flex-direction: column-reverse;
-  gap: 3px;
-  align-items: center;
-  cursor: pointer;
-  position: relative;
-}
-
-.matrixColumn:focus {
-  outline: none;
-}
-
-.matrixColumn:focus-visible {
-  outline: 1px dashed var(--ifm-color-primary);
-  outline-offset: 4px;
-  border-radius: 4px;
-}
-
-.matrixDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.05);
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-[data-theme='dark'] .matrixDot {
-  background-color: rgba(255, 255, 255, 0.06);
-}
-
-/* Glow styling for active dots */
-.matrixDotActive {
-  background-color: #000000;
-}
-
-[data-theme='dark'] .matrixDotActive {
-  background-color: #ffffff;
-}
-
-
-
-.matrixColumn:hover .matrixDotActive,
-.matrixColumn:focus-visible .matrixDotActive {
-  background-color: var(--ifm-color-primary);
-  box-shadow: 0 0 8px var(--ifm-color-primary);
-}
-
-.timelineLabels {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 0.5rem;
-  padding: 0 0.5rem;
-  font-family: var(--ifm-font-family-monospace);
-  font-size: 0.65rem;
-  opacity: 0.5;
-}
-
-/* --- Tooltip --- */
-.tooltip {
-  position: absolute;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #000000;
-  color: #ffffff;
-  padding: 0.35rem 0.6rem;
-  border-radius: 6px;
-  font-family: var(--ifm-font-family-monospace);
-  font-size: 0.65rem;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.15s ease, transform 0.15s ease;
-  z-index: 10;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-[data-theme='dark'] .tooltip {
-  background-color: #1a1a1a;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.matrixColumn:hover .tooltip {
-  opacity: 1;
-  transform: translateX(-50%) translateY(-4px);
-}
-
-/* --- Console/Terminal (Right) --- */
+/* --- Console/Terminal (full width) --- */
 .consolePanel {
   background-color: rgba(0, 0, 0, 0.03);
   border: 1px solid var(--nothing-border);
   border-radius: 16px;
   padding: 1rem;
-  min-height: 140px;
-  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   overflow: hidden;
   font-family: var(--ifm-font-family-monospace);
   transition: background-color 0.3s ease, border-color 0.3s ease;
@@ -289,18 +176,17 @@
   letter-spacing: 0.05em;
   border-bottom: 1px solid rgba(128, 128, 128, 0.15);
   padding-bottom: 0.25rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .consoleBody {
-  height: 115px; /* constrained height to show exactly ~4-5 lines, scrolls for more */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  gap: 0.5rem;
+  gap: 0.45rem;
   overflow-y: auto;
-  overflow-x: hidden; /* prevent horizontal overflow and force text wrap */
+  overflow-x: hidden;
   width: 100%;
+  max-height: 200px;
   padding-right: 6px;
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
@@ -310,7 +196,6 @@
   scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
 }
 
-/* Custom Scrollbar for Monospace Console */
 .consoleBody::-webkit-scrollbar {
   width: 4px;
 }
@@ -332,16 +217,32 @@
   background: var(--ifm-color-primary);
 }
 
+/* Each commit row — now also an anchor tag */
 .consoleLine {
   display: flex;
   align-items: flex-start;
-  flex-shrink: 0; /* prevent shrinking vertically inside fixed height flex container */
+  flex-shrink: 0;
   font-size: 0.72rem;
-  line-height: 1.35;
+  line-height: 1.4;
   gap: 0.5rem;
   white-space: normal;
   letter-spacing: -0.02em;
-  width: 100%; /* force constraint to consoleBody width */
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 0.1rem 0.25rem;
+  transition: background-color 0.15s ease;
+}
+
+.consoleLine:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+  color: inherit;
+}
+
+[data-theme='dark'] .consoleLine:hover {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .statusDot {
@@ -351,7 +252,7 @@
   background-color: rgba(0, 0, 0, 0.18);
   flex-shrink: 0;
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
-  margin-top: 5px; /* align vertically with center of the first line of text */
+  margin-top: 5px;
 }
 
 [data-theme='dark'] .statusDot {
@@ -366,7 +267,7 @@
 .timeLag {
   color: var(--ifm-color-primary);
   font-weight: 700;
-  width: 28px;
+  width: 30px;
   flex-shrink: 0;
 }
 
@@ -375,27 +276,49 @@
 }
 
 .authorTag {
-  opacity: 0.5;
-  width: 60px;
+  opacity: 0.45;
+  width: 72px;
   flex-shrink: 0;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  cursor: help;
+}
+
+.coAuthorBadge {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  opacity: 1;
+  background-color: rgba(255, 60, 60, 0.1);
+  border-radius: 4px;
+  padding: 0px 3px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  flex-shrink: 0;
+}
+
+[data-theme='dark'] .coAuthorBadge {
+  background-color: rgba(255, 60, 60, 0.15);
 }
 
 .messageText {
   flex: 1;
-  min-width: 0; /* allows flex item to shrink and text to wrap */
+  min-width: 0;
   overflow: hidden;
-  white-space: normal;
-  opacity: 0.9;
-  word-break: break-word;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  opacity: 0.88;
 }
 
-.consoleFooter {
-  font-size: 0.65rem;
-  opacity: 0.4;
-  text-align: right;
-  margin-top: 0.45rem;
+.shaTag {
+  font-size: 0.62rem;
+  opacity: 0.3;
+  flex-shrink: 0;
+  letter-spacing: 0.03em;
 }
 
 .errorContainer {
@@ -421,41 +344,31 @@
 
 /* --- Responsive Breakpoints --- */
 
-/* Tablet View (<= 768px) */
 @media screen and (max-width: 768px) {
-  .dashboard {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .glyphPanel {
-    display: none; /* Hide glyph panel on tablet/mobile to save vertical space */
-  }
-
   .container {
     padding: 1.25rem;
   }
+
+  .statsStrip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .consoleBody {
+    max-height: 180px;
+  }
 }
 
-/* Mobile View (<= 576px) */
 @media screen and (max-width: 576px) {
-  .matrixGrid {
-    height: 80px;
-    gap: 1px;
+  .statsStrip {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .matrixDot {
-    width: 4px;
-    height: 4px;
+  .statValue {
+    font-size: 1rem;
   }
 
-  .timelineLabels {
-    font-size: 0.55rem;
-  }
-
-  .consolePanel {
-    height: auto;
-    gap: 0.75rem;
+  .shaTag {
+    display: none;
   }
 
   .consoleLine {

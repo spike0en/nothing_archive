@@ -5,12 +5,13 @@ import styles from './CommitMatrix.module.css';
 interface Commit {
   sha: string;
   author: string;
+  coAuthors: string[];
   date: string;
   message: string;
 }
 
-const CACHE_KEY = 'nothing_archive_commits_cache';
-const CACHE_TIME_KEY = 'nothing_archive_commits_cache_time';
+const CACHE_KEY = 'nothing_archive_commits_cache_v2';
+const CACHE_TIME_KEY = 'nothing_archive_commits_cache_time_v2';
 const CACHE_TIMEOUT = 5 * 60 * 1000; // 5 minutes in milliseconds
 
 /**
@@ -27,13 +28,28 @@ function getTimeLag(dateStr: string): string {
   return `${Math.max(1, mins)}m`;
 }
 
+/**
+ * Extracts co-author names from a full commit message body.
+ * Parses `Co-authored-by: Name <email>` trailers that GitHub auto-adds on squash merges.
+ */
+function parseCoAuthors(fullMessage: string): string[] {
+  if (!fullMessage) return [];
+  const coAuthorRegex = /Co-authored-by:\s*(.+?)\s*<[^>]*>/gi;
+  const names: string[] = [];
+  let match: RegExpExecArray | null;
+  while ((match = coAuthorRegex.exec(fullMessage)) !== null) {
+    const name = match[1].trim();
+    if (name) names.push(name);
+  }
+  return names;
+}
+
 export default function CommitMatrix(): React.JSX.Element {
   const [commits, setCommits] = useState<Commit[]>([]);
   const [statusSource, setStatusSource] = useState<'LIVE' | 'OFFLINE'>('OFFLINE');
   const [errorState, setErrorState] = useState<'RATE_LIMITED' | 'FAILED' | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState('');
-  const [glyphFrame, setGlyphFrame] = useState(0);
 
   // 1. Ticking Local System Clock with Timezone abbreviation (e.g. IST)
   useEffect(() => {
@@ -47,7 +63,6 @@ export default function CommitMatrix(): React.JSX.Element {
         if (tzFull.length <= 5) {
           tzLabel = tzFull;
         } else {
-          // Extract acronym (e.g. India Standard Time -> IST)
           const acronym = tzFull.split(' ').map(w => w[0]).join('').replace(/[^A-Za-z]/g, '').toUpperCase();
           tzLabel = acronym.length >= 2 ? acronym : tzFull;
         }
@@ -69,7 +84,6 @@ export default function CommitMatrix(): React.JSX.Element {
         const cachedTime = localStorage.getItem(CACHE_TIME_KEY);
         const now = Date.now();
 
-        // Check cache validity
         if (cachedData && cachedTime && now - parseInt(cachedTime, 10) < CACHE_TIMEOUT) {
           const parsed = JSON.parse(cachedData);
           setCommits(parsed);
@@ -79,7 +93,6 @@ export default function CommitMatrix(): React.JSX.Element {
           return;
         }
 
-        // Fetch fresh logs from GitHub
         const response = await fetch(
           'https://api.github.com/repos/spike0en/nothing_archive/commits?per_page=100'
         );
@@ -92,14 +105,20 @@ export default function CommitMatrix(): React.JSX.Element {
         }
 
         const rawCommits = await response.json();
-        
-        // Clean and map raw commits
-        const formattedCommits: Commit[] = rawCommits.map((item: any) => ({
-          sha: item.sha.substring(0, 7),
-          author: item.commit.author?.name || item.author?.login || 'Contributor',
-          date: item.commit.author?.date || new Date().toISOString(),
-          message: item.commit.message?.split('\n')[0] || 'Code updates'
-        }));
+
+        const formattedCommits: Commit[] = rawCommits.map((item: any) => {
+          const fullMessage = item.commit.message || '';
+          const author = item.commit.author?.name || item.author?.login || 'Contributor';
+          const coAuthors = parseCoAuthors(fullMessage).filter(name => name !== author);
+
+          return {
+            sha: item.sha.substring(0, 7),
+            author,
+            coAuthors,
+            date: item.commit.author?.date || new Date().toISOString(),
+            message: fullMessage.split('\n')[0] || 'Code updates',
+          };
+        });
 
         if (formattedCommits.length > 0) {
           localStorage.setItem(CACHE_KEY, JSON.stringify(formattedCommits));
@@ -110,7 +129,7 @@ export default function CommitMatrix(): React.JSX.Element {
           setLoading(false);
           return;
         }
-        
+
         throw new Error('FAILED');
 
       } catch (err: any) {
@@ -129,98 +148,67 @@ export default function CommitMatrix(): React.JSX.Element {
     loadCommits();
   }, []);
 
-  // 3. Glyph Panel LED animation loop (100ms ticks)
-  useEffect(() => {
-    const glyphInterval = setInterval(() => {
-      setGlyphFrame(prev => prev + 1);
-    }, 100);
-    return () => clearInterval(glyphInterval);
-  }, []);
+  // --- Derived stats from commits ---
 
-  // 4. Calculate Activity Graph Columns (Last 30 days)
-  const columnsCount = 30;
-  const rowsCount = 12;
-  const activityData = new Array(columnsCount).fill(0);
   const now = new Date();
-
-  // Sort commits into daily bins based on calendar days in UTC timezone
   const todayStart = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
-  
-  commits.forEach(commit => {
-    const commitDate = new Date(commit.date);
-    const commitUTC = new Date(Date.UTC(commitDate.getUTCFullYear(), commitDate.getUTCMonth(), commitDate.getUTCDate()));
-    const diffTime = todayStart.getTime() - commitUTC.getTime();
-    const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
-    
-    if (diffDays >= 0 && diffDays < columnsCount) {
-      activityData[columnsCount - 1 - diffDays]++;
-    }
+
+  // Commits in the last 30 days
+  const commits30d = commits.filter(c => {
+    const d = new Date(c.date);
+    const dUTC = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+    const diffDays = Math.round((todayStart.getTime() - dUTC.getTime()) / (1000 * 60 * 60 * 24));
+    return diffDays >= 0 && diffDays < 30;
   });
 
-  // Scale commit frequency counts into dot-rows count
-  // 0 commits -> 1 dot (inactive baseline)
-  // 1 commit  -> 3 dots
-  // 2 commits -> 5 dots
-  // 3+ commits -> 8 dots
-  const getDotCount = (commitCount: number) => {
-    return Math.min(commitCount, rowsCount);
-  };
+  // Unique contributors in the last 30 days (authors + co-authors)
+  const contributors30d = (() => {
+    const nameSet = new Set<string>();
+    commits30d.forEach(c => {
+      nameSet.add(c.author);
+      c.coAuthors.forEach(ca => nameSet.add(ca));
+    });
+    return nameSet.size;
+  })();
 
-  const getTimelineDates = () => {
-    const dates = [];
-    for (let i = 0; i < columnsCount; i++) {
-      const date = new Date(now);
-      date.setUTCDate(now.getUTCDate() - (columnsCount - 1 - i));
-      dates.push(date);
+  const latestCommit = commits[0] || { sha: '------', author: 'N/A', coAuthors: [], date: '', message: 'Waiting for connection...' };
+
+  /**
+   * Formats the author display for a commit row.
+   * Shows "Author" alone, or "Author +N" when co-authors are present.
+   */
+  const formatAuthors = (commit: Commit): React.JSX.Element => {
+    if (commit.coAuthors.length === 0) {
+      return <span className={styles.authorTag}>{commit.author}</span>;
     }
-    return dates;
+
+    const tooltip = [commit.author, ...commit.coAuthors].join(', ');
+    return (
+      <span className={styles.authorTag} title={tooltip}>
+        {commit.author}
+        <span className={styles.coAuthorBadge}>+{commit.coAuthors.length}</span>
+      </span>
+    );
   };
 
-  const timelineDates = getTimelineDates();
-
-  // Helper to format date string for tooltip in UTC
-  const formatTooltipDate = (date: Date) => {
-    return date.toLocaleDateString(undefined, { month: 'short', day: 'numeric', timeZone: 'UTC' });
-  };
-
-  // Click handler to filter commits by UTC calendar day
-  const handleColumnClick = (date: Date) => {
-    const year = date.getUTCFullYear();
-    const month = String(date.getUTCMonth() + 1).padStart(2, '0');
-    const day = String(date.getUTCDate()).padStart(2, '0');
-    const dateStr = `${year}-${month}-${day}`;
-    const url = `https://github.com/spike0en/nothing_archive/commits?since=${dateStr}&until=${dateStr}`;
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
-
-  // 5. Render animated glyph pattern calculations (RSS feed / radar broadcast waves)
-  const isGlyphDotActive = (x: number, y: number): boolean => {
-    // Bottom-left origin dot at (1, 8)
-    const ox = 1;
-    const oy = 8;
-    
-    if (x === ox && y === oy) {
-      return true;
-    }
-    
-    const dx = x - ox;
-    const dy = oy - y; // dy is positive upwards
-    
-    // We only propagate in the quadrant from bottom-left to top-right (dx >= 0 and dy >= 0)
-    if (dx >= 0 && dy >= 0) {
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist > 1.2) {
-        // Sine wave propagating outwards.
-        // Adjust speed (0.35) and wavelength (frequency 1.2) to feel organic.
-        const val = Math.sin(dist * 1.2 - glyphFrame * 0.35);
-        return val > 0.55;
-      }
-    }
-    
-    return false;
-  };
-
-  const latestCommit = commits[0] || { sha: '------', author: 'N/A', date: '', message: 'Waiting for connection...' };
+  const stats = [
+    {
+      label: <Translate id="homepage.matrix.stat.commits30d">30D COMMITS</Translate>,
+      value: loading ? '—' : `${commits30d.length}`,
+    },
+    {
+      label: <Translate id="homepage.matrix.stat.contributors">CONTRIBUTORS</Translate>,
+      value: loading ? '—' : `${contributors30d}`,
+    },
+    {
+      label: <Translate id="homepage.matrix.stat.totalCommits">TOTAL COMMITS</Translate>,
+      value: loading ? '—' : `${commits.length}`,
+    },
+    {
+      label: <Translate id="homepage.matrix.stat.lastCommit">LAST COMMIT</Translate>,
+      value: loading ? '—' : latestCommit.date ? getTimeLag(latestCommit.date) + ' ago' : '—',
+    },
+  ];
 
   return (
     <div className={styles.container}>
@@ -253,120 +241,64 @@ export default function CommitMatrix(): React.JSX.Element {
         </div>
       </div>
 
-      <div className={styles.dashboard}>
-        {/* Glyph LED Panel (Left) */}
-        <div className={styles.glyphPanel}>
-          <div className={styles.glyphGrid} aria-hidden="true">
-            {Array.from({ length: 10 }).map((_, y) => (
-              <React.Fragment key={y}>
-                {Array.from({ length: 10 }).map((_, x) => (
-                  <div
-                    key={`${x}-${y}`}
-                    className={`${styles.glyphDot} ${
-                      isGlyphDotActive(x, y) ? styles.glyphDotActive : ''
-                    }`}
-                  />
-                ))}
-              </React.Fragment>
-            ))}
+      {/* Stats Strip */}
+      <div className={styles.statsStrip}>
+        {stats.map((stat, i) => (
+          <div key={i} className={styles.statItem}>
+            <span className={styles.statValue}>{stat.value}</span>
+            <span className={styles.statLabel}>{stat.label}</span>
           </div>
-          <div className={styles.glyphLabel}>
-            <Translate id="homepage.matrix.glyphLabel">ACTIVITY FEED</Translate>
-          </div>
+        ))}
+      </div>
+
+      {/* Recent Changes — full width */}
+      <div className={styles.consolePanel}>
+        <div className={styles.consoleHeader}>
+          <span><Translate id="homepage.matrix.consoleTitle">RECENT CHANGES</Translate></span>
+          <span>ID: {latestCommit.sha || '------'}</span>
         </div>
-
-        {/* Frequency Graph Grid (Center) */}
-        <div className={styles.graphPanel}>
-          <h2 className={styles.graphTitle}>
-            <Translate id="homepage.matrix.graphTitle">ACTIVITY GRID (30D)</Translate>
-          </h2>
-          <div className={styles.matrixGrid}>
-            {activityData.map((count, colIdx) => {
-              const activeDots = getDotCount(count);
-              const columnDate = timelineDates[colIdx];
-              return (
-                <div 
-                  key={colIdx} 
-                  className={styles.matrixColumn}
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => handleColumnClick(columnDate)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      handleColumnClick(columnDate);
-                    }
-                  }}
-                  aria-label={`View commits for ${formatTooltipDate(columnDate)}`}
-                >
-                  {Array.from({ length: rowsCount }).map((_, dotIdx) => {
-                    const isActive = dotIdx < activeDots;
-                    
-                    let dotClass = styles.matrixDot;
-                    if (isActive) {
-                      dotClass += ` ${styles.matrixDotActive}`;
-                    }
-                    
-                    return <div key={dotIdx} className={dotClass} />;
-                  })}
-                  
-                  {/* Custom Monospace Tooltip */}
-                  <div className={styles.tooltip}>
-                    {formatTooltipDate(columnDate)}: {count} {count === 1 ? 'commit' : 'commits'}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          <div className={styles.timelineLabels}>
-            <span>30 <Translate id="homepage.matrix.daysAgo">DAYS AGO</Translate></span>
-            <span><Translate id="homepage.matrix.today">TODAY</Translate></span>
-          </div>
-        </div>
-
-        {/* Console/Terminal Information Output (Right) */}
-        <div className={styles.consolePanel}>
-          <div className={styles.consoleHeader}>
-            <span><Translate id="homepage.matrix.consoleTitle">RECENT CHANGES</Translate></span>
-            <span>ID: {latestCommit.sha || '------'}</span>
-          </div>
-          <div className={styles.consoleBody}>
-            {loading ? (
-              <div className={styles.consoleLine}>
-                <span className={styles.statusDot} />
-                <span className={styles.messageText}>CONNECTING TELEMETRY FEED...</span>
+        <div className={styles.consoleBody}>
+          {loading ? (
+            <div className={styles.consoleLine}>
+              <span className={styles.statusDot} />
+              <span className={styles.messageText}>CONNECTING TELEMETRY FEED...</span>
+            </div>
+          ) : errorState === 'RATE_LIMITED' ? (
+            <div className={styles.errorContainer}>
+              <div className={styles.errorHeader}>&gt; RATE LIMIT REACHED</div>
+              <div className={styles.errorMessage}>
+                GITHUB API LIMIT EXCEEDED. PLEASE REFRESH AGAIN LATER.
               </div>
-            ) : errorState === 'RATE_LIMITED' ? (
-              <div className={styles.errorContainer}>
-                <div className={styles.errorHeader}>&gt; RATE LIMIT REACHED</div>
-                <div className={styles.errorMessage}>
-                  GITHUB API LIMIT EXCEEDED. PLEASE REFRESH AGAIN LATER.
-                </div>
+            </div>
+          ) : errorState === 'FAILED' ? (
+            <div className={styles.errorContainer}>
+              <div className={styles.errorHeader}>&gt; CONNECTION ERROR</div>
+              <div className={styles.errorMessage}>
+                COULD NOT SYNC WITH REPOSITORY. CHECK NETWORK CONNECTION.
               </div>
-            ) : errorState === 'FAILED' ? (
-              <div className={styles.errorContainer}>
-                <div className={styles.errorHeader}>&gt; CONNECTION ERROR</div>
-                <div className={styles.errorMessage}>
-                  COULD NOT SYNC WITH REPOSITORY. CHECK NETWORK CONNECTION.
-                </div>
-              </div>
-            ) : commits.length === 0 ? (
-              <div className={styles.consoleLine}>
-                <span className={styles.statusDot} />
-                <span className={styles.messageText}>NO COMMITS FOUND</span>
-              </div>
-            ) : (
-              commits.slice(0, 10).map((commit, idx) => (
-                <div key={commit.sha} className={styles.consoleLine}>
-                  <span className={`${styles.statusDot} ${idx === 0 ? styles.statusDotActive : ''}`} />
-                  <span className={styles.timeLag}>{getTimeLag(commit.date)}</span>
-                  <span className={styles.authorTag}>{commit.author}</span>
-                  <span className={styles.messageText}>{commit.message}</span>
-                </div>
-              ))
-            )}
-          </div>
-
+            </div>
+          ) : commits.length === 0 ? (
+            <div className={styles.consoleLine}>
+              <span className={styles.statusDot} />
+              <span className={styles.messageText}>NO COMMITS FOUND</span>
+            </div>
+          ) : (
+            commits.slice(0, 20).map((commit, idx) => (
+              <a
+                key={commit.sha}
+                href={`https://github.com/spike0en/nothing_archive/commit/${commit.sha}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.consoleLine}
+              >
+                <span className={`${styles.statusDot} ${idx === 0 ? styles.statusDotActive : ''}`} />
+                <span className={styles.timeLag}>{getTimeLag(commit.date)}</span>
+                {formatAuthors(commit)}
+                <span className={styles.messageText}>{commit.message}</span>
+                <span className={styles.shaTag}>{commit.sha}</span>
+              </a>
+            ))
+          )}
         </div>
       </div>
     </div>
