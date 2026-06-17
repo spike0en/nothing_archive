@@ -25,22 +25,24 @@
       transparent 70%);
 }
 
-/* Animated structural dot grid simulating device LEDs */
+/* Animated structural dot grid simulating device LEDs and transparent blueprint chassis */
 .glyphGrid {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 1px 1px,
-      rgba(255, 255, 255, 0.06) 1px,
-      transparent 0);
-  background-size: 24px 24px;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.05) 1px, transparent 0),
+    linear-gradient(to right, rgba(0, 0, 0, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.015) 1px, transparent 1px);
+  background-size: 24px 24px, 48px 48px, 48px 48px;
   pointer-events: none;
   animation: glyphPulse 6s ease-in-out infinite;
 }
 
 [data-theme='dark'] .glyphGrid {
-  background-image: radial-gradient(circle at 1px 1px,
-      rgba(255, 255, 255, 0.15) 1px,
-      transparent 0);
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.12) 1px, transparent 0),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
 }
 
 @keyframes glyphPulse {
@@ -82,11 +84,30 @@
   width: 280px;
   height: 280px;
   border-radius: 24px;
-  filter: drop-shadow(0 0 24px rgba(215, 25, 33, 0.15));
+  filter: drop-shadow(0 0 24px rgba(215, 25, 33, 0.12));
+  animation: heroFloat 6s ease-in-out infinite;
+  transition: filter 0.3s ease;
+}
+
+.heroLogo:hover {
+  filter: drop-shadow(0 0 32px rgba(215, 25, 33, 0.22));
 }
 
 [data-theme='dark'] .heroLogo {
-  filter: drop-shadow(0 0 24px rgba(255, 59, 59, 0.2));
+  filter: drop-shadow(0 0 24px rgba(255, 59, 59, 0.18));
+}
+
+[data-theme='dark'] .heroLogo:hover {
+  filter: drop-shadow(0 0 32px rgba(255, 59, 59, 0.28));
+}
+
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .heroTitle {
@@ -123,18 +144,43 @@
   font-size: 0.9rem;
   letter-spacing: -0.02em;
   background: #cc0000;
-  /* Guaranteed 4.5:1 minimum contrast ratio */
   color: #fff !important;
   border: none;
   border-radius: 999px !important;
   text-decoration: none !important;
-  transition: background 0.2s ease, transform 0.15s ease;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ctaButton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: 0.75s ease;
+  opacity: 0;
+}
+
+.ctaButton:hover::after {
+  left: 125%;
+  opacity: 1;
 }
 
 .ctaButton:hover {
   background: var(--ifm-color-primary-darkest);
   color: #fff !important;
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(215, 25, 33, 0.3);
   text-decoration: none !important;
 }
 
@@ -152,14 +198,19 @@
   border: 1px solid var(--nothing-border-strong) !important;
   border-radius: 999px !important;
   text-decoration: none !important;
-  transition: border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .ctaButtonSecondary:hover {
   border-color: var(--ifm-color-primary) !important;
   color: var(--ifm-color-primary) !important;
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(128, 128, 128, 0.05);
   text-decoration: none !important;
+}
+
+[data-theme='dark'] .ctaButtonSecondary:hover {
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.03);
 }
 
 /* --- Feature Cards Grid --- */
@@ -251,17 +302,36 @@
 .featureCard {
   position: relative;
   padding: 1.75rem;
-  background-color: var(--ifm-card-background-color);
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--nothing-border);
   border-radius: 24px !important;
   flex: 1;
   display: flex;
   flex-direction: column;
   min-height: 160px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-  transition: border-color 0.2s ease, background-color 0.2s ease,
-    transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  transition: border-color 0.25s ease, background-color 0.25s ease,
+    transform 0.25s ease, box-shadow 0.25s ease;
   overflow: hidden;
+}
+
+/* Interactive dotted background pattern on hover */
+.featureCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, var(--ifm-color-primary) 1px, transparent 0);
+  background-size: 12px 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.featureCard:hover::after {
+  opacity: 0.04;
 }
 
 /* Dynamic hover state indicator */
@@ -274,12 +344,13 @@
   height: 0;
   background: var(--ifm-color-primary);
   transition: height 0.2s ease;
+  z-index: 2;
 }
 
 .featureCard:hover {
-  border-color: var(--nothing-border-strong);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border-color: rgba(215, 25, 33, 0.25);
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 32px rgba(215, 25, 33, 0.04);
 }
 
 .featureCard:hover::before {
@@ -287,11 +358,17 @@
 }
 
 [data-theme='dark'] .featureCard {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-color: rgba(18, 18, 18, 0.75);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 [data-theme='dark'] .featureCard:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 59, 59, 0.2);
+  box-shadow: 0 12px 32px rgba(255, 59, 59, 0.08);
+}
+
+[data-theme='dark'] .featureCard:hover::after {
+  opacity: 0.08;
 }
 
 /* Icon container */
@@ -306,6 +383,8 @@
   color: var(--ifm-color-primary);
   margin-bottom: 0.75rem;
   transition: background 0.2s ease, transform 0.2s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .featureCard:hover .featureIcon {
@@ -326,6 +405,8 @@
   font-weight: 600;
   letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .featureDesc {
@@ -334,6 +415,8 @@
   opacity: 0.7;
   line-height: 1.5;
   letter-spacing: -0.01em;
+  position: relative;
+  z-index: 1;
 }
 
 /* --- Community Section --- */
@@ -370,17 +453,17 @@
   letter-spacing: -0.02em;
   color: #fff !important;
   background: #cc0000;
-  /* WCAG compliant background contrast */
   border: none;
   border-radius: 999px !important;
   text-decoration: none !important;
-  transition: background 0.2s ease, transform 0.15s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .starButton:hover {
   background: var(--ifm-color-primary-darkest);
   color: #fff !important;
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 15px rgba(215, 25, 33, 0.25);
   text-decoration: none !important;
 }
 
@@ -412,29 +495,31 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.6rem;
+  padding: 0.8rem;
   font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: -0.01em;
   background-color: var(--ifm-card-background-color);
-  border: 1px solid var(--nothing-border-strong);
+  border: 1px solid var(--nothing-border);
   border-radius: 16px !important;
   color: inherit;
   text-decoration: none !important;
-  transition: border-color 0.2s ease, color 0.2s ease,
-    background-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.25s ease, color 0.25s ease,
+    background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .socialLink:hover {
   border-color: var(--ifm-color-primary);
   color: var(--ifm-color-primary);
-  background-color: rgba(215, 25, 33, 0.05);
-  transform: translateY(-2px);
+  background-color: rgba(215, 25, 33, 0.04);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(215, 25, 33, 0.1);
   text-decoration: none !important;
 }
 
 [data-theme='dark'] .socialLink:hover {
-  background-color: rgba(255, 59, 59, 0.08);
+  background-color: rgba(255, 59, 59, 0.05);
+  box-shadow: 0 4px 12px rgba(255, 59, 59, 0.15);
 }
 
 /* --- Focus-Visible Accessibility --- */

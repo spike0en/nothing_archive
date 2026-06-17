@@ -4,6 +4,14 @@
  * Typography loading is deferred to asynchronous `<link>` directives in Docusaurus configuration.
  */
 
+html {
+  letter-spacing: -0.015em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.03em;
+}
+
 :root {
   --ifm-color-primary: #d71921;
   --ifm-color-primary-dark: #c1161d;
@@ -36,8 +44,8 @@
   --docusaurus-highlighted-code-line-bg: rgba(215, 25, 33, 0.1);
 
   /* Supplementary border tokens */
-  --nothing-border: rgba(0, 0, 0, 0.16);
-  --nothing-border-strong: rgba(0, 0, 0, 0.35);
+  --nothing-border: rgba(0, 0, 0, 0.12);
+  --nothing-border-strong: rgba(0, 0, 0, 0.28);
 }
 
 [data-theme='dark'] {
@@ -49,15 +57,15 @@
   --ifm-color-primary-lighter: #ff6565;
   --ifm-color-primary-lightest: #ff8989;
 
-  --ifm-background-color: #0a0a0a;
-  --ifm-navbar-background-color: #0a0a0a;
+  --ifm-background-color: #080808;
+  --ifm-navbar-background-color: #080808;
   --ifm-footer-background-color: #0d0d0d;
-  --ifm-card-background-color: #141414;
+  --ifm-card-background-color: #121212;
 
   --docusaurus-highlighted-code-line-bg: rgba(255, 59, 59, 0.15);
 
-  --nothing-border: rgba(255, 255, 255, 0.08);
-  --nothing-border-strong: rgba(255, 255, 255, 0.15);
+  --nothing-border: rgba(255, 255, 255, 0.06);
+  --nothing-border-strong: rgba(255, 255, 255, 0.12);
 }
 
 /* ==========================================
@@ -280,11 +288,12 @@
   /* Level 1 default */
   border-radius: 6px;
   border-left: 3px solid transparent;
-  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .menu__link:hover {
   background: rgba(0, 0, 0, 0.04);
+  transform: translateX(3px);
 }
 
 /* Base active style for all links */
@@ -302,14 +311,17 @@
 
 .menu__link--active:hover {
   background: rgba(215, 25, 33, 0.06);
+  transform: translateX(3px);
 }
 
 [data-theme='dark'] .menu__link:hover {
   background: rgba(255, 255, 255, 0.04);
+  transform: translateX(3px);
 }
 
 [data-theme='dark'] .menu__link--active:hover {
   background: rgba(255, 59, 59, 0.08);
+  transform: translateX(3px);
 }
 
 /* Sidebar hierarchical indentation */
@@ -458,81 +470,86 @@ table td {
 
 /* Table header styling */
 table th {
-  background-color: rgba(128, 128, 128, 0.1);
+  background-color: rgba(128, 128, 128, 0.08);
   font-weight: 600;
   text-transform: uppercase;
   font-size: 0.75rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   white-space: nowrap;
-  padding: 0.75rem 1rem;
+  padding: 0.85rem 1.1rem;
   text-align: left;
-  border-bottom: 2px solid rgba(128, 128, 128, 0.2);
+  border-bottom: 2px solid var(--nothing-border-strong);
 }
 
 [data-theme='dark'] table th {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.03);
 }
 
 /* Table cell styling */
 table td {
   vertical-align: middle;
-  padding: 0.75rem 1rem;
+  padding: 0.85rem 1.1rem;
   white-space: normal;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.12);
-}
-
-[data-theme='dark'] table td {
-  border-bottom-color: rgba(255, 255, 255, 0.08);
-}
-
-table tbody tr:last-child td {
-  border-bottom: none;
+  border-bottom: 1px solid var(--nothing-border);
 }
 
 /* Zebra striping */
 table tbody tr:nth-child(even) {
-  background-color: rgba(128, 128, 128, 0.03);
+  background-color: rgba(128, 128, 128, 0.015);
 }
 
 [data-theme='dark'] table tbody tr:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: rgba(255, 255, 255, 0.008);
 }
 
 /* Row hover */
+table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
 table tbody tr:hover {
-  background-color: rgba(128, 128, 128, 0.06);
+  background-color: rgba(128, 128, 128, 0.04);
 }
 
 [data-theme='dark'] table tbody tr:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.02);
 }
 
-/* Hyperlink styling within tables */
+/* Hyperlink styling within tables - command line badge aesthetic */
 table td a {
   display: inline-block;
-  padding: 0.15rem 0.5rem;
-  background-color: rgba(128, 128, 128, 0.1);
+  padding: 0.2rem 0.6rem;
+  background-color: rgba(128, 128, 128, 0.08);
   color: var(--ifm-color-primary) !important;
-  border-radius: 4px;
-  font-weight: 600;
+  border: 1px solid rgba(128, 128, 128, 0.15);
+  border-radius: 6px;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.8rem;
+  font-weight: 500;
   text-decoration: none !important;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
   white-space: nowrap;
 }
 
 table td a:hover {
-  background-color: rgba(128, 128, 128, 0.2);
+  background-color: var(--ifm-color-primary) !important;
+  color: #ffffff !important;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 2px 10px rgba(255, 59, 59, 0.25);
   transform: translateY(-1px);
 }
 
 [data-theme='dark'] table td a {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 [data-theme='dark'] table td a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--ifm-color-primary) !important;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 2px 12px rgba(255, 59, 59, 0.35);
 }
 
 /* Mobile adjustments */
@@ -805,8 +822,8 @@ a:hover {
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -814,12 +831,13 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(128, 128, 128, 0.3);
-  border-radius: 4px;
+  background: rgba(128, 128, 128, 0.25);
+  border-radius: 99px;
+  transition: background 0.2s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(128, 128, 128, 0.5);
+  background: rgba(128, 128, 128, 0.45);
 }
 
 /* ==========================================
@@ -947,24 +965,47 @@ a:hover {
 
 
 details {
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  margin: 0 !important;
-  /* Remove all margins to fix large spacing */
+  background-color: var(--ifm-card-background-color) !important;
+  border: 1px solid var(--nothing-border) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02) !important;
+  margin: 1rem 0 !important;
+  padding: 0.85rem 1.25rem !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-theme='dark'] details {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+details:hover {
+  border-color: var(--nothing-border-strong) !important;
+}
+
+details[open] {
+  border-color: var(--nothing-border-strong) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme='dark'] details[open] {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25) !important;
 }
 
 details summary {
   position: relative;
   background-color: transparent !important;
   color: inherit !important;
-  font-weight: 500 !important;
-  /* Slightly lighter for a cleaner look */
-  padding: 0.4rem 0 0.4rem 1.25rem !important;
-  /* Comfortable inline padding */
+  font-weight: 600 !important;
+  padding: 0.25rem 0 0.25rem 1.5rem !important;
   border: none !important;
+  cursor: pointer;
   transition: color 0.2s ease;
-  line-height: 1.5 !important;
+  line-height: 1.6 !important;
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
 }
 
 details summary:hover {
@@ -974,14 +1015,28 @@ details summary:hover {
 
 /* Force perfect vertical centering of the Docusaurus arrow */
 details summary::before {
+  content: '' !important;
+  background: none !important;
+  position: absolute;
+  left: 4px;
   top: 50% !important;
-  margin-top: 0 !important;
-  transform: translateY(-50%) !important;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid currentColor !important;
+  border-bottom: 2px solid currentColor !important;
+  border-top: none !important;
+  border-left: none !important;
+  transform: translateY(-50%) rotate(-45deg) !important;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 /* Open state rotation fix */
 details[open] summary::before {
-  transform: translateY(-50%) rotate(90deg) !important;
+  transform: translateY(-50%) rotate(45deg) !important;
+}
+
+details summary:hover::before {
+  border-color: var(--ifm-color-primary) !important;
 }
 
 /* Sidebar horizontal swipe Locked */
@@ -994,4 +1049,150 @@ details[open] summary::before {
 .navbar-sidebar .menu__list-item-collapsible {
   width: 280px !important;
   max-width: 280px !important;
+}
+
+/* ==========================================
+   SEARCH BAR POLISH
+   ========================================== */
+
+/* Search container & Input field styling */
+.navbar__search-input {
+  font-family: var(--ifm-font-family-monospace) !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  background-color: rgba(128, 128, 128, 0.08) !important;
+  border: 1px solid var(--nothing-border) !important;
+  border-radius: 12px !important;
+  color: inherit !important;
+  padding: 0.4rem 2.25rem 0.4rem 2.25rem !important;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' opacity='0.5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' height='16px' width='16px'><path d='M6.02945,10.20327a4.17382,4.17382,0,1,1,4.17382-4.17382A4.15609,4.15609,0,0,1,6.02945,10.20327Zm9.69195,4.2199L10.8989,9.59979A5.88021,5.88021,0,0,0,12.058,6.02856,6.00467,6.00467,0,1,0,9.59979,10.8989l4.82338,4.82338a.89729.89729,0,0,0,1.29912,0,.89749.89749,0,0,0-.00087-1.29909Z' /></svg>") !important;
+  background-position: 0.75rem center !important;
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+[data-theme='dark'] .navbar__search-input {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' opacity='0.6' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' height='16px' width='16px'><path d='M6.02945,10.20327a4.17382,4.17382,0,1,1,4.17382-4.17382A4.15609,4.15609,0,0,1,6.02945,10.20327Zm9.69195,4.2199L10.8989,9.59979A5.88021,5.88021,0,0,0,12.058,6.02856,6.00467,6.00467,0,1,0,9.59979,10.8989l4.82338,4.82338a.89729.89729,0,0,0,1.29912,0,.89749.89749,0,0,0-.00087-1.29909Z' /></svg>") !important;
+}
+
+/* Input Hover State */
+.navbar__search-input:hover {
+  background-color: rgba(128, 128, 128, 0.12) !important;
+  border-color: var(--nothing-border-strong) !important;
+}
+
+[data-theme='dark'] .navbar__search-input:hover {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Input Focus State - soft red focus glow instead of harsh sharp outline */
+.navbar__search-input:focus {
+  outline: none !important;
+  background-color: var(--ifm-card-background-color) !important;
+  border-color: var(--ifm-color-primary) !important;
+  box-shadow: 0 0 0 3px rgba(215, 25, 33, 0.12) !important;
+}
+
+[data-theme='dark'] .navbar__search-input:focus {
+  box-shadow: 0 0 0 3px rgba(255, 59, 59, 0.18) !important;
+}
+
+/* Mobile search input when collapsed (not focused) */
+@media (max-width: 996px) {
+  .navbar__search-input:not(:focus) {
+    width: 2rem !important;
+    padding: 0 !important;
+    background-position: center !important;
+    color: transparent !important;
+  }
+  .navbar__search-input:not(:focus)::placeholder {
+    color: transparent !important;
+  }
+  .navbar__search-input:not(:focus)::-webkit-input-placeholder {
+    color: transparent !important;
+  }
+  .navbar__search-input:not(:focus)::-moz-placeholder {
+    color: transparent !important;
+  }
+}
+
+/* Keyboard shortcut hint container positioning override */
+.navbar__search div[class*="searchHintContainer"] {
+  right: 14px !important;
+}
+
+/* Keyboard shortcut hint tags - clean uniform inline-flex alignment */
+.navbar__search kbd[class*="searchHint"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 18px !important;
+  min-width: 18px !important;
+  padding: 0 4px !important;
+  border: 1px solid var(--nothing-border) !important;
+  background-color: rgba(128, 128, 128, 0.08) !important;
+  box-shadow: none !important;
+  font-family: var(--ifm-font-family-monospace) !important;
+  font-size: 0.65rem !important;
+  line-height: 1 !important;
+  color: inherit !important;
+  opacity: 0.6 !important;
+  border-radius: 4px !important;
+  vertical-align: unset !important;
+}
+
+[data-theme='dark'] .navbar__search kbd[class*="searchHint"] {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Local search results dropdown dropdownMenu container */
+div[class*="dropdownMenu"] {
+  background-color: var(--ifm-card-background-color) !important;
+  border: 1px solid var(--nothing-border) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+  padding: 0.75rem !important;
+  margin-top: 8px !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+[data-theme='dark'] div[class*="dropdownMenu"] {
+  background-color: rgba(18, 18, 18, 0.85) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Individual Suggestions inside search menu */
+div[class*="dropdownMenu"] [class*="suggestion"] {
+  background-color: rgba(128, 128, 128, 0.03) !important;
+  border: 1px solid rgba(128, 128, 128, 0.06) !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease !important;
+}
+
+[data-theme='dark'] div[class*="dropdownMenu"] [class*="suggestion"] {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+  border-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+/* Activated suggestion item (keyboard navigate / mouse hover) */
+div[class*="dropdownMenu"] [class*="suggestion"][class*="cursor"] {
+  background-color: var(--ifm-color-primary) !important;
+  border-color: var(--ifm-color-primary) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+div[class*="dropdownMenu"] [class*="suggestion"][class*="cursor"] mark {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
+
+div[class*="dropdownMenu"] [class*="suggestion"] mark {
+  background: none !important;
+  color: var(--ifm-color-primary) !important;
+  font-weight: 700 !important;
 }
