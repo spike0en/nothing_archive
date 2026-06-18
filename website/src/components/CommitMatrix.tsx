@@ -51,25 +51,27 @@ export default function CommitMatrix(): React.JSX.Element {
   const [loading, setLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState('');
 
-  // 1. Ticking Local System Clock with Timezone abbreviation (e.g. IST)
+  // 1. Ticking IST Clock (Asia/Kolkata)
   useEffect(() => {
     const updateClock = () => {
       const now = new Date();
-      const timeString = now.toTimeString().split(' ')[0];
-      const tzMatch = now.toTimeString().match(/\(([^)]+)\)/);
-      let tzLabel = '';
-      if (tzMatch) {
-        const tzFull = tzMatch[1];
-        if (tzFull.length <= 5) {
-          tzLabel = tzFull;
-        } else {
-          const acronym = tzFull.split(' ').map(w => w[0]).join('').replace(/[^A-Za-z]/g, '').toUpperCase();
-          tzLabel = acronym.length >= 2 ? acronym : tzFull;
-        }
-      } else {
-        tzLabel = now.toTimeString().split(' ')[1] || '';
-      }
-      setCurrentTime(tzLabel ? `${timeString} ${tzLabel}` : timeString);
+      const timeOptions: Intl.DateTimeFormatOptions = {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+      };
+      const timeString = new Intl.DateTimeFormat('en-IN', timeOptions).format(now);
+      
+      const tzOptions: Intl.DateTimeFormatOptions = {
+        timeZone: 'Asia/Kolkata',
+        timeZoneName: 'short',
+      };
+      const parts = new Intl.DateTimeFormat('en-IN', tzOptions).formatToParts(now);
+      const tzLabel = parts.find(p => p.type === 'timeZoneName')?.value || 'IST';
+      
+      setCurrentTime(`${timeString} ${tzLabel}`);
     };
     updateClock();
     const interval = setInterval(updateClock, 1000);
