@@ -49,20 +49,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-theme='dark'] {
-  --ifm-color-primary: #ff3b3b;
-  --ifm-color-primary-dark: #ff1f1f;
-  --ifm-color-primary-darker: #ff1111;
-  --ifm-color-primary-darkest: #e60000;
-  --ifm-color-primary-light: #ff5757;
-  --ifm-color-primary-lighter: #ff6565;
-  --ifm-color-primary-lightest: #ff8989;
+  --ifm-color-primary: #d71921;
+  --ifm-color-primary-dark: #c1161d;
+  --ifm-color-primary-darker: #b6151b;
+  --ifm-color-primary-darkest: #961117;
+  --ifm-color-primary-light: #e32a32;
+  --ifm-color-primary-lighter: #e53940;
+  --ifm-color-primary-lightest: #ea5b61;
 
   --ifm-background-color: #080808;
   --ifm-navbar-background-color: #080808;
   --ifm-footer-background-color: #0d0d0d;
   --ifm-card-background-color: #121212;
 
-  --docusaurus-highlighted-code-line-bg: rgba(255, 59, 59, 0.15);
+  --docusaurus-highlighted-code-line-bg: rgba(215, 25, 33, 0.15);
 
   --nothing-border: rgba(255, 255, 255, 0.06);
   --nothing-border-strong: rgba(255, 255, 255, 0.12);
@@ -320,7 +320,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-theme='dark'] .menu__link--active:hover {
-  background: rgba(255, 59, 59, 0.08);
+  background: rgba(215, 25, 33, 0.08);
   transform: translateX(3px);
 }
 
@@ -525,7 +525,7 @@ table td a {
   color: var(--ifm-color-primary) !important;
   border: 1px solid rgba(128, 128, 128, 0.15);
   border-radius: 6px;
-  font-family: var(--ifm-font-family-monospace);
+  font-family: var(--ifm-font-family-base);
   font-size: 0.8rem;
   font-weight: 500;
   text-decoration: none !important;
@@ -537,7 +537,7 @@ table td a:hover {
   background-color: var(--ifm-color-primary) !important;
   color: #ffffff !important;
   border-color: var(--ifm-color-primary);
-  box-shadow: 0 2px 10px rgba(255, 59, 59, 0.25);
+  box-shadow: 0 2px 10px rgba(215, 25, 33, 0.25);
   transform: translateY(-1px);
 }
 
@@ -549,7 +549,7 @@ table td a:hover {
 [data-theme='dark'] table td a:hover {
   background-color: var(--ifm-color-primary) !important;
   border-color: var(--ifm-color-primary);
-  box-shadow: 0 2px 12px rgba(255, 59, 59, 0.35);
+  box-shadow: 0 2px 12px rgba(215, 25, 33, 0.35);
 }
 
 /* Mobile adjustments */
@@ -1057,7 +1057,7 @@ details summary:hover::before {
 
 /* Search container & Input field styling */
 .navbar__search-input {
-  font-family: var(--ifm-font-family-monospace) !important;
+  font-family: var(--ifm-font-family-base) !important;
   font-size: 0.85rem !important;
   font-weight: 500 !important;
   background-color: rgba(128, 128, 128, 0.08) !important;
@@ -1094,7 +1094,7 @@ details summary:hover::before {
 }
 
 [data-theme='dark'] .navbar__search-input:focus {
-  box-shadow: 0 0 0 3px rgba(255, 59, 59, 0.18) !important;
+  box-shadow: 0 0 0 3px rgba(215, 25, 33, 0.18) !important;
 }
 
 /* Mobile search input when collapsed (not focused) */
@@ -1132,7 +1132,7 @@ details summary:hover::before {
   border: 1px solid var(--nothing-border) !important;
   background-color: rgba(128, 128, 128, 0.08) !important;
   box-shadow: none !important;
-  font-family: var(--ifm-font-family-monospace) !important;
+  font-family: var(--ifm-font-family-base) !important;
   font-size: 0.65rem !important;
   line-height: 1 !important;
   color: inherit !important;
@@ -1255,7 +1255,7 @@ td:hover .table-copy-btn,
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 10px;
-  font-family: var(--ifm-font-family-monospace);
+  font-family: var(--ifm-font-family-base);
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.15s ease, transform 0.15s ease;
@@ -1284,7 +1284,7 @@ td:hover .table-copy-btn,
    LAST UPDATED TIMESTAMP
    ========================================== */
 .theme-last-updated {
-  font-family: var(--ifm-font-family-monospace);
+  font-family: var(--ifm-font-family-base);
   font-size: 0.75rem;
   color: var(--ifm-color-secondary-text, #666);
   opacity: 0.7;
@@ -1337,7 +1337,7 @@ td:hover .table-copy-btn,
   border-color: var(--ifm-color-primary) !important;
   color: #ffffff !important;
   transform: translateY(-2px) scale(1.05) !important;
-  box-shadow: 0 6px 20px rgba(215, 25, 33, 0.45) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
 }
 
 .theme-back-to-top-button:active {
@@ -1351,7 +1351,7 @@ td:hover .table-copy-btn,
 [data-theme='dark'] .theme-back-to-top-button:hover {
   background-color: var(--ifm-color-primary) !important;
   border-color: var(--ifm-color-primary) !important;
-  box-shadow: 0 6px 20px rgba(255, 59, 59, 0.45) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45) !important;
 }
 
 /* ==========================================
@@ -1398,7 +1398,7 @@ td:hover .table-copy-btn,
   align-items: center;
   padding: 1.15rem 1.5rem 0.95rem;
   border-bottom: 1px dashed var(--nothing-border);
-  font-family: var(--ifm-font-family-monospace);
+  font-family: var(--ifm-font-family-base);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -1453,7 +1453,7 @@ td:hover .table-copy-btn,
 }
 
 .shortcut-table th {
-  font-family: var(--ifm-font-family-monospace);
+  font-family: var(--ifm-font-family-base);
   font-weight: 700;
   opacity: 0.45;
   font-size: 0.64rem;
@@ -1471,7 +1471,7 @@ td:hover .table-copy-btn,
   border-radius: 6px;
   padding: 0.15rem 0.4rem;
   font-size: 0.7rem;
-  font-family: var(--ifm-font-family-monospace);
+  font-family: var(--ifm-font-family-base);
   box-shadow: 0 1px 0 rgba(0,0,0,0.05);
   color: inherit;
 }

@@ -497,7 +497,7 @@
         "message": "最新リリースの経過時間"
     },
     "homepage.releases.consoleTitle": {
-        "message": "最近のOTAイメージリリース"
+        "message": "最近のファクトリーイメージリリース"
     },
     "shortcut.modal.title": {
         "message": "キーボードショートカット"
@@ -527,7 +527,7 @@
         "message": "{codename}-{version} が利用可能になりました！"
     },
     "homepage.announcement.view": {
-        "message": "OTAイメージを表示"
+        "message": "ファクトリーイメージを表示"
     },
     "homepage.releases.changelog": {
         "message": "変更履歴"

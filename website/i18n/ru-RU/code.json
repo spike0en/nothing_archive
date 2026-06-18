@@ -494,7 +494,7 @@
     "message": "ВОЗРАСТ ПОСЛЕДНЕГО РЕЛИЗА"
   },
   "homepage.releases.consoleTitle": {
-    "message": "ПОСЛЕДНИЕ РЕЛИЗЫ ОБРАЗОВ OTA"
+    "message": "ПОСЛЕДНИЕ РЕЛИЗЫ ЗАВОДСКИХ ОБРАЗОВ"
   },
   "shortcut.modal.title": {
     "message": "ГОРЯЧИЕ КЛАВИШИ"
@@ -524,7 +524,7 @@
     "message": "{codename}-{version} уже доступен!"
   },
   "homepage.announcement.view": {
-    "message": "Посмотреть образы OTA"
+    "message": "Посмотреть заводские образы"
   },
   "homepage.releases.changelog": {
     "message": "История изменений"

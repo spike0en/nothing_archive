@@ -41,7 +41,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
-  font-family: var(--ifm-font-family-monospace);
+  font-family: var(--ifm-font-family-base);
   font-size: 0.72rem;
   font-weight: 600;
   color: inherit !important;

@@ -38,7 +38,7 @@
 .systemLabel {
   display: flex;
   align-items: center;
-  font-family: var(--ifm-font-family-monospace);
+  font-family: var(--ifm-font-family-base);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -48,7 +48,7 @@
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  font-family: var(--ifm-font-family-monospace);
+  font-family: var(--ifm-font-family-base);
   font-size: 0.75rem;
 }
 
@@ -103,7 +103,7 @@
 /* --- Stats Strip --- */
 .statsStrip {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1px;
   background-color: var(--nothing-border);
   border: 1px solid var(--nothing-border);
@@ -137,7 +137,7 @@
 }
 
 .statValue {
-  font-family: var(--ifm-font-family-monospace);
+  font-family: var(--ifm-font-family-base);
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--ifm-color-primary);
@@ -148,7 +148,7 @@
 }
 
 .statLabel {
-  font-family: var(--ifm-font-family-monospace);
+  font-family: var(--ifm-font-family-base);
   font-size: 0.6rem;
   letter-spacing: 0.1em;
   opacity: 0.45;
@@ -166,7 +166,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  font-family: var(--ifm-font-family-monospace);
+  font-family: var(--ifm-font-family-base);
   transition: background-color 0.3s ease, border-color 0.3s ease;
   flex: 1;
 }
@@ -315,7 +315,7 @@
   flex-shrink: 0;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  font-family: var(--ifm-font-family-monospace);
+  font-family: var(--ifm-font-family-base);
   transition: background-color 0.2s ease, color 0.2s ease;
   text-decoration: none !important;
 }
@@ -341,7 +341,7 @@
   flex-shrink: 0;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  font-family: var(--ifm-font-family-monospace);
+  font-family: var(--ifm-font-family-base);
 }
 
 .arrowIcon {
@@ -386,14 +386,6 @@
     padding: 1.25rem;
   }
 
-  .statsStrip {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .statItem:last-child {
-    grid-column: span 2;
-  }
-
   .consoleBody {
     height: 180px;
     max-height: 180px;
@@ -408,10 +400,6 @@
 @media screen and (max-width: 576px) {
   .statsStrip {
     grid-template-columns: 1fr;
-  }
-
-  .statItem:last-child {
-    grid-column: auto;
   }
 
   .statValue {

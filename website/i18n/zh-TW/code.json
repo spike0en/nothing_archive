@@ -497,7 +497,7 @@
     "message": "最新版本發布時間"
   },
   "homepage.releases.consoleTitle": {
-    "message": "最近發布的 OTA 映像檔版本"
+    "message": "最近發布的原廠映像檔版本"
   },
   "shortcut.modal.title": {
     "message": "鍵盤快捷鍵"
@@ -527,7 +527,7 @@
     "message": "{codename}-{version} 現已推出！"
   },
   "homepage.announcement.view": {
-    "message": "查看 OTA 映像檔"
+    "message": "查看原廠映像檔"
   },
   "homepage.releases.changelog": {
     "message": "更新日誌"

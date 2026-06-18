@@ -200,10 +200,6 @@ export default function ReleaseFeed(): React.JSX.Element {
       value: loading ? '—' : `${totalReleasesCount}`,
     },
     {
-      label: <Translate id="homepage.releases.stat.latestCodename">LATEST CODENAME</Translate>,
-      value: loading ? '—' : latestRelease.codename,
-    },
-    {
       label: <Translate id="homepage.releases.stat.latestAge">LATEST RELEASE AGE</Translate>,
       value: loading ? '—' : latestRelease.publishedAt ? getTimeLag(latestRelease.publishedAt) + ' ago' : '—',
     },
@@ -258,9 +254,8 @@ export default function ReleaseFeed(): React.JSX.Element {
       <div className={styles.consolePanel}>
         <div className={styles.consoleHeader}>
           <span>
-            <Translate id="homepage.releases.consoleTitle">RECENT OTA IMAGE RELEASES</Translate>
+            <Translate id="homepage.releases.consoleTitle">RECENT FACTORY IMAGE RELEASES</Translate>
           </span>
-          <span>TAG: {latestRelease.tagName || '------'}</span>
         </div>
         <div className={styles.consoleBody}>
           {loading ? (
@@ -292,13 +287,14 @@ export default function ReleaseFeed(): React.JSX.Element {
               const changelogKey = `${release.codename}-${release.version}`.toLowerCase();
               const hasChangelog = availableChangelogs.has(changelogKey);
               const changelogUrl = `/docs/changelogs/${release.codename.toLowerCase()}/${release.codename}-${release.version}`;
+              const targetUrl = hasChangelog ? changelogUrl : release.htmlUrl;
+              const isExternal = !hasChangelog;
 
               return (
-                <a
+                <Link
                   key={release.id}
-                  href={release.htmlUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  to={targetUrl}
+                  {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   className={styles.consoleLine}
                 >
                   <span className={`${styles.statusDot} ${idx === 0 ? styles.statusDotActive : ''}`} />
@@ -306,13 +302,9 @@ export default function ReleaseFeed(): React.JSX.Element {
                   <span className={styles.messageText}>{release.name}</span>
                   
                   {hasChangelog ? (
-                    <Link
-                      to={changelogUrl}
-                      className={styles.changelogLink}
-                      onClick={(e) => e.stopPropagation()}
-                    >
+                    <span className={styles.changelogLink}>
                       <Translate id="homepage.releases.changelog">Changelog</Translate>
-                    </Link>
+                    </span>
                   ) : (
                     <span className={styles.changelogUnavailable}>
                       <Translate id="homepage.releases.changelogUnavailable">Unavailable</Translate>
@@ -320,7 +312,7 @@ export default function ReleaseFeed(): React.JSX.Element {
                   )}
                   
                   <span className={styles.arrowIcon}>→</span>
-                </a>
+                </Link>
               );
             })
           )}

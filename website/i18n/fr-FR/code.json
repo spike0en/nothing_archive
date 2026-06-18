@@ -497,7 +497,7 @@
         "message": "AGE DE LA DERNIÈRE VERSION"
     },
     "homepage.releases.consoleTitle": {
-        "message": "VERSIONS RÉCENTES D'IMAGES OTA"
+        "message": "VERSIONS RÉCENTES D'IMAGES D'USINE"
     },
     "shortcut.modal.title": {
         "message": "RACCOURCIS CLAVIER"
@@ -527,7 +527,7 @@
         "message": "{codename}-{version} est maintenant disponible !"
     },
     "homepage.announcement.view": {
-        "message": "Voir les images OTA"
+        "message": "Voir les images d'usine"
     },
     "homepage.releases.changelog": {
         "message": "Changelog"

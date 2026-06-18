@@ -193,14 +193,6 @@ export default function CommitMatrix(): React.JSX.Element {
 
   const stats = [
     {
-      label: <Translate id="homepage.matrix.stat.commits30d">30D COMMITS</Translate>,
-      value: loading ? '—' : `${commits30d.length}`,
-    },
-    {
-      label: <Translate id="homepage.matrix.stat.contributors">CONTRIBUTORS</Translate>,
-      value: loading ? '—' : `${contributors30d}`,
-    },
-    {
       label: <Translate id="homepage.matrix.stat.lastCommit">LAST COMMIT</Translate>,
       value: loading ? '—' : latestCommit.date ? getTimeLag(latestCommit.date) + ' ago' : '—',
     },

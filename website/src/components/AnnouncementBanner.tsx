@@ -1,6 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import Translate from '@docusaurus/Translate';
+import Link from '@docusaurus/Link';
 import styles from './AnnouncementBanner.module.css';
+
+declare var require: any;
+
+let availableChangelogs = new Set<string>();
+try {
+  const context = require.context('../../docs/changelogs', true, /\.md$/);
+  context.keys().forEach((key: string) => {
+    const parts = key.split('/');
+    const filename = parts[parts.length - 1]; // "Metroid-B4.1-260603-1221.md"
+    const nameWithoutExt = filename.replace(/\.md$/, '');
+    availableChangelogs.add(nameWithoutExt.toLowerCase());
+  });
+} catch (e) {
+  console.warn('AnnouncementBanner: Failed to load changelogs context', e);
+}
 
 interface ReleaseData {
   tagName: string;
@@ -92,13 +108,18 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
     return null;
   }
 
+  const changelogKey = `${release.codename}-${release.version}`.toLowerCase();
+  const hasChangelog = availableChangelogs.has(changelogKey);
+  const changelogUrl = `/docs/changelogs/${release.codename.toLowerCase()}/${release.codename}-${release.version}`;
+  const targetUrl = hasChangelog ? changelogUrl : release.htmlUrl;
+  const isExternal = !hasChangelog;
+
   return (
     <div className={styles.banner}>
       <div className={styles.container}>
-        <a
-          href={release.htmlUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to={targetUrl}
+          {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
           className={styles.content}
         >
           <span className={styles.pulseDot} />
@@ -116,7 +137,7 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
               {'{codename}-{version} is now available!'}
             </Translate>
           </span>
-        </a>
+        </Link>
         <button
           onClick={handleDismiss}
           className={styles.dismissBtn}

@@ -367,12 +367,6 @@ const config: Config = {
           html: `<img src="https://img.shields.io/github/stars/spike0en/nothing_archive?logo=github&color=24292e" alt="GitHub Stars" width="94" height="20" style="width: auto; height: 20px;" loading="lazy" />`,
         },
         {
-          href: 'https://github.com/spike0en/nothing_archive',
-          label: 'GitHub',
-          position: 'right',
-          className: 'header-github-link',
-        },
-        {
           type: 'localeDropdown',
           position: 'right',
         },

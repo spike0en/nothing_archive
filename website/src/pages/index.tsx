@@ -326,7 +326,7 @@ export default function Home(): JSX.Element {
       <AnnouncementBanner />
       <HomepageHeader />
       <main className={styles.main}>
-        <div className="container margin-vert--lg">
+        <div className={clsx('container', styles.telemetryContainer)}>
           <div className={styles.telemetrySection}>
             <div className={styles.telemetryBox}>
               <CommitMatrix />

@@ -5,7 +5,7 @@
 
 /* --- Hero Section --- */
 .heroBanner {
-  padding: 8rem 1.5rem 7rem;
+  padding: 8rem 1.5rem 3rem;
   text-align: left;
   position: relative;
   overflow: hidden;
@@ -21,7 +21,7 @@
 
 [data-theme='dark'] .heroBanner {
   background: radial-gradient(ellipse 60% 50% at 70% 50%,
-      rgba(255, 59, 59, 0.04) 0%,
+      rgba(215, 25, 33, 0.04) 0%,
       transparent 70%);
 }
 
@@ -94,11 +94,11 @@
 }
 
 [data-theme='dark'] .heroLogo {
-  filter: drop-shadow(0 0 24px rgba(255, 59, 59, 0.18));
+  filter: drop-shadow(0 0 24px rgba(215, 25, 33, 0.18));
 }
 
 [data-theme='dark'] .heroLogo:hover {
-  filter: drop-shadow(0 0 32px rgba(255, 59, 59, 0.28));
+  filter: drop-shadow(0 0 32px rgba(215, 25, 33, 0.28));
 }
 
 @keyframes heroFloat {
@@ -363,8 +363,8 @@
 }
 
 [data-theme='dark'] .featureCard:hover {
-  border-color: rgba(255, 59, 59, 0.2);
-  box-shadow: 0 12px 32px rgba(255, 59, 59, 0.08);
+  border-color: rgba(215, 25, 33, 0.2);
+  box-shadow: 0 12px 32px rgba(215, 25, 33, 0.08);
 }
 
 [data-theme='dark'] .featureCard:hover::after {
@@ -393,11 +393,11 @@
 }
 
 [data-theme='dark'] .featureIcon {
-  background: rgba(255, 59, 59, 0.1);
+  background: rgba(215, 25, 33, 0.1);
 }
 
 [data-theme='dark'] .featureCard:hover .featureIcon {
-  background: rgba(255, 59, 59, 0.2);
+  background: rgba(215, 25, 33, 0.2);
 }
 
 .featureTitle {
@@ -517,7 +517,7 @@
   text-align: center;
   line-height: 1.2;
   text-transform: uppercase;
-  font-family: var(--ifm-font-family-monospace);
+  font-family: var(--ifm-font-family-base);
   letter-spacing: 0.05em;
   font-weight: 700;
   margin-top: 2px;
@@ -533,8 +533,8 @@
 }
 
 [data-theme='dark'] .socialLink:hover {
-  background-color: rgba(255, 59, 59, 0.05);
-  box-shadow: 0 4px 12px rgba(255, 59, 59, 0.15);
+  background-color: rgba(215, 25, 33, 0.05);
+  box-shadow: 0 4px 12px rgba(215, 25, 33, 0.15);
 }
 
 /* --- Focus-Visible Accessibility --- */
@@ -553,6 +553,11 @@
 /* --- Main Content Wrapper --- */
 .main {
   background: var(--ifm-background-color);
+}
+
+.telemetryContainer {
+  margin-top: 1.5rem;
+  margin-bottom: 3.5rem;
 }
 
 .telemetrySection {
@@ -602,7 +607,7 @@
 
   [data-theme='dark'] .heroBanner {
     background: radial-gradient(ellipse 80% 60% at 50% 40%,
-        rgba(255, 59, 59, 0.04) 0%,
+        rgba(215, 25, 33, 0.04) 0%,
         transparent 70%);
   }
 
