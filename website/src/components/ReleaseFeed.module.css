@@ -143,7 +143,6 @@
   color: var(--ifm-color-primary);
   letter-spacing: -0.02em;
   line-height: 1;
-  text-transform: uppercase;
   white-space: nowrap;
 }
 
