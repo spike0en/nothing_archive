@@ -1200,11 +1200,23 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
 /* ==========================================
    TABLE COPY BUTTONS & TOOLTIPS
    ========================================== */
+
+/*
+  The wrapper is inline-flex so it aligns content nicely.
+  When hovered, padding-right transitions from 0 to 26px,
+  smoothly pushing adjacent text to the right and expanding the hover bridge.
+*/
 .table-copy-wrapper {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
   position: relative;
+  vertical-align: middle;
+  padding-right: 0;
+  transition: padding-right 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.table-copy-wrapper:hover {
+  padding-right: 26px; /* 20px button + 6px gap */
 }
 
 .table-copy-btn {
@@ -1219,16 +1231,23 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
   color: inherit;
   cursor: pointer;
   padding: 0;
+  /* Hidden state: invisible, scaled down, non-interactive */
   opacity: 0;
-  transition: opacity 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-  flex-shrink: 0;
-  position: relative;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(0.8);
+  z-index: 10;
+  transition: opacity 0.2s ease, transform 0.2s ease,
+              background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
-/* Make sure the copy button appears when hovering over the cell or the link wrapper */
-td:hover .table-copy-btn,
+/* Reveal on individual wrapper hover only — smooth rightward slide-in */
 .table-copy-wrapper:hover .table-copy-btn {
   opacity: 0.8;
+  pointer-events: auto;
+  transform: translateY(-50%) scale(1);
 }
 
 .table-copy-btn:hover {
@@ -1247,7 +1266,7 @@ td:hover .table-copy-btn,
 .table-copy-btn::after {
   content: 'Copied!';
   position: absolute;
-  bottom: 125%;
+  bottom: calc(100% + 6px);
   left: 50%;
   transform: translate(-50%, 4px) scale(0.8);
   background-color: #1a1a1a;
