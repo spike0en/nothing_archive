@@ -432,5 +432,104 @@
   "theme.tags.tagsPageTitle": {
     "message": "Теги",
     "description": "The title of the tag list page"
+  },
+  "homepage.matrix.feedLabel": {
+    "message": "ЛЕНТА КОММИТОВ:"
+  },
+  "homepage.matrix.feedLive": {
+    "message": "В сети"
+  },
+  "homepage.matrix.feedOffline": {
+    "message": "Не в сети"
+  },
+  "homepage.matrix.feedRateLimited": {
+    "message": "Превышен лимит"
+  },
+  "homepage.matrix.feedError": {
+    "message": "Ошибка"
+  },
+  "homepage.matrix.timeLabel": {
+    "message": "ВРЕМЯ:"
+  },
+  "homepage.matrix.stat.commits": {
+    "message": "КОММИТОВ ЗА 30 ДН."
+  },
+  "homepage.matrix.stat.contributors": {
+    "message": "АВТОРЫ"
+  },
+  "homepage.matrix.stat.totalCommits": {
+    "message": "ВСЕГО КОММИТОВ"
+  },
+  "homepage.matrix.stat.lastCommit": {
+    "message": "ПОСЛЕДНИЙ КОММИТ"
+  },
+  "homepage.matrix.consoleTitle": {
+    "message": "ПОСЛЕДНИЕ ИЗМЕНЕНИЯ"
+  },
+  "homepage.releases.feedLabel": {
+    "message": "ЛЕНТА РЕЛИЗОВ:"
+  },
+  "homepage.releases.feedLive": {
+    "message": "В сети"
+  },
+  "homepage.releases.feedOffline": {
+    "message": "Не в сети"
+  },
+  "homepage.releases.feedRateLimited": {
+    "message": "Превышен лимит"
+  },
+  "homepage.releases.feedError": {
+    "message": "Ошибка"
+  },
+  "homepage.releases.timeLabel": {
+    "message": "ВРЕМЯ:"
+  },
+  "homepage.releases.stat.totalReleases": {
+    "message": "ВСЕГО РЕЛИЗОВ"
+  },
+  "homepage.releases.stat.latestCodename": {
+    "message": "ПОСЛЕДНЕЕ КОДОВОЕ ИМЯ"
+  },
+  "homepage.releases.stat.latestAge": {
+    "message": "ВОЗРАСТ ПОСЛЕДНЕГО РЕЛИЗА"
+  },
+  "homepage.releases.consoleTitle": {
+    "message": "ПОСЛЕДНИЕ РЕЛИЗЫ ОБРАЗОВ OTA"
+  },
+  "shortcut.modal.title": {
+    "message": "ГОРЯЧИЕ КЛАВИШИ"
+  },
+  "shortcut.modal.header.action": {
+    "message": "ДЕЙСТВИЕ"
+  },
+  "shortcut.modal.header.key": {
+    "message": "ГОРЯЧАЯ КЛАВИША"
+  },
+  "shortcut.modal.search": {
+    "message": "Поиск по документации"
+  },
+  "shortcut.modal.help": {
+    "message": "Открыть карту клавиш"
+  },
+  "shortcut.modal.close": {
+    "message": "Закрыть карту клавиш / Очистить поиск"
+  },
+  "shortcut.modal.nav": {
+    "message": "Навигация по результатам поиска"
+  },
+  "homepage.announcement.prefix": {
+    "message": "ПОСЛЕДНИЙ РЕЛИЗ:"
+  },
+  "homepage.announcement.message": {
+    "message": "{codename}-{version} уже доступен!"
+  },
+  "homepage.announcement.view": {
+    "message": "Посмотреть образы OTA"
+  },
+  "homepage.releases.changelog": {
+    "message": "История изменений"
+  },
+  "homepage.releases.changelogUnavailable": {
+    "message": "Недоступно"
   }
 }

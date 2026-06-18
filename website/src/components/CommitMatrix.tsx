@@ -201,10 +201,6 @@ export default function CommitMatrix(): React.JSX.Element {
       value: loading ? '—' : `${contributors30d}`,
     },
     {
-      label: <Translate id="homepage.matrix.stat.totalCommits">TOTAL COMMITS</Translate>,
-      value: loading ? '—' : `${commits.length}`,
-    },
-    {
       label: <Translate id="homepage.matrix.stat.lastCommit">LAST COMMIT</Translate>,
       value: loading ? '—' : latestCommit.date ? getTimeLag(latestCommit.date) + ' ago' : '—',
     },
@@ -217,7 +213,7 @@ export default function CommitMatrix(): React.JSX.Element {
         <div className={styles.systemLabel}>
           <span className={`${styles.pulseDot} ${statusSource === 'LIVE' ? styles.pulseDotLive : styles.pulseDotOffline}`} />
           <span className={styles.feedTextPrefix}>
-            <Translate id="homepage.matrix.feedLabel">FEED:</Translate>{' '}
+            <Translate id="homepage.matrix.feedLabel">COMMITS FEED:</Translate>{' '}
           </span>
           <span className={statusSource === 'LIVE' ? styles.feedStatusLive : styles.feedStatusOffline}>
             {errorState ? (

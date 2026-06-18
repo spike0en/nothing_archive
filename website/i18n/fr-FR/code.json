@@ -435,5 +435,104 @@
     "theme.tags.tagsPageTitle": {
         "message": "Tags",
         "description": "The title of the tag list page"
+    },
+    "homepage.matrix.feedLabel": {
+        "message": "FLUX DE COMMITS :"
+    },
+    "homepage.matrix.feedLive": {
+        "message": "En direct"
+    },
+    "homepage.matrix.feedOffline": {
+        "message": "Hors ligne"
+    },
+    "homepage.matrix.feedRateLimited": {
+        "message": "Limite atteinte"
+    },
+    "homepage.matrix.feedError": {
+        "message": "Erreur"
+    },
+    "homepage.matrix.timeLabel": {
+        "message": "HEURE :"
+    },
+    "homepage.matrix.stat.commits": {
+        "message": "COMMITS SUR 30 J."
+    },
+    "homepage.matrix.stat.contributors": {
+        "message": "CONTRIBUTEURS"
+    },
+    "homepage.matrix.stat.totalCommits": {
+        "message": "TOTAL DES COMMITS"
+    },
+    "homepage.matrix.stat.lastCommit": {
+        "message": "DERNIER COMMIT"
+    },
+    "homepage.matrix.consoleTitle": {
+        "message": "MODIFICATIONS RÉCENTES"
+    },
+    "homepage.releases.feedLabel": {
+        "message": "FLUX DE VERSIONS :"
+    },
+    "homepage.releases.feedLive": {
+        "message": "En direct"
+    },
+    "homepage.releases.feedOffline": {
+        "message": "Hors ligne"
+    },
+    "homepage.releases.feedRateLimited": {
+        "message": "Limite atteinte"
+    },
+    "homepage.releases.feedError": {
+        "message": "Erreur"
+    },
+    "homepage.releases.timeLabel": {
+        "message": "HEURE :"
+    },
+    "homepage.releases.stat.totalReleases": {
+        "message": "VERSIONS TOTALES"
+    },
+    "homepage.releases.stat.latestCodename": {
+        "message": "DERNIER NOM DE CODE"
+    },
+    "homepage.releases.stat.latestAge": {
+        "message": "AGE DE LA DERNIÈRE VERSION"
+    },
+    "homepage.releases.consoleTitle": {
+        "message": "VERSIONS RÉCENTES D'IMAGES OTA"
+    },
+    "shortcut.modal.title": {
+        "message": "RACCOURCIS CLAVIER"
+    },
+    "shortcut.modal.header.action": {
+        "message": "ACTION"
+    },
+    "shortcut.modal.header.key": {
+        "message": "RACCOURCI"
+    },
+    "shortcut.modal.search": {
+        "message": "Rechercher dans la documentation"
+    },
+    "shortcut.modal.help": {
+        "message": "Ouvrir la carte des raccourcis"
+    },
+    "shortcut.modal.close": {
+        "message": "Fermer la carte / Effacer la recherche"
+    },
+    "shortcut.modal.nav": {
+        "message": "Naviguer dans les résultats"
+    },
+    "homepage.announcement.prefix": {
+        "message": "DERNIÈRE VERSION :"
+    },
+    "homepage.announcement.message": {
+        "message": "{codename}-{version} est maintenant disponible !"
+    },
+    "homepage.announcement.view": {
+        "message": "Voir les images OTA"
+    },
+    "homepage.releases.changelog": {
+        "message": "Changelog"
+    },
+    "homepage.releases.changelogUnavailable": {
+        "message": "Non disponible"
     }
 }

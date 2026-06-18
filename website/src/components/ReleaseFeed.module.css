@@ -1,6 +1,6 @@
 /**
- * Styles for the Nothing Archive Repository Live Activity Tracker.
- * Clean telemetry feed: header → stats strip → full-width recent changes.
+ * Styles for the Nothing Archive Repository Releases Tracker.
+ * Clean telemetry feed: header → stats strip → full-width recent releases.
  */
 
 .container {
@@ -89,13 +89,11 @@
 }
 
 @keyframes telemetryPulse {
-
   0%,
   100% {
     opacity: 0.3;
     transform: scale(0.9);
   }
-
   50% {
     opacity: 1;
     transform: scale(1.1);
@@ -145,6 +143,7 @@
   color: var(--ifm-color-primary);
   letter-spacing: -0.02em;
   line-height: 1;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 
@@ -154,6 +153,7 @@
   letter-spacing: 0.1em;
   opacity: 0.45;
   text-transform: uppercase;
+  text-align: center;
   white-space: nowrap;
 }
 
@@ -227,10 +227,10 @@
   background: var(--ifm-color-primary);
 }
 
-/* Each commit row — now also an anchor tag */
+/* Each release row */
 .consoleLine {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-shrink: 0;
   font-size: 0.72rem;
   line-height: 1.4;
@@ -262,7 +262,6 @@
   background-color: rgba(0, 0, 0, 0.18);
   flex-shrink: 0;
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
-  margin-top: 5px;
 }
 
 [data-theme='dark'] .statusDot {
@@ -285,49 +284,78 @@
   color: var(--ifm-color-primary-light);
 }
 
-.authorTag {
-  opacity: 0.45;
-  width: 72px;
+.codenameTag {
+  width: 80px;
   flex-shrink: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  cursor: help;
-}
-
-.coAuthorBadge {
-  font-size: 0.55rem;
   font-weight: 700;
   color: var(--ifm-color-primary);
-  opacity: 1;
-  background-color: rgba(255, 60, 60, 0.1);
-  border-radius: 4px;
-  padding: 0px 3px;
-  line-height: 1.4;
-  letter-spacing: 0;
-  flex-shrink: 0;
-}
-
-[data-theme='dark'] .coAuthorBadge {
-  background-color: rgba(255, 60, 60, 0.15);
+  text-transform: uppercase;
 }
 
 .messageText {
   flex: 1;
   min-width: 0;
   opacity: 0.88;
+  padding-right: 0.5rem;
   white-space: normal;
   word-break: break-word;
 }
 
-.shaTag {
-  font-size: 0.62rem;
-  opacity: 0.3;
+.changelogLink {
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary) !important;
+  background-color: rgba(255, 60, 60, 0.1);
+  border-radius: 4px;
+  padding: 1px 5px;
+  margin-right: 6px;
   flex-shrink: 0;
+  text-transform: uppercase;
   letter-spacing: 0.03em;
+  font-family: var(--ifm-font-family-monospace);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  text-decoration: none !important;
+}
+
+.changelogLink:hover {
+  background-color: var(--ifm-color-primary);
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+[data-theme='dark'] .changelogLink {
+  background-color: rgba(255, 60, 60, 0.15);
+}
+
+.changelogUnavailable {
+  font-size: 0.58rem;
+  color: inherit;
+  opacity: 0.35;
+  background-color: rgba(128, 128, 128, 0.08);
+  border-radius: 4px;
+  padding: 1px 5px;
+  margin-right: 6px;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-family: var(--ifm-font-family-monospace);
+}
+
+.arrowIcon {
+  opacity: 0.5;
+  font-size: 0.8rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  font-family: var(--ifm-font-family-base);
+  flex-shrink: 0;
+}
+
+.consoleLine:hover .arrowIcon {
+  transform: translateX(2px);
+  opacity: 1;
+  color: var(--ifm-color-primary);
 }
 
 .errorContainer {
@@ -379,19 +407,15 @@
 
 @media screen and (max-width: 576px) {
   .statsStrip {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .statItem:last-child {
-    grid-column: span 2;
+    grid-column: auto;
   }
 
   .statValue {
     font-size: 1rem;
-  }
-
-  .shaTag {
-    display: none;
   }
 
   .consoleLine {

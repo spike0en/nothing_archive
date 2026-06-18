@@ -435,5 +435,104 @@
     "theme.tags.tagsPageTitle": {
         "message": "タグ",
         "description": "The title of the tag list page"
+    },
+    "homepage.matrix.feedLabel": {
+        "message": "コミットフィード :"
+    },
+    "homepage.matrix.feedLive": {
+        "message": "ライブ"
+    },
+    "homepage.matrix.feedOffline": {
+        "message": "オフライン"
+    },
+    "homepage.matrix.feedRateLimited": {
+        "message": "制限到達"
+    },
+    "homepage.matrix.feedError": {
+        "message": "エラー"
+    },
+    "homepage.matrix.timeLabel": {
+        "message": "時間 :"
+    },
+    "homepage.matrix.stat.commits": {
+        "message": "30日間のコミット"
+    },
+    "homepage.matrix.stat.contributors": {
+        "message": "貢献者"
+    },
+    "homepage.matrix.stat.totalCommits": {
+        "message": "総コミット数"
+    },
+    "homepage.matrix.stat.lastCommit": {
+        "message": "最終コミット"
+    },
+    "homepage.matrix.consoleTitle": {
+        "message": "最近の変更"
+    },
+    "homepage.releases.feedLabel": {
+        "message": "リリースフィード :"
+    },
+    "homepage.releases.feedLive": {
+        "message": "ライブ"
+    },
+    "homepage.releases.feedOffline": {
+        "message": "オフライン"
+    },
+    "homepage.releases.feedRateLimited": {
+        "message": "制限到達"
+    },
+    "homepage.releases.feedError": {
+        "message": "エラー"
+    },
+    "homepage.releases.timeLabel": {
+        "message": "時間 :"
+    },
+    "homepage.releases.stat.totalReleases": {
+        "message": "総リリース数"
+    },
+    "homepage.releases.stat.latestCodename": {
+        "message": "最新コードネーム"
+    },
+    "homepage.releases.stat.latestAge": {
+        "message": "最新リリースの経過時間"
+    },
+    "homepage.releases.consoleTitle": {
+        "message": "最近のOTAイメージリリース"
+    },
+    "shortcut.modal.title": {
+        "message": "キーボードショートカット"
+    },
+    "shortcut.modal.header.action": {
+        "message": "操作"
+    },
+    "shortcut.modal.header.key": {
+        "message": "ショートカット"
+    },
+    "shortcut.modal.search": {
+        "message": "ドキュメント検索"
+    },
+    "shortcut.modal.help": {
+        "message": "ショートカット一覧を開く"
+    },
+    "shortcut.modal.close": {
+        "message": "ショートカット一覧を閉じる / 検索をクリア"
+    },
+    "shortcut.modal.nav": {
+        "message": "検索結果の移動"
+    },
+    "homepage.announcement.prefix": {
+        "message": "最新リリース :"
+    },
+    "homepage.announcement.message": {
+        "message": "{codename}-{version} が利用可能になりました！"
+    },
+    "homepage.announcement.view": {
+        "message": "OTAイメージを表示"
+    },
+    "homepage.releases.changelog": {
+        "message": "変更履歴"
+    },
+    "homepage.releases.changelogUnavailable": {
+        "message": "利用不可"
     }
 }

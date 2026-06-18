@@ -435,5 +435,104 @@
     "theme.tags.tagsPageTitle": {
         "message": "Etiketler",
         "description": "The title of the tag list page"
+    },
+    "homepage.matrix.feedLabel": {
+        "message": "COMMIT AKIŞI:"
+    },
+    "homepage.matrix.feedLive": {
+        "message": "Aktif"
+    },
+    "homepage.matrix.feedOffline": {
+        "message": "Çevrimdışı"
+    },
+    "homepage.matrix.feedRateLimited": {
+        "message": "Hız Sınırı"
+    },
+    "homepage.matrix.feedError": {
+        "message": "Hata"
+    },
+    "homepage.matrix.timeLabel": {
+        "message": "SAAT:"
+    },
+    "homepage.matrix.stat.commits": {
+        "message": "30 GÜNLÜK COMMIT"
+    },
+    "homepage.matrix.stat.contributors": {
+        "message": "KATKIDA BULUNANLAR"
+    },
+    "homepage.matrix.stat.totalCommits": {
+        "message": "TOPLAM COMMIT"
+    },
+    "homepage.matrix.stat.lastCommit": {
+        "message": "SON COMMIT"
+    },
+    "homepage.matrix.consoleTitle": {
+        "message": "SON DEĞİŞİKLİKLER"
+    },
+    "homepage.releases.feedLabel": {
+        "message": "YAYIN AKIŞI:"
+    },
+    "homepage.releases.feedLive": {
+        "message": "Aktif"
+    },
+    "homepage.releases.feedOffline": {
+        "message": "Çevrimdışı"
+    },
+    "homepage.releases.feedRateLimited": {
+        "message": "Hız Sınırı"
+    },
+    "homepage.releases.feedError": {
+        "message": "Hata"
+    },
+    "homepage.releases.timeLabel": {
+        "message": "SAAT:"
+    },
+    "homepage.releases.stat.totalReleases": {
+        "message": "TOPLAM YAYIN"
+    },
+    "homepage.releases.stat.latestCodename": {
+        "message": "SON KOD ADI"
+    },
+    "homepage.releases.stat.latestAge": {
+        "message": "SON YAYINLANMA SÜRESİ"
+    },
+    "homepage.releases.consoleTitle": {
+        "message": "SON OTA GÖRÜNTÜ YAYINLARI"
+    },
+    "shortcut.modal.title": {
+        "message": "KLAVYE KISAYOLLARI"
+    },
+    "shortcut.modal.header.action": {
+        "message": "EYLEM"
+    },
+    "shortcut.modal.header.key": {
+        "message": "KISAYOL"
+    },
+    "shortcut.modal.search": {
+        "message": "Belgeleri Ara"
+    },
+    "shortcut.modal.help": {
+        "message": "Kısayol Haritasını Aç"
+    },
+    "shortcut.modal.close": {
+        "message": "Kısayol Haritasını Kapat / Aramayı Temizle"
+    },
+    "shortcut.modal.nav": {
+        "message": "Arama Sonuçlarında Gezin"
+    },
+    "homepage.announcement.prefix": {
+        "message": "SON YAYIN:"
+    },
+    "homepage.announcement.message": {
+        "message": "{codename}-{version} artık kullanılabilir!"
+    },
+    "homepage.announcement.view": {
+        "message": "OTA Görüntülerini Görüntüle"
+    },
+    "homepage.releases.changelog": {
+        "message": "Değişiklik Günlüğü"
+    },
+    "homepage.releases.changelogUnavailable": {
+        "message": "Mevcut Değil"
     }
 }

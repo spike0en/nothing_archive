@@ -435,5 +435,104 @@
   "theme.tags.tagsPageTitle": {
     "message": "標籤",
     "description": "The title of the tag list page"
+  },
+  "homepage.matrix.feedLabel": {
+    "message": "提交動態:"
+  },
+  "homepage.matrix.feedLive": {
+    "message": "即時"
+  },
+  "homepage.matrix.feedOffline": {
+    "message": "離線"
+  },
+  "homepage.matrix.feedRateLimited": {
+    "message": "請求受限"
+  },
+  "homepage.matrix.feedError": {
+    "message": "連線錯誤"
+  },
+  "homepage.matrix.timeLabel": {
+    "message": "時間:"
+  },
+  "homepage.matrix.stat.commits": {
+    "message": "30天內提交"
+  },
+  "homepage.matrix.stat.contributors": {
+    "message": "貢獻者"
+  },
+  "homepage.matrix.stat.totalCommits": {
+    "message": "總提交數"
+  },
+  "homepage.matrix.stat.lastCommit": {
+    "message": "最後提交"
+  },
+  "homepage.matrix.consoleTitle": {
+    "message": "最近變更"
+  },
+  "homepage.releases.feedLabel": {
+    "message": "版本更新摘要:"
+  },
+  "homepage.releases.feedLive": {
+    "message": "即時"
+  },
+  "homepage.releases.feedOffline": {
+    "message": "離線"
+  },
+  "homepage.releases.feedRateLimited": {
+    "message": "請求受限"
+  },
+  "homepage.releases.feedError": {
+    "message": "連線錯誤"
+  },
+  "homepage.releases.timeLabel": {
+    "message": "時間:"
+  },
+  "homepage.releases.stat.totalReleases": {
+    "message": "總版本數"
+  },
+  "homepage.releases.stat.latestCodename": {
+    "message": "最新代號"
+  },
+  "homepage.releases.stat.latestAge": {
+    "message": "最新版本發布時間"
+  },
+  "homepage.releases.consoleTitle": {
+    "message": "最近發布的 OTA 映像檔版本"
+  },
+  "shortcut.modal.title": {
+    "message": "鍵盤快捷鍵"
+  },
+  "shortcut.modal.header.action": {
+    "message": "功能"
+  },
+  "shortcut.modal.header.key": {
+    "message": "快捷鍵"
+  },
+  "shortcut.modal.search": {
+    "message": "搜尋文件"
+  },
+  "shortcut.modal.help": {
+    "message": "開啟快捷鍵清單"
+  },
+  "shortcut.modal.close": {
+    "message": "關閉快捷鍵清單 / 清除搜尋"
+  },
+  "shortcut.modal.nav": {
+    "message": "瀏覽搜尋結果"
+  },
+  "homepage.announcement.prefix": {
+    "message": "最新版本發布:"
+  },
+  "homepage.announcement.message": {
+    "message": "{codename}-{version} 現已推出！"
+  },
+  "homepage.announcement.view": {
+    "message": "查看 OTA 映像檔"
+  },
+  "homepage.releases.changelog": {
+    "message": "更新日誌"
+  },
+  "homepage.releases.changelogUnavailable": {
+    "message": "無法使用"
   }
 }

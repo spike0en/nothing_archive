@@ -17,6 +17,8 @@ import { TbMessageCircle } from 'react-icons/tb';
 import styles from './index.module.css';
 import { JSX } from 'react';
 import CommitMatrix from '../components/CommitMatrix';
+import ReleaseFeed from '../components/ReleaseFeed';
+import AnnouncementBanner from '../components/AnnouncementBanner';
 
 /* ============================================================
    STATIC DATA
@@ -118,10 +120,10 @@ const socialLinks = [
   { label: 'Reddit', href: 'https://www.reddit.com/r/NothingTech', icon: <FaRedditAlien size={24} /> },
   { label: 'XDA', href: 'https://xdaforums.com/c/nothing.12583/', icon: <FaTerminal size={24} /> },
   { label: 'YouTube', href: 'https://www.youtube.com/@NothingTechnology', icon: <FaYoutube size={24} /> },
-  { label: 'X (Nothing Updates Bot)', href: 'https://x.com/Nothing_Update', icon: <FaXTwitter size={24} /> },
+  { label: 'GitHub', href: 'https://github.com/NothingOSS', icon: <FaGithub size={24} /> },
   { label: 'X', href: 'https://x.com/nothing', icon: <FaXTwitter size={24} /> },
   { label: 'Instagram', href: 'https://instagram.com/nothing', icon: <FaInstagram size={24} /> },
-  { label: 'NothingOSS', href: 'https://github.com/NothingOSS', icon: <FaGithub size={24} /> },
+  { label: 'X (Nothing Updates Bot)', href: 'https://x.com/Nothing_Update', icon: <FaXTwitter size={24} /> },
 ];
 
 /* ============================================================
@@ -297,6 +299,7 @@ function HomepageSocials() {
               className={styles.socialLink}
             >
               {icon}
+              <span className={styles.socialLinkLabel}>{label}</span>
             </a>
           ))}
         </div>
@@ -320,12 +323,16 @@ export default function Home(): JSX.Element {
       title={translate({ id: 'homepage.title', message: 'Nothing OS Firmware & Resources' })}
       description={translate({ id: 'homepage.tagline', message: siteConfig.tagline })}
     >
+      <AnnouncementBanner />
       <HomepageHeader />
       <main className={styles.main}>
         <div className="container margin-vert--lg">
-          <div className="row">
-            <div className="col col--12">
+          <div className={styles.telemetrySection}>
+            <div className={styles.telemetryBox}>
               <CommitMatrix />
+            </div>
+            <div className={styles.telemetryBox}>
+              <ReleaseFeed />
             </div>
           </div>
         </div>

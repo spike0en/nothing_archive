@@ -1301,21 +1301,41 @@ td:hover .table-copy-btn,
    BACK TO TOP BUTTON
    ========================================== */
 .theme-back-to-top-button {
-  background-color: var(--ifm-color-primary) !important;
-  color: #ffffff !important;
+  background-color: var(--ifm-card-background-color) !important;
+  color: var(--ifm-color-primary) !important;
   border-radius: 999px !important;
   width: 44px !important;
   height: 44px !important;
-  box-shadow: 0 4px 16px rgba(215, 25, 33, 0.3) !important;
-  border: none !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+  border: 1px solid var(--nothing-border) !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease, box-shadow 0.2s ease !important;
+  overflow: visible !important;
+  z-index: 100 !important;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease,
+    border-color 0.2s ease !important;
+}
+
+/* Scroll-progress ring drawn via SVG injected by Root.tsx */
+.scroll-ring-svg {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: visible;
+  transform: rotate(-90deg); /* start from top */
 }
 
 .theme-back-to-top-button:hover {
-  background-color: var(--ifm-color-primary-dark) !important;
+  background-color: var(--ifm-color-primary) !important;
+  border-color: var(--ifm-color-primary) !important;
+  color: #ffffff !important;
   transform: translateY(-2px) scale(1.05) !important;
   box-shadow: 0 6px 20px rgba(215, 25, 33, 0.45) !important;
 }
@@ -1325,10 +1345,159 @@ td:hover .table-copy-btn,
 }
 
 [data-theme='dark'] .theme-back-to-top-button {
-  box-shadow: 0 4px 16px rgba(255, 59, 59, 0.3) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
 }
 
 [data-theme='dark'] .theme-back-to-top-button:hover {
-  background-color: var(--ifm-color-primary-light) !important;
+  background-color: var(--ifm-color-primary) !important;
+  border-color: var(--ifm-color-primary) !important;
   box-shadow: 0 6px 20px rgba(255, 59, 59, 0.45) !important;
 }
+
+/* ==========================================
+   KEYBOARD SHORTCUT MAP MODAL
+   ========================================== */
+.shortcut-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.15s ease-out;
+}
+
+[data-theme='dark'] .shortcut-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.shortcut-modal {
+  background-color: var(--ifm-card-background-color);
+  border: 1px solid var(--nothing-border-strong);
+  border-radius: 24px;
+  width: 90%;
+  max-width: 440px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  animation: scaleUp 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  color: var(--ifm-font-color-base);
+}
+
+[data-theme='dark'] .shortcut-modal {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+.shortcut-modal-header {
+  display: flex;
+  align-items: center;
+  padding: 1.15rem 1.5rem 0.95rem;
+  border-bottom: 1px dashed var(--nothing-border);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.shortcut-modal-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--ifm-color-primary);
+  margin-right: 8px;
+  box-shadow: 0 0 6px var(--ifm-color-primary);
+}
+
+.shortcut-modal-close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: inherit;
+  opacity: 0.4;
+  cursor: pointer;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  padding: 0;
+}
+
+.shortcut-modal-close:hover {
+  opacity: 1;
+  color: var(--ifm-color-primary);
+}
+
+.shortcut-modal-body {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.shortcut-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.shortcut-table th,
+.shortcut-table td {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--nothing-border);
+  font-size: 0.78rem;
+}
+
+.shortcut-table th {
+  font-family: var(--ifm-font-family-monospace);
+  font-weight: 700;
+  opacity: 0.45;
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.shortcut-table tr:last-child td {
+  border-bottom: none;
+}
+
+.shortcut-table kbd {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.7rem;
+  font-family: var(--ifm-font-family-monospace);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+  color: inherit;
+}
+
+[data-theme='dark'] .shortcut-table kbd {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.96); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shortcut-modal-overlay,
+  .shortcut-modal {
+    animation: none;
+  }
+  .theme-back-to-top-button::before {
+    transition: none;
+  }
+}

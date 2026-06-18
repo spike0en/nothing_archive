@@ -493,9 +493,12 @@
 
 .socialLink {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.35rem;
   padding: 0.8rem;
+  min-width: 90px;
   font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: -0.01em;
@@ -506,6 +509,18 @@
   text-decoration: none !important;
   transition: border-color 0.25s ease, color 0.25s ease,
     background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.socialLinkLabel {
+  font-size: 0.55rem;
+  opacity: 0.75;
+  text-align: center;
+  line-height: 1.2;
+  text-transform: uppercase;
+  font-family: var(--ifm-font-family-monospace);
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  margin-top: 2px;
 }
 
 .socialLink:hover {
@@ -538,6 +553,35 @@
 /* --- Main Content Wrapper --- */
 .main {
   background: var(--ifm-background-color);
+}
+
+.telemetrySection {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  align-items: stretch;
+}
+
+.telemetryBox {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.telemetryBox > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+}
+
+@media screen and (max-width: 996px) {
+  .telemetrySection {
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: stretch;
+  }
 }
 
 /* ==========================================
@@ -609,8 +653,9 @@
   }
 
   .socialLink {
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 0.4rem;
     font-size: 0.8rem;
+    min-width: 76px;
   }
 }
 
@@ -665,8 +710,9 @@
   }
 
   .socialLink {
-    padding: 0.5rem 0.85rem;
+    padding: 0.5rem 0.35rem;
     font-size: 0.8rem;
+    min-width: 70px;
   }
 }
 
