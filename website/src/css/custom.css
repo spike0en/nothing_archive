@@ -212,25 +212,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* GitHub stars badge */
-.header-github-stars {
-  display: flex;
-  align-items: center;
-}
-
-.header-github-stars img {
-  height: 22px;
-  border-radius: 4px;
-  transition: opacity 0.2s ease;
-}
-
-.header-github-stars:hover img {
-  opacity: 0.85;
-}
-
-.header-github-stars:hover {
-  text-decoration: none;
-}
+/* GitHub stars badge styles merged with global .header-badge styles below */
 
 /* ==========================================
    SIDEBAR
@@ -650,16 +632,66 @@ code {
   display: flex;
   align-items: center;
   padding: 0 0.5rem;
-  transition: opacity 0.2s ease;
 }
 
 .header-badge:hover {
-  opacity: 0.8;
   text-decoration: none;
 }
 
 .header-badge img {
   height: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--nothing-border);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Light mode overrides for badge default borders */
+[data-theme='light'] .header-badge img {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effects only applied to devices that support true hover pointers (prevents mobile sticky hover glitches) */
+@media (hover: hover) {
+  .header-badge:hover img {
+    transform: translateY(-1px) scale(1.02);
+  }
+
+  [data-theme='light'] .header-badge:hover img {
+    border-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  }
+
+  [data-theme='dark'] .header-badge:hover img {
+    border-color: var(--ifm-color-primary-light);
+    box-shadow: 0 4px 12px rgba(215, 25, 33, 0.25);
+  }
+}
+
+/* Refined styles for badges inside the mobile sidebar drawer */
+.navbar-sidebar .header-badge {
+  background: transparent !important;
+  padding: 0.6rem 1rem !important; /* aligns perfectly with standard menu items */
+}
+
+.navbar-sidebar .header-badge:hover {
+  background: transparent !important;
+}
+
+.navbar-sidebar .header-badge img {
+  height: 20px;
+  border-radius: 6px;
+  border: 1px solid var(--nothing-border);
+}
+
+/* Explicitly disable hover scaling/glows inside the mobile sidebar drawer to prevent glitchy styling */
+.navbar-sidebar .header-badge:hover img {
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: var(--nothing-border) !important;
+}
+[data-theme='light'] .navbar-sidebar .header-badge:hover img {
+  border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
 /* Links */
