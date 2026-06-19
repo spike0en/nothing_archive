@@ -190,7 +190,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 576px) {
 
-  /* Compact the right side to fix the large gap between translate and search */
+  /* Compact the right side to fix the large gap between navigation badges and search */
   .navbar__items--right {
     justify-content: flex-end !important;
     gap: 0.2rem !important;

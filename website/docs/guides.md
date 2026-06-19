@@ -529,8 +529,6 @@ D. **Restoring Partitions**
    fastboot flash persist persist.img
    ```
    Reboot to **recovery mode** → Perform **factory reset** → Reboot to **system**.
-   - Ref link: [Nothing Phone (2a) DVT Engineering Sample: Recovering Baseband and IMEI Records](https://bluehomewu.github.io/posts/Restoring-Baseband-and-IMEI-on-Nothing-Phone-2a-DVT/)
-   - Post was written with Chinese(Traditional) language but can be translated to English using browser translation features.
 
 
  - **QCom Devices:**
@@ -886,7 +884,7 @@ Install the appropriate drivers for your device's SoC manufacturer.
 
 :::
 
-- [Official Unbrick Tools](https://t.me/Edward_ROMs/360) by EdwardWu
+- [Official Unbrick Tools](https://t.me/Edward_ROMs/360)
 - [Unofficial Qualcomm Firehose / Sahara / Streaming / Diag Tools](https://github.com/bkerler/edl) by bkerler
 - [NTPI Dumper](https://github.com/AaronXenos/ntpi_dumper) by AaronXenos
 - [Phone (2a) Series Hard Brick Helper](https://github.com/mistrmochov/nothing-pacman-hardbrick) by mistrmochov

@@ -4,7 +4,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import { useColorMode } from '@docusaurus/theme-common';
 import Heading from '@theme/Heading';
-import Translate, { translate } from '@docusaurus/Translate';
 import {
   FaTelegramPlane, FaDiscord, FaRedditAlien, FaYoutube,
   FaInstagram, FaGithub, FaTerminal, FaStar,
@@ -33,79 +32,54 @@ type FeatureItem = {
 
 /**
  * Returns the collection of feature cards for the resources grid.
- * Wrapped in a function to ensure `translate()` executes within the React render lifecycle.
  */
 function getFeatureList(): FeatureItem[] {
   return [
     {
-      title: translate({ id: 'feature.devices.title', message: 'Devices' }),
-      description: translate({
-        id: 'feature.devices.description',
-        message: 'Explore the full catalog of Nothing and CMF devices, including phones, audio gear, wearables, and accessories.',
-      }),
+      title: 'Devices',
+      description: 'Explore the full catalog of Nothing and CMF devices, including phones, audio gear, wearables, and accessories.',
       link: '/docs/devices',
       icon: <FaMobileAlt size={20} />,
     },
     {
-      title: translate({ id: 'feature.firmware.title', message: 'Firmware Archive' }),
-      description: translate({
-        id: 'feature.firmware.description',
-        message: 'Download official Nothing OS firmware, stock factory images, and delta OTA updates to flash, downgrade, restore, root, or manually sideload updates on your phones to skip staggered regional rollouts.',
-      }),
+      title: 'Firmware Archive',
+      description: 'Download official Nothing OS firmware, stock factory images, and delta OTA updates to flash, downgrade, restore, root, or manually sideload updates on your phones to skip staggered regional rollouts.',
       link: '/docs/firmware',
       icon: <FaDownload size={20} />,
     },
     {
-      title: translate({ id: 'feature.changelogs.title', message: 'OTA Changelogs' }),
-      description: translate({
-        id: 'feature.changelogs.description',
-        message: 'Browse official Nothing OS changelogs, system updates, bug fixes, and version histories.',
-      }),
+      title: 'OTA Changelogs',
+      description: 'Browse official Nothing OS changelogs, system updates, bug fixes, and version histories.',
       link: '/docs/changelogs',
       icon: <FaClipboardList size={20} />,
     },
     {
-      title: translate({ id: 'feature.guides.title', message: 'Guides' }),
-      description: translate({
-        id: 'feature.guides.description',
-        message: 'Step-by-step instructions to unlock bootloaders, root, and customize Nothing and CMF devices.',
-      }),
+      title: 'Guides',
+      description: 'Step-by-step instructions to unlock bootloaders, root, and customize Nothing and CMF devices.',
       link: '/docs/guides',
       icon: <FaBook size={20} />,
     },
     {
-      title: translate({ id: 'feature.official.title', message: 'Official Resources' }),
-      description: translate({
-        id: 'feature.official.description',
-        message: 'Find official Nothing apps, wallpapers, custom fonts, kernel sources, and developer tools.',
-      }),
+      title: 'Official Resources',
+      description: 'Find official Nothing apps, wallpapers, custom fonts, kernel sources, and developer tools.',
       link: '/docs/official',
       icon: <FaBoxOpen size={20} />,
     },
     {
-      title: translate({ id: 'feature.apps.title', message: 'Community Apps' }),
-      description: translate({
-        id: 'feature.apps.description',
-        message: 'Explore custom apps, Glyph tools, and productivity utilities made by the community.',
-      }),
+      title: 'Community Apps',
+      description: 'Explore custom apps, Glyph tools, and productivity utilities made by the community.',
       link: '/docs/apps',
       icon: <FaRocket size={20} />,
     },
     {
-      title: translate({ id: 'feature.projects.title', message: 'Projects' }),
-      description: translate({
-        id: 'feature.projects.description',
-        message: 'Browse creative software, tools, and custom projects built for the Nothing ecosystem.',
-      }),
+      title: 'Projects',
+      description: 'Browse creative software, tools, and custom projects built for the Nothing ecosystem.',
       link: '/docs/projects',
       icon: <FaCode size={20} />,
     },
     {
-      title: translate({ id: 'feature.photography.title', message: 'Photography' }),
-      description: translate({
-        id: 'feature.photography.description',
-        message: 'Improve your photos with GCAM ports, custom configurations, and presets tuned for Nothing and CMF phones.',
-      }),
+      title: 'Photography',
+      description: 'Improve your photos with GCAM ports, custom configurations, and presets tuned for Nothing and CMF phones.',
       link: '/docs/photography',
       icon: <FaCameraRetro size={20} />,
     },
@@ -148,11 +122,11 @@ function HomepageHeader() {
               {siteConfig.title}
             </Heading>
             <p className={styles.heroSubtitle}>
-              <Translate id="homepage.tagline">{siteConfig.tagline}</Translate>
+              {siteConfig.tagline}
             </p>
             <div className={styles.buttons}>
               <Link className={clsx('button', styles.ctaButton)} to="/docs/intro">
-                <Translate id="homepage.hero.exploreResources">Explore Resources</Translate>
+                Explore Resources
               </Link>
               <a
                 className={clsx('button', styles.ctaButtonSecondary)}
@@ -161,7 +135,7 @@ function HomepageHeader() {
                 rel="noopener noreferrer"
               >
                 <FaGithub size={16} />
-                <Translate id="homepage.hero.viewOnGitHub">View on GitHub</Translate>
+                View on GitHub
               </a>
             </div>
           </div>
@@ -209,7 +183,7 @@ function HomepageFeatures() {
     <section className={styles.features}>
       <div className="container">
         <Heading as="h2" className={styles.sectionLabel}>
-          <Translate id="homepage.section.resources">Resources</Translate>
+          Resources
         </Heading>
         <div className={clsx('row', styles.featureRow)}>
           {featureList.map((props) => (
@@ -230,7 +204,7 @@ function HomepageCommunity() {
     <section className={styles.communitySection}>
       <div className="container">
         <Heading as="h2" className={styles.sectionLabel}>
-          <Translate id="homepage.section.community">Community</Translate>
+          Community
         </Heading>
 
         {/* Dynamic contributor graph sourced from contrib.rocks */}
@@ -255,9 +229,7 @@ function HomepageCommunity() {
         {/* Repository support action */}
         <div className={styles.supportText}>
           <p>
-            <Translate id="homepage.community.starText">
-              If you find this project helpful, please consider starring the repository. This helps with discoverability and keeps the community growing.
-            </Translate>
+            If you find this project helpful, please consider starring the repository. This helps with discoverability and keeps the community growing.
           </p>
         </div>
         <div className={styles.supportActions}>
@@ -269,7 +241,7 @@ function HomepageCommunity() {
             aria-label="Star Nothing Archive on GitHub"
           >
             <FaStar size={16} />
-            <Translate id="homepage.community.starButton">Star on GitHub</Translate>
+            Star on GitHub
           </a>
         </div>
       </div>
@@ -286,7 +258,7 @@ function HomepageSocials() {
     <section className={styles.socials}>
       <div className="container">
         <Heading as="h2" className={styles.sectionLabel}>
-          <Translate id="homepage.section.connect">Connect</Translate>
+          Connect
         </Heading>
         <div className={styles.socialLinks}>
           {socialLinks.map(({ label, href, icon }) => (
@@ -320,8 +292,8 @@ export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={translate({ id: 'homepage.title', message: 'Nothing OS Firmware & Resources' })}
-      description={translate({ id: 'homepage.tagline', message: siteConfig.tagline })}
+      title="Nothing OS Firmware & Resources"
+      description={siteConfig.tagline}
     >
       <AnnouncementBanner />
       <HomepageHeader />

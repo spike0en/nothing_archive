@@ -18,10 +18,9 @@ documentation content) are licensed under the MIT License.
   - All other scripts and core website code: spike0en.
 
 
-2. Documentation & Translations
--------------------------------
-All documentation files (*.md), guides, and translations (in "/website/docs"
-and "/website/i18n") are licensed under the Creative Commons
+2. Documentation
+----------------
+All documentation files (*.md) and guides (in "/website/docs") are licensed under the Creative Commons
 Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) license.
 
 * Primary License: LICENSE-CC-BY-NC-4.0

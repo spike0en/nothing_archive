@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Translate from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
 import styles from './AnnouncementBanner.module.css';
 
@@ -123,19 +122,9 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
           className={styles.content}
         >
           <span className={styles.pulseDot} />
-          <span className={styles.prefix}>
-            <Translate id="homepage.announcement.prefix">LATEST RELEASE:</Translate>
-          </span>
+          <span className={styles.prefix}>LATEST RELEASE:</span>
           <span className={styles.message}>
-            <Translate
-              id="homepage.announcement.message"
-              values={{
-                codename: release.codename,
-                version: release.version,
-              }}
-            >
-              {'{codename}-{version} is now available!'}
-            </Translate>
+            {`${release.codename}-${release.version} is now available!`}
           </span>
         </Link>
         <button

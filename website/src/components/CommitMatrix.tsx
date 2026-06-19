@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Translate from '@docusaurus/Translate';
 import styles from './CommitMatrix.module.css';
 
 interface Commit {
@@ -195,7 +194,7 @@ export default function CommitMatrix(): React.JSX.Element {
 
   const stats = [
     {
-      label: <Translate id="homepage.matrix.stat.lastCommit">LAST COMMIT</Translate>,
+      label: 'LAST COMMIT',
       value: loading ? '—' : latestCommit.date ? getTimeLag(latestCommit.date) + ' ago' : '—',
     },
   ];
@@ -206,27 +205,24 @@ export default function CommitMatrix(): React.JSX.Element {
       <div className={styles.telemetryHeader}>
         <div className={styles.systemLabel}>
           <span className={`${styles.pulseDot} ${statusSource === 'LIVE' ? styles.pulseDotLive : styles.pulseDotOffline}`} />
-          <span className={styles.feedTextPrefix}>
-            <Translate id="homepage.matrix.feedLabel">COMMITS FEED:</Translate>{' '}
-          </span>
+          <span className={styles.feedTextPrefix}>COMMITS FEED: </span>
           <span className={statusSource === 'LIVE' ? styles.feedStatusLive : styles.feedStatusOffline}>
             {errorState ? (
               errorState === 'RATE_LIMITED' ? (
-                <Translate id="homepage.matrix.feedRateLimited">Rate Limited</Translate>
+                'Rate Limited'
               ) : (
-                <Translate id="homepage.matrix.feedError">Error</Translate>
+                'Error'
               )
             ) : statusSource === 'LIVE' ? (
-              <Translate id="homepage.matrix.feedLive">Live</Translate>
+              'Live'
             ) : (
-              <Translate id="homepage.matrix.feedOffline">Offline</Translate>
+              'Offline'
             )}
           </span>
         </div>
         <div className={styles.systemStats}>
           <div>
-            <Translate id="homepage.matrix.timeLabel">TIME:</Translate>{' '}
-            <span>{currentTime || '--:--:--'}</span>
+            TIME: <span>{currentTime || '--:--:--'}</span>
           </div>
         </div>
       </div>
@@ -244,7 +240,7 @@ export default function CommitMatrix(): React.JSX.Element {
       {/* Recent Changes — full width */}
       <div className={styles.consolePanel}>
         <div className={styles.consoleHeader}>
-          <span><Translate id="homepage.matrix.consoleTitle">RECENT CHANGES</Translate></span>
+          <span>RECENT CHANGES</span>
           <span>ID: {latestCommit.sha || '------'}</span>
         </div>
         <div className={styles.consoleBody}>

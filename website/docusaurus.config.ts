@@ -155,15 +155,7 @@ const config: Config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'fr-FR', 'ja-JP', 'tr-TR', 'zh-TW', 'ru-RU'],
-    localeConfigs: {
-      en: { label: 'English' },
-      'fr-FR': { label: 'Français' },
-      'ja-JP': { label: '日本語' },
-      'tr-TR': { label: 'Türkçe' },
-      'zh-TW': { label: '繁體中文' },
-      'ru-RU': { label: 'Русский' },
-    },
+    locales: ['en'],
   },
 
   themes: [
@@ -172,7 +164,7 @@ const config: Config = {
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
         hashed: true,
-        language: ['en', 'zh', 'fr', 'tr', 'ja', 'ru'],
+        language: ['en'],
         fuzzyMatchingDistance: 0,
       },
     ],
@@ -365,10 +357,6 @@ const config: Config = {
           className: 'header-badge header-github-stars',
           'aria-label': 'GitHub Stars',
           html: `<img src="https://img.shields.io/github/stars/spike0en/nothing_archive?logo=github&color=24292e" alt="GitHub Stars" width="94" height="20" style="width: auto; height: 20px;" loading="lazy" />`,
-        },
-        {
-          type: 'localeDropdown',
-          position: 'right',
         },
       ],
     },

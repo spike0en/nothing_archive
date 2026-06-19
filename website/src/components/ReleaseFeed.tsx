@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Translate from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
 import styles from './ReleaseFeed.module.css';
 
@@ -196,11 +195,11 @@ export default function ReleaseFeed(): React.JSX.Element {
 
   const stats = [
     {
-      label: <Translate id="homepage.releases.stat.totalReleases">TOTAL RELEASES</Translate>,
+      label: 'TOTAL RELEASES',
       value: loading ? '—' : `${totalReleasesCount}`,
     },
     {
-      label: <Translate id="homepage.releases.stat.latestAge">LATEST RELEASE AGE</Translate>,
+      label: 'LATEST RELEASE AGE',
       value: loading ? '—' : latestRelease.publishedAt ? getTimeLag(latestRelease.publishedAt) + ' ago' : '—',
     },
   ];
@@ -215,27 +214,24 @@ export default function ReleaseFeed(): React.JSX.Element {
               statusSource === 'LIVE' ? styles.pulseDotLive : styles.pulseDotOffline
             }`}
           />
-          <span className={styles.feedTextPrefix}>
-            <Translate id="homepage.releases.feedLabel">RELEASES FEED:</Translate>{' '}
-          </span>
+          <span className={styles.feedTextPrefix}>RELEASES FEED: </span>
           <span className={statusSource === 'LIVE' ? styles.feedStatusLive : styles.feedStatusOffline}>
             {errorState ? (
               errorState === 'RATE_LIMITED' ? (
-                <Translate id="homepage.releases.feedRateLimited">Rate Limited</Translate>
+                'Rate Limited'
               ) : (
-                <Translate id="homepage.releases.feedError">Error</Translate>
+                'Error'
               )
             ) : statusSource === 'LIVE' ? (
-              <Translate id="homepage.releases.feedLive">Live</Translate>
+              'Live'
             ) : (
-              <Translate id="homepage.releases.feedOffline">Offline</Translate>
+              'Offline'
             )}
           </span>
         </div>
         <div className={styles.systemStats}>
           <div>
-            <Translate id="homepage.releases.timeLabel">TIME:</Translate>{' '}
-            <span>{currentTime || '--:--:--'}</span>
+            TIME: <span>{currentTime || '--:--:--'}</span>
           </div>
         </div>
       </div>
@@ -253,9 +249,7 @@ export default function ReleaseFeed(): React.JSX.Element {
       {/* Recent Releases Console Panel */}
       <div className={styles.consolePanel}>
         <div className={styles.consoleHeader}>
-          <span>
-            <Translate id="homepage.releases.consoleTitle">RECENT FACTORY IMAGE RELEASES</Translate>
-          </span>
+          <span>RECENT FACTORY IMAGE RELEASES</span>
         </div>
         <div className={styles.consoleBody}>
           {loading ? (
@@ -302,13 +296,9 @@ export default function ReleaseFeed(): React.JSX.Element {
                   <span className={styles.messageText}>{release.name}</span>
                   
                   {hasChangelog ? (
-                    <span className={styles.changelogLink}>
-                      <Translate id="homepage.releases.changelog">Changelog</Translate>
-                    </span>
+                    <span className={styles.changelogLink}>Changelog</span>
                   ) : (
-                    <span className={styles.changelogUnavailable}>
-                      <Translate id="homepage.releases.changelogUnavailable">Unavailable</Translate>
-                    </span>
+                    <span className={styles.changelogUnavailable}>Unavailable</span>
                   )}
                   
                   <span className={styles.arrowIcon}>→</span>
