@@ -282,6 +282,13 @@ const config: Config = {
       tagName: 'link',
       attributes: {
         rel: 'preconnect',
+        href: 'https://rsms.me/',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
         href: 'https://fonts.googleapis.com',
       },
     },
@@ -298,7 +305,14 @@ const config: Config = {
       tagName: 'link',
       attributes: {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap',
+        href: 'https://rsms.me/inter/inter.css',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap',
       },
     },
   ],

@@ -6,6 +6,7 @@
 
 html {
   letter-spacing: -0.015em;
+  font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -21,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
   --ifm-color-primary-lighter: #e53940;
   --ifm-color-primary-lightest: #ea5b61;
 
-  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-font-family-base: 'Inter var', 'Inter', system-ui, -apple-system, sans-serif;
   --ifm-font-family-monospace: 'JetBrains Mono', monospace;
   --ifm-code-font-size: 90%;
   --ifm-heading-font-weight: 600;
