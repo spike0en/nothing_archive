@@ -9,9 +9,17 @@ interface Commit {
   message: string;
 }
 
+interface RepoStats {
+  stars: number;
+  hits: number;
+}
+
 const CACHE_KEY = 'nothing_archive_commits_cache_v2';
 const CACHE_TIME_KEY = 'nothing_archive_commits_cache_time_v2';
 const CACHE_TIMEOUT = 5 * 60 * 1000; // 5 minutes in milliseconds
+
+const STATS_CACHE_KEY = 'nothing_archive_repo_stats_v1';
+const STATS_CACHE_TIME_KEY = 'nothing_archive_repo_stats_time_v1';
 
 /**
  * Calculates a clean relative time difference string (e.g. 3m, 2h, 4d).
@@ -49,6 +57,9 @@ export default function CommitMatrix(): React.JSX.Element {
   const [errorState, setErrorState] = useState<'RATE_LIMITED' | 'FAILED' | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState('');
+
+  const [repoStats, setRepoStats] = useState<RepoStats>({ stars: 0, hits: 0 });
+  const [statsLoading, setStatsLoading] = useState(true);
 
   // 1. Ticking IST Clock (Asia/Kolkata)
   useEffect(() => {
@@ -149,30 +160,74 @@ export default function CommitMatrix(): React.JSX.Element {
     loadCommits();
   }, []);
 
-  // --- Derived stats from commits ---
+  // 3. Fetch Stars and Hits Count (with caching and Promise.allSettled safety)
+  useEffect(() => {
+    async function loadStats() {
+      try {
+        const cachedData = localStorage.getItem(STATS_CACHE_KEY);
+        const cachedTime = localStorage.getItem(STATS_CACHE_TIME_KEY);
+        const now = Date.now();
 
-  const now = new Date();
-  const todayStart = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+        if (cachedData && cachedTime && now - parseInt(cachedTime, 10) < CACHE_TIMEOUT) {
+          setRepoStats(JSON.parse(cachedData));
+          setStatsLoading(false);
+          return;
+        }
 
-  // Commits in the last 30 days
-  const commits30d = commits.filter(c => {
-    const d = new Date(c.date);
-    const dUTC = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
-    const diffDays = Math.round((todayStart.getTime() - dUTC.getTime()) / (1000 * 60 * 60 * 24));
-    return diffDays >= 0 && diffDays < 30;
-  });
+        const [repoRes, hitsRes] = await Promise.allSettled([
+          fetch('https://api.github.com/repos/spike0en/nothing_archive'),
+          fetch('https://hitscounter.dev/api/hit?output=json&url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive')
+        ]);
 
-  // Unique contributors in the last 30 days (authors + co-authors)
-  const contributors30d = (() => {
-    const nameSet = new Set<string>();
-    commits30d.forEach(c => {
-      nameSet.add(c.author);
-      c.coAuthors.forEach(ca => nameSet.add(ca));
-    });
-    return nameSet.size;
-  })();
+        let stars = 0;
+        let hits = 0;
+
+        if (repoRes.status === 'fulfilled' && repoRes.value.ok) {
+          const data = await repoRes.value.json();
+          stars = data.stargazers_count || 0;
+        } else {
+          const old = cachedData ? JSON.parse(cachedData) : null;
+          stars = old ? old.stars : 0;
+        }
+
+        if (hitsRes.status === 'fulfilled' && hitsRes.value.ok) {
+          const data = await hitsRes.value.json();
+          hits = data.total_hits || 0;
+        } else {
+          const old = cachedData ? JSON.parse(cachedData) : null;
+          hits = old ? old.hits : 0;
+        }
+
+        const newStats = { stars, hits };
+        localStorage.setItem(STATS_CACHE_KEY, JSON.stringify(newStats));
+        localStorage.setItem(STATS_CACHE_TIME_KEY, now.toString());
+        setRepoStats(newStats);
+        setStatsLoading(false);
+      } catch (err) {
+        console.warn('loadStats failed', err);
+        setStatsLoading(false);
+      }
+    }
+
+    loadStats();
+  }, []);
 
   const latestCommit = commits[0] || { sha: '------', author: 'N/A', coAuthors: [], date: '', message: 'Waiting for connection...' };
+
+  const stats = [
+    {
+      label: 'LAST COMMIT',
+      value: loading ? '—' : latestCommit.date ? getTimeLag(latestCommit.date) + ' ago' : '—',
+    },
+    {
+      label: 'STARS',
+      value: statsLoading ? '—' : repoStats.stars.toLocaleString(),
+    },
+    {
+      label: 'HITS',
+      value: statsLoading ? '—' : repoStats.hits.toLocaleString(),
+    },
+  ];
 
   /**
    * Formats the author display for a commit row.
@@ -192,20 +247,13 @@ export default function CommitMatrix(): React.JSX.Element {
     );
   };
 
-  const stats = [
-    {
-      label: 'LAST COMMIT',
-      value: loading ? '—' : latestCommit.date ? getTimeLag(latestCommit.date) + ' ago' : '—',
-    },
-  ];
-
   return (
     <div className={styles.container}>
       {/* Telemetry Header */}
       <div className={styles.telemetryHeader}>
         <div className={styles.systemLabel}>
           <span className={`${styles.pulseDot} ${statusSource === 'LIVE' ? styles.pulseDotLive : styles.pulseDotOffline}`} />
-          <span className={styles.feedTextPrefix}>COMMITS FEED: </span>
+          <span className={styles.feedTextPrefix}>REPO FEED: </span>
           <span className={statusSource === 'LIVE' ? styles.feedStatusLive : styles.feedStatusOffline}>
             {errorState ? (
               errorState === 'RATE_LIMITED' ? (

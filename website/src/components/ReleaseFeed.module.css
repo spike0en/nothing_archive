@@ -79,13 +79,10 @@
 
 .feedStatusLive {
   color: var(--ifm-color-primary);
-  text-shadow: 0 0 4px rgba(255, 60, 60, 0.25);
-  font-size: 0.68rem;
 }
 
 .feedStatusOffline {
   color: rgba(128, 128, 128, 0.7);
-  font-size: 0.68rem;
 }
 
 @keyframes telemetryPulse {

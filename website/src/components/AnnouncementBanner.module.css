@@ -53,6 +53,33 @@
   opacity: 0.75;
 }
 
+.contentNonClickable {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.inlineLink {
+  color: var(--ifm-color-primary) !important;
+  font-weight: 700;
+  text-decoration: none !important;
+  transition: opacity 0.2s ease;
+}
+
+.inlineLink:hover {
+  opacity: 0.75;
+  text-decoration: underline !important;
+}
+
+.separator {
+  opacity: 0.8;
+}
+
 .pulseDot {
   width: 6px;
   height: 6px;
@@ -72,11 +99,6 @@
     opacity: 1;
     transform: scale(1.1);
   }
-}
-
-.prefix {
-  opacity: 0.5;
-  letter-spacing: 0.05em;
 }
 
 .message {
@@ -108,15 +130,16 @@
   color: var(--ifm-color-primary);
 }
 
-/* Mobile: left-align on small screens */
+/* Mobile: center-align on small screens */
 @media screen and (max-width: 576px) {
   .container {
-    padding: 0.5rem 2.5rem 0.5rem 1rem;
-    justify-content: flex-start;
+    padding: 0.5rem 2.5rem;
+    justify-content: center;
   }
-  .content {
-    justify-content: flex-start;
+  .content,
+  .contentNonClickable {
+    justify-content: center;
     font-size: 0.65rem;
-    gap: 0.35rem;
+    gap: 0.25rem;
   }
 }

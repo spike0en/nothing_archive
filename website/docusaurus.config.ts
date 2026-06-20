@@ -358,20 +358,6 @@ const config: Config = {
           position: 'left',
           label: 'Docs',
         },
-        {
-          href: 'https://github.com/spike0en/nothing_archive',
-          position: 'right',
-          className: 'header-badge header-github-hits',
-          'aria-label': 'GitHub Hits',
-          html: `<img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%23d71921&labelColor=%23181818&style=flat-square" alt="GitHub Hits" width="133" height="20" style="width: auto; height: 20px;" loading="lazy" />`,
-        },
-        {
-          href: 'https://github.com/spike0en/nothing_archive/stargazers',
-          position: 'right',
-          className: 'header-badge header-github-stars',
-          'aria-label': 'GitHub Stars',
-          html: `<img src="https://img.shields.io/github/stars/spike0en/nothing_archive?logo=github&logoColor=white&label=Stars&color=d71921&labelColor=181818&style=flat-square" alt="GitHub Stars" width="94" height="20" style="width: auto; height: 20px;" loading="lazy" />`,
-        },
       ],
     },
     footer: {
