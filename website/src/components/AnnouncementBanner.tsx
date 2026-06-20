@@ -171,7 +171,7 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
             {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             className={styles.content}
           >
-            <span className={styles.pulseDot} />
+            <span className={styles.announcementTag}>📢</span>
             <span className={styles.message}>
               {`${singleRelease.codename}-${singleRelease.version} is now available!`}
             </span>
@@ -194,7 +194,7 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
     <div className={styles.banner}>
       <div className={styles.container}>
         <div className={styles.contentNonClickable}>
-          <span className={styles.pulseDot} />
+          <span className={styles.announcementTag}>📢</span>
           <span className={styles.message}>New updates available: </span>
           {releases.map((release, index) => {
             const changelogKey = `${release.codename}-${release.version}`.toLowerCase();

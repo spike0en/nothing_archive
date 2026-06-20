@@ -51,6 +51,26 @@ export default function ReleaseFeed(): React.JSX.Element {
   const [errorState, setErrorState] = useState<'RATE_LIMITED' | 'FAILED' | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState('');
+  const [blinkActive, setBlinkActive] = useState(true);
+
+  // Track latest release per model within approx 90 days
+  const highlightedReleaseIds = React.useMemo(() => {
+    const ids = new Set<number>();
+    const seen = new Set<string>();
+    const cutoff = Date.now() - 90 * 24 * 60 * 60 * 1000; // 90 days
+    
+    for (const release of releases) {
+      const code = release.codename.toLowerCase();
+      if (!seen.has(code)) {
+        seen.add(code);
+        const pubTime = new Date(release.publishedAt).getTime();
+        if (pubTime >= cutoff) {
+          ids.add(release.id);
+        }
+      }
+    }
+    return ids;
+  }, [releases]);
 
   // 1. Ticking London Clock (Europe/London)
   useEffect(() => {
@@ -73,6 +93,7 @@ export default function ReleaseFeed(): React.JSX.Element {
       const tzLabel = parts.find(p => p.type === 'timeZoneName')?.value || 'BST';
       
       setCurrentTime(`${timeString} ${tzLabel}`);
+      setBlinkActive(now.getSeconds() % 2 === 0);
     };
     updateClock();
     const interval = setInterval(updateClock, 1000);
@@ -211,21 +232,21 @@ export default function ReleaseFeed(): React.JSX.Element {
         <div className={styles.systemLabel}>
           <span
             className={`${styles.pulseDot} ${
-              statusSource === 'LIVE' ? styles.pulseDotLive : styles.pulseDotOffline
+              statusSource === 'LIVE' ? (blinkActive ? styles.pulseDotLive : styles.pulseDotDim) : styles.pulseDotOffline
             }`}
           />
-          <span className={styles.feedTextPrefix}>RELEASES FEED: </span>
+          <span className={styles.feedTextPrefix}>RELEASES FEED:</span>
           <span className={statusSource === 'LIVE' ? styles.feedStatusLive : styles.feedStatusOffline}>
             {errorState ? (
               errorState === 'RATE_LIMITED' ? (
-                'Rate Limited'
+                'RATE LIMITED'
               ) : (
-                'Error'
+                'ERROR'
               )
             ) : statusSource === 'LIVE' ? (
-              'Live'
+              'LIVE'
             ) : (
-              'Offline'
+              'OFFLINE'
             )}
           </span>
         </div>
@@ -277,32 +298,58 @@ export default function ReleaseFeed(): React.JSX.Element {
               <span className={styles.messageText}>NO RELEASES FOUND</span>
             </div>
           ) : (
-            releases.slice(0, 10).map((release, idx) => {
+            releases
+              .filter(r => new Date(r.publishedAt).getTime() >= Date.now() - 90 * 24 * 60 * 60 * 1000)
+              .slice(0, 30)
+              .map((release, idx) => {
               const changelogKey = `${release.codename}-${release.version}`.toLowerCase();
               const hasChangelog = availableChangelogs.has(changelogKey);
               const changelogUrl = `/docs/changelogs/${release.codename.toLowerCase()}/${release.codename}-${release.version}`;
-              const targetUrl = hasChangelog ? changelogUrl : release.htmlUrl;
-              const isExternal = !hasChangelog;
+
+              const isLatestModelRelease = highlightedReleaseIds.has(release.id);
 
               return (
-                <Link
-                  key={release.id}
-                  to={targetUrl}
-                  {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                  className={styles.consoleLine}
-                >
-                  <span className={`${styles.statusDot} ${idx === 0 ? styles.statusDotActive : ''}`} />
-                  <span className={styles.timeLag}>{getTimeLag(release.publishedAt)}</span>
-                  <span className={styles.messageText}>{release.name}</span>
+                <div key={release.id} className={styles.consoleLine}>
+                  <span className={`${styles.timeLag} ${idx === 0 ? styles.timeLagActive : ''}`}>{getTimeLag(release.publishedAt)}</span>
+                  <span className={styles.messageText}>
+                    {hasChangelog ? (
+                      <Link
+                        to={changelogUrl}
+                        className={`${styles.buildLink} ${isLatestModelRelease ? styles.buildTextHighlighted : ''}`}
+                      >
+                        {release.name}
+                      </Link>
+                    ) : (
+                      <span className={`${styles.buildText} ${isLatestModelRelease ? styles.buildTextHighlighted : ''}`}>
+                        {release.name}
+                      </span>
+                    )}
+                  </span>
                   
-                  {hasChangelog ? (
-                    <span className={styles.changelogLink}>Changelog</span>
-                  ) : (
-                    <span className={styles.changelogUnavailable}>Unavailable</span>
-                  )}
-                  
-                  <span className={styles.arrowIcon}>→</span>
-                </Link>
+                  <a
+                    href={release.htmlUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${styles.githubLink} ${isLatestModelRelease ? styles.githubLinkHighlighted : ''}`}
+                    title="Open GitHub Release"
+                  >
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className={styles.downloadIcon}
+                    >
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                  </a>
+                </div>
               );
             })
           )}

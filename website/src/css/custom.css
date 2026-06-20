@@ -889,6 +889,7 @@ a:hover {
   border-left-width: 4px;
 }
 
+
 /* Accessibility: Underline footer links so they aren't distinguishable by color alone */
 .footer a {
   text-decoration: underline;
@@ -1637,6 +1638,15 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
 @keyframes scaleUp {
   from { transform: scale(0.96); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes digitalBlink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0.15;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

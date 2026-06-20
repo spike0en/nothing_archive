@@ -80,24 +80,37 @@
   opacity: 0.8;
 }
 
-.pulseDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--ifm-color-primary);
-  box-shadow: 0 0 8px var(--ifm-color-primary);
-  animation: pulse 2s infinite ease-in-out;
+.announcementTag {
+  font-size: 0.85rem;
+  margin-right: 4px;
   flex-shrink: 0;
+  user-select: none;
+  display: inline-block;
+  transform-origin: center center;
+  animation: alertWobble 5s steps(1) infinite;
 }
 
-@keyframes pulse {
-  0%, 100% {
-    opacity: 0.4;
-    transform: scale(0.9);
+@keyframes alertWobble {
+  0%, 80%, 100% {
+    transform: rotate(0deg) scale(1);
   }
-  50% {
-    opacity: 1;
-    transform: scale(1.1);
+  82% {
+    transform: rotate(-15deg) scale(1.1);
+  }
+  85% {
+    transform: rotate(15deg) scale(1.1);
+  }
+  88% {
+    transform: rotate(-15deg) scale(1.1);
+  }
+  91% {
+    transform: rotate(15deg) scale(1.1);
+  }
+  94% {
+    transform: rotate(-15deg) scale(1.1);
+  }
+  97% {
+    transform: rotate(0deg) scale(1.05);
   }
 }
 

@@ -57,6 +57,7 @@ export default function CommitMatrix(): React.JSX.Element {
   const [errorState, setErrorState] = useState<'RATE_LIMITED' | 'FAILED' | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState('');
+  const [blinkActive, setBlinkActive] = useState(true);
 
   const [repoStats, setRepoStats] = useState<RepoStats>({ stars: 0, hits: 0 });
   const [statsLoading, setStatsLoading] = useState(true);
@@ -82,6 +83,7 @@ export default function CommitMatrix(): React.JSX.Element {
       const tzLabel = parts.find(p => p.type === 'timeZoneName')?.value || 'IST';
       
       setCurrentTime(`${timeString} ${tzLabel}`);
+      setBlinkActive(now.getSeconds() % 2 === 0);
     };
     updateClock();
     const interval = setInterval(updateClock, 1000);
@@ -233,14 +235,15 @@ export default function CommitMatrix(): React.JSX.Element {
    * Formats the author display for a commit row.
    * Shows "Author" alone, or "Author +N" when co-authors are present.
    */
-  const formatAuthors = (commit: Commit): React.JSX.Element => {
+  const formatAuthors = (commit: Commit, isLatest: boolean): React.JSX.Element => {
+    const authorClass = `${styles.authorTag} ${isLatest ? styles.authorLatest : ''}`;
     if (commit.coAuthors.length === 0) {
-      return <span className={styles.authorTag}>{commit.author}</span>;
+      return <span className={authorClass}>{commit.author}</span>;
     }
 
     const tooltip = [commit.author, ...commit.coAuthors].join(', ');
     return (
-      <span className={styles.authorTag} title={tooltip}>
+      <span className={authorClass} title={tooltip}>
         {commit.author}
         <span className={styles.coAuthorBadge}>+{commit.coAuthors.length}</span>
       </span>
@@ -252,19 +255,19 @@ export default function CommitMatrix(): React.JSX.Element {
       {/* Telemetry Header */}
       <div className={styles.telemetryHeader}>
         <div className={styles.systemLabel}>
-          <span className={`${styles.pulseDot} ${statusSource === 'LIVE' ? styles.pulseDotLive : styles.pulseDotOffline}`} />
-          <span className={styles.feedTextPrefix}>REPO FEED: </span>
+          <span className={`${styles.pulseDot} ${statusSource === 'LIVE' ? (blinkActive ? styles.pulseDotLive : styles.pulseDotDim) : styles.pulseDotOffline}`} />
+          <span className={styles.feedTextPrefix}>REPO FEED:</span>
           <span className={statusSource === 'LIVE' ? styles.feedStatusLive : styles.feedStatusOffline}>
             {errorState ? (
               errorState === 'RATE_LIMITED' ? (
-                'Rate Limited'
+                'RATE LIMITED'
               ) : (
-                'Error'
+                'ERROR'
               )
             ) : statusSource === 'LIVE' ? (
-              'Live'
+              'LIVE'
             ) : (
-              'Offline'
+              'OFFLINE'
             )}
           </span>
         </div>
@@ -289,7 +292,6 @@ export default function CommitMatrix(): React.JSX.Element {
       <div className={styles.consolePanel}>
         <div className={styles.consoleHeader}>
           <span>RECENT CHANGES</span>
-          <span>ID: {latestCommit.sha || '------'}</span>
         </div>
         <div className={styles.consoleBody}>
           {loading ? (
@@ -317,21 +319,23 @@ export default function CommitMatrix(): React.JSX.Element {
               <span className={styles.messageText}>NO COMMITS FOUND</span>
             </div>
           ) : (
-            commits.slice(0, 20).map((commit, idx) => (
-              <a
-                key={commit.sha}
-                href={`https://github.com/spike0en/nothing_archive/commit/${commit.sha}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.consoleLine}
-              >
-                <span className={`${styles.statusDot} ${idx === 0 ? styles.statusDotActive : ''}`} />
-                <span className={styles.timeLag}>{getTimeLag(commit.date)}</span>
-                {formatAuthors(commit)}
-                <span className={styles.messageText}>{commit.message}</span>
-                <span className={styles.shaTag}>{commit.sha}</span>
-              </a>
-            ))
+            commits.slice(0, 20).map((commit, idx) => {
+              const isLatest = idx === 0;
+              return (
+                <a
+                  key={commit.sha}
+                  href={`https://github.com/spike0en/nothing_archive/commit/${commit.sha}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.consoleLine}
+                >
+                  <span className={`${styles.timeLag} ${isLatest ? styles.timeLagActive : ''}`}>{getTimeLag(commit.date)}</span>
+                  {formatAuthors(commit, isLatest)}
+                  <span className={`${styles.messageText} ${isLatest ? styles.messageTextLatest : ''}`}>{commit.message}</span>
+                  <span className={`${styles.shaTag} ${isLatest ? styles.shaLatest : ''}`}>{commit.sha}</span>
+                </a>
+              );
+            })
           )}
         </div>
       </div>
