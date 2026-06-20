@@ -9,6 +9,43 @@ export default function CopyButtonSetup(): null {
       return;
     }
 
+    const wrapTables = () => {
+      const tables = document.querySelectorAll('.markdown table, .theme-doc-markdown table, article table');
+      tables.forEach((table) => {
+        const parent = table.parentElement;
+        if (!parent) return;
+
+        // Skip if already wrapped in a scroll container
+        if (
+          parent.classList.contains('table-responsive-fallback') ||
+          parent.classList.contains('tableWrapper') ||
+          parent.className.includes('tableWrapper')
+        ) {
+          return;
+        }
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'table-responsive-fallback';
+
+        if (table.parentNode) {
+          table.parentNode.insertBefore(wrapper, table);
+          wrapper.appendChild(table);
+        }
+      });
+    };
+
+    // Run table wrapper setup
+    wrapTables();
+
+    // Observe DOM changes to dynamically wrap tables on client navigation
+    const observer = new MutationObserver(() => {
+      wrapTables();
+    });
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const link = target.closest('table td a') as HTMLAnchorElement | null;
@@ -65,6 +102,7 @@ export default function CopyButtonSetup(): null {
 
     document.addEventListener('mouseover', handleMouseOver);
     return () => {
+      observer.disconnect();
       document.removeEventListener('mouseover', handleMouseOver);
     };
   }, []);

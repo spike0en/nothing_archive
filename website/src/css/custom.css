@@ -157,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
 
   .navbar__items--right {
     display: flex !important;
-    gap: 0.4rem;
+    gap: 0.75rem; /* Spacious, premium spacing */
     align-items: center;
   }
 
@@ -176,16 +176,18 @@ h1, h2, h3, h4, h5, h6 {
     height: 18px;
   }
 
-  /* Hide Hits badge on mobile to prioritize Stars & GitHub */
-  .navbar__items--right .header-github-hits {
-    display: none !important;
-  }
-
   /* Resolve search container positioning conflicts */
   div[class*="navbarSearchContainer"] {
     position: relative !important;
     right: auto !important;
-    margin-left: 0.5rem;
+    margin-left: 0.75rem;
+  }
+}
+
+@media (max-width: 700px) {
+  /* Hide Hits badge on smaller screens to prioritize Stars & GitHub */
+  .navbar__items--right .header-github-hits {
+    display: none !important;
   }
 }
 
@@ -368,7 +370,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .docs-wrapper .main {
-  padding: 2rem 0;
+  padding: 0 0 2rem 0 !important;
+}
+
+main[class*="docMainContainer"] {
+  padding-top: 1rem !important;
 }
 
 .theme-doc-markdown {
@@ -416,19 +422,30 @@ article {
   overflow-x: visible;
 }
 
-/* Horizontal scrolling for wide tables */
+/* Horizontal scrolling for wide tables & custom wrapper fallback */
 div[class*="tableWrapper"],
-.tableWrapper {
-  overflow-x: auto;
-
-  margin: 1rem 0;
+.tableWrapper,
+.table-responsive-fallback {
+  overflow-x: auto !important;
+  overflow-y: auto !important; /* Avoid vertical scrollbar clipping */
+  max-width: 100%;
+  margin: 0.5rem 0 1.25rem 0;
+  border: 1px solid var(--nothing-border) !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
 }
 
-/* Base table styling - keep as table display */
+[data-theme='dark'] div[class*="tableWrapper"],
+[data-theme='dark'] .tableWrapper,
+[data-theme='dark'] .table-responsive-fallback {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Base table styling - restore standard table layout inside containers */
 table {
   display: table !important;
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate !important;
   border-spacing: 0;
   font-size: 0.9rem;
 }
@@ -449,55 +466,64 @@ table tr {
 table th,
 table td {
   display: table-cell;
+  border: none !important; /* Override standard Infima borders */
 }
 
 /* Table header styling */
 table th {
-  background-color: rgba(128, 128, 128, 0.08);
+  background-color: rgba(128, 128, 128, 0.05) !important;
+  font-family: var(--ifm-font-family-monospace);
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   letter-spacing: 0.08em;
   white-space: nowrap;
-  padding: 0.85rem 1.1rem;
+  padding: 1rem 1.25rem;
   text-align: left;
-  border-bottom: 2px solid var(--nothing-border-strong);
+  border-bottom: 1px solid var(--nothing-border-strong) !important;
+  color: inherit;
+  opacity: 0.8;
 }
 
 [data-theme='dark'] table th {
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(255, 255, 255, 0.02) !important;
 }
 
 /* Table cell styling */
 table td {
   vertical-align: middle;
-  padding: 0.85rem 1.1rem;
+  padding: 1rem 1.25rem;
   white-space: normal;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  border-bottom: 1px solid var(--nothing-border);
+  border-bottom: 1px solid var(--nothing-border) !important;
+}
+
+/* Remove border from last row to avoid double borders at the bottom card edge */
+table tbody tr:last-child td {
+  border-bottom: none !important;
 }
 
 /* Zebra striping */
 table tbody tr:nth-child(even) {
-  background-color: rgba(128, 128, 128, 0.015);
+  background-color: rgba(128, 128, 128, 0.01);
 }
 
 [data-theme='dark'] table tbody tr:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.008);
+  background-color: rgba(255, 255, 255, 0.004);
 }
 
 /* Row hover */
 table tbody tr {
-  transition: background-color 0.15s ease;
+  transition: background-color 0.2s ease;
 }
 
 table tbody tr:hover {
-  background-color: rgba(128, 128, 128, 0.04);
+  background-color: rgba(128, 128, 128, 0.03) !important;
 }
 
 [data-theme='dark'] table tbody tr:hover {
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: rgba(255, 255, 255, 0.015) !important;
 }
 
 /* Hyperlink styling within tables - command line badge aesthetic */
@@ -516,11 +542,15 @@ table td a {
   white-space: nowrap;
 }
 
-table td a:hover {
+table td a:hover,
+.table-copy-wrapper:hover a {
   background-color: var(--ifm-color-primary) !important;
   color: #ffffff !important;
   border-color: var(--ifm-color-primary);
   box-shadow: 0 2px 10px rgba(215, 25, 33, 0.25);
+}
+
+table td a:hover {
   transform: translateY(-1px);
 }
 
@@ -529,7 +559,8 @@ table td a:hover {
   border-color: rgba(255, 255, 255, 0.08);
 }
 
-[data-theme='dark'] table td a:hover {
+[data-theme='dark'] table td a:hover,
+[data-theme='dark'] .table-copy-wrapper:hover a {
   background-color: var(--ifm-color-primary) !important;
   border-color: var(--ifm-color-primary);
   box-shadow: 0 2px 12px rgba(215, 25, 33, 0.35);
@@ -545,6 +576,14 @@ table td a:hover {
 
     width: 100%;
     font-size: 0.85rem;
+  }
+
+  /* Prevent double scrollbars on mobile when table is wrapped */
+  .tableWrapper table,
+  .table-responsive-fallback table,
+  div[class*="tableWrapper"] table {
+    display: table !important;
+    overflow: visible !important;
   }
 
   /* Scroll affordance — right-edge fade to indicate scrollable content */
@@ -595,27 +634,52 @@ table td a:hover {
   }
 }
 
-/* Custom scrollbar for tables */
+/* Custom scrollbar for tables and scrollable containers */
 .markdown::-webkit-scrollbar,
-.theme-doc-markdown::-webkit-scrollbar {
-  height: 6px;
+.theme-doc-markdown::-webkit-scrollbar,
+div[class*="tableWrapper"]::-webkit-scrollbar,
+.tableWrapper::-webkit-scrollbar,
+.table-responsive-fallback::-webkit-scrollbar,
+table::-webkit-scrollbar,
+details::-webkit-scrollbar {
+  height: 8px; /* Slightly taller for better usability and visibility */
+  width: 8px;
 }
 
 .markdown::-webkit-scrollbar-track,
-.theme-doc-markdown::-webkit-scrollbar-track {
-  background: rgba(128, 128, 128, 0.1);
-  border-radius: 3px;
+.theme-doc-markdown::-webkit-scrollbar-track,
+div[class*="tableWrapper"]::-webkit-scrollbar-track,
+.tableWrapper::-webkit-scrollbar-track,
+.table-responsive-fallback::-webkit-scrollbar-track,
+table::-webkit-scrollbar-track,
+details::-webkit-scrollbar-track {
+  background: rgba(128, 128, 128, 0.05);
+  border-radius: 4px;
 }
 
 .markdown::-webkit-scrollbar-thumb,
-.theme-doc-markdown::-webkit-scrollbar-thumb {
-  background: rgba(128, 128, 128, 0.3);
-  border-radius: 3px;
+.theme-doc-markdown::-webkit-scrollbar-thumb,
+div[class*="tableWrapper"]::-webkit-scrollbar-thumb,
+.tableWrapper::-webkit-scrollbar-thumb,
+.table-responsive-fallback::-webkit-scrollbar-thumb,
+table::-webkit-scrollbar-thumb,
+details::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.35); /* Increased default visibility */
+  border-radius: 4px;
+  border: 2px solid transparent; /* Padding effect */
+  background-clip: padding-box;
 }
 
 .markdown::-webkit-scrollbar-thumb:hover,
-.theme-doc-markdown::-webkit-scrollbar-thumb:hover {
-  background: rgba(128, 128, 128, 0.5);
+.theme-doc-markdown::-webkit-scrollbar-thumb:hover,
+div[class*="tableWrapper"]::-webkit-scrollbar-thumb:hover,
+.tableWrapper::-webkit-scrollbar-thumb:hover,
+.table-responsive-fallback::-webkit-scrollbar-thumb:hover,
+table::-webkit-scrollbar-thumb:hover,
+details::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.6); /* High visibility on hover */
+  border: 2px solid transparent;
+  background-clip: padding-box;
 }
 
 /* Code blocks */
@@ -639,8 +703,9 @@ code {
 }
 
 .header-badge img {
+  box-sizing: content-box !important;
   height: 20px;
-  border-radius: 6px;
+  border-radius: 6px; /* Match global styling border-radius (e.g. navbar links, tables) for aesthetic consistency */
   overflow: hidden;
   border: 1px solid var(--nothing-border);
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease, box-shadow 0.2s ease;
@@ -679,8 +744,9 @@ code {
 }
 
 .navbar-sidebar .header-badge img {
+  box-sizing: content-box !important;
   height: 20px;
-  border-radius: 6px;
+  border-radius: 6px; /* Match global styling border-radius (e.g. navbar links, tables) for aesthetic consistency */
   border: 1px solid var(--nothing-border);
 }
 
@@ -906,7 +972,7 @@ a:hover {
 
   /* Doc page content width */
   main[class*="docMainContainer"] {
-    padding: 0 0.5rem;
+    padding: 0.5rem 0.5rem 2rem 0.5rem !important;
   }
 
   /* Docs sidebar toggle button */
@@ -1131,7 +1197,7 @@ details summary:hover::before {
 }
 
 /* Mobile search input when collapsed (not focused) */
-@media (max-width: 996px) {
+@media (max-width: 576px) {
   .navbar__search-input:not(:focus) {
     width: 2rem !important;
     padding: 0 !important;
@@ -1146,6 +1212,11 @@ details summary:hover::before {
   }
   .navbar__search-input:not(:focus)::-moz-placeholder {
     color: transparent !important;
+  }
+
+  /* Hide the keyboard shortcut hint when search is collapsed on mobile */
+  .navbar__search div[class*="searchHintContainer"] {
+    display: none !important;
   }
 }
 
@@ -1244,55 +1315,78 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
   align-items: center;
   position: relative;
   vertical-align: middle;
-  padding-right: 0;
-  transition: padding-right 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s ease;
 }
 
+/* Ensure the link has constant padding on the right to fit the button without layout shifts */
+.table-copy-wrapper a {
+  padding-right: 24px !important; /* Constant padding-right reserves space within the badge */
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+/* Translate the entire wrapper on hover to raise badge and button together */
 .table-copy-wrapper:hover {
-  padding-right: 26px; /* 20px button + 6px gap */
+  transform: translateY(-1px);
+}
+
+/* Prevent double translation on the link inside the wrapper */
+.table-copy-wrapper:hover a {
+  transform: none !important;
 }
 
 .table-copy-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border-radius: 4px;
-  border: 1px solid var(--nothing-border);
-  background-color: var(--ifm-card-background-color);
-  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  background-color: rgba(255, 255, 255, 0.18) !important;
+  color: #ffffff !important;
   cursor: pointer;
   padding: 0;
   /* Hidden state: invisible, scaled down, non-interactive */
   opacity: 0;
   pointer-events: none;
   position: absolute;
-  right: 0;
+  right: 4px; /* Sits at the right edge of the badge */
   top: 50%;
   transform: translateY(-50%) scale(0.8);
   z-index: 10;
-  transition: opacity 0.2s ease, transform 0.2s ease,
+  transition: opacity 0.15s ease, transform 0.15s ease,
               background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
-/* Reveal on individual wrapper hover only — smooth rightward slide-in */
+[data-theme='dark'] .table-copy-btn {
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  background-color: rgba(255, 255, 255, 0.18) !important;
+  color: #ffffff !important;
+}
+
+/* Reveal on individual wrapper hover - opacity 1 prevents red background bleed-through */
 .table-copy-wrapper:hover .table-copy-btn {
-  opacity: 0.8;
+  opacity: 1;
   pointer-events: auto;
   transform: translateY(-50%) scale(1);
 }
 
 .table-copy-btn:hover {
   opacity: 1 !important;
-  background-color: var(--nothing-border-strong);
-  border-color: var(--ifm-color-primary);
-  color: var(--ifm-color-primary);
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #1a1a1a !important;
+}
+
+[data-theme='dark'] .table-copy-btn:hover {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #080808 !important;
 }
 
 .table-copy-btn svg {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
 }
 
 /* Tooltip bubble using CSS pseudo-elements */
@@ -1329,6 +1423,7 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
 .table-copy-btn.copied {
   color: #10b981 !important; /* Premium green */
   border-color: #10b981 !important;
+  background-color: rgba(16, 185, 129, 0.15) !important;
   opacity: 1 !important;
 }
 
@@ -1552,4 +1647,52 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
   .theme-back-to-top-button::before {
     transition: none;
   }
+}
+
+/* ==========================================
+   TABLE OF CONTENTS (TOC) - Nothing Aesthetic
+   ========================================== */
+.theme-doc-toc-desktop {
+  border-left: 1px solid var(--nothing-border);
+}
+
+.table-of-contents {
+  list-style-type: none;
+  padding-left: 0;
+  border-left: none !important;
+  margin-left: 0.5rem;
+}
+
+.table-of-contents__link {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: inherit;
+  opacity: 0.65;
+  text-decoration: none !important;
+  padding: 0.25rem 0.75rem;
+  border-left: 2px solid transparent;
+  transition: color 0.15s ease, opacity 0.15s ease, border-color 0.15s ease;
+}
+
+/* Hover state: dim is lifted, text turns red */
+.table-of-contents__link:hover {
+  opacity: 1;
+  color: var(--ifm-color-primary) !important;
+}
+
+/* Active state: red, full opacity, red left border indicator */
+.table-of-contents__link--active {
+  opacity: 1;
+  font-weight: 600;
+  color: var(--ifm-color-primary) !important;
+  border-left-color: var(--ifm-color-primary) !important;
+}
+
+/* Nested list indentation */
+.table-of-contents ul {
+  list-style-type: none;
+  padding-left: 0.75rem;
+  margin-top: 0.15rem;
+  margin-bottom: 0.15rem;
 }
