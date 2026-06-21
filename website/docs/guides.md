@@ -532,12 +532,12 @@ D. **Restoring Partitions**
 
 
  - **QCom Devices:**
-```sh
-    fastboot flash persist persist.img
-    fastboot flash modemst1 modemst1.img
-    fastboot flash modemst2 modemst2.img
-    ```
-    **Factory reset is not mandatory in this case.**
+   ```sh
+  fastboot flash persist persist.img
+  fastboot flash modemst1 modemst1.img
+  fastboot flash modemst2 modemst2.img
+  ```
+  **Factory reset is not mandatory in this case.**
 
 ---
 
