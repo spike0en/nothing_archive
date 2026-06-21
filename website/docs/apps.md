@@ -90,6 +90,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Matrix Bridge](https://github.com/StanSNS/glyph-matrix-bridge/) | StanSNS | Play custom images and GIFs on the Nothing Phone's Glyph Matrix from a home screen widget |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Toolkit for creating and intelligently displaying custom Glyph Matrix visuals for Nothing Phone (4a) Pro |
 | [Glyph Matrix Tasker Plugin](https://github.com/Gennadiyev/GlyphMatrixTaskerPlugin) | Gennadiyev | Tasker plugin for controlling the Glyph Matrix on Nothing Phone (3). |
+| [Glyph Matrix Tools](https://github.com/toberfasanok/Glyph-Matrix-Tools) | toberfasanok | Draw and display custom glyph images and animations on the Nothing Phone (3) Glyph Matrix |
 | [Glyph Mo](https://github.com/anamite/GlyphMo) | anamite | Glyph Matrix control application designed exclusively for the Nothing Phone (4a) Pro. |
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | Create and showcase Glyph art |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Notifications, timers, visualizer |
@@ -214,6 +215,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Calculator app with dot matrix fonts |
 | [Dot Files](https://play.google.com/store/apps/details?id=com.dotfiles.app) | Dotfield Studio | Clean, fast, local-first file manager |
 | [Dot Player](https://play.google.com/store/apps/details?id=com.creepsmile.dotplayer) | Creepsmile | Minimal local music player |
+| [EarPhone X](https://github.com/noebachofner/EarPhonesX) | noebachofner | Linux application to control and configure Nothing and CMF earbuds |
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | AI-powered browser |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Nothing-inspired core Essential Space experience for all devices, featuring quick screenshots, notes, voice memos, and more |
 | [Flip To Glyph Quick Tile](https://github.com/trup40/QuickTileForFlip2GlyphNP) | trup40 | A basic quick tile to toggle the Flip to Glyph setting on Nothing phones |
@@ -264,6 +266,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Sound Stream Now](https://play.google.com/store/apps/details?id=go.ssn) | Moworks | Music player supporting the Glyph Matrix |
 | [Stario Launcher](https://play.google.com/store/apps/details?id=com.stario.launcher) | tariqamarneh | Minimal dot-grid launcher inspired by the Nothing OS aesthetic |
 | [The Everything Key](https://play.google.com/store/apps/details?id=com.spandone.everythingkey) | spandone | Essential key remapper |
+| [Typebase](https://play.google.com/store/apps/details?id=com.typebase.app) | Quiva Connect | A Nothing design inspired keyboard with additional functionality from [Side Dock](https://play.google.com/store/apps/details?id=com.sidedock.app) exists |
 | [Void](https://play.google.com/store/apps/details?id=com.thevoid.focus) | vmcreate | Minimal app blocker based on Nothing OS design language |
 | [Voidcaller](https://play.google.com/store/apps/details?id=com.voidware.voidcaller) | VoidwareLabs | Minimalist dialer |
 | [WhispCal](https://play.google.com/store/apps/details?id=com.thomasmorice.whispcal) | Thomas Morice | Calorie tracking app for Android and [iOS](https://apps.apple.com/in/app/whispcal/id6757860582) |

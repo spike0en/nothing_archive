@@ -51,6 +51,7 @@ Community-built widgets inspired by Nothing OS for various platforms and desktop
 | [Not Widgets](https://github.com/GXX0T/NotWidgets) | GXX0T | Rainmeter widgets |
 | [Nothing KDE Widgets](https://github.com/jaxparrow07/nothing-kde-widgets) | jaxparrow07 | Nothing OS themed widgets for KDE Plasma |
 | [Nothing KWGT](https://github.com/AumGupta/KWGT-Widgets) | AumGupta | KWGT widgets |
+| [Rainmeter Nothing Widgets](https://github.com/KrazyManJ/rainmeter-nothing-widgets) | KrazyManJ | Rainmeter widgets designed to replicate Nothing OS widgets on the desktop |
 
 ### Desktop & IDE Themes
 
@@ -97,6 +98,7 @@ Assets and tools designed to help other developers build Nothing-inspired projec
 | [Dot Frame](https://github.com/NyxLumen/DotFrame) | NyxLumen | Video to Ascii converter with a nothing accent |
 | [Dot Matrixify](https://github.com/szelszabi/dotmatrixify) | szelszabi | Transform pixel art to dot matrix |
 | [Dotify Client](https://github.com/PATEL96/dotify-client) | PATEL96 | Dot Matrix image generator |
+| [Nothing Glyph Communication](https://github.com/endan-criso/Nothing-Glyph-Battery-Low-Indicator) | endan-criso | Android playground and reference implementation demonstrating official Glyph SDK integration on Nothing Phone (2a) |
 
 ---
 
@@ -117,6 +119,7 @@ Web-based applications inspired by Nothing OS.
 | [Nothing Clone](https://github.com/Jivan-Patel/nothing-clone) | Jivan-Patel | A multi-page static UI clone inspired by Nothing brand product pages |
 | [Nothing History](https://ironstike.github.io/nothing-history/) | Ironstike | A website about the history of Nothing's phones ([Repo](https://github.com/Ironstike/nothing-history)) |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Nothing OS inspired weather web app |
+| [Nothing Weather Clone](https://github.com/Avadhkumar-geek/nothing_weather_clone) | Avadhkumar-geek | Flutter-based weather application replicating the Nothing OS weather design |
 | [Spin The Bottle](https://dotmatrix-beerbottle.vercel.app/) | MadGlacierRunner | Spin the bottle simulator |
 
 ---
@@ -153,6 +156,7 @@ Essential resources including wikis, firmware archives, and system repair tools.
 | [Ear Battery CLI](https://github.com/pedrordgs/nothing-ear) | pedrordgs | Command-line tool to check battery levels of Nothing Ear wireless earbuds via Bluetooth |
 | [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | Native Rust desktop client for Nothing and CMF audio devices |
 | [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Rust based linux app to control Nothing earbuds’ ANC modes |
+| [EarPhone X](https://github.com/noebachofner/EarPhonesX) | noebachofner | Linux application to control and configure Nothing and CMF earbuds |
 | [Earctl](https://github.com/xhain/earctl) | xhain | [Alfred](https://www.alfredapp.com/) workflow to control Nothing Ear (2) Bluetooth headphones from macOS |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | Integrity check bypass PoC for Phone (2a) Series & CMF Phone (1) |
 | [Glyph Adapter](https://github.com/frogfile/GlyphAdapter) | frogfile | A root Android service that lets third-party apps using Nothing's Glyph SDK work on flashed phones |
@@ -163,6 +167,7 @@ Essential resources including wikis, firmware archives, and system repair tools.
 | [Nothing Desktop](https://github.com/sowahq/nothing-desktop) | sowahq | Menu-bar app to control battery, ANC, and EQ settings for Nothing earbuds |
 | [Nothing Flasher](https://github.com/spike0en/nothing-flasher) | spike0en & Hellboy017 | Fastboot flashing scripts |
 | [Nothing Glyph Interface Research](https://github.com/ThatOneCheat/nothing-glyph-interface-research) | ThatOneCheat | Reverse-engineering notes on the Nothing Phone Glyph SDK and system service, verified against decompiled code |
+| [Nothing Ear Linux](https://github.com/sn99/nothing-linux) | sn99 | Tauri-based Linux application to control and configure Nothing Ear earbuds (inspired by [Ear (Web)](https://earweb.bttl.xyz/)) |
 | [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | News and resources hub |
 | [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | Tool to patch/disable Logkit via ADB |
 | [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | A curated gallery of the Nothing community's favourite widgets |
@@ -171,6 +176,7 @@ Essential resources including wikis, firmware archives, and system repair tools.
 | [Nothing Wiki](https://nothing.wiki) | adbo | Community-maintained unofficial wiki for Nothing |
 | [Nothing X (DMS)](https://github.com/Bestello/dms-nothingx/) | Bestello | Nothing and CMF audio device controller plugin for Dank Material Shell |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | macOS companion app for Nothing and CMF earbuds |
+| [OpenBuds Windows](https://github.com/MahinZx/openbuds-windows) | MahinZx | Unofficial Windows desktop companion application for Nothing and CMF audio devices |
 | [Something X](https://github.com/SoaOaoS/something-x) | SoaOaoS | Nothing X app for Linux, tested to work on [Omarchy](https://omarchy.org/) |
 
 ---
@@ -185,6 +191,7 @@ These require root access (KernelSU or Magisk). Proceed with caution!
 |--------|--------|-------------|
 | [Dirac Audio Nothing Phone 1 Magisk Module](https://github.com/reiryuki/Dirac-Audio-Nothing-Phone-1-Magisk-Module) | reiryuki | Dirac Audio module ported from the Nothing Phone (1) for other devices |
 | [Glyph CLI](https://github.com/mahdi-salmanzade/glyph-cli) | mahdi-salmanzade | Control 137 LEDs directly from your terminal. No SDK. No app sandbox. Pure sysfs. |
+| [Ndot to Roboto](https://github.com/reindex-ot/Ndot-to-Roboto) | reindex-ot | Magisk module to replace the system Ndot font with Roboto |
 | [NetHunter Spacewar](https://github.com/ExTV/nethunter-spacewar) | ExTV | Kali NetHunter Magisk module for the Nothing Phone (1) |
 | [Nothing AI Changer](https://github.com/Martmists-GH/Nothing-AI-Changer) | Martmists-GH | Replace ChatGPT integration with another app |
 | [Nothing Battery Fix](https://github.com/Farpathan/Nothing-Battery-Fix) | Farpathan | Restore classic battery percentage style |
