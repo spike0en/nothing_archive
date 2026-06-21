@@ -1358,6 +1358,12 @@ details summary:hover::before {
   display: none !important;
 }
 
+/* Hide the search clear button when search is collapsed */
+.navbar__search:not(:focus-within) button[class*="searchClearButton"] {
+  display: none !important;
+}
+
+
 /* On mobile, when focused, restrict width so it fits */
 @media (max-width: 576px) {
   .navbar__search-input:focus {
