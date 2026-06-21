@@ -45,17 +45,17 @@ In order to ensure perfect alphabetical sorting, please follow these strict nami
 
 ### 1. Naming Convention (Spaces & Title Case)
 *   **Spaces for Readability:** Even if the Play Store or GitHub uses CamelCase, always add a space between words.
-    *   ❌ `GlyphGlow` $\rightarrow$ ✅ **Glyph Glow**
-    *   ❌ `NothingOS` $\rightarrow$ ✅ **Nothing OS**
-    *   ❌ `BetterBattery` $\rightarrow$ ✅ **Better Battery**
+    *   ❌ `GlyphGlow` → ✅ **Glyph Glow**
+    *   ❌ `NothingOS` → ✅ **Nothing OS**
+    *   ❌ `BetterBattery` → ✅ **Better Battery**
 *   **Title Case:** All entries must be properly capitalized. Avoid all-lowercase or repo-style names.
-    *   ❌ `nothing-rice` $\rightarrow$ ✅ **Nothing Rice**
-    *   ❌ `n-recipe` $\rightarrow$ ✅ **N Recipe**
+    *   ❌ `nothing-rice` → ✅ **Nothing Rice**
+    *   ❌ `n-recipe` → ✅ **N Recipe**
 
 ### 2. Alphabetical Sorting
 *   All entries within a table must be sorted **alphabetically by display name** (Column 1).
 *   Sorting is case-insensitive.
-*   *Note:* `No` comes before `Nothing` (e.g., `No Volume` $\rightarrow$ `Nothing Audio`).
+*   *Note:* `No` comes before `Nothing` (e.g., `No Volume` → `Nothing Audio`).
 
 ---
 
