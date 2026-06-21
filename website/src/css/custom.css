@@ -209,7 +209,7 @@ h1, h2, h3, h4, h5, h6 {
 
   .navbar__items--right {
     display: flex !important;
-    gap: 0.75rem; /* Spacious, premium spacing */
+    gap: 0; /* Match desktop layout spacing */
     align-items: center;
   }
 
@@ -232,12 +232,17 @@ h1, h2, h3, h4, h5, h6 {
   div[class*="navbarSearchContainer"] {
     position: relative !important;
     right: auto !important;
-    margin-left: 0.75rem;
+    margin-left: 0;
   }
 
   /* Keep color mode toggle visible on tablet view */
   .navbar [class*="colorModeToggle"] {
     display: flex !important;
+  }
+
+  /* Disable transitions on mobile/tablet to prevent double animation/flicker during index hydration/wrapping */
+  div[class*="navbarSearchContainer"] .navbar__search-input {
+    transition: none !important;
   }
 }
 
@@ -1293,6 +1298,10 @@ details summary:hover::before {
    ========================================== */
 
 /* Search container & Input field styling */
+div[class*="navbarSearchContainer"] {
+  padding-left: 0.25rem !important;
+}
+
 .navbar__search-input {
   font-family: var(--ifm-font-family-base) !important;
   font-size: 0.85rem !important;
@@ -1307,6 +1316,12 @@ details summary:hover::before {
   transition: width 0.25s ease, padding 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
   width: 14rem !important; /* Expanded width on desktop/tablet */
 }
+
+/* Disable transitions before the autocomplete library has wrapped the input to prevent double animation and load shrink animations */
+.navbar__search > .navbar__search-input {
+  transition: none !important;
+}
+
 
 [data-theme='dark'] .navbar__search-input {
   background-color: rgba(255, 255, 255, 0.04) !important;
