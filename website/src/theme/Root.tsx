@@ -8,7 +8,7 @@ interface RootProps {
 export default function Root({ children }: RootProps): React.JSX.Element {
   const [showShortcuts, setShowShortcuts] = useState(false);
 
-  // 2. Keyboard shortcut map event listener
+  // Keyboard shortcut map event listener
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
@@ -34,7 +34,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // 3. Scroll progress ring — SVG injected into the back-to-top button
+  // Scroll progress ring — SVG injected into the back-to-top button
   useEffect(() => {
     if (typeof window === 'undefined') return;
 

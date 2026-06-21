@@ -335,6 +335,16 @@
   color: #ff3c3c !important;
 }
 
+.buildTextLatest {
+  font-weight: 600;
+  opacity: 0.95 !important;
+  color: #1a1a1a !important;
+}
+
+[data-theme='dark'] .buildTextLatest {
+  color: #ffffff !important;
+}
+
 .githubLink {
   color: #707070 !important;
   background-color: rgba(0, 0, 0, 0.04);

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './CommitMatrix.module.css';
+import { getTimeLag } from '../utils/time';
 
 interface Commit {
   sha: string;
@@ -20,20 +21,6 @@ const CACHE_TIMEOUT = 5 * 60 * 1000; // 5 minutes in milliseconds
 
 const STATS_CACHE_KEY = 'nothing_archive_repo_stats_v1';
 const STATS_CACHE_TIME_KEY = 'nothing_archive_repo_stats_time_v1';
-
-/**
- * Calculates a clean relative time difference string (e.g. 3m, 2h, 4d).
- */
-function getTimeLag(dateStr: string): string {
-  if (!dateStr) return 'N/A';
-  const diff = Date.now() - new Date(dateStr).getTime();
-  const mins = Math.floor(diff / 60000);
-  const hours = Math.floor(mins / 60);
-  const days = Math.floor(hours / 24);
-  if (days > 0) return `${days}d`;
-  if (hours > 0) return `${hours}h`;
-  return `${Math.max(1, mins)}m`;
-}
 
 /**
  * Extracts co-author names from a full commit message body.
@@ -62,27 +49,25 @@ export default function CommitMatrix(): React.JSX.Element {
   const [repoStats, setRepoStats] = useState<RepoStats>({ stars: 0, hits: 0 });
   const [statsLoading, setStatsLoading] = useState(true);
 
-  // 1. Ticking IST Clock (Asia/Kolkata)
+  // 1. Ticking Local Clock
   useEffect(() => {
     const updateClock = () => {
       const now = new Date();
       const timeOptions: Intl.DateTimeFormatOptions = {
-        timeZone: 'Asia/Kolkata',
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit',
         hour12: false,
       };
-      const timeString = new Intl.DateTimeFormat('en-IN', timeOptions).format(now);
+      const timeString = new Intl.DateTimeFormat(undefined, timeOptions).format(now);
       
       const tzOptions: Intl.DateTimeFormatOptions = {
-        timeZone: 'Asia/Kolkata',
         timeZoneName: 'short',
       };
-      const parts = new Intl.DateTimeFormat('en-IN', tzOptions).formatToParts(now);
-      const tzLabel = parts.find(p => p.type === 'timeZoneName')?.value || 'IST';
+      const parts = new Intl.DateTimeFormat(undefined, tzOptions).formatToParts(now);
+      const tzLabel = parts.find(p => p.type === 'timeZoneName')?.value || '';
       
-      setCurrentTime(`${timeString} ${tzLabel}`);
+      setCurrentTime(`${timeString} ${tzLabel}`.trim());
       setBlinkActive(now.getSeconds() % 2 === 0);
     };
     updateClock();

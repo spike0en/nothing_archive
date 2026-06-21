@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from '@docusaurus/Link';
 import styles from './ReleaseFeed.module.css';
+import { getTimeLag } from '../utils/time';
 
 declare var require: any;
 
@@ -18,17 +19,6 @@ const CACHE_KEY = 'nothing_archive_releases_cache_v2';
 const CACHE_COUNT_KEY = 'nothing_archive_releases_count_v2';
 const CACHE_TIME_KEY = 'nothing_archive_releases_cache_time_v2';
 const CACHE_TIMEOUT = 5 * 60 * 1000; // 5 minutes
-
-function getTimeLag(dateStr: string): string {
-  if (!dateStr) return 'N/A';
-  const diff = Date.now() - new Date(dateStr).getTime();
-  const mins = Math.floor(diff / 60000);
-  const hours = Math.floor(mins / 60);
-  const days = Math.floor(hours / 24);
-  if (days > 0) return `${days}d`;
-  if (hours > 0) return `${hours}h`;
-  return `${Math.max(1, mins)}m`;
-}
 
 // Read all changelog markdown filenames at compilation time
 let availableChangelogs = new Set<string>();
@@ -53,23 +43,19 @@ export default function ReleaseFeed(): React.JSX.Element {
   const [currentTime, setCurrentTime] = useState('');
   const [blinkActive, setBlinkActive] = useState(true);
 
-  // Track latest release per model within approx 90 days
-  const highlightedReleaseIds = React.useMemo(() => {
-    const ids = new Set<number>();
+  // Track latest release per model
+  const latestReleasesPerModel = React.useMemo(() => {
     const seen = new Set<string>();
-    const cutoff = Date.now() - 90 * 24 * 60 * 60 * 1000; // 90 days
+    const result: Release[] = [];
     
     for (const release of releases) {
       const code = release.codename.toLowerCase();
       if (!seen.has(code)) {
         seen.add(code);
-        const pubTime = new Date(release.publishedAt).getTime();
-        if (pubTime >= cutoff) {
-          ids.add(release.id);
-        }
+        result.push(release);
       }
     }
-    return ids;
+    return result;
   }, [releases]);
 
   // 1. Ticking London Clock (Europe/London)
@@ -298,15 +284,10 @@ export default function ReleaseFeed(): React.JSX.Element {
               <span className={styles.messageText}>NO RELEASES FOUND</span>
             </div>
           ) : (
-            releases
-              .filter(r => new Date(r.publishedAt).getTime() >= Date.now() - 90 * 24 * 60 * 60 * 1000)
-              .slice(0, 30)
-              .map((release, idx) => {
+            latestReleasesPerModel.map((release, idx) => {
               const changelogKey = `${release.codename}-${release.version}`.toLowerCase();
               const hasChangelog = availableChangelogs.has(changelogKey);
               const changelogUrl = `/docs/changelogs/${release.codename.toLowerCase()}/${release.codename}-${release.version}`;
-
-              const isLatestModelRelease = highlightedReleaseIds.has(release.id);
 
               return (
                 <div key={release.id} className={styles.consoleLine}>
@@ -315,12 +296,12 @@ export default function ReleaseFeed(): React.JSX.Element {
                     {hasChangelog ? (
                       <Link
                         to={changelogUrl}
-                        className={`${styles.buildLink} ${isLatestModelRelease ? styles.buildTextHighlighted : ''}`}
+                        className={`${styles.buildLink} ${idx === 0 ? styles.buildTextLatest : ''}`}
                       >
                         {release.name}
                       </Link>
                     ) : (
-                      <span className={`${styles.buildText} ${isLatestModelRelease ? styles.buildTextHighlighted : ''}`}>
+                      <span className={`${styles.buildText} ${idx === 0 ? styles.buildTextLatest : ''}`}>
                         {release.name}
                       </span>
                     )}
@@ -330,7 +311,7 @@ export default function ReleaseFeed(): React.JSX.Element {
                     href={release.htmlUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`${styles.githubLink} ${isLatestModelRelease ? styles.githubLinkHighlighted : ''}`}
+                    className={`${styles.githubLink} ${idx === 0 ? styles.githubLinkHighlighted : ''}`}
                     title="Open GitHub Release"
                   >
                     <svg
