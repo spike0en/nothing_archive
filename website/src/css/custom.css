@@ -76,7 +76,16 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid var(--nothing-border);
   padding: 0.5rem 1rem;
   min-height: 56px;
-  box-shadow: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  background-color: rgba(243, 242, 236, 0.97) !important;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme='dark'] .navbar {
+  background-color: rgba(8, 8, 8, 0.97) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
 .navbar__inner {
@@ -103,14 +112,50 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.9rem;
   letter-spacing: -0.01em;
   padding: 0.5rem 0.75rem;
-  border-radius: 6px;
+  border-radius: 8px;
   transition: color 0.2s ease, background-color 0.2s ease;
+  position: relative;
 }
 
-.navbar__link:hover,
-.navbar__link--active {
-  color: var(--ifm-color-primary);
+.navbar__link:hover {
+  background-color: rgba(128, 128, 128, 0.06) !important;
+  color: var(--ifm-color-primary) !important;
+  text-decoration: none !important;
 }
+
+[data-theme='dark'] .navbar__link:hover {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.navbar__link--active {
+  color: var(--ifm-color-primary) !important;
+}
+
+/* Nothing OS Active dot indicator */
+.navbar__link--active::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--ifm-color-primary);
+  animation: navbarDotFade 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes navbarDotFade {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
 
 .navbar-sidebar__backdrop {
   background: rgba(0, 0, 0, 0.5);
@@ -134,25 +179,32 @@ h1, h2, h3, h4, h5, h6 {
     display: none !important;
   }
 
-  /* Enable text-based navigation link on mobile */
+  /* Enable text-based brand navigation link on mobile */
   .navbar__item.header-home-link {
     display: inline-flex !important;
-    align-items: center;
-    margin-left: 0.75rem;
-    /* Added spacing between hamburger icon and link */
+    margin-left: 0.75rem; /* Spacing between hamburger icon and link */
+    font-size: 0 !important; /* Hide original 'Home' text */
+    padding: 0 !important;
   }
 
-  /* Responsive title morphing for document pages */
-  html.plugin-docs .navbar__item.header-home-link {
-    font-size: 0 !important;
+  /* Disable the active dot indicator for the home link in the header on mobile */
+  .navbar__item.header-home-link::after {
+    display: none !important;
   }
 
-  html.plugin-docs .navbar__item.header-home-link::after {
+  /* Always show 'Nothing Archive' as the header brand title on mobile */
+  .navbar__item.header-home-link::before {
     content: "Nothing Archive";
     font-size: 1.05rem;
-    /* Size of brand title */
     font-weight: 600;
     letter-spacing: -0.02em;
+    color: var(--ifm-color-content) !important;
+    transition: color 0.2s ease;
+  }
+
+  .navbar__item.header-home-link:hover::before {
+    color: var(--ifm-color-primary) !important;
+    text-decoration: none !important;
   }
 
   .navbar__items--right {
@@ -182,6 +234,11 @@ h1, h2, h3, h4, h5, h6 {
     right: auto !important;
     margin-left: 0.75rem;
   }
+
+  /* Keep color mode toggle visible on tablet view */
+  .navbar [class*="colorModeToggle"] {
+    display: flex !important;
+  }
 }
 
 @media (max-width: 700px) {
@@ -210,6 +267,11 @@ h1, h2, h3, h4, h5, h6 {
 
   /* Hide the extra GitHub link/button entirely on mobile to reduce clutter */
   .navbar__items--right .header-github-link {
+    display: none !important;
+  }
+
+  /* Hide color mode toggle on true mobile view to save space */
+  .navbar [class*="colorModeToggle"] {
     display: none !important;
   }
 }
@@ -245,14 +307,13 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.12em;
   opacity: 0.7;
   padding: 0.85rem 1.25rem 0.65rem;
-  border-left: 3px solid transparent !important;
+  border-left: none !important;
   color: inherit !important;
 }
 
 .theme-doc-sidebar-menu>.menu__list>.menu__list-item>.menu__list-item-collapsible>.menu__link--active {
   opacity: 1;
-  border-left-color: var(--nothing-border-strong) !important;
-  /* Visual cue but not red */
+  background-color: transparent !important;
 }
 
 /* Nested collapsible category overrides */
@@ -272,8 +333,9 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.5rem 1.25rem;
   /* Level 1 default */
   border-radius: 6px;
-  border-left: 3px solid transparent;
-  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  border-left: none !important;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  position: relative;
 }
 
 .menu__link:hover {
@@ -281,21 +343,39 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(3px);
 }
 
-/* Base active style for all links */
+/* Base active style for all links - Nothing OS capsule and dot style */
 .menu__link--active {
   font-weight: 600;
-  border-left-color: var(--ifm-color-primary);
-  color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary) !important;
+  background-color: rgba(215, 25, 33, 0.04) !important;
+  border-left: none !important;
+}
+
+.menu__link--active::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--ifm-color-primary);
+  margin-right: 8px;
+  vertical-align: middle;
+  animation: navbarDotFade 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Isolation for nested active categories */
 .menu__list-item-collapsible>.menu__link--active {
   color: inherit !important;
-  border-left-color: transparent !important;
+  background-color: transparent !important;
+  border-left: none !important;
+}
+
+.menu__list-item-collapsible>.menu__link--active::before {
+  display: none !important;
 }
 
 .menu__link--active:hover {
-  background: rgba(215, 25, 33, 0.06);
+  background-color: rgba(215, 25, 33, 0.08) !important;
   transform: translateX(3px);
 }
 
@@ -304,8 +384,12 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(3px);
 }
 
+[data-theme='dark'] .menu__link--active {
+  background-color: rgba(215, 25, 33, 0.08) !important;
+}
+
 [data-theme='dark'] .menu__link--active:hover {
-  background: rgba(215, 25, 33, 0.08);
+  background-color: rgba(215, 25, 33, 0.12) !important;
   transform: translateX(3px);
 }
 
@@ -774,35 +858,98 @@ a:hover {
    ========================================== */
 .footer {
   border-top: 1px solid var(--nothing-border);
-  padding: 1.5rem 1rem;
-  background: var(--ifm-footer-background-color);
-  color: #ffffff;
+  padding: 2.5rem 1.5rem !important; /* Elegant vertical spacing */
+  background: var(--ifm-background-color) !important; /* Seamless background integration */
+  color: var(--ifm-color-content) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .footer__copyright {
-  margin-bottom: 0;
-  opacity: 0.8;
-  font-size: 0.85rem;
+  width: 100%;
+}
+
+.footer-custom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: var(--ifm-font-family-monospace);
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: var(--ifm-color-content) !important;
+  opacity: 0.55;
+  text-decoration: none !important;
+  transition: opacity 0.2s ease, color 0.2s ease;
   font-weight: 500;
-  letter-spacing: -0.01em;
-}
-
-.footer__title {
-  font-weight: 600;
   text-transform: uppercase;
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: var(--ifm-color-primary) !important;
+}
+
+.footer-custom .separator {
+  color: var(--ifm-color-primary);
+  font-size: 0.85rem;
   opacity: 0.8;
+  user-select: none;
 }
 
-/* Footer link contrast fix — brighter red for WCAG AA compliance */
-.footer a {
-  color: var(--ifm-color-primary-lightest) !important;
-  transition: color 0.2s ease;
+.footer-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 0.68rem;
+  color: var(--ifm-color-content);
+  opacity: 0.45;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.footer a:hover {
-  color: #ff8080 !important;
+.footer-info .info-dot {
+  color: var(--ifm-color-primary);
+  opacity: 0.7;
+  user-select: none;
+}
+
+.credit-link {
+  color: inherit !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.credit-link:hover {
+  color: var(--ifm-color-primary) !important;
+  opacity: 1 !important;
+}
+
+.footer-disclaimer {
+  opacity: 0.25;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  max-width: 600px;
+  line-height: 1.45;
+  margin-top: 0.15rem;
 }
 
 /* Hero section (fallback for non-home pages) */
@@ -890,18 +1037,7 @@ a:hover {
 }
 
 
-/* Accessibility: Underline footer links so they aren't distinguishable by color alone */
-.footer a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
-  color: var(--ifm-color-primary-lightest) !important;
-  /* Passes 4.5:1 against the dark footer */
-}
 
-.footer a:hover {
-  text-decoration-thickness: 2px;
-}
 
 /* Breadcrumbs */
 .breadcrumbs__link {
@@ -1167,7 +1303,8 @@ details summary:hover::before {
   padding: 0.4rem 2.25rem 0.4rem 2.25rem !important;
   background-image: url("data:image/svg+xml;utf8,<svg fill='black' opacity='0.5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' height='16px' width='16px'><path d='M6.02945,10.20327a4.17382,4.17382,0,1,1,4.17382-4.17382A4.15609,4.15609,0,0,1,6.02945,10.20327Zm9.69195,4.2199L10.8989,9.59979A5.88021,5.88021,0,0,0,12.058,6.02856,6.00467,6.00467,0,1,0,9.59979,10.8989l4.82338,4.82338a.89729.89729,0,0,0,1.29912,0,.89749.89749,0,0,0-.00087-1.29909Z' /></svg>") !important;
   background-position: 0.75rem center !important;
-  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+  transition: width 0.25s ease, padding 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+  width: 14rem !important; /* Expanded width on desktop/tablet */
 }
 
 [data-theme='dark'] .navbar__search-input {
@@ -1197,27 +1334,34 @@ details summary:hover::before {
   box-shadow: 0 0 0 3px rgba(215, 25, 33, 0.18) !important;
 }
 
-/* Mobile search input when collapsed (not focused) */
-@media (max-width: 576px) {
-  .navbar__search-input:not(:focus) {
-    width: 2rem !important;
-    padding: 0 !important;
-    background-position: center !important;
-    color: transparent !important;
-  }
-  .navbar__search-input:not(:focus)::placeholder {
-    color: transparent !important;
-  }
-  .navbar__search-input:not(:focus)::-webkit-input-placeholder {
-    color: transparent !important;
-  }
-  .navbar__search-input:not(:focus)::-moz-placeholder {
-    color: transparent !important;
-  }
+/* Collapsed state when search input is not focused - applied to all screen sizes */
+.navbar__search-input:not(:focus) {
+  width: 2.25rem !important;
+  height: 2.25rem !important;
+  padding: 0 !important;
+  background-position: center !important;
+  color: transparent !important;
+  cursor: pointer;
+}
+.navbar__search-input:not(:focus)::placeholder {
+  color: transparent !important;
+}
+.navbar__search-input:not(:focus)::-webkit-input-placeholder {
+  color: transparent !important;
+}
+.navbar__search-input:not(:focus)::-moz-placeholder {
+  color: transparent !important;
+}
 
-  /* Hide the keyboard shortcut hint when search is collapsed on mobile */
-  .navbar__search div[class*="searchHintContainer"] {
-    display: none !important;
+/* Hide the keyboard shortcut hint when search is collapsed */
+.navbar__search:not(:focus-within) div[class*="searchHintContainer"] {
+  display: none !important;
+}
+
+/* On mobile, when focused, restrict width so it fits */
+@media (max-width: 576px) {
+  .navbar__search-input:focus {
+    width: 10rem !important;
   }
 }
 

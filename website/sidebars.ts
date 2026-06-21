@@ -6,7 +6,17 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   mainSidebar: [
-    'intro',
+    {
+      type: 'category',
+      label: 'About the Project',
+      collapsed: false,
+      items: [
+        'intro',
+        'contributing',
+        'acknowledgements',
+        'licensing',
+      ],
+    },
     {
       type: 'category',
       label: 'Resources',

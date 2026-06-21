@@ -20,21 +20,3 @@ Your ultimate source for Nothing OS firmware, stock OTA images, community apps, 
 
 If this index is helpful, please consider [starring the repository](https://github.com/spike0en/nothing_archive/stargazers). It helps with discoverability and encourages maintenance.
 
-## Contributing
-
-Nothing Archive is a community-driven project. We welcome and encourage contributions, whether it's adding a new app, updating a guide, or reporting a bug. Please refer to our [Contributing Guidelines](https://github.com/spike0en/nothing_archive/blob/main/CONTRIBUTING.md) for more details on how to get started.
-
-## Licensing
-
-The Nothing Archive project is multi-licensed to protect both the code and community contributions. For a detailed breakdown of what each license covers, please refer to the [LICENSE](https://github.com/spike0en/nothing_archive/blob/main/LICENSE) file.
-
-## Acknowledgements
-
-- **[luk1337](https://github.com/luk1337/oplus_archive)** for the AOSP OTA extraction tool.
-- **[arter97](https://github.com/arter97/nothing_archive)** for adapting the archive for Phone (2).
-- **[Shiki](https://github.com/guptavishal-xm1)** for crafting the initial website for the repo and providing self-hosted runner instance.
-- **[XelXen](https://github.com/XelXen)** for helping with initial [project branding and design](https://github.com/spike0en/nothing_archive/tree/main/website/static/img).
-- **[LukeSkyD](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/)** for early build references.
-- **[Project Contributors](https://github.com/spike0en/nothing_archive/graphs/contributors)** for their invaluable contributions and insights.
-
-A big shoutout to all the **creators, project maintainers, and Nothing community members** working behind the scenes. Their support, whether direct or indirect, has helped make this project possible.

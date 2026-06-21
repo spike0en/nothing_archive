@@ -353,17 +353,23 @@ const config: Config = {
           className: 'header-home-link',
         },
         {
-          type: 'doc',
-          docId: 'intro',
+          to: '/docs/intro',
           position: 'left',
-          label: 'Docs',
+          label: 'About',
+          activeBaseRegex: 'docs/(intro|contributing|acknowledgements|licensing)',
+        },
+        {
+          to: '/docs/devices',
+          position: 'left',
+          label: 'Resources',
+          activeBaseRegex: 'docs/(devices|firmware|changelogs|guides|official|apps|projects|photography)',
         },
       ],
     },
     footer: {
       style: 'dark',
       links: [],
-      copyright: `A community-driven initiative led by <a href="https://github.com/spike0en" target="_blank" rel="noopener noreferrer">Spike</a><br>Not affiliated with <a href="https://nothing.tech" target="_blank" rel="noopener noreferrer">Nothing</a>`,
+      copyright: `<div class="footer-custom"><div class="footer-links"><a href="/nothing_archive/docs/contributing">Contributing</a><span class="separator">•</span><a href="/nothing_archive/docs/licensing">License</a><span class="separator">•</span><a href="/nothing_archive/docs/acknowledgements">Credits</a></div><div class="footer-info"><span>© 2026 NOTHING ARCHIVE</span><span class="info-dot">•</span><span>A community initiative led by <a href="https://github.com/spike0en" target="_blank" rel="noopener noreferrer" class="credit-link">Spike</a></span></div><div class="footer-disclaimer">Not affiliated with Nothing Technology Limited</div></div>`,
     },
     prism: {
       theme: prismThemes.github,
