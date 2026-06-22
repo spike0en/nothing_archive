@@ -46,6 +46,7 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | [Glyph Zen](https://github.com/bleelblep/Glyph-Zen/releases/tag/v1.1) | bleelblep | Calming breathing app with Glyph |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Advanced Glyph controls, mini-games, compositions. Supports Phone (3) |
 | [Morse Glyphs](https://github.com/roxe12345/MorseGlyphs) | roxe12345 | Morse code displayed in glyph lights |
+| [Nashi Pomodoro](https://github.com/Dreaminko/NashiPomodoro) | Dreaminko | Pomodoro timer that visualizes focus and break progress through the Glyph Interface |
 | [Nothing Charging Meter](https://github.com/BroCoder007/NothiNGChargingMeter) | BroCoder007 | Minimalist charging indicator for Nothing Phone (3a) |
 | [Nothing Glyph Gyroscope](https://github.com/gawdam/nothingGyro) | gawdam | Bubble level using accelerometer and gyroscope |
 | [Nothing Phone Battery Notification](https://github.com/f3bruary/nothing-phone-battery-notification) | f3bruary | Red Glyph LED notifier with customizable low battery patterns for Phone (4a) |
@@ -221,6 +222,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Dot Player](https://play.google.com/store/apps/details?id=com.creepsmile.dotplayer) | Creepsmile | Minimal local music player |
 | [EarPhone X](https://github.com/noebachofner/EarPhonesX) | noebachofner | Linux application to control and configure Nothing and CMF earbuds |
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | AI-powered browser |
+| [Essential Mapper](https://github.com/tracpants/essential-mapper) | tracpants | Remap the Essential Key to launch apps or toggle flashlight by tap count |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Nothing-inspired core Essential Space experience for all devices, featuring quick screenshots, notes, voice memos, and more |
 | [Flip To Glyph Quick Tile](https://github.com/trup40/QuickTileForFlip2GlyphNP) | trup40 | A basic quick tile to toggle the Flip to Glyph setting on Nothing phones |
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | Use Bluetooth wearables without OEM apps, accounts, or cloud |
@@ -246,6 +248,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Nothing Audio Recorder](https://play.google.com/store/apps/details?id=com.service.rare.audio.recorder) | Cloud Nine Labs | Audio recorder |
 | [Nothing Calculator](https://play.google.com/store/apps/details?id=com.anoobav.calculator) | Anubhav | Nothing's design-inspired minimal calculator with live calculations, scientific functions, and history |
 | [Nothing Calculator](https://github.com/git-jamesfrench/NothingCalculator) | git-jamesfrench | Community made Nothing calculator |
+| [Nothing Calendar](https://github.com/AyushKumar-Singh/Calendar-APK) | AyushKumar-Singh | Minimal calendar and task management app inspired by the Nothing/CMF OS design language |
 | [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | World clock, timer, stopwatch |
 | [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | Mobile app for nothing.community |
 | [Nothing Compass](https://github.com/ISO53/Nothing-Compass) | ISO53 | Compass and Inclinometer in Nothing aesthetics |
@@ -266,6 +269,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Redrop Music](https://play.google.com/store/apps/details?id=re.tag.redrop) | Tagrelate | Offline music player combining Material 3 and Nothing aesthetics |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Device insights tool |
 | [Side Dock](https://play.google.com/store/apps/details?id=com.sidedock.app) | Quivox Engineering | Sidebar overlay built for faster multitasking, quick tools, and smoother workflows |
+| [Sidecue](https://github.com/shashh-hash/sidecue) | shashh-hash | Remap the Essential Key with custom press actions, Glyph Matrix feedback, and auto-pause features |
 | [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | Minimalist launcher |
 | [Sound Stream Now](https://play.google.com/store/apps/details?id=go.ssn) | Moworks | Music player supporting the Glyph Matrix |
 | [Stario Launcher](https://play.google.com/store/apps/details?id=com.stario.launcher) | tariqamarneh | Minimal dot-grid launcher inspired by the Nothing OS aesthetic |

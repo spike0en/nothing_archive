@@ -98,7 +98,9 @@ Assets and tools designed to help other developers build Nothing-inspired projec
 | [Dot Frame](https://github.com/NyxLumen/DotFrame) | NyxLumen | Video to Ascii converter with a nothing accent |
 | [Dot Matrixify](https://github.com/szelszabi/dotmatrixify) | szelszabi | Transform pixel art to dot matrix |
 | [Dotify Client](https://github.com/PATEL96/dotify-client) | PATEL96 | Dot Matrix image generator |
+| [Nothing Design Skill](https://github.com/dominikmartn/nothing-design-skill) | dominikmartn | A design system skill for Claude Code to generate user interfaces following the Nothing visual language |
 | [Nothing Glyph Communication](https://github.com/endan-criso/Nothing-Glyph-Battery-Low-Indicator) | endan-criso | Android playground and reference implementation demonstrating official Glyph SDK integration on Nothing Phone (2a) |
+| [Swift Nothing Ear](https://github.com/bestK1ngArthur/swift-nothing-ear) | bestK1ngArthur | Swift Package for interacting with Nothing headphones on macOS |
 
 ---
 
@@ -121,6 +123,7 @@ Web-based applications inspired by Nothing OS.
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Nothing OS inspired weather web app |
 | [Nothing Weather Clone](https://github.com/Avadhkumar-geek/nothing_weather_clone) | Avadhkumar-geek | Flutter-based weather application replicating the Nothing OS weather design |
 | [Spin The Bottle](https://dotmatrix-beerbottle.vercel.app/) | MadGlacierRunner | Spin the bottle simulator |
+| [Study Logix](https://github.com/ashutoshpatraa/StudyLogix) | ashutoshpatraa | Nothing OS-inspired study tracking web application featuring focus tools and analytics |
 
 ---
 
@@ -198,6 +201,7 @@ These require root access (KernelSU or Magisk). Proceed with caution!
 | [Nothing eUICC](https://github.com/reindex-ot/nothing-euicc) | reindex-ot | Force eSIM features to be enabled on Nothing devices that don't support it |
 | [Nothing OS Aura Killer](https://github.com/reindex-ot/NOS_AuraKiller/) | reindex-ot | Debloat Aura services on NOS 4.0 |
 | [Nothing Phone Patch](https://github.com/reindex-ot/magisk-module-nothing) | reindex-ot | System tweaks and enhancements |
+| [Nothing Widevine](https://github.com/Ubuntuify/nothing-widevine) | Ubuntuify | Reprovision TEE and get Widevine L1 working on custom and stock ROMs |
 | [Nothing Xpert](https://github.com/Rares6567/NothingXpert/) | Rares6567 | LSPosed module with extra features |
 | [Phone 2a APU Unlock](https://github.com/Peterc3-dev/phone2a-apu-unlock) | Peterc3-dev | KernelSU sepolicy module + Rust ABI probe that opens /dev/apusys to userspace on Nothing Phone (2a) |
 | [Premium Vibrator Nothing 2a](https://github.com/polymath-void/premium-vibrator-nothing2a) | polymath-void | A minimal, boot-safe module that applies a persistent custom vibrator strength on the Nothing Phone (2a) by writing directly to the kernel sysfs node after boot |
