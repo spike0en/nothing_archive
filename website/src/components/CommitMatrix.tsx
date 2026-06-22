@@ -211,7 +211,7 @@ export default function CommitMatrix(): React.JSX.Element {
       value: statsLoading ? '—' : repoStats.stars.toLocaleString(),
     },
     {
-      label: 'HITS',
+      label: 'VISITORS',
       value: statsLoading ? '—' : repoStats.hits.toLocaleString(),
     },
   ];
