@@ -41,6 +41,7 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | [Glyph Saber](https://github.com/Norbinarius/glyphsaber) | Norbinarius | Glyph control for Nothing OS 4.0+ |
 | [Glyph Sharge](https://github.com/Leekawaii666/GlyphSharge) | bleelblep | Advanced glyph interface management |
 | [Glyph Studio](https://github.com/SyedAhkam/glyph-studio) | SyedAhkam | Playground for everything Glyphs |
+| [Glyph Torch](https://github.com/Earendel-lab/GlyphTorch) | Earendel | Android App for letting the nothing phone glyphs glow on trigger |
 | [Glyph Unlock Pulse](https://play.google.com/store/apps/details?id=com.singularityux.glyphunlockpulse) | Singularity Design | Enhance device unlock with animated glyphs |
 | [Glyph Zen](https://github.com/bleelblep/Glyph-Zen/releases/tag/v1.1) | bleelblep | Calming breathing app with Glyph |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Advanced Glyph controls, mini-games, compositions. Supports Phone (3) |
@@ -86,6 +87,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | Space Invaders game |
 | [Glyph Lab](https://play.google.com/store/apps/details?id=com.projectkriya.glyphlab) | Vimanam Studio | Interactive glyph matrix toys designed for Nothing devices |
 | [Glyph Life](https://github.com/Yuma-Eimymk2/glyph-life) | Yuma-Eimymk2 | Conway's Game of Life toy for the Nothing Phone (4a) Pro's Glyph Matrix |
+| [Glyph Maps](https://github.com/capad-xyz/GlyphMaps) | capad-xyz | Mirror Google Maps turn by turn directions onto the Nothing Phone (4a) Pro Glyph Matrix |
 | [Glyph Marquee](https://github.com/bluehomewu/GlyphMarquee) | bluehomewu | Scrolling text messages |
 | [Glyph Matrix Bridge](https://github.com/StanSNS/glyph-matrix-bridge/) | StanSNS | Play custom images and GIFs on the Nothing Phone's Glyph Matrix from a home screen widget |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Toolkit for creating and intelligently displaying custom Glyph Matrix visuals for Nothing Phone (4a) Pro |
@@ -94,6 +96,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Mo](https://github.com/anamite/GlyphMo) | anamite | Glyph Matrix control application designed exclusively for the Nothing Phone (4a) Pro. |
 | [Glyph Museum](https://play.google.com/store/apps/details?id=com.pauwma.glyphmuseum) | pauwma | Create and showcase Glyph art |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Notifications, timers, visualizer |
+| [Glyph Nothing](https://github.com/manttii/Glphy-Nothing) | manttii | Create, preview, and trigger custom Glyph Matrix animations on Nothing phones |
 | [Glyph Pendulum](https://github.com/pauwma/GlyphPendulum) | pauwma | An interactive swinging pendulum |
 | [Glyph Pomodoro](https://github.com/itsmixu/glyph-pomo) | itsmixu | Pomodoro timer for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Pong](https://github.com/codester007/glyph-pong) | codester007 | Pong game for the Nothing Phone (4a) Pro's Glyph Matrix |
@@ -198,7 +201,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Noting](https://play.google.com/store/apps/details?id=com.hearthborn.studios.notingnotes) | Hearthborn | Notes and tasks with cloud backup |
 | [Seton](https://github.com/arijit4/Seton) | arijit4 | Pin and edit notes with widget |
 | [Spend Notes](https://play.google.com/store/apps/details?id=com.cmlabs.spendflow.spendflow) | Coder monk labs | Expense tracking |
-| [The Circle](https://play.google.com/store/apps/details?id=com.quivaconnect.thecircle) | Quiva Connect | Language learning app |
+| [The Circle](https://play.google.com/store/apps/details?id=com.quivaconnect.thecircle) | Quivox Engineering | Language learning app |
 
 ---
 
@@ -261,12 +264,12 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Recording light control for Phone (3) |
 | [Redrop Music](https://play.google.com/store/apps/details?id=re.tag.redrop) | Tagrelate | Offline music player combining Material 3 and Nothing aesthetics |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Device insights tool |
-| [Side Dock](https://play.google.com/store/apps/details?id=com.sidedock.app) | Quiva Connect | Sidebar overlay built for faster multitasking, quick tools, and smoother workflows |
+| [Side Dock](https://play.google.com/store/apps/details?id=com.sidedock.app) | Quivox Engineering | Sidebar overlay built for faster multitasking, quick tools, and smoother workflows |
 | [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | Minimalist launcher |
 | [Sound Stream Now](https://play.google.com/store/apps/details?id=go.ssn) | Moworks | Music player supporting the Glyph Matrix |
 | [Stario Launcher](https://play.google.com/store/apps/details?id=com.stario.launcher) | tariqamarneh | Minimal dot-grid launcher inspired by the Nothing OS aesthetic |
 | [The Everything Key](https://play.google.com/store/apps/details?id=com.spandone.everythingkey) | spandone | Essential key remapper |
-| [Typebase](https://play.google.com/store/apps/details?id=com.typebase.app) | Quiva Connect | A Nothing design inspired keyboard with additional functionality from [Side Dock](https://play.google.com/store/apps/details?id=com.sidedock.app) exists |
+| [Typebase](https://play.google.com/store/apps/details?id=com.typebase.app) | Quivox Engineering | A Nothing design inspired keyboard with additional functionality from [Side Dock](https://play.google.com/store/apps/details?id=com.sidedock.app) exists |
 | [Void](https://play.google.com/store/apps/details?id=com.thevoid.focus) | vmcreate | Minimal app blocker based on Nothing OS design language |
 | [Voidcaller](https://play.google.com/store/apps/details?id=com.voidware.voidcaller) | VoidwareLabs | Minimalist dialer |
 | [WhispCal](https://play.google.com/store/apps/details?id=com.thomasmorice.whispcal) | Thomas Morice | Calorie tracking app for Android and [iOS](https://apps.apple.com/in/app/whispcal/id6757860582) |
