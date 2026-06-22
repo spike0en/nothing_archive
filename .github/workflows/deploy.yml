@@ -22,8 +22,11 @@ env:
   NODE_NO_WARNINGS: "1"
 
 jobs:
-  build:
-    runs-on: [self-hosted, Linux]
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ${{ vars.USE_SELF_HOSTED == 'true' && fromJSON('["self-hosted", "Linux"]') || 'ubuntu-latest' }}
     defaults:
       run:
         working-directory: website
@@ -32,28 +35,31 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          clean: false
+
+      - name: Clean workspace but preserve node_modules and cache
+        working-directory: .
+        run: |
+          git clean -ffdx -e "website/node_modules" -e "website/.docusaurus" -e "website/.cache"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22  # Must match engines.node in package.json
-          cache: npm
-          cache-dependency-path: website/package-lock.json
         env:
           NODE_NO_WARNINGS: "1"
 
       - name: Install dependencies
-        run: npm ci
-
-      - name: Cache Docusaurus build
-        uses: actions/cache@v4
-        with:
-          path: |
-            website/.docusaurus
-            website/node_modules/.cache
-          key: docusaurus-build-${{ hashFiles('website/package-lock.json') }}-${{ github.run_id }}
-          restore-keys: |
-            docusaurus-build-${{ hashFiles('website/package-lock.json') }}-
+        run: |
+          HASH=$(sha256sum package-lock.json | cut -d' ' -f1)
+          HASH_FILE="node_modules/.package-lock.hash"
+          if [ -f "$HASH_FILE" ] && [ "$(cat "$HASH_FILE")" = "$HASH" ]; then
+            echo "Dependencies are up-to-date (hash matches), skipping install."
+          else
+            echo "Dependencies changed or missing, running npm ci..."
+            npm ci
+            echo "$HASH" > "$HASH_FILE"
+          fi
 
       - name: Type check
         run: npm run typecheck
@@ -69,13 +75,6 @@ jobs:
         with:
           path: website/build
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: [self-hosted, Linux]
-    needs: build
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
