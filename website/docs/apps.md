@@ -63,6 +63,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
+| [404+](https://play.google.com/store/apps/details?id=com.glyphfour.app) | h17 devs | Glyph Matrix control app for Nothing Phone (3) and (4a) Pro |
 | [Aero Glyph Weather](https://github.com/poorneshadhithya/Aeroglyph-Weather) | poorneshadhithya | Retro-futuristic weather station |
 | [Better Battery](https://github.com/PzmuV1517/BetterBatery) | pzmuV1517 | Advanced battery visualization |
 | [Better Clock](https://github.com/Snakehater/betterclock) | Snakehater | Multifunctional display |
