@@ -202,7 +202,7 @@ The Bauhaus-inspired theme is a special edition feature that can be unlocked acr
 3. **Install SetEdit via ADB:**
    - Rename the downloaded APK to `SetEdit.apk`.
    - Run the following command:
-     ```sh
+      ```sh
      adb install --bypass-low-target-sdk-block SetEdit.apk
      ```
 4. **Unlock the Theme:**
@@ -532,12 +532,12 @@ D. **Restoring Partitions**
 
 
  - **QCom Devices:**
-   ```sh
-  fastboot flash persist persist.img
-  fastboot flash modemst1 modemst1.img
-  fastboot flash modemst2 modemst2.img
-  ```
-  **Factory reset is not mandatory in this case.**
+    ```sh
+    fastboot flash persist persist.img
+    fastboot flash modemst1 modemst1.img
+    fastboot flash modemst2 modemst2.img
+    ```
+    **Factory reset is not mandatory in this case.**
 
 ---
 
