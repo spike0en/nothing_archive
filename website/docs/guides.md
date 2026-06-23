@@ -800,18 +800,35 @@ B. **Proceeding with Flashing:**
   - Install compatible USB drivers from [here](https://developer.android.com/studio/run/win-usb).
   - Ensure that `Android Bootloader Interface` is visible in **Device Manager** when the device is in **bootloader mode**.
   - If the extraction script was used earlier, execute it directly. Otherwise:
-    - Move all extracted image files into a single folder along with the [Nothing Fastboot Flasher Script](https://github.com/spike0en/nothing_fastboot_flasher/blob/main/README.md#-download).
-    - Place the `-hash.sha256` file in the same directory. 
+    - Download the model-specific [Nothing Flasher Script](https://github.com/spike0en/nothing_flasher) suited for your OS (Windows `.bat` / Bash `.sh` / Termux `.sh`).
+    - Move all extracted partition image files (or images dumped from a full stock OTA via `payload_dumper_go`) into the same folder as the script.
+    - Place the `-hash.sha256` file in the same directory.
     - Always download the latest script to ensure hotfixes are included.
-  - Run the script while connected to the internet (to fetch latest `platform-tools`) and follow the prompts:
-    - Answer the confirmation questionnaire.
-    - Skip or proceed with hash checks accordingly. 
-    - Choose whether to wipe data: (Y/N) [Clean Flash / Downgrade = `Y` | Dirty Flash / Upgrade = `N`]
-    - Choose whether to flash to both slots: (Y/N)
-    - Disable Android Verified Boot: (N) [Please note that if you choose `Y` here, bootloader cannot be unlocked later on!]
-  - Verify that all partitions have been successfully flashed.
+
+  - **Understanding Script Partitioning & Slots:**
+    - The script defaults to flashing to **Slot A** and erases Slot B to free up space.
+    - *Exception (Phone (3a) Series):* Due to custom ROM compatibility with 6.6 kernels, the script flashes to the inactive slot and switches slots prior to rebooting.
+
+  - **Run the Script:**
+    - Connect your device in bootloader mode.
+    - Ensure you have a working internet connection (needed to auto-download the latest `platform-tools`). If the automatic download fails, download it manually and place the folder hierarchy as specified in the script's repository.
+    - **Windows:** Double-click `flash_all.bat`.
+    - **Bash/Linux/macOS:** Open terminal, navigate to the folder, and run:
+      ```bash
+      chmod +x flash_all.sh
+      bash flash_all.sh
+      ```
+    - Follow the prompts and configure options:
+      - Answer the confirmation questionnaire.
+      - Skip or proceed with hash checks accordingly. 
+      - Choose whether to wipe data: (Y/N) [Clean Flash / Downgrade = `Y` | Dirty Flash / Upgrade = `N`]
+      - Choose whether to flash to both slots: (Y/N)
+      - Disable Android Verified Boot: (N) [Please note that if you choose `Y` here, the bootloader cannot be locked later on!]
+
+  - **Verification:**
+    - Verify that all partitions have been successfully flashed.
     - If successful, choose to reboot to system: (Y)
-    - If errors occur, reboot to bootloader and reflash after addressing the failure. Rebooting to system without doing so might result in soft/hard bricks.
+    - Do not reboot your device into the system if any errors occurred during flashing. Instead, reboot back to the bootloader and reflash after addressing the failure. Rebooting to the system without doing so might result in soft/hard bricks.
 
 ---
 

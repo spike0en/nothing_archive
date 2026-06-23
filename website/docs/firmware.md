@@ -24,7 +24,7 @@ By using this archive, users acknowledge and accept these terms:
 - **Manual Installation**: Install firmware manually during staged rollouts or when updates fail using the built-in offline updater or via ADB sideload.
 - **Stock OTA Images**: Provides unmodified images for upgrades, downgrades, and partition flashing when full packages are unavailable.
 - **Rooting & Unrooting Support**: Provides stock boot images for Magisk, KernelSU, and Apatch, while allowing unrooting by flashing the original boot image.
-- **Device Recovery**: Provides fastboot-flashable Nothing OS firmware to resolve boot loops, recover soft-bricked devices, and restore stock ROM.
+- **Device Recovery**: Provides fastboot-flashable Nothing OS firmware to resolve boot loops, recover soft-bricked devices, and restore stock ROM. You can automate this process using the [Nothing Flasher Script](https://github.com/spike0en/nothing_flasher) by following the [Flashing Stock ROM Guide](/docs/guides#flashing-stock-rom-unbrick--downgrade).
 
 :::info
 
