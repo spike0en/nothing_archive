@@ -727,7 +727,7 @@ B. **Method 2: Recovery Sideload**
 #### Fastboot-Based ROMs
 
 :::note
-- **Firmware Requirement:** Fastboot-based ROMs often require a specific version of the base Nothing OS firmware before installation. Please consult the maintainer's release notes. You can obtain base firmware images from the `image-firmware.7z` archive from the OTA releases section in the [firmware archive](/docs/firmware).
+- **Firmware Requirement:** Fastboot-based ROMs often require a specific version of the base Nothing OS firmware before installation. Please consult the maintainer's release notes. You can obtain base firmware images from the `image-firmware.7z` archive from the OTA releases section in the [firmware](/docs/firmware) page.
 :::
 
 A. **Prerequisites**

@@ -42,7 +42,7 @@ function getFeatureList(): FeatureItem[] {
       icon: <FaMobileAlt size={20} />,
     },
     {
-      title: 'Firmware Archive',
+      title: 'Firmware',
       description: 'Download official Nothing OS firmware, stock factory images, and delta OTA updates to flash, downgrade, restore, root, or manually sideload updates on your phones to skip staggered regional rollouts.',
       link: '/docs/firmware',
       icon: <FaDownload size={20} />,

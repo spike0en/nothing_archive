@@ -65,6 +65,9 @@ div[class*="tableWrapper"] table td,
   --ifm-code-font-size: 90%;
   --ifm-heading-font-weight: 600;
 
+  --ifm-menu-link-padding-horizontal: 1.25rem;
+  --ifm-menu-link-padding-vertical: 0.5rem;
+
   --ifm-background-color: #f3f2ec;
   --ifm-navbar-background-color: #f3f2ec;
   --ifm-footer-background-color: #1a1a1a;
@@ -384,6 +387,12 @@ div[class*="tableWrapper"] table td,
 .menu__link:hover {
   background: rgba(0, 0, 0, 0.04);
   transform: translateX(3px);
+}
+
+/* Remove separate button background/highlight behind the arrow carets */
+.menu__caret,
+.menu__caret:hover {
+  background-color: transparent !important;
 }
 
 /* Base active style for all links - Nothing OS capsule and dot style */
