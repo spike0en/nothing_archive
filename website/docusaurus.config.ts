@@ -98,30 +98,32 @@ function compareChangelogs(idA: string, idB: string): number {
 }
 
 function sortChangelogItems(items: any[]): any[] {
-  return items.map((item) => {
-    if (item.type === 'category') {
-      const sortedSubItems = sortChangelogItems(item.items);
-      const isChangelogCategory = sortedSubItems.some(
-        (subItem) => subItem.type === 'doc' && subItem.id.startsWith('changelogs/')
-      );
+  return items
+    .filter((item) => !(item.type === 'doc' && item.id === 'changelogs/index'))
+    .map((item) => {
+      if (item.type === 'category') {
+        const sortedSubItems = sortChangelogItems(item.items);
+        const isChangelogCategory = sortedSubItems.some(
+          (subItem) => subItem.type === 'doc' && subItem.id.startsWith('changelogs/')
+        );
 
-      if (isChangelogCategory) {
-        sortedSubItems.sort((a, b) => {
-          if (a.type !== 'doc' || b.type !== 'doc') {
-            if (a.type === 'doc' && b.type !== 'doc') return -1;
-            if (a.type !== 'doc' && b.type === 'doc') return 1;
-            return 0;
-          }
-          return compareChangelogs(a.id, b.id);
-        });
+        if (isChangelogCategory) {
+          sortedSubItems.sort((a, b) => {
+            if (a.type !== 'doc' || b.type !== 'doc') {
+              if (a.type === 'doc' && b.type !== 'doc') return -1;
+              if (a.type !== 'doc' && b.type === 'doc') return 1;
+              return 0;
+            }
+            return compareChangelogs(a.id, b.id);
+          });
+        }
+        return {
+          ...item,
+          items: sortedSubItems,
+        };
       }
-      return {
-        ...item,
-        items: sortedSubItems,
-      };
-    }
-    return item;
-  });
+      return item;
+    });
 }
 
 

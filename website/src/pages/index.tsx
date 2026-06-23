@@ -49,7 +49,7 @@ function getFeatureList(): FeatureItem[] {
     },
     {
       title: 'OTA Changelogs',
-      description: 'Browse official Nothing OS changelogs, system updates, bug fixes, and version histories.',
+      description: 'Learn how software updates work on Nothing & CMF phones and browse official Nothing OS changelogs',
       link: '/docs/changelogs',
       icon: <FaClipboardList size={20} />,
     },
