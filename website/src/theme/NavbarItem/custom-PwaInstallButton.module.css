@@ -2,11 +2,12 @@
   display: inline-flex !important;
   align-items: center;
   font-weight: 600;
-  color: var(--ifm-color-primary) !important;
-  border: 1px solid rgba(215, 25, 33, 0.25);
+  color: var(--ifm-navbar-link-color, inherit) !important;
+  border: 1px solid var(--nothing-border);
   border-radius: 999px;
   padding: 0.25rem 0.75rem !important;
   margin-left: 0.5rem;
+  margin-right: 0.5rem;
   transition: all 0.2s ease;
   font-size: 0.8rem !important;
   height: fit-content;
@@ -14,10 +15,10 @@
 }
 
 .installBtn:hover {
-  background-color: var(--ifm-color-primary) !important;
-  color: #ffffff !important;
+  background-color: rgba(215, 25, 33, 0.05) !important;
+  color: var(--ifm-color-primary) !important;
   border-color: var(--ifm-color-primary) !important;
-  box-shadow: 0 0 10px rgba(215, 25, 33, 0.2);
+  box-shadow: 0 0 10px rgba(215, 25, 33, 0.15);
   text-decoration: none !important;
 }
 
@@ -29,6 +30,8 @@
 .installIcon {
   margin-right: 6px;
   flex-shrink: 0;
+  width: 16px !important;
+  height: 16px !important;
 }
 
 /* Mobile Sidebar Specific Styling */
@@ -45,3 +48,25 @@
 .mobileInstallLink::before {
   display: none !important;
 }
+
+@media (max-width: 996px) {
+  .installBtn span {
+    display: none;
+  }
+
+  .installBtn .installIcon {
+    margin-right: 0 !important;
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .installBtn {
+    width: 30px;
+    height: 30px;
+    padding: 0 !important;
+    border-radius: 50%;
+    justify-content: center;
+    margin-left: 0.25rem;
+  }
+}
+

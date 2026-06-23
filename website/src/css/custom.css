@@ -198,6 +198,25 @@ div[class*="tableWrapper"] table td,
 }
 
 
+/* Navbar right-side items arrangement & spacing: Dark Toggle -> PWA Install -> Search */
+.navbar__items--right [class*="colorModeToggle"] {
+  order: 1 !important;
+  margin-left: 0.5rem !important;
+  margin-right: 0.5rem !important;
+}
+
+.navbar__items--right a[class*="installBtn"] {
+  order: 2 !important;
+  margin-left: 0.5rem !important;
+  margin-right: 0.5rem !important;
+}
+
+.navbar__items--right div[class*="navbarSearchContainer"] {
+  order: 3 !important;
+  margin-left: 0.5rem !important;
+  margin-right: 0 !important;
+}
+
 .navbar-sidebar__backdrop {
   background: rgba(0, 0, 0, 0.5);
 }
@@ -252,6 +271,7 @@ div[class*="tableWrapper"] table td,
     display: flex !important;
     gap: 0; /* Match desktop layout spacing */
     align-items: center;
+    justify-content: flex-end !important;
   }
 
   .navbar__items--right>* {
@@ -285,6 +305,22 @@ div[class*="tableWrapper"] table td,
   div[class*="navbarSearchContainer"] .navbar__search-input {
     transition: none !important;
   }
+
+  /* Compact right-side spacing for mobile viewports */
+  .navbar__items--right [class*="colorModeToggle"] {
+    margin-left: 0.25rem !important;
+    margin-right: 0.25rem !important;
+  }
+
+  .navbar__items--right a[class*="installBtn"] {
+    margin-left: 0.25rem !important;
+    margin-right: 0.25rem !important;
+  }
+
+  .navbar__items--right div[class*="navbarSearchContainer"] {
+    margin-left: 0.25rem !important;
+    margin-right: 0 !important;
+  }
 }
 
 @media (max-width: 700px) {
@@ -299,11 +335,17 @@ div[class*="tableWrapper"] table td,
   /* Compact the right side to fix the large gap between navigation badges and search */
   .navbar__items--right {
     justify-content: flex-end !important;
-    gap: 0.2rem !important;
+    gap: 6px !important;
+  }
+
+  .navbar__items--right a[class*="installBtn"] {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   div[class*="navbarSearchContainer"] {
     margin-left: 0 !important;
+    padding-left: 0 !important;
   }
 
   /* Hide the Stars badge to save space */
