@@ -235,8 +235,11 @@ export default function CommitMatrix(): React.JSX.Element {
     );
   };
 
+  const isProgressLoading = loading || statsLoading;
+
   return (
     <div className={styles.container}>
+      {isProgressLoading && <div className={styles.loadingBar} />}
       {/* Telemetry Header */}
       <div className={styles.telemetryHeader}>
         <div className={styles.systemLabel}>

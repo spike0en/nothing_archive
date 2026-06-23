@@ -245,6 +245,20 @@ const config: Config = {
     {
       tagName: 'link',
       attributes: {
+        rel: 'manifest',
+        href: '/nothing_archive/manifest.json',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'theme-color',
+        content: '#080808',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
         rel: 'icon',
         type: 'image/png',
         sizes: '32x32',
@@ -353,10 +367,14 @@ const config: Config = {
           className: 'header-home-link',
         },
         {
+          type: 'custom-PwaInstallButton',
+          position: 'right',
+        },
+        {
           to: '/docs/intro',
           position: 'left',
           label: 'About',
-          activeBaseRegex: 'docs/(intro|contributing|acknowledgements|licensing)',
+          activeBaseRegex: 'docs/(intro|mentions|contributing|acknowledgements|licensing)',
         },
         {
           to: '/docs/devices',

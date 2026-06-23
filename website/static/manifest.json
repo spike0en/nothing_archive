@@ -1,0 +1,17 @@
+{
+  "name": "Nothing Archive",
+  "short_name": "Nothing Archive",
+  "description": "A curated hub for everything related to the Nothing ecosystem.",
+  "start_url": "/nothing_archive/",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#080808",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/nothing_archive/img/logo_dark.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

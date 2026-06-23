@@ -12,6 +12,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'intro',
+        'mentions',
         'contributing',
         'acknowledgements',
         'licensing',

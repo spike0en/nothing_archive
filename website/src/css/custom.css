@@ -1163,6 +1163,32 @@ a:hover {
   .theme-doc-sidebar-menu {
     padding: 0.5rem;
   }
+
+  /* Footer mobile */
+  .footer {
+    padding: 1.5rem 1rem !important;
+  }
+
+  .footer-links {
+    gap: 0.4rem;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .footer-info .info-dot {
+    display: none;
+  }
+
+  .footer__title {
+    font-size: 0.7rem;
+  }
+
+  .footer__item {
+    font-size: 0.85rem;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -1217,7 +1243,7 @@ a:hover {
 
   /* Footer mobile */
   .footer {
-    padding: 0.5rem 1rem;
+    padding: 1rem !important;
   }
 
   .footer__title {
@@ -1912,4 +1938,174 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
   padding-left: 0.75rem;
   margin-top: 0.15rem;
   margin-bottom: 0.15rem;
-}
+}
+
+/* --- Featured & Community Mentions Grid --- */
+.mentions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0 1.5rem 0;
+}
+
+.mention-card {
+  background-color: var(--ifm-card-background-color);
+  border: 1px solid var(--nothing-border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none !important;
+}
+
+.mention-card:hover {
+  border-color: var(--ifm-color-primary) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme='dark'] .mention-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.mention-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mention-platform {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mention-platform.reddit {
+  background-color: rgba(255, 69, 0, 0.1);
+  color: #ff4500;
+}
+
+.mention-platform.x {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: var(--ifm-color-content);
+  border: 1px solid var(--nothing-border-strong);
+}
+
+[data-theme='dark'] .mention-platform.x {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.mention-platform.youtube {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: #ff0000;
+}
+
+.mention-platform.forums {
+  background-color: rgba(215, 25, 33, 0.08);
+  color: var(--ifm-color-primary);
+}
+
+.mention-platform.discord {
+  background-color: rgba(88, 101, 242, 0.1);
+  color: #5865f2;
+}
+
+.mention-platform.telegram {
+  background-color: rgba(36, 161, 222, 0.1);
+  color: #24a1de;
+}
+
+.mention-date {
+  font-size: 0.65rem;
+  opacity: 0.5;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.mention-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+  color: var(--ifm-color-content);
+  line-height: 1.3;
+}
+
+.mention-description {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  line-height: 1.4;
+  flex: 1;
+  color: var(--ifm-color-content);
+}
+
+.mention-link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary) !important;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: gap 0.2s ease;
+  margin-top: 0.25rem;
+}
+
+.mention-card:hover .mention-link {
+  gap: 0.5rem;
+}
+
+/* --- Features Grid (intro.md) --- */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.feature-card {
+  background-color: rgba(128, 128, 128, 0.03);
+  border: 1px solid var(--nothing-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme='dark'] .feature-card {
+  background-color: rgba(255, 255, 255, 0.015);
+}
+
+.feature-card:hover {
+  border-color: var(--ifm-color-primary) !important;
+  transform: translateY(-2px);
+}
+
+.feature-icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.feature-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  color: var(--ifm-color-content);
+}
+
+.feature-desc {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  line-height: 1.45;
+  color: var(--ifm-color-content);
+}
+
+

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CopyButtonSetup from '../components/CopyButton';
+import { PwaProvider } from '../components/PwaContext';
 
 interface RootProps {
   children: React.ReactNode;
@@ -124,7 +125,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
   }, []);
 
   return (
-    <>
+    <PwaProvider>
       {children}
       <CopyButtonSetup />
 
@@ -187,7 +188,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
           </div>
         </div>
       )}
-    </>
+    </PwaProvider>
   );
 }
 

@@ -213,6 +213,7 @@ export default function ReleaseFeed(): React.JSX.Element {
 
   return (
     <div className={styles.container}>
+      {loading && <div className={styles.loadingBar} />}
       {/* Telemetry Header */}
       <div className={styles.telemetryHeader}>
         <div className={styles.systemLabel}>

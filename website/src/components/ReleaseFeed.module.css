@@ -18,6 +18,8 @@
   flex-direction: column;
   height: 100%;
   flex: 1;
+  position: relative;
+  overflow: hidden;
 }
 
 [data-theme='dark'] .container {
@@ -438,5 +440,29 @@
 
   .consoleLine {
     font-size: 0.7rem;
+  }
+}
+
+.loadingBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--ifm-color-primary);
+  animation: loadingAnim 1.5s infinite ease-in-out;
+  transform-origin: 0% 50%;
+  z-index: 100;
+}
+
+@keyframes loadingAnim {
+  0% {
+    transform: scaleX(0);
+  }
+  50% {
+    transform: scaleX(0.75) translateX(25%);
+  }
+  100% {
+    transform: scaleX(0) translateX(100%);
   }
 }
