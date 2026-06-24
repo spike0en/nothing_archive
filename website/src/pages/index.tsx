@@ -6,7 +6,7 @@ import { useColorMode } from '@docusaurus/theme-common';
 import Heading from '@theme/Heading';
 import {
   FaTelegramPlane, FaDiscord, FaRedditAlien, FaYoutube,
-  FaInstagram, FaGithub, FaTerminal, FaStar,
+  FaInstagram, FaGithub, FaTerminal,
   FaMobileAlt, FaDownload, FaClipboardList, FaBook,
   FaBoxOpen, FaRocket, FaCode, FaCameraRetro,
 } from 'react-icons/fa';
@@ -18,6 +18,7 @@ import { JSX } from 'react';
 import CommitMatrix from '../components/CommitMatrix';
 import ReleaseFeed from '../components/ReleaseFeed';
 import AnnouncementBanner from '../components/AnnouncementBanner';
+import StarMilestones from '../components/StarMilestones';
 
 /* ============================================================
    STATIC DATA
@@ -204,7 +205,7 @@ function HomepageCommunity() {
     <section className={styles.communitySection}>
       <div className="container">
         <Heading as="h2" className={styles.sectionLabel}>
-          Community
+          Contributors
         </Heading>
 
         {/* Dynamic contributor graph sourced from contrib.rocks */}
@@ -226,24 +227,8 @@ function HomepageCommunity() {
           </a>
         </div>
 
-        {/* Repository support action */}
-        <div className={styles.supportText}>
-          <p>
-            If you find this project helpful, please consider starring the repository. This helps with discoverability and keeps the community growing.
-          </p>
-        </div>
-        <div className={styles.supportActions}>
-          <a
-            href="https://github.com/spike0en/nothing_archive/stargazers"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.starButton}
-            aria-label="Star Nothing Archive on GitHub"
-          >
-            <FaStar size={16} />
-            Star on GitHub
-          </a>
-        </div>
+        {/* Star milestone progress tracker with integrated CTA */}
+        <StarMilestones />
       </div>
     </section>
   );

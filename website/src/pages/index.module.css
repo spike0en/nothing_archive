@@ -427,47 +427,7 @@
   border-top: 1px solid var(--nothing-border);
 }
 
-.supportText {
-  text-align: center;
-  max-width: 600px;
-  margin: 1.5rem auto 1.5rem;
-  font-size: 1.05rem;
-  opacity: 0.85;
-  line-height: 1.6;
-  letter-spacing: -0.01em;
-}
 
-.supportText p {
-  margin-bottom: 0;
-}
-
-.supportActions {
-  display: flex;
-  justify-content: center;
-}
-
-.starButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.65rem 1.5rem;
-  font-size: 0.9rem;
-  letter-spacing: -0.02em;
-  color: #fff !important;
-  background: #cc0000;
-  border: none;
-  border-radius: 999px !important;
-  text-decoration: none !important;
-  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.starButton:hover {
-  background: var(--ifm-color-primary-darkest);
-  color: #fff !important;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(215, 25, 33, 0.25);
-  text-decoration: none !important;
-}
 
 /* Contributor avatar grid */
 .contributorGrid {
@@ -541,8 +501,7 @@
 
 /* --- Focus-Visible Accessibility --- */
 .ctaButton:focus-visible,
-.ctaButtonSecondary:focus-visible,
-.starButton:focus-visible {
+.ctaButtonSecondary:focus-visible {
   outline: 2px solid var(--ifm-color-primary);
   outline-offset: 2px;
 }
