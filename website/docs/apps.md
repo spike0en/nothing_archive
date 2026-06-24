@@ -261,6 +261,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Nothing LED Banner](https://play.google.com/store/apps/details?id=com.ApexCreator.thebannerapp) | Apex Creators | LED banner creator |
 | [Nothing Mixer](https://github.com/farizanjum/mixer-1) | farizanjum | Per-app volume control app designed with Nothing OS aesthetics |
 | [Nothing News](https://play.google.com/store/apps/details?id=com.nothing.news) | Mirko_ddd | Community news |
+| [Nothing OS Smart Edge](https://github.com/f4646/Smart-Edge/releases) | f4646 | Floating windows for Sidebar and Nothing OS |
 | [Nothing Quick Tools](https://github.com/DylanAkp/NothingQuickTools) | DylanAkp | Quick tiles for Phone (2) |
 | [Nothing Weather](https://play.google.com/store/apps/details?id=com.ApexCreator.nothing_weather) | Apex Creators | Weather app |
 | [Nx Calculator](https://github.com/montybytes/nxcalculator) | montybytes | Simple calculator |
