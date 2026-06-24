@@ -121,8 +121,7 @@ export default function StarMilestones(): React.JSX.Element {
       {/* Header — title left, Star CTA button right */}
       <div className={styles.milestoneHeader}>
         <span className={styles.milestoneTitle}>
-          <span className={styles.starIconWrapper}><FaStar size={12} className={styles.starIcon} /></span>
-          STAR MILESTONES
+          MILESTONE TRACKER
         </span>
         <a
           href="https://github.com/spike0en/nothing_archive/stargazers"
@@ -201,11 +200,11 @@ export default function StarMilestones(): React.JSX.Element {
       {/* Footer message */}
       {allReached ? (
         <div className={styles.milestoneComplete}>
-          ALL MILESTONES REACHED — LEGENDARY STATUS ★
+          ALL MILESTONES REACHED
         </div>
       ) : (
         <div className={styles.nextGoal}>
-          {(MILESTONES[nextIdx] - stars).toLocaleString()} stars to go · help us hit <span className={styles.nextGoalValue}>{fmtCount(MILESTONES[nextIdx])} ★</span>
+          {(MILESTONES[nextIdx] - stars).toLocaleString()} stars to go {'\u00b7'} help us reach the goal
         </div>
       )}
     </div>

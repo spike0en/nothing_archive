@@ -1002,11 +1002,16 @@ a:hover {
 }
 
 .footer-custom .separator {
-  color: var(--ifm-color-primary);
-  font-size: 0.85rem;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--ifm-color-primary);
+  color: transparent;
   opacity: 1;
   user-select: none;
-  font-weight: bold;
+  font-size: 0;
+  line-height: 0;
+  flex: 0 0 4px;
 }
 
 .footer-info {
@@ -1024,10 +1029,16 @@ a:hover {
 }
 
 .footer-info .info-dot {
-  color: var(--ifm-color-primary);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--ifm-color-primary);
+  color: transparent;
   opacity: 1;
   user-select: none;
-  font-weight: bold;
+  font-size: 0;
+  line-height: 0;
+  flex: 0 0 4px;
 }
 
 .credit-link {

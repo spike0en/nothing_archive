@@ -15,6 +15,7 @@
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03);
   transition: all 0.3s ease;
+  font-family: var(--ifm-font-family-base);
 }
 
 [data-theme='dark'] .milestoneContainer {
@@ -121,7 +122,7 @@
 }
 
 .milestoneTitle {
-  font-family: var(--nothing-font-mono, 'JetBrains Mono', 'Fira Code', monospace);
+  font-family: var(--ifm-font-family-base);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -132,14 +133,6 @@
   color: var(--ifm-color-content);
 }
 
-.starIconWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
-}
 
 .glitchingText {
   position: relative;
@@ -160,7 +153,7 @@
   padding: 0.4rem 0.9rem;
   font-size: 0.68rem;
   font-weight: 600;
-  font-family: var(--nothing-font-mono, 'JetBrains Mono', monospace);
+  font-family: var(--ifm-font-family-base);
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #fff !important;
@@ -340,7 +333,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0.35rem;
+  position: relative;
+  min-height: 24px;
 }
 
 .tickMark {
@@ -366,26 +360,35 @@
 }
 
 .nodeLabel {
-  font-family: var(--nothing-font-mono, 'JetBrains Mono', monospace);
-  font-size: 0.58rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  opacity: 0.3;
+  position: absolute;
+  top: 11px;
+  right: -24px;
+  width: 48px;
+  text-align: center;
+  font-family: var(--ifm-font-family-base);
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0;
+  opacity: 0.46;
   color: var(--ifm-color-content);
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, opacity 0.3s ease;
   white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1, "tnum" 1;
 }
 
 .nodeLabelReached {
-  opacity: 0.65;
-  font-weight: 600;
+  opacity: 0.78;
+  font-weight: 700;
 }
 
 .nodeLabelNext {
   opacity: 1;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--ifm-color-primary, #d71921);
-  transform: scale(1.05);
 }
 
 /* Footer Section */
@@ -406,17 +409,22 @@
 
 .nextGoal,
 .milestoneComplete {
-  font-family: var(--nothing-font-mono, 'JetBrains Mono', monospace);
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
+  font-family: var(--ifm-font-family-base);
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   text-align: center;
   margin-top: 1rem;
   display: block;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1, "tnum" 1;
 }
 
 .nextGoal {
-  opacity: 0.7;
+  opacity: 0.82;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .goalText {
@@ -477,7 +485,7 @@
 .loadingState {
   text-align: center;
   font-size: 0.68rem;
-  font-family: var(--nothing-font-mono, 'JetBrains Mono', monospace);
+  font-family: var(--ifm-font-family-base);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   opacity: 0.4;
@@ -523,12 +531,12 @@
   }
 
   .nodeLabel {
-    font-size: 0.5rem;
+    font-size: 10px;
   }
 
   .nextGoal,
   .milestoneComplete {
-    font-size: 0.62rem;
+    font-size: 11px;
   }
 }
 
@@ -544,7 +552,9 @@
 
 @media screen and (max-width: 640px) {
   .nodeLabel {
-    font-size: 0.46rem;
+    right: -20px;
+    width: 40px;
+    font-size: 9px;
   }
   
   .tickMark {
