@@ -23,6 +23,7 @@ Complete catalog of Nothing & CMF by Nothing products with model numbers, codena
 | [Phone (3)](https://nothing.tech/products/phone-3) | A024 | Metroid / Arbok | [Here](https://nothing.wiki/hardware/phone_3) | 01 July 2025 |
 | [Phone (3a) Lite](https://nothing.tech/products/phone-3a-lite) | A001T | Galaxian / Bulbasaur | [Here](https://nothing.wiki/hardware/phone_3a_lite) | 29 October 2025 |
 | [Phone (4a)](https://nothing.tech/products/phone-4a) / [Phone (4a) Pro](https://nothing.tech/products/phone-4a-pro) | A069 / A069P | Frogger / FroggerPro / Bellsprout | [Here](https://nothing.wiki/hardware/phone_4a_series) | 05 March 2026 |
+| [Phone (4b)](https://nothing.tech/products/phone-4b) | A009P | SuperContra / Blastoise | [Here](https://nothing.wiki/hardware/phone_4b) | 7 July 2026 |
 
 ### Audio
 
