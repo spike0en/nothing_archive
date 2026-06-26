@@ -19,7 +19,7 @@ Complete catalog of Nothing & CMF by Nothing products with model numbers, codena
 | [Phone (2)](https://nothing.tech/products/phone-2) | A065 / AIN065 | Pong / Alakazam | [Here](https://nothing.wiki/hardware/phone_2) | 11 July 2023 |
 | [Phone (2a)](https://nothing.tech/products/phone-2a) | A142 | Pacman / Aerodactyl | [Here](https://nothing.wiki/hardware/phone_2a_series) | 05 March 2024 |
 | [Phone (2a) Plus](https://nothing.tech/products/phone-2a-plus) | A142P | PacmanPro / Mega Aerodactyl | [Here](https://nothing.wiki/hardware/phone_2a_series) | 31 July 2024 |
-| [Phone (3a)](https://nothing.tech/products/phone-3a) / [Phone (3a) Pro](https://nothing.tech/products/phone-3a-pro) | A059 / A059P | Asteroids / Arcanine | [Here](https://nothing.wiki/hardware/phone_3a_series) | 04 March 2025 |
+| [Phone (3a)](https://nothing.tech/products/phone-3a) / [Phone (3a) Pro](https://nothing.tech/products/phone-3a-pro) | A059 / A059P | Asteroids / AsteroidsPro / Arcanine | [Here](https://nothing.wiki/hardware/phone_3a_series) | 04 March 2025 |
 | [Phone (3)](https://nothing.tech/products/phone-3) | A024 | Metroid / Arbok | [Here](https://nothing.wiki/hardware/phone_3) | 01 July 2025 |
 | [Phone (3a) Lite](https://nothing.tech/products/phone-3a-lite) | A001T | Galaxian / Bulbasaur | [Here](https://nothing.wiki/hardware/phone_3a_lite) | 29 October 2025 |
 | [Phone (4a)](https://nothing.tech/products/phone-4a) / [Phone (4a) Pro](https://nothing.tech/products/phone-4a-pro) | A069 / A069P | Frogger / FroggerPro / Bellsprout | [Here](https://nothing.wiki/hardware/phone_4a_series) | 05 March 2026 |
