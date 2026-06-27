@@ -31,13 +31,11 @@ export function PwaProvider({ children }: { children: React.ReactNode }): React.
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // Check display mode
     const isStandalone = window.matchMedia('(display-mode: standalone)').matches || 
                         (window.navigator as any).standalone === true;
     setIsInstalled(isStandalone);
 
     const handleBeforeInstall = (e: Event) => {
-      // Prevent browser default prompt
       e.preventDefault();
       setDeferredPrompt(e as BeforeInstallPromptEvent);
       setIsInstallable(true);
@@ -52,7 +50,6 @@ export function PwaProvider({ children }: { children: React.ReactNode }): React.
     window.addEventListener('beforeinstallprompt', handleBeforeInstall);
     window.addEventListener('appinstalled', handleAppInstalled);
 
-    // Register service worker if available
     if ('serviceWorker' in navigator) {
       // Register immediately, don't necessarily wait for page load to prevent delay on modern apps
       navigator.serviceWorker.register('/nothing_archive/sw.js')

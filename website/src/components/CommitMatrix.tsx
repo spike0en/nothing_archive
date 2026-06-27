@@ -56,7 +56,7 @@ export default function CommitMatrix(): React.JSX.Element {
     return commits.filter(commit => new Date(commit.date).getTime() >= sevenDaysAgo);
   }, [commits]);
 
-  // 1. Ticking Local Clock
+  // Update local time and handle pulse blink
   useEffect(() => {
     const updateClock = () => {
       const now = new Date();
@@ -82,7 +82,7 @@ export default function CommitMatrix(): React.JSX.Element {
     return () => clearInterval(interval);
   }, []);
 
-  // 2. Fetch Repository Commits (with LocalStorage Caching & Graceful API Limit Handling)
+  // Fetch commits from GitHub API with cache fallback
   useEffect(() => {
     async function loadCommits() {
       try {
@@ -154,7 +154,7 @@ export default function CommitMatrix(): React.JSX.Element {
     loadCommits();
   }, []);
 
-  // 3. Fetch Stars and Hits Count (with caching and Promise.allSettled safety)
+  // Fetch repository stargazers and view metrics in parallel
   useEffect(() => {
     async function loadStats() {
       try {

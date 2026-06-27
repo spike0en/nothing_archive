@@ -37,7 +37,6 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
       try {
         let allReleases: ReleaseData[] = [];
         
-        // 1. Try to read from cache first
         const cached = localStorage.getItem(RELEASES_CACHE_KEY);
         if (cached) {
           const parsed = JSON.parse(cached);
@@ -52,7 +51,6 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
           }
         }
 
-        // 2. Fetch if no cache exists
         if (allReleases.length === 0) {
           const response = await fetch(
             'https://api.github.com/repos/spike0en/nothing_archive/releases?per_page=10'
@@ -84,13 +82,11 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
         if (allReleases.length > 0) {
           const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
           
-          // Filter releases published in the last 7 days
           const recentReleases = allReleases.filter(r => {
             const pubTime = new Date(r.publishedAt).getTime();
             return pubTime >= sevenDaysAgo;
           });
 
-          // Filter out dismissed releases
           const dismissedTagStr = localStorage.getItem(DISMISS_KEY);
           let dismissedTags: string[] = [];
           if (dismissedTagStr) {

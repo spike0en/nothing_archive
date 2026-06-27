@@ -17,7 +17,6 @@ const androidOrder: Record<string, number> = {
   V: 3, // Android 15 (Vanilla)
   B: 4, // Android 16 (Baklava)
   C: 5, // Android 17 (Cinnamon Bun)
-  // Custom rank for a future Android version letter can be set here if needed in same format
 };
 
 /**

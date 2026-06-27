@@ -1,12 +1,12 @@
 /**
- * StarMilestones.module.css — Nothing OS skeuomorphic Glyph progress bar styles
+ * StarMilestones.module.css — Repository milestone progress bar styles
  */
 
 /* Card Container */
 .milestoneContainer {
   margin-top: 1.5rem;
   padding: 2rem 2.25rem 1.5rem;
-  background-color: rgba(245, 245, 240, 0.85); /* Slightly warm Nothing white */
+  background-color: rgba(245, 245, 240, 0.85); /* Slightly warm white */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--nothing-border-strong);
@@ -119,7 +119,7 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Glyph Interface Housing (Skeuomorphic cutout slot) */
+/* Segmented progress bar slot housing */
 .glyphHousing {
   background-color: rgba(0, 0, 0, 0.05); /* Light grey slot in light mode */
   border: 1px solid rgba(0, 0, 0, 0.08);

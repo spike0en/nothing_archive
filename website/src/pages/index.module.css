@@ -1,6 +1,6 @@
 /**
  * Homepage Styling
- * Implements a geometric, high-contrast aesthetic.
+ * Implements styling for homepage sections.
  */
 
 /* --- Hero Section --- */
@@ -13,7 +13,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Ambient radial highlight establishing focal depth */
   background: radial-gradient(ellipse 60% 50% at 70% 50%,
       rgba(215, 25, 33, 0.03) 0%,
       transparent 70%);
@@ -25,7 +24,7 @@
       transparent 70%);
 }
 
-/* Animated structural dot grid simulating device LEDs and transparent blueprint chassis */
+/* Grid pattern overlay */
 .glyphGrid {
   position: absolute;
   inset: 0;

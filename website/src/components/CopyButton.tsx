@@ -34,7 +34,6 @@ export default function CopyButtonSetup(): null {
       });
     };
 
-    // Run table wrapper setup
     wrapTables();
 
     // Observe DOM changes to dynamically wrap tables on client navigation
@@ -53,7 +52,6 @@ export default function CopyButtonSetup(): null {
         return;
       }
 
-      // Mark link as set up
       link.dataset.copySetup = 'true';
 
       const href = link.getAttribute('href');

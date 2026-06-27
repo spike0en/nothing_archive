@@ -729,7 +729,7 @@ table tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.015) !important;
 }
 
-/* Hyperlink styling within tables - command line badge aesthetic */
+/* Hyperlink styling within tables */
 table td a {
   display: inline-block;
   padding: 0.2rem 0.6rem;
@@ -908,7 +908,7 @@ code {
 .header-badge img {
   box-sizing: content-box !important;
   height: 20px;
-  border-radius: 6px; /* Match global styling border-radius (e.g. navbar links, tables) for aesthetic consistency */
+  border-radius: 6px; /* Match standard border radius for visual consistency */
   overflow: hidden;
   border: 1px solid var(--nothing-border);
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease, box-shadow 0.2s ease;
@@ -949,7 +949,7 @@ code {
 .navbar-sidebar .header-badge img {
   box-sizing: content-box !important;
   height: 20px;
-  border-radius: 6px; /* Match global styling border-radius (e.g. navbar links, tables) for aesthetic consistency */
+  border-radius: 6px; /* Match standard border radius for visual consistency */
   border: 1px solid var(--nothing-border);
 }
 
@@ -973,11 +973,11 @@ a:hover {
 }
 
 /* ==========================================
-   FOOTER - Nothing aesthetic
+   FOOTER
    ========================================== */
 .footer {
   border-top: 1px solid var(--nothing-border);
-  padding: 2.5rem 1.5rem !important; /* Elegant vertical spacing */
+  padding: 2.5rem 1.5rem !important;
   background: var(--ifm-background-color) !important; /* Seamless background integration */
   color: var(--ifm-color-content) !important;
   display: flex;
@@ -1543,7 +1543,7 @@ div[class*="navbarSearchContainer"] {
   right: 14px !important;
 }
 
-/* Keyboard shortcut hint tags - clean uniform inline-flex alignment */
+/* Keyboard shortcut hint tags - uniform inline-flex alignment */
 .navbar__search kbd[class*="searchHint"] {
   display: inline-flex !important;
   align-items: center !important;
@@ -1739,7 +1739,7 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
 }
 
 .table-copy-btn.copied {
-  color: #10b981 !important; /* Premium green */
+  color: #10b981 !important; /* Success indicator color */
   border-color: #10b981 !important;
   background-color: rgba(16, 185, 129, 0.15) !important;
   opacity: 1 !important;
@@ -1977,7 +1977,7 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
 }
 
 /* ==========================================
-   TABLE OF CONTENTS (TOC) - Nothing Aesthetic
+   TABLE OF CONTENTS (TOC)
    ========================================== */
 .theme-doc-toc-desktop {
   border-left: 1px solid var(--nothing-border);

@@ -21,10 +21,6 @@ import AnnouncementBanner from '../components/AnnouncementBanner';
 import StarMilestones from '../components/StarMilestones';
 import HeroGlyphLogo from '../components/HeroGlyphLogo';
 
-/* ============================================================
-   STATIC DATA
-   ============================================================ */
-
 type FeatureItem = {
   title: string;
   description: string;
@@ -102,13 +98,10 @@ const socialLinks = [
   { label: 'X (Nothing Updates Bot)', href: 'https://x.com/Nothing_Update', icon: <FaXTwitter size={24} /> },
 ];
 
-/* ============================================================
-   COMPONENTS
-   ============================================================ */
+
 
 /**
- * Primary landing page hero.
- * Renders the brand identity, primary call-to-actions, and a dynamic glyph-pattern background.
+ * Primary landing page hero component.
  */
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -151,8 +144,7 @@ function HomepageHeader() {
 }
 
 /**
- * Interactive feature card component.
- * Wraps the entire surface in a navigation link for an expanded click target area.
+ * Feature card component linking to a resource category.
  */
 function Feature({ title, description, link, icon }: FeatureItem) {
   return (
@@ -190,8 +182,7 @@ function HomepageFeatures() {
 }
 
 /**
- * Community engagement section.
- * Aggregates contributor avatars and GitHub repository support calls to action.
+ * Community contribution section.
  */
 function HomepageCommunity() {
   return (
@@ -228,8 +219,7 @@ function HomepageCommunity() {
 }
 
 /**
- * Social connectivity footer.
- * Renders a flexible grid of outbound links to external platforms.
+ * Footer section listing external social/community links.
  */
 function HomepageSocials() {
   return (
@@ -258,13 +248,10 @@ function HomepageSocials() {
   );
 }
 
-/* ============================================================
-   PAGE ROOT
-   ============================================================ */
+
 
 /**
- * Homepage route component.
- * Composes the layout wrapper and primary landing sections sequentially.
+ * Main homepage component.
  */
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();

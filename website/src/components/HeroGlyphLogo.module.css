@@ -107,10 +107,8 @@
   position: relative;
   background: #eaeaea;
   box-shadow: 
-    /* Ambient outer shadows for elevation */
     0 10px 24px rgba(0, 0, 0, 0.08),
     0 3px 8px rgba(0, 0, 0, 0.04),
-    /* Crisp specular light rim highlight */
     0 0 0 1px rgba(255, 255, 255, 0.95) inset,
     /* Concentric metal lip steps (3D ridges) - Uniform concentric offsets */
     inset 0 0 0 1px rgba(255, 255, 255, 0.95),
@@ -127,8 +125,7 @@
               box-shadow 0.4s ease,
               background-color 0.4s ease;
 }
-
-/* Global premium glass lens shine covering the entire circular dial (bezel + screen) */
+/* Glass lens shine overlay covering circular dial (bezel + screen) */
 .bezelRing::after {
   content: '';
   position: absolute;
@@ -145,7 +142,7 @@
   margin-top: 0;
   cursor: pointer;
   box-shadow: 
-    /* Centered uniform vibrant red neon backlight halos (0 Y-offset) */
+    /* Red backlight glow surrounding the dial */
     0 0 45px rgba(215, 25, 33, 0.48),
     0 0 20px rgba(215, 25, 33, 0.28),
     0 0 0 2.5px rgba(215, 25, 33, 0.16),
@@ -919,7 +916,7 @@
   white-space: nowrap;
 }
 
-/* Sleek close cross button styled as Nothing glassmorphism */
+/* Close button styled with glassmorphism */
 .closeBtn {
   position: absolute;
   top: 14px;

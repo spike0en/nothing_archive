@@ -22,9 +22,8 @@ const STATS_CACHE_TIME_KEY = 'nothing_archive_repo_stats_time_v1';
 const CACHE_TIMEOUT = 5 * 60 * 1000;
 
 /**
- * StarMilestones — visual progress bar that shows how close the repo
- * is to each successive star milestone. Designed to look like Nothing's
- * iconic Glyph Interface progress bar.
+ * Progress bar widget displaying repository stargazing achievements
+ * across defined milestones.
  */
 export default function StarMilestones(): React.JSX.Element {
   const [stars, setStars] = useState<number | null>(null);
@@ -43,7 +42,6 @@ export default function StarMilestones(): React.JSX.Element {
           return;
         }
 
-        // Fallback: fetch directly
         const res = await fetch('https://api.github.com/repos/spike0en/nothing_archive');
         if (res.ok) {
           const data = await res.json();
@@ -104,16 +102,13 @@ export default function StarMilestones(): React.JSX.Element {
 
   return (
     <div className={styles.milestoneContainer}>
-      {/* Corner screws */}
       <TorxScrew className={clsx(styles.screw, styles.screwTopLeft)} rotation={45} />
       <TorxScrew className={clsx(styles.screw, styles.screwTopRight)} rotation={120} />
       <TorxScrew className={clsx(styles.screw, styles.screwBottomLeft)} rotation={80} />
       <TorxScrew className={clsx(styles.screw, styles.screwBottomRight)} rotation={20} />
 
-      {/* Grid overlay */}
       <div className={styles.gridOverlay} />
 
-      {/* Header — title left, Star CTA button right */}
       <div className={styles.milestoneHeader}>
         <span className={styles.milestoneTitle}>
           MILESTONE TRACKER
@@ -130,7 +125,6 @@ export default function StarMilestones(): React.JSX.Element {
         </a>
       </div>
 
-      {/* Recessed Glyph housing and segments */}
       <div className={styles.glyphHousing}>
         <div className={styles.glyphTrack}>
           {MILESTONES.map((milestone, idx) => {
@@ -161,7 +155,6 @@ export default function StarMilestones(): React.JSX.Element {
         </div>
       </div>
 
-      {/* Labels aligned under segments */}
       <div className={styles.labelsRow}>
         {MILESTONES.map((milestone, idx) => {
           const reached = stars >= milestone;
@@ -192,7 +185,6 @@ export default function StarMilestones(): React.JSX.Element {
         })}
       </div>
 
-      {/* Footer message */}
       {allReached ? (
         <div className={styles.milestoneComplete}>
           ALL MILESTONES REACHED

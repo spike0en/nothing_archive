@@ -20,7 +20,7 @@ export interface Release {
 const CACHE_KEY = 'nothing_archive_releases_cache_v2';
 const CACHE_COUNT_KEY = 'nothing_archive_releases_count_v2';
 const CACHE_TIME_KEY = 'nothing_archive_releases_cache_time_v2';
-const CACHE_TIMEOUT = 5 * 60 * 1000; // 5 minutes
+const CACHE_TIMEOUT = 5 * 60 * 1000;
 
 // Read all changelog markdown filenames at compilation time
 let availableChangelogs = new Set<string>();
@@ -60,7 +60,7 @@ export default function ReleaseFeed(): React.JSX.Element {
     return result;
   }, [releases]);
 
-  // 1. Ticking London Clock (Europe/London)
+  // Fetch time in Europe/London timezone
   useEffect(() => {
     const updateClock = () => {
       const now = new Date();
@@ -88,7 +88,7 @@ export default function ReleaseFeed(): React.JSX.Element {
     return () => clearInterval(interval);
   }, []);
 
-  // 2. Fetch Releases (with LocalStorage Caching & Graceful API Limit Handling)
+  // Fetch releases from GitHub API with cache fallback
   useEffect(() => {
     async function loadReleases() {
       try {
@@ -273,7 +273,6 @@ export default function ReleaseFeed(): React.JSX.Element {
         ))}
       </div>
 
-      {/* Recent Releases Console Panel */}
       <div className={styles.consolePanel}>
         <div className={styles.consoleHeader}>
           <span>RECENT FACTORY IMAGE RELEASES</span>

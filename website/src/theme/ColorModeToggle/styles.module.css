@@ -51,7 +51,6 @@
   transform: translateX(56px);
 }
 
-/* Toggle buttons */
 .toggleButton {
   position: relative;
   display: flex;
@@ -97,16 +96,16 @@
 
 /* Active states based on HTML data-theme-choice */
 :global(html[data-theme-choice='light']) .buttonLight .iconSvg {
-  color: var(--ifm-color-primary); /* Nothing OS Red */
+  color: var(--ifm-color-primary); /* Primary brand color */
   transform: scale(1.05);
 }
 
 :global(html[data-theme-choice='system']) .buttonSystem .iconSvg {
-  color: var(--ifm-color-primary); /* Nothing OS Red */
+  color: var(--ifm-color-primary); /* Primary brand color */
   transform: scale(1.05);
 }
 
 :global(html[data-theme-choice='dark']) .buttonDark .iconSvg {
-  color: var(--ifm-color-primary); /* Nothing OS Red */
+  color: var(--ifm-color-primary); /* Primary brand color */
   transform: scale(1.05);
 }

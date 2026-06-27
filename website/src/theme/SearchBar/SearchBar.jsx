@@ -337,7 +337,6 @@ export default function SearchBar({ handleSearchBarToggle, }) {
             handleSearchBarToggle?.(true);
         }
     }, 
-    // Only run this effect on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []);
     useEffect(() => {
@@ -345,7 +344,6 @@ export default function SearchBar({ handleSearchBarToggle, }) {
             return;
         }
         const parsedKeymap = parseKeymap(searchBarShortcutKeymap);
-        // Add shortcuts based on custom keymap
         const handleShortcut = (event) => {
             if (matchesKeymap(event, parsedKeymap)) {
                 event.preventDefault();
