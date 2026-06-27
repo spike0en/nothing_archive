@@ -212,6 +212,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | App | Developer | Description |
 |-----|-----------|-------------|
 | [Battery Health](https://play.google.com/store/apps/details?id=com.monospace.battery) | monospace | Battery health monitoring |
+| [BoltShot](https://github.com/Red-Bolt-Design/BoltShot) | Red-Bolt-Design | Screenshot helper for Nothing style workflows |
 | [Calories Are Nothing](https://play.google.com/store/apps/details?id=can.wearemobilefirst.com) | WeAreMobileFirst | Meal logging app |
 | [CMF Custom Volume Controller](https://github.com/alirezafarghadani999/CMF_CustomVolumeControl) | AlirezaFarghadani | Custom volume controller for CMF |
 | [Compass](https://github.com/Earendel-lab/Compass) | Earendel | Simple compass |
