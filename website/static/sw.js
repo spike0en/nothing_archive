@@ -1,5 +1,5 @@
 // Nothing Archive Custom Service Worker for PWA compliance
-const CACHE_NAME = 'nothing-archive-cache-v1';
+const CACHE_NAME = 'nothing-archive-cache-v2';
 const ASSETS_TO_CACHE = [
   '/nothing_archive/',
   '/nothing_archive/index.html',
@@ -42,7 +42,31 @@ self.addEventListener('fetch', (event) => {
   }
 
   const url = new URL(event.request.url);
-  if (!url.pathname.startsWith('/nothing_archive/')) {
+  if (!url.pathname.startsWith('/nothing_archive/') || url.pathname.endsWith('/sw.js')) {
+    return;
+  }
+
+  const isNavigation = event.request.mode === 'navigate';
+  const acceptsHtml = event.request.headers.get('accept')?.includes('text/html');
+
+  // Network-First strategy for HTML navigation requests to prevent stale chunk errors after updates
+  if (isNavigation || acceptsHtml) {
+    event.respondWith(
+      fetch(event.request)
+        .then((networkResponse) => {
+          if (networkResponse && networkResponse.ok) {
+            const responseToCache = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, responseToCache);
+            });
+            return networkResponse;
+          }
+          return caches.match(event.request);
+        })
+        .catch(() => {
+          return caches.match(event.request) || caches.match('/nothing_archive/index.html');
+        })
+    );
     return;
   }
 
