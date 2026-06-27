@@ -7,6 +7,22 @@ interface RootProps {
 }
 
 export default function Root({ children }: RootProps): React.JSX.Element {
+  // Synchronously migrate existing users to "System" theme by default on client-side
+  if (typeof window !== 'undefined') {
+    try {
+      const MIGRATE_KEY = 'nothing_archive_theme_migrated_v1';
+      if (!localStorage.getItem(MIGRATE_KEY)) {
+        localStorage.removeItem('theme');
+        document.documentElement.setAttribute('data-theme-choice', 'system');
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', systemTheme);
+        localStorage.setItem(MIGRATE_KEY, 'true');
+      }
+    } catch (e) {
+      console.warn('Theme migration failed:', e);
+    }
+  }
+
   const [showShortcuts, setShowShortcuts] = useState(false);
 
   // Keyboard shortcut map event listener

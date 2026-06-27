@@ -1,0 +1,112 @@
+.toggleContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.08);
+  border: 1px solid var(--nothing-border);
+  border-radius: 999px;
+  padding: 2px;
+  height: 32px;
+  width: 90px;
+  overflow: hidden;
+  user-select: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Glassmorphism for dark theme */
+:global([data-theme='dark']) .toggleContainer {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 28px;
+  height: 26px;
+  border-radius: 999px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, border-color 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+:global([data-theme='dark']) .slider {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+/* Slider transitions based on active data-theme-choice */
+:global(html[data-theme-choice='light']) .slider {
+  transform: translateX(0);
+}
+
+:global(html[data-theme-choice='system']) .slider {
+  transform: translateX(28px);
+}
+
+:global(html[data-theme-choice='dark']) .slider {
+  transform: translateX(56px);
+}
+
+/* Toggle buttons */
+.toggleButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 26px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 999px;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.toggleButtonDisabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.iconSvg {
+  color: rgba(0, 0, 0, 0.4);
+  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+
+:global([data-theme='dark']) .iconSvg {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Hover effect on inactive icons */
+.toggleButton:hover .iconSvg {
+  color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.08);
+}
+
+:global([data-theme='dark']) .toggleButton:hover .iconSvg {
+  color: rgba(255, 255, 255, 0.7);
+  transform: scale(1.08);
+}
+
+/* Active states based on HTML data-theme-choice */
+:global(html[data-theme-choice='light']) .buttonLight .iconSvg {
+  color: var(--ifm-color-primary); /* Nothing OS Red */
+  transform: scale(1.05);
+}
+
+:global(html[data-theme-choice='system']) .buttonSystem .iconSvg {
+  color: var(--ifm-color-primary); /* Nothing OS Red */
+  transform: scale(1.05);
+}
+
+:global(html[data-theme-choice='dark']) .buttonDark .iconSvg {
+  color: var(--ifm-color-primary); /* Nothing OS Red */
+  transform: scale(1.05);
+}
