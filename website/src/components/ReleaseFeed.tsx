@@ -3,7 +3,6 @@ import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import styles from './ReleaseFeed.module.css';
 import { getTimeLag } from '../utils/time';
-import TorxScrew from './TorxScrew';
 
 declare var require: any;
 
@@ -215,11 +214,7 @@ export default function ReleaseFeed(): React.JSX.Element {
 
   return (
     <div className={styles.container}>
-      {/* Corner Torx Screws */}
-      <TorxScrew className={clsx(styles.screw, styles.screwTopLeft)} rotation={35} />
-      <TorxScrew className={clsx(styles.screw, styles.screwTopRight)} rotation={110} />
-      <TorxScrew className={clsx(styles.screw, styles.screwBottomLeft)} rotation={75} />
-      <TorxScrew className={clsx(styles.screw, styles.screwBottomRight)} rotation={15} />
+
       {loading && <div className={styles.loadingBar} />}
       {/* Telemetry Header */}
       <div className={styles.telemetryHeader}>

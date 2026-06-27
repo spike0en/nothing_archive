@@ -60,6 +60,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
   };
 
   const [isGameOver, setIsGameOver] = useState<boolean>(false);
+  const [gameStarted, setGameStarted] = useState<boolean>(false);
   const directionRef = useRef<Direction>('RIGHT');
 
   const [paddleCol, setPaddleColState] = useState<number>(7);
@@ -102,11 +103,23 @@ export default function HeroGlyphLogo(): React.JSX.Element {
     });
   };
 
+  const lastPaddleMoveTimeRef = useRef<number>(0);
+  const paddleMoveDirRef = useRef<number | null>(null);
+
   const dpadTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (mode !== 'PLAY' || isGameOver) return;
+
+      const isMoveKey = [
+        'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight',
+        'w', 'W', 's', 'S', 'a', 'A', 'd', 'D'
+      ].includes(e.key);
+
+      if (isMoveKey && !gameStarted) {
+        setGameStarted(true);
+      }
 
       if (activeGame === 'SNAKE') {
         let newDir: Direction | null = null;
@@ -142,20 +155,34 @@ export default function HeroGlyphLogo(): React.JSX.Element {
       } else if (activeGame === 'PONG') {
         if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
           e.preventDefault();
-          setPaddleCol(col => Math.max(4, col - 1));
+          setPaddleCol(col => {
+            const nextCol = Math.max(3, col - 1);
+            if (nextCol !== col) {
+              lastPaddleMoveTimeRef.current = Date.now();
+              paddleMoveDirRef.current = -1;
+            }
+            return nextCol;
+          });
         } else if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') {
           e.preventDefault();
-          setPaddleCol(col => Math.min(10, col + 1));
+          setPaddleCol(col => {
+            const nextCol = Math.min(11, col + 1);
+            if (nextCol !== col) {
+              lastPaddleMoveTimeRef.current = Date.now();
+              paddleMoveDirRef.current = 1;
+            }
+            return nextCol;
+          });
         }
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [mode, activeGame, isGameOver]);
+  }, [mode, activeGame, isGameOver, gameStarted]);
 
   useEffect(() => {
-    if (mode !== 'PLAY' || activeGame !== 'SNAKE' || isGameOver) return;
+    if (mode !== 'PLAY' || activeGame !== 'SNAKE' || isGameOver || !gameStarted) return;
 
     const currentSpeed = Math.max(100, 320 - scoreRef.current * 15);
 
@@ -207,10 +234,10 @@ export default function HeroGlyphLogo(): React.JSX.Element {
 
     const interval = setInterval(gameTick, currentSpeed);
     return () => clearInterval(interval);
-  }, [mode, activeGame, isGameOver, score]);
+  }, [mode, activeGame, isGameOver, score, gameStarted]);
 
   useEffect(() => {
-    if (mode !== 'PLAY' || activeGame !== 'PONG' || isGameOver) return;
+    if (mode !== 'PLAY' || activeGame !== 'PONG' || isGameOver || !gameStarted) return;
 
     const currentSpeed = Math.max(80, 220 - pongScoreRef.current * 10);
 
@@ -234,17 +261,18 @@ export default function HeroGlyphLogo(): React.JSX.Element {
       }
 
       if (nextR === 12) {
-        const onPaddle = nextC >= paddleColRef.current - 2 && nextC <= paddleColRef.current + 2;
+        const onPaddle = nextC >= paddleColRef.current - 1 && nextC <= paddleColRef.current + 1;
         if (onPaddle) {
           nextR = 11;
           velR = -1;
           setPongScore(s => s + 1);
-          const hitOffset = nextC - paddleColRef.current;
-          if (hitOffset < 0) {
-            velC = -1;
-          } else if (hitOffset > 0) {
-            velC = 1;
+          
+          // Apply active steering if the paddle was moved recently
+          const now = Date.now();
+          if (now - lastPaddleMoveTimeRef.current < 350 && paddleMoveDirRef.current !== null) {
+            velC = paddleMoveDirRef.current;
           }
+          // Specular reflection by default (velC remains unchanged), breaking infinite stationary loops
         }
       }
 
@@ -259,10 +287,11 @@ export default function HeroGlyphLogo(): React.JSX.Element {
 
     const interval = setInterval(gameTick, currentSpeed);
     return () => clearInterval(interval);
-  }, [mode, activeGame, isGameOver, pongScore]);
+  }, [mode, activeGame, isGameOver, pongScore, gameStarted]);
 
   const resetGame = () => {
     setIsGameOver(false);
+    setGameStarted(false);
     if (activeGame === 'SNAKE') {
       const initSnake = [
         { r: 7, c: 4 },
@@ -274,14 +303,19 @@ export default function HeroGlyphLogo(): React.JSX.Element {
       setFood({ r: 5, c: 10 });
     } else {
       setPaddleCol(7);
-      setBall({ r: 3, c: 7 });
+      // Randomize starting column between 4 and 10 to add variation and prevent static loops
+      const startC = Math.floor(Math.random() * 7) + 4;
+      setBall({ r: 3, c: startC });
       setBallVel({ r: 1, c: Math.random() > 0.5 ? 1 : -1 });
       setPongScore(0);
+      lastPaddleMoveTimeRef.current = 0;
+      paddleMoveDirRef.current = null;
     }
   };
 
   const togglePlayMode = () => {
     setIsGameOver(false);
+    setGameStarted(false);
     if (mode === 'PLAY') {
       setMode('LOGO');
     } else {
@@ -309,6 +343,10 @@ export default function HeroGlyphLogo(): React.JSX.Element {
   const handleDpadPress = (dir: Direction) => {
     if (mode !== 'PLAY' || isGameOver) return;
 
+    if (!gameStarted) {
+      setGameStarted(true);
+    }
+
     if (activeGame === 'SNAKE') {
       let isValid = false;
       if (dir === 'UP' && directionRef.current !== 'DOWN') isValid = true;
@@ -321,9 +359,23 @@ export default function HeroGlyphLogo(): React.JSX.Element {
       }
     } else if (activeGame === 'PONG') {
       if (dir === 'LEFT') {
-        setPaddleCol(col => Math.max(4, col - 1));
+        setPaddleCol(col => {
+          const nextCol = Math.max(3, col - 1);
+          if (nextCol !== col) {
+            lastPaddleMoveTimeRef.current = Date.now();
+            paddleMoveDirRef.current = -1;
+          }
+          return nextCol;
+        });
       } else if (dir === 'RIGHT') {
-        setPaddleCol(col => Math.min(10, col + 1));
+        setPaddleCol(col => {
+          const nextCol = Math.min(11, col + 1);
+          if (nextCol !== col) {
+            lastPaddleMoveTimeRef.current = Date.now();
+            paddleMoveDirRef.current = 1;
+          }
+          return nextCol;
+        });
       }
     }
   };
@@ -369,7 +421,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
         if (bodyPart) return { on: true, type: 1 };
         if (food.r === r && food.c === c) return { on: true, type: 3 };
       } else if (activeGame === 'PONG') {
-        if (r === 12 && c >= paddleCol - 2 && c <= paddleCol + 2) {
+        if (r === 12 && c >= paddleCol - 1 && c <= paddleCol + 1) {
           return { on: true, type: 1 };
         }
         if (ball.r === r && ball.c === c) {
@@ -441,6 +493,19 @@ export default function HeroGlyphLogo(): React.JSX.Element {
                   />
                 );
               })}
+            </div>
+          )}
+
+          {mode === 'PLAY' && !gameStarted && !isGameOver && (
+            <div 
+              className={styles.startOverlay} 
+              onClick={(e) => {
+                e.stopPropagation();
+                setGameStarted(true);
+              }}
+            >
+              <div className={styles.startText}>{activeGame === 'SNAKE' ? 'SNAKE' : 'PONG'}</div>
+              <div className={styles.playPrompt}>TAP TO START</div>
             </div>
           )}
 

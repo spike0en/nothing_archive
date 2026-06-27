@@ -62,19 +62,21 @@
 .logoChassisPlay {
   width: 270px;
   height: 320px;
+  animation: none !important;
+  transform: none !important;
 }
 
 .logoChassis:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) rotate(-1deg);
 }
 
 /* Floating animation */
 @keyframes heroFloat {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(0deg);
   }
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-10px) rotate(1.2deg);
   }
 }
 
@@ -103,11 +105,19 @@
   height: 140px;
   border-radius: 50%;
   position: relative;
-  background: linear-gradient(135deg, #ffffff 0%, #f2f2f0 40%, #e5e5e0 70%, #d8d8d0 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f7f7f5 35%, #eaeaea 65%, #d1d1ca 100%);
   box-shadow: 
-    0 6px 16px rgba(0, 0, 0, 0.06),
-    inset 0 2px 4px rgba(255, 255, 255, 1),
-    inset 0 -2px 5px rgba(0, 0, 0, 0.08),
+    /* Ambient outer shadows for elevation */
+    0 10px 24px rgba(0, 0, 0, 0.08),
+    0 3px 8px rgba(0, 0, 0, 0.04),
+    /* Crisp specular light rim highlight */
+    0 0 0 1px rgba(255, 255, 255, 0.95) inset,
+    /* Concentric metal lip steps (3D ridges) */
+    inset 0 1.5px 3px rgba(0, 0, 0, 0.15),
+    inset 0 4px 8px rgba(255, 255, 255, 0.85),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.6),
+    inset 0 0 0 3px rgba(0, 0, 0, 0.12),
     0 0 0 1px rgba(0, 0, 0, 0.06);
   z-index: 3;
   margin-top: 18px;
@@ -119,35 +129,86 @@
               background-color 0.4s ease;
 }
 
+/* Global premium glass lens shine covering the entire circular dial (bezel + screen) */
+.bezelRing::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  /* A very soft, organic radial glint at the top-left quadrant to remove the sharp diagonal slash */
+  background: radial-gradient(
+    circle at 25% 25%,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0.05) 40%,
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 7;
+}
+
+[data-theme='dark'] .bezelRing::after {
+  /* Significantly softened glint in dark mode to preserve deep display contrast */
+  background: radial-gradient(
+    circle at 25% 25%,
+    rgba(255, 255, 255, 0.07) 0%,
+    rgba(255, 255, 255, 0.02) 40%,
+    transparent 80%
+  );
+}
+
 .logoChassisLogo .bezelRing {
   width: 200px;
   height: 200px;
   margin-top: 0;
   cursor: pointer;
   box-shadow: 
-    0 10px 40px rgba(215, 25, 33, 0.45),
-    inset 0 2px 4px rgba(255, 255, 255, 0.95),
-    inset 0 -3px 8px rgba(0, 0, 0, 0.08),
-    0 0 0 1px rgba(215, 25, 33, 0.15);
+    /* Centered uniform vibrant red neon backlight halos (0 Y-offset) */
+    0 0 45px rgba(215, 25, 33, 0.48),
+    0 0 20px rgba(215, 25, 33, 0.28),
+    0 0 0 2.5px rgba(215, 25, 33, 0.16),
+    /* Concentric metal lip steps */
+    inset 0 0 0 1px rgba(255, 255, 255, 0.95),
+    inset 0 1.5px 3px rgba(0, 0, 0, 0.15),
+    inset 0 4px 8px rgba(255, 255, 255, 0.85),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.6),
+    inset 0 0 0 3px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(0, 0, 0, 0.06);
 }
 
 [data-theme='dark'] .logoChassisLogo .bezelRing {
   box-shadow: 
-    0 12px 45px rgba(215, 25, 33, 0.38),
-    inset 0 1.5px 2.5px rgba(255, 255, 255, 0.08),
-    inset 0 -3px 8px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(215, 25, 33, 0.22);
+    /* Centered uniform red backlight for dark mode (0 Y-offset) */
+    0 0 50px rgba(215, 25, 33, 0.45),
+    0 0 24px rgba(215, 25, 33, 0.28),
+    0 0 0 2.5px rgba(215, 25, 33, 0.22),
+    /* Concentric dark metal steps */
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+    inset 0 1.5px 3px rgba(0, 0, 0, 0.6),
+    inset 0 4px 8px rgba(255, 255, 255, 0.08),
+    inset 0 -5px 12px rgba(0, 0, 0, 0.85),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.04),
+    inset 0 0 0 3px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(0, 0, 0, 0.95);
 }
 
 [data-theme='dark'] .bezelRing {
-  background: linear-gradient(135deg, #2c2c2c 0%, #202020 45%, #151515 80%, #0d0d0d 100%);
+  background: linear-gradient(135deg, #323232 0%, #202020 45%, #141414 80%, #0c0c0c 100%);
   box-shadow: 
-    0 8px 24px rgba(0, 0, 0, 0.5),
-    inset 0 1.5px 2px rgba(255, 255, 255, 0.06),
-    inset 0 -2px 5px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 255, 255, 0.04);
+    /* Ambient outer shadow for dark mode */
+    0 12px 30px rgba(0, 0, 0, 0.55),
+    0 4px 12px rgba(0, 0, 0, 0.35),
+    /* Specular light rim */
+    0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+    /* Concentric dark metal steps */
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+    inset 0 1.5px 3px rgba(0, 0, 0, 0.6),
+    inset 0 4px 8px rgba(255, 255, 255, 0.08),
+    inset 0 -4px 10px rgba(0, 0, 0, 0.75),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.04),
+    inset 0 0 0 3px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(0, 0, 0, 0.85);
 }
-
 
 .circleDisplay {
   position: absolute;
@@ -157,14 +218,17 @@
   width: 128px;
   height: 128px;
   border-radius: 50%;
-  background-color: #000000;
+  /* Deep radial gradient screen face background for realistic CRT/lens depth */
+  background: radial-gradient(circle at center, #161616 0%, #020202 100%);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 
-    inset 0 4px 12px rgba(0, 0, 0, 0.98),
-    0 0 0 1.5px rgba(0, 0, 0, 0.25);
+    /* Recessed screen bevel shadows */
+    inset 0 8px 16px rgba(0, 0, 0, 0.95),
+    inset 0 -6px 12px rgba(255, 255, 255, 0.03),
+    0 0 0 2px rgba(0, 0, 0, 0.9);
   transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
               height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
               box-shadow 0.4s ease;
@@ -176,9 +240,12 @@
 }
 
 [data-theme='dark'] .circleDisplay {
+  background: radial-gradient(circle at center, #080808 0%, #000000 100%);
   box-shadow: 
-    inset 0 4px 12px rgba(0, 0, 0, 0.98),
-    0 0 0 1.5px rgba(0, 0, 0, 0.85);
+    /* Deep dark mode recessed screen shadows */
+    inset 0 10px 20px rgba(0, 0, 0, 0.98),
+    inset 0 -8px 16px rgba(255, 255, 255, 0.02),
+    0 0 0 2px rgba(0, 0, 0, 0.95);
 }
 
 
@@ -217,31 +284,29 @@
 
 
 .dotOff {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.007);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.95);
 }
-
 
 .dotWhite {
   background-color: #ffffff;
   box-shadow: 
-    0 0 5px rgba(255, 255, 255, 0.95),
-    0 0 2px rgba(255, 255, 255, 0.4);
+    0 0 6px rgba(255, 255, 255, 0.95),
+    0 0 2px rgba(255, 255, 255, 0.5);
 }
-
 
 .dotGrey {
   background-color: rgba(255, 255, 255, 0.35);
   box-shadow: 
-    0 0 3px rgba(255, 255, 255, 0.25),
-    0 0 0.5px rgba(255, 255, 255, 0.1);
+    0 0 4px rgba(255, 255, 255, 0.3),
+    0 0 1px rgba(255, 255, 255, 0.15);
 }
-
 
 .dotRed {
   background-color: #ff1744;
   box-shadow: 
-    0 0 6px rgba(255, 23, 68, 0.95),
-    0 0 2px rgba(255, 23, 68, 0.4);
+    0 0 8px rgba(255, 23, 68, 0.98),
+    0 0 3px rgba(255, 23, 68, 0.5);
 }
 
 @keyframes blink {
@@ -253,7 +318,7 @@
 .gameOverOverlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.85);
+  background: radial-gradient(circle at center, #080808 0%, #000000 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -261,6 +326,47 @@
   z-index: 10;
   cursor: pointer;
   animation: fadeIn 0.25s ease-out;
+}
+
+.startOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, #080808 0%, #000000 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: pointer;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.startText {
+  color: #ffffff;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+  margin-bottom: 8px;
+  font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1;
+}
+
+.playPrompt {
+  color: #ff1744;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 800;
+  text-shadow: 0 0 4px rgba(255, 23, 68, 0.4);
+  animation: pulsePrompt 1.5s infinite ease-in-out;
+  font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1;
+}
+
+@keyframes pulsePrompt {
+  0%, 100% { opacity: 0.95; }
+  50% { opacity: 0.35; }
 }
 
 @keyframes fadeIn {
