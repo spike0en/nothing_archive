@@ -4,37 +4,18 @@
  * Typography loading is deferred to asynchronous `<link>` directives in Docusaurus configuration.
  */
 
-html {
+html,
+body,
+button,
+input,
+select,
+textarea {
   letter-spacing: -0.015em;
+  font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1;
 }
 
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.03em;
-}
-
-/* 
- * Apply Nothing's technical Inter OpenType feature settings to UI & display elements:
- * - cv01 (Alternate one)
- * - cv02 (Open four)
- * - cv03 (Open six)
- * - cv04 (Open nine)
- * - cv06 (Simplified u)
- * - cv09 (Flat-top three)
- * - cv10 (Capital G with spur)
- * - cv11 (Single-story a)
- * - zero (Slashed zero)
- */
-h1, h2, h3, h4, h5, h6,
-.navbar__link,
-.navbar__title,
-.menu__link,
-table th,
-table td a,
-.button,
-.footer-links a,
-.footer-info,
-kbd {
-  font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1;
 }
 
 /* 
@@ -2191,8 +2172,6 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
 }
 
 .feature-title {
-  font-family: var(--ifm-font-family-base);
-  font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1;
   font-weight: 700;
   font-size: 1.05rem;
   letter-spacing: -0.02em;
@@ -2200,8 +2179,6 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
 }
 
 .feature-desc {
-  font-family: var(--ifm-font-family-base);
-  font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1;
   font-size: 0.8rem;
   opacity: 0.7;
   line-height: 1.45;
