@@ -88,6 +88,17 @@ div[class*="tableWrapper"] table td,
   /* Supplementary border tokens */
   --nothing-border: rgba(0, 0, 0, 0.12);
   --nothing-border-strong: rgba(0, 0, 0, 0.28);
+
+  /* Torx Screw Variables (Light Mode defaults) */
+  --screw-metal-light: #ffffff;
+  --screw-metal-mid: #e1e1dd;
+  --screw-metal-dark: #b8b8b3;
+  --screw-recess-light: #181818;
+  --screw-recess-dark: #2d2d2c;
+  --screw-stroke: rgba(0, 0, 0, 0.14);
+  --screw-recess-stroke: rgba(0, 0, 0, 0.45);
+  --screw-rim-highlight: rgba(255, 255, 255, 0.6);
+  --screw-slot-color: rgba(0, 0, 0, 0.25);
 }
 
 [data-theme='dark'] {
@@ -108,6 +119,17 @@ div[class*="tableWrapper"] table td,
 
   --nothing-border: rgba(255, 255, 255, 0.06);
   --nothing-border-strong: rgba(255, 255, 255, 0.12);
+
+  /* Torx Screw Variables (Dark Mode) */
+  --screw-metal-light: #525252;
+  --screw-metal-mid: #383838;
+  --screw-metal-dark: #222222;
+  --screw-recess-light: #050505;
+  --screw-recess-dark: #121212;
+  --screw-stroke: rgba(255, 255, 255, 0.08);
+  --screw-recess-stroke: rgba(0, 0, 0, 0.85);
+  --screw-rim-highlight: rgba(255, 255, 255, 0.08);
+  --screw-slot-color: rgba(0, 0, 0, 0.6);
 }
 
 /* ==========================================
@@ -2174,5 +2196,6 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
   line-height: 1.45;
   color: var(--ifm-color-content);
 }
+
 
 

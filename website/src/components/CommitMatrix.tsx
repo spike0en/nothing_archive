@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import clsx from 'clsx';
 import styles from './CommitMatrix.module.css';
 import { getTimeLag } from '../utils/time';
+import TorxScrew from './TorxScrew';
 
 interface Commit {
   sha: string;
@@ -239,6 +241,11 @@ export default function CommitMatrix(): React.JSX.Element {
 
   return (
     <div className={styles.container}>
+      {/* Corner Torx Screws */}
+      <TorxScrew className={clsx(styles.screw, styles.screwTopLeft)} rotation={45} />
+      <TorxScrew className={clsx(styles.screw, styles.screwTopRight)} rotation={120} />
+      <TorxScrew className={clsx(styles.screw, styles.screwBottomLeft)} rotation={80} />
+      <TorxScrew className={clsx(styles.screw, styles.screwBottomRight)} rotation={20} />
       {isProgressLoading && <div className={styles.loadingBar} />}
       {/* Telemetry Header */}
       <div className={styles.telemetryHeader}>

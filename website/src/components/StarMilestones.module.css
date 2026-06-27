@@ -38,73 +38,7 @@
   background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.02) 1px, transparent 0);
 }
 
-/* L-shaped corner markings */
-.chassisMarkTopLeft,
-.chassisMarkTopRight,
-.chassisMarkBottomLeft,
-.chassisMarkBottomRight {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-color: rgba(0, 0, 0, 0.15);
-  border-style: solid;
-  pointer-events: none;
-  z-index: 2;
-}
 
-[data-theme='dark'] .chassisMarkTopLeft,
-[data-theme='dark'] .chassisMarkTopRight,
-[data-theme='dark'] .chassisMarkBottomLeft,
-[data-theme='dark'] .chassisMarkBottomRight {
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-.chassisMarkTopLeft { top: 8px; left: 8px; border-width: 1px 0 0 1px; }
-.chassisMarkTopRight { top: 8px; right: 8px; border-width: 1px 1px 0 0; }
-.chassisMarkBottomLeft { bottom: 8px; left: 8px; border-width: 0 0 1px 1px; }
-.chassisMarkBottomRight { bottom: 8px; right: 8px; border-width: 0 1px 1px 0; }
-
-/* Corner screws simulating mechanical backing */
-.screw {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #e0e0e0, #9e9e9e);
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 1px 1px 2px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
-
-[data-theme='dark'] .screw {
-  background: radial-gradient(circle at 35% 35%, #424242, #1a1a1a);
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.5), 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.screwTopLeft { top: 10px; left: 10px; }
-.screwTopRight { top: 10px; right: 10px; }
-.screwBottomLeft { bottom: 10px; left: 10px; }
-.screwBottomRight { bottom: 10px; right: 10px; }
-
-.screwThread {
-  width: 6px;
-  height: 1px;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-[data-theme='dark'] .screwThread {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-/* Different rotations for organic look */
-.screwTopLeft .screwThread { transform: rotate(45deg); }
-.screwTopRight .screwThread { transform: rotate(120deg); }
-.screwBottomLeft .screwThread { transform: rotate(80deg); }
-.screwBottomRight .screwThread { transform: rotate(20deg); }
 
 /* Header Row */
 .milestoneHeader {
@@ -541,11 +475,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .screw,
-  .chassisMarkTopLeft,
-  .chassisMarkTopRight,
-  .chassisMarkBottomLeft,
-  .chassisMarkBottomRight {
+  .screw {
     display: none !important;
   }
 }
@@ -592,3 +522,25 @@
     transition: none !important;
   }
 }
+
+/* Local Torx Screw positioning */
+.screw {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.screwTopLeft { top: 10px; left: 10px; }
+.screwTopRight { top: 10px; right: 10px; }
+.screwBottomLeft { bottom: 10px; left: 10px; }
+.screwBottomRight { bottom: 10px; right: 10px; }
+
+/* Hide screws on mobile to prevent clutter */
+@media screen and (max-width: 768px) {
+  .screw {
+    display: none !important;
+  }
+}
+

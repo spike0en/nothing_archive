@@ -457,3 +457,24 @@
     transform: scaleX(0) translateX(100%);
   }
 }
+
+/* Local Torx Screw positioning */
+.screw {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.screwTopLeft { top: 10px; left: 10px; }
+.screwTopRight { top: 10px; right: 10px; }
+.screwBottomLeft { bottom: 10px; left: 10px; }
+.screwBottomRight { bottom: 10px; right: 10px; }
+
+/* Hide screws on mobile to prevent clutter */
+@media screen and (max-width: 768px) {
+  .screw {
+    display: none !important;
+  }
+}

@@ -19,6 +19,7 @@ import CommitMatrix from '../components/CommitMatrix';
 import ReleaseFeed from '../components/ReleaseFeed';
 import AnnouncementBanner from '../components/AnnouncementBanner';
 import StarMilestones from '../components/StarMilestones';
+import HeroGlyphLogo from '../components/HeroGlyphLogo';
 
 /* ============================================================
    STATIC DATA
@@ -141,15 +142,7 @@ function HomepageHeader() {
             </div>
           </div>
           <div className={styles.heroImage}>
-            <img
-              src={heroLogoSrc}
-              alt="Nothing Archive"
-              width={280}
-              height={280}
-              fetchPriority="high"
-              loading="eager"
-              className={styles.heroLogo}
-            />
+            <HeroGlyphLogo />
           </div>
         </div>
       </div>

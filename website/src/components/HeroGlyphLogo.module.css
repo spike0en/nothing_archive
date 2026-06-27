@@ -1,0 +1,868 @@
+
+
+.logoChassis {
+  width: 270px;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--nothing-border);
+  border-radius: 24px;
+  position: relative;
+  overflow: visible;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.05),
+    inset 0 2px 4px rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              background-color 0.4s ease, 
+              border-color 0.4s ease, 
+              box-shadow 0.4s ease,
+              transform 0.3s ease;
+  animation: heroFloat 6s ease-in-out infinite;
+}
+
+[data-theme='dark'] .logoChassis {
+  background-color: rgba(18, 18, 18, 0.75);
+  border-color: var(--nothing-border);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 2px rgba(255, 255, 255, 0.05);
+}
+
+
+.logoChassisLogo {
+  width: 200px;
+  height: 200px;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.logoChassisGlyphs {
+  width: 200px;
+  height: 200px;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.logoChassisPlay {
+  width: 270px;
+  height: 320px;
+}
+
+.logoChassis:hover {
+  transform: translateY(-4px);
+}
+
+/* Floating animation */
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Dotted blueprint overlay */
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.035) 1px, transparent 0);
+  background-size: 16px 16px;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.4s ease;
+  border-radius: 24px;
+}
+
+.logoChassisLogo .gridOverlay {
+  opacity: 0;
+}
+
+[data-theme='dark'] .gridOverlay {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.015) 1px, transparent 0);
+}
+
+.bezelRing {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #f2f2f0 40%, #e5e5e0 70%, #d8d8d0 100%);
+  box-shadow: 
+    0 6px 16px rgba(0, 0, 0, 0.06),
+    inset 0 2px 4px rgba(255, 255, 255, 1),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(0, 0, 0, 0.06);
+  z-index: 3;
+  margin-top: 18px;
+  flex-shrink: 0;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              margin-top 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.4s ease,
+              background-color 0.4s ease;
+}
+
+.logoChassisLogo .bezelRing {
+  width: 200px;
+  height: 200px;
+  margin-top: 0;
+  cursor: pointer;
+  box-shadow: 
+    0 10px 40px rgba(215, 25, 33, 0.45),
+    inset 0 2px 4px rgba(255, 255, 255, 0.95),
+    inset 0 -3px 8px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(215, 25, 33, 0.15);
+}
+
+[data-theme='dark'] .logoChassisLogo .bezelRing {
+  box-shadow: 
+    0 12px 45px rgba(215, 25, 33, 0.38),
+    inset 0 1.5px 2.5px rgba(255, 255, 255, 0.08),
+    inset 0 -3px 8px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(215, 25, 33, 0.22);
+}
+
+[data-theme='dark'] .bezelRing {
+  background: linear-gradient(135deg, #2c2c2c 0%, #202020 45%, #151515 80%, #0d0d0d 100%);
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.5),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.06),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+
+.circleDisplay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  background-color: #000000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    inset 0 4px 12px rgba(0, 0, 0, 0.98),
+    0 0 0 1.5px rgba(0, 0, 0, 0.25);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s ease;
+}
+
+.logoChassisLogo .circleDisplay {
+  width: 184px;
+  height: 184px;
+}
+
+[data-theme='dark'] .circleDisplay {
+  box-shadow: 
+    inset 0 4px 12px rgba(0, 0, 0, 0.98),
+    0 0 0 1.5px rgba(0, 0, 0, 0.85);
+}
+
+
+.gifLogo {
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 5;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logoChassisLogo .gifLogo {
+  width: 184px;
+  height: 184px;
+}
+
+
+.matrixGrid {
+  display: grid;
+  grid-template-columns: repeat(15, 6px);
+  grid-template-rows: repeat(15, 6px);
+  gap: 2px;
+  user-select: none;
+  z-index: 5;
+}
+
+.matrixDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+  transition: transform 0.08s ease, opacity 0.08s ease, background-color 0.1s ease;
+}
+
+
+.dotOff {
+  background-color: transparent;
+}
+
+
+.dotWhite {
+  background-color: #ffffff;
+  box-shadow: 
+    0 0 5px rgba(255, 255, 255, 0.95),
+    0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+
+.dotGrey {
+  background-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 
+    0 0 3px rgba(255, 255, 255, 0.25),
+    0 0 0.5px rgba(255, 255, 255, 0.1);
+}
+
+
+.dotRed {
+  background-color: #ff1744;
+  box-shadow: 
+    0 0 6px rgba(255, 23, 68, 0.95),
+    0 0 2px rgba(255, 23, 68, 0.4);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.95; }
+  50% { opacity: 0.25; }
+}
+
+
+.gameOverOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: pointer;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.gameOverText {
+  color: #ff1744;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-shadow: 0 0 6px rgba(255, 23, 68, 0.7);
+  margin-bottom: 2px;
+  font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1;
+}
+
+.scoreText {
+  color: #ffffff;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.65rem;
+  font-weight: 800;
+  opacity: 0.95;
+  margin-bottom: 8px;
+  font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1, "tnum" 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.retryPrompt {
+  color: rgba(255, 255, 255, 0.55);
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.52rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1;
+}
+
+
+.tabContainer {
+  width: 240px;
+  height: 28px;
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.03);
+  z-index: 10;
+}
+
+[data-theme='dark'] .tabContainer {
+  border-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+
+.logoChassisLogo .tabContainer {
+  margin-top: auto;
+  margin-bottom: 54px;
+}
+
+.logoChassisGlyphs .tabContainer {
+  margin-top: 16px;
+}
+
+.logoChassisPlay .tabContainer {
+  margin-top: 24px;
+}
+
+.tabBtn {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+.tabBtn:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] .tabBtn:not(:last-child) {
+  border-right-color: rgba(255, 255, 255, 0.04);
+}
+
+.tabBtn:hover {
+  opacity: 0.85;
+}
+
+.tabBtnActive {
+  background-color: var(--ifm-color-primary, #d71921);
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+
+.bottomArea {
+  width: 240px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+
+.logoChassisGlyphs .bottomArea {
+  margin-top: auto;
+  margin-bottom: 28px;
+}
+
+.logoChassisPlay .bottomArea {
+  margin-top: auto;
+  margin-bottom: 16px;
+}
+
+
+.glyphToggleRow {
+  display: flex;
+  width: 240px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+[data-theme='dark'] .glyphToggleRow {
+  border-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.005);
+}
+
+.glyphBtn {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 0.25rem 0;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+.glyphBtn:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .glyphBtn:not(:last-child) {
+  border-right-color: rgba(255, 255, 255, 0.04);
+}
+
+.glyphBtnActive {
+  background-color: var(--ifm-color-primary, #d71921);
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+
+.playConsole {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+}
+
+.playControlsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+.dpadContainer {
+  width: 98px;
+  height: 98px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dpadBtn {
+  width: 32px;
+  height: 32px;
+  background-color: #f0f0f0;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #121212;
+  font-size: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+[data-theme='dark'] .dpadBtn {
+  background-color: #242424;
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.dpadBtn:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.dpadBtn:not(:disabled):hover {
+  background-color: #ffffff;
+}
+
+[data-theme='dark'] .dpadBtn:not(:disabled):hover {
+  background-color: #333333;
+}
+
+.dpadBtn:active {
+  transform: scale(0.9);
+}
+
+.dpadUp {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom: none;
+}
+
+.dpadDown {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top: none;
+}
+
+.dpadMiddleRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dpadLeft {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-right: none;
+}
+
+.dpadRight {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-left: none;
+}
+
+.dpadCenter {
+  width: 32px;
+  height: 32px;
+  background-color: #eaeaea;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-left: none;
+  border-right: none;
+}
+
+[data-theme='dark'] .dpadCenter {
+  background-color: #1e1e1e;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+
+.gameSelectors {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.gameToggleGroup {
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+[data-theme='dark'] .gameToggleGroup {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.gameBtn {
+  background: none;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.52rem;
+  font-weight: 800;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.65;
+  transition: all 0.15s ease;
+  font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1;
+}
+
+.gameBtn:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .gameBtn:not(:last-child) {
+  border-right-color: rgba(255, 255, 255, 0.04);
+}
+
+.gameBtnActive {
+  background-color: var(--ifm-color-primary, #d71921);
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+.scoreRow {
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.58rem;
+  font-weight: 800;
+  opacity: 0.95;
+  text-transform: uppercase;
+  font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1, "tnum" 1;
+  font-variant-numeric: tabular-nums;
+  margin-top: 2px;
+}
+
+
+.playHint {
+  text-align: center;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.48rem;
+  font-weight: 800;
+  color: inherit;
+  opacity: 0.65;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1;
+  width: 170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+@media screen and (max-width: 996px) {
+  .logoChassis {
+    width: 250px;
+  }
+  .logoChassisLogo {
+    width: 180px;
+    height: 180px;
+  }
+  .logoChassisGlyphs {
+    width: 180px;
+    height: 180px;
+  }
+  .logoChassisPlay {
+    width: 250px;
+    height: 285px;
+  }
+
+  .bezelRing {
+    width: 126px;
+    height: 126px;
+    margin-top: 14px;
+    box-shadow: 
+      0 4px 12px rgba(0, 0, 0, 0.06),
+      inset 0 1.5px 3px rgba(255, 255, 255, 1),
+      inset 0 -1.5px 4px rgba(0, 0, 0, 0.08),
+      0 0 0 1px rgba(0, 0, 0, 0.06);
+  }
+  .logoChassisLogo .bezelRing {
+    width: 180px;
+    height: 180px;
+    margin-top: 0;
+  }
+  [data-theme='dark'] .bezelRing {
+    box-shadow: 
+      0 6px 16px rgba(0, 0, 0, 0.5),
+      inset 0 1px 1.5px rgba(255, 255, 255, 0.06),
+      inset 0 -1.5px 4px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.04);
+  }
+  .circleDisplay {
+    width: 114px;
+    height: 114px;
+  }
+  .logoChassisLogo .circleDisplay {
+    width: 164px;
+    height: 164px;
+  }
+  .matrixGrid {
+    grid-template-columns: repeat(15, 5.5px);
+    grid-template-rows: repeat(15, 5.5px);
+    gap: 1.5px;
+  }
+  .matrixDot {
+    width: 5.5px;
+    height: 5.5px;
+  }
+  .tabContainer {
+    width: 220px;
+    height: 26px;
+  }
+  .logoChassisLogo .tabContainer {
+    margin-bottom: 48px;
+  }
+  .logoChassisGlyphs .tabContainer {
+    margin-top: 14px;
+  }
+  .logoChassisPlay .tabContainer {
+    margin-top: 20px;
+  }
+  .bottomArea {
+    width: 220px;
+  }
+  .logoChassisGlyphs .bottomArea {
+    margin-bottom: 26px;
+  }
+  .logoChassisPlay .bottomArea {
+    margin-bottom: 14px;
+  }
+  .glyphToggleRow {
+    width: 220px;
+  }
+  .dpadContainer {
+    width: 86px;
+    height: 86px;
+  }
+  .dpadBtn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.52rem;
+  }
+  .dpadCenter {
+    width: 28px;
+    height: 28px;
+  }
+  .scoreRow {
+    font-size: 0.52rem;
+  }
+  .playHint {
+    font-size: 0.44rem;
+  }
+  .gifLogo {
+    width: 114px;
+    height: 114px;
+  }
+  .logoChassisLogo .gifLogo {
+    width: 164px;
+    height: 164px;
+  }
+}
+
+
+
+@media screen and (max-width: 576px) {
+  .logoChassis {
+    width: 235px;
+  }
+  .logoChassisLogo {
+    width: 160px;
+    height: 160px;
+  }
+  .logoChassisGlyphs {
+    width: 160px;
+    height: 160px;
+  }
+  .logoChassisPlay {
+    width: 235px;
+    height: 270px;
+  }
+
+  .bezelRing {
+    width: 116px;
+    height: 116px;
+    margin-top: 12px;
+  }
+  .logoChassisLogo .bezelRing {
+    width: 160px;
+    height: 160px;
+    margin-top: 0;
+  }
+  .circleDisplay {
+    width: 104px;
+    height: 104px;
+  }
+  .logoChassisLogo .circleDisplay {
+    width: 146px;
+    height: 146px;
+  }
+  .matrixGrid {
+    grid-template-columns: repeat(15, 5px);
+    grid-template-rows: repeat(15, 5px);
+    gap: 1.2px;
+  }
+  .matrixDot {
+    width: 5px;
+    height: 5px;
+  }
+  .tabContainer {
+    width: 205px;
+  }
+  .logoChassisLogo .tabContainer {
+    margin-bottom: 42px;
+  }
+  .logoChassisGlyphs .tabContainer {
+    margin-top: 12px;
+  }
+  .logoChassisPlay .tabContainer {
+    margin-top: 18px;
+  }
+  .bottomArea {
+    width: 205px;
+  }
+  .logoChassisGlyphs .bottomArea {
+    margin-bottom: 24px;
+  }
+  .logoChassisPlay .bottomArea {
+    margin-bottom: 12px;
+  }
+  .dpadContainer {
+    width: 86px;
+    height: 86px;
+  }
+  .dpadBtn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.52rem;
+  }
+  .dpadCenter {
+    width: 28px;
+    height: 28px;
+  }
+  .playHint {
+    font-size: 0.42rem;
+    width: 150px;
+  }
+  .gifLogo {
+    width: 104px;
+    height: 104px;
+  }
+  .logoChassisLogo .gifLogo {
+    width: 146px;
+    height: 146px;
+  }
+}
+
+/* Disable transition during gameplay to prevent ghosting */
+.logoChassisPlay .matrixDot {
+  transition: none !important;
+}
+
+/* Prevent hyphenation of D-PAD */
+.noWrap {
+  white-space: nowrap;
+}
+
+/* Sleek close cross button styled as Nothing glassmorphism */
+.closeBtn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.55rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 20;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+[data-theme='dark'] .closeBtn {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.closeBtn:hover {
+  background-color: rgba(215, 25, 33, 0.15);
+  border-color: rgba(215, 25, 33, 0.4);
+  color: var(--ifm-color-primary, #d71921);
+}
+
+.logoChassisPlay .closeBtn {
+  opacity: 1;
+  pointer-events: auto;
+}

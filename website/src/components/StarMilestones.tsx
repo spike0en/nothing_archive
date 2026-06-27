@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { FaStar } from 'react-icons/fa';
 import clsx from 'clsx';
 import styles from './StarMilestones.module.css';
+import TorxScrew from './TorxScrew';
 
 /**
  * Milestone thresholds.
@@ -103,17 +104,11 @@ export default function StarMilestones(): React.JSX.Element {
 
   return (
     <div className={styles.milestoneContainer}>
-      {/* Skeuomorphic visual overlays */}
-      <div className={styles.chassisMarkTopLeft} />
-      <div className={styles.chassisMarkTopRight} />
-      <div className={styles.chassisMarkBottomLeft} />
-      <div className={styles.chassisMarkBottomRight} />
-      
       {/* Corner screws */}
-      <div className={clsx(styles.screw, styles.screwTopLeft)}><div className={styles.screwThread} /></div>
-      <div className={clsx(styles.screw, styles.screwTopRight)}><div className={styles.screwThread} /></div>
-      <div className={clsx(styles.screw, styles.screwBottomLeft)}><div className={styles.screwThread} /></div>
-      <div className={clsx(styles.screw, styles.screwBottomRight)}><div className={styles.screwThread} /></div>
+      <TorxScrew className={clsx(styles.screw, styles.screwTopLeft)} rotation={45} />
+      <TorxScrew className={clsx(styles.screw, styles.screwTopRight)} rotation={120} />
+      <TorxScrew className={clsx(styles.screw, styles.screwBottomLeft)} rotation={80} />
+      <TorxScrew className={clsx(styles.screw, styles.screwBottomRight)} rotation={20} />
 
       {/* Grid overlay */}
       <div className={styles.gridOverlay} />
