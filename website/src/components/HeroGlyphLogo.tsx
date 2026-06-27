@@ -469,6 +469,11 @@ export default function HeroGlyphLogo(): React.JSX.Element {
                 let dotClass = styles.dotOff;
                 let inlineStyle: React.CSSProperties = {};
 
+                const isBoundary = (mode === 'PLAY') && (
+                  ((r === 1 || r === 13) && c >= 1 && c <= 13) ||
+                  ((c === 1 || c === 13) && r >= 1 && r <= 13)
+                );
+
                 if (led.on) {
                   if (led.type === 1) {
                     dotClass = styles.dotWhite;
@@ -483,6 +488,8 @@ export default function HeroGlyphLogo(): React.JSX.Element {
                       animation: isGameOver ? 'blink 0.5s infinite steps(1)' : 'none'
                     };
                   }
+                } else if (isBoundary) {
+                  dotClass = styles.dotBoundary;
                 }
 
                 return (

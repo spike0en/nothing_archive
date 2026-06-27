@@ -2153,29 +2153,36 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
 /* --- Features Grid (intro.md) --- */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.25rem;
   margin: 2rem 0;
 }
 
 .feature-card {
-  background-color: rgba(128, 128, 128, 0.03);
-  border: 1px solid var(--nothing-border);
-  border-radius: 16px;
-  padding: 1.5rem;
+  background-color: rgba(128, 128, 128, 0.03) !important;
+  border: 1px solid var(--nothing-border) !important;
+  border-radius: 16px !important;
+  padding: 1.5rem !important;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  transition: border-color 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+  box-shadow: none !important;
+  transform: none !important;
 }
 
 [data-theme='dark'] .feature-card {
-  background-color: rgba(255, 255, 255, 0.015);
+  background-color: rgba(255, 255, 255, 0.015) !important;
 }
 
 .feature-card:hover {
-  border-color: var(--ifm-color-primary) !important;
-  transform: translateY(-2px);
+  background-color: rgba(128, 128, 128, 0.06) !important;
+  border-color: var(--nothing-border) !important;
+  transform: none !important;
+}
+
+[data-theme='dark'] .feature-card:hover {
+  background-color: rgba(255, 255, 255, 0.03) !important;
 }
 
 .feature-icon {
@@ -2184,6 +2191,8 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
 }
 
 .feature-title {
+  font-family: var(--ifm-font-family-base);
+  font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1;
   font-weight: 700;
   font-size: 1.05rem;
   letter-spacing: -0.02em;
@@ -2191,6 +2200,8 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
 }
 
 .feature-desc {
+  font-family: var(--ifm-font-family-base);
+  font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1;
   font-size: 0.8rem;
   opacity: 0.7;
   line-height: 1.45;

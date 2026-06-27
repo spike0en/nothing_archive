@@ -14,6 +14,7 @@ export interface Release {
   name: string;
   publishedAt: string;
   htmlUrl: string;
+  downloads?: number;
 }
 
 const CACHE_KEY = 'nothing_archive_releases_cache_v2';
@@ -98,12 +99,15 @@ export default function ReleaseFeed(): React.JSX.Element {
 
         if (cachedData && cachedTime && now - parseInt(cachedTime, 10) < CACHE_TIMEOUT) {
           const parsed = JSON.parse(cachedData);
-          setReleases(parsed);
-          setTotalReleasesCount(cachedCount ? parseInt(cachedCount, 10) : parsed.length);
-          setStatusSource('LIVE');
-          setErrorState(null);
-          setLoading(false);
-          return;
+          const hasDownloads = parsed.length === 0 || parsed[0].downloads !== undefined;
+          if (hasDownloads) {
+            setReleases(parsed);
+            setTotalReleasesCount(cachedCount ? parseInt(cachedCount, 10) : parsed.length);
+            setStatusSource('LIVE');
+            setErrorState(null);
+            setLoading(false);
+            return;
+          }
         }
 
         const response = await fetch(
@@ -152,6 +156,10 @@ export default function ReleaseFeed(): React.JSX.Element {
             version = parts.slice(1).join('_');
           }
 
+          const downloads = item.assets
+            ? item.assets.reduce((sum: number, asset: any) => sum + (asset.download_count || 0), 0)
+            : 0;
+
           return {
             id: item.id,
             tagName,
@@ -160,6 +168,7 @@ export default function ReleaseFeed(): React.JSX.Element {
             name: item.name || tagName,
             publishedAt: item.published_at || new Date().toISOString(),
             htmlUrl: item.html_url || '',
+            downloads,
           };
         });
 
@@ -201,6 +210,10 @@ export default function ReleaseFeed(): React.JSX.Element {
     htmlUrl: '',
   };
 
+  const totalDownloads = React.useMemo(() => {
+    return releases.reduce((sum, r) => sum + (r.downloads || 0), 0);
+  }, [releases]);
+
   const stats = [
     {
       label: 'TOTAL RELEASES',
@@ -209,6 +222,10 @@ export default function ReleaseFeed(): React.JSX.Element {
     {
       label: 'LATEST RELEASE AGE',
       value: loading ? '—' : latestRelease.publishedAt ? getTimeLag(latestRelease.publishedAt) + ' ago' : '—',
+    },
+    {
+      label: 'TOTAL DOWNLOADS',
+      value: loading ? '—' : totalDownloads.toLocaleString(),
     },
   ];
 

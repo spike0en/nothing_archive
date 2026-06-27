@@ -105,19 +105,18 @@
   height: 140px;
   border-radius: 50%;
   position: relative;
-  background: linear-gradient(135deg, #ffffff 0%, #f7f7f5 35%, #eaeaea 65%, #d1d1ca 100%);
+  background: #eaeaea;
   box-shadow: 
     /* Ambient outer shadows for elevation */
     0 10px 24px rgba(0, 0, 0, 0.08),
     0 3px 8px rgba(0, 0, 0, 0.04),
     /* Crisp specular light rim highlight */
     0 0 0 1px rgba(255, 255, 255, 0.95) inset,
-    /* Concentric metal lip steps (3D ridges) */
-    inset 0 1.5px 3px rgba(0, 0, 0, 0.15),
-    inset 0 4px 8px rgba(255, 255, 255, 0.85),
-    inset 0 -4px 8px rgba(0, 0, 0, 0.15),
-    inset 0 0 0 2px rgba(255, 255, 255, 0.6),
-    inset 0 0 0 3px rgba(0, 0, 0, 0.12),
+    /* Concentric metal lip steps (3D ridges) - Uniform concentric offsets */
+    inset 0 0 0 1px rgba(255, 255, 255, 0.95),
+    inset 0 0 0 2px rgba(0, 0, 0, 0.06),
+    inset 0 0 0 3px rgba(255, 255, 255, 0.6),
+    inset 0 0 0 4px rgba(0, 0, 0, 0.12),
     0 0 0 1px rgba(0, 0, 0, 0.06);
   z-index: 3;
   margin-top: 18px;
@@ -135,25 +134,9 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  /* A very soft, organic radial glint at the top-left quadrant to remove the sharp diagonal slash */
-  background: radial-gradient(
-    circle at 25% 25%,
-    rgba(255, 255, 255, 0.16) 0%,
-    rgba(255, 255, 255, 0.05) 40%,
-    transparent 80%
-  );
   pointer-events: none;
   z-index: 7;
-}
-
-[data-theme='dark'] .bezelRing::after {
-  /* Significantly softened glint in dark mode to preserve deep display contrast */
-  background: radial-gradient(
-    circle at 25% 25%,
-    rgba(255, 255, 255, 0.07) 0%,
-    rgba(255, 255, 255, 0.02) 40%,
-    transparent 80%
-  );
+  display: none !important; /* disable uneven lighting glare */
 }
 
 .logoChassisLogo .bezelRing {
@@ -166,13 +149,11 @@
     0 0 45px rgba(215, 25, 33, 0.48),
     0 0 20px rgba(215, 25, 33, 0.28),
     0 0 0 2.5px rgba(215, 25, 33, 0.16),
-    /* Concentric metal lip steps */
+    /* Concentric metal lip steps - Uniform concentric offsets */
     inset 0 0 0 1px rgba(255, 255, 255, 0.95),
-    inset 0 1.5px 3px rgba(0, 0, 0, 0.15),
-    inset 0 4px 8px rgba(255, 255, 255, 0.85),
-    inset 0 -4px 8px rgba(0, 0, 0, 0.15),
-    inset 0 0 0 2px rgba(255, 255, 255, 0.6),
-    inset 0 0 0 3px rgba(0, 0, 0, 0.12),
+    inset 0 0 0 2px rgba(0, 0, 0, 0.06),
+    inset 0 0 0 3px rgba(255, 255, 255, 0.6),
+    inset 0 0 0 4px rgba(0, 0, 0, 0.12),
     0 0 0 1px rgba(0, 0, 0, 0.06);
 }
 
@@ -182,31 +163,27 @@
     0 0 50px rgba(215, 25, 33, 0.45),
     0 0 24px rgba(215, 25, 33, 0.28),
     0 0 0 2.5px rgba(215, 25, 33, 0.22),
-    /* Concentric dark metal steps */
-    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
-    inset 0 1.5px 3px rgba(0, 0, 0, 0.6),
-    inset 0 4px 8px rgba(255, 255, 255, 0.08),
-    inset 0 -5px 12px rgba(0, 0, 0, 0.85),
-    inset 0 0 0 2px rgba(255, 255, 255, 0.04),
-    inset 0 0 0 3px rgba(0, 0, 0, 0.8),
-    0 0 0 1px rgba(0, 0, 0, 0.95);
+    /* Concentric dark metal steps - Uniform concentric offsets */
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+    inset 0 0 0 2px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 3px rgba(255, 255, 255, 0.04),
+    inset 0 0 0 4px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(0, 0, 0, 0.9);
 }
 
 [data-theme='dark'] .bezelRing {
-  background: linear-gradient(135deg, #323232 0%, #202020 45%, #141414 80%, #0c0c0c 100%);
+  background: #242424;
   box-shadow: 
     /* Ambient outer shadow for dark mode */
     0 12px 30px rgba(0, 0, 0, 0.55),
     0 4px 12px rgba(0, 0, 0, 0.35),
     /* Specular light rim */
     0 0 0 1px rgba(255, 255, 255, 0.12) inset,
-    /* Concentric dark metal steps */
-    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
-    inset 0 1.5px 3px rgba(0, 0, 0, 0.6),
-    inset 0 4px 8px rgba(255, 255, 255, 0.08),
-    inset 0 -4px 10px rgba(0, 0, 0, 0.75),
-    inset 0 0 0 2px rgba(255, 255, 255, 0.04),
-    inset 0 0 0 3px rgba(0, 0, 0, 0.8),
+    /* Concentric dark metal steps - Uniform concentric offsets */
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    inset 0 0 0 2px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 3px rgba(255, 255, 255, 0.03),
+    inset 0 0 0 4px rgba(0, 0, 0, 0.6),
     0 0 0 1px rgba(0, 0, 0, 0.85);
 }
 
@@ -218,16 +195,15 @@
   width: 128px;
   height: 128px;
   border-radius: 50%;
-  /* Deep radial gradient screen face background for realistic CRT/lens depth */
-  background: radial-gradient(circle at center, #161616 0%, #020202 100%);
+  /* Uniform centered radial gradient background for screen face */
+  background: radial-gradient(circle at center, #161616 0%, #0a0a0a 100%);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 
-    /* Recessed screen bevel shadows */
-    inset 0 8px 16px rgba(0, 0, 0, 0.95),
-    inset 0 -6px 12px rgba(255, 255, 255, 0.03),
+    /* Uniform, centered recessed screen shadows */
+    inset 0 0 12px rgba(0, 0, 0, 0.95),
     0 0 0 2px rgba(0, 0, 0, 0.9);
   transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
               height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
@@ -240,11 +216,10 @@
 }
 
 [data-theme='dark'] .circleDisplay {
-  background: radial-gradient(circle at center, #080808 0%, #000000 100%);
+  background: radial-gradient(circle at center, #0a0a0a 0%, #020202 100%);
   box-shadow: 
-    /* Deep dark mode recessed screen shadows */
-    inset 0 10px 20px rgba(0, 0, 0, 0.98),
-    inset 0 -8px 16px rgba(255, 255, 255, 0.02),
+    /* Uniform, centered deep recessed dark screen shadows */
+    inset 0 0 12px rgba(0, 0, 0, 0.98),
     0 0 0 2px rgba(0, 0, 0, 0.95);
 }
 
@@ -284,7 +259,17 @@
 
 
 .dotOff {
-  background-color: rgba(255, 255, 255, 0.007);
+  background-color: rgba(255, 255, 255, 0.015);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.95);
+}
+
+.dotBoundary {
+  background-color: rgba(255, 255, 255, 0.07);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.95);
+}
+
+[data-theme='dark'] .dotBoundary {
+  background-color: rgba(255, 255, 255, 0.04);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.95);
 }
 

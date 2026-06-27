@@ -51,6 +51,11 @@ export default function CommitMatrix(): React.JSX.Element {
   const [repoStats, setRepoStats] = useState<RepoStats>({ stars: 0, hits: 0 });
   const [statsLoading, setStatsLoading] = useState(true);
 
+  const filteredCommits = React.useMemo(() => {
+    const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
+    return commits.filter(commit => new Date(commit.date).getTime() >= sevenDaysAgo);
+  }, [commits]);
+
   // 1. Ticking Local Clock
   useEffect(() => {
     const updateClock = () => {
@@ -309,8 +314,13 @@ export default function CommitMatrix(): React.JSX.Element {
               <span className={styles.statusDot} />
               <span className={styles.messageText}>NO COMMITS FOUND</span>
             </div>
+          ) : filteredCommits.length === 0 ? (
+            <div className={styles.consoleLine}>
+              <span className={styles.statusDot} />
+              <span className={styles.messageText}>NO CHANGES IN THE LAST 7 DAYS</span>
+            </div>
           ) : (
-            commits.slice(0, 20).map((commit, idx) => {
+            filteredCommits.map((commit, idx) => {
               const isLatest = idx === 0;
               return (
                 <a

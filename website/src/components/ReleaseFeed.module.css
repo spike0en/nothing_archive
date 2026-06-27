@@ -100,7 +100,7 @@
 /* --- Stats Strip --- */
 .statsStrip {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background-color: var(--nothing-border);
   border: 1px solid var(--nothing-border);
@@ -414,6 +414,13 @@
 /* --- Responsive Breakpoints --- */
 
 @media screen and (max-width: 768px) {
+  .statsStrip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .statsStrip > :nth-child(3) {
+    grid-column: span 2;
+  }
+
   .container {
     padding: 1.25rem;
   }
@@ -430,10 +437,6 @@
 }
 
 @media screen and (max-width: 576px) {
-  .statsStrip {
-    grid-template-columns: 1fr;
-  }
-
   .statValue {
     font-size: 1rem;
   }
