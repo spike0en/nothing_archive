@@ -325,19 +325,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
   };
 
   const handleBezelClick = (e: React.MouseEvent) => {
-    const now = Date.now();
-    if (now - lastClickTimeRef.current < 400) {
-      const newCount = clickCount + 1;
-      if (newCount >= 3) {
-        togglePlayMode();
-        setClickCount(0);
-      } else {
-        setClickCount(newCount);
-      }
-    } else {
-      setClickCount(1);
-    }
-    lastClickTimeRef.current = now;
+    togglePlayMode();
   };
 
   const handleDpadPress = (dir: Direction) => {

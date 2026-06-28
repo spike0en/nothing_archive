@@ -5,7 +5,7 @@
 
 /* --- Hero Section --- */
 .heroBanner {
-  padding: 4rem 1.5rem 6rem;
+  padding: 4rem 0;
   text-align: left;
   position: relative;
   overflow: hidden;
@@ -64,9 +64,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 4rem;
-  max-width: 1100px;
-  margin: 0 auto;
+  gap: 3rem;
+  width: 100%;
 }
 
 .heroText {
@@ -77,8 +76,9 @@
 .heroImage {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  padding-right: 1.5rem;
 }
 
 .heroLogo {
@@ -123,7 +123,7 @@
   font-size: clamp(1rem, 2vw, 1.25rem);
   opacity: 0.7;
   letter-spacing: -0.01em;
-  max-width: 40ch;
+  max-width: 50ch;
   margin: 0 0 2.5rem 0;
   line-height: 1.5;
 }
@@ -574,6 +574,11 @@
   .heroContent {
     flex-direction: column-reverse;
     gap: 2rem;
+  }
+
+  .heroImage {
+    justify-content: center;
+    padding-right: 0;
   }
 
   .heroText {
