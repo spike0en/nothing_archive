@@ -144,7 +144,7 @@
   padding: 0.875rem 2rem;
   font-size: 0.9rem;
   letter-spacing: -0.02em;
-  background: #cc0000;
+  background: var(--nothing-red, #D71921);
   color: #fff !important;
   border: none;
   border-radius: 999px !important;

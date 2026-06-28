@@ -117,20 +117,14 @@
   padding: 0.85rem 1rem;
   gap: 0.3rem;
   background-color: rgba(255, 255, 255, 0.6);
-  transition: background-color 0.2s ease;
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.02) 1px, transparent 0);
+  background-size: 8px 8px;
   min-height: 56px;
 }
 
 [data-theme='dark'] .statItem {
-  background-color: rgba(255, 255, 255, 0.03);
-}
-
-.statItem:hover {
-  background-color: rgba(0, 0, 0, 0.03);
-}
-
-[data-theme='dark'] .statItem:hover {
-  background-color: rgba(255, 255, 255, 0.06);
+  background-color: rgba(255, 255, 255, 0.02);
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.01) 1px, transparent 0);
 }
 
 .statValue {
@@ -291,12 +285,12 @@
 }
 
 .timeLagActive {
-  color: #d71921 !important;
+  color: var(--nothing-red, #D71921) !important;
   font-weight: 700;
 }
 
 [data-theme='dark'] .timeLagActive {
-  color: #ffc700 !important;
+  color: var(--nothing-yellow, #FFC700) !important;
 }
 
 .authorLatest {
@@ -347,7 +341,7 @@
   font-weight: 700;
   color: var(--ifm-color-primary);
   opacity: 1;
-  background-color: rgba(255, 60, 60, 0.1);
+  background-color: rgba(215, 25, 33, 0.1);
   border-radius: 4px;
   padding: 0px 3px;
   line-height: 1.4;
@@ -356,7 +350,7 @@
 }
 
 [data-theme='dark'] .coAuthorBadge {
-  background-color: rgba(255, 60, 60, 0.15);
+  background-color: rgba(215, 25, 33, 0.15);
 }
 
 .messageText {

@@ -311,16 +311,18 @@ export default function ReleaseFeed(): React.JSX.Element {
               return (
                 <div key={release.id} className={styles.consoleLine}>
                   <span className={`${styles.timeLag} ${idx === 0 ? styles.timeLagActive : ''}`}>{getTimeLag(release.publishedAt)}</span>
-                  <span className={styles.messageText}>
+                  <span className={`${styles.messageText} ${idx === 0 ? styles.messageTextLatest : ''}`}>
                     {hasChangelog ? (
                       <Link
                         to={changelogUrl}
-                        className={`${styles.buildLink} ${idx === 0 ? styles.buildTextLatest : ''}`}
+                        className={styles.buildLink}
                       >
-                        {release.name}
+                        <span className={idx === 0 ? styles.buildTextLatest : ''}>
+                          {release.name}
+                        </span>
                       </Link>
                     ) : (
-                      <span className={`${styles.buildText} ${idx === 0 ? styles.buildTextLatest : ''}`}>
+                      <span className={idx === 0 ? styles.buildTextLatest : styles.buildText}>
                         {release.name}
                       </span>
                     )}

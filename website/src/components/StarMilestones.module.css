@@ -91,7 +91,7 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #fff !important;
-  background: var(--ifm-color-primary, #d71921);
+  background: var(--ifm-color-primary, #D71921);
   border: none;
   border-radius: 999px;
   text-decoration: none !important;
@@ -101,7 +101,7 @@
 }
 
 .starCta:hover {
-  background: #f21b25;
+  background: var(--ifm-color-primary-light, #df1037);
   transform: translateY(-1.5px);
   box-shadow: 0 4px 15px rgba(215, 25, 33, 0.35);
 }
@@ -201,26 +201,26 @@
 
 /* Lit state red segment */
 .glyphSegmentRed.glyphSegmentLit {
-  border-color: rgba(255, 23, 68, 0.2);
+  border-color: rgba(215, 25, 33, 0.2);
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5);
 }
 
 [data-theme='dark'] .glyphSegmentRed.glyphSegmentLit {
-  border-color: rgba(255, 23, 68, 0.3);
-  box-shadow: inset 0 1px 1px rgba(255, 23, 68, 0.1);
+  border-color: rgba(215, 25, 33, 0.3);
+  box-shadow: inset 0 1px 1px rgba(215, 25, 33, 0.1);
 }
 
 .glyphSegmentRed.glyphSegmentLit .segmentBar {
-  background-color: #ff1744;
+  background-color: var(--nothing-red, #D71921);
 }
 
 /* Fully lit red segment glow */
 .glyphSegmentRed.glyphSegmentFullyLit .segmentBar {
-  box-shadow: 0 0 8px rgba(255, 23, 68, 0.8), 0 0 2px rgba(255, 23, 68, 0.4);
+  box-shadow: 0 0 8px rgba(215, 25, 33, 0.8), 0 0 2px rgba(215, 25, 33, 0.4);
 }
 
 [data-theme='dark'] .glyphSegmentRed.glyphSegmentFullyLit .segmentBar {
-  box-shadow: 0 0 12px rgba(255, 23, 68, 0.95), 0 0 4px rgba(255, 23, 68, 0.6);
+  box-shadow: 0 0 12px rgba(215, 25, 33, 0.95), 0 0 4px rgba(215, 25, 33, 0.6);
 }
 
 /* Active current segment breathing/pulse glow animation */
@@ -247,7 +247,7 @@
 
 /* Make red active segment glow red */
 .glyphSegmentRed.glyphSegmentCurrent .segmentBar {
-  box-shadow: 0 0 8px rgba(255, 23, 68, 0.7), 0 0 2px rgba(255, 23, 68, 0.4);
+  box-shadow: 0 0 8px rgba(215, 25, 33, 0.7), 0 0 2px rgba(215, 25, 33, 0.4);
 }
 
 /* Labels under segments — must mirror glyphTrack flex layout for alignment */
@@ -368,12 +368,12 @@
 }
 
 .nextGoalValue {
-  color: var(--ifm-color-primary, #d71921);
+  color: var(--ifm-color-primary, var(--nothing-red, #D71921));
   font-weight: 700;
 }
 
 .milestoneComplete {
-  color: var(--ifm-color-primary, #d71921);
+  color: var(--ifm-color-primary, var(--nothing-red, #D71921));
   font-weight: 700;
   letter-spacing: 0.1em;
   animation: completePulse 2s ease-in-out infinite;
@@ -391,7 +391,7 @@
   height: 6px;
   border-radius: 50%;
   display: inline-block;
-  background-color: var(--ifm-color-primary, #d71921);
+  background-color: var(--ifm-color-primary, var(--nothing-red, #D71921));
   box-shadow: 0 0 6px var(--ifm-color-primary);
 }
 

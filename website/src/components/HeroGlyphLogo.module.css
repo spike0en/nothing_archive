@@ -285,10 +285,10 @@
 }
 
 .dotRed {
-  background-color: #ff1744;
+  background-color: var(--nothing-red, #D71921);
   box-shadow: 
-    0 0 8px rgba(255, 23, 68, 0.98),
-    0 0 3px rgba(255, 23, 68, 0.5);
+    0 0 8px rgba(215, 25, 33, 0.98),
+    0 0 3px rgba(215, 25, 33, 0.5);
 }
 
 @keyframes blink {
@@ -335,13 +335,13 @@
 }
 
 .playPrompt {
-  color: #ff1744;
+  color: var(--nothing-red, #D71921);
   font-family: var(--ifm-font-family-base);
   font-size: 0.58rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 800;
-  text-shadow: 0 0 4px rgba(255, 23, 68, 0.4);
+  text-shadow: 0 0 4px rgba(215, 25, 33, 0.4);
   animation: pulsePrompt 1.5s infinite ease-in-out;
   font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1;
 }
@@ -357,12 +357,12 @@
 }
 
 .gameOverText {
-  color: #ff1744;
+  color: var(--nothing-red, #D71921);
   font-family: var(--ifm-font-family-base);
   font-size: 0.85rem;
   font-weight: 900;
   letter-spacing: 0.12em;
-  text-shadow: 0 0 6px rgba(255, 23, 68, 0.7);
+  text-shadow: 0 0 6px rgba(215, 25, 33, 0.7);
   margin-bottom: 2px;
   font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1;
 }
@@ -446,7 +446,7 @@
 }
 
 .tabBtnActive {
-  background-color: var(--ifm-color-primary, #d71921);
+  background-color: var(--ifm-color-primary, #D71921);
   color: #ffffff !important;
   opacity: 1;
 }
@@ -511,7 +511,7 @@
 }
 
 .glyphBtnActive {
-  background-color: var(--ifm-color-primary, #d71921);
+  background-color: var(--ifm-color-primary, #D71921);
   color: #ffffff !important;
   opacity: 1;
 }
@@ -666,7 +666,7 @@
 }
 
 .gameBtnActive {
-  background-color: var(--ifm-color-primary, #d71921);
+  background-color: var(--ifm-color-primary, #D71921);
   color: #ffffff !important;
   opacity: 1;
 }
@@ -947,7 +947,7 @@
 .closeBtn:hover {
   background-color: rgba(215, 25, 33, 0.15);
   border-color: rgba(215, 25, 33, 0.4);
-  color: var(--ifm-color-primary, #d71921);
+  color: var(--ifm-color-primary, #D71921);
 }
 
 .logoChassisPlay .closeBtn {
