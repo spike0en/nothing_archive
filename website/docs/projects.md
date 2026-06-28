@@ -111,7 +111,8 @@ Web-based applications inspired by Nothing OS.
 | Project | Developer | Description |
 |---------|-----------|-------------|
 | [Airi Forecasts](https://github.com/the3dmslobj/airi-forcasts) | the3dmslobj | A weather app built with Expo and React Native, wrapped in a Nothing-style monochrome dot-matrix interface |
-| [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Control earbuds from web |
+| [Attune](https://github.com/RocketSpot/attune) | RocketSpot | Desktop control + smart auto-EQ for CMF Buds Pro 2 and other Nothing / CMF earbuds |
+| [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Control earbuds from web ([Repo](https://github.com/radiance-project/ear-web)) |
 | [Essential Space Web](https://prostmitwein.github.io/EssentialSpaceWeb/) | CorruptPriest | Minimalist notespace ([Repo](https://github.com/CorruptPriest/EssentialSpaceWeb)) |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal-inspired homepage |
