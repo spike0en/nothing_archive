@@ -1482,6 +1482,12 @@ div[class*="navbarSearchContainer"] {
   box-shadow: 0 0 0 3px rgba(215, 25, 33, 0.18) !important;
 }
 
+/* Custom text selection styling */
+.navbar__search-input::selection {
+  background-color: var(--ifm-color-primary) !important;
+  color: #ffffff !important;
+}
+
 /* Collapsed state when search input is not focused - applied to all screen sizes */
 .navbar__search-input:not(:focus) {
   width: 2.25rem !important;
