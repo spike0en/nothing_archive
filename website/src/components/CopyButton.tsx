@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 const COPY_SVG = `<svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
 const CHECK_SVG = `<svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
 
+const LONG_PRESS_MS = 500;
+
 export default function CopyButtonSetup(): null {
   useEffect(() => {
     if (typeof window === 'undefined' || typeof document === 'undefined') {
@@ -15,7 +17,6 @@ export default function CopyButtonSetup(): null {
         const parent = table.parentElement;
         if (!parent) return;
 
-        // Skip if already wrapped in a scroll container
         if (
           parent.classList.contains('table-responsive-fallback') ||
           parent.classList.contains('tableWrapper') ||
@@ -34,74 +35,129 @@ export default function CopyButtonSetup(): null {
       });
     };
 
-    wrapTables();
+    const setupCopyButtons = () => {
+      const links = document.querySelectorAll('table td a');
+      links.forEach((link) => {
+        const anchor = link as HTMLAnchorElement;
+        if (anchor.dataset.copySetup) {
+          return;
+        }
 
-    // Observe DOM changes to dynamically wrap tables on client navigation
-    const observer = new MutationObserver(() => {
+        anchor.dataset.copySetup = 'true';
+
+        const href = anchor.getAttribute('href');
+        if (!href || href.startsWith('#')) {
+          return;
+        }
+
+        if (anchor.querySelector('img') || anchor.querySelector('svg')) {
+          return;
+        }
+
+        const wrapper = document.createElement('span');
+        wrapper.className = 'table-copy-wrapper';
+
+        const button = document.createElement('button');
+        button.className = 'table-copy-btn';
+        button.type = 'button';
+        button.title = 'Copy link';
+        button.innerHTML = COPY_SVG;
+
+        button.addEventListener('click', (clickEvent) => {
+          clickEvent.preventDefault();
+          clickEvent.stopPropagation();
+
+          const fullUrl = anchor.href;
+
+          navigator.clipboard.writeText(fullUrl).then(() => {
+            button.classList.add('copied');
+            button.innerHTML = CHECK_SVG;
+
+            setTimeout(() => {
+              button.classList.remove('copied');
+              button.innerHTML = COPY_SVG;
+            }, 2000);
+          }).catch((err) => {
+            console.error('Failed to copy text: ', err);
+          });
+        });
+
+        let pressTimer: ReturnType<typeof setTimeout> | null = null;
+        let longPressTriggered = false;
+
+        const clearPressTimer = () => {
+          if (pressTimer) {
+            clearTimeout(pressTimer);
+            pressTimer = null;
+          }
+        };
+
+        anchor.addEventListener('touchstart', () => {
+          longPressTriggered = false;
+          clearPressTimer();
+          pressTimer = setTimeout(() => {
+            longPressTriggered = true;
+            wrapper.classList.add('copy-btn-visible');
+          }, LONG_PRESS_MS);
+        }, { passive: true });
+
+        anchor.addEventListener('touchmove', clearPressTimer, { passive: true });
+        anchor.addEventListener('touchcancel', clearPressTimer, { passive: true });
+
+        anchor.addEventListener('touchend', () => {
+          clearPressTimer();
+        }, { passive: true });
+
+        // Long-press still emits a synthetic click on release; capture phase blocks navigation.
+        anchor.addEventListener('click', (event) => {
+          if (longPressTriggered) {
+            event.preventDefault();
+            longPressTriggered = false;
+          }
+        }, true);
+
+        if (anchor.parentNode) {
+          anchor.parentNode.insertBefore(wrapper, anchor);
+          wrapper.appendChild(anchor);
+          wrapper.appendChild(button);
+        }
+      });
+    };
+
+    const dismissCopyButtons = (event: MouseEvent | TouchEvent) => {
+      const target = event.target as Element | null;
+      if (target?.closest('.table-copy-wrapper')) {
+        return;
+      }
+
+      document.querySelectorAll('.table-copy-wrapper.copy-btn-visible').forEach((el) => {
+        el.classList.remove('copy-btn-visible');
+      });
+    };
+
+    const runSetup = () => {
       wrapTables();
+      setupCopyButtons();
+    };
+
+    runSetup();
+
+    document.addEventListener('click', dismissCopyButtons);
+    document.addEventListener('touchend', dismissCopyButtons);
+
+    // Client-side route changes inject new markdown tables after initial mount.
+    const observer = new MutationObserver(() => {
+      runSetup();
     });
     observer.observe(document.body, {
       childList: true,
       subtree: true,
     });
 
-    const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      const link = target.closest('table td a') as HTMLAnchorElement | null;
-      if (!link || link.dataset.copySetup) {
-        return;
-      }
-
-      link.dataset.copySetup = 'true';
-
-      const href = link.getAttribute('href');
-      if (!href || href.startsWith('#')) {
-        return;
-      }
-
-      if (link.querySelector('img') || link.querySelector('svg')) {
-        return;
-      }
-
-      const wrapper = document.createElement('span');
-      wrapper.className = 'table-copy-wrapper';
-
-      const button = document.createElement('button');
-      button.className = 'table-copy-btn';
-      button.type = 'button';
-      button.title = 'Copy Link';
-      button.innerHTML = COPY_SVG;
-
-      button.addEventListener('click', (clickEvent) => {
-        clickEvent.preventDefault();
-        clickEvent.stopPropagation();
-
-        const fullUrl = link.href;
-
-        navigator.clipboard.writeText(fullUrl).then(() => {
-          button.classList.add('copied');
-          button.innerHTML = CHECK_SVG;
-          
-          setTimeout(() => {
-            button.classList.remove('copied');
-            button.innerHTML = COPY_SVG;
-          }, 2000);
-        }).catch((err) => {
-          console.error('Failed to copy text: ', err);
-        });
-      });
-
-      if (link.parentNode) {
-        link.parentNode.insertBefore(wrapper, link);
-        wrapper.appendChild(link);
-        wrapper.appendChild(button);
-      }
-    };
-
-    document.addEventListener('mouseover', handleMouseOver);
     return () => {
       observer.disconnect();
-      document.removeEventListener('mouseover', handleMouseOver);
+      document.removeEventListener('click', dismissCopyButtons);
+      document.removeEventListener('touchend', dismissCopyButtons);
     };
   }, []);
 

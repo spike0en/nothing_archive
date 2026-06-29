@@ -28,7 +28,7 @@ Tips, tricks, and general guides for everyday use.
 - Because of these checks, it is not possible to brick your device by sideloading an official OTA zip on a locked bootloader.
 - For Open Beta Test updates, sideload them via `Nothing Beta Updater Hub` (name might change in future) provided by the OEM if the dialer method does not work
   You can launch the interface from Settings. This happens when you have installed the OEM's beta updater app which overrides the stock inbuilt version.
-- For visual references, see the images [here](https://github.com/spike0en/nothing_archive/tree/main/assets/sideloading) in the listed order.
+- For visual references, see the images [sideloading images](https://github.com/spike0en/nothing_archive/tree/main/assets/sideloading) in the listed order.
 
 :::
 
@@ -76,7 +76,7 @@ A. **Restoring Stock Partitions (For Rooted Users Only)**
 B. **Proceed with Sideloading** 
 
  - **Download the Correct Update Firmware File:**  
-   - Find the correct OTA firmware file for your device from [here](/docs/firmware).
+   - Find the correct OTA firmware file for your device from [firmware index](/docs/firmware).
 
  - **How to Select the Right File?**  
    - Navigate to the repository and select your device model.  
@@ -296,7 +296,7 @@ brew install --cask android-platform-tools
 
 A. **Prerequisites**
 - **Backup your data** (unlocking will erase everything).
-- **Install ADB & Fastboot tools** – [Download here](https://developer.android.com/studio/releases/platform-tools).
+- **Install ADB & Fastboot tools** – [Download Platform Tools](https://developer.android.com/studio/releases/platform-tools).
 - **Install USB drivers** – [Google USB Drivers](https://developer.android.com/studio/run/win-usb).
 - **Enable Developer Options**:
   - `Settings > About phone > Tap "Build number" 7 times.`
@@ -797,7 +797,7 @@ A. **Preparation of Flashing Folder:**
   - Then retry the extraction.
 
 B. **Proceeding with Flashing:**
-  - Install compatible USB drivers from [here](https://developer.android.com/studio/run/win-usb).
+  - Install compatible USB drivers from [compatible Android USB drivers](https://developer.android.com/studio/run/win-usb).
   - Ensure that `Android Bootloader Interface` is visible in **Device Manager** when the device is in **bootloader mode**.
   - If the extraction script was used earlier, execute it directly. Otherwise:
     - Download the model-specific [Nothing Flasher Script](https://github.com/spike0en/nothing_flasher) suited for your OS (Windows `.bat` / Bash `.sh` / Termux `.sh`).
@@ -930,21 +930,21 @@ Stay updated with custom ROMs, kernels, and development projects.
 
 | Device | ROM | Recovery | Kernel | Updates |
 |--------|-----|----------|--------|---------|
-| Phone (1) | [Here](https://t.me/s/NothingPhone1Updates?q=%23ROM) | [Here](https://t.me/s/NothingPhone1Updates?q=%23Recovery) | [Here](https://t.me/s/NothingPhone1Updates?q=%23Kernel) | [Here](https://t.me/s/NothingPhone1Updates?q=%23OTA) |
-| Phone (2) | [Here](https://t.me/s/NothingPhone2updates?q=%23ROM) | [Here](https://t.me/s/NothingPhone2updates?q=%23Recovery) | [Here](https://t.me/s/NothingPhone2updates?q=%23Kernel) | [Here](https://t.me/s/NothingPhone2updates?q=%23OTA) |
-| Phone (2a) | [Here](https://t.me/s/NothingPhone2aUpdates?q=%23ROM+%23Pacman) | [Here](https://t.me/s/NothingPhone2aUpdates?q=%23Recovery+%23Pacman) | [Here](https://t.me/s/NothingPhone2aUpdates?q=%23Kernel+%23Pacman) | [Here](https://t.me/s/NothingPhone2aUpdates?q=%23OTA+%23Pacman) |
-| Phone (2a) Plus | [Here](https://t.me/s/NothingPhone2aUpdates?q=%23ROM+%23PacmanPro) | [Here](https://t.me/s/NothingPhone2aUpdates?q=%23Recovery+%23PacmanPro) | [Here](https://t.me/s/NothingPhone2aUpdates?q=%23Kernel+%23PacmanPro) | [Here](https://t.me/s/NothingPhone2aUpdates?q=%23OTA+%23PacmanPro) |
-| Phone (3a) Series | [Here](https://t.me/s/NothingPhone3aUpdates?q=%23ROM) | [Here](https://t.me/s/NothingPhone3aUpdates?q=%23Recovery) | [Here](https://t.me/s/NothingPhone3aUpdates?q=%23Kernel) | [Here](https://t.me/s/NothingPhone3aUpdates?q=%23OTA) |
-| Phone (3a) Lite | [Here](https://t.me/s/CMFPhone2GlobalUpdates?q=%23ROM+%23Galaxian) | [Here](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Recovery+%23Galaxian) | [Here](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Kernel+%23Galaxian) | [Here](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaxian) |
-| Phone (3) | [Here](https://t.me/s/Phone3Updates?q=%23ROM) | [Here](https://t.me/s/Phone3Updates?q=%23Recovery) | [Here](https://t.me/s/Phone3Updates?q=%23Kernel) | [Here](https://t.me/s/Phone3Updates?q=%23OTA) |
-| Phone (4a) | [Here](https://t.me/s/Phone4aUpdates?q=%23ROM+%23Frogger) | [Here](https://t.me/s/Phone4aUpdates?q=%23Recovery+%23Frogger) | [Here](https://t.me/s/Phone4aUpdates?q=%23Kernel+%23Frogger) | [Here](https://t.me/s/Phone4aUpdates?q=%23OTA+%23Frogger) |
-| Phone (4a) Pro | [Here](https://t.me/s/Phone4aUpdates?q=%23ROM+%23FroggerPro) | [Here](https://t.me/s/Phone4aUpdates?q=%23Recovery+%23FroggerPro) | [Here](https://t.me/s/Phone4aUpdates?q=%23Kernel+%23FroggerPro) | [Here](https://t.me/s/Phone4aUpdates?q=%23OTA+%23FroggerPro) |
+| Phone (1) | [ROM](https://t.me/s/NothingPhone1Updates?q=%23ROM) | [Recovery](https://t.me/s/NothingPhone1Updates?q=%23Recovery) | [Kernel](https://t.me/s/NothingPhone1Updates?q=%23Kernel) | [OTA](https://t.me/s/NothingPhone1Updates?q=%23OTA) |
+| Phone (2) | [ROM](https://t.me/s/NothingPhone2updates?q=%23ROM) | [Recovery](https://t.me/s/NothingPhone2updates?q=%23Recovery) | [Kernel](https://t.me/s/NothingPhone2updates?q=%23Kernel) | [OTA](https://t.me/s/NothingPhone2updates?q=%23OTA) |
+| Phone (2a) | [ROM](https://t.me/s/NothingPhone2aUpdates?q=%23ROM+%23Pacman) | [Recovery](https://t.me/s/NothingPhone2aUpdates?q=%23Recovery+%23Pacman) | [Kernel](https://t.me/s/NothingPhone2aUpdates?q=%23Kernel+%23Pacman) | [OTA](https://t.me/s/NothingPhone2aUpdates?q=%23OTA+%23Pacman) |
+| Phone (2a) Plus | [ROM](https://t.me/s/NothingPhone2aUpdates?q=%23ROM+%23PacmanPro) | [Recovery](https://t.me/s/NothingPhone2aUpdates?q=%23Recovery+%23PacmanPro) | [Kernel](https://t.me/s/NothingPhone2aUpdates?q=%23Kernel+%23PacmanPro) | [OTA](https://t.me/s/NothingPhone2aUpdates?q=%23OTA+%23PacmanPro) |
+| Phone (3a) Series | [ROM](https://t.me/s/NothingPhone3aUpdates?q=%23ROM) | [Recovery](https://t.me/s/NothingPhone3aUpdates?q=%23Recovery) | [Kernel](https://t.me/s/NothingPhone3aUpdates?q=%23Kernel) | [OTA](https://t.me/s/NothingPhone3aUpdates?q=%23OTA) |
+| Phone (3a) Lite | [ROM](https://t.me/s/CMFPhone2GlobalUpdates?q=%23ROM+%23Galaxian) | [Recovery](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Recovery+%23Galaxian) | [Kernel](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Kernel+%23Galaxian) | [OTA](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaxian) |
+| Phone (3) | [ROM](https://t.me/s/Phone3Updates?q=%23ROM) | [Recovery](https://t.me/s/Phone3Updates?q=%23Recovery) | [Kernel](https://t.me/s/Phone3Updates?q=%23Kernel) | [OTA](https://t.me/s/Phone3Updates?q=%23OTA) |
+| Phone (4a) | [ROM](https://t.me/s/Phone4aUpdates?q=%23ROM+%23Frogger) | [Recovery](https://t.me/s/Phone4aUpdates?q=%23Recovery+%23Frogger) | [Kernel](https://t.me/s/Phone4aUpdates?q=%23Kernel+%23Frogger) | [OTA](https://t.me/s/Phone4aUpdates?q=%23OTA+%23Frogger) |
+| Phone (4a) Pro | [ROM](https://t.me/s/Phone4aUpdates?q=%23ROM+%23FroggerPro) | [Recovery](https://t.me/s/Phone4aUpdates?q=%23Recovery+%23FroggerPro) | [Kernel](https://t.me/s/Phone4aUpdates?q=%23Kernel+%23FroggerPro) | [OTA](https://t.me/s/Phone4aUpdates?q=%23OTA+%23FroggerPro) |
 
 **CMF by Nothing:**
 
 | Device | ROM | Recovery | Kernel | Updates |
 |--------|-----|----------|--------|---------|
-| Phone (1) | [Here](https://t.me/s/CMFPhone1Updates?q=%23ROM) | [Here](https://t.me/s/CMFPhone1Updates?q=%23Recovery) | [Here](https://t.me/s/CMFPhone1Updates?q=%23Kernel) | [Here](https://t.me/s/CMFPhone1Updates?q=%23OTA) |
-| Phone (2) Pro | [Here](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [Here](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [Here](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [Here](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) |
+| Phone (1) | [ROM](https://t.me/s/CMFPhone1Updates?q=%23ROM) | [Recovery](https://t.me/s/CMFPhone1Updates?q=%23Recovery) | [Kernel](https://t.me/s/CMFPhone1Updates?q=%23Kernel) | [OTA](https://t.me/s/CMFPhone1Updates?q=%23OTA) |
+| Phone (2) Pro | [ROM](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [Recovery](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [Kernel](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [OTA](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) |
 
 

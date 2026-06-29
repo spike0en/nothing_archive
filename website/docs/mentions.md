@@ -84,14 +84,14 @@ Reddit threads highlighting, reviewing, and recommending Nothing Archive as a pr
 
 | Thread Title | Link |
 | :--- | :--- |
-| Nothing Stock Firmware Archive | [Here](https://www.reddit.com/r/NothingTech/comments/1bqslzs/nothing_stock_firmware_archive/) |
-| Introducing the Awesome Nothing Website | [Here](https://www.reddit.com/r/NothingTech/comments/1riis40/introducing_the_awesome_nothing_website/) |
-| Awesome Nothing is now merged into Nothing Archive | [Here](https://www.reddit.com/r/NothingTech/comments/1s0l6pj/awesome_nothing_is_now_merged_into_nothing_archive/) |
-| "Find Something Missing in the Archive" Challenge | [Here](https://www.reddit.com/r/NothingTech/comments/1svafsg/challenge_try_to_find_something_missing_in_the/) |
-| Nothing Archive now includes OTA updates | [Here](https://www.reddit.com/r/NothingTech/comments/1u3np9n/nothing_archive_now_includes_ota_update/) |
-| "Probably something useful you might've missed" | [Here](https://www.reddit.com/r/NothingTech/comments/1snrldk/probably_something_useful_you_mightve_missed/) |
-| Nothing Archive becomes the first community-driven archive | [Here](https://www.reddit.com/r/NothingTech/comments/1tuv57g/nothing_archive_becomes_the_first_communitydriven/) |
-| The Nothing Archive design review | [Here](https://www.reddit.com/r/NothingTech/comments/1ucmagx/the_nothing_archive_site_is_looking_a_bit/) |
+| Nothing Stock Firmware Archive | [Reddit](https://www.reddit.com/r/NothingTech/comments/1bqslzs/nothing_stock_firmware_archive/) |
+| Introducing the Awesome Nothing Website | [Reddit](https://www.reddit.com/r/NothingTech/comments/1riis40/introducing_the_awesome_nothing_website/) |
+| Awesome Nothing is now merged into Nothing Archive | [Reddit](https://www.reddit.com/r/NothingTech/comments/1s0l6pj/awesome_nothing_is_now_merged_into_nothing_archive/) |
+| "Find Something Missing in the Archive" Challenge | [Reddit](https://www.reddit.com/r/NothingTech/comments/1svafsg/challenge_try_to_find_something_missing_in_the/) |
+| Nothing Archive now includes OTA updates | [Reddit](https://www.reddit.com/r/NothingTech/comments/1u3np9n/nothing_archive_now_includes_ota_update/) |
+| "Probably something useful you might've missed" | [Reddit](https://www.reddit.com/r/NothingTech/comments/1snrldk/probably_something_useful_you_mightve_missed/) |
+| Nothing Archive becomes the first community-driven archive | [Reddit](https://www.reddit.com/r/NothingTech/comments/1tuv57g/nothing_archive_becomes_the_first_communitydriven/) |
+| The Nothing Archive design review | [Reddit](https://www.reddit.com/r/NothingTech/comments/1ucmagx/the_nothing_archive_site_is_looking_a_bit/) |
 
 ## X (Twitter) Mentions
 
@@ -99,10 +99,10 @@ Key posts on X (Twitter) discussing, highlighting, and recommending Nothing Arch
 
 | Author | Link (XCancel) |
 | :--- | :--- |
-| Tom Doerr | [Here](https://xcancel.com/tom_doerr/status/2068417271110717801?s=20) |
-| Teknovist | [Here](https://xcancel.com/Teknovist/status/2035979159768326559?s=20) |
-| Tor Harrington | [Here](https://xcancel.com/torharrington/status/2063959834614026282?s=20) |
-| Spike | [Here](https://xcancel.com/spike0en/status/2063956108524605486?s=20) |
-| Nothing Newsroom | [Here](https://xcancel.com/NothingNewsroom/status/2036438901947244931?s=20) |
-| Techiboy | [Here](https://xcancel.com/techiboy96/status/1989219002279751931?s=20) |
-| Tor Harrington | [Here](https://xcancel.com/torharrington/status/1988669030044160387?s=20) |
+| Tom Doerr | [Post](https://xcancel.com/tom_doerr/status/2068417271110717801?s=20) |
+| Teknovist | [Post](https://xcancel.com/Teknovist/status/2035979159768326559?s=20) |
+| Tor Harrington | [Post](https://xcancel.com/torharrington/status/2063959834614026282?s=20) |
+| Spike | [Post](https://xcancel.com/spike0en/status/2063956108524605486?s=20) |
+| Nothing Newsroom | [Post](https://xcancel.com/NothingNewsroom/status/2036438901947244931?s=20) |
+| Techiboy | [Post](https://xcancel.com/techiboy96/status/1989219002279751931?s=20) |
+| Tor Harrington | [Post](https://xcancel.com/torharrington/status/1988669030044160387?s=20) |

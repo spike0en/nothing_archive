@@ -159,6 +159,56 @@ const config: Config = {
     locales: ['en'],
   },
 
+  plugins: [
+    () => ({
+      name: 'changelogs-plugin',
+      async contentLoaded({ actions }) {
+        const { setGlobalData } = actions;
+        const fs = require('fs');
+        const path = require('path');
+        const re = /-([a-zA-Z])([\d.]+)-(\d{6})-(\d{4})$/;
+        
+        const changelogsDir = path.join(__dirname, 'docs', 'changelogs');
+        const latestLinks = {};
+        
+        if (fs.existsSync(changelogsDir)) {
+          const folders = fs.readdirSync(changelogsDir);
+          for (const folder of folders) {
+            const folderPath = path.join(changelogsDir, folder);
+            if (fs.statSync(folderPath).isDirectory()) {
+              const files = fs.readdirSync(folderPath).filter(
+                (f) => f.endsWith('.md') && f !== '_category_.json'
+              );
+              
+              if (files.length > 0) {
+                files.sort((a, b) => {
+                  const nameA = a.replace(/\.md$/, '');
+                  const nameB = b.replace(/\.md$/, '');
+                  const matchA = nameA.match(re);
+                  const matchB = nameB.match(re);
+                  if (matchA && matchB) {
+                    // Build date (YYMMDD+HHMM) is the definitive recency indicator
+                    const stampA = matchA[3] + matchA[4];
+                    const stampB = matchB[3] + matchB[4];
+                    if (stampA !== stampB) {
+                      return stampB.localeCompare(stampA);
+                    }
+                  }
+                  return nameB.localeCompare(nameA);
+                });
+                
+                const latestFile = files[0].replace(/\.md$/, '');
+                latestLinks[folder] = `/docs/changelogs/${folder}/${latestFile}`;
+              }
+            }
+          }
+        }
+        
+        setGlobalData({ latestLinks });
+      }
+    })
+  ],
+
   themes: [
     [
       // Local offline search provider

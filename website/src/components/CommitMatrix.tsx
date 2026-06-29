@@ -50,6 +50,24 @@ export default function CommitMatrix(): React.JSX.Element {
 
   const [repoStats, setRepoStats] = useState<RepoStats>({ stars: 0, hits: 0 });
   const [statsLoading, setStatsLoading] = useState(true);
+  const [timezoneMode, setTimezoneMode] = useState<'local' | 'london'>('local');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('nothing_archive_repo_timezone') as 'local' | 'london';
+      if (saved === 'local' || saved === 'london') {
+        setTimezoneMode(saved);
+      }
+    }
+  }, []);
+
+  const handleToggleTimezone = () => {
+    const nextMode = timezoneMode === 'local' ? 'london' : 'local';
+    setTimezoneMode(nextMode);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('nothing_archive_repo_timezone', nextMode);
+    }
+  };
 
   const filteredCommits = React.useMemo(() => {
     const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
@@ -66,13 +84,19 @@ export default function CommitMatrix(): React.JSX.Element {
         second: '2-digit',
         hour12: false,
       };
+      if (timezoneMode === 'london') {
+        timeOptions.timeZone = 'Europe/London';
+      }
       const timeString = new Intl.DateTimeFormat(undefined, timeOptions).format(now);
       
       const tzOptions: Intl.DateTimeFormatOptions = {
         timeZoneName: 'short',
       };
+      if (timezoneMode === 'london') {
+        tzOptions.timeZone = 'Europe/London';
+      }
       const parts = new Intl.DateTimeFormat(undefined, tzOptions).formatToParts(now);
-      const tzLabel = parts.find(p => p.type === 'timeZoneName')?.value || '';
+      const tzLabel = parts.find(p => p.type === 'timeZoneName')?.value || (timezoneMode === 'london' ? 'BST' : '');
       
       setCurrentTime(`${timeString} ${tzLabel}`.trim());
       setBlinkActive(now.getSeconds() % 2 === 0);
@@ -80,7 +104,7 @@ export default function CommitMatrix(): React.JSX.Element {
     updateClock();
     const interval = setInterval(updateClock, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [timezoneMode]);
 
   // Fetch commits from GitHub API with cache fallback
   useEffect(() => {
@@ -252,7 +276,7 @@ export default function CommitMatrix(): React.JSX.Element {
       <div className={styles.telemetryHeader}>
         <div className={styles.systemLabel}>
           <span className={`${styles.pulseDot} ${statusSource === 'LIVE' ? (blinkActive ? styles.pulseDotLive : styles.pulseDotDim) : styles.pulseDotOffline}`} />
-          <span className={styles.feedTextPrefix}>REPO FEED:</span>
+          <span className={styles.feedTextPrefix}>REPO:</span>
           <span className={statusSource === 'LIVE' ? styles.feedStatusLive : styles.feedStatusOffline}>
             {errorState ? (
               errorState === 'RATE_LIMITED' ? (
@@ -268,8 +292,17 @@ export default function CommitMatrix(): React.JSX.Element {
           </span>
         </div>
         <div className={styles.systemStats}>
-          <div>
-            TIME: <span>{currentTime || '--:--:--'}</span>
+          <div className={styles.clockContainer}>
+            <span className={styles.timeLabel}>TIME:</span>
+            <span className={styles.timeVal}>{currentTime || '--:--:--'}</span>
+            <button
+              type="button"
+              className={styles.tzToggleBtn}
+              onClick={handleToggleTimezone}
+              title={`Switch to ${timezoneMode === 'local' ? 'London' : 'Local'} Time`}
+            >
+              [{timezoneMode === 'local' ? 'LOCAL' : 'LONDON'}]
+            </button>
           </div>
         </div>
       </div>

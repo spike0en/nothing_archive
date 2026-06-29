@@ -44,7 +44,20 @@ Guide images and other media assets in "assets/" are licensed under
 CC BY-NC 4.0, consistent with the documentation.
 
 
-5. Third-party Tools (Binaries)
+5. Device Product Images
+------------------------
+The device product images located in "website/static/img/devices/" are the
+property of Nothing Technology Limited and are sourced from nothing.tech and
+cmf.tech. These images are used solely for non-commercial device
+identification purposes within this community project.
+
+* These images are NOT covered by any of the above licenses.
+* All rights to these images belong to Nothing Technology Limited.
+* They are included here under fair use for informational and community
+  reference purposes only.
+
+
+6. Third-party Tools (Binaries)
 -------------------------------
 The binaries located in the "bin/" directory are third-party tools provided
 for convenience in the OTA extraction process. These are not owned by the

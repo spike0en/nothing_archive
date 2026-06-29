@@ -63,10 +63,10 @@ To learn more about the development, testing, and distribution process behind No
 
 ---
 
-## 📱 Select Your Device
+## Select Your Device 📱
 
 Select your device model below to view its complete Nothing OS update history and official changelogs.
 
-import DocCardList from '@theme/DocCardList';
+import DeviceGrid from '@site/src/components/DeviceGrid';
 
-<DocCardList />
+<DeviceGrid />

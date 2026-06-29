@@ -1,0 +1,218 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+@media (max-width: 996px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--ifm-card-background-color);
+  border: 1px solid var(--nothing-border);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1),
+              border-color 0.2s ease,
+              box-shadow 0.2s ease;
+  position: relative;
+  height: 280px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .card:hover {
+  box-shadow: 0 12px 32px rgba(255, 255, 255, 0.02);
+}
+
+.modelContainer {
+  height: 180px;
+  width: 100%;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.015);
+  border-bottom: 1px dashed var(--nothing-border-strong);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-theme='dark'] .modelContainer {
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+.fallbackContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  opacity: 0.35;
+  transition: opacity 0.2s ease;
+}
+
+.card:hover .fallbackContainer {
+  opacity: 0.7;
+}
+
+.fallbackIcon {
+  width: 32px;
+  height: 32px;
+  stroke-width: 1.5;
+  color: inherit;
+  margin-bottom: 8px;
+}
+
+.fallbackText {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.infoContainer {
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  background-color: rgba(128, 128, 128, 0.02);
+}
+
+[data-theme='dark'] .infoContainer {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.deviceName {
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--ifm-color-emphasis-900);
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card:hover .deviceName {
+  color: var(--ifm-color-primary);
+}
+
+.deviceBrand {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: var(--ifm-color-emphasis-500);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+.sectionHeader {
+  font-family: var(--ifm-font-family-base);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 2rem 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed var(--nothing-border-strong);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sectionHeader::before {
+  content: '›';
+  font-family: var(--ifm-font-family-monospace);
+  color: var(--ifm-color-primary);
+}
+
+.colorSelector {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.colorDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+[data-theme='dark'] .colorDot {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.colorDotActive {
+  transform: scale(1.25);
+  border: 2px solid var(--ifm-color-primary) !important;
+}
+
+.colorDot:hover {
+  transform: scale(1.15);
+}
+
+.cardLink {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.infoTextLink {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4px;
+}
+
+.deviceImage {
+  height: 85%;
+  max-width: 85%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1), filter 0.25s ease;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.08));
+}
+
+.card:hover .deviceImage {
+  transform: scale(1.05);
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15));
+}
+
+[data-theme='dark'] .deviceImage {
+  filter: drop-shadow(0 4px 10px rgba(255, 255, 255, 0.01));
+}
+
+[data-theme='dark'] .card:hover .deviceImage {
+  filter: drop-shadow(0 8px 20px rgba(255, 255, 255, 0.03));
+}

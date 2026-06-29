@@ -11,7 +11,7 @@
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--nothing-border);
   border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.02);
+  box-shadow: none !important;
   transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
   font-family: var(--ifm-font-family-base);
   display: flex;
@@ -24,7 +24,7 @@
 
 [data-theme='dark'] .container {
   background-color: rgba(18, 18, 18, 0.75);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  box-shadow: none !important;
 }
 
 /* --- Telemetry Header --- */
@@ -240,6 +240,14 @@
   color: inherit;
 }
 
+.consoleLine:hover .messageText {
+  color: var(--ifm-color-primary) !important;
+}
+
+.consoleLine:hover .messageTextLatest {
+  color: var(--ifm-color-primary) !important;
+}
+
 [data-theme='dark'] .consoleLine:hover {
   background-color: rgba(255, 255, 255, 0.05);
 }
@@ -359,6 +367,7 @@
   opacity: 0.88;
   white-space: normal;
   word-break: break-word;
+  transition: color 0.15s ease;
 }
 
 .shaTag {
@@ -471,4 +480,43 @@
   .screw {
     display: none !important;
   }
+}
+
+.clockContainer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.timeLabel {
+  opacity: 0.5;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.timeVal {
+  font-weight: 700;
+  min-width: 80px;
+  text-align: left;
+}
+
+.tzToggleBtn {
+  background: none;
+  border: none;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: inherit;
+  opacity: 0.55;
+  cursor: pointer;
+  padding: 0 4px;
+  transition: opacity 0.15s ease, color 0.15s ease;
+  letter-spacing: 0.05em;
+  user-select: none;
+  line-height: 1.4;
+}
+
+.tzToggleBtn:hover {
+  opacity: 1;
+  color: var(--ifm-color-primary) !important;
 }

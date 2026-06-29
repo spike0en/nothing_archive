@@ -1679,15 +1679,6 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
   font-weight: 700 !important;
 }
 
-/* ==========================================
-   TABLE COPY BUTTONS & TOOLTIPS
-   ========================================== */
-
-/*
-  The wrapper is inline-flex so it aligns content nicely.
-  When hovered, padding-right transitions from 0 to 26px,
-  smoothly pushing adjacent text to the right and expanding the hover bridge.
-*/
 .table-copy-wrapper {
   display: inline-flex;
   align-items: center;
@@ -1696,20 +1687,43 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
   transition: transform 0.2s ease;
 }
 
-/* Ensure the link has constant padding on the right to fit the button without layout shifts */
+/* Constant padding avoids column width shifts when the copy control mounts. */
 .table-copy-wrapper a {
-  padding-right: 24px !important; /* Constant padding-right reserves space within the badge */
+  padding-right: 0.6rem !important;
   transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease !important;
 }
 
-/* Translate the entire wrapper on hover to raise badge and button together */
 .table-copy-wrapper:hover {
   transform: translateY(-1px);
 }
 
-/* Prevent double translation on the link inside the wrapper */
+/* table td a:hover also applies translateY; suppress it inside the wrapper. */
 .table-copy-wrapper:hover a {
   transform: none !important;
+}
+
+/* ::after must start at left: 100% — a full-width bridge intercepts link clicks. */
+@media (hover: hover) and (pointer: fine) {
+  .table-copy-wrapper::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    width: 22px;
+    top: -4px;
+    bottom: -4px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .table-copy-wrapper:hover::after {
+    pointer-events: auto;
+  }
+
+  .table-copy-wrapper:hover .table-copy-btn {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-50%) scale(1);
+  }
 }
 
 .table-copy-btn {
@@ -1724,11 +1738,11 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
   color: #ffffff !important;
   cursor: pointer;
   padding: 0;
-  /* Hidden state: invisible, scaled down, non-interactive */
   opacity: 0;
   pointer-events: none;
   position: absolute;
-  right: 4px; /* Sits at the right edge of the badge */
+  left: 100%;
+  margin-left: 6px;
   top: 50%;
   transform: translateY(-50%) scale(0.8);
   z-index: 10;
@@ -1742,8 +1756,7 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
   color: #ffffff !important;
 }
 
-/* Reveal on individual wrapper hover - opacity 1 prevents red background bleed-through */
-.table-copy-wrapper:hover .table-copy-btn {
+.table-copy-wrapper.copy-btn-visible .table-copy-btn {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(-50%) scale(1);
@@ -1767,7 +1780,6 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
   height: 10px;
 }
 
-/* Tooltip bubble using CSS pseudo-elements */
 .table-copy-btn::after {
   content: 'Copied!';
   position: absolute;
@@ -2219,30 +2231,16 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
 }
 
 .feature-card {
-  background-color: rgba(128, 128, 128, 0.03) !important;
-  border: 1px solid var(--nothing-border) !important;
+  background-color: transparent !important;
+  border: 1px dashed var(--nothing-border-strong) !important;
   border-radius: 16px !important;
   padding: 1.5rem !important;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  transition: background-color 0.25s ease, border-color 0.25s ease;
   box-shadow: none !important;
   transform: none !important;
-}
-
-[data-theme='dark'] .feature-card {
-  background-color: rgba(255, 255, 255, 0.015) !important;
-}
-
-.feature-card:hover {
-  background-color: rgba(128, 128, 128, 0.06) !important;
-  border-color: var(--nothing-border) !important;
-  transform: none !important;
-}
-
-[data-theme='dark'] .feature-card:hover {
-  background-color: rgba(255, 255, 255, 0.03) !important;
+  cursor: default;
 }
 
 .feature-icon {
