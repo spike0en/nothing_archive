@@ -67,7 +67,8 @@ const devices: DeviceItem[] = [
       { name: 'White', imageUrl: '/img/devices/asteroids_white.webp', hex: '#FFFFFF' },
       { name: 'Black', imageUrl: '/img/devices/asteroids_black.webp', hex: '#1C1C1C' },
       { name: 'Blue', imageUrl: '/img/devices/asteroids_blue.webp', hex: '#1F4E79' },
-      { name: 'Grey', imageUrl: '/img/devices/asteroids_grey.webp', hex: '#8E8E93' }
+      { name: 'Grey', imageUrl: '/img/devices/asteroids_grey.webp', hex: '#8E8E93' },
+      { name: 'CE', imageUrl: '/img/devices/asteroids_CE.webp', hex: '#248B8D' }
     ],
     brand: 'Nothing'
   },
@@ -76,7 +77,8 @@ const devices: DeviceItem[] = [
     codename: 'pacmanpro',
     variants: [
       { name: 'Silver', imageUrl: '/img/devices/pacmanpro_silver.webp', hex: '#8E8E93' },
-      { name: 'Black', imageUrl: '/img/devices/pacmanpro_black.webp', hex: '#1C1C1C' }
+      { name: 'Black', imageUrl: '/img/devices/pacmanpro_black.webp', hex: '#1C1C1C' },
+      { name: 'CE', imageUrl: '/img/devices/pacmanpro_CE.webp', hex: '#D9DFCA' }
     ],
     brand: 'Nothing'
   },
