@@ -116,8 +116,21 @@ function sortChangelogItems(items: any[]): any[] {
             return compareChangelogs(a.id, b.id);
           });
         }
+
+        let link = item.link;
+        if (isChangelogCategory && sortedSubItems.length > 0 && sortedSubItems[0].type === 'doc') {
+          link = {
+            type: 'doc',
+            id: sortedSubItems[0].id,
+          };
+        }
+
+        const cleanLabel = item.label.replace(/^Nothing Phone /i, 'Phone ');
+
         return {
           ...item,
+          label: cleanLabel,
+          link,
           items: sortedSubItems,
         };
       }
@@ -198,7 +211,24 @@ const config: Config = {
                 });
                 
                 const latestFile = files[0].replace(/\.md$/, '');
-                latestLinks[folder] = `/docs/changelogs/${folder}/${latestFile}`;
+                const latestPath = `/docs/changelogs/${folder}/${latestFile}`;
+                latestLinks[folder] = latestPath;
+
+                // Create a dynamic route for the category folder that redirects to the latest changelog
+                // Must include baseUrl /nothing_archive for both the route path and redirect target
+                const redirectData = await actions.createData(
+                  `redirect-${folder}.json`,
+                  JSON.stringify({ to: `/nothing_archive/docs/changelogs/${folder}/${latestFile}` })
+                );
+
+                actions.addRoute({
+                  path: `/nothing_archive/docs/changelogs/${folder}`,
+                  component: '@site/src/components/RedirectToLatest.tsx',
+                  exact: true,
+                  modules: {
+                    data: redirectData,
+                  },
+                });
               }
             }
           }

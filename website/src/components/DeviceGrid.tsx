@@ -21,12 +21,12 @@ interface DeviceItem {
 const devices: DeviceItem[] = [
   // --- Nothing Phones (Newest to Oldest) ---
   {
-    name: 'Phone (4a) Pro (Froggerpro)',
+    name: 'Phone (4a) Pro (FroggerPro)',
     codename: 'froggerpro',
     variants: [
-      { name: 'Silver', imageUrl: '/img/devices/froggerpro_silver.png', hex: '#D1D1D6' },
-      { name: 'Black', imageUrl: '/img/devices/froggerpro_black.png', hex: '#1C1C1C' },
-      { name: 'Pink', imageUrl: '/img/devices/froggerpro_pink.png', hex: '#FFB6C1' }
+      { name: 'Silver', imageUrl: '/img/devices/froggerpro_silver.webp', hex: '#D1D1D6' },
+      { name: 'Black', imageUrl: '/img/devices/froggerpro_black.webp', hex: '#1C1C1C' },
+      { name: 'Pink', imageUrl: '/img/devices/froggerpro_pink.webp', hex: '#FFB6C1' }
     ],
     brand: 'Nothing'
   },
@@ -34,10 +34,10 @@ const devices: DeviceItem[] = [
     name: 'Phone (4a) (Frogger)',
     codename: 'frogger',
     variants: [
-      { name: 'White', imageUrl: '/img/devices/frogger_white.png', hex: '#FFFFFF' },
-      { name: 'Black', imageUrl: '/img/devices/frogger_black.png', hex: '#1C1C1C' },
-      { name: 'Pink', imageUrl: '/img/devices/frogger_pink.png', hex: '#FFB6C1' },
-      { name: 'Blue', imageUrl: '/img/devices/frogger_blue.png', hex: '#1F4E79' }
+      { name: 'White', imageUrl: '/img/devices/frogger_white.webp', hex: '#FFFFFF' },
+      { name: 'Black', imageUrl: '/img/devices/frogger_black.webp', hex: '#1C1C1C' },
+      { name: 'Pink', imageUrl: '/img/devices/frogger_pink.webp', hex: '#FFB6C1' },
+      { name: 'Blue', imageUrl: '/img/devices/frogger_blue.webp', hex: '#1F4E79' }
     ],
     brand: 'Nothing'
   },
@@ -45,9 +45,9 @@ const devices: DeviceItem[] = [
     name: 'Phone (3a) Lite (Galaxian)',
     codename: 'galaxian',
     variants: [
-      { name: 'White', imageUrl: '/img/devices/galaxian_white.png', hex: '#FFFFFF' },
-      { name: 'Black', imageUrl: '/img/devices/galaxian_black.png', hex: '#1C1C1C' },
-      { name: 'Blue', imageUrl: '/img/devices/galaxian_blue.png', hex: '#1F4E79' }
+      { name: 'White', imageUrl: '/img/devices/galaxian_white.webp', hex: '#FFFFFF' },
+      { name: 'Black', imageUrl: '/img/devices/galaxian_black.webp', hex: '#1C1C1C' },
+      { name: 'Blue', imageUrl: '/img/devices/galaxian_blue.webp', hex: '#1F4E79' }
     ],
     brand: 'Nothing'
   },
@@ -55,28 +55,28 @@ const devices: DeviceItem[] = [
     name: 'Phone (3) (Metroid)',
     codename: 'metroid',
     variants: [
-      { name: 'White', imageUrl: '/img/devices/metroid_white.png', hex: '#FFFFFF' },
-      { name: 'Black', imageUrl: '/img/devices/metroid_black.png', hex: '#1C1C1C' }
+      { name: 'White', imageUrl: '/img/devices/metroid_white.webp', hex: '#FFFFFF' },
+      { name: 'Black', imageUrl: '/img/devices/metroid_black.webp', hex: '#1C1C1C' }
     ],
     brand: 'Nothing'
   },
   {
-    name: 'Phone (3a) / (3a) Pro (Asteroids)',
+    name: 'Phone (3a) / (3a) Pro (Asteroids / AsteroidsPro)',
     codename: 'asteroids',
     variants: [
-      { name: 'White', imageUrl: '/img/devices/asteroids_white.png', hex: '#FFFFFF' },
-      { name: 'Black', imageUrl: '/img/devices/asteroids_black.png', hex: '#1C1C1C' },
-      { name: 'Blue', imageUrl: '/img/devices/asteroids_blue.png', hex: '#1F4E79' },
-      { name: 'Grey', imageUrl: '/img/devices/asteroids_grey.png', hex: '#8E8E93' }
+      { name: 'White', imageUrl: '/img/devices/asteroids_white.webp', hex: '#FFFFFF' },
+      { name: 'Black', imageUrl: '/img/devices/asteroids_black.webp', hex: '#1C1C1C' },
+      { name: 'Blue', imageUrl: '/img/devices/asteroids_blue.webp', hex: '#1F4E79' },
+      { name: 'Grey', imageUrl: '/img/devices/asteroids_grey.webp', hex: '#8E8E93' }
     ],
     brand: 'Nothing'
   },
   {
-    name: 'Phone (2a) Plus (Pacmanpro)',
+    name: 'Phone (2a) Plus (PacmanPro)',
     codename: 'pacmanpro',
     variants: [
-      { name: 'Silver', imageUrl: '/img/devices/pacmanpro_silver.png', hex: '#8E8E93' },
-      { name: 'Black', imageUrl: '/img/devices/pacmanpro_black.png', hex: '#1C1C1C' }
+      { name: 'Silver', imageUrl: '/img/devices/pacmanpro_silver.webp', hex: '#8E8E93' },
+      { name: 'Black', imageUrl: '/img/devices/pacmanpro_black.webp', hex: '#1C1C1C' }
     ],
     brand: 'Nothing'
   },
@@ -84,8 +84,8 @@ const devices: DeviceItem[] = [
     name: 'Phone (2a) (Pacman)',
     codename: 'pacman',
     variants: [
-      { name: 'Milk', imageUrl: '/img/devices/pacman_milk.png', hex: '#F0EDE6' },
-      { name: 'Black', imageUrl: '/img/devices/pacman_black.png', hex: '#1C1C1C' }
+      { name: 'Milk', imageUrl: '/img/devices/pacman_milk.webp', hex: '#F0EDE6' },
+      { name: 'Black', imageUrl: '/img/devices/pacman_black.webp', hex: '#1C1C1C' }
     ],
     brand: 'Nothing'
   },
@@ -93,8 +93,8 @@ const devices: DeviceItem[] = [
     name: 'Phone (2) (Pong)',
     codename: 'pong',
     variants: [
-      { name: 'Grey', imageUrl: '/img/devices/pong_grey.png', hex: '#8E8E93' },
-      { name: 'White', imageUrl: '/img/devices/pong_white.png', hex: '#FFFFFF' }
+      { name: 'Grey', imageUrl: '/img/devices/pong_grey.webp', hex: '#8E8E93' },
+      { name: 'White', imageUrl: '/img/devices/pong_white.webp', hex: '#FFFFFF' }
     ],
     brand: 'Nothing'
   },
@@ -102,8 +102,8 @@ const devices: DeviceItem[] = [
     name: 'Phone (1) (Spacewar)',
     codename: 'spacewar',
     variants: [
-      { name: 'Black', imageUrl: '/img/devices/spacewar_black.png', hex: '#1C1C1C' },
-      { name: 'White', imageUrl: '/img/devices/spacewar_white.png', hex: '#FFFFFF' }
+      { name: 'Black', imageUrl: '/img/devices/spacewar_black.webp', hex: '#1C1C1C' },
+      { name: 'White', imageUrl: '/img/devices/spacewar_white.webp', hex: '#FFFFFF' }
     ],
     brand: 'Nothing'
   },
@@ -112,10 +112,10 @@ const devices: DeviceItem[] = [
     name: 'CMF Phone (2) Pro (Galaga)',
     codename: 'galaga',
     variants: [
-      { name: 'Orange', imageUrl: '/img/devices/galaga_orange.png', hex: '#FF6F00' },
-      { name: 'Black', imageUrl: '/img/devices/galaga_black.png', hex: '#1C1C1C' },
-      { name: 'Grey', imageUrl: '/img/devices/galaga_grey.png', hex: '#8E8E93' },
-      { name: 'Light Green', imageUrl: '/img/devices/galaga_lightgreen.png', hex: '#A9DFBF' }
+      { name: 'Orange', imageUrl: '/img/devices/galaga_orange.webp', hex: '#FF6F00' },
+      { name: 'Black', imageUrl: '/img/devices/galaga_black.webp', hex: '#1C1C1C' },
+      { name: 'Grey', imageUrl: '/img/devices/galaga_grey.webp', hex: '#8E8E93' },
+      { name: 'Light Green', imageUrl: '/img/devices/galaga_lightgreen.webp', hex: '#A9DFBF' }
     ],
     brand: 'CMF'
   },
@@ -123,9 +123,9 @@ const devices: DeviceItem[] = [
     name: 'CMF Phone (1) (Tetris)',
     codename: 'tetris',
     variants: [
-      { name: 'Light Green', imageUrl: '/img/devices/tetris_lightgreen.png', hex: '#A9DFBF' },
-      { name: 'Orange', imageUrl: '/img/devices/tetris_orange.png', hex: '#FF6F00' },
-      { name: 'Black', imageUrl: '/img/devices/tetris_black.png', hex: '#1C1C1C' }
+      { name: 'Light Green', imageUrl: '/img/devices/tetris_lightgreen.webp', hex: '#A9DFBF' },
+      { name: 'Orange', imageUrl: '/img/devices/tetris_orange.webp', hex: '#FF6F00' },
+      { name: 'Black', imageUrl: '/img/devices/tetris_black.webp', hex: '#1C1C1C' }
     ],
     brand: 'CMF'
   }
@@ -181,7 +181,6 @@ function ModelCard({ device, latestLink }: { device: DeviceItem; latestLink: str
       </Link>
       <div className={styles.infoContainer}>
         <Link to={resolvedLink} className={styles.infoTextLink}>
-          <span className={styles.deviceBrand}>{device.brand === 'Nothing' ? 'Nothing' : 'CMF by Nothing'}</span>
           <h3 className={styles.deviceName}>{device.name}</h3>
         </Link>
         {device.variants.length > 1 && (

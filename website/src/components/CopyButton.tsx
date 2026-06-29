@@ -11,6 +11,12 @@ export default function CopyButtonSetup(): null {
       return;
     }
 
+    // Only initialize copy buttons on desktop/pointer devices supporting hover
+    const hasHoverSupport = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!hasHoverSupport) {
+      return;
+    }
+
     const wrapTables = () => {
       const tables = document.querySelectorAll('.markdown table, .theme-doc-markdown table, article table');
       tables.forEach((table) => {
@@ -82,40 +88,6 @@ export default function CopyButtonSetup(): null {
           });
         });
 
-        let pressTimer: ReturnType<typeof setTimeout> | null = null;
-        let longPressTriggered = false;
-
-        const clearPressTimer = () => {
-          if (pressTimer) {
-            clearTimeout(pressTimer);
-            pressTimer = null;
-          }
-        };
-
-        anchor.addEventListener('touchstart', () => {
-          longPressTriggered = false;
-          clearPressTimer();
-          pressTimer = setTimeout(() => {
-            longPressTriggered = true;
-            wrapper.classList.add('copy-btn-visible');
-          }, LONG_PRESS_MS);
-        }, { passive: true });
-
-        anchor.addEventListener('touchmove', clearPressTimer, { passive: true });
-        anchor.addEventListener('touchcancel', clearPressTimer, { passive: true });
-
-        anchor.addEventListener('touchend', () => {
-          clearPressTimer();
-        }, { passive: true });
-
-        // Long-press still emits a synthetic click on release; capture phase blocks navigation.
-        anchor.addEventListener('click', (event) => {
-          if (longPressTriggered) {
-            event.preventDefault();
-            longPressTriggered = false;
-          }
-        }, true);
-
         if (anchor.parentNode) {
           anchor.parentNode.insertBefore(wrapper, anchor);
           wrapper.appendChild(anchor);
@@ -124,7 +96,7 @@ export default function CopyButtonSetup(): null {
       });
     };
 
-    const dismissCopyButtons = (event: MouseEvent | TouchEvent) => {
+    const dismissCopyButtons = (event: MouseEvent) => {
       const target = event.target as Element | null;
       if (target?.closest('.table-copy-wrapper')) {
         return;
@@ -143,7 +115,6 @@ export default function CopyButtonSetup(): null {
     runSetup();
 
     document.addEventListener('click', dismissCopyButtons);
-    document.addEventListener('touchend', dismissCopyButtons);
 
     // Client-side route changes inject new markdown tables after initial mount.
     const observer = new MutationObserver(() => {
@@ -157,7 +128,6 @@ export default function CopyButtonSetup(): null {
     return () => {
       observer.disconnect();
       document.removeEventListener('click', dismissCopyButtons);
-      document.removeEventListener('touchend', dismissCopyButtons);
     };
   }, []);
 

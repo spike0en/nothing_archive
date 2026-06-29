@@ -631,8 +631,15 @@ main[class*="docMainContainer"] {
   padding-top: 1rem !important;
 }
 
-.theme-doc-markdown {
-  max-width: 100%;
+.container {
+  max-width: 1400px !important;
+}
+
+.theme-doc-markdown-container,
+.theme-doc-markdown,
+div[class*="docItemCol"],
+div[class*="docItemContainer"] {
+  max-width: 100% !important;
 }
 
 /* Content styling */
@@ -681,24 +688,33 @@ div[class*="tableWrapper"],
 .tableWrapper,
 .table-responsive-fallback {
   overflow-x: auto !important;
-  overflow-y: auto !important; /* Avoid vertical scrollbar clipping */
+  overflow-y: auto !important;
+  overflow-y: overlay !important; /* Overlay scrollbar in Chromium to prevent layout gaps */
   max-width: 100%;
+  max-height: 75vh;
+  padding: 0 !important; /* Override default framework padding to ensure full-width tables */
   margin: 0.5rem 0 1.25rem 0;
   border: 1px solid var(--nothing-border) !important;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  scrollbar-width: thin; /* Thin scrollbars in Firefox */
+  scrollbar-color: rgba(128, 128, 128, 0.25) transparent; /* Transparent track in Firefox */
+  background-color: rgba(128, 128, 128, 0.05) !important; /* Matches table header cell background in light mode */
 }
 
 [data-theme='dark'] div[class*="tableWrapper"],
 [data-theme='dark'] .tableWrapper,
 [data-theme='dark'] .table-responsive-fallback {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.02) !important; /* Matches table header cell background in dark mode */
 }
 
 /* Base table styling - restore standard table layout inside containers */
 table {
   display: table !important;
   width: 100%;
+  min-width: 100%;
+  margin: 0 !important; /* Remove any margins to fit container exactly */
   border-collapse: separate !important;
   border-spacing: 0;
   font-size: 0.9rem;
@@ -754,6 +770,18 @@ table td {
   word-wrap: break-word;
   overflow-wrap: break-word;
   border-bottom: 1px solid var(--nothing-border) !important;
+}
+
+/* Spacing for table breaks */
+.markdown table td br,
+.theme-doc-markdown table td br {
+  display: block;
+  content: "";
+}
+
+.markdown table td br + *,
+.theme-doc-markdown table td br + * {
+  margin-top: 8px !important;
 }
 
 /* Remove border from last row to avoid double borders at the bottom card edge */
@@ -832,6 +860,7 @@ table td a:hover {
     overflow-x: auto;
 
     width: 100%;
+    min-width: 100%;
     font-size: 0.85rem;
   }
 
@@ -843,26 +872,6 @@ table td a:hover {
     overflow: visible !important;
   }
 
-  /* Scroll affordance — right-edge fade to indicate scrollable content */
-  div[class*="tableWrapper"],
-  .tableWrapper {
-    position: relative;
-  }
-
-  div[class*="tableWrapper"]::after,
-  .tableWrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 32px;
-    background: linear-gradient(to right, transparent, var(--ifm-background-color));
-    pointer-events: none;
-    opacity: 0.9;
-    z-index: 1;
-    transition: opacity 0.3s ease;
-  }
 
   /* Force content minimum widths so it scrolls instead of squishing */
   table th,
@@ -1222,6 +1231,38 @@ a:hover {
 .admonition {
   border-radius: 8px;
   border-left-width: 4px;
+}
+
+/* Inline links in markdown content & admonitions */
+.markdown a,
+.theme-doc-markdown a,
+.admonition a {
+  text-decoration: underline !important;
+  text-decoration-color: var(--nothing-red, #D71921) !important;
+  text-underline-offset: 3.5px;
+  text-decoration-thickness: 1.5px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+/* Hover transitions for inline links */
+.markdown a:hover,
+.theme-doc-markdown a:hover,
+.admonition a:hover {
+  text-decoration-color: currentColor !important;
+}
+
+/* High-contrast hover states inside admonitions */
+.admonition a:hover {
+  color: #000000 !important;
+}
+
+[data-theme='dark'] .admonition a:hover {
+  color: #ffffff !important;
+}
+
+/* Exclude button-styled links in tables from the global underline */
+table td a {
+  text-decoration: none !important;
 }
 
 /* Breadcrumbs */

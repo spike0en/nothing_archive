@@ -91,17 +91,21 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #fff !important;
-  background: var(--ifm-color-primary, #D71921);
+  background: var(--nothing-red, #D71921);
   border: none;
   border-radius: 999px;
   text-decoration: none !important;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease,
+              filter 0.2s ease;
   box-shadow: 0 2px 8px rgba(215, 25, 33, 0.2);
   z-index: 3;
 }
 
 .starCta:hover {
-  background: var(--ifm-color-primary-light, #df1037);
+  background: var(--nothing-red, #D71921);
+  filter: brightness(0.9);
   transform: translateY(-1.5px);
   box-shadow: 0 4px 15px rgba(215, 25, 33, 0.35);
 }
