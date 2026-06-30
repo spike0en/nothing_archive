@@ -40,6 +40,7 @@
 }
 
 [data-theme='dark'] .card:hover {
+  background-color: #414141;
   box-shadow: 0 12px 32px rgba(255, 255, 255, 0.02);
 }
 

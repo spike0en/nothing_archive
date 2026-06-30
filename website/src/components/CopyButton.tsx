@@ -107,9 +107,26 @@ export default function CopyButtonSetup(): null {
       });
     };
 
+    const setupThemeToggleListener = () => {
+      const handleToggleClick = (event: MouseEvent) => {
+        const target = event.target as HTMLElement | null;
+        if (
+          target?.closest('button[class*="toggleButton"]') ||
+          target?.closest('[aria-label*="Switch between dark and light mode"]')
+        ) {
+          document.documentElement.classList.add('theme-transition');
+          setTimeout(() => {
+            document.documentElement.classList.remove('theme-transition');
+          }, 500);
+        }
+      };
+      document.addEventListener('click', handleToggleClick, { passive: true });
+    };
+
     const runSetup = () => {
       wrapTables();
       setupCopyButtons();
+      setupThemeToggleListener();
     };
 
     runSetup();

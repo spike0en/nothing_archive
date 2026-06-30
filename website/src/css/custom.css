@@ -14,6 +14,26 @@ textarea {
   font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1;
 }
 
+/* Smooth body background transition only during explicit theme toggle */
+html.theme-transition body {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Prevent Docusaurus SSR code block theme flashes on page load */
+[data-theme='light'] pre,
+[data-theme='light'] .theme-code-block,
+[data-theme='light'] [class*="codeBlockContainer"],
+[data-theme='light'] [class*="codeBlockContent"] {
+  background-color: #f6f8fa !important;
+}
+
+[data-theme='dark'] pre,
+[data-theme='dark'] .theme-code-block,
+[data-theme='dark'] [class*="codeBlockContainer"],
+[data-theme='dark'] [class*="codeBlockContent"] {
+  background-color: #282a36 !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.03em;
 }
@@ -164,15 +184,15 @@ div[class*="tableWrapper"] table td,
   --ifm-color-success-lighter: #1cd094;
   --ifm-color-success-lightest: #34d39f;
 
-  --ifm-background-color: #080808;
-  --ifm-navbar-background-color: #080808;
-  --ifm-footer-background-color: #0d0d0d;
-  --ifm-card-background-color: #121212;
+  --ifm-background-color: #000000;
+  --ifm-navbar-background-color: #000000;
+  --ifm-footer-background-color: #000000;
+  --ifm-card-background-color: #1b1b1b;
 
   --docusaurus-highlighted-code-line-bg: rgba(215, 25, 33, 0.15);
 
-  --nothing-border: rgba(255, 255, 255, 0.06);
-  --nothing-border-strong: rgba(255, 255, 255, 0.12);
+  --nothing-border: rgba(255, 255, 255, 0.08);
+  --nothing-border-strong: rgba(255, 255, 255, 0.15);
 
   /* Torx Screw Variables (Dark Mode) */
   --screw-metal-light: #525252;
@@ -201,7 +221,7 @@ div[class*="tableWrapper"] table td,
 }
 
 [data-theme='dark'] .navbar {
-  background-color: rgba(8, 8, 8, 0.97) !important;
+  background-color: rgba(0, 0, 0, 0.97) !important;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
@@ -706,7 +726,7 @@ div[class*="tableWrapper"],
 [data-theme='dark'] .tableWrapper,
 [data-theme='dark'] .table-responsive-fallback {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.02) !important; /* Matches table header cell background in dark mode */
+  background-color: #1b1b1b !important;
 }
 
 /* Base table styling - restore standard table layout inside containers */
@@ -1233,36 +1253,24 @@ a:hover {
   border-left-width: 4px;
 }
 
-/* Inline links in markdown content & admonitions */
-.markdown a,
-.theme-doc-markdown a,
-.admonition a {
+/* Inline links in admonitions (Red text, no underline until hover) */
+.admonition a,
+.theme-admonition a,
+div[class*="admonition"] a {
+  color: var(--nothing-red, #D71921) !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease;
+}
+
+/* Hover transitions for inline links in admonitions */
+.admonition a:hover,
+.theme-admonition a:hover,
+div[class*="admonition"] a:hover {
+  color: var(--ifm-color-primary-light, #e32a32) !important;
   text-decoration: underline !important;
-  text-decoration-color: var(--nothing-red, #D71921) !important;
+  text-decoration-color: var(--ifm-color-primary-light, #e32a32) !important;
   text-underline-offset: 3.5px;
   text-decoration-thickness: 1.5px;
-  transition: color 0.15s ease, text-decoration-color 0.15s ease;
-}
-
-/* Hover transitions for inline links */
-.markdown a:hover,
-.theme-doc-markdown a:hover,
-.admonition a:hover {
-  text-decoration-color: currentColor !important;
-}
-
-/* High-contrast hover states inside admonitions */
-.admonition a:hover {
-  color: #000000 !important;
-}
-
-[data-theme='dark'] .admonition a:hover {
-  color: #ffffff !important;
-}
-
-/* Exclude button-styled links in tables from the global underline */
-table td a {
-  text-decoration: none !important;
 }
 
 /* Breadcrumbs */
@@ -1454,28 +1462,39 @@ table td a {
 
 details {
   background-color: var(--ifm-card-background-color) !important;
-  border: 1px solid var(--nothing-border) !important;
+  border: none !important;
   border-radius: 16px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02) !important;
   margin: 1rem 0 !important;
   padding: 0.85rem 1.25rem !important;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+  --ifm-alert-border-color: transparent;
+}
+
+details [class*="collapsibleContent"] {
+  border-top: none !important;
+  margin-top: 0 !important;
+  padding-top: 0.5rem !important;
 }
 
 [data-theme='dark'] details {
+  background-color: #1b1b1b !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
 details:hover {
-  border-color: var(--nothing-border-strong) !important;
+  box-shadow: 0 0 0 1px var(--nothing-border-strong) !important;
+}
+
+[data-theme='dark'] details:not([open]):hover {
+  background-color: #414141 !important;
 }
 
 details[open] {
-  border-color: var(--nothing-border-strong) !important;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04) !important;
 }
 
 [data-theme='dark'] details[open] {
+  background-color: #1b1b1b !important;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25) !important;
 }
 
@@ -1484,12 +1503,36 @@ details summary {
   background-color: transparent !important;
   color: inherit !important;
   font-weight: 600 !important;
-  padding: 0.25rem 0 0.25rem 1.5rem !important;
+  padding: 0.5rem 0 0.5rem 1.5rem !important; /* Slightly more vertical padding for breathing room */
   border: none !important;
   cursor: pointer;
   transition: color 0.2s ease;
-  line-height: 1.6 !important;
+  line-height: 1.3 !important;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.summary-subtitle {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-600);
+  opacity: 0.65;
+  margin-top: 2px;
+}
+
+details summary:focus {
+  outline: none !important;
+}
+
+details[open] summary {
+  border-bottom: none !important;
 }
 
 details summary::-webkit-details-marker {
@@ -1498,6 +1541,11 @@ details summary::-webkit-details-marker {
 
 details summary:hover {
   background-color: transparent !important;
+  color: var(--ifm-color-primary) !important;
+}
+
+details summary:hover .summary-title,
+details summary:hover .summary-subtitle {
   color: var(--ifm-color-primary) !important;
 }
 
@@ -1774,9 +1822,9 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
   width: 16px;
   height: 16px;
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  background-color: rgba(255, 255, 255, 0.18) !important;
-  color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  color: rgba(0, 0, 0, 0.6) !important;
   cursor: pointer;
   padding: 0;
   opacity: 0;
@@ -1792,9 +1840,9 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
 }
 
 [data-theme='dark'] .table-copy-btn {
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  background-color: rgba(255, 255, 255, 0.18) !important;
-  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
 }
 
 .table-copy-wrapper.copy-btn-visible .table-copy-btn {
@@ -1805,9 +1853,9 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
 
 .table-copy-btn:hover {
   opacity: 1 !important;
-  background-color: #ffffff !important;
-  border-color: #ffffff !important;
-  color: #1a1a1a !important;
+  background-color: #1c1c1c !important;
+  border-color: #1c1c1c !important;
+  color: #ffffff !important;
 }
 
 [data-theme='dark'] .table-copy-btn:hover {
@@ -2302,6 +2350,31 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
   line-height: 1.45;
   color: var(--ifm-color-content);
 }
+[data-theme='dark'] .card:hover {
+  background-color: #414141 !important;
+}
 
+/* Seamlessly stack consecutive details blocks (e.g., list of devices) */
+.markdown details:has(+ details),
+.theme-doc-markdown details:has(+ details) {
+  margin-bottom: 4px !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
 
+.markdown details + details,
+.theme-doc-markdown details + details {
+  margin-top: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
 
+/* Full-width details on mobile */
+@media screen and (max-width: 576px) {
+  details {
+    padding: 0.65rem 0.85rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 12px !important;
+  }
+}
