@@ -218,6 +218,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Compass](https://github.com/Earendel-lab/Compass) | Earendel | Simple compass |
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Vibe coded copy of Nothing's essential space app |
 | [Currency](https://curency.pages.dev/) | Earendel | Currency converter web app |
+| [Dot Cal](https://play.google.com/store/apps/details?id=com.dotfield.dotcal) | Dotfield Studio | Minimalist calendar app inspired by Nothing OS |
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Calculator app with dot matrix fonts |
 | [Dot Files](https://play.google.com/store/apps/details?id=com.dotfiles.app) | Dotfield Studio | Clean, fast, local-first file manager |
 | [Dot Player](https://play.google.com/store/apps/details?id=com.creepsmile.dotplayer) | Creepsmile | Minimal local music player |
