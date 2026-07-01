@@ -1,4 +1,4 @@
-﻿---
+---
 sidebar_label: Firmware
 title: Nothing OS Firmware
 description: Complete release index for Nothing OS firmware, OTA updates, and factory images for Nothing and CMF devices.
@@ -86,6 +86,7 @@ Select your device model to access its Release Index.
 
 | **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
+| 3.2 | Spacewar-V3.2-260618-1045 | Spacewar_V3.2-260416-1140 -> [Spacewar_V3.2-260618-1045](https://android.googleapis.com/packages/ota-api/package/ee806849b191862527abd847e12a5e2b301517c0.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_V3.2-260618-1045) |
 | 3.2 | Spacewar-V3.2-260416-1140 | Spacewar_V3.2-260416-1140 -> [Spacewar_V3.2-260416-1140](https://android.googleapis.com/packages/ota-api/package/344b3931b7819dc847850861a2c9fd939c443480.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_V3.2-260416-1140) |
 | 3.2 | Spacewar-V3.2-260206-1016 | Spacewar_V3.2-251231-0041 -> [Spacewar_V3.2-260206-1016](https://android.googleapis.com/packages/ota-api/package/ce258ffe51e9e208b6ab65b2d0ce9fff4f5a5c8c.zip) <br /> Spacewar_V3.2-251219-1652 -> [Spacewar_V3.2-260206-1016](https://android.googleapis.com/packages/ota-api/package/250e6913d8166867521e68e0b1621ca1fffe6d48.zip) <br /> Spacewar_V3.2-250926-1631 -> [Spacewar_V3.2-260206-1016](https://android.googleapis.com/packages/ota-api/package/27d975eff0af05b757241ea388540ee549207e51.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_V3.2-260206-1016) |
 | 3.2 | Spacewar-V3.2-251231-0041 | Spacewar_V3.2-251219-1652 -> [Spacewar_V3.2-251231-0041](https://android.googleapis.com/packages/ota-api/package/6fc6fe1b1d60691f574ca167a0f7565625aff090.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_V3.2-251231-0041) |
