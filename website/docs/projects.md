@@ -98,6 +98,7 @@ Assets and tools designed to help other developers build Nothing-inspired projec
 | [Dot Frame](https://github.com/NyxLumen/DotFrame) | NyxLumen | Video to Ascii converter with a nothing accent |
 | [Dot Matrixify](https://github.com/szelszabi/dotmatrixify) | szelszabi | Transform pixel art to dot matrix |
 | [Dotify Client](https://github.com/PATEL96/dotify-client) | PATEL96 | Dot Matrix image generator |
+| [Local Neural](https://github.com/rkriad585/LocalNeural) | rkriad585 | A modern self-hosted AI interface with a clean Nothing OS aesthetic |
 | [Nothing Design Skill](https://github.com/dominikmartn/nothing-design-skill) | dominikmartn | A design system skill for Claude Code to generate user interfaces following the Nothing visual language |
 | [Nothing Glyph Communication](https://github.com/endan-criso/Nothing-Glyph-Battery-Low-Indicator) | endan-criso | Android playground and reference implementation demonstrating official Glyph SDK integration on Nothing Phone (2a) |
 | [Swift Nothing Ear](https://github.com/bestK1ngArthur/swift-nothing-ear) | bestK1ngArthur | Swift Package for interacting with Nothing headphones on macOS |
