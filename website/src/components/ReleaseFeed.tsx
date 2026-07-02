@@ -280,7 +280,22 @@ export default function ReleaseFeed(): React.JSX.Element {
         </div>
         <div className={styles.systemStats}>
           <div className={styles.clockContainer}>
-            <span className={styles.timeLabel}>TIME:</span>
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className={styles.clockIcon}
+              aria-hidden="true"
+              style={{ opacity: 0.6, flexShrink: 0 }}
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
             <span className={styles.timeVal}>{currentTime || '--:--:--'}</span>
             <button
               type="button"

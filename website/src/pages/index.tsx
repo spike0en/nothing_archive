@@ -21,6 +21,14 @@ import ReleaseFeed from '../components/ReleaseFeed';
 import AnnouncementBanner from '../components/AnnouncementBanner';
 import StarMilestones from '../components/StarMilestones';
 import HeroGlyphLogo from '../components/HeroGlyphLogo';
+import contributorsData from '../data/contributors.json';
+
+interface Contributor {
+  login: string;
+  avatar_url: string;
+  html_url: string;
+  contributions: number;
+}
 
 type FeatureItem = {
   title: string;
@@ -152,9 +160,13 @@ function Feature({ title, description, link, icon }: FeatureItem) {
     <div className={clsx('col col--3', styles.featureCol)}>
       <Link to={link} className={styles.featureLink}>
         <div className={styles.featureCard}>
-          <span className={styles.featureIcon} aria-hidden="true">{icon}</span>
-          <Heading as="h3" className={styles.featureTitle}>{title}</Heading>
-          <p className={styles.featureDesc}>{description}</p>
+          <div className={styles.featureHeader}>
+            <span className={styles.featureIcon} aria-hidden="true">{icon}</span>
+            <Heading as="h3" className={styles.featureTitle}>{title}</Heading>
+          </div>
+          <div className={styles.featureInner}>
+            <p className={styles.featureDesc}>{description}</p>
+          </div>
         </div>
       </Link>
     </div>
@@ -182,10 +194,59 @@ function HomepageFeatures() {
   );
 }
 
+const CONTRIBUTORS_CACHE_KEY = 'nothing_archive_contributors_v1';
+const CONTRIBUTORS_CACHE_TIME_KEY = 'nothing_archive_contributors_time_v1';
+const CONTRIBUTORS_CACHE_TIMEOUT = 5 * 60 * 1000; // 5 minutes
+
 /**
  * Community contribution section.
+ * Fetches contributors from the GitHub API at runtime with localStorage caching.
  */
 function HomepageCommunity() {
+  const [contributors, setContributors] = useState<Contributor[]>(contributorsData as Contributor[]);
+
+  useEffect(() => {
+    async function loadContributors() {
+      try {
+        const cachedData = localStorage.getItem(CONTRIBUTORS_CACHE_KEY);
+        const cachedTime = localStorage.getItem(CONTRIBUTORS_CACHE_TIME_KEY);
+        const now = Date.now();
+
+        if (cachedData && cachedTime && now - parseInt(cachedTime, 10) < CONTRIBUTORS_CACHE_TIMEOUT) {
+          setContributors(JSON.parse(cachedData));
+          return;
+        }
+
+        const response = await fetch(
+          'https://api.github.com/repos/spike0en/nothing_archive/contributors?per_page=100'
+        );
+
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        const raw = await response.json();
+        const parsed: Contributor[] = raw.map((item: any) => ({
+          login: item.login,
+          avatar_url: item.avatar_url,
+          html_url: item.html_url,
+          contributions: item.contributions,
+        }));
+
+        if (parsed.length > 0) {
+          localStorage.setItem(CONTRIBUTORS_CACHE_KEY, JSON.stringify(parsed));
+          localStorage.setItem(CONTRIBUTORS_CACHE_TIME_KEY, now.toString());
+          setContributors(parsed);
+        }
+      } catch (err) {
+        // Static fallback from the bundled JSON is already set as initial state
+        console.warn('Contributors: fetch failed, using bundled fallback.', err);
+      }
+    }
+
+    loadContributors();
+  }, []);
+
+  const displayContributors = contributors.slice(0, 32);
+
   return (
     <section className={styles.communitySection}>
       <div className="container">
@@ -193,26 +254,56 @@ function HomepageCommunity() {
           Contributors
         </Heading>
 
-        {/* Dynamic contributor graph sourced from contrib.rocks */}
         <div className={styles.contributorGrid}>
-          <a
-            href="https://github.com/spike0en/nothing_archive/graphs/contributors"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View all contributors on GitHub"
-          >
-            <img
-              src="https://contrib.rocks/image?repo=spike0en/nothing_archive"
-              alt="Grid of GitHub contributor avatars for Nothing Archive"
-              className={styles.contribImage}
-              width={800}
-              height={42}
-              loading="lazy"
-            />
-          </a>
+          {displayContributors.length > 0 ? (
+            displayContributors.map((contrib) => (
+              <a
+                key={contrib.login}
+                href={contrib.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.contributorCard}
+                aria-label={`View ${contrib.login}'s GitHub profile`}
+              >
+                <div className={styles.contributorAvatarContainer}>
+                  <img
+                    src={contrib.avatar_url}
+                    alt={`${contrib.login}'s avatar`}
+                    className={styles.contributorAvatar}
+                    loading="lazy"
+                  />
+                </div>
+                <div className={styles.contributorName}>{contrib.login}</div>
+              </a>
+            ))
+          ) : (
+            <div style={{ textAlign: 'center', width: '100%', gridColumn: '1 / -1', opacity: 0.7, padding: '2rem 0' }}>
+              <a
+                href="https://github.com/spike0en/nothing_archive/graphs/contributors"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'var(--ifm-color-primary)', fontWeight: 'bold' }}
+              >
+                View all contributors on GitHub
+              </a>
+            </div>
+          )}
         </div>
+      </div>
+    </section>
+  );
+}
 
-        {/* Star milestone progress tracker with integrated CTA */}
+/**
+ * Star milestones progress tracker section.
+ */
+function HomepageMilestones() {
+  return (
+    <section className={styles.milestonesSection}>
+      <div className="container">
+        <Heading as="h2" className={styles.sectionLabel}>
+          Milestones
+        </Heading>
         <StarMilestones />
       </div>
     </section>
@@ -276,6 +367,7 @@ export default function Home(): JSX.Element {
           </div>
         </div>
         <HomepageFeatures />
+        <HomepageMilestones />
         <HomepageCommunity />
         <HomepageSocials />
       </main>

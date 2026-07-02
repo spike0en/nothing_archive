@@ -110,9 +110,10 @@ export default function StarMilestones(): React.JSX.Element {
       <div className={styles.gridOverlay} />
 
       <div className={styles.milestoneHeader}>
-        <span className={styles.milestoneTitle}>
-          MILESTONE TRACKER
-        </span>
+        <div className={styles.liveStats}>
+          <span className={styles.liveIndicator} />
+          <span className={styles.liveText}>{stars.toLocaleString()} stargazers</span>
+        </div>
         <a
           href="https://github.com/spike0en/nothing_archive/stargazers"
           target="_blank"

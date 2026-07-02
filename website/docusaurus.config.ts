@@ -180,7 +180,7 @@ const config: Config = {
         const fs = require('fs');
         const path = require('path');
         const re = /-([a-zA-Z])([\d.]+)-(\d{6})-(\d{4})$/;
-        
+
         const changelogsDir = path.join(__dirname, 'docs', 'changelogs');
         const latestLinks = {};
         

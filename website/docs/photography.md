@@ -48,15 +48,25 @@ GCAM ports, configs, and camera presets for Nothing devices.
 The config files (`xml` or `.agc`) have been archived below by device name along with creator attribution:
 
 #### Nothing
+
+<div className="card-list">
+
 - [Phone (1)](https://archive.org/download/nothing-archive/spike0en/photography/phone-1/)
 - [Phone (2)](https://archive.org/download/nothing-archive/spike0en/photography/phone-2/)
 - [Phone (2a) Series](https://archive.org/download/nothing-archive/spike0en/photography/phone-2a-series/)
 - [Phone (3a) & (3a) Pro](https://archive.org/download/nothing-archive/spike0en/photography/phone-3a-series/)
 - [Phone (3)](https://archive.org/download/nothing-archive/spike0en/photography/phone-3/)
 
+</div>
+
 #### CMF by Nothing
+
+<div className="card-list">
+
 - [Phone (1)](https://archive.org/download/nothing-archive/spike0en/photography/cmf-1/)
 - [Phone (2) Pro](https://archive.org/download/nothing-archive/spike0en/photography/cmf-2pro/)
+
+</div>
 
 ---
 

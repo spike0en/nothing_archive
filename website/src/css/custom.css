@@ -335,6 +335,12 @@ div[class*="tableWrapper"] table td,
     display: none !important;
   }
 
+  /* Disable backdrop-filter when sidebar is shown to prevent it from trapping fixed-position sidebar drawer height */
+  .navbar.navbar-sidebar--show {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
   /* Enable text-based brand navigation link on mobile */
   .navbar__item.header-home-link {
     display: inline-flex !important;
@@ -2377,4 +2383,79 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
     margin-right: 0 !important;
     border-radius: 12px !important;
   }
+}
+
+/* Card List utility for premium non-tabular documentation lists */
+.card-list {
+  margin: 1.25rem 0 !important;
+}
+
+.card-list ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+  border: 1px solid var(--nothing-border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  background-color: var(--ifm-card-background-color);
+}
+
+[data-theme='dark'] .card-list ul {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card-list li {
+  margin: 0 !important;
+  padding: 0 !important;
+  border-bottom: 1px solid var(--nothing-border);
+  list-style-type: none !important;
+}
+
+.card-list li:last-child {
+  border-bottom: none !important;
+}
+
+.card-list li a {
+  display: flex !important;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  color: var(--ifm-color-content) !important;
+  font-weight: 600;
+  text-decoration: none !important;
+  font-size: 0.9rem;
+  background-color: transparent;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  position: relative;
+}
+
+/* Custom dot indicator inside link */
+.card-list li a::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--ifm-color-content);
+  opacity: 0.6;
+  transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+/* Hover state styling */
+.card-list li a:hover {
+  background-color: rgba(128, 128, 128, 0.04) !important;
+  color: var(--ifm-color-primary) !important;
+  text-decoration: none !important;
+}
+
+[data-theme='dark'] .card-list li a:hover {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+.card-list li a:hover::before {
+  background-color: var(--ifm-color-primary) !important;
+  opacity: 1;
+  transform: scale(1.25);
 }

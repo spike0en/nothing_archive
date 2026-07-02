@@ -6,6 +6,7 @@ website/.cache-loader/
 website/.env
 website/.env.local
 website/.cache/
+website/src/data/
 
 # Node
 node_modules/

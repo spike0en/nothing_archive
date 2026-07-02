@@ -520,3 +520,12 @@
   opacity: 1;
   color: var(--ifm-color-primary) !important;
 }
+
+@media screen and (max-width: 576px) {
+  .telemetryHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}

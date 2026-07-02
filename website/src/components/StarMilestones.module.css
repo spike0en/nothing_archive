@@ -40,7 +40,6 @@
 
 
 
-/* Header Row */
 .milestoneHeader {
   display: flex;
   align-items: center;
@@ -48,6 +47,24 @@
   margin-bottom: 1.5rem;
   z-index: 3;
   position: relative;
+}
+
+.liveStats {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ifm-color-content);
+  opacity: 0.8;
+  z-index: 3;
+  position: relative;
+}
+
+.liveText {
+  font-family: var(--ifm-font-family-base);
 }
 
 .milestoneTitleContainer {
@@ -394,13 +411,15 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  display: inline-block;
+  display: block;
+  flex-shrink: 0;
   background-color: var(--ifm-color-primary, var(--nothing-red, #D71921));
   box-shadow: 0 0 6px var(--ifm-color-primary);
 }
 
 .liveIndicator {
   animation: livePulse 1.5s ease-in-out infinite;
+  margin-top: 1px;
 }
 
 .pulsingRedDot {

@@ -36,6 +36,8 @@ APK mirrors available at [APKMirror](https://www.apkmirror.com/apk/nothing-techn
 
 ### Nothing
 
+<div className="card-list">
+
 - [Phone (1)](https://archive.org/download/nothing-archive/spike0en/walls/spacewar/)
 - [Phone (2)](https://archive.org/download/nothing-archive/spike0en/walls/pong/)
 - [Phone (2a) / (2a) Plus / CE](https://archive.org/download/nothing-archive/spike0en/walls/pacman%28pro%29/)
@@ -44,10 +46,16 @@ APK mirrors available at [APKMirror](https://www.apkmirror.com/apk/nothing-techn
 - [Phone (3a) Lite](https://archive.org/download/nothing-archive/spike0en/walls/galaxian/)
 - [Phone (4a) / (4a) Pro](https://archive.org/download/nothing-archive/spike0en/walls/frogger%28pro%29/)
 
+</div>
+
 ### CMF by Nothing
+
+<div className="card-list">
 
 - [Phone (1)](https://archive.org/download/nothing-archive/spike0en/walls/tetris/)
 - [Phone (2a) Pro](https://archive.org/download/nothing-archive/spike0en/walls/galaga/)
+
+</div>
 
 ---
 
@@ -205,6 +213,9 @@ The English versions of the user guides are linked below. For additional languag
 ### Phones
 
 #### Nothing
+
+<div className="card-list">
+
 - [Phone (1)](https://d2rdy6aa46gzl0.cloudfront.net/Phone+(1)+User+guide_EN.pdf)
 - [Phone (2)](https://cdn.shopify.com/s/files/1/0583/0072/7462/files/Phone_2_User_Guide.pdf?v=1690533753)
 - [Phone (2a)](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Phone_2a_User_Guide.pdf?v=1720764665)
@@ -216,11 +227,21 @@ The English versions of the user guides are linked below. For additional languag
 - [Phone (4a)](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Phone_4a_User_Guide_Global_en_2e38a5da-9c79-4ba5-ace9-51c408466e63.pdf?v=1773115876)
 - [Phone (4a) Pro](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Phone_4a_Pro_User_Guide_Global_en_7d9167f4-802c-473f-88a0-f0b28b63b0d4.pdf?v=1773115876)
 
+</div>
+
 #### CMF by Nothing
+
+<div className="card-list">
+
 - [Phone (1)](https://cdn.shopify.com/s/files/1/0583/0072/7462/files/CMF_by_Nothing_Phone_1_User_Guide_v1.2.pdf?v=1748403752)
 - [Phone (2) Pro](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/CMF_by_Nothing_Phone_2_Pro_User_Guide_-_ROW_-_EN.pdf)
 
+</div>
+
 ### Audio
+
+<div className="card-list">
+
 - [Ear (2)](https://cdn.shopifycdn.net/s/files/1/0583/2871/1328/files/Product-Guide-EN.pdf?v=1679563481)
 - [Ear](https://cdn.shopify.com/s/files/1/0586/3270/0077/files/ear_EN.pdf?v=1714993847)
 - [Ear (a)](https://cdn.shopify.com/s/files/1/0586/3270/0077/files/ear_a_EN.pdf?v=1714993262)
@@ -229,12 +250,19 @@ The English versions of the user guides are linked below. For additional languag
 - [Ear (3)](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Nothing_Ear_3_Quick_Start_Guide_Safety_Warranty_Information.pdf?v=1758509694)
 - [Headphone (a)](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Headphone_a_Quick_Start_Guide_Safety_Warranty_Information.pdf?v=1772185946)
 
+</div>
+
 ### Watches
 
 #### CMF by Nothing
+
+<div className="card-list">
+
 - [Watch Pro](https://cdn.shopify.com/s/files/1/0797/8739/3316/files/CMF_Watch_Pro_User_Manual_English_French_German_Arabic_Indian_Hindi_Japanese.pdf?v=1696608947)
 - [Watch Pro 2](https://cdn.shopify.com/s/files/1/0797/8739/3316/files/CMF_Watch_Pro_User_Manual_English_French_German_Arabic_Indian_Hindi_Japanese.pdf?v=1696608947)
 - [Watch 3 Pro](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/User_guide_English_German_French_Japanese_Arabic_Hindi_Korean_Traditional_Chinese_Simplified_Chinese.pdf?v=1753343095)
+
+</div>
 
 ---
 
