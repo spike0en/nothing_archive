@@ -231,6 +231,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Flashlight app with widgets |
 | [Hey Battery](https://github.com/ghostyapps/HeyBattery) | Candan | Battery usage tracker |
 | [Hey Cam](https://github.com/ghostyapps/HeyCam) | Candan | Minimalist camera with Glyph Matrix support |
+| [Keyboard By Voidwarelabs](https://play.google.com/store/apps/details?id=com.voidware.keyboard) | VoidwareLabs | Keyboard by VoidwareLabs is a fast, privacy-focused keyboard powered by Nira AI. Enjoy intelligent typing, accurate suggestions, voice input, and a clean, modern experience designed for everyday use. Built to help you type smarter, faster, and with confidence. |
 | [Mate App](https://github.com/shahriaravi/MateApp) | shahriaravi | Offline finance tracker |
 | [Minimal Browser](https://github.com/aaswani-v/Minimal-Browser) | aaswani-v | Browser with AI summarization |
 | [Missing Core Music](https://play.google.com/store/apps/details?id=com.cyanchill.missingcore.music) | MissingCore | Offline music player |
