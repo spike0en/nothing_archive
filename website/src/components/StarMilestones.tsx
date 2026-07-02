@@ -3,6 +3,7 @@ import { FaStar } from 'react-icons/fa';
 import clsx from 'clsx';
 import styles from './StarMilestones.module.css';
 import TorxScrew from './TorxScrew';
+import { useGitHubRepoStats } from '../utils/github-cache';
 
 /**
  * Milestone thresholds.
@@ -17,49 +18,16 @@ function fmtCount(n: number): string {
   return n.toString();
 }
 
-const STATS_CACHE_KEY = 'nothing_archive_repo_stats_v1';
-const STATS_CACHE_TIME_KEY = 'nothing_archive_repo_stats_time_v1';
-const CACHE_TIMEOUT = 5 * 60 * 1000;
+
 
 /**
  * Progress bar widget displaying repository stargazing achievements
  * across defined milestones.
  */
 export default function StarMilestones(): React.JSX.Element {
-  const [stars, setStars] = useState<number | null>(null);
-
-  useEffect(() => {
-    async function loadStars() {
-      try {
-        // Prefer cached data from CommitMatrix to avoid duplicate API calls
-        const cachedData = localStorage.getItem(STATS_CACHE_KEY);
-        const cachedTime = localStorage.getItem(STATS_CACHE_TIME_KEY);
-        const now = Date.now();
-
-        if (cachedData && cachedTime && now - parseInt(cachedTime, 10) < CACHE_TIMEOUT) {
-          const parsed = JSON.parse(cachedData);
-          setStars(parsed.stars || 0);
-          return;
-        }
-
-        const res = await fetch('https://api.github.com/repos/spike0en/nothing_archive');
-        if (res.ok) {
-          const data = await res.json();
-          setStars(data.stargazers_count || 0);
-        } else if (cachedData) {
-          // Use stale cache on API failure
-          setStars(JSON.parse(cachedData).stars || 0);
-        }
-      } catch {
-        // Last resort: try stale cache
-        try {
-          const cachedData = localStorage.getItem(STATS_CACHE_KEY);
-          if (cachedData) setStars(JSON.parse(cachedData).stars || 0);
-        } catch { /* noop */ }
-      }
-    }
-    loadStars();
-  }, []);
+  // Shares the deduplicated repo stats fetch with CommitMatrix
+  const { stats, loading: statsLoading } = useGitHubRepoStats();
+  const stars = statsLoading ? null : stats.stars;
 
   /** Index of the next unmet milestone (-1 if all reached) */
   const nextIdx = useMemo(() => {

@@ -21,14 +21,10 @@ import ReleaseFeed from '../components/ReleaseFeed';
 import AnnouncementBanner from '../components/AnnouncementBanner';
 import StarMilestones from '../components/StarMilestones';
 import HeroGlyphLogo from '../components/HeroGlyphLogo';
-import contributorsData from '../data/contributors.json';
+import { useGitHubContributors } from '../utils/github-cache';
+import type { Contributor } from '../utils/github-cache';
 
-interface Contributor {
-  login: string;
-  avatar_url: string;
-  html_url: string;
-  contributions: number;
-}
+
 
 type FeatureItem = {
   title: string;
@@ -194,56 +190,15 @@ function HomepageFeatures() {
   );
 }
 
-const CONTRIBUTORS_CACHE_KEY = 'nothing_archive_contributors_v1';
-const CONTRIBUTORS_CACHE_TIME_KEY = 'nothing_archive_contributors_time_v1';
-const CONTRIBUTORS_CACHE_TIMEOUT = 5 * 60 * 1000; // 5 minutes
+
 
 /**
  * Community contribution section.
  * Fetches contributors from the GitHub API at runtime with localStorage caching.
  */
 function HomepageCommunity() {
-  const [contributors, setContributors] = useState<Contributor[]>(contributorsData as Contributor[]);
-
-  useEffect(() => {
-    async function loadContributors() {
-      try {
-        const cachedData = localStorage.getItem(CONTRIBUTORS_CACHE_KEY);
-        const cachedTime = localStorage.getItem(CONTRIBUTORS_CACHE_TIME_KEY);
-        const now = Date.now();
-
-        if (cachedData && cachedTime && now - parseInt(cachedTime, 10) < CONTRIBUTORS_CACHE_TIMEOUT) {
-          setContributors(JSON.parse(cachedData));
-          return;
-        }
-
-        const response = await fetch(
-          'https://api.github.com/repos/spike0en/nothing_archive/contributors?per_page=100'
-        );
-
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-
-        const raw = await response.json();
-        const parsed: Contributor[] = raw.map((item: any) => ({
-          login: item.login,
-          avatar_url: item.avatar_url,
-          html_url: item.html_url,
-          contributions: item.contributions,
-        }));
-
-        if (parsed.length > 0) {
-          localStorage.setItem(CONTRIBUTORS_CACHE_KEY, JSON.stringify(parsed));
-          localStorage.setItem(CONTRIBUTORS_CACHE_TIME_KEY, now.toString());
-          setContributors(parsed);
-        }
-      } catch (err) {
-        // Static fallback from the bundled JSON is already set as initial state
-        console.warn('Contributors: fetch failed, using bundled fallback.', err);
-      }
-    }
-
-    loadContributors();
-  }, []);
+  // Centralized GitHub data hook — shares cache with other components
+  const { contributors } = useGitHubContributors();
 
   const displayContributors = contributors.slice(0, 32);
 

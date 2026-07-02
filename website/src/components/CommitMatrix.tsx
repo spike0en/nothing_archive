@@ -2,54 +2,32 @@ import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import styles from './CommitMatrix.module.css';
 import { getTimeLag } from '../utils/time';
+import { useGitHubCommits, useGitHubRepoStats } from '../utils/github-cache';
+import type { Commit } from '../utils/github-cache';
 
 
-interface Commit {
-  sha: string;
-  author: string;
-  coAuthors: string[];
-  date: string;
-  message: string;
-}
-
-interface RepoStats {
-  stars: number;
+interface HitsState {
   hits: number;
 }
 
-const CACHE_KEY = 'nothing_archive_commits_cache_v2';
-const CACHE_TIME_KEY = 'nothing_archive_commits_cache_time_v2';
-const CACHE_TIMEOUT = 5 * 60 * 1000; // 5 minutes in milliseconds
-
-const STATS_CACHE_KEY = 'nothing_archive_repo_stats_v1';
-const STATS_CACHE_TIME_KEY = 'nothing_archive_repo_stats_time_v1';
-
-/**
- * Extracts co-author names from a full commit message body.
- * Parses `Co-authored-by: Name <email>` trailers that GitHub auto-adds on squash merges.
- */
-function parseCoAuthors(fullMessage: string): string[] {
-  if (!fullMessage) return [];
-  const coAuthorRegex = /Co-authored-by:\s*(.+?)\s*<[^>]*>/gi;
-  const names: string[] = [];
-  let match: RegExpExecArray | null;
-  while ((match = coAuthorRegex.exec(fullMessage)) !== null) {
-    const name = match[1].trim();
-    if (name) names.push(name);
-  }
-  return names;
-}
+const HITS_CACHE_KEY = 'nothing_archive_hits_v1';
+const HITS_CACHE_TIME_KEY = 'nothing_archive_hits_time_v1';
+const HITS_CACHE_TIMEOUT = 15 * 60 * 1000;
 
 export default function CommitMatrix(): React.JSX.Element {
-  const [commits, setCommits] = useState<Commit[]>([]);
-  const [statusSource, setStatusSource] = useState<'LIVE' | 'OFFLINE'>('OFFLINE');
-  const [errorState, setErrorState] = useState<'RATE_LIMITED' | 'FAILED' | null>(null);
-  const [loading, setLoading] = useState(true);
+  // Centralized GitHub data hooks — deduplicated, stale-while-revalidate
+  const { commits, status: commitStatus, error: commitError, loading: commitLoading } = useGitHubCommits();
+  const { stats: repoStats, loading: statsGhLoading } = useGitHubRepoStats();
+
+  const statusSource = commitStatus;
+  const errorState = commitError;
+  const loading = commitLoading;
+
+  // hitscounter.dev is not a GitHub API — kept as a separate inline fetch
+  const [hitsData, setHitsData] = useState<HitsState>({ hits: 0 });
+  const [hitsLoading, setHitsLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState('');
   const [blinkActive, setBlinkActive] = useState(true);
-
-  const [repoStats, setRepoStats] = useState<RepoStats>({ stars: 0, hits: 0 });
-  const [statsLoading, setStatsLoading] = useState(true);
   const [timezoneMode, setTimezoneMode] = useState<'local' | 'london'>('local');
 
   useEffect(() => {
@@ -106,128 +84,45 @@ export default function CommitMatrix(): React.JSX.Element {
     return () => clearInterval(interval);
   }, [timezoneMode]);
 
-  // Fetch commits from GitHub API with cache fallback
+  // Fetch hitscounter.dev visitor count (not a GitHub API — kept separate)
   useEffect(() => {
-    async function loadCommits() {
+    async function loadHits() {
       try {
-        const cachedData = localStorage.getItem(CACHE_KEY);
-        const cachedTime = localStorage.getItem(CACHE_TIME_KEY);
+        const cachedData = localStorage.getItem(HITS_CACHE_KEY);
+        const cachedTime = localStorage.getItem(HITS_CACHE_TIME_KEY);
         const now = Date.now();
 
-        if (cachedData && cachedTime && now - parseInt(cachedTime, 10) < CACHE_TIMEOUT) {
-          const parsed = JSON.parse(cachedData);
-          setCommits(parsed);
-          setStatusSource('LIVE');
-          setErrorState(null);
-          setLoading(false);
+        if (cachedData && cachedTime && now - parseInt(cachedTime, 10) < HITS_CACHE_TIMEOUT) {
+          setHitsData(JSON.parse(cachedData));
+          setHitsLoading(false);
           return;
         }
 
-        const response = await fetch(
-          'https://api.github.com/repos/spike0en/nothing_archive/commits?per_page=100'
+        const hitsRes = await fetch(
+          'https://hitscounter.dev/api/hit?output=json&url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive'
         );
 
-        if (!response.ok) {
-          if (response.status === 403 || response.status === 429) {
-            throw new Error('RATE_LIMITED');
-          }
-          throw new Error('FAILED');
-        }
-
-        const rawCommits = await response.json();
-
-        const formattedCommits: Commit[] = rawCommits.map((item: any) => {
-          const fullMessage = item.commit.message || '';
-          const author = item.commit.author?.name || item.author?.login || 'Contributor';
-          const coAuthors = parseCoAuthors(fullMessage).filter(name => name !== author);
-
-          return {
-            sha: item.sha.substring(0, 7),
-            author,
-            coAuthors,
-            date: item.commit.author?.date || new Date().toISOString(),
-            message: fullMessage.split('\n')[0] || 'Code updates',
-          };
-        });
-
-        if (formattedCommits.length > 0) {
-          localStorage.setItem(CACHE_KEY, JSON.stringify(formattedCommits));
-          localStorage.setItem(CACHE_TIME_KEY, now.toString());
-          setCommits(formattedCommits);
-          setStatusSource('LIVE');
-          setErrorState(null);
-          setLoading(false);
-          return;
-        }
-
-        throw new Error('FAILED');
-
-      } catch (err: any) {
-        console.warn('CommitMatrix: Fetch failed.', err);
-        setLoading(false);
-        if (err.message === 'RATE_LIMITED') {
-          setErrorState('RATE_LIMITED');
-          setStatusSource('OFFLINE');
-        } else {
-          setErrorState('FAILED');
-          setStatusSource('OFFLINE');
-        }
-      }
-    }
-
-    loadCommits();
-  }, []);
-
-  // Fetch repository stargazers and view metrics in parallel
-  useEffect(() => {
-    async function loadStats() {
-      try {
-        const cachedData = localStorage.getItem(STATS_CACHE_KEY);
-        const cachedTime = localStorage.getItem(STATS_CACHE_TIME_KEY);
-        const now = Date.now();
-
-        if (cachedData && cachedTime && now - parseInt(cachedTime, 10) < CACHE_TIMEOUT) {
-          setRepoStats(JSON.parse(cachedData));
-          setStatsLoading(false);
-          return;
-        }
-
-        const [repoRes, hitsRes] = await Promise.allSettled([
-          fetch('https://api.github.com/repos/spike0en/nothing_archive'),
-          fetch('https://hitscounter.dev/api/hit?output=json&url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive')
-        ]);
-
-        let stars = 0;
         let hits = 0;
-
-        if (repoRes.status === 'fulfilled' && repoRes.value.ok) {
-          const data = await repoRes.value.json();
-          stars = data.stargazers_count || 0;
-        } else {
-          const old = cachedData ? JSON.parse(cachedData) : null;
-          stars = old ? old.stars : 0;
-        }
-
-        if (hitsRes.status === 'fulfilled' && hitsRes.value.ok) {
-          const data = await hitsRes.value.json();
+        if (hitsRes.ok) {
+          const data = await hitsRes.json();
           hits = data.total_hits || 0;
         } else {
           const old = cachedData ? JSON.parse(cachedData) : null;
           hits = old ? old.hits : 0;
         }
 
-        const newStats = { stars, hits };
-        localStorage.setItem(STATS_CACHE_KEY, JSON.stringify(newStats));
-        localStorage.setItem(STATS_CACHE_TIME_KEY, now.toString());
-        setRepoStats(newStats);
-        setStatsLoading(false);
+        const newHits = { hits };
+        localStorage.setItem(HITS_CACHE_KEY, JSON.stringify(newHits));
+        localStorage.setItem(HITS_CACHE_TIME_KEY, now.toString());
+        setHitsData(newHits);
+        setHitsLoading(false);
       } catch (err) {
-        console.warn('loadStats failed', err);
-        setStatsLoading(false);
+        console.warn('loadHits failed', err);
+        setHitsLoading(false);
       }
     }
 
-    loadStats();
+    loadHits();
   }, []);
 
   const latestCommit = commits[0] || { sha: '------', author: 'N/A', coAuthors: [], date: '', message: 'Waiting for connection...' };
@@ -239,11 +134,11 @@ export default function CommitMatrix(): React.JSX.Element {
     },
     {
       label: 'STARS',
-      value: statsLoading ? '—' : repoStats.stars.toLocaleString(),
+      value: statsGhLoading ? '—' : repoStats.stars.toLocaleString(),
     },
     {
       label: 'VISITORS',
-      value: statsLoading ? '—' : repoStats.hits.toLocaleString(),
+      value: hitsLoading ? '—' : hitsData.hits.toLocaleString(),
     },
   ];
 
@@ -266,7 +161,7 @@ export default function CommitMatrix(): React.JSX.Element {
     );
   };
 
-  const isProgressLoading = loading || statsLoading;
+  const isProgressLoading = loading || statsGhLoading || hitsLoading;
 
   return (
     <div className={styles.container}>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from '@docusaurus/Link';
 import styles from './AnnouncementBanner.module.css';
+import { useGitHubReleases } from '../utils/github-cache';
 
 declare var require: any;
 
@@ -25,102 +26,56 @@ interface ReleaseData {
   publishedAt: string;
 }
 
-const RELEASES_CACHE_KEY = 'nothing_archive_releases_cache_v2';
 const DISMISS_KEY = 'na_dismissed_announcement_tag';
 
 export default function AnnouncementBanner(): React.JSX.Element | null {
+  // Shares the deduplicated releases fetch with ReleaseFeed
+  const { releases: allGhReleases } = useGitHubReleases();
   const [releases, setReleases] = useState<ReleaseData[]>([]);
   const [isDismissed, setIsDismissed] = useState<boolean>(true); // default to true to avoid flash before load
 
   useEffect(() => {
-    async function checkReleases() {
+    if (allGhReleases.length === 0) return;
+
+    const allReleases: ReleaseData[] = allGhReleases.map((item) => ({
+      tagName: item.tagName || '',
+      codename: item.codename || 'Archive',
+      version: item.version || '',
+      htmlUrl: item.htmlUrl || '',
+      publishedAt: item.publishedAt || new Date().toISOString(),
+    }));
+
+    const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
+    const recentReleases = allReleases.filter(r => {
+      const pubTime = new Date(r.publishedAt).getTime();
+      return pubTime >= sevenDaysAgo;
+    });
+
+    const dismissedTagStr = localStorage.getItem(DISMISS_KEY);
+    let dismissedTags: string[] = [];
+    if (dismissedTagStr) {
       try {
-        let allReleases: ReleaseData[] = [];
-        
-        const cached = localStorage.getItem(RELEASES_CACHE_KEY);
-        if (cached) {
-          const parsed = JSON.parse(cached);
-          if (parsed && parsed.length > 0) {
-            allReleases = parsed.map((item: any) => ({
-              tagName: item.tagName || '',
-              codename: item.codename || 'Archive',
-              version: item.version || '',
-              htmlUrl: item.htmlUrl || '',
-              publishedAt: item.publishedAt || item.published_at || new Date().toISOString(),
-            }));
-          }
-        }
-
-        if (allReleases.length === 0) {
-          const response = await fetch(
-            'https://api.github.com/repos/spike0en/nothing_archive/releases?per_page=10'
-          );
-          if (response.ok) {
-            const raw = await response.json();
-            if (raw && raw.length > 0) {
-              allReleases = raw.map((item: any) => {
-                const tagName = item.tag_name || '';
-                const parts = tagName.split('_');
-                let codename = 'Archive';
-                let version = tagName;
-                if (parts.length > 1) {
-                  codename = parts[0];
-                  version = parts.slice(1).join('_');
-                }
-                return {
-                  tagName,
-                  codename,
-                  version,
-                  htmlUrl: item.html_url || '',
-                  publishedAt: item.published_at || new Date().toISOString(),
-                };
-              });
-            }
-          }
-        }
-
-        if (allReleases.length > 0) {
-          const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
-          
-          const recentReleases = allReleases.filter(r => {
-            const pubTime = new Date(r.publishedAt).getTime();
-            return pubTime >= sevenDaysAgo;
-          });
-
-          const dismissedTagStr = localStorage.getItem(DISMISS_KEY);
-          let dismissedTags: string[] = [];
-          if (dismissedTagStr) {
-            try {
-              if (dismissedTagStr.startsWith('[')) {
-                dismissedTags = JSON.parse(dismissedTagStr);
-              } else {
-                dismissedTags = [dismissedTagStr];
-              }
-            } catch {
-              dismissedTags = [dismissedTagStr];
-            }
-          }
-
-          const nonDismissed = recentReleases.filter(
-            r => !dismissedTags.includes(r.tagName)
-          );
-
-          if (nonDismissed.length > 0) {
-            setReleases(nonDismissed);
-            setIsDismissed(false);
-          } else {
-            setIsDismissed(true);
-          }
+        if (dismissedTagStr.startsWith('[')) {
+          dismissedTags = JSON.parse(dismissedTagStr);
         } else {
-          setIsDismissed(true);
+          dismissedTags = [dismissedTagStr];
         }
-      } catch (e) {
-        console.warn('AnnouncementBanner: failed to resolve releases.', e);
+      } catch {
+        dismissedTags = [dismissedTagStr];
       }
     }
 
-    checkReleases();
-  }, []);
+    const nonDismissed = recentReleases.filter(
+      r => !dismissedTags.includes(r.tagName)
+    );
+
+    if (nonDismissed.length > 0) {
+      setReleases(nonDismissed);
+      setIsDismissed(false);
+    } else {
+      setIsDismissed(true);
+    }
+  }, [allGhReleases]);
 
   const handleDismiss = (e: React.MouseEvent) => {
     e.preventDefault();

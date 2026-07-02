@@ -3,26 +3,13 @@ import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import styles from './ReleaseFeed.module.css';
 import { getTimeLag } from '../utils/time';
+import { useGitHubReleases } from '../utils/github-cache';
+import type { Release } from '../utils/github-cache';
 
-declare var require: any;
 
-export interface Release {
-  id: number;
-  tagName: string;
-  codename: string;
-  version: string;
-  name: string;
-  publishedAt: string;
-  htmlUrl: string;
-  downloads?: number;
-}
-
-const CACHE_KEY = 'nothing_archive_releases_cache_v2';
-const CACHE_COUNT_KEY = 'nothing_archive_releases_count_v2';
-const CACHE_TIME_KEY = 'nothing_archive_releases_cache_time_v2';
-const CACHE_TIMEOUT = 5 * 60 * 1000;
 
 // Read all changelog markdown filenames at compilation time
+declare var require: any;
 let availableChangelogs = new Set<string>();
 try {
   const context = require.context('../../docs/changelogs', true, /\.md$/);
@@ -37,11 +24,8 @@ try {
 }
 
 export default function ReleaseFeed(): React.JSX.Element {
-  const [releases, setReleases] = useState<Release[]>([]);
-  const [totalReleasesCount, setTotalReleasesCount] = useState<number>(0);
-  const [statusSource, setStatusSource] = useState<'LIVE' | 'OFFLINE'>('OFFLINE');
-  const [errorState, setErrorState] = useState<'RATE_LIMITED' | 'FAILED' | null>(null);
-  const [loading, setLoading] = useState(true);
+  // Centralized GitHub data hook — deduplicated, stale-while-revalidate
+  const { releases, totalCount: totalReleasesCount, status: statusSource, error: errorState, loading } = useGitHubReleases();
   const [currentTime, setCurrentTime] = useState('');
   const [blinkActive, setBlinkActive] = useState(true);
   const [timezoneMode, setTimezoneMode] = useState<'local' | 'london'>('local');
@@ -110,118 +94,7 @@ export default function ReleaseFeed(): React.JSX.Element {
     return () => clearInterval(interval);
   }, [timezoneMode]);
 
-  // Fetch releases from GitHub API with cache fallback
-  useEffect(() => {
-    async function loadReleases() {
-      try {
-        const cachedData = localStorage.getItem(CACHE_KEY);
-        const cachedCount = localStorage.getItem(CACHE_COUNT_KEY);
-        const cachedTime = localStorage.getItem(CACHE_TIME_KEY);
-        const now = Date.now();
 
-        if (cachedData && cachedTime && now - parseInt(cachedTime, 10) < CACHE_TIMEOUT) {
-          const parsed = JSON.parse(cachedData);
-          const hasDownloads = parsed.length === 0 || parsed[0].downloads !== undefined;
-          if (hasDownloads) {
-            setReleases(parsed);
-            setTotalReleasesCount(cachedCount ? parseInt(cachedCount, 10) : parsed.length);
-            setStatusSource('LIVE');
-            setErrorState(null);
-            setLoading(false);
-            return;
-          }
-        }
-
-        const response = await fetch(
-          'https://api.github.com/repos/spike0en/nothing_archive/releases?per_page=100'
-        );
-
-        if (!response.ok) {
-          if (response.status === 403 || response.status === 429) {
-            throw new Error('RATE_LIMITED');
-          }
-          throw new Error('FAILED');
-        }
-
-        const rawReleases = await response.json();
-        let totalCount = rawReleases.length;
-
-        // Parse Link header to get total count if paginated
-        const linkHeader = response.headers.get('Link');
-        if (linkHeader) {
-          const lastPageMatch = linkHeader.match(/<[^>]*[\?&]page=(\d+)[^>]*>;\s*rel="last"/);
-          if (lastPageMatch) {
-            const lastPage = parseInt(lastPageMatch[1], 10);
-            if (lastPage > 1) {
-              try {
-                const lastPageResponse = await fetch(
-                  `https://api.github.com/repos/spike0en/nothing_archive/releases?per_page=100&page=${lastPage}`
-                );
-                if (lastPageResponse.ok) {
-                  const lastPageReleases = await lastPageResponse.json();
-                  totalCount = (lastPage - 1) * 100 + lastPageReleases.length;
-                }
-              } catch (e) {
-                console.warn('Failed to fetch last page of releases', e);
-              }
-            }
-          }
-        }
-
-        const formattedReleases: Release[] = rawReleases.map((item: any) => {
-          const tagName = item.tag_name || '';
-          const parts = tagName.split('_');
-          let codename = 'Archive';
-          let version = tagName;
-          if (parts.length > 1) {
-            codename = parts[0];
-            version = parts.slice(1).join('_');
-          }
-
-          const downloads = item.assets
-            ? item.assets.reduce((sum: number, asset: any) => sum + (asset.download_count || 0), 0)
-            : 0;
-
-          return {
-            id: item.id,
-            tagName,
-            codename,
-            version,
-            name: item.name || tagName,
-            publishedAt: item.published_at || new Date().toISOString(),
-            htmlUrl: item.html_url || '',
-            downloads,
-          };
-        });
-
-        if (formattedReleases.length > 0) {
-          localStorage.setItem(CACHE_KEY, JSON.stringify(formattedReleases));
-          localStorage.setItem(CACHE_COUNT_KEY, totalCount.toString());
-          localStorage.setItem(CACHE_TIME_KEY, now.toString());
-          setReleases(formattedReleases);
-          setTotalReleasesCount(totalCount);
-          setStatusSource('LIVE');
-          setErrorState(null);
-          setLoading(false);
-          return;
-        }
-
-        throw new Error('FAILED');
-      } catch (err: any) {
-        console.warn('ReleaseFeed: Fetch failed.', err);
-        setLoading(false);
-        if (err.message === 'RATE_LIMITED') {
-          setErrorState('RATE_LIMITED');
-          setStatusSource('OFFLINE');
-        } else {
-          setErrorState('FAILED');
-          setStatusSource('OFFLINE');
-        }
-      }
-    }
-
-    loadReleases();
-  }, []);
 
   const latestRelease = releases[0] || {
     tagName: '------',
