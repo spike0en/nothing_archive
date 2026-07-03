@@ -84,7 +84,7 @@
 .heroLogo {
   width: 280px;
   height: 280px;
-  border-radius: 24px;
+  border-radius: 16px;
   filter: drop-shadow(0 0 24px rgba(215, 25, 33, 0.12));
   animation: heroFloat 6s ease-in-out infinite;
   transition: filter 0.3s ease;
@@ -308,7 +308,7 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--nothing-border);
-  border-radius: 24px !important;
+  border-radius: 16px !important;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -319,7 +319,7 @@
   overflow: hidden;
 }
 
-/* Interactive dotted background pattern on hover */
+/* Keep background layout clean and avoid visual clutter on card hover */
 .featureCard::after {
   content: '';
   position: absolute;
@@ -330,13 +330,14 @@
   transition: opacity 0.3s ease;
   pointer-events: none;
   z-index: 0;
+  display: none;
 }
 
 .featureCard:hover::after {
-  opacity: 0.04;
+  opacity: 0;
 }
 
-/* Dynamic hover state indicator */
+/* Render animated selection indicator on the left border of feature cards during user interaction */
 .featureCard::before {
   content: '';
   position: absolute;
@@ -350,9 +351,9 @@
 }
 
 .featureCard:hover {
-  border-color: rgba(215, 25, 33, 0.25);
+  border-color: var(--nothing-border);
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(215, 25, 33, 0.04);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
 }
 
 .featureCard:hover::before {
@@ -365,12 +366,12 @@
 }
 
 [data-theme='dark'] .featureCard:hover {
-  border-color: rgba(215, 25, 33, 0.2);
-  box-shadow: 0 12px 32px rgba(215, 25, 33, 0.08);
+  border-color: var(--nothing-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 [data-theme='dark'] .featureCard:hover::after {
-  opacity: 0.08;
+  opacity: 0;
 }
 
 /* Icon container */
@@ -421,20 +422,20 @@
 }
 
 .featureInner {
-  background-color: rgba(0, 0, 0, 0.03);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  border-radius: 14px;
-  padding: 0.9rem 1rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
 }
 
 [data-theme='dark'] .featureInner {
-  background-color: rgba(0, 0, 0, 0.45);
-  border-color: rgba(0, 0, 0, 0.6);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .featureDesc {
@@ -480,7 +481,7 @@
   aspect-ratio: 1;
   background-color: var(--ifm-card-background-color);
   border: 1px solid var(--nothing-border);
-  border-radius: 24px; /* match upper cards */
+  border-radius: 16px; /* match upper cards */
   padding: 0.75rem;
   text-decoration: none !important;
   transition: border-color 0.25s ease, transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease;
