@@ -536,6 +536,56 @@
   color: var(--ifm-color-primary) !important;
 }
 
+/* Expansion toggle styling */
+.toggleContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+  width: 100%;
+}
+
+.toggleButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2.25rem;
+  font-size: 0.8rem;
+  font-family: var(--ifm-font-family-base);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: transparent;
+  color: var(--ifm-color-content);
+  border: 1px solid var(--nothing-border-strong);
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.toggleButton:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  background-color: rgba(215, 25, 33, 0.04);
+  transform: translateY(-2px);
+  text-decoration: none !important;
+}
+
+[data-theme='dark'] .toggleButton:hover {
+  background-color: rgba(215, 25, 33, 0.06);
+  text-decoration: none !important;
+}
+
+.toggleButton:active {
+  transform: translateY(-1px);
+}
+
+.toggleButton:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
 @media screen and (max-width: 1200px) {
   .contributorGrid {
     gap: 0.85rem;

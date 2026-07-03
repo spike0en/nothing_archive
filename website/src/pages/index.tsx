@@ -200,13 +200,20 @@ function HomepageCommunity() {
   // Centralized GitHub data hook — shares cache with other components
   const { contributors } = useGitHubContributors();
 
-  const displayContributors = contributors.slice(0, 32);
+  // GitHub's contributors endpoint is typically sorted by contributions,
+  // but explicit client-side sorting ensures consistency across cached offline
+  // loads and fallback datasets.
+  const sortedContributors = React.useMemo(() => {
+    return [...contributors].sort((a, b) => b.contributions - a.contributions);
+  }, [contributors]);
+
+  const displayContributors = sortedContributors.slice(0, 10);
 
   return (
     <section className={styles.communitySection}>
       <div className="container">
         <Heading as="h2" className={styles.sectionLabel}>
-          Contributors
+          Top Contributors
         </Heading>
 
         <div className={styles.contributorGrid}>
@@ -214,11 +221,11 @@ function HomepageCommunity() {
             displayContributors.map((contrib) => (
               <a
                 key={contrib.login}
-                href={contrib.html_url}
+                href={`https://github.com/spike0en/nothing_archive/commits?author=${contrib.login}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.contributorCard}
-                aria-label={`View ${contrib.login}'s GitHub profile`}
+                aria-label={`View ${contrib.login}'s commits on GitHub`}
               >
                 <div className={styles.contributorAvatarContainer}>
                   <img
@@ -244,6 +251,19 @@ function HomepageCommunity() {
             </div>
           )}
         </div>
+
+        {sortedContributors.length > 10 && (
+          <div className={styles.toggleContainer}>
+            <a
+              href="https://github.com/spike0en/nothing_archive/graphs/contributors"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.toggleButton}
+            >
+              Show All
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -143,20 +143,30 @@ export default function CommitMatrix(): React.JSX.Element {
   ];
 
   /**
-   * Formats the author display for a commit row.
-   * Shows "Author" alone, or "Author +N" when co-authors are present.
+   * Formats the author list inline for a commit entry. Primary and co-authors are rendered
+   * inline to ensure direct visibility and attribution for all contributors in the commit log.
    */
   const formatAuthors = (commit: Commit, isLatest: boolean): React.JSX.Element => {
-    const authorClass = `${styles.authorTag} ${isLatest ? styles.authorLatest : ''}`;
+    const authorClass = clsx(styles.authorTag, isLatest && styles.authorLatest);
     if (commit.coAuthors.length === 0) {
-      return <span className={authorClass}>{commit.author}</span>;
+      return (
+        <span className={styles.authorsWrapper}>
+          <span className={authorClass} title={commit.author}>{commit.author}</span>
+        </span>
+      );
     }
 
-    const tooltip = [commit.author, ...commit.coAuthors].join(', ');
+    const allAuthors = [commit.author, ...commit.coAuthors];
+    const tooltip = allAuthors.join(', ');
     return (
-      <span className={authorClass} title={tooltip}>
-        {commit.author}
-        <span className={styles.coAuthorBadge}>+{commit.coAuthors.length}</span>
+      <span className={styles.authorsWrapper} title={tooltip}>
+        <span className={authorClass}>{commit.author}</span>
+        {commit.coAuthors.map((coAuthor) => (
+          <React.Fragment key={coAuthor}>
+            <span className={styles.coAuthorSeparator}>+</span>
+            <span className={authorClass}>{coAuthor}</span>
+          </React.Fragment>
+        ))}
       </span>
     );
   };
