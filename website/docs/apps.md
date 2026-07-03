@@ -80,6 +80,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Bike](https://play.google.com/store/apps/details?id=com.ofishialdigital.glyphbike) | Ofishial Digital | Scrolling motorcycle game |
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Arcade games on Glyph Matrix |
 | [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | Pokémon collecting fan-game |
+| [Glyph Claude Limit](https://github.com/literato1987/glyph-claude-limits) | literato1987 | Claude.ai 5h usage limit on Nothing Phone (3) Glyph Matrix |
 | [Glyp Clocks](https://bleelblep.github.io/disclaimer/glyphclocks/) | bleelblep | 16 Clocks for Phone (3)'s Glyph Matrix ([Repo](https://github.com/bleelblep/glyphclocks)) |
 | [Glyph Decibel Meter](https://github.com/iama2z/Glyph-Decibel-Meter) | iama2z | Displays decibel levels with a filling effect on the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Draw](https://github.com/kaelvalen/open-glyph) | kaelvalen | Glyph Toy for Nothing Phone (3) that lets you draw custom pixel art |
@@ -105,6 +106,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | Turns pending notifications into a glanceable display on the Glyph Matrix |
 | [Glyph Shot](https://github.com/shaibu54/glyph-shot) | shaibu54 | Hold to charge artillery game for the Nothing Phone 3 Glyph Matrix |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | A stacker arcade game |
+| [Glyph Stock Ticker](https://github.com/literato1987/glyph-stock-ticker) | literato1987 | Glyph Toy for Nothing Phone (3): live TSLA, BTC, NVDA prices on the Glyph Matrix |
 | [Glyph Stopwatch](https://github.com/Sturdy7435/GlyphStopwatch) | Sturdy7435 | A simple stopwatch for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Always-on, audio-reactive Glyph Matrix display controller |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | Coin flip, ringer mode, battery flow |
@@ -244,6 +246,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [N Keyboard](https://github.com/arunk140/nth-kbd) | arunk14 | Themed keyboard |
 | [N Music](https://github.com/alimohsenmaruf/N-Music) | alimohsenmaruf | Simple Yt music wrapper Nothing OS styled Music player |
 | [N Recipe](https://play.google.com/store/apps/details?id=com.a3chron.nrecipe) | a3chron | Offline recipebook |
+| [N Tape](https://play.google.com/store/apps/details?id=com.celestialcolosseum.ntape) | Celestial Colosseum | Lightweight and minimal music player |
 | [Neo Calc](https://play.google.com/store/apps/details?id=com.lended.neocalc) | Creepsmile | Nothing OS inspired calculator |
 | [No Calendar](https://play.google.com/store/apps/details?id=com.calendar.nocalendar) | NoAppsStudio | Calendar with Google sync |
 | [No Volume](https://play.google.com/store/apps/details?id=com.nostudio.novolume) | NoAppsStudio | Customisable volume slider |
@@ -269,6 +272,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Nothing Weather](https://play.google.com/store/apps/details?id=com.ApexCreator.nothing_weather) | Apex Creators | Weather app |
 | [Nx Calculator](https://github.com/montybytes/nxcalculator) | montybytes | Simple calculator |
 | [Open Calc](https://github.com/drrnb/OpenCalc/releases/tag/v3.0.0-beta4-nothing) | drrnb | Themed calculator |
+| [Pour Music](https://play.google.com/store/apps/details?id=com.indie6403.pour_music) | Anonymous Indie | Beautifully crafted offline music player |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Recording light control for Phone (3) |
 | [Redrop Music](https://play.google.com/store/apps/details?id=re.tag.redrop) | Tagrelate | Offline music player combining Material 3 and Nothing aesthetics |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Device insights tool |
