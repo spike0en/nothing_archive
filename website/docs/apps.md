@@ -240,6 +240,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Moon in Pixels](https://play.google.com/store/apps/details?id=com.indie6403.mooninpixels) | Archit Verma | Moon phase calendar and lunar tracker |
 | [N Board](https://github.com/MathieuDvv/Nboard) | MathieuDvv | Nothing-inspired keyboard with AI tools |
 | [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Calculator with Nothing style |
+| [N Calender](https://github.com/Strgazr-07/NCalender) | Strgazr-07 | Calender app inspired by Nothing OS |
 | [N Clock](https://play.google.com/store/apps/details?id=de.nostream.nclock) | nostream | Minimalist clock app inspired by the Nothing design language |
 | [N Dial](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ndial) | Hearthborn | Phone dialer and contacts |
 | [N Files](https://play.google.com/store/apps/details?id=com.hearthborn.studios.nfiles) | Hearthborn | File manager designed for speed, simplicity and complete control |
