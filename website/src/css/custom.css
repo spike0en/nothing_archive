@@ -1034,8 +1034,7 @@ table td a:hover {
 div[class*="tableWrapper"],
 .tableWrapper,
 .table-responsive-fallback,
-table,
-details {
+table {
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
 }
@@ -1045,8 +1044,7 @@ details {
 [data-theme='dark'] div[class*="tableWrapper"],
 [data-theme='dark'] .tableWrapper,
 [data-theme='dark'] .table-responsive-fallback,
-[data-theme='dark'] table,
-[data-theme='dark'] details {
+[data-theme='dark'] table {
   scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
 }
 
@@ -1056,8 +1054,7 @@ details {
 div[class*="tableWrapper"]::-webkit-scrollbar,
 .tableWrapper::-webkit-scrollbar,
 .table-responsive-fallback::-webkit-scrollbar,
-table::-webkit-scrollbar,
-details::-webkit-scrollbar {
+table::-webkit-scrollbar {
   width: 4px;
   height: 4px;
 }
@@ -1067,8 +1064,7 @@ details::-webkit-scrollbar {
 div[class*="tableWrapper"]::-webkit-scrollbar-track,
 .tableWrapper::-webkit-scrollbar-track,
 .table-responsive-fallback::-webkit-scrollbar-track,
-table::-webkit-scrollbar-track,
-details::-webkit-scrollbar-track {
+table::-webkit-scrollbar-track {
   background: transparent;
 }
 
@@ -1077,8 +1073,7 @@ details::-webkit-scrollbar-track {
 div[class*="tableWrapper"]::-webkit-scrollbar-thumb,
 .tableWrapper::-webkit-scrollbar-thumb,
 .table-responsive-fallback::-webkit-scrollbar-thumb,
-table::-webkit-scrollbar-thumb,
-details::-webkit-scrollbar-thumb {
+table::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.15);
   border-radius: 2px;
 }
@@ -1088,8 +1083,7 @@ details::-webkit-scrollbar-thumb {
 div[class*="tableWrapper"]::-webkit-scrollbar-corner,
 .tableWrapper::-webkit-scrollbar-corner,
 .table-responsive-fallback::-webkit-scrollbar-corner,
-table::-webkit-scrollbar-corner,
-details::-webkit-scrollbar-corner {
+table::-webkit-scrollbar-corner {
   background: transparent !important;
 }
 
@@ -1098,8 +1092,7 @@ details::-webkit-scrollbar-corner {
 [data-theme='dark'] div[class*="tableWrapper"]::-webkit-scrollbar-thumb,
 [data-theme='dark'] .tableWrapper::-webkit-scrollbar-thumb,
 [data-theme='dark'] .table-responsive-fallback::-webkit-scrollbar-thumb,
-[data-theme='dark'] table::-webkit-scrollbar-thumb,
-[data-theme='dark'] details::-webkit-scrollbar-thumb {
+[data-theme='dark'] table::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.15);
 }
 
@@ -1108,8 +1101,7 @@ details::-webkit-scrollbar-corner {
 div[class*="tableWrapper"]::-webkit-scrollbar-thumb:hover,
 .tableWrapper::-webkit-scrollbar-thumb:hover,
 .table-responsive-fallback::-webkit-scrollbar-thumb:hover,
-table::-webkit-scrollbar-thumb:hover,
-details::-webkit-scrollbar-thumb:hover {
+table::-webkit-scrollbar-thumb:hover {
   background: var(--ifm-color-primary) !important;
   /* Signature active red */
 }
@@ -1846,17 +1838,17 @@ details.alert {
 }
 
 /* Sibling stack styling to match Nothing OS settings menus */
-details:has(+ details),
-details[class*="details"]:has(+ details),
-details.alert:has(+ details.alert) {
+details:not([open]):has(+ details:not([open])),
+details[class*="details"]:not([open]):has(+ details:not([open])),
+details.alert:not([open]):has(+ details.alert:not([open])) {
   border-bottom-left-radius: 6px !important;
   border-bottom-right-radius: 6px !important;
   margin-bottom: 3px !important;
 }
 
-details + details,
-details[class*="details"] + details[class*="details"],
-details.alert + details.alert {
+details:not([open]) + details:not([open]),
+details[class*="details"]:not([open]) + details[class*="details"]:not([open]),
+details.alert:not([open]) + details.alert:not([open]) {
   border-top-left-radius: 6px !important;
   border-top-right-radius: 6px !important;
   margin-top: 0 !important;
@@ -1875,14 +1867,14 @@ details[class*="details"][open] {
 details [class*="collapsibleContent"] {
   border-top: none !important;
   margin: 0 !important;
-  padding: 0 !important;
+  padding: 0 16px 16px 16px !important;
 }
 
 details div[class*="tableWrapper"],
 details .tableWrapper,
 details .table-responsive-fallback {
-  margin: 12px 16px 16px 16px !important;
-  width: calc(100% - 32px) !important;
+  margin: 12px 0 0 0 !important;
+  width: 100% !important;
 }
 
 [data-theme='dark'] details,
@@ -2821,8 +2813,8 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
 }
 
 /* Align adjacent collapsible elements as a single grouped settings container using custom corner radii */
-.markdown details:has(+ details),
-.theme-doc-markdown details:has(+ details) {
+.markdown details:not([open]):has(+ details:not([open])),
+.theme-doc-markdown details:not([open]):has(+ details:not([open])) {
   margin-bottom: 3px !important;
   border-top-left-radius: 24px !important;
   border-top-right-radius: 24px !important;
@@ -2830,8 +2822,8 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
   border-bottom-right-radius: 6px !important;
 }
 
-.markdown details+details,
-.theme-doc-markdown details+details {
+.markdown details:not([open]) + details:not([open]),
+.theme-doc-markdown details:not([open]) + details:not([open]) {
   margin-top: 0 !important;
   border-top-left-radius: 6px !important;
   border-top-right-radius: 6px !important;
@@ -2840,8 +2832,8 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
 }
 
 /* Override inner corner radii for elements between the head and tail of the stack */
-.markdown details+details:has(+ details),
-.theme-doc-markdown details+details:has(+ details) {
+.markdown details:not([open]) + details:not([open]):has(+ details:not([open])),
+.theme-doc-markdown details:not([open]) + details:not([open]):has(+ details:not([open])) {
   margin-bottom: 3px !important;
   border-radius: 6px !important;
 }
