@@ -21,18 +21,22 @@ html.theme-transition body {
 }
 
 /* Prevent Docusaurus SSR code block theme flashes on page load */
-[data-theme='light'] pre,
-[data-theme='light'] .theme-code-block,
-[data-theme='light'] [class*="codeBlockContainer"],
-[data-theme='light'] [class*="codeBlockContent"] {
+[data-theme='light'] pre {
   background-color: #EDEDEB !important;
 }
 
-[data-theme='dark'] pre,
-[data-theme='dark'] .theme-code-block,
-[data-theme='dark'] [class*="codeBlockContainer"],
-[data-theme='dark'] [class*="codeBlockContent"] {
+[data-theme='dark'] pre {
   background-color: #1C1C1C !important;
+}
+
+/* Ensure code block containers and wrappers are transparent and shadowless to prevent double borders/radii mismatches */
+[class*="codeBlockContainer"],
+[class*="codeBlockContent"],
+.theme-code-block {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: var(--ifm-pre-border-radius) !important;
 }
 
 h1,
@@ -1113,6 +1117,8 @@ details::-webkit-scrollbar-thumb:hover {
 /* Code blocks — monochrome containment */
 pre {
   border: 1px solid rgba(0, 0, 0, 0.06);
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
 }
 
 [data-theme='dark'] pre {
