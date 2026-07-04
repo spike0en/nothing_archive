@@ -738,10 +738,26 @@ div[class*="tableWrapper"],
   /* Override default framework padding to ensure full-width tables */
   margin: 0.5rem 0 1.25rem 0;
   border: none !important;
-  border-radius: 0 !important;
+  border-radius: 24px !important;
   box-shadow: none !important;
   background-color: transparent !important;
+  /* Prevent scroll overflow bleeding through rounded corners */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  isolation: isolate;
 }
+
+
+
+/* Ensure details tables have min-width to overflow on mobile and support horizontal scrolling */
+.markdown details table,
+.theme-doc-markdown details table {
+  min-width: 900px !important;
+}
+
+
 
 [data-theme='dark'] div[class*="tableWrapper"],
 [data-theme='dark'] .tableWrapper,
@@ -787,18 +803,26 @@ table td {
 }
 
 /* Contrast nested tables inside details/cards against their containers */
-details table th,
 details table td,
-.card table th,
 .card table td {
   background-color: var(--ifm-background-color) !important;
 }
 
+details table th,
+.card table th {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+[data-theme='dark'] details table th,
+[data-theme='dark'] .card table th {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
 /* Table header styling */
 table th {
-  background-color: rgba(0, 0, 0, 0.025) !important;
+  background-color: rgba(0, 0, 0, 0.075) !important;
   font-family: var(--ifm-font-family-base);
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   font-size: 0.75rem;
   /* Exactly 12px to prevent fractional subpixel blurriness */
@@ -810,13 +834,14 @@ table th {
   white-space: nowrap;
   padding: 1rem 1.25rem;
   text-align: left;
-  color: inherit;
-  opacity: 0.8;
+  color: var(--ifm-color-emphasis-900) !important;
+  opacity: 1 !important;
 }
 
 [data-theme='dark'] table th {
-  background-color: rgba(255, 255, 255, 0.025) !important;
-  opacity: 0.5;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: var(--ifm-color-emphasis-800) !important;
+  opacity: 0.75 !important;
 }
 
 /* Table cell styling */
@@ -1593,15 +1618,220 @@ div[class*="admonition"] a:hover {
   }
 }
 
+/* Hover transitions for inline links in admonitions */
+.admonition a:hover,
+.theme-admonition a:hover,
+div[class*="admonition"] a:hover {
+  color: var(--ifm-color-primary-light, #e32a32) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--ifm-color-primary-light, #e32a32) !important;
+  text-underline-offset: 3.5px;
+  text-decoration-thickness: 1.5px;
+}
+
+/* Breadcrumbs */
+.breadcrumbs__link {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Pagination (prev/next) */
+.pagination-nav__link {
+  border: 1px solid var(--nothing-border);
+  border-radius: 12px;
+  transition: border-color 0.2s ease;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  transition: background 0.15s ease;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-color-primary) !important;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent !important;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE STYLES
+   ========================================== */
+
+/* General mobile content adjustments */
+@media screen and (max-width: 996px) {
+  .hero__title {
+    font-size: 2.25rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.1rem;
+  }
+
+  article h1 {
+    font-size: 1.75rem;
+  }
+
+  article h2 {
+    font-size: 1.4rem;
+  }
+
+  article h3 {
+    font-size: 1.15rem;
+  }
+
+  .footer__links {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* Doc page content width */
+  main[class*="docMainContainer"] {
+    padding: 0.5rem 0.5rem 2rem 0.5rem !important;
+  }
+
+  /* Docs sidebar toggle button */
+  .theme-doc-sidebar-menu {
+    padding: 0.5rem;
+  }
+
+  /* Footer mobile */
+  .footer {
+    padding: 1.5rem 1rem !important;
+  }
+
+  .footer-links {
+    gap: 0.4rem;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .footer-info .info-dot {
+    display: none;
+  }
+
+  .footer__title {
+    font-size: 0.7rem;
+  }
+
+  .footer__item {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hero__title {
+    font-size: 1.85rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  article h1 {
+    font-size: 1.5rem;
+  }
+
+  article h2 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  article h3 {
+    font-size: 1.1rem;
+  }
+
+  /* Better content padding on mobile */
+  .markdown {
+    padding: 0;
+  }
+
+  .markdown>* {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  /* Navbar adjustments - mobile */
+  .navbar {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .navbar__title {
+    font-size: 0.9rem;
+  }
+
+  .navbar__logo {
+    height: 24px;
+  }
+
+  .navbar__item {
+    padding: 0.25rem 0;
+  }
+
+  /* Footer mobile */
+  .footer {
+    padding: 1rem !important;
+  }
+
+  .footer__title {
+    font-size: 0.7rem;
+  }
+
+  .footer__item {
+    font-size: 0.85rem;
+  }
+
+  /* Button sizing */
+  .button--lg {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  /* Cards on mobile */
+  .card {
+    border-radius: 8px;
+  }
+
+  /* Admonitions */
+  .admonition {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
 
 details,
 details[class*="details"],
 details.alert {
   background-color: var(--ifm-card-background-color) !important;
   border: 1px solid var(--nothing-border) !important;
-  border-radius: 12px !important;
+  border-radius: 24px !important;
   margin: 1rem 0 !important;
-  padding: 0.85rem 1.25rem !important;
+  padding: 0 !important;
   transition: box-shadow 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
   --ifm-alert-border-color: transparent;
   max-width: 100% !important;
@@ -1613,18 +1843,20 @@ details.alert {
 details:has(+ details),
 details[class*="details"]:has(+ details),
 details.alert:has(+ details.alert) {
-  border-bottom-left-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
-  margin-bottom: 0 !important;
+  border-bottom-left-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+  margin-bottom: 3px !important;
 }
 
 details + details,
 details[class*="details"] + details[class*="details"],
 details.alert + details.alert {
-  border-top-left-radius: 0 !important;
-  border-top-right-radius: 0 !important;
-  margin-top: -1px !important;
+  border-top-left-radius: 6px !important;
+  border-top-right-radius: 6px !important;
+  margin-top: 0 !important;
 }
+
+
 
 details:hover,
 details[class*="details"]:hover,
@@ -1636,8 +1868,15 @@ details[class*="details"][open] {
 
 details [class*="collapsibleContent"] {
   border-top: none !important;
-  margin-top: 0 !important;
-  padding-top: 0.5rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+details div[class*="tableWrapper"],
+details .tableWrapper,
+details .table-responsive-fallback {
+  margin: 12px 16px 16px 16px !important;
+  width: calc(100% - 32px) !important;
 }
 
 [data-theme='dark'] details,
@@ -1684,7 +1923,7 @@ details summary {
   background-color: transparent !important;
   color: inherit !important;
   font-weight: 600 !important;
-  padding: 0.5rem 0 0.5rem 1.5rem !important;
+  padding: 0.85rem 1.25rem 0.85rem 2.25rem !important;
   /* Slightly more vertical padding for breathing room */
   border: none !important;
   cursor: pointer;
@@ -1736,7 +1975,7 @@ details summary::before {
   content: '' !important;
   background: none !important;
   position: absolute;
-  left: 4px;
+  left: 16px !important;
   top: 50% !important;
   width: 6px;
   height: 6px;
@@ -2563,6 +2802,18 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
   background-color: #262626 !important;
 }
 
+
+
+/* Full-width details on mobile */
+@media screen and (max-width: 576px) {
+  details {
+    padding: 0.65rem 0.85rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 12px !important;
+  }
+}
+
 /* Align adjacent collapsible elements as a single grouped settings container using custom corner radii */
 .markdown details:has(+ details),
 .theme-doc-markdown details:has(+ details) {
@@ -2589,14 +2840,27 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
   border-radius: 6px !important;
 }
 
-/* Full-width details on mobile */
-@media screen and (max-width: 576px) {
-  details {
-    padding: 0.65rem 0.85rem !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    border-radius: 12px !important;
-  }
+/* When a details element is open, it should stand out as a spaced, fully rounded island */
+.markdown details[open],
+.theme-doc-markdown details[open] {
+  margin-top: 16px !important;
+  margin-bottom: 16px !important;
+  border-radius: 24px !important;
+}
+
+/* Restore border radii and add spacing to neighbors of an open details element */
+.markdown details:has(+ details[open]),
+.theme-doc-markdown details:has(+ details[open]) {
+  margin-bottom: 16px !important;
+  border-bottom-left-radius: 24px !important;
+  border-bottom-right-radius: 24px !important;
+}
+
+.markdown details[open] + details,
+.theme-doc-markdown details[open] + details {
+  margin-top: 16px !important;
+  border-top-left-radius: 24px !important;
+  border-top-right-radius: 24px !important;
 }
 
 /* Render non-tabular list items in standard document groups */
