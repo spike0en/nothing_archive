@@ -76,9 +76,8 @@
 }
 
 .fallbackIcon {
-  width: 32px;
-  height: 32px;
-  stroke-width: 1.5;
+  width: 54px;
+  height: 90px;
   color: inherit;
   margin-bottom: 8px;
 }

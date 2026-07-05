@@ -227,6 +227,14 @@ async function main() {
     fetchRepoStats(),
   ]);
 
+  // Run parse-devices to extract local device metadata
+  try {
+    const { execSync } = require('child_process');
+    execSync('node ' + path.join(__dirname, 'parse-devices.js'), { stdio: 'inherit' });
+  } catch (e) {
+    console.error(`[prefetch] parse-devices failed: ${e.message}`);
+  }
+
   console.log('[prefetch] Done.');
 }
 

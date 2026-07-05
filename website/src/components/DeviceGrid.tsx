@@ -16,122 +16,12 @@ interface DeviceItem {
   codename: string;
   variants: ColorVariant[];
   brand: 'Nothing' | 'CMF';
+  series: 'number' | 'a' | 'b' | 'cmf';
 }
 
-const devices: DeviceItem[] = [
-  // --- Nothing Phones (Newest to Oldest) ---
-  {
-    name: 'Phone (4a) Pro (FroggerPro)',
-    codename: 'froggerpro',
-    variants: [
-      { name: 'Silver', imageUrl: '/img/devices/froggerpro_silver.webp', hex: '#D1D1D6' },
-      { name: 'Black', imageUrl: '/img/devices/froggerpro_black.webp', hex: '#1C1C1C' },
-      { name: 'Pink', imageUrl: '/img/devices/froggerpro_pink.webp', hex: '#FFB6C1' }
-    ],
-    brand: 'Nothing'
-  },
-  {
-    name: 'Phone (4a) (Frogger)',
-    codename: 'frogger',
-    variants: [
-      { name: 'White', imageUrl: '/img/devices/frogger_white.webp', hex: '#FFFFFF' },
-      { name: 'Black', imageUrl: '/img/devices/frogger_black.webp', hex: '#1C1C1C' },
-      { name: 'Pink', imageUrl: '/img/devices/frogger_pink.webp', hex: '#FFB6C1' },
-      { name: 'Blue', imageUrl: '/img/devices/frogger_blue.webp', hex: '#1F4E79' }
-    ],
-    brand: 'Nothing'
-  },
-  {
-    name: 'Phone (3a) Lite (Galaxian)',
-    codename: 'galaxian',
-    variants: [
-      { name: 'White', imageUrl: '/img/devices/galaxian_white.webp', hex: '#FFFFFF' },
-      { name: 'Black', imageUrl: '/img/devices/galaxian_black.webp', hex: '#1C1C1C' },
-      { name: 'Blue', imageUrl: '/img/devices/galaxian_blue.webp', hex: '#1F4E79' }
-    ],
-    brand: 'Nothing'
-  },
-  {
-    name: 'Phone (3) (Metroid)',
-    codename: 'metroid',
-    variants: [
-      { name: 'White', imageUrl: '/img/devices/metroid_white.webp', hex: '#FFFFFF' },
-      { name: 'Black', imageUrl: '/img/devices/metroid_black.webp', hex: '#1C1C1C' }
-    ],
-    brand: 'Nothing'
-  },
-  {
-    name: 'Phone (3a) / (3a) Pro (Asteroids / AsteroidsPro)',
-    codename: 'asteroids',
-    variants: [
-      { name: 'White', imageUrl: '/img/devices/asteroids_white.webp', hex: '#FFFFFF' },
-      { name: 'Black', imageUrl: '/img/devices/asteroids_black.webp', hex: '#1C1C1C' },
-      { name: 'Blue', imageUrl: '/img/devices/asteroids_blue.webp', hex: '#1F4E79' },
-      { name: 'Grey', imageUrl: '/img/devices/asteroids_grey.webp', hex: '#8E8E93' },
-      { name: 'CE', imageUrl: '/img/devices/asteroids_CE.webp', hex: '#248B8D' }
-    ],
-    brand: 'Nothing'
-  },
-  {
-    name: 'Phone (2a) Plus (PacmanPro)',
-    codename: 'pacmanpro',
-    variants: [
-      { name: 'Silver', imageUrl: '/img/devices/pacmanpro_silver.webp', hex: '#8E8E93' },
-      { name: 'Black', imageUrl: '/img/devices/pacmanpro_black.webp', hex: '#1C1C1C' },
-      { name: 'CE', imageUrl: '/img/devices/pacmanpro_CE.webp', hex: '#D9DFCA' }
-    ],
-    brand: 'Nothing'
-  },
-  {
-    name: 'Phone (2a) (Pacman)',
-    codename: 'pacman',
-    variants: [
-      { name: 'Milk', imageUrl: '/img/devices/pacman_milk.webp', hex: '#F0EDE6' },
-      { name: 'Black', imageUrl: '/img/devices/pacman_black.webp', hex: '#1C1C1C' }
-    ],
-    brand: 'Nothing'
-  },
-  {
-    name: 'Phone (2) (Pong)',
-    codename: 'pong',
-    variants: [
-      { name: 'Grey', imageUrl: '/img/devices/pong_grey.webp', hex: '#8E8E93' },
-      { name: 'White', imageUrl: '/img/devices/pong_white.webp', hex: '#FFFFFF' }
-    ],
-    brand: 'Nothing'
-  },
-  {
-    name: 'Phone (1) (Spacewar)',
-    codename: 'spacewar',
-    variants: [
-      { name: 'Black', imageUrl: '/img/devices/spacewar_black.webp', hex: '#1C1C1C' },
-      { name: 'White', imageUrl: '/img/devices/spacewar_white.webp', hex: '#FFFFFF' }
-    ],
-    brand: 'Nothing'
-  },
-  // --- CMF Phones (Newest to Oldest) ---
-  {
-    name: 'CMF Phone (2) Pro (Galaga)',
-    codename: 'galaga',
-    variants: [
-      { name: 'Orange', imageUrl: '/img/devices/galaga_orange.webp', hex: '#FF6F00' },
-      { name: 'Black', imageUrl: '/img/devices/galaga_black.webp', hex: '#1C1C1C' },
-      { name: 'Grey', imageUrl: '/img/devices/galaga_grey.webp', hex: '#8E8E93' },
-      { name: 'Light Green', imageUrl: '/img/devices/galaga_lightgreen.webp', hex: '#A9DFBF' }
-    ],
-    brand: 'CMF'
-  },
-  {
-    name: 'CMF Phone (1) (Tetris)',
-    codename: 'tetris',
-    variants: [
-      { name: 'Light Green', imageUrl: '/img/devices/tetris_lightgreen.webp', hex: '#A9DFBF' },
-      { name: 'Orange', imageUrl: '/img/devices/tetris_orange.webp', hex: '#FF6F00' },
-      { name: 'Black', imageUrl: '/img/devices/tetris_black.webp', hex: '#1C1C1C' }
-    ],
-    brand: 'CMF'
-  }
-];
+import devicesData from '../data/devices-metadata.json';
+
+const devices: DeviceItem[] = devicesData as DeviceItem[];
 
 function ModelCard({ device, latestLink }: { device: DeviceItem; latestLink: string }): React.JSX.Element {
   const resolvedLink = useBaseUrl(latestLink);
@@ -177,6 +67,7 @@ function ModelCard({ device, latestLink }: { device: DeviceItem; latestLink: str
                 <circle cx="75" cy="125" r="2" fill="currentColor" />
                 <text x="60" y="160" textAnchor="middle" fill="currentColor" fontSize="8" fontFamily="var(--ifm-font-family-monospace)" letterSpacing="1">ARCHIVE</text>
               </svg>
+              <span className={styles.fallbackText}>{device.codename.toUpperCase()}</span>
             </div>
           )}
         </div>
@@ -206,32 +97,72 @@ function ModelCard({ device, latestLink }: { device: DeviceItem; latestLink: str
 
 export default function DeviceGrid(): React.JSX.Element {
   const { latestLinks } = usePluginData('changelogs-plugin') as { latestLinks: Record<string, string> };
-  const nothingDevices = devices.filter(d => d.brand === 'Nothing');
+  const numberDevices = devices.filter(d => d.brand === 'Nothing' && d.series === 'number');
+  const aDevices = devices.filter(d => d.brand === 'Nothing' && d.series === 'a');
+  const bDevices = devices.filter(d => d.brand === 'Nothing' && d.series === 'b');
   const cmfDevices = devices.filter(d => d.brand === 'CMF');
 
   return (
     <div>
-      <h2 className={styles.sectionHeader}>Nothing Phones</h2>
-      <div className={styles.grid}>
-        {nothingDevices.map(device => (
-          <ModelCard 
-            key={device.codename} 
-            device={device} 
-            latestLink={latestLinks?.[device.codename] || `/docs/changelogs/${device.codename}`}
-          />
-        ))}
-      </div>
+      {numberDevices.length > 0 && (
+        <>
+          <h2 className={styles.sectionHeader}>Nothing (Number Series)</h2>
+          <div className={styles.grid}>
+            {numberDevices.map(device => (
+              <ModelCard
+                key={device.codename}
+                device={device}
+                latestLink={latestLinks?.[device.codename] || `/docs/changelogs/${device.codename}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
 
-      <h2 className={styles.sectionHeader}>CMF by Nothing Phones</h2>
-      <div className={styles.grid}>
-        {cmfDevices.map(device => (
-          <ModelCard 
-            key={device.codename} 
-            device={device} 
-            latestLink={latestLinks?.[device.codename] || `/docs/changelogs/${device.codename}`}
-          />
-        ))}
-      </div>
+      {aDevices.length > 0 && (
+        <>
+          <h2 className={styles.sectionHeader}>Nothing (A Series)</h2>
+          <div className={styles.grid}>
+            {aDevices.map(device => (
+              <ModelCard
+                key={device.codename}
+                device={device}
+                latestLink={latestLinks?.[device.codename] || `/docs/changelogs/${device.codename}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+
+      {bDevices.length > 0 && (
+        <>
+          <h2 className={styles.sectionHeader}>Nothing (B / Lite Series)</h2>
+          <div className={styles.grid}>
+            {bDevices.map(device => (
+              <ModelCard
+                key={device.codename}
+                device={device}
+                latestLink={latestLinks?.[device.codename] || `/docs/changelogs/${device.codename}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+
+      {cmfDevices.length > 0 && (
+        <>
+          <h2 className={styles.sectionHeader}>CMF by Nothing</h2>
+          <div className={styles.grid}>
+            {cmfDevices.map(device => (
+              <ModelCard
+                key={device.codename}
+                device={device}
+                latestLink={latestLinks?.[device.codename] || `/docs/changelogs/${device.codename}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }

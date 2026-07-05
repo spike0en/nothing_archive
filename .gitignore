@@ -6,7 +6,8 @@ website/.cache-loader/
 website/.env
 website/.env.local
 website/.cache/
-website/src/data/
+website/src/data/*
+!website/src/data/device-colors.json
 
 # Node
 node_modules/

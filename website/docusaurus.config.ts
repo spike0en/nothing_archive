@@ -96,12 +96,86 @@ function compareChangelogs(idA: string, idB: string): number {
   return nameB.localeCompare(nameA);
 }
 
+const devicesMetadata: any[] = require('./src/data/devices-metadata.json');
+
+const codenameMap = new Map<string, any>();
+devicesMetadata.forEach((device: any) => {
+  device.codenames.forEach((codename: string) => {
+    codenameMap.set(codename.toLowerCase(), device);
+  });
+});
+
+function getCodenameFromCategory(category: any): string | null {
+  if (!category.items || !Array.isArray(category.items)) return null;
+  const docItem = category.items.find(
+    (item: any) => item.type === 'doc' && item.id.startsWith('changelogs/')
+  );
+  if (!docItem) return null;
+  const parts = docItem.id.split('/');
+  if (parts.length >= 2) {
+    return parts[1].toLowerCase();
+  }
+  return null;
+}
+
+function getDeviceSeriesRank(series: string): number {
+  switch (series) {
+    case 'number': return 1;
+    case 'a': return 2;
+    case 'b': return 3;
+    default: return 4;
+  }
+}
+
+function compareDeviceCategories(a: any, b: any): number {
+  const codenameA = getCodenameFromCategory(a);
+  const codenameB = getCodenameFromCategory(b);
+
+  const devA = codenameA ? codenameMap.get(codenameA) : null;
+  const devB = codenameB ? codenameMap.get(codenameB) : null;
+
+  if (!devA || !devB) {
+    if (!devA && !devB) {
+      return a.label.localeCompare(b.label);
+    }
+    return devA ? -1 : 1;
+  }
+
+  // 1. Brand: Nothing before CMF
+  if (devA.brand !== devB.brand) {
+    return devA.brand === 'Nothing' ? -1 : 1;
+  }
+
+  if (devA.brand === 'Nothing') {
+    // 2. Series: number < a < b
+    const rankA = getDeviceSeriesRank(devA.series);
+    const rankB = getDeviceSeriesRank(devB.series);
+    if (rankA !== rankB) {
+      return rankA - rankB;
+    }
+  }
+
+  // 3. Timestamp (latest first)
+  if (devA.timestamp !== devB.timestamp) {
+    return devB.timestamp - devA.timestamp;
+  }
+
+  // 4. Pro/Plus first
+  const isProA = devA.name.toLowerCase().includes('pro') || devA.name.toLowerCase().includes('plus') || (codenameA && codenameA.includes('pro'));
+  const isProB = devB.name.toLowerCase().includes('pro') || devB.name.toLowerCase().includes('plus') || (codenameB && codenameB.includes('pro'));
+  if (isProA !== isProB) {
+    return isProA ? -1 : 1;
+  }
+
+  return devA.name.localeCompare(devB.name);
+}
+
 function sortChangelogItems(items: any[]): any[] {
   return items
     .filter((item) => !(item.type === 'doc' && item.id === 'changelogs/index'))
     .map((item) => {
       if (item.type === 'category') {
-        const sortedSubItems = sortChangelogItems(item.items);
+        let sortedSubItems = sortChangelogItems(item.items);
         const isChangelogCategory = sortedSubItems.some(
           (subItem) => subItem.type === 'doc' && subItem.id.startsWith('changelogs/')
         );
@@ -117,6 +191,84 @@ function sortChangelogItems(items: any[]): any[] {
           });
         }
 
+        if (item.label === 'OTA Changelogs') {
+          const numberItems: any[] = [];
+          const aItems: any[] = [];
+          const bItems: any[] = [];
+          const cmfItems: any[] = [];
+          const unknownItems: any[] = [];
+
+          sortedSubItems.forEach((subItem) => {
+            const codename = getCodenameFromCategory(subItem);
+            const dev = codename ? codenameMap.get(codename) : null;
+            if (!dev) {
+              unknownItems.push(subItem);
+              return;
+            }
+
+            if (dev.brand === 'CMF') {
+              cmfItems.push(subItem);
+            } else if (dev.series === 'number') {
+              numberItems.push(subItem);
+            } else if (dev.series === 'a') {
+              aItems.push(subItem);
+            } else if (dev.series === 'b') {
+              bItems.push(subItem);
+            } else {
+              unknownItems.push(subItem);
+            }
+          });
+
+          // Sort each group internally
+          numberItems.sort(compareDeviceCategories);
+          aItems.sort(compareDeviceCategories);
+          bItems.sort(compareDeviceCategories);
+          cmfItems.sort(compareDeviceCategories);
+          unknownItems.sort(compareDeviceCategories);
+
+          const newSubItems: any[] = [];
+
+          if (numberItems.length > 0) {
+            newSubItems.push({
+              type: 'category',
+              label: 'Nothing (Number Series)',
+              collapsible: true,
+              collapsed: false,
+              items: numberItems,
+            });
+          }
+          if (aItems.length > 0) {
+            newSubItems.push({
+              type: 'category',
+              label: 'Nothing (A Series)',
+              collapsible: true,
+              collapsed: false,
+              items: aItems,
+            });
+          }
+          if (bItems.length > 0) {
+            newSubItems.push({
+              type: 'category',
+              label: 'Nothing (B / Lite Series)',
+              collapsible: true,
+              collapsed: false,
+              items: bItems,
+            });
+          }
+          if (cmfItems.length > 0) {
+            newSubItems.push({
+              type: 'category',
+              label: 'CMF Series',
+              collapsible: true,
+              collapsed: false,
+              items: cmfItems,
+            });
+          }
+          newSubItems.push(...unknownItems);
+
+          sortedSubItems = newSubItems;
+        }
+
         let link = item.link;
         if (isChangelogCategory && sortedSubItems.length > 0 && sortedSubItems[0].type === 'doc') {
           link = {
@@ -125,11 +277,24 @@ function sortChangelogItems(items: any[]): any[] {
           };
         }
 
-        const cleanLabel = item.label.replace(/^Nothing Phone /i, 'Phone ');
+        // Dynamically override label for device subcategories using devices-metadata
+        let label = item.label;
+        if (isChangelogCategory) {
+          const codename = getCodenameFromCategory({ items: sortedSubItems });
+          const dev = codename ? codenameMap.get(codename) : null;
+          if (dev) {
+            label = dev.name;
+          }
+        }
+
+        // Clean label if it didn't get overridden
+        if (label === item.label) {
+          label = label.replace(/^Nothing Phone /i, 'Phone ');
+        }
 
         return {
           ...item,
-          label: cleanLabel,
+          label,
           link,
           items: sortedSubItems,
         };
