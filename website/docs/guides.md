@@ -288,7 +288,7 @@ brew install --cask android-platform-tools
 :::info
 
 - Unlocking the bootloader voids the OEM warranty. However, you can reflash the stock ROM and relock the bootloader to restore it.
-- Regardless of other factors, you will lose Widevine L1/DRM certification, which will downgrade to L3.  
+- Regardless of other factors, Qualcomm devices will lose Widevine L1/DRM certification, which will downgrade to L3 until the bootloader is relocked.  
 - You will lose [device integrity](https://developer.android.com/google/play/integrity/overview), which may cause apps relying on this to stop working unless fixed later with root access.  
   [This guide](https://github.com/yashaswee-exe/AndroidGuides/wiki/Fix-integrity-and-root-detection) may be helpful for resolving this issue. 
 
