@@ -8,7 +8,6 @@ import styles from './DeviceGrid.module.css';
 interface ColorVariant {
   name: string;
   imageUrl: string;
-  hex: string;
 }
 
 interface DeviceItem {
@@ -82,11 +81,12 @@ function ModelCard({ device, latestLink }: { device: DeviceItem; latestLink: str
               <button
                 key={v.name}
                 type="button"
-                className={clsx(styles.colorDot, selectedColor?.name === v.name && styles.colorDotActive)}
-                style={{ backgroundColor: v.hex }}
+                className={clsx(styles.colorPill, selectedColor?.name === v.name && styles.colorPillActive)}
                 onClick={() => setSelectedColor(v)}
                 title={v.name}
-              />
+              >
+                {v.name}
+              </button>
             ))}
           </div>
         )}

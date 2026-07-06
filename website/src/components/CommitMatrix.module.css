@@ -342,25 +342,19 @@
 
 .authorTag {
   opacity: 0.45;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   gap: 3px;
   cursor: help;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .coAuthorSeparator {
   opacity: 0.35;
   font-weight: 700;
-  font-size: 0.65rem;
   user-select: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  display: inline;
 }
 
 .messageText {

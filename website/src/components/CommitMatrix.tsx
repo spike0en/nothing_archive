@@ -160,13 +160,23 @@ export default function CommitMatrix(): React.JSX.Element {
     const tooltip = allAuthors.join(', ');
     return (
       <span className={styles.authorsWrapper} title={tooltip}>
-        <span className={authorClass}>{commit.author}</span>
-        {commit.coAuthors.map((coAuthor) => (
-          <React.Fragment key={coAuthor}>
-            <span className={styles.coAuthorSeparator}>+</span>
-            <span className={authorClass}>{coAuthor}</span>
-          </React.Fragment>
-        ))}
+        {allAuthors.map((author, index) => {
+          const isLast = index === allAuthors.length - 1;
+          let separator: React.JSX.Element | null = null;
+          if (index > 0) {
+            if (isLast) {
+              separator = <span className={styles.coAuthorSeparator}> &amp; </span>;
+            } else {
+              separator = <span className={styles.coAuthorSeparator}>, </span>;
+            }
+          }
+          return (
+            <React.Fragment key={author}>
+              {separator}
+              <span className={authorClass}>{author}</span>
+            </React.Fragment>
+          );
+        })}
       </span>
     );
   };

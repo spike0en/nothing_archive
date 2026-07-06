@@ -154,18 +154,22 @@ function parseDevices() {
     }
 
     let resolvedName = resolveDeviceName(folder, row.names, row.codenames, CHANGELOGS_DIR);
-    if (row.brand === 'CMF' && !resolvedName.startsWith('CMF')) {
-      resolvedName = 'CMF ' + resolvedName;
-    }
 
     let displayCodename = '';
     const otherCodenames = row.codenames.filter(c => c !== folderLower);
     const otherFoldersExist = otherCodenames.some(c => fs.existsSync(path.join(CHANGELOGS_DIR, c)));
     
     if (!otherFoldersExist && row.codenames.length > 1) {
-      displayCodename = row.codenames
-        .map(c => capitalizeCodename(c, row.originalCodenamesList))
-        .join(' / ');
+      const base = row.codenames[0];
+      const pro = row.codenames[1];
+      if (pro === base + 'pro') {
+        const baseCap = capitalizeCodename(base, row.originalCodenamesList);
+        displayCodename = `${baseCap}(Pro)`;
+      } else {
+        displayCodename = row.codenames
+          .map(c => capitalizeCodename(c, row.originalCodenamesList))
+          .join(' / ');
+      }
     } else {
       displayCodename = capitalizeCodename(folder, row.originalCodenamesList);
     }
@@ -173,11 +177,14 @@ function parseDevices() {
     const displayName = `${resolvedName} (${displayCodename})`;
 
     const colors = deviceColors[folderLower] || [];
-    const variants = colors.map(c => ({
-      name: c.name,
-      hex: c.hex,
-      imageUrl: `/img/devices/${folderLower}_${c.name.toLowerCase().replace(/\s+/g, '')}.webp`
-    }));
+    const variants = colors.map(colorName => {
+      const variantNameClean = colorName.toLowerCase().replace(/\s+/g, '');
+      const suffix = variantNameClean === 'ce' ? 'CE' : variantNameClean;
+      return {
+        name: colorName,
+        imageUrl: `/img/devices/${folderLower}_${suffix}.webp`
+      };
+    });
 
     // Convert catalog date strings to millisecond timestamps for sorting comparisons.
     const timestamp = new Date(row.releaseDate).getTime();

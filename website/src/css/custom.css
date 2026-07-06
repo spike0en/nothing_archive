@@ -1437,6 +1437,11 @@ div[class*="admonition"] a:hover {
 
 .pagination-nav__link:hover {
   border-color: var(--ifm-color-primary);
+  text-decoration: none !important;
+}
+
+.pagination-nav__link:hover * {
+  text-decoration: none !important;
 }
 
 /* Scrollbar */
@@ -1642,6 +1647,11 @@ div[class*="admonition"] a:hover {
 
 .pagination-nav__link:hover {
   border-color: var(--ifm-color-primary);
+  text-decoration: none !important;
+}
+
+.pagination-nav__link:hover * {
+  text-decoration: none !important;
 }
 
 /* Scrollbar */

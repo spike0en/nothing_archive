@@ -100,9 +100,7 @@ const devicesMetadata: any[] = require('./src/data/devices-metadata.json');
 
 const codenameMap = new Map<string, any>();
 devicesMetadata.forEach((device: any) => {
-  device.codenames.forEach((codename: string) => {
-    codenameMap.set(codename.toLowerCase(), device);
-  });
+  codenameMap.set(device.codename.toLowerCase(), device);
 });
 
 function getCodenameFromCategory(category: any): string | null {
@@ -170,137 +168,123 @@ function compareDeviceCategories(a: any, b: any): number {
   return devA.name.localeCompare(devB.name);
 }
 
-function sortChangelogItems(items: any[]): any[] {
-  return items
-    .filter((item) => !(item.type === 'doc' && item.id === 'changelogs/index'))
-    .map((item) => {
-      if (item.type === 'category') {
-        let sortedSubItems = sortChangelogItems(item.items);
-        const isChangelogCategory = sortedSubItems.some(
-          (subItem) => subItem.type === 'doc' && subItem.id.startsWith('changelogs/')
-        );
+function groupAndSortChangelogSidebar(items: any[]): any[] {
+  const cleanItems = items.filter((item) => !(item.type === 'doc' && item.id === 'changelogs/index'));
 
-        if (isChangelogCategory) {
-          sortedSubItems.sort((a, b) => {
-            if (a.type !== 'doc' || b.type !== 'doc') {
-              if (a.type === 'doc' && b.type !== 'doc') return -1;
-              if (a.type !== 'doc' && b.type === 'doc') return 1;
-              return 0;
-            }
-            return compareChangelogs(a.id, b.id);
-          });
-        }
+  const numberItems: any[] = [];
+  const aItems: any[] = [];
+  const bItems: any[] = [];
+  const cmfItems: any[] = [];
+  const unknownItems: any[] = [];
 
-        if (item.label === 'OTA Changelogs') {
-          const numberItems: any[] = [];
-          const aItems: any[] = [];
-          const bItems: any[] = [];
-          const cmfItems: any[] = [];
-          const unknownItems: any[] = [];
+  cleanItems.forEach((item) => {
+    if (item.type !== 'category') {
+      unknownItems.push(item);
+      return;
+    }
 
-          sortedSubItems.forEach((subItem) => {
-            const codename = getCodenameFromCategory(subItem);
-            const dev = codename ? codenameMap.get(codename) : null;
-            if (!dev) {
-              unknownItems.push(subItem);
-              return;
-            }
-
-            if (dev.brand === 'CMF') {
-              cmfItems.push(subItem);
-            } else if (dev.series === 'number') {
-              numberItems.push(subItem);
-            } else if (dev.series === 'a') {
-              aItems.push(subItem);
-            } else if (dev.series === 'b') {
-              bItems.push(subItem);
-            } else {
-              unknownItems.push(subItem);
-            }
-          });
-
-          // Sort each group internally
-          numberItems.sort(compareDeviceCategories);
-          aItems.sort(compareDeviceCategories);
-          bItems.sort(compareDeviceCategories);
-          cmfItems.sort(compareDeviceCategories);
-          unknownItems.sort(compareDeviceCategories);
-
-          const newSubItems: any[] = [];
-
-          if (numberItems.length > 0) {
-            newSubItems.push({
-              type: 'category',
-              label: 'Nothing (Number Series)',
-              collapsible: true,
-              collapsed: false,
-              items: numberItems,
-            });
-          }
-          if (aItems.length > 0) {
-            newSubItems.push({
-              type: 'category',
-              label: 'Nothing (A Series)',
-              collapsible: true,
-              collapsed: false,
-              items: aItems,
-            });
-          }
-          if (bItems.length > 0) {
-            newSubItems.push({
-              type: 'category',
-              label: 'Nothing (B / Lite Series)',
-              collapsible: true,
-              collapsed: false,
-              items: bItems,
-            });
-          }
-          if (cmfItems.length > 0) {
-            newSubItems.push({
-              type: 'category',
-              label: 'CMF Series',
-              collapsible: true,
-              collapsed: false,
-              items: cmfItems,
-            });
-          }
-          newSubItems.push(...unknownItems);
-
-          sortedSubItems = newSubItems;
-        }
-
-        let link = item.link;
-        if (isChangelogCategory && sortedSubItems.length > 0 && sortedSubItems[0].type === 'doc') {
-          link = {
-            type: 'doc',
-            id: sortedSubItems[0].id,
-          };
-        }
-
-        // Dynamically override label for device subcategories using devices-metadata
-        let label = item.label;
-        if (isChangelogCategory) {
-          const codename = getCodenameFromCategory({ items: sortedSubItems });
-          const dev = codename ? codenameMap.get(codename) : null;
-          if (dev) {
-            label = dev.name;
-          }
-        }
-
-        // Clean label if it didn't get overridden
-        if (label === item.label) {
-          label = label.replace(/^Nothing Phone /i, 'Phone ');
-        }
-
-        return {
-          ...item,
-          label,
-          link,
-          items: sortedSubItems,
-        };
+    // Sort internal document items in descending order of build version/date
+    const sortedSubItems = [...item.items].sort((a: any, b: any) => {
+      if (a.type !== 'doc' || b.type !== 'doc') {
+        if (a.type === 'doc' && b.type !== 'doc') return -1;
+        if (a.type !== 'doc' && b.type === 'doc') return 1;
+        return 0;
       }
-      return item;
+      return compareChangelogs(a.id, b.id);
     });
+
+    let link = item.link;
+    if (sortedSubItems.length > 0 && sortedSubItems[0].type === 'doc') {
+      link = {
+        type: 'doc',
+        id: sortedSubItems[0].id,
+      };
+    }
+
+    const codename = getCodenameFromCategory({ items: sortedSubItems });
+    const dev = codename ? codenameMap.get(codename) : null;
+    let label = item.label;
+    let series = 'unknown';
+    let brand = 'Nothing';
+
+    if (dev) {
+      label = dev.name;
+      series = dev.series;
+      brand = dev.brand;
+    } else {
+      label = label.replace(/^Nothing Phone /i, 'Phone ');
+    }
+
+    const processedCategory = {
+      ...item,
+      label,
+      link,
+      items: sortedSubItems,
+    };
+
+    if (!dev) {
+      unknownItems.push(processedCategory);
+    } else if (brand === 'CMF') {
+      cmfItems.push(processedCategory);
+    } else if (series === 'number') {
+      numberItems.push(processedCategory);
+    } else if (series === 'a') {
+      aItems.push(processedCategory);
+    } else if (series === 'b') {
+      bItems.push(processedCategory);
+    } else {
+      unknownItems.push(processedCategory);
+    }
+  });
+
+  // Sort each category group internally
+  numberItems.sort(compareDeviceCategories);
+  aItems.sort(compareDeviceCategories);
+  bItems.sort(compareDeviceCategories);
+  cmfItems.sort(compareDeviceCategories);
+  unknownItems.sort(compareDeviceCategories);
+
+  const newSubItems: any[] = [];
+
+  if (numberItems.length > 0) {
+    newSubItems.push({
+      type: 'category',
+      label: 'Nothing (Number Series)',
+      collapsible: true,
+      collapsed: false,
+      items: numberItems,
+    });
+  }
+  if (aItems.length > 0) {
+    newSubItems.push({
+      type: 'category',
+      label: 'Nothing (A Series)',
+      collapsible: true,
+      collapsed: false,
+      items: aItems,
+    });
+  }
+  if (bItems.length > 0) {
+    newSubItems.push({
+      type: 'category',
+      label: 'Nothing (B / Lite Series)',
+      collapsible: true,
+      collapsed: false,
+      items: bItems,
+    });
+  }
+  if (cmfItems.length > 0) {
+    newSubItems.push({
+      type: 'category',
+      label: 'CMF by Nothing',
+      collapsible: true,
+      collapsed: false,
+      items: cmfItems,
+    });
+  }
+  newSubItems.push(...unknownItems);
+
+  return newSubItems;
 }
 
 
@@ -427,7 +411,10 @@ const config: Config = {
           showLastUpdateAuthor: false,
           async sidebarItemsGenerator({ defaultSidebarItemsGenerator, ...args }) {
             const sidebarItems = await defaultSidebarItemsGenerator(args);
-            return sortChangelogItems(sidebarItems);
+            if (args.item.dirName === 'changelogs') {
+              return groupAndSortChangelogSidebar(sidebarItems);
+            }
+            return sidebarItems;
           },
         },
         blog: false,

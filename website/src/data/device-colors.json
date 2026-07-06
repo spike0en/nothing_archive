@@ -1,58 +1,14 @@
 {
-  "metroid": [
-    { "name": "White", "hex": "#FFFFFF" },
-    { "name": "Black", "hex": "#1C1C1C" }
-  ],
-  "pong": [
-    { "name": "Grey", "hex": "#8E8E93" },
-    { "name": "White", "hex": "#FFFFFF" }
-  ],
-  "spacewar": [
-    { "name": "Black", "hex": "#1C1C1C" },
-    { "name": "White", "hex": "#FFFFFF" }
-  ],
-  "froggerpro": [
-    { "name": "Silver", "hex": "#D1D1D6" },
-    { "name": "Black", "hex": "#1C1C1C" },
-    { "name": "Pink", "hex": "#FFB6C1" }
-  ],
-  "frogger": [
-    { "name": "White", "hex": "#FFFFFF" },
-    { "name": "Black", "hex": "#1C1C1C" },
-    { "name": "Pink", "hex": "#FFB6C1" },
-    { "name": "Blue", "hex": "#1F4E79" }
-  ],
-  "asteroids": [
-    { "name": "White", "hex": "#FFFFFF" },
-    { "name": "Black", "hex": "#1C1C1C" },
-    { "name": "Blue", "hex": "#1F4E79" },
-    { "name": "Grey", "hex": "#8E8E93" },
-    { "name": "CE", "hex": "#248B8D" }
-  ],
-  "pacmanpro": [
-    { "name": "Silver", "hex": "#8E8E93" },
-    { "name": "Black", "hex": "#1C1C1C" },
-    { "name": "CE", "hex": "#D9DFCA" }
-  ],
-  "pacman": [
-    { "name": "Milk", "hex": "#F0EDE6" },
-    { "name": "Black", "hex": "#1C1C1C" }
-  ],
+  "metroid": ["White", "Black"],
+  "pong": ["Grey", "White"],
+  "spacewar": ["Black", "White"],
+  "froggerpro": ["Silver", "Black", "Pink"],
+  "frogger": ["White", "Black", "Pink", "Blue"],
+  "asteroids": ["White", "Black", "Blue", "Grey", "CE"],
+  "pacmanpro": ["Silver", "Black", "CE"],
+  "pacman": ["Milk", "Black"],
   "supercontra": [],
-  "galaxian": [
-    { "name": "White", "hex": "#FFFFFF" },
-    { "name": "Black", "hex": "#1C1C1C" },
-    { "name": "Blue", "hex": "#1F4E79" }
-  ],
-  "galaga": [
-    { "name": "Orange", "hex": "#FF6F00" },
-    { "name": "Black", "hex": "#1C1C1C" },
-    { "name": "Grey", "hex": "#8E8E93" },
-    { "name": "Light Green", "hex": "#A9DFBF" }
-  ],
-  "tetris": [
-    { "name": "Light Green", "hex": "#A9DFBF" },
-    { "name": "Orange", "hex": "#FF6F00" },
-    { "name": "Black", "hex": "#1C1C1C" }
-  ]
+  "galaxian": ["White", "Black", "Blue"],
+  "galaga": ["Orange", "Black", "Grey", "Light Green"],
+  "tetris": ["Light Green", "Orange", "Black"]
 }

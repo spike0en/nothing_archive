@@ -250,7 +250,7 @@ Select your device model to access its Release Index.
 </details>
 
 <details>
-  <summary><span class="summary-title">Phone (3a) & (3a) Pro</span><span class="summary-subtitle">Asteroids</span></summary>
+  <summary><span class="summary-title">Phone (3a) & (3a) Pro</span><span class="summary-subtitle">Asteroids(Pro)</span></summary>
 
 
 | **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |

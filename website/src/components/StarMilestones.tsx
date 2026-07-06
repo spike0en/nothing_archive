@@ -82,6 +82,51 @@ export default function StarMilestones(): React.JSX.Element {
           <span className={styles.liveIndicator} />
           <span className={styles.liveText}>{stars.toLocaleString()} stargazers</span>
         </div>
+
+        {/*
+          Group container isolates horizontal animation to preserve relative spacing
+          between Pacman and Ghost regardless of dynamic milestone container widths.
+        */}
+        <div className={styles.pacmanContainer}>
+          <div className={styles.pacmanTrack}>
+            <div className={clsx(styles.pacmanStar, styles.star1)}><FaStar size={8} /></div>
+            <div className={clsx(styles.pacmanStar, styles.star2)}><FaStar size={8} /></div>
+            <div className={clsx(styles.pacmanStar, styles.star3)}><FaStar size={8} /></div>
+            <div className={clsx(styles.pacmanStar, styles.star4)}><FaStar size={8} /></div>
+
+            <div className={styles.pacmanGroup}>
+              <div className={styles.ghost}>
+                <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">
+                  <path
+                    d="M 0,10 A 10,10 0 0,1 20,10 L 20,20 L 16.5,16.5 L 13.5,20 L 10,16.5 L 6.5,20 L 3.5,16.5 L 0,20 Z"
+                    fill="#00E5FF"
+                  />
+                  <circle cx="7" cy="10" r="2" fill="white" />
+                  <circle cx="6" cy="10" r="1" fill="black" />
+                  <circle cx="13" cy="10" r="2" fill="white" />
+                  <circle cx="12" cy="10" r="1" fill="black" />
+                </svg>
+              </div>
+              <div className={styles.pacman}>
+                <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">
+                  <g
+                    className={styles.pacmanUpper}
+                    style={{ transformOrigin: '10px 10px', transformBox: 'view-box' }}
+                  >
+                    <path d="M 0,10 A 10,10 0 0,1 20,10 Z" fill="var(--nothing-red, #D71921)" />
+                  </g>
+                  <g
+                    className={styles.pacmanLower}
+                    style={{ transformOrigin: '10px 10px', transformBox: 'view-box' }}
+                  >
+                    <path d="M 20,10 A 10,10 0 0,1 0,10 Z" fill="var(--nothing-red, #D71921)" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <a
           href="https://github.com/spike0en/nothing_archive/stargazers"
           target="_blank"

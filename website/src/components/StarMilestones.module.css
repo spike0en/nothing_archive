@@ -539,9 +539,15 @@
   .starIcon,
   .liveIndicator,
   .pulsingRedDot,
-  .milestoneComplete {
+  .milestoneComplete,
+  .pacmanGroup,
+  .pacmanUpper,
+  .pacmanLower,
+  .ghost,
+  .pacmanStar {
     animation: none !important;
     transition: none !important;
+    display: none !important;
   }
 }
 
@@ -562,6 +568,190 @@
 /* Hide screws on mobile to prevent clutter */
 @media screen and (max-width: 768px) {
   .screw {
+    display: none !important;
+  }
+}
+
+/*
+  Positions the container relative to header layout. Flex-grow fills the space
+  between live stats and the github button. Increased height provides shadow clearance.
+*/
+.pacmanContainer {
+  flex: 1;
+  margin: 0 1.5rem;
+  height: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+/*
+  Ensures the character drop-shadows are not clipped by SVG viewport bounds.
+*/
+.pacmanContainer svg {
+  overflow: visible !important;
+}
+
+.pacmanTrack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/*
+  Animates the character group linearly from off-screen left to off-screen right.
+  A 12s loop with a 20% off-screen pause keeps the animation calm and active.
+*/
+.pacmanGroup {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 16px;
+  z-index: 2;
+  animation: groupMove 12s linear infinite;
+}
+
+.pacman {
+  position: absolute;
+  right: 0;
+  top: -1px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 2px rgba(215, 25, 33, 0.6));
+}
+
+.pacman svg,
+.ghost svg {
+  display: block;
+}
+
+.ghost {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 2px rgba(0, 229, 255, 0.6));
+  animation: ghostWiggle 0.4s ease-in-out infinite alternate;
+}
+
+/*
+  Rotates upper and lower jaws of the SVG shape to simulate the mouth chomp.
+  Uses percentage-based transform-origin and transform-box: view-box to force
+  rotation relative to the SVG viewbox center rather than path bounds.
+*/
+.pacmanUpper {
+  transform-origin: 50% 50%;
+  transform-box: view-box;
+  animation: pacmanChompUpper 0.35s ease-in-out infinite alternate;
+}
+
+.pacmanLower {
+  transform-origin: 50% 50%;
+  transform-box: view-box;
+  animation: pacmanChompLower 0.35s ease-in-out infinite alternate;
+}
+
+@keyframes pacmanChompUpper {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-35deg); }
+}
+
+@keyframes pacmanChompLower {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(35deg); }
+}
+
+/*
+  Translates the group from -50px to fully off-screen right over 80% of loop duration.
+  Ends at calc(100% + 20px) so the trailing Ghost is completely hidden during pause.
+*/
+@keyframes groupMove {
+  0% {
+    left: -50px;
+  }
+  80% {
+    left: calc(100% + 20px);
+  }
+  100% {
+    left: calc(100% + 20px);
+  }
+}
+
+/*
+  Applies vertical bobbing to simulate character walking motion.
+*/
+@keyframes ghostWiggle {
+  0% { transform: translateY(-1px); }
+  100% { transform: translateY(1px); }
+}
+
+/*
+  Star elements that Pacman eats. Soft drop-shadow provides glow.
+  Uses fixed dimensions to align icon accurately to the vertical center line.
+*/
+.pacmanStar {
+  position: absolute;
+  top: 50%;
+  transform: translateY(calc(-50% - 1px));
+  width: 8px;
+  height: 8px;
+  color: #ffc107;
+  filter: drop-shadow(0 0 3px rgba(255, 193, 7, 0.8));
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pacmanStar svg {
+  display: block;
+}
+
+.star1 { left: 20%; animation: starEaten1 12s linear infinite; }
+.star2 { left: 40%; animation: starEaten2 12s linear infinite; }
+.star3 { left: 60%; animation: starEaten3 12s linear infinite; }
+.star4 { left: 80%; animation: starEaten4 12s linear infinite; }
+
+/*
+  Coordinates star visibility changes with Pacman's horizontal group traversal.
+  Stars scale down to zero upon contact and reset at the end of the loop cycle.
+*/
+@keyframes starEaten1 {
+  0%, 16% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
+  17%, 95% { opacity: 0; transform: translateY(calc(-50% - 1px)) scale(0); }
+  96%, 100% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
+}
+
+@keyframes starEaten2 {
+  0%, 32% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
+  33%, 95% { opacity: 0; transform: translateY(calc(-50% - 1px)) scale(0); }
+  96%, 100% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
+}
+
+@keyframes starEaten3 {
+  0%, 46% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
+  47%, 95% { opacity: 0; transform: translateY(calc(-50% - 1px)) scale(0); }
+  96%, 100% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
+}
+
+@keyframes starEaten4 {
+  0%, 61% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
+  62%, 95% { opacity: 0; transform: translateY(calc(-50% - 1px)) scale(0); }
+  96%, 100% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
+}
+
+/*
+  Responsive overrides: hides the animation to prevent layout overflow on narrow views.
+*/
+@media screen and (max-width: 768px) {
+  .pacmanContainer {
     display: none !important;
   }
 }
