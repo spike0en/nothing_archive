@@ -45,6 +45,7 @@ APK mirrors available at [APKMirror](https://www.apkmirror.com/apk/nothing-techn
 - [Phone (3a) / (3a) Pro / CE](https://archive.org/download/nothing-archive/spike0en/walls/asteroids/)
 - [Phone (3a) Lite](https://archive.org/download/nothing-archive/spike0en/walls/galaxian/)
 - [Phone (4a) / (4a) Pro](https://archive.org/download/nothing-archive/spike0en/walls/frogger%28pro%29/)
+- [Phone (4b)](https://archive.org/download/nothing-archive/spike0en/walls/supercontra/)
 
 </div>
 
