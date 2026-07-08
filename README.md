@@ -34,11 +34,13 @@
 If this project helps you, please consider [starring the repository](https://github.com/spike0en/nothing_archive/stargazers). It helps with discoverability and encourages maintenance. Thank you!
 
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=spike0en/nothing_archive&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=spike0en/nothing_archive&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=spike0en/nothing_archive&type=Date" width="500" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);" />
-  </picture>
+  <a href="https://www.star-history.com/?repos=spike0en%2Fnothing_archive&type=date&legend=top-left">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=spike0en/nothing_archive&type=date&theme=dark&legend=top-left&sealed_token=bf9fX18UNYOCcb9nUIV6JpuBewyDqIOSoMGafpatPjjhDGvaBvxq71ZG5L89NAZw4sktBe4IIy6UEMfjJ1qT3KIc0spgiJXvjZAhYRrmagsePEMVzj3IF2v8wLNib5R0W-OeVPKtZuJSNYCbN6E2OOx3hCbBGzviQ3PW8A3iv2dRU-US6GTzSkhMTQbY" />
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=spike0en/nothing_archive&type=date&legend=top-left&sealed_token=bf9fX18UNYOCcb9nUIV6JpuBewyDqIOSoMGafpatPjjhDGvaBvxq71ZG5L89NAZw4sktBe4IIy6UEMfjJ1qT3KIc0spgiJXvjZAhYRrmagsePEMVzj3IF2v8wLNib5R0W-OeVPKtZuJSNYCbN6E2OOx3hCbBGzviQ3PW8A3iv2dRU-US6GTzSkhMTQbY" />
+      <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=spike0en/nothing_archive&type=date&legend=top-left&sealed_token=bf9fX18UNYOCcb9nUIV6JpuBewyDqIOSoMGafpatPjjhDGvaBvxq71ZG5L89NAZw4sktBe4IIy6UEMfjJ1qT3KIc0spgiJXvjZAhYRrmagsePEMVzj3IF2v8wLNib5R0W-OeVPKtZuJSNYCbN6E2OOx3hCbBGzviQ3PW8A3iv2dRU-US6GTzSkhMTQbY" />
+    </picture>
+  </a>
 </div>
 
 <div align="center">
