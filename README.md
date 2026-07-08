@@ -1,35 +1,152 @@
 <div align="center">
-  <img src="website/static/img/logo_dark.gif" width="128" alt="Nothing Archive Logo">
-  <h1>Nothing Archive</h1>
-  <p>Your ultimate source for Nothing OS firmware, stock OTA images, and comprehensive guides for Nothing & CMF by Nothing devices.</p>
-  <br>
 
-<div align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/logo_dark.gif">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/logo_light.gif">
+  <img alt="Nothing Archive" src="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/logo_dark.gif" width="100">
+</picture>
 
-[![Website](https://img.shields.io/badge/Website-7D00FF?style=for-the-badge&logo=Stellar&logoColor=white)](https://spike0en.github.io/nothing_archive/)
+# Nothing Archive
 
-[![Discussion](https://img.shields.io/badge/Discussion-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/s/Nothing_Archive)
-[![Nothing Flasher](https://img.shields.io/badge/Nothing_Flasher-67119E?style=for-the-badge&logo=github&logoColor=white)](https://github.com/spike0en/nothing_flasher)
+The largest open-source, community-driven index and archive for the Nothing and CMF ecosystem, featuring Nothing OS firmware, OTA updates, community-built apps and projects, hardware customization tools, official developer resources, and comprehensive guides.
 
-[![Guides](https://img.shields.io/badge/Guides-18673F?style=for-the-badge&logo=readthedocs&logoColor=white)](https://spike0en.github.io/nothing_archive/docs/guides)
-[![OTA Changelogs](https://img.shields.io/badge/OTA_Changelogs-008080?style=for-the-badge&logo=github&logoColor=white)](https://spike0en.github.io/nothing_archive/docs/changelogs)
-[![Downloads](https://img.shields.io/badge/Release_Index-B23131?style=for-the-badge&logo=github&logoColor=white)](https://spike0en.github.io/nothing_archive/docs/firmware#downloads)
+<p align="center">
+  <a href="https://spike0en.github.io/nothing_archive/"><b>Explore Hub 🌐</b></a> &nbsp;&middot;&nbsp;
+  <a href="https://spike0en.github.io/nothing_archive/docs/firmware"><b>Firmware Archive 📥</b></a> &nbsp;&middot;&nbsp;
+  <a href="https://spike0en.github.io/nothing_archive/docs/guides"><b>Guides 📖</b></a> &nbsp;&middot;&nbsp;
+  <a href="https://t.me/s/Nothing_Archive"><b>Community 💬</b></a>
+</p>
 
-[![Hits](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%23b02a37&labelColor=2E2E3F&message=&style=for-the-badge)](https://github.com/spike0en/nothing_archive)
-[![Stars](https://img.shields.io/github/stars/spike0en/nothing_archive?style=for-the-badge&logo=github&logoColor=white)](https://github.com/spike0en/nothing_archive/stargazers)
-[![Total Downloads](https://img.shields.io/github/downloads/spike0en/nothing_archive/total?style=for-the-badge&logo=github&logoColor=white)](https://github.com/spike0en/nothing_archive/releases)
+[![Hits](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%23b02a37&labelColor=2E2E3F&message=&style=for-the-badge)](https://github.com/spike0en/nothing_archive) &nbsp; [![Total Downloads](https://img.shields.io/github/downloads/spike0en/nothing_archive/total?style=for-the-badge&logo=github&logoColor=white)](https://github.com/spike0en/nothing_archive/releases) &nbsp; [![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0%20%2F%20MIT-007ec6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/spike0en/nothing_archive/blob/main/LICENSE)
+
+<br>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/banner-v2.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/banner-v2.png">
+  <img alt="Nothing Archive Banner" src="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/banner-v2.png" width="100%">
+</picture>
+
+<br>
+
+---
 
 </div>
 
-<div align="center">
-  <br>
+## ⚡ Core Pillars & Navigation
 
-  <br>
-</div>
+Nothing Archive is a centralized, community-led index. Use the interactive directory below to browse our documentation sections on the live site or access their source markdown files in the workspace.
 
-</div>
+### 🌐 [Devices Catalog](https://spike0en.github.io/nothing_archive/docs/devices)
+*Workspace Source: [`devices.md`](website/docs/devices.md)*
 
-## Support the Project
+A comprehensive catalog of Nothing and CMF products, detailing hardware specifications, codename mappings, and release dates.
+
+---
+
+### ⚡ [Firmware & Delta OTAs](https://spike0en.github.io/nothing_archive/docs/firmware)
+*Workspace Source: [`firmware.md`](website/docs/firmware.md)*
+
+Direct download links for sideloading incremental and full OTA updates sourced from official OEM servers, bypassing staggered regional rollouts.
+
+---
+
+### 📦 [Stock Factory Images](https://spike0en.github.io/nothing_archive/docs/firmware)
+*Workspace Source: [`firmware.md`](website/docs/firmware.md)*
+
+Unmodified stock OTA partition images archived for supported phone models, obtained by extracting and reconstructing base and incremental OTA updates through an automated pipeline.
+
+---
+
+### 📜 [Nothing OS Changelogs](https://spike0en.github.io/nothing_archive/docs/changelogs)
+*Workspace Source: [`changelogs/`](website/docs/changelogs)*
+
+A complete chronological database of official release notes, system changes, bug fixes, and security patches for every Nothing and CMF phone model.
+
+---
+
+### 📖 [Technical Guides](https://spike0en.github.io/nothing_archive/docs/guides)
+*Workspace Source: [`guides.md`](website/docs/guides.md)*
+
+Detailed step-by-step guides covering critical technical operations, including bootloader unlocking, custom ROM installation, partition backups, rooting, and device recovery.
+
+---
+
+### 📦 [Official OEM Resources](https://spike0en.github.io/nothing_archive/docs/official)
+*Workspace Source: [`official.md`](website/docs/official.md)*
+
+A curated collection of official Nothing apps, wallpapers, system fonts, kernel sources, 3D product models, and user manuals.
+
+---
+
+### 🧩 [Community Apps & Projects](https://spike0en.github.io/nothing_archive/docs/apps)
+*Workspace Sources: [`apps.md`](website/docs/apps.md) &nbsp;&middot;&nbsp; [`projects.md`](website/docs/projects.md)*
+
+A directory of community-developed applications, Glyph LED integrations, custom widgets, utilities, flashing toolkits, and wearable scripts.
+
+---
+
+### 📸 [Camera Configs & Mods](https://spike0en.github.io/nothing_archive/docs/photography)
+*Workspace Source: [`photography.md`](website/docs/photography.md)*
+
+Stable Google Camera (GCam) ports, custom community-made XML configurations, stock presets, and custom LUTs optimized for Nothing's camera hardware.
+
+---
+
+## 🤝 Contribution Guidelines
+
+We welcome community pull requests to expand the archive. To ensure data integrity, several files are restricted to automated updates:
+
+| Category | Contribution Scope | Files & Path |
+| :--- | :--- | :--- |
+| **Device Catalog** | **Open** | [`devices.md`](website/docs/devices.md) |
+| **Community Initiatives Indexing** | **Open** | [`apps.md`](website/docs/apps.md), [`projects.md`](website/docs/projects.md) |
+| **Official Resources** | **Open** | [`official.md`](website/docs/official.md) |
+| **Guides** | **Open** | [`guides.md`](website/docs/guides.md), [`photography.md`](website/docs/photography.md) |
+| **Firmware & Changelogs** | **Restricted** *(Automated)* | [`firmware.md`](website/docs/firmware.md), [`changelogs/`](website/docs/changelogs/) |
+
+Before creating a Pull Request, please read our [Contributing Guidelines](CONTRIBUTING.md) to ensure compliance with sorting rules, casing conventions, and spacing standards.
+
+---
+
+## 📜 Licensing & Attribution
+
+Nothing Archive employs a multi-license structure to protect the original work of contributors, respect third-party intellectual property, and prevent legal liabilities.
+
+### ⚖️ Intellectual Property Boundaries
+
+*   **Project Effort & Database Compilation (CC BY-NC 4.0)**:
+    While the underlying links are publicly available, the **curated compilation database, structured tables, device codename mappings, extraction indices, and custom flashing and recovery guides** represent substantial original research, maintenance, organization, and self-hosted pipeline development. These compilations and accompanying documentation are licensed under [CC BY-NC 4.0](LICENSE) (Creative Commons Attribution-NonCommercial 4.0 International).
+*   **OEM Firmware & Official Resources (Proprietary)**:
+    All indexed firmware payloads, OTA update links (distributed by GMS/Google servers), official system APKs, system fonts, device wallpapers, 3D models, and user manuals are the exclusive proprietary intellectual property of **Nothing Technology Limited** (or their hardware/software partners). Nothing Archive claims no ownership over these materials; they are mirrored and indexed for non-commercial community recovery and archival purposes under **Fair Use**.
+*   **Community Projects & Apps (Third-Party)**:
+    Curated lists and links to third-party tools, Glyph-powered utilities, and custom ROMs belong to their respective community developers under their own licensing terms. We index them solely to bring the developer community together in one accessible hub.
+*   **Pipeline Logic & Website Source Code (MIT)**:
+    The custom crawler utilities, Python/Bash data-fetching scripts (under `/scripts`), and the entire Docusaurus website source code (under `/website`, excluding documentation content) are licensed under the [MIT License](LICENSE-MIT).
+*   **Project Branding & Visual Identity (All Rights Reserved)**:
+    All original project logos, banners, animated sweeps, and custom graphic assets under `website/static/img/` are the exclusive creative property of **Nothing Archive**. They are **strictly proprietary** and **not** licensed for reuse, redistribution, or modification in third-party projects, clones, or sites (excluding device mockups owned by the OEM).
+
+---
+
+> [!IMPORTANT]
+> **Attribution Mandate**: Anyone replicating, scraping, hosting mirrors of, or adapting any custom guides or compiled database tables from this repository **MUST** provide prominent, visible credit to **Nothing Archive** and link back to this source repository:
+> `https://github.com/spike0en/nothing_archive`
+
+---
+## 🏆 Credits & Acknowledgements
+
+Special thanks to:
+*   **[luk1337](https://github.com/luk1337/oplus_archive)** for the AOSP OTA extraction tool.
+*   **[arter97](https://github.com/arter97/nothing_archive)** for adapting the archive for Phone (2).
+*   **[Shiki](https://github.com/guptavishal-xm1)** for crafting the initial website for the repo and providing a self-hosted runner instance.
+*   **[Earendel Labs](https://github.com/Earendel-lab)** and **[Burak Dede](https://github.com/burakdede0)** for their valuable suggestions, feedback, and QA testing that helped identify bugs and drive several improvements to the webpage over time.
+*   **[XelXen](https://github.com/XelXen)** for helping with initial [project branding and design](https://github.com/spike0en/nothing_archive/tree/main/website/static/img).
+*   **[LukeSkyD](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/)** for early build references.
+*   All project contributors listed in the [Contributors Chart](https://github.com/spike0en/nothing_archive/graphs/contributors).
+
+---
+
+## ⭐ Support the Project
 
 If this project helps you, please consider [starring the repository](https://github.com/spike0en/nothing_archive/stargazers). It helps with discoverability and encourages maintenance. Thank you!
 
@@ -41,73 +158,4 @@ If this project helps you, please consider [starring the repository](https://git
       <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=spike0en/nothing_archive&type=date&legend=top-left&sealed_token=bf9fX18UNYOCcb9nUIV6JpuBewyDqIOSoMGafpatPjjhDGvaBvxq71ZG5L89NAZw4sktBe4IIy6UEMfjJ1qT3KIc0spgiJXvjZAhYRrmagsePEMVzj3IF2v8wLNib5R0W-OeVPKtZuJSNYCbN6E2OOx3hCbBGzviQ3PW8A3iv2dRU-US6GTzSkhMTQbY" />
     </picture>
   </a>
-</div>
-
-<div align="center">
-  <br>
-
-  <br>
-</div>
-
-## Overview
-
-Nothing Archive is the most up-to-date Nothing OS firmware repository, offering official OTA updates, full firmware packages, and stock OTA images for Nothing and CMF by Nothing phones. All files are sourced directly from official OEM servers and [archived](https://archive.org/details/nothing-archive) for long-term preservation and easy access. 
-
-Beyond firmware, the project indexes community-made apps, tools, projects, official resources, aftermarket development initiatives, and more, thus serving as an all-in-one curated hub for everything related to the Nothing & CMF ecosystem.
-
-<div align="center">
-
-</div>
-
-## Contents
-
-- **[Devices](https://spike0en.github.io/nothing_archive/docs/devices)**: Complete catalog of Nothing & CMF products
-- **[Firmware Archive](https://spike0en.github.io/nothing_archive/docs/firmware)**: Nothing OS firmware, stock factory images, and delta OTA files
-- **[OTA Changelogs](https://spike0en.github.io/nothing_archive/docs/changelogs)**: Official Nothing OS update changelogs, feature updates, bug fixes, and version history
-- **[Guides](https://spike0en.github.io/nothing_archive/docs/guides)**: Comprehensive step-by-step tutorials on several aspects
-- **[Official Resources](https://spike0en.github.io/nothing_archive/docs/official)**: OEM apps, SDKs, wallpapers, fonts and more
-- **[Community Apps](https://spike0en.github.io/nothing_archive/docs/apps)**: Glyph-powered apps, productivity tools, and utilities
-- **[Projects](https://spike0en.github.io/nothing_archive/docs/projects)**: Community built projects, creative software and utilities
-- **[Photography](https://spike0en.github.io/nothing_archive/docs/photography)**: GCAM ports, configs, and stock camera presets
-
-<div align="center">
-
-</div>
-
-## Contributing
-
-We welcome community contributions! If you'd like to help improve the documentation, add new apps, or write guides, please read our [Contributing Guidelines](CONTRIBUTING.md) to get started.
-
-<div align="center">
-
-</div>
-
-## Licensing
-
-The Nothing Archive project is multi-licensed to protect both the code and community contributions:
-
-- **Automation & Website Code**: [MIT](LICENSE-MIT)
-- **Documentation & Translations**: [CC BY-NC 4.0](LICENSE-CC-BY-NC-4.0) (All `.md` files)
-- **Project Branding**: CC BY-NC-ND 4.0 (All image files under `website/static/img`)
-- **Third-party Tools**: See [bin/README.md](bin/README.md) for attribution.
-
-For a detailed breakdown of what each license covers, please refer to the [LICENSE](LICENSE) file.
-
-<div align="center">
-
-</div>
-
-## Acknowledgements
-
-Special thanks to:
-- **[luk1337](https://github.com/luk1337/oplus_archive)** for the AOSP OTA extraction tool.
-- **[arter97](https://github.com/arter97/nothing_archive)** for adapting the archive for Phone (2).
-- **[Shiki](https://github.com/guptavishal-xm1)** for crafting the initial website for the repo and providing self-hosted runner instance.
-- **[Earendel Labs](https://github.com/Earendel-lab)** and **[Burak Dede](https://github.com/burakdede0)** for their valuable suggestions, feedback, and QA testing that helped identify bugs and drive several improvements to the webpage over time.
-- **[XelXen](https://github.com/XelXen)** for helping with initial [project branding and design](https://github.com/spike0en/nothing_archive/tree/main/website/static/img).
-- **[LukeSkyD](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/)** for early build references.
-- **[Project Contributors](https://github.com/spike0en/nothing_archive/graphs/contributors)** for their invaluable contributions and insights.
-
-<div align="center">
-
 </div>
