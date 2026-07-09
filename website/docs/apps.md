@@ -40,6 +40,7 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | [Glyph Port](https://github.com/SebiAi/GlyphPort) | SebiAi | Port Glyph composition made for one Nothing device to another |
 | [Glyph Saber](https://github.com/Norbinarius/glyphsaber) | Norbinarius | Glyph control for Nothing OS 4.0+ |
 | [Glyph Sharge](https://github.com/Leekawaii666/GlyphSharge) | bleelblep | Advanced glyph interface management |
+| [Glyph Studio](https://play.google.com/store/apps/details?id=tech.abra.glyphstudio) | AbraDev | Generate Glyph ringtones and real-time LED visualizations from audio |
 | [Glyph Studio](https://github.com/SyedAhkam/glyph-studio) | SyedAhkam | Playground for everything Glyphs |
 | [Glyph Torch](https://github.com/Earendel-lab/GlyphTorch) | Earendel | Android App for letting the nothing phone glyphs glow on trigger |
 | [Glyph Unlock Pulse](https://play.google.com/store/apps/details?id=com.singularityux.glyphunlockpulse) | Singularity Design | Enhance device unlock with animated glyphs |
