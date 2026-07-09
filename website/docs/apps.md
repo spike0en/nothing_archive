@@ -24,6 +24,7 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | App | Developer | Description |
 |-----|-----------|-------------|
 | [BeatFlare](https://github.com/stilkin/beatflare) | stilkin | Raw audio-based visualization for Nothing Phone (3a) Glyphs |
+| [Better Nothing Music Visualizer](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | Aleks Levet & Oliver Lebaigue | Enhanced music visualization |
 | [Blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | Tech detox phone blocking app with Glyph integration |
 | [Delivery Glyph](https://github.com/Goktug-Dusunen/Glyph-Developer-Kit/tree/main/DeliveryGlyph) | Goktug-Dusunen | Delivery tracking app, specially optimized for Turkish services |
 | [Glyph Bar Composer](https://github.com/BhuvaneshwarMarri/GlyphBarComposer-4a) | BhuvaneshwarMarri | Compose, synchronize, and visualize custom Glyph lighting patterns for Nothing Phone (4a) |
@@ -121,6 +122,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Hi Glyph](https://github.com/alexmicuplusfour/hi-glyph) | alexmicuplusfour | Android app and relay server for the Nothing Phone (4a) Pro's Glyph Matrix display |
 | [ISS Glyph Tracker](https://github.com/TheophileJacquot/ISS-Glyph-Tracker) | TheophileJacquot | Track the ISS in real time with the Glyph Matrix on Nothing Phone (4a) Pro |
 | [Kubeats](https://github.com/Kuberwastaken/kubeats) | Kuberwastaken | Fork of [Glyph Beat](https://github.com/pauwma/GlyphBeat) with additional features |
+| [Leflac](https://github.com/mandrigin/leflac) | mandrigin | FLAC music player built around the Glyph Matrix |
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | Gyroscopic level tool |
 | [Live Bridge](https://github.com/appsfolder/livebridge) | appsfolder | Convert unsupported progress notifications into Live Notifications to make them compatible with Nothing's Glyph progress indicators |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | Classic Magic 8 Ball |
@@ -222,6 +224,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Compass](https://github.com/Earendel-lab/Compass) | Earendel | Simple compass |
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Vibe coded copy of Nothing's essential space app |
 | [Currency](https://curency.pages.dev/) | Earendel | Currency converter web app |
+| [Desight](https://play.google.com/store/apps/details?id=com.repomedia.desight) | Repomedia | Nothing-inspired, free eye strain reduction app |
 | [Dot Cal](https://play.google.com/store/apps/details?id=com.dotfield.dotcal) | Dotfield Studio | Minimalist calendar app inspired by Nothing OS |
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Calculator app with dot matrix fonts |
 | [Dot Files](https://play.google.com/store/apps/details?id=com.dotfiles.app) | Dotfield Studio | Clean, fast, local-first file manager |

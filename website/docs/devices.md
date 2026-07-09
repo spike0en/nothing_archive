@@ -27,8 +27,8 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 | [Phone (3a) Pro](https://nothing.tech/products/phone-3a-pro) <br /> <small>AsteroidsPro / Arcanine</small> | A059P | 04 March 2025 | Nothing OS 4.0 (Android 16) | 3 + 6 Years | [Here](https://nothing.wiki/hardware/phone_3a_series) |
 | [Phone (3)](https://nothing.tech/products/phone-3) <br /> <small>Metroid / Arbok</small> | A024 | 01 July 2025 | Nothing OS 3.0 (Android 15) | 5 + 7 Years | [Here](https://nothing.wiki/hardware/phone_3) |
 | [Phone (3a) Lite](https://nothing.tech/products/phone-3a-lite) <br /> <small>Galaxian / Bulbasaur</small> | A001T | 29 October 2025 | Nothing OS 3.5 (Android 15) | 3 + 6 Years | [Here](https://nothing.wiki/hardware/phone_3a_lite) |
-| [Phone (4a)](https://nothing.tech/products/phone-4a) <br /> <small>Frogger / Bellsprout</small> | A069 | 05 March 2026 | Nothing OS 4.1 (Android 16) | 3 + 4 Years | [Here](https://nothing.wiki/hardware/phone_4a_series) |
-| [Phone (4a) Pro](https://nothing.tech/products/phone-4a-pro) <br /> <small>FroggerPro / Bellsprout</small> | A069P | 05 March 2026 | Nothing OS 4.1 (Android 16) | 3 + 4 Years | [Here](https://nothing.wiki/hardware/phone_4a_series) |
+| [Phone (4a)](https://nothing.tech/products/phone-4a) <br /> <small>Frogger / Bellsprout</small> | A069 | 05 March 2026 | Nothing OS 4.1 (Android 16) | 3 + 6 Years | [Here](https://nothing.wiki/hardware/phone_4a_series) |
+| [Phone (4a) Pro](https://nothing.tech/products/phone-4a-pro) <br /> <small>FroggerPro / Bellsprout</small> | A069P | 05 March 2026 | Nothing OS 4.1 (Android 16) | 3 + 6 Years | [Here](https://nothing.wiki/hardware/phone_4a_series) |
 | [Phone (4b)](https://nothing.tech/products/phone-4b) <br /> <small>SuperContra / Blastoise</small> | A009P | 07 July 2026 | Nothing OS 4.1 (Android 16) | 3 + 6 Years | [Here](https://nothing.wiki/hardware/phone_4b) |
 
 ### Audio

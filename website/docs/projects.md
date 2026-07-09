@@ -16,7 +16,6 @@ A collection of tools for creating custom Glyph tones and compositions.
 | Project | Developer | Description |
 |---------|-----------|-------------|
 | [Better Nothing Glyph Composer](https://better-nothing-glyph-composer.pages.dev/) | Krishnagopal Sinha | Visual tool for creating custom Glyph tones. Supports Phone (3) Matrix |
-| [Better Nothing Music Visualizer](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | alekslevet | Enhanced music visualization |
 | [Cassette](https://github.com/Chipik0/Cassette) | Chipik0 | Create glyph compositions |
 | [Custom Nothing Glyph Tools](https://github.com/SebiAi/custom-nothing-glyph-tools) | SebiAi | Create custom tones with Audacity |
 | [Glyph Ctrl](https://github.com/Nonta72/glyph_ctrl) | Nonta72 | Simple helper used by the Glyphs Lights Click app for Ubuntu Touch on the Nothing Phone (1) |
