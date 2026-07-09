@@ -4,10 +4,11 @@
   "spacewar": ["Black", "White"],
   "froggerpro": ["Silver", "Black", "Pink"],
   "frogger": ["White", "Black", "Pink", "Blue"],
-  "asteroids": ["White", "Black", "Blue", "Grey", "CE"],
+  "asteroids": ["White", "Black", "Blue", "CE"],
+  "asteroidspro": ["Grey", "Black"],
   "pacmanpro": ["Silver", "Black", "CE"],
   "pacman": ["Milk", "Black"],
-  "supercontra": [],
+  "supercontra": ["White", "Blue", "Black"],
   "galaxian": ["White", "Black", "Blue"],
   "galaga": ["Orange", "Black", "Grey", "Light Green"],
   "tetris": ["Light Green", "Orange", "Black"]

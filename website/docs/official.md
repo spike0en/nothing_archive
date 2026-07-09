@@ -187,6 +187,7 @@ Official `.glb` files for Nothing products.
 | Phone (3) | [White](https://cdn.sanity.io/files/gtd4w1cq/production/0b736072a221b655bd719b579b5bef594209ff51.glb) <br /> [Black](https://cdn.sanity.io/files/gtd4w1cq/production/33caf1c9600cc1f66fc5d06a9db420ad2df7edbe.glb) |
 | Phone (4a) | [White](https://cdn.sanity.io/files/gtd4w1cq/production/d65ff6f2d0ea8c16068c9f3a6a39727ba2832fbb.glb) <br /> [Black](https://cdn.sanity.io/files/gtd4w1cq/production/18e6e295eae0a611005b55870bfcabf8ddbe3ed3.glb) <br /> [Pink](https://cdn.sanity.io/files/gtd4w1cq/production/84f427b1219bd66ae5153a8d3a48b05179fec127.glb) <br /> [Blue](https://cdn.sanity.io/files/gtd4w1cq/production/03ea3ce1ca3b486997b81661b190569c1921d68a.glb) |
 | Phone (4a) Pro | [Silver](https://cdn.sanity.io/files/gtd4w1cq/production/0ab0aab2653e4f45cd9435145a3f936834e67cd2.glb) <br /> [Black](https://cdn.sanity.io/files/gtd4w1cq/production/9b93f1ad6cd3ed81cdb51ea89974473f54b62afa.glb) <br /> [Pink](https://cdn.sanity.io/files/gtd4w1cq/production/5000880af271c65200de52b3b00e1fc5eadb2e61.glb) |
+| Phone (4b) | [White](https://cdn.sanity.io/files/gtd4w1cq/production/f76e9b641b0cd4e0a939142e571657c9a0fcaed9.glb) <br /> [Blue](https://cdn.sanity.io/files/gtd4w1cq/production/de57916b7499d7a3a53f971e76481ac8121cedfe.glb) <br /> [Black](https://cdn.sanity.io/files/gtd4w1cq/production/aa8d49d8c685e3fe507c28c58ca6cacb7acf7c29.glb) |
 
 #### CMF by Nothing
 
@@ -227,6 +228,7 @@ The English versions of the user guides are linked below. For additional languag
 - [Phone (3a) Lite](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Phone_3a_Lite_User_Guide_EN.pdf?v=1761711354)
 - [Phone (4a)](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Phone_4a_User_Guide_Global_en_2e38a5da-9c79-4ba5-ace9-51c408466e63.pdf?v=1773115876)
 - [Phone (4a) Pro](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Phone_4a_Pro_User_Guide_Global_en_7d9167f4-802c-473f-88a0-f0b28b63b0d4.pdf?v=1773115876)
+- [Phone (4b)](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Phone_4b_User_Guide_Global_en.pdf?v=1782977789)
 
 </div>
 

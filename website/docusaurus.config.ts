@@ -96,6 +96,14 @@ function compareChangelogs(idA: string, idB: string): number {
   return nameB.localeCompare(nameA);
 }
 
+function getVariantRank(name: string): number {
+  const lower = name.toLowerCase();
+  if (lower.includes('pro plus') || lower.includes('pro+')) return 1;
+  if (lower.includes('pro')) return 2;
+  if (lower.includes('plus')) return 3;
+  return 4;
+}
+
 const devicesMetadata: any[] = require('./src/data/devices-metadata.json');
 
 const codenameMap = new Map<string, any>();
@@ -159,10 +167,10 @@ function compareDeviceCategories(a: any, b: any): number {
   }
 
   // 4. Pro/Plus first
-  const isProA = devA.name.toLowerCase().includes('pro') || devA.name.toLowerCase().includes('plus') || (codenameA && codenameA.includes('pro'));
-  const isProB = devB.name.toLowerCase().includes('pro') || devB.name.toLowerCase().includes('plus') || (codenameB && codenameB.includes('pro'));
-  if (isProA !== isProB) {
-    return isProA ? -1 : 1;
+  const rankVarA = getVariantRank(devA.name);
+  const rankVarB = getVariantRank(devB.name);
+  if (rankVarA !== rankVarB) {
+    return rankVarA - rankVarB;
   }
 
   return devA.name.localeCompare(devB.name);
@@ -202,12 +210,34 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
     }
 
     const codename = getCodenameFromCategory({ items: sortedSubItems });
-    const dev = codename ? codenameMap.get(codename) : null;
+    const matchingDevices = devicesMetadata.filter((device: any) => {
+      const folderForDevice = device.folder || device.codename;
+      return folderForDevice.toLowerCase() === (codename || '').toLowerCase();
+    });
+    const dev = matchingDevices.length > 0 ? matchingDevices[0] : null;
     let label = item.label;
     let series = 'unknown';
     let brand = 'Nothing';
 
-    if (dev) {
+    if (matchingDevices.length > 1) {
+      const cleanNames = matchingDevices.map((d: any) => d.name.split(' (')[0]);
+      cleanNames.sort();
+      const joinedNames = cleanNames.join(' / ').replace(/\/ Phone \(/g, '/ (');
+      
+      const cleanCodenames = matchingDevices.map((d: any) => {
+        const parts = d.name.match(/\(([^)]+)\)$/);
+        return parts ? parts[1] : d.codename;
+      });
+      cleanCodenames.sort();
+      let joinedCodenames = cleanCodenames.join(' / ');
+      if (cleanCodenames.includes('Asteroids') && cleanCodenames.includes('AsteroidsPro')) {
+        joinedCodenames = 'Asteroids(Pro)';
+      }
+      
+      label = `${joinedNames} (${joinedCodenames})`;
+      series = matchingDevices[0].series;
+      brand = matchingDevices[0].brand;
+    } else if (dev) {
       label = dev.name;
       series = dev.series;
       brand = dev.brand;
@@ -363,6 +393,15 @@ const config: Config = {
                 const latestPath = `/docs/changelogs/${folder}/${latestFile}`;
                 latestLinks[folder] = latestPath;
 
+                // Handle virtual codenames mapped to this physical folder
+                const mappedCodenames = devicesMetadata
+                  .filter((d: any) => d.folder && d.folder.toLowerCase() === folder.toLowerCase() && d.codename.toLowerCase() !== folder.toLowerCase())
+                  .map((d: any) => d.codename.toLowerCase());
+                
+                for (const codename of mappedCodenames) {
+                  latestLinks[codename] = latestPath;
+                }
+
                 // Create a dynamic route for the category folder that redirects to the latest changelog
                 // Must include baseUrl /nothing_archive for both the route path and redirect target
                 const redirectData = await actions.createData(
@@ -378,6 +417,22 @@ const config: Config = {
                     data: redirectData,
                   },
                 });
+
+                // Add redirect routes for the virtual codenames too
+                for (const codename of mappedCodenames) {
+                  const redirectDataVirt = await actions.createData(
+                    `redirect-${codename}.json`,
+                    JSON.stringify({ to: `/nothing_archive/docs/changelogs/${folder}/${latestFile}` })
+                  );
+                  actions.addRoute({
+                    path: `/nothing_archive/docs/changelogs/${codename}`,
+                    component: '@site/src/components/RedirectToLatest.tsx',
+                    exact: true,
+                    modules: {
+                      data: redirectDataVirt,
+                    },
+                  });
+                }
               }
             }
           }

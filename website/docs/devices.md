@@ -19,11 +19,13 @@ Complete catalog of Nothing & CMF by Nothing products with model numbers, codena
 | [Phone (2)](https://nothing.tech/products/phone-2) | A065 / AIN065 | Pong / Alakazam | [Here](https://nothing.wiki/hardware/phone_2) | 11 July 2023 |
 | [Phone (2a)](https://nothing.tech/products/phone-2a) | A142 | Pacman / Aerodactyl | [Here](https://nothing.wiki/hardware/phone_2a_series) | 05 March 2024 |
 | [Phone (2a) Plus](https://nothing.tech/products/phone-2a-plus) | A142P | PacmanPro / Mega Aerodactyl | [Here](https://nothing.wiki/hardware/phone_2a_series) | 31 July 2024 |
-| [Phone (3a)](https://nothing.tech/products/phone-3a) / [Phone (3a) Pro](https://nothing.tech/products/phone-3a-pro) | A059 / A059P | Asteroids / AsteroidsPro / Arcanine | [Here](https://nothing.wiki/hardware/phone_3a_series) | 04 March 2025 |
+| [Phone (3a)](https://nothing.tech/products/phone-3a) | A059 | Asteroids / Arcanine | [Here](https://nothing.wiki/hardware/phone_3a_series) | 04 March 2025 |
+| [Phone (3a) Pro](https://nothing.tech/products/phone-3a-pro) | A059P | AsteroidsPro / Arcanine | [Here](https://nothing.wiki/hardware/phone_3a_series) | 04 March 2025 |
 | [Phone (3)](https://nothing.tech/products/phone-3) | A024 | Metroid / Arbok | [Here](https://nothing.wiki/hardware/phone_3) | 01 July 2025 |
 | [Phone (3a) Lite](https://nothing.tech/products/phone-3a-lite) | A001T | Galaxian / Bulbasaur | [Here](https://nothing.wiki/hardware/phone_3a_lite) | 29 October 2025 |
-| [Phone (4a)](https://nothing.tech/products/phone-4a) / [Phone (4a) Pro](https://nothing.tech/products/phone-4a-pro) | A069 / A069P | Frogger / FroggerPro / Bellsprout | [Here](https://nothing.wiki/hardware/phone_4a_series) | 05 March 2026 |
-| [Phone (4b)](https://nothing.tech/products/phone-4b) | A009P | SuperContra / Blastoise | [Here](https://nothing.wiki/hardware/phone_4b) | 7 July 2026 |
+| [Phone (4a)](https://nothing.tech/products/phone-4a) | A069 | Frogger / Bellsprout | [Here](https://nothing.wiki/hardware/phone_4a_series) | 05 March 2026 |
+| [Phone (4a) Pro](https://nothing.tech/products/phone-4a-pro) | A069P | FroggerPro / Bellsprout | [Here](https://nothing.wiki/hardware/phone_4a_series) | 05 March 2026 |
+| [Phone (4b)](https://nothing.tech/products/phone-4b) | A009P | SuperContra / Blastoise | [Here](https://nothing.wiki/hardware/phone_4b) | 07 July 2026 |
 
 ### Audio
 
@@ -38,6 +40,7 @@ Complete catalog of Nothing & CMF by Nothing products with model numbers, codena
 | [Headphone (1)](https://nothing.tech/products/headphone-1) | B170 | Elekid | [Here](https://nothing.wiki/hardware/headphone_1) | 01 July 2025 |
 | [Ear (3)](https://nothing.tech/products/ear-3) | B173 | Feraligatr | [Here](https://nothing.wiki/hardware/ear_series#ear_3) | 18 September 2025 |
 | [Headphone (a)](https://nothing.wiki/download/headphone_a_user_guide.pdf) | B186 | Hoppip | [Here](https://nothing.wiki/hardware/headphone_a) | 05 March 2026 |
+| [Ear (3a)](https://nothing.tech/products/ear-3a?Colour=Pink) | B190 | Jumpluff | [Here](https://nothing.wiki/hardware/ear_series#ear_3a) | 07 July 2026 |
 
 ### Apparel
 

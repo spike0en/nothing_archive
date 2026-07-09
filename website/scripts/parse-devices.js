@@ -138,67 +138,104 @@ function parseDevices() {
     }
   }
 
-  // Iterate over the filesystem directories under docs/changelogs to find folders that match catalog codenames.
-  const folders = fs.readdirSync(CHANGELOGS_DIR).filter(f => {
-    return fs.statSync(path.join(CHANGELOGS_DIR, f)).isDirectory();
-  });
+  function resolveChangelogFolder(codename) {
+    if (fs.existsSync(path.join(CHANGELOGS_DIR, codename))) {
+      return codename;
+    }
+    const baseCodename = codename.replace(/(pro|plus|lite)$/i, '');
+    if (fs.existsSync(path.join(CHANGELOGS_DIR, baseCodename))) {
+      return baseCodename;
+    }
+    return null;
+  }
+
+  function getVariantRank(name) {
+    const lower = name.toLowerCase();
+    if (lower.includes('pro plus') || lower.includes('pro+')) return 1;
+    if (lower.includes('pro')) return 2;
+    if (lower.includes('plus')) return 3;
+    return 4;
+  }
 
   const metadata = [];
 
-  for (const folder of folders) {
-    const folderLower = folder.toLowerCase();
-    const row = parsedRows.find(r => r.codenames.includes(folderLower));
-    if (!row) {
-      console.warn(`[parse-devices] Warning: Folder '${folder}' has no matching row in devices.md.`);
-      continue;
-    }
-
-    let resolvedName = resolveDeviceName(folder, row.names, row.codenames, CHANGELOGS_DIR);
-
-    let displayCodename = '';
-    const otherCodenames = row.codenames.filter(c => c !== folderLower);
-    const otherFoldersExist = otherCodenames.some(c => fs.existsSync(path.join(CHANGELOGS_DIR, c)));
-    
-    if (!otherFoldersExist && row.codenames.length > 1) {
-      const base = row.codenames[0];
-      const pro = row.codenames[1];
-      if (pro === base + 'pro') {
-        const baseCap = capitalizeCodename(base, row.originalCodenamesList);
-        displayCodename = `${baseCap}(Pro)`;
-      } else {
-        displayCodename = row.codenames
-          .map(c => capitalizeCodename(c, row.originalCodenamesList))
-          .join(' / ');
+  for (const row of parsedRows) {
+    for (const codename of row.codenames) {
+      const folder = resolveChangelogFolder(codename);
+      if (!folder) {
+        continue;
       }
-    } else {
-      displayCodename = capitalizeCodename(folder, row.originalCodenamesList);
+
+      // Check other codenames in this row
+      const otherCodenames = row.codenames.filter(c => c !== codename);
+
+      let resolvedName = resolveDeviceName(folder, row.names, row.codenames, CHANGELOGS_DIR);
+      if (row.names.length > 1 && row.names.length === row.codenames.length) {
+        const idx = row.codenames.indexOf(codename);
+        if (idx !== -1) {
+          resolvedName = row.names[idx];
+        }
+      }
+
+      let displayCodename = '';
+      const otherFoldersExist = otherCodenames.some(c => {
+        const mappedC = resolveChangelogFolder(c);
+        return mappedC && fs.existsSync(path.join(CHANGELOGS_DIR, mappedC));
+      });
+      
+      if (!otherFoldersExist && row.codenames.length > 1) {
+        const base = row.codenames[0];
+        const pro = row.codenames[1];
+        if (pro === base + 'pro') {
+          const baseCap = capitalizeCodename(base, row.originalCodenamesList);
+          displayCodename = `${baseCap}(Pro)`;
+        } else {
+          displayCodename = row.codenames
+            .map(c => capitalizeCodename(c, row.originalCodenamesList))
+            .join(' / ');
+        }
+      } else {
+        displayCodename = capitalizeCodename(codename, row.originalCodenamesList);
+      }
+
+      const displayName = `${resolvedName} (${displayCodename})`;
+
+      const colors = deviceColors[codename] || [];
+      const variants = colors.map(colorName => {
+        const variantNameClean = colorName.toLowerCase().replace(/\s+/g, '');
+        const suffix = variantNameClean === 'ce' ? 'CE' : variantNameClean;
+        return {
+          name: colorName,
+          imageUrl: `/img/devices/${codename}_${suffix}.webp`
+        };
+      });
+
+      // Convert catalog date strings to millisecond timestamps for sorting comparisons.
+      const timestamp = new Date(row.releaseDate).getTime();
+
+      metadata.push({
+        name: displayName,
+        codename: codename,
+        folder: folder,
+        codenames: [codename, ...otherCodenames],
+        brand: row.brand,
+        series: row.brand === 'CMF' ? 'cmf' : getSeries(resolvedName),
+        releaseDate: row.releaseDate,
+        timestamp,
+        variants
+      });
     }
+  }
 
-    const displayName = `${resolvedName} (${displayCodename})`;
-
-    const colors = deviceColors[folderLower] || [];
-    const variants = colors.map(colorName => {
-      const variantNameClean = colorName.toLowerCase().replace(/\s+/g, '');
-      const suffix = variantNameClean === 'ce' ? 'CE' : variantNameClean;
-      return {
-        name: colorName,
-        imageUrl: `/img/devices/${folderLower}_${suffix}.webp`
-      };
-    });
-
-    // Convert catalog date strings to millisecond timestamps for sorting comparisons.
-    const timestamp = new Date(row.releaseDate).getTime();
-
-    metadata.push({
-      name: displayName,
-      codename: folderLower,
-      codenames: [folderLower, ...otherCodenames],
-      brand: row.brand,
-      series: row.brand === 'CMF' ? 'cmf' : getSeries(resolvedName),
-      releaseDate: row.releaseDate,
-      timestamp,
-      variants
-    });
+  // Warn about folders with no matching codename in metadata
+  const generatedFolders = new Set(metadata.map(m => m.folder));
+  const folders = fs.readdirSync(CHANGELOGS_DIR).filter(f => {
+    return fs.statSync(path.join(CHANGELOGS_DIR, f)).isDirectory();
+  });
+  for (const folder of folders) {
+    if (!generatedFolders.has(folder.toLowerCase())) {
+      console.warn(`[parse-devices] Warning: Folder '${folder}' has no matching row in devices.md.`);
+    }
   }
 
   // Order the devices array to align Nothing Number, A, B/Lite series and CMF brand chronologically.
@@ -225,20 +262,20 @@ function parseDevices() {
       if (a.timestamp !== b.timestamp) {
         return b.timestamp - a.timestamp;
       }
-      const isProA = a.name.toLowerCase().includes('pro') || a.name.toLowerCase().includes('plus') || a.codename.includes('pro');
-      const isProB = b.name.toLowerCase().includes('pro') || b.name.toLowerCase().includes('plus') || b.codename.includes('pro');
-      if (isProA !== isProB) {
-        return isProA ? -1 : 1;
+      const variantRankA = getVariantRank(a.name);
+      const variantRankB = getVariantRank(b.name);
+      if (variantRankA !== variantRankB) {
+        return variantRankA - variantRankB;
       }
       return a.name.localeCompare(b.name);
     } else {
       if (a.timestamp !== b.timestamp) {
         return b.timestamp - a.timestamp;
       }
-      const isProA = a.name.toLowerCase().includes('pro') || a.name.toLowerCase().includes('plus') || a.codename.includes('pro');
-      const isProB = b.name.toLowerCase().includes('pro') || b.name.toLowerCase().includes('plus') || b.codename.includes('pro');
-      if (isProA !== isProB) {
-        return isProA ? -1 : 1;
+      const variantRankA = getVariantRank(a.name);
+      const variantRankB = getVariantRank(b.name);
+      if (variantRankA !== variantRankB) {
+        return variantRankA - variantRankB;
       }
       return a.name.localeCompare(b.name);
     }
@@ -250,3 +287,4 @@ function parseDevices() {
 }
 
 parseDevices();
+
