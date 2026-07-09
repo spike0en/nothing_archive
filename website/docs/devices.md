@@ -11,91 +11,101 @@ Complete catalog of Nothing & CMF by Nothing products with model numbers, codena
 
 ## Nothing
 
+:::info[Official Resources]
+Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or official user manuals? You can find them in the [Official Phone Resources](/docs/official#nothing-phones) section.
+:::
+
 ### Phones
 
-| Device Name | Model | Device Codename | Wiki Page | Release Date |
-|-------------|-------|-----------------|-----------|--------------|
-| [Phone (1)](https://nothing.tech/products/phone-1) | A063 | Spacewar / Abra | [Here](https://nothing.wiki/hardware/phone_1) | 12 July 2022 |
-| [Phone (2)](https://nothing.tech/products/phone-2) | A065 / AIN065 | Pong / Alakazam | [Here](https://nothing.wiki/hardware/phone_2) | 11 July 2023 |
-| [Phone (2a)](https://nothing.tech/products/phone-2a) | A142 | Pacman / Aerodactyl | [Here](https://nothing.wiki/hardware/phone_2a_series) | 05 March 2024 |
-| [Phone (2a) Plus](https://nothing.tech/products/phone-2a-plus) | A142P | PacmanPro / Mega Aerodactyl | [Here](https://nothing.wiki/hardware/phone_2a_series) | 31 July 2024 |
-| [Phone (3a)](https://nothing.tech/products/phone-3a) | A059 | Asteroids / Arcanine | [Here](https://nothing.wiki/hardware/phone_3a_series) | 04 March 2025 |
-| [Phone (3a) Pro](https://nothing.tech/products/phone-3a-pro) | A059P | AsteroidsPro / Arcanine | [Here](https://nothing.wiki/hardware/phone_3a_series) | 04 March 2025 |
-| [Phone (3)](https://nothing.tech/products/phone-3) | A024 | Metroid / Arbok | [Here](https://nothing.wiki/hardware/phone_3) | 01 July 2025 |
-| [Phone (3a) Lite](https://nothing.tech/products/phone-3a-lite) | A001T | Galaxian / Bulbasaur | [Here](https://nothing.wiki/hardware/phone_3a_lite) | 29 October 2025 |
-| [Phone (4a)](https://nothing.tech/products/phone-4a) | A069 | Frogger / Bellsprout | [Here](https://nothing.wiki/hardware/phone_4a_series) | 05 March 2026 |
-| [Phone (4a) Pro](https://nothing.tech/products/phone-4a-pro) | A069P | FroggerPro / Bellsprout | [Here](https://nothing.wiki/hardware/phone_4a_series) | 05 March 2026 |
-| [Phone (4b)](https://nothing.tech/products/phone-4b) | A009P | SuperContra / Blastoise | [Here](https://nothing.wiki/hardware/phone_4b) | 07 July 2026 |
+| Device / Pokémon <br /> Codename | Model | Release Date | Factory Firmware | Updates <br /> (OS + Security) | Wiki Page |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [Phone (1)](https://nothing.tech/products/phone-1) <br /> <small>Spacewar / Abra</small> | A063 | 12 July 2022 | Nothing OS 1.0 (Android 12) | 3 + 4 Years | [Here](https://nothing.wiki/hardware/phone_1) |
+| [Phone (2)](https://nothing.tech/products/phone-2) <br /> <small>Pong / Alakazam</small> | A065 / AIN065 | 11 July 2023 | Nothing OS 2.0 (Android 13) | 3 + 4 Years | [Here](https://nothing.wiki/hardware/phone_2) |
+| [Phone (2a)](https://nothing.tech/products/phone-2a) <br /> <small>Pacman / Aerodactyl</small> | A142 | 05 March 2024 | Nothing OS 2.5 (Android 14) | 3 + 4 Years | [Here](https://nothing.wiki/hardware/phone_2a_series) |
+| [Phone (2a) Plus](https://nothing.tech/products/phone-2a-plus) <br /> <small>PacmanPro / Mega Aerodactyl</small> | A142P | 31 July 2024 | Nothing OS 2.6 (Android 14) | 3 + 4 Years | [Here](https://nothing.wiki/hardware/phone_2a_series) |
+| [Phone (3a)](https://nothing.tech/products/phone-3a) <br /> <small>Asteroids / Arcanine</small> | A059 | 04 March 2025 | Nothing OS 4.0 (Android 16) | 3 + 6 Years | [Here](https://nothing.wiki/hardware/phone_3a_series) |
+| [Phone (3a) Pro](https://nothing.tech/products/phone-3a-pro) <br /> <small>AsteroidsPro / Arcanine</small> | A059P | 04 March 2025 | Nothing OS 4.0 (Android 16) | 3 + 6 Years | [Here](https://nothing.wiki/hardware/phone_3a_series) |
+| [Phone (3)](https://nothing.tech/products/phone-3) <br /> <small>Metroid / Arbok</small> | A024 | 01 July 2025 | Nothing OS 3.0 (Android 15) | 5 + 7 Years | [Here](https://nothing.wiki/hardware/phone_3) |
+| [Phone (3a) Lite](https://nothing.tech/products/phone-3a-lite) <br /> <small>Galaxian / Bulbasaur</small> | A001T | 29 October 2025 | Nothing OS 3.5 (Android 15) | 3 + 6 Years | [Here](https://nothing.wiki/hardware/phone_3a_lite) |
+| [Phone (4a)](https://nothing.tech/products/phone-4a) <br /> <small>Frogger / Bellsprout</small> | A069 | 05 March 2026 | Nothing OS 4.1 (Android 16) | 3 + 4 Years | [Here](https://nothing.wiki/hardware/phone_4a_series) |
+| [Phone (4a) Pro](https://nothing.tech/products/phone-4a-pro) <br /> <small>FroggerPro / Bellsprout</small> | A069P | 05 March 2026 | Nothing OS 4.1 (Android 16) | 3 + 4 Years | [Here](https://nothing.wiki/hardware/phone_4a_series) |
+| [Phone (4b)](https://nothing.tech/products/phone-4b) <br /> <small>SuperContra / Blastoise</small> | A009P | 07 July 2026 | Nothing OS 4.1 (Android 16) | 3 + 6 Years | [Here](https://nothing.wiki/hardware/phone_4b) |
 
 ### Audio
 
-| Device Name | Model | Device Codename | Wiki Page | Release Date |
-|-------------|-------|-----------------|-----------|--------------|
-| [Ear (1)](https://nothing.tech/products/ear-1) | B181 | Aipom | [Here](https://nothing.wiki/hardware/ear_series#ear_1) | 27 July 2021 |
-| [Ear (stick)](https://nothing.tech/products/ear-stick) | B157 | Bellossom | [Here](https://nothing.wiki/hardware/ear_series#ear_stick) | 26 October 2022 |
-| [Ear (2)](https://nothing.tech/products/ear-2) | B155 | Azumarill | [Here](https://nothing.wiki/hardware/ear_series#ear_2) | 22 March 2023 |
-| [Ear](https://nothing.tech/products/ear) | B171 | Entei | [Here](https://nothing.wiki/hardware/ear_series#ear) | 18 April 2024 |
-| [Ear (a)](https://nothing.tech/products/ear-a) | B162 | Cleffa | [Here](https://nothing.wiki/hardware/ear_series#ear_a) | 18 April 2024 |
-| [Ear (open)](https://nothing.tech/products/ear-open) | B182 | Flaaffy | [Here](https://nothing.wiki/hardware/ear_series#ear_open) | 24 September 2024 |
-| [Headphone (1)](https://nothing.tech/products/headphone-1) | B170 | Elekid | [Here](https://nothing.wiki/hardware/headphone_1) | 01 July 2025 |
-| [Ear (3)](https://nothing.tech/products/ear-3) | B173 | Feraligatr | [Here](https://nothing.wiki/hardware/ear_series#ear_3) | 18 September 2025 |
-| [Headphone (a)](https://nothing.wiki/download/headphone_a_user_guide.pdf) | B186 | Hoppip | [Here](https://nothing.wiki/hardware/headphone_a) | 05 March 2026 |
-| [Ear (3a)](https://nothing.tech/products/ear-3a?Colour=Pink) | B190 | Jumpluff | [Here](https://nothing.wiki/hardware/ear_series#ear_3a) | 07 July 2026 |
+| Device / Pokémon <br /> Codename | Model | Release Date | Wiki Page |
+| :--- | :--- | :--- | :--- |
+| [Ear (1)](https://nothing.tech/products/ear-1) <br /> <small>Aipom</small> | B181 | 27 July 2021 | [Here](https://nothing.wiki/hardware/ear_series#ear_1) |
+| [Ear (stick)](https://nothing.tech/products/ear-stick) <br /> <small>Bellossom</small> | B157 | 26 October 2022 | [Here](https://nothing.wiki/hardware/ear_series#ear_stick) |
+| [Ear (2)](https://nothing.tech/products/ear-2) <br /> <small>Azumarill</small> | B155 | 22 March 2023 | [Here](https://nothing.wiki/hardware/ear_series#ear_2) |
+| [Ear](https://nothing.tech/products/ear) <br /> <small>Entei</small> | B171 | 18 April 2024 | [Here](https://nothing.wiki/hardware/ear_series#ear) |
+| [Ear (a)](https://nothing.tech/products/ear-a) <br /> <small>Cleffa</small> | B162 | 18 April 2024 | [Here](https://nothing.wiki/hardware/ear_series#ear_a) |
+| [Ear (open)](https://nothing.tech/products/ear-open) <br /> <small>Flaaffy</small> | B182 | 24 September 2024 | [Here](https://nothing.wiki/hardware/ear_series#ear_open) |
+| [Headphone (1)](https://nothing.tech/products/headphone-1) <br /> <small>Elekid</small> | B170 | 01 July 2025 | [Here](https://nothing.wiki/hardware/headphone_1) |
+| [Ear (3)](https://nothing.tech/products/ear-3) <br /> <small>Feraligatr</small> | B173 | 18 September 2025 | [Here](https://nothing.wiki/hardware/ear_series#ear_3) |
+| [Headphone (a)](https://nothing.wiki/download/headphone_a_user_guide.pdf) <br /> <small>Hoppip</small> | B186 | 05 March 2026 | [Here](https://nothing.wiki/hardware/headphone_a) |
+| [Ear (3a)](https://nothing.tech/products/ear-3a?Colour=Pink) <br /> <small>Jumpluff</small> | B190 | 07 July 2026 | [Here](https://nothing.wiki/hardware/ear_series#ear_3a) |
 
 ### Apparel
 
-| Name | Wiki Page | Release Date |
-|------|-----------|--------------|
-| [Labcoat](https://nothing.tech/products/nothing-labcoat) | [Here](https://nothing.wiki/merchandise/apparel#drop_1_transparency) | 07 December 2023 |
-| [Cap](https://nothing.tech/products/nothing-cap) | [Here](https://nothing.wiki/merchandise/apparel#drop_1_transparency) | 07 December 2023 |
-| [Heavy Hoodie](https://nothing.tech/products/nothing-hoodie) | [Here](https://nothing.wiki/merchandise/apparel#drop_2_comfort) | 21 November 2024 |
-| [Ripstop Tracksuit Jacket](https://nothing.tech/products/nothing-tracksuit-jacket) | [Here](https://nothing.wiki/merchandise/apparel#drop_2_comfort) | 21 November 2024 |
-| [Ripstop Tracksuit Trousers](https://nothing.tech/products/nothing-tracksuit-trousers) | [Here](https://nothing.wiki/merchandise/apparel#drop_2_comfort) | 21 November 2024 |
-| [Ripstop Overall](https://nothing.tech/products/nothing-overall) | [Here](https://nothing.wiki/merchandise/apparel#drop_2_comfort) | 21 November 2024 |
+| Name | Release Date | Wiki Page |
+| :--- | :--- | :--- |
+| [Labcoat](https://nothing.tech/products/nothing-labcoat) | 07 December 2023 | [Here](https://nothing.wiki/merchandise/apparel#drop_1_transparency) |
+| [Cap](https://nothing.tech/products/nothing-cap) | 07 December 2023 | [Here](https://nothing.wiki/merchandise/apparel#drop_1_transparency) |
+| [Heavy Hoodie](https://nothing.tech/products/nothing-hoodie) | 21 November 2024 | [Here](https://nothing.wiki/merchandise/apparel#drop_2_comfort) |
+| [Ripstop Tracksuit Jacket](https://nothing.tech/products/nothing-tracksuit-jacket) | 21 November 2024 | [Here](https://nothing.wiki/merchandise/apparel#drop_2_comfort) |
+| [Ripstop Tracksuit Trousers](https://nothing.tech/products/nothing-tracksuit-trousers) | 21 November 2024 | [Here](https://nothing.wiki/merchandise/apparel#drop_2_comfort) |
+| [Ripstop Overall](https://nothing.tech/products/nothing-overall) | 21 November 2024 | [Here](https://nothing.wiki/merchandise/apparel#drop_2_comfort) |
 
 ### Other Products
 
-| Product / Device Name | Wiki Page | Release Date |
-|-----------------------|-----------|--------------|
-| Beer (5.1%) | [Here](https://nothing.wiki/merchandise/beer) | 05 October 2023 (limited) |
-| Coffee (spaceboy) | [Here](https://nothing.wiki/merchandise/coffee) | Unreleased |
-| Power (1) power bank & charger | [Here](https://nothing.wiki/merchandise/power_1) | Unreleased |
+| Product / Device Name | Release Date | Wiki Page |
+| :--- | :--- | :--- |
+| Beer (5.1%) | 05 October 2023 (limited) | [Here](https://nothing.wiki/merchandise/beer) |
+| Coffee (spaceboy) | Unreleased | [Here](https://nothing.wiki/merchandise/coffee) |
+| Power (1) power bank & charger | Unreleased | [Here](https://nothing.wiki/merchandise/power_1) |
 
 
 ## CMF by Nothing
 
+:::info[Official Resources]
+Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or official user manuals for CMF devices? You can find them in the [Official CMF Resources](/docs/official#cmf-phones) section.
+:::
+
 ### Phones
 
-| Device Name | Model | Device Codename | Wiki Page | Release Date |
-|-------------|-------|-----------------|-----------|--------------|
-| [Phone (1)](https://nothing.tech/products/cmf-phone-1) | A015 | Tetris / Beedrill | [Here](https://nothing.wiki/cmf/cmf_phone_1) | 08 July 2024 |
-| [Phone (2) Pro](http://nothing.tech/products/cmf-phone-2-pro) | A001 | Galaga / Bulbasaur | [Here](https://nothing.wiki/cmf/cmf_phone_2_pro) | 28 April 2025 |
+| Device / Pokémon <br /> Codename | Model | Release Date | Factory Firmware | Updates <br /> (OS + Security) | Wiki Page |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [Phone (1)](https://nothing.tech/products/cmf-phone-1) <br /> <small>Tetris / Beedrill</small> | A015 | 08 July 2024 | Nothing OS 2.6 (Android 14) | 2 + 3 Years | [Here](https://nothing.wiki/cmf/cmf_phone_1) |
+| [Phone (2) Pro](http://nothing.tech/products/cmf-phone-2-pro) <br /> <small>Galaga / Bulbasaur</small> | A001 | 28 April 2025 | Nothing OS 3.0 (Android 15) | 3 + 6 Years | [Here](https://nothing.wiki/cmf/cmf_phone_2_pro) |
+
+*\*Note: Updates are listed as (Major Android OS upgrades) + (Years of security patches).*
 
 ### Audio
 
-| Device Name | Model | Device Codename | Wiki Page | Release Date |
-|-------------|-------|-----------------|-----------|--------------|
-| [Buds Pro](https://nothing.tech/products/cmf-buds-pro) | B168 | Corsola | [Here](https://nothing.wiki/cmf/cmf_buds_pro) | 26 September 2023 |
-| [Buds](https://nothing.tech/products/cmf-buds) | B232 | Donphan | [Here](https://nothing.wiki/cmf/cmf_buds) | 05 March 2024 |
-| [Neckband Pro](https://nothing.tech/products/cmf-neckband-pro) | B164 | Crobat | [Here](https://nothing.wiki/cmf/cmf_neckband_pro) | 05 March 2024 |
-| [Buds Pro 2](https://nothing.tech/products/cmf-buds-pro-2) | B172 / B187 | Espeon | [Here](https://nothing.wiki/cmf/cmf_buds_pro_2) | 08 July 2024 |
-| [Buds 2](https://nothing.tech/products/cmf-buds-2) | B179 | Girafarig | [Here](https://nothing.wiki/cmf/cmf_buds_2) | 28 April 2025 |
-| [Buds 2 Plus](https://nothing.tech/products/cmf-buds-2-plus) | B184 | Gligar | [Here](https://nothing.wiki/cmf/cmf_buds_2_plus) | 28 April 2025 |
-| [Buds 2a](https://nothing.tech/products/cmf-buds-2a) | B185 | Hoothoot | [Here](https://nothing.wiki/cmf/cmf_buds_2a) | 28 April 2025 |
-| [Headphone Pro](https://nothing.tech/products/cmf-headphone-pro) | B205 | Forretress | [Here](https://nothing.wiki/cmf/cmf_headphone_pro) | 29 September 2025 |
+| Device / Pokémon <br /> Codename | Model | Release Date | Wiki Page |
+| :--- | :--- | :--- | :--- |
+| [Buds Pro](https://nothing.tech/products/cmf-buds-pro) <br /> <small>Corsola</small> | B168 | 26 September 2023 | [Here](https://nothing.wiki/cmf/cmf_buds_pro) |
+| [Buds](https://nothing.tech/products/cmf-buds) <br /> <small>Donphan</small> | B232 | 05 March 2024 | [Here](https://nothing.wiki/cmf/cmf_buds) |
+| [Neckband Pro](https://nothing.tech/products/cmf-neckband-pro) <br /> <small>Crobat</small> | B164 | 05 March 2024 | [Here](https://nothing.wiki/cmf/cmf_neckband_pro) |
+| [Buds Pro 2](https://nothing.tech/products/cmf-buds-pro-2) <br /> <small>Espeon</small> | B172 / B187 | 08 July 2024 | [Here](https://nothing.wiki/cmf/cmf_buds_pro_2) |
+| [Buds 2](https://nothing.tech/products/cmf-buds-2) <br /> <small>Girafarig</small> | B179 | 28 April 2025 | [Here](https://nothing.wiki/cmf/cmf_buds_2) |
+| [Buds 2 Plus](https://nothing.tech/products/cmf-buds-2-plus) <br /> <small>Gligar</small> | B184 | 28 April 2025 | [Here](https://nothing.wiki/cmf/cmf_buds_2_plus) |
+| [Buds 2a](https://nothing.tech/products/cmf-buds-2a) <br /> <small>Hoothoot</small> | B185 | 28 April 2025 | [Here](https://nothing.wiki/cmf/cmf_buds_2a) |
+| [Headphone Pro](https://nothing.tech/products/cmf-headphone-pro) <br /> <small>Forretress</small> | B205 | 29 September 2025 | [Here](https://nothing.wiki/cmf/cmf_headphone_pro) |
 
 ### Watches
 
-| Device Name | Model | Device Codename | Wiki Page | Release Date |
-|-------------|-------|-----------------|-----------|--------------|
-| [Watch Pro](https://nothing.tech/products/cmf-watch-pro) | D395 | Empoleon | [Here](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro) | 26 September 2023 |
-| [Watch Pro 2](https://nothing.tech/products/cmf-watch-pro-2) | D398 | Buizel | [Here](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro_2) | 08 July 2024 |
-| [Watch 3 Pro](https://nothing.tech/products/cmf-watch-3-pro) | D399 | Buneary | [Here](https://nothing.wiki/cmf/cmf_watch#cmf_watch_3_pro) | 22 July 2025 |
+| Device / Pokémon <br /> Codename | Model | Release Date | Wiki Page |
+| :--- | :--- | :--- | :--- |
+| [Watch Pro](https://nothing.tech/products/cmf-watch-pro) <br /> <small>Empoleon</small> | D395 | 26 September 2023 | [Here](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro) |
+| [Watch Pro 2](https://nothing.tech/products/cmf-watch-pro-2) <br /> <small>Buizel</small> | D398 | 08 July 2024 | [Here](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro_2) |
+| [Watch 3 Pro](https://nothing.tech/products/cmf-watch-3-pro) <br /> <small>Buneary</small> | D399 | 22 July 2025 | [Here](https://nothing.wiki/cmf/cmf_watch#cmf_watch_3_pro) |
 
 ### Accessories
 
-| Device Name | Model | Wiki Page | Release Date |
-|-------------|-------|-----------|--------------|
-| [Power 65W GaN](https://nothing.tech/products/cmf-power-65w-gan) | C332 | [Here](https://nothing.wiki/cmf/accessories#cmf_power_65w_gan) | 26 September 2023 |
-| [Power 100W GaN](https://nothing.tech/products/cmf-power-100w-gan) | C269 | [Here](https://nothing.wiki/cmf/accessories#cmf_power_100w_gan) | 26 September 2024 |
-| [Power 140W GaN](https://nothing.tech/products/cmf-power-140w-gan) | C362 | [Here](https://nothing.wiki/cmf/accessories#cmf_power_140w_gan) | 26 September 2024 |
+| Device Name | Model | Release Date | Wiki Page |
+| :--- | :--- | :--- | :--- |
+| [Power 65W GaN](https://nothing.tech/products/cmf-power-65w-gan) | C332 | 26 September 2023 | [Here](https://nothing.wiki/cmf/accessories#cmf_power_65w_gan) |
+| [Power 100W GaN](https://nothing.tech/products/cmf-power-100w-gan) | C269 | 26 September 2024 | [Here](https://nothing.wiki/cmf/accessories#cmf_power_100w_gan) |
+| [Power 140W GaN](https://nothing.tech/products/cmf-power-140w-gan) | C362 | 26 September 2024 | [Here](https://nothing.wiki/cmf/accessories#cmf_power_140w_gan) |

@@ -109,14 +109,19 @@ function parseDevices() {
 
     if (inPhones && trimmed.startsWith('|') && trimmed.split('|').length >= 6) {
       const cols = trimmed.split('|').map(c => c.trim());
-      if (cols[1].toLowerCase().includes('device name') || cols[1].includes('---')) {
+      if (cols[1].toLowerCase().includes('device') || cols[1].includes('---')) {
         continue;
       }
 
-      const names = parseNames(cols[1]);
-      const codenames = parseCodenames(cols[3]);
-      const releaseDate = cols[5].trim();
-      const originalCodenamesList = cols[3].split('/').map(c => c.trim());
+      const parts = cols[1].split(/<br\s*\/?>/i);
+      const namePart = parts[0].trim();
+      const codenamePartRaw = parts[1] ? parts[1].trim() : '';
+      const codenamePartClean = codenamePartRaw.replace(/<\/?[^>]+(>|$)/g, "").trim();
+
+      const names = parseNames(namePart);
+      const codenames = parseCodenames(codenamePartClean);
+      const releaseDate = cols[3].trim();
+      const originalCodenamesList = codenamePartClean.split('/').map(c => c.trim());
 
       parsedRows.push({
         names,
