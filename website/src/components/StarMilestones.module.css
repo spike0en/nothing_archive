@@ -756,3 +756,46 @@
   }
 }
 
+/* --- Border Beam SVG Animation --- */
+.borderSvg {
+  position: absolute;
+  inset: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  pointer-events: none;
+  z-index: 5;
+  overflow: visible;
+}
+
+.borderRect {
+  fill: none;
+  stroke: var(--nothing-red, #D71921);
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-dasharray: 8 42 8 42;
+}
+
+.animated {
+  animation: borderBeamSpinClockwise 20s linear infinite;
+  animation-delay: -5s;
+}
+
+[data-theme='dark'] .borderRect {
+  stroke: var(--nothing-orange, #FA471F);
+}
+
+@keyframes borderBeamSpinClockwise {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .borderSvg {
+    display: none !important;
+  }
+}
+
