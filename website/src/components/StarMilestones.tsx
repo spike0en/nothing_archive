@@ -28,11 +28,6 @@ export default function StarMilestones(): React.JSX.Element {
   // Shares the deduplicated repo stats fetch with CommitMatrix
   const { stats, loading: statsLoading } = useGitHubRepoStats();
   const stars = statsLoading ? null : stats.stars;
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   /** Index of the next unmet milestone (-1 if all reached) */
   const nextIdx = useMemo(() => {
@@ -66,9 +61,6 @@ export default function StarMilestones(): React.JSX.Element {
   if (stars === null) {
     return (
       <div className={styles.milestoneContainer}>
-        <svg className={styles.borderSvg} aria-hidden="true">
-          <rect className={clsx(styles.borderRect, mounted && styles.animated)} x="0" y="0" width="100%" height="100%" rx="14" ry="14" pathLength="100" />
-        </svg>
         <div className={styles.loadingState}>LOADING GLYPH INTERFACE...</div>
       </div>
     );
@@ -78,9 +70,6 @@ export default function StarMilestones(): React.JSX.Element {
 
   return (
     <div className={styles.milestoneContainer}>
-      <svg className={styles.borderSvg} aria-hidden="true">
-        <rect className={clsx(styles.borderRect, mounted && styles.animated)} x="0" y="0" width="100%" height="100%" rx="14" ry="14" pathLength="100" />
-      </svg>
       <TorxScrew className={clsx(styles.screw, styles.screwTopLeft)} rotation={45} />
       <TorxScrew className={clsx(styles.screw, styles.screwTopRight)} rotation={120} />
       <TorxScrew className={clsx(styles.screw, styles.screwBottomLeft)} rotation={80} />

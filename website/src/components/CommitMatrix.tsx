@@ -29,11 +29,6 @@ export default function CommitMatrix(): React.JSX.Element {
   const [currentTime, setCurrentTime] = useState('');
   const [blinkActive, setBlinkActive] = useState(true);
   const [timezoneMode, setTimezoneMode] = useState<'local' | 'london'>('local');
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -190,9 +185,6 @@ export default function CommitMatrix(): React.JSX.Element {
 
   return (
     <div className={styles.container}>
-      <svg className={styles.borderSvg} aria-hidden="true">
-        <rect className={clsx(styles.borderRect, mounted && styles.animated)} x="0" y="0" width="100%" height="100%" rx="14" ry="14" pathLength="100" />
-      </svg>
 
       {isProgressLoading && <div className={styles.loadingBar} />}
       {/* Telemetry Header */}
