@@ -19,7 +19,7 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 
 | Device / Pokémon <br /> Codename | Model | Release Date | Factory Firmware | Updates <br /> (OS + Security) | Wiki Page |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| [Phone (1)](https://nothing.tech/products/phone-1) <br /> <small>Spacewar / Abra</small> | A063 | 12 July 2022 | Nothing OS 1.0 (Android 12) | 3 + 4 Years | [Here](https://nothing.wiki/hardware/phone_1) |
+| [Phone (1)](https://nothing.tech/products/phone-1) <br /> <small>Spacewar / Abra</small> | A063 | 12 July 2022 | Nothing OS 1.0 (Android 12) | 3 + 4 Years (EOL) | [Here](https://nothing.wiki/hardware/phone_1) |
 | [Phone (2)](https://nothing.tech/products/phone-2) <br /> <small>Pong / Alakazam</small> | A065 / AIN065 | 11 July 2023 | Nothing OS 2.0 (Android 13) | 3 + 4 Years | [Here](https://nothing.wiki/hardware/phone_2) |
 | [Phone (2a)](https://nothing.tech/products/phone-2a) <br /> <small>Pacman / Aerodactyl</small> | A142 | 05 March 2024 | Nothing OS 2.5 (Android 14) | 3 + 4 Years | [Here](https://nothing.wiki/hardware/phone_2a_series) |
 | [Phone (2a) Plus](https://nothing.tech/products/phone-2a-plus) <br /> <small>PacmanPro / Mega Aerodactyl</small> | A142P | 31 July 2024 | Nothing OS 2.6 (Android 14) | 3 + 4 Years | [Here](https://nothing.wiki/hardware/phone_2a_series) |

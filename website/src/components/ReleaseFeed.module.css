@@ -584,9 +584,6 @@
   animation: borderBeamSpinClockwise 15s linear infinite;
 }
 
-[data-theme='dark'] .borderRect {
-  stroke: var(--nothing-orange, #FA471F);
-}
 
 @keyframes borderBeamSpinClockwise {
   from {

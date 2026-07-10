@@ -554,9 +554,6 @@
   animation-delay: -7.5s;
 }
 
-[data-theme='dark'] .borderRect {
-  stroke: var(--nothing-orange, #FA471F);
-}
 
 @keyframes borderBeamSpinCounterClockwise {
   from {

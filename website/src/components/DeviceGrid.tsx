@@ -106,7 +106,7 @@ export default function DeviceGrid(): React.JSX.Element {
     <div>
       {numberDevices.length > 0 && (
         <>
-          <h2 className={styles.sectionHeader}>Nothing (Number Series)</h2>
+          <h2 className={styles.sectionHeader}>Nothing Phone Series</h2>
           <div className={styles.grid}>
             {numberDevices.map(device => (
               <ModelCard
@@ -121,7 +121,7 @@ export default function DeviceGrid(): React.JSX.Element {
 
       {aDevices.length > 0 && (
         <>
-          <h2 className={styles.sectionHeader}>Nothing (A Series)</h2>
+          <h2 className={styles.sectionHeader}>Nothing Phone (a) Series</h2>
           <div className={styles.grid}>
             {aDevices.map(device => (
               <ModelCard
@@ -136,7 +136,7 @@ export default function DeviceGrid(): React.JSX.Element {
 
       {bDevices.length > 0 && (
         <>
-          <h2 className={styles.sectionHeader}>Nothing (B / Lite Series)</h2>
+          <h2 className={styles.sectionHeader}>Nothing Phone (b / Lite) Series</h2>
           <div className={styles.grid}>
             {bDevices.map(device => (
               <ModelCard
@@ -151,7 +151,7 @@ export default function DeviceGrid(): React.JSX.Element {
 
       {cmfDevices.length > 0 && (
         <>
-          <h2 className={styles.sectionHeader}>CMF by Nothing</h2>
+          <h2 className={styles.sectionHeader}>CMF by Nothing Phone Series</h2>
           <div className={styles.grid}>
             {cmfDevices.map(device => (
               <ModelCard
