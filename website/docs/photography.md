@@ -55,7 +55,6 @@ The config files (`xml` or `.agc`) have been archived below by device name along
 - [Phone (2)](https://archive.org/download/nothing-archive/spike0en/photography/phone-2/)
 - [Phone (2a) Series](https://archive.org/download/nothing-archive/spike0en/photography/phone-2a-series/)
 - [Phone (3a) & (3a) Pro](https://archive.org/download/nothing-archive/spike0en/photography/phone-3a-series/)
-- [Phone (3)](https://archive.org/download/nothing-archive/spike0en/photography/phone-3/)
 
 </div>
 
