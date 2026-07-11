@@ -17,7 +17,7 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 
 ### Phones
 
-| Device / Pokémon <br /> Codename | Model | Release Date | Factory Firmware | Updates <br /> (OS + Security) | Wiki Page |
+| Device / Pokémon Codename | Model | Release Date | Factory Firmware | Updates (OS + Security) | Wiki Page |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | [Phone (1)](https://nothing.tech/products/phone-1) <br /> <small>Spacewar / Abra</small> | A063 | 12 July 2022 | Nothing OS 1.0 (Android 12) | 3 + 1 Years (EOL) | [Here](https://nothing.wiki/hardware/phone_1) |
 | [Phone (2)](https://nothing.tech/products/phone-2) <br /> <small>Pong / Alakazam</small> | A065 / AIN065 | 11 July 2023 | Nothing OS 2.0 (Android 13) | 3 + 1 Years | [Here](https://nothing.wiki/hardware/phone_2) |
@@ -33,7 +33,7 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 
 ### Audio
 
-| Device / Pokémon <br /> Codename | Model | Release Date | Wiki Page |
+| Device / Pokémon Codename | Model | Release Date | Wiki Page |
 | :--- | :--- | :--- | :--- |
 | [Ear (1)](https://nothing.tech/products/ear-1) <br /> <small>Aipom</small> | B181 | 27 July 2021 | [Here](https://nothing.wiki/hardware/ear_series#ear_1) |
 | [Ear (stick)](https://nothing.tech/products/ear-stick) <br /> <small>Bellossom</small> | B157 | 26 October 2022 | [Here](https://nothing.wiki/hardware/ear_series#ear_stick) |
@@ -74,7 +74,7 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 
 ### Phones
 
-| Device / Pokémon <br /> Codename | Model | Release Date | Factory Firmware | Updates <br /> (OS + Security) | Wiki Page |
+| Device / Pokémon Codename | Model | Release Date | Factory Firmware | Updates (OS + Security) | Wiki Page |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | [Phone (1)](https://nothing.tech/products/cmf-phone-1) <br /> <small>Tetris / Beedrill</small> | A015 | 08 July 2024 | Nothing OS 2.6 (Android 14) | 2 + 1 Years | [Here](https://nothing.wiki/cmf/cmf_phone_1) |
 | [Phone (2) Pro](http://nothing.tech/products/cmf-phone-2-pro) <br /> <small>Galaga / Bulbasaur</small> | A001 | 28 April 2025 | Nothing OS 3.0 (Android 15) | 3 + 3 Years | [Here](https://nothing.wiki/cmf/cmf_phone_2_pro) |
@@ -83,7 +83,7 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 
 ### Audio
 
-| Device / Pokémon <br /> Codename | Model | Release Date | Wiki Page |
+| Device / Pokémon Codename | Model | Release Date | Wiki Page |
 | :--- | :--- | :--- | :--- |
 | [Buds Pro](https://nothing.tech/products/cmf-buds-pro) <br /> <small>Corsola</small> | B168 | 26 September 2023 | [Here](https://nothing.wiki/cmf/cmf_buds_pro) |
 | [Buds](https://nothing.tech/products/cmf-buds) <br /> <small>Donphan</small> | B232 | 05 March 2024 | [Here](https://nothing.wiki/cmf/cmf_buds) |
@@ -96,7 +96,7 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 
 ### Watches
 
-| Device / Pokémon <br /> Codename | Model | Release Date | Wiki Page |
+| Device / Pokémon Codename | Model | Release Date | Wiki Page |
 | :--- | :--- | :--- | :--- |
 | [Watch Pro](https://nothing.tech/products/cmf-watch-pro) <br /> <small>Empoleon</small> | D395 | 26 September 2023 | [Here](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro) |
 | [Watch Pro 2](https://nothing.tech/products/cmf-watch-pro-2) <br /> <small>Buizel</small> | D398 | 08 July 2024 | [Here](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro_2) |

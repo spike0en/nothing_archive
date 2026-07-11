@@ -32,7 +32,7 @@ Nothing OS software build numbers contain structured metadata about the build it
 
 Let's dissect the example build **`Asteroids-B4.1-260414-1749`**:
 
-| Component | Code Name | Description |
+| Component | Codename | Description |
 | :--- | :--- | :--- |
 | **Device Codename** | `Asteroids` | Codename representing the specific device (in this case, Phone (3a)) |
 | **Android Version** | `B` | Android version codename character (e.g. `B` = Baklava/Android 16, `V` = Vanilla Ice Cream/Android 15, `U` = Upside Down Cake/Android 14) |

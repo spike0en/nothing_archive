@@ -81,7 +81,7 @@ Select your device model to access its Release Index.
   <summary><span class="summary-title">Phone (3)</span><span class="summary-subtitle">Metroid</span></summary>
 
 
-| **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
+| **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
 | 4.1 | Metroid-B4.1-260624-1457 | Metroid_B4.1-260603-1221 -> [Metroid_B4.1-260624-1457](https://android.googleapis.com/packages/ota-api/package/31e75bb6a41cafe97f3705e48af4a3f757304a61.zip) <br /> Metroid_B4.1-260414-1846 -> [Metroid_B4.1-260624-1457](https://android.googleapis.com/packages/ota-api/package/7c55ab51a8ab95f12adf1f8f1c1fe6e13bfc4840.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Metroid_B4.1-260624-1457) |
 | 4.1 | Metroid-B4.1-260603-1221 | Metroid_B4.1-260414-1846 -> [Metroid_B4.1-260603-1221](https://android.googleapis.com/packages/ota-api/package/c910ab569b4ffce6fabfa2dc7880fd73d96c09be.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Metroid_B4.1-260603-1221) |
@@ -105,7 +105,7 @@ Select your device model to access its Release Index.
   <summary><span class="summary-title">Phone (2)</span><span class="summary-subtitle">Pong</span></summary>
 
 
-| **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
+| **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
 | 4.1 | Pong-B4.1-260618-1026 | Pong_B4.1-260414-1749 -> [Pong_B4.1-260618-1026](https://android.googleapis.com/packages/ota-api/package/821762bba7df49d1648ab91eef5c98574f20e740.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Pong_B4.1-260618-1026) |
 | 4.1 | Pong-B4.1-260414-1749 | Pong_B4.0-260226-0955 -> [Pong_B4.1-260414-1749](https://android.googleapis.com/packages/ota-api/package/41f1d2ef1f9d67eb8a1f655f89c568d9567fd5ca.zip) | [Archive](https://archive.org/download/nothing-archive/spike0en/fullota/pong/Pong_B4.1-260414-1749.zip) | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Pong_B4.1-260414-1749) | 
@@ -156,7 +156,7 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
 > **Note**: Builds older than 1.5.1 OBT-2 are region-specific. GLO = Global (including India); EEA = European Economic Area.
 
 
-| **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
+| **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
 | 3.2 | Spacewar-V3.2-260618-1045 | Spacewar_V3.2-260416-1140 -> [Spacewar_V3.2-260618-1045](https://android.googleapis.com/packages/ota-api/package/ee806849b191862527abd847e12a5e2b301517c0.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_V3.2-260618-1045) |
 | 3.2 | Spacewar-V3.2-260416-1140 | Spacewar_V3.2-260416-1140 -> [Spacewar_V3.2-260416-1140](https://android.googleapis.com/packages/ota-api/package/344b3931b7819dc847850861a2c9fd939c443480.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_V3.2-260416-1140) |
@@ -217,7 +217,7 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
   <summary><span class="summary-title">Phone (4a) Pro</span><span class="summary-subtitle">FroggerPro</span></summary>
 
 
-| **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
+| **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
 | 4.1 | FroggerPro-B4.1-260522-1414 | FroggerPro_B4.1-260424-1447 -> [FroggerPro_B4.1-260522-1414](https://android.googleapis.com/packages/ota-api/package/c5b4eaace90ee7d6be8ea635e19a3af153509ee1.zip) <br /> FroggerPro_B4.1-260323-1635 -> [FroggerPro_B4.1-260522-1414-IND](https://android.googleapis.com/packages/ota-api/package/61b226abc32a127dbb00e8bf212230fc1ed2ec55.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/FroggerPro_B4.1-260522-1414) |
 | 4.1 | FroggerPro-B4.1-260424-1447 | FroggerPro_B4.1-260323-1635 -> [FroggerPro_B4.1-260424-1447](https://android.googleapis.com/packages/ota-api/package/c0d5f2470a3b392b8ee9a6cab544ec29f55788c1.zip) <br /> FroggerPro_B4.1-260204-2215 > [FroggerPro_B4.1-260424-1447](https://android.googleapis.com/packages/ota-api/package/76b30fa56889d9a425c21c5bca6b10ded67a5e82.zip) <br /> FroggerPro_B4.1-260115-2109 -> [FroggerPro_B4.1-260424-1447](https://android.googleapis.com/packages/ota-api/package/116b8968dc4498178eb8fedf50662b94de7536c0.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/FroggerPro_B4.1-260424-1447) | 
@@ -230,7 +230,7 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
   <summary><span class="summary-title">Phone (4a)</span><span class="summary-subtitle">Frogger</span></summary>
 
 
-| **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
+| **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
 | 4.1 | Frogger-B4.1-260630-1839 | Frogger_B4.1-260430-1731 -> [Frogger_B4.1-260630-1839](https://android.googleapis.com/packages/ota-api/package/5540a34c891414d2c13fdfabdc41e8cee66033db.zip) <br /> Frogger_B4.1-260402-1229 -> [Frogger_B4.1-260630-1839](https://android.googleapis.com/packages/ota-api/package/d940f95eca4c66a6f6d1628b1d8d082692a6330f.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Frogger_B4.1-260630-1839) |
 | 4.1 | Frogger-B4.1-260430-1731 | Frogger_B4.1-260402-1229 -> [Frogger_B4.1-260430-1731](https://android.googleapis.com/packages/ota-api/package/9a3be6390889743830ae19b70c49233bb00be94d.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Frogger_B4.1-260430-1731) |
@@ -246,7 +246,7 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
   <summary><span class="summary-title">Phone (3a) & (3a) Pro</span><span class="summary-subtitle">Asteroids(Pro)</span></summary>
 
 
-| **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
+| **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
 | 4.1 | Asteroids-B4.1-260618-1048 | Asteroids_B4.1-260414-1749 -> [Asteroids_B4.1-260618-1048](https://android.googleapis.com/packages/ota-api/package/76572cca2e8236e27d80cbae9358ac38ee501f28.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Asteroids_B4.1-260618-1048) |
 | 4.1 | Asteroids-B4.1-260414-1749 | Asteroids_B4.0-260225-1824 -> [Asteroids_B4.1-260414-1749](https://android.googleapis.com/packages/ota-api/package/4657436c73067dadfcfef1be89fa1b97f79ec97e.zip) | [Archive](https://archive.org/download/nothing-archive/spike0en/fullota/asteroids/Asteroids_B4.1-260414-1749.zip) | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Asteroids_B4.1-260414-1749) |
@@ -273,7 +273,7 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
   <summary><span class="summary-title">Phone (2a) Plus</span><span class="summary-subtitle">PacmanPro</span></summary>
 
 
-| **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
+| **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
 | 4.1 | PacmanPro-B4.1-260609-1926 | PacmanPro_B4.1-260414-2142 -> [PacmanPro_B4.1-260609-1926](https://android.googleapis.com/packages/ota-api/package/b9094a25e3eb73313f1d9f85f4e066e7a65d9ce3.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/PacmanPro_B4.1-260609-1926) |
 | 4.1 | PacmanPro-B4.1-260414-2142 | PacmanPro_B4.0-260225-2039 -> [PacmanPro_B4.1-260414-2142](https://android.googleapis.com/packages/ota-api/package/d9843a5573b8bc2bb0705b7c88834f8555f2689e.zip) | [Archive](https://archive.org/download/nothing-archive/spike0en/fullota/pacmanpro/PacmanPro_B4.1-260414-2142.zip) | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/PacmanPro_B4.1-260414-2142) |
@@ -304,7 +304,7 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
 > **Note**: Versions 2.5.3 to 2.5.5A are compatible only with Milk, White, and Black variants. Versions 2.5.6 and higher support all color variants.
 
 
-| **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
+| **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
 | 4.1 | Pacman-B4.1-260609-1925 | Pacman_B4.1-260414-2141 -> [Pacman_B4.1-260609-1925](https://android.googleapis.com/packages/ota-api/package/f51817177faff37c4a6aa0be04f7ffe690f79150.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Pacman_B4.1-260609-1925) |
 | 4.1 | Pacman-B4.1-260414-2141 | Pacman_B4.0-260225-1817 -> [Pacman_B4.1-260414-2141](https://android.googleapis.com/packages/ota-api/package/b5934c6be2b4451492c784e284d7528437be506e.zip) | [Archive](https://archive.org/download/nothing-archive/spike0en/fullota/pacman/Pacman_B4.1-260414-2141.zip) | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Pacman_B4.1-260414-2141) |
@@ -346,7 +346,7 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
   <summary><span class="summary-title">Phone (4b)</span><span class="summary-subtitle">SuperContra</span></summary>
 
 
-| **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
+| **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
 | 4.1 | SuperContra-B4.1-260703-1843 | SuperContra_B4.1-260618-1034 -> [SuperContra_B4.1-260703-1843](https://android.googleapis.com/packages/ota-api/package/104eb4aa31e852c9fc6fccdd6d691e47d05bd85a.zip) | N/A | N/A |
 
@@ -357,7 +357,7 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
   <summary><span class="summary-title">Phone (3a) Lite</span><span class="summary-subtitle">Galaxian</span></summary>
 
 
-| **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
+| **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
 | 4.1 | Galaxian-B4.1-260508-1508 | Galaxian_B4.0-260303-1710 -> [Galaxian_B4.1-260508-1508](https://android.googleapis.com/packages/ota-api/package/eb792cc60c97d0baec8636623f9ea827f45abd62.zip) <br /> Galaxian_B4.0-260116-1904 -> [Galaxian_B4.1-260508-1508](https://android.googleapis.com/packages/ota-api/package/a25aff7634a64e0f7ef5f6a8c3c24b4c88224adf.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Galaxian_B4.1-260508-1508) |
 | 4.0 | Galaxian-B4.0-260303-1710 | Galaxian_B4.0-260116-1904 -> [Galaxian_B4.0-260303-1710](https://android.googleapis.com/packages/ota-api/package/1446a64eb217791d25c437cdc14af231c6811dad.zip) <br /> Galaxian_V3.5-251222-1801 -> [Galaxian_B4.0-260303-1710](https://android.googleapis.com/packages/ota-api/package/3767d3f791867fe175488dab29fb3574f71f2b81.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Galaxian_B4.0-260303-1710) |
@@ -378,7 +378,7 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
   <summary><span class="summary-title">Phone (2) Pro</span><span class="summary-subtitle">Galaga</span></summary>
 
 
-| **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
+| **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
 | 4.1 | Galaga-B4.1-260615-1653 | Galaga_B4.1-260415-1710 -> [Galaga_B4.1-260615-1653](https://android.googleapis.com/packages/ota-api/package/be9f18a33428eb63d616f7bc01d2a7bef494ea5d.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Galaga_B4.1-260615-1653) |
 | 4.1 | Galaga-B4.1-260415-1710 | Galaga_B4.0-260226-1122 -> [Galaga_B4.1-260415-1710](https://android.googleapis.com/packages/ota-api/package/ef8bd872ce3c9dfc46ea2c9b160b934156952f7c.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Galaga_B4.1-260415-1710) |
@@ -400,7 +400,7 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
   <summary><span class="summary-title">Phone (1)</span><span class="summary-subtitle">Tetris</span></summary>
 
 
-| **Nothing OS Version** | **Build No.**     | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
+| **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
 | 4.1 | Tetris-B4.1-260615-1652 | Tetris_B4.1-260415-1709 -> [Tetris_B4.1-260615-1652](https://android.googleapis.com/packages/ota-api/package/fe1ba8361a2e55a36825763af51942b5d91c9ba2.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Tetris_B4.1-260615-1652) |
 | 4.1 | Tetris-B4.1-260415-1709 | Tetris_B4.0-260225-1904 -> [Tetris_B4.1-260415-1709](https://android.googleapis.com/packages/ota-api/package/a8b9fdc18fdcd81355f9c3dfa8b7c61a584b51f0.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Tetris_B4.1-260415-1709) |
@@ -446,7 +446,6 @@ certutil -hashfile <filename> SHA256
 ```powerShell
 Get-FileHash -Path <filename> -Algorithm SHA256
 ```
-> Users can also use open-source utilities like [OpenHashTab](https://github.com/namazso/OpenHashTab).
 
 ---
 

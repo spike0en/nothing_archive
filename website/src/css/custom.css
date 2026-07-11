@@ -819,7 +819,7 @@ details table th,
 
 [data-theme='dark'] details table th,
 [data-theme='dark'] .card table th {
-  background-color: rgba(255, 255, 255, 0.08) !important;
+  background-color: rgba(255, 255, 255, 0.10) !important;
 }
 
 /* Table header styling */
@@ -835,7 +835,10 @@ table th {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  white-space: nowrap;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 160px;
   padding: 1rem 1.25rem;
   text-align: left;
   color: var(--ifm-color-emphasis-900) !important;
@@ -843,9 +846,9 @@ table th {
 }
 
 [data-theme='dark'] table th {
-  background-color: rgba(255, 255, 255, 0.05) !important;
-  color: var(--ifm-color-emphasis-800) !important;
-  opacity: 0.75 !important;
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color: var(--ifm-color-emphasis-900) !important;
+  opacity: 1 !important;
 }
 
 /* Table cell styling */
@@ -1000,10 +1003,19 @@ table td a:hover {
 
 
   /* Force content minimum widths so it scrolls instead of squishing */
+  table td {
+    white-space: nowrap;
+  }
+
   table th,
   table td {
     padding: 0.6rem 0.75rem;
-    white-space: nowrap;
+  }
+
+  table th {
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   table th {
