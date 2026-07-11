@@ -88,6 +88,14 @@
         "odm", "product", "system", "system_ext", "vbmeta_system", "vendor"
       ]
     },
+    "SuperContra": {
+      "boot_partitions": [
+        "boot", "dtbo", "init_boot", "recovery", "vbmeta", "vbmeta_system", "vbmeta_vendor", "vendor_boot"
+      ],
+      "logical_partitions": [
+        "odm", "product", "system", "system_dlkm", "system_ext", "vendor", "vendor_dlkm"
+      ]
+    },
     "Tetris": {
       "boot_partitions": [
         "boot", "dtbo", "init_boot", "vendor_boot", "vbmeta"

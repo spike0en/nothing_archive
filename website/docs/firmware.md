@@ -56,6 +56,7 @@ The unmodified stock OTA image files are archived in `.7z` format and categorize
 | **Phone (3a) Lite** | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor` (Total: 7) | `apusys`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `modem`, `mcupm`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` (Total: 20) | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product` (Total: 8) |
 | **Phone (4a)** | `boot`, `dtbo`, `init_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` (Total: 8) | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `pvmfw`, `qupfw`, `shrm`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` (Total: 23) | `odm`, `product`, `system`, `system_dlkm`, `system_ext`, `vendor`, `vendor_dlkm` (Total: 7) |
 | **Phone (4a) Pro** | `boot`, `dtbo`, `init_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` (Total: 8) | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `multiimgqti`, `pvmfw`, `qupfw`, `shrm`, `soccp_dcd`, `soccp_debug`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` (Total: 26) | `odm`, `product`, `system`, `system_dlkm`, `system_ext`, `vendor`, `vendor_dlkm` (Total: 7) |
+| **Phone (4b)** | `boot`, `dtbo`, `init_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` (Total: 8) | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `pvmfw`, `qupfw`, `shrm`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` (Total: 23) | `odm`, `product`, `system`, `system_dlkm`, `system_ext`, `vendor`, `vendor_dlkm` (Total: 7) |
 
 </details>
 
@@ -348,7 +349,7 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
 
 | **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
-| 4.1 | SuperContra-B4.1-260703-1843 | SuperContra_B4.1-260618-1034 -> [SuperContra_B4.1-260703-1843](https://android.googleapis.com/packages/ota-api/package/104eb4aa31e852c9fc6fccdd6d691e47d05bd85a.zip) | N/A | N/A |
+| 4.1 | SuperContra-B4.1-260703-1843 | SuperContra_B4.1-260618-1034 -> [SuperContra_B4.1-260703-1843](https://android.googleapis.com/packages/ota-api/package/104eb4aa31e852c9fc6fccdd6d691e47d05bd85a.zip) | [Archive](https://archive.org/download/nothing-archive/spike0en/fullota/supercontra/SuperContra_B4.1-260703-1843.zip) | [Github](https://github.com/spike0en/nothing_archive/releases/tag/SuperContra_B4.1-260703-1843) |
 
 
 </details>
