@@ -58,5 +58,3 @@ Use the **sidebar** to browse by category, or check the links below to stay conn
 ## Support the Project
 
 If this index is helpful, please consider [starring the repository](https://github.com/spike0en/nothing_archive/stargazers). It helps with discoverability and encourages maintenance.
-
-

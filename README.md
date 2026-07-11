@@ -29,8 +29,6 @@ The largest open-source, community-driven index and archive for the Nothing and 
 
 <br>
 
----
-
 </div>
 
 ## ⚡ Core Pillars & Navigation
@@ -42,56 +40,40 @@ Nothing Archive is a centralized, community-led index. Use the interactive direc
 
 A comprehensive catalog of Nothing and CMF products, detailing hardware specifications, codename mappings, and release dates.
 
----
-
 ### ⚡ [Firmware & Delta OTAs](https://spike0en.github.io/nothing_archive/docs/firmware)
 *Workspace Source: [`firmware.md`](website/docs/firmware.md)*
 
 Direct download links for sideloading incremental and full OTA updates sourced from official OEM servers, bypassing staggered regional rollouts.
-
----
 
 ### 📦 [Stock Factory Images](https://spike0en.github.io/nothing_archive/docs/firmware)
 *Workspace Source: [`firmware.md`](website/docs/firmware.md)*
 
 Unmodified stock OTA partition images archived for supported phone models, obtained by extracting and reconstructing base and incremental OTA updates through an automated pipeline.
 
----
-
 ### 📜 [Nothing OS Changelogs](https://spike0en.github.io/nothing_archive/docs/changelogs)
 *Workspace Source: [`changelogs/`](website/docs/changelogs)*
 
 A complete chronological database of official release notes, system changes, bug fixes, and security patches for every Nothing and CMF phone model.
-
----
 
 ### 📖 [Technical Guides](https://spike0en.github.io/nothing_archive/docs/guides)
 *Workspace Source: [`guides.md`](website/docs/guides.md)*
 
 Detailed step-by-step guides covering critical technical operations, including bootloader unlocking, custom ROM installation, partition backups, rooting, and device recovery.
 
----
-
 ### 📦 [Official OEM Resources](https://spike0en.github.io/nothing_archive/docs/official)
 *Workspace Source: [`official.md`](website/docs/official.md)*
 
 A curated collection of official Nothing apps, wallpapers, system fonts, kernel sources, 3D product models, and user manuals.
-
----
 
 ### 🧩 [Community Apps & Projects](https://spike0en.github.io/nothing_archive/docs/apps)
 *Workspace Sources: [`apps.md`](website/docs/apps.md) &nbsp;&middot;&nbsp; [`projects.md`](website/docs/projects.md)*
 
 A directory of community-developed applications, Glyph LED integrations, custom widgets, utilities, flashing toolkits, and wearable scripts.
 
----
-
 ### 📸 [Camera Configs & Mods](https://spike0en.github.io/nothing_archive/docs/photography)
 *Workspace Source: [`photography.md`](website/docs/photography.md)*
 
 Stable Google Camera (GCam) ports, custom community-made XML configurations, stock presets, and custom LUTs optimized for Nothing's camera hardware.
-
----
 
 ## 🤝 Contribution Guidelines
 
@@ -106,8 +88,6 @@ We welcome community pull requests to expand the archive. To ensure data integri
 | **Firmware & Changelogs** | **Restricted** *(Automated)* | [`firmware.md`](website/docs/firmware.md), [`changelogs/`](website/docs/changelogs/) |
 
 Before creating a Pull Request, please read our [Contributing Guidelines](CONTRIBUTING.md) to ensure compliance with sorting rules, casing conventions, and spacing standards.
-
----
 
 ## 📜 Licensing & Attribution
 
@@ -126,13 +106,10 @@ Nothing Archive employs a multi-license structure to protect the original work o
 *   **Project Branding & Visual Identity (All Rights Reserved)**:
     All original project logos, banners, animated sweeps, and custom graphic assets under `website/static/img/` are the exclusive creative property of **Nothing Archive**. They are **strictly proprietary** and **not** licensed for reuse, redistribution, or modification in third-party projects, clones, or sites (excluding device mockups owned by the OEM).
 
----
-
 > [!IMPORTANT]
 > **Attribution Mandate**: Anyone replicating, scraping, hosting mirrors of, or adapting any custom guides or compiled database tables from this repository **MUST** provide prominent, visible credit to **Nothing Archive** and link back to this source repository:
 > `https://github.com/spike0en/nothing_archive`
 
----
 ## 🏆 Credits & Acknowledgements
 
 Special thanks to:
@@ -143,8 +120,6 @@ Special thanks to:
 *   **[XelXen](https://github.com/XelXen)** for helping with initial [project branding and design](https://github.com/spike0en/nothing_archive/tree/main/website/static/img).
 *   **[LukeSkyD](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/)** for early build references.
 *   All project contributors listed in the [Contributors Chart](https://github.com/spike0en/nothing_archive/graphs/contributors).
-
----
 
 ## ⭐ Support the Project
 

@@ -31,8 +31,6 @@ A collection of tools for creating custom Glyph tones and compositions.
 | [Pyglyph](https://github.com/Snakehater/pyglyph) | Snakehater | Python script for audio visualization |
 | [Vizmatrices](https://udaign.github.io/vizmatrices/) | udaign | Real time audio reactive visualizer ([Repo](https://github.com/udaign/vizmatrices)) |
 
----
-
 ## Customization
 
 Personalization projects including desktop rices, widgets, and themes for various platforms.
@@ -86,8 +84,6 @@ Utilities for creating and generating Nothing-style wallpapers.
 | [Nothing Glass](https://github.com/Vauth/nothing-glass) | Vauth | Nothing OS glass effect wallpaper creator |
 | [Wallpaper Studio Pro](https://wallpaperstudiopro.netlify.app/) | Ifham9 | AI wallpaper generator |
 
----
-
 ## Developer Tools
 
 Assets and tools designed to help other developers build Nothing-inspired projects.
@@ -102,8 +98,6 @@ Assets and tools designed to help other developers build Nothing-inspired projec
 | [Nothing Design Skill](https://github.com/dominikmartn/nothing-design-skill) | dominikmartn | A design system skill for Claude Code to generate user interfaces following the Nothing visual language |
 | [Nothing Glyph Communication](https://github.com/endan-criso/Nothing-Glyph-Battery-Low-Indicator) | endan-criso | Android playground and reference implementation demonstrating official Glyph SDK integration on Nothing Phone (2a) |
 | [Swift Nothing Ear](https://github.com/bestK1ngArthur/swift-nothing-ear) | bestK1ngArthur | Swift Package for interacting with Nothing headphones on macOS |
-
----
 
 ## Web Apps
 
@@ -128,8 +122,6 @@ Web-based applications inspired by Nothing OS.
 | [Study Logix](https://github.com/ashutoshpatraa/StudyLogix) | ashutoshpatraa | Nothing OS-inspired study tracking web application featuring focus tools and analytics |
 | [Vibe Nothing Design](https://wangbh030722.github.io/vibe-nothing-ui-design/) | Claude & wangbh030722 | A Nothing OS inspired UI component library for the web ([Repo](https://github.com/wangbh030722/vibe-nothing-ui-design)) |
 
----
-
 ## Extensions
 
 Browser extensions and other add-ons inspired by Nothing OS.
@@ -142,15 +134,11 @@ Browser extensions and other add-ons inspired by Nothing OS.
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Browser New Tab extension |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome extension |
 
----
-
 ## Sound & Audio
 
 Community-made EQ profiles for Nothing earphones and headphones:
 
 - [Stock EQ Profiles](https://playground.nothing.tech/eqs) — Compatible with Advanced Equaliser via [Nothing X](https://play.google.com/store/apps/details?id=com.nothing.smartcenter)
-
----
 
 ## Resources & Utilities
 
@@ -187,8 +175,6 @@ Essential resources including wikis, firmware archives, and system repair tools.
 | [NothingBar (macOS)](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | Menu bar app to control Nothing and CMF audio devices for macOS |
 | [OpenBuds Windows](https://github.com/MahinZx/openbuds-windows) | MahinZx | Unofficial Windows desktop companion application for Nothing and CMF audio devices |
 | [Something X](https://github.com/SoaOaoS/something-x) | SoaOaoS | Nothing X app for Linux, tested to work on [Omarchy](https://omarchy.org/) |
-
----
 
 ## Root Modules
 

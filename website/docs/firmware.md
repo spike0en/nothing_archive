@@ -37,8 +37,6 @@ By using this archive, users acknowledge and accept these terms:
 
 :::
 
----
-
 ## Categorization
 
 The unmodified stock OTA image files are archived in `.7z` format and categorized into three groups: Boot, Firmware, and Logical.
@@ -70,8 +68,6 @@ The unmodified stock OTA image files are archived in `.7z` format and categorize
 
 </details>
 
----
-
 ## Downloads
 
 Select your device model to access its Release Index.
@@ -80,7 +76,6 @@ Select your device model to access its Release Index.
 
 <details>
   <summary><span class="summary-title">Phone (3)</span><span class="summary-subtitle">Metroid</span></summary>
-
 
 | **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
@@ -99,12 +94,10 @@ Select your device model to access its Release Index.
 | 3.5 | Metroid-V3.5-250719-1646 | Metroid_V3.5-250711-2047 -> [Metroid_V3.5-250719-1646](https://android.googleapis.com/packages/ota-api/package/c1501de03858f3ac4e6fbfcae468ff07e8c336fa.zip) <br /> Metroid_V3.5-250626-1934 -> [Metroid_V3.5-250719-1646](https://android.googleapis.com/packages/ota-api/package/21e8ef236eee740213eca42aa307f680014c3666.zip) <br /> Metroid_V3.5-250529-1404-> [Metroid_V3.5-250719-1646](https://android.googleapis.com/packages/ota-api/package/3f7ea84647f828e625d46246aec0004e0fa419ae.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Metroid_V3.5-250719-1646) |
 | 3.5 | Metroid-V3.5-250711-2047 | Metroid_V3.5-250626-1934 -> [Metroid-V3.5-250711-2047](https://android.googleapis.com/packages/ota-api/package/6096b0ce17b226e8b9707f9a911631fa3138d46f.zip) <br /> Metroid_V3.5-250529-1404-> [Metroid_V3.5-250711-2047](https://android.googleapis.com/packages/ota-api/package/30545d507c2922f6d1e3da12b1782cdf175ff84a.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Metroid_V3.5-250711-2047) |
 
-
 </details>
 
 <details>
   <summary><span class="summary-title">Phone (2)</span><span class="summary-subtitle">Pong</span></summary>
-
 
 | **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
@@ -142,7 +135,6 @@ Select your device model to access its Release Index.
 | 2.0.1A | Pong-T2.0-230719-1458 | Pong_T2.0-230709-2003 -> [Pong_T2.0-230719-1458](https://android.googleapis.com/packages/ota-api/package/d0f3e3e897154d513c91634ad225da1b724c9455.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Pong_T2.0-230719-1458) |
 | 2.0.1 | Pong-T2.0-230709-2003 | N/A | [Google](https://android.googleapis.com/packages/ota-api/package/7becde0f47753b99a7cc37ff27713ba8a48ef51a.zip) | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Pong_T2.0-230709-2003) |
 
-
 </details>
 
 <details>
@@ -152,10 +144,7 @@ Select your device model to access its Release Index.
 As of July 2026, Phone (1) has reached its official EOL status. This device will no longer receive official Nothing OS system updates or security patches.
 :::
 
-
-
 > **Note**: Builds older than 1.5.1 OBT-2 are region-specific. GLO = Global (including India); EEA = European Economic Area.
-
 
 | **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
@@ -207,16 +196,12 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
 | 1.0.2 | Spacewar-S1.0-220705-2027 | N/A | [GLO](https://android.googleapis.com/packages/ota-api/package/fad5d83167989dd71ef9adbb4243a8baa02956e6.zip) <br /> [EEA](https://android.googleapis.com/packages/ota-api/package/09a261dea24fa76050bf9b03fff232dbab9b3a28.zip) | [GLO](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.0-220705-2027-GLO) <br /> [EEA](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.0-220705-2027-EEA) |
 | 1.0.1 | Spacewar-S1.0-22 | N/A | [EEA](https://archive.org/download/nothing-archive/spike0en/fullota/spacewar/Spacewar_S1.0-22_1.0.1-EEA.zip) | [EEA](https://github.com/spike0en/nothing_archive/releases/tag/Spacewar_S1.0-22-EEA) |
 
-
 </details>
-
----
 
 ### Nothing Phone (a) Series
 
 <details>
   <summary><span class="summary-title">Phone (4a) Pro</span><span class="summary-subtitle">FroggerPro</span></summary>
-
 
 | **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
@@ -224,12 +209,10 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
 | 4.1 | FroggerPro-B4.1-260424-1447 | FroggerPro_B4.1-260323-1635 -> [FroggerPro_B4.1-260424-1447](https://android.googleapis.com/packages/ota-api/package/c0d5f2470a3b392b8ee9a6cab544ec29f55788c1.zip) <br /> FroggerPro_B4.1-260204-2215 > [FroggerPro_B4.1-260424-1447](https://android.googleapis.com/packages/ota-api/package/76b30fa56889d9a425c21c5bca6b10ded67a5e82.zip) <br /> FroggerPro_B4.1-260115-2109 -> [FroggerPro_B4.1-260424-1447](https://android.googleapis.com/packages/ota-api/package/116b8968dc4498178eb8fedf50662b94de7536c0.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/FroggerPro_B4.1-260424-1447) | 
 | 4.1 | FroggerPro-B4.1-260323-1635 | FroggerPro_B4.1-260204-2215 -> [FroggerPro_B4.1-260323-1635](https://android.googleapis.com/packages/ota-api/package/1b8de932f02eb999b111aafa3807f2de5de8db7c.zip) <br /> FroggerPro_B4.1-260115-2109 -> [FroggerPro_B4.1-260323-1635](https://android.googleapis.com/packages/ota-api/package/a154c48e1c62cbe774869423198b54f1bdf84942.zip) | [Archive](https://archive.org/download/nothing-archive/spike0en/fullota/froggerpro/FroggerPro_B4.1-260323-1635.zip) | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/FroggerPro_B4.1-260323-1635) |
 
-
 </details>
 
 <details>
   <summary><span class="summary-title">Phone (4a)</span><span class="summary-subtitle">Frogger</span></summary>
-
 
 | **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
@@ -240,12 +223,10 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
 | 4.1 | Frogger-B4.1-260309-1830 | Frogger_B4.1-260204-2218 -> [Frogger_B4.1-260309-1830](https://android.googleapis.com/packages/ota-api/package/6080372e63d2457ef8947525eb00a20184d7c748.zip) <br /> Frogger_B4.1-260115-2109 -> [Frogger_B4.1-260309-1830](https://android.googleapis.com/packages/ota-api/package/02d3a4e54d0a00987f5d632aec75ab3c7e0373a1.zip) | [Archive](https://archive.org/download/nothing-archive/spike0en/fullota/frogger/Frogger_B4.1-260309-1830.zip) | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Frogger_B4.1-260309-1830) |
 | 4.1 | Frogger-B4.1-260204-2218 | Frogger_B4.1-260115-2109 -> [Frogger_B4.1-260204-2218](https://android.googleapis.com/packages/ota-api/package/e86d32f2e060d9b2ea13680c571b78ecf632ac2b.zip) | N/A | N/A |
 
-
 </details>
 
 <details>
   <summary><span class="summary-title">Phone (3a) & (3a) Pro</span><span class="summary-subtitle">Asteroids(Pro)</span></summary>
-
 
 | **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
@@ -267,12 +248,10 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
 | 3.1 | Asteroids-V3.1-250302-1856 | Asteroids_V3.1-250217-2235 -> [Asteroids_V3.1-250302-1856](https://android.googleapis.com/packages/ota-api/package/4d1092626406b96e5f1e5e31d727b0d71ed4cbf3.zip) <br /> Asteroids_V3.1-241231-1753 -> [Asteroids_V3.1-250302-1856](https://android.googleapis.com/packages/ota-api/package/9d8b54d1cb47c80c233319560d1720ccb5bd1c5e.zip) | [Google](https://android.googleapis.com/packages/ota-api/package/156adca4d6d6cf50e385a3ddf5b9569af62b1bef.zip) | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Asteroids_V3.1-250302-1856)
 | 3.1 | Asteroids-V3.1-250217-2235 | Asteroids_V3.1-250112-1904 -> [Asteroids_V3.1-250217-2235](https://android.googleapis.com/packages/ota-api/package/ced682b69a20c21a8359ede518813c6ded14a1c2.zip) <br /> Asteroids_V3.1-241231-1753 -> [Asteroids_V3.1-250217-2235](https://android.googleapis.com/packages/ota-api/package/a201b6cb78c1fdabd65af36a122847fbfce77edb.zip)  | N/A | N/A |
 
-
 </details>
 
 <details>
   <summary><span class="summary-title">Phone (2a) Plus</span><span class="summary-subtitle">PacmanPro</span></summary>
-
 
 | **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
@@ -295,15 +274,12 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
 | 2.6 | PacmanPro-U2.6-240924-2223 | PacmanPro_U2.6-240723-1102 -> [PacmanPro_U2.6-240924-2223](https://android.googleapis.com/packages/ota-api/package/b8d1f9e6b3de2f85bc2ca29632bb11b23686078f.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/PacmanPro_U2.6-240924-2223) |
 | 2.6 | PacmanPro-U2.6-240723-1102 | N/A | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/PacmanPro_U2.6-240723-1102) |
 
-
 </details>
 
 <details>
   <summary><span class="summary-title">Phone (2a)</span><span class="summary-subtitle">Pacman</span></summary>
 
-
 > **Note**: Versions 2.5.3 to 2.5.5A are compatible only with Milk, White, and Black variants. Versions 2.5.6 and higher support all color variants.
-
 
 | **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
@@ -336,27 +312,21 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
 | 2.5.3 | Pacman-U2.5-240301-2206 | N/A | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Pacman_U2.5-240301-2206) |
 | 2.5 | Pacman-U2.5-231207-0042 | N/A | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Pacman_U2.5-231207-0042) |
 
-
 </details>
-
----
 
 ### Nothing Phone (b / Lite) Series
 
 <details>
   <summary><span class="summary-title">Phone (4b)</span><span class="summary-subtitle">SuperContra</span></summary>
 
-
 | **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
 | 4.1 | SuperContra-B4.1-260703-1843 | SuperContra_B4.1-260618-1034 -> [SuperContra_B4.1-260703-1843](https://android.googleapis.com/packages/ota-api/package/104eb4aa31e852c9fc6fccdd6d691e47d05bd85a.zip) | [Archive](https://archive.org/download/nothing-archive/spike0en/fullota/supercontra/SuperContra_B4.1-260703-1843.zip) | [Github](https://github.com/spike0en/nothing_archive/releases/tag/SuperContra_B4.1-260703-1843) |
-
 
 </details>
 
 <details>
   <summary><span class="summary-title">Phone (3a) Lite</span><span class="summary-subtitle">Galaxian</span></summary>
-
 
 | **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
@@ -368,16 +338,12 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
 | 3.5 | Galaxian-V3.5-251122-0841 | Galaxian_V3.5-251029-1642 -> [Galaxian_V3.5-251122-0841](https://android.googleapis.com/packages/ota-api/package/b4340758c69d138b9b2357076391f530833d0b92.zip) <br /> Galaxian_V3.5-250829-1700 -> [Galaxian_V3.5-251122-0841](https://android.googleapis.com/packages/ota-api/package/e8244388b29883c3a2ce6806c71460e567072c23.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Galaxian_V3.5-251122-0841) |
 | 3.5 | Galaxian-V3.5-251029-1642 | Galaxian_V3.5-250829-1700 -> [Galaxian_V3.5-251029-1642](https://android.googleapis.com/packages/ota-api/package/0b5b0e6d070dd8835fa6e80f4b5750d689d85152.zip) | [Archive](https://archive.org/download/nothing-archive/spike0en/fullota/galaxian/Galaxian_V3.5-251029-1642.zip) | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Galaxian_V3.5-251029-1642) |
 
-
 </details>
-
----
 
 ### CMF by Nothing Phone Series
 
 <details>
   <summary><span class="summary-title">Phone (2) Pro</span><span class="summary-subtitle">Galaga</span></summary>
-
 
 | **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
@@ -394,12 +360,10 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
 | 3.2 | Galaga-V3.2-250507-1139 | N/A | [Google](https://android.googleapis.com/packages/ota-api/package/2800780fa49032a870618ec026097f5a09aa805b.zip) | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Galaga_V3.2-250507-1139) | 
 | 3.2 | Galaga-V3.2-250425-1517 | Galaga_V3.2-250312-1750 -> [Galaga_V3.2-250425-1517](https://android.googleapis.com/packages/ota-api/package/e7e4b8e861c37de0460a8c95b358fbeb4e2a12d2.zip) | N/A | N/A |
 
-
 </details>
 
 <details>
   <summary><span class="summary-title">Phone (1)</span><span class="summary-subtitle">Tetris</span></summary>
-
 
 | **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
@@ -426,7 +390,6 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
 | 2.6 | Tetris-U2.6-240713-1955 | Tetris_U2.6-240702-2200 -> [Tetris-U2.6-240713-1955](https://android.googleapis.com/packages/ota-api/package/24c251bfc97dbe9a32777af2677e979e38bfcef2.zip) <br /> Tetris_U2.6-240606-1805 -> [Tetris_U2.6-240713-1955](https://android.googleapis.com/packages/ota-api/package/d84e482fad907cef29a0de4dc344d18e61adf42a.zip) <br /> Tetris_U2.6-240524-1536 -> [Tetris_U2.6-240713-1955](https://android.googleapis.com/packages/ota-api/package/72b82b535759b4559d0eb60c20e9ceabd303872a.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Tetris_U2.6-240713-1955) |
 | 2.6 | Tetris-U2.6-240702-2200 | N/A | [Archive](https://archive.org/download/nothing-archive/spike0en/fullota/tetris/Tetris_U2.6-240702-2200_2.6.zip) | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/Tetris_U2.6-240702-2200) |
 
-
 </details>
 
 ## Integrity Check
@@ -439,14 +402,13 @@ sha256sum -c *-hash.sha256
 ```
 
 ### Windows
+
 #### With command prompt(cmd)
 ```cmd
 certutil -hashfile <filename> SHA256
 ```
+
 #### With PowerShell 5+
 ```powerShell
 Get-FileHash -Path <filename> -Algorithm SHA256
 ```
-
----
-

@@ -8,8 +8,6 @@ description: Guidelines and instructions to contribute to the Nothing Archive pr
 
 First off, thank you for considering contributing to the Nothing Archive! Community contributions help keep this resource complete, accurate, and up-to-date for everyone.
 
----
-
 ## Ways to Contribute
 
 We welcome community participation in two primary areas:
@@ -25,8 +23,6 @@ Contribute to the website's infrastructure by resolving bugs or adding features.
 *   Respect existing coding conventions to ensure future scalability and ease of maintenance.
 *   Prioritize stable, premium user experiences while minimizing unnecessary divergence from the core source.
 
----
-
 ## Restricted Files & Directories
 
 :::danger Restricted Content
@@ -36,8 +32,6 @@ To ensure accuracy and preserve archive integrity, **do not** submit pull reques
 
 These files and folders are managed exclusively by the project authors and collaborators.
 :::
-
----
 
 ## Documentation Guidelines
 
@@ -56,8 +50,6 @@ In order to ensure perfect alphabetical sorting, please follow these strict nami
 *   All entries within a table must be sorted **alphabetically by display name** (Column 1).
 *   Sorting is case-insensitive.
 *   *Note:* `No` comes before `Nothing` (e.g., `No Volume` → `Nothing Audio`).
-
----
 
 ## How to Submit Changes
 

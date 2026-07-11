@@ -17,8 +17,6 @@ Contribute to the website's infrastructure by resolving bugs or adding features.
 - Respect existing coding conventions to ensure future scalability and ease of maintenance.
 - Prioritize stable, premium user experiences while minimizing unnecessary divergence from the core source.
 
----
-
 ## Restricted Files & Directories
 
 To ensure accuracy and preserve integrity, **do not** submit pull requests that modify the following files or directories:
@@ -26,8 +24,6 @@ To ensure accuracy and preserve integrity, **do not** submit pull requests that 
 - `website/docs/changelogs/`
 
 These are maintained only by the project authors and collaborators.
-
----
 
 ## Documentation Guidelines
 
@@ -46,8 +42,6 @@ In order to ensure perfect alphabetical sorting, please follow these strict nami
 *   All entries within a table must be sorted **alphabetically by display name** (Column 1).
 *   Sorting is case-insensitive.
 *   Note: `No` comes before `Nothing`. (e.g., `No Volume` $\rightarrow$ `Nothing Audio`).
-
----
 
 ## How to Contribute
 

@@ -9,7 +9,6 @@ keywords: [nothing bootloader unlock, root nothing phone, nothing fastboot, noth
 
 Step-by-step guides on several aspects.
 
-
 ## General Use & Troubleshooting
 
 Tips, tricks, and general guides for everyday use.
@@ -123,13 +122,9 @@ B. **Proceed with Sideloading**
 
 :::
 
----
-
 ### Safe Mode
 
 - [Rebooting to Safe Mode](https://www.hardreset.info/devices/nothing/nothing-phone-2/safe-mode/)
-
----
 
 ### Dialer Codes
 
@@ -150,8 +145,6 @@ Dialer codes (USSD) that you can dial to access hidden menus and diagnostics.
 :::tip[Hidden Diagnostics Menu]
 Inside the Nothing Diagnostics menu (`*#*#9#*#*`), you can access advanced hardware diagnostic settings, tests, and tools by tapping the phone icon in the middle of the screen 5–7 times and entering the password `nothing`.
 :::
-
----
 
 ## Device Features & Accessories
 
@@ -182,8 +175,6 @@ This guide shows how to open the hidden **Battery Information** page in Nothing 
    com.android.settings/com.nothing.settings.NtSettings$BatteryInformationActivity
    ```
 6. You should now see the **Battery Information** page showing **Maximum capacity**, **Cycle count**, **Production date**, and **First use date** of the factory-installed battery.
-
----
 
 ### Unlocking Bauhaus Theme
 
@@ -222,8 +213,6 @@ The Bauhaus-inspired theme is a special edition feature that can be unlocked acr
 
 :::
 
----
-
 ### Essential Key Remapping
 
 Guides for remapping the Essential Key on Phone (3):
@@ -235,15 +224,10 @@ Guides for remapping the Essential Key on Phone (3):
 | [XDA Guide](https://xdaforums.com/t/how-to-disable-or-remap-the-essentials-button.4755184/) | rwilco12 |
 | [GitHub Guide](https://github.com/z3phydev/How-to-remap-or-disable-the-Essential-Key) | z3phydev |
 
----
-
 ### Gadgetbridge Related
 
 - [Supported Models and features](https://gadgetbridge.org/gadgets/wearables/nothing/)
 - [Nothing CMF server pairing](https://gadgetbridge.org/basics/pairing/nothing-cmf-server/)
-
-
----
 
 ## Advanced Guides
 
@@ -283,8 +267,6 @@ winget install --id=Google.PlatformTools -e
 ```bash
 brew install --cask android-platform-tools
 ```
-
----
 
 ### Unlocking Bootloader
 
@@ -347,8 +329,6 @@ C. **Post-Unlock**
     ```
 
   - Bootloader is now unlocked and your device will show an Orange State warning at boot—this is normal.
-
----
 
 ### Rooting
 
@@ -449,15 +429,11 @@ D. **Patch the Image**
 
 - The device should be rooted with KSU/KSUN.
 
----
-
 ### Play Integrity
 
 | Guide | Link |
 |-------|------|
 | Fix Play Integrity & Root Detection | [Wiki](https://github.com/yashaswee-exe/AndroidGuides/wiki/Fix-integrity-and-root-detection) |
-
----
 
 ### Backing Up Essential Partitions
 
@@ -533,7 +509,6 @@ D. **Restoring Partitions**
    ```
    Reboot to **recovery mode** → Perform **factory reset** → Reboot to **system**.
 
-
  - **QCom Devices:**
     ```sh
     fastboot flash persist persist.img
@@ -541,8 +516,6 @@ D. **Restoring Partitions**
     fastboot flash modemst2 modemst2.img
     ```
     **Factory reset is not mandatory in this case.**
-
----
 
 ### Flashing Custom ROM
 
@@ -764,8 +737,6 @@ Run the following command depending on the type of flash you want to perform:
   fastboot update <path/to/rom_zip>
   ```
 
----
-
 ### Flashing Stock ROM (Unbrick / Downgrade)
 
 :::note
@@ -833,8 +804,6 @@ B. **Proceeding with Flashing:**
     - If successful, choose to reboot to system: (Y)
     - Do not reboot your device into the system if any errors occurred during flashing. Instead, reboot back to the bootloader and reflash after addressing the failure. Rebooting to the system without doing so might result in soft/hard bricks.
 
----
-
 ### Relocking Bootloader
 
 A. **Prerequisites**
@@ -866,9 +835,6 @@ B. **Relocking Process**
 C. **Post-Relock**
   - Set up your device again.
   - The bootloader is now locked!
-
-
----
 
 ## Hard Unbrick
 
@@ -911,9 +877,6 @@ Install the appropriate drivers for your device's SoC manufacturer.
 - [Phone (2a) Series Flash Tool](https://github.com/R0rt1z2/pacman-flash-tool) by R0rt1z2
 - [Firehose Auth Files for Nothing Phones](https://github.com/Vagelis1608/nothing_edl) by plusonsoy
 
-
----
-
 ## Aftermarket Development
 
 Stay updated with custom ROMs, kernels, and development projects.
@@ -949,5 +912,3 @@ Stay updated with custom ROMs, kernels, and development projects.
 |--------|-----|----------|--------|---------|
 | Phone (1) | [ROM](https://t.me/s/CMFPhone1Updates?q=%23ROM) | [Recovery](https://t.me/s/CMFPhone1Updates?q=%23Recovery) | [Kernel](https://t.me/s/CMFPhone1Updates?q=%23Kernel) | [OTA](https://t.me/s/CMFPhone1Updates?q=%23OTA) |
 | Phone (2) Pro | [ROM](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [Recovery](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [Kernel](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [OTA](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) |
-
-

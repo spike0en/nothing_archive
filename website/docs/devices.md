@@ -65,7 +65,6 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 | Coffee (spaceboy) | Unreleased | [Here](https://nothing.wiki/merchandise/coffee) |
 | Power (1) power bank & charger | Unreleased | [Here](https://nothing.wiki/merchandise/power_1) |
 
-
 ## CMF by Nothing
 
 :::info[Official Resources]
@@ -79,7 +78,6 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 | [Phone (1)](https://nothing.tech/products/cmf-phone-1) <br /> <small>Tetris / Beedrill</small> | A015 | 08 July 2024 | Nothing OS 2.6 (Android 14) | 2 + 1 Years | [Here](https://nothing.wiki/cmf/cmf_phone_1) |
 | [Phone (2) Pro](http://nothing.tech/products/cmf-phone-2-pro) <br /> <small>Galaga / Bulbasaur</small> | A001 | 28 April 2025 | Nothing OS 3.0 (Android 15) | 3 + 3 Years | [Here](https://nothing.wiki/cmf/cmf_phone_2_pro) |
 
-*\*Note: Updates are listed as (Major Android OS upgrades) + (Years of security patches).*
 
 ### Audio
 

@@ -67,8 +67,6 @@ The config files (`xml` or `.agc`) have been archived below by device name along
 
 </div>
 
----
-
 ## Stock Camera Presets
 
 Resources for Nothing Camera presets:
@@ -82,9 +80,4 @@ Resources for Nothing Camera presets:
 | Reddit Search | [r/NothingTech](https://www.reddit.com/r/NothingTech/search/?q=camera+presets&type=posts&sort=new) · [r/NOTHING](https://www.reddit.com/r/NOTHING/search/?q=camera+presets&type=posts&sort=new) · [r/CMFtech](https://www.reddit.com/r/CMFTech/search/?q=camera+presets&type=posts&sort=new) |
 | Telegram Community | [Join](https://t.me/NothingTelegramCommunity) |
 
----
-
-## Miscellaneous
-
-- [Shot With Nothing](https://shotwithnothing.crd.co/) by Ali — A space for the community to share captures and celebrate photography.
 

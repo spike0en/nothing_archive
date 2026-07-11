@@ -15,8 +15,6 @@ AI-generated, hyper-personalized mini-applications extending the Nothing OS ecos
 
 - [Nothing Playground](https://playground.nothing.tech/apps)
 
----
-
 ## Glyph-Powered
 
 Apps that integrate with the Glyph interface on Nothing phones.
@@ -53,8 +51,6 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | [Nothing Glyph Gyroscope](https://github.com/gawdam/nothingGyro) | gawdam | Bubble level using accelerometer and gyroscope |
 | [Nothing Phone Battery Notification](https://github.com/f3bruary/nothing-phone-battery-notification) | f3bruary | Red Glyph LED notifier with customizable low battery patterns for Phone (4a) |
 | [Simone](https://play.google.com/store/apps/details?id=com.lisra.simone) | RapidZapper | Classic memory game with Glyph interface |
-
----
 
 ## Glyph Matrix-Powered
 
@@ -138,8 +134,6 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Toyph](https://github.com/antonvidishchev/toyph) | antonvidishchev | A JSON-driven Glyph Toy for the Nothing Phone (4a) Pro |
 | [V Pet](https://github.com/uzugu/V-pet-Glyph-Matrix) | uzugu | Digimon V-pet emulator adaptation for the Nothing Phone (3)'s Glyph Matrix |
 
----
-
 ## Customization
 
 Personalize your Nothing device with icon packs, widgets, and custom wallpapers.
@@ -189,8 +183,6 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Lentlay](https://lentlay.framer.website/) | Omkar Mangalekar | Lenticular effect for images |
 | [Nothing Wallpaper Changer](https://github.com/NineCSdev/nothing-wallpaper-changer) | NineCSdev | Lockscreen wallpaper changer for Nothing Phone (1) |
 
----
-
 ## Notes & Productivity
 
 | App | Developer | Description |
@@ -210,8 +202,6 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Seton](https://github.com/arijit4/Seton) | arijit4 | Pin and edit notes with widget |
 | [Spend Notes](https://play.google.com/store/apps/details?id=com.cmlabs.spendflow.spendflow) | Coder monk labs | Expense tracking |
 | [The Circle](https://play.google.com/store/apps/details?id=com.quivaconnect.thecircle) | Quivox Engineering | Language learning app |
-
----
 
 ## Utilities & Tools
 
@@ -293,8 +283,6 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Voidcaller](https://play.google.com/store/apps/details?id=com.voidware.voidcaller) | VoidwareLabs | Minimalist dialer |
 | [WhispCal](https://play.google.com/store/apps/details?id=com.thomasmorice.whispcal) | Thomas Morice | Calorie tracking app for Android and [iOS](https://apps.apple.com/in/app/whispcal/id6757860582) |
 
----
-
 ## Games
 
 General games inspired by the Nothing design language.
@@ -303,8 +291,6 @@ General games inspired by the Nothing design language.
 |-----|-----------|-------------|
 | [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | Dino game inspired |
 | [Tetris](https://github.com/ItsCR24/tetris-m3) | ItsCR24 | Material You & Nothing OS inspired Tetris game |
-
----
 
 ## Ported Apps
 
@@ -319,5 +305,3 @@ It is advised to refer to the documentation and release notes from the linked Te
 | Ayra Hikari | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://t.me/s/AyraProject?q=nothing) |
 | Android Port World | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://t.me/s/AndroidPortWorld?q=nothing) |
 | El Pong | [Telegram](https://t.me/s/LigmaCore?q=nothing) |
-
-

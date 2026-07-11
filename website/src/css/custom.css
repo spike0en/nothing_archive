@@ -3051,4 +3051,17 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
 /* Warning badge custom text color for accessibility contrast in both light and dark themes */
 .badge--warning {
   color: #000000 !important;
+}
+
+/* Heading styles for clean separation after divider removal */
+.markdown h2 {
+  margin-top: 2.5rem !important;
+  margin-bottom: 1.25rem !important;
+  border-bottom: 1px solid var(--nothing-border) !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.markdown h3 {
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
 }

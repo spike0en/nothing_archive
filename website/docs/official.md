@@ -31,8 +31,6 @@ Unified index of official and developer resources for Nothing and CMF phones, in
 | **Phone (4a) Pro** | [Download](https://archive.org/download/nothing-archive/spike0en/walls/frogger%28pro%29/) | [Dumps](https://dumps.tadiphone.dev/dumps/nothing/froggerpro/) | [Repository](https://github.com/NothingOSS/android_kernel_msm-6.6_nothing_sm7750) | [Silver](https://cdn.sanity.io/files/gtd4w1cq/production/0ab0aab2653e4f45cd9435145a3f936834e67cd2.glb) <br /> [Black](https://cdn.sanity.io/files/gtd4w1cq/production/9b93f1ad6cd3ed81cdb51ea89974473f54b62afa.glb) <br /> [Pink](https://cdn.sanity.io/files/gtd4w1cq/production/5000880af271c65200de52b3b00e1fc5eadb2e61.glb) | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Phone_4a_Pro_User_Guide_Global_en_7d9167f4-802c-473f-88a0-f0b28b63b0d4.pdf?v=1773115876) | N/A | [Label](https://cdn.sanity.io/images/gtd4w1cq/production/8b9d16c5b4139a3f49d8e7b61f4f38de94d978fc-1134x2268.png?auto=format) |
 | **Phone (4b)** | [Download](https://archive.org/download/nothing-archive/spike0en/walls/supercontra/) | [Dumps](https://dumps.tadiphone.dev/dumps/nothing/supercontra/) | N/A | [White](https://cdn.sanity.io/files/gtd4w1cq/production/f76e9b641b0cd4e0a939142e571657c9a0fcaed9.glb) <br /> [Blue](https://cdn.sanity.io/files/gtd4w1cq/production/de57916b7499d7a3a53f971e76481ac8121cedfe.glb) <br /> [Black](https://cdn.sanity.io/files/gtd4w1cq/production/aa8d49d8c685e3fe507c28c58ca6cacb7acf7c29.glb) | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Phone_4b_User_Guide_Global_en.pdf?v=1782977789) | N/A | [Label](https://cdn.sanity.io/images/gtd4w1cq/production/e120a2804a26f55ca1abe6f7f38ffdd0257bdd21-1134x2268.png?auto=format) |
 
----
-
 <a id="cmf-phones"></a>
 
 ### CMF Phones
@@ -41,8 +39,6 @@ Unified index of official and developer resources for Nothing and CMF phones, in
 |--------|------------|-------------|---------------|----------|-------------|-------------|
 | **Phone (1)** | [Download](https://archive.org/download/nothing-archive/spike0en/walls/tetris/) | [Dumps](https://dumps.tadiphone.dev/dumps/nothing/tetris/) | [Repository](https://github.com/NothingOSS/android_kernel_6.1_nothing_mt6878) | [Light Green](https://cdn.sanity.io/files/gtd4w1cq/production/cdbaddc958359556191101ba3b049782b0c618ae.glb) <br /> [Orange](https://cdn.sanity.io/files/gtd4w1cq/production/94a4ddd97cac31d7676845ab2942849471e2d1a3.glb) <br /> [Black](https://cdn.sanity.io/files/gtd4w1cq/production/de67e4ed8b864d9f05da3a3a01839069cf79ad8b.glb) | [PDF](https://cdn.shopify.com/s/files/1/0583/0072/7462/files/CMF_by_Nothing_Phone_1_User_Guide_v1.2.pdf?v=1748403752) | N/A |
 | **Phone (2) Pro** | [Download](https://archive.org/download/nothing-archive/spike0en/walls/galaga/) | [Dumps](https://dumps.tadiphone.dev/dumps/nothing/galaga/) | [Repository](https://github.com/NothingOSS/android_kernel_modules_nothing_mt6878/tree/mt6878/Galaga/v) | [Light Green](https://cdn.sanity.io/files/gtd4w1cq/production/b54cdec768b611a7af4c166b10e617f8caf11204.glb) <br /> [Orange](https://cdn.sanity.io/files/gtd4w1cq/production/540e40a622cc01c73edddfeb4283cfe1109820b7.glb) <br /> [White](https://cdn.sanity.io/files/gtd4w1cq/production/c7ca3faffb239aac1b1e711086ab43f49f0e3a31.glb) <br /> [Black](https://cdn.sanity.io/files/gtd4w1cq/production/3fe749a61a1c98b3c6473d57e8f3a17d8c1aaba0.glb) | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/CMF_by_Nothing_Phone_2_Pro_User_Guide_-_ROW_-_EN.pdf) | [Label](https://cdn.sanity.io/images/gtd4w1cq/production/2fb255baabba04b8f2dcef9f447b68d34918f6d8-1134x2268.png?auto=format) |
-
----
 
 ## System Sounds
 
@@ -55,8 +51,6 @@ The files are located in the following paths depending on the chipset:
 | Notifications | `vendor/product/media/audio/notifications` | `product/media/audio/notifications` |
 | Ringtones | `vendor/product/media/audio/ringtones` | `product/media/audio/ringtones` |
 | UI Sounds | `vendor/product/media/audio/ui` | `product/media/audio/ui` |
-
----
 
 ## Official Apps
 
@@ -84,8 +78,6 @@ APK mirrors for manual installation are available at [APKMirror](https://www.apk
 | Weather | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.weather) |
 | Widgets | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.hearthstone) |
 
----
-
 ## Other Products
 
 Official user manuals, guides, and 3D assets for audio, smartwatches, and ecosystem accessories.
@@ -109,8 +101,6 @@ Official user manuals, guides, and 3D assets for audio, smartwatches, and ecosys
 | **Watch Pro** | [PDF](https://cdn.shopify.com/s/files/1/0797/8739/3316/files/CMF_Watch_Pro_User_Manual_English_French_German_Arabic_Indian_Hindi_Japanese.pdf?v=1696608947) | N/A |
 | **Watch Pro 2** | [PDF](https://cdn.shopify.com/s/files/1/0797/8739/3316/files/CMF_Watch_Pro_User_Manual_English_French_German_Arabic_Indian_Hindi_Japanese.pdf?v=1696608947) | N/A |
 | **Watch 3 Pro** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/User_guide_English_German_French_Japanese_Arabic_Hindi_Korean_Traditional_Chinese_Simplified_Chinese.pdf?v=1753343095) | [Light Green](https://cdn.sanity.io/files/gtd4w1cq/production/81021cb98904dfc82e2c546bd9c82022c2a71aa0.glb) <br /> [Orange](https://cdn.sanity.io/files/gtd4w1cq/production/9ac120222f97b7cb2cf02d26a91cf93d2e3c5639.glb) <br /> [Light Grey](https://cdn.sanity.io/files/gtd4w1cq/production/940208a1ba1a079cebaebb96e868130c82b81fc1.glb) <br /> [Black](https://cdn.sanity.io/files/gtd4w1cq/production/7eaca26163a0202091cd94228c980c7dcdf8b08d.glb) |
-
----
 
 ## Fonts
 
@@ -136,8 +126,6 @@ Official and system fonts used by Nothing on their devices and website.
 | NothingFont | [GitHub](https://github.com/xeji01/nothingfont) |
 | Geist Mono | [Google Fonts](https://fonts.google.com/specimen/Geist+Mono) |
 
----
-
 ## Glyph Developer Kit
 
 Software toolkit for creating custom Glyph experiences.
@@ -157,8 +145,6 @@ To request a key, send an email to [GDKsupport@nothing.tech](mailto:GDKsupport@n
 | BetterGDK (Unofficial) | [GitHub](https://github.com/Fr4nKB/BetterGDK) |
 | Flutter Plugin (Unofficial) | [pub.dev](https://pub.dev/packages/nothing_glyph_interface) |
 | Unity SDK (Unofficial) | [GitHub](https://github.com/am1goo/NothingOS.Unity) |
-
----
 
 ## Support Links
 

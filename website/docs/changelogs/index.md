@@ -12,8 +12,6 @@ Welcome to the Nothing OS update index. Here you will find official changelogs f
 
 Before exploring the individual changelogs below, please review the guidelines below to understand how Nothing OS updates are built, compiled, and distributed.
 
----
-
 ## 🚀 How Updates Work
 
 ### 1. Phased Regional Rollouts
@@ -54,14 +52,10 @@ Each Nothing and CMF device has its own development cycle tailored to its hardwa
 * **Trickle-Down Features**: Features introduced on newer models gradually make their way back to older devices over time, unless there are hardware limitations. However, newer models may be prioritized first to support initial sales launches.
 * **Version Parity**: Having the same version number (e.g., Nothing OS 4.1) on two different devices does not mean they have identical features. For example, budget-friendly models and flagship models will have features tailored to their hardware capabilities (e.g., custom camera modes or depth effects on lockscreen might be rolled out to models at different times).
 
----
-
 :::tip Deep Dive
 To learn more about the development, testing, and distribution process behind Nothing OS updates, see the community article:
 👉 **[Inside a Major Nothing OS Update](https://nothing.community/d/47051-inside-a-major-nothing-os-update)**
 :::
-
----
 
 ## Select Your Device 📱
 
