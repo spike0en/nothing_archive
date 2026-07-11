@@ -143,7 +143,7 @@ Dialer codes (USSD) that you can dial to access hidden menus and diagnostics.
 | `*#*#682#*#*` | Opens Offline OTA Updater (won't work if Nothing Beta Hub is installed) |
 
 :::tip[Hidden Diagnostics Menu]
-Inside the Nothing Diagnostics menu (`*#*#9#*#*`), you can access advanced hardware diagnostic settings, tests, and tools by tapping the phone icon in the middle of the screen 5–7 times and entering the password `nothing`.
+Inside the Nothing Diagnostics menu (`*#*#9#*#*`), you can access advanced hardware diagnostic settings, tests, and tools by tapping the phone icon in the middle of the screen 10 times and entering the password `nothing`.
 :::
 
 ## Device Features & Accessories
