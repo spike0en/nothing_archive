@@ -1,0 +1,256 @@
+/**
+ * SupportNudge — Bottom-right floating toast card.
+ *
+ * Visual: glassmorphism card (backdrop-blur) with slide-in/slide-out
+ * animations, a shrinking progress bar for auto-dismiss, and full
+ * responsive adaptation (full-width bottom bar on mobile ≤768 px).
+ * Respects `prefers-reduced-motion` for accessibility.
+ */
+
+.nudgeContainer {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1500;
+  pointer-events: none;
+}
+
+.nudge {
+  pointer-events: auto;
+  width: 340px;
+  background-color: var(--ifm-card-background-color);
+  border: 1px solid var(--nothing-border-strong);
+  border-radius: 20px;
+  padding: 1.25rem 1.25rem 1rem;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: slideInUp 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+[data-theme='dark'] .nudge {
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+  border-color: var(--nothing-border-strong);
+}
+
+/* --- Exiting state --- */
+.nudgeExiting {
+  animation: slideOutDown 0.35s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+
+/* --- Header row --- */
+.nudgeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.nudgeTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.heartIcon {
+  color: var(--nothing-red, #D71921);
+  flex-shrink: 0;
+  animation: heartPulse 1.5s infinite ease-in-out;
+  filter: drop-shadow(0 0 4px rgba(215, 25, 33, 0.4));
+}
+
+.nudgeTitle {
+  margin: 0;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ifm-font-color-base);
+  line-height: 1.3;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--ifm-font-color-base);
+  opacity: 0.35;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.closeBtn:hover {
+  opacity: 0.85;
+  background-color: var(--nothing-hover-bg);
+  transform: rotate(90deg);
+}
+
+/* --- Body text --- */
+.nudgeBody {
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--ifm-font-color-base);
+  opacity: 0.65;
+  margin: 0;
+}
+
+/* --- Actions row --- */
+.nudgeActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* --- CTA button --- */
+.nudgeCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: var(--ifm-font-color-base);
+  color: var(--ifm-card-background-color) !important;
+  border: 1px solid var(--ifm-font-color-base);
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.nudgeCta:hover {
+  background-color: transparent;
+  color: var(--ifm-font-color-base) !important;
+}
+
+.ctaIcon {
+  flex-shrink: 0;
+  animation: heartPulse 1.5s infinite ease-in-out;
+}
+
+/* --- Already Supported (ghost link) --- */
+.alreadySupported {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  color: var(--ifm-font-color-base);
+  opacity: 0.4;
+  font-size: 0.68rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.35rem 0.25rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  letter-spacing: 0.01em;
+}
+
+.alreadySupported:hover {
+  opacity: 0.75;
+  background-color: var(--nothing-hover-bg);
+}
+
+
+/* --- Auto-dismiss progress bar --- */
+.progressTrack {
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background: var(--nothing-border);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: var(--nothing-red, #D71921);
+  border-radius: 1px;
+  width: 100%;
+  animation: shrinkBar 15s linear forwards;
+  opacity: 0.6;
+}
+
+/* --- Animations --- */
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutDown {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%) scale(0.95);
+    opacity: 0;
+  }
+}
+
+@keyframes heartPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shrinkBar {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+/* --- Responsive: mobile --- */
+@media (max-width: 768px) {
+  .nudgeContainer {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 0.75rem;
+  }
+
+  .nudge {
+    width: 100%;
+    border-radius: 16px;
+  }
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .nudge,
+  .nudgeExiting {
+    animation-duration: 0.01ms !important;
+  }
+
+  .heartIcon,
+  .ctaIcon {
+    animation: none !important;
+  }
+
+  .progressBar {
+    animation-duration: 15s;
+  }
+}

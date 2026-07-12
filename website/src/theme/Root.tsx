@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import CopyButtonSetup from '../components/CopyButton';
 import { PwaProvider } from '../components/PwaContext';
 import SupportModal from '../components/SupportModal';
+import SupportNudge from '../components/SupportNudge';
 
 interface RootProps {
   children: React.ReactNode;
@@ -181,6 +182,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
       {children}
       <CopyButtonSetup />
       <SupportModal isOpen={showSupport} onClose={() => setShowSupport(false)} />
+      <SupportNudge />
 
       {showShortcuts && (
         <div
