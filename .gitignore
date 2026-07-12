@@ -5,6 +5,7 @@ website/.cache/
 website/.cache-loader/
 website/src/data/*
 !website/src/data/device-colors.json
+!website/src/data/donations.json
 
 # Dependencies
 node_modules/

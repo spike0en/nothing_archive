@@ -659,6 +659,10 @@ const config: Config = {
           position: 'right',
         },
         {
+          type: 'custom-SupportButton',
+          position: 'right',
+        },
+        {
           to: '/docs/intro',
           position: 'left',
           label: 'About',

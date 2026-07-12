@@ -123,7 +123,15 @@ Special thanks to:
 
 ## ⭐ Support the Project
 
-If this project helps you, please consider [starring the repository](https://github.com/spike0en/nothing_archive/stargazers). It helps with discoverability and encourages maintenance. Thank you!
+If you would like to support the project financially to help cover server hosting and pipeline maintenance costs, please consider donating. 
+
+You can view our supported payment methods (including **UPI**, **Ko-fi**, **PayPal**, and **Cryptocurrencies**) through our:
+*   **[Nothing Archive Support Panel (Web UI) 🌐](https://spike0en.github.io/nothing_archive/#support)**
+*   **GitHub Sponsor button** at the top right of this repository.
+
+If this project helps you, please consider **[starring the repository](https://github.com/spike0en/nothing_archive/stargazers)**. It helps with discoverability and encourages maintenance.
+
+Thank you for your support!
 
 <div align="center">
   <a href="https://www.star-history.com/?repos=spike0en%2Fnothing_archive&type=date&legend=top-left">

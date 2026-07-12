@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CopyButtonSetup from '../components/CopyButton';
 import { PwaProvider } from '../components/PwaContext';
+import SupportModal from '../components/SupportModal';
 
 interface RootProps {
   children: React.ReactNode;
@@ -24,6 +25,39 @@ export default function Root({ children }: RootProps): React.JSX.Element {
   }
 
   const [showShortcuts, setShowShortcuts] = useState(false);
+  const [showSupport, setShowSupport] = useState(false);
+
+  // Support modal trigger listeners (hash and custom event)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const checkHash = () => {
+      if (window.location.hash === '#support' || window.location.hash === '#donate') {
+        setShowSupport(true);
+        // Clear hash to allow re-triggering later without polluting navigation history
+        try {
+          history.replaceState(null, '', window.location.pathname + window.location.search);
+        } catch (e) {
+          console.warn('Failed to clear hash:', e);
+        }
+      }
+    };
+
+    // Initial check
+    checkHash();
+
+    window.addEventListener('hashchange', checkHash);
+
+    const handleOpenSupport = () => {
+      setShowSupport(true);
+    };
+    window.addEventListener('open-support-modal', handleOpenSupport);
+
+    return () => {
+      window.removeEventListener('hashchange', checkHash);
+      window.removeEventListener('open-support-modal', handleOpenSupport);
+    };
+  }, []);
 
   // Keyboard shortcut map event listener
   useEffect(() => {
@@ -142,8 +176,11 @@ export default function Root({ children }: RootProps): React.JSX.Element {
 
   return (
     <PwaProvider>
+      <span id="support" style={{ display: 'none' }} />
+      <span id="donate" style={{ display: 'none' }} />
       {children}
       <CopyButtonSetup />
+      <SupportModal isOpen={showSupport} onClose={() => setShowSupport(false)} />
 
       {showShortcuts && (
         <div
