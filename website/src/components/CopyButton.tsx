@@ -11,12 +11,54 @@ export default function CopyButtonSetup(): null {
       return;
     }
 
-    // Only initialize copy buttons on desktop/pointer devices supporting hover
-    const hasHoverSupport = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    if (!hasHoverSupport) {
-      return;
-    }
+    let isInitialMount = true;
+    setTimeout(() => {
+      isInitialMount = false;
+    }, 1000); // 1000ms delay to bypass initial hydration/mounting theme changes
 
+    // 1. Setup Theme Transition Handling (always active for all devices)
+    const triggerThemeTransition = () => {
+      document.documentElement.classList.add('theme-transition');
+      
+      if ((window as any).themeTransitionTimeout) {
+        clearTimeout((window as any).themeTransitionTimeout);
+      }
+      
+      (window as any).themeTransitionTimeout = setTimeout(() => {
+        document.documentElement.classList.remove('theme-transition');
+      }, 850); // 850ms covers React render blocking during complex table re-renders
+    };
+
+    // A. Eagerly set transition class on click to run before Docusaurus state update
+    const handleToggleClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement | null;
+      if (
+        target?.closest('button[class*="toggleButton"]') ||
+        target?.closest('[aria-label*="Switch between dark and light mode"]') ||
+        target?.closest('[class*="toggleContainer"]')
+      ) {
+        triggerThemeTransition();
+      }
+    };
+    document.addEventListener('click', handleToggleClick, { capture: true, passive: true });
+
+    // B. Observer fallback for keyboard shortcuts, system preference changes, or tab synchronization
+    const themeObserver = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'data-theme') {
+          if (!isInitialMount) {
+            triggerThemeTransition();
+          }
+        }
+      });
+    });
+
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme'],
+    });
+
+    // 2. Wrap tables (needed for responsive tables on all devices)
     const wrapTables = () => {
       const tables = document.querySelectorAll('.markdown table, .theme-doc-markdown table, article table');
       tables.forEach((table) => {
@@ -41,7 +83,11 @@ export default function CopyButtonSetup(): null {
       });
     };
 
+    // 3. Desktop-only features (copy buttons)
+    const hasHoverSupport = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    
     const setupCopyButtons = () => {
+      if (!hasHoverSupport) return;
       const links = document.querySelectorAll('table td a');
       links.forEach((link) => {
         const anchor = link as HTMLAnchorElement;
@@ -97,6 +143,7 @@ export default function CopyButtonSetup(): null {
     };
 
     const dismissCopyButtons = (event: MouseEvent) => {
+      if (!hasHoverSupport) return;
       const target = event.target as Element | null;
       if (target?.closest('.table-copy-wrapper')) {
         return;
@@ -107,44 +154,33 @@ export default function CopyButtonSetup(): null {
       });
     };
 
-    const setupThemeToggleListener = () => {
-      const handleToggleClick = (event: MouseEvent) => {
-        const target = event.target as HTMLElement | null;
-        if (
-          target?.closest('button[class*="toggleButton"]') ||
-          target?.closest('[aria-label*="Switch between dark and light mode"]')
-        ) {
-          document.documentElement.classList.add('theme-transition');
-          setTimeout(() => {
-            document.documentElement.classList.remove('theme-transition');
-          }, 500);
-        }
-      };
-      document.addEventListener('click', handleToggleClick, { passive: true });
-    };
-
     const runSetup = () => {
       wrapTables();
       setupCopyButtons();
-      setupThemeToggleListener();
     };
 
     runSetup();
 
-    document.addEventListener('click', dismissCopyButtons);
+    if (hasHoverSupport) {
+      document.addEventListener('click', dismissCopyButtons);
+    }
 
     // Client-side route changes inject new markdown tables after initial mount.
-    const observer = new MutationObserver(() => {
+    const routeObserver = new MutationObserver(() => {
       runSetup();
     });
-    observer.observe(document.body, {
+    routeObserver.observe(document.body, {
       childList: true,
       subtree: true,
     });
 
     return () => {
-      observer.disconnect();
-      document.removeEventListener('click', dismissCopyButtons);
+      themeObserver.disconnect();
+      routeObserver.disconnect();
+      document.removeEventListener('click', handleToggleClick, { capture: true });
+      if (hasHoverSupport) {
+        document.removeEventListener('click', dismissCopyButtons);
+      }
     };
   }, []);
 

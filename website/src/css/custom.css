@@ -15,9 +15,120 @@ textarea {
 }
 
 
-/* Smooth body background transition only during explicit theme toggle */
+/* ── Theme-switch transition guard ───────────────────────────────────────
+ * When the theme toggle is clicked, CopyButton.tsx adds `theme-transition`
+ * to <html> for 500 ms. During that window every element on the page
+ * smoothly fades background-color, color, border-color, and box-shadow
+ * at a unified 0.25 s duration. A wildcard rule is used because there are
+ * 80+ elements with their own background-color declarations; enumerating
+ * them individually was guaranteed to miss some, causing the "snap vs fade"
+ * jitter the user reported.
+ *
+ * Exclusions: elements that run CSS animations, transforms, or layout
+ * transitions (e.g., search box expand, sidebar slide) are carved out so
+ * the wildcard doesn't interfere with their independent timing. */
+/* Enable smooth background & color transitions on top-level layout wrappers only to prevent color inheritance lockups */
+html.theme-transition,
 html.theme-transition body {
-  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: background-color 0.25s ease,
+              color 0.25s ease !important;
+}
+
+/* Optimize child element transitions and exclude text color from wildcard calculations so child text updates instantly */
+html.theme-transition :not(svg, svg *, [class*="matrixDot"], [class*="matrixGrid"], [class*="dot"], [class*="CommitMatrix"], [class*="CommitMatrix"] *, [class*="ReleaseFeed"], [class*="ReleaseFeed"] *),
+html.theme-transition :not(svg, svg *, [class*="matrixDot"], [class*="matrixGrid"], [class*="dot"], [class*="CommitMatrix"], [class*="CommitMatrix"] *, [class*="ReleaseFeed"], [class*="ReleaseFeed"] *)::before,
+html.theme-transition :not(svg, svg *, [class*="matrixDot"], [class*="matrixGrid"], [class*="dot"], [class*="CommitMatrix"], [class*="CommitMatrix"] *, [class*="ReleaseFeed"], [class*="ReleaseFeed"] *)::after {
+  transition: background-color 0.25s ease,
+              border-color 0.25s ease,
+              box-shadow 0.25s ease,
+              fill 0.25s ease,
+              stroke 0.25s ease !important;
+}
+
+/* Temporarily disable backdrop-filter to prevent layout-painting bottleneck during transition */
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Opt-out: elements whose own transitions must stay untouched during theme switch */
+html.theme-transition .navbar__search-input,
+html.theme-transition div[class*="searchBarContainer"],
+html.theme-transition [class*="navbarSearchContainer"],
+html.theme-transition .navbar-sidebar,
+html.theme-transition [class*="collapseSidebarButton"],
+html.theme-transition [class*="expandButton"] {
+  transition: none !important;
+}
+
+/* ── Custom transition restoration during theme switch ───────────────────
+ * Restore original transitions for components that have their own custom 
+ * animations (transforms, filters, etc.) which would otherwise be wiped out 
+ * by the wildcard theme-transition shorthand. */
+
+/* Theme Toggle Slider */
+html.theme-transition [class*="slider"] {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.3s ease,
+              border-color 0.3s ease !important;
+}
+
+/* Theme Toggle Icons */
+html.theme-transition [class*="iconSvg"] {
+  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Homepage CTA Buttons */
+html.theme-transition [class*="ctaButton"] {
+  transition: background-color 0.2s ease,
+              transform 0.2s ease,
+              box-shadow 0.2s ease,
+              filter 0.2s ease !important;
+}
+
+/* Homepage Hero Logo */
+html.theme-transition [class*="heroLogo"] {
+  transition: filter 0.3s ease !important;
+}
+
+/* Homepage Feature Cards */
+html.theme-transition [class*="featureCard"] {
+  transition: border-color 0.25s ease,
+              background-color 0.25s ease,
+              transform 0.25s ease,
+              box-shadow 0.25s ease !important;
+}
+
+/* Homepage Feature Icons */
+html.theme-transition [class*="featureIcon"] {
+  transition: background 0.2s ease,
+              transform 0.2s ease !important;
+}
+
+/* Header Badges */
+html.theme-transition [class*="header-badge"] img {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.2s ease,
+              box-shadow 0.2s ease !important;
+}
+
+/* Table Copy Links */
+html.theme-transition table td a {
+  transition: background-color 0.15s ease,
+              border-color 0.15s ease,
+              color 0.15s ease,
+              box-shadow 0.15s ease,
+              transform 0.15s ease !important;
+}
+
+/* Navbar/Sidebar Menu Links */
+html.theme-transition .menu__link {
+  transition: background 0.2s ease,
+              color 0.2s ease,
+              transform 0.2s ease !important;
 }
 
 /* Prevent Docusaurus SSR code block theme flashes on page load */
@@ -803,7 +914,6 @@ table td {
   border: none !important;
   /* Override standard Infima borders and remove outlines */
   background-color: var(--ifm-card-background-color) !important;
-  transition: background-color 0.15s ease;
 }
 
 /* Contrast nested tables inside details/cards against their containers */
@@ -923,12 +1033,6 @@ table tbody tr:nth-child(even) {
 [data-theme='dark'] table tbody tr:nth-child(even) {
   background-color: transparent !important;
 }
-
-/* Row hover */
-table tbody tr {
-  transition: background-color 0.15s ease;
-}
-
 table tbody tr:hover td {
   background-color: var(--nothing-hover-bg) !important;
 }
@@ -1852,7 +1956,7 @@ details.alert {
   border-radius: 24px !important;
   margin: 1rem 0 !important;
   padding: 0 !important;
-  transition: box-shadow 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
   --ifm-alert-border-color: transparent;
   max-width: 100% !important;
   overflow: hidden !important;
