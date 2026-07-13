@@ -28,7 +28,7 @@
   max-height: 90vh;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.12);
   overflow-y: auto;
-  animation: scaleUp 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   color: var(--ifm-font-color-base);
   display: flex;
   flex-direction: column;
@@ -111,7 +111,8 @@
   line-height: 1.6;
   margin-bottom: 2rem;
   opacity: 0.8;
-  max-width: 800px;
+  max-width: 720px;
+  width: 100%;
 }
 
 .contentLayout {

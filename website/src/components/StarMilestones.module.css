@@ -190,9 +190,10 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 0;
+  width: 100%;
   border-radius: 1.5px;
-  transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-origin: left;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Lit state white segments */
@@ -730,20 +731,20 @@
 }
 
 @keyframes starEaten2 {
-  0%, 32% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
-  33%, 95% { opacity: 0; transform: translateY(calc(-50% - 1px)) scale(0); }
+  0%, 30.5% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
+  31.5%, 95% { opacity: 0; transform: translateY(calc(-50% - 1px)) scale(0); }
   96%, 100% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
 }
 
 @keyframes starEaten3 {
-  0%, 46% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
-  47%, 95% { opacity: 0; transform: translateY(calc(-50% - 1px)) scale(0); }
+  0%, 45.2% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
+  46.2%, 95% { opacity: 0; transform: translateY(calc(-50% - 1px)) scale(0); }
   96%, 100% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
 }
 
 @keyframes starEaten4 {
-  0%, 61% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
-  62%, 95% { opacity: 0; transform: translateY(calc(-50% - 1px)) scale(0); }
+  0%, 59.9% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
+  60.9%, 95% { opacity: 0; transform: translateY(calc(-50% - 1px)) scale(0); }
   96%, 100% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
 }
 

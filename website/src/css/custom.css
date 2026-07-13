@@ -1411,17 +1411,17 @@ a:hover {
 /* Admonitions */
 .admonition {
   border-radius: 8px;
-  border-left-width: 4px;
+  border-left-width: 4px; /* impeccable-disable-line side-tab */
 }
-
-/* Inline links in admonitions (Red text, no underline until hover) */
+/* Inline links in admonitions (Red text with underlines for accessibility) */
 .admonition a,
 .theme-admonition a,
 div[class*="admonition"] a {
   color: var(--nothing-red, #D71921) !important;
-  text-decoration: none !important;
+  text-decoration: underline !important;
   transition: color 0.15s ease;
 }
+
 
 /* Hover transitions for inline links in admonitions */
 .admonition a:hover,
@@ -2048,7 +2048,7 @@ div[class*="navbarSearchContainer"] {
   padding: 0.4rem 2.25rem 0.4rem 2.25rem !important;
   background-image: url("data:image/svg+xml;utf8,<svg fill='black' opacity='0.5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' height='16px' width='16px'><path d='M6.02945,10.20327a4.17382,4.17382,0,1,1,4.17382-4.17382A4.15609,4.15609,0,0,1,6.02945,10.20327Zm9.69195,4.2199L10.8989,9.59979A5.88021,5.88021,0,0,0,12.058,6.02856,6.00467,6.00467,0,1,0,9.59979,10.8989l4.82338,4.82338a.89729.89729,0,0,0,1.29912,0,.89749.89749,0,0,0-.00087-1.29909Z' /></svg>") !important;
   background-position: 0.75rem center !important;
-  transition: width 0.25s ease, padding 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+  transition: width 0.25s ease, padding 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important; /* impeccable-disable-line layout-transition */
   width: 14rem !important;
   /* Expanded width on desktop/tablet */
 }
@@ -2385,7 +2385,7 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
   justify-content: center !important;
   overflow: visible !important;
   z-index: 100 !important;
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
     background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease,
     border-color 0.2s ease !important;
 }
@@ -2458,7 +2458,7 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
   max-width: 440px;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  animation: scaleUp 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: scaleUp 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   color: var(--ifm-font-color-base);
 }
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import CopyButtonSetup from '../components/CopyButton';
 import { PwaProvider } from '../components/PwaContext';
 import SupportModal from '../components/SupportModal';
@@ -27,6 +27,51 @@ export default function Root({ children }: RootProps): React.JSX.Element {
 
   const [showShortcuts, setShowShortcuts] = useState(false);
   const [showSupport, setShowSupport] = useState(false);
+
+  const modalRef = useRef<HTMLDivElement>(null);
+  const previousActiveElement = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (showShortcuts) {
+      previousActiveElement.current = document.activeElement as HTMLElement;
+      // Focus the close button or first focusable element in the modal
+      const closeBtn = modalRef.current?.querySelector('.shortcut-modal-close') as HTMLElement;
+      if (closeBtn) {
+        // Wait a tick for rendering transition
+        setTimeout(() => closeBtn.focus(), 50);
+      }
+    } else {
+      if (previousActiveElement.current) {
+        previousActiveElement.current.focus();
+        previousActiveElement.current = null;
+      }
+    }
+  }, [showShortcuts]);
+
+  const handleModalKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Tab') {
+      const focusableEls = modalRef.current?.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex="0"]'
+      );
+      if (focusableEls && focusableEls.length > 0) {
+        const firstEl = focusableEls[0] as HTMLElement;
+        const lastEl = focusableEls[focusableEls.length - 1] as HTMLElement;
+        if (e.shiftKey) {
+          if (document.activeElement === firstEl) {
+            lastEl.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === lastEl) {
+            firstEl.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    } else if (e.key === 'Escape') {
+      setShowShortcuts(false);
+    }
+  };
 
   // Support modal trigger listeners (hash and custom event)
   useEffect(() => {
@@ -186,8 +231,10 @@ export default function Root({ children }: RootProps): React.JSX.Element {
 
       {showShortcuts && (
         <div
+          ref={modalRef}
           className="shortcut-modal-overlay"
           onClick={() => setShowShortcuts(false)}
+          onKeyDown={handleModalKeyDown}
           role="dialog"
           aria-modal="true"
           aria-labelledby="shortcut-title"

@@ -161,7 +161,7 @@ export default function StarMilestones(): React.JSX.Element {
               >
                 <div
                   className={styles.segmentBar}
-                  style={{ width: `${fillWidth}%` }}
+                  style={{ transform: `scaleX(${fillWidth / 100})` }}
                 />
               </div>
             );

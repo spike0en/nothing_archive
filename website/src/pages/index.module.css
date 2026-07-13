@@ -472,7 +472,7 @@
   border-radius: 16px; /* match upper cards */
   padding: 0.75rem;
   text-decoration: none !important;
-  transition: border-color 0.25s ease, transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease;
+  transition: border-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
 }
 
 .contributorAvatarContainer {

@@ -27,7 +27,7 @@
     0 2px 8px rgba(0, 0, 0, 0.04);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  animation: slideInUp 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation: slideInUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;

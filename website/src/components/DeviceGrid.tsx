@@ -76,7 +76,7 @@ function ModelCard({ device, latestLink }: { device: DeviceItem; latestLink: str
           <h3 className={styles.deviceName}>{device.name}</h3>
         </Link>
         {device.variants.length > 1 && (
-          <div className={styles.colorSelector}>
+          <div className={styles.colorSelector} role="group" aria-label={`Color variants for ${device.name}`}>
             {device.variants.map((v) => (
               <button
                 key={v.name}
@@ -84,6 +84,8 @@ function ModelCard({ device, latestLink }: { device: DeviceItem; latestLink: str
                 className={clsx(styles.colorPill, selectedColor?.name === v.name && styles.colorPillActive)}
                 onClick={() => setSelectedColor(v)}
                 title={v.name}
+                aria-label={`Select ${v.name} color`}
+                aria-pressed={selectedColor?.name === v.name}
               >
                 {v.name}
               </button>
