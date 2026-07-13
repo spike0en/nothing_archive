@@ -71,15 +71,24 @@
 
 
 
-/* Radiating red glow animation */
-@keyframes glowPulse {
-  0%, 100% {
-    filter: drop-shadow(0 0 6px rgba(215, 25, 33, 0.4)) drop-shadow(0 0 2px rgba(215, 25, 33, 0.2));
+/* Concentric rings ripple animation */
+@keyframes rippleWave {
+  0% {
     transform: scale(1);
+    opacity: 0;
+    border-color: rgba(215, 25, 33, 0.15);
+    filter: drop-shadow(0 0 2px rgba(215, 25, 33, 0.05));
   }
-  50% {
-    filter: drop-shadow(0 0 26px rgba(215, 25, 33, 0.85)) drop-shadow(0 0 8px rgba(215, 25, 33, 0.45));
-    transform: scale(1.025);
+  15% {
+    opacity: 0.75;
+    border-color: rgba(215, 25, 33, 0.5);
+    filter: drop-shadow(0 0 4px rgba(215, 25, 33, 0.3));
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+    border-color: rgba(215, 25, 33, 0.02);
+    filter: drop-shadow(0 0 6px rgba(215, 25, 33, 0));
   }
 }
 
@@ -145,31 +154,70 @@
   margin-top: 0;
   cursor: pointer;
   box-shadow: 
-    /* Red backlight glow surrounding the dial */
-    0 0 45px rgba(215, 25, 33, 0.48),
-    0 0 20px rgba(215, 25, 33, 0.28),
-    0 0 0 2.5px rgba(215, 25, 33, 0.16),
+    0 0 0 2px rgba(215, 25, 33, 0.75),
+    0 0 10px rgba(215, 25, 33, 0.2),
     /* Concentric metal lip steps - Uniform concentric offsets */
     inset 0 0 0 1px rgba(255, 255, 255, 0.95),
     inset 0 0 0 2px rgba(0, 0, 0, 0.06),
     inset 0 0 0 3px rgba(255, 255, 255, 0.6),
     inset 0 0 0 4px rgba(0, 0, 0, 0.12),
     0 0 0 1px rgba(0, 0, 0, 0.06);
-  animation: glowPulse 3s ease-in-out infinite;
+  position: relative;
+}
+
+.logoChassisLogo .bezelRing::before {
+  content: '';
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(215, 25, 33, 0.3) 0%, transparent 70%);
+  opacity: 0.85;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.ring1,
+.ring2,
+.ring3 {
+  display: block;
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+  border: 1px solid rgba(215, 25, 33, 0.4);
+  background: none !important;
+  background-color: transparent !important;
+  opacity: 0;
+  animation: rippleWave 3s cubic-bezier(0.25, 1, 0.2, 1) infinite;
+}
+
+.ring1 {
+  animation-delay: 0s;
+}
+
+.ring2 {
+  animation-delay: 1s;
+}
+
+.ring3 {
+  animation-delay: 2s;
 }
 
 [data-theme='dark'] .logoChassisLogo .bezelRing {
   box-shadow: 
-    /* Centered uniform red backlight for dark mode (0 Y-offset) */
-    0 0 50px rgba(215, 25, 33, 0.45),
-    0 0 24px rgba(215, 25, 33, 0.28),
-    0 0 0 2.5px rgba(215, 25, 33, 0.22),
+    0 0 0 2px rgba(215, 25, 33, 0.9),
+    0 0 12px rgba(215, 25, 33, 0.35),
     /* Concentric dark metal steps - Uniform concentric offsets */
     inset 0 0 0 1px rgba(255, 255, 255, 0.15),
     inset 0 0 0 2px rgba(0, 0, 0, 0.5),
     inset 0 0 0 3px rgba(255, 255, 255, 0.04),
     inset 0 0 0 4px rgba(0, 0, 0, 0.7),
     0 0 0 1px rgba(0, 0, 0, 0.9);
+}
+
+[data-theme='dark'] .logoChassisLogo .bezelRing::before {
+  background: radial-gradient(circle, rgba(215, 25, 33, 0.42) 0%, transparent 70%);
 }
 
 [data-theme='dark'] .bezelRing {

@@ -429,6 +429,14 @@ export default function HeroGlyphLogo(): React.JSX.Element {
     )}>
       <div className={styles.gridOverlay} />
 
+      {mode === 'LOGO' && (
+        <>
+          <div className={styles.ring1} />
+          <div className={styles.ring2} />
+          <div className={styles.ring3} />
+        </>
+      )}
+
       <button
         className={styles.closeBtn}
         onClick={(e) => {

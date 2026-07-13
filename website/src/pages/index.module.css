@@ -13,26 +13,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(ellipse 60% 50% at 70% 50%,
-      rgba(215, 25, 33, 0.03) 0%,
+  --mouse-x: 75%;
+  --mouse-y: 50%;
+  background: radial-gradient(ellipse 600px 500px at var(--mouse-x) var(--mouse-y),
+      rgba(215, 25, 33, 0.04) 0%,
       transparent 70%);
+  transition: background 0.15s ease-out;
 }
 
 [data-theme='dark'] .heroBanner {
-  background: radial-gradient(ellipse 60% 50% at 70% 50%,
-      rgba(215, 25, 33, 0.04) 0%,
+  background: radial-gradient(ellipse 600px 500px at var(--mouse-x) var(--mouse-y),
+      rgba(215, 25, 33, 0.06) 0%,
       transparent 70%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroBanner {
+    --mouse-x: 75% !important;
+    --mouse-y: 50% !important;
+    transition: none !important;
+  }
 }
 
 /* Grid pattern overlay */
 .glyphGrid {
   position: absolute;
   inset: 0;
-  background-image: 
-    radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.05) 1px, transparent 0),
-    linear-gradient(to right, rgba(0, 0, 0, 0.015) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.015) 1px, transparent 1px);
-  background-size: 24px 24px, 48px 48px, 48px 48px;
+  background-image: radial-gradient(circle 1px at 1px 1px, rgba(0, 0, 0, 0.045) 1px, transparent 0);
+  background-size: 24px 24px;
   pointer-events: none;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
@@ -40,10 +48,7 @@
 }
 
 [data-theme='dark'] .glyphGrid {
-  background-image: 
-    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.12) 1px, transparent 0),
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-image: radial-gradient(circle 1px at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
 }
 
 @keyframes glyphPulse {
@@ -222,11 +227,12 @@
 
 /* Global section header styling */
 .sectionLabel {
-  font-size: 0.85rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  opacity: 0.7;
+  letter-spacing: 0.15em;
+  opacity: 0.75;
   margin-bottom: 2.5rem;
   text-align: center;
 }
@@ -330,34 +336,16 @@
   transition: opacity 0.3s ease;
   pointer-events: none;
   z-index: 0;
-  display: none;
 }
 
 .featureCard:hover::after {
-  opacity: 0;
-}
-
-/* Render animated selection indicator on the left border of feature cards during user interaction */
-.featureCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 3px;
-  height: 0;
-  background: var(--ifm-color-primary);
-  transition: height 0.2s ease;
-  z-index: 2;
+  opacity: 0.04;
 }
 
 .featureCard:hover {
-  border-color: var(--nothing-border);
+  border-color: var(--nothing-red);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
-}
-
-.featureCard:hover::before {
-  height: 100%;
+  box-shadow: 0 8px 24px rgba(215, 25, 33, 0.04);
 }
 
 [data-theme='dark'] .featureCard {
@@ -366,12 +354,12 @@
 }
 
 [data-theme='dark'] .featureCard:hover {
-  border-color: var(--nothing-border);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  border-color: var(--nothing-red);
+  box-shadow: 0 8px 24px rgba(215, 25, 33, 0.12);
 }
 
 [data-theme='dark'] .featureCard:hover::after {
-  opacity: 0;
+  opacity: 0.08;
 }
 
 /* Icon container */

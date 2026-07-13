@@ -4,18 +4,42 @@
   justify-content: center;
   position: relative;
   z-index: 100;
-  padding: 1.25rem 1rem 0.25rem 1rem;
-  animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 1.25rem 1rem 1.25rem 1rem;
+  overflow: hidden;
+  animation: expandDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@keyframes slideDown {
+.bannerDismissing {
+  animation: retractUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+@keyframes expandDown {
   from {
-    transform: translateY(-20px);
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     opacity: 0;
   }
   to {
-    transform: translateY(0);
+    max-height: 140px;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
     opacity: 1;
+  }
+}
+
+@keyframes retractUp {
+  from {
+    max-height: 140px;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    opacity: 1;
+  }
+  to {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
   }
 }
 
@@ -32,11 +56,14 @@
   padding: 0.5rem 1rem 0.5rem 1.25rem;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
   max-width: 90%;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  opacity: 0;
+  transform: translateY(-10px) scale(0.95);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  animation: pillSlideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s forwards;
 }
 
 .container:hover {
-  transform: translateY(-1px);
+  transform: translateY(-1px) scale(1.01);
   border-color: rgba(0, 0, 0, 0.2);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
@@ -51,6 +78,33 @@
   background-color: rgba(24, 24, 24, 0.85);
   border-color: rgba(255, 255, 255, 0.15);
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px) scale(1.01);
+}
+
+.bannerDismissing .container {
+  animation: pillScaleOut 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+@keyframes pillSlideIn {
+  from {
+    transform: translateY(-10px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pillScaleOut {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-10px) scale(0.92);
+    opacity: 0;
+  }
 }
 
 /* The entire content area is now the clickable link */
@@ -164,7 +218,11 @@
 /* Mobile: center-align on small screens */
 @media screen and (max-width: 576px) {
   .banner {
-    padding: 1rem 0.5rem 0.25rem 0.5rem;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    animation: expandDownMobile 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .bannerDismissing {
+    animation: retractUpMobile 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
   }
   .container {
     padding: 0.4rem 0.75rem 0.4rem 1rem;
@@ -180,5 +238,35 @@
     font-size: 1rem;
     padding: 0.2rem;
     margin-left: 0.1rem;
+  }
+}
+
+@keyframes expandDownMobile {
+  from {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 140px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    opacity: 1;
+  }
+}
+
+@keyframes retractUpMobile {
+  from {
+    max-height: 140px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    opacity: 1;
+  }
+  to {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
   }
 }

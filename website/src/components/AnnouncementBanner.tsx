@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from '@docusaurus/Link';
+import clsx from 'clsx';
 import styles from './AnnouncementBanner.module.css';
 import { useGitHubReleases } from '../utils/github-cache';
 
@@ -33,6 +34,7 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
   const { releases: allGhReleases } = useGitHubReleases();
   const [releases, setReleases] = useState<ReleaseData[]>([]);
   const [isDismissed, setIsDismissed] = useState<boolean>(true); // default to true to avoid flash before load
+  const [isDismissing, setIsDismissing] = useState<boolean>(false);
 
   useEffect(() => {
     if (allGhReleases.length === 0) return;
@@ -71,7 +73,11 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
 
     if (nonDismissed.length > 0) {
       setReleases(nonDismissed);
-      setIsDismissed(false);
+      // Introduce a 3-second delay before showing the banner to let the page load
+      const timer = setTimeout(() => {
+        setIsDismissed(false);
+      }, 3000);
+      return () => clearTimeout(timer);
     } else {
       setIsDismissed(true);
     }
@@ -97,7 +103,11 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
       const newlyDismissed = releases.map(r => r.tagName);
       const merged = Array.from(new Set([...previouslyDismissed, ...newlyDismissed]));
       localStorage.setItem(DISMISS_KEY, JSON.stringify(merged));
-      setIsDismissed(true);
+      
+      setIsDismissing(true);
+      setTimeout(() => {
+        setIsDismissed(true);
+      }, 400); // match animation duration (400ms)
     }
   };
 
@@ -115,7 +125,7 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
     const isExternal = !hasChangelog;
 
     return (
-      <div className={styles.banner}>
+      <div className={clsx(styles.banner, isDismissing && styles.bannerDismissing)}>
         <div className={styles.container}>
           <Link
             to={targetUrl}
@@ -142,7 +152,7 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
 
   // Multiple releases - render as inline clickable links
   return (
-    <div className={styles.banner}>
+    <div className={clsx(styles.banner, isDismissing && styles.bannerDismissing)}>
       <div className={styles.container}>
         <div className={styles.contentNonClickable}>
           <span className={styles.announcementTag}>📢</span>

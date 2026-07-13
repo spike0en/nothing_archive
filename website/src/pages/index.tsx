@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -110,10 +110,28 @@ const socialLinks = [
  */
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
-  const { colorMode } = useColorMode();
-  const heroLogoSrc = colorMode === 'dark' ? 'img/logo_dark.gif' : 'img/logo_light.gif';
+  const headerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+
+    const handlePointerMove = (e: PointerEvent) => {
+      const rect = header.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      header.style.setProperty('--mouse-x', `${x}px`);
+      header.style.setProperty('--mouse-y', `${y}px`);
+    };
+
+    header.addEventListener('pointermove', handlePointerMove);
+    return () => {
+      header.removeEventListener('pointermove', handlePointerMove);
+    };
+  }, []);
+
   return (
-    <header className={clsx('hero', styles.heroBanner)}>
+    <header ref={headerRef} className={clsx('hero', styles.heroBanner)}>
       <div className={styles.glyphGrid} aria-hidden="true" />
       <div className="container">
         <div className={styles.heroContent}>
