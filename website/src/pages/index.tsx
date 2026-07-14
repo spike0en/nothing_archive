@@ -23,6 +23,7 @@ import StarMilestones from '../components/StarMilestones';
 import HeroGlyphLogo from '../components/HeroGlyphLogo';
 import { useGitHubContributors } from '../utils/github-cache';
 import type { Contributor } from '../utils/github-cache';
+import contributorMetadata from '../data/contributor-metadata.json';
 
 
 
@@ -225,18 +226,83 @@ function HomepageCommunity() {
     return [...contributors].sort((a, b) => b.contributions - a.contributions);
   }, [contributors]);
 
-  const displayContributors = sortedContributors.slice(0, 10);
+  // Resolve core members in the exact order specified in configuration
+  const coreMembers = React.useMemo(() => {
+    return contributorMetadata.core
+      .map((login) => contributors.find((c) => c.login === login))
+      .filter((c): c is Contributor => !!c);
+  }, [contributors]);
+
+  // Resolve top contributors, excluding core members, capped at 6 for a premium look
+  const topContributors = React.useMemo(() => {
+    const coreLogins = new Set(contributorMetadata.core);
+    return sortedContributors
+      .filter((c) => !coreLogins.has(c.login))
+      .slice(0, 6);
+  }, [sortedContributors]);
+
+  const brandingMember = contributorMetadata.branding;
 
   return (
     <section className={styles.communitySection}>
       <div className="container">
         <Heading as="h2" className={styles.sectionLabel}>
-          Top Contributors
+          Hall of Fame
         </Heading>
 
+        {/* Core Team Subsection */}
+        <Heading as="h3" className={styles.subSectionLabel}>
+          Core Team
+        </Heading>
+        <div className={styles.coreGrid}>
+          {coreMembers.map((contrib) => (
+            <a
+              key={contrib.login}
+              href={`https://github.com/spike0en/nothing_archive/commits?author=${contrib.login}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.coreCard}
+              aria-label={`View ${contrib.name || contrib.login}'s commits on GitHub`}
+            >
+              <div className={styles.coreAvatarContainer}>
+                <img
+                  src={contrib.avatar_url}
+                  alt={`${contrib.name || contrib.login}'s avatar`}
+                  className={styles.coreAvatar}
+                  loading="lazy"
+                />
+              </div>
+              <div className={styles.coreName}>{contrib.name || contrib.login}</div>
+            </a>
+          ))}
+        </div>
+
+        {/* Branding Credit */}
+        <div className={styles.brandingSection}>
+          <span className={styles.brandingLabel}>Branding</span>
+          <a
+            href={brandingMember.html_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.brandingCard}
+          >
+            <img
+              src={brandingMember.avatar_url}
+              alt={brandingMember.name}
+              className={styles.brandingAvatar}
+              loading="lazy"
+            />
+            <span className={styles.brandingName}>{brandingMember.name}</span>
+          </a>
+        </div>
+
+        {/* General Contributors Subsection */}
+        <Heading as="h3" className={styles.subSectionLabel}>
+          Top Contributors
+        </Heading>
         <div className={styles.contributorGrid}>
-          {displayContributors.length > 0 ? (
-            displayContributors.map((contrib) => (
+          {topContributors.length > 0 ? (
+            topContributors.map((contrib) => (
               <a
                 key={contrib.login}
                 href={`https://github.com/spike0en/nothing_archive/commits?author=${contrib.login}`}
@@ -253,7 +319,9 @@ function HomepageCommunity() {
                     loading="lazy"
                   />
                 </div>
-                <div className={styles.contributorName}>{contrib.login}</div>
+                <div className={styles.contributorName}>
+                  {contrib.name || contrib.login}
+                </div>
               </a>
             ))
           ) : (

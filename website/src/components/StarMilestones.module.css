@@ -4,7 +4,7 @@
 
 /* Card Container */
 .milestoneContainer {
-  margin-top: 1.5rem;
+  margin-top: 0;
   padding: 1.75rem;
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);

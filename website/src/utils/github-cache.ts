@@ -48,6 +48,7 @@ export interface RepoStats {
 
 export interface Contributor {
   login: string;
+  name?: string;
   avatar_url: string;
   html_url: string;
   contributions: number;
@@ -73,8 +74,8 @@ const LS_KEYS = {
   commitsTime: 'na_gh_commits_time_v3',
   repoStats: 'na_gh_stats_v3',
   repoStatsTime: 'na_gh_stats_time_v3',
-  contributors: 'na_gh_contributors_v3',
-  contributorsTime: 'na_gh_contributors_time_v3',
+  contributors: 'na_gh_contributors_v4',
+  contributorsTime: 'na_gh_contributors_time_v4',
 } as const;
 
 // --- In-memory deduplication layer ---
@@ -272,12 +273,16 @@ async function fetchContributorsFromAPI(): Promise<Contributor[]> {
   }
 
   const raw = await response.json();
-  return raw.map((item: any) => ({
-    login: item.login,
-    avatar_url: item.avatar_url,
-    html_url: item.html_url,
-    contributions: item.contributions,
-  }));
+  return raw.map((item: any) => {
+    const staticMatch = (staticContributors as any[] || []).find((sc) => sc.login === item.login);
+    return {
+      login: item.login,
+      name: staticMatch?.name || item.name || item.login,
+      avatar_url: item.avatar_url,
+      html_url: item.html_url,
+      contributions: item.contributions,
+    };
+  });
 }
 
 // --- Generic stale-while-revalidate hook factory ---

@@ -85,14 +85,53 @@ function writeFallback(filePath, fallback, label) {
 async function fetchContributors() {
   const filePath = path.join(OUT_DIR, 'contributors.json');
   const label = 'contributors';
+
+  // Try to load existing contributor name mappings to avoid re-fetching and hitting rate limits
+  const existingNames = {};
+  try {
+    if (fs.existsSync(filePath)) {
+      const existing = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      if (Array.isArray(existing)) {
+        for (const c of existing) {
+          if (c.login && c.name) {
+            existingNames[c.login] = c.name;
+          }
+        }
+      }
+    }
+  } catch (e) {
+    console.warn(`[${label}] Failed to load existing names: ${e.message}`);
+  }
+
   try {
     const { data } = await fetchJSON('/repos/spike0en/nothing_archive/contributors?per_page=100');
-    const contributors = data.map((c) => ({
-      login: c.login,
-      avatar_url: c.avatar_url,
-      html_url: c.html_url,
-      contributions: c.contributions,
-    }));
+
+    // Resolve names for each contributor
+    const contributors = [];
+    for (const c of data) {
+      let name = existingNames[c.login];
+
+      // If we don't have the name cached, fetch it from GitHub
+      if (!name) {
+        try {
+          console.log(`[${label}] Fetching user profile for new contributor: ${c.login}`);
+          const userProfile = await fetchJSON(`/users/${c.login}`);
+          name = userProfile.data?.name || c.login;
+        } catch (err) {
+          console.warn(`[${label}] Failed to fetch name for ${c.login}: ${err.message}`);
+          name = c.login; // fallback
+        }
+      }
+
+      contributors.push({
+        login: c.login,
+        name: name,
+        avatar_url: c.avatar_url,
+        html_url: c.html_url,
+        contributions: c.contributions,
+      });
+    }
+
     safeWrite(filePath, contributors, label);
   } catch (e) {
     console.warn(`[${label}] Fetch failed: ${e.message}`);

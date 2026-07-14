@@ -119,9 +119,8 @@
   position: relative;
   background: #eaeaea;
   box-shadow: 
-    0 10px 24px rgba(0, 0, 0, 0.08),
-    0 3px 8px rgba(0, 0, 0, 0.04),
-    0 0 0 1px rgba(255, 255, 255, 0.95) inset,
+    0 0 0 2px rgba(215, 25, 33, 0.75),
+    0 0 10px rgba(215, 25, 33, 0.2),
     /* Concentric metal lip steps (3D ridges) - Uniform concentric offsets */
     inset 0 0 0 1px rgba(255, 255, 255, 0.95),
     inset 0 0 0 2px rgba(0, 0, 0, 0.06),
@@ -153,19 +152,10 @@
   height: 200px;
   margin-top: 0;
   cursor: pointer;
-  box-shadow: 
-    0 0 0 2px rgba(215, 25, 33, 0.75),
-    0 0 10px rgba(215, 25, 33, 0.2),
-    /* Concentric metal lip steps - Uniform concentric offsets */
-    inset 0 0 0 1px rgba(255, 255, 255, 0.95),
-    inset 0 0 0 2px rgba(0, 0, 0, 0.06),
-    inset 0 0 0 3px rgba(255, 255, 255, 0.6),
-    inset 0 0 0 4px rgba(0, 0, 0, 0.12),
-    0 0 0 1px rgba(0, 0, 0, 0.06);
   position: relative;
 }
 
-.logoChassisLogo .bezelRing::before {
+.bezelRing::before {
   content: '';
   position: absolute;
   inset: -15px;
@@ -204,28 +194,15 @@
   animation-delay: 2s;
 }
 
-[data-theme='dark'] .logoChassisLogo .bezelRing {
-  box-shadow: 
-    0 0 0 2px rgba(215, 25, 33, 0.9),
-    0 0 12px rgba(215, 25, 33, 0.35),
-    /* Concentric dark metal steps - Uniform concentric offsets */
-    inset 0 0 0 1px rgba(255, 255, 255, 0.15),
-    inset 0 0 0 2px rgba(0, 0, 0, 0.5),
-    inset 0 0 0 3px rgba(255, 255, 255, 0.04),
-    inset 0 0 0 4px rgba(0, 0, 0, 0.7),
-    0 0 0 1px rgba(0, 0, 0, 0.9);
-}
-
-[data-theme='dark'] .logoChassisLogo .bezelRing::before {
+[data-theme='dark'] .bezelRing::before {
   background: radial-gradient(circle, rgba(215, 25, 33, 0.42) 0%, transparent 70%);
 }
 
 [data-theme='dark'] .bezelRing {
   background: #242424;
   box-shadow: 
-    /* Ambient outer shadow for dark mode */
-    0 12px 30px rgba(0, 0, 0, 0.55),
-    0 4px 12px rgba(0, 0, 0, 0.35),
+    0 0 0 2px rgba(215, 25, 33, 0.9),
+    0 0 12px rgba(215, 25, 33, 0.35),
     /* Specular light rim */
     0 0 0 1px rgba(255, 255, 255, 0.12) inset,
     /* Concentric dark metal steps - Uniform concentric offsets */
@@ -233,7 +210,7 @@
     inset 0 0 0 2px rgba(0, 0, 0, 0.5),
     inset 0 0 0 3px rgba(255, 255, 255, 0.03),
     inset 0 0 0 4px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(0, 0, 0, 0.85);
+    0 0 0 1px rgba(0, 0, 0, 0.9);
 }
 
 .circleDisplay {
@@ -776,7 +753,8 @@
     height: 126px;
     margin-top: 14px;
     box-shadow: 
-      0 4px 12px rgba(0, 0, 0, 0.06),
+      0 0 0 2px rgba(215, 25, 33, 0.75),
+      0 0 8px rgba(215, 25, 33, 0.2),
       inset 0 1.5px 3px rgba(255, 255, 255, 1),
       inset 0 -1.5px 4px rgba(0, 0, 0, 0.08),
       0 0 0 1px rgba(0, 0, 0, 0.06);
@@ -788,7 +766,8 @@
   }
   [data-theme='dark'] .bezelRing {
     box-shadow: 
-      0 6px 16px rgba(0, 0, 0, 0.5),
+      0 0 0 2px rgba(215, 25, 33, 0.9),
+      0 0 10px rgba(215, 25, 33, 0.35),
       inset 0 1px 1.5px rgba(255, 255, 255, 0.06),
       inset 0 -1.5px 4px rgba(0, 0, 0, 0.5),
       0 0 0 1px rgba(255, 255, 255, 0.04);
