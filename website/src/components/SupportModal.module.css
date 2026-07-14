@@ -109,7 +109,7 @@
 .introText {
   font-size: 0.95rem;
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
   opacity: 0.8;
   max-width: 720px;
   width: 100%;
@@ -118,29 +118,29 @@
 .contentLayout {
   display: flex;
   gap: 2rem;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .leftColumn {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
 }
 
 .stack {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.5rem;
   width: 100%;
+  flex-grow: 1;
+  justify-content: space-between;
 }
 
 .rightColumn {
   flex: 0 0 380px;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  align-items: center;
+  align-items: stretch;
 }
 
 .columnTitle {
@@ -155,42 +155,20 @@
   width: 100%;
 }
 
-.iframeCard {
-  background-color: var(--ifm-background-color);
-  border: 1px solid var(--nothing-border);
-  border-radius: 20px;
-  padding: 1rem;
+.iframeWrapper {
   width: 100%;
-  max-width: 378px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  transition: all 0.25s ease;
+  height: 615px;
   position: relative;
   overflow: hidden;
+  border-radius: 14px;
 }
 
-.iframeCard iframe {
-  mix-blend-mode: multiply;
+.iframeWrapper iframe {
+  display: block;
+  margin: 0 auto;
 }
 
-.iframeCard:hover {
-  transform: translateY(-4px);
-  border-color: var(--nothing-border-strong);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
-}
-
-[data-theme='dark'] .iframeCard {
-  background-color: var(--ifm-background-color);
-  border-color: var(--nothing-border);
-}
-
-[data-theme='dark'] .iframeCard:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-}
-
-[data-theme='dark'] .iframeCard iframe {
+[data-theme='dark'] .iframeWrapper iframe {
   filter: invert(0.9) hue-rotate(180deg) contrast(1.05);
   mix-blend-mode: normal;
 }
@@ -372,7 +350,7 @@
   .rightColumn {
     flex: none;
     width: 100%;
-    align-items: center;
+    align-items: stretch;
   }
 }
 
@@ -423,4 +401,126 @@
     transform: scale(1);
     opacity: 1;
   }
+}
+
+.donorsSection {
+  margin-bottom: 1.25rem;
+  width: 100%;
+}
+
+.donorsTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ifm-font-color-base);
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  animation: textShimmer 3s infinite ease-in-out;
+}
+
+@keyframes textShimmer {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animatedEmoji {
+  display: inline-block;
+  animation: handshake 2.5s infinite ease-in-out;
+  transform-origin: bottom center;
+}
+
+@keyframes handshake {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(-8deg); }
+  20% { transform: rotate(10deg); }
+  30% { transform: rotate(-8deg); }
+  40% { transform: rotate(10deg); }
+  50% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--nothing-border-strong);
+  margin: 2rem 0;
+  opacity: 0.5;
+}
+
+.donorsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.donorBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--ifm-background-color);
+  border: 1px solid var(--nothing-border);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.donorBadge:hover {
+  border-color: var(--nothing-border-strong);
+  background-color: var(--nothing-hover-bg);
+  transform: translateY(-1px);
+}
+
+.donorHeart {
+  color: var(--nothing-red, #D71921);
+  filter: drop-shadow(0 0 2px rgba(215, 25, 33, 0.4));
+}
+
+/* Spinner for NOWPayments iframe card */
+.spinnerContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ifm-background-color);
+  z-index: 2;
+  gap: 0.75rem;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--nothing-border);
+  border-top-color: var(--ifm-color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinnerText {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.cryptoCard {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }

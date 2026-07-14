@@ -499,6 +499,13 @@ const config: Config = {
   ],
 
   headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://nowpayments.io',
+      },
+    },
     // Core SEO keywords for global indexation
     {
       tagName: 'meta',

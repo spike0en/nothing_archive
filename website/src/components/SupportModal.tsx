@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaCopy, FaCheck, FaTimes, FaExternalLinkAlt, FaHeart } from 'react-icons/fa';
 import donationsData from '../data/donations.json';
+import donorsData from '../data/donors.json';
 import styles from './SupportModal.module.css';
 
 interface DonationChannel {
@@ -21,6 +22,7 @@ interface SupportModalProps {
 
 export default function SupportModal({ isOpen, onClose }: SupportModalProps): React.JSX.Element | null {
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [iframeLoading, setIframeLoading] = useState(true);
 
   // Disable body scroll when modal is open
   useEffect(() => {
@@ -87,9 +89,27 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
             Nothing Archive is a community-driven initiative and will always remain completely free to use. However, keeping this platform online involves ongoing server hosting expenses for self hosted runners and running the backend pipelines that continuously fetch and process firmware updates. Contributions are entirely optional, but if you'd like to help cover these resource costs and motivate continued efforts for maintainers for their time put in for the community, any support is deeply appreciated!
           </p>
 
+          {Array.isArray(donorsData) && donorsData.length > 0 && (
+            <div className={styles.donorsSection}>
+              <h3 className={styles.donorsTitle}>
+                <span className={styles.animatedEmoji}>🤝</span> TOP SUPPORTERS
+              </h3>
+              <div className={styles.donorsList}>
+                {donorsData.slice(0, 10).map((donor, idx) => (
+                  <span key={idx} className={styles.donorBadge}>
+                    {donor}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <h3 className={styles.donorsTitle}>
+            <span className={styles.animatedEmoji}>🪙</span> PAYMENT METHODS
+          </h3>
+
           <div className={styles.contentLayout}>
             <div className={styles.leftColumn}>
-              <h3 className={styles.columnTitle}>Payment Methods</h3>
               <div className={styles.stack}>
                 {(donationsData as DonationChannel[]).map((channel) => (
                   <div key={channel.id} className={styles.card}>
@@ -138,22 +158,43 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
             </div>
 
             <div className={styles.rightColumn}>
-              <h3 className={styles.columnTitle}>Crypto (All Coins)</h3>
-              <div className={styles.iframeCard}>
-                <iframe
-                  src="https://nowpayments.io/embeds/donation-widget?api_key=5c5ff9c5-3853-4097-9453-03f55ea87d34"
-                  width="346"
-                  height="623"
-                  frameBorder="0"
-                  scrolling="no"
-                  style={{ overflowY: 'hidden', display: 'block', margin: '0 auto', borderRadius: '14px' }}
-                  title="NOWPayments Donation Widget"
-                >
-                  Can't load widget
-                </iframe>
+              <div className={`${styles.card} ${styles.cryptoCard}`}>
+                <h3 className={styles.cardTitle}>Crypto (All Coins)</h3>
+                <p className={styles.cardDesc}>
+                  Donate securely using any major cryptocurrency via NOWPayments.
+                </p>
+                <div className={styles.iframeWrapper}>
+                  {iframeLoading && (
+                    <div className={styles.spinnerContainer}>
+                      <div className={styles.spinner} />
+                      <span className={styles.spinnerText}>Loading Widget...</span>
+                    </div>
+                  )}
+                  <iframe
+                    src="https://nowpayments.io/embeds/donation-widget?api_key=5c5ff9c5-3853-4097-9453-03f55ea87d34"
+                    width="346"
+                    height="615"
+                    frameBorder="0"
+                    scrolling="no"
+                    style={{ 
+                      overflowY: 'hidden', 
+                      display: 'block', 
+                      margin: '0 auto', 
+                      borderRadius: '14px',
+                      opacity: iframeLoading ? 0 : 1,
+                      transition: 'opacity 0.3s ease'
+                    }}
+                    title="NOWPayments Donation Widget"
+                    onLoad={() => setIframeLoading(false)}
+                  >
+                    Can't load widget
+                  </iframe>
+                </div>
               </div>
             </div>
           </div>
+
+
         </div>
       </div>
     </div>
