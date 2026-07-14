@@ -440,7 +440,35 @@ const config: Config = {
         
         setGlobalData({ latestLinks });
       }
-    })
+    }),
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: false,
+        offlineModeActivationStrategies: [
+          'appInstalled',
+          'standalone',
+          'queryString',
+        ],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/nothing_archive/img/logo_dark.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/nothing_archive/manifest.json',
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: '#080808',
+          },
+        ],
+      },
+    ],
   ],
 
   themes: [

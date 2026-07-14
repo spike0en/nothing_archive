@@ -50,16 +50,7 @@ export function PwaProvider({ children }: { children: React.ReactNode }): React.
     window.addEventListener('beforeinstallprompt', handleBeforeInstall);
     window.addEventListener('appinstalled', handleAppInstalled);
 
-    if ('serviceWorker' in navigator) {
-      // Register immediately, don't necessarily wait for page load to prevent delay on modern apps
-      navigator.serviceWorker.register('/nothing_archive/sw.js')
-        .then((reg) => {
-          console.log('Nothing Archive PWA SW registered successfully:', reg.scope);
-        })
-        .catch((err) => {
-          console.error('Nothing Archive PWA SW registration failed:', err);
-        });
-    }
+
 
     return () => {
       window.removeEventListener('beforeinstallprompt', handleBeforeInstall);
