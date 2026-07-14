@@ -304,6 +304,6 @@ It is advised to refer to the documentation and release notes from the linked Te
 
 | Developer | Sources |
 |-----------|---------|
-| Ayra Hikari | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://t.me/s/AyraProject?q=nothing) |
-| Android Port World | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://t.me/s/AndroidPortWorld?q=nothing) |
-| El Pong | [Telegram](https://t.me/s/LigmaCore?q=nothing) |
+| Ayra Hikari | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://telegram.me/s/AyraProject?q=nothing) |
+| Android Port World | [Pling](https://www.pling.com/p/2203457) // [Telegram](https://telegram.me/s/AndroidPortWorld?q=nothing) |
+| El Pong | [Telegram](https://telegram.me/s/LigmaCore?q=nothing) |

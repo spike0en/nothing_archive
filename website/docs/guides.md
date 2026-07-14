@@ -870,7 +870,7 @@ Install the appropriate drivers for your device's SoC manufacturer.
 
 :::
 
-- [Official Unbrick Tools](https://t.me/Edward_ROMs/360)
+- [Official Unbrick Tools](https://telegram.me/Edward_ROMs/360)
 - [Unofficial Qualcomm Firehose / Sahara / Streaming / Diag Tools](https://github.com/bkerler/edl) by bkerler
 - [NTPI Dumper](https://github.com/AaronXenos/ntpi_dumper) by AaronXenos
 - [Phone (2a) Series Hard Brick Helper](https://github.com/mistrmochov/nothing-pacman-hardbrick) by mistrmochov
@@ -883,7 +883,7 @@ Stay updated with custom ROMs, kernels, and development projects.
 
 :::note
 
-- This section is community-managed in [Telegram](https://t.me/Nothing_Archive) and is not affiliated with Nothing.
+- This section is community-managed in [Telegram](https://telegram.me/Nothing_Archive) and is not affiliated with Nothing.
 - The links below provide filtered search results from Telegram channels without the need to sign up. However, it is recommended to do so to interact and join discussion chats for respective devices, seek support, or engage with the enthusiast community if you are interested in tinkering, maximizing your device's potential, or staying up to date with all releases.
 - At times, the links below might return no results, which means that certain categories of content are not yet available, developed, or maintained by a reliable maintainer for that particular model.
 - Unlocking the bootloader and flashing custom firmware will void your OEM warranty. Please read all flashing guides if stated in the corresponding posts and refer to the support chat if linked or the discussion group for the model.
@@ -896,19 +896,19 @@ Stay updated with custom ROMs, kernels, and development projects.
 
 | Device | ROM | Recovery | Kernel | Updates |
 |--------|-----|----------|--------|---------|
-| Phone (1) | [ROM](https://t.me/s/NothingPhone1Updates?q=%23ROM) | [Recovery](https://t.me/s/NothingPhone1Updates?q=%23Recovery) | [Kernel](https://t.me/s/NothingPhone1Updates?q=%23Kernel) | [OTA](https://t.me/s/NothingPhone1Updates?q=%23OTA) |
-| Phone (2) | [ROM](https://t.me/s/NothingPhone2updates?q=%23ROM) | [Recovery](https://t.me/s/NothingPhone2updates?q=%23Recovery) | [Kernel](https://t.me/s/NothingPhone2updates?q=%23Kernel) | [OTA](https://t.me/s/NothingPhone2updates?q=%23OTA) |
-| Phone (2a) | [ROM](https://t.me/s/NothingPhone2aUpdates?q=%23ROM+%23Pacman) | [Recovery](https://t.me/s/NothingPhone2aUpdates?q=%23Recovery+%23Pacman) | [Kernel](https://t.me/s/NothingPhone2aUpdates?q=%23Kernel+%23Pacman) | [OTA](https://t.me/s/NothingPhone2aUpdates?q=%23OTA+%23Pacman) |
-| Phone (2a) Plus | [ROM](https://t.me/s/NothingPhone2aUpdates?q=%23ROM+%23PacmanPro) | [Recovery](https://t.me/s/NothingPhone2aUpdates?q=%23Recovery+%23PacmanPro) | [Kernel](https://t.me/s/NothingPhone2aUpdates?q=%23Kernel+%23PacmanPro) | [OTA](https://t.me/s/NothingPhone2aUpdates?q=%23OTA+%23PacmanPro) |
-| Phone (3a) Series | [ROM](https://t.me/s/NothingPhone3aUpdates?q=%23ROM) | [Recovery](https://t.me/s/NothingPhone3aUpdates?q=%23Recovery) | [Kernel](https://t.me/s/NothingPhone3aUpdates?q=%23Kernel) | [OTA](https://t.me/s/NothingPhone3aUpdates?q=%23OTA) |
-| Phone (3a) Lite | [ROM](https://t.me/s/CMFPhone2GlobalUpdates?q=%23ROM+%23Galaxian) | [Recovery](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Recovery+%23Galaxian) | [Kernel](https://t.me/s/CMFPhone2GlobalUpdates?q=%23Kernel+%23Galaxian) | [OTA](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaxian) |
-| Phone (3) | [ROM](https://t.me/s/Phone3Updates?q=%23ROM) | [Recovery](https://t.me/s/Phone3Updates?q=%23Recovery) | [Kernel](https://t.me/s/Phone3Updates?q=%23Kernel) | [OTA](https://t.me/s/Phone3Updates?q=%23OTA) |
-| Phone (4a) | [ROM](https://t.me/s/Phone4aUpdates?q=%23ROM+%23Frogger) | [Recovery](https://t.me/s/Phone4aUpdates?q=%23Recovery+%23Frogger) | [Kernel](https://t.me/s/Phone4aUpdates?q=%23Kernel+%23Frogger) | [OTA](https://t.me/s/Phone4aUpdates?q=%23OTA+%23Frogger) |
-| Phone (4a) Pro | [ROM](https://t.me/s/Phone4aUpdates?q=%23ROM+%23FroggerPro) | [Recovery](https://t.me/s/Phone4aUpdates?q=%23Recovery+%23FroggerPro) | [Kernel](https://t.me/s/Phone4aUpdates?q=%23Kernel+%23FroggerPro) | [OTA](https://t.me/s/Phone4aUpdates?q=%23OTA+%23FroggerPro) |
+| Phone (1) | [ROM](https://telegram.me/s/NothingPhone1Updates?q=%23ROM) | [Recovery](https://telegram.me/s/NothingPhone1Updates?q=%23Recovery) | [Kernel](https://telegram.me/s/NothingPhone1Updates?q=%23Kernel) | [OTA](https://telegram.me/s/NothingPhone1Updates?q=%23OTA) |
+| Phone (2) | [ROM](https://telegram.me/s/NothingPhone2updates?q=%23ROM) | [Recovery](https://telegram.me/s/NothingPhone2updates?q=%23Recovery) | [Kernel](https://telegram.me/s/NothingPhone2updates?q=%23Kernel) | [OTA](https://telegram.me/s/NothingPhone2updates?q=%23OTA) |
+| Phone (2a) | [ROM](https://telegram.me/s/NothingPhone2aUpdates?q=%23ROM+%23Pacman) | [Recovery](https://telegram.me/s/NothingPhone2aUpdates?q=%23Recovery+%23Pacman) | [Kernel](https://telegram.me/s/NothingPhone2aUpdates?q=%23Kernel+%23Pacman) | [OTA](https://telegram.me/s/NothingPhone2aUpdates?q=%23OTA+%23Pacman) |
+| Phone (2a) Plus | [ROM](https://telegram.me/s/NothingPhone2aUpdates?q=%23ROM+%23PacmanPro) | [Recovery](https://telegram.me/s/NothingPhone2aUpdates?q=%23Recovery+%23PacmanPro) | [Kernel](https://telegram.me/s/NothingPhone2aUpdates?q=%23Kernel+%23PacmanPro) | [OTA](https://telegram.me/s/NothingPhone2aUpdates?q=%23OTA+%23PacmanPro) |
+| Phone (3a) Series | [ROM](https://telegram.me/s/NothingPhone3aUpdates?q=%23ROM) | [Recovery](https://telegram.me/s/NothingPhone3aUpdates?q=%23Recovery) | [Kernel](https://telegram.me/s/NothingPhone3aUpdates?q=%23Kernel) | [OTA](https://telegram.me/s/NothingPhone3aUpdates?q=%23OTA) |
+| Phone (3a) Lite | [ROM](https://telegram.me/s/CMFPhone2GlobalUpdates?q=%23ROM+%23Galaxian) | [Recovery](https://telegram.me/s/CMFPhone2GlobalUpdates?q=%23Recovery+%23Galaxian) | [Kernel](https://telegram.me/s/CMFPhone2GlobalUpdates?q=%23Kernel+%23Galaxian) | [OTA](https://telegram.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaxian) |
+| Phone (3) | [ROM](https://telegram.me/s/Phone3Updates?q=%23ROM) | [Recovery](https://telegram.me/s/Phone3Updates?q=%23Recovery) | [Kernel](https://telegram.me/s/Phone3Updates?q=%23Kernel) | [OTA](https://telegram.me/s/Phone3Updates?q=%23OTA) |
+| Phone (4a) | [ROM](https://telegram.me/s/Phone4aUpdates?q=%23ROM+%23Frogger) | [Recovery](https://telegram.me/s/Phone4aUpdates?q=%23Recovery+%23Frogger) | [Kernel](https://telegram.me/s/Phone4aUpdates?q=%23Kernel+%23Frogger) | [OTA](https://telegram.me/s/Phone4aUpdates?q=%23OTA+%23Frogger) |
+| Phone (4a) Pro | [ROM](https://telegram.me/s/Phone4aUpdates?q=%23ROM+%23FroggerPro) | [Recovery](https://telegram.me/s/Phone4aUpdates?q=%23Recovery+%23FroggerPro) | [Kernel](https://telegram.me/s/Phone4aUpdates?q=%23Kernel+%23FroggerPro) | [OTA](https://telegram.me/s/Phone4aUpdates?q=%23OTA+%23FroggerPro) |
 
 **CMF by Nothing:**
 
 | Device | ROM | Recovery | Kernel | Updates |
 |--------|-----|----------|--------|---------|
-| Phone (1) | [ROM](https://t.me/s/CMFPhone1Updates?q=%23ROM) | [Recovery](https://t.me/s/CMFPhone1Updates?q=%23Recovery) | [Kernel](https://t.me/s/CMFPhone1Updates?q=%23Kernel) | [OTA](https://t.me/s/CMFPhone1Updates?q=%23OTA) |
-| Phone (2) Pro | [ROM](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [Recovery](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [Kernel](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [OTA](https://t.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) |
+| Phone (1) | [ROM](https://telegram.me/s/CMFPhone1Updates?q=%23ROM) | [Recovery](https://telegram.me/s/CMFPhone1Updates?q=%23Recovery) | [Kernel](https://telegram.me/s/CMFPhone1Updates?q=%23Kernel) | [OTA](https://telegram.me/s/CMFPhone1Updates?q=%23OTA) |
+| Phone (2) Pro | [ROM](https://telegram.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [Recovery](https://telegram.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [Kernel](https://telegram.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) | [OTA](https://telegram.me/s/CMFPhone2GlobalUpdates?q=%23OTA+%23Galaga) |

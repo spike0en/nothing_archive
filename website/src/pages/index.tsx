@@ -91,7 +91,7 @@ function getFeatureList(): FeatureItem[] {
 
 /** External community platform links. */
 const socialLinks = [
-  { label: 'Telegram', href: 'https://t.me/s/Nothing_Archive', icon: <FaTelegramPlane size={24} /> },
+  { label: 'Telegram', href: 'https://telegram.me/s/Nothing_Archive', icon: <FaTelegramPlane size={24} /> },
   { label: 'Community', href: 'https://nothing.community', icon: <TbMessageCircle size={24} /> },
   { label: 'Discord', href: 'https://discord.com/invite/nothingtech', icon: <FaDiscord size={24} /> },
   { label: 'Reddit', href: 'https://www.reddit.com/r/NothingTech', icon: <FaRedditAlien size={24} /> },
