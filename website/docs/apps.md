@@ -262,6 +262,7 @@ Dynamic wallpapers and visual enhancements to elevate your device's look.
 | [Nothing Gallery](https://github.com/jerichoi224/Nothing-Gallery) | jerichoi224 | Gallery app |
 | [Nothing K](https://github.com/cuadratico/NothingK) | cuadratico | Password vault |
 | [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Dynamic Island for Nothing OS |
+| [No Land](https://github.com/Luminus-Labs/NoLand) | Luminus Labs | Dynamic Island android that utilizes the nothing design language, a continuation on [Nothing Land](https://github.com/TheGlitchh/NothingLand) |
 | [Nothing LED Banner](https://play.google.com/store/apps/details?id=com.ApexCreator.thebannerapp) | Apex Creators | LED banner creator |
 | [Nothing Mixer](https://github.com/farizanjum/mixer-1) | farizanjum | Per-app volume control app designed with Nothing OS aesthetics |
 | [Nothing News](https://play.google.com/store/apps/details?id=com.nothing.news) | Mirko_ddd | Community news |
