@@ -106,21 +106,63 @@ async function fetchContributors() {
   try {
     const { data } = await fetchJSON('/repos/spike0en/nothing_archive/contributors?per_page=100');
 
+    // Read the manually maintained core team and branding logins from contributor-metadata.json
+    const metadataPath = path.join(OUT_DIR, 'contributor-metadata.json');
+    let coreLogins = [];
+    let brandingLogin = '';
+    try {
+      if (fs.existsSync(metadataPath)) {
+        const metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
+        coreLogins = metadata.core || [];
+        brandingLogin = metadata.branding?.login || '';
+      }
+    } catch (e) {
+      console.warn(`[${label}] Failed to read contributor-metadata.json: ${e.message}`);
+    }
+
+    const coreSet = new Set(coreLogins);
+    const loginsToResolve = new Set();
+
+    // 1. Add core team logins
+    coreLogins.forEach(login => loginsToResolve.add(login));
+
+    // 2. Add branding login
+    if (brandingLogin) {
+      loginsToResolve.add(brandingLogin);
+    }
+
+    // 3. Add top 10 general contributors (non-core)
+    let generalCount = 0;
+    for (const c of data) {
+      if (!coreSet.has(c.login)) {
+        loginsToResolve.add(c.login);
+        generalCount++;
+        if (generalCount >= 10) {
+          break;
+        }
+      }
+    }
+
     // Resolve names for each contributor
     const contributors = [];
     for (const c of data) {
       let name = existingNames[c.login];
 
-      // If we don't have the name cached, fetch it from GitHub
-      if (!name) {
-        try {
-          console.log(`[${label}] Fetching user profile for new contributor: ${c.login}`);
-          const userProfile = await fetchJSON(`/users/${c.login}`);
-          name = userProfile.data?.name || c.login;
-        } catch (err) {
-          console.warn(`[${label}] Failed to fetch name for ${c.login}: ${err.message}`);
-          name = c.login; // fallback
+      // Only fetch profile from GitHub API if they need to be resolved and we don't have it cached
+      if (loginsToResolve.has(c.login)) {
+        if (!name) {
+          try {
+            console.log(`[${label}] Fetching user profile for contributor: ${c.login}`);
+            const userProfile = await fetchJSON(`/users/${c.login}`);
+            name = userProfile.data?.name || c.login;
+          } catch (err) {
+            console.warn(`[${label}] Failed to fetch name for ${c.login}: ${err.message}`);
+            name = c.login; // fallback
+          }
         }
+      } else {
+        // For remaining contributors, default to their cached name or login
+        name = name || c.login;
       }
 
       contributors.push({
