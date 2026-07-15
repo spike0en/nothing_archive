@@ -110,10 +110,11 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Always-on, audio-reactive Glyph Matrix display controller |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | Coin flip, ringer mode, battery flow |
 | [Glyph Type](https://github.com/deepudxd/GlyphType) | deepudxd | Converts text into scrolling dot-matrix animations for the Nothing Phone (4a) Pro's 13×13 Glyph Matrix |
+| [Glyph Weather](https://github.com/byrbyrka/glyph-weather) | byrbyrka | Live weather on glyph interface Nothing Phone (4a) Pro |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Ball maze, quick dial, Tamagotchi |
 | [Glyphix](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | Ambiental AOD for the Glyph Matrix |
-| [Glyphtick](https://play.google.com/store/apps/details?id=com.stetson.glyphtick) | oddmod | Hand-pixeled clock faces for Nothing Phone (3) and Nothing Phone (4a) Pro |
 | [Glyphs](https://github.com/Rorenheim/glyphs) | Rorenheim | Heart Glyph Toy for Nothing Phone (3) that explodes into sprinkles and says "luv u" |
+| [Glyphtick](https://play.google.com/store/apps/details?id=com.stetson.glyphtick) | oddmod | Hand-pixeled clock faces for Nothing Phone (3) and Nothing Phone (4a) Pro |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistant entity toggle |
 | [Hamon](https://github.com/yuk1-kondo/GlyphToys-hamon) | yuk1-kondo | Physical wave propagation |
 | [Hi Glyph](https://github.com/alexmicuplusfour/hi-glyph) | alexmicuplusfour | Android app and relay server for the Nothing Phone (4a) Pro's Glyph Matrix display |
