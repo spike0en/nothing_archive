@@ -128,7 +128,7 @@ export default function StarMilestones(): React.JSX.Element {
         </div>
 
         <a
-          href="https://github.com/spike0en/nothing_archive/stargazers"
+          href="https://github.com/spike0en/nothing_archive"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.starCta}

@@ -57,6 +57,6 @@ Use the **sidebar** to browse by category, or check the links below to stay conn
 
 ## Support the Project {#support}
 
-If this index is helpful, please consider **[starring the repository](https://github.com/spike0en/nothing_archive/stargazers)**. It helps with discoverability and encourages maintenance.
+If this index is helpful, please consider **[starring the repository on GitHub](https://github.com/spike0en/nothing_archive)** (requires a GitHub account). It helps with discoverability and encourages maintenance.
 
 If you would like to support the project financially to help cover server hosting and pipeline maintenance costs, or to support the lead maintainer for their time and effort in keeping the archive updated, you can **[donate to the project](#support)** to open our interactive payment panel.

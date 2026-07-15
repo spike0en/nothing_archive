@@ -129,7 +129,7 @@ You can view our supported payment methods (including **UPI**, **Ko-fi**, **PayP
 *   **[Nothing Archive Support Panel (Web UI) 🌐](https://spike0en.github.io/nothing_archive/#support)**
 *   **GitHub Sponsor button** at the top right of this repository.
 
-If this project helps you, please consider **[starring the repository](https://github.com/spike0en/nothing_archive/stargazers)**. It helps with discoverability and encourages maintenance.
+If this project helps you, please consider **starring the repository** at the top right of this page (requires a GitHub account). It helps with discoverability and encourages maintenance.
 
 Thank you for your support!
 
