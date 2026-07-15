@@ -44,7 +44,7 @@ jobs:
       - name: Maximize Github Runner Space
         if: >-
           inputs.runner_type == 'github' &&
-          inputs.run_maximize_github_runner_space == 'true'
+          inputs.run_maximize_github_runner_space
         uses: justinthelaw/maximize-github-runner-space@v0.9.0
 
       - name: Checkout repo
