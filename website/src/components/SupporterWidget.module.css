@@ -1,0 +1,70 @@
+.tickerContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--nothing-border);
+  border-radius: 14px;
+  padding: 0.6rem 1.1rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+[data-theme='dark'] .tickerContainer {
+  background-color: rgba(18, 18, 18, 0.75);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tickerLabel {
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ifm-color-content-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.tickerWindow {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000000 16px, #000000 calc(100% - 16px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000000 16px, #000000 calc(100% - 16px), transparent 100%);
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 18s linear infinite;
+}
+
+.supporterName {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ifm-color-content);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+

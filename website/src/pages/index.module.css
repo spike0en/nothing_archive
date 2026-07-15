@@ -227,11 +227,11 @@
 
 /* Global section header styling */
 .sectionLabel {
-  font-family: var(--ifm-font-family-monospace);
+  font-family: var(--ifm-font-family-base);
   font-size: 1.15rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.15em;
   margin-bottom: 2rem;
   text-align: center;
 }

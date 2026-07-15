@@ -152,7 +152,6 @@ async function fetchContributors() {
       if (loginsToResolve.has(c.login)) {
         if (!name) {
           try {
-            console.log(`[${label}] Fetching user profile for contributor: ${c.login}`);
             const userProfile = await fetchJSON(`/users/${c.login}`);
             name = userProfile.data?.name || c.login;
           } catch (err) {

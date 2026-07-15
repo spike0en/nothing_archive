@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaCopy, FaCheck, FaTimes, FaExternalLinkAlt, FaHeart } from 'react-icons/fa';
 import donationsData from '../data/donations.json';
 import donorsData from '../data/donors.json';
+import SupporterWidget from './SupporterWidget';
 import styles from './SupportModal.module.css';
 
 interface DonationChannel {
@@ -23,6 +24,47 @@ interface SupportModalProps {
 export default function SupportModal({ isOpen, onClose }: SupportModalProps): React.JSX.Element | null {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [iframeLoading, setIframeLoading] = useState(true);
+  const [scale, setScale] = useState(1);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Track and scale NOWPayments iframe to fit mobile viewport
+  useEffect(() => {
+    if (!isOpen || typeof window === 'undefined') return;
+
+    const updateScale = () => {
+      if (containerRef.current) {
+        const width = containerRef.current.clientWidth;
+        if (width > 0 && width < 346) {
+          setScale(width / 346);
+        } else {
+          setScale(1);
+        }
+      }
+    };
+
+    updateScale();
+
+    let resizeObserver: ResizeObserver | null = null;
+    if (typeof ResizeObserver !== 'undefined' && containerRef.current) {
+      resizeObserver = new ResizeObserver(() => {
+        updateScale();
+      });
+      resizeObserver.observe(containerRef.current);
+    } else {
+      window.addEventListener('resize', updateScale);
+    }
+
+    const timer = setTimeout(updateScale, 100);
+
+    return () => {
+      clearTimeout(timer);
+      if (resizeObserver) {
+        resizeObserver.disconnect();
+      } else {
+        window.removeEventListener('resize', updateScale);
+      }
+    };
+  }, [isOpen]);
 
   // Disable body scroll when modal is open
   useEffect(() => {
@@ -85,27 +127,26 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
         </div>
         
         <div className={styles.body}>
-          <p className={styles.introText}>
-            Nothing Archive is a community-driven initiative and will always remain completely free to use. However, keeping this platform online involves ongoing server hosting expenses for self hosted runners and running the backend pipelines that continuously fetch and process firmware updates. Contributions are entirely optional, but if you'd like to help cover these resource costs and motivate continued efforts for maintainers for their time put in for the community, any support is deeply appreciated!
-          </p>
-
-          {Array.isArray(donorsData) && donorsData.length > 0 && (
-            <div className={styles.donorsSection}>
-              <h3 className={styles.donorsTitle}>
-                <span className={styles.animatedEmoji}>🤝</span> TOP SUPPORTERS
-              </h3>
-              <div className={styles.donorsList}>
-                {donorsData.slice(0, 10).map((donor, idx) => (
-                  <span key={idx} className={styles.donorBadge}>
-                    {donor}
-                  </span>
-                ))}
-              </div>
+          <div className={styles.introContainer}>
+            <div className={styles.introText}>
+              <p>
+                Nothing Archive is a community-driven project. Keeping it up to date and relevant takes time, effort, and ongoing costs (where applicable). If you've benefited from the archive and would like to support it, your donation helps cover these costs and allows the project to keep growing.
+              </p>
+              <p>
+                Donations are completely optional, and every contribution is sincerely appreciated. 💛
+              </p>
+              <p>
+                As a small thank-you, the supporters widget recognizes those who have made notable contributions. If you choose to support the project, your name can be featured there too.
+              </p>
+              <p>
+                Thank you for being part of the journey!
+              </p>
             </div>
-          )}
+            <SupporterWidget donors={donorsData} />
+          </div>
 
           <h3 className={styles.donorsTitle}>
-            <span className={styles.animatedEmoji}>🪙</span> PAYMENT METHODS
+            <span className={styles.animatedEmoji}>💵</span> DONATION METHODS
           </h3>
 
           <div className={styles.contentLayout}>
@@ -159,11 +200,17 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
 
             <div className={styles.rightColumn}>
               <div className={`${styles.card} ${styles.cryptoCard}`}>
-                <h3 className={styles.cardTitle}>Crypto (All Coins)</h3>
+                <h3 className={styles.cardTitle}>NOWPayments</h3>
                 <p className={styles.cardDesc}>
                   Donate securely using any major cryptocurrency via NOWPayments.
                 </p>
-                <div className={styles.iframeWrapper}>
+                <div 
+                  ref={containerRef} 
+                  className={styles.iframeWrapper}
+                  style={{
+                    height: scale < 1 ? `${615 * scale}px` : '615px'
+                  }}
+                >
                   {iframeLoading && (
                     <div className={styles.spinnerContainer}>
                       <div className={styles.spinner} />
@@ -177,12 +224,16 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
                     frameBorder="0"
                     scrolling="no"
                     style={{ 
+                      position: 'absolute',
+                      left: '50%',
+                      top: 0,
                       overflowY: 'hidden', 
                       display: 'block', 
-                      margin: '0 auto', 
                       borderRadius: '14px',
                       opacity: iframeLoading ? 0 : 1,
-                      transition: 'opacity 0.3s ease'
+                      transition: 'opacity 0.3s ease',
+                      transform: `translate(-50%, 0) scale(${scale})`,
+                      transformOrigin: 'top center'
                     }}
                     title="NOWPayments Donation Widget"
                     onLoad={() => setIframeLoading(false)}

@@ -102,17 +102,37 @@
 }
 
 .body {
-  padding: 2rem;
+  padding: 1.5rem;
   overflow-y: auto;
 }
 
-.introText {
+.introText p {
   font-size: 0.95rem;
   line-height: 1.6;
-  margin-bottom: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
   opacity: 0.8;
-  max-width: 720px;
+  font-weight: 400;
   width: 100%;
+}
+
+.introText p:last-child {
+  margin-bottom: 0;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+.introContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: stretch;
+  margin-bottom: 2rem;
+  width: 100%;
+  background-color: var(--nothing-hover-bg);
+  border: 1px solid var(--nothing-border);
+  border-radius: 24px;
+  padding: 1.5rem 2rem;
 }
 
 .contentLayout {
@@ -371,12 +391,25 @@
   }
   
   .body {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
   
-  .introText {
-    font-size: 0.9rem;
+  .introText p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .introText p:last-child {
+    margin-bottom: 0;
+  }
+
+  .introContainer {
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: stretch;
     margin-bottom: 1.5rem;
+    padding: 1.25rem;
   }
 }
 
@@ -452,11 +485,36 @@
 
 .donorsList {
   display: flex;
-  flex-wrap: wrap;
   gap: 0.75rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+  margin-bottom: -0.25rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--nothing-border-strong, rgba(255, 255, 255, 0.15)) transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom scrollbar style */
+.donorsList::-webkit-scrollbar {
+  height: 4px;
+}
+
+.donorsList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.donorsList::-webkit-scrollbar-thumb {
+  background-color: var(--nothing-border-strong, rgba(255, 255, 255, 0.15));
+  border-radius: 10px;
+}
+
+.donorsList::-webkit-scrollbar-thumb:hover {
+  background-color: var(--nothing-red, #D71921);
 }
 
 .donorBadge {
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   gap: 6px;
