@@ -30,6 +30,10 @@ function ModelCard({ device, latestLink }: { device: DeviceItem; latestLink: str
 
   const resolvedImageUrl = selectedColor ? useBaseUrl(selectedColor.imageUrl) : '';
 
+  const match = device.name.match(/^(.*?)\s*\(([^)]+)\)$/);
+  const displayName = match ? match[1] : device.name;
+  const displayCodename = match ? match[2] : device.codename;
+
   return (
     <div className={styles.card}>
       <Link to={resolvedLink} className={styles.cardLink}>
@@ -72,8 +76,9 @@ function ModelCard({ device, latestLink }: { device: DeviceItem; latestLink: str
         </div>
       </Link>
       <div className={styles.infoContainer}>
+        <div className={styles.deviceBrand}>{displayCodename.toUpperCase()}</div>
         <Link to={resolvedLink} className={styles.infoTextLink}>
-          <h3 className={styles.deviceName}>{device.name}</h3>
+          <h3 className={styles.deviceName}>{displayName}</h3>
         </Link>
         {device.variants.length > 1 && (
           <div className={styles.colorSelector} role="group" aria-label={`Color variants for ${device.name}`}>

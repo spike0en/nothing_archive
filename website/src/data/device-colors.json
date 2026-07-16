@@ -8,8 +8,8 @@
   "asteroidspro": ["Grey", "Black"],
   "pacmanpro": ["Silver", "Black", "CE"],
   "pacman": ["Milk", "Black"],
-  "supercontra": ["White", "Blue", "Black"],
-  "galaxian": ["White", "Black", "Blue"],
+  "supercontra": ["White", "Blue", "Black", "Red"],
+  "galaxian": ["White", "Black", "Blue", "Red"],
   "galaga": ["Orange", "Black", "Grey", "Light Green"],
   "tetris": ["Light Green", "Orange", "Black"]
 }
