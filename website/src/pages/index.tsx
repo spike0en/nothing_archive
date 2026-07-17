@@ -116,17 +116,25 @@ function HomepageHeader() {
     const header = headerRef.current;
     if (!header) return;
 
+    let headerRect = header.getBoundingClientRect();
+    const updateHeaderRect = () => {
+      headerRect = header.getBoundingClientRect();
+    };
+
     const handlePointerMove = (e: PointerEvent) => {
-      const rect = header.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+      const x = e.clientX - headerRect.left;
+      const y = e.clientY - headerRect.top;
       header.style.setProperty('--mouse-x', `${x}px`);
       header.style.setProperty('--mouse-y', `${y}px`);
     };
 
+    header.addEventListener('pointerenter', updateHeaderRect);
     header.addEventListener('pointermove', handlePointerMove);
+    window.addEventListener('resize', updateHeaderRect);
     return () => {
+      header.removeEventListener('pointerenter', updateHeaderRect);
       header.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('resize', updateHeaderRect);
     };
   }, []);
 

@@ -11,7 +11,7 @@ assert(assetExists('static', 'img', 'brand', 'logo-dark-hero-256.webp'));
 assert(assetExists('static', 'img', 'brand', 'logo-dark-hero-384.webp'));
 assert(assetExists('static', 'img', 'brand', 'logo-dark-nav.webp'));
 assert(assetExists('static', 'img', 'brand', 'logo-light-nav.webp'));
-assert(assetExists('src', 'css', 'fonts', 'InterVariable.woff2'));
+assert(assetExists('static', 'fonts', 'InterVariable.woff2'));
 
 const config = read('docusaurus.config.ts');
 assert(!config.includes('https://rsms.me/inter/inter.css'));
@@ -19,6 +19,8 @@ assert(!config.includes('https://nowpayments.io'));
 assert(!config.includes('logo-dark.gif'));
 assert(!config.includes('logo-light.gif'));
 assert(config.includes('changelogLinks'));
+assert(config.includes('`${baseUrl}fonts/InterVariable.woff2`'));
+assert(config.includes("src: url('${baseUrl}fonts/InterVariable.woff2')"));
 
 const hero = read('src', 'components', 'HeroGlyphLogo.tsx');
 assert(hero.includes('logo-dark-hero.webp'));
@@ -27,6 +29,16 @@ assert(hero.includes('logo-dark-hero-384.webp'));
 assert(hero.includes('srcSet='));
 assert(hero.includes('sizes="(max-width: 576px) 146px, (max-width: 996px) 164px, 184px"'));
 assert(hero.includes('fetchPriority="high"'));
+
+const homepage = read('src', 'pages', 'index.tsx');
+const pointerMoveStart = homepage.indexOf('const handlePointerMove');
+const pointerMoveEnd = homepage.indexOf("header.addEventListener('pointermove'", pointerMoveStart);
+assert(pointerMoveStart >= 0 && pointerMoveEnd > pointerMoveStart);
+assert(homepage.includes('const updateHeaderRect = () =>'));
+assert(!homepage.slice(pointerMoveStart, pointerMoveEnd).includes('getBoundingClientRect'));
+
+const customCss = read('src', 'css', 'custom.css');
+assert(!customCss.includes('InterVariable.woff2'));
 
 const releaseFeed = read('src', 'components', 'ReleaseFeed.tsx');
 const announcement = read('src', 'components', 'AnnouncementBanner.tsx');

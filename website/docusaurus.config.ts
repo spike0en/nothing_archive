@@ -607,6 +607,29 @@ const config: Config = {
         href: `${baseUrl}img/brand/apple-touch-icon.png`,
       },
     },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        as: 'font',
+        type: 'font/woff2',
+        href: `${baseUrl}fonts/InterVariable.woff2`,
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'style',
+      attributes: {},
+      innerHTML: `
+        @font-face {
+          font-family: 'Inter var';
+          font-style: normal;
+          font-weight: 100 900;
+          font-display: swap;
+          src: url('${baseUrl}fonts/InterVariable.woff2') format('woff2');
+        }
+      `,
+    },
     // Preconnect directives for external font domains to reduce latency
     {
       tagName: 'link',
