@@ -14,6 +14,8 @@ interface Point {
 }
 
 export default function HeroGlyphLogo(): React.JSX.Element {
+  const logoDark256Url = useBaseUrl('/img/brand/logo-dark-hero-256.webp');
+  const logoDark384Url = useBaseUrl('/img/brand/logo-dark-hero-384.webp');
   const logoDarkUrl = useBaseUrl('/img/brand/logo-dark-hero.webp');
 
   const [mode, setMode] = useState<Mode>('LOGO');
@@ -449,6 +451,8 @@ export default function HeroGlyphLogo(): React.JSX.Element {
           {mode === 'LOGO' ? (
             <img 
               src={logoDarkUrl} 
+              srcSet={`${logoDark256Url} 256w, ${logoDark384Url} 384w, ${logoDarkUrl} 512w`}
+              sizes="(max-width: 576px) 146px, (max-width: 996px) 164px, 184px"
               className={styles.gifLogo}
               alt="Nothing Archive Logo"
               width={184}
