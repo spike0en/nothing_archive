@@ -199,6 +199,16 @@
   transition: background-color 0.15s ease;
 }
 
+.releaseLink {
+  align-items: center;
+  color: inherit;
+  display: flex;
+  flex: 1;
+  gap: 0.5rem;
+  min-width: 0;
+  text-decoration: none;
+}
+
 .consoleLine:hover {
   background-color: rgba(0, 0, 0, 0.04);
   text-decoration: none;
@@ -486,6 +496,5 @@
     padding-bottom: 0.5rem;
   }
 }
-
 
 

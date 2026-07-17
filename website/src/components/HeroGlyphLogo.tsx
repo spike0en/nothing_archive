@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
 import clsx from 'clsx';
-import { useColorMode } from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './HeroGlyphLogo.module.css';
 
@@ -15,10 +14,7 @@ interface Point {
 }
 
 export default function HeroGlyphLogo(): React.JSX.Element {
-  const { colorMode } = useColorMode();
-  const isDark = colorMode === 'dark';
-
-  const logoDarkUrl = useBaseUrl("/img/brand/logo-dark.gif");
+  const logoDarkUrl = useBaseUrl('/img/brand/logo-dark-hero.webp');
 
   const [mode, setMode] = useState<Mode>('LOGO');
   const [activeGame, setActiveGame] = useState<GameMode>('SNAKE');
@@ -455,6 +451,10 @@ export default function HeroGlyphLogo(): React.JSX.Element {
               src={logoDarkUrl} 
               className={styles.gifLogo}
               alt="Nothing Archive Logo"
+              width={184}
+              height={184}
+              fetchPriority="high"
+              decoding="async"
             />
           ) : (
             <div className={styles.matrixGrid}>

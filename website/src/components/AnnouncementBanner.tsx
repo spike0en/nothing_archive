@@ -1,22 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Link from '@docusaurus/Link';
+import { usePluginData } from '@docusaurus/useGlobalData';
 import clsx from 'clsx';
 import styles from './AnnouncementBanner.module.css';
 import { useGitHubReleases } from '../utils/github-cache';
 
-declare var require: any;
-
-let availableChangelogs = new Set<string>();
-try {
-  const context = require.context('../../docs/changelogs', true, /\.md$/);
-  context.keys().forEach((key: string) => {
-    const parts = key.split('/');
-    const filename = parts[parts.length - 1]; // "Metroid-B4.1-260603-1221.md"
-    const nameWithoutExt = filename.replace(/\.md$/, '');
-    availableChangelogs.add(nameWithoutExt.toLowerCase());
-  });
-} catch (e) {
-  console.warn('AnnouncementBanner: Failed to load changelogs context', e);
+interface ChangelogsPluginData {
+  changelogLinks: Record<string, string>;
 }
 
 interface ReleaseData {
@@ -32,6 +22,7 @@ const DISMISS_KEY = 'na_dismissed_announcement_tag';
 export default function AnnouncementBanner(): React.JSX.Element | null {
   // Shares the deduplicated releases fetch with ReleaseFeed
   const { releases: allGhReleases } = useGitHubReleases();
+  const { changelogLinks } = usePluginData('changelogs-plugin') as ChangelogsPluginData;
   const [releases, setReleases] = useState<ReleaseData[]>([]);
   const [isDismissed, setIsDismissed] = useState<boolean>(true); // default to true to avoid flash before load
   const [isDismissing, setIsDismissing] = useState<boolean>(false);
@@ -119,8 +110,8 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
   if (releases.length === 1) {
     const singleRelease = releases[0];
     const changelogKey = `${singleRelease.codename}-${singleRelease.version}`.toLowerCase();
-    const hasChangelog = availableChangelogs.has(changelogKey);
-    const changelogUrl = `/docs/changelogs/${singleRelease.codename.toLowerCase()}/${singleRelease.codename}-${singleRelease.version}`;
+    const changelogUrl = changelogLinks[changelogKey];
+    const hasChangelog = Boolean(changelogUrl);
     const targetUrl = hasChangelog ? changelogUrl : singleRelease.htmlUrl;
     const isExternal = !hasChangelog;
 
@@ -159,8 +150,8 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
           <span className={styles.message}>New updates available: </span>
           {releases.map((release, index) => {
             const changelogKey = `${release.codename}-${release.version}`.toLowerCase();
-            const hasChangelog = availableChangelogs.has(changelogKey);
-            const changelogUrl = `/docs/changelogs/${release.codename.toLowerCase()}/${release.codename}-${release.version}`;
+            const changelogUrl = changelogLinks[changelogKey];
+            const hasChangelog = Boolean(changelogUrl);
             const targetUrl = hasChangelog ? changelogUrl : release.htmlUrl;
             const isExternal = !hasChangelog;
 
