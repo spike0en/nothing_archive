@@ -4,14 +4,6 @@
  * Inter is bundled locally to avoid a render-blocking third-party font request.
  */
 
-@font-face {
-  font-family: 'Inter var';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url('./fonts/InterVariable.woff2') format('woff2');
-}
-
 html,
 body,
 button,
