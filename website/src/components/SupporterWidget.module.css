@@ -39,6 +39,10 @@
   position: relative;
   display: flex;
   align-items: center;
+  /* Prevent I-beam text cursor and accidental text highlighting on moving names */
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, #000000 16px, #000000 calc(100% - 16px), transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, #000000 16px, #000000 calc(100% - 16px), transparent 100%);
 }
@@ -46,7 +50,15 @@
 .marqueeTrack {
   display: flex;
   width: max-content;
-  animation: marqueeScroll 18s linear infinite;
+  /* Force GPU rendering layers via translate3d & will-change to eliminate subpixel layout jitter */
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  animation: marqueeScroll var(--marquee-duration, 12s) linear infinite;
+}
+
+/* Pause the animation immediately when user hovers over the ticker window */
+.tickerWindow:hover .marqueeTrack {
+  animation-play-state: paused;
 }
 
 .supporterName {
@@ -57,14 +69,41 @@
   text-transform: uppercase;
   letter-spacing: 0.06em;
   white-space: nowrap;
+  transition: color 0.2s ease;
+  /* Use margin instead of flexbox gap to guarantee a mathematically perfect seamless infinite loop */
+  margin-right: 1rem;
 }
 
+/* Highlight the hovered supporter name with theme's primary color */
+.tickerWindow:hover .supporterName:hover {
+  color: var(--ifm-color-primary);
+}
+
+.nameGroup {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.separator {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ifm-color-content);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  opacity: 0.75;
+  /* Matching right margin to preserve spacing symmetry */
+  margin-right: 1rem;
+}
+
+/* Loop restarts precisely at -50% translation without layout shifts */
 @keyframes marqueeScroll {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
