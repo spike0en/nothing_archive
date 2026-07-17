@@ -7,6 +7,8 @@ const read = (...parts) => fs.readFileSync(path.join(siteRoot, ...parts), 'utf8'
 const assetExists = (...parts) => fs.existsSync(path.join(siteRoot, ...parts));
 
 assert(assetExists('static', 'img', 'brand', 'logo-dark-hero.webp'));
+assert(assetExists('static', 'img', 'brand', 'logo-dark-hero-256.webp'));
+assert(assetExists('static', 'img', 'brand', 'logo-dark-hero-384.webp'));
 assert(assetExists('static', 'img', 'brand', 'logo-dark-nav.webp'));
 assert(assetExists('static', 'img', 'brand', 'logo-light-nav.webp'));
 assert(assetExists('src', 'css', 'fonts', 'InterVariable.woff2'));
@@ -20,6 +22,10 @@ assert(config.includes('changelogLinks'));
 
 const hero = read('src', 'components', 'HeroGlyphLogo.tsx');
 assert(hero.includes('logo-dark-hero.webp'));
+assert(hero.includes('logo-dark-hero-256.webp'));
+assert(hero.includes('logo-dark-hero-384.webp'));
+assert(hero.includes('srcSet='));
+assert(hero.includes('sizes="(max-width: 576px) 146px, (max-width: 996px) 164px, 184px"'));
 assert(hero.includes('fetchPriority="high"'));
 
 const releaseFeed = read('src', 'components', 'ReleaseFeed.tsx');
