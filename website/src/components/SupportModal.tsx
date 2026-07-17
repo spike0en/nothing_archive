@@ -7,7 +7,6 @@ import styles from './SupportModal.module.css';
 
 interface DonationChannel {
   id: string;
-  category: string;
   title: string;
   description?: string;
   address: string;
@@ -34,10 +33,8 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
     const updateScale = () => {
       if (containerRef.current) {
         const width = containerRef.current.clientWidth;
-        if (width > 0 && width < 346) {
+        if (width > 0) {
           setScale(width / 346);
-        } else {
-          setScale(1);
         }
       }
     };
@@ -208,7 +205,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
                   ref={containerRef} 
                   className={styles.iframeWrapper}
                   style={{
-                    height: scale < 1 ? `${615 * scale}px` : '615px'
+                    height: `${615 * scale}px`
                   }}
                 >
                   {iframeLoading && (

@@ -27,7 +27,7 @@
   max-width: 1020px;
   max-height: 90vh;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.12);
-  overflow-y: auto;
+  overflow: hidden;
   animation: scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   color: var(--ifm-font-color-base);
   display: flex;
@@ -104,6 +104,8 @@
 .body {
   padding: 1.5rem;
   overflow-y: auto;
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 .introText p {
@@ -127,7 +129,7 @@
   flex-direction: column;
   gap: 1.5rem;
   align-items: stretch;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   width: 100%;
   background-color: var(--nothing-hover-bg);
   border: 1px solid var(--nothing-border);
@@ -138,7 +140,7 @@
 .contentLayout {
   display: flex;
   gap: 2rem;
-  align-items: stretch;
+  align-items: flex-start;
 }
 
 .leftColumn {
@@ -221,17 +223,6 @@
   align-items: center;
   margin-bottom: 0.75rem;
 }
-
-.cardCategory {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--ifm-font-color-base);
-  opacity: 0.5;
-  text-transform: uppercase;
-}
-
-
 
 .cardTitle {
   margin: 0 0 0.75rem;
@@ -356,7 +347,7 @@
 }
 
 /* --- Responsive Adjustments --- */
-@media (max-width: 996px) {
+@media (max-width: 768px) {
   .contentLayout {
     flex-direction: column;
     align-items: stretch;
@@ -370,11 +361,8 @@
   .rightColumn {
     flex: none;
     width: 100%;
-    align-items: stretch;
   }
-}
 
-@media (max-width: 768px) {
   .overlay {
     padding: 0;
   }
@@ -408,7 +396,7 @@
     flex-direction: column;
     gap: 1.25rem;
     align-items: stretch;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     padding: 1.25rem;
   }
 }

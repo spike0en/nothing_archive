@@ -125,7 +125,7 @@ Special thanks to:
 
 If you would like to support the project financially to help cover server hosting and pipeline maintenance costs, please consider donating. 
 
-You can view our supported payment methods (including **UPI**, **Ko-fi**, **PayPal**, and **Cryptocurrencies**) through our:
+You can view our supported payment methods (including **UPI**, **Ko-fi**, **PayPal**, **Boosty**, and **Cryptocurrencies**) through our:
 *   **[Nothing Archive Support Panel (Web UI) 🌐](https://nothingarchive.tech/#support)**
 *   **GitHub Sponsor button** at the top right of this repository.
 
