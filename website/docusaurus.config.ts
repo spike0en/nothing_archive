@@ -365,6 +365,7 @@ const config: Config = {
 
         const changelogsDir = path.join(__dirname, 'docs', 'changelogs');
         const latestLinks = {};
+        const changelogLinks: Record<string, string> = {};
         
         if (fs.existsSync(changelogsDir)) {
           const folders = fs.readdirSync(changelogsDir);
@@ -374,6 +375,11 @@ const config: Config = {
               const files = fs.readdirSync(folderPath).filter(
                 (f) => f.endsWith('.md') && f !== '_category_.json'
               );
+
+              for (const file of files) {
+                const filename = file.replace(/\.md$/, '');
+                changelogLinks[filename.toLowerCase()] = `${baseUrl}docs/changelogs/${folder}/${filename}`;
+              }
               
               if (files.length > 0) {
                 files.sort((a, b) => {
@@ -441,7 +447,7 @@ const config: Config = {
           }
         }
         
-        setGlobalData({ latestLinks });
+        setGlobalData({ latestLinks, changelogLinks });
       }
     }),
     [
@@ -530,13 +536,6 @@ const config: Config = {
   ],
 
   headTags: [
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preconnect',
-        href: 'https://nowpayments.io',
-      },
-    },
     // Core SEO keywords for global indexation
     {
       tagName: 'meta',
@@ -608,33 +607,7 @@ const config: Config = {
         href: `${baseUrl}img/brand/apple-touch-icon.png`,
       },
     },
-    // Preload Largest Contentful Paint (LCP) hero graphics for both themes
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preload',
-        as: 'image',
-        href: `${baseUrl}img/brand/logo-dark.gif`,
-        fetchpriority: 'high',
-      },
-    },
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preload',
-        as: 'image',
-        href: `${baseUrl}img/brand/logo-light.gif`,
-        fetchpriority: 'high',
-      },
-    },
     // Preconnect directives for external font domains to reduce latency
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preconnect',
-        href: 'https://rsms.me/',
-      },
-    },
     {
       tagName: 'link',
       attributes: {
@@ -648,14 +621,6 @@ const config: Config = {
         rel: 'preconnect',
         href: 'https://fonts.gstatic.com',
         crossorigin: 'anonymous',
-      },
-    },
-    // Typography stylesheet loaded asynchronously to prevent render-blocking
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'stylesheet',
-        href: 'https://rsms.me/inter/inter.css',
       },
     },
     {
@@ -689,8 +654,8 @@ const config: Config = {
       title: 'Nothing Archive',
       logo: {
         alt: 'Nothing Archive Logo',
-        src: 'img/brand/logo-light.gif',
-        srcDark: 'img/brand/logo-dark.gif',
+        src: 'img/brand/logo-light-nav.webp',
+        srcDark: 'img/brand/logo-dark-nav.webp',
         width: 32,
         height: 32,
       },

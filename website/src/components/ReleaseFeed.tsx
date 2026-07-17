@@ -1,30 +1,19 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
+import { usePluginData } from '@docusaurus/useGlobalData';
 import styles from './ReleaseFeed.module.css';
 import { getTimeLag } from '../utils/time';
 import { useGitHubReleases } from '../utils/github-cache';
 import type { Release } from '../utils/github-cache';
 
-
-
-// Read all changelog markdown filenames at compilation time
-declare var require: any;
-let availableChangelogs = new Set<string>();
-try {
-  const context = require.context('../../docs/changelogs', true, /\.md$/);
-  context.keys().forEach((key: string) => {
-    const parts = key.split('/');
-    const filename = parts[parts.length - 1]; // "Metroid-B4.1-260603-1221.md"
-    const nameWithoutExt = filename.replace(/\.md$/, '');
-    availableChangelogs.add(nameWithoutExt.toLowerCase());
-  });
-} catch (e) {
-  console.warn('ReleaseFeed: Failed to load changelogs context', e);
+interface ChangelogsPluginData {
+  changelogLinks: Record<string, string>;
 }
 
 export default function ReleaseFeed(): React.JSX.Element {
   // Centralized GitHub data hook — deduplicated, stale-while-revalidate
   const { releases, totalCount: totalReleasesCount, status: statusSource, error: errorState, loading } = useGitHubReleases();
+  const { changelogLinks } = usePluginData('changelogs-plugin') as ChangelogsPluginData;
   // Track latest release per model
   const latestReleasesPerModel = React.useMemo(() => {
     const seen = new Set<string>();
@@ -128,32 +117,31 @@ export default function ReleaseFeed(): React.JSX.Element {
           ) : (
             latestReleasesPerModel.map((release, idx) => {
               const changelogKey = `${release.codename}-${release.version}`.toLowerCase();
-              const hasChangelog = availableChangelogs.has(changelogKey);
-              const changelogUrl = `/docs/changelogs/${release.codename.toLowerCase()}/${release.codename}-${release.version}`;
+              const changelogUrl = changelogLinks[changelogKey];
+              const hasChangelog = Boolean(changelogUrl);
               const targetUrl = hasChangelog ? changelogUrl : release.htmlUrl;
 
               return (
-                <Link
-                  key={release.id}
-                  to={targetUrl}
-                  target={hasChangelog ? undefined : '_blank'}
-                  rel={hasChangelog ? undefined : 'noopener noreferrer'}
-                  className={styles.consoleLine}
-                >
-                  <span className={`${styles.timeLag} ${idx === 0 ? styles.timeLagActive : ''}`}>{getTimeLag(release.publishedAt)}</span>
-                  <span className={`${styles.messageText} ${idx === 0 ? styles.messageTextLatest : ''}`}>
-                    <span className={idx === 0 ? styles.buildTextLatest : styles.buildText}>
-                      {release.name}
+                <div key={release.id} className={styles.consoleLine}>
+                  <Link
+                    to={targetUrl}
+                    target={hasChangelog ? undefined : '_blank'}
+                    rel={hasChangelog ? undefined : 'noopener noreferrer'}
+                    className={styles.releaseLink}
+                  >
+                    <span className={`${styles.timeLag} ${idx === 0 ? styles.timeLagActive : ''}`}>{getTimeLag(release.publishedAt)}</span>
+                    <span className={`${styles.messageText} ${idx === 0 ? styles.messageTextLatest : ''}`}>
+                      <span className={idx === 0 ? styles.buildTextLatest : styles.buildText}>
+                        {release.name}
+                      </span>
                     </span>
-                  </span>
-                  
+                  </Link>
                   <a
                     href={release.htmlUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`${styles.githubLink} ${idx === 0 ? styles.githubLinkHighlighted : ''}`}
                     title="Open GitHub Release"
-                    onClick={(e) => e.stopPropagation()}
                   >
                     <svg
                       width="12"
@@ -171,7 +159,7 @@ export default function ReleaseFeed(): React.JSX.Element {
                       <line x1="12" y1="15" x2="12" y2="3" />
                     </svg>
                   </a>
-                </Link>
+                </div>
               );
             })
           )}
