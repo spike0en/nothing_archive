@@ -1,9 +1,9 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/logo_dark.gif">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/logo_light.gif">
-  <img alt="Nothing Archive" src="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/logo_dark.gif" width="100">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/brand/logo-dark.gif">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/brand/logo-light.gif">
+  <img alt="Nothing Archive" src="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/brand/logo-dark.gif" width="100">
 </picture>
 
 # Nothing Archive
@@ -22,9 +22,9 @@ The largest open-source, community-driven index and archive for the Nothing and 
 <br>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/banner-v2.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/banner-v2.png">
-  <img alt="Nothing Archive Banner" src="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/banner-v2.png" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/brand/social-banner.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/brand/social-banner.png">
+  <img alt="Nothing Archive Banner" src="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/brand/social-banner.png" width="100%">
 </picture>
 
 <br>

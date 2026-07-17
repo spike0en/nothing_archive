@@ -9,7 +9,12 @@
   "orientation": "any",
   "icons": [
     {
-      "src": "/nothing_archive/img/logo_dark.png",
+      "src": "/nothing_archive/img/brand/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/nothing_archive/img/brand/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

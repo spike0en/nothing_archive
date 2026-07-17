@@ -18,7 +18,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
   const { colorMode } = useColorMode();
   const isDark = colorMode === 'dark';
 
-  const logoDarkUrl = useBaseUrl("/img/logo_dark.gif");
+  const logoDarkUrl = useBaseUrl("/img/brand/logo-dark.gif");
 
   const [mode, setMode] = useState<Mode>('LOGO');
   const [activeGame, setActiveGame] = useState<GameMode>('SNAKE');

@@ -321,7 +321,7 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
 const config: Config = {
   title: 'Nothing Archive',
   tagline: 'A curated hub for everything related to the Nothing ecosystem.',
-  favicon: 'favicon.ico',
+  favicon: 'img/brand/favicon.ico',
 
   future: {
     v4: true,
@@ -454,7 +454,7 @@ const config: Config = {
           {
             tagName: 'link',
             rel: 'icon',
-            href: '/nothing_archive/img/logo_dark.png',
+            href: '/nothing_archive/img/brand/icon-512.png',
           },
           {
             tagName: 'link',
@@ -562,7 +562,7 @@ const config: Config = {
       attributes: {
         rel: 'icon',
         type: 'image/x-icon',
-        href: '/nothing_archive/favicon.ico',
+        href: '/nothing_archive/img/brand/favicon.ico',
       },
     },
     {
@@ -584,15 +584,25 @@ const config: Config = {
       attributes: {
         rel: 'icon',
         type: 'image/png',
-        sizes: '32x32',
-        href: '/nothing_archive/img/logo_dark.png',
+        sizes: '192x192',
+        href: '/nothing_archive/img/brand/icon-192.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '512x512',
+        href: '/nothing_archive/img/brand/icon-512.png',
       },
     },
     {
       tagName: 'link',
       attributes: {
         rel: 'apple-touch-icon',
-        href: '/nothing_archive/img/logo_dark.png',
+        sizes: '180x180',
+        href: '/nothing_archive/img/brand/apple-touch-icon.png',
       },
     },
     // Preload Largest Contentful Paint (LCP) hero graphics for both themes
@@ -601,7 +611,7 @@ const config: Config = {
       attributes: {
         rel: 'preload',
         as: 'image',
-        href: '/nothing_archive/img/logo_dark.gif',
+        href: '/nothing_archive/img/brand/logo-dark.gif',
         fetchpriority: 'high',
       },
     },
@@ -610,7 +620,7 @@ const config: Config = {
       attributes: {
         rel: 'preload',
         as: 'image',
-        href: '/nothing_archive/img/logo_light.gif',
+        href: '/nothing_archive/img/brand/logo-light.gif',
         fetchpriority: 'high',
       },
     },
@@ -655,17 +665,17 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/banner-v2.png',
+    image: 'img/brand/social-banner.png',
     metadata: [
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'Nothing Archive' },
-      { property: 'og:image', content: 'https://spike0en.github.io/nothing_archive/img/banner-v2.png' },
+      { property: 'og:image', content: 'https://spike0en.github.io/nothing_archive/img/brand/social-banner.png' },
       { property: 'og:image:width', content: '2160' },
       { property: 'og:image:height', content: '1080' },
       { property: 'og:image:type', content: 'image/png' },
       { property: 'og:image:alt', content: 'Nothing Archive — Nothing OS Firmware & Community Resources' },
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:image', content: 'https://spike0en.github.io/nothing_archive/img/banner-v2.png' },
+      { name: 'twitter:image', content: 'https://spike0en.github.io/nothing_archive/img/brand/social-banner.png' },
     ],
     colorMode: {
       defaultMode: 'dark',
@@ -676,8 +686,8 @@ const config: Config = {
       title: 'Nothing Archive',
       logo: {
         alt: 'Nothing Archive Logo',
-        src: 'img/logo_light.gif',
-        srcDark: 'img/logo_dark.gif',
+        src: 'img/brand/logo-light.gif',
+        srcDark: 'img/brand/logo-dark.gif',
         width: 32,
         height: 32,
       },
