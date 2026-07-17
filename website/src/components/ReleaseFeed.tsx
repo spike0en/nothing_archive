@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Link from '@docusaurus/Link';
-import clsx from 'clsx';
 import styles from './ReleaseFeed.module.css';
 import { getTimeLag } from '../utils/time';
 import { useGitHubReleases } from '../utils/github-cache';
@@ -26,27 +25,6 @@ try {
 export default function ReleaseFeed(): React.JSX.Element {
   // Centralized GitHub data hook — deduplicated, stale-while-revalidate
   const { releases, totalCount: totalReleasesCount, status: statusSource, error: errorState, loading } = useGitHubReleases();
-  const [currentTime, setCurrentTime] = useState('');
-  const [blinkActive, setBlinkActive] = useState(true);
-  const [timezoneMode, setTimezoneMode] = useState<'local' | 'london'>('local');
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('nothing_archive_releases_timezone') as 'local' | 'london';
-      if (saved === 'local' || saved === 'london') {
-        setTimezoneMode(saved);
-      }
-    }
-  }, []);
-
-  const handleToggleTimezone = () => {
-    const nextMode = timezoneMode === 'local' ? 'london' : 'local';
-    setTimezoneMode(nextMode);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('nothing_archive_releases_timezone', nextMode);
-    }
-  };
-
   // Track latest release per model
   const latestReleasesPerModel = React.useMemo(() => {
     const seen = new Set<string>();
@@ -61,38 +39,6 @@ export default function ReleaseFeed(): React.JSX.Element {
     }
     return result;
   }, [releases]);
-
-  // Fetch time based on timezoneMode
-  useEffect(() => {
-    const updateClock = () => {
-      const now = new Date();
-      const timeOptions: Intl.DateTimeFormatOptions = {
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false,
-      };
-      if (timezoneMode === 'london') {
-        timeOptions.timeZone = 'Europe/London';
-      }
-      const timeString = new Intl.DateTimeFormat(timezoneMode === 'london' ? 'en-GB' : undefined, timeOptions).format(now);
-      
-      const tzOptions: Intl.DateTimeFormatOptions = {
-        timeZoneName: 'short',
-      };
-      if (timezoneMode === 'london') {
-        tzOptions.timeZone = 'Europe/London';
-      }
-      const parts = new Intl.DateTimeFormat(timezoneMode === 'london' ? 'en-GB' : undefined, tzOptions).formatToParts(now);
-      const tzLabel = parts.find(p => p.type === 'timeZoneName')?.value || (timezoneMode === 'london' ? 'BST' : '');
-      
-      setCurrentTime(`${timeString} ${tzLabel}`.trim());
-      setBlinkActive(now.getSeconds() % 2 === 0);
-    };
-    updateClock();
-    const interval = setInterval(updateClock, 1000);
-    return () => clearInterval(interval);
-  }, [timezoneMode]);
 
 
 
@@ -131,54 +77,12 @@ export default function ReleaseFeed(): React.JSX.Element {
       {/* Telemetry Header */}
       <div className={styles.telemetryHeader}>
         <div className={styles.systemLabel}>
-          <span
-            className={`${styles.pulseDot} ${
-              statusSource === 'LIVE' ? (blinkActive ? styles.pulseDotLive : styles.pulseDotDim) : styles.pulseDotOffline
-            }`}
-          />
-          <span className={styles.feedTextPrefix}>RELEASES:</span>
-          <span className={statusSource === 'LIVE' ? styles.feedStatusLive : styles.feedStatusOffline}>
-            {errorState ? (
-              errorState === 'RATE_LIMITED' ? (
-                'RATE LIMITED'
-              ) : (
-                'ERROR'
-              )
-            ) : statusSource === 'LIVE' ? (
-              'LIVE'
-            ) : (
-              'OFFLINE'
-            )}
-          </span>
-        </div>
-        <div className={styles.systemStats}>
-          <div className={styles.clockContainer}>
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className={styles.clockIcon}
-              aria-hidden="true"
-              style={{ opacity: 0.6, flexShrink: 0 }}
-            >
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
-            </svg>
-            <span className={styles.timeVal}>{currentTime || '--:--:--'}</span>
-            <button
-              type="button"
-              className={styles.tzToggleBtn}
-              onClick={handleToggleTimezone}
-              title={`Switch to ${timezoneMode === 'local' ? 'London' : 'Local'} Time`}
-            >
-              [{timezoneMode === 'local' ? 'LOCAL' : 'LONDON'}]
-            </button>
-          </div>
+          <span className={styles.feedTextPrefix}>RELEASES</span>
+          {(errorState || statusSource !== 'LIVE') && (
+            <span className={styles.feedStatusOffline}>
+              {errorState === 'RATE_LIMITED' ? 'RATE LIMITED' : errorState ? 'ERROR' : 'OFFLINE'}
+            </span>
+          )}
         </div>
       </div>
 

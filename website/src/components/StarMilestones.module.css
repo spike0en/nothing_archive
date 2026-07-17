@@ -405,39 +405,6 @@
   50% { opacity: 1; text-shadow: 0 0 8px rgba(215, 25, 33, 0.2); }
 }
 
-/* Pulsing Dots for status */
-.liveIndicator,
-.pulsingRedDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  display: block;
-  flex-shrink: 0;
-  background-color: var(--ifm-color-primary, var(--nothing-red, #D71921));
-  box-shadow: 0 0 6px var(--ifm-color-primary);
-}
-
-.liveIndicator {
-  animation: livePulse 1.5s ease-in-out infinite;
-  margin-top: 1px;
-}
-
-.pulsingRedDot {
-  animation: livePulse 1s ease-in-out infinite;
-}
-
-@keyframes livePulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.5;
-    box-shadow: 0 0 0 0 rgba(215, 25, 33, 0.4);
-  }
-  50% {
-    transform: scale(1.15);
-    opacity: 1;
-    box-shadow: 0 0 6px 2px rgba(215, 25, 33, 0.2);
-  }
-}
 
 .loadingState {
   text-align: center;

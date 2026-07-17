@@ -312,9 +312,25 @@ function useGitHubData<T>(config: {
     if (mem && config.isValid(mem.data)) return mem.data;
     return config.staticFallback;
   });
-  const [status, setStatus] = useState<DataStatus>('OFFLINE');
+  const [status, setStatus] = useState<DataStatus>(() => {
+    const mem = memoryCache.get(config.cacheKey);
+    if (mem && config.isValid(mem.data)) return 'LIVE';
+    if (typeof window !== 'undefined') {
+      const ls = readLocalStorage<T>(config.lsKey, config.lsTimeKey);
+      if (ls && config.isValid(ls.data)) return 'LIVE';
+    }
+    return 'OFFLINE';
+  });
   const [error, setError] = useState<ErrorState>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    const mem = memoryCache.get(config.cacheKey);
+    if (mem && config.isValid(mem.data)) return false;
+    if (typeof window !== 'undefined') {
+      const ls = readLocalStorage<T>(config.lsKey, config.lsTimeKey);
+      if (ls && config.isValid(ls.data)) return false;
+    }
+    return true;
+  });
 
   useEffect(() => {
     let cancelled = false;

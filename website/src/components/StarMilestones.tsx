@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { FaStar } from 'react-icons/fa';
 import clsx from 'clsx';
 import styles from './StarMilestones.module.css';
@@ -79,7 +79,6 @@ export default function StarMilestones(): React.JSX.Element {
 
       <div className={styles.milestoneHeader}>
         <div className={styles.liveStats}>
-          <span className={styles.liveIndicator} />
           <span className={styles.liveText}>{stars.toLocaleString()} stargazers</span>
         </div>
 

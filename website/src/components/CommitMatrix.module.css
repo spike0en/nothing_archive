@@ -33,8 +33,8 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px dashed var(--nothing-border-strong);
-  padding-bottom: 0.75rem;
-  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .systemLabel {
@@ -46,42 +46,6 @@
   letter-spacing: 0.1em;
 }
 
-.systemStats {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  font-family: var(--ifm-font-family-base);
-  font-size: 0.75rem;
-}
-
-.pulseDot {
-  display: block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  margin-right: 8px;
-  flex-shrink: 0;
-  aspect-ratio: 1 / 1;
-  font-size: 0;
-  line-height: 0;
-}
-
-.pulseDotLive {
-  background-color: var(--ifm-color-primary);
-  box-shadow: none;
-  opacity: 1;
-}
-
-.pulseDotDim {
-  background-color: var(--ifm-color-primary);
-  box-shadow: none;
-  opacity: 0.15;
-}
-
-.pulseDotOffline {
-  background-color: rgba(128, 128, 128, 0.5);
-  box-shadow: none;
-}
 
 .feedTextPrefix {
   color: inherit;
@@ -482,44 +446,6 @@
   }
 }
 
-.clockContainer {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.timeLabel {
-  opacity: 0.5;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
-.timeVal {
-  font-weight: 700;
-  min-width: 80px;
-  text-align: left;
-}
-
-.tzToggleBtn {
-  background: none;
-  border: none;
-  font-family: var(--ifm-font-family-base);
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: inherit;
-  opacity: 0.55;
-  cursor: pointer;
-  padding: 0 4px;
-  transition: opacity 0.15s ease, color 0.15s ease;
-  letter-spacing: 0.05em;
-  user-select: none;
-  line-height: 1.4;
-}
-
-.tzToggleBtn:hover {
-  opacity: 1;
-  color: var(--ifm-color-primary) !important;
-}
 
 @media screen and (max-width: 576px) {
   .telemetryHeader {

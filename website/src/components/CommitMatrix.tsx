@@ -26,63 +26,11 @@ export default function CommitMatrix(): React.JSX.Element {
   // hitscounter.dev is not a GitHub API — kept as a separate inline fetch
   const [hitsData, setHitsData] = useState<HitsState>({ hits: 0 });
   const [hitsLoading, setHitsLoading] = useState(true);
-  const [currentTime, setCurrentTime] = useState('');
-  const [blinkActive, setBlinkActive] = useState(true);
-  const [timezoneMode, setTimezoneMode] = useState<'local' | 'london'>('local');
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('nothing_archive_repo_timezone') as 'local' | 'london';
-      if (saved === 'local' || saved === 'london') {
-        setTimezoneMode(saved);
-      }
-    }
-  }, []);
-
-  const handleToggleTimezone = () => {
-    const nextMode = timezoneMode === 'local' ? 'london' : 'local';
-    setTimezoneMode(nextMode);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('nothing_archive_repo_timezone', nextMode);
-    }
-  };
 
   const filteredCommits = React.useMemo(() => {
     const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
     return commits.filter(commit => new Date(commit.date).getTime() >= sevenDaysAgo);
   }, [commits]);
-
-  // Update local time and handle pulse blink
-  useEffect(() => {
-    const updateClock = () => {
-      const now = new Date();
-      const timeOptions: Intl.DateTimeFormatOptions = {
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false,
-      };
-      if (timezoneMode === 'london') {
-        timeOptions.timeZone = 'Europe/London';
-      }
-      const timeString = new Intl.DateTimeFormat(undefined, timeOptions).format(now);
-      
-      const tzOptions: Intl.DateTimeFormatOptions = {
-        timeZoneName: 'short',
-      };
-      if (timezoneMode === 'london') {
-        tzOptions.timeZone = 'Europe/London';
-      }
-      const parts = new Intl.DateTimeFormat(undefined, tzOptions).formatToParts(now);
-      const tzLabel = parts.find(p => p.type === 'timeZoneName')?.value || (timezoneMode === 'london' ? 'BST' : '');
-      
-      setCurrentTime(`${timeString} ${tzLabel}`.trim());
-      setBlinkActive(now.getSeconds() % 2 === 0);
-    };
-    updateClock();
-    const interval = setInterval(updateClock, 1000);
-    return () => clearInterval(interval);
-  }, [timezoneMode]);
 
   // Fetch hitscounter.dev visitor count (not a GitHub API — kept separate)
   useEffect(() => {
@@ -137,7 +85,7 @@ export default function CommitMatrix(): React.JSX.Element {
       value: statsGhLoading ? '—' : repoStats.stars.toLocaleString(),
     },
     {
-      label: 'VISITORS',
+      label: 'VIEWS',
       value: hitsLoading ? '—' : hitsData.hits.toLocaleString(),
     },
   ];
@@ -190,50 +138,12 @@ export default function CommitMatrix(): React.JSX.Element {
       {/* Telemetry Header */}
       <div className={styles.telemetryHeader}>
         <div className={styles.systemLabel}>
-          <span className={`${styles.pulseDot} ${statusSource === 'LIVE' ? (blinkActive ? styles.pulseDotLive : styles.pulseDotDim) : styles.pulseDotOffline}`} />
-          <span className={styles.feedTextPrefix}>REPO:</span>
-          <span className={statusSource === 'LIVE' ? styles.feedStatusLive : styles.feedStatusOffline}>
-            {errorState ? (
-              errorState === 'RATE_LIMITED' ? (
-                'RATE LIMITED'
-              ) : (
-                'ERROR'
-              )
-            ) : statusSource === 'LIVE' ? (
-              'LIVE'
-            ) : (
-              'OFFLINE'
-            )}
-          </span>
-        </div>
-        <div className={styles.systemStats}>
-          <div className={styles.clockContainer}>
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className={styles.clockIcon}
-              aria-hidden="true"
-              style={{ opacity: 0.6, flexShrink: 0 }}
-            >
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
-            </svg>
-            <span className={styles.timeVal}>{currentTime || '--:--:--'}</span>
-            <button
-              type="button"
-              className={styles.tzToggleBtn}
-              onClick={handleToggleTimezone}
-              title={`Switch to ${timezoneMode === 'local' ? 'London' : 'Local'} Time`}
-            >
-              [{timezoneMode === 'local' ? 'LOCAL' : 'LONDON'}]
-            </button>
-          </div>
+          <span className={styles.feedTextPrefix}>REPO</span>
+          {(errorState || statusSource !== 'LIVE') && (
+            <span className={styles.feedStatusOffline}>
+              {errorState === 'RATE_LIMITED' ? 'RATE LIMITED' : errorState ? 'ERROR' : 'OFFLINE'}
+            </span>
+          )}
         </div>
       </div>
 
