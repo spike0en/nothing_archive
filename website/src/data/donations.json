@@ -1,7 +1,6 @@
 [
   {
     "id": "upi",
-    "category": "UPI",
     "title": "UPI (India)",
     "description": "Send via any UPI app (PhonePe / GPay / Paytm) to the ID below. Add reference: NOTHING ARCHIVE.",
     "address": "harshitsinha@fam",
@@ -11,7 +10,6 @@
   },
   {
     "id": "kofi",
-    "category": "OTHER",
     "title": "Ko-fi",
     "description": "One-tap tip via Ko-fi (card / Apple Pay / Google Pay).",
     "address": "https://ko-fi.com/phatwalrus",
@@ -20,11 +18,18 @@
   },
   {
     "id": "paypal",
-    "category": "OTHER",
     "title": "PayPal",
     "description": "Send via PayPal.me — 'Friends & Family' if possible.",
     "address": "https://paypal.me/PhatWalrus",
     "proofUrl": "https://paypal.me/PhatWalrus",
     "buttonText": "Open PayPal"
+  },
+  {
+    "id": "boosty",
+    "title": "Boosty (Russia)",
+    "description": "Support the archive via Boosty (available for cards in Russia).",
+    "address": "https://boosty.to/phatwalrus/donate",
+    "proofUrl": "https://boosty.to/phatwalrus/donate",
+    "buttonText": "Open Boosty"
   }
 ]
