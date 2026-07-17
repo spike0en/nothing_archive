@@ -318,6 +318,9 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
 }
 
 
+const siteUrl = process.env.SITE_URL || (process.env.GITHUB_ACTIONS === 'true' ? 'https://nothingarchive.tech' : 'http://localhost:3000');
+const baseUrl = process.env.BASE_URL || '/';
+
 const config: Config = {
   title: 'Nothing Archive',
   tagline: 'A curated hub for everything related to the Nothing ecosystem.',
@@ -328,8 +331,8 @@ const config: Config = {
     experimental_faster: true,
   },
 
-  url: 'https://spike0en.github.io',
-  baseUrl: '/nothing_archive/',
+  url: siteUrl,
+  baseUrl: baseUrl,
   trailingSlash: false,
 
   organizationName: 'spike0en',
@@ -403,14 +406,14 @@ const config: Config = {
                 }
 
                 // Create a dynamic route for the category folder that redirects to the latest changelog
-                // Must include baseUrl /nothing_archive for both the route path and redirect target
+                // Must include baseUrl for both the route path and redirect target
                 const redirectData = await actions.createData(
                   `redirect-${folder}.json`,
-                  JSON.stringify({ to: `/nothing_archive/docs/changelogs/${folder}/${latestFile}` })
+                  JSON.stringify({ to: `${baseUrl}docs/changelogs/${folder}/${latestFile}` })
                 );
 
                 actions.addRoute({
-                  path: `/nothing_archive/docs/changelogs/${folder}`,
+                  path: `${baseUrl}docs/changelogs/${folder}`,
                   component: '@site/src/components/RedirectToLatest.tsx',
                   exact: true,
                   modules: {
@@ -422,10 +425,10 @@ const config: Config = {
                 for (const codename of mappedCodenames) {
                   const redirectDataVirt = await actions.createData(
                     `redirect-${codename}.json`,
-                    JSON.stringify({ to: `/nothing_archive/docs/changelogs/${folder}/${latestFile}` })
+                    JSON.stringify({ to: `${baseUrl}docs/changelogs/${folder}/${latestFile}` })
                   );
                   actions.addRoute({
-                    path: `/nothing_archive/docs/changelogs/${codename}`,
+                    path: `${baseUrl}docs/changelogs/${codename}`,
                     component: '@site/src/components/RedirectToLatest.tsx',
                     exact: true,
                     modules: {
@@ -454,12 +457,12 @@ const config: Config = {
           {
             tagName: 'link',
             rel: 'icon',
-            href: '/nothing_archive/img/brand/icon-512.png',
+            href: `${baseUrl}img/brand/icon-512.png`,
           },
           {
             tagName: 'link',
             rel: 'manifest',
-            href: '/nothing_archive/manifest.json',
+            href: `${baseUrl}manifest.json`,
           },
           {
             tagName: 'meta',
@@ -515,7 +518,7 @@ const config: Config = {
               if (item.url.includes('/docs/firmware')) {
                 return { ...item, changefreq: 'daily' as const, priority: 0.8 };
               }
-              if (item.url.includes('/docs/intro') || item.url.endsWith('/nothing_archive/')) {
+              if (item.url.includes('/docs/intro') || item.url.endsWith(baseUrl)) {
                 return { ...item, priority: 0.9 };
               }
               return item;
@@ -562,14 +565,14 @@ const config: Config = {
       attributes: {
         rel: 'icon',
         type: 'image/x-icon',
-        href: '/nothing_archive/img/brand/favicon.ico',
+        href: `${baseUrl}img/brand/favicon.ico`,
       },
     },
     {
       tagName: 'link',
       attributes: {
         rel: 'manifest',
-        href: '/nothing_archive/manifest.json',
+        href: `${baseUrl}manifest.json`,
       },
     },
     {
@@ -585,7 +588,7 @@ const config: Config = {
         rel: 'icon',
         type: 'image/png',
         sizes: '192x192',
-        href: '/nothing_archive/img/brand/icon-192.png',
+        href: `${baseUrl}img/brand/icon-192.png`,
       },
     },
     {
@@ -594,7 +597,7 @@ const config: Config = {
         rel: 'icon',
         type: 'image/png',
         sizes: '512x512',
-        href: '/nothing_archive/img/brand/icon-512.png',
+        href: `${baseUrl}img/brand/icon-512.png`,
       },
     },
     {
@@ -602,7 +605,7 @@ const config: Config = {
       attributes: {
         rel: 'apple-touch-icon',
         sizes: '180x180',
-        href: '/nothing_archive/img/brand/apple-touch-icon.png',
+        href: `${baseUrl}img/brand/apple-touch-icon.png`,
       },
     },
     // Preload Largest Contentful Paint (LCP) hero graphics for both themes
@@ -611,7 +614,7 @@ const config: Config = {
       attributes: {
         rel: 'preload',
         as: 'image',
-        href: '/nothing_archive/img/brand/logo-dark.gif',
+        href: `${baseUrl}img/brand/logo-dark.gif`,
         fetchpriority: 'high',
       },
     },
@@ -620,7 +623,7 @@ const config: Config = {
       attributes: {
         rel: 'preload',
         as: 'image',
-        href: '/nothing_archive/img/brand/logo-light.gif',
+        href: `${baseUrl}img/brand/logo-light.gif`,
         fetchpriority: 'high',
       },
     },
@@ -669,13 +672,13 @@ const config: Config = {
     metadata: [
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'Nothing Archive' },
-      { property: 'og:image', content: 'https://spike0en.github.io/nothing_archive/img/brand/social-banner.png' },
+      { property: 'og:image', content: `${siteUrl}${baseUrl}img/brand/social-banner.png` },
       { property: 'og:image:width', content: '2160' },
       { property: 'og:image:height', content: '1080' },
       { property: 'og:image:type', content: 'image/png' },
       { property: 'og:image:alt', content: 'Nothing Archive — Nothing OS Firmware & Community Resources' },
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:image', content: 'https://spike0en.github.io/nothing_archive/img/brand/social-banner.png' },
+      { name: 'twitter:image', content: `${siteUrl}${baseUrl}img/brand/social-banner.png` },
     ],
     colorMode: {
       defaultMode: 'dark',
@@ -724,7 +727,7 @@ const config: Config = {
     footer: {
       style: 'dark',
       links: [],
-      copyright: `<div class="footer-custom"><div class="footer-links"><a href="/nothing_archive/docs/contributing">Contributing</a><span class="separator">•</span><a href="/nothing_archive/docs/licensing">License</a><span class="separator">•</span><a href="/nothing_archive/docs/acknowledgements">Credits</a></div><div class="footer-info"><span>© 2026 NOTHING ARCHIVE</span><span class="info-dot">•</span><span>A community initiative led by <a href="https://github.com/spike0en" target="_blank" rel="noopener noreferrer" class="credit-link">Spike</a></span></div><div class="footer-disclaimer">Not affiliated with Nothing Technology Limited</div></div>`,
+      copyright: `<div class="footer-custom"><div class="footer-links"><a href="${baseUrl}docs/contributing">Contributing</a><span class="separator">•</span><a href="${baseUrl}docs/licensing">License</a><span class="separator">•</span><a href="${baseUrl}docs/acknowledgements">Credits</a></div><div class="footer-info"><span>© 2026 NOTHING ARCHIVE</span><span class="info-dot">•</span><span>A community initiative led by <a href="https://github.com/spike0en" target="_blank" rel="noopener noreferrer" class="credit-link">Spike</a></span></div><div class="footer-disclaimer">Not affiliated with Nothing Technology Limited</div></div>`,
     },
     prism: {
       theme: prismThemes.github,

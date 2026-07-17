@@ -156,7 +156,7 @@ Essential resources including wikis, firmware archives, and system repair tools.
 | [Glyph Adapter](https://github.com/frogfile/GlyphAdapter) | frogfile | A root Android service that lets third-party apps using Nothing's Glyph SDK work on flashed phones |
 | [Kairo](https://github.com/nikitawebdeg-debug/-kairo) | nikitawebdeg-debug | ESP32-powered desktop system monitor with a Nothing OS-inspired dot-matrix display |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid macros |
-| [Nothing Archive](https://spike0en.github.io/nothing_archive) | spike0en | Curated hub for official Nothing & CMF firmware, community apps, projects, resources and aftermarket development. ([Repo](https://github.com/spike0en/nothing_archive)) |
+| [Nothing Archive](https://nothingarchive.tech) | spike0en | Curated hub for official Nothing & CMF firmware, community apps, projects, resources and aftermarket development. ([Repo](https://github.com/spike0en/nothing_archive)) |
 | [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | PWA-style web app that indexes community apps, using a foundational database sourced from [Nothing Archive](https://github.com/spike0en/nothing_archive) |
 | [Nothing Desktop](https://github.com/sowahq/nothing-desktop) | sowahq | Menu-bar app to control battery, ANC, and EQ settings for Nothing earbuds |
 | [Nothing Flasher](https://github.com/spike0en/nothing-flasher) | spike0en & Hellboy017 | Fastboot flashing scripts |

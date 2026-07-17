@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://spike0en.github.io/nothing_archive/sitemap.xml
+Sitemap: https://nothingarchive.tech/sitemap.xml

@@ -70,6 +70,19 @@ jobs:
         run: npm run build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          BASE_URL: ${{ vars.BASE_URL }}
+
+      - name: Patch robots.txt sitemap URL
+        working-directory: .
+        run: |
+          SITE_URL="${{ vars.SITE_URL || 'https://nothingarchive.tech' }}"
+          BASE_URL="${{ vars.BASE_URL || '/' }}"
+          ROBOTS="website/build/robots.txt"
+          if [ -f "$ROBOTS" ]; then
+            sed -i "s|https://spike0en.github.io/nothing_archive/|${SITE_URL}${BASE_URL}|g" "$ROBOTS"
+            echo "Patched robots.txt → ${SITE_URL}${BASE_URL}sitemap.xml"
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
