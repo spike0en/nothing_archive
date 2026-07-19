@@ -1,6 +1,11 @@
 /**
- * Primary Docusaurus configuration.
- * Defines site metadata, internationalization, static routing, and theme parameters.
+ * @file docusaurus.config.ts
+ * @description Primary configuration file for the Docusaurus-based site. Defines 
+ * build metadata, plugin setups, site navigation structure, internationalization, 
+ * and custom parsing tools for sorting changelogs and devices.
+ * 
+ * Layer: Global site configuration.
+ * Boundary: Invoked exclusively by Docusaurus at build time.
  */
 
 import { themes as prismThemes } from 'prism-react-renderer';
@@ -40,6 +45,13 @@ function getAndroidLetterRank(letter: string): number {
   return 0;
 }
 
+/**
+ * Compares two software version strings.
+ * 
+ * @param vAStr First version string (e.g. '1.0.1')
+ * @param vBStr Second version string (e.g. '1.0.2')
+ * @returns Negative if vAStr > vBStr, positive if vBStr > vAStr, or 0 if equal.
+ */
 function compareVersions(vAStr: string, vBStr: string): number {
   const partsA = vAStr.split('.');
   const partsB = vBStr.split('.');
@@ -61,6 +73,14 @@ function compareVersions(vAStr: string, vBStr: string): number {
   return 0;
 }
 
+/**
+ * Sorts Docusaurus changelog documentation pages.
+ * Orders them chronologically by Android letter rank, version string, date, and timestamp.
+ * 
+ * @param idA First changelog file identifier path
+ * @param idB Second changelog file identifier path
+ * @returns Comparison value for sorting
+ */
 function compareChangelogs(idA: string, idB: string): number {
   const nameA = (idA.split('/').pop() || '').replace(/\.mdx?$/i, '');
   const nameB = (idB.split('/').pop() || '').replace(/\.mdx?$/i, '');
@@ -96,6 +116,12 @@ function compareChangelogs(idA: string, idB: string): number {
   return nameB.localeCompare(nameA);
 }
 
+/**
+ * Resolves the numeric ranking score of a device name suffix variant.
+ * 
+ * @param name Device display name
+ * @returns Numeric variant rank (lower number represents higher priority)
+ */
 function getVariantRank(name: string): number {
   const lower = name.toLowerCase();
   if (lower.includes('pro plus') || lower.includes('pro+')) return 1;
@@ -279,7 +305,7 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
   if (numberItems.length > 0) {
     newSubItems.push({
       type: 'category',
-      label: 'Nothing (Number Series)',
+      label: 'Nothing Phone Series',
       collapsible: true,
       collapsed: false,
       items: numberItems,
@@ -288,7 +314,7 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
   if (aItems.length > 0) {
     newSubItems.push({
       type: 'category',
-      label: 'Nothing (A Series)',
+      label: 'Nothing Phone (a) Series',
       collapsible: true,
       collapsed: false,
       items: aItems,
@@ -297,7 +323,7 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
   if (bItems.length > 0) {
     newSubItems.push({
       type: 'category',
-      label: 'Nothing (B / Lite Series)',
+      label: 'Nothing Phone (b / Lite) Series',
       collapsible: true,
       collapsed: false,
       items: bItems,
@@ -306,7 +332,7 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
   if (cmfItems.length > 0) {
     newSubItems.push({
       type: 'category',
-      label: 'CMF by Nothing',
+      label: 'CMF by Nothing Phone Series',
       collapsible: true,
       collapsed: false,
       items: cmfItems,

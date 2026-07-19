@@ -1,3 +1,11 @@
+/**
+ * @file custom-SupportButton.tsx
+ * @description Button component displayed in the navigation bar to trigger the global support/donation modal.
+ * 
+ * Layer: Navigation theme components.
+ * Boundary: Dispatches CustomEvent 'open-support-modal' on click, handled globally.
+ */
+
 import React from 'react';
 import clsx from 'clsx';
 import { FaHeart } from 'react-icons/fa';
@@ -7,6 +15,10 @@ interface SupportButtonProps {
   mobile?: boolean;
 }
 
+/**
+ * SupportButton component.
+ * Renders support navigation item in both desktop and mobile layouts.
+ */
 export default function SupportButton({ mobile }: SupportButtonProps): React.JSX.Element | null {
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();

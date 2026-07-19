@@ -17,9 +17,9 @@ Tips, tricks, and general guides for everyday use.
 
 :::note
 
-- Bootloader unlocking is **not mandatory** to sideload incremental OTA updates. Skip Step A unless you are a rooted user.
+- Bootloader unlocking is not mandatory to sideload incremental OTA updates. Skip Step A unless you are a rooted user.
 - Sideloading official incremental or full OTA updates is safe as long as they are downloaded directly from this archive.
-- Do not use third-party sources. All firmware in the Nothing Archive is sourced directly from Nothing’s official OEM servers.  
+- Do not use third-party sources. All firmware in the Nothing Archive is sourced directly from Nothing's official OEM servers.  
   This can be verified by inspecting the download URL(s) in the incremental OTA section, which point to official server and not third-party file hosts.
 - The built-in Nothing OS offline updater only accepts OEM-signed update packages.
 - The updater verifies the firmware hash before installation and will fail if an incorrect or mismatched OTA zip is used.
@@ -38,17 +38,17 @@ A. **Restoring Stock Partitions (For Rooted Users Only)**
   If your bootloader is locked, skip directly to Point B!
   :::
 
-1. **Check your current Nothing OS version:**  
+1. Check your current Nothing OS version:  
    - Go to `Settings > About phone > Tap the device banner`.  
    - Note down the build number.  
 
-2. **Fetch stock images for your current firmware build:**  
+2. Fetch stock images for your current firmware build:  
    - Download the `-boot-image.7z` file.  
    - Extract the archive to obtain `.img` files.  
 
-3. **Identify the required partitions:**  
-   - **Qualcomm Devices:** `boot`, `init_boot`, `vendor_boot`, `recovery`, `vbmeta`  
-   - **MediaTek Devices:** `init_boot`, `vbmeta`, `lk`
+3. Identify the required partitions:  
+   - Qualcomm devices: `boot`, `init_boot`, `vendor_boot`, `recovery`, `vbmeta`  
+   - MediaTek devices: `init_boot`, `vbmeta`, `lk`
 
 4. **Flash stock partitions** in bootloader mode:  
    :::note
@@ -110,15 +110,15 @@ B. **Proceed with Sideloading**
    - The updater will automatically detect the update file.  
    - If not detected, manually browse and import the OTA file.  
    - Tap `Directly Apply OTA` or `Update` (based on the app UI).  
-   - Wait for the update to complete —your device will reboot automatically.
+   - Wait for the update to complete; your device will reboot automatically.
 
 :::note
 
 - If the updater shows an **unknown error**, try using the **"Browse"** option instead of manually copying the file to the **"ota"** folder.
 - **Full OTA firmware** can be sideloaded if incremental OTA fails.
-- **Full OTA cannot be used to downgrade** — it can only update to the same or a higher build.
+- **Full OTA cannot be used to downgrade**; it can only update to the same or a higher build.
 - **Unlocked bootloader users** can flash full OTA via custom recoveries (e.g., OrangeFox for Phone (2)).
-- **Not every release has a Full OTA file** — use incrementals instead in such cases.
+- **Not every release has a Full OTA file**; use incrementals instead in such cases.
 
 :::
 
@@ -185,25 +185,25 @@ The Bauhaus-inspired theme is a special edition feature that can be unlocked acr
 
 #### Other Nothing Models
 
-**Requirements:**
+Requirements:
 - PC with ADB & Fastboot
 - [SetEdit App](https://github.com/MuntashirAkon/SetEdit)
 
-**Steps:**
+Steps:
 
-1. **Enable Developer Options:** Go to `Settings > About phone > Tap "Build number" 7 times`.
-2. **Enable USB Debugging:** Go to `Settings > System > Developer options > Enable USB Debugging`.
-3. **Install SetEdit via ADB:**
+1. Enable Developer Options: Go to `Settings > About phone > Tap "Build number" 7 times`.
+2. Enable USB Debugging: Go to `Settings > System > Developer options > Enable USB Debugging`.
+3. Install SetEdit via ADB:
    - Rename the downloaded APK to `SetEdit.apk`.
    - Run the following command:
       ```sh
      adb install --bypass-low-target-sdk-block SetEdit.apk
      ```
-4. **Unlock the Theme:**
+4. Unlock the Theme:
    - Open SetEdit and grant any requested permissions.
    - In the **System Table**, look for `theme_bauhaus_enable`.
    - Set the value to `1` (Set it back to `0` to disable).
-5. **Apply the Theme:**
+5. Apply the Theme:
    - Go to Nothing Launcher Settings and apply the new theme.
 
 :::warning
@@ -258,12 +258,12 @@ Download Android SDK Platform-Tools:
 - [Windows / Linux / macOS](https://developer.android.com/studio/releases/platform-tools)
 - [Installation Guide](https://www.xda-developers.com/install-adb-windows-macos-linux/)
 
-**Windows (winget):**
+Windows (using winget):
 ```cmd
 winget install --id=Google.PlatformTools -e
 ```
 
-**macOS/Linux (Homebrew):**
+macOS/Linux (using Homebrew):
 ```bash
 brew install --cask android-platform-tools
 ```
@@ -281,13 +281,13 @@ brew install --cask android-platform-tools
 
 A. **Prerequisites**
 - **Backup your data** (unlocking will erase everything).
-- **Install ADB & Fastboot tools** – [Download Platform Tools](https://developer.android.com/studio/releases/platform-tools).
-- **Install USB drivers** – [Google USB Drivers](https://developer.android.com/studio/run/win-usb).
-- **Enable Developer Options**:
+- **Install ADB & Fastboot tools** - [Download Platform Tools](https://developer.android.com/studio/releases/platform-tools).
+- **Install USB drivers** - [Google USB Drivers](https://developer.android.com/studio/run/win-usb).
+- Enable Developer Options:
   - `Settings > About phone > Tap "Build number" 7 times.`
-- **Enable USB Debugging & OEM Unlocking**:
+- Enable USB Debugging & OEM Unlocking:
   - `Settings > System > Developer options > Enable USB Debugging & OEM Unlocking.`
-- **Remove Screen Lock/PIN/Password and Logged-in Accounts (optional but recommended)**
+- Remove Screen Lock/PIN/Password and Logged-in Accounts (optional but recommended)
   - Removing accounts before relocking the bootloader helps prevent Google FRP (Factory Reset Protection) lock. If FRP is triggered, the device will ask for the previously linked Google account after a factory reset. If you forget the credentials or can't access the account, you may be locked out of your device. To avoid this, it's recommended to remove all Google accounts before relocking.
 
 B. **Unlocking Process**
@@ -295,40 +295,40 @@ B. **Unlocking Process**
 - **Open a command prompt** in the platform-tools folder:
   - Windows: `Shift + Right Click` > **Open Command Prompt/Powershell here**.
   - Mac/Linux: Open **Terminal** and navigate to platform-tools.
-- **Verify device connection**:
+- Verify device connection:
   ```sh
   adb devices
   ```
   If prompted, allow USB debugging on the phone.
 
-- **Reboot to bootloader:**
+- Reboot to bootloader:
    ```sh
    adb reboot bootloader
    ```
 
-- **Verify fastboot connection:**
+- Verify fastboot connection:
    ```sh
    fastboot devices
    ```
    If no device is detected, reinstall USB drivers.
 
-- **Unlock the bootloader:**
+- Unlock the bootloader:
    ```sh
    fastboot flashing unlock
    ```
 
-- **Confirm on your phone:**
+- Confirm on your phone:
   - Use **Volume Keys** to navigate and **Power Button** to confirm.
   - Your device will **erase all data** and reboot.
 
 C. **Post-Unlock**
   - Set up your phone again.
-  - **Verify bootloader status**:
+  - Verify bootloader status:
     ```sh
     Settings > System > Developer options > OEM Unlocking should be enabled.
     ```
 
-  - Bootloader is now unlocked and your device will show an Orange State warning at boot—this is normal.
+  - Bootloader is now unlocked and your device will show an Orange State warning at boot; this is normal.
 
 ### Rooting
 
@@ -423,7 +423,7 @@ D. **Patch the Image**
   ```
 
 - Reboot to system:
-  ```bash
+  ```sh
   fastboot reboot
   ``` 
 
@@ -439,7 +439,7 @@ D. **Patch the Image**
 
 :::info
 
-- After unlocking the bootloader, it is crucial to back up essential partitions such as `persist`, `modemst1`, `modemst2`, `fsg`, etc., **before** flashing custom ROMs or kernels.
+- After unlocking the bootloader, make sure to back up essential partitions such as `persist`, `modemst1`, `modemst2`, `fsg`, etc., **before** flashing custom ROMs or kernels.
 - These partitions contain important data, including IMEI, network settings, and fingerprint sensor calibration.
 - If lost or corrupted, your device may experience **loss of cellular connectivity, fingerprint issues, or even become bricked**.
 - Creating backups ensures you can **restore your device** if something goes wrong.
@@ -450,12 +450,12 @@ A. **Requirements**
 - **Unlocked bootloader**
 - **Root access** (via Magisk/KSU/Apatch)
 - **Termux app** (install via F-Droid or Play Store)
-- **Check Partition Paths:**
-  - **Qcom devices:** `/dev/block/bootdevice/by-name/`
-  - **MTK devices:** `/dev/block/by-name/`
+- Check Partition Paths:
+  - Qcom devices: `/dev/block/bootdevice/by-name/`
+  - MTK devices: `/dev/block/by-name/`
 
 B. **Backup Instructions**
-- **For Qualcomm (QCom) Devices:**
+- For Qualcomm (QCom) Devices:
   - Open **Termux** and grant root access using:
     ```sh
     su
@@ -477,7 +477,7 @@ B. **Backup Instructions**
     cp -f "$partition" /sdcard/partitions_backup/; done
     ```
 
-- **For MediaTek (MTK) Devices:**
+- For MediaTek (MTK) Devices:
   - Open **Termux** and grant root access using:
     ```sh
     su
@@ -500,22 +500,22 @@ C. **Storing Backup**
   - **Do NOT share these backups!** They contain unique device data like IMEI.
 
 D. **Restoring Partitions**
- - **MTK Devices:**
-   ```sh
-   fastboot flash nvram nvram.img
-   fastboot flash nvdata nvdata.img
-   fastboot flash nvcfg nvcfg.img
-   fastboot flash persist persist.img
-   ```
-   Reboot to **recovery mode** → Perform **factory reset** → Reboot to **system**.
-
- - **QCom Devices:**
+  - For MediaTek devices:
     ```sh
+    fastboot flash nvram nvram.img
+    fastboot flash nvdata nvdata.img
+    fastboot flash nvcfg nvcfg.img
     fastboot flash persist persist.img
-    fastboot flash modemst1 modemst1.img
-    fastboot flash modemst2 modemst2.img
     ```
-    **Factory reset is not mandatory in this case.**
+    Reboot to recovery mode, perform a factory reset, and then reboot to system.
+
+  - For Qualcomm devices:
+     ```sh
+     fastboot flash persist persist.img
+     fastboot flash modemst1 modemst1.img
+     fastboot flash modemst2 modemst2.img
+     ```
+     Factory reset is not mandatory in this case.
 
 ### Flashing Custom ROM
 
@@ -524,16 +524,16 @@ Ensure your bootloader is unlocked before proceeding. Refer to the [Unlocking Bo
 :::
 
 :::danger Disclaimer & Warning
-- **General Guide:** This is a generic guide designed to work in most scenarios. Always cross-reference and follow any specific instructions provided by the ROM developer or maintainer.
-- **Data Loss:** Flashing a custom ROM for the first time or performing a clean flash **will erase all user data**. Back up your data before proceeding (e.g., using Google One, copying folders manually via `adb pull` or FTP, or using root backup tools like Swift Backup if your device is already rooted).
-- **Driver and Tool Setup:** You must have an unlocked bootloader and properly configured USB, ADB, and Fastboot drivers on your PC.
-- **Device Safety:** Flashing custom ROMs or using experimental builds carries the risk of bootlooping or bricking your device. Proceed at your own risk. The project authors and contributors are not responsible for any damage to your device.
+- This is a generic guide designed to work in most scenarios. Always cross-reference and follow any specific instructions provided by the ROM developer or maintainer.
+- Flashing a custom ROM for the first time or performing a clean flash **will erase all user data**. Back up your data before proceeding (e.g., using Google One, copying folders manually via `adb pull` or FTP, or using root backup tools like Swift Backup if your device is already rooted).
+- You must have an unlocked bootloader and properly configured USB, ADB, and Fastboot drivers on your PC.
+- Flashing custom ROMs or using experimental builds carries the risk of bootlooping or bricking your device. Proceed at your own risk. The project authors and contributors are not responsible for any damage to your device.
 :::
 
 :::info
 - A **clean flash** wipes all user data and is mandatory when flashing a custom ROM for the first time or switching to a different ROM.
 - A **dirty flash** (updating without wiping data) is generally supported only for minor updates of the same ROM. It is typically not supported for major version upgrades (e.g., Nothing OS/Android version transitions).
-- **Fastboot vs. Recovery ROMs:** You can distinguish between the two by checking the contents of the ROM package:
+- You can distinguish between the two ROM types by checking the contents of the package:
   - If the zip contains a `payload.bin` file, it is a **Recovery/Sideload** based ROM (or OTA zip).
   - If it contains multiple individual partition `.img` files, it is a **Fastboot** based ROM.
 :::
@@ -614,7 +614,7 @@ fastboot reboot recovery
 
 G. **Format Data**
 In the recovery user interface, navigate to:
-**Factory Reset** → **Format data / factory reset**
+Factory Reset, then select Format data / factory reset
 
 Alternatively, you can wipe user data via Fastboot:
 ```sh
@@ -623,7 +623,7 @@ fastboot erase metadata
 ```
 
 H. **Sideload the ROM**
-1. In the recovery menu, select **Apply Update** → **Apply from ADB**.
+1. In the recovery menu, select Apply Update, then select Apply from ADB.
 2. Verify the ADB sideload connection on your PC:
    ```sh
    adb devices
@@ -644,14 +644,14 @@ H. **Sideload the ROM**
 
 I. **GApps & Additional Packages**
 Once the sideload completes, the recovery will ask if you want to install additional packages:
-- **Vanilla Builds:** Select **YES**, reboot to recovery, and sideload your GApps package:
+- For Vanilla builds: select **YES**, reboot to recovery, and sideload your GApps package:
   ```sh
   adb sideload gapps.zip
   ```
-- **GMS Builds:** Select **NO** (Google Apps are already included).
+- For GMS builds: select **NO** (Google Apps are already included).
 
 J. **Final Wipe and Boot**
-1. Navigate to **Factory Reset** → **Format data / factory reset** one final time to clear encryption.
+1. Navigate to Factory Reset and select Format data / factory reset one final time to clear encryption.
 2. Select **Reboot system now**.
 
 <br />
@@ -670,7 +670,7 @@ J. **Final Wipe and Boot**
 :::
 
 A. **Method 1: OTA Update**
-1. Navigate to **Settings** → **System** → **System updates**.
+1. Navigate to Settings, then System, and select System updates.
 2. Download the latest available OTA update.
 3. Tap **Reboot** once the download and verification processes are complete.
 4. Your device will install the update and reboot automatically.
@@ -680,7 +680,7 @@ B. **Method 2: Recovery Sideload**
    ```sh
    adb reboot recovery
    ```
-2. Navigate to **Apply Update** → **Apply from ADB**.
+2. Navigate to Apply Update, then select Apply from ADB.
 3. Verify the connection on your PC:
    ```sh
    adb devices
@@ -703,7 +703,7 @@ B. **Method 2: Recovery Sideload**
 #### Fastboot-Based ROMs
 
 :::note
-- **Firmware Requirement:** Fastboot-based ROMs often require a specific version of the base Nothing OS firmware before installation. Please consult the maintainer's release notes. You can obtain base firmware images from the `image-firmware.7z` archive from the OTA releases section in the [firmware](/docs/firmware) page.
+- Fastboot-based ROMs often require a specific version of the base Nothing OS firmware before installation. Please consult the maintainer's release notes. You can obtain base firmware images from the `image-firmware.7z` archive from the OTA releases section in the [firmware](/docs/firmware) page.
 :::
 
 A. **Prerequisites**
@@ -727,12 +727,12 @@ B. **Reboot to Bootloader**
 C. **Flash the ROM**
 Run the following command depending on the type of flash you want to perform:
 
-- **For a Clean Flash (wipes all user data):**
+- For a Clean Flash (wipes all user data):
   ```sh
   fastboot -w update <path/to/rom_zip>
   ```
 
-- **For a Dirty Flash (retains user data):**
+- For a Dirty Flash (retains user data):
   ```sh
   fastboot update <path/to/rom_zip>
   ```
@@ -892,7 +892,7 @@ Stay updated with custom ROMs, kernels, and development projects.
 
 ### Device Update Channels (Telegram)
 
-**Nothing:**
+Nothing Devices:
 
 | Device | ROM | Recovery | Kernel | Updates |
 |--------|-----|----------|--------|---------|

@@ -1,3 +1,13 @@
+/**
+ * @file HeroGlyphLogo.tsx
+ * @description Renders the interactive brand logo in the hero section. 
+ * Supports both standard static logo rendering and interactive arcade games (Snake and Pong)
+ * mapped to a custom LED matrix grid visualization.
+ * 
+ * Boundaries: Confined to the hero section UI layout. Integrates with launcher theme configs.
+ * Lifecycles: Mounts and attaches global keyboard event listeners for game control when active.
+ */
+
 import React, { useEffect, useState, useRef } from 'react';
 import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,6 +23,10 @@ interface Point {
   c: number;
 }
 
+/**
+ * HeroGlyphLogo component.
+ * Manages game state (Snake grid, Pong velocities/paddles, collision rules), and keyboard interactions.
+ */
 export default function HeroGlyphLogo(): React.JSX.Element {
   const logoDark256Url = useBaseUrl('/img/brand/logo-dark-hero-256.webp');
   const logoDark384Url = useBaseUrl('/img/brand/logo-dark-hero-384.webp');
@@ -195,6 +209,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
         case 'RIGHT': newHead.c = head.c + 1; break;
       }
 
+      // Wrap around grid boundaries (playable grid coordinates range from 2 to 12)
       if (newHead.r < 2) newHead.r = 12;
       if (newHead.r > 12) newHead.r = 2;
       if (newHead.c < 2) newHead.c = 12;
@@ -245,6 +260,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
       let velR = ballVelRef.current.r;
       let velC = ballVelRef.current.c;
 
+      // Bounce off lateral boundaries (columns 2 and 12)
       if (nextC < 2) {
         nextC = 3;
         velC = 1;
@@ -253,11 +269,13 @@ export default function HeroGlyphLogo(): React.JSX.Element {
         velC = -1;
       }
 
+      // Bounce off top wall boundary (row 2)
       if (nextR < 2) {
         nextR = 3;
         velR = 1;
       }
 
+      // Handle collision logic with the player paddle (at row 12)
       if (nextR === 12) {
         const onPaddle = nextC >= paddleColRef.current - 1 && nextC <= paddleColRef.current + 1;
         if (onPaddle) {

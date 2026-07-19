@@ -240,7 +240,7 @@ function HomepageCommunity() {
       .filter((c): c is Contributor => !!c);
   }, [contributors]);
 
-  // Resolve top contributors, excluding core members, capped at 6 for a premium look
+  // Resolve top contributors, excluding core members, capped at 6 for layout alignment and clean presentation
   const topContributors = React.useMemo(() => {
     const coreLogins = new Set(contributorMetadata.core);
     return sortedContributors

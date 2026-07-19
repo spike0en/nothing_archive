@@ -473,7 +473,7 @@
   justify-content: center;
   width: calc(20% - 1rem);
   max-width: 130px;
-  aspect-ratio: 1;
+  min-height: 140px;
   background-color: var(--ifm-card-background-color);
   border: 1px solid var(--nothing-border);
   border-radius: 20px;
@@ -522,9 +522,8 @@
   color: var(--ifm-color-content);
   text-align: center;
   width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
   transition: color 0.2s ease;
 }
 
@@ -631,11 +630,11 @@
   align-items: center;
   justify-content: center;
   width: calc(12.5% - 0.875rem); /* Fits exactly 8 columns across 100% container width */
-  aspect-ratio: 1;
+  min-height: 115px;
   background-color: var(--ifm-card-background-color);
   border: 1px solid var(--nothing-border);
   border-radius: 16px; /* match upper cards */
-  padding: 0.75rem;
+  padding: 0.75rem 0.35rem;
   text-decoration: none !important;
   transition: border-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
 }
@@ -665,9 +664,8 @@
   color: var(--ifm-color-content);
   text-align: center;
   width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
   transition: color 0.2s ease;
 }
 

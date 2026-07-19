@@ -1,17 +1,10 @@
 /**
- * Prebuild script: fetches GitHub repository data and writes static JSON
- * files to src/data/ for bundling as fallback data.
- *
- * Consolidates what was previously only contributor fetching into a single
- * script that also captures releases, commits, and repo stats. This gives
- * every visitor instant data from the bundle — live API calls become
- * optional freshness upgrades, not hard requirements.
- *
- * Runs automatically before every `npm run build` / `npm start` via
- * the `prebuild` and `prestart` npm lifecycle hooks in package.json.
- *
- * Uses GITHUB_TOKEN if available (automatic in GitHub Actions CI) to
- * avoid the 60 req/hour unauthenticated rate limit.
+ * @file fetch-github-data.js
+ * @description Prebuild script fetching GitHub repository data (contributors, releases, commits, stats)
+ * and caching static JSON fallback data in src/data/.
+ * 
+ * Layer: Prebuild lifecycle scripts.
+ * Boundary: Communicates with GitHub REST API via HTTPS, outputting local JSON artifacts.
  */
 
 const https = require('https');
@@ -86,8 +79,9 @@ async function fetchContributors() {
   const filePath = path.join(OUT_DIR, 'contributors.json');
   const label = 'contributors';
 
-  // Try to load existing contributor name mappings to avoid re-fetching and hitting rate limits
+  // Try to load existing contributor name and html_url mappings to avoid re-fetching and preserve custom links
   const existingNames = {};
+  const existingHtmlUrls = {};
   try {
     if (fs.existsSync(filePath)) {
       const existing = JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -95,6 +89,9 @@ async function fetchContributors() {
         for (const c of existing) {
           if (c.login && c.name) {
             existingNames[c.login] = c.name;
+          }
+          if (c.login && c.html_url) {
+            existingHtmlUrls[c.login] = c.html_url;
           }
         }
       }
@@ -131,44 +128,41 @@ async function fetchContributors() {
       loginsToResolve.add(brandingLogin);
     }
 
-    // 3. Add top 10 general contributors (non-core)
+    // 3. Add top 6 general contributors (non-core)
     let generalCount = 0;
     for (const c of data) {
       if (!coreSet.has(c.login)) {
         loginsToResolve.add(c.login);
         generalCount++;
-        if (generalCount >= 10) {
+        if (generalCount >= 6) {
           break;
         }
       }
     }
 
-    // Resolve names for each contributor
+    // Resolve names for each target contributor
     const contributors = [];
     for (const c of data) {
-      let name = existingNames[c.login];
+      if (!loginsToResolve.has(c.login)) {
+        continue;
+      }
 
-      // Only fetch profile from GitHub API if they need to be resolved and we don't have it cached
-      if (loginsToResolve.has(c.login)) {
-        if (!name) {
-          try {
-            const userProfile = await fetchJSON(`/users/${c.login}`);
-            name = userProfile.data?.name || c.login;
-          } catch (err) {
-            console.warn(`[${label}] Failed to fetch name for ${c.login}: ${err.message}`);
-            name = c.login; // fallback
-          }
+      let name = existingNames[c.login];
+      if (!name) {
+        try {
+          const userProfile = await fetchJSON(`/users/${c.login}`);
+          name = userProfile.data?.name || c.login;
+        } catch (err) {
+          console.warn(`[${label}] Failed to fetch name for ${c.login}: ${err.message}`);
+          name = c.login; // fallback
         }
-      } else {
-        // For remaining contributors, default to their cached name or login
-        name = name || c.login;
       }
 
       contributors.push({
         login: c.login,
         name: name,
         avatar_url: c.avatar_url,
-        html_url: c.html_url,
+        html_url: existingHtmlUrls[c.login] || c.html_url,
         contributions: c.contributions,
       });
     }

@@ -1,3 +1,11 @@
+/**
+ * @file SearchBar/__mocks__/icons.js
+ * @description Mock icons module for search unit testing suites.
+ * 
+ * Layer: Test mocks.
+ * Boundary: Outputs simplified SVG string stubs.
+ */
+
 export const iconTitle = '<svg class="icon-title"></svg>';
 export const iconHeading = '<svg class="icon-heading"></svg>';
 export const iconContent = '<svg class="icon-content"></svg>';

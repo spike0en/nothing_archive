@@ -1,3 +1,12 @@
+/**
+ * @file StarMilestones.tsx
+ * @description Component that renders stargazing milestones for the repository as an 
+ * interactive progress indicator styled to match Nothing's hardware-based LED strip design.
+ * 
+ * Layer: Home page visualization components.
+ * Boundary: Consumes GitHub stats cache hook, renders local HTML segments and SVG icons.
+ */
+
 import React, { useMemo } from 'react';
 import { FaStar } from 'react-icons/fa';
 import clsx from 'clsx';
@@ -12,17 +21,16 @@ import { useGitHubRepoStats } from '../utils/github-cache';
  */
 const MILESTONES = [50, 100, 250, 500, 1_000, 1_500, 2_000, 3_000, 5_000, 10_000];
 
-/** Compact display format: 1000 → 1K, 10000 → 10K */
+/** Compact display format: 1000 -> 1K, 10000 -> 10K */
 function fmtCount(n: number): string {
   if (n >= 1_000) return `${(n / 1_000).toFixed(n % 1_000 === 0 ? 0 : 1)}K`;
   return n.toString();
 }
 
-
-
 /**
- * Progress bar widget displaying repository stargazing achievements
- * across defined milestones.
+ * StarMilestones component.
+ * Evaluates repository stargazers count, computes progress for discrete segments, 
+ * and handles UI state rendering.
  */
 export default function StarMilestones(): React.JSX.Element {
   // Shares the deduplicated repo stats fetch with CommitMatrix

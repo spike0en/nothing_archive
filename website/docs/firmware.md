@@ -11,21 +11,21 @@ hide_table_of_contents: true
 :::warning Disclaimer
 
 By using this archive, users acknowledge and accept these terms:
-- **Authenticity**: All firmware files are unaltered, unmodified, and sourced directly from the OEM.
-- **Flash at Your Own Risk**: Installing firmware on an unlocked bootloader carries inherent risks. Follow instructions carefully to avoid bricking your device.
-- **Compatibility**: Ensure the firmware matches your Nothing or CMF device variant before installation.
-- **No Warranty**: This is a community-driven project, unaffiliated with [Nothing](https://nothing.tech). The author and contributors are not liable for bricked devices due to misuse or firmware modifications.
-- **Integrity**: Redistribution is permitted only with proper attribution. Reselling freely available firmware is strictly prohibited.
+- Authenticity: all firmware files are unaltered, unmodified, and sourced directly from the OEM.
+- Flash at your own risk: installing firmware on an unlocked bootloader carries inherent risks. Follow instructions carefully to avoid bricking your device.
+- Compatibility: ensure the firmware matches your Nothing or CMF device variant before installation.
+- No warranty: this is a community-driven project, unaffiliated with [Nothing](https://nothing.tech). The author and contributors are not liable for bricked devices due to misuse or firmware modifications.
+- Integrity: redistribution is permitted only with proper attribution. Reselling freely available firmware is strictly prohibited.
 
 :::
 
 ### Features & Benefits
 
-- **Direct OTA Indexing**: Tracks Nothing OS OTA update links from official servers, providing access to incremental and full updates.
-- **Manual Installation**: Install firmware manually during staged rollouts or when updates fail using the built-in offline updater or via ADB sideload.
-- **Stock OTA Images**: Provides unmodified images for upgrades, downgrades, and partition flashing when full packages are unavailable.
-- **Rooting & Unrooting Support**: Provides stock boot images for Magisk, KernelSU, and Apatch, while allowing unrooting by flashing the original boot image.
-- **Device Recovery**: Provides fastboot-flashable Nothing OS firmware to resolve boot loops, recover soft-bricked devices, and restore stock ROM. You can automate this process using the [Nothing Flasher Script](https://github.com/spike0en/nothing_flasher) by following the [Flashing Stock ROM Guide](/docs/guides#flashing-stock-rom-unbrick--downgrade).
+- Direct OTA indexing: tracks Nothing OS OTA update links from official servers, providing access to incremental and full updates.
+- Manual installation: install firmware manually during staged rollouts or when updates fail using the built-in offline updater or via ADB sideload.
+- Stock OTA images: provides unmodified images for upgrades, downgrades, and partition flashing when full packages are unavailable.
+- Rooting and unrooting support: provides stock boot images for Magisk, KernelSU, and Apatch, while allowing unrooting by flashing the original boot image.
+- Device recovery: provides fastboot-flashable Nothing OS firmware to resolve boot loops, recover soft-bricked devices, and restore stock ROM. You can automate this process using the [Nothing Flasher Script](https://github.com/spike0en/nothing_flasher) by following the [Flashing Stock ROM Guide](/docs/guides#flashing-stock-rom-unbrick--downgrade).
 
 :::info
 

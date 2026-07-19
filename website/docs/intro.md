@@ -8,13 +8,13 @@ keywords: [nothing, cmf by nothing, nothing ecosystem, rooting, nothing firmware
 
 # Nothing Archive
 
-Your ultimate source for Nothing OS firmware, stock OTA images, community apps, projects, resources, comprehensive guides and more for Nothing & CMF by Nothing devices.
+Your ultimate source for Nothing OS firmware, stock OTA images, community apps, projects, resources, detailed guides and more for Nothing & CMF by Nothing devices.
 
 <div class="features-grid">
   <div class="feature-card">
     <div class="feature-icon">📦</div>
     <div class="feature-title">Factory Images</div>
-    <div class="feature-desc">Provides flashable system packages generated for every software build. This serves as the only source on the open web, offering an alternative to Google's factory images.</div>
+    <div class="feature-desc">Provides flashable system packages generated for every software build. This is the only source on the open web, offering an alternative to Google's factory images.</div>
   </div>
   <div class="feature-card">
     <div class="feature-icon">⚡</div>

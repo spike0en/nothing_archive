@@ -1,3 +1,11 @@
+/**
+ * @file MDXComponents/Code.tsx
+ * @description Theme override for code elements rendered within MDX content, routing to inline or block elements.
+ * 
+ * Layer: Theme MDX element overrides.
+ * Boundary: Chooses between @theme/CodeInline and @theme/CodeBlock.
+ */
+
 import type {ComponentProps, ReactNode} from 'react';
 import React from 'react';
 import CodeBlock from '@theme/CodeBlock';

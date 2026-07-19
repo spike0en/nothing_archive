@@ -1,3 +1,14 @@
+/**
+ * @file parse-devices.js
+ * @description Build-time parsing script that reads devices catalog from devices.md and 
+ * color metadata from device-colors.json, generating a consolidated JSON file of 
+ * device metadata for the Docusaurus site UI.
+ * 
+ * Boundary: Reads exclusively from local markdown and static JSON files, outputting 
+ * to src/data/devices-metadata.json. Does not interact with network or external APIs.
+ * Lifecycle: Runs synchronously as a prebuild hook in Node.js runtime.
+ */
+
 const fs = require('fs');
 const path = require('path');
 
@@ -6,6 +17,13 @@ const COLORS_JSON_PATH = path.join(__dirname, '..', 'src', 'data', 'device-color
 const OUT_JSON_PATH = path.join(__dirname, '..', 'src', 'data', 'devices-metadata.json');
 const CHANGELOGS_DIR = path.join(__dirname, '..', 'docs', 'changelogs');
 
+/**
+ * Extracts and returns an array of device names from a markdown column value.
+ * Parses markdown links if present, otherwise splits by forward slash.
+ * 
+ * @param {string} columnVal Raw markdown string from the Device column.
+ * @returns {string[]} Array of clean device names.
+ */
 function parseNames(columnVal) {
   const links = [];
   const regex = /\[([^\]]+)\]\([^)]+\)/g;
@@ -19,6 +37,13 @@ function parseNames(columnVal) {
   return columnVal.split('/').map(s => s.trim());
 }
 
+/**
+ * Parses and normalizes device codenames from a markdown column value.
+ * Converts codenames to lowercase and excludes the last Pokemon codename if multiple exist.
+ * 
+ * @param {string} columnVal Raw markdown string from the Codename column.
+ * @returns {string[]} Array of normalized, lowercase codenames.
+ */
 function parseCodenames(columnVal) {
   // e.g. "Spacewar / Abra" -> ["spacewar", "abra"]
   const parts = columnVal.split('/').map(p => p.trim());
@@ -29,6 +54,12 @@ function parseCodenames(columnVal) {
   return parts.map(p => p.toLowerCase());
 }
 
+/**
+ * Categorizes a device name into its corresponding series identifier.
+ * 
+ * @param {string} name Clean device name.
+ * @returns {string} Series category ('b', 'a', or 'number').
+ */
 function getSeries(name) {
   const cleanName = name.toLowerCase();
   if (cleanName.includes('lite') || /\([0-9]+b\)/.test(cleanName)) {
@@ -40,6 +71,16 @@ function getSeries(name) {
   return 'number';
 }
 
+/**
+ * Resolves the display name for a specific device folder from potential names.
+ * Matches suffix tags (pro, plus, lite) or defaults based on directory presence.
+ * 
+ * @param {string} folder Target folder name.
+ * @param {string[]} names Available names in the row.
+ * @param {string[]} rowCodenames Available codenames in the row.
+ * @param {string} changelogsDir Path to the local changelogs directory.
+ * @returns {string} The resolved clean name.
+ */
 function resolveDeviceName(folder, names, rowCodenames, changelogsDir) {
   if (names.length === 1) return names[0];
 
@@ -72,12 +113,24 @@ function resolveDeviceName(folder, names, rowCodenames, changelogsDir) {
   return match || names[0];
 }
 
+/**
+ * Preserves or applies capitalization formatting on a device codename.
+ * Matches against the original casing from markdown if available.
+ * 
+ * @param {string} codename Lowcase target codename.
+ * @param {string[]} originalCodenames List of original codenames for casing comparison.
+ * @returns {string} Capitalized codename.
+ */
 function capitalizeCodename(codename, originalCodenames) {
   // Find matching codename in original list to preserve casing (e.g. PacmanPro)
   const match = originalCodenames.find(c => c.toLowerCase() === codename.toLowerCase());
   return match ? match.trim() : codename.charAt(0).toUpperCase() + codename.slice(1);
 }
 
+/**
+ * Synchronously parses devices.md and merges with device-colors.json.
+ * Validates, sorts, and writes output to devices-metadata.json.
+ */
 function parseDevices() {
   console.log('[parse-devices] Reading devices.md and device-colors.json...');
   

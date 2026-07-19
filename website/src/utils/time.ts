@@ -1,6 +1,9 @@
 /**
- * Calculates a clean relative time difference string (e.g. 3m, 2h, 4d).
- * Used across telemetry feed components.
+ * @file time.ts
+ * @description Time formatting utility for computing human-readable relative ages.
+ * 
+ * Layer: Shared utilities.
+ * Boundary: Pure date calculation functions.
  * 
  * @param dateStr The ISO date string or timestamp string to compare.
  * @returns A formatted relative age string (e.g., "5m", "3h", "2d", or "N/A").

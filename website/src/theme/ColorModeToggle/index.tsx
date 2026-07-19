@@ -1,3 +1,11 @@
+/**
+ * @file ColorModeToggle/index.tsx
+ * @description Custom theme override component for toggling between Light, System, and Dark color modes.
+ * 
+ * Layer: Navigation theme overrides.
+ * Boundary: Controls root Docusaurus theme state via onChange callback.
+ */
+
 import React from 'react';
 import clsx from 'clsx';
 import useIsBrowser from '@docusaurus/useIsBrowser';

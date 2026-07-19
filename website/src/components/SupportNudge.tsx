@@ -1,3 +1,12 @@
+/**
+ * @file SupportNudge.tsx
+ * @description Non-intrusive, dismissable support nudge toast that appears 
+ * periodically in the bottom-right corner.
+ * 
+ * Layer: Shared UI components.
+ * Boundary: Dispatches CustomEvent 'open-support-modal' and syncs preferences with localStorage.
+ */
+
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { FaHeart, FaTimes, FaCheckCircle } from 'react-icons/fa';
 import styles from './SupportNudge.module.css';

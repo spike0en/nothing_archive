@@ -8,7 +8,7 @@ keywords: [nothing community, nothing tech reddit, nothing firmware x, nothing c
 
 # Featured & Mentions
 
-Nothing Archive has been featured, referenced, and discussed across official community portals, Reddit, YouTube, X (Twitter), and other developer platforms. Here is a curated log of these features and discussions:
+Nothing Archive is referenced and discussed across official community portals, Reddit, YouTube, X (Twitter), and other developer platforms. Here is a log of these references and discussions:
 
 ## Announcements & Community Hubs
 
@@ -27,10 +27,10 @@ Official announcements, community threads, and discussion hubs for Nothing Archi
   <a href="https://discord.com/channels/930878214237200394/1438475677278933075" target="_blank" rel="noopener noreferrer" class="mention-card">
     <div class="mention-header">
       <span class="mention-platform discord">Discord</span>
-      <span class="mention-date">Community Showcase</span>
+      <span class="mention-date">Community Projects</span>
     </div>
-    <div class="mention-title">Nothing Discord Project Showcase</div>
-    <div class="mention-description">Feature showcase and discussion channel inside the official Nothing Community Discord server.</div>
+    <div class="mention-title">Nothing Discord Projects</div>
+    <div class="mention-description">Feature listings and discussion channel inside the official Nothing Community Discord server.</div>
     <span class="mention-link">Open Discord &rarr;</span>
   </a>
   <a href="https://telegram.me/Nothing_Archive/37" target="_blank" rel="noopener noreferrer" class="mention-card">
@@ -46,7 +46,7 @@ Official announcements, community threads, and discussion hubs for Nothing Archi
 
 ## YouTube Features & Guides
 
-Video guides, software showcases, and setup tutorials highlighting Nothing Archive resources:
+Video guides, software walkthroughs, and setup tutorials highlighting Nothing Archive resources:
 
 <div class="mentions-grid">
   <a href="https://m.youtube.com/watch?v=wTK6TS3pXgc&t=3m40s" target="_blank" rel="noopener noreferrer" class="mention-card">
@@ -55,7 +55,7 @@ Video guides, software showcases, and setup tutorials highlighting Nothing Archi
       <span class="mention-date">Video Spotlight</span>
     </div>
     <div class="mention-title">Switch & Click</div>
-    <div class="mention-description">Featuring video segment where the project helped her to unbrick her device back to factory firmware and proceed with ubuntu touch installation.</div>
+    <div class="mention-description">A video segment showing how the project helped recover a device to stock firmware before installing Ubuntu Touch.</div>
     <span class="mention-link">Watch Video &rarr;</span>
   </a>
   <a href="https://youtu.be/ZFY-LaVl9kY?si=L_orlbPepSYBk2pk" target="_blank" rel="noopener noreferrer" class="mention-card">
@@ -64,7 +64,7 @@ Video guides, software showcases, and setup tutorials highlighting Nothing Archi
       <span class="mention-date">Video Spotlight</span>
     </div>
     <div class="mention-title">Techiboy</div>
-    <div class="mention-description">Featuring the entire Awesome Nothing website in its legacy days which is now merged in Nothing Archive.</div>
+    <div class="mention-description">Highlights the legacy Awesome Nothing website, which is now merged into Nothing Archive.</div>
     <span class="mention-link">Watch Video &rarr;</span>
   </a>
   <a href="https://www.youtube.com/results?search_query=spike0en+nothing+archive" target="_blank" rel="noopener noreferrer" class="mention-card">
@@ -73,7 +73,7 @@ Video guides, software showcases, and setup tutorials highlighting Nothing Archi
       <span class="mention-date">Search Directory</span>
     </div>
     <div class="mention-title">Other Videos & Guides</div>
-    <div class="mention-description">Other videos / tutorials and guides on flashing downgrading upgrading rooting and etc stuff utilizing resources and guides and scripts from nothing archive.</div>
+    <div class="mention-description">Video tutorials and guides on flashing, downgrading, upgrading, and rooting using resources from the archive.</div>
     <span class="mention-link">Search Videos &rarr;</span>
   </a>
 </div>

@@ -31,15 +31,15 @@ GCAM ports, configs, and camera presets for Nothing devices.
 1. Download the config file (`.xml`) from the links below.
 2. Open the downloaded GCAM app at least once. Make sure to give access to files, storage, camera, and other necessary permissions.
 3. The folder for the respective cam variant will be created automatically in the root of internal storage. The path might vary but it generally follows the following:
-- **AGC** → `Internal storage/Download/AGC/AGC X.Y/configs/`  
-- **LMC** → `Internal storage/LMCX.Y/`  
-- **SGCAM** → `Internal storage/SGCAM/X.Y.Z/XML/`
+- **AGC**: `Internal storage/Download/AGC/AGC X.Y/configs/`  
+- **LMC**: `Internal storage/LMCX.Y/`  
+- **SGCAM**: `Internal storage/SGCAM/X.Y.Z/XML/`
 
 > `X.Y` or `X.Y.Z` represents the app version (e.g., `9.2` or `9.2.114`).
 
 4. Move the downloaded `.xml` or `.agc` config file to the path mentioned in step 3.
 5. Open the GCAM app again and load the config file as follows:
-- For AGC: More settings Icon > Give access permissions to all files > come back > Go to **Settings → Load Config**, then select the `.agc` file which you have saved under the AGC Configs folder then **Save**.
+- For AGC: More settings Icon > Give access permissions to all files > come back > Go to **Settings**, select **Load Config**, then select the `.agc` file which you have saved under the AGC Configs folder then **Save**.
 - LMC: Double-tap the empty area between the **shutter button** and the **camera switch icon**, select the config, and tap **Import**. Grant permissions if prompted.
 6. The config will be applied automatically. Switch between profiles (if available) from the top bar.
 

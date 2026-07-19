@@ -5,9 +5,9 @@
  * All homepage components consume GitHub data through hooks exported
  * from this module. This eliminates duplicate API calls, extends cache
  * lifetime, and provides a tiered fallback chain:
- *   in-memory → localStorage → bundled static JSON → error state
+ *   in-memory -> localStorage -> bundled static JSON -> error state
  *
- * The hitscounter.dev fetch is intentionally excluded — it is not a
+ * The hitscounter.dev fetch is intentionally excluded; it is not a
  * GitHub API call and is not subject to the same rate limits.
  */
 
@@ -66,7 +66,7 @@ type ErrorState = 'RATE_LIMITED' | 'FAILED' | null;
 
 const CACHE_TTL = 15 * 60 * 1000; // 15 minutes
 
-/** localStorage key prefixes — versioned to allow safe cache invalidation. */
+/** localStorage key prefixes, versioned to allow safe cache invalidation. */
 const LS_KEYS = {
   releases: 'na_gh_releases_v3',
   releasesTime: 'na_gh_releases_time_v3',
@@ -74,8 +74,8 @@ const LS_KEYS = {
   commitsTime: 'na_gh_commits_time_v3',
   repoStats: 'na_gh_stats_v3',
   repoStatsTime: 'na_gh_stats_time_v3',
-  contributors: 'na_gh_contributors_v4',
-  contributorsTime: 'na_gh_contributors_time_v4',
+  contributors: 'na_gh_contributors_v6',
+  contributorsTime: 'na_gh_contributors_time_v6',
 } as const;
 
 // --- In-memory deduplication layer ---
@@ -86,11 +86,18 @@ const LS_KEYS = {
  */
 const inflight = new Map<string, Promise<any>>();
 
-/** In-memory data cache — survives across re-renders within a single page session. */
+/** In-memory data cache, surviving across re-renders within a single page session. */
 const memoryCache = new Map<string, { data: any; timestamp: number }>();
 
 // --- Core cache utilities ---
 
+/**
+ * Reads and parses data from localStorage.
+ * 
+ * @param key The key under which the data is stored in localStorage.
+ * @param timeKey The key under which the timestamp is stored.
+ * @returns The parsed data and freshness status, or null on cache miss or error.
+ */
 function readLocalStorage<T>(key: string, timeKey: string): { data: T; fresh: boolean } | null {
   try {
     const raw = localStorage.getItem(key);
@@ -104,18 +111,29 @@ function readLocalStorage<T>(key: string, timeKey: string): { data: T; fresh: bo
   }
 }
 
+/**
+ * Serializes and writes data to localStorage.
+ * 
+ * @param key The destination storage key.
+ * @param timeKey The destination timestamp key.
+ * @param data The payload to serialize and write.
+ */
 function writeLocalStorage(key: string, timeKey: string, data: any): void {
   try {
     localStorage.setItem(key, JSON.stringify(data));
     localStorage.setItem(timeKey, Date.now().toString());
   } catch {
-    // localStorage full or unavailable — degrade silently
+    // localStorage full or unavailable; degrade silently
   }
 }
 
 /**
  * Deduplicating fetch wrapper. If a request for the same cacheKey is
  * already in flight, returns the existing Promise.
+ * 
+ * @param cacheKey Unique identifier key for request de-duplication.
+ * @param fetcher Async callback that performs the underlying data fetch.
+ * @returns Promise resolving to the fetched data type T.
  */
 async function deduplicatedFetch<T>(
   cacheKey: string,
@@ -273,16 +291,24 @@ async function fetchContributorsFromAPI(): Promise<Contributor[]> {
   }
 
   const raw = await response.json();
-  return raw.map((item: any) => {
+  const apiContributors: Contributor[] = raw.map((item: any) => {
     const staticMatch = (staticContributors as any[] || []).find((sc) => sc.login === item.login);
     return {
       login: item.login,
       name: staticMatch?.name || item.name || item.login,
       avatar_url: item.avatar_url,
-      html_url: item.html_url,
+      html_url: staticMatch?.html_url || item.html_url,
       contributions: item.contributions,
     };
   });
+
+  // Preserve any static contributors (such as core team members) missing from GitHub API response
+  const apiLogins = new Set(apiContributors.map((c) => c.login));
+  const missingStatic = (staticContributors as Contributor[] || []).filter(
+    (sc) => !apiLogins.has(sc.login),
+  );
+
+  return [...apiContributors, ...missingStatic];
 }
 
 // --- Generic stale-while-revalidate hook factory ---

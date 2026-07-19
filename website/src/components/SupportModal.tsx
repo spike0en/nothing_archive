@@ -1,3 +1,12 @@
+/**
+ * @file SupportModal.tsx
+ * @description Component rendering the donation modal options, supporting NOWPayments 
+ * widget embedding, copyable transaction addresses, and a supporter recognition widget.
+ * 
+ * Layer: Global modal overlay components.
+ * Boundary: Integrates with donations.json, donors.json, and the local SupporterWidget.
+ */
+
 import React, { useState, useEffect, useRef } from 'react';
 import { FaCopy, FaCheck, FaTimes, FaExternalLinkAlt, FaHeart } from 'react-icons/fa';
 import donationsData from '../data/donations.json';
@@ -20,6 +29,12 @@ interface SupportModalProps {
   onClose: () => void;
 }
 
+/**
+ * SupportModal component.
+ * Displays various payment channels and hooks keyboard listeners to close the dialog.
+ * 
+ * @param props Props containing isOpen and onClose callback
+ */
 export default function SupportModal({ isOpen, onClose }: SupportModalProps): React.JSX.Element | null {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [iframeLoading, setIframeLoading] = useState(true);

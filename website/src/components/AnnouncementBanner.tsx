@@ -1,3 +1,11 @@
+/**
+ * @file AnnouncementBanner.tsx
+ * @description Header announcement banner notifying users of recent Nothing OS release updates.
+ * 
+ * Layer: Home and global theme components.
+ * Boundary: Consumes useGitHubReleases and local storage dismissal keys.
+ */
+
 import React, { useState, useEffect } from 'react';
 import Link from '@docusaurus/Link';
 import { usePluginData } from '@docusaurus/useGlobalData';
