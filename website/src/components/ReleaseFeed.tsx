@@ -1,7 +1,7 @@
 /**
  * @file ReleaseFeed.tsx
  * @description Component that displays the live OTA and firmware release updates feed on the homepage.
- * 
+ *
  * Layer: Home page feed components.
  * Boundary: Consumes GitHub releases cache hook and Docusaurus global changelogs plugin data.
  */

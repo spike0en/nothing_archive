@@ -1,8 +1,8 @@
 /**
  * @file SupportModal.tsx
- * @description Component rendering the donation modal options, supporting NOWPayments 
+ * @description Component rendering the donation modal options, supporting NOWPayments
  * widget embedding, copyable transaction addresses, and a supporter recognition widget.
- * 
+ *
  * Layer: Global modal overlay components.
  * Boundary: Integrates with donations.json, donors.json, and the local SupporterWidget.
  */
@@ -32,12 +32,13 @@ interface SupportModalProps {
 /**
  * SupportModal component.
  * Displays various payment channels and hooks keyboard listeners to close the dialog.
- * 
+ *
  * @param props Props containing isOpen and onClose callback
  */
 export default function SupportModal({ isOpen, onClose }: SupportModalProps): React.JSX.Element | null {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [iframeLoading, setIframeLoading] = useState(true);
+  const [loadPaymentWidget, setLoadPaymentWidget] = useState(false);
   const [scale, setScale] = useState(1);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -220,38 +221,44 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
                   ref={containerRef} 
                   className={styles.iframeWrapper}
                   style={{
-                    height: `${615 * scale}px`
+                    height: loadPaymentWidget ? `${615 * scale}px` : 'auto',
                   }}
                 >
-                  {iframeLoading && (
+                  {loadPaymentWidget && iframeLoading && (
                     <div className={styles.spinnerContainer}>
                       <div className={styles.spinner} />
                       <span className={styles.spinnerText}>Loading Widget...</span>
                     </div>
                   )}
-                  <iframe
-                    src="https://nowpayments.io/embeds/donation-widget?api_key=5c5ff9c5-3853-4097-9453-03f55ea87d34"
-                    width="346"
-                    height="615"
-                    frameBorder="0"
-                    scrolling="no"
-                    style={{ 
-                      position: 'absolute',
-                      left: '50%',
-                      top: 0,
-                      overflowY: 'hidden', 
-                      display: 'block', 
-                      borderRadius: '14px',
-                      opacity: iframeLoading ? 0 : 1,
-                      transition: 'opacity 0.3s ease',
-                      transform: `translate(-50%, 0) scale(${scale})`,
-                      transformOrigin: 'top center'
-                    }}
-                    title="NOWPayments Donation Widget"
-                    onLoad={() => setIframeLoading(false)}
-                  >
-                    Can't load widget
-                  </iframe>
+                  {loadPaymentWidget ? (
+                    <iframe
+                      src="https://nowpayments.io/embeds/donation-widget?api_key=5c5ff9c5-3853-4097-9453-03f55ea87d34"
+                      width="346"
+                      height="615"
+                      frameBorder="0"
+                      scrolling="no"
+                      style={{
+                        position: 'absolute',
+                        left: '50%',
+                        top: 0,
+                        overflowY: 'hidden',
+                        display: 'block',
+                        borderRadius: '14px',
+                        opacity: iframeLoading ? 0 : 1,
+                        transition: 'opacity 0.3s ease',
+                        transform: `translate(-50%, 0) scale(${scale})`,
+                        transformOrigin: 'top center'
+                      }}
+                      title="NOWPayments Donation Widget"
+                      onLoad={() => setIframeLoading(false)}
+                    >
+                      Can't load widget
+                    </iframe>
+                  ) : (
+                    <button type="button" className={styles.paidBtn} onClick={() => setLoadPaymentWidget(true)}>
+                      Load payment widget
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

@@ -54,9 +54,6 @@ html.theme-transition *::after {
 }
 
 /* Opt-out: elements whose own transitions must stay untouched during theme switch */
-html.theme-transition .navbar__search-input,
-html.theme-transition div[class*="searchBarContainer"],
-html.theme-transition [class*="navbarSearchContainer"],
 html.theme-transition .navbar-sidebar,
 html.theme-transition [class*="collapseSidebarButton"],
 html.theme-transition [class*="expandButton"] {
@@ -433,7 +430,7 @@ div[class*="tableWrapper"] table td,
   margin-right: 0.5rem !important;
 }
 
-.navbar__items--right div[class*="navbarSearchContainer"] {
+.navbar__items--right .DocSearch-Button {
   order: 3 !important;
   margin-left: 0.5rem !important;
   margin-right: 0 !important;
@@ -520,21 +517,9 @@ div[class*="tableWrapper"] table td,
     height: 18px;
   }
 
-  /* Resolve search container positioning conflicts */
-  div[class*="navbarSearchContainer"] {
-    position: relative !important;
-    right: auto !important;
-    margin-left: 0;
-  }
-
   /* Keep color mode toggle visible on tablet view */
   .navbar [class*="colorModeToggle"] {
     display: flex !important;
-  }
-
-  /* Disable transitions on mobile/tablet to prevent double animation/flicker during index hydration/wrapping */
-  div[class*="navbarSearchContainer"] .navbar__search-input {
-    transition: none !important;
   }
 
   /* Compact right-side spacing for mobile viewports */
@@ -548,7 +533,7 @@ div[class*="tableWrapper"] table td,
     margin-right: 0.25rem !important;
   }
 
-  .navbar__items--right div[class*="navbarSearchContainer"] {
+  .navbar__items--right .DocSearch-Button {
     margin-left: 0.25rem !important;
     margin-right: 0 !important;
   }
@@ -575,9 +560,9 @@ div[class*="tableWrapper"] table td,
     margin-right: 0 !important;
   }
 
-  div[class*="navbarSearchContainer"] {
+  .navbar__items--right .DocSearch-Button {
     margin-left: 0 !important;
-    padding-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   /* Hide the Stars badge to save space */
@@ -1963,23 +1948,6 @@ details.alert {
   box-shadow: none !important;
 }
 
-/* Sibling stack styling to match Nothing OS settings menus */
-details:not([open]):has(+ details:not([open])),
-details[class*="details"]:not([open]):has(+ details:not([open])),
-details.alert:not([open]):has(+ details.alert:not([open])) {
-  border-bottom-left-radius: 6px !important;
-  border-bottom-right-radius: 6px !important;
-  margin-bottom: 3px !important;
-}
-
-details:not([open]) + details:not([open]),
-details[class*="details"]:not([open]) + details[class*="details"]:not([open]),
-details.alert:not([open]) + details.alert:not([open]) {
-  border-top-left-radius: 6px !important;
-  border-top-right-radius: 6px !important;
-  margin-top: 0 !important;
-}
-
 
 
 details:hover,
@@ -2133,190 +2101,113 @@ details summary:hover::before {
 }
 
 /* ==========================================
-   SEARCH BAR POLISH
+   DOCSEARCH
    ========================================== */
 
-/* Search container & Input field styling */
-div[class*="navbarSearchContainer"] {
-  padding-left: 0.25rem !important;
+.DocSearch {
+  --docsearch-primary-color: var(--ifm-color-primary);
+  --docsearch-highlight-color: var(--ifm-color-primary);
+  --docsearch-text-color: var(--ifm-font-color-base);
+  --docsearch-muted-color: var(--ifm-color-emphasis-600);
+  --docsearch-container-background: rgba(0, 0, 0, 0.7);
+  --docsearch-modal-background: var(--ifm-background-surface-color);
+  --docsearch-searchbox-background: var(--ifm-background-color);
+  --docsearch-searchbox-focus-background: var(--ifm-background-color);
+  --docsearch-hit-background: var(--ifm-background-surface-color);
+  --docsearch-hit-color: var(--ifm-font-color-base);
+  --docsearch-footer-background: var(--ifm-background-color);
+  --docsearch-key-gradient: none;
+  --docsearch-key-shadow: none;
 }
 
-.navbar__search-input {
-  font-family: var(--ifm-font-family-base) !important;
-  font-size: 0.85rem !important;
-  font-weight: 500 !important;
-  background-color: rgba(0, 0, 0, 0.04) !important;
-  border: 1px solid var(--nothing-border) !important;
-  border-radius: 12px !important;
-  color: inherit !important;
-  padding: 0.4rem 2.25rem 0.4rem 2.25rem !important;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='black' opacity='0.5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' height='16px' width='16px'><path d='M6.02945,10.20327a4.17382,4.17382,0,1,1,4.17382-4.17382A4.15609,4.15609,0,0,1,6.02945,10.20327Zm9.69195,4.2199L10.8989,9.59979A5.88021,5.88021,0,0,0,12.058,6.02856,6.00467,6.00467,0,1,0,9.59979,10.8989l4.82338,4.82338a.89729.89729,0,0,0,1.29912,0,.89749.89749,0,0,0-.00087-1.29909Z' /></svg>") !important;
-  background-position: 0.75rem center !important;
-  transition: width 0.25s ease, padding 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important; /* impeccable-disable-line layout-transition */
-  width: 14rem !important;
-  /* Expanded width on desktop/tablet */
+.DocSearch-Button {
+  border: 1px solid var(--nothing-border);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  margin: 0;
+  min-width: 2.5rem;
+  padding: 0.35rem 0.55rem;
 }
 
-/* Disable transitions before the autocomplete library has wrapped the input to prevent double animation and load shrink animations */
-.navbar__search>.navbar__search-input {
-  transition: none !important;
+.DocSearch-Button:hover,
+.DocSearch-Button:focus-visible {
+  background: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(215, 25, 33, 0.18);
+  color: var(--ifm-font-color-base);
 }
 
-
-[data-theme='dark'] .navbar__search-input {
-  background-color: rgba(255, 255, 255, 0.05) !important;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='white' opacity='0.6' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' height='16px' width='16px'><path d='M6.02945,10.20327a4.17382,4.17382,0,1,1,4.17382-4.17382A4.15609,4.15609,0,0,1,6.02945,10.20327Zm9.69195,4.2199L10.8989,9.59979A5.88021,5.88021,0,0,0,12.058,6.02856,6.00467,6.00467,0,1,0,9.59979,10.8989l4.82338,4.82338a.89729.89729,0,0,0,1.29912,0,.89749.89749,0,0,0-.00087-1.29909Z' /></svg>") !important;
+.DocSearch-Button-Placeholder {
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.85rem;
 }
 
-/* Input Hover State */
-.navbar__search-input:hover {
-  background-color: rgba(0, 0, 0, 0.06) !important;
-  border-color: var(--nothing-border-strong) !important;
+.DocSearch-Button-Key {
+  background: var(--ifm-background-color);
+  border: 1px solid var(--nothing-border);
+  box-shadow: none;
+  color: var(--ifm-font-color-base);
 }
 
-[data-theme='dark'] .navbar__search-input:hover {
-  background-color: rgba(255, 255, 255, 0.07) !important;
+.DocSearch-Modal {
+  border: 1px solid var(--nothing-border-strong);
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
 }
 
-/* Input Focus State - soft red focus glow instead of harsh sharp outline */
-.navbar__search-input:focus {
-  outline: none !important;
-  background-color: var(--ifm-card-background-color) !important;
-  border-color: var(--ifm-color-primary) !important;
-  box-shadow: 0 0 0 3px rgba(215, 25, 33, 0.12) !important;
+.DocSearch-Form {
+  border: 1px solid var(--nothing-border);
+  border-radius: 12px;
+  box-shadow: none;
 }
 
-[data-theme='dark'] .navbar__search-input:focus {
-  box-shadow: 0 0 0 3px rgba(215, 25, 33, 0.18) !important;
+.DocSearch-Form:focus-within {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(215, 25, 33, 0.18);
 }
 
-/* Custom text selection styling */
-.navbar__search-input::selection {
-  background-color: var(--ifm-color-primary) !important;
-  color: #ffffff !important;
+.DocSearch-Input {
+  font-family: var(--ifm-font-family-base);
 }
 
-/* Collapsed state when search input is not focused - applied to all screen sizes */
-.navbar__search-input:not(:focus) {
-  width: 2.25rem !important;
-  height: 2.25rem !important;
-  padding: 0 !important;
-  background-position: center !important;
-  color: transparent !important;
-  cursor: pointer;
+.DocSearch-Hit a {
+  border: 1px solid transparent;
+  border-radius: 10px;
 }
 
-.navbar__search-input:not(:focus)::placeholder {
-  color: transparent !important;
+.DocSearch-Hit[aria-selected='true'] a,
+.DocSearch-Hit a:hover {
+  background: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color: #ffffff;
 }
 
-.navbar__search-input:not(:focus)::-webkit-input-placeholder {
-  color: transparent !important;
+.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-path,
+.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-title,
+.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-icon,
+.DocSearch-Hit a:hover .DocSearch-Hit-path,
+.DocSearch-Hit a:hover .DocSearch-Hit-title,
+.DocSearch-Hit a:hover .DocSearch-Hit-icon {
+  color: #ffffff;
 }
 
-.navbar__search-input:not(:focus)::-moz-placeholder {
-  color: transparent !important;
+.DocSearch-Hit mark {
+  color: var(--ifm-color-primary);
 }
 
-/* Hide the keyboard shortcut hint when search is collapsed */
-.navbar__search:not(:focus-within) div[class*="searchHintContainer"] {
-  display: none !important;
+.DocSearch-Hit[aria-selected='true'] mark,
+.DocSearch-Hit a:hover mark {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
-/* Hide the search clear button when search is collapsed */
-.navbar__search:not(:focus-within) button[class*="searchClearButton"] {
-  display: none !important;
+.DocSearch-Commands-Key,
+.DocSearch-Footer kbd {
+  border: 1px solid var(--nothing-border);
+  border-radius: 4px;
+  box-shadow: none;
 }
-
-
-/* On mobile, when focused, restrict width so it fits */
-@media (max-width: 576px) {
-  .navbar__search-input:focus {
-    width: 10rem !important;
-  }
-}
-
-/* Keyboard shortcut hint container positioning override */
-.navbar__search div[class*="searchHintContainer"] {
-  right: 14px !important;
-}
-
-/* Keyboard shortcut hint tags - uniform inline-flex alignment */
-.navbar__search kbd[class*="searchHint"] {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  height: 18px !important;
-  min-width: 18px !important;
-  padding: 0 4px !important;
-  border: 1px solid var(--nothing-border) !important;
-  background-color: rgba(0, 0, 0, 0.04) !important;
-  box-shadow: none !important;
-  font-family: var(--ifm-font-family-base) !important;
-  font-size: 0.65rem !important;
-  line-height: 1 !important;
-  color: inherit !important;
-  opacity: 0.6 !important;
-  border-radius: 4px !important;
-  vertical-align: unset !important;
-}
-
-[data-theme='dark'] .navbar__search kbd[class*="searchHint"] {
-  background-color: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(255, 255, 255, 0.06) !important;
-}
-
-/* Local search results dropdown dropdownMenu container */
-div[class*="dropdownMenu"] {
-  background-color: var(--ifm-card-background-color) !important;
-  border: 1px solid var(--nothing-border) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
-  padding: 0.75rem !important;
-  margin-top: 8px !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-}
-
-[data-theme='dark'] div[class*="dropdownMenu"] {
-  background-color: rgba(18, 18, 18, 0.85) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
-}
-
-/* Individual Suggestions inside search menu */
-div[class*="dropdownMenu"] [class*="suggestion"] {
-  background-color: rgba(0, 0, 0, 0.02) !important;
-  border: 1px solid rgba(0, 0, 0, 0.04) !important;
-  border-radius: 10px !important;
-  box-shadow: none !important;
-  color: inherit !important;
-  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease !important;
-}
-
-[data-theme='dark'] div[class*="dropdownMenu"] [class*="suggestion"] {
-  background-color: rgba(255, 255, 255, 0.02) !important;
-  border-color: rgba(255, 255, 255, 0.03) !important;
-}
-
-/* Activated suggestion item (keyboard navigate / mouse hover) */
-div[class*="dropdownMenu"] [class*="suggestion"][class*="cursor"] {
-  background-color: var(--ifm-color-primary) !important;
-  border-color: var(--ifm-color-primary) !important;
-  color: #ffffff !important;
-  transform: translateY(-1px);
-}
-
-div[class*="dropdownMenu"] [class*="suggestion"][class*="cursor"] mark {
-  color: #ffffff !important;
-  text-decoration: underline !important;
-}
-
-div[class*="dropdownMenu"] [class*="suggestion"] mark {
-  background: none !important;
-  color: var(--ifm-color-primary) !important;
-  font-weight: 700 !important;
-}
-
 .table-copy-wrapper {
   display: inline-flex;
   align-items: center;
@@ -2938,32 +2829,6 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
   }
 }
 
-/* Align adjacent collapsible elements as a single grouped settings container using custom corner radii */
-.markdown details:not([open]):has(+ details:not([open])),
-.theme-doc-markdown details:not([open]):has(+ details:not([open])) {
-  margin-bottom: 3px !important;
-  border-top-left-radius: 24px !important;
-  border-top-right-radius: 24px !important;
-  border-bottom-left-radius: 6px !important;
-  border-bottom-right-radius: 6px !important;
-}
-
-.markdown details:not([open]) + details:not([open]),
-.theme-doc-markdown details:not([open]) + details:not([open]) {
-  margin-top: 0 !important;
-  border-top-left-radius: 6px !important;
-  border-top-right-radius: 6px !important;
-  border-bottom-left-radius: 24px !important;
-  border-bottom-right-radius: 24px !important;
-}
-
-/* Override inner corner radii for elements between the head and tail of the stack */
-.markdown details:not([open]) + details:not([open]):has(+ details:not([open])),
-.theme-doc-markdown details:not([open]) + details:not([open]):has(+ details:not([open])) {
-  margin-bottom: 3px !important;
-  border-radius: 6px !important;
-}
-
 /* When a details element is open, it should stand out as a spaced, fully rounded island */
 .markdown details[open],
 .theme-doc-markdown details[open] {
@@ -3168,4 +3033,4 @@ div[class*="dropdownMenu"] [class*="suggestion"] mark {
 .markdown h3 {
   margin-top: 2rem !important;
   margin-bottom: 1rem !important;
-}
+}

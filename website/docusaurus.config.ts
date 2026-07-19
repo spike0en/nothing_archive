@@ -1,9 +1,9 @@
 /**
  * @file docusaurus.config.ts
- * @description Primary configuration file for the Docusaurus-based site. Defines 
- * build metadata, plugin setups, site navigation structure, internationalization, 
+ * @description Primary configuration file for the Docusaurus-based site. Defines
+ * build metadata, plugin setups, site navigation structure, internationalization,
  * and custom parsing tools for sorting changelogs and devices.
- * 
+ *
  * Layer: Global site configuration.
  * Boundary: Invoked exclusively by Docusaurus at build time.
  */
@@ -11,6 +11,8 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 
 /**
  * Maps Android version codename letters to their chronological ranks.
@@ -27,7 +29,7 @@ const androidOrder: Record<string, number> = {
 /**
  * Resolves the chronological rank of an Android codename letter.
  * Checks the explicit lookup map first, then dynamically falls back to alphabetical rank for B-Z.
- * 
+ *
  * @param letter The Android version letter (e.g. 'B', 'V', 'T')
  * @returns Numerical rank representing chronological order (higher is newer)
  */
@@ -47,7 +49,7 @@ function getAndroidLetterRank(letter: string): number {
 
 /**
  * Compares two software version strings.
- * 
+ *
  * @param vAStr First version string (e.g. '1.0.1')
  * @param vBStr Second version string (e.g. '1.0.2')
  * @returns Negative if vAStr > vBStr, positive if vBStr > vAStr, or 0 if equal.
@@ -76,7 +78,7 @@ function compareVersions(vAStr: string, vBStr: string): number {
 /**
  * Sorts Docusaurus changelog documentation pages.
  * Orders them chronologically by Android letter rank, version string, date, and timestamp.
- * 
+ *
  * @param idA First changelog file identifier path
  * @param idB Second changelog file identifier path
  * @returns Comparison value for sorting
@@ -118,7 +120,7 @@ function compareChangelogs(idA: string, idB: string): number {
 
 /**
  * Resolves the numeric ranking score of a device name suffix variant.
- * 
+ *
  * @param name Device display name
  * @returns Numeric variant rank (lower number represents higher priority)
  */
@@ -346,6 +348,20 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
 
 const siteUrl = process.env.SITE_URL || (process.env.GITHUB_ACTIONS === 'true' ? 'https://nothingarchive.tech' : 'http://localhost:3000');
 const baseUrl = process.env.BASE_URL || '/';
+const websiteSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${siteUrl}${baseUrl}#website`,
+  name: 'Nothing Archive',
+  url: `${siteUrl}${baseUrl}`,
+  description: 'A curated hub for everything related to the Nothing ecosystem.',
+  inLanguage: 'en',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${siteUrl}${baseUrl}search?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+});
 
 const config: Config = {
   title: 'Nothing Archive',
@@ -354,7 +370,7 @@ const config: Config = {
 
   future: {
     v4: true,
-    experimental_faster: true,
+    faster: true,
   },
 
   url: siteUrl,
@@ -385,12 +401,10 @@ const config: Config = {
       name: 'changelogs-plugin',
       async contentLoaded({ actions }) {
         const { setGlobalData } = actions;
-        const fs = require('fs');
-        const path = require('path');
         const re = /-([a-zA-Z])([\d.]+)-(\d{6})-(\d{4})$/;
 
         const changelogsDir = path.join(__dirname, 'docs', 'changelogs');
-        const latestLinks = {};
+        const latestLinks: Record<string, string> = {};
         const changelogLinks: Record<string, string> = {};
         
         if (fs.existsSync(changelogsDir)) {
@@ -506,17 +520,7 @@ const config: Config = {
     ],
   ],
 
-  themes: [
-    [
-      // Local offline search provider
-      require.resolve('@easyops-cn/docusaurus-search-local'),
-      {
-        hashed: true,
-        language: ['en'],
-        fuzzyMatchingDistance: 0,
-      },
-    ],
-  ],
+  themes: ['@docusaurus/theme-mermaid'],
 
   presets: [
     [
@@ -541,6 +545,7 @@ const config: Config = {
         },
         sitemap: {
           changefreq: 'weekly',
+          lastmod: 'date',
           priority: 0.5,
           ignorePatterns: ['/search'],
           filename: 'sitemap.xml',
@@ -562,14 +567,6 @@ const config: Config = {
   ],
 
   headTags: [
-    // Core SEO keywords for global indexation
-    {
-      tagName: 'meta',
-      attributes: {
-        name: 'keywords',
-        content: 'Nothing Phone, Nothing OS, Nothing OS firmware, Nothing OTA update, CMF by Nothing, Nothing Phone firmware download, Nothing archive, Glyph interface, Nothing community apps',
-      },
-    },
     // Search engine verification tokens
     {
       tagName: 'meta',
@@ -584,6 +581,20 @@ const config: Config = {
         name: 'msvalidate.01',
         content: '9A91D8D4ED9FB1AF08C3344E84B33661',
       },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'algolia-site-verification',
+        content: '82DB95221F91EA16',
+      },
+    },
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: websiteSchema,
     },
     {
       tagName: 'link',
@@ -684,6 +695,7 @@ const config: Config = {
   themeConfig: {
     image: 'img/brand/social-banner.png',
     metadata: [
+      { name: 'keywords', content: 'Nothing Phone, Nothing OS, Nothing OS firmware, Nothing OTA update, CMF by Nothing, Nothing Phone firmware download, Nothing archive, Glyph interface, Nothing community apps' },
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'Nothing Archive' },
       { property: 'og:image', content: `${siteUrl}${baseUrl}img/brand/social-banner.png` },
@@ -694,6 +706,20 @@ const config: Config = {
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:image', content: `${siteUrl}${baseUrl}img/brand/social-banner.png` },
     ],
+    algolia: {
+      appId: 'LIS46M13N2',
+      apiKey: 'e78b1e8d8e1e54f001d08b919bc096f9',
+      indexName: 'Nothing Archive crawl',
+      contextualSearch: true,
+      searchPagePath: 'search',
+      insights: false,
+    },
+    mermaid: {
+      theme: {
+        light: 'neutral',
+        dark: 'dark',
+      },
+    },
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
