@@ -1,3 +1,11 @@
+/**
+ * @file SearchBar/SuggestionTemplate.js
+ * @description HTML string renderer for individual search autocomplete suggestion items.
+ * 
+ * Layer: Search theme overrides.
+ * Boundary: Formats document titles, headings, and AskAI prompts for autocomplete.js dropdown.
+ */
+
 import { SearchDocumentType, } from "@easyops-cn/docusaurus-search-local/dist/client/shared/interfaces";
 import { concatDocumentPath } from "@easyops-cn/docusaurus-search-local/dist/client/client/utils/concatDocumentPath";
 import { escapeHtml } from "@easyops-cn/docusaurus-search-local/dist/client/client/utils/escapeHtml";
@@ -7,6 +15,10 @@ import { highlightStemmed } from "@easyops-cn/docusaurus-search-local/dist/clien
 import { explicitSearchResultPath } from "@easyops-cn/docusaurus-search-local/dist/client/client/utils/proxiedGenerated";
 import { iconAction, iconAskAI, iconContent, iconHeading, iconTitle, iconTreeInter, iconTreeLast, } from "./icons";
 import styles from "./SearchBar.module.css";
+
+/**
+ * SuggestionTemplate component returning formatted HTML strings for individual search results.
+ */
 export function SuggestionTemplate({ document, type, page, metadata, tokens, isInterOfTree, isLastOfTree, }) {
     if (type === SearchDocumentType.AskAI) {
         return [

@@ -1,3 +1,11 @@
+/**
+ * @file ReleaseFeed.tsx
+ * @description Component that displays the live OTA and firmware release updates feed on the homepage.
+ *
+ * Layer: Home page feed components.
+ * Boundary: Consumes GitHub releases cache hook and Docusaurus global changelogs plugin data.
+ */
+
 import React from 'react';
 import Link from '@docusaurus/Link';
 import { usePluginData } from '@docusaurus/useGlobalData';
@@ -10,11 +18,15 @@ interface ChangelogsPluginData {
   changelogLinks: Record<string, string>;
 }
 
+/**
+ * ReleaseFeed component.
+ * Filters and lists latest firmware releases per device model and computes total download metrics.
+ */
 export default function ReleaseFeed(): React.JSX.Element {
-  // Centralized GitHub data hook — deduplicated, stale-while-revalidate
+  // Centralized GitHub data hook: deduplicated, stale-while-revalidate
   const { releases, totalCount: totalReleasesCount, status: statusSource, error: errorState, loading } = useGitHubReleases();
   const { changelogLinks } = usePluginData('changelogs-plugin') as ChangelogsPluginData;
-  // Track latest release per model
+  // Track the latest release per model.
   const latestReleasesPerModel = React.useMemo(() => {
     const seen = new Set<string>();
     const result: Release[] = [];

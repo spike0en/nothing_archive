@@ -1,3 +1,12 @@
+/**
+ * @file CommitMatrix.tsx
+ * @description Component that displays commit statistics, stargazers, page visitor hits, 
+ * and a list of recent commits to the repository.
+ * 
+ * Layer: Home page metadata components.
+ * Boundary: Reads GitHub stats/commits hooks and local visitor API, renders local HTML structure.
+ */
+
 import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import styles from './CommitMatrix.module.css';
@@ -14,8 +23,12 @@ const HITS_CACHE_KEY = 'nothing_archive_hits_v1';
 const HITS_CACHE_TIME_KEY = 'nothing_archive_hits_time_v1';
 const HITS_CACHE_TIMEOUT = 15 * 60 * 1000;
 
+/**
+ * CommitMatrix component.
+ * Fetches hitscounter data, filters recent commits, and formats authors for display.
+ */
 export default function CommitMatrix(): React.JSX.Element {
-  // Centralized GitHub data hooks — deduplicated, stale-while-revalidate
+  // Centralized GitHub data hooks: deduplicated, stale-while-revalidate
   const { commits, status: commitStatus, error: commitError, loading: commitLoading } = useGitHubCommits();
   const { stats: repoStats, loading: statsGhLoading } = useGitHubRepoStats();
 
@@ -23,7 +36,7 @@ export default function CommitMatrix(): React.JSX.Element {
   const errorState = commitError;
   const loading = commitLoading;
 
-  // hitscounter.dev is not a GitHub API — kept as a separate inline fetch
+  // hitscounter.dev is not a GitHub API; kept as a separate inline fetch
   const [hitsData, setHitsData] = useState<HitsState>({ hits: 0 });
   const [hitsLoading, setHitsLoading] = useState(true);
 
@@ -32,7 +45,7 @@ export default function CommitMatrix(): React.JSX.Element {
     return commits.filter(commit => new Date(commit.date).getTime() >= sevenDaysAgo);
   }, [commits]);
 
-  // Fetch hitscounter.dev visitor count (not a GitHub API — kept separate)
+  // Fetch hitscounter.dev visitor count (not a GitHub API; kept separate)
   useEffect(() => {
     async function loadHits() {
       try {

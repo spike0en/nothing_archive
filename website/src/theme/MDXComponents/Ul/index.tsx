@@ -1,3 +1,11 @@
+/**
+ * @file MDXComponents/Ul/index.tsx
+ * @description Theme override for unordered list (ul) elements rendered within MDX content.
+ * 
+ * Layer: Theme MDX element overrides.
+ * Boundary: Customizes class names for task-list subcomponents.
+ */
+
 import React, {type ReactNode} from 'react';
 import clsx from 'clsx';
 import type {Props} from '@theme/MDXComponents/Ul';

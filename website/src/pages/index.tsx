@@ -222,6 +222,48 @@ function HomepageFeatures() {
  * Community contribution section.
  * Fetches contributors from the GitHub API at runtime with localStorage caching.
  */
+/**
+ * Renders a contributor name. If it contains a parenthesized suffix (e.g. "Real Name (username)"),
+ * wraps the suffix in a distinct span to allow styling and breaking to a new line on smaller screens.
+ */
+function renderContributorName(name: string) {
+  const match = name.match(/^([^(]+)\s*\(([^)]+)\)$/);
+  if (match) {
+    return (
+      <>
+        {match[1].trim()}
+        <span className={styles.usernameSuffix}>({match[2].trim()})</span>
+      </>
+    );
+  }
+  return name;
+}
+
+/**
+ * Resolves the display name for a contributor card. If a custom name is configured in metadata,
+ * uses that custom name; otherwise defaults to contrib.name or contrib.login.
+ */
+function getContributorName(contrib: Contributor) {
+  const customNames = (contributorMetadata as any).customNames || {};
+  if (customNames[contrib.login]) {
+    return customNames[contrib.login];
+  }
+  return contrib.name || contrib.login;
+}
+
+/**
+ * Resolves the link for a contributor card. If a custom URL is configured in metadata,
+ * uses that URL (e.g. for author commits filter via email); otherwise defaults to searching
+ * repository commits by author username.
+ */
+function getContributorHref(contrib: Contributor) {
+  const customUrls = (contributorMetadata as any).customUrls || {};
+  if (customUrls[contrib.login]) {
+    return customUrls[contrib.login];
+  }
+  return `https://github.com/spike0en/nothing_archive/commits?author=${contrib.login}`;
+}
+
 function HomepageCommunity() {
   // Centralized GitHub data hook — shares cache with other components
   const { contributors } = useGitHubContributors();
@@ -240,7 +282,7 @@ function HomepageCommunity() {
       .filter((c): c is Contributor => !!c);
   }, [contributors]);
 
-  // Resolve top contributors, excluding core members, capped at 6 for a premium look
+  // Resolve top contributors, excluding core members, capped at 6 for layout alignment and clean presentation
   const topContributors = React.useMemo(() => {
     const coreLogins = new Set(contributorMetadata.core);
     return sortedContributors
@@ -265,7 +307,7 @@ function HomepageCommunity() {
           {coreMembers.map((contrib) => (
             <a
               key={contrib.login}
-              href={`https://github.com/spike0en/nothing_archive/commits?author=${contrib.login}`}
+              href={getContributorHref(contrib)}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.coreCard}
@@ -279,7 +321,7 @@ function HomepageCommunity() {
                   loading="lazy"
                 />
               </div>
-              <div className={styles.coreName}>{contrib.name || contrib.login}</div>
+              <div className={styles.coreName}>{renderContributorName(getContributorName(contrib))}</div>
             </a>
           ))}
         </div>
@@ -312,7 +354,7 @@ function HomepageCommunity() {
             topContributors.map((contrib) => (
               <a
                 key={contrib.login}
-                href={`https://github.com/spike0en/nothing_archive/commits?author=${contrib.login}`}
+                href={getContributorHref(contrib)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.contributorCard}
@@ -327,7 +369,7 @@ function HomepageCommunity() {
                   />
                 </div>
                 <div className={styles.contributorName}>
-                  {contrib.name || contrib.login}
+                  {renderContributorName(getContributorName(contrib))}
                 </div>
               </a>
             ))

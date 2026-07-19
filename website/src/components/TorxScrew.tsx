@@ -1,3 +1,11 @@
+/**
+ * @file TorxScrew.tsx
+ * @description SVG rendering of a Torx screw, aligning with Nothing's transparent industrial design visual language.
+ * 
+ * Layer: Shared UI components.
+ * Boundary: Renders self-contained SVG node with optional CSS styling and rotation.
+ */
+
 import React from 'react';
 
 interface TorxScrewProps {
@@ -5,6 +13,11 @@ interface TorxScrewProps {
   rotation?: number;
 }
 
+/**
+ * TorxScrew component.
+ * 
+ * @param props Props detailing the optional className and rotation angle in degrees.
+ */
 export default function TorxScrew({ className, rotation }: TorxScrewProps): React.JSX.Element {
   const finalRotation = rotation !== undefined ? rotation : 45;
 

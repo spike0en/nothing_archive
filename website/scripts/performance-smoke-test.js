@@ -1,3 +1,11 @@
+/**
+ * @file performance-smoke-test.js
+ * @description Pre-release smoke test script verifying critical performance optimizations,
+ * asset existence, responsive image attributes, and bundle configuration.
+ *
+ * Layer: Build and verification scripts.
+ * Boundary: Reads local files and executes Node assertions.
+ */
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -49,6 +57,11 @@ assert(releaseFeed.includes('styles.releaseLink'));
 const githubCache = read('src', 'utils', 'github-cache.ts');
 assert(!githubCache.includes('const [status, setStatus] = useState<DataStatus>(() =>'));
 assert(!githubCache.includes('const [loading, setLoading] = useState(() =>'));
+
+const supportModal = read('src', 'components', 'SupportModal.tsx');
+assert(supportModal.includes('const [loadPaymentWidget, setLoadPaymentWidget] = useState(false);'));
+assert(supportModal.includes('{loadPaymentWidget && iframeLoading && ('));
+assert(supportModal.includes('onClick={() => setLoadPaymentWidget(true)}'));
 
 const manifest = JSON.parse(read('static', 'manifest.json'));
 assert.equal(manifest.start_url, '.');

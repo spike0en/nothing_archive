@@ -32,3 +32,6 @@ yarn-error.log*
 
 # Local Workspace
 .local/
+
+# Local codebase graphs
+graphify-out/

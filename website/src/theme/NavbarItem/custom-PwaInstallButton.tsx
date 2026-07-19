@@ -1,3 +1,12 @@
+/**
+ * @file custom-PwaInstallButton.tsx
+ * @description Button component displayed in the navigation bar to trigger PWA installation 
+ * when the application is installable on the user's platform/browser.
+ * 
+ * Layer: Navigation theme components.
+ * Boundary: Interacts with custom PwaContext to verify availability and trigger prompt.
+ */
+
 import React from 'react';
 import { usePwa } from '../../components/PwaContext';
 import clsx from 'clsx';
@@ -7,6 +16,10 @@ interface PwaInstallButtonProps {
   mobile?: boolean;
 }
 
+/**
+ * PwaInstallButton component.
+ * Renders the install navigation item in both desktop and mobile views.
+ */
 export default function PwaInstallButton({ mobile }: PwaInstallButtonProps): React.JSX.Element | null {
   const { isInstallable, install } = usePwa();
 

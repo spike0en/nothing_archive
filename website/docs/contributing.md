@@ -21,7 +21,7 @@ This involves the continuous upkeep and expansion of the main English documentat
 ### 2. Technical Development & Enhancements
 Contribute to the website's infrastructure by resolving bugs or adding features. Technical contributions should:
 *   Respect existing coding conventions to ensure future scalability and ease of maintenance.
-*   Prioritize stable, premium user experiences while minimizing unnecessary divergence from the core source.
+*   Prioritize stability and clean user interfaces while minimizing unnecessary divergence from the core source.
 
 ## Restricted Files & Directories
 
@@ -37,14 +37,10 @@ These files and folders are managed exclusively by the project authors and colla
 
 In order to ensure perfect alphabetical sorting, please follow these strict naming and sorting rules when adding new entries to [apps.md](apps.md) or [projects.md](projects.md):
 
-### 1. Naming Convention (Spaces & Title Case)
-*   **Spaces for Readability:** Even if the Play Store or GitHub uses CamelCase, always add a space between words.
-    *   ❌ `GlyphGlow` → ✅ **Glyph Glow**
-    *   ❌ `NothingOS` → ✅ **Nothing OS**
-    *   ❌ `BetterBattery` → ✅ **Better Battery**
-*   **Title Case:** All entries must be properly capitalized. Avoid all-lowercase or repo-style names.
-    *   ❌ `nothing-rice` → ✅ **Nothing Rice**
-    *   ❌ `n-recipe` → ✅ **N Recipe**
+### Naming Conventions
+
+*   Add spaces between words for readability: even if the source repository or app store listing uses CamelCase, split them with spaces. For example, use **Glyph Glow** instead of `GlyphGlow`, **Nothing OS** instead of `NothingOS`, and **Better Battery** instead of `BetterBattery`.
+*   Use title case: capitalize all entries properly. Avoid all-lowercase or repo-style names. For example, use **Nothing Rice** instead of `nothing-rice`, and **N Recipe** instead of `n-recipe`.
 
 ### 2. Alphabetical Sorting
 *   All entries within a table must be sorted **alphabetically by display name** (Column 1).

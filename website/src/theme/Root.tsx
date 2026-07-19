@@ -1,3 +1,12 @@
+/**
+ * @file Root.tsx
+ * @description Top-level theme wrapper component that injects global modals, PWA providers, 
+ * scroll progress rings, and keyboard shortcut event listeners across all routes.
+ * 
+ * Layer: Theme root wrappers.
+ * Boundary: Mounts SupportModal, PwaProvider, and global event listeners.
+ */
+
 import React, { useEffect, useState, useRef } from 'react';
 import CopyButtonSetup from '../components/CopyButton';
 import { PwaProvider } from '../components/PwaContext';
@@ -8,6 +17,9 @@ interface RootProps {
   children: React.ReactNode;
 }
 
+/**
+ * Root component wrapping the entire Docusaurus application.
+ */
 export default function Root({ children }: RootProps): React.JSX.Element {
   // Synchronously migrate existing users to "System" theme by default on client-side
   if (typeof window !== 'undefined') {
@@ -131,7 +143,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Scroll progress ring — SVG injected into the back-to-top button
+  // Scroll progress ring: SVG injected into the back-to-top button
   useEffect(() => {
     if (typeof window === 'undefined') return;
 

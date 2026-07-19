@@ -2,7 +2,7 @@
   // Restricts compiler to type-checking for IDE intellisense; Docusaurus handles active compilation.
   "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
-    "baseUrl": "."
+    "ignoreDeprecations": "6.0"
   },
   "exclude": [
     ".docusaurus",

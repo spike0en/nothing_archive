@@ -1,3 +1,11 @@
+/**
+ * @file MDXComponents/Img/index.tsx
+ * @description Theme override for image elements rendered within MDX content, applying async decoding and lazy loading.
+ * 
+ * Layer: Theme MDX element overrides.
+ * Boundary: Controls rendering and styling of img tags.
+ */
+
 import React, {type ReactNode} from 'react';
 import clsx from 'clsx';
 import type {Props} from '@theme/MDXComponents/Img';

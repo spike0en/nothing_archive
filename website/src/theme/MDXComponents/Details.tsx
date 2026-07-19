@@ -1,3 +1,11 @@
+/**
+ * @file MDXComponents/Details.tsx
+ * @description Theme override for details/summary expandable accordion elements rendered within MDX content.
+ * 
+ * Layer: Theme MDX element overrides.
+ * Boundary: Extracts summary element and delegates rendering to @theme/Details.
+ */
+
 import React, {
   type ComponentProps,
   type ReactElement,

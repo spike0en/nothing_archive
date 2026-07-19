@@ -1,3 +1,12 @@
+/**
+ * @file SearchBar/SearchBar.jsx
+ * @description Local search bar component handling client-side search autocomplete, 
+ * index fetching, keyword highlighting, and keyboard shortcuts.
+ * 
+ * Layer: Search theme overrides.
+ * Boundary: Integrates with @easyops-cn/docusaurus-search-local web worker search APIs.
+ */
+
 import React, { useCallback, useEffect, useRef, useState, } from "react";
 import clsx from "clsx";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";

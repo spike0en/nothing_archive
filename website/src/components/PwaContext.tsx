@@ -1,3 +1,11 @@
+/**
+ * @file PwaContext.tsx
+ * @description Context provider and hook managing PWA installation prompts and status state across the site.
+ * 
+ * Layer: Global React context providers.
+ * Boundary: Listens to browser beforeinstallprompt and appinstalled window events.
+ */
+
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 interface BeforeInstallPromptEvent extends Event {
@@ -21,8 +29,17 @@ const PwaContext = createContext<PwaContextType>({
   install: async () => {},
 });
 
+/**
+ * Custom hook to access PwaContext values.
+ * 
+ * @returns Object containing isInstallable, isInstalled status flags and install launcher function.
+ */
 export const usePwa = () => useContext(PwaContext);
 
+/**
+ * PwaProvider component.
+ * Tracks display mode and install events, managing the deferred install prompt.
+ */
 export function PwaProvider({ children }: { children: React.ReactNode }): React.JSX.Element {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [isInstallable, setIsInstallable] = useState(false);

@@ -138,7 +138,7 @@ Browser extensions and other add-ons inspired by Nothing OS.
 
 Community-made EQ profiles for Nothing earphones and headphones:
 
-- [Stock EQ Profiles](https://playground.nothing.tech/eqs) — Compatible with Advanced Equaliser via [Nothing X](https://play.google.com/store/apps/details?id=com.nothing.smartcenter)
+- [Stock EQ Profiles](https://playground.nothing.tech/eqs) (compatible with Advanced Equaliser via [Nothing X](https://play.google.com/store/apps/details?id=com.nothing.smartcenter))
 
 ## Resources & Utilities
 
@@ -149,7 +149,7 @@ Essential resources including wikis, firmware archives, and system repair tools.
 | [Disable Essential Space](https://github.com/AntonDevia/Disable-Essential-Space) | AntonDevia | ADB script to completely disable Essential Space and block the Essential Key on Nothing OS |
 | [Ear Battery CLI](https://github.com/pedrordgs/nothing-ear) | pedrordgs | Command-line tool to check battery levels of Nothing Ear wireless earbuds via Bluetooth |
 | [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | Native Rust desktop client for Nothing and CMF audio devices |
-| [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Rust based linux app to control Nothing earbuds’ ANC modes |
+| [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Rust based linux app to control Nothing earbuds' ANC modes |
 | [EarPhone X](https://github.com/noebachofner/EarPhonesX) | noebachofner | Linux application to control and configure Nothing and CMF earbuds |
 | [Earctl](https://github.com/xhain/earctl) | xhain | [Alfred](https://www.alfredapp.com/) workflow to control Nothing Ear (2) Bluetooth headphones from macOS |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | Integrity check bypass PoC for Phone (2a) Series & CMF Phone (1) |
@@ -190,7 +190,7 @@ These require root access (KernelSU or Magisk). Proceed with caution!
 | [NetHunter Spacewar](https://github.com/ExTV/nethunter-spacewar) | ExTV | Kali NetHunter Magisk module for the Nothing Phone (1) |
 | [Nothing AI Changer](https://github.com/Martmists-GH/Nothing-AI-Changer) | Martmists-GH | Replace ChatGPT integration with another app |
 | [Nothing Battery Fix](https://github.com/Farpathan/Nothing-Battery-Fix) | Farpathan | Restore classic battery percentage style |
-| [Nothing eUICC](https://github.com/reindex-ot/nothing-euicc) | reindex-ot | Force eSIM features to be enabled on Nothing devices that don't support it |
+| [Nothing eUICC](https://github.com/reindex-ot/nothing-euicc) | reindex-ot | Enable eSIM functionality on Nothing devices that do not support it |
 | [Nothing OS Aura Killer](https://github.com/reindex-ot/NOS_AuraKiller/) | reindex-ot | Debloat Aura services on NOS 4.0 |
 | [Nothing Phone Patch](https://github.com/reindex-ot/magisk-module-nothing) | reindex-ot | System tweaks and enhancements |
 | [Nothing Widevine](https://github.com/Ubuntuify/nothing-widevine) | Ubuntuify | Reprovision TEE and get Widevine L1 working on custom and stock ROMs |

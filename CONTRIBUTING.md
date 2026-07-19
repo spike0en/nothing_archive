@@ -29,14 +29,10 @@ These are maintained only by the project authors and collaborators.
 
 In order to ensure perfect alphabetical sorting, please follow these strict naming and sorting rules when adding new entries to `apps.md` or `projects.md`:
 
-### 1. Naming Convention (Spaces & Title Case)
-*   **Spaces for Readability:** Even if the Play Store or GitHub uses CamelCase, always add a space between words.
-    *   ❌ `GlyphGlow` $\rightarrow$ ✅ **Glyph Glow**
-    *   ❌ `NothingOS` $\rightarrow$ ✅ **Nothing OS**
-    *   ❌ `BetterBattery` $\rightarrow$ ✅ **Better Battery**
-*   **Title Case:** All entries must be properly capitalized. Avoid all-lowercase or repo-style names.
-    *   ❌ `nothing-rice` $\rightarrow$ ✅ **Nothing Rice**
-    *   ❌ `n-recipe` $\rightarrow$ ✅ **N Recipe**
+### Naming Conventions
+
+*   Add spaces between words for readability: even if the source repository or app store listing uses CamelCase, split them with spaces. For example, use **Glyph Glow** instead of `GlyphGlow`, **Nothing OS** instead of `NothingOS`, and **Better Battery** instead of `BetterBattery`.
+*   Use title case: capitalize all entries properly. Avoid all-lowercase or repo-style names. For example, use **Nothing Rice** instead of `nothing-rice`, and **N Recipe** instead of `n-recipe`.
 
 ### 2. Alphabetical Sorting
 *   All entries within a table must be sorted **alphabetically by display name** (Column 1).
