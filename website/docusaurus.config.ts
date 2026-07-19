@@ -348,6 +348,20 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
 
 const siteUrl = process.env.SITE_URL || (process.env.GITHUB_ACTIONS === 'true' ? 'https://nothingarchive.tech' : 'http://localhost:3000');
 const baseUrl = process.env.BASE_URL || '/';
+const websiteSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${siteUrl}${baseUrl}#website`,
+  name: 'Nothing Archive',
+  url: `${siteUrl}${baseUrl}`,
+  description: 'A curated hub for everything related to the Nothing ecosystem.',
+  inLanguage: 'en',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${siteUrl}${baseUrl}search?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+});
 
 const config: Config = {
   title: 'Nothing Archive',
@@ -506,17 +520,7 @@ const config: Config = {
     ],
   ],
 
-  themes: [
-    [
-      // Local offline search provider
-      require.resolve('@easyops-cn/docusaurus-search-local'),
-      {
-        hashed: true,
-        language: ['en'],
-        fuzzyMatchingDistance: 0,
-      },
-    ],
-  ],
+  themes: ['@docusaurus/theme-mermaid'],
 
   presets: [
     [
@@ -541,6 +545,7 @@ const config: Config = {
         },
         sitemap: {
           changefreq: 'weekly',
+          lastmod: 'date',
           priority: 0.5,
           ignorePatterns: ['/search'],
           filename: 'sitemap.xml',
@@ -562,14 +567,6 @@ const config: Config = {
   ],
 
   headTags: [
-    // Core SEO keywords for global indexation
-    {
-      tagName: 'meta',
-      attributes: {
-        name: 'keywords',
-        content: 'Nothing Phone, Nothing OS, Nothing OS firmware, Nothing OTA update, CMF by Nothing, Nothing Phone firmware download, Nothing archive, Glyph interface, Nothing community apps',
-      },
-    },
     // Search engine verification tokens
     {
       tagName: 'meta',
@@ -584,6 +581,20 @@ const config: Config = {
         name: 'msvalidate.01',
         content: '9A91D8D4ED9FB1AF08C3344E84B33661',
       },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'algolia-site-verification',
+        content: '82DB95221F91EA16',
+      },
+    },
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: websiteSchema,
     },
     {
       tagName: 'link',
@@ -684,6 +695,7 @@ const config: Config = {
   themeConfig: {
     image: 'img/brand/social-banner.png',
     metadata: [
+      { name: 'keywords', content: 'Nothing Phone, Nothing OS, Nothing OS firmware, Nothing OTA update, CMF by Nothing, Nothing Phone firmware download, Nothing archive, Glyph interface, Nothing community apps' },
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'Nothing Archive' },
       { property: 'og:image', content: `${siteUrl}${baseUrl}img/brand/social-banner.png` },
@@ -694,6 +706,20 @@ const config: Config = {
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:image', content: `${siteUrl}${baseUrl}img/brand/social-banner.png` },
     ],
+    algolia: {
+      appId: 'LIS46M13N2',
+      apiKey: 'e78b1e8d8e1e54f001d08b919bc096f9',
+      indexName: 'Nothing Archive crawl',
+      contextualSearch: true,
+      searchPagePath: 'search',
+      insights: false,
+    },
+    mermaid: {
+      theme: {
+        light: 'neutral',
+        dark: 'dark',
+      },
+    },
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
