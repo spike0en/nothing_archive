@@ -9,6 +9,7 @@
  */
 
 import React, { useEffect, useState, useRef } from 'react';
+import Translate, { translate } from '@docusaurus/Translate';
 import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './HeroGlyphLogo.module.css';
@@ -459,7 +460,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
           e.stopPropagation();
           togglePlayMode();
         }}
-        aria-label="Close game console"
+        aria-label={translate({id: 'heroGame.close', message: 'Close game console', description: 'Accessible label for the hero game close button'})}
       >
         ✕
       </button>
@@ -472,7 +473,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
               srcSet={`${logoDark256Url} 256w, ${logoDark384Url} 384w, ${logoDarkUrl} 512w`}
               sizes="(max-width: 576px) 146px, (max-width: 996px) 164px, 184px"
               className={styles.gifLogo}
-              alt="Nothing Archive Logo"
+              alt={translate({id: 'heroGame.logoAlt', message: 'Nothing Archive Logo', description: 'Accessible label for the homepage hero logo'})}
               width={184}
               height={184}
               fetchPriority="high"
@@ -530,7 +531,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
               }}
             >
               <div className={styles.startText}>{activeGame === 'SNAKE' ? 'SNAKE' : 'PONG'}</div>
-              <div className={styles.playPrompt}>TAP TO START</div>
+              <div className={styles.playPrompt}>{translate({id: 'heroGame.tapToStart', message: 'TAP TO START', description: 'Hero game start prompt'})}</div>
             </div>
           )}
 
@@ -542,9 +543,9 @@ export default function HeroGlyphLogo(): React.JSX.Element {
                 resetGame();
               }}
             >
-              <div className={styles.gameOverText}>GAME OVER</div>
-              <div className={styles.scoreText}>SCORE: {activeGame === 'SNAKE' ? score : pongScore}</div>
-              <div className={styles.retryPrompt}>TAP TO RETRY</div>
+              <div className={styles.gameOverText}>{translate({id: 'heroGame.gameOver', message: 'GAME OVER', description: 'Hero game completion message'})}</div>
+              <div className={styles.scoreText}>{translate({id: 'heroGame.score', message: 'SCORE: {score}', description: 'Hero game score label'}, {score: activeGame === 'SNAKE' ? score : pongScore})}</div>
+              <div className={styles.retryPrompt}>{translate({id: 'heroGame.tapToRetry', message: 'TAP TO RETRY', description: 'Hero game retry prompt'})}</div>
             </div>
           )}
         </div>
@@ -563,7 +564,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
                   onMouseUp={(e) => stopDpadHold(e)}
                   onMouseLeave={(e) => stopDpadHold(e)}
                   onTouchEnd={(e) => stopDpadHold(e)}
-                  aria-label="Up"
+                  aria-label={translate({id: 'heroGame.direction.up', message: 'Up', description: 'Accessible label for the game up control'})}
                   disabled={activeGame === 'PONG'}
                 >▲</button>
                 <div className={styles.dpadMiddleRow}>
@@ -574,7 +575,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
                     onMouseUp={(e) => stopDpadHold(e)}
                     onMouseLeave={(e) => stopDpadHold(e)}
                     onTouchEnd={(e) => stopDpadHold(e)}
-                    aria-label="Left"
+                    aria-label={translate({id: 'heroGame.direction.left', message: 'Left', description: 'Accessible label for the game left control'})}
                   >◀</button>
                   <div className={styles.dpadCenter} />
                   <button 
@@ -584,7 +585,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
                     onMouseUp={(e) => stopDpadHold(e)}
                     onMouseLeave={(e) => stopDpadHold(e)}
                     onTouchEnd={(e) => stopDpadHold(e)}
-                    aria-label="Right"
+                    aria-label={translate({id: 'heroGame.direction.right', message: 'Right', description: 'Accessible label for the game right control'})}
                   >▶</button>
                 </div>
                 <button 
@@ -594,7 +595,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
                   onMouseUp={(e) => stopDpadHold(e)}
                   onMouseLeave={(e) => stopDpadHold(e)}
                   onTouchEnd={(e) => stopDpadHold(e)}
-                  aria-label="Down"
+                  aria-label={translate({id: 'heroGame.direction.down', message: 'Down', description: 'Accessible label for the game down control'})}
                   disabled={activeGame === 'PONG'}
                 >▼</button>
               </div>
@@ -615,13 +616,19 @@ export default function HeroGlyphLogo(): React.JSX.Element {
                   </button>
                 </div>
                 <div className={styles.scoreRow}>
-                  SCORE: {activeGame === 'SNAKE' ? score : pongScore}
+                  {translate({id: 'heroGame.score', message: 'SCORE: {score}', description: 'Hero game score label'}, {score: activeGame === 'SNAKE' ? score : pongScore})}
                 </div>
               </div>
             </div>
 
             <div className={styles.playHint}>
-              USE WASD, ARROWS, OR ON-SCREEN <span className={styles.noWrap}>D-PAD</span> TO PLAY
+              <Translate
+                id="heroGame.instructions"
+                description="Instructions for controlling the hero game"
+                values={{dpad: <span className={styles.noWrap}>D-PAD</span>}}
+              >
+                {'USE WASD, ARROWS, OR ON-SCREEN {dpad} TO PLAY'}
+              </Translate>
             </div>
           </div>
         )}

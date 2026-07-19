@@ -9,6 +9,8 @@
 
 import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
+import { translate } from '@docusaurus/Translate';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './CommitMatrix.module.css';
 import { getTimeLag } from '../utils/time';
 import { useGitHubCommits, useGitHubRepoStats } from '../utils/github-cache';
@@ -28,6 +30,7 @@ const HITS_CACHE_TIMEOUT = 15 * 60 * 1000;
  * Fetches hitscounter data, filters recent commits, and formats authors for display.
  */
 export default function CommitMatrix(): React.JSX.Element {
+  const {i18n: {currentLocale}} = useDocusaurusContext();
   // Centralized GitHub data hooks: deduplicated, stale-while-revalidate
   const { commits, status: commitStatus, error: commitError, loading: commitLoading } = useGitHubCommits();
   const { stats: repoStats, loading: statsGhLoading } = useGitHubRepoStats();
@@ -88,18 +91,19 @@ export default function CommitMatrix(): React.JSX.Element {
 
   const latestCommit = commits[0] || { sha: '------', author: 'N/A', coAuthors: [], date: '', message: 'Waiting for connection...' };
 
+  const numberFormatter = React.useMemo(() => new Intl.NumberFormat(currentLocale), [currentLocale]);
   const stats = [
     {
-      label: 'LAST COMMIT',
-      value: loading ? '—' : latestCommit.date ? getTimeLag(latestCommit.date) + ' ago' : '—',
+      label: translate({id: 'telemetry.commit.lastCommit', message: 'LAST COMMIT', description: 'Commit telemetry statistic label'}),
+      value: loading ? '—' : latestCommit.date ? getTimeLag(latestCommit.date, currentLocale) : '—',
     },
     {
-      label: 'STARS',
-      value: statsGhLoading ? '—' : repoStats.stars.toLocaleString(),
+      label: translate({id: 'telemetry.commit.stars', message: 'STARS', description: 'Repository telemetry statistic label'}),
+      value: statsGhLoading ? '—' : numberFormatter.format(repoStats.stars),
     },
     {
-      label: 'VIEWS',
-      value: hitsLoading ? '—' : hitsData.hits.toLocaleString(),
+      label: translate({id: 'telemetry.commit.views', message: 'VIEWS', description: 'Repository telemetry statistic label'}),
+      value: hitsLoading ? '—' : numberFormatter.format(hitsData.hits),
     },
   ];
 
@@ -151,10 +155,14 @@ export default function CommitMatrix(): React.JSX.Element {
       {/* Telemetry Header */}
       <div className={styles.telemetryHeader}>
         <div className={styles.systemLabel}>
-          <span className={styles.feedTextPrefix}>REPO</span>
+          <span className={styles.feedTextPrefix}>{translate({id: 'telemetry.commit.repo', message: 'REPO', description: 'Commit telemetry source label'})}</span>
           {(errorState || statusSource !== 'LIVE') && (
             <span className={styles.feedStatusOffline}>
-              {errorState === 'RATE_LIMITED' ? 'RATE LIMITED' : errorState ? 'ERROR' : 'OFFLINE'}
+              {errorState === 'RATE_LIMITED'
+                ? translate({id: 'telemetry.status.rateLimited', message: 'RATE LIMITED', description: 'Telemetry status label'})
+                : errorState
+                  ? translate({id: 'telemetry.status.error', message: 'ERROR', description: 'Telemetry status label'})
+                  : translate({id: 'telemetry.status.offline', message: 'OFFLINE', description: 'Telemetry status label'})}
             </span>
           )}
         </div>
@@ -173,37 +181,37 @@ export default function CommitMatrix(): React.JSX.Element {
       {/* Recent Changes — full width */}
       <div className={styles.consolePanel}>
         <div className={styles.consoleHeader}>
-          <span>RECENT CHANGES</span>
+          <span>{translate({id: 'telemetry.commit.recentChanges', message: 'RECENT CHANGES', description: 'Commit telemetry panel title'})}</span>
         </div>
         <div className={styles.consoleBody}>
           {loading ? (
             <div className={styles.consoleLine}>
               <span className={styles.statusDot} />
-              <span className={styles.messageText}>CONNECTING TELEMETRY FEED...</span>
+              <span className={styles.messageText}>{translate({id: 'telemetry.connecting', message: 'CONNECTING TELEMETRY FEED...', description: 'Loading message for telemetry panels'})}</span>
             </div>
           ) : errorState === 'RATE_LIMITED' ? (
             <div className={styles.errorContainer}>
-              <div className={styles.errorHeader}>&gt; RATE LIMIT REACHED</div>
+              <div className={styles.errorHeader}>&gt; {translate({id: 'telemetry.rateLimitReached', message: 'RATE LIMIT REACHED', description: 'Telemetry rate-limit error heading'})}</div>
               <div className={styles.errorMessage}>
-                GITHUB API LIMIT EXCEEDED. PLEASE REFRESH AGAIN LATER.
+                {translate({id: 'telemetry.rateLimitMessage', message: 'GITHUB API LIMIT EXCEEDED. PLEASE REFRESH AGAIN LATER.', description: 'Telemetry rate-limit error message'})}
               </div>
             </div>
           ) : errorState === 'FAILED' ? (
             <div className={styles.errorContainer}>
-              <div className={styles.errorHeader}>&gt; CONNECTION ERROR</div>
+              <div className={styles.errorHeader}>&gt; {translate({id: 'telemetry.connectionError', message: 'CONNECTION ERROR', description: 'Telemetry connection error heading'})}</div>
               <div className={styles.errorMessage}>
-                COULD NOT SYNC WITH REPOSITORY. CHECK NETWORK CONNECTION.
+                {translate({id: 'telemetry.connectionErrorMessage', message: 'COULD NOT SYNC WITH REPOSITORY. CHECK NETWORK CONNECTION.', description: 'Telemetry connection error message'})}
               </div>
             </div>
           ) : commits.length === 0 ? (
             <div className={styles.consoleLine}>
               <span className={styles.statusDot} />
-              <span className={styles.messageText}>NO COMMITS FOUND</span>
+              <span className={styles.messageText}>{translate({id: 'telemetry.commit.empty', message: 'NO COMMITS FOUND', description: 'Empty state for commit telemetry'})}</span>
             </div>
           ) : filteredCommits.length === 0 ? (
             <div className={styles.consoleLine}>
               <span className={styles.statusDot} />
-              <span className={styles.messageText}>NO CHANGES IN THE LAST 7 DAYS</span>
+              <span className={styles.messageText}>{translate({id: 'telemetry.commit.noRecentChanges', message: 'NO CHANGES IN THE LAST 7 DAYS', description: 'Empty state for recent commits'})}</span>
             </div>
           ) : (
             filteredCommits.map((commit, idx) => {
@@ -216,7 +224,7 @@ export default function CommitMatrix(): React.JSX.Element {
                   rel="noopener noreferrer"
                   className={styles.consoleLine}
                 >
-                  <span className={`${styles.timeLag} ${isLatest ? styles.timeLagActive : ''}`}>{getTimeLag(commit.date)}</span>
+                  <span className={`${styles.timeLag} ${isLatest ? styles.timeLagActive : ''}`}>{getTimeLag(commit.date, currentLocale)}</span>
                   {formatAuthors(commit, isLatest)}
                   <span className={`${styles.messageText} ${isLatest ? styles.messageTextLatest : ''}`}>{commit.message}</span>
                   <span className={`${styles.shaTag} ${isLatest ? styles.shaLatest : ''}`}>{commit.sha}</span>

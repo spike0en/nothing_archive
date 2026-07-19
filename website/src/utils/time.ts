@@ -6,15 +6,18 @@
  * Boundary: Pure date calculation functions.
  * 
  * @param dateStr The ISO date string or timestamp string to compare.
- * @returns A formatted relative age string (e.g., "5m", "3h", "2d", or "N/A").
+ * @param locale BCP 47 locale used for the relative-time message.
+ * @returns A localized relative-time message.
  */
-export function getTimeLag(dateStr: string): string {
-  if (!dateStr) return 'N/A';
+export function getTimeLag(dateStr: string, locale: string): string {
+  if (!dateStr) return '—';
   const diff = Date.now() - new Date(dateStr).getTime();
+  if (!Number.isFinite(diff)) return '—';
   const mins = Math.floor(diff / 60000);
   const hours = Math.floor(mins / 60);
   const days = Math.floor(hours / 24);
-  if (days > 0) return `${days}d`;
-  if (hours > 0) return `${hours}h`;
-  return `${Math.max(1, mins)}m`;
+  const formatter = new Intl.RelativeTimeFormat(locale, {numeric: 'auto', style: 'short'});
+  if (days > 0) return formatter.format(-days, 'day');
+  if (hours > 0) return formatter.format(-hours, 'hour');
+  return formatter.format(-Math.max(1, mins), 'minute');
 }

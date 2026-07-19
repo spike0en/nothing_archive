@@ -9,6 +9,8 @@
 
 import React, { useMemo } from 'react';
 import { FaStar } from 'react-icons/fa';
+import { translate } from '@docusaurus/Translate';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import clsx from 'clsx';
 import styles from './StarMilestones.module.css';
 import TorxScrew from './TorxScrew';
@@ -33,6 +35,7 @@ function fmtCount(n: number): string {
  * and handles UI state rendering.
  */
 export default function StarMilestones(): React.JSX.Element {
+  const {i18n: {currentLocale}} = useDocusaurusContext();
   // Shares the deduplicated repo stats fetch with CommitMatrix
   const { stats, loading: statsLoading } = useGitHubRepoStats();
   const stars = statsLoading ? null : stats.stars;
@@ -69,7 +72,7 @@ export default function StarMilestones(): React.JSX.Element {
   if (stars === null) {
     return (
       <div className={styles.milestoneContainer}>
-        <div className={styles.loadingState}>LOADING GLYPH INTERFACE...</div>
+        <div className={styles.loadingState}>{translate({id: 'milestones.loading', message: 'LOADING GLYPH INTERFACE...', description: 'Loading state for the GitHub star milestones widget'})}</div>
       </div>
     );
   }
@@ -87,7 +90,7 @@ export default function StarMilestones(): React.JSX.Element {
 
       <div className={styles.milestoneHeader}>
         <div className={styles.liveStats}>
-          <span className={styles.liveText}>{stars.toLocaleString()} stargazers</span>
+          <span className={styles.liveText}>{translate({id: 'milestones.stargazers', message: '{count} stargazers', description: 'Current GitHub star count'}, {count: new Intl.NumberFormat(currentLocale).format(stars)})}</span>
         </div>
 
         {/*
@@ -139,10 +142,10 @@ export default function StarMilestones(): React.JSX.Element {
           target="_blank"
           rel="noopener noreferrer"
           className={styles.starCta}
-          aria-label="Star Nothing Archive on GitHub"
+          aria-label={translate({id: 'milestones.starOnGitHub.aria', message: 'Star Nothing Archive on GitHub', description: 'Accessible label for the GitHub star button'})}
         >
           <FaStar size={11} className={styles.starIcon} />
-          Star on GitHub
+          {translate({id: 'milestones.starOnGitHub', message: 'Star on GitHub', description: 'GitHub star button label'})}
         </a>
       </div>
 
@@ -208,15 +211,13 @@ export default function StarMilestones(): React.JSX.Element {
 
       {allReached ? (
         <div className={styles.milestoneComplete}>
-          ALL MILESTONES REACHED
+          {translate({id: 'milestones.allReached', message: 'ALL MILESTONES REACHED', description: 'Message shown after the final GitHub star milestone is reached'})}
         </div>
       ) : (
         <div className={styles.nextGoal}>
-          {(MILESTONES[nextIdx] - stars).toLocaleString()} stars to go {'\u00b7'} help us reach the goal
+          {translate({id: 'milestones.nextGoal', message: '{count} stars to go · help us reach the goal', description: 'Progress message before the next GitHub star milestone'}, {count: new Intl.NumberFormat(currentLocale).format(MILESTONES[nextIdx] - stars)})}
         </div>
       )}
     </div>
   );
 }
-
-

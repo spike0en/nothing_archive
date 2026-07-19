@@ -1,0 +1,22 @@
+{
+  "title": {
+    "message": "Nothing Archive",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Nothing Archive Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Home": {
+    "message": "Home",
+    "description": "Navbar item with label Home"
+  },
+  "item.label.About": {
+    "message": "About",
+    "description": "Navbar item with label About"
+  },
+  "item.label.Resources": {
+    "message": "Resources",
+    "description": "Navbar item with label Resources"
+  }
+}

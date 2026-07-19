@@ -1,0 +1,1092 @@
+{
+  "announcement.releaseAvailable": {
+    "message": "{release} is now available!",
+    "description": "Announcement shown when one new firmware release is available"
+  },
+  "announcement.dismiss": {
+    "message": "Dismiss announcement",
+    "description": "Accessible label for the announcement close button"
+  },
+  "announcement.dismissShort": {
+    "message": "Dismiss",
+    "description": "Tooltip for the announcement close button"
+  },
+  "announcement.newUpdates": {
+    "message": "New updates available:",
+    "description": "Prefix for a list of new firmware releases"
+  },
+  "announcement.more": {
+    "message": "{count} more",
+    "description": "Link to additional firmware releases"
+  },
+  "telemetry.commit.lastCommit": {
+    "message": "LAST COMMIT",
+    "description": "Commit telemetry statistic label"
+  },
+  "telemetry.commit.stars": {
+    "message": "STARS",
+    "description": "Repository telemetry statistic label"
+  },
+  "telemetry.commit.views": {
+    "message": "VIEWS",
+    "description": "Repository telemetry statistic label"
+  },
+  "telemetry.commit.repo": {
+    "message": "REPO",
+    "description": "Commit telemetry source label"
+  },
+  "telemetry.status.rateLimited": {
+    "message": "RATE LIMITED",
+    "description": "Telemetry status label"
+  },
+  "telemetry.status.error": {
+    "message": "ERROR",
+    "description": "Telemetry status label"
+  },
+  "telemetry.status.offline": {
+    "message": "OFFLINE",
+    "description": "Telemetry status label"
+  },
+  "telemetry.commit.recentChanges": {
+    "message": "RECENT CHANGES",
+    "description": "Commit telemetry panel title"
+  },
+  "telemetry.connecting": {
+    "message": "CONNECTING TELEMETRY FEED...",
+    "description": "Loading message for telemetry panels"
+  },
+  "telemetry.rateLimitReached": {
+    "message": "RATE LIMIT REACHED",
+    "description": "Telemetry rate-limit error heading"
+  },
+  "telemetry.rateLimitMessage": {
+    "message": "GITHUB API LIMIT EXCEEDED. PLEASE REFRESH AGAIN LATER.",
+    "description": "Telemetry rate-limit error message"
+  },
+  "telemetry.connectionError": {
+    "message": "CONNECTION ERROR",
+    "description": "Telemetry connection error heading"
+  },
+  "telemetry.connectionErrorMessage": {
+    "message": "COULD NOT SYNC WITH REPOSITORY. CHECK NETWORK CONNECTION.",
+    "description": "Telemetry connection error message"
+  },
+  "telemetry.commit.empty": {
+    "message": "NO COMMITS FOUND",
+    "description": "Empty state for commit telemetry"
+  },
+  "telemetry.commit.noRecentChanges": {
+    "message": "NO CHANGES IN THE LAST 7 DAYS",
+    "description": "Empty state for recent commits"
+  },
+  "copyButton.copyLink": {
+    "message": "Copy link",
+    "description": "Tooltip for copying a table link"
+  },
+  "deviceGrid.imageAlt": {
+    "message": "{device} - {color}",
+    "description": "Accessible label for a device image"
+  },
+  "deviceGrid.colorVariants": {
+    "message": "Color variants for {device}",
+    "description": "Accessible label for a device color selector"
+  },
+  "deviceGrid.selectColor": {
+    "message": "Select {color} color",
+    "description": "Accessible label for a device color option"
+  },
+  "deviceGrid.series.number": {
+    "message": "Nothing Phone Series",
+    "description": "Device catalog category heading"
+  },
+  "deviceGrid.series.a": {
+    "message": "Nothing Phone (a) Series",
+    "description": "Device catalog category heading"
+  },
+  "deviceGrid.series.b": {
+    "message": "Nothing Phone (b / Lite) Series",
+    "description": "Device catalog category heading"
+  },
+  "deviceGrid.series.cmf": {
+    "message": "CMF by Nothing Phone Series",
+    "description": "Device catalog category heading"
+  },
+  "heroGame.close": {
+    "message": "Close game console",
+    "description": "Accessible label for the hero game close button"
+  },
+  "heroGame.logoAlt": {
+    "message": "Nothing Archive Logo",
+    "description": "Accessible label for the homepage hero logo"
+  },
+  "heroGame.tapToStart": {
+    "message": "TAP TO START",
+    "description": "Hero game start prompt"
+  },
+  "heroGame.gameOver": {
+    "message": "GAME OVER",
+    "description": "Hero game completion message"
+  },
+  "heroGame.score": {
+    "message": "SCORE: {score}",
+    "description": "Hero game score label"
+  },
+  "heroGame.tapToRetry": {
+    "message": "TAP TO RETRY",
+    "description": "Hero game retry prompt"
+  },
+  "heroGame.direction.up": {
+    "message": "Up",
+    "description": "Accessible label for the game up control"
+  },
+  "heroGame.direction.left": {
+    "message": "Left",
+    "description": "Accessible label for the game left control"
+  },
+  "heroGame.direction.right": {
+    "message": "Right",
+    "description": "Accessible label for the game right control"
+  },
+  "heroGame.direction.down": {
+    "message": "Down",
+    "description": "Accessible label for the game down control"
+  },
+  "heroGame.instructions": {
+    "message": "USE WASD, ARROWS, OR ON-SCREEN {dpad} TO PLAY",
+    "description": "Instructions for controlling the hero game"
+  },
+  "telemetry.release.totalReleases": {
+    "message": "TOTAL RELEASES",
+    "description": "Release telemetry statistic label"
+  },
+  "telemetry.release.latestAge": {
+    "message": "LATEST RELEASE AGE",
+    "description": "Release telemetry statistic label"
+  },
+  "telemetry.release.totalDownloads": {
+    "message": "TOTAL DOWNLOADS",
+    "description": "Release telemetry statistic label"
+  },
+  "telemetry.release.releases": {
+    "message": "RELEASES",
+    "description": "Release telemetry source label"
+  },
+  "telemetry.release.recentFactoryImages": {
+    "message": "RECENT FACTORY IMAGE RELEASES",
+    "description": "Release telemetry panel title"
+  },
+  "telemetry.release.empty": {
+    "message": "NO RELEASES FOUND",
+    "description": "Empty state for release telemetry"
+  },
+  "telemetry.release.openGitHub": {
+    "message": "Open GitHub Release",
+    "description": "Tooltip for the external release link"
+  },
+  "milestones.loading": {
+    "message": "LOADING GLYPH INTERFACE...",
+    "description": "Loading state for the GitHub star milestones widget"
+  },
+  "milestones.stargazers": {
+    "message": "{count} stargazers",
+    "description": "Current GitHub star count"
+  },
+  "milestones.starOnGitHub": {
+    "message": "Star Nothing Archive on GitHub",
+    "description": "GitHub star button label"
+  },
+  "milestones.allReached": {
+    "message": "ALL MILESTONES REACHED",
+    "description": "Message shown after the final GitHub star milestone is reached"
+  },
+  "milestones.nextGoal": {
+    "message": "{count} stars to go · help us reach the goal",
+    "description": "Progress message before the next GitHub star milestone"
+  },
+  "support.modal.title": {
+    "message": "SUPPORT THE PROJECT",
+    "description": "Support donation modal title"
+  },
+  "support.modal.close": {
+    "message": "Close dialogue",
+    "description": "Accessible label for the support modal close button"
+  },
+  "support.modal.intro.community": {
+    "message": "Nothing Archive is a community-driven project. Keeping it up to date and relevant takes time, effort, and ongoing costs (where applicable). If you've benefited from the archive and would like to support it, your donation helps cover these costs and allows the project to keep growing.",
+    "description": "Support modal introduction paragraph"
+  },
+  "support.modal.intro.optional": {
+    "message": "Donations are completely optional, and every contribution is sincerely appreciated. 💛",
+    "description": "Support modal introduction paragraph"
+  },
+  "support.modal.intro.supporters": {
+    "message": "As a small thank-you, the supporters widget recognizes those who have made notable contributions. If you choose to support the project, your name can be featured there too.",
+    "description": "Support modal introduction paragraph"
+  },
+  "support.modal.intro.thanks": {
+    "message": "Thank you for being part of the journey!",
+    "description": "Support modal introduction paragraph"
+  },
+  "support.modal.methods": {
+    "message": "DONATION METHODS",
+    "description": "Donation methods section heading"
+  },
+  "support.modal.paymentAddress": {
+    "message": "{channel} payment address",
+    "description": "Accessible label for a donation payment address"
+  },
+  "support.modal.copyAddress": {
+    "message": "Copy Address",
+    "description": "Tooltip for copying a donation address"
+  },
+  "support.modal.copyChannelAddress": {
+    "message": "Copy {channel} address",
+    "description": "Accessible label for copying a donation address"
+  },
+  "support.modal.shareConfirmation": {
+    "message": "Share Confirmation",
+    "description": "Donation proof button label"
+  },
+  "support.modal.nowPayments.description": {
+    "message": "Donate securely using any major cryptocurrency via NOWPayments.",
+    "description": "NOWPayments donation method description"
+  },
+  "support.modal.loadingWidget": {
+    "message": "Loading Widget...",
+    "description": "NOWPayments widget loading message"
+  },
+  "support.modal.nowPayments.title": {
+    "message": "NOWPayments Donation Widget",
+    "description": "Title for the embedded NOWPayments donation widget"
+  },
+  "support.modal.widgetFallback": {
+    "message": "Can't load widget",
+    "description": "Fallback content for the embedded NOWPayments donation widget"
+  },
+  "support.modal.loadWidget": {
+    "message": "Load payment widget",
+    "description": "Button that loads the NOWPayments donation widget"
+  },
+  "support.nudge.landmark": {
+    "message": "Support prompt",
+    "description": "Accessible landmark label for the support nudge"
+  },
+  "support.nudge.title": {
+    "message": "Enjoying Nothing Archive?",
+    "description": "Support nudge title"
+  },
+  "support.nudge.dismiss": {
+    "message": "Dismiss support prompt",
+    "description": "Accessible label for the support nudge close button"
+  },
+  "support.nudge.body": {
+    "message": "If you found this useful, please consider supporting the project. Thank you!",
+    "description": "Support nudge description"
+  },
+  "support.nudge.supportProject": {
+    "message": "Support Project",
+    "description": "Support nudge primary action"
+  },
+  "support.nudge.hideForever": {
+    "message": "Hide this prompt forever",
+    "description": "Tooltip for permanently dismissing the support nudge"
+  },
+  "support.nudge.alreadySupported": {
+    "message": "Already Supported",
+    "description": "Support nudge secondary action"
+  },
+  "supporterWidget.fallback.support": {
+    "message": "SUPPORT",
+    "description": "Fallback supporter ticker item"
+  },
+  "supporterWidget.fallback.archive": {
+    "message": "ARCHIVE",
+    "description": "Fallback supporter ticker item"
+  },
+  "supporterWidget.fallback.community": {
+    "message": "COMMUNITY",
+    "description": "Fallback supporter ticker item"
+  },
+  "supporterWidget.title": {
+    "message": "Top Supporters",
+    "description": "Supporter ticker heading"
+  },
+  "homepage.feature.devices": {
+    "message": "Devices",
+    "description": "Homepage feature card title"
+  },
+  "homepage.feature.devices.description": {
+    "message": "Explore the full catalog of Nothing and CMF devices, including phones, audio gear, wearables, and accessories.",
+    "description": "Homepage devices feature card description"
+  },
+  "homepage.feature.firmware": {
+    "message": "Firmware",
+    "description": "Homepage feature card title"
+  },
+  "homepage.feature.firmware.description": {
+    "message": "Download official Nothing OS firmware, stock factory images, and delta OTA updates to flash, downgrade, restore, root, or manually sideload updates on your phones to skip staggered regional rollouts.",
+    "description": "Homepage firmware feature card description"
+  },
+  "homepage.feature.changelogs": {
+    "message": "OTA Changelogs",
+    "description": "Homepage feature card title"
+  },
+  "homepage.feature.changelogs.description": {
+    "message": "Learn how software updates work on Nothing & CMF phones and browse official Nothing OS changelogs",
+    "description": "Homepage changelog feature card description"
+  },
+  "homepage.feature.guides": {
+    "message": "Guides",
+    "description": "Homepage feature card title"
+  },
+  "homepage.feature.guides.description": {
+    "message": "Step-by-step instructions to unlock bootloaders, root, and customize Nothing and CMF devices.",
+    "description": "Homepage guides feature card description"
+  },
+  "homepage.feature.official": {
+    "message": "Official Resources",
+    "description": "Homepage feature card title"
+  },
+  "homepage.feature.official.description": {
+    "message": "Find official Nothing apps, wallpapers, custom fonts, kernel sources, and developer tools.",
+    "description": "Homepage official resources feature card description"
+  },
+  "homepage.feature.apps": {
+    "message": "Community Apps",
+    "description": "Homepage feature card title"
+  },
+  "homepage.feature.apps.description": {
+    "message": "Explore custom apps, Glyph tools, and productivity utilities made by the community.",
+    "description": "Homepage community apps feature card description"
+  },
+  "homepage.feature.projects": {
+    "message": "Projects",
+    "description": "Homepage feature card title"
+  },
+  "homepage.feature.projects.description": {
+    "message": "Browse creative software, tools, and custom projects built for the Nothing ecosystem.",
+    "description": "Homepage projects feature card description"
+  },
+  "homepage.feature.photography": {
+    "message": "Photography",
+    "description": "Homepage feature card title"
+  },
+  "homepage.feature.photography.description": {
+    "message": "Improve your photos with GCAM ports, custom configurations, and presets tuned for Nothing and CMF phones.",
+    "description": "Homepage photography feature card description"
+  },
+  "homepage.social.community": {
+    "message": "Community",
+    "description": "Label for the Nothing community link"
+  },
+  "homepage.tagline": {
+    "message": "A curated hub for everything related to the Nothing ecosystem.",
+    "description": "Homepage hero subtitle"
+  },
+  "homepage.hero.exploreResources": {
+    "message": "Explore Resources",
+    "description": "Homepage primary call to action"
+  },
+  "homepage.hero.viewOnGitHub": {
+    "message": "View on GitHub",
+    "description": "Homepage secondary call to action"
+  },
+  "homepage.section.resources": {
+    "message": "Resources",
+    "description": "Homepage feature card section heading"
+  },
+  "homepage.section.hallOfFame": {
+    "message": "Hall of Fame",
+    "description": "Homepage contributors section heading"
+  },
+  "homepage.section.coreTeam": {
+    "message": "Core Team",
+    "description": "Homepage core contributors heading"
+  },
+  "homepage.contributor.viewCommits": {
+    "message": "View {name}'s commits on GitHub",
+    "description": "Accessible label for a contributor link"
+  },
+  "homepage.contributor.avatar": {
+    "message": "{name}'s avatar",
+    "description": "Accessible label for a contributor avatar"
+  },
+  "homepage.branding": {
+    "message": "Branding",
+    "description": "Homepage branding credit label"
+  },
+  "homepage.section.topContributors": {
+    "message": "Top Contributors",
+    "description": "Homepage contributor list heading"
+  },
+  "homepage.contributor.viewAll": {
+    "message": "View all contributors on GitHub",
+    "description": "Link to the full GitHub contributors list"
+  },
+  "homepage.contributor.showAll": {
+    "message": "Show All",
+    "description": "Link to the full GitHub contributors list"
+  },
+  "homepage.section.milestones": {
+    "message": "Milestones",
+    "description": "Homepage milestone section heading"
+  },
+  "homepage.section.connect": {
+    "message": "Connect",
+    "description": "Homepage social links section heading"
+  },
+  "homepage.metadata.title": {
+    "message": "Nothing OS Firmware & Resources",
+    "description": "Homepage browser title"
+  },
+  "shortcuts.title": {
+    "message": "KEYBOARD SHORTCUTS",
+    "description": "Keyboard shortcuts dialog title"
+  },
+  "shortcuts.close": {
+    "message": "Close",
+    "description": "Accessible label for the keyboard shortcuts close button"
+  },
+  "shortcuts.action": {
+    "message": "ACTION",
+    "description": "Keyboard shortcuts table column heading"
+  },
+  "shortcuts.shortcut": {
+    "message": "SHORTCUT",
+    "description": "Keyboard shortcuts table column heading"
+  },
+  "shortcuts.searchDocumentation": {
+    "message": "Search Documentation",
+    "description": "Keyboard shortcut action"
+  },
+  "shortcuts.openMap": {
+    "message": "Open Shortcut Map",
+    "description": "Keyboard shortcut action"
+  },
+  "shortcuts.closeOrClear": {
+    "message": "Close Shortcut Map / Clear Search",
+    "description": "Keyboard shortcut action"
+  },
+  "shortcuts.navigateSearch": {
+    "message": "Navigate Search Results",
+    "description": "Keyboard shortcut action"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "light mode",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "system mode",
+    "description": "The name for the system color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "dark mode",
+    "description": "The name for the dark color mode"
+  },
+  "navbar.installApp": {
+    "message": "Install App",
+    "description": "Navigation action that installs the progressive web app"
+  },
+  "navbar.supportProject": {
+    "message": "Support Project",
+    "description": "Mobile navigation action that opens the support modal"
+  },
+  "navbar.supportDonations": {
+    "message": "Support & Donations",
+    "description": "Tooltip for the support navigation action"
+  },
+  "navbar.support": {
+    "message": "Support",
+    "description": "Navigation action that opens the support modal"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "This page crashed.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Scroll back to top",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "Archive",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "Archive",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "Blog list page navigation",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Newer entries",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Older entries",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Blog post page navigation",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Newer post",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Older post",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "View all tags",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "Switch between dark and light mode (currently {mode})",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Breadcrumbs",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "Docs pages",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "Previous",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "Next",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "One doc tagged|{count} docs tagged",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} with \"{tagName}\"",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "Version: {versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "This is unreleased documentation for {siteTitle} {versionLabel} version.",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "This is documentation for {siteTitle} {versionLabel}, which is no longer actively maintained.",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "For up-to-date documentation, see the {latestVersionLink} ({versionLabel}).",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "latest version",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "Direct link to {heading}",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " on {date}",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " by {user}",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "Last updated{atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.common.editThisPage": {
+    "message": "Edit this page",
+    "description": "The link label to edit the current page"
+  },
+  "theme.NotFound.title": {
+    "message": "Page Not Found",
+    "description": "The title of the 404 page"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "Tags:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Close",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.admonition.caution": {
+    "message": "caution",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "danger",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "info",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "note",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "tip",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "warning",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Versions",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Blog recent posts navigation",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Expand sidebar category '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Collapse sidebar category '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "We could not find what you were looking for.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "On this page",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Languages",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Read more",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Read more about {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Copy",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Copied",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copy code to clipboard",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Toggle word wrap",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "One min read|{readingTime} min read",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home page",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Docs sidebar",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Close navigation bar",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← Back to main menu",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.SearchBar.seeAll": {
+    "message": "See all {count} results"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "One document found|{count} documents found",
+    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "Search results for \"{query}\"",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "Search the documentation",
+    "description": "The search page title for empty query"
+  },
+  "theme.SearchPage.inputPlaceholder": {
+    "message": "Type your search here",
+    "description": "The placeholder for search page input"
+  },
+  "theme.SearchPage.inputLabel": {
+    "message": "Search",
+    "description": "The ARIA label for search page input"
+  },
+  "theme.SearchPage.algoliaLabel": {
+    "message": "Powered by Algolia",
+    "description": "The description label for Algolia mention"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "No results were found",
+    "description": "The paragraph for empty search result"
+  },
+  "theme.SearchPage.fetchingNewResults": {
+    "message": "Fetching new results...",
+    "description": "The paragraph for fetching new search results"
+  },
+  "theme.SearchBar.label": {
+    "message": "Search",
+    "description": "The ARIA label and placeholder for search button"
+  },
+  "theme.SearchModal.searchBox.resetButtonTitle": {
+    "message": "Clear the query",
+    "description": "The label and ARIA label for search box reset button"
+  },
+  "theme.SearchModal.searchBox.cancelButtonText": {
+    "message": "Cancel",
+    "description": "The label and ARIA label for search box cancel button"
+  },
+  "theme.SearchModal.searchBox.placeholderText": {
+    "message": "Search docs",
+    "description": "The placeholder text for the main search input field"
+  },
+  "theme.SearchModal.searchBox.placeholderTextAskAi": {
+    "message": "Ask another question...",
+    "description": "The placeholder text when in AI question mode"
+  },
+  "theme.SearchModal.searchBox.placeholderTextAskAiStreaming": {
+    "message": "Answering...",
+    "description": "The placeholder text for search box when AI is streaming an answer"
+  },
+  "theme.SearchModal.searchBox.enterKeyHint": {
+    "message": "search",
+    "description": "The hint for the search box enter key text"
+  },
+  "theme.SearchModal.searchBox.enterKeyHintAskAi": {
+    "message": "enter",
+    "description": "The hint for the Ask AI search box enter key text"
+  },
+  "theme.SearchModal.searchBox.searchInputLabel": {
+    "message": "Search",
+    "description": "The ARIA label for search input"
+  },
+  "theme.SearchModal.searchBox.backToKeywordSearchButtonText": {
+    "message": "Back to keyword search",
+    "description": "The text for back to keyword search button"
+  },
+  "theme.SearchModal.searchBox.backToKeywordSearchButtonAriaLabel": {
+    "message": "Back to keyword search",
+    "description": "The ARIA label for back to keyword search button"
+  },
+  "theme.SearchModal.startScreen.recentSearchesTitle": {
+    "message": "Recent",
+    "description": "The title for recent searches"
+  },
+  "theme.SearchModal.startScreen.noRecentSearchesText": {
+    "message": "No recent searches",
+    "description": "The text when there are no recent searches"
+  },
+  "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
+    "message": "Save this search",
+    "description": "The title for save recent search button"
+  },
+  "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
+    "message": "Remove this search from history",
+    "description": "The title for remove recent search button"
+  },
+  "theme.SearchModal.startScreen.favoriteSearchesTitle": {
+    "message": "Favorite",
+    "description": "The title for favorite searches"
+  },
+  "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
+    "message": "Remove this search from favorites",
+    "description": "The title for remove favorite search button"
+  },
+  "theme.SearchModal.startScreen.recentConversationsTitle": {
+    "message": "Recent conversations",
+    "description": "The title for recent conversations"
+  },
+  "theme.SearchModal.startScreen.removeRecentConversationButtonTitle": {
+    "message": "Remove this conversation from history",
+    "description": "The title for remove recent conversation button"
+  },
+  "theme.SearchModal.errorScreen.titleText": {
+    "message": "Unable to fetch results",
+    "description": "The title for error screen"
+  },
+  "theme.SearchModal.errorScreen.helpText": {
+    "message": "You might want to check your network connection.",
+    "description": "The help text for error screen"
+  },
+  "theme.SearchModal.resultsScreen.askAiPlaceholder": {
+    "message": "Ask AI: ",
+    "description": "The placeholder text for Ask AI input"
+  },
+  "theme.SearchModal.askAiScreen.disclaimerText": {
+    "message": "Answers are generated with AI which can make mistakes. Verify responses.",
+    "description": "The disclaimer text for AI answers"
+  },
+  "theme.SearchModal.askAiScreen.relatedSourcesText": {
+    "message": "Related sources",
+    "description": "The text for related sources"
+  },
+  "theme.SearchModal.askAiScreen.thinkingText": {
+    "message": "Thinking...",
+    "description": "The text when AI is thinking"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonText": {
+    "message": "Copy",
+    "description": "The text for copy button"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonCopiedText": {
+    "message": "Copied!",
+    "description": "The text for copy button when copied"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonTitle": {
+    "message": "Copy",
+    "description": "The title for copy button"
+  },
+  "theme.SearchModal.askAiScreen.likeButtonTitle": {
+    "message": "Like",
+    "description": "The title for like button"
+  },
+  "theme.SearchModal.askAiScreen.dislikeButtonTitle": {
+    "message": "Dislike",
+    "description": "The title for dislike button"
+  },
+  "theme.SearchModal.askAiScreen.thanksForFeedbackText": {
+    "message": "Thanks for your feedback!",
+    "description": "The text for thanks for feedback"
+  },
+  "theme.SearchModal.askAiScreen.preToolCallText": {
+    "message": "Searching...",
+    "description": "The text before tool call"
+  },
+  "theme.SearchModal.askAiScreen.duringToolCallText": {
+    "message": "Searching for ",
+    "description": "The text during tool call"
+  },
+  "theme.SearchModal.askAiScreen.afterToolCallText": {
+    "message": "Searched for",
+    "description": "The text after tool call"
+  },
+  "theme.SearchModal.footer.selectText": {
+    "message": "Select",
+    "description": "The select text for footer"
+  },
+  "theme.SearchModal.footer.submitQuestionText": {
+    "message": "Submit question",
+    "description": "The submit question text for footer"
+  },
+  "theme.SearchModal.footer.selectKeyAriaLabel": {
+    "message": "Enter key",
+    "description": "The ARIA label for select key in footer"
+  },
+  "theme.SearchModal.footer.navigateText": {
+    "message": "Navigate",
+    "description": "The navigate text for footer"
+  },
+  "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
+    "message": "Arrow up",
+    "description": "The ARIA label for navigate up key in footer"
+  },
+  "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
+    "message": "Arrow down",
+    "description": "The ARIA label for navigate down key in footer"
+  },
+  "theme.SearchModal.footer.closeText": {
+    "message": "Close",
+    "description": "The close text for footer"
+  },
+  "theme.SearchModal.footer.closeKeyAriaLabel": {
+    "message": "Escape key",
+    "description": "The ARIA label for close key in footer"
+  },
+  "theme.SearchModal.footer.searchByText": {
+    "message": "Powered by",
+    "description": "The 'Powered by' text for footer"
+  },
+  "theme.SearchModal.footer.backToSearchText": {
+    "message": "Back to search",
+    "description": "The back to search text for footer"
+  },
+  "theme.SearchModal.noResultsScreen.noResultsText": {
+    "message": "No results found for",
+    "description": "The text when there are no results"
+  },
+  "theme.SearchModal.noResultsScreen.suggestedQueryText": {
+    "message": "Try searching for",
+    "description": "The text for suggested query"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
+    "message": "Believe this query should return results?",
+    "description": "The text for reporting missing results"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
+    "message": "Let us know.",
+    "description": "The link text for reporting missing results"
+  },
+  "theme.SearchModal.placeholder": {
+    "message": "Search docs",
+    "description": "The placeholder of the input of the DocSearch pop-up modal"
+  },
+  "theme.blog.post.plurals": {
+    "message": "One post|{count} posts",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} tagged with \"{tagName}\"",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts}",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "Authors",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "View all authors",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "Unlisted page",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "Draft page",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "description": "The draft content banner message"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 item|{count} items",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Try again",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "Skip to main content",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Tags",
+    "description": "The title of the tag list page"
+  },
+  "milestones.starOnGitHub.aria": {
+    "message": "Star Nothing Archive on GitHub",
+    "description": "Accessible label for the GitHub star button"
+  },
+  "support.modal.channel.upi.title": {
+    "message": "UPI (India)",
+    "description": "UPI donation method title"
+  },
+  "support.modal.channel.upi.description": {
+    "message": "Send via any UPI app (PhonePe / GPay / Paytm) to the ID below. Add reference: NOTHING ARCHIVE.",
+    "description": "UPI donation method description"
+  },
+  "support.modal.channel.upi.holder": {
+    "message": "holder: Harshit Sinha",
+    "description": "UPI payment account holder information"
+  },
+  "support.modal.channel.kofi.description": {
+    "message": "One-tap tip via Ko-fi (card / Apple Pay / Google Pay).",
+    "description": "Ko-fi donation method description"
+  },
+  "support.modal.channel.kofi.button": {
+    "message": "Open Ko-fi",
+    "description": "Ko-fi donation method button label"
+  },
+  "support.modal.channel.paypal.description": {
+    "message": "Send via PayPal.me — 'Friends & Family' if possible.",
+    "description": "PayPal donation method description"
+  },
+  "support.modal.channel.paypal.button": {
+    "message": "Open PayPal",
+    "description": "PayPal donation method button label"
+  },
+  "support.modal.channel.boosty.title": {
+    "message": "Boosty (Russia)",
+    "description": "Boosty donation method title"
+  },
+  "support.modal.channel.boosty.description": {
+    "message": "Support the archive via Boosty (available for cards in Russia).",
+    "description": "Boosty donation method description"
+  },
+  "support.modal.channel.boosty.button": {
+    "message": "Open Boosty",
+    "description": "Boosty donation method button label"
+  }
+}

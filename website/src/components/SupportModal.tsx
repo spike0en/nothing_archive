@@ -8,6 +8,7 @@
  */
 
 import React, { useState, useEffect, useRef } from 'react';
+import { translate } from '@docusaurus/Translate';
 import { FaCopy, FaCheck, FaTimes, FaExternalLinkAlt, FaHeart } from 'react-icons/fa';
 import donationsData from '../data/donations.json';
 import donorsData from '../data/donors.json';
@@ -106,6 +107,40 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
 
   if (!isOpen) return null;
 
+  const donationChannels = (donationsData as DonationChannel[]).map((channel) => {
+    switch (channel.id) {
+      case 'upi':
+        return {
+          ...channel,
+          title: translate({id: 'support.modal.channel.upi.title', message: 'UPI (India)', description: 'UPI donation method title'}),
+          description: translate({id: 'support.modal.channel.upi.description', message: 'Send via any UPI app (PhonePe / GPay / Paytm) to the ID below. Add reference: NOTHING ARCHIVE.', description: 'UPI donation method description'}),
+          extraInfo: translate({id: 'support.modal.channel.upi.holder', message: 'holder: Harshit Sinha', description: 'UPI payment account holder information'}),
+          buttonText: translate({id: 'support.modal.shareConfirmation', message: 'Share Confirmation', description: 'Donation proof button label'}),
+        };
+      case 'kofi':
+        return {
+          ...channel,
+          description: translate({id: 'support.modal.channel.kofi.description', message: 'One-tap tip via Ko-fi (card / Apple Pay / Google Pay).', description: 'Ko-fi donation method description'}),
+          buttonText: translate({id: 'support.modal.channel.kofi.button', message: 'Open Ko-fi', description: 'Ko-fi donation method button label'}),
+        };
+      case 'paypal':
+        return {
+          ...channel,
+          description: translate({id: 'support.modal.channel.paypal.description', message: "Send via PayPal.me — 'Friends & Family' if possible.", description: 'PayPal donation method description'}),
+          buttonText: translate({id: 'support.modal.channel.paypal.button', message: 'Open PayPal', description: 'PayPal donation method button label'}),
+        };
+      case 'boosty':
+        return {
+          ...channel,
+          title: translate({id: 'support.modal.channel.boosty.title', message: 'Boosty (Russia)', description: 'Boosty donation method title'}),
+          description: translate({id: 'support.modal.channel.boosty.description', message: 'Support the archive via Boosty (available for cards in Russia).', description: 'Boosty donation method description'}),
+          buttonText: translate({id: 'support.modal.channel.boosty.button', message: 'Open Boosty', description: 'Boosty donation method button label'}),
+        };
+      default:
+        return channel;
+    }
+  });
+
   const handleCopy = (id: string, text: string) => {
     if (typeof navigator === 'undefined' || !navigator.clipboard) return;
     navigator.clipboard.writeText(text).then(() => {
@@ -128,12 +163,12 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
         <div className={styles.header}>
           <div className={styles.headerTitleGroup}>
             <FaHeart className={styles.heartIcon} size={14} />
-            <h2 id="support-modal-title" className={styles.title}>SUPPORT THE PROJECT</h2>
+            <h2 id="support-modal-title" className={styles.title}>{translate({id: 'support.modal.title', message: 'SUPPORT THE PROJECT', description: 'Support donation modal title'})}</h2>
           </div>
           <button
             className={styles.closeBtn}
             onClick={onClose}
-            aria-label="Close dialogue"
+            aria-label={translate({id: 'support.modal.close', message: 'Close dialogue', description: 'Accessible label for the support modal close button'})}
           >
             <FaTimes size={18} />
           </button>
@@ -143,29 +178,29 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
           <div className={styles.introContainer}>
             <div className={styles.introText}>
               <p>
-                Nothing Archive is a community-driven project. Keeping it up to date and relevant takes time, effort, and ongoing costs (where applicable). If you've benefited from the archive and would like to support it, your donation helps cover these costs and allows the project to keep growing.
+                {translate({id: 'support.modal.intro.community', message: "Nothing Archive is a community-driven project. Keeping it up to date and relevant takes time, effort, and ongoing costs (where applicable). If you've benefited from the archive and would like to support it, your donation helps cover these costs and allows the project to keep growing.", description: 'Support modal introduction paragraph'})}
               </p>
               <p>
-                Donations are completely optional, and every contribution is sincerely appreciated. 💛
+                {translate({id: 'support.modal.intro.optional', message: 'Donations are completely optional, and every contribution is sincerely appreciated. 💛', description: 'Support modal introduction paragraph'})}
               </p>
               <p>
-                As a small thank-you, the supporters widget recognizes those who have made notable contributions. If you choose to support the project, your name can be featured there too.
+                {translate({id: 'support.modal.intro.supporters', message: 'As a small thank-you, the supporters widget recognizes those who have made notable contributions. If you choose to support the project, your name can be featured there too.', description: 'Support modal introduction paragraph'})}
               </p>
               <p>
-                Thank you for being part of the journey!
+                {translate({id: 'support.modal.intro.thanks', message: 'Thank you for being part of the journey!', description: 'Support modal introduction paragraph'})}
               </p>
             </div>
             <SupporterWidget donors={donorsData} />
           </div>
 
           <h3 className={styles.donorsTitle}>
-            <span className={styles.animatedEmoji}>💵</span> DONATION METHODS
+            <span className={styles.animatedEmoji}>💵</span> {translate({id: 'support.modal.methods', message: 'DONATION METHODS', description: 'Donation methods section heading'})}
           </h3>
 
           <div className={styles.contentLayout}>
             <div className={styles.leftColumn}>
               <div className={styles.stack}>
-                {(donationsData as DonationChannel[]).map((channel) => (
+                {donationChannels.map((channel) => (
                   <div key={channel.id} className={styles.card}>
                     <h3 className={styles.cardTitle}>{channel.title}</h3>
                     {channel.description && <p className={styles.cardDesc}>{channel.description}</p>}
@@ -178,13 +213,13 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
                           value={channel.address}
                           className={styles.addressInput}
                           onClick={(e) => (e.target as HTMLInputElement).select()}
-                          aria-label={`${channel.title} payment address`}
+                          aria-label={translate({id: 'support.modal.paymentAddress', message: '{channel} payment address', description: 'Accessible label for a donation payment address'}, {channel: channel.title})}
                         />
                         <button
                           className={`${styles.copyBtn} ${copiedId === channel.id ? styles.copied : ''}`}
                           onClick={() => handleCopy(channel.id, channel.address)}
-                          title="Copy Address"
-                          aria-label={`Copy ${channel.title} address`}
+                          title={translate({id: 'support.modal.copyAddress', message: 'Copy Address', description: 'Tooltip for copying a donation address'})}
+                          aria-label={translate({id: 'support.modal.copyChannelAddress', message: 'Copy {channel} address', description: 'Accessible label for copying a donation address'}, {channel: channel.title})}
                         >
                           {copiedId === channel.id ? <FaCheck size={12} /> : <FaCopy size={12} />}
                         </button>
@@ -202,7 +237,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
                         rel="noopener noreferrer"
                         className={styles.paidBtn}
                       >
-                        <span>{channel.buttonText || 'Share Confirmation'}</span>
+                        <span>{channel.buttonText || translate({id: 'support.modal.shareConfirmation', message: 'Share Confirmation', description: 'Donation proof button label'})}</span>
                         <FaExternalLinkAlt size={10} className={styles.btnIcon} />
                       </a>
                     )}
@@ -215,7 +250,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
               <div className={`${styles.card} ${styles.cryptoCard}`}>
                 <h3 className={styles.cardTitle}>NOWPayments</h3>
                 <p className={styles.cardDesc}>
-                  Donate securely using any major cryptocurrency via NOWPayments.
+                  {translate({id: 'support.modal.nowPayments.description', message: 'Donate securely using any major cryptocurrency via NOWPayments.', description: 'NOWPayments donation method description'})}
                 </p>
                 <div 
                   ref={containerRef} 
@@ -227,7 +262,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
                   {loadPaymentWidget && iframeLoading && (
                     <div className={styles.spinnerContainer}>
                       <div className={styles.spinner} />
-                      <span className={styles.spinnerText}>Loading Widget...</span>
+                      <span className={styles.spinnerText}>{translate({id: 'support.modal.loadingWidget', message: 'Loading Widget...', description: 'NOWPayments widget loading message'})}</span>
                     </div>
                   )}
                   {loadPaymentWidget ? (
@@ -249,14 +284,14 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
                         transform: `translate(-50%, 0) scale(${scale})`,
                         transformOrigin: 'top center'
                       }}
-                      title="NOWPayments Donation Widget"
+                      title={translate({id: 'support.modal.nowPayments.title', message: 'NOWPayments Donation Widget', description: 'Title for the embedded NOWPayments donation widget'})}
                       onLoad={() => setIframeLoading(false)}
                     >
-                      Can't load widget
+                      {translate({id: 'support.modal.widgetFallback', message: "Can't load widget", description: 'Fallback content for the embedded NOWPayments donation widget'})}
                     </iframe>
                   ) : (
                     <button type="button" className={styles.paidBtn} onClick={() => setLoadPaymentWidget(true)}>
-                      Load payment widget
+                      {translate({id: 'support.modal.loadWidget', message: 'Load payment widget', description: 'Button that loads the NOWPayments donation widget'})}
                     </button>
                   )}
                 </div>

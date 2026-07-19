@@ -1,0 +1,82 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.mainSidebar.category.About the Project": {
+    "message": "About the Project",
+    "description": "The label for category 'About the Project' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Resources": {
+    "message": "Resources",
+    "description": "The label for category 'Resources' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.OTA Changelogs": {
+    "message": "OTA Changelogs",
+    "description": "The label for category 'OTA Changelogs' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Nothing Phone Series": {
+    "message": "Nothing Phone Series",
+    "description": "The label for category 'Nothing Phone Series' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Phone (3) (Metroid)": {
+    "message": "Phone (3) (Metroid)",
+    "description": "The label for category 'Phone (3) (Metroid)' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Phone (2) (Pong)": {
+    "message": "Phone (2) (Pong)",
+    "description": "The label for category 'Phone (2) (Pong)' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Phone (1) (Spacewar)": {
+    "message": "Phone (1) (Spacewar)",
+    "description": "The label for category 'Phone (1) (Spacewar)' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Nothing Phone (a) Series": {
+    "message": "Nothing Phone (a) Series",
+    "description": "The label for category 'Nothing Phone (a) Series' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Phone (4a) Pro (FroggerPro)": {
+    "message": "Phone (4a) Pro (FroggerPro)",
+    "description": "The label for category 'Phone (4a) Pro (FroggerPro)' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Phone (4a) (Frogger)": {
+    "message": "Phone (4a) (Frogger)",
+    "description": "The label for category 'Phone (4a) (Frogger)' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Phone / Phone (Asteroids(Pro))": {
+    "message": "Phone / Phone (Asteroids(Pro))",
+    "description": "The label for category 'Phone / Phone (Asteroids(Pro))' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Phone (2a) Plus (PacmanPro)": {
+    "message": "Phone (2a) Plus (PacmanPro)",
+    "description": "The label for category 'Phone (2a) Plus (PacmanPro)' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Phone (2a) (Pacman)": {
+    "message": "Phone (2a) (Pacman)",
+    "description": "The label for category 'Phone (2a) (Pacman)' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Nothing Phone (b / Lite) Series": {
+    "message": "Nothing Phone (b / Lite) Series",
+    "description": "The label for category 'Nothing Phone (b / Lite) Series' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Phone (4b) (SuperContra)": {
+    "message": "Phone (4b) (SuperContra)",
+    "description": "The label for category 'Phone (4b) (SuperContra)' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Phone (3a) Lite (Galaxian)": {
+    "message": "Phone (3a) Lite (Galaxian)",
+    "description": "The label for category 'Phone (3a) Lite (Galaxian)' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.CMF by Nothing Phone Series": {
+    "message": "CMF by Nothing Phone Series",
+    "description": "The label for category 'CMF by Nothing Phone Series' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Phone (2) Pro (Galaga)": {
+    "message": "Phone (2) Pro (Galaga)",
+    "description": "The label for category 'Phone (2) Pro (Galaga)' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Phone (1) (Tetris)": {
+    "message": "Phone (1) (Tetris)",
+    "description": "The label for category 'Phone (1) (Tetris)' in sidebar 'mainSidebar'"
+  }
+}

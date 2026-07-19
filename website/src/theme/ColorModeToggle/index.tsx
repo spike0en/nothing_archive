@@ -91,6 +91,9 @@ function ColorModeToggle({
 }: Props): React.JSX.Element {
   const isBrowser = useIsBrowser();
   const currentChoice = value === null ? 'system' : value;
+  const lightModeLabel = translate({message: 'Light Mode', id: 'theme.colorToggle.ariaLabel.mode.light'});
+  const systemModeLabel = translate({message: 'System Mode', id: 'theme.colorToggle.ariaLabel.mode.system'});
+  const darkModeLabel = translate({message: 'Dark Mode', id: 'theme.colorToggle.ariaLabel.mode.dark'});
 
   return (
     <div className={clsx(styles.toggleContainer, className)}>
@@ -105,11 +108,8 @@ function ColorModeToggle({
         )}
         onClick={() => onChange('light')}
         disabled={!isBrowser}
-        title={translate({
-          message: 'Light Mode',
-          id: 'theme.colorToggle.ariaLabel.mode.light',
-        })}
-        aria-label="Light Mode"
+        title={lightModeLabel}
+        aria-label={lightModeLabel}
         aria-pressed={currentChoice === 'light'}
       >
         <SunIcon />
@@ -124,11 +124,8 @@ function ColorModeToggle({
         )}
         onClick={() => onChange(null)}
         disabled={!isBrowser}
-        title={translate({
-          message: 'System Mode',
-          id: 'theme.colorToggle.ariaLabel.mode.system',
-        })}
-        aria-label="System Mode"
+        title={systemModeLabel}
+        aria-label={systemModeLabel}
         aria-pressed={currentChoice === 'system'}
       >
         <SystemIcon />
@@ -143,11 +140,8 @@ function ColorModeToggle({
         )}
         onClick={() => onChange('dark')}
         disabled={!isBrowser}
-        title={translate({
-          message: 'Dark Mode',
-          id: 'theme.colorToggle.ariaLabel.mode.dark',
-        })}
-        aria-label="Dark Mode"
+        title={darkModeLabel}
+        aria-label={darkModeLabel}
         aria-pressed={currentChoice === 'dark'}
       >
         <MoonIcon />

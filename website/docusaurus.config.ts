@@ -348,6 +348,7 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
 
 const siteUrl = process.env.SITE_URL || (process.env.GITHUB_ACTIONS === 'true' ? 'https://nothingarchive.tech' : 'http://localhost:3000');
 const baseUrl = process.env.BASE_URL || '/';
+const supportedLocales = ['en', 'fr', 'de', 'es', 'ru', 'zh-CN', 'ja', 'pt-BR', 'pl', 'tr', 'ko', 'id', 'hi'];
 const websiteSchema = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -355,7 +356,7 @@ const websiteSchema = JSON.stringify({
   name: 'Nothing Archive',
   url: `${siteUrl}${baseUrl}`,
   description: 'A curated hub for everything related to the Nothing ecosystem.',
-  inLanguage: 'en',
+  inLanguage: supportedLocales,
   potentialAction: {
     '@type': 'SearchAction',
     target: `${siteUrl}${baseUrl}search?q={search_term_string}`,
@@ -393,7 +394,7 @@ const config: Config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: supportedLocales,
   },
 
   plugins: [
@@ -744,6 +745,10 @@ const config: Config = {
         },
         {
           type: 'custom-PwaInstallButton',
+          position: 'right',
+        },
+        {
+          type: 'localeDropdown',
           position: 'right',
         },
         {

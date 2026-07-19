@@ -8,6 +8,7 @@
  */
 
 import React from 'react';
+import { translate } from '@docusaurus/Translate';
 import { usePwa } from '../../components/PwaContext';
 import clsx from 'clsx';
 import styles from './custom-PwaInstallButton.module.css';
@@ -55,7 +56,7 @@ export default function PwaInstallButton({ mobile }: PwaInstallButtonProps): Rea
     return (
       <li className="menu__list-item">
         <a className={clsx("menu__link", styles.mobileInstallLink)} href="#" onClick={handleClick}>
-          {icon} <span>Install App</span>
+          {icon} <span>{translate({id: 'navbar.installApp', message: 'Install App', description: 'Navigation action that installs the progressive web app'})}</span>
         </a>
       </li>
     );
@@ -67,7 +68,7 @@ export default function PwaInstallButton({ mobile }: PwaInstallButtonProps): Rea
       onClick={handleClick}
       className={clsx('navbar__item navbar__link', styles.installBtn)}
     >
-      {icon} <span>Install App</span>
+      {icon} <span>{translate({id: 'navbar.installApp', message: 'Install App', description: 'Navigation action that installs the progressive web app'})}</span>
     </a>
   );
 }

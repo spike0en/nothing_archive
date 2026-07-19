@@ -9,6 +9,7 @@
 
 import React, { useState } from 'react';
 import Link from '@docusaurus/Link';
+import { translate } from '@docusaurus/Translate';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import clsx from 'clsx';
@@ -56,7 +57,7 @@ function ModelCard({ device, latestLink }: { device: DeviceItem; latestLink: str
             <img
               key={resolvedImageUrl}
               src={resolvedImageUrl}
-              alt={`${device.name} - ${selectedColor.name}`}
+              alt={translate({id: 'deviceGrid.imageAlt', message: '{device} - {color}', description: 'Accessible label for a device image'}, {device: device.name, color: selectedColor.name})}
               className={styles.deviceImage}
               loading="lazy"
             />
@@ -95,7 +96,7 @@ function ModelCard({ device, latestLink }: { device: DeviceItem; latestLink: str
           <h3 className={styles.deviceName}>{displayName}</h3>
         </Link>
         {device.variants.length > 1 && (
-          <div className={styles.colorSelector} role="group" aria-label={`Color variants for ${device.name}`}>
+          <div className={styles.colorSelector} role="group" aria-label={translate({id: 'deviceGrid.colorVariants', message: 'Color variants for {device}', description: 'Accessible label for a device color selector'}, {device: device.name})}>
             {device.variants.map((v) => (
               <button
                 key={v.name}
@@ -103,7 +104,7 @@ function ModelCard({ device, latestLink }: { device: DeviceItem; latestLink: str
                 className={clsx(styles.colorPill, selectedColor?.name === v.name && styles.colorPillActive)}
                 onClick={() => setSelectedColor(v)}
                 title={v.name}
-                aria-label={`Select ${v.name} color`}
+                aria-label={translate({id: 'deviceGrid.selectColor', message: 'Select {color} color', description: 'Accessible label for a device color option'}, {color: v.name})}
                 aria-pressed={selectedColor?.name === v.name}
               >
                 {v.name}
@@ -131,7 +132,7 @@ export default function DeviceGrid(): React.JSX.Element {
     <div>
       {numberDevices.length > 0 && (
         <>
-          <h2 className={styles.sectionHeader}>Nothing Phone Series</h2>
+          <h2 className={styles.sectionHeader}>{translate({id: 'deviceGrid.series.number', message: 'Nothing Phone Series', description: 'Device catalog category heading'})}</h2>
           <div className={styles.grid}>
             {numberDevices.map(device => (
               <ModelCard
@@ -146,7 +147,7 @@ export default function DeviceGrid(): React.JSX.Element {
 
       {aDevices.length > 0 && (
         <>
-          <h2 className={styles.sectionHeader}>Nothing Phone (a) Series</h2>
+          <h2 className={styles.sectionHeader}>{translate({id: 'deviceGrid.series.a', message: 'Nothing Phone (a) Series', description: 'Device catalog category heading'})}</h2>
           <div className={styles.grid}>
             {aDevices.map(device => (
               <ModelCard
@@ -161,7 +162,7 @@ export default function DeviceGrid(): React.JSX.Element {
 
       {bDevices.length > 0 && (
         <>
-          <h2 className={styles.sectionHeader}>Nothing Phone (b / Lite) Series</h2>
+          <h2 className={styles.sectionHeader}>{translate({id: 'deviceGrid.series.b', message: 'Nothing Phone (b / Lite) Series', description: 'Device catalog category heading'})}</h2>
           <div className={styles.grid}>
             {bDevices.map(device => (
               <ModelCard
@@ -176,7 +177,7 @@ export default function DeviceGrid(): React.JSX.Element {
 
       {cmfDevices.length > 0 && (
         <>
-          <h2 className={styles.sectionHeader}>CMF by Nothing Phone Series</h2>
+          <h2 className={styles.sectionHeader}>{translate({id: 'deviceGrid.series.cmf', message: 'CMF by Nothing Phone Series', description: 'Device catalog category heading'})}</h2>
           <div className={styles.grid}>
             {cmfDevices.map(device => (
               <ModelCard

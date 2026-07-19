@@ -8,6 +8,7 @@
  */
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { translate } from '@docusaurus/Translate';
 import { FaHeart, FaTimes, FaCheckCircle } from 'react-icons/fa';
 import styles from './SupportNudge.module.css';
 
@@ -151,39 +152,39 @@ export default function SupportNudge(): React.JSX.Element | null {
   if (!visible) return null;
 
   return (
-    <div className={styles.nudgeContainer} role="complementary" aria-label="Support prompt">
+    <div className={styles.nudgeContainer} role="complementary" aria-label={translate({id: 'support.nudge.landmark', message: 'Support prompt', description: 'Accessible landmark label for the support nudge'})}>
       <div className={`${styles.nudge} ${exiting ? styles.nudgeExiting : ''}`}>
         <div className={styles.nudgeHeader}>
           <div className={styles.nudgeTitleGroup}>
             <FaHeart size={13} className={styles.heartIcon} />
-            <p className={styles.nudgeTitle}>Enjoying Nothing Archive?</p>
+            <p className={styles.nudgeTitle}>{translate({id: 'support.nudge.title', message: 'Enjoying Nothing Archive?', description: 'Support nudge title'})}</p>
           </div>
           <button
             className={styles.closeBtn}
             onClick={dismissWithCooldown}
-            aria-label="Dismiss support prompt"
+            aria-label={translate({id: 'support.nudge.dismiss', message: 'Dismiss support prompt', description: 'Accessible label for the support nudge close button'})}
           >
             <FaTimes size={12} />
           </button>
         </div>
 
         <p className={styles.nudgeBody}>
-          If you found this useful, please consider supporting the project. Thank you!
+          {translate({id: 'support.nudge.body', message: 'If you found this useful, please consider supporting the project. Thank you!', description: 'Support nudge description'})}
         </p>
 
         <div className={styles.nudgeActions}>
           <button className={styles.nudgeCta} onClick={handleCta}>
             <FaHeart size={10} className={styles.ctaIcon} />
-            <span>Support Project</span>
+            <span>{translate({id: 'support.nudge.supportProject', message: 'Support Project', description: 'Support nudge primary action'})}</span>
           </button>
 
           <button
             className={styles.alreadySupported}
             onClick={dismissPermanently}
-            title="Hide this prompt forever"
+            title={translate({id: 'support.nudge.hideForever', message: 'Hide this prompt forever', description: 'Tooltip for permanently dismissing the support nudge'})}
           >
             <FaCheckCircle size={10} />
-            <span>Already Supported</span>
+            <span>{translate({id: 'support.nudge.alreadySupported', message: 'Already Supported', description: 'Support nudge secondary action'})}</span>
           </button>
         </div>
 

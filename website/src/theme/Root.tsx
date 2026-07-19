@@ -8,6 +8,7 @@
  */
 
 import React, { useEffect, useState, useRef } from 'react';
+import { translate } from '@docusaurus/Translate';
 import CopyButtonSetup from '../components/CopyButton';
 import { PwaProvider } from '../components/PwaContext';
 import SupportModal from '../components/SupportModal';
@@ -254,11 +255,11 @@ export default function Root({ children }: RootProps): React.JSX.Element {
           <div className="shortcut-modal" onClick={e => e.stopPropagation()}>
             <div className="shortcut-modal-header">
               <span className="shortcut-modal-dot" />
-              <span id="shortcut-title">KEYBOARD SHORTCUTS</span>
+              <span id="shortcut-title">{translate({id: 'shortcuts.title', message: 'KEYBOARD SHORTCUTS', description: 'Keyboard shortcuts dialog title'})}</span>
               <button
                 className="shortcut-modal-close"
                 onClick={() => setShowShortcuts(false)}
-                aria-label="Close"
+                aria-label={translate({id: 'shortcuts.close', message: 'Close', description: 'Accessible label for the keyboard shortcuts close button'})}
               >
                 &times;
               </button>
@@ -267,31 +268,31 @@ export default function Root({ children }: RootProps): React.JSX.Element {
               <table className="shortcut-table">
                 <thead>
                   <tr>
-                    <th>ACTION</th>
-                    <th>SHORTCUT</th>
+                    <th>{translate({id: 'shortcuts.action', message: 'ACTION', description: 'Keyboard shortcuts table column heading'})}</th>
+                    <th>{translate({id: 'shortcuts.shortcut', message: 'SHORTCUT', description: 'Keyboard shortcuts table column heading'})}</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Search Documentation</td>
+                    <td>{translate({id: 'shortcuts.searchDocumentation', message: 'Search Documentation', description: 'Keyboard shortcut action'})}</td>
                     <td>
                       <kbd>Ctrl</kbd> + <kbd>K</kbd> / <kbd>⌘</kbd> + <kbd>K</kbd>
                     </td>
                   </tr>
                   <tr>
-                    <td>Open Shortcut Map</td>
+                    <td>{translate({id: 'shortcuts.openMap', message: 'Open Shortcut Map', description: 'Keyboard shortcut action'})}</td>
                     <td>
                       <kbd>?</kbd>
                     </td>
                   </tr>
                   <tr>
-                    <td>Close Shortcut Map / Clear Search</td>
+                    <td>{translate({id: 'shortcuts.closeOrClear', message: 'Close Shortcut Map / Clear Search', description: 'Keyboard shortcut action'})}</td>
                     <td>
                       <kbd>Esc</kbd>
                     </td>
                   </tr>
                   <tr>
-                    <td>Navigate Search Results</td>
+                    <td>{translate({id: 'shortcuts.navigateSearch', message: 'Navigate Search Results', description: 'Keyboard shortcut action'})}</td>
                     <td>
                       <kbd>↑</kbd> <kbd>↓</kbd> / <kbd>Enter</kbd>
                     </td>
@@ -305,4 +306,3 @@ export default function Root({ children }: RootProps): React.JSX.Element {
     </PwaProvider>
   );
 }
-

@@ -1,0 +1,17 @@
+project_id_env: CROWDIN_PROJECT_ID
+api_token_env: CROWDIN_PERSONAL_TOKEN
+base_path: .
+preserve_hierarchy: true
+
+languages_mapping: &docusaurus_locales
+  two_letters_code:
+    pt-BR: pt-BR
+    zh-CN: zh-CN
+
+files:
+  - source: /i18n/en/**/*
+    translation: /i18n/%two_letters_code%/**/%original_file_name%
+    languages_mapping: *docusaurus_locales
+  - source: /docs/**/*
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%
+    languages_mapping: *docusaurus_locales

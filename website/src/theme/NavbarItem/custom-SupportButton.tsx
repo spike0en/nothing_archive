@@ -7,6 +7,7 @@
  */
 
 import React from 'react';
+import { translate } from '@docusaurus/Translate';
 import clsx from 'clsx';
 import { FaHeart } from 'react-icons/fa';
 import styles from './custom-SupportButton.module.css';
@@ -38,7 +39,7 @@ export default function SupportButton({ mobile }: SupportButtonProps): React.JSX
     return (
       <li className="menu__list-item">
         <a className={clsx("menu__link", styles.mobileSupportLink)} href="#" onClick={handleClick}>
-          {icon} <span>Support Project</span>
+          {icon} <span>{translate({id: 'navbar.supportProject', message: 'Support Project', description: 'Mobile navigation action that opens the support modal'})}</span>
         </a>
       </li>
     );
@@ -49,9 +50,9 @@ export default function SupportButton({ mobile }: SupportButtonProps): React.JSX
       href="#"
       onClick={handleClick}
       className={clsx('navbar__item navbar__link', styles.supportBtn)}
-      title="Support & Donations"
+      title={translate({id: 'navbar.supportDonations', message: 'Support & Donations', description: 'Tooltip for the support navigation action'})}
     >
-      {icon} <span>Support</span>
+      {icon} <span>{translate({id: 'navbar.support', message: 'Support', description: 'Navigation action that opens the support modal'})}</span>
     </a>
   );
 }

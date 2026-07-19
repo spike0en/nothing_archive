@@ -8,6 +8,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from '@docusaurus/Link';
+import { translate } from '@docusaurus/Translate';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import clsx from 'clsx';
 import styles from './AnnouncementBanner.module.css';
@@ -133,14 +134,14 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
           >
             <span className={styles.announcementTag}>📢</span>
             <span className={styles.message}>
-              {`${singleRelease.codename}-${singleRelease.version} is now available!`}
+              {translate({id: 'announcement.releaseAvailable', message: '{release} is now available!', description: 'Announcement shown when one new firmware release is available'}, {release: `${singleRelease.codename}-${singleRelease.version}`})}
             </span>
           </Link>
           <button
             onClick={handleDismiss}
             className={styles.dismissBtn}
-            aria-label="Dismiss announcement"
-            title="Dismiss"
+            aria-label={translate({id: 'announcement.dismiss', message: 'Dismiss announcement', description: 'Accessible label for the announcement close button'})}
+            title={translate({id: 'announcement.dismissShort', message: 'Dismiss', description: 'Tooltip for the announcement close button'})}
           >
             &times;
           </button>
@@ -155,7 +156,7 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
       <div className={styles.container}>
         <div className={styles.contentNonClickable}>
           <span className={styles.announcementTag}>📢</span>
-          <span className={styles.message}>New updates available: </span>
+          <span className={styles.message}>{translate({id: 'announcement.newUpdates', message: 'New updates available:', description: 'Prefix for a list of new firmware releases'})} </span>
           {releases.map((release, index) => {
             const changelogKey = `${release.codename}-${release.version}`.toLowerCase();
             const changelogUrl = changelogLinks[changelogKey];
@@ -170,7 +171,7 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
                   <React.Fragment key="more">
                     <span className={styles.separator}> &amp; </span>
                     <Link to="/docs/changelogs" className={styles.inlineLink}>
-                      {`${releases.length - 2} more`}
+                      {translate({id: 'announcement.more', message: '{count} more', description: 'Link to additional firmware releases'}, {count: releases.length - 2})}
                     </Link>
                   </React.Fragment>
                 );
@@ -199,8 +200,8 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
         <button
           onClick={handleDismiss}
           className={styles.dismissBtn}
-          aria-label="Dismiss announcement"
-          title="Dismiss"
+          aria-label={translate({id: 'announcement.dismiss', message: 'Dismiss announcement', description: 'Accessible label for the announcement close button'})}
+          title={translate({id: 'announcement.dismissShort', message: 'Dismiss', description: 'Tooltip for the announcement close button'})}
         >
           &times;
         </button>

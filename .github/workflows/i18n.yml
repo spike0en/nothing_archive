@@ -1,0 +1,88 @@
+name: Community translations
+
+on:
+  pull_request:
+    paths:
+      - 'website/docusaurus.config.ts'
+      - 'website/docs/**'
+      - 'website/src/**'
+      - 'website/package.json'
+      - 'website/bun.lock'
+      - 'website/crowdin.yml'
+      - 'website/i18n/en/**'
+  push:
+    branches: [main]
+    paths:
+      - 'website/docusaurus.config.ts'
+      - 'website/docs/**'
+      - 'website/src/**'
+      - 'website/package.json'
+      - 'website/bun.lock'
+      - 'website/crowdin.yml'
+      - 'website/i18n/en/**'
+  schedule:
+    - cron: '17 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  validate-source-catalog:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: website
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.3.14'
+      - run: bun install --frozen-lockfile
+      - run: bun run translations:check
+
+  upload-sources:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: website
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.3.14'
+      - run: bun install --frozen-lockfile
+      - run: bun run translations:check
+      - run: bun run crowdin upload sources
+        env:
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+
+  download-translations:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: website
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.3.14'
+      - run: bun install --frozen-lockfile
+      - run: bun run crowdin download
+        env:
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+      - uses: peter-evans/create-pull-request@v8
+        with:
+          path: website
+          add-paths: i18n/**
+          branch: automation/crowdin-translations
+          commit-message: 'chore(i18n): sync community translations'
+          title: 'chore(i18n): sync community translations'
+          body: 'Automated Crowdin translation sync. Review and merge to publish the updated locales.'
+          delete-branch: true

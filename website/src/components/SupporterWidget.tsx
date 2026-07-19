@@ -8,6 +8,7 @@
  */
 
 import React from 'react';
+import { translate } from '@docusaurus/Translate';
 import styles from './SupporterWidget.module.css';
 
 interface SupporterWidgetProps {
@@ -19,7 +20,11 @@ interface SupporterWidgetProps {
  * Calculates duration dynamically based on list length and renders scrolling track.
  */
 export default function SupporterWidget({ donors }: SupporterWidgetProps): React.JSX.Element {
-  const displayNames = donors.length > 0 ? donors : ['SUPPORT', 'ARCHIVE', 'COMMUNITY'];
+  const displayNames = donors.length > 0 ? donors : [
+    translate({id: 'supporterWidget.fallback.support', message: 'SUPPORT', description: 'Fallback supporter ticker item'}),
+    translate({id: 'supporterWidget.fallback.archive', message: 'ARCHIVE', description: 'Fallback supporter ticker item'}),
+    translate({id: 'supporterWidget.fallback.community', message: 'COMMUNITY', description: 'Fallback supporter ticker item'}),
+  ];
 
   // Scales at 1.2s per name, capped between 6s and 20s.
   // This ensures the loop never takes more than 20 seconds to complete, even with long lists.
@@ -35,7 +40,7 @@ export default function SupporterWidget({ donors }: SupporterWidgetProps): React
 
   return (
     <div className={styles.tickerContainer}>
-      <span className={styles.tickerLabel}>Top Supporters</span>
+      <span className={styles.tickerLabel}>{translate({id: 'supporterWidget.title', message: 'Top Supporters', description: 'Supporter ticker heading'})}</span>
       <div className={styles.tickerWindow}>
         <div
           className={styles.marqueeTrack}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
+import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
@@ -39,50 +40,50 @@ type FeatureItem = {
 function getFeatureList(): FeatureItem[] {
   return [
     {
-      title: 'Devices',
-      description: 'Explore the full catalog of Nothing and CMF devices, including phones, audio gear, wearables, and accessories.',
+      title: translate({id: 'homepage.feature.devices', message: 'Devices', description: 'Homepage feature card title'}),
+      description: translate({id: 'homepage.feature.devices.description', message: 'Explore the full catalog of Nothing and CMF devices, including phones, audio gear, wearables, and accessories.', description: 'Homepage devices feature card description'}),
       link: '/docs/devices',
       icon: <FaMobileAlt size={20} />,
     },
     {
-      title: 'Firmware',
-      description: 'Download official Nothing OS firmware, stock factory images, and delta OTA updates to flash, downgrade, restore, root, or manually sideload updates on your phones to skip staggered regional rollouts.',
+      title: translate({id: 'homepage.feature.firmware', message: 'Firmware', description: 'Homepage feature card title'}),
+      description: translate({id: 'homepage.feature.firmware.description', message: 'Download official Nothing OS firmware, stock factory images, and delta OTA updates to flash, downgrade, restore, root, or manually sideload updates on your phones to skip staggered regional rollouts.', description: 'Homepage firmware feature card description'}),
       link: '/docs/firmware',
       icon: <FaDownload size={20} />,
     },
     {
-      title: 'OTA Changelogs',
-      description: 'Learn how software updates work on Nothing & CMF phones and browse official Nothing OS changelogs',
+      title: translate({id: 'homepage.feature.changelogs', message: 'OTA Changelogs', description: 'Homepage feature card title'}),
+      description: translate({id: 'homepage.feature.changelogs.description', message: 'Learn how software updates work on Nothing & CMF phones and browse official Nothing OS changelogs', description: 'Homepage changelog feature card description'}),
       link: '/docs/changelogs',
       icon: <FaClipboardList size={20} />,
     },
     {
-      title: 'Guides',
-      description: 'Step-by-step instructions to unlock bootloaders, root, and customize Nothing and CMF devices.',
+      title: translate({id: 'homepage.feature.guides', message: 'Guides', description: 'Homepage feature card title'}),
+      description: translate({id: 'homepage.feature.guides.description', message: 'Step-by-step instructions to unlock bootloaders, root, and customize Nothing and CMF devices.', description: 'Homepage guides feature card description'}),
       link: '/docs/guides',
       icon: <FaBook size={20} />,
     },
     {
-      title: 'Official Resources',
-      description: 'Find official Nothing apps, wallpapers, custom fonts, kernel sources, and developer tools.',
+      title: translate({id: 'homepage.feature.official', message: 'Official Resources', description: 'Homepage feature card title'}),
+      description: translate({id: 'homepage.feature.official.description', message: 'Find official Nothing apps, wallpapers, custom fonts, kernel sources, and developer tools.', description: 'Homepage official resources feature card description'}),
       link: '/docs/official',
       icon: <FaBoxOpen size={20} />,
     },
     {
-      title: 'Community Apps',
-      description: 'Explore custom apps, Glyph tools, and productivity utilities made by the community.',
+      title: translate({id: 'homepage.feature.apps', message: 'Community Apps', description: 'Homepage feature card title'}),
+      description: translate({id: 'homepage.feature.apps.description', message: 'Explore custom apps, Glyph tools, and productivity utilities made by the community.', description: 'Homepage community apps feature card description'}),
       link: '/docs/apps',
       icon: <FaRocket size={20} />,
     },
     {
-      title: 'Projects',
-      description: 'Browse creative software, tools, and custom projects built for the Nothing ecosystem.',
+      title: translate({id: 'homepage.feature.projects', message: 'Projects', description: 'Homepage feature card title'}),
+      description: translate({id: 'homepage.feature.projects.description', message: 'Browse creative software, tools, and custom projects built for the Nothing ecosystem.', description: 'Homepage projects feature card description'}),
       link: '/docs/projects',
       icon: <FaCode size={20} />,
     },
     {
-      title: 'Photography',
-      description: 'Improve your photos with GCAM ports, custom configurations, and presets tuned for Nothing and CMF phones.',
+      title: translate({id: 'homepage.feature.photography', message: 'Photography', description: 'Homepage feature card title'}),
+      description: translate({id: 'homepage.feature.photography.description', message: 'Improve your photos with GCAM ports, custom configurations, and presets tuned for Nothing and CMF phones.', description: 'Homepage photography feature card description'}),
       link: '/docs/photography',
       icon: <FaCameraRetro size={20} />,
     },
@@ -92,7 +93,7 @@ function getFeatureList(): FeatureItem[] {
 /** External community platform links. */
 const socialLinks = [
   { label: 'Telegram', href: 'https://telegram.me/s/Nothing_Archive', icon: <FaTelegramPlane size={24} /> },
-  { label: 'Community', href: 'https://nothing.community', icon: <TbMessageCircle size={24} /> },
+  { label: translate({id: 'homepage.social.community', message: 'Community', description: 'Label for the Nothing community link'}), href: 'https://nothing.community', icon: <TbMessageCircle size={24} /> },
   { label: 'Discord', href: 'https://discord.com/invite/nothingtech', icon: <FaDiscord size={24} /> },
   { label: 'Reddit', href: 'https://www.reddit.com/r/NothingTech', icon: <FaRedditAlien size={24} /> },
   { label: 'XDA', href: 'https://xdaforums.com/c/nothing.12583/', icon: <FaTerminal size={24} /> },
@@ -110,6 +111,7 @@ const socialLinks = [
  */
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
+  const tagline = translate({id: 'homepage.tagline', message: 'A curated hub for everything related to the Nothing ecosystem.', description: 'Homepage hero subtitle'});
   const headerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -148,11 +150,11 @@ function HomepageHeader() {
               {siteConfig.title}
             </Heading>
             <p className={styles.heroSubtitle}>
-              {siteConfig.tagline}
+              {tagline}
             </p>
             <div className={styles.buttons}>
               <Link className={clsx('button', styles.ctaButton)} to="/docs/intro">
-                Explore Resources
+                {translate({id: 'homepage.hero.exploreResources', message: 'Explore Resources', description: 'Homepage primary call to action'})}
               </Link>
               <a
                 className={clsx('button', styles.ctaButtonSecondary)}
@@ -161,7 +163,7 @@ function HomepageHeader() {
                 rel="noopener noreferrer"
               >
                 <FaGithub size={16} />
-                View on GitHub
+                {translate({id: 'homepage.hero.viewOnGitHub', message: 'View on GitHub', description: 'Homepage secondary call to action'})}
               </a>
             </div>
           </div>
@@ -204,7 +206,7 @@ function HomepageFeatures() {
     <section className={styles.features}>
       <div className="container">
         <Heading as="h2" className={styles.sectionLabel}>
-          Resources
+          {translate({id: 'homepage.section.resources', message: 'Resources', description: 'Homepage feature card section heading'})}
         </Heading>
         <div className={clsx('row', styles.featureRow)}>
           {featureList.map((props) => (
@@ -296,12 +298,12 @@ function HomepageCommunity() {
     <section className={styles.communitySection}>
       <div className="container">
         <Heading as="h2" className={styles.sectionLabel}>
-          Hall of Fame
+          {translate({id: 'homepage.section.hallOfFame', message: 'Hall of Fame', description: 'Homepage contributors section heading'})}
         </Heading>
 
         {/* Core Team Subsection */}
         <Heading as="h3" className={styles.subSectionLabel}>
-          Core Team
+          {translate({id: 'homepage.section.coreTeam', message: 'Core Team', description: 'Homepage core contributors heading'})}
         </Heading>
         <div className={styles.coreGrid}>
           {coreMembers.map((contrib) => (
@@ -311,12 +313,12 @@ function HomepageCommunity() {
               target="_blank"
               rel="noopener noreferrer"
               className={styles.coreCard}
-              aria-label={`View ${contrib.name || contrib.login}'s commits on GitHub`}
+              aria-label={translate({id: 'homepage.contributor.viewCommits', message: "View {name}'s commits on GitHub", description: 'Accessible label for a contributor link'}, {name: contrib.name || contrib.login})}
             >
               <div className={styles.coreAvatarContainer}>
                 <img
                   src={contrib.avatar_url}
-                  alt={`${contrib.name || contrib.login}'s avatar`}
+                  alt={translate({id: 'homepage.contributor.avatar', message: "{name}'s avatar", description: 'Accessible label for a contributor avatar'}, {name: contrib.name || contrib.login})}
                   className={styles.coreAvatar}
                   loading="lazy"
                 />
@@ -328,7 +330,7 @@ function HomepageCommunity() {
 
         {/* Branding Credit */}
         <div className={styles.brandingSection}>
-          <span className={styles.brandingLabel}>Branding</span>
+          <span className={styles.brandingLabel}>{translate({id: 'homepage.branding', message: 'Branding', description: 'Homepage branding credit label'})}</span>
           <a
             href={brandingMember.html_url}
             target="_blank"
@@ -347,7 +349,7 @@ function HomepageCommunity() {
 
         {/* General Contributors Subsection */}
         <Heading as="h3" className={styles.subSectionLabel}>
-          Top Contributors
+          {translate({id: 'homepage.section.topContributors', message: 'Top Contributors', description: 'Homepage contributor list heading'})}
         </Heading>
         <div className={styles.contributorGrid}>
           {topContributors.length > 0 ? (
@@ -358,12 +360,12 @@ function HomepageCommunity() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.contributorCard}
-                aria-label={`View ${contrib.login}'s commits on GitHub`}
+                aria-label={translate({id: 'homepage.contributor.viewCommits', message: "View {name}'s commits on GitHub", description: 'Accessible label for a contributor link'}, {name: contrib.login})}
               >
                 <div className={styles.contributorAvatarContainer}>
                   <img
                     src={contrib.avatar_url}
-                    alt={`${contrib.login}'s avatar`}
+                  alt={translate({id: 'homepage.contributor.avatar', message: "{name}'s avatar", description: 'Accessible label for a contributor avatar'}, {name: contrib.login})}
                     className={styles.contributorAvatar}
                     loading="lazy"
                   />
@@ -381,7 +383,7 @@ function HomepageCommunity() {
                 rel="noopener noreferrer"
                 style={{ color: 'var(--ifm-color-primary)', fontWeight: 'bold' }}
               >
-                View all contributors on GitHub
+                {translate({id: 'homepage.contributor.viewAll', message: 'View all contributors on GitHub', description: 'Link to the full GitHub contributors list'})}
               </a>
             </div>
           )}
@@ -395,7 +397,7 @@ function HomepageCommunity() {
               rel="noopener noreferrer"
               className={styles.toggleButton}
             >
-              Show All
+              {translate({id: 'homepage.contributor.showAll', message: 'Show All', description: 'Link to the full GitHub contributors list'})}
             </a>
           </div>
         )}
@@ -412,7 +414,7 @@ function HomepageMilestones() {
     <section className={styles.milestonesSection}>
       <div className="container">
         <Heading as="h2" className={styles.sectionLabel}>
-          Milestones
+          {translate({id: 'homepage.section.milestones', message: 'Milestones', description: 'Homepage milestone section heading'})}
         </Heading>
         <StarMilestones />
       </div>
@@ -428,7 +430,7 @@ function HomepageSocials() {
     <section className={styles.socials}>
       <div className="container">
         <Heading as="h2" className={styles.sectionLabel}>
-          Connect
+          {translate({id: 'homepage.section.connect', message: 'Connect', description: 'Homepage social links section heading'})}
         </Heading>
         <div className={styles.socialLinks}>
           {socialLinks.map(({ label, href, icon }) => (
@@ -456,12 +458,10 @@ function HomepageSocials() {
  * Main homepage component.
  */
 export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
-
   return (
     <Layout
-      title="Nothing OS Firmware & Resources"
-      description={siteConfig.tagline}
+      title={translate({id: 'homepage.metadata.title', message: 'Nothing OS Firmware & Resources', description: 'Homepage browser title'})}
+      description={translate({id: 'homepage.tagline', message: 'A curated hub for everything related to the Nothing ecosystem.', description: 'Homepage hero subtitle'})}
     >
       <AnnouncementBanner />
       <HomepageHeader />
