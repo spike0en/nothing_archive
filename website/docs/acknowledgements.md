@@ -11,7 +11,7 @@ Nothing Archive has been built on top of and inspired by various community effor
 - **[luk1337](https://github.com/luk1337/oplus_archive)** for the AOSP OTA extraction tool.
 - **[arter97](https://github.com/arter97/nothing_archive)** for adapting the archive for Phone (2).
 - **[Shiki](https://github.com/guptavishalxm1)** for crafting the initial website for the repo and providing a self-hosted runner instance.
-- **[Earendel Labs](https://github.com/Earendel-lab)** and **[Burak Dede](https://github.com/burakdede0)** for their suggestions, feedback, and QA testing that helped identify bugs and drive several improvements to the webpage over time.
+- **[Earendel](https://github.com/Earendel-lab)** and **[Burak Dede](https://github.com/burakdede0)** for their suggestions, feedback, and QA testing that helped identify bugs and drive several improvements to the webpage over time.
 - **[XelXen](https://github.com/XelXen)** for helping with initial [project branding and design](https://github.com/spike0en/nothing_archive/tree/main/website/static/img).
 - **[LukeSkyD](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/)** for early build references.
 - **[Project Contributors](https://github.com/spike0en/nothing_archive/graphs/contributors)** for their invaluable contributions and insights.
