@@ -15,117 +15,12 @@ textarea {
 }
 
 
-/* ── Theme-switch transition guard ───────────────────────────────────────
- * When the theme toggle is clicked, CopyButton.tsx adds `theme-transition`
- * to <html> for 500 ms. During that window every element on the page
- * smoothly fades background-color, color, border-color, and box-shadow
- * at a unified 0.25 s duration. A wildcard rule is used because there are
- * 80+ elements with their own background-color declarations; enumerating
- * them individually was guaranteed to miss some, causing the "snap vs fade"
- * jitter the user reported.
- *
- * Exclusions: elements that run CSS animations, transforms, or layout
- * transitions (e.g., search box expand, sidebar slide) are carved out so
- * the wildcard doesn't interfere with their independent timing. */
-/* Enable smooth background & color transitions on top-level layout wrappers only to prevent color inheritance lockups */
+/* Synchronous theme state application — forces atomic background and typography state updates across viewports */
 html.theme-transition,
-html.theme-transition body {
-  transition: background-color 0.25s ease,
-              color 0.25s ease !important;
-}
-
-/* Optimize child element transitions and exclude text color from wildcard calculations so child text updates instantly */
-html.theme-transition :not(svg, svg *, [class*="matrixDot"], [class*="matrixGrid"], [class*="dot"], [class*="CommitMatrix"], [class*="CommitMatrix"] *, [class*="ReleaseFeed"], [class*="ReleaseFeed"] *),
-html.theme-transition :not(svg, svg *, [class*="matrixDot"], [class*="matrixGrid"], [class*="dot"], [class*="CommitMatrix"], [class*="CommitMatrix"] *, [class*="ReleaseFeed"], [class*="ReleaseFeed"] *)::before,
-html.theme-transition :not(svg, svg *, [class*="matrixDot"], [class*="matrixGrid"], [class*="dot"], [class*="CommitMatrix"], [class*="CommitMatrix"] *, [class*="ReleaseFeed"], [class*="ReleaseFeed"] *)::after {
-  transition: background-color 0.25s ease,
-              border-color 0.25s ease,
-              box-shadow 0.25s ease,
-              fill 0.25s ease,
-              stroke 0.25s ease !important;
-}
-
-/* Temporarily disable backdrop-filter to prevent layout-painting bottleneck during transition */
 html.theme-transition *,
 html.theme-transition *::before,
 html.theme-transition *::after {
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-
-/* Opt-out: elements whose own transitions must stay untouched during theme switch */
-html.theme-transition .navbar-sidebar,
-html.theme-transition [class*="collapseSidebarButton"],
-html.theme-transition [class*="expandButton"] {
   transition: none !important;
-}
-
-/* ── Custom transition restoration during theme switch ───────────────────
- * Restore original transitions for components that have their own custom 
- * animations (transforms, filters, etc.) which would otherwise be wiped out 
- * by the wildcard theme-transition shorthand. */
-
-/* Theme Toggle Slider */
-html.theme-transition [class*="slider"] {
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              background-color 0.3s ease,
-              border-color 0.3s ease !important;
-}
-
-/* Theme Toggle Icons */
-html.theme-transition [class*="iconSvg"] {
-  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-/* Homepage CTA Buttons */
-html.theme-transition [class*="ctaButton"] {
-  transition: background-color 0.2s ease,
-              transform 0.2s ease,
-              box-shadow 0.2s ease,
-              filter 0.2s ease !important;
-}
-
-/* Homepage Hero Logo */
-html.theme-transition [class*="heroLogo"] {
-  transition: filter 0.3s ease !important;
-}
-
-/* Homepage Feature Cards */
-html.theme-transition [class*="featureCard"] {
-  transition: border-color 0.25s ease,
-              background-color 0.25s ease,
-              transform 0.25s ease,
-              box-shadow 0.25s ease !important;
-}
-
-/* Homepage Feature Icons */
-html.theme-transition [class*="featureIcon"] {
-  transition: background 0.2s ease,
-              transform 0.2s ease !important;
-}
-
-/* Header Badges */
-html.theme-transition [class*="header-badge"] img {
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-              border-color 0.2s ease,
-              box-shadow 0.2s ease !important;
-}
-
-/* Table Copy Links */
-html.theme-transition table td a {
-  transition: background-color 0.15s ease,
-              border-color 0.15s ease,
-              color 0.15s ease,
-              box-shadow 0.15s ease,
-              transform 0.15s ease !important;
-}
-
-/* Navbar/Sidebar Menu Links */
-html.theme-transition .menu__link {
-  transition: background 0.2s ease,
-              color 0.2s ease,
-              transform 0.2s ease !important;
 }
 
 /* Prevent Docusaurus SSR code block theme flashes on page load */
@@ -171,22 +66,22 @@ div[class*="tableWrapper"] table td,
 }
 
 :root {
-  --nothing-red: #D71921;
+  --nothing-red: #D71920;
   --nothing-orange: #FA471F;
   --nothing-yellow: #FFC700;
   --nothing-blue: #2A2B7B;
-  --nothing-dark-grey: #1C1C1C;
+  --nothing-dark-grey: #1A1A1A;
   --nothing-light-grey: #292929;
-  --nothing-white: #F1F1F1;
+  --nothing-white: #FFFFFF;
   --nothing-dull-white: #D4D4D4;
 
-  --ifm-color-primary: #D71921;
-  --ifm-color-primary-dark: #c1161d;
-  --ifm-color-primary-darker: #b6151b;
-  --ifm-color-primary-darkest: #961117;
-  --ifm-color-primary-light: #e32a32;
-  --ifm-color-primary-lighter: #e53940;
-  --ifm-color-primary-lightest: #ea5b61;
+  --ifm-color-primary: #D71920;
+  --ifm-color-primary-dark: #c1161c;
+  --ifm-color-primary-darker: #b6151a;
+  --ifm-color-primary-darkest: #961116;
+  --ifm-color-primary-light: #e32a31;
+  --ifm-color-primary-lighter: #e5393f;
+  --ifm-color-primary-lightest: #ea5b60;
 
   --ifm-color-info: #2A2B7B;
   --ifm-color-info-dark: #25266e;
@@ -204,13 +99,13 @@ div[class*="tableWrapper"] table td,
   --ifm-color-warning-lighter: #ffcf26;
   --ifm-color-warning-lightest: #fed74c;
 
-  --ifm-color-danger: #D71921;
-  --ifm-color-danger-dark: #c1161d;
-  --ifm-color-danger-darker: #b6151b;
-  --ifm-color-danger-darkest: #961117;
-  --ifm-color-danger-light: #e32a32;
-  --ifm-color-danger-lighter: #e53940;
-  --ifm-color-danger-lightest: #ea5b61;
+  --ifm-color-danger: #D71920;
+  --ifm-color-danger-dark: #c1161c;
+  --ifm-color-danger-darker: #b6151a;
+  --ifm-color-danger-darkest: #961116;
+  --ifm-color-danger-light: #e32a31;
+  --ifm-color-danger-lighter: #e5393f;
+  --ifm-color-danger-lightest: #ea5b60;
 
   --ifm-color-success: #10b981;
   --ifm-color-success-dark: #0fa774;
@@ -264,13 +159,13 @@ div[class*="tableWrapper"] table td,
 }
 
 [data-theme='dark'] {
-  --ifm-color-primary: #D71921;
-  --ifm-color-primary-dark: #c1161d;
-  --ifm-color-primary-darker: #b6151b;
-  --ifm-color-primary-darkest: #961117;
-  --ifm-color-primary-light: #e32a32;
-  --ifm-color-primary-lighter: #e53940;
-  --ifm-color-primary-lightest: #ea5b61;
+  --ifm-color-primary: #D71920;
+  --ifm-color-primary-dark: #c1161c;
+  --ifm-color-primary-darker: #b6151a;
+  --ifm-color-primary-darkest: #961116;
+  --ifm-color-primary-light: #e32a31;
+  --ifm-color-primary-lighter: #e5393f;
+  --ifm-color-primary-lightest: #ea5b60;
 
   --ifm-color-info: #2A2B7B;
   --ifm-color-info-dark: #25266e;
@@ -288,13 +183,13 @@ div[class*="tableWrapper"] table td,
   --ifm-color-warning-lighter: #ffcf26;
   --ifm-color-warning-lightest: #fed74c;
 
-  --ifm-color-danger: #D71921;
-  --ifm-color-danger-dark: #c1161d;
-  --ifm-color-danger-darker: #b6151b;
-  --ifm-color-danger-darkest: #961117;
-  --ifm-color-danger-light: #e32a32;
-  --ifm-color-danger-lighter: #e53940;
-  --ifm-color-danger-lightest: #ea5b61;
+  --ifm-color-danger: #D71920;
+  --ifm-color-danger-dark: #c1161c;
+  --ifm-color-danger-darker: #b6151a;
+  --ifm-color-danger-darkest: #961116;
+  --ifm-color-danger-light: #e32a31;
+  --ifm-color-danger-lighter: #e5393f;
+  --ifm-color-danger-lightest: #ea5b60;
 
   --ifm-color-success: #10b981;
   --ifm-color-success-dark: #0fa774;
@@ -307,7 +202,7 @@ div[class*="tableWrapper"] table td,
   --ifm-background-color: #000000;
   --ifm-navbar-background-color: #000000;
   --ifm-footer-background-color: #000000;
-  --ifm-card-background-color: #1C1C1C;
+  --ifm-card-background-color: #1A1A1A;
 
   --docusaurus-highlighted-code-line-bg: rgba(215, 25, 33, 0.15);
 
@@ -390,29 +285,29 @@ div[class*="tableWrapper"] table td,
   color: var(--ifm-color-primary) !important;
 }
 
-/* Nothing OS Active dot indicator */
+/* Active primary navigation indicator bar — centered horizontal pill anchored to active route */
 .navbar__link--active::after {
   content: '';
   position: absolute;
-  bottom: 4px;
+  bottom: 2px;
   left: 50%;
   transform: translateX(-50%);
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
+  width: 18px;
+  height: 3px;
+  border-radius: 999px;
   background-color: var(--ifm-color-primary);
-  animation: navbarDotFade 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: navbarBarFade 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@keyframes navbarDotFade {
+@keyframes navbarBarFade {
   from {
     opacity: 0;
-    transform: translateX(-50%) scale(0);
+    transform: translateX(-50%) scaleX(0);
   }
 
   to {
     opacity: 1;
-    transform: translateX(-50%) scale(1);
+    transform: translateX(-50%) scaleX(1);
   }
 }
 
@@ -586,7 +481,7 @@ div[class*="tableWrapper"] table td,
    SIDEBAR
    ========================================== */
 .theme-doc-sidebar-container {
-  border-right: none !important;
+  border-right: 1px solid var(--nothing-border) !important;
   width: 280px;
   min-width: 280px;
 }
@@ -647,78 +542,116 @@ div[class*="tableWrapper"] table td,
   transform: translateX(3px);
 }
 
-/* Remove separate button background/highlight behind the arrow carets */
+/* Collapsible chevron background normalization */
 .menu__caret,
 .menu__caret:hover {
   background-color: transparent !important;
 }
 
-/* Base active style for all links - Nothing OS capsule and dot style */
-.menu__link--active {
-  font-weight: 600;
-  color: var(--ifm-color-primary) !important;
-  background-color: rgba(215, 25, 33, 0.04) !important;
-  border-left: none !important;
-}
-
+/* ── Navigation Tree Active State Architecture ──────────────────────────────
+ * Active document cards (.menu__list-item:not(.menu__list-item-collapsible) > .menu__link--active)
+ * are isolated to target leaf nodes to prevent sub-branch visual noise.
+ * Parent categories receive high-contrast text color accents while maintaining transparent containers. */
+.menu__link::before,
 .menu__link--active::before {
-  content: '';
-  display: inline-block;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: var(--ifm-color-primary);
-  margin-right: 8px;
-  vertical-align: middle;
-  animation: navbarDotFade 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Isolation for nested active categories */
-.menu__list-item-collapsible>.menu__link--active {
-  color: inherit !important;
-  background-color: transparent !important;
-  border-left: none !important;
-}
-
-.menu__list-item-collapsible>.menu__link--active::before {
   display: none !important;
 }
 
-.menu__link--active:hover {
-  background-color: rgba(215, 25, 33, 0.08) !important;
+/* Active Leaf Document Link (Light Mode) */
+.menu__list-item:not(.menu__list-item-collapsible) > .menu__link--active {
+  font-weight: 600 !important;
+  color: #000000 !important;
+  background-color: #F0F0F0 !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-left: 3.5px solid var(--ifm-color-primary) !important;
+  border-radius: 6px !important;
+}
+
+.menu__list-item:not(.menu__list-item-collapsible) > .menu__link--active:hover {
+  background-color: #E8E8E8 !important;
   transform: translateX(3px);
 }
 
-[data-theme='dark'] .menu__link:hover {
-  background: rgba(255, 255, 255, 0.05);
+/* Active Leaf Document Link (Dark Mode) */
+[data-theme='dark'] .menu__list-item:not(.menu__list-item-collapsible) > .menu__link--active {
+  color: #FFFFFF !important;
+  background-color: #1A1A1A !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-left: 3.5px solid var(--ifm-color-primary) !important;
+  border-radius: 6px !important;
+}
+
+[data-theme='dark'] .menu__list-item:not(.menu__list-item-collapsible) > .menu__link--active:hover {
+  background-color: #242424 !important;
   transform: translateX(3px);
 }
 
-[data-theme='dark'] .menu__link--active {
-  background-color: rgba(215, 25, 33, 0.08) !important;
+/* Ancestor category container normalization — preserves flat hierarchy across collapsible branches */
+.menu__list-item-collapsible,
+.menu__list-item-collapsible > .menu__link,
+.menu__list-item-collapsible > .menu__link--active,
+.menu__link--sublist,
+.menu__link--sublist.menu__link--active,
+[data-theme='dark'] .menu__list-item-collapsible,
+[data-theme='dark'] .menu__list-item-collapsible > .menu__link,
+[data-theme='dark'] .menu__list-item-collapsible > .menu__link--active,
+[data-theme='dark'] .menu__link--sublist,
+[data-theme='dark'] .menu__link--sublist.menu__link--active {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-left: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
-[data-theme='dark'] .menu__link--active:hover {
-  background-color: rgba(215, 25, 33, 0.12) !important;
-  transform: translateX(3px);
+.menu__list-item-collapsible > .menu__link--active,
+.menu__link--sublist.menu__link--active,
+[data-theme='dark'] .menu__list-item-collapsible > .menu__link--active,
+[data-theme='dark'] .menu__link--sublist.menu__link--active {
+  color: var(--ifm-color-primary) !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
 }
 
-/* Sidebar hierarchical indentation */
-.menu__list .menu__list>.menu__list-item>.menu__link,
-.menu__list .menu__list>.menu__list-item>.menu__list-item-collapsible>.menu__link {
-  padding-left: 1.5rem !important;
+.menu__list-item-collapsible > .menu__link--active:hover,
+.menu__link--sublist.menu__link--active:hover,
+[data-theme='dark'] .menu__list-item-collapsible > .menu__link--active:hover,
+[data-theme='dark'] .menu__link--sublist.menu__link--active:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  transform: translateX(2px);
+}
+
+/* Sidebar hierarchical indentation & nested active tab alignment */
+.menu__list-item > .menu__link {
+  margin-left: 0.4rem;
+  padding-left: 0.75rem !important;
+  width: calc(100% - 0.6rem);
+}
+
+.menu__list .menu__list > .menu__list-item > .menu__link,
+.menu__list .menu__list > .menu__list-item > .menu__list-item-collapsible > .menu__link {
+  margin-left: 1.1rem !important;
+  padding-left: 0.75rem !important;
+  width: calc(100% - 1.3rem);
   font-size: 0.85rem;
 }
 
-.menu__list .menu__list .menu__list>.menu__list-item>.menu__link,
-.menu__list .menu__list .menu__list>.menu__list-item>.menu__list-item-collapsible>.menu__link {
-  padding-left: 2.25rem !important;
+.menu__list .menu__list .menu__list > .menu__list-item > .menu__link,
+.menu__list .menu__list .menu__list > .menu__list-item > .menu__list-item-collapsible > .menu__link {
+  margin-left: 1.75rem !important;
+  padding-left: 0.75rem !important;
+  width: calc(100% - 1.95rem);
   font-size: 0.85rem;
 }
 
-.menu__list .menu__list .menu__list .menu__list>.menu__list-item>.menu__link,
-.menu__list .menu__list .menu__list .menu__list>.menu__list-item>.menu__list-item-collapsible>.menu__link {
-  padding-left: 3rem !important;
+.menu__list .menu__list .menu__list .menu__list > .menu__list-item > .menu__link,
+.menu__list .menu__list .menu__list .menu__list > .menu__list-item > .menu__list-item-collapsible > .menu__link {
+  margin-left: 2.4rem !important;
+  padding-left: 0.75rem !important;
+  width: calc(100% - 2.6rem);
   font-size: 0.85rem;
 }
 
@@ -787,6 +720,7 @@ article h1,
 article h2,
 article h3 {
   letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 /* Doc sidebar responsive - mobile drawer */
@@ -1044,7 +978,6 @@ table td a:hover,
   background-color: var(--ifm-color-primary) !important;
   color: #ffffff !important;
   border-color: var(--ifm-color-primary);
-  box-shadow: 0 2px 8px rgba(215, 25, 33, 0.2);
 }
 
 table td a:hover {
@@ -1065,7 +998,6 @@ table td a:hover {
   background-color: var(--ifm-color-primary) !important;
   color: #ffffff !important;
   border-color: var(--ifm-color-primary);
-  box-shadow: 0 2px 10px rgba(215, 25, 33, 0.3);
 }
 
 /* Mobile adjustments */
@@ -1255,12 +1187,10 @@ code {
 
   [data-theme='light'] .header-badge:hover img {
     border-color: rgba(0, 0, 0, 0.25);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
   }
 
   [data-theme='dark'] .header-badge:hover img {
     border-color: var(--ifm-color-primary-light);
-    box-shadow: 0 4px 12px rgba(215, 25, 33, 0.25);
   }
 }
 
@@ -1526,6 +1456,22 @@ div[class*="admonition"] a:hover {
 .breadcrumbs__link {
   font-weight: 500;
   letter-spacing: -0.01em;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+  background: #F0F0F0 !important;
+  color: #000000 !important;
+  font-weight: 600;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme='dark'] .breadcrumbs__item--active .breadcrumbs__link {
+  background: #1A1A1A !important;
+  color: #FFFFFF !important;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
 }
 
 /* Pagination (prev/next) */
@@ -1938,13 +1884,39 @@ details.alert {
   background-color: var(--ifm-card-background-color) !important;
   border: 1px solid var(--nothing-border) !important;
   border-radius: 24px !important;
-  margin: 1rem 0 !important;
+  margin: 0.2rem 0 !important;
   padding: 0 !important;
-  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease, border-radius 0.15s ease;
   --ifm-alert-border-color: transparent;
   max-width: 100% !important;
   overflow: hidden !important;
   box-shadow: none !important;
+}
+
+/* Grouped accordion list layout — unifies adjacent collapsible sections into cohesive list items */
+details + details,
+details[class*="details"] + details[class*="details"] {
+  margin-top: 2px !important;
+}
+
+/* Grouped corner radii for stacked details lists */
+details:has(+ details),
+details[class*="details"]:has(+ details[class*="details"]) {
+  border-bottom-left-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+}
+
+details + details,
+details[class*="details"] + details[class*="details"] {
+  border-top-left-radius: 6px !important;
+  border-top-right-radius: 6px !important;
+  border-bottom-left-radius: 24px !important;
+  border-bottom-right-radius: 24px !important;
+}
+
+details + details:has(+ details),
+details[class*="details"] + details[class*="details"]:has(+ details[class*="details"]) {
+  border-radius: 6px !important;
 }
 
 

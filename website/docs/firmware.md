@@ -8,7 +8,7 @@ hide_table_of_contents: true
 
 # Nothing OS Firmware
 
-:::warning Disclaimer
+:::warning[Disclaimer]
 
 By using this archive, users acknowledge and accept these terms:
 - Authenticity: all firmware files are unaltered, unmodified, and sourced directly from the OEM.

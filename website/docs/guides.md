@@ -523,7 +523,7 @@ D. **Restoring Partitions**
 Ensure your bootloader is unlocked before proceeding. Refer to the [Unlocking Bootloader](#unlocking-bootloader) guide if you have not done so.
 :::
 
-:::danger Disclaimer & Warning
+:::danger[Disclaimer & Warning]
 - This is a generic guide designed to work in most scenarios. Always cross-reference and follow any specific instructions provided by the ROM developer or maintainer.
 - Flashing a custom ROM for the first time or performing a clean flash **will erase all user data**. Back up your data before proceeding (e.g., using Google One, copying folders manually via `adb pull` or FTP, or using root backup tools like Swift Backup if your device is already rooted).
 - You must have an unlocked bootloader and properly configured USB, ADB, and Fastboot drivers on your PC.
@@ -542,7 +542,7 @@ Ensure your bootloader is unlocked before proceeding. Refer to the [Unlocking Bo
 
 #### Recovery / Sideload Based ROMs
 
-:::note Key Considerations
+:::note[Key Considerations]
 - **Sideload Progress & PC Status:** When running `adb sideload`, the progress indicator on your PC will often pause at around **47%** and may report `Total xfer: 1.00x` or error messages such as `adb: failed to read command: Success`, `No error`, or `Undefined error: 0`. This is normal behavior and indicates a successful transfer. Always refer to your phone's screen to verify that the installation completed (look for `exit status 0`). Reaching 47% on the PC and seeing `/metadata/ota` errors on the device screen after formatting are expected.
 - **Flashing via Custom Recoveries:** Directly flashing recovery-based custom ROM builds using custom recoveries like TWRP or OrangeFox is generally possible. However, check developer notes to ensure functionality is not broken. Note that doing so may disable automatic OTA updates, as OTAs typically rely on the stock recovery image shipped with the ROM.
 - **Error 7 (kInstallDeviceOpenError):** If you are switching from the stock ROM or another custom ROM and encounter `Error Applying update: 7 (ErrorCode: kInstallDeviceOpenError)` (or if flashing fails via recovery), you must flash the `super_empty.img` partition image. You can obtain this file from the Telegram discussion group for your specific device model.

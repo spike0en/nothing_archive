@@ -90,21 +90,16 @@
   width: 280px;
   height: 280px;
   border-radius: 16px;
-  filter: drop-shadow(0 0 24px rgba(215, 25, 33, 0.12));
   animation: heroFloat 6s ease-in-out infinite;
   transition: filter 0.3s ease;
 }
 
 .heroLogo:hover {
-  filter: drop-shadow(0 0 32px rgba(215, 25, 33, 0.22));
-}
-
-[data-theme='dark'] .heroLogo {
-  filter: drop-shadow(0 0 24px rgba(215, 25, 33, 0.18));
+  filter: brightness(1.05);
 }
 
 [data-theme='dark'] .heroLogo:hover {
-  filter: drop-shadow(0 0 32px rgba(215, 25, 33, 0.28));
+  filter: brightness(1.1);
 }
 
 @keyframes heroFloat {
@@ -118,10 +113,11 @@
 
 .heroTitle {
   font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
   margin-bottom: 1rem;
+  text-wrap: balance;
 }
 
 .heroSubtitle {
@@ -187,7 +183,6 @@
   filter: brightness(0.9);
   color: #fff !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(215, 25, 33, 0.3);
   text-decoration: none !important;
 }
 
@@ -212,12 +207,7 @@
   border-color: var(--ifm-color-primary) !important;
   color: var(--ifm-color-primary) !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(128, 128, 128, 0.05);
   text-decoration: none !important;
-}
-
-[data-theme='dark'] .ctaButtonSecondary:hover {
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.03);
 }
 
 /* --- Feature Cards Grid --- */
@@ -225,15 +215,16 @@
   padding: 1.75rem 0;
 }
 
-/* Global section header styling */
+/* Section category typography — establishes distinct visual hierarchy across content blocks */
 .sectionLabel {
   font-family: var(--ifm-font-family-base);
-  font-size: 1.15rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   margin-bottom: 2rem;
   text-align: center;
+  opacity: 0.55;
 }
 
 .featureRow {
@@ -281,6 +272,12 @@
   animation-delay: 0.35s;
 }
 
+/* Grid rhythm & visual hierarchy — compacts secondary resource cards (Row 2) to break uniform template monotony */
+.featureCol:nth-child(n+5) .featureCard {
+  min-height: 155px;
+  padding: 1.15rem;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -319,9 +316,8 @@
   display: flex;
   flex-direction: column;
   min-height: 180px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
   transition: border-color 0.25s ease, background-color 0.25s ease,
-    transform 0.25s ease, box-shadow 0.25s ease;
+    transform 0.25s ease;
   overflow: hidden;
 }
 
@@ -345,17 +341,14 @@
 .featureCard:hover {
   border-color: var(--nothing-red);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(215, 25, 33, 0.04);
 }
 
 [data-theme='dark'] .featureCard {
   background-color: rgba(18, 18, 18, 0.75);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 [data-theme='dark'] .featureCard:hover {
   border-color: var(--nothing-red);
-  box-shadow: 0 8px 24px rgba(215, 25, 33, 0.12);
 }
 
 [data-theme='dark'] .featureCard:hover::after {
@@ -429,7 +422,7 @@
 .featureDesc {
   margin: 0;
   font-size: 0.9rem;
-  opacity: 0.7;
+  opacity: 0.8;
   line-height: 1.5;
   letter-spacing: -0.01em;
   position: relative;
@@ -485,11 +478,6 @@
 .coreCard:hover {
   border-color: var(--ifm-color-primary) !important;
   transform: translateY(-3px) scale(1.025);
-  box-shadow: 0 8px 24px rgba(215, 25, 33, 0.08);
-}
-
-[data-theme='dark'] .coreCard:hover {
-  box-shadow: 0 8px 24px rgba(215, 25, 33, 0.16);
 }
 
 .coreAvatarContainer {
@@ -680,11 +668,6 @@
 .contributorCard:hover {
   border-color: var(--ifm-color-primary) !important;
   transform: translateY(-4px) scale(1.04);
-  box-shadow: 0 6px 16px rgba(215, 25, 33, 0.06);
-}
-
-[data-theme='dark'] .contributorCard:hover {
-  box-shadow: 0 6px 16px rgba(215, 25, 33, 0.16);
 }
 
 .contributorCard:hover .contributorAvatarContainer {
@@ -837,13 +820,11 @@
   color: var(--ifm-color-primary);
   background-color: rgba(215, 25, 33, 0.04);
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(215, 25, 33, 0.1);
   text-decoration: none !important;
 }
 
 [data-theme='dark'] .socialLink:hover {
   background-color: rgba(215, 25, 33, 0.05);
-  box-shadow: 0 4px 12px rgba(215, 25, 33, 0.15);
 }
 
 /* --- Focus-Visible Accessibility --- */
