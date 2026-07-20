@@ -25,7 +25,7 @@ Contribute to the website's infrastructure by resolving bugs or adding features.
 
 ## Restricted Files & Directories
 
-:::danger Restricted Content
+:::danger[Restricted Content]
 To ensure accuracy and preserve archive integrity, **do not** submit pull requests that modify the following files or directories:
 *   `website/docs/firmware.md`
 *   `website/docs/changelogs/`
