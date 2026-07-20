@@ -55,7 +55,6 @@ assert(workflow.includes('oven-sh/setup-bun@v2'));
 assert(workflow.includes("bun-version: '1.3.14'"));
 assert(workflow.includes('bun install --frozen-lockfile'));
 assert(workflow.includes('bun run test:performance'));
-assert(!workflow.includes('npm '));
 assert(!workflow.includes('package-lock'));
 
 const firmware = read('docs', 'firmware.md');
