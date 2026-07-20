@@ -66,6 +66,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Aero Glyph Weather](https://github.com/poorneshadhithya/Aeroglyph-Weather) | poorneshadhithya | Retro-futuristic weather station |
 | [Better Battery](https://github.com/PzmuV1517/BetterBatery) | pzmuV1517 | Advanced battery visualization |
 | [Better Clock](https://github.com/Snakehater/betterclock) | Snakehater | Multifunctional display |
+| [Clip Matrix](https://github.com/Sukhendu2002/ClipMatrix) | Sukhendu2002 | Customize the Glyph Matrix on Nothing Phone (4a) Pro with different Glyph Toy |
 | [Clock AOD Glyph](https://github.com/Aureliink/Clock-AOD-Glyph-Toy) | Aureliink | A vertical-style clock toy for Nothing Phone (3)'s Glyph Matrix |
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | Counter ranging 0-9999 |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | Visualizer, compass, dice, counter |
