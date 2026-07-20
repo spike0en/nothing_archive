@@ -1,71 +1,95 @@
+/*
+ * ColorModeToggle Module Styles
+ * Symmetrical 80px container, 24px circle slider, and exact 2.0px capsule margin math.
+ */
+
 .toggleContainer {
   position: relative;
-  display: flex;
-  align-items: center;
-  background-color: rgba(128, 128, 128, 0.08);
+  display: block;
+  background-color: rgba(0, 0, 0, 0.04);
   border: 1px solid var(--nothing-border);
   border-radius: 999px;
-  padding: 2px;
-  height: 32px;
-  width: 90px;
+  height: 30px;
+  /* Total track width 80px ensures exact 2.0px left & right capsule margins */
+  width: 80px;
   overflow: hidden;
   user-select: none;
   transition: border-color 0.3s ease, background-color 0.3s ease;
+  box-sizing: border-box;
 }
 
-/* Glassmorphism for dark theme */
+/* Glassmorphism background for dark theme */
 :global([data-theme='dark']) .toggleContainer {
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .slider {
   position: absolute;
+  /* Top 2px + left 2px positioning for 2.0px top/left outer padding */
   top: 2px;
   left: 2px;
-  width: 28px;
-  height: 26px;
-  border-radius: 999px;
+  /* 24px x 24px circle guarantees 12.0px 360-degree equal radius around icon */
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
   background-color: #ffffff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, border-color 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   pointer-events: none;
   z-index: 1;
+  box-sizing: border-box;
 }
 
 :global([data-theme='dark']) .slider {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: none;
+  background-color: #262626;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
-/* Slider transitions based on active data-theme-choice */
+/* Slider translations: 0px (Light), 26px (System center), 52px (Dark right) */
 :global(html[data-theme-choice='light']) .slider {
   transform: translateX(0);
 }
 
 :global(html[data-theme-choice='system']) .slider {
-  transform: translateX(28px);
+  transform: translateX(26px);
 }
 
 :global(html[data-theme-choice='dark']) .slider {
-  transform: translateX(56px);
+  transform: translateX(52px);
 }
 
 .toggleButton {
-  position: relative;
+  position: absolute;
+  top: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   border: none;
   background: transparent;
   padding: 0;
   cursor: pointer;
   z-index: 2;
-  border-radius: 999px;
+  border-radius: 50%;
   -webkit-tap-highlight-color: transparent;
   outline: none;
+  box-sizing: border-box;
+}
+
+/* Absolute button slot positions matching slider circle coordinates */
+.buttonLight {
+  left: 2px;
+}
+
+.buttonSystem {
+  left: 28px;
+}
+
+.buttonDark {
+  left: 54px;
 }
 
 .toggleButtonDisabled {
@@ -74,38 +98,38 @@
 }
 
 .iconSvg {
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.45);
   transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   display: block;
 }
 
 :global([data-theme='dark']) .iconSvg {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 /* Hover effect on inactive icons */
 .toggleButton:hover .iconSvg {
-  color: rgba(0, 0, 0, 0.7);
+  color: rgba(0, 0, 0, 0.8);
   transform: scale(1.08);
 }
 
 :global([data-theme='dark']) .toggleButton:hover .iconSvg {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.85);
   transform: scale(1.08);
 }
 
 /* Active states based on HTML data-theme-choice */
 :global(html[data-theme-choice='light']) .buttonLight .iconSvg {
-  color: var(--ifm-color-primary); /* Primary brand color */
+  color: var(--ifm-color-primary);
   transform: scale(1.05);
 }
 
 :global(html[data-theme-choice='system']) .buttonSystem .iconSvg {
-  color: var(--ifm-color-primary); /* Primary brand color */
+  color: var(--ifm-color-primary);
   transform: scale(1.05);
 }
 
 :global(html[data-theme-choice='dark']) .buttonDark .iconSvg {
-  color: var(--ifm-color-primary); /* Primary brand color */
+  color: var(--ifm-color-primary);
   transform: scale(1.05);
 }

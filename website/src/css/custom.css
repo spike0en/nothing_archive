@@ -2156,17 +2156,18 @@ details summary:hover::before {
 }
 
 .DocSearch-Search-Icon {
-  width: 15px !important;
-  height: 15px !important;
+  width: 16px !important;
+  height: 16px !important;
   margin: 0 !important;
   color: currentColor !important;
   fill: currentColor !important;
-  opacity: 0.8;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  stroke: none !important;
+  opacity: 1 !important;
+  display: block !important;
+  transition: transform 0.2s ease;
 }
 
 .DocSearch-Button:hover .DocSearch-Search-Icon {
-  opacity: 1;
   transform: scale(1.1);
 }
 
@@ -2246,33 +2247,135 @@ details summary:hover::before {
 
 .DocSearch-Hit a {
   border: 1px solid transparent;
-  border-radius: 10px;
+  border-radius: 12px;
+  background: transparent;
+  text-decoration: none !important;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
+/* Selected / hovered result item — subtle elevated card in tune with site background */
 .DocSearch-Hit[aria-selected='true'] a,
 .DocSearch-Hit a:hover {
-  background: var(--ifm-color-primary);
-  border-color: var(--ifm-color-primary);
-  color: #ffffff;
+  background: rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(215, 25, 33, 0.5) !important;
+  color: var(--ifm-color-content) !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+
+[data-theme='dark'] .DocSearch-Hit[aria-selected='true'] a,
+[data-theme='dark'] .DocSearch-Hit a:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(215, 25, 33, 0.6) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+
+/* Ensure no text-decoration / underlines inside hit items */
+.DocSearch-Hit-title,
+.DocSearch-Hit-path,
+.DocSearch-Hit-text,
+.DocSearch-Hit-content-wrapper,
+.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-title,
+.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-path,
+.DocSearch-Hit a:hover .DocSearch-Hit-title,
+.DocSearch-Hit a:hover .DocSearch-Hit-path {
+  text-decoration: none !important;
+}
+
+.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-title,
+.DocSearch-Hit a:hover .DocSearch-Hit-title {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-title,
+[data-theme='dark'] .DocSearch-Hit a:hover .DocSearch-Hit-title {
+  color: #ffffff !important;
+}
+
+.DocSearch-Hit-path {
+  color: var(--ifm-color-content) !important;
+  opacity: 0.6;
 }
 
 .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-path,
-.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-title,
-.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-icon,
-.DocSearch-Hit a:hover .DocSearch-Hit-path,
-.DocSearch-Hit a:hover .DocSearch-Hit-title,
-.DocSearch-Hit a:hover .DocSearch-Hit-icon {
-  color: #ffffff;
+.DocSearch-Hit a:hover .DocSearch-Hit-path {
+  color: var(--ifm-color-primary) !important;
+  opacity: 0.85;
 }
 
+.DocSearch-Hit-icon {
+  color: var(--ifm-color-content) !important;
+  opacity: 0.6;
+}
+
+.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-icon,
+.DocSearch-Hit a:hover .DocSearch-Hit-icon {
+  color: var(--ifm-color-primary) !important;
+  opacity: 1;
+}
+
+/* ONLY highlight search query keywords in RED, with NO underline */
 .DocSearch-Hit mark {
-  color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary) !important;
+  font-weight: 700 !important;
+  background: transparent !important;
+  text-decoration: none !important;
 }
 
 .DocSearch-Hit[aria-selected='true'] mark,
 .DocSearch-Hit a:hover mark {
-  color: #ffffff;
-  text-decoration: underline;
+  color: var(--ifm-color-primary) !important;
+  font-weight: 700 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+}
+
+/* DocSearch Hit Action Buttons (Remove from history X, Favorite star, Select arrow) */
+.DocSearch-Hit-action-button,
+.DocSearch-Hit-action {
+  color: var(--ifm-font-color-base) !important;
+  opacity: 0.4;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 50%;
+  padding: 4px !important;
+  transition: opacity 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-action-button,
+.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-action {
+  opacity: 0.75;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.DocSearch-Hit-action-button:hover,
+.DocSearch-Hit-action-button:focus,
+.DocSearch-Hit-action:hover {
+  opacity: 1 !important;
+  transform: scale(1.15);
+  color: var(--ifm-color-primary) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.DocSearch-Hit-action-button svg,
+.DocSearch-Hit-action svg {
+  color: currentColor !important;
+  fill: currentColor !important;
+  width: 14px;
+  height: 14px;
+}
+
+/* Favorite star button state */
+.DocSearch-Hit-action-button[title*="save"]:hover,
+.DocSearch-Hit-action-button[title*="favorite"]:hover,
+.DocSearch-Hit-action-button[aria-label*="favorite"]:hover,
+.DocSearch-Hit-action-button[aria-label*="save"]:hover {
+  color: #eac54f !important;
 }
 
 .DocSearch-Commands-Key,

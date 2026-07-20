@@ -2,6 +2,7 @@
  * @file custom-PwaInstallButton.tsx
  * @description Button component displayed in the navigation bar to trigger PWA installation 
  * when the application is installable on the user's platform/browser.
+ * Uses official Google Material Symbols Outlined mobile_arrow_down icon path.
  * 
  * Layer: Navigation theme components.
  * Boundary: Interacts with custom PwaContext to verify availability and trigger prompt.
@@ -17,8 +18,33 @@ interface PwaInstallButtonProps {
 }
 
 /**
+ * Renders the official Google Material Symbols Outlined mobile_arrow_down SVG icon.
+ * 
+ * @param {Object} props - Component properties containing optional className.
+ * @param {string} [props.className] - CSS class for icon styling and hover transitions.
+ * @returns {React.JSX.Element} Mobile arrow down vector SVG element.
+ */
+function MobileArrowDownIcon({ className }: { className?: string }): React.JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="16"
+      width="16"
+      viewBox="0 -960 960 960"
+      fill="currentColor"
+      className={className}
+    >
+      <path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v124q18 7 29 22t11 34v80q0 19-11 34t-29 22v404q0 33-23.5 56.5T680-40H280Zm0-80h400v-720H280v720Zm0 0v-720 720Zm200-200 160-160-56-56-64 62v-166h-80v166l-64-62-56 56 160 160Z" />
+    </svg>
+  );
+}
+
+/**
  * PwaInstallButton component.
- * Renders the install navigation item in both desktop and mobile views.
+ * Renders the install navigation item in both desktop and mobile viewports when available.
+ * 
+ * @param {PwaInstallButtonProps} props - Component properties specifying view mode.
+ * @returns {React.JSX.Element | null} Install button element or null if not installable.
  */
 export default function PwaInstallButton({ mobile }: PwaInstallButtonProps): React.JSX.Element | null {
   const { isInstallable, install } = usePwa();
@@ -32,24 +58,7 @@ export default function PwaInstallButton({ mobile }: PwaInstallButtonProps): Rea
     install();
   };
 
-  const icon = (
-    <svg
-      width="14"
-      height="14"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={styles.installIcon}
-    >
-      <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-      <line x1="12" y1="18" x2="12.01" y2="18" />
-      <polyline points="9 10 12 13 15 10" />
-      <line x1="12" y1="6" x2="12" y2="13" />
-    </svg>
-  );
+  const icon = <MobileArrowDownIcon className={styles.installIcon} />;
 
   if (mobile) {
     return (
