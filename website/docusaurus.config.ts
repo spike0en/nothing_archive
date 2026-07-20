@@ -346,8 +346,8 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
 }
 
 
-const siteUrl = process.env.SITE_URL || (process.env.GITHUB_ACTIONS === 'true' ? 'https://nothingarchive.tech' : 'http://localhost:3000');
-const baseUrl = process.env.BASE_URL || '/';
+const siteUrl = process.env.SITE_URL || (process.env.GITHUB_ACTIONS === 'true' ? 'https://earendel-lab.github.io' : 'http://localhost:3000');
+const baseUrl = process.env.BASE_URL || (process.env.GITHUB_ACTIONS === 'true' ? '/nothing_archive/' : '/');
 const websiteSchema = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -377,7 +377,7 @@ const config: Config = {
   baseUrl: baseUrl,
   trailingSlash: false,
 
-  organizationName: 'spike0en',
+  organizationName: 'Earendel-lab',
   projectName: 'nothing_archive',
 
   onBrokenLinks: 'throw',
@@ -528,7 +528,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/spike0en/nothing_archive/tree/main/website/',
+          editUrl: 'https://github.com/Earendel-lab/nothing_archive/tree/main/website/',
           showLastUpdateTime: true,
           showLastUpdateAuthor: false,
           async sidebarItemsGenerator({ defaultSidebarItemsGenerator, ...args }) {
