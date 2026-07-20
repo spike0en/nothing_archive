@@ -318,7 +318,7 @@
   flex-direction: column;
   min-height: 180px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-  transition: border-color 0.25s ease, border-width 0.25s ease, background-color 0.25s ease,
+  transition: border-color 0.25s ease, background-color 0.25s ease,
     transform 0.25s ease, box-shadow 0.25s ease;
   overflow: hidden;
 }
@@ -326,6 +326,7 @@
 [data-theme='dark'] .featureCard {
   background-color: #1B1B1B;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: transparent;
 }
 
 /* Keep background layout clean and avoid visual clutter on card hover */
@@ -346,15 +347,14 @@
 }
 
 .featureCard:hover {
-  border-color: var(--nothing-red);
-  border-width: 1.15px;
+  border-color: transparent;
+  box-shadow: 0 8px 24px rgba(215, 25, 33, 0.04), inset 0 0 0 2px var(--nothing-red);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(215, 25, 33, 0.04);
 }
 
 [data-theme='dark'] .featureCard:hover {
-  border-color: var(--nothing-red);
-  box-shadow: 0 8px 24px rgba(215, 25, 33, 0.12);
+  border-color: transparent;
+  box-shadow: 0 8px 24px rgba(215, 25, 33, 0.12), inset 0 0 0 2px var(--nothing-red);
 }
 
 [data-theme='dark'] .featureCard:hover::after {
@@ -410,7 +410,7 @@
 
 .featureInner {
   background-color: #F3F3F3;
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 0.85rem 1rem;
   margin-top: auto;
   flex: 1;
@@ -477,35 +477,35 @@
   background-color: #FFFFFF;
   border: 1px solid var(--nothing-border);
   border-radius: 20px;
-  padding: 1.25rem 0.5rem;
+  padding: 8px;
   text-decoration: none !important;
-  transition: border-color 0.25s ease, border-width 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  transition: border-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
 }
 
 [data-theme='dark'] .coreCard {
   background-color: #1B1B1B;
+  border-color: transparent;
 }
 
 .coreCard:hover {
-  border-color: var(--ifm-color-primary) !important;
-  border-width: 1.15px;
+  border-color: transparent;
   transform: translateY(-3px) scale(1.025);
-  box-shadow: 0 8px 24px rgba(215, 25, 33, 0.08);
+  box-shadow: 0 8px 24px rgba(215, 25, 33, 0.08), inset 0 0 0 2px var(--ifm-color-primary);
 }
 
 [data-theme='dark'] .coreCard:hover {
-  box-shadow: 0 8px 24px rgba(215, 25, 33, 0.16);
+  box-shadow: 0 8px 24px rgba(215, 25, 33, 0.16), inset 0 0 0 2px var(--ifm-color-primary);
 }
 
 .coreAvatarContainer {
-  width: 68%;
+  width: 100%;
   aspect-ratio: 1;
-  border-radius: 26%;
+  border-radius: 12px;
   overflow: hidden;
   background-color: #F3F3F3;
-  padding: 5%;
+  padding: 4px;
   box-sizing: border-box;
-  margin-bottom: 0.75rem;
+  margin-bottom: 8px;
   flex-shrink: 0;
   transition: transform 0.25s ease;
 }
@@ -517,7 +517,7 @@
 .coreAvatar {
   width: 100%;
   height: 100%;
-  border-radius: 20%;
+  border-radius: 8px;
   object-fit: cover;
   display: block;
 }
@@ -622,11 +622,7 @@
   }
   .coreCard {
     width: calc(50% - 0.375rem);
-    padding: 1rem 0.5rem;
-  }
-  .coreAvatarContainer {
-    width: 60px;
-    height: 60px;
+    padding: 6px;
   }
 }
 
@@ -652,24 +648,25 @@
   background-color: #FFFFFF;
   border: 1px solid var(--nothing-border);
   border-radius: 18px; /* match upper cards */
-  padding: 0.5rem 0.4rem 0.6rem;
+  padding: 6px;
   text-decoration: none !important;
-  transition: border-color 0.25s ease, border-width 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  transition: border-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
 }
 
 [data-theme='dark'] .contributorCard {
   background-color: #1B1B1B;
+  border-color: transparent;
 }
 
 .contributorAvatarContainer {
-  width: 80%;
+  width: 100%;
   aspect-ratio: 1;
-  border-radius: 26%;
+  border-radius: 12px;
   overflow: hidden;
   background-color: #F3F3F3;
-  padding: 5%;
+  padding: 4px;
   box-sizing: border-box;
-  margin-bottom: 0.5rem;
+  margin-bottom: 6px;
   flex-shrink: 0;
   transition: transform 0.25s ease;
 }
@@ -681,7 +678,7 @@
 .contributorAvatar {
   width: 100%;
   height: 100%;
-  border-radius: 20%;
+  border-radius: 8px;
   object-fit: cover;
   display: block;
 }
@@ -698,14 +695,13 @@
 }
 
 .contributorCard:hover {
-  border-color: var(--ifm-color-primary) !important;
-  border-width: 1.15px;
+  border-color: transparent;
   transform: translateY(-4px) scale(1.04);
-  box-shadow: 0 6px 16px rgba(215, 25, 33, 0.06);
+  box-shadow: 0 6px 16px rgba(215, 25, 33, 0.06), inset 0 0 0 2px var(--ifm-color-primary);
 }
 
 [data-theme='dark'] .contributorCard:hover {
-  box-shadow: 0 6px 16px rgba(215, 25, 33, 0.16);
+  box-shadow: 0 6px 16px rgba(215, 25, 33, 0.16), inset 0 0 0 2px var(--ifm-color-primary);
 }
 
 .contributorCard:hover .contributorAvatarContainer {
@@ -772,7 +768,6 @@
   }
   .contributorCard {
     width: calc(16.666% - 0.71rem); /* 6 columns */
-    border-radius: 20px;
   }
 }
 
@@ -788,12 +783,6 @@
   }
   .contributorCard {
     width: calc(25% - 0.57rem); /* 4 columns */
-    border-radius: 16px;
-    padding: 0.5rem;
-  }
-  .contributorAvatarContainer {
-    width: 60%;
-    margin-bottom: 0.35rem;
   }
   .contributorName {
     font-size: 0.7rem;
