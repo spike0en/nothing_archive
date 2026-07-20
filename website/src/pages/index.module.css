@@ -500,10 +500,10 @@
 .coreAvatarContainer {
   width: 100%;
   aspect-ratio: 1;
-  border-radius: 14px;
+  border-radius: 10px;
   overflow: hidden;
   background-color: #F3F3F3;
-  padding: 8px;
+  padding: 3px;
   box-sizing: border-box;
   margin-bottom: 7px;
   flex-shrink: 0;
@@ -517,7 +517,7 @@
 .coreAvatar {
   width: 100%;
   height: 100%;
-  border-radius: 6px;
+  border-radius: 7px;
   object-fit: cover;
   display: block;
 }
@@ -659,7 +659,7 @@
   border-radius: 14px;
   overflow: hidden;
   background-color: #F3F3F3;
-  padding: 8px;
+  padding: 10px;
   box-sizing: border-box;
   margin-bottom: 5px;
   flex-shrink: 0;
@@ -673,7 +673,7 @@
 .contributorAvatar {
   width: 100%;
   height: 100%;
-  border-radius: 6px;
+  border-radius: 4px;
   object-fit: cover;
   display: block;
 }
