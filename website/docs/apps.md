@@ -77,6 +77,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Beat](https://play.google.com/store/apps/details?id=com.pauwma.glyphbeat) | pauwma | Media visualizer with themes |
 | [Glyph Bike](https://play.google.com/store/apps/details?id=com.ofishialdigital.glyphbike) | Ofishial Digital | Scrolling motorcycle game |
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Arcade games on Glyph Matrix |
+| [Glyph Cars](https://github.com/AlyaNs1/GlyphCars) | AlyaNs1 | Car Game For Nothing Phone (3)'s Glyph Matrix |
 | [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | Pokémon collecting fan-game |
 | [Glyph Claude Limit](https://github.com/literato1987/glyph-claude-limits) | literato1987 | Claude.ai 5h usage limit on Nothing Phone (3) Glyph Matrix |
 | [Glyp Clocks](https://bleelblep.github.io/disclaimer/glyphclocks/) | bleelblep | 16 Clocks for Phone (3)'s Glyph Matrix ([Repo](https://github.com/bleelblep/glyphclocks)) |
@@ -103,7 +104,8 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Pomodoro](https://github.com/itsmixu/glyph-pomo) | itsmixu | Pomodoro timer for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Pong](https://github.com/codester007/glyph-pong) | codester007 | Pong game for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Sense](https://github.com/mohitsharma16/GlyphSense-Smart-Notification-Filter-for-Nothing-Phones) | mohitsharma16 | Turns pending notifications into a glanceable display on the Glyph Matrix |
-| [Glyph Shot](https://github.com/shaibu54/glyph-shot) | shaibu54 | Hold to charge artillery game for the Nothing Phone 3 Glyph Matrix |
+| [Glyph Shot](https://github.com/shaibu54/glyph-shot) | shaibu54 | Hold to charge artillery game for the Nothing Phone (3)'s Glyph Matrix |
+| [Glyph Snake](https://github.com/AlyaNs1/GlyphSnake) | AlyaNs1 | Snake Game for Nothing Phone (3)'s Glyph Matrix |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | A stacker arcade game |
 | [Glyph Stock Ticker](https://github.com/literato1987/glyph-stock-ticker) | literato1987 | Glyph Toy for Nothing Phone (3): live TSLA, BTC, NVDA prices on the Glyph Matrix |
 | [Glyph Stopwatch](https://github.com/Sturdy7435/GlyphStopwatch) | Sturdy7435 | A simple stopwatch for the Nothing Phone (4a) Pro's Glyph Matrix |
