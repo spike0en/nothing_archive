@@ -314,7 +314,7 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--nothing-border);
-  border-radius: 16px !important;
+  border-radius: 20px !important;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -323,6 +323,11 @@
   transition: border-color 0.25s ease, background-color 0.25s ease,
     transform 0.25s ease, box-shadow 0.25s ease;
   overflow: hidden;
+}
+
+[data-theme='dark'] .featureCard {
+  background-color: rgba(18, 18, 18, 0.75);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Keep background layout clean and avoid visual clutter on card hover */
@@ -346,11 +351,6 @@
   border-color: var(--nothing-red);
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(215, 25, 33, 0.04);
-}
-
-[data-theme='dark'] .featureCard {
-  background-color: rgba(18, 18, 18, 0.75);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 [data-theme='dark'] .featureCard:hover {
@@ -410,20 +410,27 @@
 }
 
 .featureInner {
-  background-color: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 0;
+  background-color: rgba(0, 0, 0, 0.035);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  margin-top: auto;
   flex: 1;
   display: flex;
   flex-direction: column;
-  box-shadow: none;
+  justify-content: center;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  z-index: 1;
 }
 
 [data-theme='dark'] .featureInner {
-  background-color: transparent;
-  border-color: transparent;
-  box-shadow: none;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.featureCard:hover .featureInner {
+  border-color: rgba(215, 25, 33, 0.12);
 }
 
 .featureDesc {
@@ -495,7 +502,7 @@
 .coreAvatarContainer {
   width: 60px;
   height: 60px;
-  border-radius: 16px;
+  border-radius: 22%;
   overflow: hidden;
   background-color: rgba(128, 128, 128, 0.05);
   border: 1px solid var(--nothing-border);
@@ -641,22 +648,22 @@
   min-height: 115px;
   background-color: var(--ifm-card-background-color);
   border: 1px solid var(--nothing-border);
-  border-radius: 16px; /* match upper cards */
+  border-radius: 18px; /* match upper cards */
   padding: 0.75rem 0.35rem;
   text-decoration: none !important;
   transition: border-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
 }
 
 .contributorAvatarContainer {
-  width: 55%;
+  width: 68%;
   aspect-ratio: 1;
-  border-radius: 50%;
+  border-radius: 22%;
   overflow: hidden;
   background-color: rgba(128, 128, 128, 0.05);
   border: 1px solid var(--nothing-border);
   margin-bottom: 0.5rem;
   flex-shrink: 0;
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
 .contributorAvatar {
@@ -689,6 +696,7 @@
 
 .contributorCard:hover .contributorAvatarContainer {
   transform: scale(1.04);
+  border-color: var(--ifm-color-primary);
 }
 
 .contributorCard:hover .contributorName {
