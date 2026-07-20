@@ -32,3 +32,7 @@ yarn-error.log*
 
 # Local Workspace
 .local/
+
+# Knowledge Graphs
+graphify-out/
+.code-review-graph/

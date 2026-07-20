@@ -49,6 +49,7 @@
   display: none !important;
 }
 
+/* Collapse text to render as a 32px circular icon button on tablet/mobile viewports for uniform header height */
 @media (max-width: 996px) {
   .installBtn span {
     display: none;
@@ -61,12 +62,12 @@
   }
 
   .installBtn {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     padding: 0 !important;
     border-radius: 50%;
     justify-content: center;
-    margin-left: 0.25rem;
+    margin: 0;
   }
 }
 
