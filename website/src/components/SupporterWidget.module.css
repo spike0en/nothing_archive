@@ -1,3 +1,14 @@
+/**
+ * @file SupporterWidget.module.css
+ * @description Layout and animation styles for the supporters marquee ticker widget.
+ * 
+ * Container uses a dual-layer background technique: an opaque surface fill clipped to the 
+ * padding box over an animated gradient border clipped to the border box.
+ * 
+ * Performance: background-position translation runs on the compositor thread without 
+ * triggering layout reflows or repaint cycles.
+ */
+
 .tickerContainer {
   position: relative;
   width: 100%;
@@ -5,19 +16,41 @@
   flex-direction: row;
   align-items: center;
   gap: 1rem;
-  background-color: rgba(255, 255, 255, 0.85);
-  border: 1px solid var(--nothing-border);
-  border-radius: 14px;
-  padding: 0.6rem 1.1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
+
+  /* Dual-layer background: solid surface padding-box interior with animated gradient border-box.
+   * Gradient stops repeat twice over 200% background width to allow smooth infinite loop via background-position shift.
+   */
+  background: 
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(90deg, #D71920 0%, #E85B14 12.5%, #FFC700 25%, #E85B14 37.5%, #D71920 50%, #E85B14 62.5%, #FFC700 75%, #E85B14 87.5%, #D71920 100%) border-box;
+  background-size: 100% 100%, 200% 100%;
+  background-position: 0 0, 0% 0%;
+  -webkit-background-clip: padding-box, border-box;
+  background-clip: padding-box, border-box;
+  border: 2px solid transparent;
+  box-shadow: none;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  animation: borderShimmer 8s linear infinite;
 }
 
 [data-theme='dark'] .tickerContainer {
-  background-color: rgba(18, 18, 18, 0.75);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: 
+    linear-gradient(#141414, #141414) padding-box,
+    linear-gradient(90deg, #D71920 0%, #E85B14 12.5%, #FFC700 25%, #E85B14 37.5%, #D71920 50%, #E85B14 62.5%, #FFC700 75%, #E85B14 87.5%, #D71920 100%) border-box;
+  background-size: 100% 100%, 200% 100%;
+  background-position: 0 0, 0% 0%;
+  -webkit-background-clip: padding-box, border-box;
+  background-clip: padding-box, border-box;
+  border: 2px solid transparent;
+  box-shadow: none;
+}
+
+.tickerContainer:hover {
+  box-shadow: none;
 }
 
 .tickerLabel {
@@ -39,21 +72,51 @@
   position: relative;
   display: flex;
   align-items: center;
-  /* Prevent I-beam text cursor and accidental text highlighting on moving names */
   cursor: default;
   user-select: none;
   -webkit-user-select: none;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000000 16px, #000000 calc(100% - 16px), transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, #000000 16px, #000000 calc(100% - 16px), transparent 100%);
+}
+
+/* Gradient edge overlays for seamless fade without CPU-bound mask-image overhead */
+.tickerWindow::before,
+.tickerWindow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tickerWindow::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
+}
+
+.tickerWindow::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0));
+}
+
+[data-theme='dark'] .tickerWindow::before {
+  background: linear-gradient(to right, #141414, rgba(20, 20, 20, 0));
+}
+
+[data-theme='dark'] .tickerWindow::after {
+  background: linear-gradient(to left, #141414, rgba(20, 20, 20, 0));
 }
 
 .marqueeTrack {
   display: flex;
   width: max-content;
-  /* Force GPU rendering layers via translate3d & will-change to eliminate subpixel layout jitter */
   will-change: transform;
   transform: translate3d(0, 0, 0);
-  animation: marqueeScroll var(--marquee-duration, 12s) linear infinite;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  animation: marqueeScroll var(--marquee-duration, 30s) linear infinite;
 }
 
 /* Pause the animation immediately when user hovers over the ticker window */
@@ -64,14 +127,14 @@
 .supporterName {
   font-family: var(--ifm-font-family-monospace);
   font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--ifm-color-content);
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   white-space: nowrap;
   transition: color 0.2s ease;
-  /* Use margin instead of flexbox gap to guarantee a mathematically perfect seamless infinite loop */
-  margin-right: 1rem;
+  margin-right: 0.75rem;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Highlight the hovered supporter name with theme's primary color */
@@ -88,13 +151,12 @@
 .separator {
   font-family: var(--ifm-font-family-monospace);
   font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--ifm-color-content);
-  letter-spacing: 0.06em;
+  font-weight: 800;
+  color: var(--nothing-red, #D71920);
+  letter-spacing: 0.05em;
   white-space: nowrap;
-  opacity: 0.75;
-  /* Matching right margin to preserve spacing symmetry */
-  margin-right: 1rem;
+  margin-right: 0.75rem;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Loop restarts precisely at -50% translation without layout shifts */
@@ -104,6 +166,16 @@
   }
   100% {
     transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Smooth continuous border gradient sweep animation */
+@keyframes borderShimmer {
+  0% {
+    background-position: 0 0, 0% 0%;
+  }
+  100% {
+    background-position: 0 0, -200% 0%;
   }
 }
 

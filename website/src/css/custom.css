@@ -1527,7 +1527,7 @@ div[class*="admonition"] a:hover {
 
 /* Pagination (prev/next) */
 .pagination-nav__link {
-  border: 1px solid var(--nothing-border);
+  border: 2px solid var(--nothing-border);
   border-radius: 12px;
   transition: border-color 0.2s ease;
 }
@@ -2153,7 +2153,7 @@ details summary:hover::before {
   max-width: 32px !important;
   padding: 0 !important;
   margin: 0 !important;
-  border: 1px solid var(--nothing-border) !important;
+  border: 2px solid var(--nothing-border) !important;
   border-radius: 50% !important;
   background: transparent !important;
   color: var(--ifm-font-color-base) !important;
@@ -2573,7 +2573,7 @@ details summary:hover::before {
   width: 44px !important;
   height: 44px !important;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
-  border: 1px solid var(--nothing-border) !important;
+  border: 2px solid var(--nothing-border) !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -2856,7 +2856,7 @@ details summary:hover::before {
 
 .mention-card {
   background-color: var(--ifm-card-background-color);
-  border: 1px solid var(--nothing-border);
+  border: 2px solid var(--nothing-border);
   border-radius: 16px;
   padding: 1.25rem;
   display: flex;

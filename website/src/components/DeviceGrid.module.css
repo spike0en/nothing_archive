@@ -1,19 +1,21 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 1.25rem;
   margin: 2rem 0;
 }
 
-@media (max-width: 996px) {
+@media (max-width: 1150px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 }
 
 @media (max-width: 600px) {
   .grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
 
@@ -21,7 +23,7 @@
   display: flex;
   flex-direction: column;
   background-color: var(--ifm-card-background-color);
-  border: 1px solid var(--nothing-border);
+  border: 2px solid var(--nothing-border);
   border-radius: 16px;
   overflow: hidden;
   text-decoration: none !important;
@@ -30,7 +32,8 @@
               border-color 0.2s ease,
               box-shadow 0.2s ease;
   position: relative;
-  height: 290px;
+  min-height: 290px;
+  height: 100%;
 }
 
 .card:hover {
@@ -109,8 +112,9 @@
 }
 
 .infoContainer {
-  padding: 0.45rem 1rem 0.5rem;
-  display: block !important;
+  padding: 0.5rem 0.75rem 0.6rem;
+  display: flex !important;
+  flex-direction: column;
   flex: 1;
   background-color: rgba(128, 128, 128, 0.02);
 }
@@ -166,13 +170,18 @@
   color: var(--ifm-color-primary);
 }
 
+/* Color selector container.
+ * Layout rationale: Uses flexbox wrapping with a 6px row-gap and 5px column-gap.
+ * 6px vertical row-gap prevents stacked color pills from touching when wrapping on smaller scale breakpoints,
+ * while 5px horizontal column-gap preserves dense pill layout within device cards.
+ */
 .colorSelector {
   display: flex;
-  gap: 6px;
+  gap: 6px 5px;
   align-items: center;
   flex-wrap: wrap;
   padding: 2px 0;
-  margin: 2px 0 0 0 !important;
+  margin: 4px 0 0 0 !important;
   overflow: visible !important;
 }
 
@@ -181,15 +190,16 @@
   align-items: center;
   justify-content: center;
   font-family: var(--ifm-font-family-base);
-  font-size: 0.65rem;
+  font-size: 0.625rem;
   font-weight: 500;
-  padding: 0.2rem 0.55rem;
+  padding: 0.18rem 0.45rem;
   border-radius: 999px;
-  border: 1px solid var(--nothing-border-strong);
+  border: 2px solid var(--nothing-border-strong);
   background-color: transparent;
   color: var(--ifm-color-emphasis-700);
   cursor: pointer;
   line-height: 1;
+  white-space: nowrap;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 

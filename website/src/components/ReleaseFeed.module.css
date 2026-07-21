@@ -199,6 +199,11 @@
   transition: background-color 0.15s ease;
 }
 
+/* Release row link target wrapper.
+ * Hover rationale: Enforces text-decoration: none !important across link text and children to override
+ * Docusaurus default a:hover underline rules. Text state feedback is provided via primary color highlight
+ * instead, matching the interaction pattern of the repository commit tracker widget (CommitMatrix).
+ */
 .releaseLink {
   align-items: center;
   color: inherit;
@@ -206,12 +211,19 @@
   flex: 1;
   gap: 0.5rem;
   min-width: 0;
-  text-decoration: none;
+  text-decoration: none !important;
+}
+
+.releaseLink:hover,
+.releaseLink:hover *,
+.consoleLine:hover .releaseLink,
+.consoleLine:hover .releaseLink * {
+  text-decoration: none !important;
 }
 
 .consoleLine:hover {
   background-color: rgba(0, 0, 0, 0.04);
-  text-decoration: none;
+  text-decoration: none !important;
   color: inherit;
 }
 
@@ -302,13 +314,13 @@
 
 .buildLink {
   color: inherit;
-  text-decoration: none;
+  text-decoration: none !important;
   transition: color 0.15s ease, opacity 0.15s ease;
   cursor: pointer;
 }
 
 .buildLink:hover {
-  text-decoration: none;
+  text-decoration: none !important;
   color: var(--ifm-color-primary) !important;
 }
 
@@ -318,6 +330,7 @@
 
 .buildText {
   color: inherit;
+  text-decoration: none !important;
   transition: color 0.15s ease;
 }
 
@@ -335,6 +348,7 @@
   font-weight: 600;
   opacity: 0.95 !important;
   color: #1a1a1a !important;
+  text-decoration: none !important;
   transition: color 0.15s ease;
 }
 

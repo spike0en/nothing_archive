@@ -21,9 +21,9 @@ interface SupporterWidgetProps {
 export default function SupporterWidget({ donors }: SupporterWidgetProps): React.JSX.Element {
   const displayNames = donors.length > 0 ? donors : ['SUPPORT', 'ARCHIVE', 'COMMUNITY'];
 
-  // Scales at 1.2s per name, capped between 6s and 20s.
-  // This ensures the loop never takes more than 20 seconds to complete, even with long lists.
-  const duration = Math.min(20, Math.max(6, displayNames.length * 1.2));
+  // Smooth marquee speed: 4.0s per name, capped between 25s and 40s.
+  // Calibrated for 60Hz/120Hz/144Hz refresh rates to prevent stroboscopic judder and eye-strain.
+  const duration = Math.min(40, Math.max(25, displayNames.length * 4.0));
 
   // Render the name sequence once; duplicated via aria-hidden copy for continuous loop
   const nameSequence = displayNames.map((name, i) => (
