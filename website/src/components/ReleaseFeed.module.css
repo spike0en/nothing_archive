@@ -40,7 +40,7 @@
 .systemLabel {
   display: flex;
   align-items: center;
-  font-family: var(--ifm-font-family-base);
+  font-family: var(--ifm-font-family-monospace);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;

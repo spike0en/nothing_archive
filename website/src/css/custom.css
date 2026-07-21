@@ -1,7 +1,7 @@
 /**
  * Global CSS Overrides
  * Establishes root design tokens, theming variables, and core layout modifications.
- * Inter is bundled locally to avoid a render-blocking third-party font request.
+ * Geist, Geist Mono, and Inter variable fonts are bundled locally to eliminate render-blocking requests.
  */
 
 html,
@@ -42,6 +42,10 @@ html.theme-transition *::after {
   border-radius: var(--ifm-pre-border-radius) !important;
 }
 
+h1 {
+  font-family: var(--f-headline);
+}
+
 h1,
 h2,
 h3,
@@ -49,6 +53,31 @@ h4,
 h5,
 h6 {
   letter-spacing: -0.03em;
+}
+
+/* Typography utility classes */
+.font-ndot {
+  font-family: var(--f-ndot);
+}
+.font-headline {
+  font-family: var(--f-headline);
+}
+.font-regular {
+  font-family: var(--f-regular);
+}
+.font-mono {
+  font-family: var(--f-mono);
+}
+.font-lettera {
+  font-family: var(--f-lettera);
+  font-size: 0.85em;
+  letter-spacing: -0.02em;
+}
+.font-geist {
+  font-family: 'Geist', sans-serif;
+}
+.font-geist-mono {
+  font-family: 'Geist Mono', monospace;
 }
 
 /* 
@@ -115,8 +144,16 @@ div[class*="tableWrapper"] table td,
   --ifm-color-success-lighter: #1cd094;
   --ifm-color-success-lightest: #34d39f;
 
-  --ifm-font-family-base: 'Inter var', 'Inter', system-ui, -apple-system, sans-serif;
-  --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', 'Fira Mono', 'SF Mono', Monaco, Consolas, 'Liberation Mono', monospace;
+  --ifm-font-family-base: 'Geist', 'Inter var', 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-font-family-monospace: 'Geist Mono', GeistMono, 'Geist-Mono', 'JetBrains Mono', 'Fira Code', 'Fira Mono', 'SF Mono', Monaco, Consolas, 'Liberation Mono', monospace;
+  
+  /* Brand Typography Tokens */
+  --f-ndot: 'NDot55', 'Geist Mono', GeistMono, monospace;
+  --f-headline: 'NType82Headline', 'Geist', sans-serif;
+  --f-regular: 'NType82', 'Geist', 'Inter var', sans-serif;
+  --f-mono: 'NType82Mono', 'Geist Mono', GeistMono, 'JetBrains Mono', monospace;
+  --f-lettera: 'LetteraMonoLL', 'Geist Mono', GeistMono, monospace;
+
   --ifm-code-font-size: 90%;
   --ifm-heading-font-weight: 600;
 

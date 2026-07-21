@@ -656,6 +656,26 @@ const config: Config = {
         rel: 'preload',
         as: 'font',
         type: 'font/woff2',
+        href: `${baseUrl}fonts/Geist-Variable.woff2`,
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        as: 'font',
+        type: 'font/woff2',
+        href: `${baseUrl}fonts/GeistMono-Variable.woff2`,
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        as: 'font',
+        type: 'font/woff2',
         href: `${baseUrl}fonts/InterVariable.woff2`,
         crossorigin: 'anonymous',
       },
@@ -665,11 +685,79 @@ const config: Config = {
       attributes: {},
       innerHTML: `
         @font-face {
+          font-family: 'Geist';
+          font-style: normal;
+          font-weight: 100 900;
+          font-display: swap;
+          src: url('${baseUrl}fonts/Geist-Variable.woff2') format('woff2');
+        }
+        @font-face {
+          font-family: 'Geist Mono';
+          font-style: normal;
+          font-weight: 100 900;
+          font-display: swap;
+          src: url('${baseUrl}fonts/GeistMono-Variable.woff2') format('woff2');
+        }
+        @font-face {
+          font-family: 'GeistMono';
+          font-style: normal;
+          font-weight: 100 900;
+          font-display: swap;
+          src: url('${baseUrl}fonts/GeistMono-Variable.woff2') format('woff2');
+        }
+        @font-face {
+          font-family: 'Geist-Mono';
+          font-style: normal;
+          font-weight: 100 900;
+          font-display: swap;
+          src: url('${baseUrl}fonts/GeistMono-Variable.woff2') format('woff2');
+        }
+        @font-face {
           font-family: 'Inter var';
           font-style: normal;
           font-weight: 100 900;
           font-display: swap;
           src: url('${baseUrl}fonts/InterVariable.woff2') format('woff2');
+        }
+        @font-face {
+          font-family: 'NDot55';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url('${baseUrl}fonts/NDot-55.woff2') format('woff2'),
+               url('${baseUrl}fonts/NDot-55.otf') format('opentype');
+        }
+        @font-face {
+          font-family: 'NType82Headline';
+          font-style: normal;
+          font-weight: 400 700;
+          font-display: swap;
+          src: url('${baseUrl}fonts/NType82-Headline.woff2') format('woff2'),
+               url('${baseUrl}fonts/NType82-Headline.otf') format('opentype');
+        }
+        @font-face {
+          font-family: 'NType82';
+          font-style: normal;
+          font-weight: 400 700;
+          font-display: swap;
+          src: url('${baseUrl}fonts/NType82-Regular.woff2') format('woff2'),
+               url('${baseUrl}fonts/NType82-Regular.otf') format('opentype');
+        }
+        @font-face {
+          font-family: 'NType82Mono';
+          font-style: normal;
+          font-weight: 400 700;
+          font-display: swap;
+          src: url('${baseUrl}fonts/NType82Mono-Regular.woff2') format('woff2'),
+               url('${baseUrl}fonts/NType82Mono-Regular.otf') format('opentype');
+        }
+        @font-face {
+          font-family: 'LetteraMonoLL';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url('${baseUrl}fonts/LetteraMono-LL.woff2') format('woff2'),
+               url('${baseUrl}fonts/LetteraMono-LL.otf') format('opentype');
         }
       `,
     },

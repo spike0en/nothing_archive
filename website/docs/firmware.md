@@ -140,7 +140,7 @@ Select your device model to access its Release Index.
 <details>
   <summary><span class="summary-title">Phone (1) &nbsp; <span class="badge badge--warning">EOL</span></span><span class="summary-subtitle">Spacewar</span></summary>
 
-:::warning Support Ended
+:::warning[Support Ended]
 As of July 2026, Phone (1) has reached its official EOL status. This device will no longer receive official Nothing OS system updates or security patches.
 :::
 

@@ -112,8 +112,9 @@
 }
 
 .heroTitle {
+  font-family: var(--f-headline);
   font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.045em;
   line-height: 1.05;
   margin-bottom: 1rem;
@@ -217,14 +218,14 @@
 
 /* Section category typography — establishes distinct visual hierarchy across content blocks */
 .sectionLabel {
-  font-family: var(--ifm-font-family-base);
+  font-family: var(--ifm-font-family-monospace);
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   margin-bottom: 2rem;
   text-align: center;
-  opacity: 0.55;
+  opacity: 0.65;
 }
 
 .featureRow {

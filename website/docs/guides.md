@@ -859,7 +859,7 @@ Install the appropriate drivers for your device's SoC manufacturer.
 
 ### Tools & Resources
 
-:::danger Disclaimer & Notice
+:::danger[Disclaimer & Notice]
 
 - This section serves solely as a reference index for resources already publicly available on the open web. This project does not host, store, or distribute any of the proprietary tools or binary files listed below.
 - All links provided point to external, third-party repositories and file hosts over which we have no control. We do not guarantee the security, integrity, or legality of these external resources.

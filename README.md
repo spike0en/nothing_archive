@@ -100,6 +100,7 @@ Nothing Archive employs a multi-license structure to protect the original work o
 *   **Community projects and third-party apps** belong to their respective developers under their own licensing terms. We index these links solely to bring the developer community together in one accessible hub.
 *   **The pipeline logic and website source code** (under `/scripts` and `/website`, excluding documentation content) are licensed under the [MIT License](LICENSE-MIT).
 *   **Project branding and visual identity** assets under `website/static/img/` (including original logos, banners, and graphics) are strictly proprietary and not licensed for reuse or redistribution.
+*   **Project typography and font assets** under `website/static/fonts/` are subject to their respective open-source licenses and brand foundry attributions. See [website/static/fonts/README.md](website/static/fonts/README.md) for full licensing details.
 
 > [!IMPORTANT]
 > **Attribution Mandate**: Anyone replicating, scraping, hosting mirrors of, or adapting any custom guides or compiled database tables from this repository **MUST** provide prominent, visible credit to **Nothing Archive** and link back to this source repository:

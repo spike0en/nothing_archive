@@ -38,7 +38,7 @@ Let's dissect the example build **`Asteroids-B4.1-260414-1749`**:
 | **Build Date** | `260414` | The compilation date in `YYMMDD` format (April 14, 2026) |
 | **Build Time** | `1749` | The compilation time in `HHMM` 24-hour format |
 
-:::important Build Date vs. Public Rollout
+:::info[Build Date vs. Public Rollout]
 Every software build goes through internal quality assurance and testing by the Nothing software team before release. Consequently, there is always a delay between the compilation date and the public rollout date. 
 
 For instance, while a build like `Asteroids-B4.1-260414-1749` was compiled on **April 14th**, it was rolled out on **April 24th**. The bi-monthly schedule countdown for the next update begins from the **rollout date**, not the compilation date.
@@ -52,7 +52,7 @@ Each Nothing and CMF device has its own development cycle tailored to its hardwa
 * **Trickle-Down Features**: Features introduced on newer models gradually make their way back to older devices over time, unless there are hardware limitations. However, newer models may be prioritized first to support initial sales launches.
 * **Version Parity**: Having the same version number (e.g., Nothing OS 4.1) on two different devices does not mean they have identical features. For example, budget-friendly models and flagship models will have features tailored to their hardware capabilities (e.g., custom camera modes or depth effects on lockscreen might be rolled out to models at different times).
 
-:::tip Deep Dive
+:::tip[Deep Dive]
 To learn more about the development, testing, and distribution process behind Nothing OS updates, see the community article:
 👉 **[Inside a Major Nothing OS Update](https://nothing.community/d/47051-inside-a-major-nothing-os-update)**
 :::
