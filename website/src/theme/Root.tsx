@@ -14,6 +14,8 @@ import SupportModal from '../components/SupportModal';
 import SupportNudge from '../components/SupportNudge';
 import MagneticCursorRing from '../components/MagneticCursorRing';
 
+import PwaReloadPopup from './PwaReloadPopup';
+
 interface RootProps {
   children: React.ReactNode;
 }
@@ -40,6 +42,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
 
   const [showShortcuts, setShowShortcuts] = useState(false);
   const [showSupport, setShowSupport] = useState(false);
+  const [showPwaTest, setShowPwaTest] = useState(false);
 
   const modalRef = useRef<HTMLDivElement>(null);
   const previousActiveElement = useRef<HTMLElement | null>(null);
@@ -86,7 +89,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
     }
   };
 
-  // Support modal trigger listeners (hash and custom event)
+  // Support modal & PWA reload test trigger listeners (hash and custom event)
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
@@ -99,6 +102,8 @@ export default function Root({ children }: RootProps): React.JSX.Element {
         } catch (e) {
           console.warn('Failed to clear hash:', e);
         }
+      } else if (window.location.hash === '#pwa-reload' || window.location.hash === '#pwa-test' || window.location.hash === '#stack-test' || window.location.search.includes('pwa-test=true')) {
+        setShowPwaTest(true);
       }
     };
 
@@ -241,6 +246,9 @@ export default function Root({ children }: RootProps): React.JSX.Element {
       <CopyButtonSetup />
       <SupportModal isOpen={showSupport} onClose={() => setShowSupport(false)} />
       <SupportNudge />
+      {showPwaTest && (
+        <PwaReloadPopup onReload={() => window.location.reload()} />
+      )}
 
       {showShortcuts && (
         <div

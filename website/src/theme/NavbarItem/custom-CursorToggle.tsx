@@ -10,6 +10,10 @@ import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import styles from './custom-CursorToggle.module.css';
 
+interface CursorToggleProps {
+  mobile?: boolean;
+}
+
 /**
  * CursorToggle component.
  * Renders a navigation button to toggle the global magnetic cursor ring preference.
@@ -17,7 +21,7 @@ import styles from './custom-CursorToggle.module.css';
  * 
  * @returns {React.JSX.Element | null} Target cursor toggle button element.
  */
-export default function CursorToggle(): React.JSX.Element | null {
+export default function CursorToggle({ mobile }: CursorToggleProps): React.JSX.Element | null {
   const [enabled, setEnabled] = useState<boolean>(false);
   const [mounted, setMounted] = useState(false);
 
@@ -40,6 +44,10 @@ export default function CursorToggle(): React.JSX.Element | null {
       console.warn('Failed to read cursor setting:', e);
     }
   }, []);
+
+  if (mobile) {
+    return null;
+  }
 
   /**
    * Toggles cursor active state, updates localStorage, and dispatches global event.

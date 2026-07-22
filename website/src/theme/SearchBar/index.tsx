@@ -378,6 +378,7 @@ function DocSearch({externalUrlRegex, ...props}: DocSearchV4Props) {
         type="button"
         className="DocSearch DocSearch-Button"
         aria-label="Search"
+        title="Search"
         onTouchStart={importDocSearchModalIfNeeded}
         onFocus={importDocSearchModalIfNeeded}
         onMouseOver={importDocSearchModalIfNeeded}

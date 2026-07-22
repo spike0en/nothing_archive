@@ -1,21 +1,21 @@
 /**
- * SupportNudge — Bottom-right floating toast card.
- *
- * Visual: glassmorphism card (backdrop-blur) with slide-in/slide-out
- * animations, a shrinking progress bar for auto-dismiss, and full
- * responsive adaptation (full-width bottom bar on mobile ≤768 px).
- * Respects `prefers-reduced-motion` for accessibility.
+ * PwaReloadPopup — Custom update reload toast notification styling.
  */
 
-.nudgeContainer {
+.popupContainer {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
-  z-index: 1500;
+  z-index: 1600;
   pointer-events: none;
+  transition: bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.nudge {
+.popupShifted {
+  bottom: 11.75rem;
+}
+
+.popupCard {
   pointer-events: auto;
   width: 340px;
   background-color: var(--ifm-card-background-color);
@@ -23,54 +23,57 @@
   border-radius: 20px;
   padding: 1.25rem 1.25rem 1rem;
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.08),
-    0 2px 8px rgba(0, 0, 0, 0.04);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+    0 12px 32px rgba(0, 0, 0, 0.15),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   animation: slideInUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-[data-theme='dark'] .nudge {
+[data-theme='dark'] .popupCard {
+  background-color: rgba(24, 24, 24, 0.94);
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.35),
-    0 2px 8px rgba(0, 0, 0, 0.2);
-  border-color: var(--nothing-border-strong);
+    0 12px 36px rgba(0, 0, 0, 0.55),
+    0 2px 10px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.14);
 }
 
-/* --- Exiting state --- */
-.nudgeExiting {
+/* --- Exiting State --- */
+.popupExiting {
   animation: slideOutDown 0.35s cubic-bezier(0.55, 0, 1, 0.45) forwards;
 }
 
-/* --- Header row --- */
-.nudgeHeader {
+/* --- Header --- */
+.popupHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
 }
 
-.nudgeTitleGroup {
+.titleGroup {
   display: flex;
   align-items: center;
   gap: 8px;
   min-width: 0;
 }
 
-.heartIcon {
+.updateIcon {
+  width: 16px;
+  height: 16px;
   color: var(--nothing-red, #D71921);
+  display: inline-block;
   flex-shrink: 0;
-  animation: heartPulse 1.5s infinite ease-in-out;
-  filter: drop-shadow(0 0 4px rgba(215, 25, 33, 0.4));
+  animation: updateSpin 3s linear infinite;
 }
 
-.nudgeTitle {
+.popupTitle {
   margin: 0;
-  font-family: var(--ifm-font-family-base);
-  font-size: 0.82rem;
+  font-family: var(--f-headline, var(--ifm-font-family-base));
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--ifm-font-color-base);
@@ -81,7 +84,7 @@
   background: none;
   border: none;
   color: var(--ifm-font-color-base);
-  opacity: 0.35;
+  opacity: 0.4;
   cursor: pointer;
   padding: 4px;
   display: flex;
@@ -93,100 +96,80 @@
 }
 
 .closeBtn:hover {
-  opacity: 0.85;
+  opacity: 0.9;
   background-color: var(--nothing-hover-bg);
   transform: rotate(90deg);
 }
 
-/* --- Body text --- */
-.nudgeBody {
+/* --- Body --- */
+.popupBody {
   font-size: 0.78rem;
-  line-height: 1.55;
+  line-height: 1.5;
   color: var(--ifm-font-color-base);
-  opacity: 0.65;
+  opacity: 0.7;
   margin: 0;
 }
 
-/* --- Actions row --- */
-.nudgeActions {
+/* --- Actions --- */
+.popupActions {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  flex-wrap: wrap;
 }
 
-/* --- CTA button --- */
-.nudgeCta {
+.refreshCta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  background-color: var(--ifm-font-color-base);
-  color: var(--ifm-card-background-color) !important;
-  border: 1px solid var(--ifm-font-color-base);
+  background-color: var(--nothing-red, #D71921);
+  color: #ffffff !important;
+  border: 1px solid var(--nothing-red, #D71921);
   border-radius: 999px;
-  padding: 0.45rem 1rem;
-  font-size: 0.72rem;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   cursor: pointer;
   text-decoration: none !important;
   transition: all 0.2s ease;
+  box-shadow: none;
 }
 
-.nudgeCta:hover {
-  background-color: transparent;
-  color: var(--ifm-font-color-base) !important;
+.refreshCta:hover {
+  background-color: #c1161c;
+  border-color: #c1161c;
+  transform: translateY(-1px);
+  box-shadow: none;
 }
 
-.ctaIcon {
+.refreshIcon {
   flex-shrink: 0;
-  animation: heartPulse 1.5s infinite ease-in-out;
+  transition: transform 0.3s ease;
 }
 
-/* --- Already Supported (ghost link) --- */
-.alreadySupported {
+.refreshCta:hover .refreshIcon {
+  transform: rotate(180deg);
+}
+
+.laterBtn {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
   background: none;
   border: none;
   color: var(--ifm-font-color-base);
-  opacity: 0.4;
-  font-size: 0.68rem;
+  opacity: 0.5;
+  font-size: 0.72rem;
   font-weight: 600;
   cursor: pointer;
-  padding: 0.35rem 0.25rem;
-  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  border-radius: 999px;
   transition: all 0.2s ease;
-  letter-spacing: 0.01em;
 }
 
-.alreadySupported:hover {
-  opacity: 0.75;
+.laterBtn:hover {
+  opacity: 0.85;
   background-color: var(--nothing-hover-bg);
-}
-
-
-/* --- Auto-dismiss progress bar --- */
-.progressTrack {
-  position: absolute;
-  bottom: 0;
-  left: 1rem;
-  right: 1rem;
-  height: 2px;
-  background: var(--nothing-border);
-  border-radius: 1px;
-  overflow: hidden;
-}
-
-.progressBar {
-  height: 100%;
-  background: var(--nothing-red, #D71921);
-  border-radius: 1px;
-  width: 100%;
-  animation: shrinkBar 15s linear forwards;
-  opacity: 0.6;
 }
 
 /* --- Animations --- */
@@ -212,61 +195,58 @@
   }
 }
 
-@keyframes heartPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.18); }
-  100% { transform: scale(1); }
-}
-
-@keyframes shrinkBar {
-  from { width: 100%; }
-  to { width: 0%; }
+@keyframes updateSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
 
 /* --- Responsive: mobile floating card --- */
 @media (max-width: 768px) {
-  .nudgeContainer {
+  .popupContainer {
     bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
     right: 0.75rem;
     left: 0.75rem;
     padding: 0;
+    transition: bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .nudge {
+  .popupShifted {
+    bottom: calc(9.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .popupCard {
     width: 100%;
     border-radius: 16px;
     padding: 1rem 1.1rem 0.85rem;
     gap: 0.6rem;
   }
 
-  .nudgeTitle {
+  .popupTitle {
     font-size: 0.8rem;
   }
 
-  .nudgeBody {
+  .popupBody {
     display: block !important;
     font-size: 0.76rem;
     line-height: 1.45;
   }
 
-  .alreadySupported {
+  .laterBtn {
     display: inline-flex !important;
   }
 }
 
-/* --- Reduced motion --- */
 @media (prefers-reduced-motion: reduce) {
-  .nudge,
-  .nudgeExiting {
+  .popupCard,
+  .popupExiting {
     animation-duration: 0.01ms !important;
   }
 
-  .heartIcon,
-  .ctaIcon {
+  .updateIcon {
     animation: none !important;
-  }
-
-  .progressBar {
-    animation-duration: 15s;
   }
 }

@@ -49,6 +49,10 @@ function MobileArrowDownIcon({ className }: { className?: string }): React.JSX.E
 export default function PwaInstallButton({ mobile }: PwaInstallButtonProps): React.JSX.Element | null {
   const { isInstallable, install } = usePwa();
 
+  if (mobile) {
+    return null;
+  }
+
   if (!isInstallable) {
     return null;
   }
@@ -60,21 +64,13 @@ export default function PwaInstallButton({ mobile }: PwaInstallButtonProps): Rea
 
   const icon = <MobileArrowDownIcon className={styles.installIcon} />;
 
-  if (mobile) {
-    return (
-      <li className="menu__list-item">
-        <a className={clsx("menu__link", styles.mobileInstallLink)} href="#" onClick={handleClick}>
-          {icon} <span>Install App</span>
-        </a>
-      </li>
-    );
-  }
-
   return (
     <a
       href="#"
       onClick={handleClick}
       className={clsx('navbar__item navbar__link', styles.installBtn)}
+      title="Install App"
+      aria-label="Install App"
     >
       {icon} <span>Install App</span>
     </a>

@@ -45,6 +45,10 @@ function VolunteerActivismIcon({ className }: { className?: string }): React.JSX
  * @returns {React.JSX.Element | null} Support button element or mobile menu item.
  */
 export default function SupportButton({ mobile }: SupportButtonProps): React.JSX.Element | null {
+  if (mobile) {
+    return null;
+  }
+
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     if (typeof window !== 'undefined') {
@@ -54,22 +58,13 @@ export default function SupportButton({ mobile }: SupportButtonProps): React.JSX
 
   const icon = <VolunteerActivismIcon className={styles.supportIcon} />;
 
-  if (mobile) {
-    return (
-      <li className="menu__list-item">
-        <a className={clsx("menu__link", styles.mobileSupportLink)} href="#" onClick={handleClick}>
-          {icon} <span>Support Project</span>
-        </a>
-      </li>
-    );
-  }
-
   return (
     <a
       href="#"
       onClick={handleClick}
       className={clsx('navbar__item navbar__link', styles.supportBtn)}
       title="Support & Donations"
+      aria-label="Support & Donations"
     >
       {icon} <span>Support</span>
     </a>

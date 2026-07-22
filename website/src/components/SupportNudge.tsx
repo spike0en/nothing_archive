@@ -117,6 +117,38 @@ export default function SupportNudge(): React.JSX.Element | null {
     setTimeout(() => setVisible(false), 350);
   }, [clearAutoHide]);
 
+  // Broadcast visibility events so PWA reload popup can adaptively stack above SupportNudge
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    if (visible) {
+      (window as any).__SUPPORT_NUDGE_ACTIVE__ = true;
+      window.dispatchEvent(new CustomEvent('support-nudge-show'));
+    } else {
+      (window as any).__SUPPORT_NUDGE_ACTIVE__ = false;
+      window.dispatchEvent(new CustomEvent('support-nudge-hide'));
+    }
+
+    return () => {
+      (window as any).__SUPPORT_NUDGE_ACTIVE__ = false;
+      window.dispatchEvent(new CustomEvent('support-nudge-hide'));
+    };
+  }, [visible]);
+
+  // Hash trigger for instant visual testing (#stack-test / #nudge-test)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const checkHash = () => {
+      if (window.location.hash === '#stack-test' || window.location.hash === '#nudge-test') {
+        setVisible(true);
+      }
+    };
+    checkHash();
+    window.addEventListener('hashchange', checkHash);
+    return () => window.removeEventListener('hashchange', checkHash);
+  }, []);
+
   // Schedule the nudge to appear after SHOW_DELAY_MS, then auto-hide after AUTO_HIDE_MS.
   // Gate checks run both at mount and at fire-time to handle late storage writes.
   useEffect(() => {
@@ -141,6 +173,31 @@ export default function SupportNudge(): React.JSX.Element | null {
     return () => clearAutoHide();
   }, [clearAutoHide]);
 
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [dragX, setDragX] = useState<number>(0);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (touchStartX === null) return;
+    const currentX = e.touches[0].clientX;
+    const diff = currentX - touchStartX;
+    if (diff > 0) {
+      setDragX(diff);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (dragX > 75) {
+      dismissWithCooldown();
+    } else {
+      setDragX(0);
+    }
+    setTouchStartX(null);
+  };
+
   /** Handles the "Support Project" CTA — dismisses the nudge and opens the SupportModal. */
   const handleCta = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -152,7 +209,17 @@ export default function SupportNudge(): React.JSX.Element | null {
 
   return (
     <div className={styles.nudgeContainer} role="complementary" aria-label="Support prompt">
-      <div className={`${styles.nudge} ${exiting ? styles.nudgeExiting : ''}`}>
+      <div
+        className={`${styles.nudge} ${exiting ? styles.nudgeExiting : ''}`}
+        style={{
+          transform: dragX > 0 ? `translateX(${dragX}px)` : undefined,
+          opacity: dragX > 0 ? Math.max(0, 1 - dragX / 200) : undefined,
+          transition: dragX > 0 ? 'none' : undefined,
+        }}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <div className={styles.nudgeHeader}>
           <div className={styles.nudgeTitleGroup}>
             <FaHeart size={13} className={styles.heartIcon} />
