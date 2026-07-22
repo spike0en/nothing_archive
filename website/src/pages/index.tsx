@@ -106,42 +106,15 @@ const socialLinks = [
 
 
 /**
- * Primary landing page hero component.
+ * Primary landing page hero header component.
  */
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
-  const headerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const header = headerRef.current;
-    if (!header) return;
-
-    let headerRect = header.getBoundingClientRect();
-    const updateHeaderRect = () => {
-      headerRect = header.getBoundingClientRect();
-    };
-
-    const handlePointerMove = (e: PointerEvent) => {
-      const x = e.clientX - headerRect.left;
-      const y = e.clientY - headerRect.top;
-      header.style.setProperty('--mouse-x', `${x}px`);
-      header.style.setProperty('--mouse-y', `${y}px`);
-    };
-
-    header.addEventListener('pointerenter', updateHeaderRect);
-    header.addEventListener('pointermove', handlePointerMove);
-    window.addEventListener('resize', updateHeaderRect);
-    return () => {
-      header.removeEventListener('pointerenter', updateHeaderRect);
-      header.removeEventListener('pointermove', handlePointerMove);
-      window.removeEventListener('resize', updateHeaderRect);
-    };
-  }, []);
 
   return (
-    <header ref={headerRef} className={clsx('hero', styles.heroBanner)}>
-      <div className={styles.glyphGrid} aria-hidden="true" />
+    <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
+        <AnnouncementBanner />
         <div className={styles.heroContent}>
           <div className={styles.heroText}>
             <Heading as="h1" className={styles.heroTitle}>
@@ -457,30 +430,95 @@ function HomepageSocials() {
  */
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
+  const homepageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = homepageRef.current;
+    if (!container) return;
+
+    let lastClientX: number | null = null;
+    let lastClientY: number | null = null;
+    let animFrameId: number | null = null;
+
+    const updateGlowPosition = () => {
+      if (!container) return;
+
+      // If mouse hasn't moved yet, default to top-right behind Hero Glyph logo
+      if (lastClientX === null || lastClientY === null) {
+        container.style.setProperty('--mouse-x', '75%');
+        container.style.setProperty('--mouse-y', '200px');
+        return;
+      }
+
+      const rect = container.getBoundingClientRect();
+      const x = lastClientX - rect.left;
+      const y = lastClientY - rect.top;
+
+      container.style.setProperty('--mouse-x', `${x}px`);
+      container.style.setProperty('--mouse-y', `${y}px`);
+    };
+
+    const requestUpdate = () => {
+      if (animFrameId !== null) return;
+      animFrameId = requestAnimationFrame(() => {
+        animFrameId = null;
+        updateGlowPosition();
+      });
+    };
+
+    const handlePointerMove = (e: PointerEvent) => {
+      lastClientX = e.clientX;
+      lastClientY = e.clientY;
+      requestUpdate();
+    };
+
+    const handleScroll = () => {
+      requestUpdate();
+    };
+
+    const handleResize = () => {
+      requestUpdate();
+    };
+
+    window.addEventListener('pointermove', handlePointerMove, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize, { passive: true });
+
+    updateGlowPosition();
+
+    return () => {
+      if (animFrameId !== null) cancelAnimationFrame(animFrameId);
+      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <Layout
       title="Nothing OS Firmware & Resources"
       description={siteConfig.tagline}
     >
-      <AnnouncementBanner />
-      <HomepageHeader />
-      <main className={styles.main}>
-        <div className={clsx('container', styles.telemetryContainer)}>
-          <div className={styles.telemetrySection}>
-            <div className={styles.telemetryBox}>
-              <CommitMatrix />
-            </div>
-            <div className={styles.telemetryBox}>
-              <ReleaseFeed />
+      <div ref={homepageRef} className={styles.homepageContainer}>
+        <div className={styles.glyphGrid} aria-hidden="true" />
+        <HomepageHeader />
+        <main className={styles.main}>
+          <div className={clsx('container', styles.telemetryContainer)}>
+            <div className={styles.telemetrySection}>
+              <div className={styles.telemetryBox}>
+                <CommitMatrix />
+              </div>
+              <div className={styles.telemetryBox}>
+                <ReleaseFeed />
+              </div>
             </div>
           </div>
-        </div>
-        <HomepageFeatures />
-        <HomepageMilestones />
-        <HomepageCommunity />
-        <HomepageSocials />
-      </main>
+          <HomepageFeatures />
+          <HomepageMilestones />
+          <HomepageCommunity />
+          <HomepageSocials />
+        </main>
+      </div>
     </Layout>
   );
 }

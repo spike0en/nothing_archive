@@ -841,6 +841,10 @@ const config: Config = {
           position: 'right',
         },
         {
+          type: 'custom-CursorToggle',
+          position: 'right',
+        },
+        {
           type: 'custom-PwaInstallButton',
           position: 'right',
         },

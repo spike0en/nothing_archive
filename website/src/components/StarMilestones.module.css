@@ -24,19 +24,7 @@
   box-shadow: none !important;
 }
 
-/* Radial gradient overlay that creates a textured dot grid background */
-.gridOverlay {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.03) 1px, transparent 0);
-  background-size: 16px 16px;
-  pointer-events: none;
-  z-index: 1;
-}
 
-[data-theme='dark'] .gridOverlay {
-  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.02) 1px, transparent 0);
-}
 
 
 

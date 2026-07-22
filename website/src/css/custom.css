@@ -597,29 +597,27 @@ div[class*="tableWrapper"] table td,
 /* Active Leaf Document Link (Light Mode) */
 .menu__list-item:not(.menu__list-item-collapsible) > .menu__link--active {
   font-weight: 600 !important;
-  color: #000000 !important;
-  background-color: #F0F0F0 !important;
-  border: 1px solid rgba(0, 0, 0, 0.08) !important;
-  border-left: 3.5px solid var(--ifm-color-primary) !important;
-  border-radius: 6px !important;
+  color: var(--ifm-color-primary) !important;
+  background-color: rgba(215, 25, 33, 0.06) !important;
+  border: 1px solid rgba(215, 25, 33, 0.15) !important;
+  border-radius: 8px !important;
 }
 
 .menu__list-item:not(.menu__list-item-collapsible) > .menu__link--active:hover {
-  background-color: #E8E8E8 !important;
+  background-color: rgba(215, 25, 33, 0.1) !important;
   transform: translateX(3px);
 }
 
 /* Active Leaf Document Link (Dark Mode) */
 [data-theme='dark'] .menu__list-item:not(.menu__list-item-collapsible) > .menu__link--active {
   color: #FFFFFF !important;
-  background-color: #1A1A1A !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  border-left: 3.5px solid var(--ifm-color-primary) !important;
-  border-radius: 6px !important;
+  background-color: rgba(215, 25, 33, 0.12) !important;
+  border: 1px solid rgba(215, 25, 33, 0.25) !important;
+  border-radius: 8px !important;
 }
 
 [data-theme='dark'] .menu__list-item:not(.menu__list-item-collapsible) > .menu__link--active:hover {
-  background-color: #242424 !important;
+  background-color: rgba(215, 25, 33, 0.18) !important;
   transform: translateX(3px);
 }
 

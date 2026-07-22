@@ -31,15 +31,17 @@
 .telemetryHeader {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px dashed var(--nothing-border-strong);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+  justify-content: flex-start;
+  text-align: left;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0;
 }
 
 .systemLabel {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
   font-family: var(--ifm-font-family-monospace);
   font-size: 0.75rem;
   font-weight: 700;
@@ -50,7 +52,7 @@
 .feedTextPrefix {
   color: inherit;
   opacity: 0.85;
-  margin-right: 6px;
+  margin-right: 0;
 }
 
 .feedStatusLive {

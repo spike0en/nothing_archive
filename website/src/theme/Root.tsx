@@ -12,6 +12,7 @@ import CopyButtonSetup from '../components/CopyButton';
 import { PwaProvider } from '../components/PwaContext';
 import SupportModal from '../components/SupportModal';
 import SupportNudge from '../components/SupportNudge';
+import MagneticCursorRing from '../components/MagneticCursorRing';
 
 interface RootProps {
   children: React.ReactNode;
@@ -302,6 +303,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
           </div>
         </div>
       )}
+      <MagneticCursorRing />
     </PwaProvider>
   );
 }

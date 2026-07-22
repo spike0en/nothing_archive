@@ -1,10 +1,21 @@
+/**
+ * @file AnnouncementBanner.module.css
+ * @description Layout and responsive styling for the top announcement banner pill.
+ *
+ * Design & Layout Invariants:
+ * 1. Single-Line Pill Geometry: Forces flex-wrap: nowrap and text-overflow: ellipsis
+ *    so release tags fit on a single horizontal line without inflating the 999px pill.
+ * 2. Ripple Wave Clearance: Maintains 1.5rem bottom padding on mobile to provide a ~20px
+ *    optical cushion above the peak expansion height of the HeroGlyphLogo ripple wave.
+ */
+
 .banner {
   width: 100%;
   display: flex;
   justify-content: center;
   position: relative;
   z-index: 100;
-  padding: 1.25rem 1rem 1.25rem 1rem;
+  padding: 0 0 1.25rem 0;
   overflow: hidden;
   animation: expandDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -22,7 +33,7 @@
   }
   to {
     max-height: 140px;
-    padding-top: 1.25rem;
+    padding-top: 0;
     padding-bottom: 1.25rem;
     opacity: 1;
   }
@@ -31,7 +42,7 @@
 @keyframes retractUp {
   from {
     max-height: 140px;
-    padding-top: 1.25rem;
+    padding-top: 0;
     padding-bottom: 1.25rem;
     opacity: 1;
   }
@@ -111,15 +122,17 @@
 .content {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.35rem;
   font-family: var(--ifm-font-family-base);
   font-size: 0.8rem;
   font-weight: 600;
   color: inherit !important;
   text-decoration: none !important;
   transition: opacity 0.2s ease;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 .content:hover {
@@ -129,12 +142,14 @@
 .contentNonClickable {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 0.35rem;
   font-family: var(--ifm-font-family-base);
   font-size: 0.8rem;
   font-weight: 600;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 .inlineLink {
@@ -193,6 +208,10 @@
 
 .message {
   letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 
 /* Dismiss button integrated in the flex layout of the pill */
@@ -222,25 +241,40 @@
 /* Mobile: center-align on small screens */
 @media screen and (max-width: 576px) {
   .banner {
-    padding: 1rem 0.5rem 1rem 0.5rem;
+    padding: 0.25rem 0.5rem 1.5rem 0.5rem;
     animation: expandDownMobile 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
   .bannerDismissing {
     animation: retractUpMobile 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
   }
   .container {
-    padding: 0.4rem 0.75rem 0.4rem 1rem;
-    gap: 0.5rem;
+    padding: 0.35rem 0.6rem 0.35rem 0.75rem;
+    gap: 0.35rem;
+    max-width: 95%;
   }
   .content,
   .contentNonClickable {
     justify-content: center;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     gap: 0.25rem;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    min-width: 0;
+  }
+  .message {
+    font-size: 0.7rem;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .announcementTag {
+    font-size: 0.75rem;
+    margin-right: 2px;
   }
   .dismissBtn {
-    font-size: 1rem;
-    padding: 0.2rem;
+    font-size: 0.95rem;
+    padding: 0.15rem;
     margin-left: 0.1rem;
   }
 }
@@ -254,8 +288,8 @@
   }
   to {
     max-height: 140px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 1.5rem;
     opacity: 1;
   }
 }
@@ -263,8 +297,8 @@
 @keyframes retractUpMobile {
   from {
     max-height: 140px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 1.5rem;
     opacity: 1;
   }
   to {

@@ -1,0 +1,88 @@
+/**
+ * MagneticCursorRing.module.css
+ * Precision target ring cursor styles matching Nothing OS hardware aesthetics.
+ */
+
+.cursorContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 99999;
+  contain: layout style;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cursorVisible {
+  opacity: 1;
+}
+
+/* Outer Target Ring */
+.cursorRing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ifm-color-primary);
+  background-color: rgba(215, 25, 33, 0.04);
+  box-shadow: 0 0 10px rgba(215, 25, 33, 0.3);
+  pointer-events: none;
+  transform: translate3d(-50%, -50%, 0);
+  transition: border-radius 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease,
+              border-color 0.25s ease,
+              box-shadow 0.25s ease;
+  will-change: transform, width, height;
+}
+
+[data-theme='dark'] .cursorRing {
+  background-color: rgba(215, 25, 33, 0.08);
+  box-shadow: 0 0 12px rgba(215, 25, 33, 0.4);
+}
+
+/* Center Precision Dot */
+.cursorDot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--ifm-color-primary);
+  pointer-events: none;
+  transform: translate3d(-50%, -50%, 0);
+  transition: transform 0.15s ease, opacity 0.2s ease;
+  will-change: transform;
+}
+
+/* Hover / Target Lock State */
+.cursorRingHovered {
+  border-color: var(--ifm-color-primary);
+  background-color: rgba(215, 25, 33, 0.08);
+  box-shadow: 0 0 16px rgba(215, 25, 33, 0.35);
+}
+
+[data-theme='dark'] .cursorRingHovered {
+  background-color: rgba(215, 25, 33, 0.15);
+  box-shadow: 0 0 20px rgba(215, 25, 33, 0.45);
+}
+
+/* Magnetic Snap State (over buttons / interactive elements) */
+.cursorRingSnapped {
+  border-radius: 12px;
+  border-width: 1.5px;
+  border-color: var(--ifm-color-primary);
+  background-color: rgba(215, 25, 33, 0.06);
+  box-shadow: 0 0 20px rgba(215, 25, 33, 0.35);
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .cursorContainer {
+    display: none !important;
+  }
+}

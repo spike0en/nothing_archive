@@ -3,48 +3,59 @@
  * Implements styling for homepage sections.
  */
 
-/* --- Hero Section --- */
+/* --- Homepage Continuous Canvas --- */
+.homepageContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--ifm-background-color);
+  transition: background-color 0.15s ease-out;
+}
+
+[data-theme='dark'] .homepageContainer {
+  background-color: var(--ifm-background-color);
+}
+
 .heroBanner {
-  padding: 4rem 0;
+  padding: 1.5rem 0 1.25rem 0;
   text-align: left;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   min-height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  --mouse-x: 75%;
-  --mouse-y: 50%;
-  background: radial-gradient(ellipse 600px 500px at var(--mouse-x) var(--mouse-y),
-      rgba(215, 25, 33, 0.04) 0%,
-      transparent 70%);
-  transition: background-color 0.15s ease-out;
+  background: transparent !important;
+  z-index: 1;
 }
 
 [data-theme='dark'] .heroBanner {
-  background: radial-gradient(ellipse 600px 500px at var(--mouse-x) var(--mouse-y),
-      rgba(215, 25, 33, 0.06) 0%,
-      transparent 70%);
+  background: transparent !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .homepageContainer,
   .heroBanner {
     --mouse-x: 75% !important;
-    --mouse-y: 50% !important;
+    --mouse-y: 20% !important;
     transition: none !important;
   }
 }
 
-/* Grid pattern overlay */
+/* Grid pattern overlay spanning the ENTIRE homepage without mask clipping */
 .glyphGrid {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle 1px at 1px 1px, rgba(0, 0, 0, 0.045) 1px, transparent 0);
+  background-image: radial-gradient(circle 1px at 1px 1px, rgba(0, 0, 0, 0.04) 1px, transparent 0);
   background-size: 24px 24px;
   pointer-events: none;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
+  opacity: 0.85;
   animation: glyphPulse 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+[data-theme='dark'] .glyphGrid {
+  background-image: radial-gradient(circle 1px at 1px 1px, rgba(255, 255, 255, 0.055) 1px, transparent 0);
 }
 
 [data-theme='dark'] .glyphGrid {
@@ -842,12 +853,15 @@
 
 /* --- Main Content Wrapper --- */
 .main {
-  background: var(--ifm-background-color);
+  background: transparent !important;
+  position: relative;
+  z-index: 1;
 }
 
 .telemetryContainer {
   margin-top: 0.5rem;
   margin-bottom: 2rem;
+  padding-bottom: 0;
 }
 
 .telemetrySection {
@@ -886,29 +900,26 @@
 /* Tablet (≤996px) */
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 3rem 1rem 4.5rem;
+    padding: 1.25rem 1rem 3rem;
     min-height: auto;
     text-align: center;
-    /* Reset gradient for centered layout */
-    background: radial-gradient(ellipse 80% 60% at 50% 40%,
-        rgba(215, 25, 33, 0.03) 0%,
-        transparent 70%);
+    background: transparent !important;
   }
 
   [data-theme='dark'] .heroBanner {
-    background: radial-gradient(ellipse 80% 60% at 50% 40%,
-        rgba(215, 25, 33, 0.04) 0%,
-        transparent 70%);
+    background: transparent !important;
   }
 
   .heroContent {
     flex-direction: column-reverse;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
+  /* Establishes uniform ~20px optical clearance between AnnouncementBanner bottom and peak ripple wave */
   .heroImage {
     justify-content: center;
     padding-right: 0;
+    margin-top: 1.25rem;
   }
 
   .heroText {

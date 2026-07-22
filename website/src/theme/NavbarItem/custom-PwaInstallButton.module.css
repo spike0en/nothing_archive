@@ -12,6 +12,7 @@
   font-size: 0.8rem !important;
   height: fit-content;
   align-self: center;
+  order: 10 !important;
 }
 
 .installBtn:hover {

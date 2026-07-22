@@ -83,8 +83,6 @@ export default function StarMilestones(): React.JSX.Element {
       <TorxScrew className={clsx(styles.screw, styles.screwBottomLeft)} rotation={80} />
       <TorxScrew className={clsx(styles.screw, styles.screwBottomRight)} rotation={20} />
 
-      <div className={styles.gridOverlay} />
-
       <div className={styles.milestoneHeader}>
         <div className={styles.liveStats}>
           <span className={styles.liveText}>{stars.toLocaleString()} stargazers</span>

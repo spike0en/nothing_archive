@@ -83,9 +83,8 @@ assert(hero.includes('fetchPriority="high"'));
 
 const homepage = read('src', 'pages', 'index.tsx');
 const pointerMoveStart = homepage.indexOf('const handlePointerMove');
-const pointerMoveEnd = homepage.indexOf("header.addEventListener('pointermove'", pointerMoveStart);
+const pointerMoveEnd = homepage.indexOf("window.addEventListener('pointermove'", pointerMoveStart);
 assert(pointerMoveStart >= 0 && pointerMoveEnd > pointerMoveStart);
-assert(homepage.includes('const updateHeaderRect = () =>'));
 assert(!homepage.slice(pointerMoveStart, pointerMoveEnd).includes('getBoundingClientRect'));
 
 const customCss = read('src', 'css', 'custom.css');
