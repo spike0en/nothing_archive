@@ -17,6 +17,7 @@
 
 .popupCard {
   pointer-events: auto;
+  touch-action: none;
   width: 340px;
   background-color: var(--ifm-card-background-color);
   border: 1px solid var(--nothing-border-strong);

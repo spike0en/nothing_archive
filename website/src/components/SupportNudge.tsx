@@ -173,29 +173,56 @@ export default function SupportNudge(): React.JSX.Element | null {
     return () => clearAutoHide();
   }, [clearAutoHide]);
 
-  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const dragStartXRef = useRef<number | null>(null);
+  const dragXRef = useRef<number>(0);
   const [dragX, setDragX] = useState<number>(0);
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStartX(e.touches[0].clientX);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (touchStartX === null) return;
-    const currentX = e.touches[0].clientX;
-    const diff = currentX - touchStartX;
-    if (diff > 0) {
-      setDragX(diff);
+  /** Captures initial pointer coordinate and locks pointer capture to element. */
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.button !== undefined && e.button !== 0) return;
+    dragStartXRef.current = e.clientX;
+    dragXRef.current = 0;
+    try {
+      e.currentTarget.setPointerCapture(e.pointerId);
+    } catch {
+      // Degrade gracefully if setPointerCapture is unsupported
     }
   };
 
-  const handleTouchEnd = () => {
-    if (dragX > 75) {
+  /** Updates drag offset synchronously in ref and updates visual state. */
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (dragStartXRef.current === null) return;
+    const diff = e.clientX - dragStartXRef.current;
+    dragXRef.current = diff;
+    setDragX(diff);
+  };
+
+  /** Evaluates swipe distance against 75px threshold on pointer release. */
+  const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (dragStartXRef.current === null) return;
+    try {
+      if (e.currentTarget.hasPointerCapture(e.pointerId)) {
+        e.currentTarget.releasePointerCapture(e.pointerId);
+      }
+    } catch {
+      // Degrade gracefully
+    }
+
+    const finalDrag = dragXRef.current;
+    if (Math.abs(finalDrag) > 75) {
       dismissWithCooldown();
     } else {
       setDragX(0);
     }
-    setTouchStartX(null);
+    dragStartXRef.current = null;
+    dragXRef.current = 0;
+  };
+
+  /** Resets drag position when pointer gesture is canceled. */
+  const handlePointerCancel = () => {
+    setDragX(0);
+    dragStartXRef.current = null;
+    dragXRef.current = 0;
   };
 
   /** Handles the "Support Project" CTA — dismisses the nudge and opens the SupportModal. */
@@ -212,13 +239,15 @@ export default function SupportNudge(): React.JSX.Element | null {
       <div
         className={`${styles.nudge} ${exiting ? styles.nudgeExiting : ''}`}
         style={{
-          transform: dragX > 0 ? `translateX(${dragX}px)` : undefined,
-          opacity: dragX > 0 ? Math.max(0, 1 - dragX / 200) : undefined,
-          transition: dragX > 0 ? 'none' : undefined,
+          transform: dragX !== 0 ? `translateX(${dragX}px)` : undefined,
+          opacity: dragX !== 0 ? Math.max(0, 1 - Math.abs(dragX) / 200) : undefined,
+          transition: dragX !== 0 ? 'none' : undefined,
+          animation: dragX !== 0 ? 'none' : undefined,
         }}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+        onPointerCancel={handlePointerCancel}
       >
         <div className={styles.nudgeHeader}>
           <div className={styles.nudgeTitleGroup}>
