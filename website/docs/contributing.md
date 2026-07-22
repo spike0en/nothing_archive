@@ -37,10 +37,11 @@ These files and folders are managed exclusively by the project authors and colla
 
 In order to ensure perfect alphabetical sorting, please follow these strict naming and sorting rules when adding new entries to [apps.md](apps.md) or [projects.md](projects.md):
 
-### Naming Conventions
+### 1. Naming Conventions
 
 *   Add spaces between words for readability: even if the source repository or app store listing uses CamelCase, split them with spaces. For example, use **Glyph Glow** instead of `GlyphGlow`, **Nothing OS** instead of `NothingOS`, and **Better Battery** instead of `BetterBattery`.
 *   Use title case: capitalize all entries properly. Avoid all-lowercase or repo-style names. For example, use **Nothing Rice** instead of `nothing-rice`, and **N Recipe** instead of `n-recipe`.
+*   Preserve acronyms & abbreviations: keep 2–4 letter technical acronyms, protocol abbreviations, and product codes in ALL CAPS. For example, use **FMC** instead of `Fmc`, **SDDM** instead of `Sddm`, and **KWGT** instead of `Kwgt`.
 
 ### 2. Alphabetical Sorting
 *   All entries within a table must be sorted **alphabetically by display name** (Column 1).
