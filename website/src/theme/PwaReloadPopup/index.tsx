@@ -97,8 +97,13 @@ export default function PwaReloadPopup({ onReload }: Props): ReactNode {
   React.useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // Skip checking storage if in dev preview mode (#stack-test or #pwa-test)
-    if (window.location.hash === '#stack-test' || window.location.hash === '#pwa-test') {
+    // Skip checking storage if in dev preview mode (#stack-test, #pwa-test, #pwa-reload, ?pwa-test=true)
+    if (
+      window.location.hash === '#stack-test' ||
+      window.location.hash === '#pwa-test' ||
+      window.location.hash === '#pwa-reload' ||
+      window.location.search.includes('pwa-test=true')
+    ) {
       return;
     }
 
@@ -197,9 +202,63 @@ export default function PwaReloadPopup({ onReload }: Props): ReactNode {
       // Storage access blocked or restricted
     }
     setExiting(true);
+
     setTimeout(() => {
       setIsVisible(false);
-      onReload();
+
+      // Clean up dev test hash/query if present so test mode doesn't loop reload forever
+      if (typeof window !== 'undefined') {
+        if (
+          window.location.hash === '#pwa-test' ||
+          window.location.hash === '#pwa-reload' ||
+          window.location.hash === '#stack-test' ||
+          window.location.search.includes('pwa-test=true')
+        ) {
+          try {
+            const cleanUrl = window.location.pathname + window.location.search.replace(/[\?&]pwa-test=true/, '');
+            history.replaceState(null, '', cleanUrl || '/');
+          } catch (e) {
+            // Ignore history replacement failures
+          }
+        }
+      }
+
+      // Explicitly send SKIP_WAITING to waiting Service Worker if present
+      if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
+        navigator.serviceWorker
+          .getRegistration()
+          .then((reg) => {
+            if (reg && reg.waiting) {
+              reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+            }
+          })
+          .catch(() => {
+            // Degrade gracefully if registration lookup fails
+          });
+
+        // Trigger immediate reload on controller activation
+        const handleControllerChange = () => {
+          navigator.serviceWorker.removeEventListener('controllerchange', handleControllerChange);
+          window.location.reload();
+        };
+        navigator.serviceWorker.addEventListener('controllerchange', handleControllerChange);
+      }
+
+      // Invoke Docusaurus theme onReload callback
+      try {
+        if (typeof onReload === 'function') {
+          onReload();
+        }
+      } catch (e) {
+        console.error('Error invoking PWA onReload callback:', e);
+      }
+
+      // Failsafe reload guarantee if Workbox controlling or controllerchange events hang
+      setTimeout(() => {
+        if (typeof window !== 'undefined') {
+          window.location.reload();
+        }
+      }, 500);
     }, 300);
   };
 

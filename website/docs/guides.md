@@ -883,7 +883,7 @@ Stay updated with custom ROMs, kernels, and development projects.
 
 :::note
 
-- This section is community-managed in [Telegram](https://telegram.me/Nothing_Archive) and is not affiliated with Nothing.
+- This section is community-managed in [Telegram](https://t.me/s/NothingTechCommunity) and is not affiliated with Nothing.
 - The links below provide filtered search results from Telegram channels without the need to sign up. However, it is recommended to do so to interact and join discussion chats for respective devices, seek support, or engage with the enthusiast community if you are interested in tinkering, maximizing your device's potential, or staying up to date with all releases.
 - At times, the links below might return no results, which means that certain categories of content are not yet available, developed, or maintained by a reliable maintainer for that particular model.
 - Unlocking the bootloader and flashing custom firmware will void your OEM warranty. Please read all flashing guides if stated in the corresponding posts and refer to the support chat if linked or the discussion group for the model.

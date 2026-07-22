@@ -33,7 +33,7 @@ Official announcements, community threads, and discussion hubs for Nothing Archi
     <div class="mention-description">Feature listings and discussion channel inside the official Nothing Community Discord server.</div>
     <span class="mention-link">Open Discord &rarr;</span>
   </a>
-  <a href="https://telegram.me/Nothing_Archive/37" target="_blank" rel="noopener noreferrer" class="mention-card">
+  <a href="https://t.me/s/NothingTechCommunity/5" target="_blank" rel="noopener noreferrer" class="mention-card">
     <div class="mention-header">
       <span class="mention-platform telegram">Telegram</span>
       <span class="mention-date">Feed Channel</span>

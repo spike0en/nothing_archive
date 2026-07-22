@@ -14,7 +14,7 @@ The largest open-source, community-driven index and archive for the Nothing and 
   <a href="https://nothingarchive.tech/"><b>Explore Hub 🌐</b></a> &nbsp;&middot;&nbsp;
   <a href="https://nothingarchive.tech/docs/firmware"><b>Firmware Archive 📥</b></a> &nbsp;&middot;&nbsp;
   <a href="https://nothingarchive.tech/docs/guides"><b>Guides 📖</b></a> &nbsp;&middot;&nbsp;
-  <a href="https://telegram.me/s/Nothing_Archive"><b>Community 💬</b></a>
+  <a href="https://t.me/s/NothingTechCommunity"><b>Community 💬</b></a>
 </p>
 
 [![Hits](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%23b02a37&labelColor=2E2E3F&message=&style=for-the-badge)](https://github.com/spike0en/nothing_archive) &nbsp; [![Total Downloads](https://img.shields.io/github/downloads/spike0en/nothing_archive/total?style=for-the-badge&logo=github&logoColor=white)](https://github.com/spike0en/nothing_archive/releases) &nbsp; [![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0%20%2F%20MIT-007ec6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/spike0en/nothing_archive/blob/main/LICENSE)
