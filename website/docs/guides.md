@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Guides
+pagination_prev: changelogs/index
 description: Step-by-step guides for bootloader unlocking, rooting, OTA updates, and Nothing device customization.
 keywords: [nothing bootloader unlock, root nothing phone, nothing fastboot, nothing ota updates, nothing dialer codes, remap essential key]
 ---

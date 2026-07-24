@@ -205,6 +205,10 @@
   }
 }
 
+.spinning {
+  animation: updateSpin 0.8s linear infinite !important;
+}
+
 /* --- Responsive: mobile floating card --- */
 @media (max-width: 768px) {
   .popupContainer {

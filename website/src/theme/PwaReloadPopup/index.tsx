@@ -91,6 +91,7 @@ function CloseIcon({ className }: { className?: string }): React.JSX.Element {
 export default function PwaReloadPopup({ onReload }: Props): ReactNode {
   const [isVisible, setIsVisible] = useState(true);
   const [exiting, setExiting] = useState(false);
+  const [isReloading, setIsReloading] = useState(false);
   const [isNudgeActive, setIsNudgeActive] = useState(false);
 
   // Check session dismissal on mount
@@ -138,6 +139,8 @@ export default function PwaReloadPopup({ onReload }: Props): ReactNode {
   /** Captures initial pointer coordinate and locks pointer capture to element. */
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     if (e.button !== undefined && e.button !== 0) return;
+    if ((e.target as HTMLElement).closest('button, a')) return;
+
     dragStartXRef.current = e.clientX;
     dragXRef.current = 0;
     try {
@@ -184,10 +187,13 @@ export default function PwaReloadPopup({ onReload }: Props): ReactNode {
   };
 
   /** Dismisses the popup for the current browsing session (Close 'X' / Swipe) */
-  const handleDismiss = () => {
+  const handleDismiss = (e?: React.MouseEvent) => {
+    if (e) {
+      e.stopPropagation();
+    }
     try {
       sessionStorage.setItem('pwa_reload_dismissed_session', 'true');
-    } catch (e) {
+    } catch (err) {
       // Storage access blocked or restricted
     }
     setExiting(true);
@@ -195,71 +201,73 @@ export default function PwaReloadPopup({ onReload }: Props): ReactNode {
   };
 
   /** Triggers Service Worker update and page reload ('Refresh Page' button) */
-  const handleReload = () => {
+  const handleReload = (e?: React.MouseEvent) => {
+    if (e) {
+      e.stopPropagation();
+    }
+    if (isReloading) return;
+    setIsReloading(true);
+
     try {
       sessionStorage.removeItem('pwa_reload_dismissed_session');
-    } catch (e) {
+    } catch (err) {
       // Storage access blocked or restricted
     }
     setExiting(true);
 
-    setTimeout(() => {
-      setIsVisible(false);
+    // Clean up dev test hash/query if present so test mode doesn't loop reload forever
+    if (typeof window !== 'undefined') {
+      if (
+        window.location.hash === '#pwa-test' ||
+        window.location.hash === '#pwa-reload' ||
+        window.location.hash === '#stack-test' ||
+        window.location.search.includes('pwa-test=true')
+      ) {
+        try {
+          const cleanUrl = window.location.pathname + window.location.search.replace(/[\?&]pwa-test=true/, '');
+          history.replaceState(null, '', cleanUrl || '/');
+        } catch (err) {
+          // Ignore history replacement failures
+        }
+      }
+    }
 
-      // Clean up dev test hash/query if present so test mode doesn't loop reload forever
-      if (typeof window !== 'undefined') {
-        if (
-          window.location.hash === '#pwa-test' ||
-          window.location.hash === '#pwa-reload' ||
-          window.location.hash === '#stack-test' ||
-          window.location.search.includes('pwa-test=true')
-        ) {
-          try {
-            const cleanUrl = window.location.pathname + window.location.search.replace(/[\?&]pwa-test=true/, '');
-            history.replaceState(null, '', cleanUrl || '/');
-          } catch (e) {
-            // Ignore history replacement failures
+    // Explicitly send SKIP_WAITING to waiting Service Worker if present
+    if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .getRegistration()
+        .then((reg) => {
+          if (reg && reg.waiting) {
+            reg.waiting.postMessage({ type: 'SKIP_WAITING' });
           }
-        }
+        })
+        .catch(() => {
+          // Degrade gracefully if registration lookup fails
+        });
+
+      // Trigger immediate reload on controller activation
+      const handleControllerChange = () => {
+        navigator.serviceWorker.removeEventListener('controllerchange', handleControllerChange);
+        window.location.reload();
+      };
+      navigator.serviceWorker.addEventListener('controllerchange', handleControllerChange);
+    }
+
+    // Invoke Docusaurus theme onReload callback
+    try {
+      if (typeof onReload === 'function') {
+        onReload();
       }
+    } catch (err) {
+      console.error('Error invoking PWA onReload callback:', err);
+    }
 
-      // Explicitly send SKIP_WAITING to waiting Service Worker if present
-      if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
-        navigator.serviceWorker
-          .getRegistration()
-          .then((reg) => {
-            if (reg && reg.waiting) {
-              reg.waiting.postMessage({ type: 'SKIP_WAITING' });
-            }
-          })
-          .catch(() => {
-            // Degrade gracefully if registration lookup fails
-          });
-
-        // Trigger immediate reload on controller activation
-        const handleControllerChange = () => {
-          navigator.serviceWorker.removeEventListener('controllerchange', handleControllerChange);
-          window.location.reload();
-        };
-        navigator.serviceWorker.addEventListener('controllerchange', handleControllerChange);
+    // Guaranteed location reload
+    setTimeout(() => {
+      if (typeof window !== 'undefined') {
+        window.location.reload();
       }
-
-      // Invoke Docusaurus theme onReload callback
-      try {
-        if (typeof onReload === 'function') {
-          onReload();
-        }
-      } catch (e) {
-        console.error('Error invoking PWA onReload callback:', e);
-      }
-
-      // Failsafe reload guarantee if Workbox controlling or controllerchange events hang
-      setTimeout(() => {
-        if (typeof window !== 'undefined') {
-          window.location.reload();
-        }
-      }, 500);
-    }, 300);
+    }, 150);
   };
 
   if (!isVisible) {
@@ -311,14 +319,19 @@ export default function PwaReloadPopup({ onReload }: Props): ReactNode {
             className={styles.refreshCta}
             type="button"
             onClick={handleReload}
+            disabled={isReloading}
           >
-            <RefreshIcon className={styles.refreshIcon} />
+            <RefreshIcon className={clsx(styles.refreshIcon, isReloading && styles.spinning)} />
             <span>
-              <Translate
-                id="theme.PwaReloadPopup.refreshButtonText"
-                description="The text for PWA reload button">
-                Refresh Page
-              </Translate>
+              {isReloading ? (
+                'Refreshing...'
+              ) : (
+                <Translate
+                  id="theme.PwaReloadPopup.refreshButtonText"
+                  description="The text for PWA reload button">
+                  Refresh Page
+                </Translate>
+              )}
             </span>
           </button>
         </div>

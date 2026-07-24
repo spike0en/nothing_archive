@@ -180,6 +180,8 @@ export default function SupportNudge(): React.JSX.Element | null {
   /** Captures initial pointer coordinate and locks pointer capture to element. */
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     if (e.button !== undefined && e.button !== 0) return;
+    if ((e.target as HTMLElement).closest('button, a')) return;
+
     dragStartXRef.current = e.clientX;
     dragXRef.current = 0;
     try {
