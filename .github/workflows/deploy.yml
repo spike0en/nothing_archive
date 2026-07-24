@@ -8,6 +8,12 @@ on:
       - 'website/**'
       - '.github/workflows/deploy.yml'
   workflow_dispatch:
+    inputs:
+      use_self_hosted:
+        description: 'Run on self-hosted runner (uncheck for GitHub ubuntu-latest)'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -23,7 +29,11 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ${{ vars.USE_SELF_HOSTED == 'true' && fromJSON('["self-hosted", "Linux"]') || 'ubuntu-latest' }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    runs-on: ${{ ((github.event_name == 'workflow_dispatch' && inputs.use_self_hosted) || (github.event_name != 'workflow_dispatch' && vars.USE_SELF_HOSTED == 'true')) && fromJSON('["self-hosted", "Linux"]') || 'ubuntu-latest' }}
     defaults:
       run:
         working-directory: website

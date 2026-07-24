@@ -496,8 +496,8 @@ export default function Home(): JSX.Element {
 
   return (
     <Layout
-      title="Nothing OS Firmware & Resources"
-      description={siteConfig.tagline}
+      title="Nothing OS Firmware, OTA Updates & Community Apps"
+      description="Community-driven archive for the Nothing & CMF ecosystem. Download official Nothing OS firmware, OTA updates, and community apps, and browse technical guides."
     >
       <div ref={homepageRef} className={styles.homepageContainer}>
         <div className={styles.glyphGrid} aria-hidden="true" />

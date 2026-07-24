@@ -365,7 +365,7 @@ const websiteSchema = JSON.stringify({
 
 const config: Config = {
   title: 'Nothing Archive',
-  tagline: 'A curated hub for everything related to the Nothing ecosystem.',
+  tagline: 'Community-driven index for Nothing OS firmware, apps, projects, official resources, and guides.',
   favicon: 'img/brand/favicon.ico',
 
   future: {
@@ -796,7 +796,7 @@ const config: Config = {
       { property: 'og:image:width', content: '2160' },
       { property: 'og:image:height', content: '1080' },
       { property: 'og:image:type', content: 'image/png' },
-      { property: 'og:image:alt', content: 'Nothing Archive — Nothing OS Firmware & Community Resources' },
+      { property: 'og:image:alt', content: 'Nothing Archive — Nothing OS Firmware, OTA Updates & Community Apps' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:image', content: `${siteUrl}${baseUrl}img/brand/social-banner.png` },
     ],
