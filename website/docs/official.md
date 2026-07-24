@@ -64,6 +64,7 @@ APK mirrors for manual installation are available at [APKMirror](https://www.apk
 |-----|-------|
 | CMF Watch | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.cmf.watch) <br /> [iOS](https://apps.apple.com/us/app/cmf-watch/id6447500890) |
 | Community Widgets | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.communitywidgets) |
+| Essential Apps | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.essentialapps) |
 | Essential Search | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.essential.search) |
 | Essential Space | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.ntessentialspace) |
 | Gallery | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.gallery) |
