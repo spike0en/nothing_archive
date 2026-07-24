@@ -341,6 +341,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
   };
 
   const handleBezelClick = (e: React.MouseEvent) => {
+    if (mode === 'PLAY') return;
     togglePlayMode();
   };
 
@@ -478,7 +479,13 @@ export default function HeroGlyphLogo(): React.JSX.Element {
               fetchPriority="high"
               decoding="async"
             />
-          ) : (
+          ) : (gameStarted || isGameOver) ? (
+            /* 
+              Matrix grid is rendered only when an active game session is running (gameStarted)
+              or during game over state. When !gameStarted, matrixGrid is unmounted so that 
+              faint boundary dots do not bleed through startOverlay's fade-in animation or 
+              flash momentarily when expanding the hero widget from logo mode.
+            */
             <div className={styles.matrixGrid}>
               {Array(225).fill(null).map((_, index) => {
                 const r = Math.floor(index / 15);
@@ -519,7 +526,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
                 );
               })}
             </div>
-          )}
+          ) : null}
 
           {mode === 'PLAY' && !gameStarted && !isGameOver && (
             <div 

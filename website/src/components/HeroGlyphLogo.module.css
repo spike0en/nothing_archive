@@ -21,8 +21,8 @@
   -moz-user-select: none;
   -ms-user-select: none;
 
-  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-              height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              height 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
               background-color 0.4s ease, 
               border-color 0.4s ease, 
               box-shadow 0.4s ease,
@@ -61,6 +61,7 @@
 .logoChassisPlay {
   width: 270px;
   height: 320px;
+  overflow: visible;
   animation: none !important;
   transform: none !important;
 }
@@ -76,40 +77,30 @@
   0% {
     transform: scale(1);
     opacity: 0;
-    border-color: rgba(215, 25, 33, 0.15);
-    filter: drop-shadow(0 0 2px rgba(215, 25, 33, 0.05));
+    border-color: rgba(215, 25, 33, 0.2);
+    filter: drop-shadow(0 0 3px rgba(215, 25, 33, 0.1));
   }
-  15% {
-    opacity: 0.75;
-    border-color: rgba(215, 25, 33, 0.5);
-    filter: drop-shadow(0 0 4px rgba(215, 25, 33, 0.3));
+  20% {
+    opacity: 0.95;
+    border-color: rgba(215, 25, 33, 0.85);
+    filter: drop-shadow(0 0 8px rgba(215, 25, 33, 0.5));
+  }
+  60% {
+    opacity: 0.5;
+    border-color: rgba(215, 25, 33, 0.45);
+    filter: drop-shadow(0 0 10px rgba(215, 25, 33, 0.3));
   }
   100% {
-    transform: scale(1.35);
+    transform: scale(1.30);
     opacity: 0;
-    border-color: rgba(215, 25, 33, 0.02);
-    filter: drop-shadow(0 0 6px rgba(215, 25, 33, 0));
+    border-color: rgba(215, 25, 33, 0);
+    filter: drop-shadow(0 0 12px rgba(215, 25, 33, 0));
   }
 }
 
-/* Dotted blueprint overlay */
+/* Disable dotted blueprint overlay to prevent faint square grid flashing on click */
 .gridOverlay {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.035) 1px, transparent 0);
-  background-size: 16px 16px;
-  pointer-events: none;
-  z-index: 1;
-  transition: opacity 0.4s ease;
-  border-radius: 24px;
-}
-
-.logoChassisLogo .gridOverlay {
-  opacity: 0;
-}
-
-[data-theme='dark'] .gridOverlay {
-  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.015) 1px, transparent 0);
+  display: none !important;
 }
 
 .bezelRing {
@@ -117,11 +108,13 @@
   height: 140px;
   border-radius: 50%;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #eaeaea;
   box-shadow: 
     0 0 0 2px rgba(215, 25, 33, 0.75),
     0 0 10px rgba(215, 25, 33, 0.2),
-    /* Concentric metal lip steps (3D ridges) - Uniform concentric offsets */
     inset 0 0 0 1px rgba(255, 255, 255, 0.95),
     inset 0 0 0 2px rgba(0, 0, 0, 0.06),
     inset 0 0 0 3px rgba(255, 255, 255, 0.6),
@@ -130,9 +123,9 @@
   z-index: 3;
   margin-top: 18px;
   flex-shrink: 0;
-  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-              height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-              margin-top 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              height 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              margin-top 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
               box-shadow 0.4s ease,
               background-color 0.4s ease;
 }
@@ -158,10 +151,10 @@
 .bezelRing::before {
   content: '';
   position: absolute;
-  inset: -15px;
+  inset: -20px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(215, 25, 33, 0.3) 0%, transparent 70%);
-  opacity: 0.85;
+  background: radial-gradient(circle, rgba(215, 25, 33, 0.45) 0%, transparent 70%);
+  opacity: 0.9;
   z-index: -2;
   pointer-events: none;
 }
@@ -175,11 +168,11 @@
   border-radius: 50%;
   pointer-events: none;
   z-index: 2;
-  border: 1px solid rgba(215, 25, 33, 0.4);
+  border: 1.5px solid rgba(215, 25, 33, 0.75);
   background: none !important;
   background-color: transparent !important;
   opacity: 0;
-  animation: rippleWave 3s cubic-bezier(0.25, 1, 0.2, 1) infinite;
+  animation: rippleWave 3.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 }
 
 .ring1 {
@@ -214,10 +207,7 @@
 }
 
 .circleDisplay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   width: 128px;
   height: 128px;
   border-radius: 50%;
@@ -231,14 +221,14 @@
     /* Uniform, centered recessed screen shadows */
     inset 0 0 12px rgba(0, 0, 0, 0.95),
     0 0 0 2px rgba(0, 0, 0, 0.9);
-  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-              height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.4s ease;
 }
 
 .logoChassisLogo .circleDisplay {
-  width: 184px;
-  height: 184px;
+  width: 188px;
+  height: 188px;
 }
 
 [data-theme='dark'] .circleDisplay {
@@ -329,6 +319,7 @@
 .gameOverOverlay {
   position: absolute;
   inset: 0;
+  border-radius: 50%;
   background: radial-gradient(circle at center, #080808 0%, #000000 100%);
   display: flex;
   flex-direction: column;
@@ -342,6 +333,7 @@
 .startOverlay {
   position: absolute;
   inset: 0;
+  border-radius: 50%;
   background: radial-gradient(circle at center, #080808 0%, #000000 100%);
   display: flex;
   flex-direction: column;
@@ -551,6 +543,18 @@
   flex-direction: column;
   width: 100%;
   gap: 8px;
+  animation: consoleFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes consoleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .playControlsRow {
@@ -755,8 +759,8 @@
     box-shadow: 
       0 0 0 2px rgba(215, 25, 33, 0.75),
       0 0 8px rgba(215, 25, 33, 0.2),
-      inset 0 1.5px 3px rgba(255, 255, 255, 1),
-      inset 0 -1.5px 4px rgba(0, 0, 0, 0.08),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.95),
+      inset 0 0 0 2px rgba(0, 0, 0, 0.08),
       0 0 0 1px rgba(0, 0, 0, 0.06);
   }
   .logoChassisLogo .bezelRing {
@@ -768,8 +772,8 @@
     box-shadow: 
       0 0 0 2px rgba(215, 25, 33, 0.9),
       0 0 10px rgba(215, 25, 33, 0.35),
-      inset 0 1px 1.5px rgba(255, 255, 255, 0.06),
-      inset 0 -1.5px 4px rgba(0, 0, 0, 0.5),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+      inset 0 0 0 2px rgba(0, 0, 0, 0.5),
       0 0 0 1px rgba(255, 255, 255, 0.04);
   }
   .circleDisplay {
@@ -777,8 +781,8 @@
     height: 114px;
   }
   .logoChassisLogo .circleDisplay {
-    width: 164px;
-    height: 164px;
+    width: 168px;
+    height: 168px;
   }
   .matrixGrid {
     grid-template-columns: repeat(15, 5.5px);
@@ -877,8 +881,8 @@
     height: 104px;
   }
   .logoChassisLogo .circleDisplay {
-    width: 146px;
-    height: 146px;
+    width: 148px;
+    height: 148px;
   }
   .matrixGrid {
     grid-template-columns: repeat(15, 5px);
