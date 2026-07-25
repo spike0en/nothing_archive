@@ -18,6 +18,7 @@ A collection of tools for creating custom Glyph tones and compositions.
 | [Better Nothing Glyph Composer](https://better-nothing-glyph-composer.pages.dev/) | Krishnagopal Sinha | Visual tool for creating custom Glyph tones. Supports Phone (3) Matrix |
 | [Cassette](https://github.com/Chipik0/Cassette) | Chipik0 | Create glyph compositions |
 | [Custom Nothing Glyph Tools](https://github.com/SebiAi/custom-nothing-glyph-tools) | SebiAi | Create custom tones with Audacity |
+| [Glyph Converter](https://github.com/jarpl-o-pvl/glyph-converter) | jarpl-o-pvl | Convert Audacity labels into custom Glyph ringtones for Nothing Phone |
 | [Glyph Ctrl](https://github.com/Nonta72/glyph_ctrl) | Nonta72 | Simple helper used by the Glyphs Lights Click app for Ubuntu Touch on the Nothing Phone (1) |
 | [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Pixel art editor for Phone (3) |
 | [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | Image to glyph pattern converter |
@@ -42,6 +43,7 @@ Community-built widgets inspired by Nothing OS for various platforms and desktop
 | Project | Developer | Description |
 |---------|-----------|-------------|
 | [Everything UI](https://github.com/Prince-1652/EveryThing-UI) | Prince-1652 | Nothing OS Inspired Rainmeter Widget |
+| [Kdear](https://github.com/AndresLopezzz/Kdear-nothing-cmf) | AndresLopezzz | KDE Plasma 6 desktop widget to control ANC, EQ, and battery for Nothing and CMF earbuds |
 | [KWGT Widgets](https://github.com/rjwarrier/KWGT-Widgets) | rjwarrier | KWGT Widgets inspired by Ndot |
 | [N KWGT](https://github.com/avnishkt2783/nKWGT) | avnishkt2783 | Nothing-style widgets |
 | [N Thing UI](https://github.com/Runixe786/NThing-UI) | Runixe786 | Rainmeter widgets |
@@ -60,11 +62,14 @@ Themes and rices for Arch Linux, VS Code, and other development environments fol
 | [Notes (Windows)](https://github.com/rohankishore/Notes-1) | rohankishore | Nothing themed notepad for Windows |
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | macOS menu bar app |
 | [Nothing Cursor Pack](https://discord.com/channels/930878214237200394/1513976039335002192) | farinhajorge | A cursor pack inspired by Nothing's design language |
+| [Nothing Floris](https://github.com/itsmeralph09/nothing-floris) | itsmeralph09 | Minimalist Nothing OS inspired theme for FlorisBoard Android keyboard |
 | [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | GNOME desktop build |
 | [Nothing Rice](https://github.com/Adhil-ka/nothing-rice) | Adhil-ka | Nothing OS inspired Arch Hyprland desktop rice |
 | [Nothing Telegram Theme](https://github.com/Costeer/Nothing-Telegram-Theme) | Costeer | Nothing inspired theme for Telegram |
 | [Nothing VS Code Theme](https://github.com/shahriaravi/nothing-vscode-theme) | shahriaravi | VS Code theme |
+| [Nth Cord](https://github.com/deathbyfrag/nthCord) | deathbyfrag | Nothing OS inspired theme for Discord |
 | [Obsidian Nothing Theme](https://github.com/saulojoab/obsidian-nothing-theme) | saulojoab | Obsidian theme based on Nothing |
+| [Soot Theme](https://github.com/OsqY/soot-theme) | OsqY | Monochrome dot-matrix theme for the Zed editor influenced by Nothing design |
 
 ### Fonts & Style
 
@@ -80,7 +85,7 @@ Utilities for creating and generating Nothing-style wallpapers.
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
-| [Atmosphere](https://atmospherewallpaper.com) | Mxtechz | Generate and download high-fidelity glass & light wallpapers | 
+| [Atmosphere](https://atmospherewallpaper.com) | Mxtechz | Generate and download high-fidelity glass & light wallpapers |
 | [Nothing Glass](https://github.com/Vauth/nothing-glass) | Vauth | Nothing OS glass effect wallpaper creator |
 | [Wallpaper Studio Pro](https://wallpaperstudiopro.netlify.app/) | Ifham9 | AI wallpaper generator |
 
@@ -93,8 +98,11 @@ Assets and tools designed to help other developers build Nothing-inspired projec
 | [Dot Frame](https://github.com/NyxLumen/DotFrame) | NyxLumen | Video to Ascii converter with a nothing accent |
 | [Dot Matrixify](https://github.com/szelszabi/dotmatrixify) | szelszabi | Transform pixel art to dot matrix |
 | [Dotify Client](https://github.com/PATEL96/dotify-client) | PATEL96 | Dot Matrix image generator |
+| [F1 TUI](https://github.com/kashifulhaque/f1-tui) | kashifulhaque | Terminal UI application for Formula 1 schedule and live race updates inspired by Nothing OS |
 | [Glyph Matrix Simulator](https://github.com/literato1987/glyph-matrix-simulator) | literato1987 | CLI preview for Nothing Phone (3) Glyph Matrix using the official 621-LED allocation |
 | [Local Neural](https://github.com/rkriad585/LocalNeural) | rkriad585 | A modern self-hosted AI interface with a clean Nothing OS aesthetic |
+| [Nothing Design Skill](https://github.com/DanielOu1208/nothing-design-skill) | DanielOu1208 | Portable Nothing-inspired design system skill for AI agents and coding assistants |
+| [Nothing Design Skill](https://github.com/yuebinzhang77-hub/nothing-design-skill) | yuebinzhang77-hub | Nothing-inspired UI/UX design skill for Claude Code |
 | [Nothing Design Skill](https://github.com/dominikmartn/nothing-design-skill) | dominikmartn | A design system skill for Claude Code to generate user interfaces following the Nothing visual language |
 | [Nothing Glyph Communication](https://github.com/endan-criso/Nothing-Glyph-Battery-Low-Indicator) | endan-criso | Android playground and reference implementation demonstrating official Glyph SDK integration on Nothing Phone (2a) |
 | [Swift Nothing Ear](https://github.com/bestK1ngArthur/swift-nothing-ear) | bestK1ngArthur | Swift Package for interacting with Nothing headphones on macOS |
@@ -112,11 +120,16 @@ Web-based applications inspired by Nothing OS.
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal-inspired homepage |
 | [Invo](https://dibyajyotikabi.github.io/Nothing-OS-Inspired-Invoice-App) | Dibyajyotikabi | Nothing OS Inspired Invoice Web App ([Repo](https://github.com/Dibyajyotikabi/Nothing-OS-Inspired-Invoice-App)) |
+| [Its Nothing](https://github.com/eduardochiaro/its-nothing) | eduardochiaro | Minimal web experience inspired by Nothing OS |
 | [Lutai](https://vauth.github.io/lutai) | Vauth | Create lut filters (.cube) for Nothing phone ([Repo](https://github.com/Vauth/lutai)) |
 | [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | HTML logo generator using the Nothing fonts ([Repo](https://github.com/Lovinoes/ndot-logo-generator)) |
+| [Nothing Chess](https://github.com/ankur874/Chess-FE) | ankur874 | Real-time multiplayer chess game web app featuring a Nothing-inspired UI |
 | [Nothing Clone](https://nothingclone-jivan.netlify.app/) | Jivan-Patel | A multi-page static UI clone inspired by Nothing brand product pages ([Repo](https://github.com/Jivan-Patel/nothing-clone)) |
+| [Nothing Glyph](https://kuldeepjambhulkar.github.io/Nothing-Glyph/) | kuldeepjambhulkar | Interactive animated pixel-glyph web simulation inspired by Nothing's Glyph interface ([Repo](https://github.com/kuldeepjambhulkar/Nothing-Glyph)) |
 | [Nothing History](https://ironstike.github.io/nothing-history/) | Ironstike | A website about the history of Nothing's phones ([Repo](https://github.com/Ironstike/nothing-history)) |
 | [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Nothing OS inspired weather web app |
+| [Nothing Solitaire](https://solitaire-swart.vercel.app/) | S1r1u511 | Classic Solitaire card game web app built with Nothing OS design aesthetics ([Repo](https://github.com/S1r1u511/Solitaire)) |
+| [Nothing Store Landing](https://github.com/Vladislav-Korsun/nothing-store-landing) | Vladislav-Korsun | Product store landing page website designed with Nothing OS aesthetics |
 | [Nothing Weather Clone](https://github.com/Avadhkumar-geek/nothing_weather_clone) | Avadhkumar-geek | Flutter-based weather application replicating the Nothing OS weather design |
 | [Spin The Bottle](https://dotmatrix-beerbottle.vercel.app/) | MadGlacierRunner | Spin the bottle simulator |
 | [Study Logix](https://github.com/ashutoshpatraa/StudyLogix) | ashutoshpatraa | Nothing OS-inspired study tracking web application featuring focus tools and analytics |
@@ -128,11 +141,12 @@ Browser extensions and other add-ons inspired by Nothing OS.
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
-| [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing-themed browser New Tab extension | 
+| [Essential Tab](https://github.com/varshitnunna/Essential-tab) | varshitnunna | Nothing-themed browser New Tab extension |
 | [Glyph Ktx](https://github.com/RyuNen344/GlyphKtx) | RyuNen344 | Glyph SDK Kotlin Extensions |
 | [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | GNOME extension for ANC control on Nothing Ear |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Browser New Tab extension |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome extension |
+| [Void Glyph New Tab](https://github.com/NamiCode-Dev/void-glyph-newtab) | NamiCode-Dev | Industrial browser New Tab page extension inspired by the Nothing OS design system |
 
 ## Sound & Audio
 
@@ -142,42 +156,49 @@ Community-made EQ profiles for Nothing earphones and headphones:
 
 ## Resources & Utilities
 
-Essential resources including wikis, firmware archives, and system repair tools.
+Essential resources including wikis, firmware archives, audio control utilities, and system repair tools.
+
+### Audio & Hardware Tools
+
+| Project | Developer | Description |
+|---------|-----------|-------------|
+| [CMF Tray](https://github.com/abhineet00/cmf-tray) | abhineet00 | Windows taskbar tray app to control CMF and Nothing earbuds settings and battery |
+| [Ear Battery CLI](https://github.com/pedrordgs/nothing-ear) | pedrordgs | Command-line tool to check battery levels of Nothing Ear wireless earbuds via Bluetooth |
+| [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | Native Rust desktop client for Nothing and CMF audio devices |
+| [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Rust based linux app to control Nothing earbuds' ANC modes |
+| [Earctl](https://github.com/xhain/earctl) | xhain | [Alfred](https://www.alfredapp.com/) workflow to control Nothing Ear (2) Bluetooth headphones from macOS |
+| [EarPhone X](https://github.com/noebachofner/EarPhonesX) | noebachofner | Linux application to control and configure Nothing and CMF earbuds |
+| [FMC](https://github.com/freethinkel/fmc) | freethinkel | Terminal companion tool, watchface compiler/editor, and BLE sideloading manager for CMF Watch Pro 2 |
+| [Kairo](https://github.com/nikitawebdeg-debug/-kairo) | nikitawebdeg-debug | ESP32-powered desktop system monitor with a Nothing OS-inspired dot-matrix display |
+| [Nothing Desktop](https://github.com/sowahq/nothing-desktop) | sowahq | Menu-bar app to control battery, ANC, and EQ settings for Nothing earbuds |
+| [Nothing Ear Linux](https://github.com/sn99/nothing-linux) | sn99 | Tauri-based Linux application to control and configure Nothing Ear earbuds (inspired by [Ear (Web)](https://earweb.bttl.xyz/)) |
+| [Nothing X (DMS)](https://github.com/Bestello/dms-nothingx/) | Bestello | Nothing and CMF audio device controller plugin for Dank Material Shell |
+| [Nothing X (macOS)](https://github.com/eldandelion/nothing-x-macos) | eldandelion | Companion app for the Nothing ear (1) for macOS |
+| [Nothing X (macOS)](https://github.com/marlon-yepes/cmf-macos) | marlon-yepes | Unofficial macOS companion app for Nothing & CMF earbuds |
+| [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | macOS companion app for Nothing and CMF earbuds |
+| [NothingBar (macOS)](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | Menu bar app to control Nothing and CMF audio devices for macOS |
+| [OpenBuds Windows](https://github.com/MahinZx/openbuds-windows) | MahinZx | Unofficial Windows desktop companion application for Nothing and CMF audio devices |
+| [Something X](https://github.com/SoaOaoS/something-x) | SoaOaoS | Nothing X app for Linux, tested to work on [Omarchy](https://omarchy.org/) |
+
+### Documentation & Resources
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
 | [Disable Essential Space](https://github.com/AntonDevia/Disable-Essential-Space) | AntonDevia | ADB script to completely disable Essential Space and block the Essential Key on Nothing OS |
-| [Ear Battery CLI](https://github.com/pedrordgs/nothing-ear) | pedrordgs | Command-line tool to check battery levels of Nothing Ear wireless earbuds via Bluetooth |
-| [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | Native Rust desktop client for Nothing and CMF audio devices |
-| [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Rust based linux app to control Nothing earbuds' ANC modes |
-| [EarPhone X](https://github.com/noebachofner/EarPhonesX) | noebachofner | Linux application to control and configure Nothing and CMF earbuds |
-| [Earctl](https://github.com/xhain/earctl) | xhain | [Alfred](https://www.alfredapp.com/) workflow to control Nothing Ear (2) Bluetooth headphones from macOS |
 | [Fenrir](https://github.com/R0rt1z2/fenrir) | R0rt1z2 | Integrity check bypass PoC for Phone (2a) Series & CMF Phone (1) |
-| [FMC](https://github.com/freethinkel/fmc) | freethinkel | Terminal companion tool, watchface compiler/editor, and BLE sideloading manager for CMF Watch Pro 2 |
 | [Glyph Adapter](https://github.com/frogfile/GlyphAdapter) | frogfile | A root Android service that lets third-party apps using Nothing's Glyph SDK work on flashed phones |
-| [Kairo](https://github.com/nikitawebdeg-debug/-kairo) | nikitawebdeg-debug | ESP32-powered desktop system monitor with a Nothing OS-inspired dot-matrix display |
 | [Macros](https://nothing.community/d/14869-useful-macros-for-nothing-phones) | RedSkullxHydra | Macrodroid macros |
 | [Nothing Archive](https://nothingarchive.tech) | spike0en | Curated hub for official Nothing & CMF firmware, community apps, projects, resources and aftermarket development. ([Repo](https://github.com/spike0en/nothing_archive)) |
 | [Nothing Brand Reference](https://nothing.wiki/nothing/brand_reference) | adbo | An unofficial Nothing brand guidelines reference for community developers and designers |
 | [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | PWA-style web app that indexes community apps, using a foundational database sourced from [Nothing Archive](https://github.com/spike0en/nothing_archive) |
-| [Nothing Desktop](https://github.com/sowahq/nothing-desktop) | sowahq | Menu-bar app to control battery, ANC, and EQ settings for Nothing earbuds |
 | [Nothing Flasher](https://github.com/spike0en/nothing-flasher) | spike0en & Hellboy017 | Fastboot flashing scripts |
 | [Nothing Glyph Interface Research](https://github.com/ThatOneCheat/nothing-glyph-interface-research) | ThatOneCheat | Reverse-engineering notes on the Nothing Phone Glyph SDK and system service, verified against decompiled code |
-| [Nothing Ear Linux](https://github.com/sn99/nothing-linux) | sn99 | Tauri-based Linux application to control and configure Nothing Ear earbuds (inspired by [Ear (Web)](https://earweb.bttl.xyz/)) |
 | [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | News and resources hub |
 | [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | Tool to patch/disable Logkit via ADB |
 | [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | A curated gallery of the Nothing community's favourite widgets |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | Community hub ([Repo](https://github.com/nothingtools/nothingtools.github.io)) |
 | [Nothing Termux Voice Control](https://github.com/abdular721-lgtm/nothing-archives) | abdular721-lgtm | Termux voice-control scripts for the Nothing Phone (2a) Plus |
 | [Nothing Wiki](https://nothing.wiki) | adbo | Community-maintained unofficial wiki for Nothing |
-| [Nothing X (DMS)](https://github.com/Bestello/dms-nothingx/) | Bestello | Nothing and CMF audio device controller plugin for Dank Material Shell |
-| [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | macOS companion app for Nothing and CMF earbuds |
-| [Nothing X (macOS)](https://github.com/marlon-yepes/cmf-macos) | marlon-yepes | Unofficial macOS companion app for Nothing & CMF earbuds |
-| [Nothing X (macOS)](https://github.com/eldandelion/nothing-x-macos) | eldandelion | Companion app for the Nothing ear (1) for macOS |
-| [NothingBar (macOS)](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | Menu bar app to control Nothing and CMF audio devices for macOS |
-| [OpenBuds Windows](https://github.com/MahinZx/openbuds-windows) | MahinZx | Unofficial Windows desktop companion application for Nothing and CMF audio devices |
-| [Something X](https://github.com/SoaOaoS/something-x) | SoaOaoS | Nothing X app for Linux, tested to work on [Omarchy](https://omarchy.org/) |
-
 ## Root Modules
 
 :::warning
@@ -200,3 +221,4 @@ These require root access (KernelSU or Magisk). Proceed with caution!
 | [Phone 2a APU Unlock](https://github.com/Peterc3-dev/phone2a-apu-unlock) | Peterc3-dev | KernelSU sepolicy module + Rust ABI probe that opens /dev/apusys to userspace on Nothing Phone (2a) |
 | [Premium Vibrator Nothing 2a](https://github.com/polymath-void/premium-vibrator-nothing2a) | polymath-void | A minimal, boot-safe module that applies a persistent custom vibrator strength on the Nothing Phone (2a) by writing directly to the kernel sysfs node after boot |
 | [Soft Volume Curve For Nothing 2a](https://github.com/GNU-MGR/Soft-Volume-Curve-For-Nothing-2a) | GNU-MGR | A volume curve optimization module specifically for the Nothing Phone (2a) |
+| [Spacewar Audio](https://github.com/EzerchE/spacewar-audio) | EzerchE | KernelSU Bluetooth A2DP audio stability module for Nothing Phone (1) |
