@@ -26,6 +26,7 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | [Blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | Tech detox phone blocking app with Glyph integration |
 | [Delivery Glyph](https://github.com/Goktug-Dusunen/Glyph-Developer-Kit/tree/main/DeliveryGlyph) | Goktug-Dusunen | Delivery tracking app, specially optimized for Turkish services |
 | [Gemini Glyph](https://github.com/TbitL/GeminiGlyph) | TbitL | Brings Glyph interface light responses to Google Gemini assistant on Nothing Phone (3a) |
+| [Gliph Lights](https://github.com/AnirudhRao290/GliphLights) | AnirudhRao290 | Creative lighting controller and visualizer for Nothing Phone (3a) Pro |
 | [Glyph Bar Composer](https://github.com/BhuvaneshwarMarri/GlyphBarComposer-4a) | BhuvaneshwarMarri | Compose, synchronize, and visualize custom Glyph lighting patterns for Nothing Phone (4a) |
 | [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | Glyph visualizer app incorporating both Nothing-inspired and Material 3 UI interfaces |
 | [Glyph Battery](https://github.com/0x91m0n/NothingGlyphBattery) | 0x91m0n | Battery level visualization through the Glyph Interface |
@@ -42,7 +43,6 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | [Glyph Sharge](https://github.com/Leekawaii666/GlyphSharge) | bleelblep | Advanced glyph interface management |
 | [Glyph Studio](https://github.com/SyedAhkam/glyph-studio) | SyedAhkam | Playground for everything Glyphs |
 | [Glyph Studio](https://play.google.com/store/apps/details?id=tech.abra.glyphstudio) | AbraDev | Generate Glyph ringtones and real-time LED visualizations from audio |
-| [Glyph Studio Pro](https://github.com/AnirudhRao290/GliphLights) | AnirudhRao290 | Creative lighting controller and visualizer for Nothing Phone (3a) Pro |
 | [Glyph Torch](https://github.com/Earendel-lab/GlyphTorch) | Earendel | Android App for letting the nothing phone glyphs glow on trigger |
 | [Glyph Unlock Pulse](https://play.google.com/store/apps/details?id=com.singularityux.glyphunlockpulse) | Singularity Design | Customize device unlock with animated glyphs |
 | [Glyph Zen](https://github.com/bleelblep/Glyph-Zen/releases/tag/v1.1) | bleelblep | Calming breathing app with Glyph |
