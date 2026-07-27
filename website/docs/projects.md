@@ -168,7 +168,7 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Rust based linux app to control Nothing earbuds' ANC modes |
 | [Earctl](https://github.com/xhain/earctl) | xhain | [Alfred](https://www.alfredapp.com/) workflow to control Nothing Ear (2) Bluetooth headphones from macOS |
 | [EarPhone X](https://github.com/noebachofner/EarPhonesX) | noebachofner | Linux application to control and configure Nothing and CMF earbuds |
-| [FMC](https://github.com/freethinkel/fmc) | freethinkel | Terminal companion tool, watchface compiler/editor, and BLE sideloading manager for CMF Watch Pro 2 |
+| [FMC](https://fmc.freethinkel.dev) | freethinkel | Terminal companion tool, watchface compiler/editor, and BLE sideloading manager for CMF Watch Pro 2 ([Repo]((https://github.com/freethinkel/fmc))) |
 | [Kairo](https://github.com/nikitawebdeg-debug/-kairo) | nikitawebdeg-debug | ESP32-powered desktop system monitor with a Nothing OS-inspired dot-matrix display |
 | [Nothing Desktop](https://github.com/sowahq/nothing-desktop) | sowahq | Menu-bar app to control battery, ANC, and EQ settings for Nothing earbuds |
 | [Nothing Linux)](https://github.com/Dospacite/NothingLinux) | Dospacite | Unofficial local Rust/GTK4 controller for Nothing Ear on Linux |
