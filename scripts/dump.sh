@@ -43,7 +43,7 @@ download_with_aria2c() {
         rm -f ota.zip ota.zip.aria2
         if command -v wget &> /dev/null; then
             echo "Downloading with wget..."
-            wget -O ota.zip "$1"
+            wget --progress=dot:giga -O ota.zip "$1"
         elif command -v curl &> /dev/null; then
             echo "Downloading with curl..."
             curl -L -o ota.zip "$1"
