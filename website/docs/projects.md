@@ -63,6 +63,7 @@ Themes and rices for Arch Linux, VS Code, and other development environments fol
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | macOS menu bar app |
 | [Nothing Cursor Pack](https://discord.com/channels/930878214237200394/1513976039335002192) | farinhajorge | A cursor pack inspired by Nothing's design language |
 | [Nothing Floris](https://github.com/itsmeralph09/nothing-floris) | itsmeralph09 | Minimalist Nothing OS inspired theme for FlorisBoard Android keyboard |
+| [Nothing Mono KDE](https://github.com/veedy-dev/nothing-mono-kde) | veedy-dev | Nothing inspired KDE Plasma 6 setup |
 | [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | GNOME desktop build |
 | [Nothing Rice](https://github.com/Adhil-ka/nothing-rice) | Adhil-ka | Nothing OS inspired Arch Hyprland desktop rice |
 | [Nothing Telegram Theme](https://github.com/Costeer/Nothing-Telegram-Theme) | Costeer | Nothing inspired theme for Telegram |
