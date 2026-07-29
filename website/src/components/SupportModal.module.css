@@ -134,6 +134,102 @@
   padding: 1.5rem 2rem;
 }
 
+.formLink {
+  color: var(--nothing-red, #D71921);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.formLink:hover {
+  color: var(--nothing-red, #D71921);
+  opacity: 0.85;
+}
+
+/* Supporter Google Form tracking callout box — prompts donors to submit details for recognition */
+.formCallout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: var(--ifm-card-background-color);
+  border: 1px solid var(--nothing-border-strong);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Subtle elevation shadow on hover without altering border-color to maintain brand theme */
+.formCallout:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.formCalloutContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.formCalloutIcon {
+  color: var(--nothing-red, #D71921);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.formCalloutTextGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.formCalloutTitle {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
+  line-height: 1.3;
+}
+
+.formCalloutSub {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--ifm-font-color-base);
+  opacity: 0.8;
+  word-break: break-word;
+}
+
+.formCalloutBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: var(--nothing-red, #D71921);
+  color: #ffffff !important;
+  border: 1px solid var(--nothing-red, #D71921);
+  border-radius: 999px;
+  padding: 0.5rem 1.15rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none !important;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.formCalloutBtn:hover {
+  background-color: transparent;
+  color: var(--nothing-red, #D71921) !important;
+  box-shadow: none;
+}
+
 .contentLayout {
   display: flex;
   gap: 2rem;
@@ -394,6 +490,20 @@
     align-items: stretch;
     margin-bottom: 2rem;
     padding: 1.25rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .formCallout {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+    padding: 1rem;
+  }
+
+  .formCalloutBtn {
+    width: 100%;
+    padding: 0.6rem 1rem;
   }
 }
 

@@ -150,7 +150,7 @@
   gap: 1rem;
 }
 
-/* Primary CTA (filled) */
+/* Primary CTA (filled) — solid brand red that inverts to transparent with red border on hover */
 .ctaButton {
   display: inline-flex;
   align-items: center;
@@ -160,12 +160,12 @@
   letter-spacing: -0.02em;
   background: var(--nothing-red, #D71921);
   color: #fff !important;
-  border: none;
+  border: 1px solid var(--nothing-red, #D71921) !important;
   border-radius: 999px !important;
   text-decoration: none !important;
   position: relative;
   overflow: hidden;
-  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
 .ctaButton::after {
@@ -191,10 +191,11 @@
   opacity: 1;
 }
 
+/* Invert fill to transparent on hover to match site-wide primary pill hover interaction */
 .ctaButton:hover {
-  background: var(--nothing-red, #D71921);
-  filter: brightness(0.9);
-  color: #fff !important;
+  background: transparent !important;
+  color: var(--nothing-red, #D71921) !important;
+  border-color: var(--nothing-red, #D71921) !important;
   transform: translateY(-2px);
   text-decoration: none !important;
 }

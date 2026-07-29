@@ -8,7 +8,7 @@
  */
 
 import React, { useState, useEffect, useRef } from 'react';
-import { FaCopy, FaCheck, FaTimes, FaExternalLinkAlt, FaHeart } from 'react-icons/fa';
+import { FaCopy, FaCheck, FaTimes, FaExternalLinkAlt, FaHeart, FaClipboardList } from 'react-icons/fa';
 import donationsData from '../data/donations.json';
 import donorsData from '../data/donors.json';
 import SupporterWidget from './SupporterWidget';
@@ -149,12 +149,31 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
                 Donations are completely optional, and every contribution is sincerely appreciated. 💛
               </p>
               <p>
-                As a small thank-you, the supporters widget recognizes those who have made notable contributions. If you choose to support the project, your name can be featured there too.
-              </p>
-              <p>
                 Thank you for being part of the journey!
               </p>
             </div>
+
+            {/* Supporter tracking Google Form callout banner */}
+            <div className={styles.formCallout}>
+              <div className={styles.formCalloutContent}>
+                <FaClipboardList className={styles.formCalloutIcon} />
+                <div className={styles.formCalloutTextGroup}>
+                  <span className={styles.formCalloutTitle}>Already donated?</span>
+                  <span className={styles.formCalloutSub}>Fill out our supporter form so we can track your donation and feature you on the widget below.</span>
+                </div>
+              </div>
+              <a
+                href="https://forms.gle/krJQjc5XshNaGSF58"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.formCalloutBtn}
+                title="Fill Donation Tracking Form"
+              >
+                <span>Fill Form</span>
+                <FaExternalLinkAlt size={11} className={styles.btnIcon} />
+              </a>
+            </div>
+
             <SupporterWidget donors={donorsData} />
           </div>
 
