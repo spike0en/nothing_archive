@@ -274,6 +274,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 
 | App | Developer | Description |
 |---------|-----------|-------------|
+| [Calc Plus](https://github.com/pixelcraftin/CalcPlus) | pixelcraftin | Nothing OS inspired calculator app |
 | [Calories Are Nothing](https://play.google.com/store/apps/details?id=can.wearemobilefirst.com) | WeAreMobileFirst | Meal logging app |
 | [Compass](https://github.com/Earendel-lab/Compass) | Earendel | Simple compass |
 | [Currency](https://curency.pages.dev/) | Earendel | Currency converter web app |
