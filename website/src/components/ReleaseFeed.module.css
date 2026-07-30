@@ -362,7 +362,7 @@
 .githubLink {
   color: #707070 !important;
   background-color: rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(0, 0, 0, 0.08);
   border-radius: 6px;
   width: 24px;
   height: 24px;
@@ -376,26 +376,32 @@
 [data-theme='dark'] .githubLink {
   color: #888888 !important;
   background-color: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.08);
 }
 
 .githubLinkHighlighted {
   color: var(--ifm-color-primary) !important;
   background-color: rgba(215, 25, 33, 0.08);
-  border: 1px solid rgba(215, 25, 33, 0.15);
+  border: 2px solid rgba(215, 25, 33, 0.15);
 }
 
 [data-theme='dark'] .githubLinkHighlighted {
   color: var(--ifm-color-primary-light, #df1037) !important;
   background-color: rgba(215, 25, 33, 0.08);
-  border: 1px solid rgba(215, 25, 33, 0.15);
+  border: 2px solid rgba(215, 25, 33, 0.15);
 }
 
 .githubLink:hover {
-  background-color: var(--ifm-color-primary) !important;
-  color: #ffffff !important;
-  border-color: var(--ifm-color-primary) !important;
+  background-color: rgba(215, 25, 33, 0.08) !important;
+  color: var(--ifm-color-primary) !important;
+  border: 2px solid var(--ifm-color-primary) !important;
   transform: translateY(-1px);
+}
+
+[data-theme='dark'] .githubLink:hover {
+  background-color: rgba(215, 25, 33, 0.15) !important;
+  color: var(--ifm-color-primary) !important;
+  border: 2px solid var(--ifm-color-primary) !important;
 }
 
 .downloadIcon {

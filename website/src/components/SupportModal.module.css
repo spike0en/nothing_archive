@@ -213,7 +213,7 @@
   gap: 6px;
   background-color: var(--nothing-red, #D71921);
   color: #ffffff !important;
-  border: 1px solid var(--nothing-red, #D71921);
+  border: 2px solid var(--nothing-red, #D71921);
   border-radius: 999px;
   padding: 0.5rem 1.15rem;
   font-size: 0.78rem;
@@ -221,12 +221,13 @@
   white-space: nowrap;
   text-decoration: none !important;
   flex-shrink: 0;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .formCalloutBtn:hover {
-  background-color: transparent;
+  background-color: transparent !important;
   color: var(--nothing-red, #D71921) !important;
+  border-color: var(--nothing-red, #D71921) !important;
   box-shadow: none;
 }
 

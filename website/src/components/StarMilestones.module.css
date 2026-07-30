@@ -97,22 +97,23 @@
   text-transform: uppercase;
   color: #fff !important;
   background: var(--nothing-red, #D71921);
-  border: none;
+  border: 2px solid var(--nothing-red, #D71921);
   border-radius: 999px;
   text-decoration: none !important;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
               background-color 0.2s ease,
-              filter 0.2s ease;
-  box-shadow: 0 2px 8px rgba(215, 25, 33, 0.2);
+              color 0.2s ease,
+              border-color 0.2s ease;
+  box-shadow: none !important;
   z-index: 3;
 }
 
 .starCta:hover {
-  background: var(--nothing-red, #D71921);
-  filter: brightness(0.9);
+  background: transparent !important;
+  color: var(--nothing-red, #D71921) !important;
+  border-color: var(--nothing-red, #D71921) !important;
   transform: translateY(-1.5px);
-  box-shadow: 0 4px 15px rgba(215, 25, 33, 0.35);
+  box-shadow: none !important;
 }
 
 .starCta:active {

@@ -1,10 +1,9 @@
 /**
  * @file MagneticCursorRing.tsx
- * @description Precision target cursor ring with magnetic snapping and lerp physics
- * matching Nothing OS design system.
+ * @description Magnetic cursor ring component with target interpolation and viewport bounds handling.
  * 
  * Layer: Theme components.
- * Boundary: Consumes global pointer events and renders a high-performance cursor overlay.
+ * Boundary: Consumes global pointer events and renders a custom cursor overlay.
  */
 
 import React, { useEffect, useState, useRef } from 'react';
@@ -16,14 +15,46 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isSnapped, setIsSnapped] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return false;
+    return window.matchMedia('(max-width: 575px)').matches;
+  });
 
   const ringRef = useRef<HTMLDivElement>(null);
   const dotRef = useRef<HTMLDivElement>(null);
 
+  /**
+   * Syncs viewport state across resize events to toggle cursor overlay on breakpoint boundaries.
+   */
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // Check stored cursor preference
+    const mql = window.matchMedia('(max-width: 575px)');
+    const handleMediaChange = () => {
+      setIsMobile(mql.matches);
+    };
+
+    if (mql.addEventListener) {
+      mql.addEventListener('change', handleMediaChange);
+    } else {
+      mql.addListener(handleMediaChange);
+    }
+    window.addEventListener('resize', handleMediaChange, { passive: true });
+
+    return () => {
+      if (mql.removeEventListener) {
+        mql.removeEventListener('change', handleMediaChange);
+      } else {
+        mql.removeListener(handleMediaChange);
+      }
+      window.removeEventListener('resize', handleMediaChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    // Disabled by default; active only when explicitly enabled in storage
     try {
       const stored = localStorage.getItem('nothing_archive_cursor');
       if (stored === 'enabled') {
@@ -33,6 +64,7 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
       }
     } catch (e) {
       console.warn('Failed to read cursor preference:', e);
+      setEnabled(false);
     }
 
     const handleToggle = (e: Event) => {
@@ -51,13 +83,55 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
     };
   }, []);
 
+  /**
+   * Toggles global pointer hiding rules when the custom cursor is active on hover-capable pointer devices.
+   */
   useEffect(() => {
-    if (typeof window === 'undefined' || !enabled) return;
+    if (typeof document === 'undefined') return;
 
-    // Disable on coarse pointer devices (touchscreens) or reduced motion preference
-    const isTouch = window.matchMedia('(pointer: coarse)').matches;
+    const isTouchOnly = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse) and (hover: none)').matches;
+    const isReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isActive = enabled && !isMobile && !isTouchOnly && !isReducedMotion;
+
+    let styleEl = document.getElementById('nothing-hide-cursor-style') as HTMLStyleElement | null;
+
+    if (isActive) {
+      document.documentElement.classList.add('nothing-custom-cursor-active');
+      document.body?.classList.add('nothing-custom-cursor-active');
+
+      if (!styleEl) {
+        styleEl = document.createElement('style');
+        styleEl.id = 'nothing-hide-cursor-style';
+        styleEl.innerHTML = `
+          @media (min-width: 576px) and (hover: hover) {
+            html, body, *, *::before, *::after, *:hover, *:focus, *:active {
+              cursor: none !important;
+            }
+          }
+        `;
+        document.head.appendChild(styleEl);
+      }
+    } else {
+      document.documentElement.classList.remove('nothing-custom-cursor-active');
+      document.body?.classList.remove('nothing-custom-cursor-active');
+      styleEl?.remove();
+    }
+
+    return () => {
+      document.documentElement.classList.remove('nothing-custom-cursor-active');
+      document.body?.classList.remove('nothing-custom-cursor-active');
+      const el = document.getElementById('nothing-hide-cursor-style');
+      el?.remove();
+    };
+  }, [enabled, isMobile]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !enabled || isMobile) return;
+
+    // Exclude touch-only devices (finger input) and respect reduced motion preference
+    const isTouchOnly = window.matchMedia('(pointer: coarse) and (hover: none)').matches;
     const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (isTouch || isReducedMotion) return;
+    if (isTouchOnly || isReducedMotion) return;
 
     let mouseX = -100;
     let mouseY = -100;
@@ -79,7 +153,6 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
       mouseY = e.clientY;
       if (!isVisible) setIsVisible(true);
 
-      // Inspect target element for interactive hover or magnetic snapping
       const target = e.target as HTMLElement | null;
       if (!target) return;
 
@@ -106,45 +179,33 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
     };
 
     /**
-     * Animation frame render loop updating lerp position and element transforms.
+     * Updates spring physics and target dimension interpolation each frame.
      */
     const render = () => {
       let targetX = mouseX;
       let targetY = mouseY;
 
       if (activeElement) {
-        const rect = activeElement.getBoundingClientRect();
-        // Snap target ring to center of small-to-medium interactive elements (<240px wide, <90px tall)
-        if (rect.width < 240 && rect.height < 90) {
-          targetX = rect.left + rect.width / 2;
-          targetY = rect.top + rect.height / 2;
-          targetWidth = Math.max(rect.width + 12, 36);
-          targetHeight = Math.max(rect.height + 12, 36);
-          setIsSnapped(true);
-        } else {
-          targetWidth = 44;
-          targetHeight = 44;
-          setIsSnapped(false);
-        }
+        targetWidth = 38;
+        targetHeight = 38;
+        setIsSnapped(false);
       } else {
         targetWidth = 28;
         targetHeight = 28;
         setIsSnapped(false);
       }
 
-      // Linear interpolation (lerp) coefficients for smooth trailing inertia:
-      // Outer ring lerp factor (0.18 = smooth trailing spring), dot lerp factor (0.45 = fast precision response)
+      // Lerp spring coefficients: 0.18 for ring inertia, 0.45 for dot response
       ringX += (targetX - ringX) * 0.18;
       ringY += (targetY - ringY) * 0.18;
 
       dotX += (mouseX - dotX) * 0.45;
       dotY += (mouseY - dotY) * 0.45;
 
-      // Smooth dimension expansion lerp (0.2 factor for crisp shape morphing)
       currentWidth += (targetWidth - currentWidth) * 0.2;
       currentHeight += (targetHeight - currentHeight) * 0.2;
 
-      // Apply GPU-accelerated translate3d with -50% offset for concentric centering
+      // GPU-accelerated transform updates
       if (ringRef.current) {
         ringRef.current.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
         ringRef.current.style.width = `${currentWidth}px`;
@@ -170,9 +231,9 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
       document.removeEventListener('mouseleave', handleMouseLeave);
       document.removeEventListener('mouseenter', handleMouseEnter);
     };
-  }, [isVisible, enabled]);
+  }, [isVisible, enabled, isMobile]);
 
-  if (!enabled) return null;
+  if (!enabled || isMobile) return null;
 
   return (
     <div className={clsx(styles.cursorContainer, isVisible && styles.cursorVisible)}>
@@ -184,7 +245,14 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
           isSnapped && styles.cursorRingSnapped
         )}
       />
-      <div ref={dotRef} className={styles.cursorDot} />
+      <div
+        ref={dotRef}
+        className={clsx(
+          styles.cursorDot,
+          isHovered && styles.cursorDotHovered,
+          isSnapped && styles.cursorDotSnapped
+        )}
+      />
     </div>
   );
 }

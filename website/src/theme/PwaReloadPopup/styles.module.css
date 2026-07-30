@@ -12,7 +12,7 @@
 }
 
 .popupShifted {
-  bottom: 11.75rem;
+  bottom: 12.5rem;
 }
 
 .popupCard {
@@ -125,7 +125,7 @@
   gap: 6px;
   background-color: var(--nothing-red, #D71921);
   color: #ffffff !important;
-  border: 1px solid var(--nothing-red, #D71921);
+  border: 2px solid var(--nothing-red, #D71921);
   border-radius: 999px;
   padding: 0.45rem 1.1rem;
   font-size: 0.75rem;
@@ -133,13 +133,14 @@
   letter-spacing: 0.02em;
   cursor: pointer;
   text-decoration: none !important;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   box-shadow: none;
 }
 
 .refreshCta:hover {
-  background-color: #c1161c;
-  border-color: #c1161c;
+  background-color: transparent !important;
+  color: var(--nothing-red, #D71921) !important;
+  border-color: var(--nothing-red, #D71921) !important;
   transform: translateY(-1px);
   box-shadow: none;
 }

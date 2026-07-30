@@ -1,13 +1,12 @@
 /*
  * ColorModeToggle Module Styles
- * Symmetrical 80px container, 24px circle slider, and exact 2.0px capsule margin math.
  */
 
 .toggleContainer {
   position: relative;
   display: block;
   background-color: rgba(0, 0, 0, 0.04);
-  border: 1px solid var(--nothing-border);
+  border: 2px solid var(--nothing-border);
   border-radius: 999px;
   height: 30px;
   /* Total track width 80px ensures exact 2.0px left & right capsule margins */

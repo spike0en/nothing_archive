@@ -112,8 +112,9 @@
 .nudgeActions {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
 }
 
 /* --- CTA button --- */
@@ -121,23 +122,25 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 5px;
   background-color: var(--ifm-font-color-base);
   color: var(--ifm-card-background-color) !important;
-  border: 1px solid var(--ifm-font-color-base);
+  border: 2px solid var(--ifm-font-color-base);
   border-radius: 999px;
-  padding: 0.45rem 1rem;
-  font-size: 0.72rem;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
   cursor: pointer;
   text-decoration: none !important;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .nudgeCta:hover {
-  background-color: transparent;
+  background-color: transparent !important;
   color: var(--ifm-font-color-base) !important;
+  border-color: var(--ifm-font-color-base) !important;
 }
 
 .ctaIcon {
@@ -145,27 +148,31 @@
   animation: heartPulse 1.5s infinite ease-in-out;
 }
 
-/* --- Already Supported (ghost link) --- */
+/* --- Already Supported (secondary ghost button) --- */
 .alreadySupported {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  background: none;
-  border: none;
+  gap: 4px;
+  background: transparent;
+  border: 2px solid transparent;
   color: var(--ifm-font-color-base);
-  opacity: 0.4;
+  opacity: 0.45;
   font-size: 0.68rem;
   font-weight: 600;
+  white-space: nowrap;
   cursor: pointer;
-  padding: 0.35rem 0.25rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
+  padding: 0.4rem 0.65rem;
+  border-radius: 999px;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
   letter-spacing: 0.01em;
 }
 
 .alreadySupported:hover {
-  opacity: 0.75;
-  background-color: var(--nothing-hover-bg);
+  opacity: 0.9;
+  background-color: transparent !important;
+  border-color: var(--nothing-border-strong) !important;
+  color: var(--ifm-font-color-base) !important;
+  transform: translateY(-1px);
 }
 
 

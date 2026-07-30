@@ -13,7 +13,7 @@
   margin-left: 0.25rem;
   margin-right: 0.25rem;
   border-radius: 50%;
-  border: 1px solid var(--nothing-border);
+  border: 2px solid var(--nothing-border);
   background-color: transparent;
   color: var(--ifm-color-content);
   cursor: pointer;
@@ -35,7 +35,7 @@
 
 
 
-@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+@media (max-width: 575px), (prefers-reduced-motion: reduce) {
   .cursorToggleBtn {
     display: none !important;
   }

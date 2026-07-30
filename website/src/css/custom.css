@@ -14,6 +14,26 @@ textarea {
   font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1;
 }
 
+/* Suppress native OS mouse pointer when custom magnetic cursor is active (Desktop & Tablet with pointer device >= 576px) */
+@media (min-width: 576px) and (hover: hover) {
+  html.nothing-custom-cursor-active,
+  html.nothing-custom-cursor-active *,
+  html.nothing-custom-cursor-active *::before,
+  html.nothing-custom-cursor-active *::after,
+  html.nothing-custom-cursor-active *:hover,
+  html.nothing-custom-cursor-active *:focus,
+  html.nothing-custom-cursor-active *:active,
+  body.nothing-custom-cursor-active,
+  body.nothing-custom-cursor-active *,
+  body.nothing-custom-cursor-active *::before,
+  body.nothing-custom-cursor-active *::after,
+  body.nothing-custom-cursor-active *:hover,
+  body.nothing-custom-cursor-active *:focus,
+  body.nothing-custom-cursor-active *:active {
+    cursor: none !important;
+  }
+}
+
 
 /* Synchronous theme state application — forces atomic background and typography state updates across viewports */
 html.theme-transition,
@@ -284,18 +304,27 @@ div[class*="tableWrapper"] table td,
   margin: 0 auto;
 }
 
-.navbar__brand {
+.navbar__brand,
+.navbar__brand:hover,
+.navbar__brand:focus,
+.navbar__brand:active,
+.navbar__brand *,
+.navbar__brand:hover * {
   gap: 0.75rem;
+  text-decoration: none !important;
 }
 
 .navbar__logo {
   display: none !important;
 }
 
-.navbar__title {
+.navbar__title,
+.navbar__title:hover,
+.navbar__title:focus {
   font-weight: 600;
   font-size: 1rem;
   letter-spacing: -0.03em;
+  text-decoration: none !important;
 }
 
 .navbar__link {
@@ -1012,7 +1041,7 @@ table td a:visited {
   padding: 0.2rem 0.6rem;
   background-color: rgba(0, 0, 0, 0.04);
   color: var(--ifm-color-primary) !important;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(0, 0, 0, 0.08);
   border-radius: 6px;
   font-family: var(--ifm-font-family-base);
   font-size: 0.8rem;
@@ -1024,9 +1053,9 @@ table td a:visited {
 
 table td a:hover,
 .table-copy-wrapper:hover a {
-  background-color: var(--ifm-color-primary) !important;
-  color: #ffffff !important;
-  border-color: var(--ifm-color-primary);
+  background-color: rgba(215, 25, 33, 0.08) !important;
+  color: var(--ifm-color-primary) !important;
+  border: 2px solid var(--ifm-color-primary) !important;
 }
 
 table td a:hover {
@@ -1037,16 +1066,16 @@ table td a:hover {
 [data-theme='dark'] table td a:link,
 [data-theme='dark'] table td a:visited {
   background-color: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.06);
+  border: 2px solid rgba(255, 255, 255, 0.08);
   color: var(--ifm-color-primary) !important;
   font-weight: 600 !important;
 }
 
 [data-theme='dark'] table td a:hover,
 [data-theme='dark'] .table-copy-wrapper:hover a {
-  background-color: var(--ifm-color-primary) !important;
-  color: #ffffff !important;
-  border-color: var(--ifm-color-primary);
+  background-color: rgba(215, 25, 33, 0.15) !important;
+  color: var(--ifm-color-primary) !important;
+  border: 2px solid var(--ifm-color-primary) !important;
 }
 
 /* Mobile adjustments */
@@ -1413,7 +1442,7 @@ a:hover {
   opacity: 0.8;
 }
 
-/* Buttons - Nothing geometric, sharp -> now rounded */
+/* Buttons */
 .button {
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -1435,7 +1464,7 @@ a:hover {
 
 .button--secondary {
   background-color: transparent;
-  border: 1px solid var(--nothing-border-strong);
+  border: 2px solid var(--nothing-border-strong);
   color: inherit !important;
 }
 
@@ -1452,10 +1481,10 @@ a:hover {
   margin: 2rem 0;
 }
 
-/* Cards — NothingOS surface cards */
+/* Cards */
 .card {
   background-color: var(--ifm-card-background-color);
-  border: 1px solid var(--nothing-border);
+  border: 2px solid var(--nothing-border);
   border-radius: 24px;
   box-shadow: none;
   transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
@@ -1735,7 +1764,7 @@ div[class*="admonition"] a:hover {
 
 /* Pagination (prev/next) */
 .pagination-nav__link {
-  border: 1px solid var(--nothing-border);
+  border: 2px solid var(--nothing-border);
   border-radius: 12px;
   transition: border-color 0.2s ease;
 }

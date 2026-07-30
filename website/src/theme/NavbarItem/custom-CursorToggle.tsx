@@ -42,6 +42,7 @@ export default function CursorToggle({ mobile }: CursorToggleProps): React.JSX.E
       }
     } catch (e) {
       console.warn('Failed to read cursor setting:', e);
+      setEnabled(false);
     }
   }, []);
 
