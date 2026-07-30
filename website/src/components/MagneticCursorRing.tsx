@@ -10,6 +10,10 @@ import React, { useEffect, useState, useRef } from 'react';
 import clsx from 'clsx';
 import styles from './MagneticCursorRing.module.css';
 
+/**
+ * Custom cursor overlay component providing smoothed pointer tracking and interactive target scaling.
+ * Maintains pointer position state across viewport mouseenter/mouseleave transitions to prevent position jumps.
+ */
 export default function MagneticCursorRing(): React.JSX.Element | null {
   const [enabled, setEnabled] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -22,6 +26,24 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
 
   const ringRef = useRef<HTMLDivElement>(null);
   const dotRef = useRef<HTMLDivElement>(null);
+
+  // Position tracking ref persistent across effect tear-downs and visibility toggles
+  const posRef = useRef({
+    mouseX: -100,
+    mouseY: -100,
+    ringX: -100,
+    ringY: -100,
+    dotX: -100,
+    dotY: -100,
+    targetWidth: 28,
+    targetHeight: 28,
+    currentWidth: 28,
+    currentHeight: 28,
+    isInitialized: false,
+  });
+
+  const isVisibleRef = useRef(false);
+  const activeElementRef = useRef<HTMLElement | null>(null);
 
   /**
    * Syncs viewport state across resize events to toggle cursor overlay on breakpoint boundaries.
@@ -51,17 +73,15 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
     };
   }, []);
 
+  /**
+   * Reads initial cursor preference from local storage and subscribes to toggle custom events.
+   */
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // Disabled by default; active only when explicitly enabled in storage
     try {
       const stored = localStorage.getItem('nothing_archive_cursor');
-      if (stored === 'enabled') {
-        setEnabled(true);
-      } else {
-        setEnabled(false);
-      }
+      setEnabled(stored === 'enabled');
     } catch (e) {
       console.warn('Failed to read cursor preference:', e);
       setEnabled(false);
@@ -125,33 +145,41 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
     };
   }, [enabled, isMobile]);
 
+  /**
+   * Manages pointer listeners and requestAnimationFrame spring physics loop.
+   */
   useEffect(() => {
     if (typeof window === 'undefined' || !enabled || isMobile) return;
 
-    // Exclude touch-only devices (finger input) and respect reduced motion preference
     const isTouchOnly = window.matchMedia('(pointer: coarse) and (hover: none)').matches;
     const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (isTouchOnly || isReducedMotion) return;
 
-    let mouseX = -100;
-    let mouseY = -100;
-    let ringX = -100;
-    let ringY = -100;
-    let dotX = -100;
-    let dotY = -100;
-
-    let targetWidth = 28;
-    let targetHeight = 28;
-    let currentWidth = 28;
-    let currentHeight = 28;
-
     let animFrameId: number | null = null;
-    let activeElement: HTMLElement | null = null;
 
+    // Handles incoming pointer movements and updates position state
     const handlePointerMove = (e: PointerEvent) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      if (!isVisible) setIsVisible(true);
+      const pos = posRef.current;
+      const { clientX, clientY } = e;
+
+      // On initial move or re-entry after hide, snap positions immediately to prevent translation sweep
+      if (!pos.isInitialized || !isVisibleRef.current) {
+        pos.mouseX = clientX;
+        pos.mouseY = clientY;
+        pos.ringX = clientX;
+        pos.ringY = clientY;
+        pos.dotX = clientX;
+        pos.dotY = clientY;
+        pos.isInitialized = true;
+      } else {
+        pos.mouseX = clientX;
+        pos.mouseY = clientY;
+      }
+
+      if (!isVisibleRef.current) {
+        setIsVisible(true);
+        isVisibleRef.current = true;
+      }
 
       const target = e.target as HTMLElement | null;
       if (!target) return;
@@ -162,58 +190,74 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
 
       if (interactive) {
         setIsHovered(true);
-        activeElement = interactive;
+        activeElementRef.current = interactive;
       } else {
         setIsHovered(false);
         setIsSnapped(false);
-        activeElement = null;
+        activeElementRef.current = null;
       }
     };
 
+    // Retains last valid coordinates on leave so fade-out occurs in place rather than translating to off-screen origin
     const handleMouseLeave = () => {
       setIsVisible(false);
+      isVisibleRef.current = false;
     };
 
-    const handleMouseEnter = () => {
+    // Re-initializes pointer coordinates on viewport re-entry and updates visibility state
+    const handleMouseEnter = (e: MouseEvent) => {
+      const pos = posRef.current;
+      if (typeof e.clientX === 'number' && typeof e.clientY === 'number' && e.clientX >= 0 && e.clientY >= 0) {
+        pos.mouseX = e.clientX;
+        pos.mouseY = e.clientY;
+        pos.ringX = e.clientX;
+        pos.ringY = e.clientY;
+        pos.dotX = e.clientX;
+        pos.dotY = e.clientY;
+        pos.isInitialized = true;
+      }
       setIsVisible(true);
+      isVisibleRef.current = true;
     };
 
     /**
-     * Updates spring physics and target dimension interpolation each frame.
+     * Physics frame renderer updating lerp positions and direct DOM transforms.
      */
     const render = () => {
-      let targetX = mouseX;
-      let targetY = mouseY;
+      const pos = posRef.current;
 
-      if (activeElement) {
-        targetWidth = 38;
-        targetHeight = 38;
-        setIsSnapped(false);
-      } else {
-        targetWidth = 28;
-        targetHeight = 28;
-        setIsSnapped(false);
-      }
+      if (pos.isInitialized) {
+        const targetX = pos.mouseX;
+        const targetY = pos.mouseY;
 
-      // Lerp spring coefficients: 0.18 for ring inertia, 0.45 for dot response
-      ringX += (targetX - ringX) * 0.18;
-      ringY += (targetY - ringY) * 0.18;
+        if (activeElementRef.current) {
+          pos.targetWidth = 38; // Hover enlarged target diameter (px)
+          pos.targetHeight = 38;
+        } else {
+          pos.targetWidth = 28; // Default cursor ring diameter (px)
+          pos.targetHeight = 28;
+        }
 
-      dotX += (mouseX - dotX) * 0.45;
-      dotY += (mouseY - dotY) * 0.45;
+        // Inertial lerp spring factors: 0.18 for smooth ring trailing, 0.45 for rapid dot response
+        pos.ringX += (targetX - pos.ringX) * 0.18;
+        pos.ringY += (targetY - pos.ringY) * 0.18;
 
-      currentWidth += (targetWidth - currentWidth) * 0.2;
-      currentHeight += (targetHeight - currentHeight) * 0.2;
+        pos.dotX += (pos.mouseX - pos.dotX) * 0.45;
+        pos.dotY += (pos.mouseY - pos.dotY) * 0.45;
 
-      // GPU-accelerated transform updates
-      if (ringRef.current) {
-        ringRef.current.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
-        ringRef.current.style.width = `${currentWidth}px`;
-        ringRef.current.style.height = `${currentHeight}px`;
-      }
+        // Smooth size expansion/contraction factor (0.2)
+        pos.currentWidth += (pos.targetWidth - pos.currentWidth) * 0.2;
+        pos.currentHeight += (pos.targetHeight - pos.currentHeight) * 0.2;
 
-      if (dotRef.current) {
-        dotRef.current.style.transform = `translate3d(${dotX}px, ${dotY}px, 0) translate(-50%, -50%)`;
+        if (ringRef.current) {
+          ringRef.current.style.transform = `translate3d(${pos.ringX}px, ${pos.ringY}px, 0) translate(-50%, -50%)`;
+          ringRef.current.style.width = `${pos.currentWidth}px`;
+          ringRef.current.style.height = `${pos.currentHeight}px`;
+        }
+
+        if (dotRef.current) {
+          dotRef.current.style.transform = `translate3d(${pos.dotX}px, ${pos.dotY}px, 0) translate(-50%, -50%)`;
+        }
       }
 
       animFrameId = requestAnimationFrame(render);
@@ -231,7 +275,7 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
       document.removeEventListener('mouseleave', handleMouseLeave);
       document.removeEventListener('mouseenter', handleMouseEnter);
     };
-  }, [isVisible, enabled, isMobile]);
+  }, [enabled, isMobile]);
 
   if (!enabled || isMobile) return null;
 
@@ -256,3 +300,4 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
     </div>
   );
 }
+
