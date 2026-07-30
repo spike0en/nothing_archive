@@ -132,9 +132,9 @@ Thank you for your support!
 <div align="center">
   <a href="https://www.star-history.com/?repos=spike0en%2Fnothing_archive&type=date&legend=top-left">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=spike0en/nothing_archive&type=date&theme=dark&legend=top-left&sealed_token=bf9fX18UNYOCcb9nUIV6JpuBewyDqIOSoMGafpatPjjhDGvaBvxq71ZG5L89NAZw4sktBe4IIy6UEMfjJ1qT3KIc0spgiJXvjZAhYRrmagsePEMVzj3IF2v8wLNib5R0W-OeVPKtZuJSNYCbN6E2OOx3hCbBGzviQ3PW8A3iv2dRU-US6GTzSkhMTQbY" />
-      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=spike0en/nothing_archive&type=date&legend=top-left&sealed_token=bf9fX18UNYOCcb9nUIV6JpuBewyDqIOSoMGafpatPjjhDGvaBvxq71ZG5L89NAZw4sktBe4IIy6UEMfjJ1qT3KIc0spgiJXvjZAhYRrmagsePEMVzj3IF2v8wLNib5R0W-OeVPKtZuJSNYCbN6E2OOx3hCbBGzviQ3PW8A3iv2dRU-US6GTzSkhMTQbY" />
-      <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=spike0en/nothing_archive&type=date&legend=top-left&sealed_token=bf9fX18UNYOCcb9nUIV6JpuBewyDqIOSoMGafpatPjjhDGvaBvxq71ZG5L89NAZw4sktBe4IIy6UEMfjJ1qT3KIc0spgiJXvjZAhYRrmagsePEMVzj3IF2v8wLNib5R0W-OeVPKtZuJSNYCbN6E2OOx3hCbBGzviQ3PW8A3iv2dRU-US6GTzSkhMTQbY" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=spike0en/nothing_archive&type=date&theme=dark&legend=top-left&sealed_token=NcVgyxYK8-jUI033z9tzG6AFGZLdqldpomXFSofgrxrvb8PMZqfNREtTpK163Xt2AJSrHQUZtWvr3vdO4xyoCsN6wGFoANqWn3VwYKnzzwlb8eVxnhAc3MkoYCLQ2UqFclIGFG3BBambKWD_jzqGR8DjyPy3o9PNc9xSOn5wLsPx7g3hviz8DG3Ut7G6" />
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=spike0en/nothing_archive&type=date&legend=top-left&sealed_token=NcVgyxYK8-jUI033z9tzG6AFGZLdqldpomXFSofgrxrvb8PMZqfNREtTpK163Xt2AJSrHQUZtWvr3vdO4xyoCsN6wGFoANqWn3VwYKnzzwlb8eVxnhAc3MkoYCLQ2UqFclIGFG3BBambKWD_jzqGR8DjyPy3o9PNc9xSOn5wLsPx7g3hviz8DG3Ut7G6" />
+      <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=spike0en/nothing_archive&type=date&legend=top-left&sealed_token=NcVgyxYK8-jUI033z9tzG6AFGZLdqldpomXFSofgrxrvb8PMZqfNREtTpK163Xt2AJSrHQUZtWvr3vdO4xyoCsN6wGFoANqWn3VwYKnzzwlb8eVxnhAc3MkoYCLQ2UqFclIGFG3BBambKWD_jzqGR8DjyPy3o9PNc9xSOn5wLsPx7g3hviz8DG3Ut7G6" />
     </picture>
   </a>
 </div>
