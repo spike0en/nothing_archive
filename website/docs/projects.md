@@ -194,7 +194,7 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [Nothing Archive](https://nothingarchive.tech) | spike0en | Curated hub for official Nothing & CMF firmware, community apps, projects, resources and aftermarket development. ([Repo](https://github.com/spike0en/nothing_archive)) |
 | [Nothing Brand Reference](https://nothing.wiki/nothing/brand_reference) | adbo | An unofficial Nothing brand guidelines reference for community developers and designers |
 | [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | PWA-style web app that indexes community apps, using a foundational database sourced from [Nothing Archive](https://github.com/spike0en/nothing_archive) |
-| [Nothing Flasher](https://github.com/spike0en/nothing-flasher) | spike0en & Hellboy017 | Fastboot flashing scripts |
+| [Nothing Flasher](https://github.com/spike0en/nothing_flasher) | spike0en & Hellboy017 | Fastboot flashing scripts |
 | [Nothing Glyph Interface Research](https://github.com/ThatOneCheat/nothing-glyph-interface-research) | ThatOneCheat | Reverse-engineering notes on the Nothing Phone Glyph SDK and system service, verified against decompiled code |
 | [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | News and resources hub |
 | [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | Tool to patch/disable Logkit via ADB |
@@ -221,6 +221,7 @@ These require root access (KernelSU or Magisk). Proceed with caution!
 | [Nothing Phone Patch](https://github.com/reindex-ot/magisk-module-nothing) | reindex-ot | System tweaks and enhancements |
 | [Nothing Widevine](https://github.com/Ubuntuify/nothing-widevine) | Ubuntuify | Reprovision TEE and get Widevine L1 working on custom and stock ROMs |
 | [Nothing Xpert](https://github.com/Rares6567/NothingXpert/) | Rares6567 | LSPosed module with extra features |
+| [NP2 WiFi Fix](https://github.com/PNSoniX/Np2-WiFi-Fix) | PNSoniX | Magisk module that fixes broken WiFi on Nothing Phone 2 by repairing the persist/wlan partition and reloading the QCA6490 driver |
 | [Phone 2a APU Unlock](https://github.com/Peterc3-dev/phone2a-apu-unlock) | Peterc3-dev | KernelSU sepolicy module + Rust ABI probe that opens /dev/apusys to userspace on Nothing Phone (2a) |
 | [Premium Vibrator Nothing 2a](https://github.com/polymath-void/premium-vibrator-nothing2a) | polymath-void | A minimal, boot-safe module that applies a persistent custom vibrator strength on the Nothing Phone (2a) by writing directly to the kernel sysfs node after boot |
 | [Soft Volume Curve For Nothing 2a](https://github.com/GNU-MGR/Soft-Volume-Curve-For-Nothing-2a) | GNU-MGR | A volume curve optimization module specifically for the Nothing Phone (2a) |
