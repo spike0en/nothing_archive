@@ -588,6 +588,21 @@ const config: Config = {
         content: '82DB95221F91EA16',
       },
     },
+    // Anti-AI data mining and crawler opt-out standards
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'robots',
+        content: 'noai, noimageai',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'tdm-reservation',
+        content: '1',
+      },
+    },
     {
       tagName: 'script',
       attributes: {
@@ -598,8 +613,23 @@ const config: Config = {
     {
       tagName: 'link',
       attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0',
+        href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap',
       },
     },
     {
@@ -761,6 +791,17 @@ const config: Config = {
         }
       `,
     },
+    // Preload critical headline font to eliminate FCP/LCP render delay
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        href: `${baseUrl}fonts/NType82-Headline.woff2`,
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: 'anonymous',
+      },
+    },
     // Preconnect directives for external font domains to reduce latency
     {
       tagName: 'link',
@@ -777,12 +818,20 @@ const config: Config = {
         crossorigin: 'anonymous',
       },
     },
+    // Non-render-blocking font stylesheet loading for JetBrains Mono
     {
       tagName: 'link',
       attributes: {
-        rel: 'stylesheet',
+        rel: 'preload',
+        as: 'style',
         href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap',
+        onload: "this.onload=null;this.rel='stylesheet'",
       },
+    },
+    {
+      tagName: 'noscript',
+      attributes: {},
+      innerHTML: `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">`,
     },
   ],
 

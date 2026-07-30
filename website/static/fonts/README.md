@@ -23,12 +23,12 @@ This directory contains typography assets used by the **Nothing Archive** websit
 ## Brand Typefaces & Foundry Attribution
 
 ### 3. NDot 55 & NType 82
-- **Files**: `NDot-55.otf`, `NType82-Headline.otf`, `NType82-Regular.otf`, `NType82Mono-Regular.otf`
+- **Files**: `NDot-55.otf`, `NDot-55.woff2`, `NType82-Headline.otf`, `NType82-Headline.woff2`, `NType82-Regular.otf`, `NType82-Regular.woff2`, `NType82Mono-Regular.otf`, `NType82Mono-Regular.woff2`
 - **Copyright Owner**: Copyright © Nothing Technology Limited. All rights reserved.
 - **Type Foundry**: Designed by [Colophon Foundry](https://www.colophon-foundry.org) for Nothing Technology Limited.
 
 ### 4. Lettera Mono LL
-- **Files**: `LetteraMono-LL.otf`
+- **Files**: `LetteraMono-LL.otf`, `LetteraMono-LL.woff2`
 - **Copyright Owner**: Copyright © Lineto GmbH. All rights reserved.
 - **Type Foundry / Designer**: Designed by Kobi Benezri (2008–2016) / [Lineto Type Foundry](https://www.lineto.com).
 

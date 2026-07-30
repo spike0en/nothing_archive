@@ -237,6 +237,25 @@ function getContributorHref(contrib: Contributor) {
   return `https://github.com/spike0en/nothing_archive/commits?author=${contrib.login}`;
 }
 
+/**
+ * Normalizes and optimizes GitHub avatar image URLs for target display dimensions.
+ * Strips pre-existing size parameters and applies high-DPI resolution scaling.
+ *
+ * @param url Raw GitHub avatar URL string
+ * @param size Desired edge dimension in pixels for high-DPI display
+ * @returns Optimized avatar URL containing the normalized target size parameter
+ */
+function getOptimizedAvatarUrl(url: string, size: number = 96): string {
+  if (!url) return url;
+  if (url.includes('githubusercontent.com')) {
+    // Strip existing size parameter if present to force target resolution
+    const cleanUrl = url.replace(/([?&])s=\d+/g, '');
+    const separator = cleanUrl.includes('?') ? '&' : '?';
+    return `${cleanUrl}${separator}s=${size}`;
+  }
+  return url;
+}
+
 function HomepageCommunity() {
   // Centralized GitHub data hook — shares cache with other components
   const { contributors } = useGitHubContributors();
@@ -268,6 +287,7 @@ function HomepageCommunity() {
   return (
     <section className={styles.communitySection}>
       <div className="container">
+        {/* Section Heading & Subtitle */}
         <Heading as="h2" className={styles.sectionLabel}>
           Hall of Fame
         </Heading>
@@ -288,9 +308,11 @@ function HomepageCommunity() {
             >
               <div className={styles.coreAvatarContainer}>
                 <img
-                  src={contrib.avatar_url}
+                  src={getOptimizedAvatarUrl(contrib.avatar_url, 160)}
                   alt={`${contrib.name || contrib.login}'s avatar`}
                   className={styles.coreAvatar}
+                  width="102"
+                  height="102"
                   loading="lazy"
                 />
               </div>
@@ -309,9 +331,11 @@ function HomepageCommunity() {
             className={styles.brandingCard}
           >
             <img
-              src={brandingMember.avatar_url}
+              src={getOptimizedAvatarUrl(brandingMember.avatar_url, 96)}
               alt={brandingMember.name}
               className={styles.brandingAvatar}
+              width="35"
+              height="35"
               loading="lazy"
             />
             <span className={styles.brandingName}>{brandingMember.name}</span>
@@ -335,9 +359,11 @@ function HomepageCommunity() {
               >
                 <div className={styles.contributorAvatarContainer}>
                   <img
-                    src={contrib.avatar_url}
+                    src={getOptimizedAvatarUrl(contrib.avatar_url, 96)}
                     alt={`${contrib.login}'s avatar`}
                     className={styles.contributorAvatar}
+                    width="35"
+                    height="35"
                     loading="lazy"
                   />
                 </div>

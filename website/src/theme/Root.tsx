@@ -149,6 +149,29 @@ export default function Root({ children }: RootProps): React.JSX.Element {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  // Appends canonical source attribution metadata to copied text snippets (>60 chars) to maintain project credit
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const handleCopy = (e: ClipboardEvent) => {
+      const selection = window.getSelection();
+      if (!selection || selection.toString().trim().length < 60) return;
+
+      const activeEl = document.activeElement;
+      if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA' || activeEl.hasAttribute('contenteditable'))) return;
+
+      const copiedText = selection.toString();
+      const attribution = `\n\n— Source: Nothing Archive (${window.location.href})`;
+      if (e.clipboardData) {
+        e.clipboardData.setData('text/plain', copiedText + attribution);
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('copy', handleCopy);
+    return () => document.removeEventListener('copy', handleCopy);
+  }, []);
+
   // Scroll progress ring: SVG injected into the back-to-top button
   useEffect(() => {
     if (typeof window === 'undefined') return;

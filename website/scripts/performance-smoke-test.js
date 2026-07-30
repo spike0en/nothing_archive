@@ -24,10 +24,16 @@ assert(assetExists('static', 'fonts', 'Geist-Variable.woff2'));
 assert(assetExists('static', 'fonts', 'GeistMono-Variable.woff2'));
 assert(assetExists('static', 'fonts', 'InterVariable.woff2'));
 assert(assetExists('static', 'fonts', 'NDot-55.otf'));
+assert(assetExists('static', 'fonts', 'NDot-55.woff2'));
 assert(assetExists('static', 'fonts', 'NType82-Headline.otf'));
+assert(assetExists('static', 'fonts', 'NType82-Headline.woff2'));
 assert(assetExists('static', 'fonts', 'NType82-Regular.otf'));
+assert(assetExists('static', 'fonts', 'NType82-Regular.woff2'));
 assert(assetExists('static', 'fonts', 'NType82Mono-Regular.otf'));
+assert(assetExists('static', 'fonts', 'NType82Mono-Regular.woff2'));
 assert(assetExists('static', 'fonts', 'LetteraMono-LL.otf'));
+assert(assetExists('static', 'fonts', 'LetteraMono-LL.woff2'));
+assert(assetExists('static', '_headers'));
 
 const config = read('docusaurus.config.ts');
 assert(!config.includes('https://rsms.me/inter/inter.css'));
