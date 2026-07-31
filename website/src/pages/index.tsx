@@ -98,7 +98,7 @@ function getFeatureList(): FeatureItem[] {
 function NothingWikiIcon({ size = 22 }: { size?: number }) {
   return (
     <img
-      src="https://nothing.wiki/lib/tpl/mikio/images/logo.svg"
+      src="https://nothing.wiki/lib/tpl/mikio/images/logo_white.svg"
       width={size}
       height={size}
       alt="Nothing.wiki"
