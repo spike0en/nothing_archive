@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import {
@@ -10,7 +11,7 @@ import {
   FaMobileAlt, FaDownload, FaClipboardList, FaBook,
   FaBoxOpen, FaRocket, FaCode, FaCameraRetro,
 } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+import { FaXTwitter, FaThreads, FaTiktok, FaGlobe } from 'react-icons/fa6';
 import { TbMessageCircle } from 'react-icons/tb';
 
 import styles from './index.module.css';
@@ -89,18 +90,52 @@ function getFeatureList(): FeatureItem[] {
   ];
 }
 
-/** External community platform links. */
-const socialLinks = [
-  { label: 'Telegram', href: 'https://t.me/s/NothingTechCommunity', icon: <FaTelegramPlane size={24} /> },
-  { label: 'Community', href: 'https://nothing.community', icon: <TbMessageCircle size={24} /> },
-  { label: 'Discord', href: 'https://discord.com/invite/nothingtech', icon: <FaDiscord size={24} /> },
-  { label: 'Reddit', href: 'https://www.reddit.com/r/NothingTech', icon: <FaRedditAlien size={24} /> },
-  { label: 'XDA', href: 'https://xdaforums.com/c/nothing.12583/', icon: <FaTerminal size={24} /> },
-  { label: 'YouTube', href: 'https://www.youtube.com/@NothingTechnology', icon: <FaYoutube size={24} /> },
-  { label: 'GitHub', href: 'https://github.com/NothingOSS', icon: <FaGithub size={24} /> },
-  { label: 'X', href: 'https://x.com/nothing', icon: <FaXTwitter size={24} /> },
-  { label: 'Instagram', href: 'https://instagram.com/nothing', icon: <FaInstagram size={24} /> },
-  { label: 'X (Nothing Updates Bot)', href: 'https://x.com/Nothing_Update', icon: <FaXTwitter size={24} /> },
+/**
+ * Renders the logo for Nothing.wiki using their live hosted image URL.
+ *
+ * @param size Target edge dimension in pixels for icon display
+ */
+function NothingWikiIcon({ size = 22 }: { size?: number }) {
+  return (
+    <img
+      src="https://nothing.wiki/lib/tpl/mikio/images/logo.svg"
+      width={size}
+      height={size}
+      alt="Nothing.wiki"
+      className={styles.socialIconImg}
+      loading="lazy"
+    />
+  );
+}
+
+/** Official web portals and developer resources. */
+const officialPortalLinks = [
+  { label: 'Community', href: 'https://nothing.community/', icon: <TbMessageCircle size={22} /> },
+  { label: 'Discord', href: 'https://discord.com/invite/nothingtech', icon: <FaDiscord size={22} /> },
+  { label: 'GitHub', href: 'https://github.com/NothingOSS', icon: <FaGithub size={22} /> },
+  { label: 'Playground', href: 'https://playground.nothing.tech/', icon: <FaRocket size={22} /> },
+  { label: 'Website', href: 'https://nothing.tech/', icon: <FaGlobe size={22} /> },
+];
+
+/** Community-maintained platform links. */
+const communityMaintainedLinks = [
+  { label: 'Reddit', href: 'https://www.reddit.com/r/NothingTech', icon: <FaRedditAlien size={22} /> },
+  { label: 'Telegram', href: 'https://t.me/s/NothingTechCommunity', icon: <FaTelegramPlane size={22} /> },
+  { label: 'Updates', href: 'https://x.com/Nothing_Update', icon: <FaXTwitter size={22} /> },
+  { label: 'Wiki', href: 'https://nothing.wiki/', icon: <NothingWikiIcon size={22} /> },
+  { label: 'XDA', href: 'https://xdaforums.com/c/nothing.12583/', icon: <FaTerminal size={22} /> },
+];
+
+/** Official social media channels. */
+const socialMediaLinks = [
+  { label: 'CMF', href: 'https://x.com/cmfbynothing', icon: <FaXTwitter size={22} /> },
+  { label: 'Community', href: 'https://www.instagram.com/community.nothing', icon: <FaInstagram size={22} /> },
+  { label: 'Essential', href: 'https://x.com/essential', icon: <FaXTwitter size={22} /> },
+  { label: 'Instagram', href: 'https://instagram.com/nothing', icon: <FaInstagram size={22} /> },
+  { label: 'Nothing', href: 'https://x.com/nothing', icon: <FaXTwitter size={22} /> },
+  { label: 'Threads', href: 'https://www.threads.net/@nothing', icon: <FaThreads size={22} /> },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@nothing', icon: <FaTiktok size={22} /> },
+  { label: 'YouTube', href: 'https://www.youtube.com/@NothingTechnology', icon: <FaYoutube size={22} /> },
 ];
 
 
@@ -420,7 +455,8 @@ function HomepageMilestones() {
 }
 
 /**
- * Footer section listing external social/community links.
+ * Footer section listing external links divided into Community Maintained,
+ * Official Portals, and Social Media categories.
  */
 function HomepageSocials() {
   return (
@@ -429,10 +465,55 @@ function HomepageSocials() {
         <Heading as="h2" className={styles.sectionLabel}>
           Connect
         </Heading>
+
+        {/* Community Maintained Section */}
+        <Heading as="h3" className={styles.subSectionLabel}>
+          Community Maintained
+        </Heading>
         <div className={styles.socialLinks}>
-          {socialLinks.map(({ label, href, icon }) => (
+          {communityMaintainedLinks.map(({ label, href, icon }) => (
             <a
-              key={label}
+              key={href}
+              href={href}
+              aria-label={label}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+            >
+              {icon}
+              <span className={styles.socialLinkLabel}>{label}</span>
+            </a>
+          ))}
+        </div>
+
+        {/* Official Portals Section */}
+        <Heading as="h3" className={clsx(styles.subSectionLabel, styles.subSectionLabelMargin)}>
+          Official Portals
+        </Heading>
+        <div className={styles.socialLinks}>
+          {officialPortalLinks.map(({ label, href, icon }) => (
+            <a
+              key={href}
+              href={href}
+              aria-label={label}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+            >
+              {icon}
+              <span className={styles.socialLinkLabel}>{label}</span>
+            </a>
+          ))}
+        </div>
+
+        {/* Social Media Section */}
+        <Heading as="h3" className={clsx(styles.subSectionLabel, styles.subSectionLabelMargin)}>
+          Social Media
+        </Heading>
+        <div className={styles.socialLinks}>
+          {socialMediaLinks.map(({ label, href, icon }) => (
+            <a
+              key={href}
               href={href}
               aria-label={label}
               target="_blank"
