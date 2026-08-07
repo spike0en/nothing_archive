@@ -255,7 +255,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Vibe coded copy of Nothing's essential space app |
 | [Dot Files](https://play.google.com/store/apps/details?id=com.dotfiles.app) | Dotfield Studio | Clean, fast, local-first file manager |
 | [EarPhone X](https://github.com/noebachofner/EarPhonesX) | noebachofner | Linux application to control and configure Nothing and CMF earbuds |
-| [Essential Key Tools](https://github.com/KoukeNeko/EssentialKeyTools) | KoukeNeko | Remap the Nothing Phone Essential Key to your own actions — no root required. |
+| [Essential Key Tools](https://github.com/KoukeNeko/EssentialKeyTools) | KoukeNeko | Remap the Nothing Phone Essential Key to custom actions without root |
 | [Essential Mapper](https://github.com/tracpants/essential-mapper) | tracpants | Remap the Essential Key to launch apps or toggle flashlight by tap count |
 | [Essential Remapper](https://play.google.com/store/apps/details?id=com.essential.remapper) | AllexB | Remap the hardware Essential Key on Nothing & CMF devices to custom actions, shortcuts, or media controls |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Nothing-inspired core Essential Space experience for all devices, featuring quick screenshots, notes, voice memos, and more |

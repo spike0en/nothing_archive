@@ -21,7 +21,7 @@ A collection of tools for creating custom Glyph tones and compositions.
 | [Glyph Converter](https://github.com/jarpl-o-pvl/glyph-converter) | jarpl-o-pvl | Convert Audacity labels into custom Glyph ringtones for Nothing Phone |
 | [Glyph Ctrl](https://github.com/Nonta72/glyph_ctrl) | Nonta72 | Simple helper used by the Glyphs Lights Click app for Ubuntu Touch on the Nothing Phone (1) |
 | [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Pixel art editor for Phone (3) |
-| [Glyph Matrix Image Maker](https://github.com/quintenvandamme/glyph-matrix-image-maker) | quintenvandamme | Image to glyph pattern converter |
+| [Glyph Matrix Image Maker](https://quintenvandamme.github.io/glyph-matrix-image-maker/) | quintenvandamme | Convert images into Glyph Matrix patterns ([Repo](https://github.com/quintenvandamme/glyph-matrix-image-maker)) |
 | [Glyph Tones](https://glyphtones.firu.dev/) | Firu11 | Collection of community Glyph tones. ([Repo](https://github.com/firu11/nothing-glyphtones)) |
 | [Glyph Utils](https://github.com/pgsk33/Glyph-Utils) | pgsk33 | Java helper for frame-based Glyph Interface animations |
 | [Glyph Visualizer](https://github.com/SebiAi/GlyphVisualizer) | SebiAi | Desktop visualizer for .ogg compositions |
