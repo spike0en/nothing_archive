@@ -77,7 +77,7 @@ Resources for Nothing Camera presets:
 | Google Photos Collection | [View](https://photos.google.com/share/AF1QipMLXmA5txDQHqlHzF6OV4HhkLTMsqUx9m8_3jMNH0_MizjA7038n_j8gz4v54zTNw?pli=1&key=QUJKYVY4akFFWGVCWWtleG9DMkNCcDc1c2V5TzZB) |
 | Nothing Playground | [Browse](https://playground.nothing.tech/presets) |
 | Notion Doc by flo_rahil | [View](http://aromatic-perfume-9a5.notion.site/1bd0ff2f0ced80c0b32cce32f552aa4e?v=1bd0ff2f0ced8152aa23000ce56a341a) |
-| Reddit Search | [r/NothingTech](https://www.reddit.com/r/NothingTech/search/?q=camera+presets&type=posts&sort=new) · [r/NOTHING](https://www.reddit.com/r/NOTHING/search/?q=camera+presets&type=posts&sort=new) · [r/CMFtech](https://www.reddit.com/r/CMFTech/search/?q=camera+presets&type=posts&sort=new) |
+| Reddit Search | [r/NothingTech](https://www.reddit.com/r/NothingTech/search/?q=camera+presets&type=posts&sort=new) <br /> [r/NOTHING](https://www.reddit.com/r/NOTHING/search/?q=camera+presets&type=posts&sort=new) <br /> [r/CMFtech](https://www.reddit.com/r/CMFTech/search/?q=camera+presets&type=posts&sort=new) |
 | Telegram Community | [Join](https://telegram.me/NothingTelegramCommunity) |
 
 
