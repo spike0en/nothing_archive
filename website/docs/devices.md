@@ -91,6 +91,7 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 | [Buds 2 Plus](https://nothing.tech/products/cmf-buds-2-plus) <br /> <small>Gligar</small> | B184 | 28 April 2025 | [Here](https://nothing.wiki/cmf/cmf_buds_2_plus) |
 | [Buds 2a](https://nothing.tech/products/cmf-buds-2a) <br /> <small>Hoothoot</small> | B185 | 28 April 2025 | [Here](https://nothing.wiki/cmf/cmf_buds_2a) |
 | [Headphone Pro](https://nothing.tech/products/cmf-headphone-pro) <br /> <small>Forretress</small> | B205 | 29 September 2025 | [Here](https://nothing.wiki/cmf/cmf_headphone_pro) |
+| [Clip Pro](https://nothing.tech/products/cmf-clip-pro) <br /> <small>Jumpluff</small> | B189 | 04 August 2026 | [Here](https://nothing.wiki/cmf/cmf_clip_pro) |
 
 ### Watches
 
