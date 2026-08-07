@@ -112,7 +112,8 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Stock Ticker](https://github.com/literato1987/glyph-stock-ticker) | literato1987 | Glyph Toy for Nothing Phone (3): live TSLA, BTC, NVDA prices on the Glyph Matrix |
 | [Glyph Synapse](https://github.com/Reyiannonn/GlyphSynapse) | Reyiannonn | Always-on, audio-reactive Glyph Matrix display controller |
 | [Glyph Weather](https://github.com/byrbyrka/glyph-weather) | byrbyrka | Live weather on glyph interface Nothing Phone (4a) Pro |
-| [Glyphix](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | Ambiental AOD for the Glyph Matrix |
+| [Glyphix Lite](https://play.google.com/store/apps/details?id=com.stevetex.glyphix) | stevetex | Ambiental AOD for the Glyph Matrix |
+| [Glyphix Pro](https://play.google.com/store/apps/details?id=com.stevetex.glyphixpro) | stevetex | Ambiental AOD for the Glyph Matrix |
 | [Glyphtick](https://play.google.com/store/apps/details?id=com.stetson.glyphtick) | oddmod | Hand-pixeled clock faces for Nothing Phone (3) and Nothing Phone (4a) Pro |
 | [Hamon](https://github.com/yuk1-kondo/GlyphToys-hamon) | yuk1-kondo | Physical wave propagation |
 | [ISS Glyph Tracker](https://github.com/TheophileJacquot/ISS-Glyph-Tracker) | TheophileJacquot | Track the ISS in real time with the Glyph Matrix on Nothing Phone (4a) Pro |
