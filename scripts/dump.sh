@@ -31,6 +31,26 @@ mkdir -p "$OUTPUT_DIR"
 
 # === Helper Functions ===
 
+generate_metadata_notice() {
+    cat << EOF
+===================================================================
+                     NOTHING ARCHIVE FIRMWARE
+===================================================================
+ Model:        $MODEL
+ Build:        $TAG
+ Source:       https://github.com/spike0en/nothing_archive
+ Webpage:      https://nothingarchive.tech
+===================================================================
+ Notice:
+ Firmware images are property of Nothing Technology Limited (OEM).
+ OTA payload extraction, incremental update patching, partition
+ image generation, and archiving provided by Nothing Archive.
+ If redistributing or repacking these partition images, please
+ retain this notice to credit the project.
+===================================================================
+EOF
+}
+
 download_with_gdown() {
     echo "Downloading with gdown: $1"
     gdown --fuzzy "$1" -O ota.zip
@@ -202,8 +222,14 @@ echo "Logical Partitions: $LOGICAL_PARTITIONS"
 echo "Generating file hashes using $PARALLEL_JOBS parallel jobs..."
 cd ota
 
+HASH_FILE="../out/${TAG}-hash.sha256"
+
+# Ignored by sha256sum -c
+generate_metadata_notice | sed 's/^/# /' > "$HASH_FILE"
+echo "" >> "$HASH_FILE"
+
 echo "--- SHA256 Hashes ---"
-find . -maxdepth 1 -type f -print0 | parallel -0 -j $PARALLEL_JOBS "openssl dgst -sha256 -r" 2>/dev/null | sort -k2 -V | tee ../out/${TAG}-hash.sha256
+find . -maxdepth 1 -type f -print0 | parallel -0 -j $PARALLEL_JOBS "openssl dgst -sha256 -r" 2>/dev/null | sort -k2 -V | tee -a "$HASH_FILE"
 
 # === Organize Images ===
 
@@ -216,6 +242,14 @@ done
 for f in $LOGICAL_PARTITIONS; do
     [ -f "${f}.img" ] && mv "${f}.img" ../dyn
 done
+
+# === Credit & Metadata Notice ===
+
+generate_metadata_notice > ../out/spike0en_nothing_archive.txt
+
+[ -d "../boot" ] && cp ../out/spike0en_nothing_archive.txt ../boot/
+[ -d "." ] && cp ../out/spike0en_nothing_archive.txt ./
+[ -d "../dyn" ] && cp ../out/spike0en_nothing_archive.txt ../dyn/
 
 # === Archive Images ===
 
