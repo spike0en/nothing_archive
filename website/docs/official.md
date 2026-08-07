@@ -147,6 +147,22 @@ To request a key, send an email to [GDKsupport@nothing.tech](mailto:GDKsupport@n
 | Flutter Plugin (Unofficial) | [pub.dev](https://pub.dev/packages/nothing_glyph_interface) |
 | Unity SDK (Unofficial) | [GitHub](https://github.com/am1goo/NothingOS.Unity) |
 
+## Repair & Self-Service
+
+Service portals, repair manuals, and spare parts ordering for Nothing and CMF devices, managed in partnership with B2X Care Solutions.
+
+:::info[Self-Repair & Warranty]
+Availability of self-repair guides, spare parts, and service options on the B2X portal varies by region. Check warranty status before attempting repairs, as self-service damage can void warranty coverage.
+:::
+
+| Resource | Description | Link |
+|----------|-------------|------|
+| **B2X Service Portal** | Main after-sales portal for Nothing and CMF repair services. | [Portal](https://nothing.one-connect.b2x.com/) |
+| **Repair Guides** | Official PDF repair manuals, disassembly guides, and documentation per model. | [Documentation](https://nothing.one-connect.b2x.com/documentation) |
+| **Spare Parts Shop** | Webshop to purchase original replacement components. | [Shop](https://nothing.one-connect.b2x.com/shop) |
+| **Track & Trace** | Order status tracking for parts purchases and repair orders. | [Track](https://nothing.one-connect.b2x.com/track) |
+| **Service FAQs** | Frequently asked questions on spare parts ordering, returns, shipping costs, payment methods, and order tracking. | [FAQ](https://nothing.one-connect.b2x.com/faq) |
+
 ## Support Links
 
 Directory of official channels, service centers, and help resources for customer care, careers, and security concerns.
