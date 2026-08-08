@@ -119,11 +119,11 @@ const officialPortalLinks = [
 
 /** Community-maintained platform links. */
 const communityMaintainedLinks = [
-  { label: 'Reddit', href: 'https://www.reddit.com/r/NothingTech', icon: <FaRedditAlien size={22} /> },
-  { label: 'Telegram', href: 'https://t.me/s/NothingTechCommunity', icon: <FaTelegramPlane size={22} /> },
-  { label: 'Updates', href: 'https://x.com/Nothing_Update', icon: <FaXTwitter size={22} /> },
-  { label: 'Wiki', href: 'https://nothing.wiki/', icon: <NothingWikiIcon size={22} /> },
-  { label: 'XDA', href: 'https://xdaforums.com/c/nothing.12583/', icon: <FaTerminal size={22} /> },
+  { label: 'Community', ariaLabel: 'Community', href: 'https://t.me/s/NothingTechCommunity', icon: <FaTelegramPlane size={22} /> },
+  { label: <span style={{ textTransform: 'none' }}>r/NothingTech</span>, ariaLabel: 'r/NothingTech', href: 'https://www.reddit.com/r/NothingTech', icon: <FaRedditAlien size={22} /> },
+  { label: 'Updates', ariaLabel: 'Updates', href: 'https://t.me/NothingTelegramCommunity', icon: <FaTelegramPlane size={22} /> },
+  { label: 'Wiki', ariaLabel: 'Wiki', href: 'https://nothing.wiki/', icon: <NothingWikiIcon size={22} /> },
+  { label: 'XDA', ariaLabel: 'XDA', href: 'https://xdaforums.com/c/nothing.12583/', icon: <FaTerminal size={22} /> },
 ];
 
 /** Official social media channels. */
@@ -471,11 +471,11 @@ function HomepageSocials() {
           Community Maintained
         </Heading>
         <div className={styles.socialLinks}>
-          {communityMaintainedLinks.map(({ label, href, icon }) => (
+          {communityMaintainedLinks.map(({ label, ariaLabel, href, icon }) => (
             <a
               key={href}
               href={href}
-              aria-label={label}
+              aria-label={ariaLabel || (typeof label === 'string' ? label : undefined)}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}

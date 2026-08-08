@@ -132,13 +132,13 @@ div[class*="tableWrapper"] table td,
   --ifm-color-primary-lighter: #e5393f;
   --ifm-color-primary-lightest: #ea5b60;
 
-  --ifm-color-info: #2A2B7B;
-  --ifm-color-info-dark: #25266e;
-  --ifm-color-info-darker: #232468;
-  --ifm-color-info-darkest: #1d1e56;
-  --ifm-color-info-light: #2e2f87;
-  --ifm-color-info-lighter: #30318d;
-  --ifm-color-info-lightest: #36379f;
+  --ifm-color-info: #10b981;
+  --ifm-color-info-dark: #0fa774;
+  --ifm-color-info-darker: #0e9e6d;
+  --ifm-color-info-darkest: #0b8259;
+  --ifm-color-info-light: #16ca8f;
+  --ifm-color-info-lighter: #1cd094;
+  --ifm-color-info-lightest: #34d39f;
 
   --ifm-color-warning: #FFC700;
   --ifm-color-warning-dark: #e5b300;
@@ -224,13 +224,13 @@ div[class*="tableWrapper"] table td,
   --ifm-color-primary-lighter: #e5393f;
   --ifm-color-primary-lightest: #ea5b60;
 
-  --ifm-color-info: #2A2B7B;
-  --ifm-color-info-dark: #25266e;
-  --ifm-color-info-darker: #232468;
-  --ifm-color-info-darkest: #1d1e56;
-  --ifm-color-info-light: #2e2f87;
-  --ifm-color-info-lighter: #30318d;
-  --ifm-color-info-lightest: #36379f;
+  --ifm-color-info: #10b981;
+  --ifm-color-info-dark: #0fa774;
+  --ifm-color-info-darker: #0e9e6d;
+  --ifm-color-info-darkest: #0b8259;
+  --ifm-color-info-light: #16ca8f;
+  --ifm-color-info-lighter: #1cd094;
+  --ifm-color-info-lightest: #34d39f;
 
   --ifm-color-warning: #FFC700;
   --ifm-color-warning-dark: #e5b300;
@@ -1504,11 +1504,186 @@ a:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Admonitions */
-.admonition {
+/*
+ * Admonition Component Styling
+ * Restricts callout variants to red, yellow, and green channels across themes.
+ * Light mode uses high-lightness surface fills; dark mode uses low-alpha surface overlays.
+ * Left indicator strips are disabled by default. Uncomment border-left properties to re-enable.
+ */
+.admonition,
+.theme-admonition,
+div[class*="admonition-"] {
   border-radius: 8px;
-  border-left-width: 4px; /* impeccable-disable-line side-tab */
+  border-left: none !important;
+  box-shadow: none !important;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
+
+/* Light mode surface fills (WCAG 2.1 AA contrast floor >= 4.5:1) */
+[data-theme='light'] .admonition-danger,
+[data-theme='light'] .theme-admonition-danger,
+[data-theme='light'] .alert--danger,
+[data-theme='light'] div[class*="admonition-danger"],
+[data-theme='light'] div[class*="theme-admonition-danger"] {
+  background-color: #FFF5F5 !important;
+  color: #961116 !important;
+  /* border-left: 4px solid #D71920 !important; */
+}
+
+[data-theme='light'] .admonition-warning,
+[data-theme='light'] .admonition-caution,
+[data-theme='light'] .theme-admonition-warning,
+[data-theme='light'] .theme-admonition-caution,
+[data-theme='light'] .alert--warning,
+[data-theme='light'] .alert--caution,
+[data-theme='light'] div[class*="admonition-warning"],
+[data-theme='light'] div[class*="admonition-caution"] {
+  background-color: #FFFBE6 !important;
+  color: #7A5E00 !important;
+  /* border-left: 4px solid #FFC700 !important; */
+}
+
+[data-theme='light'] .admonition-info,
+[data-theme='light'] .admonition-note,
+[data-theme='light'] .admonition-tip,
+[data-theme='light'] .theme-admonition-info,
+[data-theme='light'] .theme-admonition-note,
+[data-theme='light'] .theme-admonition-tip,
+[data-theme='light'] .alert--info,
+[data-theme='light'] .alert--success,
+[data-theme='light'] .alert--secondary,
+[data-theme='light'] div[class*="admonition-info"],
+[data-theme='light'] div[class*="admonition-note"],
+[data-theme='light'] div[class*="admonition-tip"],
+[data-theme='light'] div[class*="admonition-secondary"] {
+  background-color: #F0FDF4 !important;
+  color: #065F46 !important;
+  /* border-left: 4px solid #10B981 !important; */
+}
+
+/* Dark mode surface overlays */
+[data-theme='dark'] .admonition-danger,
+[data-theme='dark'] .theme-admonition-danger,
+[data-theme='dark'] .alert--danger,
+[data-theme='dark'] div[class*="admonition-danger"],
+[data-theme='dark'] div[class*="theme-admonition-danger"] {
+  background-color: rgba(215, 25, 32, 0.10) !important;
+  color: #FCA5A5 !important;
+  /* border-left: 4px solid #D71920 !important; */
+}
+
+[data-theme='dark'] .admonition-warning,
+[data-theme='dark'] .admonition-caution,
+[data-theme='dark'] .theme-admonition-warning,
+[data-theme='dark'] .theme-admonition-caution,
+[data-theme='dark'] .alert--warning,
+[data-theme='dark'] .alert--caution,
+[data-theme='dark'] div[class*="admonition-warning"],
+[data-theme='dark'] div[class*="admonition-caution"] {
+  background-color: rgba(255, 199, 0, 0.08) !important;
+  color: #FDE047 !important;
+  /* border-left: 4px solid #FFC700 !important; */
+}
+
+[data-theme='dark'] .admonition-info,
+[data-theme='dark'] .admonition-note,
+[data-theme='dark'] .admonition-tip,
+[data-theme='dark'] .theme-admonition-info,
+[data-theme='dark'] .theme-admonition-note,
+[data-theme='dark'] .theme-admonition-tip,
+[data-theme='dark'] .alert--info,
+[data-theme='dark'] .alert--success,
+[data-theme='dark'] .alert--secondary,
+[data-theme='dark'] div[class*="admonition-info"],
+[data-theme='dark'] div[class*="admonition-note"],
+[data-theme='dark'] div[class*="admonition-tip"],
+[data-theme='dark'] div[class*="admonition-secondary"] {
+  background-color: rgba(16, 185, 129, 0.10) !important;
+  color: #6EE7B7 !important;
+  /* border-left: 4px solid #10B981 !important; */
+}
+
+/*
+ * Optional hover and focus-within indicator activation rules.
+ * Uncomment this block to enable left border indicators on hover or focus-within.
+ *
+ * .admonition-danger:hover,
+ * .admonition-danger:focus-within,
+ * .theme-admonition-danger:hover,
+ * .theme-admonition-danger:focus-within,
+ * .alert--danger:hover,
+ * .alert--danger:focus-within,
+ * div[class*="admonition-danger"]:hover,
+ * div[class*="admonition-danger"]:focus-within,
+ * div[class*="theme-admonition-danger"]:hover,
+ * div[class*="theme-admonition-danger"]:focus-within {
+ *   border-left: 4px solid #D71920 !important;
+ * }
+ *
+ * .admonition-warning:hover,
+ * .admonition-warning:focus-within,
+ * .admonition-caution:hover,
+ * .admonition-caution:focus-within,
+ * .theme-admonition-warning:hover,
+ * .theme-admonition-warning:focus-within,
+ * .theme-admonition-caution:hover,
+ * .theme-admonition-caution:focus-within,
+ * .alert--warning:hover,
+ * .alert--warning:focus-within,
+ * .alert--caution:hover,
+ * .alert--caution:focus-within,
+ * div[class*="admonition-warning"]:hover,
+ * div[class*="admonition-warning"]:focus-within,
+ * div[class*="admonition-caution"]:hover,
+ * div[class*="admonition-caution"]:focus-within {
+ *   border-left: 4px solid #FFC700 !important;
+ * }
+ *
+ * .admonition-info:hover,
+ * .admonition-info:focus-within,
+ * .admonition-note:hover,
+ * .admonition-note:focus-within,
+ * .admonition-tip:hover,
+ * .admonition-tip:focus-within,
+ * .theme-admonition-info:hover,
+ * .theme-admonition-info:focus-within,
+ * .theme-admonition-note:hover,
+ * .theme-admonition-note:focus-within,
+ * .theme-admonition-tip:hover,
+ * .theme-admonition-tip:focus-within,
+ * .alert--info:hover,
+ * .alert--info:focus-within,
+ * .alert--success:hover,
+ * .alert--success:focus-within,
+ * .alert--secondary:hover,
+ * .alert--secondary:focus-within,
+ * div[class*="admonition-info"]:hover,
+ * div[class*="admonition-info"]:focus-within,
+ * div[class*="admonition-note"]:hover,
+ * div[class*="admonition-note"]:focus-within,
+ * div[class*="admonition-tip"]:hover,
+ * div[class*="admonition-tip"]:focus-within,
+ * div[class*="admonition-secondary"]:hover,
+ * div[class*="admonition-secondary"]:focus-within {
+ *   border-left: 4px solid #10B981 !important;
+ * }
+ */
+
+/* Headings and icons inherit parent element color */
+.admonition [class*="admonitionHeading"],
+.theme-admonition [class*="admonitionHeading"],
+div[class*="admonition"] [class*="admonitionHeading"],
+.alert [class*="admonitionHeading"] {
+  color: inherit !important;
+}
+
+.admonition [class*="admonitionIcon"] svg,
+.theme-admonition [class*="admonitionIcon"] svg,
+div[class*="admonition"] [class*="admonitionIcon"] svg {
+  fill: currentColor !important;
+  color: inherit !important;
+}
+
 /* Inline links in admonitions (Red text with underlines for accessibility) */
 .admonition a,
 .theme-admonition a,
