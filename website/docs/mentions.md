@@ -49,6 +49,15 @@ Official announcements, community threads, and discussion hubs for Nothing Archi
 Video guides, software walkthroughs, and setup tutorials highlighting Nothing Archive resources:
 
 <div class="mentions-grid">
+  <a href="https://www.youtube.com/watch?v=s18iuFe3zzA" target="_blank" rel="noopener noreferrer" class="mention-card">
+    <div class="mention-header">
+      <span class="mention-platform youtube">YouTube</span>
+      <span class="mention-date">Video Spotlight</span>
+    </div>
+    <div class="mention-title">Techiboy</div>
+    <div class="mention-description">A section-by-section tour of the Nothing Archive website and its features.</div>
+    <span class="mention-link">Watch Video &rarr;</span>
+  </a>
   <a href="https://m.youtube.com/watch?v=wTK6TS3pXgc&t=3m40s" target="_blank" rel="noopener noreferrer" class="mention-card">
     <div class="mention-header">
       <span class="mention-platform youtube">YouTube</span>
@@ -56,15 +65,6 @@ Video guides, software walkthroughs, and setup tutorials highlighting Nothing Ar
     </div>
     <div class="mention-title">Switch & Click</div>
     <div class="mention-description">A video segment showing how the project helped recover a device to stock firmware before installing Ubuntu Touch.</div>
-    <span class="mention-link">Watch Video &rarr;</span>
-  </a>
-  <a href="https://youtu.be/ZFY-LaVl9kY?si=L_orlbPepSYBk2pk" target="_blank" rel="noopener noreferrer" class="mention-card">
-    <div class="mention-header">
-      <span class="mention-platform youtube">YouTube</span>
-      <span class="mention-date">Video Spotlight</span>
-    </div>
-    <div class="mention-title">Techiboy</div>
-    <div class="mention-description">Highlights the legacy Awesome Nothing website, which is now merged into Nothing Archive.</div>
     <span class="mention-link">Watch Video &rarr;</span>
   </a>
   <a href="https://www.youtube.com/results?search_query=spike0en+nothing+archive" target="_blank" rel="noopener noreferrer" class="mention-card">
