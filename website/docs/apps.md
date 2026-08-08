@@ -22,7 +22,7 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | App | Developer | Description |
 |-----|-----------|-------------|
 | [BeatFlare](https://github.com/stilkin/beatflare) | stilkin | Raw audio-based visualization for Nothing Phone (3a) Glyphs |
-| [Better Nothing Music Visualizer](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | Aleks Levet & Oliver Lebaigue | Enhanced music visualization |
+| [Better Nothing Music Visualizer (BNMV)](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | Aleks Levet | Enhanced music visualization that uses the glyphs, haptic vibration motor and flashlight |
 | [Blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | Tech detox phone blocking app with Glyph integration |
 | [Delivery Glyph](https://github.com/Goktug-Dusunen/Glyph-Developer-Kit/tree/main/DeliveryGlyph) | Goktug-Dusunen | Delivery tracking app, specially optimized for Turkish services |
 | [Gemini Glyph](https://github.com/TbitL/GeminiGlyph) | TbitL | Brings Glyph interface light responses to Google Gemini assistant on Nothing Phone (3a) |
