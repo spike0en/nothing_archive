@@ -849,8 +849,8 @@ This section should only be referred to when no other option is left to recover 
 
 Install the appropriate drivers for your device's SoC manufacturer.
 
-- **Qualcomm HS-USB 9008 Driver:** [OneDrive](https://itraps-my.sharepoint.com/personal/public_builds_itraps_onmicrosoft_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers&viewid=fce5f287%2D4883%2D4f5a%2Daf37%2D29642c53cfdf) // [Microsoft Update Catalog](https://catalog.update.microsoft.com/Search.aspx?q=qualcomm%20hs-usb)
-- **MediaTek Driver:** [MediaFire](https://www.mediafire.com/file/w0z94wwe4lkka7q/MTK-Driver-v5.2307.zip/file) // [OneDrive](https://itraps-my.sharepoint.com/personal/public_builds_itraps_onmicrosoft_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers&viewid=fce5f287%2D4883%2D4f5a%2Daf37%2D29642c53cfdf)
+- **Qualcomm HS-USB 9008 Driver:** [Gofile](https://gofile.io/d/s2C20f) // [Microsoft Update Catalog](https://catalog.update.microsoft.com/Search.aspx?q=qualcomm%20hs-usb) // [Pixeldrain](https://pixeldrain.com/u/xyUqeUyr)
+- **MediaTek Driver:** [Gofile](https://gofile.io/d/s2C20f) // [MediaFire](https://www.mediafire.com/file/w0z94wwe4lkka7q/MTK-Driver-v5.2307.zip/file) // [Pixeldrain](https://pixeldrain.com/u/fLng7rMk)
 
 ### EDL Cable (Qualcomm)
 
