@@ -119,6 +119,7 @@ Web-based applications inspired by Nothing OS.
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Control earbuds from web ([Repo](https://github.com/radiance-project/ear-web)) |
 | [Essential Space Web](https://prostmitwein.github.io/EssentialSpaceWeb/) | CorruptPriest | Minimalist notespace ([Repo](https://github.com/CorruptPriest/EssentialSpaceWeb)) |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
+| [Glyph Portal](https://glyph.suns.red/) ([Repo](https://github.com/aero-md/GlyphPortal)) | aero-md | Web portal with real-scale browser previews of Nothing Phone Glyph Matrix toys |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal-inspired homepage |
 | [Invo](https://dibyajyotikabi.github.io/Nothing-OS-Inspired-Invoice-App) | Dibyajyotikabi | Nothing OS Inspired Invoice Web App ([Repo](https://github.com/Dibyajyotikabi/Nothing-OS-Inspired-Invoice-App)) |
 | [Its Nothing](https://github.com/eduardochiaro/its-nothing) | eduardochiaro | Minimal web experience inspired by Nothing OS |
