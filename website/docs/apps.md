@@ -230,25 +230,73 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 
 ## Notes & Productivity
 
+### Notes & Notebooks
+
 | App | Developer | Description |
 |-----|-----------|-------------|
-| [Don't Look](https://play.google.com/store/apps/details?id=com.lended.dontlook) | Creepsmile | Focus enhancement app |
 | [Dot Notes](https://github.com/shubh72010/DotNotes) | shubh72010 | AI-powered notes app |
-| [Dothing](https://play.google.com/store/apps/details?id=com.firstyogi.dothing) | FirstYogi | Minimalist tasks app with cloud backup |
 | [N Dot Notes](https://github.com/AzhamProdLive/Notes_App_Nothing) | AzhamProdLive | Notes app with NDot font theme |
 | [N Notes](https://play.google.com/store/apps/details?id=com.bhavukverma.nNotes) | Bhavuk Verma | Open source Nothing OS style notes |
-| [No Things To Do List](https://play.google.com/store/apps/details?id=com.todo.nothingwidgets) | Martin Diermayr | Task/to-do app with widgets |
 | [Notes](https://play.google.com/store/apps/details?id=com.monospace.notes) | monospace | Notes app with built-in security |
 | [Nothing Notes](https://github.com/ThriveEngineer/nothing.notes) | ThriveEngineer | Nothing themed notes app |
 | [Nothing Notes](https://play.google.com/store/apps/details?id=com.ApexCreator.nothingnotes) | Apex Creator | Minimal notepad |
-| [Nothing To Do](https://github.com/amriths04/NothingToDo) | amriths04 | Nothing to do android app |
 | [Nothiq](https://play.google.com/store/apps/details?id=com.rontag.nothiq) | Rontag | Nothing-inspired notes and task management app |
 | [Noting](https://play.google.com/store/apps/details?id=com.hearthborn.studios.notingnotes) | Hearthborn | Notes and tasks with cloud backup |
 | [Seton](https://github.com/arijit4/Seton) | arijit4 | Pin and edit notes with widget |
 | [Spend Notes](https://play.google.com/store/apps/details?id=com.cmlabs.spendflow.spendflow) | Coder monk labs | Expense tracking |
-| [The Circle](https://play.google.com/store/apps/details?id=com.quivaconnect.thecircle) | Quivox Engineering | Language learning app |
 
+### Task & Focus Management
+
+| App | Developer | Description |
+|-----|-----------|-------------|
+| [Don't Look](https://play.google.com/store/apps/details?id=com.lended.dontlook) | Creepsmile | Focus enhancement app |
+| [Dothing](https://play.google.com/store/apps/details?id=com.firstyogi.dothing) | FirstYogi | Minimalist tasks app with cloud backup |
+| [No Things To Do List](https://play.google.com/store/apps/details?id=com.todo.nothingwidgets) | Martin Diermayr | Task/to-do app with widgets |
+| [Nothing To Do](https://github.com/amriths04/NothingToDo) | amriths04 | Nothing to do android app |
+
+### Learning & Education
+
+| App | Developer | Description |
+|-----|-----------|-------------|
+| [The Circle](https://play.google.com/store/apps/details?id=com.quivaconnect.thecircle) | Quivox Engineering | Language learning app |
 ## Utilities & Tools
+
+### Essential Key Remappers
+
+| App | Developer | Description |
+|-----|-----------|-------------|
+| [Buttonoo](https://github.com/bractstudio/buttonoo) | bractstudio | Remap the hardware Essential Key on Nothing and CMF phones to launch apps, shortcuts, or system controls across custom press patterns |
+| [Essential Key Tools](https://github.com/KoukeNeko/EssentialKeyTools) | KoukeNeko | Remap the Nothing Phone Essential Key to custom actions without root |
+| [Essential Mapper](https://github.com/tracpants/essential-mapper) | tracpants | Remap the Essential Key to launch apps or toggle flashlight by tap count |
+| [Essential Remapper](https://play.google.com/store/apps/details?id=com.essential.remapper) | AllexB | Remap the hardware Essential Key on Nothing & CMF devices to custom actions, shortcuts, or media controls |
+| [Sidecue](https://github.com/shashh-hash/sidecue) | shashh-hash | Remap the Essential Key with custom press actions, Glyph Matrix feedback, and auto-pause features |
+| [The Everything Key](https://play.google.com/store/apps/details?id=com.spandone.everythingkey) | spandone | Essential key remapper |
+
+### System & Hardware Utilities
+
+| App | Developer | Description |
+|-----|-----------|-------------|
+| [Battery Health](https://play.google.com/store/apps/details?id=com.monospace.battery) | monospace | Battery health monitoring |
+| [BoltShot](https://github.com/Red-Bolt-Design/BoltShot) | Red-Bolt-Design | Screenshot helper for Nothing style workflows |
+| [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Vibe coded copy of Nothing's essential space app |
+| [EarPhone X](https://github.com/noebachofner/EarPhonesX) | noebachofner | Linux application to control and configure Nothing and CMF earbuds |
+| [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Nothing-inspired core Essential Space experience for all devices, featuring quick screenshots, notes, voice memos, and more |
+| [Flip To Glyph Quick Tile](https://github.com/trup40/QuickTileForFlip2GlyphNP) | trup40 | A basic quick tile to toggle the Flip to Glyph setting on Nothing phones |
+| [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | Use Bluetooth wearables without OEM apps, accounts, or cloud |
+| [Hey Battery](https://github.com/ghostyapps/HeyBattery) | Candan | Battery usage tracker |
+| [Nothing Dashcam](https://github.com/amitskamboj/nothing-dashcam) | amitskamboj | Dashcam app for Nothing Phone (2) with support for loop recording, impact detection, call pause/resume, GPS overlay and MediaStore output |
+| [Nothing Quick Tools](https://github.com/DylanAkp/NothingQuickTools) | DylanAkp | Quick tiles for Phone (2) |
+| [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Device insights tool |
+| [Side Dock](https://play.google.com/store/apps/details?id=com.sidedock.app) | Quivox Engineering | Sidebar overlay built for faster multitasking, quick tools, and smoother workflows |
+
+### File Managers
+
+| App | Developer | Description |
+|-----|-----------|-------------|
+| [Dot Files](https://play.google.com/store/apps/details?id=com.dotfiles.app) | Dotfield Studio | Clean, fast, local-first file manager |
+| [N Files](https://play.google.com/store/apps/details?id=com.hearthborn.studios.nfiles) | Hearthborn | File manager designed for speed, simplicity and complete control |
+| [Noid](https://play.google.com/store/apps/details?id=com.techsip.noid) | TechSip Studios | File management |
+| [Nothing Files](https://github.com/Mo-Array/Nothing-Files) | Mo-Array | Nothing OS themed file manager app |
 
 ### Audio & Media
 
@@ -267,71 +315,74 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Redrop Music](https://play.google.com/store/apps/details?id=re.tag.redrop) | Tagrelate | Offline music player combining Material 3 and Nothing aesthetics |
 | [Sound Stream Now](https://play.google.com/store/apps/details?id=go.ssn) | Moworks | Music player supporting the Glyph Matrix |
 
-### System & Hardware
+### Launchers
 
 | App | Developer | Description |
 |-----|-----------|-------------|
-| [Battery Health](https://play.google.com/store/apps/details?id=com.monospace.battery) | monospace | Battery health monitoring |
-| [BoltShot](https://github.com/Red-Bolt-Design/BoltShot) | Red-Bolt-Design | Screenshot helper for Nothing style workflows |
-| [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Vibe coded copy of Nothing's essential space app |
-| [Dot Files](https://play.google.com/store/apps/details?id=com.dotfiles.app) | Dotfield Studio | Clean, fast, local-first file manager |
-| [EarPhone X](https://github.com/noebachofner/EarPhonesX) | noebachofner | Linux application to control and configure Nothing and CMF earbuds |
-| [Essential Key Tools](https://github.com/KoukeNeko/EssentialKeyTools) | KoukeNeko | Remap the Nothing Phone Essential Key to custom actions without root |
-| [Essential Mapper](https://github.com/tracpants/essential-mapper) | tracpants | Remap the Essential Key to launch apps or toggle flashlight by tap count |
-| [Essential Remapper](https://play.google.com/store/apps/details?id=com.essential.remapper) | AllexB | Remap the hardware Essential Key on Nothing & CMF devices to custom actions, shortcuts, or media controls |
-| [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Nothing-inspired core Essential Space experience for all devices, featuring quick screenshots, notes, voice memos, and more |
-| [Flip To Glyph Quick Tile](https://github.com/trup40/QuickTileForFlip2GlyphNP) | trup40 | A basic quick tile to toggle the Flip to Glyph setting on Nothing phones |
-| [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | Use Bluetooth wearables without OEM apps, accounts, or cloud |
-| [Hey Battery](https://github.com/ghostyapps/HeyBattery) | Candan | Battery usage tracker |
-| [N Files](https://play.google.com/store/apps/details?id=com.hearthborn.studios.nfiles) | Hearthborn | File manager designed for speed, simplicity and complete control |
-| [Noid](https://play.google.com/store/apps/details?id=com.techsip.noid) | TechSip Studios | File management |
-| [Nothing Dashcam](https://github.com/amitskamboj/nothing-dashcam) | amitskamboj | Dashcam app for Nothing Phone (2) with support for loop recording, impact detection, call pause/resume, GPS overlay and MediaStore output |
-| [Nothing Files](https://github.com/Mo-Array/Nothing-Files) | Mo-Array | Nothing OS themed file manager app |
-| [Nothing Quick Tools](https://github.com/DylanAkp/NothingQuickTools) | DylanAkp | Quick tiles for Phone (2) |
-| [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Device insights tool |
-| [Side Dock](https://play.google.com/store/apps/details?id=com.sidedock.app) | Quivox Engineering | Sidebar overlay built for faster multitasking, quick tools, and smoother workflows |
-| [Sidecue](https://github.com/shashh-hash/sidecue) | shashh-hash | Remap the Essential Key with custom press actions, Glyph Matrix feedback, and auto-pause features |
-| [The Everything Key](https://play.google.com/store/apps/details?id=com.spandone.everythingkey) | spandone | Essential key remapper |
+| [MINIMAA Launcher](https://play.google.com/store/apps/details?id=com.minimaa.minimal.detox.launcher) | Pickerry Apps | Minimalist launcher built to reduce digital distractions with a text-based interface, dark themes, and focus utilities |
+| [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | Minimalist launcher |
+| [Stario Launcher](https://play.google.com/store/apps/details?id=com.stario.launcher) | tariqamarneh | Minimal dot-grid launcher inspired by the Nothing OS aesthetic |
 
-### Daily Utilities
+### Keyboards & Input
 
 | App | Developer | Description |
-|---------|-----------|-------------|
+|-----|-----------|-------------|
+| [Dotboard](https://github.com/amal-infosec/dotboard) | amal-infosec | Android keyboard inspired by Nothing OS with NDOT typography and monochromatic theme |
+| [Keyboard By Voidwarelabs](https://play.google.com/store/apps/details?id=com.voidware.keyboard) | VoidwareLabs | Fast, privacy-first AI keyboard with smart suggestions and voice input. |
+| [N Board](https://github.com/MathieuDvv/Nboard) | MathieuDvv | Nothing-inspired keyboard with AI tools |
+| [N Keyboard](https://github.com/arunk140/nth-kbd) | arunk14 | Themed keyboard |
+| [Typebase](https://play.google.com/store/apps/details?id=com.typebase.app) | Quivox Engineering | A Nothing design inspired keyboard with additional functionality from [Side Dock](https://play.google.com/store/apps/details?id=com.sidedock.app) exists |
+
+### Calculators
+
+| App | Developer | Description |
+|-----|-----------|-------------|
 | [Calc Plus](https://github.com/pixelcraftin/CalcPlus) | pixelcraftin | Nothing OS inspired calculator app |
+| [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Calculator app with dot matrix fonts |
+| [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Calculator with Nothing style |
+| [Neo Calc](https://play.google.com/store/apps/details?id=com.lended.neocalc) | Creepsmile | Nothing OS inspired calculator |
+| [Nothing Calc](https://github.com/himanshuksr0007/NothingCalc) | himanshuksr0007 | Calculator app inspired by the Nothing OS design language |
+| [Nothing Calculator](https://github.com/git-jamesfrench/NothingCalculator) | git-jamesfrench | Community made Nothing calculator |
+| [Nothing Calculator](https://play.google.com/store/apps/details?id=com.anoobav.calculator) | Anubhav | Nothing's design-inspired minimal calculator with live calculations, scientific functions, and history |
+| [Nx Calculator](https://github.com/montybytes/nxcalculator) | montybytes | Simple calculator |
+| [Open Calc](https://github.com/drrnb/OpenCalc/releases/tag/v3.0.0-beta4-nothing) | drrnb | Themed calculator |
+| [Re Calc](https://github.com/Aouni19/ReCalc) | Aouni19 | Simple and clean calculator app built with Nothing OS styling |
+| [SmartCalc](https://play.google.com/store/apps/details?id=com.znaetapps.smartcalc) | ZnaetAPPS | Offline calculator and currency converter with dark mode |
+
+### Calendars & Clocks
+
+| App | Developer | Description |
+|-----|-----------|-------------|
+| [Dot Cal](https://play.google.com/store/apps/details?id=com.dotfield.dotcal) | Dotfield Studio | Minimalist calendar app inspired by Nothing OS |
+| [Moon in Pixels](https://play.google.com/store/apps/details?id=com.indie6403.mooninpixels) | Archit Verma | Moon phase calendar and lunar tracker |
+| [N Calender](https://github.com/Strgazr-07/NCalender) | Strgazr-07 | Calender app inspired by Nothing OS |
+| [N Clock](https://play.google.com/store/apps/details?id=de.nostream.nclock) | nostream | Minimalist clock app inspired by the Nothing design language |
+| [No Calendar](https://play.google.com/store/apps/details?id=com.calendar.nocalendar) | NoAppsStudio | Calendar with Google sync |
+| [Nothing Calendar](https://github.com/AyushKumar-Singh/Calendar-APK) | AyushKumar-Singh | Minimal calendar and task management app inspired by the Nothing/CMF OS design language |
+| [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | World clock, timer, stopwatch |
+| [Nothing Desk Clock](https://play.google.com/store/apps/details?id=com.ApexCreator.deskclock) | Apex Creators | Desk clock app |
+| [WhispCal](https://play.google.com/store/apps/details?id=com.thomasmorice.whispcal) | Thomas Morice | Calorie tracking app for Android and [iOS](https://apps.apple.com/in/app/whispcal/id6757860582) |
+
+### General Daily Utilities
+
+| App | Developer | Description |
+|-----|-----------|-------------|
 | [Calories Are Nothing](https://play.google.com/store/apps/details?id=can.wearemobilefirst.com) | WeAreMobileFirst | Meal logging app |
 | [Compass](https://github.com/Earendel-lab/Compass) | Earendel | Simple compass |
 | [Currency](https://curency.pages.dev/) | Earendel | Currency converter web app |
 | [Desight](https://play.google.com/store/apps/details?id=com.repomedia.desight) | Repomedia | Nothing-inspired, free eye strain reduction app |
-| [Dot Cal](https://play.google.com/store/apps/details?id=com.dotfield.dotcal) | Dotfield Studio | Minimalist calendar app inspired by Nothing OS |
-| [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Calculator app with dot matrix fonts |
-| [Dotboard](https://github.com/amal-infosec/dotboard) | amal-infosec | Android keyboard inspired by Nothing OS with NDOT typography and monochromatic theme |
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | AI-powered browser |
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Flashlight app with widgets |
 | [Glimpse](https://github.com/amitozalvo/nothing-phone-apps) | amitozalvo | Notification and OTP assistant for Nothing Phone (3) |
 | [Hey Cam](https://github.com/ghostyapps/HeyCam) | Candan | Minimalist camera with Glyph Matrix support |
 | [Iris](https://github.com/hrideshmg/iris) | hrideshmg | Nothing Phone (3a) voice assistant companion app for Hermes AI agent |
-| [Keyboard By Voidwarelabs](https://play.google.com/store/apps/details?id=com.voidware.keyboard) | VoidwareLabs | Fast, privacy-first AI keyboard with smart suggestions and voice input. |
 | [Mate App](https://github.com/shahriaravi/MateApp) | shahriaravi | Offline finance tracker |
 | [Minimal Browser](https://github.com/aaswani-v/Minimal-Browser) | aaswani-v | Browser with AI summarization |
-| [Moon in Pixels](https://play.google.com/store/apps/details?id=com.indie6403.mooninpixels) | Archit Verma | Moon phase calendar and lunar tracker |
-| [N Board](https://github.com/MathieuDvv/Nboard) | MathieuDvv | Nothing-inspired keyboard with AI tools |
-| [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Calculator with Nothing style |
-| [N Calender](https://github.com/Strgazr-07/NCalender) | Strgazr-07 | Calender app inspired by Nothing OS |
-| [N Clock](https://play.google.com/store/apps/details?id=de.nostream.nclock) | nostream | Minimalist clock app inspired by the Nothing design language |
 | [N Dial](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ndial) | Hearthborn | Phone dialer and contacts |
-| [N Keyboard](https://github.com/arunk140/nth-kbd) | arunk14 | Themed keyboard |
 | [N Recipe](https://play.google.com/store/apps/details?id=com.a3chron.nrecipe) | a3chron | Offline recipebook |
-| [Neo Calc](https://play.google.com/store/apps/details?id=com.lended.neocalc) | Creepsmile | Nothing OS inspired calculator |
-| [No Calendar](https://play.google.com/store/apps/details?id=com.calendar.nocalendar) | NoAppsStudio | Calendar with Google sync |
-| [Nothing Calc](https://github.com/himanshuksr0007/NothingCalc) | himanshuksr0007 | Calculator app inspired by the Nothing OS design language |
-| [Nothing Calculator](https://github.com/git-jamesfrench/NothingCalculator) | git-jamesfrench | Community made Nothing calculator |
-| [Nothing Calculator](https://play.google.com/store/apps/details?id=com.anoobav.calculator) | Anubhav | Nothing's design-inspired minimal calculator with live calculations, scientific functions, and history |
-| [Nothing Calendar](https://github.com/AyushKumar-Singh/Calendar-APK) | AyushKumar-Singh | Minimal calendar and task management app inspired by the Nothing/CMF OS design language |
 | [Nothing Cinema](https://github.com/Zwe-Paing-Htet/nothing_cinema) | Zwe-Paing-Htet | Movie catalog and streaming companion app designed with Nothing OS aesthetics |
-| [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | World clock, timer, stopwatch |
 | [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | Mobile app for nothing.community |
 | [Nothing Compass](https://github.com/ISO53/Nothing-Compass) | ISO53 | Compass and Inclinometer in Nothing aesthetics |
-| [Nothing Desk Clock](https://play.google.com/store/apps/details?id=com.ApexCreator.deskclock) | Apex Creators | Desk clock app |
 | [Nothing Gallery](https://github.com/jerichoi224/Nothing-Gallery) | jerichoi224 | Gallery app |
 | [Nothing K](https://github.com/cuadratico/NothingK) | cuadratico | Password vault |
 | [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Dynamic Island for Nothing OS |
@@ -339,17 +390,12 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Nothing News](https://play.google.com/store/apps/details?id=com.nothing.news) | Mirko_ddd | Community news |
 | [Nothing OS Smart Edge](https://github.com/f4646/Smart-Edge/releases) | f4646 | Floating windows for Sidebar and Nothing OS |
 | [Nothing Weather](https://play.google.com/store/apps/details?id=com.ApexCreator.nothing_weather) | Apex Creators | Weather app |
-| [Nx Calculator](https://github.com/montybytes/nxcalculator) | montybytes | Simple calculator |
-| [Open Calc](https://github.com/drrnb/OpenCalc/releases/tag/v3.0.0-beta4-nothing) | drrnb | Themed calculator |
 | [qMetronome](https://github.com/quaternionmedia/qmetronome) | quaternionmedia | Metronome and tempo visualizer built with Nothing OS aesthetics |
-| [Re Calc](https://github.com/Aouni19/ReCalc) | Aouni19 | Simple and clean calculator app built with Nothing OS styling |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Recording light control for Phone (3) |
-| [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | Minimalist launcher |
-| [Stario Launcher](https://play.google.com/store/apps/details?id=com.stario.launcher) | tariqamarneh | Minimal dot-grid launcher inspired by the Nothing OS aesthetic |
-| [Typebase](https://play.google.com/store/apps/details?id=com.typebase.app) | Quivox Engineering | A Nothing design inspired keyboard with additional functionality from [Side Dock](https://play.google.com/store/apps/details?id=com.sidedock.app) exists |
 | [Void](https://play.google.com/store/apps/details?id=com.thevoid.focus) | vmcreate | Minimal app blocker based on Nothing OS design language |
 | [Voidcaller](https://play.google.com/store/apps/details?id=com.voidware.voidcaller) | VoidwareLabs | Minimalist dialer |
-| [WhispCal](https://play.google.com/store/apps/details?id=com.thomasmorice.whispcal) | Thomas Morice | Calorie tracking app for Android and [iOS](https://apps.apple.com/in/app/whispcal/id6757860582) |
+
+
 ## Games
 
 General games inspired by the Nothing design language.
