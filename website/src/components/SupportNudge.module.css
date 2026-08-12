@@ -1,0 +1,280 @@
+/**
+ * SupportNudge — Bottom-right floating toast card.
+ *
+ * Visual: glassmorphism card (backdrop-blur) with slide-in/slide-out
+ * animations, a shrinking progress bar for auto-dismiss, and full
+ * responsive adaptation (full-width bottom bar on mobile ≤768 px).
+ * Respects `prefers-reduced-motion` for accessibility.
+ */
+
+.nudgeContainer {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1500;
+  pointer-events: none;
+}
+
+.nudge {
+  pointer-events: auto;
+  touch-action: none;
+  width: 340px;
+  background-color: var(--ifm-card-background-color);
+  border: 1px solid var(--nothing-border-strong);
+  border-radius: 20px;
+  padding: 1.25rem 1.25rem 1rem;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: slideInUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+[data-theme='dark'] .nudge {
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+  border-color: var(--nothing-border-strong);
+}
+
+/* --- Exiting state --- */
+.nudgeExiting {
+  animation: slideOutDown 0.35s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+
+/* --- Header row --- */
+.nudgeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.nudgeTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.heartIcon {
+  color: var(--nothing-red, #D71921);
+  flex-shrink: 0;
+  animation: heartPulse 1.5s infinite ease-in-out;
+  filter: drop-shadow(0 0 4px rgba(215, 25, 33, 0.4));
+}
+
+.nudgeTitle {
+  margin: 0;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ifm-font-color-base);
+  line-height: 1.3;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--ifm-font-color-base);
+  opacity: 0.35;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.closeBtn:hover {
+  opacity: 0.85;
+  background-color: var(--nothing-hover-bg);
+  transform: rotate(90deg);
+}
+
+/* --- Body text --- */
+.nudgeBody {
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--ifm-font-color-base);
+  opacity: 0.65;
+  margin: 0;
+}
+
+/* --- Actions row --- */
+.nudgeActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+
+/* --- CTA button --- */
+.nudgeCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: var(--ifm-font-color-base);
+  color: var(--ifm-card-background-color) !important;
+  border: 2px solid var(--ifm-font-color-base);
+  border-radius: 999px;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.nudgeCta:hover {
+  background-color: transparent !important;
+  color: var(--ifm-font-color-base) !important;
+  border-color: var(--ifm-font-color-base) !important;
+}
+
+.ctaIcon {
+  flex-shrink: 0;
+  animation: heartPulse 1.5s infinite ease-in-out;
+}
+
+/* --- Already Supported (secondary ghost button) --- */
+.alreadySupported {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: 2px solid transparent;
+  color: var(--ifm-font-color-base);
+  opacity: 0.45;
+  font-size: 0.68rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 0.4rem 0.65rem;
+  border-radius: 999px;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+  letter-spacing: 0.01em;
+}
+
+.alreadySupported:hover {
+  opacity: 0.9;
+  background-color: transparent !important;
+  border-color: var(--nothing-border-strong) !important;
+  color: var(--ifm-font-color-base) !important;
+  transform: translateY(-1px);
+}
+
+
+/* --- Auto-dismiss progress bar --- */
+.progressTrack {
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background: var(--nothing-border);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: var(--nothing-red, #D71921);
+  border-radius: 1px;
+  width: 100%;
+  animation: shrinkBar 15s linear forwards;
+  opacity: 0.6;
+}
+
+/* --- Animations --- */
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutDown {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%) scale(0.95);
+    opacity: 0;
+  }
+}
+
+@keyframes heartPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shrinkBar {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+/* --- Responsive: mobile floating card --- */
+@media (max-width: 768px) {
+  .nudgeContainer {
+    bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+    right: 0.75rem;
+    left: 0.75rem;
+    padding: 0;
+  }
+
+  .nudge {
+    width: 100%;
+    border-radius: 16px;
+    padding: 1rem 1.1rem 0.85rem;
+    gap: 0.6rem;
+  }
+
+  .nudgeTitle {
+    font-size: 0.8rem;
+  }
+
+  .nudgeBody {
+    display: block !important;
+    font-size: 0.76rem;
+    line-height: 1.45;
+  }
+
+  .alreadySupported {
+    display: inline-flex !important;
+  }
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .nudge,
+  .nudgeExiting {
+    animation-duration: 0.01ms !important;
+  }
+
+  .heartIcon,
+  .ctaIcon {
+    animation: none !important;
+  }
+
+  .progressBar {
+    animation-duration: 15s;
+  }
+}

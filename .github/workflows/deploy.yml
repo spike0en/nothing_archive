@@ -1,0 +1,96 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'website/**'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+    inputs:
+      use_self_hosted:
+        description: 'Run on self-hosted runner (uncheck for GitHub ubuntu-latest)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    runs-on: ${{ ((github.event_name == 'workflow_dispatch' && inputs.use_self_hosted) || (github.event_name != 'workflow_dispatch' && vars.USE_SELF_HOSTED == 'true')) && fromJSON('["self-hosted", "Linux"]') || 'ubuntu-latest' }}
+    defaults:
+      run:
+        working-directory: website
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.3.14'
+
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Performance smoke test
+        run: bun run test:performance
+
+      - name: Type check
+        run: bun run typecheck
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build website
+        run: npm run build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          BASE_URL: ${{ vars.BASE_URL }}
+
+      - name: Patch robots.txt sitemap URL
+        working-directory: .
+        run: |
+          SITE_URL="${{ vars.SITE_URL || 'https://nothingarchive.tech' }}"
+          BASE_URL="${{ vars.BASE_URL || '/' }}"
+          ROBOTS="website/build/robots.txt"
+          if [ -f "$ROBOTS" ]; then
+            sed -i "s|https://spike0en.github.io/nothing_archive/|${SITE_URL}${BASE_URL}|g" "$ROBOTS"
+            echo "Patched robots.txt → ${SITE_URL}${BASE_URL}sitemap.xml"
+          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: website/build
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

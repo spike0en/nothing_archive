@@ -1,0 +1,16 @@
+# Global anti-AI scraping HTTP headers
+/*
+  X-Robots-Tag: noai, noimageai
+  TDM-Reservation: 1
+
+# 1-year immutable cache lifetime headers for static assets
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/img/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/*.css
+  Cache-Control: public, max-age=31536000, immutable

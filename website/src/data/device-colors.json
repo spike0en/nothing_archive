@@ -1,0 +1,15 @@
+{
+  "metroid": ["White", "Black"],
+  "pong": ["Grey", "White"],
+  "spacewar": ["Black", "White"],
+  "froggerpro": ["Silver", "Black", "Pink"],
+  "frogger": ["White", "Black", "Pink", "Blue"],
+  "asteroids": ["White", "Black", "Blue", "CE"],
+  "asteroidspro": ["Grey", "Black"],
+  "pacmanpro": ["Silver", "Black", "CE"],
+  "pacman": ["Milk", "Black"],
+  "supercontra": ["White", "Blue", "Black", "Red"],
+  "galaxian": ["White", "Black", "Blue", "Red"],
+  "galaga": ["Orange", "Black", "Grey", "Light Green"],
+  "tetris": ["Light Green", "Orange", "Black"]
+}

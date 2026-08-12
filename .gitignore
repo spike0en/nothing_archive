@@ -1,0 +1,38 @@
+# Docusaurus & Frontend Web
+website/build/
+website/.docusaurus/
+website/.cache/
+website/.cache-loader/
+website/src/data/*
+!website/src/data/device-colors.json
+!website/src/data/donations.json
+!website/src/data/donors.json
+!website/src/data/contributor-metadata.json
+
+# Dependencies
+node_modules/
+
+# Editor & OS Temp Files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Log Files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment Secret Files
+.env
+.env.*
+
+# Local Workspace
+.local/
+
+# Knowledge Graphs
+graphify-out/
+.code-review-graph/

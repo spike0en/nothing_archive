@@ -1,0 +1,273 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+@media (max-width: 1150px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--ifm-card-background-color);
+  border: 2px solid var(--nothing-border);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1),
+              border-color 0.2s ease,
+              box-shadow 0.2s ease;
+  position: relative;
+  min-height: 290px;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .card:hover {
+  background-color: #242424;
+  box-shadow: 0 12px 32px rgba(255, 255, 255, 0.02);
+}
+
+.modelContainer {
+  height: 170px;
+  width: 100%;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.015);
+  border-bottom: 1px solid var(--nothing-border);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Subtle dot-grid texture matching stargazers panel */
+.modelContainer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.025) 1px, transparent 0);
+  background-size: 12px 12px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+[data-theme='dark'] .modelContainer::before {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.015) 1px, transparent 0);
+}
+
+[data-theme='dark'] .modelContainer {
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+
+
+.fallbackContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  opacity: 0.35;
+  transition: opacity 0.2s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.card:hover .fallbackContainer {
+  opacity: 0.7;
+}
+
+.fallbackIcon {
+  width: 54px;
+  height: 90px;
+  color: inherit;
+  margin-bottom: 8px;
+}
+
+.fallbackText {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.infoContainer {
+  padding: 0.5rem 0.75rem 0.6rem;
+  display: flex !important;
+  flex-direction: column;
+  flex: 1;
+  background-color: rgba(128, 128, 128, 0.02);
+}
+
+[data-theme='dark'] .infoContainer {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.deviceName {
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: var(--ifm-color-emphasis-900);
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card:hover .deviceName {
+  color: var(--ifm-color-primary);
+}
+
+.deviceBrand {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: var(--ifm-color-emphasis-700);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  margin: 0 !important;
+}
+
+.sectionHeader {
+  font-family: var(--ifm-font-family-base);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 2rem 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed var(--nothing-border-strong);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sectionHeader::before {
+  content: '›';
+  font-family: var(--ifm-font-family-monospace);
+  color: var(--ifm-color-primary);
+}
+
+/* Color selector container.
+ * Layout rationale: Uses flexbox wrapping with a 6px row-gap and 5px column-gap.
+ * 6px vertical row-gap prevents stacked color pills from touching when wrapping on smaller scale breakpoints,
+ * while 5px horizontal column-gap preserves dense pill layout within device cards.
+ */
+.colorSelector {
+  display: flex;
+  gap: 6px 5px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2px 0;
+  margin: 4px 0 0 0 !important;
+  overflow: visible !important;
+}
+
+.colorPill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.625rem;
+  font-weight: 500;
+  padding: 0.18rem 0.45rem;
+  border-radius: 999px;
+  border: 2px solid var(--nothing-border-strong);
+  background-color: transparent;
+  color: var(--ifm-color-emphasis-700);
+  cursor: pointer;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+[data-theme='dark'] .colorPill {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--ifm-color-emphasis-600);
+}
+
+.colorPill:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary) !important;
+  background-color: rgba(215, 25, 33, 0.03);
+}
+
+[data-theme='dark'] .colorPill:hover {
+  background-color: rgba(215, 25, 33, 0.08);
+}
+
+.colorPillActive {
+  background-color: var(--ifm-color-primary) !important;
+  border-color: var(--ifm-color-primary) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.colorPillActive:hover {
+  background-color: var(--ifm-color-primary-dark) !important;
+  border-color: var(--ifm-color-primary-dark) !important;
+  color: #ffffff !important;
+}
+
+
+.cardLink {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 170px;
+}
+
+.infoTextLink {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex;
+  flex-direction: column;
+  flex: none !important;
+  flex-grow: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.deviceImage {
+  height: 85%;
+  max-width: 85%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.08));
+}
+
+.card:hover .deviceImage {
+  transform: scale(1.05) translateY(-2px);
+}
+
+[data-theme='dark'] .deviceImage {
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.45));
+}

@@ -7,7 +7,8 @@
 
 # === Configuration ===
 set -e
-export LD_LIBRARY_PATH="$(pwd)/bin:$LD_LIBRARY_PATH"
+ORIGINAL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+export LD_LIBRARY_PATH="$ORIGINAL_DIR/bin:$LD_LIBRARY_PATH"
 
 DETECTED_CORES=$(nproc)
 CORES=$((DETECTED_CORES > 44 ? 44 : DETECTED_CORES))
@@ -21,14 +22,34 @@ echo "Thread allocation - ARIA2C: $ARIA2C_CONNECTIONS, PARALLEL: $PARALLEL_JOBS,
 
 export PARALLEL="-j$PARALLEL_JOBS"
 
-ORIGINAL_DIR=$(pwd)
+
 OTA_EXTRACTOR="$ORIGINAL_DIR/bin/ota_extractor"
-DEVICES_JSON="$ORIGINAL_DIR/devices.json"
+DEVICES_JSON="$ORIGINAL_DIR/scripts/devices.json"
 OUTPUT_DIR="$ORIGINAL_DIR/out"
 
 mkdir -p "$OUTPUT_DIR"
 
 # === Helper Functions ===
+
+generate_metadata_notice() {
+    cat << EOF
+===================================================================
+                     NOTHING ARCHIVE FIRMWARE
+===================================================================
+ Model:        $MODEL
+ Build:        $TAG
+ Source:       https://github.com/spike0en/nothing_archive
+ Webpage:      https://nothingarchive.tech
+===================================================================
+ Notice:
+ Firmware images are property of Nothing Technology Limited (OEM).
+ OTA payload extraction, incremental update patching, partition
+ image generation, and archiving provided by Nothing Archive.
+ If redistributing or repacking these partition images, please
+ retain this notice to credit the project.
+===================================================================
+EOF
+}
 
 download_with_gdown() {
     echo "Downloading with gdown: $1"
@@ -37,7 +58,20 @@ download_with_gdown() {
 
 download_with_aria2c() {
     echo "Downloading with aria2c using $ARIA2C_CONNECTIONS connections: $1"
-    aria2c -x$ARIA2C_CONNECTIONS -s$ARIA2C_CONNECTIONS "$1" -o ota.zip
+    if ! aria2c -x$ARIA2C_CONNECTIONS -s$ARIA2C_CONNECTIONS --max-tries=5 --retry-wait=5 "$1" -o ota.zip; then
+        echo "aria2c download failed. Cleaning up and falling back..."
+        rm -f ota.zip ota.zip.aria2
+        if command -v wget &> /dev/null; then
+            echo "Downloading with wget..."
+            wget --progress=dot:giga -O ota.zip "$1"
+        elif command -v curl &> /dev/null; then
+            echo "Downloading with curl..."
+            curl -L -o ota.zip "$1"
+        else
+            echo "Error: Neither wget nor curl is installed as a fallback." >&2
+            exit 1
+        fi
+    fi
 }
 
 download_file() {
@@ -188,8 +222,14 @@ echo "Logical Partitions: $LOGICAL_PARTITIONS"
 echo "Generating file hashes using $PARALLEL_JOBS parallel jobs..."
 cd ota
 
+HASH_FILE="../out/${TAG}-hash.sha256"
+
+# Ignored by sha256sum -c
+generate_metadata_notice | sed 's/^/# /' > "$HASH_FILE"
+echo "" >> "$HASH_FILE"
+
 echo "--- SHA256 Hashes ---"
-find . -maxdepth 1 -type f -print0 | parallel -0 -j $PARALLEL_JOBS "openssl dgst -sha256 -r" 2>/dev/null | sort -k2 -V | tee ../out/${TAG}-hash.sha256
+find . -maxdepth 1 -type f -print0 | parallel -0 -j $PARALLEL_JOBS "openssl dgst -sha256 -r" 2>/dev/null | sort -k2 -V | tee -a "$HASH_FILE"
 
 # === Organize Images ===
 
@@ -202,6 +242,14 @@ done
 for f in $LOGICAL_PARTITIONS; do
     [ -f "${f}.img" ] && mv "${f}.img" ../dyn
 done
+
+# === Credit & Metadata Notice ===
+
+generate_metadata_notice > ../out/spike0en_nothing_archive.txt
+
+[ -d "../boot" ] && cp ../out/spike0en_nothing_archive.txt ../boot/
+[ -d "." ] && cp ../out/spike0en_nothing_archive.txt ./
+[ -d "../dyn" ] && cp ../out/spike0en_nothing_archive.txt ../dyn/
 
 # === Archive Images ===
 

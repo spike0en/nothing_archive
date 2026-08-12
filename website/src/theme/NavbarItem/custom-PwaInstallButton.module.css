@@ -1,0 +1,78 @@
+.installBtn {
+  display: inline-flex !important;
+  align-items: center;
+  font-weight: 600;
+  color: var(--ifm-navbar-link-color, inherit) !important;
+  border: 2px solid var(--nothing-border);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem !important;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  transition: all 0.2s ease;
+  font-size: 0.8rem !important;
+  height: fit-content;
+  align-self: center;
+  order: 10 !important;
+}
+
+.installBtn:hover {
+  background-color: rgba(215, 25, 33, 0.05) !important;
+  color: var(--ifm-color-primary) !important;
+  border-color: var(--ifm-color-primary) !important;
+  box-shadow: 0 0 10px rgba(215, 25, 33, 0.2) !important;
+  text-decoration: none !important;
+}
+
+/* Disable active dot indicator for this action button */
+.installBtn::after {
+  display: none !important;
+}
+
+.installIcon {
+  margin-right: 6px;
+  flex-shrink: 0;
+  width: 16px !important;
+  height: 16px !important;
+  transition: transform 0.2s ease;
+}
+
+.installBtn:hover .installIcon {
+  transform: scale(1.15);
+}
+
+/* Mobile Sidebar Specific Styling */
+.mobileInstallLink {
+  color: var(--ifm-color-primary) !important;
+  font-weight: 600 !important;
+}
+
+.mobileInstallLink:hover {
+  color: var(--ifm-color-primary) !important;
+  background-color: rgba(215, 25, 33, 0.05) !important;
+}
+
+.mobileInstallLink::before {
+  display: none !important;
+}
+
+/* Collapse text to render as a 32px circular icon button on tablet/mobile viewports for uniform header height */
+@media (max-width: 996px) {
+  .installBtn span {
+    display: none;
+  }
+
+  .installBtn .installIcon {
+    margin-right: 0 !important;
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .installBtn {
+    width: 32px;
+    height: 32px;
+    padding: 0 !important;
+    border-radius: 50%;
+    justify-content: center;
+    margin: 0;
+  }
+}

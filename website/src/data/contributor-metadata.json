@@ -1,0 +1,27 @@
+{
+  "core": [
+    "pikawee",
+    "luk1337",
+    "arter97",
+    "guptavishalxm1",
+    "PHATWalrus"
+  ],
+  "customUrls": {
+    "guptavishalxm1": "https://github.com/spike0en/nothing_archive/commits?author=guptavishal998.pa@gmail.com"
+  },
+  "customNames": {
+    "pikawee": "Spike (spike0en)",
+    "luk1337": "Łukasz Patron (luk1337)",
+    "arter97": "Juhyung Park (arter97)",
+    "guptavishalxm1": "Vishal Gupta (Shiki)",
+    "PHATWalrus": "Harshit Sinha (Phatwalrus)",
+    "burakdede0": "Burak Dede (Siemens NX)",
+    "AdaaamB": "Adam Bowman (adbo)"
+  },
+  "branding": {
+    "login": "XelXen",
+    "name": "XelXen",
+    "avatar_url": "https://avatars.githubusercontent.com/u/78258352?v=4",
+    "html_url": "https://github.com/spike0en/nothing_archive#nothing-archive"
+  }
+}

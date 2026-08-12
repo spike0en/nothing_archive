@@ -1,0 +1,717 @@
+/**
+ * StarMilestones.module.css — Repository milestone progress bar styles
+ */
+
+/* Card Container */
+.milestoneContainer {
+  margin-top: 0;
+  padding: 1.75rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--nothing-border);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: none !important;
+  transition: all 0.3s ease;
+  font-family: var(--ifm-font-family-base);
+}
+
+[data-theme='dark'] .milestoneContainer {
+  background-color: rgba(18, 18, 18, 0.75);
+  border-color: var(--nothing-border);
+  box-shadow: none !important;
+}
+
+
+
+
+
+.milestoneHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  z-index: 3;
+  position: relative;
+}
+
+.liveStats {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ifm-color-content);
+  opacity: 0.8;
+  z-index: 3;
+  position: relative;
+}
+
+.liveText {
+  font-family: var(--ifm-font-family-base);
+}
+
+.milestoneTitleContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.milestoneTitle {
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--ifm-color-content);
+}
+
+
+.glitchingText {
+  position: relative;
+}
+
+.subModel {
+  font-size: 0.55rem;
+  opacity: 0.35;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+/* Star CTA Button */
+.starCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  font-family: var(--ifm-font-family-base);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff !important;
+  background: var(--nothing-red, #D71921);
+  border: 2px solid var(--nothing-red, #D71921);
+  border-radius: 999px;
+  text-decoration: none !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease,
+              color 0.2s ease,
+              border-color 0.2s ease;
+  box-shadow: none !important;
+  z-index: 3;
+}
+
+.starCta:hover {
+  background: transparent !important;
+  color: var(--nothing-red, #D71921) !important;
+  border-color: var(--nothing-red, #D71921) !important;
+  transform: translateY(-1.5px);
+  box-shadow: none !important;
+}
+
+.starCta:active {
+  transform: translateY(0);
+}
+
+.starIcon {
+  animation: starSpin 3s linear infinite;
+}
+
+@keyframes starSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Segmented progress bar slot housing */
+.glyphHousing {
+  background-color: rgba(0, 0, 0, 0.03); /* Low-contrast background container for the light mode progress bar */
+  border: 1px solid var(--nothing-border);
+  border-radius: 12px;
+  padding: 0.75rem 1rem 0.75rem;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+[data-theme='dark'] .glyphHousing {
+  background-color: #0b0b0b; /* High-contrast dark background for progress bar tracking */
+  border-color: rgba(255, 255, 255, 0.05);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.8), 0 1px 2px rgba(255, 255, 255, 0.05);
+}
+
+.glyphTrack {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+  height: 14px;
+}
+
+/* Individual Glyph Segment Channels */
+.glyphSegment {
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.06); /* Background color for inactive progress bar segments */
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .glyphSegment {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Segment Bar fills */
+.segmentBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-radius: 1.5px;
+  transform-origin: left;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Lit state white segments */
+.glyphSegmentWhite.glyphSegmentLit {
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+[data-theme='dark'] .glyphSegmentWhite.glyphSegmentLit {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.glyphSegmentWhite.glyphSegmentLit .segmentBar {
+  background-color: #ffffff;
+}
+
+/* Fully lit white segments glow */
+.glyphSegmentWhite.glyphSegmentFullyLit .segmentBar {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 1), 0 2px 4px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+[data-theme='dark'] .glyphSegmentWhite.glyphSegmentFullyLit .segmentBar {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.85), 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+/* Lit state red segment */
+.glyphSegmentRed.glyphSegmentLit {
+  border-color: rgba(215, 25, 33, 0.25);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+[data-theme='dark'] .glyphSegmentRed.glyphSegmentLit {
+  border-color: rgba(215, 25, 33, 0.3);
+  box-shadow: inset 0 1px 1px rgba(215, 25, 33, 0.1);
+}
+
+.glyphSegmentRed.glyphSegmentLit .segmentBar {
+  background-color: var(--nothing-red, #D71921);
+}
+
+/* Fully lit red segment glow */
+.glyphSegmentRed.glyphSegmentFullyLit .segmentBar {
+  box-shadow: 0 0 8px rgba(215, 25, 33, 0.8), 0 2px 4px rgba(215, 25, 33, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+[data-theme='dark'] .glyphSegmentRed.glyphSegmentFullyLit .segmentBar {
+  box-shadow: 0 0 12px rgba(215, 25, 33, 0.95), 0 0 4px rgba(215, 25, 33, 0.6);
+}
+
+/* Active current segment breathing/pulse glow animation */
+.glyphSegmentCurrent .segmentBar {
+  animation: segmentPulse 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes segmentPulse {
+  0% {
+    opacity: 0.75;
+    filter: brightness(0.9);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1.1);
+    box-shadow: 0 0 8px currentColor;
+  }
+}
+
+/* Make white active segment glow white */
+.glyphSegmentWhite.glyphSegmentCurrent .segmentBar {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Make red active segment glow red */
+.glyphSegmentRed.glyphSegmentCurrent .segmentBar {
+  box-shadow: 0 0 8px rgba(215, 25, 33, 0.7), 0 1px 3px rgba(215, 25, 33, 0.2);
+}
+
+/* Labels under segments — must mirror glyphTrack flex layout for alignment */
+.labelsRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 0 calc(1rem + 1px); /* match glyphHousing padding + border */
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+  z-index: 2;
+  position: relative;
+}
+
+.labelCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+  min-height: 24px;
+}
+
+.tickMark {
+  width: 1px;
+  height: 5px;
+  background-color: var(--nothing-border);
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .tickMark {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.tickMarkLit {
+  opacity: 0.7;
+}
+
+.tickMarkReached {
+  background-color: var(--ifm-color-content);
+  height: 6px;
+  opacity: 1;
+}
+
+.nodeLabel {
+  position: absolute;
+  top: 11px;
+  right: -24px;
+  width: 48px;
+  text-align: center;
+  font-family: var(--ifm-font-family-base);
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0;
+  opacity: 0.46;
+  color: var(--ifm-color-content);
+  transition: color 0.3s ease, opacity 0.3s ease;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1, "tnum" 1;
+}
+
+.nodeLabelReached {
+  opacity: 0.78;
+  font-weight: 700;
+}
+
+.nodeLabelNext {
+  opacity: 1;
+  font-weight: 800;
+  color: var(--ifm-color-primary, #d71921);
+}
+
+/* Footer Section */
+.footerContainer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mechanicalDivider {
+  width: 100%;
+  height: 1px;
+  border-top: 1px dashed var(--nothing-border-strong);
+  margin-bottom: 0.85rem;
+}
+
+.nextGoal,
+.milestoneComplete {
+  font-family: var(--ifm-font-family-base);
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 1rem;
+  display: block;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1, "tnum" 1;
+}
+
+.nextGoal {
+  opacity: 0.82;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.goalText {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.nextGoalValue {
+  color: var(--ifm-color-primary, var(--nothing-red, #D71921));
+  font-weight: 700;
+}
+
+.milestoneComplete {
+  color: var(--ifm-color-primary, var(--nothing-red, #D71921));
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  animation: completePulse 2s ease-in-out infinite;
+}
+
+@keyframes completePulse {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; text-shadow: 0 0 8px rgba(215, 25, 33, 0.2); }
+}
+
+
+.loadingState {
+  text-align: center;
+  font-size: 0.68rem;
+  font-family: var(--ifm-font-family-base);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.4;
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.loadingState::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid var(--ifm-color-content);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Overrides */
+@media screen and (max-width: 996px) {
+  .milestoneContainer {
+    padding: 1.5rem 1.5rem 1.25rem;
+  }
+  
+  .glyphHousing {
+    padding: 0.6rem 0.75rem 0.6rem;
+  }
+  
+  .glyphTrack {
+    height: 12px;
+    gap: 4px;
+  }
+
+  .labelsRow {
+    gap: 4px;
+    padding: 0 calc(0.75rem + 1px);
+  }
+
+  .nodeLabel {
+    font-size: 10px;
+  }
+
+  .nextGoal,
+  .milestoneComplete {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .screw {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .nodeLabel {
+    right: -20px;
+    width: 40px;
+    font-size: 9px;
+  }
+  
+  .tickMark {
+    height: 4px;
+  }
+
+  .glyphTrack {
+    height: 10px;
+    gap: 3px;
+  }
+
+  .labelsRow {
+    gap: 3px;
+    padding: 0 calc(1rem + 1px);
+  }
+  
+  .milestoneContainer {
+    padding: 1.25rem 1rem 1rem;
+    border-radius: 16px;
+  }
+
+  .starCta {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.62rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .segmentBar,
+  .starIcon,
+  .liveIndicator,
+  .pulsingRedDot,
+  .milestoneComplete,
+  .pacmanGroup,
+  .pacmanUpper,
+  .pacmanLower,
+  .ghost,
+  .pacmanStar {
+    animation: none !important;
+    transition: none !important;
+    display: none !important;
+  }
+}
+
+/* Local Torx Screw positioning */
+.screw {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.screwTopLeft { top: 10px; left: 10px; }
+.screwTopRight { top: 10px; right: 10px; }
+.screwBottomLeft { bottom: 10px; left: 10px; }
+.screwBottomRight { bottom: 10px; right: 10px; }
+
+/* Hide screws on mobile to prevent clutter */
+@media screen and (max-width: 768px) {
+  .screw {
+    display: none !important;
+  }
+}
+
+/*
+  Positions the container relative to header layout. Flex-grow fills the space
+  between live stats and the github button. Increased height provides shadow clearance.
+*/
+.pacmanContainer {
+  flex: 1;
+  margin: 0 1.5rem;
+  height: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+/*
+  Ensures the character drop-shadows are not clipped by SVG viewport bounds.
+*/
+.pacmanContainer svg {
+  overflow: visible !important;
+}
+
+.pacmanTrack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/*
+  Animates the character group linearly from off-screen left to off-screen right.
+  A 12s loop with a 20% off-screen pause keeps the animation calm and active.
+*/
+.pacmanGroup {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 16px;
+  z-index: 2;
+  animation: groupMove 12s linear infinite;
+}
+
+.pacman {
+  position: absolute;
+  right: 0;
+  top: -1px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 2px rgba(215, 25, 33, 0.6));
+}
+
+.pacman svg,
+.ghost svg {
+  display: block;
+}
+
+.ghost {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 2px rgba(0, 229, 255, 0.6));
+  animation: ghostWiggle 0.4s ease-in-out infinite alternate;
+}
+
+/*
+  Rotates upper and lower jaws of the SVG shape to simulate the mouth chomp.
+  Uses percentage-based transform-origin and transform-box: view-box to force
+  rotation relative to the SVG viewbox center rather than path bounds.
+*/
+.pacmanUpper {
+  transform-origin: 50% 50%;
+  transform-box: view-box;
+  animation: pacmanChompUpper 0.35s ease-in-out infinite alternate;
+}
+
+.pacmanLower {
+  transform-origin: 50% 50%;
+  transform-box: view-box;
+  animation: pacmanChompLower 0.35s ease-in-out infinite alternate;
+}
+
+@keyframes pacmanChompUpper {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-35deg); }
+}
+
+@keyframes pacmanChompLower {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(35deg); }
+}
+
+/*
+  Translates the group from -50px to fully off-screen right over 80% of loop duration.
+  Ends at calc(100% + 20px) so the trailing Ghost is completely hidden during pause.
+*/
+@keyframes groupMove {
+  0% {
+    left: -50px;
+  }
+  80% {
+    left: calc(100% + 20px);
+  }
+  100% {
+    left: calc(100% + 20px);
+  }
+}
+
+/*
+  Applies vertical bobbing to simulate character walking motion.
+*/
+@keyframes ghostWiggle {
+  0% { transform: translateY(-1px); }
+  100% { transform: translateY(1px); }
+}
+
+/*
+  Star elements that Pacman eats. Soft drop-shadow provides glow.
+  Uses fixed dimensions to align icon accurately to the vertical center line.
+*/
+.pacmanStar {
+  position: absolute;
+  top: 50%;
+  transform: translateY(calc(-50% - 1px));
+  width: 8px;
+  height: 8px;
+  color: #ffc107;
+  filter: drop-shadow(0 0 3px rgba(255, 193, 7, 0.8));
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pacmanStar svg {
+  display: block;
+}
+
+.star1 { left: 20%; animation: starEaten1 12s linear infinite; }
+.star2 { left: 40%; animation: starEaten2 12s linear infinite; }
+.star3 { left: 60%; animation: starEaten3 12s linear infinite; }
+.star4 { left: 80%; animation: starEaten4 12s linear infinite; }
+
+/*
+  Coordinates star visibility changes with Pacman's horizontal group traversal.
+  Stars scale down to zero upon contact and reset at the end of the loop cycle.
+*/
+@keyframes starEaten1 {
+  0%, 16% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
+  17%, 95% { opacity: 0; transform: translateY(calc(-50% - 1px)) scale(0); }
+  96%, 100% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
+}
+
+@keyframes starEaten2 {
+  0%, 30.5% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
+  31.5%, 95% { opacity: 0; transform: translateY(calc(-50% - 1px)) scale(0); }
+  96%, 100% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
+}
+
+@keyframes starEaten3 {
+  0%, 45.2% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
+  46.2%, 95% { opacity: 0; transform: translateY(calc(-50% - 1px)) scale(0); }
+  96%, 100% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
+}
+
+@keyframes starEaten4 {
+  0%, 59.9% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
+  60.9%, 95% { opacity: 0; transform: translateY(calc(-50% - 1px)) scale(0); }
+  96%, 100% { opacity: 1; transform: translateY(calc(-50% - 1px)) scale(1); }
+}
+
+/*
+  Responsive overrides: hides the animation to prevent layout overflow on narrow views.
+*/
+@media screen and (max-width: 768px) {
+  .pacmanContainer {
+    display: none !important;
+  }
+}
+
+
+

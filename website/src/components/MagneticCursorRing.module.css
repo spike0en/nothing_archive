@@ -1,0 +1,103 @@
+/**
+ * MagneticCursorRing.module.css
+ * Target ring overlay styles with 3D central sphere and state transitions.
+ */
+
+.cursorContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 99999;
+  contain: layout style;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cursorVisible {
+  opacity: 1;
+}
+
+/* Outer target ring */
+.cursorRing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.35);
+  background-color: transparent;
+  box-shadow: none !important;
+  pointer-events: none;
+  transform: translate3d(-50%, -50%, 0);
+  transition: border-radius 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease,
+              border-color 0.25s ease;
+  will-change: transform, width, height;
+}
+
+[data-theme='dark'] .cursorRing {
+  border-color: rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+  box-shadow: none !important;
+}
+
+/* Central pointer sphere */
+.cursorDot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  /* 3D sphere gradient with top-left specular highlight */
+  background: radial-gradient(circle at 32% 32%, #999999 0%, #444444 35%, #111111 75%, #000000 100%);
+  box-shadow: none !important;
+  pointer-events: none;
+  transform: translate3d(-50%, -50%, 0);
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.25s ease,
+              opacity 0.2s ease;
+  will-change: transform;
+}
+
+[data-theme='dark'] .cursorDot {
+  background: radial-gradient(circle at 32% 32%, #FFFFFF 0%, #E6E6E6 40%, #B0B0B0 75%, #777777 100%);
+  box-shadow: none !important;
+}
+
+/* Hover and active target states */
+.cursorRingHovered {
+  border-color: var(--nothing-red, #D71921) !important;
+  background-color: rgba(215, 25, 33, 0.04) !important;
+  box-shadow: none !important;
+}
+
+.cursorDotHovered {
+  transform: translate3d(-50%, -50%, 0) scale(1.25);
+  background: radial-gradient(circle at 32% 32%, #FFFFFF 0%, #FF3B44 35%, #D71921 75%, #800A0F 100%) !important;
+  box-shadow: none !important;
+}
+
+.cursorRingSnapped {
+  border-radius: 50% !important;
+  border-width: 2px;
+  border-color: var(--nothing-red, #D71921) !important;
+  background-color: rgba(215, 25, 33, 0.04) !important;
+  box-shadow: none !important;
+}
+
+.cursorDotSnapped {
+  transform: translate3d(-50%, -50%, 0) scale(1.35);
+  background: radial-gradient(circle at 32% 32%, #FFFFFF 0%, #FF3B44 32%, #D71921 72%, #800A0F 100%) !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 575px), (pointer: coarse) and (hover: none), (prefers-reduced-motion: reduce) {
+  .cursorContainer {
+    display: none !important;
+  }
+}

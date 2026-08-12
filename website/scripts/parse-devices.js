@@ -1,0 +1,348 @@
+/**
+ * @file parse-devices.js
+ * @description Build-time parsing script that reads devices catalog from devices.md and 
+ * color metadata from device-colors.json, generating a consolidated JSON file of 
+ * device metadata for the Docusaurus site UI.
+ * 
+ * Boundary: Reads exclusively from local markdown and static JSON files, outputting 
+ * to src/data/devices-metadata.json. Does not interact with network or external APIs.
+ * Lifecycle: Runs synchronously as a prebuild hook in Node.js runtime.
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+const DEVICES_MD_PATH = path.join(__dirname, '..', 'docs', 'devices.md');
+const COLORS_JSON_PATH = path.join(__dirname, '..', 'src', 'data', 'device-colors.json');
+const OUT_JSON_PATH = path.join(__dirname, '..', 'src', 'data', 'devices-metadata.json');
+const CHANGELOGS_DIR = path.join(__dirname, '..', 'docs', 'changelogs');
+
+/**
+ * Extracts and returns an array of device names from a markdown column value.
+ * Parses markdown links if present, otherwise splits by forward slash.
+ * 
+ * @param {string} columnVal Raw markdown string from the Device column.
+ * @returns {string[]} Array of clean device names.
+ */
+function parseNames(columnVal) {
+  const links = [];
+  const regex = /\[([^\]]+)\]\([^)]+\)/g;
+  let match;
+  while ((match = regex.exec(columnVal)) !== null) {
+    links.push(match[1].trim());
+  }
+  if (links.length > 0) {
+    return links;
+  }
+  return columnVal.split('/').map(s => s.trim());
+}
+
+/**
+ * Parses and normalizes device codenames from a markdown column value.
+ * Converts codenames to lowercase and excludes the last Pokemon codename if multiple exist.
+ * 
+ * @param {string} columnVal Raw markdown string from the Codename column.
+ * @returns {string[]} Array of normalized, lowercase codenames.
+ */
+function parseCodenames(columnVal) {
+  // e.g. "Spacewar / Abra" -> ["spacewar", "abra"]
+  const parts = columnVal.split('/').map(p => p.trim());
+  if (parts.length > 1) {
+    // Exclude the last codename (internal Pokemon name)
+    return parts.slice(0, -1).map(p => p.toLowerCase());
+  }
+  return parts.map(p => p.toLowerCase());
+}
+
+/**
+ * Categorizes a device name into its corresponding series identifier.
+ * 
+ * @param {string} name Clean device name.
+ * @returns {string} Series category ('b', 'a', or 'number').
+ */
+function getSeries(name) {
+  const cleanName = name.toLowerCase();
+  if (cleanName.includes('lite') || /\([0-9]+b\)/.test(cleanName)) {
+    return 'b';
+  }
+  if (/\([0-9]+a\)/.test(cleanName)) {
+    return 'a';
+  }
+  return 'number';
+}
+
+/**
+ * Resolves the display name for a specific device folder from potential names.
+ * Matches suffix tags (pro, plus, lite) or defaults based on directory presence.
+ * 
+ * @param {string} folder Target folder name.
+ * @param {string[]} names Available names in the row.
+ * @param {string[]} rowCodenames Available codenames in the row.
+ * @param {string} changelogsDir Path to the local changelogs directory.
+ * @returns {string} The resolved clean name.
+ */
+function resolveDeviceName(folder, names, rowCodenames, changelogsDir) {
+  if (names.length === 1) return names[0];
+
+  const folderLower = folder.toLowerCase();
+  if (folderLower.includes('pro')) {
+    const match = names.find(n => n.toLowerCase().includes('pro'));
+    if (match) return match;
+  }
+  if (folderLower.includes('plus')) {
+    const match = names.find(n => n.toLowerCase().includes('plus'));
+    if (match) return match;
+  }
+  if (folderLower.includes('lite')) {
+    const match = names.find(n => n.toLowerCase().includes('lite'));
+    if (match) return match;
+  }
+
+  // Check if other folders exist for other codenames in this row
+  const otherCodenames = rowCodenames.filter(c => c !== folderLower);
+  const otherFoldersExist = otherCodenames.some(c => fs.existsSync(path.join(changelogsDir, c)));
+  
+  if (!otherFoldersExist) {
+    // No other folders exist, so this folder represents all names in the row
+    let joined = names.join(' / ');
+    return joined.replace(/\/ Phone \(/g, '/ (');
+  }
+
+  // If other folders exist, default to the one without "pro"/"plus"/"lite"
+  const match = names.find(n => !n.toLowerCase().includes('pro') && !n.toLowerCase().includes('plus') && !n.toLowerCase().includes('lite'));
+  return match || names[0];
+}
+
+/**
+ * Preserves or applies capitalization formatting on a device codename.
+ * Matches against the original casing from markdown if available.
+ * 
+ * @param {string} codename Lowcase target codename.
+ * @param {string[]} originalCodenames List of original codenames for casing comparison.
+ * @returns {string} Capitalized codename.
+ */
+function capitalizeCodename(codename, originalCodenames) {
+  // Find matching codename in original list to preserve casing (e.g. PacmanPro)
+  const match = originalCodenames.find(c => c.toLowerCase() === codename.toLowerCase());
+  return match ? match.trim() : codename.charAt(0).toUpperCase() + codename.slice(1);
+}
+
+/**
+ * Synchronously parses devices.md and merges with device-colors.json.
+ * Validates, sorts, and writes output to devices-metadata.json.
+ */
+function parseDevices() {
+  console.log('[parse-devices] Reading devices.md and device-colors.json...');
+  
+  if (!fs.existsSync(DEVICES_MD_PATH)) {
+    console.error(`[parse-devices] Error: devices.md not found at ${DEVICES_MD_PATH}`);
+    process.exit(1);
+  }
+
+  const content = fs.readFileSync(DEVICES_MD_PATH, 'utf-8');
+  const lines = content.split('\n');
+
+  let currentBrand = 'Nothing';
+  let inPhones = false;
+  const parsedRows = [];
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (trimmed.startsWith('## Nothing')) {
+      currentBrand = 'Nothing';
+      inPhones = false;
+    } else if (trimmed.startsWith('## CMF by Nothing')) {
+      currentBrand = 'CMF';
+      inPhones = false;
+    } else if (trimmed.startsWith('### Phones')) {
+      inPhones = true;
+    } else if (trimmed.startsWith('##') || trimmed.startsWith('###')) {
+      inPhones = false;
+    }
+
+    if (inPhones && trimmed.startsWith('|') && trimmed.split('|').length >= 6) {
+      const cols = trimmed.split('|').map(c => c.trim());
+      if (cols[1].toLowerCase().includes('device') || cols[1].includes('---')) {
+        continue;
+      }
+
+      const parts = cols[1].split(/<br\s*\/?>/i);
+      const namePart = parts[0].trim();
+      const codenamePartRaw = parts[1] ? parts[1].trim() : '';
+      const codenamePartClean = codenamePartRaw.replace(/<\/?[^>]+(>|$)/g, "").trim();
+
+      const names = parseNames(namePart);
+      const codenames = parseCodenames(codenamePartClean);
+      const releaseDate = cols[3].trim();
+      const originalCodenamesList = codenamePartClean.split('/').map(c => c.trim());
+
+      parsedRows.push({
+        names,
+        codenames,
+        releaseDate,
+        brand: currentBrand,
+        originalCodenamesList
+      });
+    }
+  }
+
+  // Retrieve device colors from the static config file to merge with the parsed catalog.
+  let deviceColors = {};
+  if (fs.existsSync(COLORS_JSON_PATH)) {
+    try {
+      deviceColors = JSON.parse(fs.readFileSync(COLORS_JSON_PATH, 'utf-8'));
+    } catch (e) {
+      console.warn(`[parse-devices] Warning: Failed to parse device-colors.json: ${e.message}`);
+    }
+  }
+
+  function resolveChangelogFolder(codename) {
+    if (fs.existsSync(path.join(CHANGELOGS_DIR, codename))) {
+      return codename;
+    }
+    const baseCodename = codename.replace(/(pro|plus|lite)$/i, '');
+    if (fs.existsSync(path.join(CHANGELOGS_DIR, baseCodename))) {
+      return baseCodename;
+    }
+    return null;
+  }
+
+  function getVariantRank(name) {
+    const lower = name.toLowerCase();
+    if (lower.includes('pro plus') || lower.includes('pro+')) return 1;
+    if (lower.includes('pro')) return 2;
+    if (lower.includes('plus')) return 3;
+    return 4;
+  }
+
+  const metadata = [];
+
+  for (const row of parsedRows) {
+    for (const codename of row.codenames) {
+      const folder = resolveChangelogFolder(codename);
+      if (!folder) {
+        continue;
+      }
+
+      // Check other codenames in this row
+      const otherCodenames = row.codenames.filter(c => c !== codename);
+
+      let resolvedName = resolveDeviceName(folder, row.names, row.codenames, CHANGELOGS_DIR);
+      if (row.names.length > 1 && row.names.length === row.codenames.length) {
+        const idx = row.codenames.indexOf(codename);
+        if (idx !== -1) {
+          resolvedName = row.names[idx];
+        }
+      }
+
+      let displayCodename = '';
+      const otherFoldersExist = otherCodenames.some(c => {
+        const mappedC = resolveChangelogFolder(c);
+        return mappedC && fs.existsSync(path.join(CHANGELOGS_DIR, mappedC));
+      });
+      
+      if (!otherFoldersExist && row.codenames.length > 1) {
+        const base = row.codenames[0];
+        const pro = row.codenames[1];
+        if (pro === base + 'pro') {
+          const baseCap = capitalizeCodename(base, row.originalCodenamesList);
+          displayCodename = `${baseCap}(Pro)`;
+        } else {
+          displayCodename = row.codenames
+            .map(c => capitalizeCodename(c, row.originalCodenamesList))
+            .join(' / ');
+        }
+      } else {
+        displayCodename = capitalizeCodename(codename, row.originalCodenamesList);
+      }
+
+      const displayName = `${resolvedName} (${displayCodename})`;
+
+      const colors = deviceColors[codename] || [];
+      const variants = colors.map(colorName => {
+        const variantNameClean = colorName.toLowerCase().replace(/\s+/g, '');
+        const suffix = variantNameClean === 'ce' ? 'CE' : variantNameClean;
+        return {
+          name: colorName,
+          imageUrl: `/img/devices/${codename}_${suffix}.webp`
+        };
+      });
+
+      // Convert catalog date strings to millisecond timestamps for sorting comparisons.
+      const timestamp = new Date(row.releaseDate).getTime();
+
+      metadata.push({
+        name: displayName,
+        codename: codename,
+        folder: folder,
+        codenames: [codename, ...otherCodenames],
+        brand: row.brand,
+        series: row.brand === 'CMF' ? 'cmf' : getSeries(resolvedName),
+        releaseDate: row.releaseDate,
+        timestamp,
+        variants
+      });
+    }
+  }
+
+  // Warn about folders with no matching codename in metadata
+  const generatedFolders = new Set(metadata.map(m => m.folder));
+  const folders = fs.readdirSync(CHANGELOGS_DIR).filter(f => {
+    return fs.statSync(path.join(CHANGELOGS_DIR, f)).isDirectory();
+  });
+  for (const folder of folders) {
+    if (!generatedFolders.has(folder.toLowerCase())) {
+      console.warn(`[parse-devices] Warning: Folder '${folder}' has no matching row in devices.md.`);
+    }
+  }
+
+  // Order the devices array to align Nothing Number, A, B/Lite series and CMF brand chronologically.
+  function getDeviceSeriesRank(series) {
+    switch (series) {
+      case 'number': return 1;
+      case 'a': return 2;
+      case 'b': return 3;
+      default: return 4;
+    }
+  }
+
+  metadata.sort((a, b) => {
+    if (a.brand !== b.brand) {
+      return a.brand === 'Nothing' ? -1 : 1;
+    }
+
+    if (a.brand === 'Nothing') {
+      const rankA = getDeviceSeriesRank(a.series);
+      const rankB = getDeviceSeriesRank(b.series);
+      if (rankA !== rankB) {
+        return rankA - rankB;
+      }
+      if (a.timestamp !== b.timestamp) {
+        return b.timestamp - a.timestamp;
+      }
+      const variantRankA = getVariantRank(a.name);
+      const variantRankB = getVariantRank(b.name);
+      if (variantRankA !== variantRankB) {
+        return variantRankA - variantRankB;
+      }
+      return a.name.localeCompare(b.name);
+    } else {
+      if (a.timestamp !== b.timestamp) {
+        return b.timestamp - a.timestamp;
+      }
+      const variantRankA = getVariantRank(a.name);
+      const variantRankB = getVariantRank(b.name);
+      if (variantRankA !== variantRankB) {
+        return variantRankA - variantRankB;
+      }
+      return a.name.localeCompare(b.name);
+    }
+  });
+
+  fs.mkdirSync(path.dirname(OUT_JSON_PATH), { recursive: true });
+  fs.writeFileSync(OUT_JSON_PATH, JSON.stringify(metadata, null, 2));
+  console.log(`[parse-devices] Success: Wrote ${metadata.length} device metadata entries to devices-metadata.json.`);
+}
+
+parseDevices();
+

@@ -21,15 +21,17 @@ on:
         options:
           - github
           - self-hosted
-      run_maximize_build_space:
-        description: 'Maximize build space? (GitHub runner only)'
+      run_maximize_github_runner_space:
+        description: 'Run maximize-github-runner-space? (GitHub runner only)'
         required: true
         type: boolean
         default: false
 
 jobs:
   dump:
-    permissions: write-all
+    permissions:
+      contents: write
+      pull-requests: write
 
     runs-on: >-
       ${{
@@ -39,17 +41,11 @@ jobs:
       }}
 
     steps:
-      - name: Maximize build space
+      - name: Maximize Github Runner Space
         if: >-
           inputs.runner_type == 'github' &&
-          inputs.run_maximize_build_space == 'true'
-        uses: easimon/maximize-build-space@master
-        with:
-          remove-android: 'true'
-          remove-dotnet: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
-          remove-docker-images: 'true'
+          inputs.run_maximize_github_runner_space
+        uses: justinthelaw/maximize-github-runner-space@v0.9.0
 
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -60,7 +56,7 @@ jobs:
         if: inputs.runner_type == 'github'
         run: |
           sudo apt update
-          sudo apt -y install python3-pip aria2 zstd p7zip-full parallel openssl xxhash jq
+          sudo apt -y install python3-pip aria2 zstd p7zip-full parallel openssl xxhash jq curl wget
           python3 -m pip install gdown
 
       - name: Set script permissions
