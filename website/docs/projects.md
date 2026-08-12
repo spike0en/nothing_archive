@@ -220,10 +220,10 @@ These require root access (KernelSU or Magisk). Proceed with caution!
 | [Nothing eUICC](https://github.com/reindex-ot/nothing-euicc) | reindex-ot | Enable eSIM functionality on Nothing devices that do not support it |
 | [Nothing OS Aura Killer](https://github.com/reindex-ot/NOS_AuraKiller/) | reindex-ot | Debloat Aura services on NOS 4.0 |
 | [Nothing Phone Patch](https://github.com/reindex-ot/magisk-module-nothing) | reindex-ot | System tweaks and enhancements |
+| [Nothing Tweaks](https://github.com/RevealedSoulEven/NothingTweaks) | RevealedSoulEven | A multi-feature customization module for Nothing OS based on Xposed framework |
 | [Nothing Widevine](https://github.com/Ubuntuify/nothing-widevine) | Ubuntuify | Reprovision TEE and get Widevine L1 working on custom and stock ROMs |
 | [Nothing Xpert](https://github.com/Rares6567/NothingXpert/) | Rares6567 | LSPosed module with extra features |
 | [Phone 2a APU Unlock](https://github.com/Peterc3-dev/phone2a-apu-unlock) | Peterc3-dev | KernelSU sepolicy module + Rust ABI probe that opens /dev/apusys to userspace on Nothing Phone (2a) |
 | [Premium Vibrator Nothing 2a](https://github.com/polymath-void/premium-vibrator-nothing2a) | polymath-void | A minimal, boot-safe module that applies a persistent custom vibrator strength on the Nothing Phone (2a) by writing directly to the kernel sysfs node after boot |
 | [Soft Volume Curve For Nothing 2a](https://github.com/GNU-MGR/Soft-Volume-Curve-For-Nothing-2a) | GNU-MGR | A volume curve optimization module specifically for the Nothing Phone (2a) |
 | [Spacewar Audio](https://github.com/EzerchE/spacewar-audio) | EzerchE | KernelSU Bluetooth A2DP audio stability module for Nothing Phone (1) |
-| [Nothing Tweaks](https://github.com/RevealedSoulEven/NothingTweaks) | RevealedSoulEven | A multi-feature customization module for Nothing OS based on Xposed framework. |
