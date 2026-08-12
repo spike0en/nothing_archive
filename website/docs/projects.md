@@ -226,3 +226,4 @@ These require root access (KernelSU or Magisk). Proceed with caution!
 | [Premium Vibrator Nothing 2a](https://github.com/polymath-void/premium-vibrator-nothing2a) | polymath-void | A minimal, boot-safe module that applies a persistent custom vibrator strength on the Nothing Phone (2a) by writing directly to the kernel sysfs node after boot |
 | [Soft Volume Curve For Nothing 2a](https://github.com/GNU-MGR/Soft-Volume-Curve-For-Nothing-2a) | GNU-MGR | A volume curve optimization module specifically for the Nothing Phone (2a) |
 | [Spacewar Audio](https://github.com/EzerchE/spacewar-audio) | EzerchE | KernelSU Bluetooth A2DP audio stability module for Nothing Phone (1) |
+| [Nothing Tweaks](https://github.com/RevealedSoulEven/NothingTweaks) | RevealedSoulEven | A multi-feature customization module for Nothing OS based on Xposed framework. |
