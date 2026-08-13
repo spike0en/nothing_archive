@@ -82,19 +82,6 @@
   box-shadow: none !important;
 }
 
-.cursorRingSnapped {
-  border-radius: 50% !important;
-  border-width: 2px;
-  border-color: var(--nothing-red, #D71921) !important;
-  background-color: rgba(215, 25, 33, 0.04) !important;
-  box-shadow: none !important;
-}
-
-.cursorDotSnapped {
-  transform: translate3d(-50%, -50%, 0) scale(1.35);
-  background: radial-gradient(circle at 32% 32%, #FFFFFF 0%, #FF3B44 32%, #D71921 72%, #800A0F 100%) !important;
-  box-shadow: none !important;
-}
 
 @media (max-width: 575px), (pointer: coarse) and (hover: none), (prefers-reduced-motion: reduce) {
   .cursorContainer {

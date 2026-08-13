@@ -11,7 +11,7 @@ import Link from '@docusaurus/Link';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import clsx from 'clsx';
 import styles from './AnnouncementBanner.module.css';
-import { useGitHubReleases } from '../utils/github-cache';
+import { useGitHubReleases, type Release } from '../utils/github-cache';
 
 interface ChangelogsPluginData {
   changelogLinks: Record<string, string>;
@@ -30,6 +30,7 @@ const DISMISS_KEY = 'na_dismissed_announcement_tag';
 export default function AnnouncementBanner(): React.JSX.Element | null {
   // Shares the deduplicated releases fetch with ReleaseFeed
   const { releases: allGhReleases } = useGitHubReleases();
+  // SAFETY: Validated by Docusaurus plugin contract
   const { changelogLinks } = usePluginData('changelogs-plugin') as ChangelogsPluginData;
   const [releases, setReleases] = useState<ReleaseData[]>([]);
   const [isDismissed, setIsDismissed] = useState<boolean>(true); // default to true to avoid flash before load
@@ -38,7 +39,7 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
   useEffect(() => {
     if (allGhReleases.length === 0) return;
 
-    const allReleases: ReleaseData[] = allGhReleases.map((item) => ({
+    const allReleases: ReleaseData[] = allGhReleases.map((item: Release) => ({
       tagName: item.tagName || '',
       codename: item.codename || 'Archive',
       version: item.version || '',

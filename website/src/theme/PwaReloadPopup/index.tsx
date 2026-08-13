@@ -96,7 +96,7 @@ export default function PwaReloadPopup({ onReload }: Props): ReactNode {
 
   // Check session dismissal on mount
   React.useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (globalThis.window === undefined) return;
 
     // Skip checking storage if in dev preview mode (#stack-test, #pwa-test, #pwa-reload, ?pwa-test=true)
     if (
@@ -114,8 +114,9 @@ export default function PwaReloadPopup({ onReload }: Props): ReactNode {
   }, []);
 
   React.useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (globalThis.window === undefined) return;
 
+    // SAFETY: Global window state property access
     if ((window as any).__SUPPORT_NUDGE_ACTIVE__) {
       setIsNudgeActive(true);
     }
@@ -139,6 +140,7 @@ export default function PwaReloadPopup({ onReload }: Props): ReactNode {
   /** Captures initial pointer coordinate and locks pointer capture to element. */
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     if (e.button !== undefined && e.button !== 0) return;
+    // SAFETY: Pointer event target element casting
     if ((e.target as HTMLElement).closest('button, a')) return;
 
     dragStartXRef.current = e.clientX;
@@ -193,7 +195,7 @@ export default function PwaReloadPopup({ onReload }: Props): ReactNode {
     }
     try {
       sessionStorage.setItem('pwa_reload_dismissed_session', 'true');
-    } catch (err) {
+    } catch {
       // Storage access blocked or restricted
     }
     setExiting(true);
@@ -210,13 +212,13 @@ export default function PwaReloadPopup({ onReload }: Props): ReactNode {
 
     try {
       sessionStorage.removeItem('pwa_reload_dismissed_session');
-    } catch (err) {
+    } catch {
       // Storage access blocked or restricted
     }
     setExiting(true);
 
     // Clean up dev test hash/query if present so test mode doesn't loop reload forever
-    if (typeof window !== 'undefined') {
+    if (globalThis.window !== undefined) {
       if (
         window.location.hash === '#pwa-test' ||
         window.location.hash === '#pwa-reload' ||
@@ -224,16 +226,16 @@ export default function PwaReloadPopup({ onReload }: Props): ReactNode {
         window.location.search.includes('pwa-test=true')
       ) {
         try {
-          const cleanUrl = window.location.pathname + window.location.search.replace(/[\?&]pwa-test=true/, '');
+          const cleanUrl = window.location.pathname + window.location.search.replace(/[?&]pwa-test=true/, '');
           history.replaceState(null, '', cleanUrl || '/');
-        } catch (err) {
+        } catch {
           // Ignore history replacement failures
         }
       }
     }
 
     // Explicitly send SKIP_WAITING to waiting Service Worker if present
-    if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
+    if (globalThis.navigator !== undefined && 'serviceWorker' in navigator) {
       navigator.serviceWorker
         .getRegistration()
         .then((reg) => {
@@ -255,16 +257,16 @@ export default function PwaReloadPopup({ onReload }: Props): ReactNode {
 
     // Invoke Docusaurus theme onReload callback
     try {
-      if (typeof onReload === 'function') {
+      if (onReload instanceof Function) {
         onReload();
       }
-    } catch (err) {
-      console.error('Error invoking PWA onReload callback:', err);
+    } catch (_err) {
+      console.error('Error invoking PWA onReload callback:', _err);
     }
 
     // Guaranteed location reload
     setTimeout(() => {
-      if (typeof window !== 'undefined') {
+      if (globalThis.window !== undefined) {
         window.location.reload();
       }
     }, 150);

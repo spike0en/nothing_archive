@@ -141,10 +141,12 @@ function useNavigator({
  * @returns {{ transformSearchClient: DocSearchModalProps['transformSearchClient'], latestHitsCount: number }}
  * Transformed client wrapper and current query's exact non-accumulating hit count.
  */
-function useTransformSearchClient(): {
-  transformSearchClient: DocSearchModalProps['transformSearchClient'];
+export interface TransformSearchClientResult {
+  transformSearchClient: (searchClient: DocSearchTransformClient) => DocSearchTransformClient;
   latestHitsCount: number;
-} {
+}
+
+function useTransformSearchClient(): TransformSearchClientResult {
   const {
     siteMetadata: {docusaurusVersion},
   } = useDocusaurusContext();
@@ -157,12 +159,13 @@ function useTransformSearchClient(): {
       const originalSearch = searchClient.search.bind(searchClient);
 
       // Wrap search function to calculate exact hit sum per query batch
+      // SAFETY: Algolia search client wrapper method signature casting
       searchClient.search = (async (...args: Parameters<typeof originalSearch>) => {
         const res = await originalSearch(...args);
         if (res && Array.isArray(res.results) && res.results.length > 0) {
           // Sum nbHits across returned search result sets
           const totalHits = res.results.reduce(
-            (sum: number, r: any) => sum + (typeof r?.nbHits === 'number' ? r.nbHits : 0),
+            (sum: number, r: any) => sum + (Number.isFinite(r?.nbHits) ? r.nbHits : 0),
             0,
           );
           setLatestHitsCount(totalHits);
@@ -298,6 +301,7 @@ function useSearchParameters({
  */
 function DocSearch({externalUrlRegex, ...props}: DocSearchV4Props) {
   const navigator = useNavigator({externalUrlRegex});
+  // SAFETY: DocSearch properties conversion
   const searchParameters = useSearchParameters({...props} as DocSearchProps);
   const transformItems = useTransformItems(props);
   const {transformSearchClient, latestHitsCount} = useTransformSearchClient();
@@ -351,6 +355,7 @@ function DocSearch({externalUrlRegex, ...props}: DocSearchV4Props) {
     hitsCount: latestHitsCount,
   });
 
+  // SAFETY: Keyboard events props conversion
   useDocSearchKeyboardEvents({
     isOpen,
     onOpen: openModal,
@@ -406,6 +411,7 @@ function DocSearch({externalUrlRegex, ...props}: DocSearchV4Props) {
               resultsFooterComponent,
             })}
             placeholder={currentPlaceholder}
+            // SAFETY: DocSearchModal dynamic props spreading
             {...(props as any)}
             translations={props.translations?.modal ?? translations.modal}
             searchParameters={searchParameters}
@@ -428,6 +434,7 @@ export default function SearchBar(props: Partial<DocSearchV4Props>): ReactNode {
   const {siteConfig} = useDocusaurusContext();
 
   const docSearchProps: DocSearchV4Props = {
+    // SAFETY: Site config themeConfig algolia object conversion
     ...(siteConfig.themeConfig.algolia as DocSearchV4Props),
     ...props,
   };

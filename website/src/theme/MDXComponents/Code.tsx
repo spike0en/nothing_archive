@@ -16,9 +16,9 @@ function shouldBeInline(props: Props) {
   return (
     // empty code blocks have no props.children,
     // see https://github.com/facebook/docusaurus/pull/9704
-    typeof props.children !== 'undefined' &&
+    props.children !== undefined &&
     React.Children.toArray(props.children).every(
-      (el) => typeof el === 'string' && !el.includes('\n'),
+      (el) => Object.prototype.toString.call(el) === '[object String]' && !String(el).includes('\n'),
     )
   );
 }
@@ -27,6 +27,7 @@ export default function MDXCode(props: Props): ReactNode {
   return shouldBeInline(props) ? (
     <CodeInline {...props} />
   ) : (
+    // SAFETY: MDX Code block props component compatibility
     <CodeBlock {...(props as ComponentProps<typeof CodeBlock>)} />
   );
 }

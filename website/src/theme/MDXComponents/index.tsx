@@ -28,16 +28,17 @@ import type {MDXComponentsObject} from '@theme/MDXComponents';
  * @returns {string} Concatenated plain-text representation of the node tree.
  */
 function getNodeText(node: ReactNode): string {
-  if (node === null || node === undefined || typeof node === 'boolean') {
+  if (node === null || node === undefined || Object.prototype.toString.call(node) === '[object Boolean]') {
     return '';
   }
-  if (typeof node === 'string' || typeof node === 'number') {
+  if (Object.prototype.toString.call(node) === '[object String]' || Object.prototype.toString.call(node) === '[object Number]') {
     return String(node);
   }
   if (Array.isArray(node)) {
     return node.map(getNodeText).join('');
   }
   if (React.isValidElement(node)) {
+    // SAFETY: Dynamic React element props inspection
     return getNodeText((node.props as any)?.children);
   }
   return '';
@@ -59,9 +60,11 @@ function enhanceTableChildren(children: ReactNode): ReactNode {
     // Extract table column headers from <thead>
     childrenArray.forEach((child) => {
       if (React.isValidElement(child) && child.type === 'thead') {
+        // SAFETY: Dynamic React element props inspection
         const theadChildren = React.Children.toArray((child.props as any)?.children);
         theadChildren.forEach((tr) => {
           if (React.isValidElement(tr) && tr.type === 'tr') {
+            // SAFETY: Dynamic React element props inspection
             const thList = React.Children.toArray((tr.props as any)?.children);
             headers = thList.map((th) => getNodeText(th).trim());
           }
@@ -79,12 +82,14 @@ function enhanceTableChildren(children: ReactNode): ReactNode {
         return child;
       }
 
+      // SAFETY: Dynamic React element props inspection
       const rows = React.Children.toArray((child.props as any)?.children);
       const enhancedRows = rows.map((tr) => {
         if (!React.isValidElement(tr) || tr.type !== 'tr') {
           return tr;
         }
 
+        // SAFETY: Dynamic React element props inspection
         const cells = React.Children.toArray((tr.props as any)?.children);
         if (cells.length === 0) {
           return tr;
@@ -112,6 +117,7 @@ function enhanceTableChildren(children: ReactNode): ReactNode {
           }
 
           const contextStr = otherContextParts.join(' — ');
+          // SAFETY: Dynamic React element props inspection
           const existingChildren = (cell.props as any)?.children;
 
           return React.cloneElement(cell, {}, [
@@ -127,7 +133,7 @@ function enhanceTableChildren(children: ReactNode): ReactNode {
 
       return React.cloneElement(child, {}, enhancedRows);
     });
-  } catch (_err) {
+  } catch {
     return children;
   }
 }

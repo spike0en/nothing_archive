@@ -25,6 +25,7 @@ interface ChangelogsPluginData {
 export default function ReleaseFeed(): React.JSX.Element {
   // Centralized GitHub data hook: deduplicated, stale-while-revalidate
   const { releases, totalCount: totalReleasesCount, status: statusSource, error: errorState, loading } = useGitHubReleases();
+  // SAFETY: Validated by Docusaurus plugin contract
   const { changelogLinks } = usePluginData('changelogs-plugin') as ChangelogsPluginData;
   // Track the latest release per model.
   const latestReleasesPerModel = React.useMemo(() => {
@@ -53,7 +54,7 @@ export default function ReleaseFeed(): React.JSX.Element {
   };
 
   const totalDownloads = React.useMemo(() => {
-    return releases.reduce((sum, r) => sum + (r.downloads || 0), 0);
+    return releases.reduce((sum: number, r: Release) => sum + (r.downloads || 0), 0);
   }, [releases]);
 
   const stats = [

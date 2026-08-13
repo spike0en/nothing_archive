@@ -35,8 +35,8 @@ export default function HeroGlyphLogo(): React.JSX.Element {
   const [mode, setMode] = useState<Mode>('LOGO');
   const [activeGame, setActiveGame] = useState<GameMode>('SNAKE');
 
-  const [clickCount, setClickCount] = useState<number>(0);
-  const lastClickTimeRef = useRef<number>(0);
+  const [_clickCount, _setClickCount] = useState<number>(0);
+  const _lastClickTimeRef = useRef<number>(0);
 
   const [snake, setSnakeState] = useState<Point[]>([
     { r: 7, c: 4 },
@@ -48,7 +48,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
   ]);
   const setSnake = (val: Point[] | ((prev: Point[]) => Point[])) => {
     setSnakeState(prev => {
-      const newVal = typeof val === 'function' ? val(prev) : val;
+      const newVal = val instanceof Function ? val(prev) : val;
       snakeRef.current = newVal;
       return newVal;
     });
@@ -65,7 +65,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
   const scoreRef = useRef<number>(0);
   const setScore = (val: number | ((prev: number) => number)) => {
     setScoreState(prev => {
-      const newVal = typeof val === 'function' ? val(prev) : val;
+      const newVal = val instanceof Function ? val(prev) : val;
       scoreRef.current = newVal;
       return newVal;
     });
@@ -79,7 +79,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
   const paddleColRef = useRef<number>(7);
   const setPaddleCol = (val: number | ((prev: number) => number)) => {
     setPaddleColState(prev => {
-      const newVal = typeof val === 'function' ? val(prev) : val;
+      const newVal = val instanceof Function ? val(prev) : val;
       paddleColRef.current = newVal;
       return newVal;
     });
@@ -89,17 +89,17 @@ export default function HeroGlyphLogo(): React.JSX.Element {
   const ballRef = useRef<Point>({ r: 4, c: 7 });
   const setBall = (val: Point | ((prev: Point) => Point)) => {
     setBallState(prev => {
-      const newVal = typeof val === 'function' ? val(prev) : val;
+      const newVal = val instanceof Function ? val(prev) : val;
       ballRef.current = newVal;
       return newVal;
     });
   };
 
-  const [ballVel, setBallVelState] = useState<Point>({ r: 1, c: 1 });
+  const [_ballVel, setBallVelState] = useState<Point>({ r: 1, c: 1 });
   const ballVelRef = useRef<Point>({ r: 1, c: 1 });
   const setBallVel = (val: Point | ((prev: Point) => Point)) => {
     setBallVelState(prev => {
-      const newVal = typeof val === 'function' ? val(prev) : val;
+      const newVal = val instanceof Function ? val(prev) : val;
       ballVelRef.current = newVal;
       return newVal;
     });
@@ -109,7 +109,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
   const pongScoreRef = useRef<number>(0);
   const setPongScore = (val: number | ((prev: number) => number)) => {
     setPongScoreState(prev => {
-      const newVal = typeof val === 'function' ? val(prev) : val;
+      const newVal = val instanceof Function ? val(prev) : val;
       pongScoreRef.current = newVal;
       return newVal;
     });
@@ -340,7 +340,7 @@ export default function HeroGlyphLogo(): React.JSX.Element {
     }
   };
 
-  const handleBezelClick = (e: React.MouseEvent) => {
+  const handleBezelClick = (_e: React.MouseEvent) => {
     if (mode === 'PLAY') return;
     togglePlayMode();
   };
@@ -416,7 +416,12 @@ export default function HeroGlyphLogo(): React.JSX.Element {
     };
   }, []);
 
-  const getLedState = (r: number, c: number): { on: boolean; type: number } => {
+  interface LedState {
+    on: boolean;
+    type: number;
+  }
+
+  const getLedState = (r: number, c: number): LedState => {
     if (mode === 'PLAY') {
       if (activeGame === 'SNAKE') {
         if (snake[0].r === r && snake[0].c === c) {

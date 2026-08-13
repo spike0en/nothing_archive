@@ -39,6 +39,7 @@ export default function SupporterWidget({ donors }: SupporterWidgetProps): React
       <div className={styles.tickerWindow}>
         <div
           className={styles.marqueeTrack}
+          // SAFETY: Custom CSS variable binding allowed by React style property
           style={{ '--marquee-duration': `${duration}s` } as React.CSSProperties}
         >
           <span className={styles.nameGroup}>{nameSequence}</span>

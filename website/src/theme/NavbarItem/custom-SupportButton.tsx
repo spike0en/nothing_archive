@@ -51,7 +51,7 @@ export default function SupportButton({ mobile }: SupportButtonProps): React.JSX
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (typeof window !== 'undefined') {
+    if (globalThis.window !== undefined) {
       window.dispatchEvent(new CustomEvent('open-support-modal'));
     }
   };

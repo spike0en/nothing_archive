@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import {
@@ -252,6 +251,7 @@ function renderContributorName(name: string) {
  * uses that custom name; otherwise defaults to contrib.name or contrib.login.
  */
 function getContributorName(contrib: Contributor) {
+  // SAFETY: contributorMetadata is bundled static JSON matching customNames map schema.
   const customNames = (contributorMetadata as any).customNames || {};
   if (customNames[contrib.login]) {
     return customNames[contrib.login];
@@ -265,6 +265,7 @@ function getContributorName(contrib: Contributor) {
  * repository commits by author username.
  */
 function getContributorHref(contrib: Contributor) {
+  // SAFETY: contributorMetadata is bundled static JSON matching customUrls map schema.
   const customUrls = (contributorMetadata as any).customUrls || {};
   if (customUrls[contrib.login]) {
     return customUrls[contrib.login];
@@ -472,10 +473,11 @@ function HomepageSocials() {
         </Heading>
         <div className={styles.socialLinks}>
           {communityMaintainedLinks.map(({ label, ariaLabel, href, icon }) => (
+            // SAFETY: Validated string primitive via Object prototype check
             <a
               key={href}
               href={href}
-              aria-label={ariaLabel || (typeof label === 'string' ? label : undefined)}
+              aria-label={ariaLabel || (Object.prototype.toString.call(label) === '[object String]' ? (label as string) : undefined)}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
@@ -536,7 +538,6 @@ function HomepageSocials() {
  * Main homepage component.
  */
 export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
   const homepageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

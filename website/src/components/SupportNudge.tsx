@@ -39,25 +39,15 @@ const SHOW_DELAY_MS = 15_000;
 /** Duration in milliseconds the nudge remains visible before auto-hiding. */
 const AUTO_HIDE_MS = 15_000;
 
-/** Checks whether the user has opted out permanently ("Already Supported"). */
-function isPermanentlyHidden(): boolean {
-  if (typeof localStorage === 'undefined') return false;
+/** Returns `true` if nudge was permanently opted out or dismissed within the cooldown window. */
+function isNudgeHidden(): boolean {
+  if (globalThis.localStorage === undefined) return false;
   try {
-    return localStorage.getItem(PERMANENT_KEY) === '1';
-  } catch {
-    return false;
-  }
-}
-
-/** Returns `true` if the ✕ button was clicked within the last {@link DISMISS_DAYS} days. */
-function isDismissedRecently(): boolean {
-  if (typeof localStorage === 'undefined') return false;
-  try {
+    if (localStorage.getItem(PERMANENT_KEY) === '1') return true;
     const raw = localStorage.getItem(DISMISS_KEY);
     if (!raw) return false;
     const ts = parseInt(raw, 10);
-    if (Number.isNaN(ts)) return false;
-    return (Date.now() - ts) / (1000 * 60 * 60 * 24) < DISMISS_DAYS;
+    return !Number.isNaN(ts) && (Date.now() - ts) / (1000 * 60 * 60 * 24) < DISMISS_DAYS;
   } catch {
     return false;
   }
@@ -119,17 +109,20 @@ export default function SupportNudge(): React.JSX.Element | null {
 
   // Broadcast visibility events so PWA reload popup can adaptively stack above SupportNudge
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (globalThis.window === undefined) return;
 
     if (visible) {
+      // SAFETY: Global window state property binding
       (window as any).__SUPPORT_NUDGE_ACTIVE__ = true;
       window.dispatchEvent(new CustomEvent('support-nudge-show'));
     } else {
+      // SAFETY: Global window state property binding
       (window as any).__SUPPORT_NUDGE_ACTIVE__ = false;
       window.dispatchEvent(new CustomEvent('support-nudge-hide'));
     }
 
     return () => {
+      // SAFETY: Global window state property binding
       (window as any).__SUPPORT_NUDGE_ACTIVE__ = false;
       window.dispatchEvent(new CustomEvent('support-nudge-hide'));
     };
@@ -137,7 +130,7 @@ export default function SupportNudge(): React.JSX.Element | null {
 
   // Hash trigger for instant visual testing (#stack-test / #nudge-test)
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (globalThis.window === undefined) return;
 
     const checkHash = () => {
       if (window.location.hash === '#stack-test' || window.location.hash === '#nudge-test') {
@@ -152,11 +145,11 @@ export default function SupportNudge(): React.JSX.Element | null {
   // Schedule the nudge to appear after SHOW_DELAY_MS, then auto-hide after AUTO_HIDE_MS.
   // Gate checks run both at mount and at fire-time to handle late storage writes.
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    if (isPermanentlyHidden() || isDismissedRecently()) return;
+    if (globalThis.window === undefined) return;
+    if (isNudgeHidden()) return;
 
     const timer = setTimeout(() => {
-      if (isPermanentlyHidden() || isDismissedRecently()) return;
+      if (isNudgeHidden()) return;
 
       setVisible(true);
 
@@ -180,6 +173,7 @@ export default function SupportNudge(): React.JSX.Element | null {
   /** Captures initial pointer coordinate and locks pointer capture to element. */
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     if (e.button !== undefined && e.button !== 0) return;
+    // SAFETY: Pointer event target HTMLElement casting
     if ((e.target as HTMLElement).closest('button, a')) return;
 
     dragStartXRef.current = e.clientX;

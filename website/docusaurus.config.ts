@@ -18,7 +18,7 @@ import * as path from 'node:path';
  * Maps Android version codename letters to their chronological ranks.
  * Add new letters here (e.g., D: 6 for Android 18) to explicitly define them if needed.
  */
-const androidOrder: Record<string, number> = {
+const androidOrder = {
   T: 1, // Android 13 (Tiramisu)
   U: 2, // Android 14 (Upside Down Cake)
   V: 3, // Android 15 (Vanilla)
@@ -35,9 +35,9 @@ const androidOrder: Record<string, number> = {
  */
 function getAndroidLetterRank(letter: string): number {
   const upper = letter.toUpperCase();
-  const knownRank = androidOrder[upper];
-  if (knownRank !== undefined) {
-    return knownRank;
+  if (upper in androidOrder) {
+    // SAFETY: Key present in androidOrder object lookup
+    return androidOrder[upper as keyof typeof androidOrder];
   }
   // Dynamic fallback for B-Z (B starts at rank 4, C is 5, etc.) using ASCII char code
   const code = upper.charCodeAt(0);

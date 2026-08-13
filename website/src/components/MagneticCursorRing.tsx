@@ -18,9 +18,8 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
   const [enabled, setEnabled] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const [isSnapped, setIsSnapped] = useState(false);
   const [isMobile, setIsMobile] = useState<boolean>(() => {
-    if (typeof window === 'undefined') return false;
+    if (globalThis.window === undefined) return false;
     return window.matchMedia('(max-width: 575px)').matches;
   });
 
@@ -49,7 +48,7 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
    * Syncs viewport state across resize events to toggle cursor overlay on breakpoint boundaries.
    */
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (globalThis.window === undefined) return;
 
     const mql = window.matchMedia('(max-width: 575px)');
     const handleMediaChange = () => {
@@ -77,7 +76,7 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
    * Reads initial cursor preference from local storage and subscribes to toggle custom events.
    */
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (globalThis.window === undefined) return;
 
     try {
       const stored = localStorage.getItem('nothing_archive_cursor');
@@ -88,8 +87,9 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
     }
 
     const handleToggle = (e: Event) => {
+      // SAFETY: Event dispatched by custom toggle event carrying boolean detail payload.
       const evt = e as CustomEvent<boolean>;
-      if (typeof evt.detail === 'boolean') {
+      if (Object.prototype.toString.call(evt.detail) === '[object Boolean]') {
         setEnabled(evt.detail);
       } else {
         const stored = localStorage.getItem('nothing_archive_cursor');
@@ -107,12 +107,13 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
    * Toggles global pointer hiding rules when the custom cursor is active on hover-capable pointer devices.
    */
   useEffect(() => {
-    if (typeof document === 'undefined') return;
+    if (globalThis.document === undefined) return;
 
-    const isTouchOnly = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse) and (hover: none)').matches;
-    const isReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isTouchOnly = globalThis.window !== undefined && window.matchMedia('(pointer: coarse) and (hover: none)').matches;
+    const isReducedMotion = globalThis.window !== undefined && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const isActive = enabled && !isMobile && !isTouchOnly && !isReducedMotion;
 
+    // SAFETY: Element retrieved by known ID string matches DOM style element interface.
     let styleEl = document.getElementById('nothing-hide-cursor-style') as HTMLStyleElement | null;
 
     if (isActive) {
@@ -149,7 +150,7 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
    * Manages pointer listeners and requestAnimationFrame spring physics loop.
    */
   useEffect(() => {
-    if (typeof window === 'undefined' || !enabled || isMobile) return;
+    if (globalThis.window === undefined || !enabled || isMobile) return;
 
     const isTouchOnly = window.matchMedia('(pointer: coarse) and (hover: none)').matches;
     const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -181,6 +182,7 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
         isVisibleRef.current = true;
       }
 
+      // SAFETY: Pointer event target in DOM tree is an HTML element or null.
       const target = e.target as HTMLElement | null;
       if (!target) return;
 
@@ -193,7 +195,6 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
         activeElementRef.current = interactive;
       } else {
         setIsHovered(false);
-        setIsSnapped(false);
         activeElementRef.current = null;
       }
     };
@@ -207,7 +208,7 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
     // Re-initializes pointer coordinates on viewport re-entry and updates visibility state
     const handleMouseEnter = (e: MouseEvent) => {
       const pos = posRef.current;
-      if (typeof e.clientX === 'number' && typeof e.clientY === 'number' && e.clientX >= 0 && e.clientY >= 0) {
+      if (Number.isFinite(e.clientX) && Number.isFinite(e.clientY) && e.clientX >= 0 && e.clientY >= 0) {
         pos.mouseX = e.clientX;
         pos.mouseY = e.clientY;
         pos.ringX = e.clientX;
@@ -285,16 +286,14 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
         ref={ringRef}
         className={clsx(
           styles.cursorRing,
-          isHovered && styles.cursorRingHovered,
-          isSnapped && styles.cursorRingSnapped
+          isHovered && styles.cursorRingHovered
         )}
       />
       <div
         ref={dotRef}
         className={clsx(
           styles.cursorDot,
-          isHovered && styles.cursorDotHovered,
-          isSnapped && styles.cursorDotSnapped
+          isHovered && styles.cursorDotHovered
         )}
       />
     </div>

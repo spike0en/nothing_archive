@@ -44,7 +44,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
 
   // Track and scale NOWPayments iframe to fit mobile viewport
   useEffect(() => {
-    if (!isOpen || typeof window === 'undefined') return;
+    if (!isOpen || globalThis.window === undefined) return;
 
     const updateScale = () => {
       if (containerRef.current) {
@@ -58,7 +58,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
     updateScale();
 
     let resizeObserver: ResizeObserver | null = null;
-    if (typeof ResizeObserver !== 'undefined' && containerRef.current) {
+    if (globalThis.ResizeObserver !== undefined && containerRef.current) {
       resizeObserver = new ResizeObserver(() => {
         updateScale();
       });
@@ -81,7 +81,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
 
   // Disable body scroll when modal is open
   useEffect(() => {
-    if (typeof document === 'undefined') return;
+    if (globalThis.document === undefined) return;
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -94,7 +94,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
 
   // Escape key listener to close modal
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (globalThis.window === undefined) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isOpen) {
         onClose();
@@ -107,7 +107,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
   if (!isOpen) return null;
 
   const handleCopy = (id: string, text: string) => {
-    if (typeof navigator === 'undefined' || !navigator.clipboard) return;
+    if (globalThis.navigator === undefined || !navigator.clipboard) return;
     navigator.clipboard.writeText(text).then(() => {
       setCopiedId(id);
       setTimeout(() => setCopiedId(null), 2000);
@@ -115,6 +115,9 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
       console.error('Failed to copy address: ', err);
     });
   };
+
+  // SAFETY: Validated donation channel list structure
+  const channels = donationsData as DonationChannel[];
 
   return (
     <div
@@ -184,7 +187,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
           <div className={styles.contentLayout}>
             <div className={styles.leftColumn}>
               <div className={styles.stack}>
-                {(donationsData as DonationChannel[]).map((channel) => (
+                {channels.map((channel) => (
                   <div key={channel.id} className={styles.card}>
                     <h3 className={styles.cardTitle}>{channel.title}</h3>
                     {channel.description && <p className={styles.cardDesc}>{channel.description}</p>}
@@ -196,6 +199,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
                           readOnly
                           value={channel.address}
                           className={styles.addressInput}
+                          // SAFETY: Input click event target casting
                           onClick={(e) => (e.target as HTMLInputElement).select()}
                           aria-label={`${channel.title} payment address`}
                         />

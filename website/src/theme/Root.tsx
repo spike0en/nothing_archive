@@ -25,7 +25,7 @@ interface RootProps {
  */
 export default function Root({ children }: RootProps): React.JSX.Element {
   // Synchronously migrate existing users to "System" theme by default on client-side
-  if (typeof window !== 'undefined') {
+  if (globalThis.window !== undefined) {
     try {
       const MIGRATE_KEY = 'nothing_archive_theme_migrated_v1';
       if (!localStorage.getItem(MIGRATE_KEY)) {
@@ -49,8 +49,10 @@ export default function Root({ children }: RootProps): React.JSX.Element {
 
   useEffect(() => {
     if (showShortcuts) {
+      // SAFETY: Active DOM element focus casting
       previousActiveElement.current = document.activeElement as HTMLElement;
       // Focus the close button or first focusable element in the modal
+      // SAFETY: Modal close button query selector casting
       const closeBtn = modalRef.current?.querySelector('.shortcut-modal-close') as HTMLElement;
       if (closeBtn) {
         // Wait a tick for rendering transition
@@ -70,7 +72,9 @@ export default function Root({ children }: RootProps): React.JSX.Element {
         'button, [href], input, select, textarea, [tabindex="0"]'
       );
       if (focusableEls && focusableEls.length > 0) {
+        // SAFETY: Focusable element array casting
         const firstEl = focusableEls[0] as HTMLElement;
+        // SAFETY: Focusable element array casting
         const lastEl = focusableEls[focusableEls.length - 1] as HTMLElement;
         if (e.shiftKey) {
           if (document.activeElement === firstEl) {
@@ -91,7 +95,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
 
   // Support modal & PWA reload test trigger listeners (hash and custom event)
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (globalThis.window === undefined) return;
 
     const checkHash = () => {
       if (window.location.hash === '#support' || window.location.hash === '#donate') {
@@ -125,7 +129,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
 
   // Keyboard shortcut map event listener
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (globalThis.window === undefined) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
       const activeEl = document.activeElement;
@@ -151,7 +155,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
 
   // Appends canonical source attribution metadata to copied text snippets (>60 chars) to maintain project credit
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (globalThis.window === undefined) return;
 
     const handleCopy = (e: ClipboardEvent) => {
       const selection = window.getSelection();
@@ -174,7 +178,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
 
   // Scroll progress ring: SVG injected into the back-to-top button
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (globalThis.window === undefined) return;
 
     const RADIUS = 24;
     const CIRCUMFERENCE = 2 * Math.PI * RADIUS;

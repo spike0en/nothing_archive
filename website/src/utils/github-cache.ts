@@ -103,6 +103,7 @@ function readLocalStorage<T>(key: string, timeKey: string): { data: T; fresh: bo
     const raw = localStorage.getItem(key);
     const time = localStorage.getItem(timeKey);
     if (!raw || !time) return null;
+    // SAFETY: Generic JSON parse casting
     const data = JSON.parse(raw) as T;
     const fresh = Date.now() - parseInt(time, 10) < CACHE_TTL;
     return { data, fresh };
@@ -140,7 +141,10 @@ async function deduplicatedFetch<T>(
   fetcher: () => Promise<T>,
 ): Promise<T> {
   const existing = inflight.get(cacheKey);
-  if (existing) return existing as Promise<T>;
+  if (existing) {
+    // SAFETY: Map inflight promise casting
+    return existing as Promise<T>;
+  }
 
   const promise = fetcher().finally(() => {
     inflight.delete(cacheKey);
@@ -292,6 +296,7 @@ async function fetchContributorsFromAPI(): Promise<Contributor[]> {
 
   const raw = await response.json();
   const apiContributors: Contributor[] = raw.map((item: any) => {
+    // SAFETY: Static contributors list array casting
     const staticMatch = (staticContributors as any[] || []).find((sc) => sc.login === item.login);
     return {
       login: item.login,
@@ -304,6 +309,7 @@ async function fetchContributorsFromAPI(): Promise<Contributor[]> {
 
   // Preserve any static contributors (such as core team members) missing from GitHub API response
   const apiLogins = new Set(apiContributors.map((c) => c.login));
+  // SAFETY: Static contributors list array casting
   const missingStatic = (staticContributors as Contributor[] || []).filter(
     (sc) => !apiLogins.has(sc.login),
   );
@@ -312,6 +318,42 @@ async function fetchContributorsFromAPI(): Promise<Contributor[]> {
 }
 
 // --- Generic stale-while-revalidate hook factory ---
+
+export interface GitHubDataHookResult<T> {
+  data: T;
+  status: DataStatus;
+  error: ErrorState;
+  loading: boolean;
+}
+
+export interface GitHubReleasesHookResult {
+  releases: Release[];
+  totalCount: number;
+  status: DataStatus;
+  error: ErrorState;
+  loading: boolean;
+}
+
+export interface GitHubCommitsHookResult {
+  commits: Commit[];
+  status: DataStatus;
+  error: ErrorState;
+  loading: boolean;
+}
+
+export interface GitHubRepoStatsHookResult {
+  stats: RepoStats;
+  status: DataStatus;
+  error: ErrorState;
+  loading: boolean;
+}
+
+export interface GitHubContributorsHookResult {
+  contributors: Contributor[];
+  status: DataStatus;
+  error: ErrorState;
+  loading: boolean;
+}
 
 /**
  * Creates a React hook that implements the full tiered fallback chain:
@@ -331,7 +373,7 @@ function useGitHubData<T>(config: {
   fetcher: () => Promise<T>;
   /** Validates that the data is non-empty / usable */
   isValid: (data: T) => boolean;
-}): { data: T; status: DataStatus; error: ErrorState; loading: boolean } {
+}): GitHubDataHookResult<T> {
   const [data, setData] = useState<T>(() => {
     // Synchronous init: check memory cache first
     const mem = memoryCache.get(config.cacheKey);
@@ -364,7 +406,7 @@ function useGitHubData<T>(config: {
       }
 
       // 2. Check localStorage
-      if (typeof window !== 'undefined') {
+      if (globalThis.window !== undefined) {
         const ls = readLocalStorage<T>(config.lsKey, config.lsTimeKey);
         if (ls && config.isValid(ls.data)) {
           if (!cancelled) {
@@ -401,7 +443,7 @@ function useGitHubData<T>(config: {
           setLoading(false);
           // Update caches
           memoryCache.set(config.cacheKey, { data: freshData, timestamp: Date.now() });
-          if (typeof window !== 'undefined') {
+          if (globalThis.window !== undefined) {
             writeLocalStorage(config.lsKey, config.lsTimeKey, freshData);
           }
         }
@@ -429,13 +471,8 @@ function useGitHubData<T>(config: {
 // --- Public hooks ---
 
 /** Releases feed data with stale-while-revalidate caching. */
-export function useGitHubReleases(): {
-  releases: Release[];
-  totalCount: number;
-  status: DataStatus;
-  error: ErrorState;
-  loading: boolean;
-} {
+export function useGitHubReleases(): GitHubReleasesHookResult {
+  // SAFETY: Static releases fallback properties casting
   const fallback: ReleasesPayload = {
     releases: (staticReleases as any).releases || [],
     totalCount: (staticReleases as any).totalCount || 0,
@@ -454,12 +491,8 @@ export function useGitHubReleases(): {
 }
 
 /** Commit history data with stale-while-revalidate caching. */
-export function useGitHubCommits(): {
-  commits: Commit[];
-  status: DataStatus;
-  error: ErrorState;
-  loading: boolean;
-} {
+export function useGitHubCommits(): GitHubCommitsHookResult {
+  // SAFETY: Static commits array fallback casting
   const fallback = (staticCommits as any) || [];
 
   const { data, status, error, loading } = useGitHubData<Commit[]>({
@@ -475,12 +508,8 @@ export function useGitHubCommits(): {
 }
 
 /** Repository stars and fork count with stale-while-revalidate caching. */
-export function useGitHubRepoStats(): {
-  stats: RepoStats;
-  status: DataStatus;
-  error: ErrorState;
-  loading: boolean;
-} {
+export function useGitHubRepoStats(): GitHubRepoStatsHookResult {
+  // SAFETY: Static repo stats fallback properties casting
   const fallback: RepoStats = {
     stars: (staticRepoStats as any).stars || 0,
     forks: (staticRepoStats as any).forks || 0,
@@ -499,12 +528,8 @@ export function useGitHubRepoStats(): {
 }
 
 /** Contributor list with stale-while-revalidate caching. */
-export function useGitHubContributors(): {
-  contributors: Contributor[];
-  status: DataStatus;
-  error: ErrorState;
-  loading: boolean;
-} {
+export function useGitHubContributors(): GitHubContributorsHookResult {
+  // SAFETY: Static contributors array fallback casting
   const fallback = Array.isArray(staticContributors) ? (staticContributors as Contributor[]) : [];
 
   const { data, status, error, loading } = useGitHubData<Contributor[]>({

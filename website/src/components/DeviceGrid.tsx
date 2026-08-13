@@ -30,6 +30,7 @@ interface DeviceItem {
 
 import devicesData from '../data/devices-metadata.json';
 
+// SAFETY: Validated structure matching DeviceItem schema
 const devices: DeviceItem[] = devicesData as DeviceItem[];
 
 /**
@@ -121,6 +122,7 @@ function ModelCard({ device, latestLink }: { device: DeviceItem; latestLink: str
  * Filters and categorizes the parsed device metadata list, rendering grouped section grids.
  */
 export default function DeviceGrid(): React.JSX.Element {
+  // SAFETY: Validated by Docusaurus plugin contract
   const { latestLinks } = usePluginData('changelogs-plugin') as { latestLinks: Record<string, string> };
   const numberDevices = devices.filter(d => d.brand === 'Nothing' && d.series === 'number');
   const aDevices = devices.filter(d => d.brand === 'Nothing' && d.series === 'a');

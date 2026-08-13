@@ -12,11 +12,10 @@ import { useEffect } from 'react';
 const COPY_SVG = `<svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
 const CHECK_SVG = `<svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
 
-const LONG_PRESS_MS = 500;
 
 export default function CopyButtonSetup(): null {
   useEffect(() => {
-    if (typeof window === 'undefined' || typeof document === 'undefined') {
+    if (globalThis.window === undefined || globalThis.document === undefined) {
       return;
     }
 
@@ -29,17 +28,20 @@ export default function CopyButtonSetup(): null {
     const triggerThemeTransition = () => {
       document.documentElement.classList.add('theme-transition');
       
-      if ((window as any).themeTransitionTimeout) {
-        clearTimeout((window as any).themeTransitionTimeout);
+      // SAFETY: Global window object casting for custom property
+      const win = window as any;
+      if (win.themeTransitionTimeout) {
+        clearTimeout(win.themeTransitionTimeout);
       }
       
-      (window as any).themeTransitionTimeout = setTimeout(() => {
+      win.themeTransitionTimeout = setTimeout(() => {
         document.documentElement.classList.remove('theme-transition');
       }, 850); // 850ms covers React render blocking during complex table re-renders
     };
 
     // A. Eagerly set transition class on click to run before Docusaurus state update
     const handleToggleClick = (event: MouseEvent) => {
+      // SAFETY: DOM mouse event target element type
       const target = event.target as HTMLElement | null;
       if (
         target?.closest('button[class*="toggleButton"]') ||
@@ -99,6 +101,7 @@ export default function CopyButtonSetup(): null {
       if (!hasHoverSupport) return;
       const links = document.querySelectorAll('table td a');
       links.forEach((link) => {
+        // SAFETY: DOM element query selector result casting
         const anchor = link as HTMLAnchorElement;
         if (anchor.dataset.copySetup) {
           return;
@@ -153,6 +156,7 @@ export default function CopyButtonSetup(): null {
 
     const dismissCopyButtons = (event: MouseEvent) => {
       if (!hasHoverSupport) return;
+      // SAFETY: DOM mouse event target element casting
       const target = event.target as Element | null;
       if (target?.closest('.table-copy-wrapper')) {
         return;

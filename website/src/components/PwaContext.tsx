@@ -46,14 +46,16 @@ export function PwaProvider({ children }: { children: React.ReactNode }): React.
   const [isInstalled, setIsInstalled] = useState(false);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (globalThis.window === undefined) return;
 
+    // SAFETY: iOS Safari navigator standalone property
     const isStandalone = window.matchMedia('(display-mode: standalone)').matches || 
                         (window.navigator as any).standalone === true;
     setIsInstalled(isStandalone);
 
     const handleBeforeInstall = (e: Event) => {
       e.preventDefault();
+      // SAFETY: Standard BeforeInstallPromptEvent browser event
       setDeferredPrompt(e as BeforeInstallPromptEvent);
       setIsInstallable(true);
     };

@@ -3,6 +3,8 @@ website/build/
 website/.docusaurus/
 website/.cache/
 website/.cache-loader/
+website/tools/
+website/oxlint.config.ts
 website/src/data/*
 !website/src/data/device-colors.json
 !website/src/data/donations.json
@@ -33,6 +35,3 @@ yarn-error.log*
 # Local Workspace
 .local/
 
-# Knowledge Graphs
-graphify-out/
-.code-review-graph/

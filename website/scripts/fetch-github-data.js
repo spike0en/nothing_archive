@@ -213,7 +213,7 @@ async function fetchReleases() {
               `/repos/spike0en/nothing_archive/releases?per_page=100&page=${lastPage}`
             );
             totalCount = (lastPage - 1) * 100 + lastPageReleases.length;
-          } catch (e) {
+          } catch {
             console.warn(`[${label}] Last page fetch failed, using first-page count.`);
           }
         }
