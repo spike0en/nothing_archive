@@ -239,6 +239,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [N Dot Notes](https://github.com/AzhamProdLive/Notes_App_Nothing) | AzhamProdLive | Notes app with NDot font theme |
 | [N Notes](https://play.google.com/store/apps/details?id=com.bhavukverma.nNotes) | Bhavuk Verma | Open source Nothing OS style notes |
 | [Notes](https://play.google.com/store/apps/details?id=com.monospace.notes) | monospace | Notes app with built-in security |
+| [NotesApp](https://play.google.com/store/apps/details?id=ru.znaetapps.notesapp) | ZnaetAPPS | Notes app with a Nothing OS inspired theme |
 | [Nothing Notes](https://github.com/ThriveEngineer/nothing.notes) | ThriveEngineer | Nothing themed notes app |
 | [Nothing Notes](https://play.google.com/store/apps/details?id=com.ApexCreator.nothingnotes) | Apex Creator | Minimal notepad |
 | [Nothiq](https://play.google.com/store/apps/details?id=com.rontag.nothiq) | Rontag | Nothing-inspired notes and task management app |
