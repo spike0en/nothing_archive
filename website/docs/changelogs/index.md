@@ -4,6 +4,8 @@ sidebar_label: OTA Changelogs
 pagination_label: OTA Changelogs
 sidebar_position: 1
 slug: /changelogs
+pagination_prev: firmware
+pagination_next: guides
 description: Official Nothing OS Update Changelogs for Nothing and CMF devices, along with updates policies and guide.
 ---
 
