@@ -323,6 +323,7 @@ As of July 2026, Phone (1) has reached its official EOL status. This device will
 
 | **Nothing OS Version** | **Build Number**  | **Incremental / Delta OTA**                        | **Full OTA**                           | **OTA Images**          |
 |------------------------|-------------------|----------------------------------------------------|----------------------------------------|-------------------------|
+| 4.1 | SuperContra-B4.1-260811-1606 | SuperContra_B4.1-260703-1843 -> [SuperContra_B4.1-260811-1606](https://android.googleapis.com/packages/ota-api/package/60cc94aeae79e3afa31013237603a3ba603ed380.zip) <br /> SuperContra_B4.1-260618-1034 -> [SuperContra_B4.1-260811-1606](https://android.googleapis.com/packages/ota-api/package/e628261ff0afc899b227964516737bee16b6f1aa.zip) <br /> SuperContra_B4.1-260522-2231 -> [SuperContra_B4.1-260811-1606](https://android.googleapis.com/packages/ota-api/package/cd27f2397ca487e376b09502dc254a54b59f648a.zip) | N/A | [GitHub](https://github.com/spike0en/nothing_archive/releases/tag/SuperContra_B4.1-260811-1606) |
 | 4.1 | SuperContra-B4.1-260703-1843 | SuperContra_B4.1-260618-1034 -> [SuperContra_B4.1-260703-1843](https://android.googleapis.com/packages/ota-api/package/104eb4aa31e852c9fc6fccdd6d691e47d05bd85a.zip) | [Archive](https://archive.org/download/nothing-archive/spike0en/fullota/supercontra/SuperContra_B4.1-260703-1843.zip) | [Github](https://github.com/spike0en/nothing_archive/releases/tag/SuperContra_B4.1-260703-1843) |
 
 </details>
