@@ -117,6 +117,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Leflac](https://github.com/mandrigin/leflac) | mandrigin | FLAC music player built around the Glyph Matrix |
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | Gyroscopic level tool |
 | [Morse Glyph](https://github.com/Reyiannonn/MorseGlyph) | Reyiannonn | Translates text into Morse code and transmits it through the Nothing Phone's Glyph Matrix |
+| [Odyssey Glyph](https://github.com/rickastley12/OdysseyGlyph) | rickastley12 | Turn your videos and lyrics into custom animations for the Nothing Phone (3) Glyph Matrix |
 | [Pomodoro Timer](https://github.com/PzmuV1517/GlyphPomodoroTimer) | pzmuV1517 | Pomodoro timer toy |
 | [Toyph](https://github.com/antonvidishchev/toyph) | antonvidishchev | A JSON-driven Glyph Toy for the Nothing Phone (4a) Pro |
 
@@ -238,6 +239,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [N Dot Notes](https://github.com/AzhamProdLive/Notes_App_Nothing) | AzhamProdLive | Notes app with NDot font theme |
 | [N Notes](https://play.google.com/store/apps/details?id=com.bhavukverma.nNotes) | Bhavuk Verma | Open source Nothing OS style notes |
 | [Notes](https://play.google.com/store/apps/details?id=com.monospace.notes) | monospace | Notes app with built-in security |
+| [NotesApp](https://play.google.com/store/apps/details?id=ru.znaetapps.notesapp) | ZnaetAPPS | Notes app with a Nothing OS inspired theme |
 | [Nothing Notes](https://github.com/ThriveEngineer/nothing.notes) | ThriveEngineer | Nothing themed notes app |
 | [Nothing Notes](https://play.google.com/store/apps/details?id=com.ApexCreator.nothingnotes) | Apex Creator | Minimal notepad |
 | [Nothiq](https://play.google.com/store/apps/details?id=com.rontag.nothiq) | Rontag | Nothing-inspired notes and task management app |
@@ -269,6 +271,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Essential Key Tools](https://github.com/KoukeNeko/EssentialKeyTools) | KoukeNeko | Remap the Nothing Phone Essential Key to custom actions without root |
 | [Essential Mapper](https://github.com/tracpants/essential-mapper) | tracpants | Remap the Essential Key to launch apps or toggle flashlight by tap count |
 | [Essential Remapper](https://play.google.com/store/apps/details?id=com.essential.remapper) | AllexB | Remap the hardware Essential Key on Nothing & CMF devices to custom actions, shortcuts, or media controls |
+| [Nothing Button Remapper](https://github.com/THE-TECH-CHANGER/NothingButtonRemapper) | THE-TECH-CHANGER | Unlock the full potential of your Nothing Phone's Essential Key without Root |
 | [Sidecue](https://github.com/shashh-hash/sidecue) | shashh-hash | Remap the Essential Key with custom press actions, Glyph Matrix feedback, and auto-pause features |
 | [The Everything Key](https://play.google.com/store/apps/details?id=com.spandone.everythingkey) | spandone | Essential key remapper |
 
