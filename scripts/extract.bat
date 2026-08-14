@@ -153,40 +153,34 @@ echo.
 
 set /p DEVICE_CHOICE=Enter your selection: 
 
-set "FLASH_SCRIPT_URL="
-if "%DEVICE_CHOICE%"=="1" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/spacewar/Windows/flash_all.bat"
-if "%DEVICE_CHOICE%"=="2" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/pong/Windows/flash_all.bat"
-if "%DEVICE_CHOICE%"=="3" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/pacman/Windows/flash_all.bat"
-if "%DEVICE_CHOICE%"=="4" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/asteroids/Windows/flash_all.bat"
-if "%DEVICE_CHOICE%"=="5" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/metroid/Windows/flash_all.bat"
-if "%DEVICE_CHOICE%"=="6" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/frogger/Windows/flash_all.bat"
-if "%DEVICE_CHOICE%"=="7" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/froggerpro/Windows/flash_all.bat"
-if "%DEVICE_CHOICE%"=="8" set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/galaga-tetris/Windows/flash_all.bat"
+set "BRANCH="
+if "%DEVICE_CHOICE%"=="1" set "BRANCH=spacewar"
+if "%DEVICE_CHOICE%"=="2" set "BRANCH=pong"
+if "%DEVICE_CHOICE%"=="3" set "BRANCH=pacman"
+if "%DEVICE_CHOICE%"=="4" set "BRANCH=asteroids"
+if "%DEVICE_CHOICE%"=="5" set "BRANCH=metroid"
+if "%DEVICE_CHOICE%"=="6" set "BRANCH=frogger"
+if "%DEVICE_CHOICE%"=="7" set "BRANCH=froggerpro"
+if "%DEVICE_CHOICE%"=="8" set "BRANCH=galaga-tetris"
 if /I "%DEVICE_CHOICE%"=="X" exit /b 0
 
-if "%FLASH_SCRIPT_URL%"=="" (
+if not defined BRANCH (
     echo [ERROR] Invalid selection. Exiting...
     pause
     exit /b 1
 )
 
-:: Download with retries
-set "MAX_RETRIES=3"
-set "RETRY_DELAY=5"
-echo.
+set "FLASH_SCRIPT_URL=https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/%BRANCH%/Windows/flash_all.bat"
 
-for /L %%i in (1,1,%MAX_RETRIES%) do (
-    echo [DOWNLOAD] Attempt %%i of %MAX_RETRIES%: Downloading flash script...
-    curl --ssl-no-revoke -L -o "%EXTRACT_DIR%\flash_all.bat" "%FLASH_SCRIPT_URL%" && goto :success
-    echo [WARNING] Download failed. Retrying in %RETRY_DELAY% seconds...
-    timeout /t %RETRY_DELAY% /nobreak >nul
+echo.
+echo [DOWNLOAD] Downloading flash script...
+curl --ssl-no-revoke --retry 3 --retry-delay 5 -fL -o "%EXTRACT_DIR%\flash_all.bat" "%FLASH_SCRIPT_URL%"
+if errorlevel 1 (
+    echo [ERROR] All download attempts failed! Please check your internet connection.
+    pause
+    exit /b 1
 )
 
-echo [ERROR] All download attempts failed! Please check your internet connection.
-pause
-exit /b 1
-
-:success
 echo [SUCCESS] Download complete. Saved to: %EXTRACT_DIR%\flash_all.bat
 echo.
 

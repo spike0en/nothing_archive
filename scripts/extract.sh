@@ -140,16 +140,16 @@ else
     
     read -p "Enter your selection: " DEVICE_CHOICE
     
-    FLASH_SCRIPT_URL=""
+    BRANCH=""
     case "$DEVICE_CHOICE" in
-        1) FLASH_SCRIPT_URL="https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/spacewar/Linux/flash_all.sh" ;;
-        2) FLASH_SCRIPT_URL="https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/pong/Linux/flash_all.sh" ;;
-        3) FLASH_SCRIPT_URL="https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/pacman/Linux/flash_all.sh" ;;
-        4) FLASH_SCRIPT_URL="https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/asteroids/Linux/flash_all.sh" ;;
-        5) FLASH_SCRIPT_URL="https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/metroid/Linux/flash_all.sh" ;;
-        6) FLASH_SCRIPT_URL="https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/frogger/Linux/flash_all.sh" ;;
-        7) FLASH_SCRIPT_URL="https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/froggerpro/Linux/flash_all.sh" ;;		
-        8) FLASH_SCRIPT_URL="https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/galaga-tetris/Linux/flash_all.sh" ;;
+        1) BRANCH="spacewar" ;;
+        2) BRANCH="pong" ;;
+        3) BRANCH="pacman" ;;
+        4) BRANCH="asteroids" ;;
+        5) BRANCH="metroid" ;;
+        6) BRANCH="frogger" ;;
+        7) BRANCH="froggerpro" ;;
+        8) BRANCH="galaga-tetris" ;;
         [xX]) exit 0 ;;
         *)
             echo "[ERROR] Invalid selection. Exiting..."
@@ -157,26 +157,15 @@ else
             ;;
     esac
     
-    MAX_RETRIES=3
-    RETRY_DELAY=5
+    FLASH_SCRIPT_URL="https://raw.githubusercontent.com/spike0en/nothing_fastboot_flasher/${BRANCH}/Linux/flash_all.sh"
+    
     echo ""
-    
-    SUCCESS=0
-    for ((i=1; i<=MAX_RETRIES; i++)); do
-        echo "[DOWNLOAD] Attempt $i of $MAX_RETRIES: Downloading flash script..."
-        if curl -L -o "$EXTRACT_DIR/flash_all.sh" "$FLASH_SCRIPT_URL"; then
-            SUCCESS=1
-            chmod +x "$EXTRACT_DIR/flash_all.sh"
-            break
-        fi
-        echo "[WARNING] Download failed. Retrying in $RETRY_DELAY seconds..."
-        sleep $RETRY_DELAY
-    done
-    
-    if [ $SUCCESS -eq 0 ]; then
+    echo "[DOWNLOAD] Downloading flash script..."
+    if ! curl --retry 3 --retry-delay 5 -fL -o "$EXTRACT_DIR/flash_all.sh" "$FLASH_SCRIPT_URL"; then
         echo "[ERROR] All download attempts failed! Please check your internet connection."
         exit 1
     fi
+    chmod +x "$EXTRACT_DIR/flash_all.sh"
     
     echo "[SUCCESS] Download complete. Saved to: $EXTRACT_DIR/flash_all.sh"
     echo ""

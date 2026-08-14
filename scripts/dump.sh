@@ -59,16 +59,10 @@ download_with_gdown() {
 download_with_aria2c() {
     echo "Downloading with aria2c using $ARIA2C_CONNECTIONS connections: $1"
     if ! aria2c -x$ARIA2C_CONNECTIONS -s$ARIA2C_CONNECTIONS --max-tries=5 --retry-wait=5 "$1" -o ota.zip; then
-        echo "aria2c download failed. Cleaning up and falling back..."
+        echo "aria2c download failed. Cleaning up and falling back to curl..."
         rm -f ota.zip ota.zip.aria2
-        if command -v wget &> /dev/null; then
-            echo "Downloading with wget..."
-            wget --progress=dot:giga -O ota.zip "$1"
-        elif command -v curl &> /dev/null; then
-            echo "Downloading with curl..."
-            curl -L -o ota.zip "$1"
-        else
-            echo "Error: Neither wget nor curl is installed as a fallback." >&2
+        if ! curl --retry 3 --retry-delay 5 -fL -o ota.zip "$1"; then
+            echo "Error: curl download fallback failed." >&2
             exit 1
         fi
     fi
@@ -99,7 +93,8 @@ extract_version() {
 
 detect_model() {
     local detected_model="UnknownModel"
-    local models=$(jq -r '.devices | keys[]' "$DEVICES_JSON")
+    local models
+    models=$(jq -r '.devices | keys[]' "$DEVICES_JSON")
     
     if [ -z "$models" ]; then
         echo "Error: Could not read models from $DEVICES_JSON or jq is not installed." >&2
@@ -107,21 +102,11 @@ detect_model() {
         return
     fi
 
-    local metadata_content=$(unzip -p ota.zip META-INF/com/android/metadata 2>/dev/null || echo "")
-    if [ -n "$metadata_content" ]; then
+    local combined_content
+    combined_content=$(unzip -p ota.zip META-INF/com/android/metadata payload_properties.txt 2>/dev/null || true)
+    if [ -n "$combined_content" ]; then
         for model in $models; do
-            if echo "$metadata_content" | grep -qi "\b$model\b"; then
-                detected_model="$model"
-                echo "$detected_model"
-                return
-            fi
-        done
-    fi
-
-    local properties_content=$(unzip -p ota.zip payload_properties.txt 2>/dev/null || echo "")
-     if [ -n "$properties_content" ]; then
-        for model in $models; do
-             if echo "$properties_content" | grep -qi "\b$model\b"; then
+            if echo "$combined_content" | grep -qi "\b$model\b"; then
                 detected_model="$model"
                 echo "$detected_model"
                 return
@@ -248,7 +233,7 @@ done
 generate_metadata_notice > ../out/spike0en_nothing_archive.txt
 
 [ -d "../boot" ] && cp ../out/spike0en_nothing_archive.txt ../boot/
-[ -d "." ] && cp ../out/spike0en_nothing_archive.txt ./
+cp ../out/spike0en_nothing_archive.txt ./
 [ -d "../dyn" ] && cp ../out/spike0en_nothing_archive.txt ../dyn/
 
 # === Archive Images ===
