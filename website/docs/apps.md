@@ -99,6 +99,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Draw](https://play.google.com/store/apps/details?id=com.shashank.fyi.glyph_draw) | Shashank | Matrix drawing tool and pixel editor for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph GeekBox](https://github.com/danissomo/GlyphMatrix-AODGeekBox) | danissomo | Some geek stuff on GlyphMatrix. Nothing Phone 4(a) pro targeted |
 | [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | Android app that displays Home Assistant sensor data on the Nothing Glyph Matrix |
+| [Glyphifier](https://github.com/AhmedYasser5/Glyphifier) | AhmedYasser5 | Play GIFs, media, and notification-triggered visuals on the Glyph Matrix |
 | [Glyph Lapse](https://github.com/aero-md/glyphlapse) | aero-md | Elapsed or remaining time counter for the Nothing Phone (3) Glyph Matrix with multi-lapse switching via the Glyph Button |
 | [Glyph Maps](https://github.com/capad-xyz/GlyphMaps) | capad-xyz | Mirror Google Maps turn by turn directions onto the Nothing Phone (4a) Pro Glyph Matrix |
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Toolkit for creating and intelligently displaying custom Glyph Matrix visuals for Nothing Phone (4a) Pro |
