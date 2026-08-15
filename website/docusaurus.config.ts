@@ -248,7 +248,7 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
     let brand = 'Nothing';
 
     if (matchingDevices.length > 1) {
-      const cleanNames = matchingDevices.map((d: any) => d.name.split(' (')[0]);
+      const cleanNames = matchingDevices.map((d: any) => d.name.match(/^(.*)\s\([^(]+\)$/)?.at(1) ?? "");
       cleanNames.sort();
       const joinedNames = cleanNames.join(' / ').replace(/\/ Phone \(/g, '/ (');
       
