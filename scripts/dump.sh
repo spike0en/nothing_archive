@@ -230,11 +230,10 @@ done
 
 # === Credit & Metadata Notice ===
 
-generate_metadata_notice > ../out/spike0en_nothing_archive.txt
+generate_metadata_notice > spike0en_nothing_archive.txt
 
-[ -d "../boot" ] && cp ../out/spike0en_nothing_archive.txt ../boot/
-cp ../out/spike0en_nothing_archive.txt ./
-[ -d "../dyn" ] && cp ../out/spike0en_nothing_archive.txt ../dyn/
+[ -d "../boot" ] && cp spike0en_nothing_archive.txt ../boot/
+[ -d "../dyn" ] && cp spike0en_nothing_archive.txt ../dyn/
 
 # === Archive Images ===
 
