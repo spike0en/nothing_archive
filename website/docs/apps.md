@@ -44,6 +44,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | Coin flip, ringer mode, battery flow |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Ball maze, quick dial, Tamagotchi |
 | [Glyphs](https://github.com/Rorenheim/glyphs) | Rorenheim | Heart Glyph Toy for Nothing Phone (3) that explodes into sprinkles and says "luv u" |
+| [Justadice](https://github.com/aero-md/justadice) | aero-md | 3D physics-based dice rolling toy with d6, d10, d12, and d20 solids for the Nothing Phone (3) Glyph Matrix |
 | [Magic 8 Ball](https://play.google.com/store/apps/details?id=com.frank.magic8ball) | Fr4nKB | Classic Magic 8 Ball |
 | [Matrix Dice](https://github.com/Snakehater/matrixdice/) | Snakehater | Glyph matrix dice toy |
 | [Minecraft Glyph Matrix](https://github.com/nosoyyo0717/Minecraft-Glyph-Matrix) | nosoyyo0717 | Minecraft pixel art |
@@ -87,6 +88,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | Project | Developer | Description |
 |---------|-----------|-------------|
 | [Better Battery](https://github.com/PzmuV1517/BetterBatery) | pzmuV1517 | Advanced battery visualization |
+| [Better Nothing Music Visualizer (BNMV)](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | Aleks Levet | Real-time audio visualizer for Nothing Phone Glyphs, Glyph Matrix, and haptics |
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | Counter ranging 0-9999 |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | Visualizer, compass, dice, counter |
 | [Glyf1](https://github.com/dfrost90/glyf1) | dfrost90 | F1 companion for Nothing phones with Glyph Matrix and home-screen race updates. |
@@ -110,6 +112,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Nothing](https://github.com/manttii/Glphy-Nothing) | manttii | Create, preview, and trigger custom Glyph Matrix animations on Nothing phones |
 | [Glyph Pomodoro](https://github.com/itsmixu/glyph-pomo) | itsmixu | Pomodoro timer for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Stopwatch](https://github.com/Sturdy7435/GlyphStopwatch) | Sturdy7435 | A simple stopwatch for the Nothing Phone (4a) Pro's Glyph Matrix |
+| [Glyph Temperature](https://github.com/Gabelloide/GlyphTemperatureToy) | Gabelloide | Displays CPU, battery, and GPU temperatures with a scrolling history plot on the Nothing Phone (3) Glyph Matrix |
 | [Glyph Torch Toy](https://github.com/dotstaraj/GlyphTorchToy) | dotstaraj | Minimal Glyph Toy for Nothing Phone (3) that flashes the entire matrix as a torch |
 | [Glyph Type](https://github.com/deepudxd/GlyphType) | deepudxd | Converts text into scrolling dot-matrix animations for the Nothing Phone (4a) Pro's 13×13 Glyph Matrix |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistant entity toggle |
@@ -131,7 +134,6 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | App | Developer | Description |
 |-----|-----------|-------------|
 | [BeatFlare](https://github.com/stilkin/beatflare) | stilkin | Raw audio-based visualization for Nothing Phone (3a) Glyphs |
-| [Better Nothing Music Visualizer (BNMV)](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | Aleks Levet | Enhanced music visualization that uses the glyphs, haptic vibration motor and flashlight |
 | [Gliph Lights](https://github.com/AnirudhRao290/GliphLights) | AnirudhRao290 | Creative lighting controller and visualizer for Nothing Phone (3a) Pro |
 | [Glyph Bar Composer](https://github.com/BhuvaneshwarMarri/GlyphBarComposer-4a) | BhuvaneshwarMarri | Compose, synchronize, and visualize custom Glyph lighting patterns for Nothing Phone (4a) |
 | [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | Glyph visualizer app incorporating both Nothing-inspired and Material 3 UI interfaces |
