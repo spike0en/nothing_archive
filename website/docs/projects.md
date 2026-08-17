@@ -135,7 +135,7 @@ Web-based applications inspired by Nothing OS.
 | [Nothing Weather Clone](https://github.com/Avadhkumar-geek/nothing_weather_clone) | Avadhkumar-geek | Flutter-based weather application replicating the Nothing OS weather design |
 | [Spin The Bottle](https://dotmatrix-beerbottle.vercel.app/) | MadGlacierRunner | Spin the bottle simulator |
 | [Study Logix](https://github.com/ashutoshpatraa/StudyLogix) | ashutoshpatraa | Nothing OS-inspired study tracking web application featuring focus tools and analytics |
-| [Vibe Nothing Design](https://wangbh030722.github.io/vibe-nothing-ui-design/) | Claude & wangbh030722 | A Nothing OS inspired UI component library for the web ([Repo](https://github.com/wangbh030722/vibe-nothing-ui-design)) |
+| [Vibe Nothing Design](https://wangbh030722.github.io/vibe-nothing-ui-design/) | wangbh030722 | A Nothing OS inspired UI component library for the web ([Repo](https://github.com/wangbh030722/vibe-nothing-ui-design)) |
 
 ## Extensions
 

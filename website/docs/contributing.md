@@ -29,6 +29,7 @@ Contribute to the website's infrastructure by resolving bugs or adding features.
 To ensure accuracy and preserve archive integrity, **do not** submit pull requests that modify the following files or directories:
 *   `website/docs/firmware.md`
 *   `website/docs/changelogs/`
+*   `website/src/data/showcase-config.json` (Editor's Choice and featured showcase selections are curated exclusively by the repository maintainer)
 
 These files and folders are managed exclusively by the project authors and collaborators.
 :::

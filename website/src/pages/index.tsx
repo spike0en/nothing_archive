@@ -9,6 +9,7 @@ import {
   FaInstagram, FaGithub, FaTerminal,
   FaMobileAlt, FaDownload, FaClipboardList, FaBook,
   FaBoxOpen, FaRocket, FaCode, FaCameraRetro,
+  FaRegCompass, FaArrowRight,
 } from 'react-icons/fa';
 import { FaXTwitter, FaThreads, FaTiktok, FaGlobe } from 'react-icons/fa6';
 import { TbMessageCircle } from 'react-icons/tb';
@@ -158,8 +159,12 @@ function HomepageHeader() {
               {siteConfig.tagline}
             </p>
             <div className={styles.buttons}>
-              <Link className={clsx('button', styles.ctaButton)} to="/docs/intro">
-                Explore Resources
+              <Link className={clsx('button', styles.ctaButton)} to="/showcase">
+                <span className={styles.ctaIconWrapper}>
+                  <FaRegCompass className={styles.ctaCompassIcon} size={16} />
+                </span>
+                <span>Explore Showcase</span>
+                <FaArrowRight className={styles.ctaArrowIcon} size={12} />
               </Link>
               <a
                 className={clsx('button', styles.ctaButtonSecondary)}

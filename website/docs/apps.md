@@ -88,7 +88,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | Project | Developer | Description |
 |---------|-----------|-------------|
 | [Better Battery](https://github.com/PzmuV1517/BetterBatery) | pzmuV1517 | Advanced battery visualization |
-| [Better Nothing Music Visualizer (BNMV)](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | Aleks Levet | Real-time audio visualizer for Nothing Phone Glyphs, Glyph Matrix, and haptics |
+| [Better Nothing Music Visualizer (BNMV)](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | Aleks Levet & Oliver Lebaigue | Real-time audio visualizer for Nothing Phone Glyphs, Glyph Matrix, and haptics |
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | Counter ranging 0-9999 |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | Visualizer, compass, dice, counter |
 | [Glyf1](https://github.com/dfrost90/glyf1) | dfrost90 | F1 companion for Nothing phones with Glyph Matrix and home-screen race updates. |

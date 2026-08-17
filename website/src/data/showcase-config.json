@@ -1,0 +1,16 @@
+{
+  "featuredSlugs": [
+    "glyphify",
+    "dot-hub",
+    "glyph-museum",
+    "nothing-wiki",
+    "ear-web",
+    "fmc",
+    "nothing-archive",
+    "custom-nothing-glyph-tools"
+  ],
+  "platformOverrides": {
+    "nothing-archive": ["web"],
+    "nothing-flasher": ["windows", "linux", "macos"]
+  }
+}

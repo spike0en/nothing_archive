@@ -6,10 +6,13 @@ website/.cache-loader/
 website/tools/
 website/oxlint.config.ts
 website/src/data/*
+!website/src/data/*.ts
+!website/src/data/*.tsx
 !website/src/data/device-colors.json
 !website/src/data/donations.json
 !website/src/data/donors.json
 !website/src/data/contributor-metadata.json
+!website/src/data/showcase-config.json
 
 # Dependencies
 node_modules/
