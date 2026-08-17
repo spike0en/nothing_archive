@@ -58,25 +58,19 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
   background-color: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--nothing-border-strong);
+  border: 2px solid var(--nothing-border-strong);
   border-radius: 999px;
-  padding: 0.5rem 1rem 0.5rem 1.25rem;
+  padding: 0 0.4rem 0 0;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
   max-width: 90%;
   opacity: 0;
   transform: translateY(-10px) scale(0.95);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
   animation: pillSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
-}
-
-.container:hover {
-  transform: translateY(-1px) scale(1.01);
-  border-color: rgba(0, 0, 0, 0.2);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
 }
 
 [data-theme='dark'] .container {
@@ -85,11 +79,60 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+.container:active {
+  transform: scale(0.985);
+  border-color: rgba(215, 25, 32, 0.55);
+}
+
+.content:active .buildName,
+.container:active .buildName {
+  color: var(--ifm-color-primary) !important;
+  text-decoration: none !important;
+}
+
+.container:has(.dismissBtn:active) .buildName {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.container:focus,
+.content:focus {
+  outline: none;
+}
+
+.container:hover {
+  transform: translateY(-1px) scale(1.01);
+  border-color: rgba(215, 25, 32, 0.5);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
 [data-theme='dark'] .container:hover {
   background-color: rgba(24, 24, 24, 0.85);
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(215, 25, 32, 0.55);
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
   transform: translateY(-1px) scale(1.01);
+}
+
+.content:hover .buildName,
+.container:hover .buildName {
+  color: var(--ifm-color-primary) !important;
+  text-decoration: none !important;
+}
+
+.container:has(.dismissBtn:hover) .buildName {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.container:hover .announcementTag,
+.content:hover .announcementTag {
+  animation: alertWobbleHover 1s ease-in-out infinite;
+}
+
+.dismissBtn:hover {
+  opacity: 1;
+  color: var(--ifm-color-primary);
+  transform: scale(1.15);
 }
 
 .bannerDismissing .container {
@@ -118,7 +161,7 @@
   }
 }
 
-/* The entire content area is now the clickable link */
+/* Entire content area acts as single-release link */
 .content {
   display: flex;
   align-items: center;
@@ -130,42 +173,55 @@
   font-weight: 600;
   color: inherit !important;
   text-decoration: none !important;
-  transition: opacity 0.2s ease;
   white-space: nowrap;
   min-width: 0;
+  padding: calc(0.5rem - 1px) 0.5rem calc(0.5rem - 1px) 1.25rem;
 }
 
-.content:hover {
-  opacity: 0.75;
-}
-
-.contentNonClickable {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  justify-content: center;
-  gap: 0.35rem;
-  font-family: var(--ifm-font-family-base);
-  font-size: 0.8rem;
+.buildName {
   font-weight: 600;
-  white-space: nowrap;
-  min-width: 0;
+  color: inherit;
+  transition: color 0.2s ease;
 }
 
-.inlineLink {
-  color: var(--ifm-color-primary) !important;
-  font-weight: 700;
-  text-decoration: none !important;
-  transition: opacity 0.2s ease;
+.actionText {
+  color: inherit;
+  font-weight: 600;
+  white-space: pre;
 }
 
-.inlineLink:hover {
-  opacity: 0.75;
-  text-decoration: underline !important;
+.actionFull {
+  display: inline;
 }
 
-.separator {
-  opacity: 0.8;
+.actionShort {
+  display: none;
+}
+
+@keyframes tickerSlideFade {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tickerBadge {
+  font-family: inherit;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85em;
+  font-weight: 500;
+  opacity: 0.55;
+  margin-left: 0.35rem;
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+  user-select: none;
+  line-height: inherit;
+  display: inline-flex;
+  align-items: center;
 }
 
 .announcementTag {
@@ -174,44 +230,56 @@
   flex-shrink: 0;
   user-select: none;
   display: inline-block;
-  transform-origin: center center;
-  animation: alertWobble 5s steps(1) 3; /* impeccable-disable-line bounce-easing */
-}
-
-.container:hover .announcementTag {
-  animation: alertWobble 2s steps(1) infinite; /* impeccable-disable-line bounce-easing */
+  transform-origin: 20% 80%;
+  animation: alertWobble 6.5s ease-in-out infinite;
 }
 
 @keyframes alertWobble {
-  0%, 80%, 100% {
+  0%, 35%, 55%, 100% {
     transform: rotate(0deg) scale(1);
   }
-  82% {
-    transform: rotate(-15deg) scale(1.1);
+  38% {
+    transform: rotate(-14deg) scale(1.12);
   }
-  85% {
-    transform: rotate(15deg) scale(1.1);
+  42% {
+    transform: rotate(12deg) scale(1.12);
   }
-  88% {
-    transform: rotate(-15deg) scale(1.1);
+  46% {
+    transform: rotate(-8deg) scale(1.08);
   }
-  91% {
-    transform: rotate(15deg) scale(1.1);
+  49% {
+    transform: rotate(6deg) scale(1.04);
   }
-  94% {
-    transform: rotate(-15deg) scale(1.1);
+  52% {
+    transform: rotate(-2deg) scale(1.02);
   }
-  97% {
-    transform: rotate(0deg) scale(1.05);
+}
+
+@keyframes alertWobbleHover {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  20% {
+    transform: rotate(-18deg) scale(1.2);
+  }
+  40% {
+    transform: rotate(16deg) scale(1.2);
+  }
+  60% {
+    transform: rotate(-12deg) scale(1.15);
+  }
+  80% {
+    transform: rotate(10deg) scale(1.1);
   }
 }
 
 .message {
+  display: inline-flex;
+  align-items: center;
   letter-spacing: -0.01em;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   min-width: 0;
+  animation: tickerSlideFade 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Dismiss button integrated in the flex layout of the pill */
@@ -232,50 +300,67 @@
   flex-shrink: 0;
 }
 
-.dismissBtn:hover {
+.dismissBtn:active {
   opacity: 1;
   color: var(--ifm-color-primary);
-  transform: scale(1.15);
+  transform: scale(1.1);
 }
 
 /* Mobile: center-align on small screens */
 @media screen and (max-width: 576px) {
   .banner {
-    padding: 0.25rem 0.5rem 1.5rem 0.5rem;
+    padding: 0.25rem 0.25rem 1.5rem 0.25rem;
     animation: expandDownMobile 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
   .bannerDismissing {
     animation: retractUpMobile 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
   }
   .container {
-    padding: 0.35rem 0.6rem 0.35rem 0.75rem;
-    gap: 0.35rem;
-    max-width: 95%;
+    padding: 0 0.15rem 0 0;
+    max-width: calc(100vw - 16px);
   }
-  .content,
-  .contentNonClickable {
+  .content {
     justify-content: center;
-    font-size: 0.7rem;
-    gap: 0.25rem;
+    font-size: 0.68rem;
+    gap: 0.2rem;
     flex-wrap: nowrap;
     white-space: nowrap;
     min-width: 0;
+    padding: 0.35rem 0.25rem 0.35rem 0.6rem;
   }
   .message {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     letter-spacing: -0.02em;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  }
+  .actionFull {
+    display: none;
+  }
+  .actionShort {
+    display: inline;
+  }
+  .tickerBadge {
+    margin-left: 0.2rem;
   }
   .announcementTag {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     margin-right: 2px;
   }
   .dismissBtn {
     font-size: 0.95rem;
-    padding: 0.15rem;
-    margin-left: 0.1rem;
+    padding: 0.15rem 0.25rem;
+    margin-left: 0.05rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .content {
+    font-size: 0.62rem;
+    padding: 0.3rem 0.15rem 0.3rem 0.45rem;
+    gap: 0.15rem;
+  }
+  .message {
+    font-size: 0.62rem;
   }
 }
 

@@ -13,6 +13,7 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import * as child_process from 'node:child_process';
 
 /**
  * Maps Android version codename letters to their chronological ranks.
@@ -405,6 +406,34 @@ const config: Config = {
         const changelogsDir = path.join(__dirname, 'docs', 'changelogs');
         const latestLinks: Record<string, string> = {};
         const changelogLinks: Record<string, string> = {};
+        const changelogs: {
+          tagName: string;
+          path: string;
+          publishedAt: string;
+        }[] = [];
+
+        // Batch query git commit timestamps for changelog files to determine repository availability date
+        const fileCommitDates = new Map<string, string>();
+        try {
+          const logOutput = child_process.execSync(
+            'git log --name-only --format=COMMIT:%cI -- docs/changelogs',
+            { cwd: __dirname, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }
+          );
+          let currentCommitDate = '';
+          for (const line of logOutput.split(/\r?\n/)) {
+            const trimmed = line.trim();
+            if (trimmed.startsWith('COMMIT:')) {
+              currentCommitDate = trimmed.slice(7);
+            } else if (trimmed && trimmed.endsWith('.md') && currentCommitDate) {
+              const baseName = path.basename(trimmed, '.md').toLowerCase();
+              if (!fileCommitDates.has(baseName)) {
+                fileCommitDates.set(baseName, currentCommitDate);
+              }
+            }
+          }
+        } catch {
+          // Subprocess execution fails gracefully in environments lacking git history
+        }
         
         if (fs.existsSync(changelogsDir)) {
           const folders = fs.readdirSync(changelogsDir);
@@ -417,7 +446,25 @@ const config: Config = {
 
               for (const file of files) {
                 const filename = file.replace(/\.md$/, '');
-                changelogLinks[filename.toLowerCase()] = `${baseUrl}docs/changelogs/${folder}/${filename}`;
+                const filePath = path.join(folderPath, file);
+                const targetUrl = `${baseUrl}docs/changelogs/${folder}/${filename}`;
+                changelogLinks[filename.toLowerCase()] = targetUrl;
+
+                const lowerName = filename.toLowerCase();
+                let publishedAt = fileCommitDates.get(lowerName);
+                if (!publishedAt) {
+                  try {
+                    publishedAt = fs.statSync(filePath).mtime.toISOString();
+                  } catch {
+                    publishedAt = new Date().toISOString();
+                  }
+                }
+
+                changelogs.push({
+                  tagName: filename,
+                  path: targetUrl,
+                  publishedAt,
+                });
               }
               
               if (files.length > 0) {
@@ -485,8 +532,11 @@ const config: Config = {
             }
           }
         }
+
+        // Sort changelogs chronologically descending by commit date
+        changelogs.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
         
-        setGlobalData({ latestLinks, changelogLinks });
+        setGlobalData({ latestLinks, changelogLinks, changelogs });
       }
     }),
     [

@@ -1,9 +1,9 @@
 /**
  * @file AnnouncementBanner.tsx
  * @description Header announcement banner notifying users of recent Nothing OS release updates.
- * 
+ *
  * Layer: Home and global theme components.
- * Boundary: Consumes useGitHubReleases and local storage dismissal keys.
+ * Boundary: Consumes changelogs plugin global data and persistent client-side dismissal state.
  */
 
 import React, { useState, useEffect } from 'react';
@@ -11,48 +11,46 @@ import Link from '@docusaurus/Link';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import clsx from 'clsx';
 import styles from './AnnouncementBanner.module.css';
-import { useGitHubReleases, type Release } from '../utils/github-cache';
 
-interface ChangelogsPluginData {
-  changelogLinks: Record<string, string>;
+interface ChangelogEntry {
+  tagName: string;
+  path: string;
+  publishedAt: string;
 }
 
-interface ReleaseData {
-  tagName: string;
-  codename: string;
-  version: string;
-  htmlUrl: string;
-  publishedAt: string;
+interface ChangelogsPluginData {
+  changelogs?: ChangelogEntry[];
+  changelogLinks?: Record<string, string>;
 }
 
 const DISMISS_KEY = 'na_dismissed_announcement_tag';
 
+/**
+ * Header announcement banner component.
+ * Evaluates changelog commit recency against a 7-day threshold and presents an animated rotating ticker for multiple releases.
+ */
 export default function AnnouncementBanner(): React.JSX.Element | null {
-  // Shares the deduplicated releases fetch with ReleaseFeed
-  const { releases: allGhReleases } = useGitHubReleases();
-  // SAFETY: Validated by Docusaurus plugin contract
-  const { changelogLinks } = usePluginData('changelogs-plugin') as ChangelogsPluginData;
-  const [releases, setReleases] = useState<ReleaseData[]>([]);
-  const [isDismissed, setIsDismissed] = useState<boolean>(true); // default to true to avoid flash before load
+  // SAFETY: Provided by local changelogs-plugin in docusaurus.config.ts
+  const pluginData = usePluginData('changelogs-plugin') as ChangelogsPluginData | undefined;
+  const allChangelogs = pluginData?.changelogs || [];
+
+  const [releases, setReleases] = useState<ChangelogEntry[]>([]);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [isPaused, setIsPaused] = useState<boolean>(false);
+  const [isDismissed, setIsDismissed] = useState<boolean>(true);
   const [isDismissing, setIsDismissing] = useState<boolean>(false);
 
   useEffect(() => {
-    if (allGhReleases.length === 0) return;
+    if (!allChangelogs || allChangelogs.length === 0) return;
 
-    const allReleases: ReleaseData[] = allGhReleases.map((item: Release) => ({
-      tagName: item.tagName || '',
-      codename: item.codename || 'Archive',
-      version: item.version || '',
-      htmlUrl: item.htmlUrl || '',
-      publishedAt: item.publishedAt || new Date().toISOString(),
-    }));
-
+    // Filter changelog records created/committed within the last 7 calendar days
     const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
-    const recentReleases = allReleases.filter(r => {
-      const pubTime = new Date(r.publishedAt).getTime();
+    const recentReleases = allChangelogs.filter((entry) => {
+      const pubTime = new Date(entry.publishedAt).getTime();
       return pubTime >= sevenDaysAgo;
     });
 
+    // Parse dismissed tag identifiers from persistent client state
     const dismissedTagStr = localStorage.getItem(DISMISS_KEY);
     let dismissedTags: string[] = [];
     if (dismissedTagStr) {
@@ -68,7 +66,7 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
     }
 
     const nonDismissed = recentReleases.filter(
-      r => !dismissedTags.includes(r.tagName)
+      (entry) => !dismissedTags.includes(entry.tagName)
     );
 
     if (nonDismissed.length > 0) {
@@ -81,7 +79,18 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
     } else {
       setIsDismissed(true);
     }
-  }, [allGhReleases]);
+  }, [allChangelogs]);
+
+  // Rotates through multiple releases on a 6.5-second interval when not hovered
+  useEffect(() => {
+    if (releases.length <= 1 || isPaused || isDismissed) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % releases.length);
+    }, 6500);
+
+    return () => clearInterval(interval);
+  }, [releases.length, isPaused, isDismissed]);
 
   const handleDismiss = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -100,7 +109,7 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
           previouslyDismissed = [dismissedTagStr];
         }
       }
-      const newlyDismissed = releases.map(r => r.tagName);
+      const newlyDismissed = releases.map((r) => r.tagName);
       const merged = Array.from(new Set([...previouslyDismissed, ...newlyDismissed]));
       localStorage.setItem(DISMISS_KEY, JSON.stringify(merged));
       
@@ -115,88 +124,49 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
     return null;
   }
 
-  // If there is only one release, keep the clean block layout
-  if (releases.length === 1) {
-    const singleRelease = releases[0];
-    const changelogKey = `${singleRelease.codename}-${singleRelease.version}`.toLowerCase();
-    const changelogUrl = changelogLinks[changelogKey];
-    const hasChangelog = Boolean(changelogUrl);
-    const targetUrl = hasChangelog ? changelogUrl : singleRelease.htmlUrl;
-    const isExternal = !hasChangelog;
+  const currentRelease = releases[currentIndex] || releases[0];
 
-    return (
-      <div className={clsx(styles.banner, isDismissing && styles.bannerDismissing)}>
-        <div className={styles.container}>
-          <Link
-            to={targetUrl}
-            {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-            className={styles.content}
-          >
-            <span className={styles.announcementTag}>📢</span>
-            <span className={styles.message}>
-              {`${singleRelease.codename}-${singleRelease.version} is now available!`}
-            </span>
-          </Link>
-          <button
-            onClick={handleDismiss}
-            className={styles.dismissBtn}
-            aria-label="Dismiss announcement"
-            title="Dismiss"
-          >
-            &times;
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  // Multiple releases - render as inline clickable links
   return (
-    <div className={clsx(styles.banner, isDismissing && styles.bannerDismissing)}>
+    <div
+      className={clsx(styles.banner, isDismissing && styles.bannerDismissing)}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocus={() => setIsPaused(true)}
+      onBlur={() => setIsPaused(false)}
+      onTouchStart={() => setIsPaused(true)}
+      onTouchEnd={(e) => {
+        setIsPaused(false);
+        if (e.target instanceof HTMLElement) {
+          e.target.blur();
+        }
+      }}
+      onTouchCancel={(e) => {
+        setIsPaused(false);
+        if (e.target instanceof HTMLElement) {
+          e.target.blur();
+        }
+      }}
+    >
       <div className={styles.container}>
-        <div className={styles.contentNonClickable}>
+        <Link
+          to={currentRelease.path}
+          className={styles.content}
+          title={currentRelease.tagName}
+        >
           <span className={styles.announcementTag}>📢</span>
-          <span className={styles.message}>New updates available: </span>
-          {releases.map((release, index) => {
-            const changelogKey = `${release.codename}-${release.version}`.toLowerCase();
-            const changelogUrl = changelogLinks[changelogKey];
-            const hasChangelog = Boolean(changelogUrl);
-            const targetUrl = hasChangelog ? changelogUrl : release.htmlUrl;
-            const isExternal = !hasChangelog;
-
-            // If there are many updates, show links for the first 2 and a "+ X more" link to the changelogs index
-            if (releases.length > 2 && index >= 2) {
-              if (index === 2) {
-                return (
-                  <React.Fragment key="more">
-                    <span className={styles.separator}> &amp; </span>
-                    <Link to="/docs/changelogs" className={styles.inlineLink}>
-                      {`${releases.length - 2} more`}
-                    </Link>
-                  </React.Fragment>
-                );
-              }
-              return null;
-            }
-
-            const isLastOfTwo = releases.length === 2 && index === 1;
-            const isLastOfThree = releases.length > 2 && index === 1;
-
-            return (
-              <React.Fragment key={release.tagName}>
-                {index > 0 && !isLastOfTwo && !isLastOfThree && <span className={styles.separator}>, </span>}
-                {(isLastOfTwo || isLastOfThree) && <span className={styles.separator}> &amp; </span>}
-                <Link
-                  to={targetUrl}
-                  {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                  className={styles.inlineLink}
-                >
-                  {`${release.codename}-${release.version}`}
-                </Link>
-              </React.Fragment>
-            );
-          })}
-        </div>
+          <span key={currentRelease.tagName} className={styles.message}>
+            <span className={styles.buildName}>{currentRelease.tagName}</span>
+            <span className={styles.actionText}>
+              <span className={styles.actionFull}> is now available!</span>
+              <span className={styles.actionShort}> is live!</span>
+            </span>
+          </span>
+          {releases.length > 1 && (
+            <span className={styles.tickerBadge} aria-label={`Update ${currentIndex + 1} of ${releases.length}`}>
+              {`${currentIndex + 1}/${releases.length}`}
+            </span>
+          )}
+        </Link>
         <button
           onClick={handleDismiss}
           className={styles.dismissBtn}
