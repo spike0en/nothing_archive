@@ -230,14 +230,6 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
       return compareChangelogs(a.id, b.id);
     });
 
-    let link = item.link;
-    if (sortedSubItems.length > 0 && sortedSubItems[0].type === 'doc') {
-      link = {
-        type: 'doc',
-        id: sortedSubItems[0].id,
-      };
-    }
-
     const codename = getCodenameFromCategory({ items: sortedSubItems });
     const matchingDevices = devicesMetadata.filter((device: any) => {
       const folderForDevice = device.folder || device.codename;
@@ -277,9 +269,9 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
     const processedCategory = {
       ...item,
       label,
-      link,
       items: sortedSubItems,
     };
+    delete processedCategory.link;
 
     if (!dev) {
       unknownItems.push(processedCategory);
