@@ -17,7 +17,7 @@
   background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
 }
 
-/* Header Section — Left-aligned modern discipline matching doc headers */
+/* Header */
 .header {
   position: relative;
   z-index: 1;
@@ -64,7 +64,7 @@
   min-width: 0;
 }
 
-/* Unified Command Toolbar (Hardware Console Bar) */
+/* Toolbar */
 .toolbar {
   position: relative;
   z-index: 2;
@@ -641,8 +641,7 @@
   gap: 0.65rem;
 }
 
-.bannerButton,
-.bannerButtonSecondary {
+.bannerButton {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -655,34 +654,17 @@
   text-decoration: none !important;
   transition: all 0.2s ease;
   box-sizing: border-box;
-}
-
-.bannerButton {
-  background: transparent;
-  color: var(--nothing-red) !important;
-  border: 2px solid var(--nothing-red) !important;
-}
-
-.bannerButton:hover {
-  background: rgba(215, 25, 32, 0.12) !important;
-  color: var(--nothing-red) !important;
-  border-color: var(--nothing-red) !important;
-  transform: translateY(-2px);
-  text-decoration: none !important;
-}
-
-.bannerButtonSecondary {
   background: transparent;
   color: var(--ifm-heading-color) !important;
   border: 2px solid var(--nothing-border-strong, rgba(0, 0, 0, 0.18)) !important;
 }
 
-[data-theme='dark'] .bannerButtonSecondary {
+[data-theme='dark'] .bannerButton {
   border-color: rgba(255, 255, 255, 0.18) !important;
   color: #ffffff !important;
 }
 
-.bannerButtonSecondary:hover {
+.bannerButton:hover {
   border-color: var(--nothing-red) !important;
   color: var(--nothing-red) !important;
   background: rgba(215, 25, 32, 0.06) !important;
@@ -690,13 +672,28 @@
   text-decoration: none !important;
 }
 
-.bannerButton:hover svg,
-.bannerButtonSecondary:hover svg {
+.bannerButtonActive {
+  background: transparent;
+  color: var(--nothing-red) !important;
+  border-color: var(--nothing-red) !important;
+}
+
+[data-theme='dark'] .bannerButtonActive {
+  color: var(--nothing-red) !important;
+  border-color: var(--nothing-red) !important;
+}
+
+.bannerButtonActive:hover {
+  background: rgba(215, 25, 32, 0.12) !important;
+  color: var(--nothing-red) !important;
+  border-color: var(--nothing-red) !important;
+}
+
+.bannerButton:hover svg {
   transform: translateX(3px);
 }
 
-.bannerButton svg,
-.bannerButtonSecondary svg {
+.bannerButton svg {
   transition: transform 0.2s ease;
 }
 
@@ -706,8 +703,7 @@
 .loadMoreBtn:focus-visible,
 .emptyStateResetBtn:focus-visible,
 .resetAllBtn:focus-visible,
-.bannerButton:focus-visible,
-.bannerButtonSecondary:focus-visible {
+.bannerButton:focus-visible {
   outline: 2px solid var(--nothing-red);
   outline-offset: 2px;
 }

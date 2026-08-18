@@ -462,7 +462,6 @@ export default function ShowcasePage(): React.JSX.Element {
       search: '',
       sort: 'az',
     }));
-    setVisibleCount(PAGE_SIZE);
   };
 
   const handleClearDeveloper = () => {
@@ -525,7 +524,6 @@ export default function ShowcasePage(): React.JSX.Element {
       ...prev,
       sort: mode,
     }));
-    setVisibleCount(PAGE_SIZE);
   };
 
   // Multi-dimensional filtering logic with Editor's Choice naturally boosted to top
@@ -535,28 +533,20 @@ export default function ShowcasePage(): React.JSX.Element {
       if (source !== 'all' && item.source !== source) return false;
 
       // Filter: Broad Category (H2)
-      if (selectedCategory !== 'all') {
-        if (item.categoryKey !== selectedCategory) return false;
-      }
+      if (selectedCategory !== 'all' && item.categoryKey !== selectedCategory) return false;
 
       // Filter: Subcategory (H3)
-      if (selectedSubCategory !== 'all') {
-        if (item.subCategoryKey !== selectedSubCategory) return false;
-      }
+      if (selectedSubCategory !== 'all' && item.subCategoryKey !== selectedSubCategory) return false;
 
       // Filter: Target OS Platform
-      if (selectedPlatform !== 'all') {
-        const osList = item.platformOS || [];
-        if (!osList.includes(selectedPlatform)) return false;
-      }
+      if (selectedPlatform !== 'all' && !(item.platformOS || []).includes(selectedPlatform)) return false;
 
       // Filter: Developer
       if (selectedDeveloper) {
-        const itemDevs = parseDevelopers(item.developer).map((d) => d.toLowerCase().trim());
         const target = selectedDeveloper.toLowerCase().trim();
-        const matchesIndividual = itemDevs.includes(target);
-        const matchesRaw = item.developer.toLowerCase().trim() === target;
-        if (!matchesIndividual && !matchesRaw) return false;
+        const rawMatch = item.developer.toLowerCase().trim() === target;
+        const devMatch = parseDevelopers(item.developer).some((d) => d.toLowerCase().trim() === target);
+        if (!rawMatch && !devMatch) return false;
       }
 
       // Filter: Search query
@@ -576,15 +566,6 @@ export default function ShowcasePage(): React.JSX.Element {
       return true;
     });
 
-    if (sortMode === 'category') {
-      return [...matched].sort((a, b) =>
-        a.category.localeCompare(b.category) ||
-        (a.subCategory || '').localeCompare(b.subCategory || '') ||
-        (a.featured === b.featured ? 0 : a.featured ? -1 : 1) ||
-        a.title.localeCompare(b.title, undefined, { sensitivity: 'base' })
-      );
-    }
-
     const isFilterOrSearchActive =
       source !== 'all' ||
       selectedCategory !== 'all' ||
@@ -594,7 +575,7 @@ export default function ShowcasePage(): React.JSX.Element {
       searchQuery.trim().length > 0;
 
     // Boost Editor's Choice items to the top when filters or search are active
-    if (isFilterOrSearchActive) {
+    if (isFilterOrSearchActive && sortMode !== 'category') {
       return [...matched].sort((a, b) => {
         if (a.featured && !b.featured) return -1;
         if (!a.featured && b.featured) return 1;
@@ -602,7 +583,7 @@ export default function ShowcasePage(): React.JSX.Element {
       });
     }
 
-    // Root view: retain pure discovery across all catalog entries
+    // Root view and category sort retain natural base order
     return matched;
   }, [
     sortedBaseItems,
@@ -697,7 +678,7 @@ export default function ShowcasePage(): React.JSX.Element {
 
             {/* Main Content Area */}
             <main className={styles.mainContent}>
-              {/* Unified Command Toolbar (Hardware Console Bar) */}
+              {/* Command toolbar */}
               <div className={styles.toolbar}>
                 {/* Integrated Search Input */}
                 <div className={styles.searchSection}>
@@ -919,7 +900,7 @@ export default function ShowcasePage(): React.JSX.Element {
                 </div>
               )}
 
-              {/* Documentation Reference Footer Strip */}
+              {/* Documentation reference footer */}
               <div className={styles.bottomBanner}>
                 <div className={styles.bannerContent}>
                   <h2 className={styles.bannerTitle}>Documentation</h2>
@@ -928,11 +909,23 @@ export default function ShowcasePage(): React.JSX.Element {
                   </p>
                 </div>
                 <div className={styles.bannerActions}>
-                  <Link to="/docs/apps" className={styles.bannerButton}>
+                  <Link
+                    to="/docs/apps"
+                    className={clsx(
+                      styles.bannerButton,
+                      source === 'apps' && styles.bannerButtonActive
+                    )}
+                  >
                     <span>Apps</span>
                     <FaArrowRight size={11} />
                   </Link>
-                  <Link to="/docs/projects" className={styles.bannerButtonSecondary}>
+                  <Link
+                    to="/docs/projects"
+                    className={clsx(
+                      styles.bannerButton,
+                      source === 'projects' && styles.bannerButtonActive
+                    )}
+                  >
                     <span>Projects</span>
                     <FaArrowRight size={11} />
                   </Link>

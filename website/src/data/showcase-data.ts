@@ -59,10 +59,6 @@ export interface CategoryOption {
   subCategories: SubCategoryOption[];
 }
 
-export interface ShowcasePayload {
-  items: ShowcaseItem[];
-  categories: Record<SourceFilter, CategoryOption[]>;
-}
 
 export const SOURCE_TABS: { id: SourceFilter; label: string; shortLabel: string }[] = [
   { id: 'all', label: 'All Catalog', shortLabel: 'All' },
