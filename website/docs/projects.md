@@ -148,7 +148,6 @@ Browser extensions and other add-ons inspired by Nothing OS.
 | [Nothing Ear Controller](https://github.com/LuanAdemi/nothing-ear-controller) | LuanAdemi | GNOME extension for ANC control on Nothing Ear |
 | [Nothing Home](https://github.com/nemy-new/NothingHome) | nemy-new | Browser New Tab extension |
 | [Nothing News Extension](https://chromewebstore.google.com/detail/nothing-news/ijacccpmmnbckkiobhonleppbcljpjpo) | lsh3 | Chrome extension |
-| [Void Glyph New Tab](https://github.com/NamiCode-Dev/void-glyph-newtab) | NamiCode-Dev | Industrial browser New Tab page extension inspired by the Nothing OS design system |
 
 ## Sound & Audio
 

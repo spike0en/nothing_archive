@@ -21,8 +21,8 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | [Phone (1)](https://nothing.tech/products/phone-1) <br /> <small>Spacewar / Abra</small> | A063 | 12 July 2022 | Nothing OS 1.0 (Android 12) | 3 + 1 Years (EOL) | [Here](https://nothing.wiki/hardware/phone_1) |
 | [Phone (2)](https://nothing.tech/products/phone-2) <br /> <small>Pong / Alakazam</small> | A065 / AIN065 | 11 July 2023 | Nothing OS 2.0 (Android 13) | 3 + 1 Years | [Here](https://nothing.wiki/hardware/phone_2) |
-| [Phone (2a)](https://nothing.tech/products/phone-2a) <br /> <small>Pacman / Aerodactyl</small> | A142 | 05 March 2024 | Nothing OS 2.5 (Android 14) | 3 + 1 Years | [Here](https://nothing.wiki/hardware/phone_2a_series) |
-| [Phone (2a) Plus](https://nothing.tech/products/phone-2a-plus) <br /> <small>PacmanPro / Mega Aerodactyl</small> | A142P | 31 July 2024 | Nothing OS 2.6 (Android 14) | 3 + 1 Years | [Here](https://nothing.wiki/hardware/phone_2a_series) |
+| [Phone (2a)](https://intl.nothing.tech/products/phone-2a) <br /> <small>Pacman / Aerodactyl</small> | A142 | 05 March 2024 | Nothing OS 2.5 (Android 14) | 3 + 1 Years | [Here](https://nothing.wiki/hardware/phone_2a_series) |
+| [Phone (2a) Plus](https://nl.nothing.tech/products/phone-2a-plus) <br /> <small>PacmanPro / Mega Aerodactyl</small> | A142P | 31 July 2024 | Nothing OS 2.6 (Android 14) | 3 + 1 Years | [Here](https://nothing.wiki/hardware/phone_2a_series) |
 | [Phone (3a)](https://nothing.tech/products/phone-3a) <br /> <small>Asteroids / Arcanine</small> | A059 | 04 March 2025 | Nothing OS 3.0 (Android 15) | 3 + 3 Years | [Here](https://nothing.wiki/hardware/phone_3a_series) |
 | [Phone (3a) Pro](https://nothing.tech/products/phone-3a-pro) <br /> <small>AsteroidsPro / Arcanine</small> | A059P | 04 March 2025 | Nothing OS 3.0 (Android 15) | 3 + 3 Years | [Here](https://nothing.wiki/hardware/phone_3a_series) |
 | [Phone (3)](https://nothing.tech/products/phone-3) <br /> <small>Metroid / Arbok</small> | A024 | 01 July 2025 | Nothing OS 3.5 (Android 15) | 5 + 2 Years | [Here](https://nothing.wiki/hardware/phone_3) |
@@ -35,7 +35,7 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 
 | Device / Pokémon Codename | Model | Release Date | Wiki Page |
 | :--- | :--- | :--- | :--- |
-| [Ear (1)](https://nothing.tech/products/ear-1) <br /> <small>Aipom</small> | B181 | 27 July 2021 | [Here](https://nothing.wiki/hardware/ear_series#ear_1) |
+| [Ear (1)](https://in.nothing.tech/products/ear-1) <br /> <small>Aipom</small> | B181 | 27 July 2021 | [Here](https://nothing.wiki/hardware/ear_series#ear_1) |
 | [Ear (stick)](https://nothing.tech/products/ear-stick) <br /> <small>Bellossom</small> | B157 | 26 October 2022 | [Here](https://nothing.wiki/hardware/ear_series#ear_stick) |
 | [Ear (2)](https://nothing.tech/products/ear-2) <br /> <small>Azumarill</small> | B155 | 22 March 2023 | [Here](https://nothing.wiki/hardware/ear_series#ear_2) |
 | [Ear](https://nothing.tech/products/ear) <br /> <small>Entei</small> | B171 | 18 April 2024 | [Here](https://nothing.wiki/hardware/ear_series#ear) |
@@ -51,7 +51,7 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 | Name | Release Date | Wiki Page |
 | :--- | :--- | :--- |
 | [Labcoat](https://nothing.tech/products/nothing-labcoat) | 07 December 2023 | [Here](https://nothing.wiki/merchandise/apparel#drop_1_transparency) |
-| [Cap](https://nothing.tech/products/nothing-cap) | 07 December 2023 | [Here](https://nothing.wiki/merchandise/apparel#drop_1_transparency) |
+| [Cap](https://in.nothing.tech/products/nothing-cap) | 07 December 2023 | [Here](https://nothing.wiki/merchandise/apparel#drop_1_transparency) |
 | [Heavy Hoodie](https://nothing.tech/products/nothing-hoodie) | 21 November 2024 | [Here](https://nothing.wiki/merchandise/apparel#drop_2_comfort) |
 | [Ripstop Tracksuit Jacket](https://nothing.tech/products/nothing-tracksuit-jacket) | 21 November 2024 | [Here](https://nothing.wiki/merchandise/apparel#drop_2_comfort) |
 | [Ripstop Tracksuit Trousers](https://nothing.tech/products/nothing-tracksuit-trousers) | 21 November 2024 | [Here](https://nothing.wiki/merchandise/apparel#drop_2_comfort) |
@@ -75,8 +75,8 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 
 | Device / Pokémon Codename | Model | Release Date | Factory Firmware | Updates (OS + Security) | Wiki Page |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| [Phone (1)](https://nothing.tech/products/cmf-phone-1) <br /> <small>Tetris / Beedrill</small> | A015 | 08 July 2024 | Nothing OS 2.6 (Android 14) | 2 + 1 Years | [Here](https://nothing.wiki/cmf/cmf_phone_1) |
-| [Phone (2) Pro](https://nothing.tech/products/cmf-phone-2-pro) <br /> <small>Galaga / Bulbasaur</small> | A001 | 28 April 2025 | Nothing OS 3.2 (Android 15) | 3 + 3 Years | [Here](https://nothing.wiki/cmf/cmf_phone_2_pro) |
+| [Phone (1)](https://in.nothing.tech/products/cmf-phone-1) <br /> <small>Tetris / Beedrill</small> | A015 | 08 July 2024 | Nothing OS 2.6 (Android 14) | 2 + 1 Years | [Here](https://nothing.wiki/cmf/cmf_phone_1) |
+| [Phone (2) Pro](https://in.nothing.tech/products/cmf-phone-2-pro) <br /> <small>Galaga / Bulbasaur</small> | A001 | 28 April 2025 | Nothing OS 3.2 (Android 15) | 3 + 3 Years | [Here](https://nothing.wiki/cmf/cmf_phone_2_pro) |
 
 
 ### Audio
@@ -98,7 +98,7 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 | Device / Pokémon Codename | Model | Release Date | Wiki Page |
 | :--- | :--- | :--- | :--- |
 | [Watch Pro](https://nothing.tech/products/cmf-watch-pro) <br /> <small>Empoleon</small> | D395 | 26 September 2023 | [Here](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro) |
-| [Watch Pro 2](https://nothing.tech/products/cmf-watch-pro-2) <br /> <small>Buizel</small> | D398 | 08 July 2024 | [Here](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro_2) |
+| [Watch Pro 2](https://in.nothing.tech/products/cmf-watch-pro-2) <br /> <small>Buizel</small> | D398 | 08 July 2024 | [Here](https://nothing.wiki/cmf/cmf_watch#cmf_watch_pro_2) |
 | [Watch 3 Pro](https://nothing.tech/products/cmf-watch-3-pro) <br /> <small>Buneary</small> | D399 | 22 July 2025 | [Here](https://nothing.wiki/cmf/cmf_watch#cmf_watch_3_pro) |
 
 ### Accessories

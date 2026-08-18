@@ -129,7 +129,7 @@ const communityMaintainedLinks = [
 /** Official social media channels. */
 const socialMediaLinks = [
   { label: 'CMF', href: 'https://x.com/cmfbynothing', icon: <FaXTwitter size={22} /> },
-  { label: 'Community', href: 'https://www.instagram.com/community.nothing', icon: <FaInstagram size={22} /> },
+  { label: 'Community', href: 'https://www.instagram.com/nothing.community', icon: <FaInstagram size={22} /> },
   { label: 'Essential', href: 'https://x.com/essential', icon: <FaXTwitter size={22} /> },
   { label: 'Instagram', href: 'https://instagram.com/nothing', icon: <FaInstagram size={22} /> },
   { label: 'Nothing', href: 'https://x.com/nothing', icon: <FaXTwitter size={22} /> },

@@ -62,7 +62,7 @@ APK mirrors for manual installation are available at [APKMirror](https://www.apk
 
 | App | Links |
 |-----|-------|
-| CMF Watch | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.cmf.watch) <br /> [iOS](https://apps.apple.com/us/app/cmf-watch/id6447500890) |
+| CMF Watch (Discontinued) | [APKMirror](https://www.apkmirror.com/apk/nothing-technology-limited/cmf-watch/) |
 | Community Widgets | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.communitywidgets) |
 | Essential Apps | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.essentialapps) |
 | Essential Search | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.essential.search) |
@@ -75,7 +75,7 @@ APK mirrors for manual installation are available at [APKMirror](https://www.apk
 | Launcher | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.launcher) |
 | Nothing X | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.smartcenter) <br /> [iOS](https://apps.apple.com/us/app/nothing-x/id1568033706) |
 | Wallpaper | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.wallpaper) |
-| Warp | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.rotom) <br /> [Chrome Web Extension](https://chromewebstore.google.com/detail/nothing-warp/giginmkkobiioddannfahhhleccgggaj) |
+| Warp | [APKMirror](https://www.apkmirror.com/apk/nothing-technology-limited/) <br /> [Chrome Web Extension](https://chromewebstore.google.com/detail/nothing-warp/giginmkkobiioddannfahhhleccgggaj) |
 | Weather | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.weather) |
 | Widgets | [Play Store](https://play.google.com/store/apps/details?id=com.nothing.hearthstone) |
 

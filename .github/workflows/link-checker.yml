@@ -1,15 +1,26 @@
 name: Link Checker
+
 on:
   schedule:
     - cron: "0 0 1 * *" # Runs monthly on the 1st
   workflow_dispatch:
+    inputs:
+      runner:
+        description: "Runner environment"
+        required: false
+        default: "self-hosted"
+        type: choice
+        options:
+          - self-hosted
+          - ubuntu-latest
 
 jobs:
   check-links:
-    runs-on: ubuntu-latest
+    runs-on: ${{ inputs.runner == 'ubuntu-latest' && 'ubuntu-latest' || fromJSON('["self-hosted", "X64"]') }}
     steps:
       - uses: actions/checkout@v4
       - name: Lychee Link Checker
         uses: lycheeverse/lychee-action@v1.9.3
         with:
-          args: --accept 200,429 --verbose --no-progress --exclude "reddit.com" --exclude "archive.org" --exclude "support.nothing.tech" --exclude "forms.gle" './**/*.md'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          args: --accept 200,429 --verbose --no-progress --max-concurrency 8 --timeout 20 --max-retries 3 --retry-wait-time 2 --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" --exclude "reddit.com" --exclude "archive.org" --exclude "support.nothing.tech" --exclude "forms.gle" --exclude "xdaforums.com" --exclude "hardreset.info" --exclude "apkmirror.com" --exclude "android.googleapis.com" --exclude "developer.android.com" --exclude "sourceforge.net" --exclude "droidwin.com" --exclude "codeberg.org" --exclude "fonts.gstatic.com" --exclude "fonts.googleapis.com" --exclude "localhost" './**/*.md' './website/src/**/*.{ts,tsx,js,jsx}' './website/docusaurus.config.ts'

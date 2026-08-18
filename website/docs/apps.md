@@ -97,7 +97,6 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Beat](https://play.google.com/store/apps/details?id=com.pauwma.glyphbeat) | pauwma | Media visualizer with themes |
 | [Glyph Claude Limit](https://github.com/literato1987/glyph-claude-limits) | literato1987 | Claude.ai 5h usage limit on Nothing Phone (3) Glyph Matrix |
 | [Glyph Decibel Meter](https://github.com/iama2z/Glyph-Decibel-Meter) | iama2z | Displays decibel levels with a filling effect on the Nothing Phone (4a) Pro's Glyph Matrix |
-| [Glyph Draw](https://github.com/kaelvalen/open-glyph) | kaelvalen | Glyph Toy for Nothing Phone (3) that lets you draw custom pixel art |
 | [Glyph Draw](https://play.google.com/store/apps/details?id=com.shashank.fyi.glyph_draw) | Shashank | Matrix drawing tool and pixel editor for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph GeekBox](https://github.com/danissomo/GlyphMatrix-AODGeekBox) | danissomo | Some geek stuff on GlyphMatrix. Nothing Phone 4(a) pro targeted |
 | [Glyph HA Integration](https://github.com/Pytonballoon810/Glyph-HA-Integration) | Pytonballoon810 | Android app that displays Home Assistant sensor data on the Nothing Glyph Matrix |
@@ -254,7 +253,6 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 
 | App | Developer | Description |
 |-----|-----------|-------------|
-| [Don't Look](https://play.google.com/store/apps/details?id=com.lended.dontlook) | Creepsmile | Focus enhancement app |
 | [Dothing](https://play.google.com/store/apps/details?id=com.firstyogi.dothing) | FirstYogi | Minimalist tasks app with cloud backup |
 | [No Things To Do List](https://play.google.com/store/apps/details?id=com.todo.nothingwidgets) | Martin Diermayr | Task/to-do app with widgets |
 | [Nothing To Do](https://github.com/amriths04/NothingToDo) | amriths04 | Nothing to do android app |
@@ -327,7 +325,6 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 |-----|-----------|-------------|
 | [MINIMAA Launcher](https://play.google.com/store/apps/details?id=com.minimaa.minimal.detox.launcher) | Pickerry Apps | Minimalist launcher built to reduce digital distractions with a text-based interface, dark themes, and focus utilities |
 | [Simple Launcher](https://play.google.com/store/apps/details?id=com.dino.simple) | DinoyRajk | Minimalist launcher |
-| [Stario Launcher](https://play.google.com/store/apps/details?id=com.stario.launcher) | tariqamarneh | Minimal dot-grid launcher inspired by the Nothing OS aesthetic |
 
 ### Keyboards & Input
 
