@@ -274,8 +274,15 @@ export default function ShowcasePage(): React.JSX.Element {
     setSelectedSubCategoryState(parsed.subCategory);
     setSelectedPlatformState(parsed.platform);
     setSelectedDeveloperState(parsed.developer);
-    setSearchQueryState(parsed.search);
     setSortModeState(parsed.sort);
+
+    // Prevent overwriting local search input state during active typing or trailing whitespace
+    setSearchQueryState((prev) => {
+      if (prev.trim() === parsed.search.trim()) {
+        return prev;
+      }
+      return parsed.search;
+    });
   }, [location.search]);
 
   // Commits filter changes to state and updates browser history stack
