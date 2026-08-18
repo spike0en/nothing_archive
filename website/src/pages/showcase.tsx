@@ -660,18 +660,17 @@ export default function ShowcasePage(): React.JSX.Element {
   return (
     <Layout
       title="Community Showcase"
-      description="Discover community-built apps, Glyph Matrix tools, widgets, and open-source projects for Nothing and CMF devices."
+      description="Explore apps and projects built by the Nothing community."
     >
       <div className={styles.showcasePage}>
         <div className={styles.glyphGrid} aria-hidden="true" />
 
         <div className="container">
-          {/* Header section with left-aligned typographic discipline */}
           <header className={styles.header}>
             <div className={styles.headerLeft}>
               <h1 className={styles.title}>Community Showcase</h1>
               <p className={styles.subtitle}>
-                Explore and collaborate on the applications and projects made by the Nothing &amp; CMF community.
+                Explore apps and projects built by the Nothing community.
               </p>
             </div>
           </header>
