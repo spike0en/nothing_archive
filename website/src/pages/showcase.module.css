@@ -370,7 +370,12 @@
 
   .toolbarActions {
     flex: 1;
-    justify-content: flex-end;
+    justify-content: flex-start;
+  }
+
+  .sortMenuPanel {
+    left: 0;
+    right: auto;
   }
 }
 

@@ -7,12 +7,10 @@
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: var(--ifm-card-border-radius, 24px);
   padding: 1.35rem;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.2s ease,
+  transition: border-color 0.2s ease,
               box-shadow 0.2s ease;
   box-sizing: border-box;
-  backface-visibility: hidden;
-  transform: translateZ(0);
+  cursor: default;
 }
 
 [data-theme='dark'] .card {
@@ -26,25 +24,16 @@
 }
 
 .card:hover {
-  transform: translateY(-2px) translateZ(0);
   border-color: var(--ifm-color-emphasis-400);
 }
 
 [data-theme='dark'] .card:hover {
-  border-color: rgba(255, 255, 255, 0.22);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
 }
 
 [data-theme='light'] .card:hover {
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-}
-
-.featuredCard {
-  border-color: rgba(255, 199, 0, 0.35);
-}
-
-[data-theme='dark'] .featuredCard {
-  border-color: rgba(255, 199, 0, 0.25);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
 .header {
@@ -167,8 +156,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background: rgba(255, 199, 0, 0.12);
   color: #FFC700;
@@ -186,56 +175,71 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
   box-sizing: border-box;
   transition: all 0.15s ease;
-  background: var(--ifm-color-emphasis-100);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  color: var(--ifm-color-emphasis-800);
-}
-
-[data-theme='dark'] .platformBadge {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
-  color: #bbb;
 }
 
 .platformAndroid {
-  color: #3DDC84;
-}
-
-[data-theme='light'] .platformAndroid {
+  background: rgba(30, 123, 68, 0.08);
+  border: 1px solid rgba(30, 123, 68, 0.25);
   color: #1E7B44;
 }
 
+[data-theme='dark'] .platformAndroid {
+  background: rgba(61, 220, 132, 0.12);
+  border-color: rgba(61, 220, 132, 0.28);
+  color: #3DDC84;
+}
+
 .platformWindows {
+  background: rgba(0, 120, 212, 0.08);
+  border: 1px solid rgba(0, 120, 212, 0.25);
   color: #0078D4;
 }
 
-[data-theme='light'] .platformWindows {
-  color: #00569E;
+[data-theme='dark'] .platformWindows {
+  background: rgba(0, 164, 239, 0.12);
+  border-color: rgba(0, 164, 239, 0.28);
+  color: #00A4EF;
 }
 
 .platformLinux {
-  color: #FCC624;
-}
-
-[data-theme='light'] .platformLinux {
+  background: rgba(255, 199, 0, 0.08);
+  border: 1px solid rgba(181, 126, 0, 0.25);
   color: #B57E00;
 }
 
+[data-theme='dark'] .platformLinux {
+  background: rgba(255, 199, 0, 0.12);
+  border-color: rgba(255, 199, 0, 0.28);
+  color: #FFC700;
+}
+
 .platformApple {
-  color: var(--ifm-heading-color);
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #1D1D1F;
+}
+
+[data-theme='dark'] .platformApple {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
 }
 
 .platformWeb {
-  color: #00D2FF;
+  background: rgba(0, 112, 243, 0.08);
+  border: 1px solid rgba(0, 112, 243, 0.25);
+  color: #0070F3;
 }
 
-[data-theme='light'] .platformWeb {
-  color: #0070F3;
+[data-theme='dark'] .platformWeb {
+  background: rgba(0, 210, 255, 0.12);
+  border-color: rgba(0, 210, 255, 0.28);
+  color: #00D2FF;
 }
 
 .description {
@@ -319,6 +323,54 @@
 [data-theme='dark'] .actionButton:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff !important;
+}
+
+.actionPlayStore:hover {
+  background: rgba(61, 220, 132, 0.1);
+  border-color: rgba(30, 123, 68, 0.45);
+  color: #117337 !important;
+}
+
+[data-theme='dark'] .actionPlayStore:hover {
+  background: rgba(61, 220, 132, 0.12);
+  border-color: rgba(61, 220, 132, 0.45);
+  color: #3DDC84 !important;
+}
+
+.actionGithub:hover {
+  background: rgba(255, 199, 0, 0.12);
+  border-color: rgba(181, 117, 0, 0.45);
+  color: #946000 !important;
+}
+
+[data-theme='dark'] .actionGithub:hover {
+  background: rgba(255, 199, 0, 0.12);
+  border-color: rgba(255, 199, 0, 0.45);
+  color: #FFC700 !important;
+}
+
+.actionWeb:hover {
+  background: rgba(0, 112, 243, 0.08);
+  border-color: rgba(0, 112, 243, 0.4);
+  color: #0070F3 !important;
+}
+
+[data-theme='dark'] .actionWeb:hover {
+  background: rgba(0, 210, 255, 0.12);
+  border-color: rgba(0, 210, 255, 0.45);
+  color: #00D2FF !important;
+}
+
+.actionAppStore:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.4);
+  color: #000000 !important;
+}
+
+[data-theme='dark'] .actionAppStore:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.45);
   color: #ffffff !important;
 }
 

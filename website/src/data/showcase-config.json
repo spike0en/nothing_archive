@@ -7,7 +7,8 @@
     "ear-web",
     "fmc",
     "nothing-archive",
-    "custom-nothing-glyph-tools"
+    "custom-nothing-glyph-tools",
+    "glyph-nexus"
   ],
   "platformOverrides": {
     "nothing-archive": ["web"],

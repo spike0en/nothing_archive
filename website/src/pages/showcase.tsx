@@ -2,7 +2,8 @@
  * @file showcase.tsx
  * @description Catalog route for the Nothing Archive Community Showcase.
  * Orchestrates full-text search, multi-source taxonomy filtering, active facet chips,
- * and responsive showcase cards grid.
+ * and responsive showcase cards grid. Synchronizes state with URL search params
+ * to support browser history and back/forward navigation.
  * 
  * Layer: Top-level page route (/showcase).
  * Boundary: Orchestrates search, multi-source taxonomy filtering, sort modes, and renders showcase cards.
@@ -11,6 +12,7 @@
 import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
+import { useHistory, useLocation } from '@docusaurus/router';
 import {
   FaMagnifyingGlass,
   FaArrowRight,
@@ -19,7 +21,6 @@ import {
   FaChevronDown,
   FaRotateLeft,
   FaSliders,
-  FaCrown,
   FaArrowDownAZ,
   FaArrowDownZA,
   FaFolder,
@@ -53,11 +54,107 @@ interface SortOption {
 
 const SORT_OPTIONS: SortOption[] = [
   { id: 'random', label: 'Random', icon: <FaShuffle size={12} /> },
-  { id: 'featured', label: "Editor's Choice", icon: <FaCrown size={12} /> },
   { id: 'az', label: 'Title (A → Z)', icon: <FaArrowDownAZ size={12} /> },
   { id: 'za', label: 'Title (Z → A)', icon: <FaArrowDownZA size={12} /> },
-  { id: 'category', label: 'Group by Category', icon: <FaFolder size={12} /> },
+  { id: 'category', label: 'Category', icon: <FaFolder size={12} /> },
 ];
+
+interface ShowcaseUrlState {
+  source: SourceFilter;
+  category: string;
+  subCategory: string;
+  platform: PlatformFilter;
+  developer: string | null;
+  search: string;
+  sort: SortMode;
+}
+
+/**
+ * Validates whether a raw string represents a supported platform filter identifier.
+ *
+ * @param {string | null} value - Raw query string parameter.
+ * @returns {value is PlatformFilter} True if valid platform filter.
+ */
+function isPlatformFilter(value: string | null): value is PlatformFilter {
+  return (
+    value === 'all' ||
+    value === 'android' ||
+    value === 'ios' ||
+    value === 'windows' ||
+    value === 'linux' ||
+    value === 'macos' ||
+    value === 'web'
+  );
+}
+
+/**
+ * Validates whether a raw string represents a supported catalog sort mode.
+ *
+ * @param {string | null} value - Raw query string parameter.
+ * @returns {value is SortMode} True if valid sort mode.
+ */
+function isSortMode(value: string | null): value is SortMode {
+  return (
+    value === 'random' ||
+    value === 'featured' ||
+    value === 'az' ||
+    value === 'za' ||
+    value === 'category'
+  );
+}
+
+/**
+ * Extracts validated filter state from URL query parameters.
+ *
+ * @param {string} searchStr - Query string from location.search.
+ * @returns {ShowcaseUrlState} Parsed filter state.
+ */
+function parseUrlState(searchStr: string): ShowcaseUrlState {
+  const params = new URLSearchParams(searchStr);
+  const rawSource = params.get('source') || params.get('type');
+  const source: SourceFilter = rawSource === 'apps' || rawSource === 'projects' ? rawSource : 'all';
+
+  const category = params.get('category') || 'all';
+  const subCategory = params.get('subcategory') || params.get('sub') || 'all';
+
+  const rawPlatform = params.get('platform');
+  const platform: PlatformFilter = isPlatformFilter(rawPlatform) ? rawPlatform : 'all';
+
+  const developer = params.get('dev') || params.get('developer') || null;
+  const search = params.get('q') || params.get('search') || '';
+
+  const rawSort = params.get('sort');
+  const sort: SortMode = isSortMode(rawSort) ? rawSort : 'random';
+
+  return {
+    source,
+    category,
+    subCategory,
+    platform,
+    developer,
+    search,
+    sort,
+  };
+}
+
+/**
+ * Constructs URL search parameter string from filter state.
+ *
+ * @param {ShowcaseUrlState} state - Active filter state.
+ * @returns {string} URL query string with leading question mark or empty string.
+ */
+function buildUrlSearch(state: ShowcaseUrlState): string {
+  const params = new URLSearchParams();
+  if (state.source !== 'all') params.set('source', state.source);
+  if (state.category !== 'all') params.set('category', state.category);
+  if (state.subCategory !== 'all') params.set('subcategory', state.subCategory);
+  if (state.platform !== 'all') params.set('platform', state.platform);
+  if (state.developer) params.set('dev', state.developer);
+  if (state.search.trim()) params.set('q', state.search.trim());
+  if (state.sort !== 'random') params.set('sort', state.sort);
+  const qs = params.toString();
+  return qs ? `?${qs}` : '';
+}
 
 /**
  * Dropdown selector for catalog sorting order with outside-click dismissal.
@@ -150,18 +247,84 @@ function CustomSortDropdown({
  * @returns {React.JSX.Element} Showcase page layout.
  */
 export default function ShowcasePage(): React.JSX.Element {
-  const [source, setSource] = useState<SourceFilter>('all');
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedSubCategory, setSelectedSubCategory] = useState<string>('all');
-  const [selectedPlatform, setSelectedPlatform] = useState<PlatformFilter>('all');
-  const [selectedDeveloper, setSelectedDeveloper] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [sortMode, setSortMode] = useState<SortMode>('random');
+  const history = useHistory();
+  const location = useLocation();
+
+  const initialUrlState = useMemo(() => parseUrlState(location.search), []);
+
+  const [source, setSourceState] = useState<SourceFilter>(initialUrlState.source);
+  const [selectedCategory, setSelectedCategoryState] = useState<string>(initialUrlState.category);
+  const [selectedSubCategory, setSelectedSubCategoryState] = useState<string>(initialUrlState.subCategory);
+  const [selectedPlatform, setSelectedPlatformState] = useState<PlatformFilter>(initialUrlState.platform);
+  const [selectedDeveloper, setSelectedDeveloperState] = useState<string | null>(initialUrlState.developer);
+  const [searchQuery, setSearchQueryState] = useState<string>(initialUrlState.search);
+  const [sortMode, setSortModeState] = useState<SortMode>(initialUrlState.sort);
+
   const [shuffleSeed, setShuffleSeed] = useState(42);
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
 
   const searchInputRef = useRef<HTMLInputElement>(null);
+
+  // Synchronize state when browser navigation events (Back/Forward) update location.search
+  useEffect(() => {
+    const parsed = parseUrlState(location.search);
+    setSourceState(parsed.source);
+    setSelectedCategoryState(parsed.category);
+    setSelectedSubCategoryState(parsed.subCategory);
+    setSelectedPlatformState(parsed.platform);
+    setSelectedDeveloperState(parsed.developer);
+    setSearchQueryState(parsed.search);
+    setSortModeState(parsed.sort);
+  }, [location.search]);
+
+  // Commits filter changes to state and updates browser history stack
+  const applyState = useCallback(
+    (
+      updater: (prev: ShowcaseUrlState) => ShowcaseUrlState,
+      options?: { replace?: boolean }
+    ) => {
+      const current: ShowcaseUrlState = {
+        source,
+        category: selectedCategory,
+        subCategory: selectedSubCategory,
+        platform: selectedPlatform,
+        developer: selectedDeveloper,
+        search: searchQuery,
+        sort: sortMode,
+      };
+      const next = updater(current);
+
+      setSourceState(next.source);
+      setSelectedCategoryState(next.category);
+      setSelectedSubCategoryState(next.subCategory);
+      setSelectedPlatformState(next.platform);
+      setSelectedDeveloperState(next.developer);
+      setSearchQueryState(next.search);
+      setSortModeState(next.sort);
+
+      const targetSearch = buildUrlSearch(next);
+      if (targetSearch !== location.search) {
+        if (options?.replace) {
+          history.replace({ pathname: location.pathname, search: targetSearch });
+        } else {
+          history.push({ pathname: location.pathname, search: targetSearch });
+        }
+      }
+    },
+    [
+      history,
+      location.pathname,
+      location.search,
+      source,
+      selectedCategory,
+      selectedSubCategory,
+      selectedPlatform,
+      selectedDeveloper,
+      searchQuery,
+      sortMode,
+    ]
+  );
 
   // Compute item counts for each catalog source partition
   const sourceCounts = useMemo(() => {
@@ -213,41 +376,45 @@ export default function ShowcasePage(): React.JSX.Element {
     return [];
   }, [activeCategoryData]);
 
-  // Reset selected category if not present in new source catalog
+  // Debounced search query synchronization with URL query parameter
   useEffect(() => {
-    if (selectedCategory !== 'all') {
-      const exists = availableCategories.some((c) => c.id === selectedCategory);
-      if (!exists) {
-        setSelectedCategory('all');
-        setSelectedSubCategory('all');
-      }
-    }
-  }, [source, availableCategories, selectedCategory]);
+    const current = parseUrlState(location.search);
+    if (current.search === searchQuery) return;
 
-  // Reset selected subcategory when category changes
-  useEffect(() => {
-    if (selectedSubCategory !== 'all') {
-      const exists = availableSubCategories.some((s) => s.id === selectedSubCategory);
-      if (!exists) {
-        setSelectedSubCategory('all');
+    const timer = setTimeout(() => {
+      const nextState: ShowcaseUrlState = {
+        source,
+        category: selectedCategory,
+        subCategory: selectedSubCategory,
+        platform: selectedPlatform,
+        developer: selectedDeveloper,
+        search: searchQuery,
+        sort: sortMode,
+      };
+      const targetSearch = buildUrlSearch(nextState);
+      if (targetSearch !== location.search) {
+        history.replace({ pathname: location.pathname, search: targetSearch });
       }
-    }
-  }, [selectedCategory, availableSubCategories, selectedSubCategory]);
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, [
+    searchQuery,
+    source,
+    selectedCategory,
+    selectedSubCategory,
+    selectedPlatform,
+    selectedDeveloper,
+    sortMode,
+    history,
+    location.pathname,
+    location.search,
+  ]);
 
   // Base list processed with sorting / randomization
   const sortedBaseItems = useMemo<ShowcaseItem[]>(() => {
     const list = [...ALL_SHOWCASE_ITEMS];
 
-    if (sortMode === 'featured') {
-      return list.sort((a, b) => {
-        if (a.featured && !b.featured) return -1;
-        if (!a.featured && b.featured) return 1;
-        return a.title.localeCompare(b.title, undefined, { sensitivity: 'base' });
-      });
-    }
-    if (sortMode === 'random') {
-      return shuffleItems(list, shuffleSeed);
-    }
     if (sortMode === 'az') {
       return list.sort((a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: 'base' }));
     }
@@ -258,10 +425,11 @@ export default function ShowcasePage(): React.JSX.Element {
       return list.sort((a, b) =>
         a.category.localeCompare(b.category) ||
         (a.subCategory || '').localeCompare(b.subCategory || '') ||
+        (a.featured === b.featured ? 0 : a.featured ? -1 : 1) ||
         a.title.localeCompare(b.title, undefined, { sensitivity: 'base' })
       );
     }
-    return list;
+    return shuffleItems(list, shuffleSeed);
   }, [sortMode, shuffleSeed]);
 
   // Dynamically compute platform filters that exist for the selected source catalog
@@ -274,64 +442,88 @@ export default function ShowcasePage(): React.JSX.Element {
       filters = filters.filter((p) => p.id !== 'android' && p.id !== 'ios');
     }
 
-    if (sortMode === 'featured') {
-      const featuredItems = sortedBaseItems.filter((i) => i.featured && (source === 'all' || i.source === source));
-      const existingOS = new Set<string>();
-      for (const item of featuredItems) {
-        for (const os of item.platformOS || []) {
-          existingOS.add(os);
-        }
-      }
-      return filters.filter(
-        (p) => existingOS.has(p.id) || (p.id === 'ios' && existingOS.has('macos'))
-      );
-    }
-
     return filters;
-  }, [source, sortMode, sortedBaseItems]);
-
-  // Reset selected platform if not available in current source catalog
-  useEffect(() => {
-    if (selectedPlatform !== 'all') {
-      const isAvailable = availablePlatforms.some((p) => p.id === selectedPlatform);
-      if (!isAvailable) {
-        setSelectedPlatform('all');
-      }
-    }
-  }, [source, availablePlatforms, selectedPlatform]);
+  }, [source]);
 
   const handleSelectDeveloper = (devName: string) => {
-    setSelectedDeveloper(devName);
-    setSelectedCategory('all');
-    setSelectedSubCategory('all');
-    setSelectedPlatform('all');
-    setSource('all');
-    setSearchQuery('');
-    setSortMode('az');
+    applyState(() => ({
+      source: 'all',
+      category: 'all',
+      subCategory: 'all',
+      platform: 'all',
+      developer: devName,
+      search: '',
+      sort: 'az',
+    }));
     setVisibleCount(PAGE_SIZE);
   };
 
   const handleClearDeveloper = () => {
-    setSelectedDeveloper(null);
+    applyState((prev) => ({
+      ...prev,
+      developer: null,
+    }));
   };
 
   const handleResetFilters = useCallback(() => {
-    setSource('all');
-    setSelectedCategory('all');
-    setSelectedSubCategory('all');
-    setSelectedPlatform('all');
-    setSelectedDeveloper(null);
-    setSearchQuery('');
-    setSortMode('random');
+    applyState(() => ({
+      source: 'all',
+      category: 'all',
+      subCategory: 'all',
+      platform: 'all',
+      developer: null,
+      search: '',
+      sort: 'random',
+    }));
     setShuffleSeed(Math.floor(Math.random() * 10000) + 1);
-  }, []);
+  }, [applyState]);
 
-  // Multi-dimensional filtering logic
+  const handleSelectSource = (newSource: SourceFilter) => {
+    applyState((prev) => ({
+      ...prev,
+      source: newSource,
+      category: 'all',
+      subCategory: 'all',
+      platform: 'all',
+    }));
+  };
+
+  const handleSelectCategory = (categoryId: string) => {
+    applyState((prev) => ({
+      ...prev,
+      category: categoryId,
+      subCategory: 'all',
+    }));
+  };
+
+  const handleSelectSubCategory = (subCatId: string) => {
+    applyState((prev) => ({
+      ...prev,
+      subCategory: subCatId,
+    }));
+  };
+
+  const handleSelectPlatform = (platformId: PlatformFilter) => {
+    applyState((prev) => ({
+      ...prev,
+      platform: platformId,
+    }));
+  };
+
+  const handleSelectSortMode = (mode: SortMode) => {
+    if (mode === 'random') {
+      setShuffleSeed(Math.floor(Math.random() * 100000) + 1);
+    }
+    applyState((prev) => ({
+      ...prev,
+      sort: mode,
+    }));
+    setVisibleCount(PAGE_SIZE);
+  };
+
+  // Multi-dimensional filtering logic with Editor's Choice naturally boosted to top
   const filteredItems = useMemo(() => {
-    return sortedBaseItems.filter((item) => {
-      // Filter: Editor's Choice mode
-      if (sortMode === 'featured' && !item.featured) return false;
-
+    const matched = sortedBaseItems.filter((item) => {
       // Filter: Source catalog (apps vs projects)
       if (source !== 'all' && item.source !== source) return false;
 
@@ -376,6 +568,35 @@ export default function ShowcasePage(): React.JSX.Element {
 
       return true;
     });
+
+    if (sortMode === 'category') {
+      return [...matched].sort((a, b) =>
+        a.category.localeCompare(b.category) ||
+        (a.subCategory || '').localeCompare(b.subCategory || '') ||
+        (a.featured === b.featured ? 0 : a.featured ? -1 : 1) ||
+        a.title.localeCompare(b.title, undefined, { sensitivity: 'base' })
+      );
+    }
+
+    const isFilterOrSearchActive =
+      source !== 'all' ||
+      selectedCategory !== 'all' ||
+      selectedSubCategory !== 'all' ||
+      selectedPlatform !== 'all' ||
+      Boolean(selectedDeveloper) ||
+      searchQuery.trim().length > 0;
+
+    // Boost Editor's Choice items to the top when filters or search are active
+    if (isFilterOrSearchActive) {
+      return [...matched].sort((a, b) => {
+        if (a.featured && !b.featured) return -1;
+        if (!a.featured && b.featured) return 1;
+        return 0;
+      });
+    }
+
+    // Root view: retain pure discovery across all catalog entries
+    return matched;
   }, [
     sortedBaseItems,
     source,
@@ -417,7 +638,6 @@ export default function ShowcasePage(): React.JSX.Element {
     if (selectedPlatform !== 'all') count++;
     if (selectedDeveloper !== null) count++;
     if (searchQuery.trim().length > 0) count++;
-    if (sortMode === 'featured') count++;
     return count;
   }, [
     source,
@@ -426,7 +646,6 @@ export default function ShowcasePage(): React.JSX.Element {
     selectedPlatform,
     selectedDeveloper,
     searchQuery,
-    sortMode,
   ]);
 
   const hasActiveFilters = activeFilterCount > 0;
@@ -455,16 +674,16 @@ export default function ShowcasePage(): React.JSX.Element {
             {/* Persistent Desktop Sidebar (>= 1024px) */}
             <ShowcaseSidebar
               source={source}
-              onSelectSource={setSource}
+              onSelectSource={handleSelectSource}
               sourceCounts={sourceCounts}
               selectedCategory={selectedCategory}
-              onSelectCategory={setSelectedCategory}
+              onSelectCategory={handleSelectCategory}
               availableCategories={availableCategories}
               selectedSubCategory={selectedSubCategory}
-              onSelectSubCategory={setSelectedSubCategory}
+              onSelectSubCategory={handleSelectSubCategory}
               availableSubCategories={availableSubCategories}
               selectedPlatform={selectedPlatform}
-              onSelectPlatform={setSelectedPlatform}
+              onSelectPlatform={handleSelectPlatform}
               availablePlatforms={availablePlatforms}
               onResetAll={handleResetFilters}
               hasActiveFilters={hasActiveFilters}
@@ -482,14 +701,17 @@ export default function ShowcasePage(): React.JSX.Element {
                     type="text"
                     placeholder="Search by name, dev, or keyword..."
                     value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onChange={(e) => setSearchQueryState(e.target.value)}
                     className={styles.searchInput}
                     aria-label="Search showcase creations"
                   />
                   {searchQuery ? (
                     <button
                       type="button"
-                      onClick={() => setSearchQuery('')}
+                      onClick={() => {
+                        setSearchQueryState('');
+                        applyState((prev) => ({ ...prev, search: '' }), { replace: true });
+                      }}
                       className={styles.clearSearchBtn}
                       title="Clear search"
                       aria-label="Clear search"
@@ -529,13 +751,7 @@ export default function ShowcasePage(): React.JSX.Element {
                         ? SORT_OPTIONS
                         : SORT_OPTIONS.filter((o) => o.id !== 'category')
                     }
-                    onChange={(mode) => {
-                      if (mode === 'random') {
-                        setShuffleSeed(Math.floor(Math.random() * 100000) + 1);
-                      }
-                      setSortMode(mode);
-                      setVisibleCount(PAGE_SIZE);
-                    }}
+                    onChange={handleSelectSortMode}
                   />
                 </div>
               </div>
@@ -555,7 +771,7 @@ export default function ShowcasePage(): React.JSX.Element {
                           <span>Type: {source === 'apps' ? 'Apps' : 'Projects'}</span>
                           <button
                             type="button"
-                            onClick={() => setSource('all')}
+                            onClick={() => handleSelectSource('all')}
                             aria-label="Remove source filter"
                           >
                             <FaXmark size={9} />
@@ -568,7 +784,7 @@ export default function ShowcasePage(): React.JSX.Element {
                           <span>Platform: {selectedPlatform}</span>
                           <button
                             type="button"
-                            onClick={() => setSelectedPlatform('all')}
+                            onClick={() => handleSelectPlatform('all')}
                             aria-label="Remove platform filter"
                           >
                             <FaXmark size={9} />
@@ -582,8 +798,7 @@ export default function ShowcasePage(): React.JSX.Element {
                           <button
                             type="button"
                             onClick={() => {
-                              setSelectedCategory('all');
-                              setSelectedSubCategory('all');
+                              handleSelectCategory('all');
                             }}
                             aria-label="Remove category filter"
                           >
@@ -597,21 +812,8 @@ export default function ShowcasePage(): React.JSX.Element {
                           <span>Sub: {availableSubCategories.find((s) => s.id === selectedSubCategory)?.label || selectedSubCategory}</span>
                           <button
                             type="button"
-                            onClick={() => setSelectedSubCategory('all')}
+                            onClick={() => handleSelectSubCategory('all')}
                             aria-label="Remove subcategory filter"
-                          >
-                            <FaXmark size={9} />
-                          </button>
-                        </span>
-                      )}
-
-                      {sortMode === 'featured' && (
-                        <span className={styles.activeTag}>
-                          <span>Editor&apos;s Choice</span>
-                          <button
-                            type="button"
-                            onClick={() => setSortMode('random')}
-                            aria-label="Remove Editor's Choice filter"
                           >
                             <FaXmark size={9} />
                           </button>
@@ -636,7 +838,10 @@ export default function ShowcasePage(): React.JSX.Element {
                           <span>&quot;{searchQuery}&quot;</span>
                           <button
                             type="button"
-                            onClick={() => setSearchQuery('')}
+                            onClick={() => {
+                              setSearchQueryState('');
+                              applyState((prev) => ({ ...prev, search: '' }), { replace: true });
+                            }}
                             aria-label="Clear search"
                           >
                             <FaXmark size={9} />
@@ -737,28 +942,19 @@ export default function ShowcasePage(): React.JSX.Element {
         isOpen={isFilterDrawerOpen}
         onClose={() => setIsFilterDrawerOpen(false)}
         source={source}
-        onSelectSource={setSource}
+        onSelectSource={handleSelectSource}
         sourceCounts={sourceCounts}
         selectedCategory={selectedCategory}
-        onSelectCategory={setSelectedCategory}
+        onSelectCategory={handleSelectCategory}
         availableCategories={availableCategories}
         selectedSubCategory={selectedSubCategory}
-        onSelectSubCategory={setSelectedSubCategory}
+        onSelectSubCategory={handleSelectSubCategory}
         availableSubCategories={availableSubCategories}
         selectedPlatform={selectedPlatform}
-        onSelectPlatform={setSelectedPlatform}
+        onSelectPlatform={handleSelectPlatform}
         availablePlatforms={availablePlatforms}
         sortMode={sortMode}
-        onSelectSortMode={(mode) => {
-          setSortMode(mode);
-          if (mode === 'featured') {
-            setSelectedCategory('all');
-            setSelectedSubCategory('all');
-            setSelectedPlatform('all');
-            setSource('all');
-            setSelectedDeveloper(null);
-          }
-        }}
+        onSelectSortMode={handleSelectSortMode}
         onResetAll={handleResetFilters}
         totalMatches={filteredItems.length}
         hasActiveFilters={hasActiveFilters}
@@ -766,3 +962,4 @@ export default function ShowcasePage(): React.JSX.Element {
     </Layout>
   );
 }
+

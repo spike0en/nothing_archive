@@ -46,21 +46,21 @@ interface PlatformDisplayInfo {
 function getPlatformInfo(item: ShowcaseItem): PlatformDisplayInfo {
   const osList = item.platformOS || [];
   if (osList.includes('ios')) {
-    return { key: 'platformApple', icon: <FaApple size={11} />, title: 'iOS Platform' };
+    return { key: 'platformApple', icon: <FaApple size={13} />, title: 'iOS Platform' };
   }
   if (osList.includes('android')) {
-    return { key: 'platformAndroid', icon: <FaAndroid size={11} />, title: 'Android Platform' };
+    return { key: 'platformAndroid', icon: <FaAndroid size={13} />, title: 'Android Platform' };
   }
   if (osList.includes('windows')) {
-    return { key: 'platformWindows', icon: <FaWindows size={11} />, title: 'Windows OS' };
+    return { key: 'platformWindows', icon: <FaWindows size={12} />, title: 'Windows OS' };
   }
   if (osList.includes('linux')) {
-    return { key: 'platformLinux', icon: <FaLinux size={11} />, title: 'Linux System' };
+    return { key: 'platformLinux', icon: <FaLinux size={13} />, title: 'Linux System' };
   }
   if (osList.includes('macos')) {
-    return { key: 'platformApple', icon: <FaApple size={11} />, title: 'macOS' };
+    return { key: 'platformApple', icon: <FaApple size={13} />, title: 'macOS' };
   }
-  return { key: 'platformWeb', icon: <FaGlobe size={11} />, title: 'Web App & Portal' };
+  return { key: 'platformWeb', icon: <FaGlobe size={13} />, title: 'Web App & Portal' };
 }
 
 /**
@@ -169,7 +169,7 @@ export default function ShowcaseCard({
             href={item.links.playStore}
             target="_blank"
             rel="noopener noreferrer"
-            className={clsx(styles.actionButton, styles.secondaryAction)}
+            className={clsx(styles.actionButton, styles.actionPlayStore)}
             aria-label={`Get ${item.title} on Google Play`}
           >
             <FaGooglePlay size={11} />
@@ -182,7 +182,7 @@ export default function ShowcaseCard({
             href={item.links.appStore}
             target="_blank"
             rel="noopener noreferrer"
-            className={clsx(styles.actionButton, styles.secondaryAction)}
+            className={clsx(styles.actionButton, styles.actionAppStore)}
             aria-label={`Get ${item.title} on Apple App Store`}
           >
             <FaApple size={12} />
@@ -195,7 +195,7 @@ export default function ShowcaseCard({
             href={item.links.github}
             target="_blank"
             rel="noopener noreferrer"
-            className={clsx(styles.actionButton, styles.secondaryAction)}
+            className={clsx(styles.actionButton, styles.actionGithub)}
             aria-label={`View ${item.title} repository on GitHub`}
           >
             <FaGithub size={12} />
@@ -208,7 +208,7 @@ export default function ShowcaseCard({
             href={item.links.website}
             target="_blank"
             rel="noopener noreferrer"
-            className={clsx(styles.actionButton, styles.secondaryAction)}
+            className={clsx(styles.actionButton, styles.actionWeb)}
             aria-label={`Visit ${item.title} website`}
           >
             <FaArrowUpRightFromSquare size={10} />

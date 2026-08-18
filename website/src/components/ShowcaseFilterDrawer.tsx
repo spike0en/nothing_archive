@@ -21,7 +21,6 @@ import {
   FaMobileScreenButton,
   FaCode,
   FaShuffle,
-  FaCrown,
   FaArrowDownAZ,
   FaArrowDownZA,
   FaFolder,
@@ -274,88 +273,86 @@ export default function ShowcaseFilterDrawer({
             </div>
           </div>
 
-          {/* Section: Categories (Single-Column Ergonomic List) */}
-          {sortMode !== 'featured' && (
-            <div className={styles.section}>
-              <div className={styles.sectionHeader}>
-                <span className={styles.sectionLabel}>Categories</span>
-                {selectedCategory !== 'all' && (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      onSelectCategory('all');
-                      onSelectSubCategory('all');
-                    }}
-                    className={styles.sectionClearBtn}
-                  >
-                    Reset Categories
-                  </button>
-                )}
-              </div>
-
-              <div className={styles.categoryList}>
-                {availableCategories.map((cat) => {
-                  const isCatSelected = selectedCategory === cat.id;
-
-                  return (
-                    <div key={cat.id} className={styles.categoryGroup}>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          if (isCatSelected) {
-                            onSelectCategory('all');
-                            onSelectSubCategory('all');
-                          } else {
-                            onSelectCategory(cat.id);
-                            onSelectSubCategory('all');
-                          }
-                        }}
-                        className={clsx(
-                          styles.categoryRow,
-                          isCatSelected && styles.categoryRowActive
-                        )}
-                      >
-                        <div className={styles.categoryRowLeft}>
-                          <span className={styles.categoryRadio}>
-                            {isCatSelected && <FaCheck size={9} />}
-                          </span>
-                          <span className={styles.categoryLabel}>{cat.label}</span>
-                        </div>
-                        <span className={styles.categoryCount}>{cat.count}</span>
-                      </button>
-
-                      {/* Progressive Subcategories Disclosure */}
-                      {isCatSelected && availableSubCategories.length > 0 && (
-                        <div className={styles.subCategoryContainer}>
-                          <div className={styles.subCategoryPills}>
-                            {availableSubCategories.map((sub) => {
-                              const isSubSelected = selectedSubCategory === sub.id;
-                              return (
-                                <button
-                                  key={sub.id}
-                                  type="button"
-                                  onClick={() => onSelectSubCategory(isSubSelected ? 'all' : sub.id)}
-                                  className={clsx(
-                                    styles.subCategoryChip,
-                                    isSubSelected && styles.subCategoryChipActive
-                                  )}
-                                >
-                                  <span>{sub.label}</span>
-                                  <span className={styles.subCategoryBadge}>
-                                    {sub.count}
-                                  </span>
-                                </button>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
+          {/* Section: Categories (Single-Column List) */}
+          <div className={styles.section}>
+            <div className={styles.sectionHeader}>
+              <span className={styles.sectionLabel}>Categories</span>
+              {selectedCategory !== 'all' && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    onSelectCategory('all');
+                    onSelectSubCategory('all');
+                  }}
+                  className={styles.sectionClearBtn}
+                >
+                  Reset Categories
+                </button>
+              )}
             </div>
-          )}
+
+            <div className={styles.categoryList}>
+              {availableCategories.map((cat) => {
+                const isCatSelected = selectedCategory === cat.id;
+
+                return (
+                  <div key={cat.id} className={styles.categoryGroup}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (isCatSelected) {
+                          onSelectCategory('all');
+                          onSelectSubCategory('all');
+                        } else {
+                          onSelectCategory(cat.id);
+                          onSelectSubCategory('all');
+                        }
+                      }}
+                      className={clsx(
+                        styles.categoryRow,
+                        isCatSelected && styles.categoryRowActive
+                      )}
+                    >
+                      <div className={styles.categoryRowLeft}>
+                        <span className={styles.categoryRadio}>
+                          {isCatSelected && <FaCheck size={9} />}
+                        </span>
+                        <span className={styles.categoryLabel}>{cat.label}</span>
+                      </div>
+                      <span className={styles.categoryCount}>{cat.count}</span>
+                    </button>
+
+                    {/* Progressive Subcategories Disclosure */}
+                    {isCatSelected && availableSubCategories.length > 0 && (
+                      <div className={styles.subCategoryContainer}>
+                        <div className={styles.subCategoryPills}>
+                          {availableSubCategories.map((sub) => {
+                            const isSubSelected = selectedSubCategory === sub.id;
+                            return (
+                              <button
+                                key={sub.id}
+                                type="button"
+                                onClick={() => onSelectSubCategory(isSubSelected ? 'all' : sub.id)}
+                                className={clsx(
+                                  styles.subCategoryChip,
+                                  isSubSelected && styles.subCategoryChipActive
+                                )}
+                              >
+                                <span>{sub.label}</span>
+                                <span className={styles.subCategoryBadge}>
+                                  {sub.count}
+                                </span>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
 
           {/* Section: Sort Order */}
           <div className={styles.section}>
@@ -366,11 +363,10 @@ export default function ShowcaseFilterDrawer({
               {(() => {
                 const sortOptions: DrawerSortOption[] = [
                   { id: 'random', label: 'Random', icon: <FaShuffle size={12} /> },
-                  { id: 'featured', label: "Editor's Choice", icon: <FaCrown size={12} /> },
                   { id: 'az', label: 'Title (A → Z)', icon: <FaArrowDownAZ size={12} /> },
                   { id: 'za', label: 'Title (Z → A)', icon: <FaArrowDownZA size={12} /> },
                   ...(selectedCategory === 'all' && selectedSubCategory === 'all'
-                    ? [{ id: 'category' as const, label: 'By Category', icon: <FaFolder size={12} /> }]
+                    ? [{ id: 'category' as const, label: 'Category', icon: <FaFolder size={12} /> }]
                     : []),
                 ];
                 return sortOptions.map((opt) => (
