@@ -42,6 +42,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Snake](https://github.com/AlyaNs1/GlyphSnake) | AlyaNs1 | Snake Game for Nothing Phone (3)'s Glyph Matrix |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | A stacker arcade game |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | Coin flip, ringer mode, battery flow |
+| [Glyph Works](https://play.google.com/store/apps/details?id=space.linuxct.glyphworks) | linuxct | Adds support for Nothing Phone (3)-like Glyph Toy actions, custom designs, and matrix widgets via the Essential Key ([Repo](https://github.com/linuxct/glyphworks)) |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Ball maze, quick dial, Tamagotchi |
 | [Glyphs](https://github.com/Rorenheim/glyphs) | Rorenheim | Heart Glyph Toy for Nothing Phone (3) that explodes into sprinkles and says "luv u" |
 | [Justadice](https://github.com/aero-md/justadice) | aero-md | 3D physics-based dice rolling toy with d6, d10, d12, and d20 solids for the Nothing Phone (3) Glyph Matrix |
