@@ -575,10 +575,10 @@ export default function ShowcasePage(): React.JSX.Element {
       }
 
       // Filter: Broad Category (H2)
-      if (selectedCategory !== 'all' && item.categoryKey !== selectedCategory) return false;
+      if (selectedCategory !== 'all' && !(item.categoryKeys || [item.categoryKey]).includes(selectedCategory)) return false;
 
       // Filter: Subcategory (H3)
-      if (selectedSubCategory !== 'all' && item.subCategoryKey !== selectedSubCategory) return false;
+      if (selectedSubCategory !== 'all' && !(item.subCategoryKeys || [item.subCategoryKey]).includes(selectedSubCategory)) return false;
 
       // Filter: Target OS Platform
       if (selectedPlatform !== 'all' && !(item.platformOS || []).includes(selectedPlatform)) return false;

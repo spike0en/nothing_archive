@@ -14,5 +14,8 @@
   "platformOverrides": {
     "nothing-archive": ["web"],
     "nothing-flasher": ["windows", "linux", "macos"]
+  },
+  "categoryOverrides": {
+    "glyph-studio": ["glyph-matrix-powered", "glyph-powered"]
   }
 }

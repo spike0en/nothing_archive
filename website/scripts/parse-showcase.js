@@ -17,10 +17,11 @@ const ICONS_CACHE_FILE = path.join(__dirname, '..', 'src', 'data', 'showcase-ico
 const PRICING_CACHE_FILE = path.join(__dirname, '..', 'src', 'data', 'showcase-pricing-cache.json');
 const CONFIG_FILE = path.join(__dirname, '..', 'src', 'data', 'showcase-config.json');
 
-// Curated editorial configuration for spotlight slugs and explicit platform overrides
+// Curated editorial configuration for spotlight slugs, platform overrides, and category overrides
 const showcaseConfig = fs.existsSync(CONFIG_FILE) ? JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8')) : {};
 const FEATURED_SLUGS = new Set(showcaseConfig.featuredSlugs || []);
 const PROJECT_PLATFORM_OVERRIDES = showcaseConfig.platformOverrides || {};
+const CATEGORY_OVERRIDES = showcaseConfig.categoryOverrides || {};
 
 /**
  * Loads cached icon URLs from disk to prevent redundant HTTP requests across builds.
@@ -610,20 +611,31 @@ async function main() {
     console.log(`[parse-showcase] Fetched ${pricingFetchedCount} new Play Store pricing records.`);
   }
 
-  // Compute total projects count per developer across both sources
+  // Compute total projects count per developer across both sources and collect multi-category keys
   const devCounts = new Map();
-  const seenItems = new Set();
+  const uniqueItemsMap = new Map();
   const uniqueItems = [];
 
   for (const item of [...appItems, ...projectItems]) {
     const key = `${item.source}-${item.slug}`;
-    if (!seenItems.has(key)) {
-      seenItems.add(key);
+    if (!uniqueItemsMap.has(key)) {
+      const explicitOverrides = CATEGORY_OVERRIDES[item.slug] || [];
+      item.categoryKeys = Array.from(new Set([item.categoryKey, ...explicitOverrides]));
+      item.subCategoryKeys = [item.subCategoryKey];
+      uniqueItemsMap.set(key, item);
       uniqueItems.push(item);
       const devs = parseDevelopers(item.developer);
       for (const d of devs) {
         const devKey = d.toLowerCase().trim();
         devCounts.set(devKey, (devCounts.get(devKey) || 0) + 1);
+      }
+    } else {
+      const existing = uniqueItemsMap.get(key);
+      if (!existing.categoryKeys.includes(item.categoryKey)) {
+        existing.categoryKeys.push(item.categoryKey);
+      }
+      if (item.subCategoryKey && !existing.subCategoryKeys.includes(item.subCategoryKey)) {
+        existing.subCategoryKeys.push(item.subCategoryKey);
       }
     }
   }

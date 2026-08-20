@@ -28,8 +28,10 @@ export interface ShowcaseItem {
   source: 'apps' | 'projects';
   category: string;
   categoryKey: string;
+  categoryKeys?: string[];
   subCategory: string;
   subCategoryKey: string;
+  subCategoryKeys?: string[];
   hasDistinctSubCategory?: boolean;
   subSubCategory?: string;
   subSubCategoryKey?: string;
