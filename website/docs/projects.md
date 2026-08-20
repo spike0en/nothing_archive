@@ -171,6 +171,7 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [EarPhone X](https://github.com/noebachofner/EarPhonesX) | noebachofner | Linux application to control and configure Nothing and CMF earbuds |
 | [FMC](https://fmc.freethinkel.dev) | freethinkel | Terminal companion tool, watchface compiler/editor, and BLE sideloading manager for CMF Watch Pro 2 ([Repo](https://github.com/freethinkel/fmc)) |
 | [Kairo](https://github.com/nikitawebdeg-debug/-kairo) | nikitawebdeg-debug | ESP32-powered desktop system monitor with a Nothing OS-inspired dot-matrix display |
+| [Nadamas](https://github.com/ezvk/nadamas) | ezvk | Linux desktop utility and system tray app to control Nothing and CMF earbuds with LDAC codec and ANC controls |
 | [Nothing Desktop](https://github.com/sowahq/nothing-desktop) | sowahq | Menu-bar app to control battery, ANC, and EQ settings for Nothing earbuds |
 | [Nothing Ear Linux](https://github.com/sn99/nothing-linux) | sn99 | Tauri-based Linux application to control and configure Nothing Ear earbuds (inspired by [Ear (Web)](https://earweb.bttl.xyz/)) |
 | [Nothing Linux](https://github.com/Dospacite/NothingLinux) | Dospacite | Unofficial local Rust/GTK4 controller for Nothing Ear on Linux |
