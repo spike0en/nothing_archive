@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'website/**'
+      - 'CONTRIBUTING.md'
       - '.github/workflows/deploy.yml'
   workflow_dispatch:
     inputs:

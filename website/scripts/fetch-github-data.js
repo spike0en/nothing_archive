@@ -312,6 +312,14 @@ async function main() {
     console.error(`[prefetch] local parsers failed: ${e.message}`);
   }
 
+  // Auto-sync root CONTRIBUTING.md to website/docs/contributing.md with Docusaurus frontmatter
+  const rootContrib = path.join(__dirname, '..', '..', 'CONTRIBUTING.md');
+  const docContrib = path.join(__dirname, '..', 'docs', 'contributing.md');
+  if (fs.existsSync(rootContrib)) {
+    const frontmatter = `---\nsidebar_position: 2\ntitle: Contributing\ndescription: Guidelines and instructions to contribute to the Nothing Archive project.\n---\n\n`;
+    fs.writeFileSync(docContrib, frontmatter + fs.readFileSync(rootContrib, 'utf8'));
+  }
+
   console.log('[prefetch] Done.');
 }
 

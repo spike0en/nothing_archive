@@ -13,6 +13,7 @@ website/src/data/*
 !website/src/data/donors.json
 !website/src/data/contributor-metadata.json
 !website/src/data/showcase-config.json
+website/docs/contributing.md
 
 # Dependencies
 node_modules/
