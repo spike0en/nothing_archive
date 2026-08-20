@@ -88,11 +88,11 @@ function fetchPlayStorePrice(packageId) {
           res.on('end', () => {
             const priceMatch = data.match(/itemprop="price"\s+content="([^"]+)"/);
             const schemaPrice = data.match(/"@type":"Offer","price":"([^"]+)"/);
-            const jsonPrice = data.match(/"price":"([\d\.]+)"/);
+            const jsonPrice = data.match(/"price":"([\d.]+)"/);
             let val = priceMatch ? priceMatch[1] : (schemaPrice ? schemaPrice[1] : (jsonPrice ? jsonPrice[1] : null));
 
             if (!val || val === '0' || val.toLowerCase() === 'free') {
-              const buyMatch = data.match(/aria-label="[^"]*Buy[^"]*([^\s"]+[\d\.\,]+|[\d\.\,]+\s*[^\s"]+)/);
+              const buyMatch = data.match(/aria-label="[^"]*Buy[^"]*([^\s"]+[\d.,]+|[\d.,]+\s*[^\s"]+)/);
               if (buyMatch) {
                 val = buyMatch[1];
               }

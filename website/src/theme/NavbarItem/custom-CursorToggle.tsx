@@ -35,11 +35,7 @@ export default function CursorToggle({ mobile }: CursorToggleProps): React.JSX.E
 
     try {
       const stored = localStorage.getItem('nothing_archive_cursor');
-      if (stored === 'enabled') {
-        setEnabled(true);
-      } else {
-        setEnabled(false);
-      }
+      setEnabled(stored === 'enabled');
     } catch (e) {
       console.warn('Failed to read cursor setting:', e);
       setEnabled(false);

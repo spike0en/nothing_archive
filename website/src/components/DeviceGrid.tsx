@@ -124,18 +124,21 @@ function ModelCard({ device, latestLink }: { device: DeviceItem; latestLink: str
 export default function DeviceGrid(): React.JSX.Element {
   // SAFETY: Validated by Docusaurus plugin contract
   const { latestLinks } = usePluginData('changelogs-plugin') as { latestLinks: Record<string, string> };
-  const numberDevices = devices.filter(d => d.brand === 'Nothing' && d.series === 'number');
-  const aDevices = devices.filter(d => d.brand === 'Nothing' && d.series === 'a');
-  const bDevices = devices.filter(d => d.brand === 'Nothing' && d.series === 'b');
-  const cmfDevices = devices.filter(d => d.brand === 'CMF');
+
+  const sections = [
+    { title: 'Nothing Phone Series', items: devices.filter(d => d.brand === 'Nothing' && d.series === 'number') },
+    { title: 'Nothing Phone (a) Series', items: devices.filter(d => d.brand === 'Nothing' && d.series === 'a') },
+    { title: 'Nothing Phone (b / Lite) Series', items: devices.filter(d => d.brand === 'Nothing' && d.series === 'b') },
+    { title: 'CMF by Nothing Phone Series', items: devices.filter(d => d.brand === 'CMF') },
+  ];
 
   return (
     <div>
-      {numberDevices.length > 0 && (
-        <>
-          <h2 className={styles.sectionHeader}>Nothing Phone Series</h2>
+      {sections.map(section => section.items.length > 0 && (
+        <React.Fragment key={section.title}>
+          <h2 className={styles.sectionHeader}>{section.title}</h2>
           <div className={styles.grid}>
-            {numberDevices.map(device => (
+            {section.items.map(device => (
               <ModelCard
                 key={device.codename}
                 device={device}
@@ -143,53 +146,8 @@ export default function DeviceGrid(): React.JSX.Element {
               />
             ))}
           </div>
-        </>
-      )}
-
-      {aDevices.length > 0 && (
-        <>
-          <h2 className={styles.sectionHeader}>Nothing Phone (a) Series</h2>
-          <div className={styles.grid}>
-            {aDevices.map(device => (
-              <ModelCard
-                key={device.codename}
-                device={device}
-                latestLink={latestLinks?.[device.codename] || `/docs/changelogs/${device.codename}`}
-              />
-            ))}
-          </div>
-        </>
-      )}
-
-      {bDevices.length > 0 && (
-        <>
-          <h2 className={styles.sectionHeader}>Nothing Phone (b / Lite) Series</h2>
-          <div className={styles.grid}>
-            {bDevices.map(device => (
-              <ModelCard
-                key={device.codename}
-                device={device}
-                latestLink={latestLinks?.[device.codename] || `/docs/changelogs/${device.codename}`}
-              />
-            ))}
-          </div>
-        </>
-      )}
-
-      {cmfDevices.length > 0 && (
-        <>
-          <h2 className={styles.sectionHeader}>CMF by Nothing Phone Series</h2>
-          <div className={styles.grid}>
-            {cmfDevices.map(device => (
-              <ModelCard
-                key={device.codename}
-                device={device}
-                latestLink={latestLinks?.[device.codename] || `/docs/changelogs/${device.codename}`}
-              />
-            ))}
-          </div>
-        </>
-      )}
+        </React.Fragment>
+      ))}
     </div>
   );
 }

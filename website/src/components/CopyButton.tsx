@@ -24,17 +24,17 @@ export default function CopyButtonSetup(): null {
       isInitialMount = false;
     }, 1000); // 1000ms delay to bypass initial hydration/mounting theme changes
 
+    let themeTransitionTimeout: ReturnType<typeof setTimeout> | null = null;
+
     // 1. Setup Theme Transition Handling (always active for all devices)
     const triggerThemeTransition = () => {
       document.documentElement.classList.add('theme-transition');
       
-      // SAFETY: Global window object casting for custom property
-      const win = window as any;
-      if (win.themeTransitionTimeout) {
-        clearTimeout(win.themeTransitionTimeout);
+      if (themeTransitionTimeout) {
+        clearTimeout(themeTransitionTimeout);
       }
       
-      win.themeTransitionTimeout = setTimeout(() => {
+      themeTransitionTimeout = setTimeout(() => {
         document.documentElement.classList.remove('theme-transition');
       }, 850); // 850ms covers React render blocking during complex table re-renders
     };
@@ -188,6 +188,9 @@ export default function CopyButtonSetup(): null {
     });
 
     return () => {
+      if (themeTransitionTimeout) {
+        clearTimeout(themeTransitionTimeout);
+      }
       themeObserver.disconnect();
       routeObserver.disconnect();
       document.removeEventListener('click', handleToggleClick, { capture: true });

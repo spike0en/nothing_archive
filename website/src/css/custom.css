@@ -2769,58 +2769,113 @@ details summary:hover::before {
    BACK TO TOP BUTTON
    ========================================== */
 .theme-back-to-top-button {
-  background-color: var(--ifm-card-background-color) !important;
-  color: var(--ifm-color-primary) !important;
-  border-radius: 999px !important;
   width: 44px !important;
   height: 44px !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
-  border: 2px solid var(--nothing-border) !important;
+  border-radius: 50% !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   overflow: visible !important;
   z-index: 100 !important;
+  cursor: pointer !important;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-    background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease,
-    border-color 0.2s ease !important;
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease !important;
+}
+
+.theme-back-to-top-button::before {
+  display: none !important;
+}
+
+.theme-back-to-top-button::after {
+  content: '' !important;
+  display: block !important;
+  width: 9px !important;
+  height: 9px !important;
+  box-sizing: border-box !important;
+  border-top: 2px solid #111111 !important;
+  border-left: 2px solid #111111 !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  border-radius: 1px !important;
+  transform: rotate(45deg) translate(2px, 2px) !important;
+  mask: none !important;
+  -webkit-mask: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  transition: border-color 0.2s ease, transform 0.2s ease !important;
+}
+
+[data-theme='dark'] .theme-back-to-top-button {
+  background-color: rgba(22, 22, 24, 0.85) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+
+[data-theme='dark'] .theme-back-to-top-button::after {
+  border-top-color: #EDEDED !important;
+  border-left-color: #EDEDED !important;
 }
 
 /* Scroll-progress ring drawn via SVG injected by Root.tsx */
 .scroll-ring-svg {
   position: absolute;
-  top: -4px;
-  left: -4px;
-  width: calc(100% + 8px);
-  height: calc(100% + 8px);
+  top: -3px;
+  left: -3px;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
   border-radius: 50%;
   pointer-events: none;
   z-index: -1;
   overflow: visible;
   transform: rotate(-90deg);
-  /* start from top */
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.15));
+  transition: filter 0.2s ease;
+}
+
+.scroll-ring-track {
+  stroke: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] .scroll-ring-track {
+  stroke: rgba(255, 255, 255, 0.08);
+}
+
+.scroll-ring-progress {
+  stroke: var(--ifm-color-primary);
 }
 
 .theme-back-to-top-button:hover {
-  background-color: var(--ifm-color-primary) !important;
-  border-color: var(--ifm-color-primary) !important;
-  color: #ffffff !important;
-  transform: translateY(-2px) scale(1.05) !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+  background-color: rgba(215, 25, 33, 0.06) !important;
+  border-color: rgba(215, 25, 33, 0.4) !important;
+  transform: translateY(-3px) scale(1.04) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12), 0 0 12px rgba(215, 25, 33, 0.15) !important;
 }
 
-.theme-back-to-top-button:active {
-  transform: translateY(0) scale(0.95) !important;
+.theme-back-to-top-button:hover .scroll-ring-svg {
+  filter: drop-shadow(0 0 4px rgba(215, 25, 33, 0.45));
 }
 
-[data-theme='dark'] .theme-back-to-top-button {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+.theme-back-to-top-button:hover::after {
+  border-top-color: var(--ifm-color-primary) !important;
+  border-left-color: var(--ifm-color-primary) !important;
+  transform: rotate(45deg) translate(1px, 1px) !important;
 }
 
 [data-theme='dark'] .theme-back-to-top-button:hover {
-  background-color: var(--ifm-color-primary) !important;
-  border-color: var(--ifm-color-primary) !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45) !important;
+  background-color: rgba(215, 25, 33, 0.1) !important;
+  border-color: rgba(215, 25, 33, 0.5) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5), 0 0 14px rgba(215, 25, 33, 0.25) !important;
+}
+
+.theme-back-to-top-button:active {
+  transform: translateY(-1px) scale(0.96) !important;
 }
 
 /* ==========================================

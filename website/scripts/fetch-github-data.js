@@ -7,7 +7,6 @@
  * Boundary: Communicates with GitHub REST API via HTTPS, outputting local JSON artifacts.
  */
 
-const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
@@ -17,35 +16,19 @@ const OUT_DIR = path.join(__dirname, '..', 'src', 'data');
 const AUTH_TOKEN = process.env.GITHUB_TOKEN || '';
 
 /** Shared HTTPS GET with optional bearer auth and JSON parsing. */
-function fetchJSON(urlPath) {
-  return new Promise((resolve, reject) => {
-    const headers = { 'User-Agent': 'Nothing-Archive-Build' };
-    if (AUTH_TOKEN) {
-      headers['Authorization'] = `Bearer ${AUTH_TOKEN}`;
-    }
-
-    const options = {
-      hostname: 'api.github.com',
-      path: urlPath,
-      headers,
-    };
-
-    https.get(options, (res) => {
-      let data = '';
-      res.on('data', (chunk) => { data += chunk; });
-      res.on('end', () => {
-        if (res.statusCode >= 200 && res.statusCode < 300) {
-          try {
-            resolve({ data: JSON.parse(data), headers: res.headers, status: res.statusCode });
-          } catch (e) {
-            reject(new Error(`Parse error: ${e.message}`));
-          }
-        } else {
-          reject(new Error(`HTTP ${res.statusCode}`));
-        }
-      });
-    }).on('error', reject);
-  });
+async function fetchJSON(urlPath) {
+  const headers = { 'User-Agent': 'Nothing-Archive-Build' };
+  if (AUTH_TOKEN) {
+    headers['Authorization'] = `Bearer ${AUTH_TOKEN}`;
+  }
+  const url = urlPath.startsWith('http') ? urlPath : `https://api.github.com${urlPath}`;
+  const res = await fetch(url, { headers });
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status}`);
+  }
+  const data = await res.json();
+  const link = res.headers.get('link') || '';
+  return { data, headers: { link }, status: res.status };
 }
 
 /**

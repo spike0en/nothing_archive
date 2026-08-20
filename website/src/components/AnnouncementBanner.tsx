@@ -25,6 +25,20 @@ interface ChangelogsPluginData {
 
 const DISMISS_KEY = 'na_dismissed_announcement_tag';
 
+function parseDismissedTags(key: string): string[] {
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return [];
+    if (raw.startsWith('[')) {
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : [];
+    }
+    return [raw];
+  } catch {
+    return [];
+  }
+}
+
 /**
  * Header announcement banner component.
  * Evaluates changelog commit recency against a 7-day threshold and presents an animated rotating ticker for multiple releases.
@@ -50,21 +64,7 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
       return pubTime >= sevenDaysAgo;
     });
 
-    // Parse dismissed tag identifiers from persistent client state
-    const dismissedTagStr = localStorage.getItem(DISMISS_KEY);
-    let dismissedTags: string[] = [];
-    if (dismissedTagStr) {
-      try {
-        if (dismissedTagStr.startsWith('[')) {
-          dismissedTags = JSON.parse(dismissedTagStr);
-        } else {
-          dismissedTags = [dismissedTagStr];
-        }
-      } catch {
-        dismissedTags = [dismissedTagStr];
-      }
-    }
-
+    const dismissedTags = parseDismissedTags(DISMISS_KEY);
     const nonDismissed = recentReleases.filter(
       (entry) => !dismissedTags.includes(entry.tagName)
     );
@@ -96,19 +96,7 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
     e.preventDefault();
     e.stopPropagation();
     if (releases && releases.length > 0) {
-      const dismissedTagStr = localStorage.getItem(DISMISS_KEY);
-      let previouslyDismissed: string[] = [];
-      if (dismissedTagStr) {
-        try {
-          if (dismissedTagStr.startsWith('[')) {
-            previouslyDismissed = JSON.parse(dismissedTagStr);
-          } else {
-            previouslyDismissed = [dismissedTagStr];
-          }
-        } catch {
-          previouslyDismissed = [dismissedTagStr];
-        }
-      }
+      const previouslyDismissed = parseDismissedTags(DISMISS_KEY);
       const newlyDismissed = releases.map((r) => r.tagName);
       const merged = Array.from(new Set([...previouslyDismissed, ...newlyDismissed]));
       localStorage.setItem(DISMISS_KEY, JSON.stringify(merged));

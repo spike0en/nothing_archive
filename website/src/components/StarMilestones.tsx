@@ -40,8 +40,7 @@ export default function StarMilestones(): React.JSX.Element {
   /** Index of the next unmet milestone (-1 if all reached) */
   const nextIdx = useMemo(() => {
     if (stars === null) return -1;
-    const idx = MILESTONES.findIndex(m => stars < m);
-    return idx;
+    return MILESTONES.findIndex(m => stars < m);
   }, [stars]);
 
   /**

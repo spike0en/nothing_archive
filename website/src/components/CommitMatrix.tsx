@@ -29,12 +29,8 @@ const HITS_CACHE_TIMEOUT = 15 * 60 * 1000;
  */
 export default function CommitMatrix(): React.JSX.Element {
   // Centralized GitHub data hooks: deduplicated, stale-while-revalidate
-  const { commits, status: commitStatus, error: commitError, loading: commitLoading } = useGitHubCommits();
+  const { commits, status: statusSource, error: errorState, loading } = useGitHubCommits();
   const { stats: repoStats, loading: statsGhLoading } = useGitHubRepoStats();
-
-  const statusSource = commitStatus;
-  const errorState = commitError;
-  const loading = commitLoading;
 
   // hitscounter.dev is not a GitHub API; kept as a separate inline fetch
   const [hitsData, setHitsData] = useState<HitsState>({ hits: 0 });

@@ -180,34 +180,34 @@ export default function Root({ children }: RootProps): React.JSX.Element {
   useEffect(() => {
     if (globalThis.window === undefined) return;
 
-    const RADIUS = 24;
+    const RADIUS = 21;
     const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
     const SVG_NS = 'http://www.w3.org/2000/svg';
 
     // Create SVG ring
     const svg = document.createElementNS(SVG_NS, 'svg');
     svg.setAttribute('class', 'scroll-ring-svg');
-    svg.setAttribute('viewBox', '0 0 52 52');
+    svg.setAttribute('viewBox', '0 0 46 46');
     svg.setAttribute('aria-hidden', 'true');
 
     const trackCircle = document.createElementNS(SVG_NS, 'circle');
-    trackCircle.setAttribute('cx', '26');
-    trackCircle.setAttribute('cy', '26');
+    trackCircle.setAttribute('cx', '23');
+    trackCircle.setAttribute('cy', '23');
     trackCircle.setAttribute('r', String(RADIUS));
     trackCircle.setAttribute('fill', 'none');
-    trackCircle.setAttribute('stroke', 'currentColor');
-    trackCircle.setAttribute('stroke-width', '2.5');
-    trackCircle.setAttribute('opacity', '0.12');
+    trackCircle.setAttribute('class', 'scroll-ring-track');
+    trackCircle.setAttribute('stroke-width', '1.75');
     trackCircle.setAttribute('stroke-dasharray', String(CIRCUMFERENCE));
     trackCircle.setAttribute('stroke-dashoffset', '0');
 
     const progressCircle = document.createElementNS(SVG_NS, 'circle');
-    progressCircle.setAttribute('cx', '26');
-    progressCircle.setAttribute('cy', '26');
+    progressCircle.setAttribute('cx', '23');
+    progressCircle.setAttribute('cy', '23');
     progressCircle.setAttribute('r', String(RADIUS));
     progressCircle.setAttribute('fill', 'none');
+    progressCircle.setAttribute('class', 'scroll-ring-progress');
     progressCircle.setAttribute('stroke', 'var(--ifm-color-primary)');
-    progressCircle.setAttribute('stroke-width', '2.5');
+    progressCircle.setAttribute('stroke-width', '1.75');
     progressCircle.setAttribute('stroke-linecap', 'round');
     progressCircle.setAttribute('stroke-dasharray', String(CIRCUMFERENCE));
     progressCircle.setAttribute('stroke-dashoffset', String(CIRCUMFERENCE));

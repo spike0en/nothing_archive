@@ -35,9 +35,6 @@ export default function HeroGlyphLogo(): React.JSX.Element {
   const [mode, setMode] = useState<Mode>('LOGO');
   const [activeGame, setActiveGame] = useState<GameMode>('SNAKE');
 
-  const [_clickCount, _setClickCount] = useState<number>(0);
-  const _lastClickTimeRef = useRef<number>(0);
-
   const [snake, setSnakeState] = useState<Point[]>([
     { r: 7, c: 4 },
     { r: 7, c: 3 }
