@@ -14,6 +14,7 @@ const https = require('https');
 const DOCS_DIR = path.join(__dirname, '..', 'docs');
 const OUT_FILE = path.join(__dirname, '..', 'src', 'data', 'showcase-items.json');
 const ICONS_CACHE_FILE = path.join(__dirname, '..', 'src', 'data', 'showcase-icons-cache.json');
+const PRICING_CACHE_FILE = path.join(__dirname, '..', 'src', 'data', 'showcase-pricing-cache.json');
 const CONFIG_FILE = path.join(__dirname, '..', 'src', 'data', 'showcase-config.json');
 
 // Curated editorial configuration for spotlight slugs and explicit platform overrides
@@ -26,6 +27,96 @@ const PROJECT_PLATFORM_OVERRIDES = showcaseConfig.platformOverrides || {};
  *
  * @returns {Record<string, string>} Mapping of package/slug identifiers to cached icon URLs.
  */
+
+/**
+ * Loads cached app pricing metadata from disk.
+ *
+ * @returns {Record<string, { isPaid: boolean; price?: string; store?: string }>} Pricing cache map.
+ */
+function loadPricingCache() {
+  if (fs.existsSync(PRICING_CACHE_FILE)) {
+    try {
+      return JSON.parse(fs.readFileSync(PRICING_CACHE_FILE, 'utf8'));
+    } catch {
+      return {};
+    }
+  }
+  return {};
+}
+
+/**
+ * Persists the updated pricing cache to disk.
+ *
+ * @param {Record<string, object>} cache - Mapping of package/app IDs to pricing info.
+ */
+function savePricingCache(cache) {
+  fs.mkdirSync(path.dirname(PRICING_CACHE_FILE), { recursive: true });
+  fs.writeFileSync(PRICING_CACHE_FILE, JSON.stringify(cache, null, 2));
+}
+
+/**
+ * Fetches pricing metadata from Google Play with regional fallbacks.
+ *
+ * @param {string} packageId - Android package identifier.
+ * @returns {Promise<{ isPaid: boolean; price?: string }>} Resolved pricing info.
+ */
+function fetchPlayStorePrice(packageId) {
+  return new Promise((resolve) => {
+    const regions = ['', 'GB', 'IN', 'DE', 'US'];
+    let idx = 0;
+
+    function tryNextRegion() {
+      if (idx >= regions.length) {
+        return resolve({ isPaid: false, price: 'Free' });
+      }
+      const gl = regions[idx++];
+      const url = `https://play.google.com/store/apps/details?id=${packageId}&hl=en` + (gl ? `&gl=${gl}` : '');
+      const req = https.get(
+        url,
+        {
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept-Language': 'en-GB,en-US,en;q=0.9',
+          },
+        },
+        (res) => {
+          if (res.statusCode === 404) {
+            return tryNextRegion();
+          }
+          let data = '';
+          res.on('data', (chunk) => (data += chunk));
+          res.on('end', () => {
+            const priceMatch = data.match(/itemprop="price"\s+content="([^"]+)"/);
+            const schemaPrice = data.match(/"@type":"Offer","price":"([^"]+)"/);
+            const jsonPrice = data.match(/"price":"([\d\.]+)"/);
+            let val = priceMatch ? priceMatch[1] : (schemaPrice ? schemaPrice[1] : (jsonPrice ? jsonPrice[1] : null));
+
+            if (!val || val === '0' || val.toLowerCase() === 'free') {
+              const buyMatch = data.match(/aria-label="[^"]*Buy[^"]*([^\s"]+[\d\.\,]+|[\d\.\,]+\s*[^\s"]+)/);
+              if (buyMatch) {
+                val = buyMatch[1];
+              }
+            }
+
+            if (val && val !== '0' && val.toLowerCase() !== 'free') {
+              resolve({ isPaid: true, price: val });
+            } else {
+              resolve({ isPaid: false, price: 'Free' });
+            }
+          });
+        }
+      );
+      req.on('error', () => tryNextRegion());
+      req.setTimeout(4000, () => {
+        req.destroy();
+        tryNextRegion();
+      });
+    }
+
+    tryNextRegion();
+  });
+}
+
 function loadIconsCache() {
   if (fs.existsSync(ICONS_CACHE_FILE)) {
     try {
@@ -451,10 +542,13 @@ async function main() {
 
   const iconsCache = loadIconsCache();
   let iconsFetchedCount = 0;
+  const pricingCache = loadPricingCache();
+  let pricingFetchedCount = 0;
 
-  // Resolve Play Store icon, Chrome Web Store favicon, or GitHub avatar for items
+  // Resolve Play Store icon, Chrome Web Store favicon, or GitHub avatar for items, and pricing status
   for (const item of [...appItems, ...projectItems]) {
     const playStoreUrl = item.links.playStore;
+    const appStoreUrl = item.links.appStore;
     const githubUrl = item.links.github;
     const webUrl = item.links.website;
 
@@ -474,6 +568,26 @@ async function main() {
             iconsFetchedCount++;
           }
         }
+
+        if (pricingCache[pkgId]) {
+          item.isPaid = pricingCache[pkgId].isPaid || false;
+          if (pricingCache[pkgId].price) item.price = pricingCache[pkgId].price;
+        } else {
+          const priceInfo = await fetchPlayStorePrice(pkgId);
+          pricingCache[pkgId] = { isPaid: priceInfo.isPaid, price: priceInfo.price, store: 'Google Play', title: item.title };
+          item.isPaid = priceInfo.isPaid;
+          if (priceInfo.price) item.price = priceInfo.price;
+          pricingFetchedCount++;
+        }
+      }
+    } else if (appStoreUrl) {
+      const match = appStoreUrl.match(/id(\d+)/);
+      if (match && match[1]) {
+        const aid = match[1];
+        if (pricingCache[aid]) {
+          item.isPaid = pricingCache[aid].isPaid || false;
+          if (pricingCache[aid].price) item.price = pricingCache[aid].price;
+        }
       }
     } else if (webUrl && (webUrl.includes('chromewebstore.google.com') || webUrl.includes('chrome.google.com'))) {
       item.iconUrl = 'https://www.google.com/s2/favicons?domain=chromewebstore.google.com&sz=128';
@@ -489,6 +603,11 @@ async function main() {
   if (iconsFetchedCount > 0) {
     saveIconsCache(iconsCache);
     console.log(`[parse-showcase] Fetched ${iconsFetchedCount} new Play Store app icons.`);
+  }
+
+  if (pricingFetchedCount > 0) {
+    savePricingCache(pricingCache);
+    console.log(`[parse-showcase] Fetched ${pricingFetchedCount} new Play Store pricing records.`);
   }
 
   // Compute total projects count per developer across both sources

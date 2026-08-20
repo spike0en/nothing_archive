@@ -34,6 +34,7 @@ import {
   type CategoryOption,
   type SubCategoryOption,
   SOURCE_TABS,
+  PricingFilter,
 } from '../data/showcase-data';
 import styles from './ShowcaseFilterDrawer.module.css';
 
@@ -50,6 +51,10 @@ interface ShowcaseFilterDrawerProps {
   source: SourceFilter;
   onSelectSource: (source: SourceFilter) => void;
   sourceCounts: { all: number; apps: number; projects: number };
+
+  pricing: PricingFilter;
+  onSelectPricing: (pricing: PricingFilter) => void;
+  pricingCounts: { all: number; free: number; paid: number };
 
   selectedCategory: string;
   onSelectCategory: (categoryId: string) => void;
@@ -124,6 +129,9 @@ export default function ShowcaseFilterDrawer({
   source,
   onSelectSource,
   sourceCounts,
+  pricing,
+  onSelectPricing,
+  pricingCounts,
   selectedCategory,
   onSelectCategory,
   availableCategories,
@@ -237,6 +245,53 @@ export default function ShowcaseFilterDrawer({
               })}
             </div>
           </div>
+
+          {/* Section: App Pricing Filter (Free / Paid toggles) */}
+          {source === 'apps' && (
+            <div className={styles.section}>
+              <div className={styles.sectionHeader}>
+                <span className={styles.sectionLabel}>App Pricing</span>
+                {pricing !== 'all' && (
+                  <button
+                    type="button"
+                    onClick={() => onSelectPricing('all')}
+                    className={styles.sectionClearBtn}
+                  >
+                    Reset
+                  </button>
+                )}
+              </div>
+              <div className={styles.segmentedControl} role="tablist">
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={pricing === 'free'}
+                  onClick={() => onSelectPricing(pricing === 'free' ? 'all' : 'free')}
+                  className={clsx(
+                    styles.segmentTab,
+                    pricing === 'free' && styles.segmentTabActive
+                  )}
+                >
+                  <span className={styles.segmentLabel}>Free</span>
+                  <span className={styles.segmentBadge}>{pricingCounts.free}</span>
+                </button>
+
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={pricing === 'paid'}
+                  onClick={() => onSelectPricing(pricing === 'paid' ? 'all' : 'paid')}
+                  className={clsx(
+                    styles.segmentTab,
+                    pricing === 'paid' && styles.segmentTabActive
+                  )}
+                >
+                  <span className={styles.segmentLabel}>Paid</span>
+                  <span className={styles.segmentBadge}>{pricingCounts.paid}</span>
+                </button>
+              </div>
+            </div>
+          )}
 
           {/* Section: Target OS Platform */}
           <div className={styles.section}>

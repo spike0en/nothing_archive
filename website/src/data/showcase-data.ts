@@ -11,6 +11,8 @@ import rawPayload from './showcase-items.json';
 
 export type SourceFilter = 'all' | 'apps' | 'projects';
 
+export type PricingFilter = 'all' | 'free' | 'paid';
+
 export type PlatformFilter = 'all' | 'android' | 'ios' | 'windows' | 'linux' | 'macos' | 'web';
 
 export type SortMode = 'featured' | 'random' | 'az' | 'za' | 'category';
@@ -43,6 +45,8 @@ export interface ShowcaseItem {
     docs?: string;
   };
   featured?: boolean;
+  isPaid?: boolean;
+  price?: string;
 }
 
 export interface SubCategoryOption {

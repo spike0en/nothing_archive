@@ -27,6 +27,7 @@ import type {
   PlatformFilter,
   CategoryOption,
   SubCategoryOption,
+  PricingFilter,
 } from '../data/showcase-data';
 import styles from './ShowcaseSidebar.module.css';
 
@@ -34,6 +35,10 @@ interface ShowcaseSidebarProps {
   source: SourceFilter;
   onSelectSource: (source: SourceFilter) => void;
   sourceCounts: { all: number; apps: number; projects: number };
+
+  pricing: PricingFilter;
+  onSelectPricing: (pricing: PricingFilter) => void;
+  pricingCounts: { all: number; free: number; paid: number };
 
   selectedCategory: string;
   onSelectCategory: (categoryId: string) => void;
@@ -85,6 +90,9 @@ export default function ShowcaseSidebar({
   source,
   onSelectSource,
   sourceCounts,
+  pricing,
+  onSelectPricing,
+  pricingCounts,
   selectedCategory,
   onSelectCategory,
   availableCategories,
@@ -163,6 +171,36 @@ export default function ShowcaseSidebar({
             </button>
           </div>
         </div>
+
+        {/* Section: App Pricing Filter (Free / Paid toggles) */}
+        {source === 'apps' && (
+          <div className={styles.section}>
+            <span className={styles.sectionLabel}>App Pricing</span>
+            <div className={styles.sourceList}>
+              <button
+                type="button"
+                className={clsx(styles.sourceItem, pricing === 'free' && styles.sourceItemActive)}
+                onClick={() => onSelectPricing(pricing === 'free' ? 'all' : 'free')}
+              >
+                <span className={styles.sourceItemLeft}>
+                  <span>Free</span>
+                </span>
+                <span className={styles.sourceCount}>{pricingCounts.free}</span>
+              </button>
+
+              <button
+                type="button"
+                className={clsx(styles.sourceItem, pricing === 'paid' && styles.sourceItemActive)}
+                onClick={() => onSelectPricing(pricing === 'paid' ? 'all' : 'paid')}
+              >
+                <span className={styles.sourceItemLeft}>
+                  <span>Paid</span>
+                </span>
+                <span className={styles.sourceCount}>{pricingCounts.paid}</span>
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Section 2: Platform Filter */}
         <div className={styles.section}>

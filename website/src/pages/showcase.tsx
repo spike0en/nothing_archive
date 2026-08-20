@@ -37,6 +37,7 @@ import {
   parseDevelopers,
   type SourceFilter,
   type PlatformFilter,
+  type PricingFilter,
   type SortMode,
   type ShowcaseItem,
   type SubCategoryOption,
@@ -61,6 +62,7 @@ const SORT_OPTIONS: SortOption[] = [
 
 interface ShowcaseUrlState {
   source: SourceFilter;
+  pricing: PricingFilter;
   category: string;
   subCategory: string;
   platform: PlatformFilter;
@@ -114,6 +116,9 @@ function parseUrlState(searchStr: string): ShowcaseUrlState {
   const rawSource = params.get('source') || params.get('type');
   const source: SourceFilter = rawSource === 'apps' || rawSource === 'projects' ? rawSource : 'all';
 
+  const rawPricing = params.get('pricing');
+  const pricing: PricingFilter = rawPricing === 'paid' ? 'paid' : (rawPricing === 'free' ? 'free' : 'all');
+
   const category = params.get('category') || 'all';
   const subCategory = params.get('subcategory') || params.get('sub') || 'all';
 
@@ -128,6 +133,7 @@ function parseUrlState(searchStr: string): ShowcaseUrlState {
 
   return {
     source,
+    pricing,
     category,
     subCategory,
     platform,
@@ -146,6 +152,7 @@ function parseUrlState(searchStr: string): ShowcaseUrlState {
 function buildUrlSearch(state: ShowcaseUrlState): string {
   const params = new URLSearchParams();
   if (state.source !== 'all') params.set('source', state.source);
+  if (state.source === 'apps' && state.pricing !== 'all') params.set('pricing', state.pricing);
   if (state.category !== 'all') params.set('category', state.category);
   if (state.subCategory !== 'all') params.set('subcategory', state.subCategory);
   if (state.platform !== 'all') params.set('platform', state.platform);
@@ -253,6 +260,7 @@ export default function ShowcasePage(): React.JSX.Element {
   const initialUrlState = useMemo(() => parseUrlState(location.search), []);
 
   const [source, setSourceState] = useState<SourceFilter>(initialUrlState.source);
+  const [pricing, setPricingState] = useState<PricingFilter>(initialUrlState.pricing);
   const [selectedCategory, setSelectedCategoryState] = useState<string>(initialUrlState.category);
   const [selectedSubCategory, setSelectedSubCategoryState] = useState<string>(initialUrlState.subCategory);
   const [selectedPlatform, setSelectedPlatformState] = useState<PlatformFilter>(initialUrlState.platform);
@@ -270,6 +278,7 @@ export default function ShowcasePage(): React.JSX.Element {
   useEffect(() => {
     const parsed = parseUrlState(location.search);
     setSourceState(parsed.source);
+    setPricingState(parsed.pricing);
     setSelectedCategoryState(parsed.category);
     setSelectedSubCategoryState(parsed.subCategory);
     setSelectedPlatformState(parsed.platform);
@@ -293,6 +302,7 @@ export default function ShowcasePage(): React.JSX.Element {
     ) => {
       const current: ShowcaseUrlState = {
         source,
+        pricing,
         category: selectedCategory,
         subCategory: selectedSubCategory,
         platform: selectedPlatform,
@@ -303,6 +313,7 @@ export default function ShowcasePage(): React.JSX.Element {
       const next = updater(current);
 
       setSourceState(next.source);
+      setPricingState(next.pricing);
       setSelectedCategoryState(next.category);
       setSelectedSubCategoryState(next.subCategory);
       setSelectedPlatformState(next.platform);
@@ -324,6 +335,7 @@ export default function ShowcasePage(): React.JSX.Element {
       location.pathname,
       location.search,
       source,
+      pricing,
       selectedCategory,
       selectedSubCategory,
       selectedPlatform,
@@ -391,6 +403,7 @@ export default function ShowcasePage(): React.JSX.Element {
     const timer = setTimeout(() => {
       const nextState: ShowcaseUrlState = {
         source,
+        pricing: pricing,
         category: selectedCategory,
         subCategory: selectedSubCategory,
         platform: selectedPlatform,
@@ -408,6 +421,7 @@ export default function ShowcasePage(): React.JSX.Element {
   }, [
     searchQuery,
     source,
+    pricing,
     selectedCategory,
     selectedSubCategory,
     selectedPlatform,
@@ -455,6 +469,7 @@ export default function ShowcasePage(): React.JSX.Element {
   const handleSelectDeveloper = (devName: string) => {
     applyState(() => ({
       source: 'all',
+      pricing: 'all',
       category: 'all',
       subCategory: 'all',
       platform: 'all',
@@ -474,6 +489,7 @@ export default function ShowcasePage(): React.JSX.Element {
   const handleResetFilters = useCallback(() => {
     applyState(() => ({
       source: 'all',
+      pricing: 'all',
       category: 'all',
       subCategory: 'all',
       platform: 'all',
@@ -488,6 +504,7 @@ export default function ShowcasePage(): React.JSX.Element {
     applyState((prev) => ({
       ...prev,
       source: newSource,
+      pricing: 'all',
       category: 'all',
       subCategory: 'all',
       platform: 'all',
@@ -506,6 +523,25 @@ export default function ShowcasePage(): React.JSX.Element {
     applyState((prev) => ({
       ...prev,
       subCategory: subCatId,
+    }));
+  };
+
+  // Compute live Free vs Paid counts strictly for the Apps catalog
+  const pricingCounts = useMemo(() => {
+    const apps = ALL_SHOWCASE_ITEMS.filter((item) => item.source === 'apps');
+    let paid = 0;
+    let free = 0;
+    for (const app of apps) {
+      if (app.isPaid) paid++;
+      else free++;
+    }
+    return { all: apps.length, free, paid };
+  }, []);
+
+  const handleSelectPricing = (newPricing: PricingFilter) => {
+    applyState((prev) => ({
+      ...prev,
+      pricing: newPricing,
     }));
   };
 
@@ -531,6 +567,12 @@ export default function ShowcasePage(): React.JSX.Element {
     const matched = sortedBaseItems.filter((item) => {
       // Filter: Source catalog (apps vs projects)
       if (source !== 'all' && item.source !== source) return false;
+
+      // Filter: App Pricing (Free vs Paid, active strictly for apps source)
+      if (source === 'apps' && pricing !== 'all') {
+        if (pricing === 'paid' && !item.isPaid) return false;
+        if (pricing === 'free' && item.isPaid) return false;
+      }
 
       // Filter: Broad Category (H2)
       if (selectedCategory !== 'all' && item.categoryKey !== selectedCategory) return false;
@@ -588,6 +630,7 @@ export default function ShowcasePage(): React.JSX.Element {
   }, [
     sortedBaseItems,
     source,
+    pricing,
     selectedCategory,
     selectedSubCategory,
     selectedPlatform,
@@ -601,6 +644,7 @@ export default function ShowcasePage(): React.JSX.Element {
     setVisibleCount(PAGE_SIZE);
   }, [
     source,
+    pricing,
     selectedCategory,
     selectedSubCategory,
     selectedPlatform,
@@ -621,6 +665,7 @@ export default function ShowcasePage(): React.JSX.Element {
   const activeFilterCount = useMemo(() => {
     let count = 0;
     if (source !== 'all') count++;
+    if (source === 'apps' && pricing !== 'all') count++;
     if (selectedCategory !== 'all') count++;
     if (selectedSubCategory !== 'all') count++;
     if (selectedPlatform !== 'all') count++;
@@ -629,6 +674,7 @@ export default function ShowcasePage(): React.JSX.Element {
     return count;
   }, [
     source,
+    pricing,
     selectedCategory,
     selectedSubCategory,
     selectedPlatform,
@@ -663,6 +709,9 @@ export default function ShowcasePage(): React.JSX.Element {
               source={source}
               onSelectSource={handleSelectSource}
               sourceCounts={sourceCounts}
+              pricing={pricing}
+              onSelectPricing={handleSelectPricing}
+              pricingCounts={pricingCounts}
               selectedCategory={selectedCategory}
               onSelectCategory={handleSelectCategory}
               availableCategories={availableCategories}
@@ -760,6 +809,19 @@ export default function ShowcasePage(): React.JSX.Element {
                             type="button"
                             onClick={() => handleSelectSource('all')}
                             aria-label="Remove source filter"
+                          >
+                            <FaXmark size={9} />
+                          </button>
+                        </span>
+                      )}
+
+                      {source === 'apps' && pricing !== 'all' && (
+                        <span className={styles.activeTag}>
+                          <span>Pricing: {pricing === 'paid' ? 'Paid' : 'Free'}</span>
+                          <button
+                            type="button"
+                            onClick={() => handleSelectPricing('all')}
+                            aria-label="Remove pricing filter"
                           >
                             <FaXmark size={9} />
                           </button>
@@ -943,6 +1005,9 @@ export default function ShowcasePage(): React.JSX.Element {
         source={source}
         onSelectSource={handleSelectSource}
         sourceCounts={sourceCounts}
+        pricing={pricing}
+        onSelectPricing={handleSelectPricing}
+        pricingCounts={pricingCounts}
         selectedCategory={selectedCategory}
         onSelectCategory={handleSelectCategory}
         availableCategories={availableCategories}

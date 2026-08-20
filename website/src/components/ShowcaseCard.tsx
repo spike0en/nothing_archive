@@ -106,7 +106,7 @@ export default function ShowcaseCard({
                 developers.map((dev, idx) => {
                   const isClickable = hasMultipleCreations && Boolean(onSelectDeveloper);
                   return (
-                    <React.Fragment key={dev}>
+                    <span key={dev} className={styles.developerUnit}>
                       {idx > 0 && <span className={styles.devSeparator}>&amp;</span>}
                       {isClickable ? (
                         <button
@@ -123,7 +123,7 @@ export default function ShowcaseCard({
                       ) : (
                         <span>{dev}</span>
                       )}
-                    </React.Fragment>
+                    </span>
                   );
                 })
               ) : (
@@ -134,6 +134,14 @@ export default function ShowcaseCard({
         </div>
 
         <div className={styles.badgeGroup}>
+          {item.isPaid && (
+            <span
+              className={styles.paidBadge}
+              title={item.price ? `Paid Application (${item.price})` : 'Paid Application'}
+            >
+              PAID
+            </span>
+          )}
           {item.featured && (
             <span className={styles.crownBadge} title="Editor's Choice">
               <FaCrown size={11} className={styles.crownIcon} />
