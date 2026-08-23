@@ -388,7 +388,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Nothing Cinema](https://github.com/Zwe-Paing-Htet/nothing_cinema) | Zwe-Paing-Htet | Movie catalog and streaming companion app designed with Nothing OS aesthetics |
 | [Nothing Community App](https://github.com/Shaurya2295/Nothing-Community-App/) | Shaurya2295 | Mobile app for nothing.community |
 | [Nothing Compass](https://github.com/ISO53/Nothing-Compass) | ISO53 | Compass and Inclinometer in Nothing aesthetics |
-| [Nothing Dialer 1](https://play.google.com/store/apps/details?id=com.rkkvishva.nothing_dialer) | Knurdz | Nothing OS inspired dialer with synced Glyph effects |
+| [Nothing Dialer 1](https://play.google.com/store/apps/details?id=com.rkkvishva.nothing_dialer) | Knurdz | Nothing OS inspired dialer with synced Glyph effects ([Repo](https://github.com/rkvishwa/Nothing-Dialer-1)) |
 | [Nothing Gallery](https://github.com/jerichoi224/Nothing-Gallery) | jerichoi224 | Gallery app |
 | [Nothing K](https://github.com/cuadratico/NothingK) | cuadratico | Password vault |
 | [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Dynamic Island for Nothing OS |
