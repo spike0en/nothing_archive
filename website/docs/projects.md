@@ -22,6 +22,7 @@ A collection of tools for creating custom Glyph tones and compositions.
 | [Glyph Ctrl](https://github.com/Nonta72/glyph_ctrl) | Nonta72 | Simple helper used by the Glyphs Lights Click app for Ubuntu Touch on the Nothing Phone (1) |
 | [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Pixel art editor for Phone (3) |
 | [Glyph Matrix Image Maker](https://quintenvandamme.github.io/glyph-matrix-image-maker/) | quintenvandamme | Convert images into Glyph Matrix patterns ([Repo](https://github.com/quintenvandamme/glyph-matrix-image-maker)) |
+| [Glyph Tone Merger](https://github.com/danissomo/GlyphToneMerger) | danissomo | CLI tool for merging animations from GlyphMuseum with any audio |
 | [Glyph Tones](https://glyphtones.firu.dev/) | Firu11 | Collection of community Glyph tones. ([Repo](https://github.com/firu11/nothing-glyphtones)) |
 | [Glyph Utils](https://github.com/pgsk33/Glyph-Utils) | pgsk33 | Java helper for frame-based Glyph Interface animations |
 | [Glyph Visualizer](https://github.com/SebiAi/GlyphVisualizer) | SebiAi | Desktop visualizer for .ogg compositions |
@@ -63,6 +64,7 @@ Themes and rices for Arch Linux, VS Code, and other development environments fol
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | macOS menu bar app |
 | [Nothing Cursor Pack](https://discord.com/channels/930878214237200394/1513976039335002192) | farinhajorge | A cursor pack inspired by Nothing's design language |
 | [Nothing Floris](https://github.com/itsmeralph09/nothing-floris) | itsmeralph09 | Minimalist Nothing OS inspired theme for FlorisBoard Android keyboard |
+| [Nothing KDE Rice](https://github.com/buddi0812/nothing-kde-rice) | buddi0812 | Nothing OS inspired KDE Plasma 6 desktop for Linux. |
 | [Nothing Mono KDE](https://github.com/veedy-dev/nothing-mono-kde) | veedy-dev | Nothing inspired KDE Plasma 6 setup |
 | [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | GNOME desktop build |
 | [Nothing Rice](https://github.com/Adhil-ka/nothing-rice) | Adhil-ka | Nothing OS inspired Arch Hyprland desktop rice |
@@ -119,7 +121,7 @@ Web-based applications inspired by Nothing OS.
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Control earbuds from web ([Repo](https://github.com/radiance-project/ear-web)) |
 | [Essential Space Web](https://prostmitwein.github.io/EssentialSpaceWeb/) | CorruptPriest | Minimalist notespace ([Repo](https://github.com/CorruptPriest/EssentialSpaceWeb)) |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
-| [Glyph Portal](https://glyph.suns.red/) ([Repo](https://github.com/aero-md/GlyphPortal)) | aero-md | Web portal with real-scale browser previews of Nothing Phone Glyph Matrix toys |
+| [Glyph Portal](https://glyph.suns.red/) | aero-md | Web portal with real-scale browser previews of Nothing Phone Glyph Matrix toys  ([Repo](https://github.com/aero-md/GlyphPortal)) |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal-inspired homepage |
 | [Invo](https://dibyajyotikabi.github.io/Nothing-OS-Inspired-Invoice-App) | Dibyajyotikabi | Nothing OS Inspired Invoice Web App ([Repo](https://github.com/Dibyajyotikabi/Nothing-OS-Inspired-Invoice-App)) |
 | [Its Nothing](https://github.com/eduardochiaro/its-nothing) | eduardochiaro | Minimal web experience inspired by Nothing OS |
@@ -163,6 +165,7 @@ Essential resources including wikis, firmware archives, audio control utilities,
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
+| [CMF Ringtone Tool](https://github.com/tirodz/CMF-Ringtone-Tool) | tirodz | CMF Watch Pro 2 ringtone customization tool |
 | [CMF Tray](https://github.com/abhineet00/cmf-tray) | abhineet00 | Windows taskbar tray app to control CMF and Nothing earbuds settings and battery |
 | [Ear Battery CLI](https://github.com/pedrordgs/nothing-ear) | pedrordgs | Command-line tool to check battery levels of Nothing Ear wireless earbuds via Bluetooth |
 | [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | Native Rust desktop client for Nothing and CMF audio devices |
