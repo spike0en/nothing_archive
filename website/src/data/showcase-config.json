@@ -9,7 +9,12 @@
     "nothing-archive",
     "custom-nothing-glyph-tools",
     "glyph-nexus",
-    "glyph-toybox"
+    "glyph-toybox",
+    "glyph-barty",
+    "better-nothing-music-visualizer-bnmv",
+    "nothing-flasher",
+    "glyph-tones",
+    "better-nothing-glyph-composer-bngc"
   ],
   "platformOverrides": {
     "nothing-archive": ["web"],

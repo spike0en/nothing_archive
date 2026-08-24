@@ -15,7 +15,7 @@ A collection of tools for creating custom Glyph tones and compositions.
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
-| [Better Nothing Glyph Composer](https://better-nothing-glyph-composer.pages.dev/) | Krishnagopal Sinha | Visual tool for creating custom Glyph tones. Supports Phone (3) Matrix |
+| [Better Nothing Glyph Composer (BNGC)](https://better-nothing-glyph-composer.pages.dev/) | Krishnagopal Sinha | Visual tool for creating custom Glyph tones. Supports Phone (3) Matrix |
 | [Cassette](https://github.com/Chipik0/Cassette) | Chipik0 | Create glyph compositions |
 | [Custom Nothing Glyph Tools](https://github.com/SebiAi/custom-nothing-glyph-tools) | SebiAi | Create custom tones with Audacity |
 | [Glyph Converter](https://github.com/jarpl-o-pvl/glyph-converter) | jarpl-o-pvl | Convert Audacity labels into custom Glyph ringtones for Nothing Phone |
