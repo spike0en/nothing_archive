@@ -248,6 +248,60 @@ function CustomSortDropdown({
   );
 }
 
+const SESSION_SEED_KEY = 'nothing_showcase_seed';
+
+/**
+ * Retrieves an existing deterministic shuffle seed from URL parameters or session storage,
+ * generating and persisting a new pseudo-random seed if none exists for the active session.
+ *
+ * @param {string} [searchStr] - Optional raw URL query string (e.g. location.search).
+ * @returns {number} Deterministic integer seed for Fisher-Yates array shuffling.
+ */
+function getOrInitSeed(searchStr?: string): number {
+  if (typeof window === 'undefined') return 42;
+  try {
+    if (searchStr) {
+      const params = new URLSearchParams(searchStr);
+      const urlSeed = params.get('seed');
+      if (urlSeed && !isNaN(Number(urlSeed))) {
+        const parsed = parseInt(urlSeed, 10);
+        if (parsed > 0) {
+          window.sessionStorage.setItem(SESSION_SEED_KEY, String(parsed));
+          return parsed;
+        }
+      }
+    }
+    const saved = window.sessionStorage.getItem(SESSION_SEED_KEY);
+    if (saved) {
+      const parsed = parseInt(saved, 10);
+      if (!isNaN(parsed) && parsed > 0) {
+        return parsed;
+      }
+    }
+    const newSeed = Math.floor(Math.random() * 100000) + 1;
+    window.sessionStorage.setItem(SESSION_SEED_KEY, String(newSeed));
+    return newSeed;
+  } catch {
+    return 42;
+  }
+}
+
+/**
+ * Generates a fresh pseudorandom integer seed, persists it to session storage,
+ * and returns it to trigger an on-demand catalog reshuffle.
+ *
+ * @returns {number} Newly generated random seed.
+ */
+function generateAndSaveNewSeed(): number {
+  const newSeed = Math.floor(Math.random() * 100000) + 1;
+  if (typeof window !== 'undefined') {
+    try {
+      window.sessionStorage.setItem(SESSION_SEED_KEY, String(newSeed));
+    } catch {}
+  }
+  return newSeed;
+}
+
 /**
  * Main Community Showcase page rendering searchable, filterable catalog of community creations.
  *
@@ -268,7 +322,12 @@ export default function ShowcasePage(): React.JSX.Element {
   const [searchQuery, setSearchQueryState] = useState<string>(initialUrlState.search);
   const [sortMode, setSortModeState] = useState<SortMode>(initialUrlState.sort);
 
-  const [shuffleSeed, setShuffleSeed] = useState(42);
+  const [shuffleSeed, setShuffleSeed] = useState<number>(() => {
+    if (typeof window !== 'undefined') {
+      return getOrInitSeed(location.search);
+    }
+    return 42;
+  });
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
 
@@ -284,6 +343,18 @@ export default function ShowcasePage(): React.JSX.Element {
     setSelectedPlatformState(parsed.platform);
     setSelectedDeveloperState(parsed.developer);
     setSortModeState(parsed.sort);
+
+    const params = new URLSearchParams(location.search);
+    const urlSeed = params.get('seed');
+    if (urlSeed && !isNaN(Number(urlSeed))) {
+      const parsedSeed = parseInt(urlSeed, 10);
+      if (parsedSeed > 0) {
+        setShuffleSeed(parsedSeed);
+        try {
+          window.sessionStorage.setItem(SESSION_SEED_KEY, String(parsedSeed));
+        } catch {}
+      }
+    }
 
     // Prevent overwriting local search input state during active typing or trailing whitespace
     setSearchQueryState((prev) => {
@@ -371,9 +442,10 @@ export default function ShowcasePage(): React.JSX.Element {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Randomize initial seed on client mount so each visit/reload is fresh
+  // Restore or initialize deterministic session seed on client mount
   useEffect(() => {
-    setShuffleSeed(Math.floor(Math.random() * 100000) + 1);
+    const seed = getOrInitSeed(location.search);
+    setShuffleSeed(seed);
   }, []);
 
   // Available broad categories extracted from markdown docs for active source
@@ -497,7 +569,7 @@ export default function ShowcasePage(): React.JSX.Element {
       search: '',
       sort: 'random',
     }));
-    setShuffleSeed(Math.floor(Math.random() * 10000) + 1);
+    setShuffleSeed(generateAndSaveNewSeed());
   }, [applyState]);
 
   const handleSelectSource = (newSource: SourceFilter) => {
@@ -554,7 +626,7 @@ export default function ShowcasePage(): React.JSX.Element {
 
   const handleSelectSortMode = (mode: SortMode) => {
     if (mode === 'random') {
-      setShuffleSeed(Math.floor(Math.random() * 100000) + 1);
+      setShuffleSeed(generateAndSaveNewSeed());
     }
     applyState((prev) => ({
       ...prev,
