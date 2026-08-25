@@ -15,7 +15,7 @@ A collection of tools for creating custom Glyph tones and compositions.
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
-| [Better Nothing Glyph Composer (BNGC)](https://better-nothing-glyph-composer.pages.dev/) | Krishnagopal Sinha | Visual tool for creating custom Glyph tones. Supports Phone (3) Matrix |
+| [Better Nothing Glyph Composer (BNGC)](https://better-nothing-glyph-composer.pages.dev/) | Krishnagopal Sinha | Visual tool for creating custom Glyph tones. Supports Phone (3) Matrix ([Repo](https://github.com/Krishnagopal-Sinha/better-nothing-glyph-composer)) |
 | [Cassette](https://github.com/Chipik0/Cassette) | Chipik0 | Create glyph compositions |
 | [Custom Nothing Glyph Tools](https://github.com/SebiAi/custom-nothing-glyph-tools) | SebiAi | Create custom tones with Audacity |
 | [Glyph Converter](https://github.com/jarpl-o-pvl/glyph-converter) | jarpl-o-pvl | Convert Audacity labels into custom Glyph ringtones for Nothing Phone |
@@ -200,7 +200,7 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | PWA-style web app that indexes community apps, using a foundational database sourced from [Nothing Archive](https://github.com/spike0en/nothing_archive) |
 | [Nothing Flasher](https://github.com/spike0en/nothing-flasher) | spike0en & Hellboy017 | Fastboot flashing scripts |
 | [Nothing Glyph Interface Research](https://github.com/ThatOneCheat/nothing-glyph-interface-research) | ThatOneCheat | Reverse-engineering notes on the Nothing Phone Glyph SDK and system service, verified against decompiled code |
-| [Nothing News Hub](https://nothing-news.de/hub/) | StickyPRP | News and resources hub |
+| [Nothing News Hub](https://nothing-news.com) | StickyPRP | News and resources hub |
 | [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | Tool to patch/disable Logkit via ADB |
 | [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | A curated gallery of the Nothing community's favourite widgets |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | Community hub ([Repo](https://github.com/nothingtools/nothingtools.github.io)) |

@@ -174,6 +174,97 @@ function fetchPlayStoreIcon(packageId) {
 }
 
 /**
+ * Scrapes the primary extension icon image URL from a Chrome Web Store listing.
+ *
+ * @param {string} url - Chrome Web Store listing URL.
+ * @returns {Promise<string | null>} Resolved icon URL string or null on failure.
+ */
+function fetchChromeWebStoreIcon(url) {
+  return new Promise((resolve) => {
+    const req = https.get(
+      url,
+      {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+          'Accept-Language': 'en-US,en;q=0.9',
+        },
+      },
+      (res) => {
+        let data = '';
+        res.on('data', (chunk) => (data += chunk));
+        res.on('end', () => {
+          const metaMatch = data.match(/<meta[^>]+(?:property|name|itemprop)=["'](?:og:image|image|twitter:image)["'][^>]+content=["']([^"']+)["']/i);
+          if (metaMatch && metaMatch[1]) {
+            return resolve(metaMatch[1]);
+          }
+          const imgMatch = data.match(/https:\/\/(?:lh3|lh4|lh5|lh6)\.googleusercontent\.com\/[a-zA-Z0-9_\-=]+/);
+          if (imgMatch) {
+            return resolve(imgMatch[0]);
+          }
+          resolve(null);
+        });
+      }
+    );
+    req.on('error', () => resolve(null));
+    req.setTimeout(5000, () => {
+      req.destroy();
+      resolve(null);
+    });
+  });
+}
+
+/**
+ * Resolves the highest quality icon or logo available for a generic web page URL.
+ * Scrapes Apple Touch Icon, OpenGraph preview image, and standard favicons with fallback.
+ *
+ * @param {string} url - Target website URL.
+ * @returns {Promise<string | null>} Resolved icon URL string or null on failure.
+ */
+async function fetchWebIcon(url) {
+  try {
+    const res = await fetch(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+      },
+      signal: AbortSignal.timeout(4000),
+    });
+    if (!res.ok) return null;
+    const html = await res.text();
+
+    const appleMatch = html.match(/<link[^>]+rel=["'](?:apple-touch-icon|apple-touch-icon-precomposed)["'][^>]+href=["']([^"']+)["']/i)
+      || html.match(/<link[^>]+href=["']([^"']+)["'][^>]+rel=["'](?:apple-touch-icon|apple-touch-icon-precomposed)["']/i);
+    if (appleMatch && appleMatch[1]) {
+      return new URL(appleMatch[1], url).href;
+    }
+
+    const ogMatch = html.match(/<meta[^>]+(?:property|name)=["'](?:og:image|twitter:image)["'][^>]+content=["']([^"']+)["']/i)
+      || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+(?:property|name)=["'](?:og:image|twitter:image)["']/i);
+    if (ogMatch && ogMatch[1]) {
+      const ogUrl = ogMatch[1].trim();
+      if (!ogUrl.includes('screenshot') && !ogUrl.endsWith('.mp4')) {
+        return new URL(ogUrl, url).href;
+      }
+    }
+
+    const iconMatch = html.match(/<link[^>]+rel=["'](?:shortcut icon|icon)["'][^>]+href=["']([^"']+)["']/i)
+      || html.match(/<link[^>]+href=["']([^"']+)["'][^>]+rel=["'](?:shortcut icon|icon)["']/i);
+    if (iconMatch && iconMatch[1]) {
+      return new URL(iconMatch[1], url).href;
+    }
+
+    const hostname = new URL(url).hostname;
+    return `https://www.google.com/s2/favicons?domain=${hostname}&sz=128`;
+  } catch {
+    try {
+      const hostname = new URL(url).hostname;
+      return `https://www.google.com/s2/favicons?domain=${hostname}&sz=128`;
+    } catch {
+      return null;
+    }
+  }
+}
+
+/**
  * Extracts text and URL components from inline markdown link syntax `[Text](Url)`.
  *
  * @param {string} text - Raw markdown text.
@@ -553,9 +644,7 @@ async function main() {
     const githubUrl = item.links.github;
     const webUrl = item.links.website;
 
-    if (item.slug === 'nothing-wiki') {
-      item.iconUrl = 'https://nothing.wiki/lib/tpl/mikio/images/logo_white.svg';
-    } else if (playStoreUrl) {
+    if (playStoreUrl) {
       const match = playStoreUrl.match(/id=([a-zA-Z0-9._]+)/);
       if (match && match[1]) {
         const pkgId = match[1];
@@ -591,12 +680,37 @@ async function main() {
         }
       }
     } else if (webUrl && (webUrl.includes('chromewebstore.google.com') || webUrl.includes('chrome.google.com'))) {
-      item.iconUrl = 'https://www.google.com/s2/favicons?domain=chromewebstore.google.com&sz=128';
+      const extMatch = webUrl.match(/\/([a-z]{32})(?:\?|$|\/)/i);
+      const extKey = extMatch ? `cws_${extMatch[1]}` : item.slug;
+      if (iconsCache[extKey]) {
+        item.iconUrl = iconsCache[extKey];
+      } else {
+        const fetchedIcon = await fetchChromeWebStoreIcon(webUrl);
+        if (fetchedIcon) {
+          iconsCache[extKey] = fetchedIcon;
+          item.iconUrl = fetchedIcon;
+          iconsFetchedCount++;
+        } else {
+          item.iconUrl = 'https://www.google.com/s2/favicons?domain=chromewebstore.google.com&sz=128';
+        }
+      }
     } else if (githubUrl) {
       const match = githubUrl.match(/github\.com\/([a-zA-Z0-9_-]+)/);
       if (match && match[1]) {
         const owner = match[1];
         item.iconUrl = `https://github.com/${owner}.png?size=80`;
+      }
+    } else if (webUrl) {
+      const cacheKey = `web_${item.slug}`;
+      if (iconsCache[cacheKey]) {
+        item.iconUrl = iconsCache[cacheKey];
+      } else {
+        const fetchedIcon = await fetchWebIcon(webUrl);
+        if (fetchedIcon) {
+          iconsCache[cacheKey] = fetchedIcon;
+          item.iconUrl = fetchedIcon;
+          iconsFetchedCount++;
+        }
       }
     }
   }
