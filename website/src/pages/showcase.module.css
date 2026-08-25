@@ -424,16 +424,36 @@
   }
 
   .toolbarActions {
-    flex: 1;
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.45rem;
+    flex-wrap: nowrap;
+    gap: 0.4rem;
     justify-content: flex-start;
   }
 
+  .featuredToggle,
+  .filterBtnMobile,
+  .sortTriggerBtn {
+    flex: 0 0 auto;
+    padding: 0 0.55rem;
+    font-size: 0.74rem;
+    gap: 0.35rem;
+  }
+
+  .customSortDropdown {
+    flex: 0 0 auto;
+  }
+
+  .sortTriggerLabel {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 85px;
+  }
+
   .sortMenuPanel {
-    left: 0;
-    right: auto;
+    left: auto;
+    right: 0;
   }
 }
 
