@@ -13,6 +13,7 @@ import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import { useHistory, useLocation } from '@docusaurus/router';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import {
   FaMagnifyingGlass,
   FaArrowRight,
@@ -24,6 +25,7 @@ import {
   FaArrowDownAZ,
   FaArrowDownZA,
   FaFolder,
+  FaCrown,
 } from 'react-icons/fa6';
 import clsx from 'clsx';
 import ShowcaseCard from '../components/ShowcaseCard';
@@ -31,6 +33,7 @@ import ShowcaseSidebar from '../components/ShowcaseSidebar';
 import ShowcaseFilterDrawer from '../components/ShowcaseFilterDrawer';
 import {
   ALL_SHOWCASE_ITEMS,
+  FEATURED_COUNT,
   CATEGORIES_BY_SOURCE,
   PLATFORM_FILTERS,
   shuffleItems,
@@ -61,6 +64,7 @@ const SORT_OPTIONS: SortOption[] = [
 ];
 
 interface ShowcaseUrlState {
+  onlyFeatured: boolean;
   source: SourceFilter;
   pricing: PricingFilter;
   category: string;
@@ -113,6 +117,8 @@ function isSortMode(value: string | null): value is SortMode {
  */
 function parseUrlState(searchStr: string): ShowcaseUrlState {
   const params = new URLSearchParams(searchStr);
+  const onlyFeatured = params.get('featured') === 'true';
+
   const rawSource = params.get('source') || params.get('type');
   const source: SourceFilter = rawSource === 'apps' || rawSource === 'projects' ? rawSource : 'all';
 
@@ -132,6 +138,7 @@ function parseUrlState(searchStr: string): ShowcaseUrlState {
   const sort: SortMode = isSortMode(rawSort) ? rawSort : 'random';
 
   return {
+    onlyFeatured,
     source,
     pricing,
     category,
@@ -151,6 +158,7 @@ function parseUrlState(searchStr: string): ShowcaseUrlState {
  */
 function buildUrlSearch(state: ShowcaseUrlState): string {
   const params = new URLSearchParams();
+  if (state.onlyFeatured) params.set('featured', 'true');
   if (state.source !== 'all') params.set('source', state.source);
   if (state.source === 'apps' && state.pricing !== 'all') params.set('pricing', state.pricing);
   if (state.category !== 'all') params.set('category', state.category);
@@ -258,7 +266,7 @@ const SESSION_SEED_KEY = 'nothing_showcase_seed';
  * @returns {number} Deterministic integer seed for Fisher-Yates array shuffling.
  */
 function getOrInitSeed(searchStr?: string): number {
-  if (typeof window === 'undefined') return 42;
+  if (!ExecutionEnvironment.canUseDOM) return 42;
   try {
     if (searchStr) {
       const params = new URLSearchParams(searchStr);
@@ -294,7 +302,7 @@ function getOrInitSeed(searchStr?: string): number {
  */
 function generateAndSaveNewSeed(): number {
   const newSeed = Math.floor(Math.random() * 100000) + 1;
-  if (typeof window !== 'undefined') {
+  if (ExecutionEnvironment.canUseDOM) {
     try {
       window.sessionStorage.setItem(SESSION_SEED_KEY, String(newSeed));
     } catch {}
@@ -313,6 +321,7 @@ export default function ShowcasePage(): React.JSX.Element {
 
   const initialUrlState = useMemo(() => parseUrlState(location.search), []);
 
+  const [onlyFeatured, setOnlyFeaturedState] = useState<boolean>(initialUrlState.onlyFeatured);
   const [source, setSourceState] = useState<SourceFilter>(initialUrlState.source);
   const [pricing, setPricingState] = useState<PricingFilter>(initialUrlState.pricing);
   const [selectedCategory, setSelectedCategoryState] = useState<string>(initialUrlState.category);
@@ -323,7 +332,7 @@ export default function ShowcasePage(): React.JSX.Element {
   const [sortMode, setSortModeState] = useState<SortMode>(initialUrlState.sort);
 
   const [shuffleSeed, setShuffleSeed] = useState<number>(() => {
-    if (typeof window !== 'undefined') {
+    if (ExecutionEnvironment.canUseDOM) {
       return getOrInitSeed(location.search);
     }
     return 42;
@@ -336,6 +345,7 @@ export default function ShowcasePage(): React.JSX.Element {
   // Synchronize state when browser navigation events (Back/Forward) update location.search
   useEffect(() => {
     const parsed = parseUrlState(location.search);
+    setOnlyFeaturedState(parsed.onlyFeatured);
     setSourceState(parsed.source);
     setPricingState(parsed.pricing);
     setSelectedCategoryState(parsed.category);
@@ -372,6 +382,7 @@ export default function ShowcasePage(): React.JSX.Element {
       options?: { replace?: boolean }
     ) => {
       const current: ShowcaseUrlState = {
+        onlyFeatured,
         source,
         pricing,
         category: selectedCategory,
@@ -383,6 +394,7 @@ export default function ShowcasePage(): React.JSX.Element {
       };
       const next = updater(current);
 
+      setOnlyFeaturedState(next.onlyFeatured);
       setSourceState(next.source);
       setPricingState(next.pricing);
       setSelectedCategoryState(next.category);
@@ -405,6 +417,7 @@ export default function ShowcasePage(): React.JSX.Element {
       history,
       location.pathname,
       location.search,
+      onlyFeatured,
       source,
       pricing,
       selectedCategory,
@@ -474,6 +487,7 @@ export default function ShowcasePage(): React.JSX.Element {
 
     const timer = setTimeout(() => {
       const nextState: ShowcaseUrlState = {
+        onlyFeatured,
         source,
         pricing: pricing,
         category: selectedCategory,
@@ -492,6 +506,7 @@ export default function ShowcasePage(): React.JSX.Element {
     return () => clearTimeout(timer);
   }, [
     searchQuery,
+    onlyFeatured,
     source,
     pricing,
     selectedCategory,
@@ -540,6 +555,7 @@ export default function ShowcasePage(): React.JSX.Element {
 
   const handleSelectDeveloper = (devName: string) => {
     applyState(() => ({
+      onlyFeatured: false,
       source: 'all',
       pricing: 'all',
       category: 'all',
@@ -560,6 +576,7 @@ export default function ShowcasePage(): React.JSX.Element {
 
   const handleResetFilters = useCallback(() => {
     applyState(() => ({
+      onlyFeatured: false,
       source: 'all',
       pricing: 'all',
       category: 'all',
@@ -571,6 +588,16 @@ export default function ShowcasePage(): React.JSX.Element {
     }));
     setShuffleSeed(generateAndSaveNewSeed());
   }, [applyState]);
+
+  /**
+   * Toggles the Editor's Choice filter mode on or off.
+   */
+  const handleToggleFeatured = () => {
+    applyState((prev) => ({
+      ...prev,
+      onlyFeatured: !prev.onlyFeatured,
+    }));
+  };
 
   const handleSelectSource = (newSource: SourceFilter) => {
     applyState((prev) => ({
@@ -637,6 +664,9 @@ export default function ShowcasePage(): React.JSX.Element {
   // Multi-dimensional filtering logic with Editor's Choice naturally boosted to top
   const filteredItems = useMemo(() => {
     const matched = sortedBaseItems.filter((item) => {
+      // Filter: Editor's Choice curated items isolation
+      if (onlyFeatured && !item.featured) return false;
+
       // Filter: Source catalog (apps vs projects)
       if (source !== 'all' && item.source !== source) return false;
 
@@ -681,6 +711,7 @@ export default function ShowcasePage(): React.JSX.Element {
     });
 
     const isFilterOrSearchActive =
+      onlyFeatured ||
       source !== 'all' ||
       selectedCategory !== 'all' ||
       selectedSubCategory !== 'all' ||
@@ -701,6 +732,7 @@ export default function ShowcasePage(): React.JSX.Element {
     return matched;
   }, [
     sortedBaseItems,
+    onlyFeatured,
     source,
     pricing,
     selectedCategory,
@@ -715,6 +747,7 @@ export default function ShowcasePage(): React.JSX.Element {
   useEffect(() => {
     setVisibleCount(PAGE_SIZE);
   }, [
+    onlyFeatured,
     source,
     pricing,
     selectedCategory,
@@ -736,6 +769,7 @@ export default function ShowcasePage(): React.JSX.Element {
   // Count active non-default filters to display badge on Filter button
   const activeFilterCount = useMemo(() => {
     let count = 0;
+    if (onlyFeatured) count++;
     if (source !== 'all') count++;
     if (source === 'apps' && pricing !== 'all') count++;
     if (selectedCategory !== 'all') count++;
@@ -745,6 +779,7 @@ export default function ShowcasePage(): React.JSX.Element {
     if (searchQuery.trim().length > 0) count++;
     return count;
   }, [
+    onlyFeatured,
     source,
     pricing,
     selectedCategory,
@@ -831,8 +866,25 @@ export default function ShowcasePage(): React.JSX.Element {
                   )}
                 </div>
 
-                {/* Actions: Filter Drawer Trigger (Mobile) & Sort Dropdown */}
+                {/* Actions: Filter Drawer Trigger (Mobile), Curated Quick Pill & Sort Dropdown */}
                 <div className={styles.toolbarActions}>
+                  <button
+                    type="button"
+                    role="checkbox"
+                    aria-checked={onlyFeatured}
+                    onClick={handleToggleFeatured}
+                    className={clsx(
+                      styles.featuredToggle,
+                      onlyFeatured && styles.featuredToggleActive
+                    )}
+                    title="Filter by Editor's Choice"
+                    aria-label="Filter by Editor's Choice"
+                  >
+                    <FaCrown size={11} />
+                    <span className={styles.featuredToggleLabel}>Editor&apos;s Choice</span>
+                    <span className={styles.featuredToggleCount}>{FEATURED_COUNT}</span>
+                  </button>
+
                   <button
                     type="button"
                     onClick={() => setIsFilterDrawerOpen(true)}
@@ -874,6 +926,19 @@ export default function ShowcasePage(): React.JSX.Element {
 
                     {/* Active facet tags list */}
                     <div className={styles.activeTagsList}>
+                      {onlyFeatured && (
+                        <span className={styles.activeTag}>
+                          <span>Editor&apos;s Choice</span>
+                          <button
+                            type="button"
+                            onClick={handleToggleFeatured}
+                            aria-label="Remove Editor's Choice filter"
+                          >
+                            <FaXmark size={9} />
+                          </button>
+                        </span>
+                      )}
+
                       {source !== 'all' && (
                         <span className={styles.activeTag}>
                           <span>Type: {source === 'apps' ? 'Apps' : 'Projects'}</span>

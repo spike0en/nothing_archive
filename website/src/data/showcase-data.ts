@@ -85,6 +85,9 @@ export const PLATFORM_FILTERS: { id: PlatformFilter; label: string }[] = [
 const rawItems = ('items' in rawPayload && Array.isArray(rawPayload.items) ? rawPayload.items : []) as ShowcaseItem[];
 export const ALL_SHOWCASE_ITEMS: ShowcaseItem[] = rawItems;
 
+/** Precomputed count of items marked with featured: true in the static payload. */
+export const FEATURED_COUNT = ALL_SHOWCASE_ITEMS.filter((i) => i.featured).length;
+
 // SAFETY: categories mapping is generated and validated at prebuild by scripts/parse-showcase.js.
 const rawCategories = (
   'categories' in rawPayload && rawPayload.categories
