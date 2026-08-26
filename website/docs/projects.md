@@ -59,6 +59,7 @@ Themes and rices for Arch Linux, VS Code, and other development environments fol
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
+| [Dotfiles Nothing OS](https://github.com/0xbbuddha/dotfiles_nothing_os) | 0xbbuddha | Hyprland + Quickshell rice for Linux inspired by Nothing OS design language. |
 | [Glyph SDDM](https://github.com/xCaptaiN09/glyph-sddm) | xCaptaiN09 | Minimalist SDDM theme inspired by Nothing's design language |
 | [Notes (Windows)](https://github.com/rohankishore/Notes-1) | rohankishore | Nothing themed notepad for Windows |
 | [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | macOS menu bar app |
@@ -206,6 +207,7 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | Community hub ([Repo](https://github.com/nothingtools/nothingtools.github.io)) |
 | [Nothing Termux Voice Control](https://github.com/abdular721-lgtm/nothing-archives) | abdular721-lgtm | Termux voice-control scripts for the Nothing Phone (2a) Plus |
 | [Nothing Wiki](https://nothing.wiki) | adbo | Community-maintained unofficial wiki for Nothing |
+
 ## Root Modules
 
 :::warning
