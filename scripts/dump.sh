@@ -8,8 +8,8 @@
 # === Configuration ===
 set -e
 ORIGINAL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-export LD_LIBRARY_PATH="$ORIGINAL_DIR/bin:$LD_LIBRARY_PATH"
 
+# Clamp thread allocation to prevent memory exhaustion and I/O thrashing on large nodes
 DETECTED_CORES=$(nproc)
 CORES=$((DETECTED_CORES > 44 ? 44 : DETECTED_CORES))
 echo "Detected $DETECTED_CORES CPU cores, using $CORES cores for parallel processing"
@@ -22,8 +22,18 @@ echo "Thread allocation - ARIA2C: $ARIA2C_CONNECTIONS, PARALLEL: $PARALLEL_JOBS,
 
 export PARALLEL="-j$PARALLEL_JOBS"
 
+HOST_ARCH=$(uname -m)
+case "$HOST_ARCH" in
+    aarch64|arm64)
+        OTA_EXTRACTOR="$ORIGINAL_DIR/bin/arm64/ota_extractor"
+        ;;
+    x86_64|amd64|*)
+        OTA_EXTRACTOR="$ORIGINAL_DIR/bin/x86_64/ota_extractor"
+        export LD_LIBRARY_PATH="$ORIGINAL_DIR/bin/x86_64:$LD_LIBRARY_PATH"
+        ;;
+esac
+chmod +x "$OTA_EXTRACTOR" 2>/dev/null || true
 
-OTA_EXTRACTOR="$ORIGINAL_DIR/bin/ota_extractor"
 DEVICES_JSON="$ORIGINAL_DIR/scripts/devices.json"
 OUTPUT_DIR="$ORIGINAL_DIR/out"
 
@@ -125,6 +135,12 @@ detect_model() {
 
 # === Main Execution ===
 
+if [ ! -f "$OTA_EXTRACTOR" ]; then
+    echo "Error: Extractor binary not found at $OTA_EXTRACTOR" >&2
+    exit 1
+fi
+chmod +x "$OTA_EXTRACTOR"
+
 echo "Downloading initial OTA package..."
 download_file "$1"
 echo "Download complete."
@@ -140,7 +156,6 @@ if [ "$MODEL" == "UnknownModel" ]; then
 fi
 
 echo "Extracting initial payload..."
-chmod +x "$OTA_EXTRACTOR"
 unzip ota.zip payload.bin || { echo "Failed to unzip payload"; rm -f ota.zip; exit 1; }
 mv payload.bin payload_working.bin
 
@@ -170,7 +185,7 @@ for i in "$@"; do
     rm ota.zip
 
     mkdir -p ota_new
-    "$OTA_EXTRACTOR" -input-dir ota -output_dir ota_new -payload payload_working.bin || { echo "Error: Failed to extract incremental payload for $i"; rm -f payload_working.bin; exit 1; }
+    "$OTA_EXTRACTOR" -input_dir ota -output_dir ota_new -payload payload_working.bin || { echo "Error: Failed to extract incremental payload for $i"; rm -f payload_working.bin; exit 1; }
     rm -rf ota
     mv ota_new ota
     rm payload_working.bin
@@ -209,7 +224,7 @@ cd ota
 
 HASH_FILE="../out/${TAG}-hash.sha256"
 
-# Ignored by sha256sum -c
+# Lines prefixed with '#' are ignored by sha256sum -c
 generate_metadata_notice | sed 's/^/# /' > "$HASH_FILE"
 echo "" >> "$HASH_FILE"
 
@@ -247,6 +262,7 @@ if [ -d "../ota" ] && [ "$(ls -A ../ota 2>/dev/null)" ]; then
     (cd ../ota && 7z a -mmt$COMPRESSION_THREADS -mx6 ../out/${TAG}-image-firmware.7z * && rm -rf ../ota) &
 fi
 
+# Split dynamic/super partition images into 2GB chunks to stay under release upload limits
 if [ -d "../dyn" ] && [ "$(ls -A ../dyn 2>/dev/null)" ]; then
     (cd ../dyn && 7z a -mmt$COMPRESSION_THREADS -mx6 -v2000M ../out/${TAG}-image-logical.7z * && rm -rf ../dyn) &
 fi
