@@ -207,7 +207,7 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | Community hub ([Repo](https://github.com/nothingtools/nothingtools.github.io)) |
 | [Nothing Termux Voice Control](https://github.com/abdular721-lgtm/nothing-archives) | abdular721-lgtm | Termux voice-control scripts for the Nothing Phone (2a) Plus |
 | [Nothing Wiki](https://nothing.wiki) | adbo | Community-maintained unofficial wiki for Nothing |
-| [NP Doctor](https://github.com/kaungkhantko26/nothing-phone) | kaungkhantko26 | ADB CLI diagnostic + repair toolkit for Nothing Phone |
+
 ## Root Modules
 
 :::warning
