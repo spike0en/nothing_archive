@@ -287,6 +287,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Vibe coded copy of Nothing's essential space app |
 | [EarPhone X](https://github.com/noebachofner/EarPhonesX) | noebachofner | Linux application to control and configure Nothing and CMF earbuds |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Nothing-inspired core Essential Space experience for all devices, featuring quick screenshots, notes, voice memos, and more |
+| [Essential Voice](https://github.com/email2ishaanpatel-collab/essential-voice) | email2ishaanpatel-collab | On device Essential Voice for unsupported Nothing/CMF phones |
 | [Flip To Glyph Quick Tile](https://github.com/trup40/QuickTileForFlip2GlyphNP) | trup40 | A basic quick tile to toggle the Flip to Glyph setting on Nothing phones |
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | Use Bluetooth wearables without OEM apps, accounts, or cloud |
 | [Hey Battery](https://github.com/ghostyapps/HeyBattery) | Candan | Battery usage tracker |
