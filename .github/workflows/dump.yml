@@ -36,7 +36,7 @@ jobs:
     runs-on: >-
       ${{
         inputs.runner_type == 'self-hosted'
-        && fromJSON('["self-hosted", "Linux", "X64"]')
+        && fromJSON('["self-hosted", "Linux"]')
         || 'ubuntu-latest'
       }}
 
