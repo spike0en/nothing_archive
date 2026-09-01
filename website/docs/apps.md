@@ -374,6 +374,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | App | Developer | Description |
 |-----|-----------|-------------|
 | [Calories Are Nothing](https://play.google.com/store/apps/details?id=can.wearemobilefirst.com) | WeAreMobileFirst | Meal logging app |
+| [Chats By Voidwarelabs](https://play.google.com/store/apps/details?id=com.voidwarelabs.chats) | VoidwareLabs | Clean, minimal SMS app inspired by Nothing UI |
 | [Compass](https://github.com/Earendel-lab/Compass) | Earendel | Simple compass |
 | [Currency](https://curency.pages.dev/) | Earendel | Currency converter web app |
 | [Desight](https://play.google.com/store/apps/details?id=com.repomedia.desight) | Repomedia | Nothing-inspired, free eye strain reduction app |
