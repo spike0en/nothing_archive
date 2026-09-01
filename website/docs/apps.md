@@ -41,6 +41,7 @@ Check out [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) 
 | [Glyph Slot](https://github.com/aero-md/glyphslot) | aero-md | Slot-machine Glyph Toy for the Nothing Phone (3) Glyph Matrix |
 | [Glyph Snake](https://github.com/AlyaNs1/GlyphSnake) | AlyaNs1 | Snake Game for Nothing Phone (3)'s Glyph Matrix |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | A stacker arcade game |
+| [Glyph Tide](https://github.com/erosika/glyph-tide) | erosika | Tide tracking toy for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | Coin flip, ringer mode, battery flow |
 | [Glyph Works](https://play.google.com/store/apps/details?id=space.linuxct.glyphworks) | linuxct | Adds support for Nothing Phone (3)-like Glyph Toy actions, custom designs, and matrix widgets via the Essential Key ([Repo](https://github.com/linuxct/glyphworks)) |
 | [Glyphify](https://play.google.com/store/apps/details?id=com.frank.glyphify) | Fr4nKB | Ball maze, quick dial, Tamagotchi |
