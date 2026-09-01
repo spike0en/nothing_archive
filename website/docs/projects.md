@@ -73,6 +73,7 @@ Themes and rices for Arch Linux, VS Code, and other development environments fol
 | [Nothing VS Code Theme](https://github.com/shahriaravi/nothing-vscode-theme) | shahriaravi | VS Code theme |
 | [Nth Cord](https://github.com/deathbyfrag/nthCord) | deathbyfrag | Nothing OS inspired theme for Discord |
 | [Obsidian Nothing Theme](https://github.com/saulojoab/obsidian-nothing-theme) | saulojoab | Obsidian theme based on Nothing |
+| [SelfControl Mastered](https://github.com/advegaf/selfcontrol-mastered) | advegaf | Nothing-inspired distraction and website blocker for macOS |
 | [Soot Theme](https://github.com/OsqY/soot-theme) | OsqY | Monochrome dot-matrix theme for the Zed editor influenced by Nothing design |
 
 ### Fonts & Style

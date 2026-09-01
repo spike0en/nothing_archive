@@ -383,7 +383,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Glimpse](https://github.com/amitozalvo/nothing-phone-apps) | amitozalvo | Notification and OTP assistant for Nothing Phone (3) |
 | [Hey Cam](https://github.com/ghostyapps/HeyCam) | Candan | Minimalist camera with Glyph Matrix support |
 | [Iris](https://github.com/hrideshmg/iris) | hrideshmg | Nothing Phone (3a) voice assistant companion app for Hermes AI agent |
-| [Mate App](https://github.com/shahriaravi/MateApp) | shahriaravi | Offline finance tracker |
+| [Mate](https://github.com/shahriaravi/MateApp) | shahriaravi | Offline finance tracker |
 | [Minimal Browser](https://github.com/aaswani-v/Minimal-Browser) | aaswani-v | Browser with AI summarization |
 | [N Dial](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ndial) | Hearthborn | Phone dialer and contacts |
 | [N Recipe](https://play.google.com/store/apps/details?id=com.a3chron.nrecipe) | a3chron | Offline recipebook |
@@ -410,6 +410,7 @@ General games inspired by the Nothing design language.
 
 | App | Developer | Description |
 |-----|-----------|-------------|
+| [Game & Magic](https://play.google.com/store/apps/details?id=com.repomedia.gameandmagic) | Repomedia | Magic: The Gathering life counter app with retro LCD aesthetics |
 | [Gamething](https://play.google.com/store/apps/details?id=com.LevMatuzin.Gamething) | Lev Matuzin | Dino game inspired |
 | [Pixel Golf](https://github.com/saberzou/pixel-golf) | saberzou | Minimalist mini golf game with Nothing-inspired pixel aesthetics |
 | [Tetris](https://github.com/ItsCR24/tetris-m3) | ItsCR24 | Material You & Nothing OS inspired Tetris game |
