@@ -14,7 +14,8 @@
     "better-nothing-music-visualizer-bnmv",
     "nothing-flasher",
     "glyph-tones",
-    "better-nothing-glyph-composer-bngc"
+    "better-nothing-glyph-composer-bngc",
+    "voidcaller"
   ],
   "platformOverrides": {
     "nothing-archive": ["web"],
