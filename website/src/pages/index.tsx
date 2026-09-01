@@ -163,7 +163,7 @@ function HomepageHeader() {
                 <span className={styles.ctaIconWrapper}>
                   <FaRegCompass className={styles.ctaCompassIcon} size={16} />
                 </span>
-                <span>Explore Showcase</span>
+                <span>Explore Apps & Projects</span>
                 <FaArrowRight className={styles.ctaArrowIcon} size={12} />
               </Link>
               <a
