@@ -31,12 +31,14 @@ By using this archive, users acknowledge and accept these terms:
 :::info
 
 - Releases for OTA images are tagged using the format `<POST_OTA_VERSION>`, as shown in the [releases](https://github.com/spike0en/nothing_archive/releases) section.
-- Region-specific releases are tagged as `<POST_OTA_VERSION>-<GLO/EEA>`, applicable to older Spacewar builds. GLO = Global; EEA = European Economic Area.
+- Region-specific releases are tagged as `<POST_OTA_VERSION>-<GLO|EEA>`, applicable to older Spacewar builds. GLO = Global; EEA = European Economic Area.
 - Nothing OS Open Beta Test releases are denoted by `OBT`.
-- Android Developer preview releases are tagged as `0.0.0-dev`+`<Device Codename>.<Incremental Date>`.
+- Android Developer preview releases are tagged as `0.0.0-dev+<Device Codename>.<Incremental Date>`.
 - Unless stated otherwise, releases are compatible with all regional and color variants of the device.
 
 :::
+
+import PartitionExplorer from '@site/src/components/PartitionExplorer/PartitionExplorer';
 
 ## Categorization
 
@@ -47,15 +49,15 @@ The unmodified stock OTA image files are archived in `.7z` format and categorize
 
 | Device | Boot (`-image-boot.7z`) | Firmware (`-image-firmware.7z`) | Logical (`-image-logical.7z.001-00x`) |
 | :--- | :--- | :--- | :--- |
-| **Phone (1)** | `boot`, `dtbo`, `vendor_boot`, `vbmeta` (Total: 4) | `abl`, `aop`, `bluetooth`, `cpucp`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `qupfw`, `shrm`, `tz`, `uefisecapp`, `xbl`, `xbl_config` (Total: 18) | `system`, `system_ext`, `product`, `vendor`, `odm`, `vbmeta_system`, `vbmeta_vendor` (Total: 7) |
-| **Phone (2)** | `boot`, `dtbo`, `vendor_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor` (Total: 7) | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `multiimgqti`, `qupfw`, `qweslicstore`, `shrm`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` (Total: 23) | `system`, `system_ext`, `product`, `vendor`, `vendor_dlkm`, `odm` (Total: 6) |
-| **Phone (2a) / Plus** | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta` (Total: 5) | `apusys`, `audio_dsp`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `mcupm`, `md1img`, `mvpu_algo`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` (Total: 22) | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product`, `vbmeta_system`, `vbmeta_vendor` (Total: 10) |
-| **Phone (3a) / Pro** | `boot`, `init_boot`, `dtbo`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` (Total: 8) | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `pvmfw`, `qupfw`, `shrm`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` (Total: 23) | `system`, `system_dlkm`, `system_ext`, `product`, `vendor`, `vendor_dlkm`, `odm` (Total: 7) |
-| **Phone (3)** | `boot`, `dtbo`, `init_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` (Total: 8) | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `multiimgqti`, `pvmfw`, `qupfw`, `shrm`, `soccp_dcd`, `soccp_debug`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` (Total: 26) | `odm`, `product`, `system`, `system_dlkm`, `system_ext`, `vendor`, `vendor_dlkm` (Total: 7) |
-| **Phone (3a) Lite** | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor` (Total: 7) | `apusys`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `modem`, `mcupm`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` (Total: 20) | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product` (Total: 8) |
-| **Phone (4a)** | `boot`, `dtbo`, `init_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` (Total: 8) | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `pvmfw`, `qupfw`, `shrm`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` (Total: 23) | `odm`, `product`, `system`, `system_dlkm`, `system_ext`, `vendor`, `vendor_dlkm` (Total: 7) |
-| **Phone (4a) Pro** | `boot`, `dtbo`, `init_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` (Total: 8) | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `multiimgqti`, `pvmfw`, `qupfw`, `shrm`, `soccp_dcd`, `soccp_debug`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` (Total: 26) | `odm`, `product`, `system`, `system_dlkm`, `system_ext`, `vendor`, `vendor_dlkm` (Total: 7) |
-| **Phone (4b)** | `boot`, `dtbo`, `init_boot`, `recovery`, `vbmeta`, `vbmeta_system`, `vbmeta_vendor`, `vendor_boot` (Total: 8) | `abl`, `aop`, `aop_config`, `bluetooth`, `cpucp`, `cpucp_dtb`, `devcfg`, `dsp`, `featenabler`, `hyp`, `imagefv`, `keymaster`, `modem`, `multiimgoem`, `pvmfw`, `qupfw`, `shrm`, `tz`, `uefi`, `uefisecapp`, `xbl`, `xbl_config`, `xbl_ramdump` (Total: 23) | `odm`, `product`, `system`, `system_dlkm`, `system_ext`, `vendor`, `vendor_dlkm` (Total: 7) |
+| **Phone (3)** | `boot, dtbo, init_boot, recovery, vbmeta, vbmeta_system, vbmeta_vendor, vendor_boot` (Total: 8) | `abl, aop, aop_config, bluetooth, cpucp, cpucp_dtb, devcfg, dsp, featenabler, hyp, imagefv, keymaster, modem, multiimgoem, multiimgqti, pvmfw, qupfw, shrm, soccp_dcd, soccp_debug, tz, uefi, uefisecapp, xbl, xbl_config, xbl_ramdump` (Total: 26) | `odm, product, system, system_dlkm, system_ext, vendor, vendor_dlkm` (Total: 7) |
+| **Phone (2)** | `boot, dtbo, vendor_boot, recovery, vbmeta, vbmeta_system, vbmeta_vendor` (Total: 7) | `abl, aop, aop_config, bluetooth, cpucp, devcfg, dsp, featenabler, hyp, imagefv, keymaster, modem, multiimgoem, multiimgqti, qupfw, qweslicstore, shrm, tz, uefi, uefisecapp, xbl, xbl_config, xbl_ramdump` (Total: 23) | `system, system_ext, product, vendor, vendor_dlkm, odm` (Total: 6) |
+| **Phone (1)** | `boot, dtbo, vendor_boot, vbmeta` (Total: 4) | `abl, aop, bluetooth, cpucp, devcfg, dsp, featenabler, hyp, imagefv, keymaster, modem, multiimgoem, qupfw, shrm, tz, uefisecapp, xbl, xbl_config` (Total: 18) | `system, system_ext, product, vendor, odm, vbmeta_system, vbmeta_vendor` (Total: 7) |
+| **Phone (4a) Pro** | `boot, dtbo, init_boot, recovery, vbmeta, vbmeta_system, vbmeta_vendor, vendor_boot` (Total: 8) | `abl, aop, aop_config, bluetooth, cpucp, cpucp_dtb, devcfg, dsp, featenabler, hyp, imagefv, keymaster, modem, multiimgoem, multiimgqti, pvmfw, qupfw, shrm, soccp_dcd, soccp_debug, tz, uefi, uefisecapp, xbl, xbl_config, xbl_ramdump` (Total: 26) | `odm, product, system, system_dlkm, system_ext, vendor, vendor_dlkm` (Total: 7) |
+| **Phone (4a)** | `boot, dtbo, init_boot, recovery, vbmeta, vbmeta_system, vbmeta_vendor, vendor_boot` (Total: 8) | `abl, aop, aop_config, bluetooth, cpucp, cpucp_dtb, devcfg, dsp, featenabler, hyp, imagefv, keymaster, modem, multiimgoem, pvmfw, qupfw, shrm, tz, uefi, uefisecapp, xbl, xbl_config, xbl_ramdump` (Total: 23) | `odm, product, system, system_dlkm, system_ext, vendor, vendor_dlkm` (Total: 7) |
+| **Phone (3a) / Pro** | `boot, init_boot, dtbo, recovery, vbmeta, vbmeta_system, vbmeta_vendor, vendor_boot` (Total: 8) | `abl, aop, aop_config, bluetooth, cpucp, cpucp_dtb, devcfg, dsp, featenabler, hyp, imagefv, keymaster, modem, multiimgoem, pvmfw, qupfw, shrm, tz, uefi, uefisecapp, xbl, xbl_config, xbl_ramdump` (Total: 23) | `system, system_dlkm, system_ext, product, vendor, vendor_dlkm, odm` (Total: 7) |
+| **Phone (2a) / Plus** | `boot, dtbo, init_boot, vendor_boot, vbmeta` (Total: 5) | `apusys, audio_dsp, ccu, connsys_bt, connsys_gnss, connsys_wifi, dpm, gpueb, gz, lk, logo, mcf_ota, mcupm, md1img, mvpu_algo, pi_img, preloader_raw, scp, spmfw, sspm, tee, vcp` (Total: 22) | `odm, vendor, system_ext, system, vendor_dlkm, odm_dlkm, system_dlkm, product, vbmeta_system, vbmeta_vendor` (Total: 10) |
+| **Phone (4b)** | `boot, dtbo, init_boot, recovery, vbmeta, vbmeta_system, vbmeta_vendor, vendor_boot` (Total: 8) | `abl, aop, aop_config, bluetooth, cpucp, cpucp_dtb, devcfg, dsp, featenabler, hyp, imagefv, keymaster, modem, multiimgoem, pvmfw, qupfw, shrm, tz, uefi, uefisecapp, xbl, xbl_config, xbl_ramdump` (Total: 23) | `odm, product, system, system_dlkm, system_ext, vendor, vendor_dlkm` (Total: 7) |
+| **Phone (3a) Lite** | `boot, dtbo, init_boot, vendor_boot, vbmeta, vbmeta_system, vbmeta_vendor` (Total: 7) | `apusys, ccu, connsys_bt, connsys_gnss, connsys_wifi, dpm, gpueb, gz, lk, logo, mcf_ota, modem, mcupm, pi_img, preloader_raw, scp, spmfw, sspm, tee, vcp` (Total: 20) | `odm, vendor, system_ext, system, vendor_dlkm, odm_dlkm, system_dlkm, product` (Total: 8) |
 
 </details>
 
@@ -64,8 +66,8 @@ The unmodified stock OTA image files are archived in `.7z` format and categorize
 
 | Device | Boot (`-image-boot.7z`) | Firmware (`-image-firmware.7z`) | Logical (`-image-logical.7z.001-00x`) |
 | :--- | :--- | :--- | :--- |
-| **Phone (1)** | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta` (Total: 5) | `apusys`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `modem`, `mcupm`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` (Total: 20) | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product`, `vbmeta_system`, `vbmeta_vendor` (Total: 10) |
-| **Phone (2) Pro** | `boot`, `dtbo`, `init_boot`, `vendor_boot`, `vbmeta` (Total: 5) | `apusys`, `ccu`, `connsys_bt`, `connsys_gnss`, `connsys_wifi`, `dpm`, `gpueb`, `gz`, `lk`, `logo`, `mcf_ota`, `modem`, `mcupm`, `pi_img`, `preloader_raw`, `scp`, `spmfw`, `sspm`, `tee`, `vcp` (Total: 20) | `odm`, `vendor`, `system_ext`, `system`, `vendor_dlkm`, `odm_dlkm`, `system_dlkm`, `product`, `vbmeta_system`, `vbmeta_vendor` (Total: 10) |
+| **Phone (2) Pro** | `boot, dtbo, init_boot, vendor_boot, vbmeta` (Total: 5) | `apusys, ccu, connsys_bt, connsys_gnss, connsys_wifi, dpm, gpueb, gz, lk, logo, mcf_ota, modem, mcupm, pi_img, preloader_raw, scp, spmfw, sspm, tee, vcp` (Total: 20) | `odm, vendor, system_ext, system, vendor_dlkm, odm_dlkm, system_dlkm, product, vbmeta_system, vbmeta_vendor` (Total: 10) |
+| **Phone (1)** | `boot, dtbo, init_boot, vendor_boot, vbmeta` (Total: 5) | `apusys, ccu, connsys_bt, connsys_gnss, connsys_wifi, dpm, gpueb, gz, lk, logo, mcf_ota, modem, mcupm, pi_img, preloader_raw, scp, spmfw, sspm, tee, vcp` (Total: 20) | `odm, vendor, system_ext, system, vendor_dlkm, odm_dlkm, system_dlkm, product, vbmeta_system, vbmeta_vendor` (Total: 10) |
 
 </details>
 
@@ -425,3 +427,9 @@ certutil -hashfile <filename> SHA256
 ```powerShell
 Get-FileHash -Path <filename> -Algorithm SHA256
 ```
+
+## Partition Scheme & Update Flow
+
+Inspect Android 11+ partition hierarchies, userspace dynamic partitions inside `super.img`, AVB 2.0 verification, and dual-slot A/B update flows.
+
+<PartitionExplorer />
