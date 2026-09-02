@@ -169,8 +169,10 @@ Essential resources including wikis, firmware archives, audio control utilities,
 |---------|-----------|-------------|
 | [CMF Ringtone Tool](https://github.com/tirodz/CMF-Ringtone-Tool) | tirodz | CMF Watch Pro 2 ringtone customization tool |
 | [CMF Tray](https://github.com/abhineet00/cmf-tray) | abhineet00 | Windows taskbar tray app to control CMF and Nothing earbuds settings and battery |
+| [Ear A](https://github.com/oneydef/EarA-linux) | oneydef | Unofficial GTK4 companion for Nothing / CMF earbuds on Linux |
 | [Ear Battery CLI](https://github.com/pedrordgs/nothing-ear) | pedrordgs | Command-line tool to check battery levels of Nothing Ear wireless earbuds via Bluetooth |
 | [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | Native Rust desktop client for Nothing and CMF audio devices |
+| [Ear Tray](https://github.com/Vadim-Karpenko/ear-tray) | Vadim-Karpenko | Lightweight Windows tray app for Nothing / CMF earbuds |
 | [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Rust based linux app to control Nothing earbuds' ANC modes |
 | [Earctl](https://github.com/xhain/earctl) | xhain | [Alfred](https://www.alfredapp.com/) workflow to control Nothing Ear (2) Bluetooth headphones from macOS |
 | [EarPhone X](https://github.com/noebachofner/EarPhonesX) | noebachofner | Linux application to control and configure Nothing and CMF earbuds |
