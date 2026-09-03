@@ -111,10 +111,11 @@ Nothing Archive employs a multi-license structure to protect the original work o
 Special thanks to:
 *   **[luk1337](https://github.com/luk1337/oplus_archive)** for the AOSP OTA extraction tool.
 *   **[arter97](https://github.com/arter97/nothing_archive)** for adapting the archive for Phone (2).
-*   **[Shiki](https://github.com/guptavishalxm1)** for crafting the initial website for the repo and providing a self-hosted runner instance.
-*   **[Earendel Labs](https://github.com/Earendel-lab)** and **[Burak Dede](https://github.com/burakdede0)** for their suggestions, feedback, and QA testing that helped identify bugs and drive several improvements to the webpage over time.
+*   **[Shiki](https://github.com/guptavishalxm1)** for building the initial website.
+*   **[Earendel Labs](https://github.com/Earendel-lab)** and **[Burak Dede](https://github.com/burakdede0)** for suggestions, feedback, and QA testing that helped identify bugs and improve the website over time.
 *   **[XelXen](https://github.com/XelXen)** for helping with initial [project branding and design](https://github.com/spike0en/nothing_archive/tree/main/website/static/img).
 *   **[LukeSkyD](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/)** for early build references.
+*   **[PHATWalrus](https://github.com/PHATWalrus)** & **[Miki](https://github.com/RealYasin)** for backend help with necessary resources.
 *   All project contributors listed in the [Contributors Chart](https://github.com/spike0en/nothing_archive/graphs/contributors).
 
 ## Support the Project

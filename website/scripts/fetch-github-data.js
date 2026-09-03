@@ -320,6 +320,20 @@ async function main() {
     fs.writeFileSync(docContrib, frontmatter + fs.readFileSync(rootContrib, 'utf8'));
   }
 
+  // Auto-sync root README.md "## Credits & Acknowledgements" to website/docs/acknowledgements.md with Docusaurus frontmatter
+  const rootReadme = path.join(__dirname, '..', '..', 'README.md');
+  const docAck = path.join(__dirname, '..', 'docs', 'acknowledgements.md');
+  if (fs.existsSync(rootReadme)) {
+    const readmeContent = fs.readFileSync(rootReadme, 'utf8');
+    const ackMatch = readmeContent.match(/## Credits & Acknowledgements\s*([\s\S]*?)(?=\n##\s+|$)/);
+    if (ackMatch) {
+      const ackBody = ackMatch[1].trim().replace(/^Special thanks to:\s*/i, '');
+      const frontmatter = `---\nsidebar_position: 3\ntitle: Acknowledgements\ndescription: Credits and acknowledgements for key projects and contributors to Nothing Archive.\n---\n\n# Acknowledgements\n\nNothing Archive builds upon community contributions. Special thanks to:\n\n`;
+      const closing = `\n\nThanks to all app developers, project maintainers, and Nothing community members supporting this project.\n`;
+      fs.writeFileSync(docAck, frontmatter + ackBody + closing);
+    }
+  }
+
   console.log('[prefetch] Done.');
 }
 
