@@ -7,7 +7,8 @@
  * Boundary: Reads GitHub stats/commits hooks and local visitor API, renders local HTML structure.
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import clsx from 'clsx';
 import styles from './CommitMatrix.module.css';
 import { getTimeLag } from '../utils/time';
@@ -100,6 +101,37 @@ export default function CommitMatrix(): React.JSX.Element {
   ];
 
   /**
+   * Computes the exact pixel width of the widest author line across all 7d commits,
+   * dynamically aligning all commit titles to start right after the largest entry.
+   */
+  const dynamicAuthorWidth = useMemo(() => {
+    if (!ExecutionEnvironment.canUseDOM) return 110;
+    try {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return 110;
+      ctx.font = '500 0.72rem Geist, "Inter var", Inter, system-ui, sans-serif';
+      let maxW = 40;
+      filteredCommits.forEach((commit) => {
+        if (commit.coAuthors.length === 0) {
+          maxW = Math.max(maxW, ctx.measureText(commit.author).width);
+        } else if (commit.coAuthors.length === 1) {
+          const line = `${commit.author} & ${commit.coAuthors[0]}`;
+          maxW = Math.max(maxW, ctx.measureText(line).width);
+        } else {
+          const all = [commit.author, ...commit.coAuthors];
+          const initial = all.slice(0, -1).join(', ') + ' &';
+          const last = all[all.length - 1];
+          maxW = Math.max(maxW, ctx.measureText(initial).width, ctx.measureText(last).width);
+        }
+      });
+      return Math.ceil(maxW) + 2;
+    } catch {
+      return 110;
+    }
+  }, [filteredCommits]);
+
+  /**
    * Formats the author list inline for a commit entry. Primary and co-authors are rendered
    * inline to ensure direct visibility and attribution for all contributors in the commit log.
    */
@@ -107,33 +139,46 @@ export default function CommitMatrix(): React.JSX.Element {
     const authorClass = clsx(styles.authorTag, isLatest && styles.authorLatest);
     if (commit.coAuthors.length === 0) {
       return (
-        <span className={styles.authorsWrapper}>
-          <span className={authorClass} title={commit.author}>{commit.author}</span>
+        <span className={styles.authorsWrapper} style={{ width: `${dynamicAuthorWidth}px` }}>
+          <span className={styles.authorLine}>
+            <span className={authorClass} title={commit.author}>{commit.author}</span>
+          </span>
         </span>
       );
     }
 
     const allAuthors = [commit.author, ...commit.coAuthors];
     const tooltip = allAuthors.join(', ');
+
+    if (allAuthors.length === 2) {
+      return (
+        <span className={styles.authorsWrapper} style={{ width: `${dynamicAuthorWidth}px` }} title={tooltip}>
+          <span className={styles.authorLine}>
+            <span className={authorClass}>{allAuthors[0]}</span>
+            <span className={styles.coAuthorSeparator}> &amp; </span>
+            <span className={authorClass}>{allAuthors[1]}</span>
+          </span>
+        </span>
+      );
+    }
+
+    const initialAuthors = allAuthors.slice(0, -1);
+    const lastAuthor = allAuthors[allAuthors.length - 1];
     return (
-      <span className={styles.authorsWrapper} title={tooltip}>
-        {allAuthors.map((author, index) => {
-          const isLast = index === allAuthors.length - 1;
-          let separator: React.JSX.Element | null = null;
-          if (index > 0) {
-            if (isLast) {
-              separator = <span className={styles.coAuthorSeparator}> &amp; </span>;
-            } else {
-              separator = <span className={styles.coAuthorSeparator}>, </span>;
-            }
-          }
-          return (
+      <span className={styles.authorsWrapper} style={{ width: `${dynamicAuthorWidth}px` }} title={tooltip}>
+        <span className={styles.authorLine}>
+          {initialAuthors.map((author, i) => (
             <React.Fragment key={author}>
-              {separator}
               <span className={authorClass}>{author}</span>
+              <span className={styles.coAuthorSeparator}>
+                {i === initialAuthors.length - 1 ? ' & ' : ', '}
+              </span>
             </React.Fragment>
-          );
-        })}
+          ))}
+        </span>
+        <span className={styles.authorLine}>
+          <span className={authorClass}>{lastAuthor}</span>
+        </span>
       </span>
     );
   };
