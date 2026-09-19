@@ -224,6 +224,7 @@ These require root access (KernelSU or Magisk). Proceed with caution.
 | [Dirac Audio Nothing Phone 1 Magisk Module](https://github.com/reiryuki/Dirac-Audio-Nothing-Phone-1-Magisk-Module) | reiryuki | Dirac Audio module ported from the Nothing Phone (1) for other devices |
 | [Glyph CLI](https://github.com/mahdi-salmanzade/glyph-cli) | mahdi-salmanzade | Control 137 LEDs directly from your terminal. No SDK. No app sandbox. Pure sysfs. |
 | [Ndot to Roboto](https://github.com/reindex-ot/Ndot-to-Roboto) | reindex-ot | Magisk module to replace the system Ndot font with Roboto |
+| [NetHunter Asteroids](https://github.com/Tbeard602/nothing-phone-3a-nethunter) | Tbeard602 | Kali NetHunter Kernel build with OrangeFox recovery (3a) & (3a) Pro|
 | [NetHunter Spacewar](https://github.com/ExTV/nethunter-spacewar) | ExTV | Kali NetHunter Magisk module for the Nothing Phone (1) |
 | [Nothing AI Changer](https://github.com/Martmists-GH/Nothing-AI-Changer) | Martmists-GH | Replace ChatGPT integration with another app |
 | [Nothing Battery Fix](https://github.com/Farpathan/Nothing-Battery-Fix) | Farpathan | Restore classic battery percentage style |
