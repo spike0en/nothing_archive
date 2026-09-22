@@ -110,6 +110,7 @@ See [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) for of
 | [Glyph Mo](https://github.com/anamite/GlyphMo) | anamite | Glyph Matrix control application designed exclusively for the Nothing Phone (4a) Pro. |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Notifications, timers, visualizer |
 | [Glyph Nothing](https://github.com/manttii/Glphy-Nothing) | manttii | Create, preview, and trigger custom Glyph Matrix animations on Nothing phones |
+| [Glyph Pilot](https://play.google.com/store/apps/details?id=com.glyphcontroller.app) | Kalainovainfotech | Create custom 25×25 animations, audio-reactive visuals, widgets, and automations for the Glyph Matrix |
 | [Glyph Pomodoro](https://github.com/itsmixu/glyph-pomo) | itsmixu | Pomodoro timer for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Stopwatch](https://github.com/Sturdy7435/GlyphStopwatch) | Sturdy7435 | A simple stopwatch for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Studio](https://play.google.com/store/apps/details?id=tech.abra.glyphstudio) | AbraDev | Generate custom ringtones and real-time audio visualizations for both Glyph LEDs and the Glyph Matrix |
@@ -342,6 +343,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Keyboard By Voidwarelabs](https://play.google.com/store/apps/details?id=com.voidware.keyboard) | VoidwareLabs | Fast, privacy-first AI keyboard with smart suggestions and voice input. |
 | [N Board](https://github.com/MathieuDvv/Nboard) | MathieuDvv | Nothing-inspired keyboard with AI tools |
 | [N Keyboard](https://github.com/arunk140/nth-kbd) | arunk14 | Themed keyboard |
+| [Nothiq Keys](https://play.google.com/store/apps/details?id=com.rontag.nothiqkeys) | Rontag | Nothing-inspired keyboard with customizable themes, accent colors, clipboard history, and cursor controls |
 | [Typebase](https://play.google.com/store/apps/details?id=com.typebase.app) | Quivox Engineering | Keyboard inspired by Nothing OS with Side Dock integration |
 
 ### Calculators
