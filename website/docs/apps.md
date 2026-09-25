@@ -351,6 +351,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | App | Developer | Description |
 |-----|-----------|-------------|
 | [Calc Plus](https://github.com/pixelcraftin/CalcPlus) | pixelcraftin | Nothing OS inspired calculator app |
+| [Dot Calc](https://github.com/bedxnta/dotCalc) | bedxnta | Dot-matrix calculator with arithmetic operations, unit conversions, and number-base conversions |
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Calculator app with dot matrix fonts |
 | [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Calculator with Nothing style |
 | [Neo Calc](https://play.google.com/store/apps/details?id=com.lended.neocalc) | Creepsmile | Nothing OS inspired calculator |
