@@ -38,12 +38,20 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 | [Ear (stick)](https://nothing.tech/products/ear-stick) <br /> <small>Bellossom</small> | B157 | 26 October 2022 | [Here](https://nothing.wiki/hardware/ear_series#ear_stick) |
 | [Ear (2)](https://nothing.tech/products/ear-2) <br /> <small>Azumarill</small> | B155 | 22 March 2023 | [Here](https://nothing.wiki/hardware/ear_series#ear_2) |
 | [Ear](https://nothing.tech/products/ear) <br /> <small>Entei</small> | B171 | 18 April 2024 | [Here](https://nothing.wiki/hardware/ear_series#ear) |
-| [Ear (a)](https://nothing.tech/products/ear-a) <br /> <small>Cleffa</small> | B162 | 18 April 2024 | [Here](https://nothing.wiki/hardware/ear_series#ear_a) |
-| [Ear (open)](https://nothing.tech/products/ear-open) <br /> <small>Flaaffy</small> | B182 | 24 September 2024 | [Here](https://nothing.wiki/hardware/ear_series#ear_open) |
+| [Ear (a)](https://nothing.tech/products/ear-a) <br /> <small>Cleffa</small> | B162 / B183 | 18 April 2024 | [Here](https://nothing.wiki/hardware/ear_series#ear_a) |
+| [Ear (open)](https://nothing.tech/products/ear-open) <br /> <small>Flaaffy</small> | B174 / B182 | 24 September 2024 | [Here](https://nothing.wiki/hardware/ear_series#ear_open) |
 | [Headphone (1)](https://nothing.tech/products/headphone-1) <br /> <small>Elekid</small> | B170 | 01 July 2025 | [Here](https://nothing.wiki/hardware/headphone_1) |
 | [Ear (3)](https://nothing.tech/products/ear-3) <br /> <small>Feraligatr</small> | B173 | 18 September 2025 | [Here](https://nothing.wiki/hardware/ear_series#ear_3) |
-| [Headphone (a)](https://nothing.wiki/download/headphone_a_user_guide.pdf) <br /> <small>Hoppip</small> | B186 | 05 March 2026 | [Here](https://nothing.wiki/hardware/headphone_a) |
+| [Headphone (a)](https://nothing.wiki/download/headphone_a_user_guide.pdf) <br /> <small>Elekid</small> | B186 / B198 | 05 March 2026 | [Here](https://nothing.wiki/hardware/headphone_a) |
 | [Ear (3a)](https://nothing.tech/products/ear-3a?Colour=Pink) <br /> <small>Jumpluff</small> | B190 | 07 July 2026 | [Here](https://nothing.wiki/hardware/ear_series#ear_3a) |
+
+### Accessories
+
+| Device Name | Model | Release Date | Wiki Page |
+| :--- | :--- | :--- | :--- |
+| [Power (45W)](https://nothing.tech/products/power-45w) | C304 / C347 / C348 | 12 July 2022 | N/A |
+| [Cable (c-c) (Transparent)](https://in.nothing.tech/products/cable) | C306 (100cm) <br /> C351 (180cm) | [July 2023](https://x.com/nothing/status/1671516845545750530) | N/A |
+| Cable (c-c) (TPE Jacket) | C270 | July 2024 | N/A |
 
 ### Apparel
 
@@ -82,15 +90,15 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 
 | Device / Pokémon Codename | Model | Release Date | Wiki Page |
 | :--- | :--- | :--- | :--- |
-| [Buds Pro](https://nothing.tech/products/cmf-buds-pro) <br /> <small>Corsola</small> | B168 | 26 September 2023 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_buds_pro) |
-| [Buds](https://nothing.tech/products/cmf-buds) <br /> <small>Donphan</small> | B232 | 05 March 2024 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_buds) |
-| [Neckband Pro](https://nothing.tech/products/cmf-neckband-pro) <br /> <small>Crobat</small> | B164 | 05 March 2024 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_neckband_pro) |
+| [Buds Pro](https://nothing.tech/products/cmf-buds-pro) <br /> <small>Corsola</small> | B163 | 26 September 2023 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_buds_pro) |
+| [Buds](https://nothing.tech/products/cmf-buds) <br /> <small>Donphan</small> | B168 / B232 | 05 March 2024 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_buds) |
+| [Neckband Pro](https://nothing.tech/products/cmf-neckband-pro) <br /> <small>Crobat</small> | B164 / B169 | 05 March 2024 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_neckband_pro) |
 | [Buds Pro 2](https://nothing.tech/products/cmf-buds-pro-2) <br /> <small>Espeon</small> | B172 / B187 | 08 July 2024 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_buds_pro_2) |
 | [Buds 2](https://nothing.tech/products/cmf-buds-2) <br /> <small>Girafarig</small> | B179 | 28 April 2025 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_buds_2) |
 | [Buds 2 Plus](https://nothing.tech/products/cmf-buds-2-plus) <br /> <small>Gligar</small> | B184 | 28 April 2025 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_buds_2_plus) |
 | [Buds 2a](https://nothing.tech/products/cmf-buds-2a) <br /> <small>Hoothoot</small> | B185 | 28 April 2025 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_buds_2a) |
-| [Headphone Pro](https://nothing.tech/products/cmf-headphone-pro) <br /> <small>Forretress</small> | B205 | 29 September 2025 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_headphone_pro) |
-| [Clip Pro](https://nothing.tech/products/cmf-clip-pro) <br /> <small>Jumpluff</small> | B189 | 04 August 2026 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_clip_pro) |
+| [Headphone Pro](https://nothing.tech/products/cmf-headphone-pro) <br /> <small>Forretress</small> | B175 / B205 | 29 September 2025 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_headphone_pro) |
+| [Clip Pro](https://nothing.tech/products/cmf-clip-pro) <br /> <small>Igglybuff</small> | B189 | 04 August 2026 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_clip_pro) |
 | [Buds Neo](https://nothing.tech/products/cmf-buds-neo) <br /> <small>Larvitar</small> | B193 | 20 August 2026 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_buds_neo) |
 
 ### Watches
@@ -106,5 +114,8 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 | Device Name | Model | Release Date | Wiki Page |
 | :--- | :--- | :--- | :--- |
 | [Power 65W GaN](https://nothing.tech/products/cmf-power-65w-gan) | C332 | 26 September 2023 | [Here](https://nothing.wiki/cmf/accessories#cmf_power_65w_gan) |
+| Power 33W Fast Charger | C383 | 08 July 2024 | N/A |
 | [Power 100W GaN](https://nothing.tech/products/cmf-power-100w-gan) | C269 | 26 September 2024 | [Here](https://nothing.wiki/cmf/accessories#cmf_power_100w_gan) |
 | [Power 140W GaN](https://nothing.tech/products/cmf-power-140w-gan) | C362 | 26 September 2024 | [Here](https://nothing.wiki/cmf/accessories#cmf_power_140w_gan) |
+| Power 33W Fast Charger | C281 | 2026 | N/A |
+
