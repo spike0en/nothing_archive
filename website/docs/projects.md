@@ -48,6 +48,7 @@ Community-built widgets inspired by Nothing OS for various platforms and desktop
 | [N KWGT](https://github.com/avnishkt2783/nKWGT) | avnishkt2783 | Nothing-style widgets |
 | [N Thing UI](https://github.com/Runixe786/NThing-UI) | Runixe786 | Rainmeter widgets |
 | [Not Widgets](https://github.com/GXX0T/NotWidgets) | GXX0T | Rainmeter widgets |
+| [Nothing Display Toggle](https://github.com/fatihaydost/nothing-display-toggle) | fatihaydost | KDE Plasma 6 widget to toggle connected displays for Linux |
 | [Nothing KDE Widgets](https://github.com/jaxparrow07/nothing-kde-widgets) | jaxparrow07 | Nothing OS themed widgets for KDE Plasma |
 | [Nothing KWGT](https://github.com/AumGupta/KWGT-Widgets) | AumGupta | KWGT widgets |
 | [Rainmeter Nothing Widgets](https://github.com/KrazyManJ/rainmeter-nothing-widgets) | KrazyManJ | Rainmeter widgets that replicate Nothing OS widgets on the Windows desktop |
@@ -74,6 +75,7 @@ Themes and rices for Arch Linux, VS Code, and other development environments fol
 | [Nothing VS Code Theme](https://github.com/shahriaravi/nothing-vscode-theme) | shahriaravi | VS Code theme |
 | [Nth Cord](https://github.com/deathbyfrag/nthCord) | deathbyfrag | Nothing OS inspired theme for Discord |
 | [Obsidian Nothing Theme](https://github.com/saulojoab/obsidian-nothing-theme) | saulojoab | Obsidian theme based on Nothing |
+| [Ryoku Nothing Interface](https://github.com/venchik111/ryoku-nothing-interface) | venchik111 | Nothing OS-inspired island bar, lock screen, and desktop widgets for Ryoku on Linux |
 | [SelfControl Mastered](https://github.com/advegaf/selfcontrol-mastered) | advegaf | Nothing-inspired distraction and website blocker for macOS |
 | [Soot Theme](https://github.com/OsqY/soot-theme) | OsqY | Monochrome dot-matrix theme for the Zed editor influenced by Nothing design |
 
