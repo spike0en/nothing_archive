@@ -21,11 +21,6 @@ export interface Props {
   readonly onChange: (colorMode: 'light' | 'dark' | null) => void;
 }
 
-/**
- * Renders the official Google Material Symbols Outlined light_mode (Sun) SVG icon.
- * 
- * @returns {React.JSX.Element} Sun vector SVG element.
- */
 function SunIcon(): React.JSX.Element {
   return (
     <svg
@@ -41,11 +36,6 @@ function SunIcon(): React.JSX.Element {
   );
 }
 
-/**
- * Renders the official Google Material Symbols Outlined desktop_windows (System) SVG icon.
- * 
- * @returns {React.JSX.Element} Monitor vector SVG element.
- */
 function SystemIcon(): React.JSX.Element {
   return (
     <svg
@@ -61,11 +51,6 @@ function SystemIcon(): React.JSX.Element {
   );
 }
 
-/**
- * Renders the official Google Material Symbols Outlined dark_mode (Moon) SVG icon.
- * 
- * @returns {React.JSX.Element} Moon vector SVG element.
- */
 function MoonIcon(): React.JSX.Element {
   return (
     <svg
@@ -82,11 +67,7 @@ function MoonIcon(): React.JSX.Element {
 }
 
 /**
- * ColorModeToggle component.
- * Renders a segmented toggle control for switching between Light, System, and Dark themes.
- * 
- * @param {Props} props - Component properties containing value, onChange callback, and className.
- * @returns {React.JSX.Element} Three-state theme toggle pill control.
+ * Three-state segmented toggle control for switching between Light, System, and Dark color modes.
  */
 function ColorModeToggle({
   className,

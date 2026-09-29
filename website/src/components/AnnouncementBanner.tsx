@@ -57,7 +57,7 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
   useEffect(() => {
     if (!allChangelogs || allChangelogs.length === 0) return;
 
-    // Filter changelog records created/committed within the last 7 calendar days
+    // Restrict announcements to builds released within the last 7 calendar days.
     const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
     const recentReleases = allChangelogs.filter((entry) => {
       const pubTime = new Date(entry.publishedAt).getTime();
@@ -71,7 +71,7 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
 
     if (nonDismissed.length > 0) {
       setReleases(nonDismissed);
-      // Introduce a 3-second delay before showing the banner to let the page load
+      // 3-second delay prevents layout shifts and lets above-the-fold content settle first.
       const timer = setTimeout(() => {
         setIsDismissed(false);
       }, 3000);
@@ -81,7 +81,7 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
     }
   }, [allChangelogs]);
 
-  // Rotates through multiple releases on a 6.5-second interval when not hovered
+  // 6.5-second rotation provides sufficient reading time per release before cycling.
   useEffect(() => {
     if (releases.length <= 1 || isPaused || isDismissed) return;
 
@@ -102,9 +102,10 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
       localStorage.setItem(DISMISS_KEY, JSON.stringify(merged));
       
       setIsDismissing(true);
+      // 400ms matches the CSS exit transition duration.
       setTimeout(() => {
         setIsDismissed(true);
-      }, 400); // match animation duration (400ms)
+      }, 400);
     }
   };
 
@@ -114,6 +115,13 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
 
   const currentRelease = releases[currentIndex] || releases[0];
 
+  const handleTouchEndOrCancel = (e: React.TouchEvent) => {
+    setIsPaused(false);
+    if (e.target instanceof HTMLElement) {
+      e.target.blur();
+    }
+  };
+
   return (
     <div
       className={clsx(styles.banner, isDismissing && styles.bannerDismissing)}
@@ -122,18 +130,8 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
       onFocus={() => setIsPaused(true)}
       onBlur={() => setIsPaused(false)}
       onTouchStart={() => setIsPaused(true)}
-      onTouchEnd={(e) => {
-        setIsPaused(false);
-        if (e.target instanceof HTMLElement) {
-          e.target.blur();
-        }
-      }}
-      onTouchCancel={(e) => {
-        setIsPaused(false);
-        if (e.target instanceof HTMLElement) {
-          e.target.blur();
-        }
-      }}
+      onTouchEnd={handleTouchEndOrCancel}
+      onTouchCancel={handleTouchEndOrCancel}
     >
       <div className={styles.container}>
         <Link

@@ -1,19 +1,11 @@
 /**
- * @file MagneticCursorRing.tsx
- * @description Magnetic cursor ring component with target interpolation and viewport bounds handling.
- * 
- * Layer: Theme components.
- * Boundary: Consumes global pointer events and renders a custom cursor overlay.
+ * Magnetic cursor ring overlay with smoothed target interpolation.
  */
 
 import React, { useEffect, useState, useRef } from 'react';
 import clsx from 'clsx';
 import styles from './MagneticCursorRing.module.css';
 
-/**
- * Custom cursor overlay component providing smoothed pointer tracking and interactive target scaling.
- * Maintains pointer position state across viewport mouseenter/mouseleave transitions to prevent position jumps.
- */
 export default function MagneticCursorRing(): React.JSX.Element | null {
   const [enabled, setEnabled] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -44,9 +36,7 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
   const isVisibleRef = useRef(false);
   const activeElementRef = useRef<HTMLElement | null>(null);
 
-  /**
-   * Syncs viewport state across resize events to toggle cursor overlay on breakpoint boundaries.
-   */
+  // Syncs viewport state across resize events to toggle cursor overlay on breakpoint boundaries
   useEffect(() => {
     if (globalThis.window === undefined) return;
 
@@ -89,7 +79,7 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
     const handleToggle = (e: Event) => {
       // SAFETY: Event dispatched by custom toggle event carrying boolean detail payload.
       const evt = e as CustomEvent<boolean>;
-      if (Object.prototype.toString.call(evt.detail) === '[object Boolean]') {
+      if (evt.detail === true || evt.detail === false) {
         setEnabled(evt.detail);
       } else {
         const stored = localStorage.getItem('nothing_archive_cursor');

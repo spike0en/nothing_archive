@@ -1,10 +1,6 @@
 /**
- * @file parse-showcase.js
- * @description Extracts community showcase apps and projects from markdown documentation,
- * scrapes Play Store preview icons, resolves GitHub avatars, and builds showcase data.
- * 
- * Layer: Prebuild data pipeline.
- * Boundary: Reads local markdown documentation files, fetches icon previews, and writes src/data/showcase-items.json.
+ * Prebuild data script extracting showcase apps and projects from markdown docs,
+ * scraping Play Store icons, resolving GitHub avatars, and writing showcase-items.json.
  */
 
 const fs = require('fs');
@@ -24,17 +20,7 @@ const PROJECT_PLATFORM_OVERRIDES = showcaseConfig.platformOverrides || {};
 const CATEGORY_OVERRIDES = showcaseConfig.categoryOverrides || {};
 const ICON_OVERRIDES = showcaseConfig.iconOverrides || {};
 
-/**
- * Loads cached icon URLs from disk to prevent redundant HTTP requests across builds.
- *
- * @returns {Record<string, string>} Mapping of package/slug identifiers to cached icon URLs.
- */
-
-/**
- * Loads cached app pricing metadata from disk.
- *
- * @returns {Record<string, { isPaid: boolean; price?: string; store?: string }>} Pricing cache map.
- */
+/** Loads cached app pricing metadata from disk. */
 function loadPricingCache() {
   if (fs.existsSync(PRICING_CACHE_FILE)) {
     try {
@@ -46,22 +32,13 @@ function loadPricingCache() {
   return {};
 }
 
-/**
- * Persists the updated pricing cache to disk.
- *
- * @param {Record<string, object>} cache - Mapping of package/app IDs to pricing info.
- */
+/** Persists the updated pricing cache to disk. */
 function savePricingCache(cache) {
   fs.mkdirSync(path.dirname(PRICING_CACHE_FILE), { recursive: true });
   fs.writeFileSync(PRICING_CACHE_FILE, JSON.stringify(cache, null, 2));
 }
 
-/**
- * Fetches pricing metadata from Google Play with regional fallbacks.
- *
- * @param {string} packageId - Android package identifier.
- * @returns {Promise<{ isPaid: boolean; price?: string }>} Resolved pricing info.
- */
+/** Fetches pricing metadata from Google Play with regional fallbacks. */
 function fetchPlayStorePrice(packageId) {
   return new Promise((resolve) => {
     const regions = ['', 'GB', 'IN', 'DE', 'US'];
@@ -119,6 +96,7 @@ function fetchPlayStorePrice(packageId) {
   });
 }
 
+/** Loads cached icon URLs from disk. */
 function loadIconsCache() {
   if (fs.existsSync(ICONS_CACHE_FILE)) {
     try {
@@ -130,22 +108,13 @@ function loadIconsCache() {
   return {};
 }
 
-/**
- * Persists the updated icon URL cache to disk.
- *
- * @param {Record<string, string>} cache - Mapping of package/slug identifiers to icon URLs.
- */
+/** Persists the updated icon URL cache to disk. */
 function saveIconsCache(cache) {
   fs.mkdirSync(path.dirname(ICONS_CACHE_FILE), { recursive: true });
   fs.writeFileSync(ICONS_CACHE_FILE, JSON.stringify(cache, null, 2));
 }
 
-/**
- * Scrapes the Play Store application icon URL directly from Google Play listing markup.
- *
- * @param {string} packageId - Android application package identifier.
- * @returns {Promise<string | null>} Resolved icon URL string or null on failure.
- */
+/** Scrapes the Play Store application icon URL directly from Google Play listing markup. */
 function fetchPlayStoreIcon(packageId) {
   return new Promise((resolve) => {
     const url = `https://play.google.com/store/apps/details?id=${packageId}&hl=en`;
@@ -174,12 +143,7 @@ function fetchPlayStoreIcon(packageId) {
   });
 }
 
-/**
- * Scrapes the primary extension icon image URL from a Chrome Web Store listing.
- *
- * @param {string} url - Chrome Web Store listing URL.
- * @returns {Promise<string | null>} Resolved icon URL string or null on failure.
- */
+/** Scrapes the primary extension icon image URL from a Chrome Web Store listing. */
 function fetchChromeWebStoreIcon(url) {
   return new Promise((resolve) => {
     const req = https.get(
@@ -215,11 +179,8 @@ function fetchChromeWebStoreIcon(url) {
 }
 
 /**
- * Resolves the highest quality icon or logo available for a generic web page URL.
- * Scrapes Apple Touch Icon, OpenGraph preview image, and standard favicons with fallback.
- *
- * @param {string} url - Target website URL.
- * @returns {Promise<string | null>} Resolved icon URL string or null on failure.
+ * Resolves the highest quality icon or logo available for a generic web URL.
+ * Checks Apple Touch Icon, OpenGraph preview image, and favicons with Google favicon fallback.
  */
 async function fetchWebIcon(url) {
   try {
@@ -265,12 +226,7 @@ async function fetchWebIcon(url) {
   }
 }
 
-/**
- * Extracts text and URL components from inline markdown link syntax `[Text](Url)`.
- *
- * @param {string} text - Raw markdown text.
- * @returns {{ text: string; url: string | null }} Extracted label and optional URL.
- */
+/** Extracts text and URL components from inline markdown link syntax [Text](Url). */
 function parseMarkdownLink(text) {
   const match = text.match(/\[(.*?)\]\((.*?)\)/);
   if (match) {
@@ -279,12 +235,7 @@ function parseMarkdownLink(text) {
   return { text: text.trim(), url: null };
 }
 
-/**
- * Strips raw markdown link syntax and boilerplate repo annotations from description text.
- *
- * @param {string} desc - Raw markdown description string.
- * @returns {string} Sanitized plain-text description.
- */
+/** Strips raw markdown link syntax and repository annotations from description text. */
 function sanitizeDescription(desc) {
   if (!desc) return '';
   let clean = desc.replace(/\[(.*?)\]\((.*?)\)/g, '$1');
@@ -293,12 +244,7 @@ function sanitizeDescription(desc) {
   return clean;
 }
 
-/**
- * Converts a text string into a URL-friendly lowercase kebab-case slug identifier.
- *
- * @param {string} text - Source title or category string.
- * @returns {string} Normalized kebab-case slug.
- */
+/** Converts a text string into a URL-friendly lowercase kebab-case slug identifier. */
 function slugify(text) {
   return (text || '')
     .toLowerCase()
@@ -306,12 +252,7 @@ function slugify(text) {
     .replace(/^-+|-+$/g, '');
 }
 
-/**
- * Splits composite developer attribution string into individual trimmed developer names.
- *
- * @param {string} [devString] - Raw developer attribution string.
- * @returns {string[]} List of individual cleaned developer names.
- */
+/** Splits composite developer attribution string into individual trimmed developer names. */
 function parseDevelopers(devString) {
   if (!devString) return [];
   return devString
@@ -320,16 +261,8 @@ function parseDevelopers(devString) {
     .filter(Boolean);
 }
 
-
 /**
  * Resolves target operating systems based on text heuristics, package links, and explicit overrides.
- *
- * @param {string} combinedText - Aggregated description, title, and section strings for heuristic matching.
- * @param {string | null} mainUrl - Primary outbound link URL.
- * @param {'apps' | 'projects'} source - Origin catalog category.
- * @param {string} slug - Unique item identifier used for explicit overrides.
- * @param {Record<string, string>} [links] - Extracted link destinations.
- * @returns {string[]} List of resolved platform identifiers (e.g. 'android', 'web', 'windows', 'ios', 'macos').
  */
 function resolvePlatformOS(combinedText, mainUrl, source, slug, links = {}) {
   if (PROJECT_PLATFORM_OVERRIDES[slug]) {
@@ -375,10 +308,6 @@ function resolvePlatformOS(combinedText, mainUrl, source, slug, links = {}) {
 /**
  * Parses markdown table entries from docs/apps.md or docs/projects.md.
  * Extracts structural hierarchy from H2 (broad category), H3 (subcategory), and H4 headings.
- *
- * @param {string} fileName - Markdown file name within the docs directory.
- * @param {'apps' | 'projects'} source - Origin collection name.
- * @returns {Array<object>} Array of parsed showcase item records with taxonomy metadata.
  */
 function parseDocFile(fileName, source) {
   const filePath = path.join(DOCS_DIR, fileName);
@@ -552,15 +481,9 @@ function parseDocFile(fileName, source) {
   return items;
 }
 
-/**
- * Builds structured two-tier category hierarchy (H2 categories and nested H3 subcategories) with counts.
- *
- * @param {Array<object>} items - Full list of parsed showcase items.
- * @returns {{ all: Array<object>; apps: Array<object>; projects: Array<object> }}
- */
+/** Builds a two-tier category hierarchy (H2 categories and nested H3 subcategories) with counts. */
 function buildDynamicCategoryHierarchy(items) {
   function getCategoriesForList(list) {
-    // Preserve discovery insertion order for broad categories
     const categoryOrder = [];
     const categoryMap = new Map();
 
@@ -624,9 +547,6 @@ function buildDynamicCategoryHierarchy(items) {
   };
 }
 
-/**
- * Main execution orchestrator parsing markdown docs, resolving icon previews, and writing JSON payload.
- */
 async function main() {
   console.log('[parse-showcase] Dynamically extracting items from docs/apps.md and docs/projects.md...');
 
@@ -638,7 +558,6 @@ async function main() {
   const pricingCache = loadPricingCache();
   let pricingFetchedCount = 0;
 
-  // Resolve Play Store icon, Chrome Web Store favicon, or GitHub avatar for items, and pricing status
   for (const item of [...appItems, ...projectItems]) {
     const playStoreUrl = item.links.playStore;
     const appStoreUrl = item.links.appStore;

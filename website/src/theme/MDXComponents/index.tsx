@@ -22,17 +22,11 @@ import Mermaid from '@theme/Mermaid';
 import type {MDXComponentsObject} from '@theme/MDXComponents';
 
 /**
- * Extracts plain text recursively from a React node tree for row metadata extraction.
- * 
- * @param {ReactNode} node - React element, array, string, or primitive node.
- * @returns {string} Concatenated plain-text representation of the node tree.
+ * Extracts plain text recursively from a React node tree for row metadata indexing.
  */
 function getNodeText(node: ReactNode): string {
-  if (node === null || node === undefined || Object.prototype.toString.call(node) === '[object Boolean]') {
+  if (node === null || node === undefined || node === true || node === false) {
     return '';
-  }
-  if (Object.prototype.toString.call(node) === '[object String]' || Object.prototype.toString.call(node) === '[object Number]') {
-    return String(node);
   }
   if (Array.isArray(node)) {
     return node.map(getNodeText).join('');
@@ -41,16 +35,12 @@ function getNodeText(node: ReactNode): string {
     // SAFETY: Dynamic React element props inspection
     return getNodeText((node.props as any)?.children);
   }
-  return '';
+  return String(node);
 }
 
 /**
- * Traverses React element tree of Markdown tables to attach contextual metadata from sibling columns
- * into hidden screen-reader spans within each table cell. This allows search engines and Algolia crawlers
- * to associate isolated column values (such as developer names or model numbers) with their parent row context.
- * 
- * @param {ReactNode} children - Table child elements (<thead>, <tbody>, etc.) passed from MDX parser.
- * @returns {ReactNode} Transformed React element tree containing injected .algolia-search-context spans.
+ * Attaches contextual metadata from sibling columns into hidden screen-reader spans within each table cell.
+ * Enables Algolia search crawlers to associate isolated values (such as codenames or package IDs) with parent row context.
  */
 function enhanceTableChildren(children: ReactNode): ReactNode {
   try {

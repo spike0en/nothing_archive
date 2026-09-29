@@ -1,10 +1,5 @@
 /**
- * @file StarMilestones.tsx
- * @description Component that renders stargazing milestones for the repository as an 
- * interactive progress indicator styled to match Nothing's hardware-based LED strip design.
- * 
- * Layer: Home page visualization components.
- * Boundary: Consumes GitHub stats cache hook, renders local HTML segments and SVG icons.
+ * GitHub stargazing milestones progress indicator with Nothing-style glyph styling.
  */
 
 import React, { useMemo } from 'react';
@@ -27,11 +22,6 @@ function fmtCount(n: number): string {
   return n.toString();
 }
 
-/**
- * StarMilestones component.
- * Evaluates repository stargazers count, computes progress for discrete segments, 
- * and handles UI state rendering.
- */
 export default function StarMilestones(): React.JSX.Element {
   // Shares the deduplicated repo stats fetch with CommitMatrix
   const { stats, loading: statsLoading } = useGitHubRepoStats();

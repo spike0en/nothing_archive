@@ -1,10 +1,6 @@
 /**
- * @file performance-smoke-test.js
- * @description Pre-release smoke test script verifying critical performance optimizations,
+ * Pre-release smoke test verifying performance optimizations,
  * asset existence, responsive image attributes, and bundle configuration.
- *
- * Layer: Build and verification scripts.
- * Boundary: Reads local files and executes Node assertions.
  */
 const assert = require('node:assert/strict');
 const fs = require('node:fs');

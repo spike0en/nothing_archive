@@ -1,10 +1,5 @@
 /**
- * @file SupportNudge.tsx
- * @description Non-intrusive, dismissable support nudge toast that appears 
- * periodically in the bottom-right corner.
- * 
- * Layer: Shared UI components.
- * Boundary: Dispatches CustomEvent 'open-support-modal' and syncs preferences with localStorage.
+ * Support nudge toast with swipe-to-dismiss, cooldown tracking, and permanent opt-out.
  */
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
@@ -12,34 +7,25 @@ import { FaHeart, FaTimes, FaCheckCircle } from 'react-icons/fa';
 import styles from './SupportNudge.module.css';
 
 /**
- * Non-intrusive, dismissable support nudge toast.
- *
- * Renders a small floating card in the bottom-right corner prompting
- * visitors to consider supporting the project. Integrates with the
- * existing {@link SupportModal} via the `open-support-modal` custom event.
- *
  * Dismiss tiers:
- *  - Auto-hide (ignored)       → reappears on the next visit.
- *  - Close button (✕)          → suppressed for {@link DISMISS_DAYS} days.
- *  - CTA ("Support Project")   → dismissed for the current page view.
- *  - "Already Supported"       → permanently hidden via `localStorage`.
- *
- * Timing: appears at {@link SHOW_DELAY_MS} ms, auto-hides after
- * {@link AUTO_HIDE_MS} ms of inactivity.
+ * - Auto-hide (ignored): reappears on next visit.
+ * - Close button (X): suppressed for 7 days.
+ * - CTA (Support Project): dismissed for current page view.
+ * - Already Supported: permanently hidden via localStorage.
  */
 
 /** localStorage key for the permanent opt-out flag. */
 const PERMANENT_KEY = 'support_nudge_permanent';
-/** localStorage key storing the epoch timestamp of the last ✕ dismissal. */
+/** localStorage key storing the epoch timestamp of the last dismissal. */
 const DISMISS_KEY = 'support_nudge_dismissed';
-/** Number of days to suppress the nudge after an explicit ✕ dismissal. */
+/** Days to suppress the nudge after an explicit close button dismissal. */
 const DISMISS_DAYS = 7;
 /** Delay in milliseconds before the nudge first appears after page load. */
 const SHOW_DELAY_MS = 15_000;
 /** Duration in milliseconds the nudge remains visible before auto-hiding. */
 const AUTO_HIDE_MS = 15_000;
 
-/** Returns `true` if nudge was permanently opted out or dismissed within the cooldown window. */
+/** Returns true if nudge was permanently opted out or dismissed within cooldown window. */
 function isNudgeHidden(): boolean {
   if (globalThis.localStorage === undefined) return false;
   try {
@@ -53,21 +39,21 @@ function isNudgeHidden(): boolean {
   }
 }
 
-/** Persists the current timestamp as the last ✕ dismissal time. */
+/** Persists current timestamp as the last dismissal time. */
 function setDismissed(): void {
   try {
     localStorage.setItem(DISMISS_KEY, String(Date.now()));
   } catch {
-    // Storage may be full or blocked in private browsing — degrade gracefully.
+    // Storage may be full or blocked in private browsing: degrade gracefully
   }
 }
 
-/** Sets the permanent opt-out flag so the nudge never appears again. */
+/** Sets permanent opt-out flag so the nudge never appears again. */
 function setPermanentlyHidden(): void {
   try {
     localStorage.setItem(PERMANENT_KEY, '1');
   } catch {
-    // Storage may be full or blocked in private browsing — degrade gracefully.
+    // Storage may be full or blocked in private browsing: degrade gracefully
   }
 }
 

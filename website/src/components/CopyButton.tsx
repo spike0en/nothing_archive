@@ -1,10 +1,5 @@
 /**
- * @file CopyButton.tsx
- * @description Dynamic DOM enhancement script injecting copy buttons into markdown tables
- * and handling global theme transition classes.
- * 
- * Layer: Shared DOM utility components.
- * Boundary: Direct DOM mutation and event handling on rendered tables.
+ * Injects copy buttons into markdown tables and handles theme transition styling.
  */
 
 import { useEffect } from 'react';
@@ -22,11 +17,10 @@ export default function CopyButtonSetup(): null {
     let isInitialMount = true;
     setTimeout(() => {
       isInitialMount = false;
-    }, 1000); // 1000ms delay to bypass initial hydration/mounting theme changes
+    }, 1000); // 1000ms delay bypasses theme flips during initial hydration
 
     let themeTransitionTimeout: ReturnType<typeof setTimeout> | null = null;
 
-    // 1. Setup Theme Transition Handling (always active for all devices)
     const triggerThemeTransition = () => {
       document.documentElement.classList.add('theme-transition');
       
@@ -39,7 +33,7 @@ export default function CopyButtonSetup(): null {
       }, 850); // 850ms covers React render blocking during complex table re-renders
     };
 
-    // A. Eagerly set transition class on click to run before Docusaurus state update
+    // Eagerly set transition class on click before Docusaurus state update
     const handleToggleClick = (event: MouseEvent) => {
       // SAFETY: DOM mouse event target element type
       const target = event.target as HTMLElement | null;
@@ -53,7 +47,7 @@ export default function CopyButtonSetup(): null {
     };
     document.addEventListener('click', handleToggleClick, { capture: true, passive: true });
 
-    // B. Observer fallback for keyboard shortcuts, system preference changes, or tab synchronization
+    // Mutation fallback for keyboard shortcuts, system preference changes, or cross-tab sync
     const themeObserver = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.attributeName === 'data-theme') {
@@ -69,32 +63,6 @@ export default function CopyButtonSetup(): null {
       attributeFilter: ['data-theme'],
     });
 
-    // 2. Wrap tables (needed for responsive tables on all devices)
-    const wrapTables = () => {
-      const tables = document.querySelectorAll('.markdown table, .theme-doc-markdown table, article table');
-      tables.forEach((table) => {
-        const parent = table.parentElement;
-        if (!parent) return;
-
-        if (
-          parent.classList.contains('table-responsive-fallback') ||
-          parent.classList.contains('tableWrapper') ||
-          parent.className.includes('tableWrapper')
-        ) {
-          return;
-        }
-
-        const wrapper = document.createElement('div');
-        wrapper.className = 'table-responsive-fallback';
-
-        if (table.parentNode) {
-          table.parentNode.insertBefore(wrapper, table);
-          wrapper.appendChild(table);
-        }
-      });
-    };
-
-    // 3. Desktop-only features (copy buttons)
     const hasHoverSupport = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     
     const setupCopyButtons = () => {
@@ -154,33 +122,11 @@ export default function CopyButtonSetup(): null {
       });
     };
 
-    const dismissCopyButtons = (event: MouseEvent) => {
-      if (!hasHoverSupport) return;
-      // SAFETY: DOM mouse event target element casting
-      const target = event.target as Element | null;
-      if (target?.closest('.table-copy-wrapper')) {
-        return;
-      }
-
-      document.querySelectorAll('.table-copy-wrapper.copy-btn-visible').forEach((el) => {
-        el.classList.remove('copy-btn-visible');
-      });
-    };
-
-    const runSetup = () => {
-      wrapTables();
-      setupCopyButtons();
-    };
-
-    runSetup();
-
-    if (hasHoverSupport) {
-      document.addEventListener('click', dismissCopyButtons);
-    }
+    setupCopyButtons();
 
     // Client-side route changes inject new markdown tables after initial mount.
     const routeObserver = new MutationObserver(() => {
-      runSetup();
+      setupCopyButtons();
     });
     routeObserver.observe(document.body, {
       childList: true,
@@ -194,9 +140,6 @@ export default function CopyButtonSetup(): null {
       themeObserver.disconnect();
       routeObserver.disconnect();
       document.removeEventListener('click', handleToggleClick, { capture: true });
-      if (hasHoverSupport) {
-        document.removeEventListener('click', dismissCopyButtons);
-      }
     };
   }, []);
 

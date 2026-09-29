@@ -12,12 +12,6 @@ import Translate from '@docusaurus/Translate';
 import type { Props } from '@theme/PwaReloadPopup';
 import styles from './styles.module.css';
 
-/**
- * Renders vector SVG rotating update arrows icon.
- * 
- * @param {Object} props - Component properties containing optional className.
- * @returns {React.JSX.Element} Update arrows vector SVG element.
- */
 function UpdateArrowsIcon({ className }: { className?: string }): React.JSX.Element {
   return (
     <svg
@@ -39,12 +33,6 @@ function UpdateArrowsIcon({ className }: { className?: string }): React.JSX.Elem
   );
 }
 
-/**
- * Renders vector SVG refresh icon for CTA button.
- * 
- * @param {Object} props - Component properties containing optional className.
- * @returns {React.JSX.Element} Refresh vector SVG element.
- */
 function RefreshIcon({ className }: { className?: string }): React.JSX.Element {
   return (
     <svg
@@ -60,12 +48,6 @@ function RefreshIcon({ className }: { className?: string }): React.JSX.Element {
   );
 }
 
-/**
- * Renders vector SVG close icon for dismissal button.
- * 
- * @param {Object} props - Component properties containing optional className.
- * @returns {React.JSX.Element} Close vector SVG element.
- */
 function CloseIcon({ className }: { className?: string }): React.JSX.Element {
   return (
     <svg
@@ -82,11 +64,7 @@ function CloseIcon({ className }: { className?: string }): React.JSX.Element {
 }
 
 /**
- * PwaReloadPopup component.
- * Toast notification prompting users to reload when a new PWA service worker version is registered.
- * 
- * @param {Props} props - Component properties containing onReload callback.
- * @returns {ReactNode} Floating notification toast element or null if hidden.
+ * Toast notification prompting users to reload when a new PWA service worker version activates.
  */
 export default function PwaReloadPopup({ onReload }: Props): ReactNode {
   const [isVisible, setIsVisible] = useState(true);
@@ -160,7 +138,6 @@ export default function PwaReloadPopup({ onReload }: Props): ReactNode {
     setDragX(diff);
   };
 
-  /** Evaluates swipe distance against 75px threshold on pointer release. */
   const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
     if (dragStartXRef.current === null) return;
     try {
@@ -168,10 +145,11 @@ export default function PwaReloadPopup({ onReload }: Props): ReactNode {
         e.currentTarget.releasePointerCapture(e.pointerId);
       }
     } catch {
-      // Degrade gracefully
+      // Degrade gracefully if pointer capture release fails
     }
 
     const finalDrag = dragXRef.current;
+    // 75px threshold requires deliberate swipe gesture to prevent accidental dismissal.
     if (Math.abs(finalDrag) > 75) {
       handleDismiss();
     } else {
@@ -181,14 +159,12 @@ export default function PwaReloadPopup({ onReload }: Props): ReactNode {
     dragXRef.current = 0;
   };
 
-  /** Resets drag position when pointer gesture is canceled. */
   const handlePointerCancel = () => {
     setDragX(0);
     dragStartXRef.current = null;
     dragXRef.current = 0;
   };
 
-  /** Dismisses the popup for the current browsing session (Close 'X' / Swipe) */
   const handleDismiss = (e?: React.MouseEvent) => {
     if (e) {
       e.stopPropagation();
@@ -199,10 +175,10 @@ export default function PwaReloadPopup({ onReload }: Props): ReactNode {
       // Storage access blocked or restricted
     }
     setExiting(true);
+    // 350ms duration matches the slide-out CSS exit animation.
     setTimeout(() => setIsVisible(false), 350);
   };
 
-  /** Triggers Service Worker update and page reload ('Refresh Page' button) */
   const handleReload = (e?: React.MouseEvent) => {
     if (e) {
       e.stopPropagation();

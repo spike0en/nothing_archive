@@ -1,10 +1,5 @@
 /**
- * @file ShowcaseFilterDrawer.tsx
- * @description Mobile filter drawer modal (< 1024px) for the Community Showcase catalog.
- * Provides faceted navigation across catalog sources, target platforms, categories, and sort modes.
- * 
- * Layer: Presentation / Modal Filter Sheet.
- * Boundary: Consumes taxonomy filter state and dispatches selection events.
+ * Mobile filter drawer sheet (< 1024px) for the Community Showcase catalog.
  */
 
 import React, { useEffect } from 'react';

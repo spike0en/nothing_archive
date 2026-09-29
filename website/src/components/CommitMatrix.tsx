@@ -22,11 +22,9 @@ interface HitsState {
 
 const HITS_CACHE_KEY = 'nothing_archive_hits_v1';
 const HITS_CACHE_TIME_KEY = 'nothing_archive_hits_time_v1';
+// 15-minute hit count cache prevents excessive calls to the external hitscounter service.
 const HITS_CACHE_TIMEOUT = 15 * 60 * 1000;
 
-/**
- * Fetches visitor counts, filters recent commits, and formats authors for display.
- */
 export default function CommitMatrix(): React.JSX.Element {
   const { commits, status: statusSource, error: errorState, loading } = useGitHubCommits();
   const { stats: repoStats, loading: statsGhLoading } = useGitHubRepoStats();
@@ -36,8 +34,10 @@ export default function CommitMatrix(): React.JSX.Element {
   const [hitsLoading, setHitsLoading] = useState(true);
 
   const filteredCommits = React.useMemo(() => {
+    // 7 rows fill the telemetry console panel without vertical scrolling.
     const TARGET_COMMITS = 7;
     const sorted = [...commits].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    // Restricts display to commits within 7 days, falling back to recent history if activity is quiet.
     const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
     const recent = sorted.filter(commit => new Date(commit.date).getTime() >= sevenDaysAgo);
 
@@ -128,15 +128,13 @@ export default function CommitMatrix(): React.JSX.Element {
           maxW = Math.max(maxW, ctx.measureText(initial).width, ctx.measureText(last).width);
         }
       });
+      // +2px margin prevents right-edge clipping from fractional font sub-pixel rendering.
       return Math.ceil(maxW) + 2;
     } catch {
       return 110;
     }
   }, [filteredCommits]);
 
-  /**
-   * Formats primary and co-authors inline for repository contributors.
-   */
   const formatAuthors = (commit: Commit, isLatest: boolean): React.JSX.Element => {
     const authorClass = clsx(styles.authorTag, isLatest && styles.authorLatest);
     if (commit.coAuthors.length === 0) {
@@ -152,35 +150,40 @@ export default function CommitMatrix(): React.JSX.Element {
     const allAuthors = [commit.author, ...commit.coAuthors];
     const tooltip = allAuthors.join(', ');
 
+    let content: React.ReactNode;
     if (allAuthors.length === 2) {
-      return (
-        <span className={styles.authorsWrapper} style={{ width: `${dynamicAuthorWidth}px` }} title={tooltip}>
-          <span className={styles.authorLine}>
-            <span className={authorClass}>{allAuthors[0]}</span>
-            <span className={styles.coAuthorSeparator}> &amp; </span>
-            <span className={authorClass}>{allAuthors[1]}</span>
-          </span>
+      content = (
+        <span className={styles.authorLine}>
+          <span className={authorClass}>{allAuthors[0]}</span>
+          <span className={styles.coAuthorSeparator}> &amp; </span>
+          <span className={authorClass}>{allAuthors[1]}</span>
         </span>
+      );
+    } else {
+      const initialAuthors = allAuthors.slice(0, -1);
+      const lastAuthor = allAuthors[allAuthors.length - 1];
+      content = (
+        <>
+          <span className={styles.authorLine}>
+            {initialAuthors.map((author, i) => (
+              <React.Fragment key={author}>
+                <span className={authorClass}>{author}</span>
+                <span className={styles.coAuthorSeparator}>
+                  {i === initialAuthors.length - 1 ? ' & ' : ', '}
+                </span>
+              </React.Fragment>
+            ))}
+          </span>
+          <span className={styles.authorLine}>
+            <span className={authorClass}>{lastAuthor}</span>
+          </span>
+        </>
       );
     }
 
-    const initialAuthors = allAuthors.slice(0, -1);
-    const lastAuthor = allAuthors[allAuthors.length - 1];
     return (
       <span className={styles.authorsWrapper} style={{ width: `${dynamicAuthorWidth}px` }} title={tooltip}>
-        <span className={styles.authorLine}>
-          {initialAuthors.map((author, i) => (
-            <React.Fragment key={author}>
-              <span className={authorClass}>{author}</span>
-              <span className={styles.coAuthorSeparator}>
-                {i === initialAuthors.length - 1 ? ' & ' : ', '}
-              </span>
-            </React.Fragment>
-          ))}
-        </span>
-        <span className={styles.authorLine}>
-          <span className={authorClass}>{lastAuthor}</span>
-        </span>
+        {content}
       </span>
     );
   };

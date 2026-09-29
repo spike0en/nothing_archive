@@ -16,8 +16,8 @@ import * as path from 'node:path';
 import * as child_process from 'node:child_process';
 
 /**
- * Maps Android version codename letters to their chronological ranks.
- * Add new letters here (e.g., D: 6 for Android 18) to explicitly define them if needed.
+ * Maps Android dessert version letters to chronological release ranks.
+ * Android 16 resets alphabetical progression back to B (Baklava) instead of W.
  */
 const androidOrder = {
   T: 1, // Android 13 (Tiramisu)
@@ -29,18 +29,15 @@ const androidOrder = {
 
 /**
  * Resolves the chronological rank of an Android codename letter.
- * Checks the explicit lookup map first, then dynamically falls back to alphabetical rank for B-Z.
- *
- * @param letter The Android version letter (e.g. 'B', 'V', 'T')
- * @returns Numerical rank representing chronological order (higher is newer)
+ * Checks the explicit lookup map first, then falls back to ASCII alphabetical order for B through Z.
  */
 function getAndroidLetterRank(letter: string): number {
   const upper = letter.toUpperCase();
   if (upper in androidOrder) {
-    // SAFETY: Key present in androidOrder object lookup
+    // SAFETY: Key checked in androidOrder map before property access
     return androidOrder[upper as keyof typeof androidOrder];
   }
-  // Dynamic fallback for B-Z (B starts at rank 4, C is 5, etc.) using ASCII char code
+  // Dynamic fallback for post-Baklava letter progression (B starts at rank 4, C is 5).
   const code = upper.charCodeAt(0);
   if (code >= 66 && code <= 90) { // 'B' (66) through 'Z' (90)
     return code - 66 + 4;
@@ -49,11 +46,7 @@ function getAndroidLetterRank(letter: string): number {
 }
 
 /**
- * Compares two software version strings.
- *
- * @param vAStr First version string (e.g. '1.0.1')
- * @param vBStr Second version string (e.g. '1.0.2')
- * @returns Negative if vAStr > vBStr, positive if vBStr > vAStr, or 0 if equal.
+ * Compares two dot-delimited software version strings in descending order (higher version first).
  */
 function compareVersions(vAStr: string, vBStr: string): number {
   const partsA = vAStr.split('.');
@@ -77,12 +70,9 @@ function compareVersions(vAStr: string, vBStr: string): number {
 }
 
 /**
- * Sorts Docusaurus changelog documentation pages.
- * Orders them chronologically by Android letter rank, version string, date, and timestamp.
- *
- * @param idA First changelog file identifier path
- * @param idB Second changelog file identifier path
- * @returns Comparison value for sorting
+ * Sorts changelog pages descending by Android letter rank, version, date, and timestamp.
+ * Matches Nothing OS build tag pattern: [Codename]-[AndroidLetter][Version]-[YYMMDD]-[HHMM]
+ * Example: Pacman-U2.6-240828-1925
  */
 function compareChangelogs(idA: string, idB: string): number {
   const nameA = (idA.split('/').pop() || '').replace(/\.mdx?$/i, '');
@@ -120,10 +110,7 @@ function compareChangelogs(idA: string, idB: string): number {
 }
 
 /**
- * Resolves the numeric ranking score of a device name suffix variant.
- *
- * @param name Device display name
- * @returns Numeric variant rank (lower number represents higher priority)
+ * Priority rank for device model suffixes (Pro Plus > Pro > Plus > Base).
  */
 function getVariantRank(name: string): number {
   const lower = name.toLowerCase();
@@ -956,7 +943,7 @@ const config: Config = {
     footer: {
       style: 'dark',
       links: [],
-      copyright: `<div class="footer-custom"><div class="footer-links"><a href="${baseUrl}docs/contributing">Contributing</a><span class="separator">•</span><a href="${baseUrl}docs/licensing">License</a><span class="separator">•</span><a href="${baseUrl}docs/acknowledgements">Credits</a></div><div class="footer-info"><span>© 2026 NOTHING ARCHIVE</span><span class="info-dot">•</span><span>A community initiative led by <a href="https://github.com/spike0en" target="_blank" rel="noopener noreferrer" class="credit-link">Spike</a></span></div><div class="footer-disclaimer">Not affiliated with Nothing Technology Limited</div></div>`,
+      copyright: `<div class="footer-custom"><div class="footer-links"><a href="${baseUrl}docs/contributing">Contributing</a><span class="separator">•</span><a href="${baseUrl}docs/licensing">License</a><span class="separator">•</span><a href="${baseUrl}docs/acknowledgements">Credits</a></div><div class="footer-info"><span>© 2026 NOTHING ARCHIVE</span></div><div class="footer-disclaimer">Not affiliated with Nothing Technology Limited</div></div>`,
     },
     prism: {
       theme: prismThemes.github,

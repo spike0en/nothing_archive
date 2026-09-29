@@ -45,6 +45,7 @@ import {
   type ShowcaseItem,
   type SubCategoryOption,
 } from '../data/showcase-data';
+import { useClickOutside } from '../utils/useClickOutside';
 import styles from './showcase.module.css';
 
 // Batch pagination size cleanly divisible by 1, 2, 3, and 4 column grid layouts
@@ -75,12 +76,7 @@ interface ShowcaseUrlState {
   sort: SortMode;
 }
 
-/**
- * Validates whether a raw string represents a supported platform filter identifier.
- *
- * @param {string | null} value - Raw query string parameter.
- * @returns {value is PlatformFilter} True if valid platform filter.
- */
+/** Validates whether a raw query parameter matches a supported platform filter. */
 function isPlatformFilter(value: string | null): value is PlatformFilter {
   return (
     value === 'all' ||
@@ -93,12 +89,7 @@ function isPlatformFilter(value: string | null): value is PlatformFilter {
   );
 }
 
-/**
- * Validates whether a raw string represents a supported catalog sort mode.
- *
- * @param {string | null} value - Raw query string parameter.
- * @returns {value is SortMode} True if valid sort mode.
- */
+/** Validates whether a raw query parameter matches a supported catalog sort mode. */
 function isSortMode(value: string | null): value is SortMode {
   return (
     value === 'random' ||
@@ -109,12 +100,7 @@ function isSortMode(value: string | null): value is SortMode {
   );
 }
 
-/**
- * Extracts validated filter state from URL query parameters.
- *
- * @param {string} searchStr - Query string from location.search.
- * @returns {ShowcaseUrlState} Parsed filter state.
- */
+/** Extracts validated catalog filter state from location search query parameters. */
 function parseUrlState(searchStr: string): ShowcaseUrlState {
   const params = new URLSearchParams(searchStr);
   const onlyFeatured = params.get('featured') === 'true';
@@ -150,12 +136,7 @@ function parseUrlState(searchStr: string): ShowcaseUrlState {
   };
 }
 
-/**
- * Constructs URL search parameter string from filter state.
- *
- * @param {ShowcaseUrlState} state - Active filter state.
- * @returns {string} URL query string with leading question mark or empty string.
- */
+/** Serializes active filter state into URL search parameters. */
 function buildUrlSearch(state: ShowcaseUrlState): string {
   const params = new URLSearchParams();
   if (state.onlyFeatured) params.set('featured', 'true');
@@ -171,15 +152,7 @@ function buildUrlSearch(state: ShowcaseUrlState): string {
   return qs ? `?${qs}` : '';
 }
 
-/**
- * Dropdown selector for catalog sorting order with outside-click dismissal.
- *
- * @param {object} props - Component properties.
- * @param {SortMode} props.value - Currently active sort mode.
- * @param {SortOption[]} props.options - Available sorting options.
- * @param {(mode: SortMode) => void} props.onChange - Selection change callback.
- * @returns {React.JSX.Element} Rendered dropdown trigger and popup menu.
- */
+/** Dropdown menu for catalog sort mode with outside-click dismissal. */
 function CustomSortDropdown({
   value,
   options,
@@ -192,19 +165,7 @@ function CustomSortDropdown({
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (dropdownRef.current && e.target instanceof Node && !dropdownRef.current.contains(e.target)) {
-        setIsOpen(false);
-      }
-    }
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isOpen]);
+  useClickOutside(dropdownRef, () => setIsOpen(false), isOpen);
 
   const selectedOption = options.find((o) => o.id === value) || options[0];
 
@@ -259,11 +220,8 @@ function CustomSortDropdown({
 const SESSION_SEED_KEY = 'nothing_showcase_seed';
 
 /**
- * Retrieves an existing deterministic shuffle seed from URL parameters or session storage,
- * generating and persisting a new pseudo-random seed if none exists for the active session.
- *
- * @param {string} [searchStr] - Optional raw URL query string (e.g. location.search).
- * @returns {number} Deterministic integer seed for Fisher-Yates array shuffling.
+ * Restores the deterministic shuffle seed from URL params or sessionStorage.
+ * Generates and stores a new seed on first visit.
  */
 function getOrInitSeed(searchStr?: string): number {
   if (!ExecutionEnvironment.canUseDOM) return 42;
@@ -294,12 +252,7 @@ function getOrInitSeed(searchStr?: string): number {
   }
 }
 
-/**
- * Generates a fresh pseudorandom integer seed, persists it to session storage,
- * and returns it to trigger an on-demand catalog reshuffle.
- *
- * @returns {number} Newly generated random seed.
- */
+/** Generates and persists a new random seed for on-demand catalog shuffling. */
 function generateAndSaveNewSeed(): number {
   const newSeed = Math.floor(Math.random() * 100000) + 1;
   if (ExecutionEnvironment.canUseDOM) {
@@ -311,9 +264,8 @@ function generateAndSaveNewSeed(): number {
 }
 
 /**
- * Main Community Showcase page rendering searchable, filterable catalog of community creations.
- *
- * @returns {React.JSX.Element} Showcase page layout.
+ * Community Showcase catalog route with full-text search, multi-taxonomy filtering,
+ * sort order controls, and deep-linkable URL search parameter synchronization.
  */
 export default function ShowcasePage(): React.JSX.Element {
   const history = useHistory();
@@ -664,28 +616,18 @@ export default function ShowcasePage(): React.JSX.Element {
   // Multi-dimensional filtering logic with Editor's Choice naturally boosted to top
   const filteredItems = useMemo(() => {
     const matched = sortedBaseItems.filter((item) => {
-      // Filter: Editor's Choice curated items isolation
       if (onlyFeatured && !item.featured) return false;
-
-      // Filter: Source catalog (apps vs projects)
       if (source !== 'all' && item.source !== source) return false;
 
-      // Filter: App Pricing (Free vs Paid, active strictly for apps source)
       if (source === 'apps' && pricing !== 'all') {
         if (pricing === 'paid' && !item.isPaid) return false;
         if (pricing === 'free' && item.isPaid) return false;
       }
 
-      // Filter: Broad Category (H2)
       if (selectedCategory !== 'all' && !(item.categoryKeys || [item.categoryKey]).includes(selectedCategory)) return false;
-
-      // Filter: Subcategory (H3)
       if (selectedSubCategory !== 'all' && !(item.subCategoryKeys || [item.subCategoryKey]).includes(selectedSubCategory)) return false;
-
-      // Filter: Target OS Platform
       if (selectedPlatform !== 'all' && !(item.platformOS || []).includes(selectedPlatform)) return false;
 
-      // Filter: Developer
       if (selectedDeveloper) {
         const target = selectedDeveloper.toLowerCase().trim();
         const rawMatch = item.developer.toLowerCase().trim() === target;
@@ -693,7 +635,6 @@ export default function ShowcasePage(): React.JSX.Element {
         if (!rawMatch && !devMatch) return false;
       }
 
-      // Filter: Search query
       if (searchQuery.trim()) {
         const query = searchQuery.toLowerCase().trim();
         const matchTitle = item.title.toLowerCase().includes(query);

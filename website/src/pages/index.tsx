@@ -11,7 +11,7 @@ import {
   FaBoxOpen, FaRocket, FaCode, FaCameraRetro,
   FaRegCompass, FaArrowRight,
 } from 'react-icons/fa';
-import { FaXTwitter, FaThreads, FaTiktok, FaGlobe } from 'react-icons/fa6';
+import { FaXTwitter, FaThreads, FaTiktok, FaGlobe, FaCrown } from 'react-icons/fa6';
 import { TbMessageCircle } from 'react-icons/tb';
 
 import styles from './index.module.css';
@@ -230,34 +230,26 @@ function HomepageFeatures() {
 
 
 
-/**
- * Community contribution section.
- * Fetches contributors from the GitHub API at runtime with localStorage caching.
- */
-/**
- * Renders a contributor name. If it contains a parenthesized suffix (e.g. "Real Name (username)"),
- * wraps the suffix in a distinct span to allow styling and breaking to a new line on smaller screens.
- */
-function renderContributorName(name: string) {
-  const match = name.match(/^([^(]+)\s*\(([^)]+)\)$/);
-  if (match) {
-    return (
-      <>
-        {match[1].trim()}
-        <span className={styles.usernameSuffix}>({match[2].trim()})</span>
-      </>
-    );
-  }
-  return name;
+interface ContributorMetadata {
+  lead?: string;
+  maintainers?: string[];
+  foundational?: string[];
+  core?: string[];
+  key?: string[];
+  roles?: Record<string, string>;
+  customAvatars?: Record<string, string>;
+  customUrls?: Record<string, string>;
+  customNames?: Record<string, string>;
 }
 
+// SAFETY: Bundled static JSON matches the ContributorMetadata interface schema.
+const metadata = contributorMetadata as ContributorMetadata;
+
 /**
- * Resolves the display name for a contributor card. If a custom name is configured in metadata,
- * uses that custom name; otherwise defaults to contrib.name or contrib.login.
+ * Resolves the display name for a contributor card, falling back to name or username.
  */
-function getContributorName(contrib: Contributor) {
-  // SAFETY: contributorMetadata is bundled static JSON matching customNames map schema.
-  const customNames = (contributorMetadata as any).customNames || {};
+function getContributorName(contrib: Contributor): string {
+  const customNames = metadata.customNames || {};
   if (customNames[contrib.login]) {
     return customNames[contrib.login];
   }
@@ -265,13 +257,10 @@ function getContributorName(contrib: Contributor) {
 }
 
 /**
- * Resolves the link for a contributor card. If a custom URL is configured in metadata,
- * uses that URL (e.g. for author commits filter via email); otherwise defaults to searching
- * repository commits by author username.
+ * Resolves the profile or commit history link for a contributor card.
  */
-function getContributorHref(contrib: Contributor) {
-  // SAFETY: contributorMetadata is bundled static JSON matching customUrls map schema.
-  const customUrls = (contributorMetadata as any).customUrls || {};
+function getContributorHref(contrib: Contributor): string {
+  const customUrls = metadata.customUrls || {};
   if (customUrls[contrib.login]) {
     return customUrls[contrib.login];
   }
@@ -279,17 +268,33 @@ function getContributorHref(contrib: Contributor) {
 }
 
 /**
- * Normalizes and optimizes GitHub avatar image URLs for target display dimensions.
- * Strips pre-existing size parameters and applies high-DPI resolution scaling.
- *
- * @param url Raw GitHub avatar URL string
- * @param size Desired edge dimension in pixels for high-DPI display
- * @returns Optimized avatar URL containing the normalized target size parameter
+ * Resolves the assigned contributor role from metadata.
+ */
+function getContributorRole(login: string): string | undefined {
+  const roles = metadata.roles || {};
+  return roles[login];
+}
+
+/**
+ * Resolves the avatar URL for a contributor, preferring curated overrides.
+ */
+function getContributorAvatar(contrib: Contributor): string {
+  const customAvatars = metadata.customAvatars || {};
+  if (customAvatars[contrib.login]) {
+    return customAvatars[contrib.login];
+  }
+  if (contrib.avatar_url && contrib.avatar_url.trim().length > 0) {
+    return contrib.avatar_url;
+  }
+  return `https://avatars.githubusercontent.com/${contrib.login}?v=4`;
+}
+
+/**
+ * Appends a dimension query parameter to GitHub avatar URLs for high-DPI rendering.
  */
 function getOptimizedAvatarUrl(url: string, size: number = 96): string {
   if (!url) return url;
   if (url.includes('githubusercontent.com')) {
-    // Strip existing size parameter if present to force target resolution
     const cleanUrl = url.replace(/([?&])s=\d+/g, '');
     const separator = cleanUrl.includes('?') ? '&' : '?';
     return `${cleanUrl}${separator}s=${size}`;
@@ -297,148 +302,292 @@ function getOptimizedAvatarUrl(url: string, size: number = 96): string {
   return url;
 }
 
+function formatContributorHandle(handleText: string): string {
+  if (!handleText) return '';
+  const clean = handleText.trim();
+  if (clean.includes('/')) {
+    return clean
+      .split('/')
+      .map((part) => {
+        const p = part.trim();
+        return p.startsWith('@') ? p : `@${p}`;
+      })
+      .join(' / ');
+  }
+  if (clean.includes(' ')) {
+    return clean;
+  }
+  return clean.startsWith('@') ? clean : `@${clean}`;
+}
+
+interface ContributorDisplay {
+  displayName: string;
+  subName: string | null;
+  role?: string;
+  href: string;
+  avatarUrl: string;
+}
+
+function resolveContributorDisplay(contrib: Contributor): ContributorDisplay {
+  const role = getContributorRole(contrib.login);
+  const rawName = getContributorName(contrib);
+  const match = rawName.match(/^(.*?)\s*\((.*?)\)$/);
+  const displayName = match ? match[1] : rawName;
+  const rawSub = match
+    ? match[2]
+    : contrib.login.toLowerCase() !== displayName.toLowerCase()
+    ? contrib.login
+    : null;
+  const subName = rawSub ? formatContributorHandle(rawSub) : null;
+  const href = getContributorHref(contrib);
+  const avatarUrl = getContributorAvatar(contrib);
+
+  return { displayName, subName, role, href, avatarUrl };
+}
+
+function ContributorCard({
+  contrib,
+  variant,
+}: {
+  contrib: Contributor;
+  variant: 'core' | 'key';
+}) {
+  const { displayName, subName, role, href, avatarUrl } = resolveContributorDisplay(contrib);
+  const isCore = variant === 'core';
+  const cardClass = isCore ? styles.coreCard : styles.keyCard;
+  const avatarContainerClass = isCore ? styles.coreAvatarContainer : styles.keyAvatarContainer;
+  const avatarClass = isCore ? styles.coreAvatar : styles.keyAvatar;
+  const headerClass = isCore ? styles.coreHeader : styles.keyHeader;
+  const titleClass = isCore ? styles.coreTitle : styles.keyTitle;
+  const handleClass = isCore ? styles.coreHandle : styles.keyHandle;
+  const roleClass = isCore ? styles.coreRoleBadge : styles.keyRoleBadge;
+  const avatarPixelSize = isCore ? 50 : 44;
+  const avatarFetchSize = isCore ? 110 : 96;
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={cardClass}
+      aria-label={`View ${contrib.name || contrib.login}'s commits on GitHub`}
+    >
+      <div className={avatarContainerClass}>
+        <img
+          src={getOptimizedAvatarUrl(avatarUrl, avatarFetchSize)}
+          alt={`${contrib.name || contrib.login}'s avatar`}
+          className={avatarClass}
+          width={avatarPixelSize}
+          height={avatarPixelSize}
+          loading="lazy"
+        />
+      </div>
+      <div className={styles.cardContent}>
+        <div className={clsx(styles.cardHeader, headerClass)}>
+          <div className={clsx(styles.cardTitle, titleClass)}>{displayName}</div>
+          {subName && <div className={clsx(styles.cardHandle, handleClass)}>{subName}</div>}
+        </div>
+        {role && <div className={clsx(styles.cardRoleBadge, roleClass)}>{role}</div>}
+      </div>
+    </a>
+  );
+}
+
 function HomepageCommunity() {
-  // Centralized GitHub data hook — shares cache with other components
+  // Centralized GitHub data hook; shares cache across components.
   const { contributors } = useGitHubContributors();
 
-  // GitHub's contributors endpoint is typically sorted by contributions,
-  // but explicit client-side sorting ensures consistency across cached offline
-  // loads and fallback datasets.
+  // Sort contributors descending by commit count to keep offline and live views aligned.
   const sortedContributors = React.useMemo(() => {
     return [...contributors].sort((a, b) => b.contributions - a.contributions);
   }, [contributors]);
 
-  // Resolve core members in the exact order specified in configuration
-  const coreMembers = React.useMemo(() => {
-    return contributorMetadata.core
+  // Maintainers (lead and co-maintainers).
+  const maintainerMembers = React.useMemo(() => {
+    const maintainerLogins: string[] = metadata.maintainers || [
+      metadata.lead || 'pikawee',
+      'PHATWalrus',
+    ];
+    return maintainerLogins
       .map((login) => contributors.find((c) => c.login === login))
       .filter((c): c is Contributor => !!c);
   }, [contributors]);
 
-  // Resolve top contributors, excluding core members, capped at 6 for layout alignment and clean presentation
-  const topContributors = React.useMemo(() => {
-    const coreLogins = new Set(contributorMetadata.core);
-    return sortedContributors
-      .filter((c) => !coreLogins.has(c.login))
-      .slice(0, 6);
-  }, [sortedContributors]);
+  // Foundational members in configured display order.
+  const foundationalMembers = React.useMemo(() => {
+    const maintainerLogins = new Set(
+      metadata.maintainers || [
+        metadata.lead || 'pikawee',
+        'PHATWalrus',
+      ]
+    );
+    const logins: string[] = metadata.foundational ||
+      (metadata.core || []).filter((l: string) => !maintainerLogins.has(l));
+    return logins
+      .filter((l: string) => !maintainerLogins.has(l))
+      .map((login) => contributors.find((c) => c.login === login))
+      .filter((c): c is Contributor => !!c);
+  }, [contributors]);
 
-  const brandingMember = contributorMetadata.branding;
+  // Key contributors with dedicated profile cards.
+  const keyMembers = React.useMemo(() => {
+    const keyLogins: string[] = metadata.key || [
+      'Earendel-lab',
+      'burakdede0',
+      'AdaaamB',
+      'LukeSkyD',
+    ];
+    return keyLogins
+      .map((login) => contributors.find((c) => c.login === login))
+      .filter((c): c is Contributor => !!c);
+  }, [contributors]);
+
+  // Community contributors excluding maintainers, foundational, and key members.
+  const communityContributors = React.useMemo(() => {
+    const maintainerLogins = metadata.maintainers || [
+      metadata.lead || 'pikawee',
+      'PHATWalrus',
+    ];
+    const excludedLogins = new Set([
+      ...maintainerLogins,
+      ...(metadata.foundational || []),
+      ...(metadata.key || []),
+    ]);
+    return sortedContributors.filter((c) => !excludedLogins.has(c.login));
+  }, [sortedContributors]);
 
   return (
     <section className={styles.communitySection}>
       <div className="container">
-        {/* Section Heading & Subtitle */}
         <Heading as="h2" className={styles.sectionLabel}>
           Hall of Fame
         </Heading>
 
-        {/* Core Team Subsection */}
         <Heading as="h3" className={styles.subSectionLabel}>
-          Core Team
+          Maintainers
+        </Heading>
+        <div className={styles.leadContainer}>
+          {maintainerMembers.map((contrib) => {
+            const { displayName, subName, role, href, avatarUrl } = resolveContributorDisplay(contrib);
+            const isFounder = contrib.login === 'pikawee' || contrib.login === metadata.lead;
+
+            return (
+              <a
+                key={contrib.login}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.leadCard}
+                aria-label={`View ${contrib.name || contrib.login}'s commits on GitHub`}
+              >
+                <div className={styles.leadAvatarContainer}>
+                  <img
+                    src={getOptimizedAvatarUrl(avatarUrl, 130)}
+                    alt={`${contrib.name || contrib.login}'s avatar`}
+                    className={styles.leadAvatar}
+                    width="62"
+                    height="62"
+                    loading="lazy"
+                  />
+                  {isFounder && (
+                    <span
+                      className={styles.crownBadge}
+                      title="Founder & Project Lead"
+                      aria-label="Founder & Project Lead"
+                    >
+                      <FaCrown size={10} />
+                    </span>
+                  )}
+                </div>
+                <div className={styles.cardContent}>
+                  <div className={clsx(styles.cardHeader, styles.leadHeader)}>
+                    <div className={clsx(styles.cardTitle, styles.leadTitle)}>
+                      {displayName}
+                    </div>
+                    <div className={clsx(styles.cardHandle, styles.leadHandle)}>
+                      {subName}
+                    </div>
+                  </div>
+                  <div className={clsx(styles.cardRoleBadge, styles.leadRoleBadge)}>
+                    {role || 'Maintainer'}
+                  </div>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+
+        {/* Foundational Contributors Subsection */}
+        <Heading as="h3" className={clsx(styles.subSectionLabel, styles.subSectionLabelMargin)}>
+          Foundational Contributors
         </Heading>
         <div className={styles.coreGrid}>
-          {coreMembers.map((contrib) => (
-            <a
-              key={contrib.login}
-              href={getContributorHref(contrib)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.coreCard}
-              aria-label={`View ${contrib.name || contrib.login}'s commits on GitHub`}
-            >
-              <div className={styles.coreAvatarContainer}>
-                <img
-                  src={getOptimizedAvatarUrl(contrib.avatar_url, 160)}
-                  alt={`${contrib.name || contrib.login}'s avatar`}
-                  className={styles.coreAvatar}
-                  width="102"
-                  height="102"
-                  loading="lazy"
-                />
-              </div>
-              <div className={styles.coreName}>{renderContributorName(getContributorName(contrib))}</div>
-            </a>
+          {foundationalMembers.map((contrib) => (
+            <ContributorCard key={contrib.login} contrib={contrib} variant="core" />
           ))}
         </div>
 
-        {/* Branding Credit */}
-        <div className={styles.brandingSection}>
-          <span className={styles.brandingLabel}>Branding</span>
-          <a
-            href={brandingMember.html_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.brandingCard}
-          >
-            <img
-              src={getOptimizedAvatarUrl(brandingMember.avatar_url, 96)}
-              alt={brandingMember.name}
-              className={styles.brandingAvatar}
-              width="35"
-              height="35"
-              loading="lazy"
-            />
-            <span className={styles.brandingName}>{brandingMember.name}</span>
-          </a>
-        </div>
-
-        {/* General Contributors Subsection */}
-        <Heading as="h3" className={styles.subSectionLabel}>
-          Top Contributors
+        <Heading as="h3" className={clsx(styles.subSectionLabel, styles.subSectionLabelMargin)}>
+          Key Contributors
         </Heading>
-        <div className={styles.contributorGrid}>
-          {topContributors.length > 0 ? (
-            topContributors.map((contrib) => (
-              <a
-                key={contrib.login}
-                href={getContributorHref(contrib)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.contributorCard}
-                aria-label={`View ${contrib.login}'s commits on GitHub`}
-              >
-                <div className={styles.contributorAvatarContainer}>
-                  <img
-                    src={getOptimizedAvatarUrl(contrib.avatar_url, 96)}
-                    alt={`${contrib.login}'s avatar`}
-                    className={styles.contributorAvatar}
-                    width="35"
-                    height="35"
-                    loading="lazy"
-                  />
-                </div>
-                <div className={styles.contributorName}>
-                  {renderContributorName(getContributorName(contrib))}
-                </div>
-              </a>
-            ))
-          ) : (
-            <div style={{ textAlign: 'center', width: '100%', gridColumn: '1 / -1', opacity: 0.7, padding: '2rem 0' }}>
-              <a
-                href="https://github.com/spike0en/nothing_archive/graphs/contributors"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: 'var(--ifm-color-primary)', fontWeight: 'bold' }}
-              >
-                View all contributors on GitHub
-              </a>
-            </div>
-          )}
+        <div className={styles.keyGrid}>
+          {keyMembers.map((contrib) => (
+            <ContributorCard key={contrib.login} contrib={contrib} variant="key" />
+          ))}
         </div>
 
-        {sortedContributors.length > 10 && (
-          <div className={styles.toggleContainer}>
-            <a
-              href="https://github.com/spike0en/nothing_archive/graphs/contributors"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.toggleButton}
-            >
-              Show All
-            </a>
+        {communityContributors.length > 0 && (
+          <div className={styles.communityBlock}>
+            <Heading as="h3" className={clsx(styles.subSectionLabel, styles.subSectionLabelMargin)}>
+              Community Contributors
+            </Heading>
+            <div className={styles.avatarCloud}>
+              {communityContributors.map((contrib) => {
+                const commits = contrib.contributions;
+                const commitText = `${commits} ${commits === 1 ? 'commit' : 'commits'}`;
+                const title = `${getContributorName(contrib)} (${commitText})`;
+                return (
+                  <a
+                    key={contrib.login}
+                    href={getContributorHref(contrib)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.avatarBubble}
+                    title={title}
+                    aria-label={title}
+                  >
+                    <img
+                      src={getOptimizedAvatarUrl(getContributorAvatar(contrib), 96)}
+                      alt={`${contrib.login}'s avatar`}
+                      className={styles.avatarBubbleImg}
+                      width="42"
+                      height="42"
+                      loading="lazy"
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        if (!target.dataset.triedFallback) {
+                          target.dataset.triedFallback = 'true';
+                          target.src = `https://avatars.githubusercontent.com/${contrib.login}?v=4`;
+                        }
+                      }}
+                    />
+                  </a>
+                );
+              })}
+            </div>
           </div>
         )}
+
+        <div className={styles.toggleContainer}>
+          <a
+            href="https://github.com/spike0en/nothing_archive/graphs/contributors"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.toggleButton}
+          >
+            Show All on GitHub
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -461,6 +610,29 @@ function HomepageMilestones() {
 }
 
 /**
+ * Repository commit and firmware release activity feeds.
+ */
+function HomepageActivity() {
+  return (
+    <section className={styles.activitySection}>
+      <div className="container">
+        <Heading as="h2" className={styles.sectionLabel}>
+          Activity
+        </Heading>
+        <div className={styles.telemetrySection}>
+          <div className={styles.telemetryBox}>
+            <CommitMatrix />
+          </div>
+          <div className={styles.telemetryBox}>
+            <ReleaseFeed />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/**
  * Footer section listing external links divided into Community Maintained,
  * Official Portals, and Social Media categories.
  */
@@ -472,17 +644,15 @@ function HomepageSocials() {
           Connect
         </Heading>
 
-        {/* Community Maintained Section */}
         <Heading as="h3" className={styles.subSectionLabel}>
           Community Maintained
         </Heading>
         <div className={styles.socialLinks}>
           {communityMaintainedLinks.map(({ label, ariaLabel, href, icon }) => (
-            // SAFETY: Validated string primitive via Object prototype check
             <a
               key={href}
               href={href}
-              aria-label={ariaLabel || (Object.prototype.toString.call(label) === '[object String]' ? (label as string) : undefined)}
+              aria-label={ariaLabel}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
@@ -493,7 +663,6 @@ function HomepageSocials() {
           ))}
         </div>
 
-        {/* Official Portals Section */}
         <Heading as="h3" className={clsx(styles.subSectionLabel, styles.subSectionLabelMargin)}>
           Official Portals
         </Heading>
@@ -513,7 +682,6 @@ function HomepageSocials() {
           ))}
         </div>
 
-        {/* Social Media Section */}
         <Heading as="h3" className={clsx(styles.subSectionLabel, styles.subSectionLabelMargin)}>
           Social Media
         </Heading>
@@ -616,17 +784,8 @@ export default function Home(): JSX.Element {
         <div className={styles.glyphGrid} aria-hidden="true" />
         <HomepageHeader />
         <main className={styles.main}>
-          <div className={clsx('container', styles.telemetryContainer)}>
-            <div className={styles.telemetrySection}>
-              <div className={styles.telemetryBox}>
-                <CommitMatrix />
-              </div>
-              <div className={styles.telemetryBox}>
-                <ReleaseFeed />
-              </div>
-            </div>
-          </div>
           <HomepageFeatures />
+          <HomepageActivity />
           <HomepageMilestones />
           <HomepageCommunity />
           <HomepageSocials />

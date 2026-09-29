@@ -15,11 +15,8 @@ interface CursorToggleProps {
 }
 
 /**
- * CursorToggle component.
- * Renders a navigation button to toggle the global magnetic cursor ring preference.
- * Disabled by default; persists setting in localStorage and broadcasts custom events.
- * 
- * @returns {React.JSX.Element | null} Target cursor toggle button element.
+ * Navigation button that toggles the magnetic cursor ring preference.
+ * Persists choice in localStorage and broadcasts custom events to listener components.
  */
 export default function CursorToggle({ mobile }: CursorToggleProps): React.JSX.Element | null {
   const [enabled, setEnabled] = useState<boolean>(false);
@@ -46,9 +43,6 @@ export default function CursorToggle({ mobile }: CursorToggleProps): React.JSX.E
     return null;
   }
 
-  /**
-   * Toggles cursor active state, updates localStorage, and dispatches global event.
-   */
   const handleToggle = () => {
     const nextState = !enabled;
     setEnabled(nextState);

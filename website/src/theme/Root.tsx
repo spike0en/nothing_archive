@@ -51,11 +51,10 @@ export default function Root({ children }: RootProps): React.JSX.Element {
     if (showShortcuts) {
       // SAFETY: Active DOM element focus casting
       previousActiveElement.current = document.activeElement as HTMLElement;
-      // Focus the close button or first focusable element in the modal
       // SAFETY: Modal close button query selector casting
       const closeBtn = modalRef.current?.querySelector('.shortcut-modal-close') as HTMLElement;
       if (closeBtn) {
-        // Wait a tick for rendering transition
+        // 50ms delay accommodates the CSS transition before claiming focus.
         setTimeout(() => closeBtn.focus(), 50);
       }
     } else {

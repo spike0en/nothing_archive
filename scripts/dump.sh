@@ -5,7 +5,6 @@
 #
 # Modified by: spike0en
 
-# === Configuration ===
 set -e
 ORIGINAL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
@@ -38,8 +37,6 @@ DEVICES_JSON="$ORIGINAL_DIR/scripts/devices.json"
 OUTPUT_DIR="$ORIGINAL_DIR/out"
 
 mkdir -p "$OUTPUT_DIR"
-
-# === Helper Functions ===
 
 generate_metadata_notice() {
     cat << EOF
@@ -133,8 +130,6 @@ detect_model() {
     echo "$detected_model"
 }
 
-# === Main Execution ===
-
 if [ ! -f "$OTA_EXTRACTOR" ]; then
     echo "Error: Extractor binary not found at $OTA_EXTRACTOR" >&2
     exit 1
@@ -170,8 +165,6 @@ mkdir -p ota out dyn boot
 echo "Initial payload extracted."
 rm payload_working.bin
 
-# === Incremental Updates ===
-
 shift
 for i in "$@"; do
     echo "Processing incremental OTA: $i"
@@ -191,16 +184,12 @@ for i in "$@"; do
     rm payload_working.bin
 done
 
-# === Prepare Release Information ===
-
 BODY=$(printf "%s\n\n**Fingerprint:**\n%s" "$BODY" "${FINGERPRINT//|/$'\n'}")
 
 if [ -n "$GITHUB_RUN_ID" ]; then
     RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
     BODY=$(printf "%s\n\n**Workflow Run**: [Here](%s)" "$BODY" "$RUN_URL")
 fi
-
-# === Fetch Partition Information ===
 
 echo "Fetching partition lists for model: $MODEL"
 
@@ -217,8 +206,6 @@ echo "Using dynamically fetched partitions for model: $MODEL"
 echo "Boot Partitions: $BOOT_PARTITIONS"
 echo "Logical Partitions: $LOGICAL_PARTITIONS"
 
-# === Generate SHA-256 Hashes ===
-
 echo "Generating file hashes using $PARALLEL_JOBS parallel jobs..."
 cd ota
 
@@ -231,8 +218,6 @@ echo "" >> "$HASH_FILE"
 echo "--- SHA256 Hashes ---"
 find . -maxdepth 1 -type f -print0 | parallel -0 -j $PARALLEL_JOBS "openssl dgst -sha256 -r" 2>/dev/null | sort -k2 -V | tee -a "$HASH_FILE"
 
-# === Organize Images ===
-
 echo "Organizing images..."
 
 for f in $BOOT_PARTITIONS; do
@@ -243,14 +228,10 @@ for f in $LOGICAL_PARTITIONS; do
     [ -f "${f}.img" ] && mv "${f}.img" ../dyn
 done
 
-# === Credit & Metadata Notice ===
-
 generate_metadata_notice > spike0en_nothing_archive.txt
 
 [ -d "../boot" ] && cp spike0en_nothing_archive.txt ../boot/
 [ -d "../dyn" ] && cp spike0en_nothing_archive.txt ../dyn/
-
-# === Archive Images ===
 
 echo "Archiving images using optimized compression settings..."
 
@@ -268,8 +249,6 @@ if [ -d "../dyn" ] && [ "$(ls -A ../dyn 2>/dev/null)" ]; then
 fi
 
 wait
-
-# === Set GitHub Actions Outputs ===
 
 echo "Setting GitHub Actions outputs..."
 

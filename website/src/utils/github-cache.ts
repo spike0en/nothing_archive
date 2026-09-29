@@ -58,7 +58,8 @@ interface ReleasesPayload {
 type DataStatus = 'LIVE' | 'OFFLINE';
 type ErrorState = 'RATE_LIMITED' | 'FAILED' | null;
 
-const CACHE_TTL = 15 * 60 * 1000; // 15 minutes
+// 15-minute cache TTL balances fresh activity feeds with GitHub's 60 req/hr unauthenticated rate limit.
+const CACHE_TTL = 15 * 60 * 1000;
 
 /** localStorage key prefixes, versioned to allow safe cache invalidation. */
 const LS_KEYS = {
@@ -68,8 +69,8 @@ const LS_KEYS = {
   commitsTime: 'na_gh_commits_time_v3',
   repoStats: 'na_gh_stats_v3',
   repoStatsTime: 'na_gh_stats_time_v3',
-  contributors: 'na_gh_contributors_v6',
-  contributorsTime: 'na_gh_contributors_time_v6',
+  contributors: 'na_gh_contributors_v7',
+  contributorsTime: 'na_gh_contributors_time_v7',
 } as const;
 
 const inflight = new Map<string, Promise<any>>();
@@ -78,11 +79,8 @@ const inflight = new Map<string, Promise<any>>();
 const memoryCache = new Map<string, { data: any; timestamp: number }>();
 
 /**
- * Reads and parses data from localStorage.
- * 
- * @param key The key under which the data is stored in localStorage.
- * @param timeKey The key under which the timestamp is stored.
- * @returns The parsed data and freshness status, or null on cache miss or error.
+ * Reads cached payload and timestamp from localStorage.
+ * Returns null on cache miss, parse error, or when storage is unavailable.
  */
 function readLocalStorage<T>(key: string, timeKey: string): { data: T; fresh: boolean } | null {
   try {
@@ -99,11 +97,7 @@ function readLocalStorage<T>(key: string, timeKey: string): { data: T; fresh: bo
 }
 
 /**
- * Serializes and writes data to localStorage.
- * 
- * @param key The destination storage key.
- * @param timeKey The destination timestamp key.
- * @param data The payload to serialize and write.
+ * Persists payload and write timestamp to localStorage, silently degrading if storage is full or disabled.
  */
 function writeLocalStorage(key: string, timeKey: string, data: any): void {
   try {
@@ -115,12 +109,7 @@ function writeLocalStorage(key: string, timeKey: string, data: any): void {
 }
 
 /**
- * Deduplicating fetch wrapper. If a request for the same cacheKey is
- * already in flight, returns the existing Promise.
- * 
- * @param cacheKey Unique identifier key for request de-duplication.
- * @param fetcher Async callback that performs the underlying data fetch.
- * @returns Promise resolving to the fetched data type T.
+ * Reuses inflight promises for matching cache keys to prevent duplicate network calls.
  */
 async function deduplicatedFetch<T>(
   cacheKey: string,
@@ -139,8 +128,6 @@ async function deduplicatedFetch<T>(
   inflight.set(cacheKey, promise);
   return promise;
 }
-
-// --- Fetcher functions ---
 
 async function fetchReleasesFromAPI(): Promise<ReleasesPayload> {
   const response = await fetch(
@@ -375,7 +362,7 @@ function useGitHubData<T>(config: {
     let cancelled = false;
 
     async function load() {
-      // 1. Check memory cache
+      // 1. Check memory cache.
       const mem = memoryCache.get(config.cacheKey);
       if (mem && config.isValid(mem.data)) {
         if (!cancelled) {
@@ -386,13 +373,13 @@ function useGitHubData<T>(config: {
         const isFresh = Date.now() - mem.timestamp < CACHE_TTL;
         if (isFresh) {
           if (!cancelled) setLoading(false);
-          return; // Still fresh, no need to refetch
+          return;
         }
-        // Stale — continue to background refresh but don't show loading
+        // Stale: proceed with background refresh without showing a blocking loading indicator.
         if (!cancelled) setLoading(false);
       }
 
-      // 2. Check localStorage
+      // 2. Check localStorage.
       if (globalThis.window !== undefined) {
         const ls = readLocalStorage<T>(config.lsKey, config.lsTimeKey);
         if (ls && config.isValid(ls.data)) {
@@ -402,25 +389,22 @@ function useGitHubData<T>(config: {
             setError(null);
             setLoading(false);
           }
-          // Populate memory cache
           memoryCache.set(config.cacheKey, {
             data: ls.data,
             timestamp: parseInt(localStorage.getItem(config.lsTimeKey) || '0', 10),
           });
-          if (ls.fresh) return; // Still fresh
-          // Stale — continue to background refresh
+          if (ls.fresh) return;
         }
       }
 
-      // 3. Static fallback is already set as initial state — ensure loading clears
+      // 3. Clear loading state if static fallback is already visible.
       if (!cancelled && loading) {
-        // If we have valid static data, show it and clear loading
         if (config.isValid(config.staticFallback)) {
           setLoading(false);
         }
       }
 
-      // 4. Live API fetch (background refresh)
+      // 4. Background refresh via GitHub API.
       try {
         const freshData = await deduplicatedFetch(config.cacheKey, config.fetcher);
         if (!cancelled && config.isValid(freshData)) {
@@ -428,7 +412,6 @@ function useGitHubData<T>(config: {
           setStatus('LIVE');
           setError(null);
           setLoading(false);
-          // Update caches
           memoryCache.set(config.cacheKey, { data: freshData, timestamp: Date.now() });
           if (globalThis.window !== undefined) {
             writeLocalStorage(config.lsKey, config.lsTimeKey, freshData);
@@ -437,13 +420,12 @@ function useGitHubData<T>(config: {
       } catch (err: any) {
         if (!cancelled) {
           setLoading(false);
-          // Only show error if we have no cached data at all
+          // Surface error only if no cached or static data is available.
           const hasData = config.isValid(data);
           if (!hasData) {
             setError(err.message === 'RATE_LIMITED' ? 'RATE_LIMITED' : 'FAILED');
             setStatus('OFFLINE');
           }
-          // If we have stale data, keep showing it — no error state
         }
       }
     }
@@ -454,8 +436,6 @@ function useGitHubData<T>(config: {
 
   return { data, status, error, loading };
 }
-
-// --- Public hooks ---
 
 /** Releases feed data with stale-while-revalidate caching. */
 export function useGitHubReleases(): GitHubReleasesHookResult {

@@ -15,13 +15,6 @@ interface SupportButtonProps {
   mobile?: boolean;
 }
 
-/**
- * Renders the official Google Material Symbols Outlined volunteer_activism SVG icon.
- * 
- * @param {Object} props - Component properties containing optional className.
- * @param {string} [props.className] - CSS class for icon styling and transitions.
- * @returns {React.JSX.Element} Volunteer activism vector SVG element.
- */
 function VolunteerActivismIcon({ className }: { className?: string }): React.JSX.Element {
   return (
     <svg
@@ -38,11 +31,7 @@ function VolunteerActivismIcon({ className }: { className?: string }): React.JSX
 }
 
 /**
- * SupportButton component.
- * Renders support navigation item in both desktop navbar and mobile sidebar layouts.
- * 
- * @param {SupportButtonProps} props - Component properties indicating desktop vs mobile view.
- * @returns {React.JSX.Element | null} Support button element or mobile menu item.
+ * Navbar button that dispatches a global custom event to display the support/donation modal.
  */
 export default function SupportButton({ mobile }: SupportButtonProps): React.JSX.Element | null {
   if (mobile) {

@@ -1,11 +1,5 @@
 /**
- * @file ShowcaseSidebar.tsx
- * @description Persistent left-rail filter panel for desktop viewport (>= 1024px).
- * Provides immediate, zero-modal faceted navigation for catalog source, target platforms,
- * and hierarchical categories/subcategories.
- * 
- * Layer: Presentation / Navigation component.
- * Boundary: Consumes taxonomy filter states and dispatches selection callbacks without blocking main grid view.
+ * Persistent left-rail filter panel for desktop viewport (>= 1024px).
  */
 
 import React from 'react';
@@ -56,12 +50,6 @@ interface ShowcaseSidebarProps {
   hasActiveFilters: boolean;
 }
 
-/**
- * Returns platform vector SVG icon for desktop sidebar list.
- *
- * @param {PlatformFilter} p - Platform identifier.
- * @returns {React.ReactElement} Platform vector SVG icon.
- */
 function getPlatformIcon(p: PlatformFilter): React.ReactElement {
   switch (p) {
     case 'android':
@@ -80,12 +68,6 @@ function getPlatformIcon(p: PlatformFilter): React.ReactElement {
   }
 }
 
-/**
- * Persistent sidebar filter component for desktop screens.
- *
- * @param {ShowcaseSidebarProps} props - Component properties.
- * @returns {React.JSX.Element} Rendered desktop sidebar.
- */
 export default function ShowcaseSidebar({
   source,
   onSelectSource,
@@ -108,7 +90,6 @@ export default function ShowcaseSidebar({
   return (
     <aside className={styles.sidebar} aria-label="Showcase catalog filters">
       <div className={styles.sidebarSticky}>
-        {/* Header & Reset Button */}
         <div className={styles.sidebarHeader}>
           <span className={styles.sidebarTitle}>Filters</span>
           {hasActiveFilters && (
@@ -172,7 +153,6 @@ export default function ShowcaseSidebar({
           </div>
         </div>
 
-        {/* Section: App Pricing Filter (Free / Paid toggles) */}
         {source === 'apps' && (
           <div className={styles.section}>
             <span className={styles.sectionLabel}>App Pricing</span>
@@ -202,7 +182,6 @@ export default function ShowcaseSidebar({
           </div>
         )}
 
-        {/* Section 2: Platform Filter */}
         <div className={styles.section}>
           <span className={styles.sectionLabel}>Target Platform</span>
           <div className={styles.platformList}>
@@ -223,7 +202,6 @@ export default function ShowcaseSidebar({
           </div>
         </div>
 
-        {/* Section 3: Categories & Subcategories Tree */}
         <div className={styles.section}>
           <span className={styles.sectionLabel}>Categories</span>
           <div className={styles.categoryList}>
@@ -257,7 +235,6 @@ export default function ShowcaseSidebar({
                     <span className={styles.categoryCount}>{cat.count}</span>
                   </button>
 
-                  {/* Nested Subcategories List when Category is Active */}
                   {isCatSelected && availableSubCategories.length > 0 && (
                     <div className={styles.subCategoryTree}>
                       {availableSubCategories.map((sub) => {

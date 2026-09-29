@@ -17,13 +17,6 @@ interface PwaInstallButtonProps {
   mobile?: boolean;
 }
 
-/**
- * Renders the official Google Material Symbols Outlined mobile_arrow_down SVG icon.
- * 
- * @param {Object} props - Component properties containing optional className.
- * @param {string} [props.className] - CSS class for icon styling and hover transitions.
- * @returns {React.JSX.Element} Mobile arrow down vector SVG element.
- */
 function MobileArrowDownIcon({ className }: { className?: string }): React.JSX.Element {
   return (
     <svg
@@ -40,11 +33,7 @@ function MobileArrowDownIcon({ className }: { className?: string }): React.JSX.E
 }
 
 /**
- * PwaInstallButton component.
- * Renders the install navigation item in both desktop and mobile viewports when available.
- * 
- * @param {PwaInstallButtonProps} props - Component properties specifying view mode.
- * @returns {React.JSX.Element | null} Install button element or null if not installable.
+ * Navbar button that prompts the browser's native PWA installation flow when available.
  */
 export default function PwaInstallButton({ mobile }: PwaInstallButtonProps): React.JSX.Element | null {
   const { isInstallable, install } = usePwa();

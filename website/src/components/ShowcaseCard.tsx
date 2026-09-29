@@ -1,10 +1,6 @@
 /**
- * @file ShowcaseCard.tsx
- * @description Renders an individual community showcase catalog card with icon preview,
- * creator attribution, target platform badge, taxonomic tags, and direct repository/store action links.
- * 
- * Layer: Presentation component.
- * Boundary: Consumes a typed ShowcaseItem record and renders an interactive grid card.
+ * Community showcase catalog card with icon preview, creator attribution,
+ * platform badges, and action links.
  */
 
 import React, { useState } from 'react';
@@ -37,12 +33,7 @@ interface PlatformDisplayInfo {
   title: string;
 }
 
-/**
- * Resolves the primary operating system platform badge and vector icon for a showcase entry.
- *
- * @param {ShowcaseItem} item - Showcase item containing target OS platform array.
- * @returns {PlatformDisplayInfo} Visual metadata object containing CSS module key, icon element, and tooltip title.
- */
+/** Resolves the primary OS badge and icon for a showcase item. */
 function getPlatformInfo(item: ShowcaseItem): PlatformDisplayInfo {
   const osList = item.platformOS || [];
   if (osList.includes('ios')) {
@@ -63,12 +54,6 @@ function getPlatformInfo(item: ShowcaseItem): PlatformDisplayInfo {
   return { key: 'platformWeb', icon: <FaGlobe size={13} />, title: 'Web App & Portal' };
 }
 
-/**
- * Renders an interactive showcase card for a community application or open-source project.
- *
- * @param {ShowcaseCardProps} props - Component properties.
- * @returns {React.JSX.Element} Rendered showcase card element.
- */
 export default function ShowcaseCard({
   item,
   className,

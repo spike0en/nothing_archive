@@ -1,10 +1,5 @@
 /**
- * @file SupporterWidget.tsx
- * @description Renders a scrolling marquee (ticker) displaying names of top donors 
- * inside the support modal context.
- * 
- * Layer: Donation modal widgets.
- * Boundary: Renders marquee layout powered by custom CSS transitions and durations.
+ * Scrolling marquee displaying names of donors inside the support modal.
  */
 
 import React from 'react';
@@ -14,10 +9,6 @@ interface SupporterWidgetProps {
   donors: string[];
 }
 
-/**
- * SupporterWidget component.
- * Calculates duration dynamically based on list length and renders scrolling track.
- */
 export default function SupporterWidget({ donors }: SupporterWidgetProps): React.JSX.Element {
   const displayNames = donors.length > 0 ? donors : ['SUPPORT', 'ARCHIVE', 'COMMUNITY'];
 

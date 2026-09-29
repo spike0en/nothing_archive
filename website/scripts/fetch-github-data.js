@@ -1,10 +1,6 @@
 /**
- * @file fetch-github-data.js
- * @description Prebuild script fetching GitHub repository data (contributors, releases, commits, stats)
- * and caching static JSON fallback data in src/data/.
- * 
- * Layer: Prebuild lifecycle scripts.
- * Boundary: Communicates with GitHub REST API via HTTPS, outputting local JSON artifacts.
+ * Prebuild script fetching GitHub repository data (contributors, releases,
+ * commits, stats) and caching static fallback JSON files in src/data/.
  */
 
 const fs = require('fs');
@@ -57,19 +53,16 @@ function writeFallback(filePath, fallback, label) {
 }
 
 /**
- * Fetches contributors from the GitHub API and compiles them into a static JSON fallback file.
- * Automatically resolves profile names, avatars, and HTML URLs for core team members, the branding
- * contributor, and top general contributors. Keeps existing metadata overrides from previous builds.
- * 
- * @note To ensure core team members who might not be in the top 100 contributors list returned by
- * the GitHub API are still included, we iterate over the unified list of target logins and fetch
- * individual profiles via the GitHub API if they are missing from the general list.
+ * Compiles contributors into a static JSON fallback file.
+ * Pulls profile names, avatars, and URLs for core team members, branding,
+ * and top contributors. If a core member is missing from the top-100 list,
+ * fetches their profile directly from the GitHub user endpoint.
  */
 async function fetchContributors() {
   const filePath = path.join(OUT_DIR, 'contributors.json');
   const label = 'contributors';
 
-  // Try to load existing contributor name and html_url mappings to avoid re-fetching and preserve custom links
+  // Load existing name and URL mappings to reduce network calls and preserve custom links
   const existingNames = {};
   const existingHtmlUrls = {};
   try {
@@ -93,61 +86,54 @@ async function fetchContributors() {
   try {
     const { data } = await fetchJSON('/repos/spike0en/nothing_archive/contributors?per_page=100');
 
-    // Read the manually maintained core team, branding logins, custom names, and custom URL overrides from contributor-metadata.json
     const metadataPath = path.join(OUT_DIR, 'contributor-metadata.json');
     let coreLogins = [];
+    let keyLogins = [];
     let brandingLogin = '';
     let customUrls = {};
     let customNames = {};
+    let customAvatars = {};
     try {
       if (fs.existsSync(metadataPath)) {
         const metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
-        coreLogins = metadata.core || [];
+        const leadLogins = metadata.lead ? [metadata.lead] : [];
+        const foundationalLogins = metadata.foundational || [];
+        keyLogins = metadata.key || [];
+        coreLogins = metadata.core || [...leadLogins, ...foundationalLogins];
         brandingLogin = metadata.branding?.login || '';
         customUrls = metadata.customUrls || {};
         customNames = metadata.customNames || {};
+        customAvatars = metadata.customAvatars || {};
       }
     } catch (e) {
       console.warn(`[${label}] Failed to read contributor-metadata.json: ${e.message}`);
     }
 
-    const coreSet = new Set(coreLogins);
     const loginsToResolve = new Set();
-
-    // 1. Gather all target logins to resolve: core, branding, and top 6 active general contributors.
     coreLogins.forEach(login => loginsToResolve.add(login));
+    keyLogins.forEach(login => loginsToResolve.add(login));
 
     if (brandingLogin) {
       loginsToResolve.add(brandingLogin);
     }
 
-    let generalCount = 0;
     for (const c of data) {
-      if (!coreSet.has(c.login)) {
+      if (c && c.login) {
         loginsToResolve.add(c.login);
-        generalCount++;
-        if (generalCount >= 6) {
-          break;
-        }
       }
     }
 
-    // 2. Loop through all gathered target logins and compile their full contributor objects.
     const contributors = [];
     for (const login of loginsToResolve) {
-      // Find if they exist in the repository-wide contributors list
       const apiContrib = data.find(c => c.login === login);
 
-      // Prioritize custom name overrides defined in contributor-metadata.json, then cached names, then GitHub API default
       let name = customNames[login] || existingNames[login];
-      let avatar_url = apiContrib ? apiContrib.avatar_url : '';
-      // Prioritize custom URL overrides defined in contributor-metadata.json, then fallback to repository author commits search link
+      let avatar_url = customAvatars[login] || (apiContrib ? apiContrib.avatar_url : '');
       let html_url = customUrls[login] || `https://github.com/spike0en/nothing_archive/commits?author=${login}`;
-      // Default to 0 contributions if they are not in the repository API's contributors list
       let contributions = apiContrib ? apiContrib.contributions : 0;
 
-      // Fetch the full user profile if name or avatar_url are missing (e.g. for core members not in API contributors list)
-      if (!name || !avatar_url) {
+      // Profile details are only queried when avatar_url is missing from the list
+      if (!avatar_url) {
         try {
           const userProfile = await fetchJSON(`/users/${login}`);
           name = name || userProfile.data?.name || login;
@@ -156,6 +142,8 @@ async function fetchContributors() {
           console.warn(`[${label}] Failed to fetch profile details for ${login}: ${err.message}`);
           name = name || login;
         }
+      } else if (!name) {
+        name = login;
       }
 
       contributors.push({
@@ -292,7 +280,6 @@ async function main() {
     console.log('[prefetch] Using GITHUB_TOKEN for authenticated requests.');
   }
 
-  // Run all fetchers in parallel for speed
   await Promise.allSettled([
     fetchContributors(),
     fetchReleases(),

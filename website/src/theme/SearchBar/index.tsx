@@ -72,9 +72,7 @@ interface DocSearchV4Props extends Omit<DocSearchProps, 'askAi'> {
 let DocSearchModal: typeof DocSearchModalType | null = null;
 
 /**
- * Lazy loads the heavy DocSearch modal JS bundle and CSS styles on first interaction or focus.
- * 
- * @returns {Promise<void>} Resolves when modal modules are imported and assigned to local state.
+ * Lazy loads DocSearch modal scripts and styles on first user interaction or focus.
  */
 function importDocSearchModalIfNeeded(): Promise<void> {
   if (DocSearchModal) {
@@ -89,12 +87,6 @@ function importDocSearchModalIfNeeded(): Promise<void> {
   });
 }
 
-/**
- * Renders the official Google Material Symbols Outlined search SVG icon.
- * Uses 24px viewBox coordinates with fill="currentColor" to match navbar stroke density.
- * 
- * @returns {ReactNode} Vector SVG element representing the search icon.
- */
 function SearchIcon(): ReactNode {
   return (
     <svg
@@ -111,10 +103,7 @@ function SearchIcon(): ReactNode {
 }
 
 /**
- * Custom navigation hook for routing search result selection to local history or external links.
- * 
- * @param {Pick<DocSearchProps, 'externalUrlRegex'>} props - Regex matching external URLs.
- * @returns {DocSearchModalProps['navigator']} Navigator object implementing search result navigation.
+ * Routes search result selections to the internal router or external browser location.
  */
 function useNavigator({
   externalUrlRegex,
@@ -180,12 +169,7 @@ function useTransformSearchClient(): TransformSearchClientResult {
   return { transformSearchClient, latestHitsCount };
 }
 
-/**
- * Transforms raw Algolia result items by processing URLs for Docusaurus base path routing.
- * 
- * @param {Pick<DocSearchProps, 'transformItems'>} props - Custom transform function override.
- * @returns {DocSearchModalProps['transformItems']} Transformed item processor callback.
- */
+/** Rewrites Algolia result URLs to include Docusaurus baseUrl and routing paths. */
 function useTransformItems(props: Pick<DocSearchProps, 'transformItems'>): DocSearchModalProps['transformItems'] {
   const processSearchResultUrl = useSearchResultUrlProcessor();
   const [transformItems] = useState<DocSearchModalProps['transformItems']>(
@@ -202,14 +186,7 @@ function useTransformItems(props: Pick<DocSearchProps, 'transformItems'>): DocSe
   return transformItems;
 }
 
-/**
- * Memoized hook producing the modal footer component that displays exact query hit counts.
- * 
- * @param {Object} params - Parameters object containing modal close callback and hits count.
- * @param {() => void} params.closeModal - Callback to close modal on navigation.
- * @param {number} params.hitsCount - Exact non-accumulated total hit count for current query.
- * @returns {DocSearchProps['resultsFooterComponent']} React component for search modal footer.
- */
+/** Memoizes the search modal footer component displaying exact query hit counts. */
 function useResultsFooterComponent({
   closeModal,
   hitsCount,
@@ -314,7 +291,6 @@ function DocSearch({externalUrlRegex, ...props}: DocSearchV4Props) {
   const {isAskAiActive, currentPlaceholder, onAskAiToggle, extraAskAiProps} =
     useAlgoliaAskAi(props);
 
-  // Prepares portal DOM container for rendering modal dialog at body root
   const prepareSearchContainer = useCallback(() => {
     if (!searchContainer.current) {
       const divElement = document.createElement('div');
@@ -323,13 +299,11 @@ function DocSearch({externalUrlRegex, ...props}: DocSearchV4Props) {
     }
   }, []);
 
-  // Opens search modal and triggers lazy bundle import
   const openModal = useCallback(() => {
     prepareSearchContainer();
     importDocSearchModalIfNeeded().then(() => setIsOpen(true));
   }, [prepareSearchContainer]);
 
-  // Closes modal and returns focus to search trigger button
   const closeModal = useCallback(() => {
     setIsOpen(false);
     searchButtonRef.current?.focus();
@@ -337,7 +311,6 @@ function DocSearch({externalUrlRegex, ...props}: DocSearchV4Props) {
     onAskAiToggle(false);
   }, [onAskAiToggle]);
 
-  // Handles keyboard shortcut keydown events for quick search trigger
   const handleInput = useCallback(
     (event: KeyboardEvent) => {
       if (event.key === 'f' && (event.metaKey || event.ctrlKey)) {

@@ -263,14 +263,23 @@
 
 /* Section category typography — establishes distinct visual hierarchy across content blocks */
 .sectionLabel {
-  font-family: var(--ifm-font-family-monospace);
-  font-size: 0.8rem;
+  font-family: var(--f-headline);
+  font-size: 2rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
+  text-transform: none;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
   margin-bottom: 2rem;
   text-align: center;
-  opacity: 0.65;
+  color: var(--ifm-color-content);
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .sectionLabel {
+    font-size: 1.65rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .featureRow {
@@ -486,26 +495,121 @@
 }
 
 .subSectionLabel {
-  font-size: 0.75rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.16em;
   text-align: center;
-  margin: 1rem 0 0.5rem;
+  margin: 1.25rem 0 0.5rem;
   color: var(--ifm-color-content-muted);
+  opacity: 0.85;
 }
 
 .subSectionLabelMargin {
   margin-top: 2rem;
 }
 
-/* Core grid & cards */
+/* Lead Maintainer card - Tier 1 (Hero / Largest) */
+.leadContainer {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.25rem;
+  width: 100%;
+  margin: 1.25rem 0 1.5rem;
+  flex-wrap: wrap;
+}
+
+.leadCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 186px;
+  max-width: 186px;
+  flex: 0 0 186px;
+  min-height: 200px;
+  background-color: var(--ifm-card-background-color);
+  border: 2px solid var(--nothing-border);
+  border-radius: 20px;
+  padding: 1.25rem 0.55rem;
+  color: inherit;
+  text-decoration: none !important;
+  transition: border-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 420px) {
+  .leadCard {
+    width: calc(50% - 0.65rem);
+    max-width: 160px;
+    flex: 1 1 auto;
+  }
+}
+
+.leadCard:hover {
+  border-color: var(--nothing-red, #D71920) !important;
+  transform: translateY(-3px) scale(1.025);
+}
+
+.leadAvatarContainer {
+  width: 62px;
+  height: 62px;
+  border-radius: 18px;
+  overflow: visible;
+  background-color: rgba(128, 128, 128, 0.05);
+  border: 1.5px solid var(--nothing-border);
+  margin-bottom: 0.65rem;
+  flex-shrink: 0;
+  position: relative;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.leadAvatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 16.5px;
+  object-fit: cover;
+  display: block;
+}
+
+.leadCard:hover .leadAvatarContainer {
+  border-color: var(--nothing-red, #D71920);
+  transform: scale(1.06);
+}
+
+.crownBadge {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--nothing-red, #D71920);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--ifm-card-background-color);
+  box-shadow: none;
+  z-index: 3;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.leadCard:hover .crownBadge {
+  transform: scale(1.15) rotate(8deg);
+}
+
+/* Foundational (Core) grid & cards - Tier 2 */
 .coreGrid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.25rem;
-  margin: 1.5rem 0 1.25rem;
+  gap: 1rem;
+  margin: 1.25rem 0 1.5rem;
   width: 100%;
 }
 
@@ -513,31 +617,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: calc(20% - 1rem);
-  max-width: 135px;
-  min-height: 145px;
+  justify-content: flex-start;
+  width: calc(33.333% - 0.75rem);
+  max-width: 154px;
+  min-height: 172px;
   background-color: var(--ifm-card-background-color);
   border: 2px solid var(--nothing-border);
-  border-radius: 20px;
-  padding: 1.25rem 0.5rem;
+  border-radius: 18px;
+  padding: 1.1rem 0.55rem;
+  color: inherit;
   text-decoration: none !important;
   transition: border-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .coreCard:hover {
-  border-color: var(--nothing-red, #D71921) !important;
+  border-color: var(--nothing-red, #D71920) !important;
   transform: translateY(-3px) scale(1.025);
 }
 
 .coreAvatarContainer {
-  width: 62px;
-  height: 62px;
-  border-radius: 16px;
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
   overflow: hidden;
   background-color: rgba(128, 128, 128, 0.05);
   border: 1px solid var(--nothing-border);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.55rem;
   flex-shrink: 0;
   transition: transform 0.25s ease, border-color 0.25s ease;
 }
@@ -550,207 +655,331 @@
 }
 
 .coreCard:hover .coreAvatarContainer {
-  border-color: var(--nothing-red, #D71921);
+  border-color: var(--nothing-red, #D71920);
   transform: scale(1.06);
 }
 
-.coreName {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--ifm-color-content);
-  text-align: center;
-  width: 100%;
-  white-space: normal;
-  overflow-wrap: anywhere;
-  transition: color 0.2s ease;
-}
-
-.usernameSuffix {
-  display: block;
-  font-size: 0.7rem;
-  font-weight: 500;
-  opacity: 0.7;
-  margin-top: 0.15rem;
-}
-
-.coreCard:hover .coreName {
-  color: var(--nothing-red, #D71921) !important;
-}
-
-.coreRole {
-  font-size: 0.55rem;
-  font-weight: 700;
-  color: var(--ifm-color-content-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-top: 0.35rem;
-}
-
-
-
-/* Branding credit section */
-.brandingSection {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0.75rem 0 1.5rem;
-  width: 100%;
-}
-
-.brandingLabel {
-  font-size: 0.55rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--ifm-color-content-muted);
-  margin-bottom: 0.6rem;
-}
-
-.brandingCard {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.4rem 1rem;
-  background-color: rgba(128, 128, 128, 0.05);
-  border: 2px solid var(--nothing-border);
-  border-radius: 99px;
-  text-decoration: none !important;
-  color: inherit;
-  transition: border-color 0.25s ease, transform 0.25s ease;
-}
-
-.brandingCard:hover {
-  border-color: var(--ifm-color-primary) !important;
-  transform: translateY(-2px);
-}
-
-.brandingAvatar {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.brandingName {
-  font-size: 0.75rem;
-  font-weight: 700;
-}
-
-
-
-/* Contributor card grid */
-.contributorGrid {
+/* Key Contributors grid & cards - Tier 3 */
+.keyGrid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-  margin: 1.5rem 0 0;
+  gap: 0.85rem;
+  margin: 1.25rem 0 1.5rem;
   width: 100%;
 }
 
-.contributorCard {
+.keyCard {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: calc(16.666% - 0.85rem);
-  max-width: 118px;
-  min-height: 130px;
+  justify-content: flex-start;
+  width: calc(25% - 0.65rem);
+  max-width: 142px;
+  min-height: 162px;
   background-color: var(--ifm-card-background-color);
   border: 2px solid var(--nothing-border);
   border-radius: 16px;
-  padding: 1rem 0.4rem;
+  padding: 1rem 0.45rem;
+  color: inherit;
   text-decoration: none !important;
-  transition: border-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  transition: border-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.contributorAvatarContainer {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
+.keyCard:hover {
+  border-color: var(--nothing-red, #D71920) !important;
+  transform: translateY(-3px) scale(1.025);
+}
+
+.keyAvatarContainer {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   overflow: hidden;
   background-color: rgba(128, 128, 128, 0.05);
   border: 1px solid var(--nothing-border);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.50rem;
   flex-shrink: 0;
   transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
-.contributorAvatar {
+.keyAvatar {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.contributorName {
-  font-size: 0.78rem;
-  font-weight: 600;
+.keyCard:hover .keyAvatarContainer {
+  border-color: var(--nothing-red, #D71920);
+  transform: scale(1.06);
+}
+
+/* Card Content & Typographic Distinction (Title, Handle, Role Badge) */
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.leadHeader {
+  height: 48px;
+  min-height: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.coreHeader {
+  min-height: 40px;
+}
+
+.keyHeader {
+  min-height: 38px;
+}
+
+.cardTitle {
+  font-family: 'Geist', var(--ifm-font-family-base);
+  font-weight: 700;
   color: var(--ifm-color-content);
   text-align: center;
   width: 100%;
   white-space: normal;
   overflow-wrap: anywhere;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
   transition: color 0.2s ease;
 }
 
-.contributorCard:hover {
-  border-color: var(--ifm-color-primary) !important;
-  transform: translateY(-4px) scale(1.04);
+.leadTitle {
+  font-size: 0.98rem;
+  font-weight: 700;
 }
 
-.contributorCard:hover .contributorAvatarContainer {
-  transform: scale(1.04);
+.coreTitle {
+  font-size: 0.86rem;
+  font-weight: 700;
 }
 
-.contributorCard:hover .contributorName {
-  color: var(--ifm-color-primary) !important;
+.keyTitle {
+  font-size: 0.80rem;
+  font-weight: 700;
+}
+
+.cardHandle {
+  font-family: 'Geist Mono', var(--ifm-font-family-monospace);
+  font-weight: 400;
+  color: var(--ifm-color-content-muted);
+  opacity: 0.75;
+  margin-top: 3px;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.leadHandle {
+  font-size: 0.58rem;
+  letter-spacing: -0.02em;
+}
+
+.coreHandle {
+  font-size: 0.58rem;
+}
+
+.keyHandle {
+  font-size: 0.54rem;
+}
+
+.cardRoleBadge {
+  font-family: 'Geist', var(--ifm-font-family-base);
+  font-weight: 500;
+  text-transform: none;
+  color: var(--ifm-color-content-secondary, rgba(255, 255, 255, 0.70));
+  text-align: center;
+  line-height: 1.35;
+  margin-top: 0.45rem;
+  padding-top: 0.40rem;
+  border-top: 1px solid rgba(128, 128, 128, 0.15);
+  width: 100%;
+  box-sizing: border-box;
+  word-break: normal;
+  overflow-wrap: break-word;
+  transition: color 0.2s ease, border-top-color 0.2s ease;
+}
+
+[data-theme='light'] .cardRoleBadge {
+  color: rgba(0, 0, 0, 0.68);
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+.leadRoleBadge {
+  font-size: 0.74rem;
+  letter-spacing: -0.01em;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.coreRoleBadge {
+  font-size: 0.70rem;
+  letter-spacing: -0.01em;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.keyRoleBadge {
+  font-size: 0.66rem;
+  letter-spacing: -0.01em;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+/* Card hover states */
+.leadCard:hover .cardTitle,
+.coreCard:hover .cardTitle,
+.keyCard:hover .cardTitle {
+  color: var(--nothing-red, #D71920) !important;
+}
+
+.leadCard:hover .cardRoleBadge,
+.coreCard:hover .cardRoleBadge,
+.keyCard:hover .cardRoleBadge {
+  color: var(--ifm-color-content);
+  border-top-color: rgba(215, 25, 32, 0.35);
+}
+
+/* Community Contributors - Tier 4 (Mini Avatar Cloud) */
+.communityBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 1.5rem 0 1rem;
+}
+
+.avatarCloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.65rem;
+  max-width: 680px;
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+
+.avatarBubble {
+  position: relative;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), z-index 0.2s ease;
+}
+
+.avatarBubble:hover {
+  transform: scale(1.15);
+  z-index: 10;
+}
+
+.avatarBubbleImg {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid rgba(128, 128, 128, 0.28);
+  background-color: rgba(128, 128, 128, 0.08);
+  object-fit: cover;
+  display: block;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+[data-theme='light'] .avatarBubbleImg {
+  border-color: rgba(0, 0, 0, 0.22);
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+[data-theme='dark'] .avatarBubbleImg {
+  border-color: rgba(255, 255, 255, 0.22);
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.avatarBubble:hover .avatarBubbleImg {
+  border-color: var(--nothing-red, #D71920) !important;
 }
 
 @media screen and (max-width: 996px) {
+  .leadCard {
+    max-width: 155px;
+  }
   .coreCard {
-    width: calc(33.333% - 0.85rem);
+    width: calc(50% - 0.6rem);
     max-width: 140px;
   }
-  .contributorCard {
-    width: calc(25% - 0.75rem);
-    max-width: 120px;
-    padding: 0.75rem 0.35rem;
-  }
-  .contributorAvatarContainer {
-    width: 48px;
-    height: 48px;
-  }
-  .contributorName {
-    font-size: 0.72rem;
+  .keyCard {
+    width: calc(50% - 0.6rem);
+    max-width: 130px;
   }
 }
 
 @media screen and (max-width: 576px) {
   .coreGrid,
-  .contributorGrid {
+  .keyGrid {
     gap: 0.5rem;
   }
-  .coreCard {
-    width: calc(33.333% - 0.35rem);
-    padding: 0.85rem 0.35rem;
+  .leadCard {
+    max-width: 138px;
+    padding: 1rem 0.45rem;
   }
-  .contributorCard {
-    width: calc(25% - 0.38rem);
-    padding: 0.65rem 0.2rem;
-  }
-  .coreAvatarContainer {
+  .leadAvatarContainer {
     width: 52px;
     height: 52px;
   }
-  .contributorAvatarContainer {
+  .coreCard {
+    width: calc(50% - 0.35rem);
+    max-width: 128px;
+    padding: 0.85rem 0.35rem;
+  }
+  .coreAvatarContainer {
     width: 44px;
     height: 44px;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.45rem;
   }
-  .contributorName {
-    font-size: 0.68rem;
+  .keyCard {
+    width: calc(50% - 0.35rem);
+    max-width: 120px;
+    padding: 0.75rem 0.25rem;
+  }
+  .keyAvatarContainer {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.40rem;
+  }
+  .avatarBubbleImg {
+    width: 36px;
+    height: 36px;
   }
 }
 
@@ -892,10 +1121,9 @@
   z-index: 1;
 }
 
-.telemetryContainer {
-  margin-top: 0.5rem;
-  margin-bottom: 2rem;
-  padding-bottom: 0;
+/* --- Activity Section --- */
+.activitySection {
+  padding: 1.75rem 0;
 }
 
 .telemetrySection {
@@ -1030,6 +1258,7 @@
 
   .features,
   .milestonesSection,
+  .activitySection,
   .communitySection,
   .socials {
     padding: 1.25rem 0;

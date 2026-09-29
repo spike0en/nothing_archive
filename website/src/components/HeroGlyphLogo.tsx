@@ -1,18 +1,12 @@
 /**
- * @file HeroGlyphLogo.tsx
- * @description Renders the interactive brand logo in the hero section. 
- * Supports both standard static logo rendering and interactive arcade games (Snake and Pong)
- * mapped to a custom LED matrix grid visualization.
- * 
- * Boundaries: Confined to the hero section UI layout. Integrates with launcher theme configs.
- * Lifecycles: Mounts and attaches global keyboard event listeners for game control when active.
+ * Interactive brand logo rendering in the hero section.
+ * Supports static logo display and LED-matrix arcade games (Snake and Pong).
  */
 
 import React, { useEffect, useState, useRef } from 'react';
 import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './HeroGlyphLogo.module.css';
-
 
 type Mode = 'LOGO' | 'PLAY';
 type GameMode = 'SNAKE' | 'PONG';
@@ -24,9 +18,21 @@ interface Point {
 }
 
 /**
- * HeroGlyphLogo component.
- * Manages game state (Snake grid, Pong velocities/paddles, collision rules), and keyboard interactions.
+ * Synchronizes React state with a persistent ref for interval game tick loops.
  */
+function useRefState<T>(initialValue: T): [T, (val: T | ((prev: T) => T)) => void, React.MutableRefObject<T>] {
+  const [state, setState] = useState<T>(initialValue);
+  const ref = useRef<T>(initialValue);
+  const setVal = (val: T | ((prev: T) => T)) => {
+    setState((prev) => {
+      const newVal = val instanceof Function ? val(prev) : val;
+      ref.current = newVal;
+      return newVal;
+    });
+  };
+  return [state, setVal, ref];
+}
+
 export default function HeroGlyphLogo(): React.JSX.Element {
   const logoDark256Url = useBaseUrl('/img/brand/logo-dark-hero-256.webp');
   const logoDark384Url = useBaseUrl('/img/brand/logo-dark-hero-384.webp');
@@ -35,82 +41,20 @@ export default function HeroGlyphLogo(): React.JSX.Element {
   const [mode, setMode] = useState<Mode>('LOGO');
   const [activeGame, setActiveGame] = useState<GameMode>('SNAKE');
 
-  const [snake, setSnakeState] = useState<Point[]>([
+  const [snake, setSnake, snakeRef] = useRefState<Point[]>([
     { r: 7, c: 4 },
     { r: 7, c: 3 }
   ]);
-  const snakeRef = useRef<Point[]>([
-    { r: 7, c: 4 },
-    { r: 7, c: 3 }
-  ]);
-  const setSnake = (val: Point[] | ((prev: Point[]) => Point[])) => {
-    setSnakeState(prev => {
-      const newVal = val instanceof Function ? val(prev) : val;
-      snakeRef.current = newVal;
-      return newVal;
-    });
-  };
-
-  const [food, setFoodState] = useState<Point>({ r: 5, c: 10 });
-  const foodRef = useRef<Point>({ r: 5, c: 10 });
-  const setFood = (val: Point) => {
-    setFoodState(val);
-    foodRef.current = val;
-  };
-
-  const [score, setScoreState] = useState<number>(0);
-  const scoreRef = useRef<number>(0);
-  const setScore = (val: number | ((prev: number) => number)) => {
-    setScoreState(prev => {
-      const newVal = val instanceof Function ? val(prev) : val;
-      scoreRef.current = newVal;
-      return newVal;
-    });
-  };
-
+  const [food, setFood, foodRef] = useRefState<Point>({ r: 5, c: 10 });
+  const [score, setScore, scoreRef] = useRefState<number>(0);
   const [isGameOver, setIsGameOver] = useState<boolean>(false);
   const [gameStarted, setGameStarted] = useState<boolean>(false);
   const directionRef = useRef<Direction>('RIGHT');
 
-  const [paddleCol, setPaddleColState] = useState<number>(7);
-  const paddleColRef = useRef<number>(7);
-  const setPaddleCol = (val: number | ((prev: number) => number)) => {
-    setPaddleColState(prev => {
-      const newVal = val instanceof Function ? val(prev) : val;
-      paddleColRef.current = newVal;
-      return newVal;
-    });
-  };
-
-  const [ball, setBallState] = useState<Point>({ r: 4, c: 7 });
-  const ballRef = useRef<Point>({ r: 4, c: 7 });
-  const setBall = (val: Point | ((prev: Point) => Point)) => {
-    setBallState(prev => {
-      const newVal = val instanceof Function ? val(prev) : val;
-      ballRef.current = newVal;
-      return newVal;
-    });
-  };
-
-  const [_ballVel, setBallVelState] = useState<Point>({ r: 1, c: 1 });
-  const ballVelRef = useRef<Point>({ r: 1, c: 1 });
-  const setBallVel = (val: Point | ((prev: Point) => Point)) => {
-    setBallVelState(prev => {
-      const newVal = val instanceof Function ? val(prev) : val;
-      ballVelRef.current = newVal;
-      return newVal;
-    });
-  };
-
-  const [pongScore, setPongScoreState] = useState<number>(0);
-  const pongScoreRef = useRef<number>(0);
-  const setPongScore = (val: number | ((prev: number) => number)) => {
-    setPongScoreState(prev => {
-      const newVal = val instanceof Function ? val(prev) : val;
-      pongScoreRef.current = newVal;
-      return newVal;
-    });
-  };
+  const [paddleCol, setPaddleCol, paddleColRef] = useRefState<number>(7);
+  const [ball, setBall, ballRef] = useRefState<Point>({ r: 4, c: 7 });
+  const [_ballVel, setBallVel, ballVelRef] = useRefState<Point>({ r: 1, c: 1 });
+  const [pongScore, setPongScore, pongScoreRef] = useRefState<number>(0);
 
   const lastPaddleMoveTimeRef = useRef<number>(0);
   const paddleMoveDirRef = useRef<number | null>(null);
