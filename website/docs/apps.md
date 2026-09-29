@@ -82,6 +82,7 @@ See [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) for of
 | [Hamon](https://github.com/yuk1-kondo/GlyphToys-hamon) | yuk1-kondo | Physical wave propagation |
 | [ISS Glyph Tracker](https://github.com/TheophileJacquot/ISS-Glyph-Tracker) | TheophileJacquot | Track the ISS in real time with the Glyph Matrix on Nothing Phone (4a) Pro |
 | [Live Bridge](https://github.com/appsfolder/livebridge) | appsfolder | Convert unsupported progress notifications into Live Notifications to make them compatible with Nothing's Glyph progress indicators |
+| [Orbit Dial](https://github.com/samkex/orbit-dial) | samkex | Minimalist Glyph Matrix clock toy with an orbiting minute mark for Nothing Phone (3) and (4a) Pro |
 | [Screenie](https://github.com/pauwma/Screenie) | pauwma | Face reflecting the daily screen on time |
 | [Timepiece](https://play.google.com/store/apps/details?id=com.arunk140.timepiece) | Arun Khanchandani | Always-On clock utility |
 
@@ -298,6 +299,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Nothing Dashcam](https://github.com/amitskamboj/nothing-dashcam) | amitskamboj | Dashcam app for Nothing Phone (2) with support for loop recording, impact detection, call pause/resume, GPS overlay and MediaStore output |
 | [Nothing Quick Tools](https://github.com/DylanAkp/NothingQuickTools) | DylanAkp | Quick tiles for Phone (2) |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Recording light control for Phone (3) |
+| [Root My Nothing](https://github.com/ang3lo-azevedo/root-my-nothing) | ang3lo-azevedo | One-click root app for Nothing Phone (1) using CVE-2026-43499 (GhostLock) to install KernelSU without unlocking the bootloader |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Device insights tool |
 | [Side Dock](https://play.google.com/store/apps/details?id=com.sidedock.app) | Quivox Engineering | Sidebar overlay built for faster multitasking, quick tools, and smoother workflows |
 
