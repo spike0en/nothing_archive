@@ -41,6 +41,7 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 | [Ear (a)](https://nothing.tech/products/ear-a) <br /> <small>Cleffa</small> | B162 / B183 | 18 April 2024 | [Here](https://nothing.wiki/hardware/ear_series#ear_a) |
 | [Ear (open)](https://nothing.tech/products/ear-open) <br /> <small>Flaaffy</small> | B174 / B182 | 24 September 2024 | [Here](https://nothing.wiki/hardware/ear_series#ear_open) |
 | [Headphone (1)](https://nothing.tech/products/headphone-1) <br /> <small>Elekid</small> | B170 | 01 July 2025 | [Here](https://nothing.wiki/hardware/headphone_1) |
+| [Headphone (1) Pro](https://nothing.tech/products/headphone-1-pro) <br /> <small>Lanturn</small> | B192 | September 2026 | [Here](https://nothing.wiki/hardware/headphone_1_pro) |
 | [Ear (3)](https://nothing.tech/products/ear-3) <br /> <small>Feraligatr</small> | B173 | 18 September 2025 | [Here](https://nothing.wiki/hardware/ear_series#ear_3) |
 | [Headphone (a)](https://nothing.wiki/download/headphone_a_user_guide.pdf) <br /> <small>Elekid</small> | B186 / B198 | 05 March 2026 | [Here](https://nothing.wiki/hardware/headphone_a) |
 | [Ear (3a)](https://nothing.tech/products/ear-3a?Colour=Pink) <br /> <small>Jumpluff</small> | B190 | 07 July 2026 | [Here](https://nothing.wiki/hardware/ear_series#ear_3a) |
