@@ -1,4 +1,5 @@
-name: Nothing Firmware Dumper
+name: Nothing OS Firmware Dumper
+run-name: "Dump: ${{ inputs.name || inputs.fallback_model || 'Nothing OS Firmware' }}"
 
 on:
   workflow_dispatch:
@@ -7,7 +8,7 @@ on:
         description: 'URLs (comma or space separated)'
         required: true
       name:
-        description: 'Release tag'
+        description: 'Release tag / build name'
         required: false
       fallback_model:
         description: 'Fallback device model (if auto-detection fails)'
@@ -36,7 +37,7 @@ jobs:
     runs-on: >-
       ${{
         inputs.runner_type == 'self-hosted'
-        && fromJSON('["self-hosted", "Linux"]')
+        && fromJSON('["self-hosted", "Linux", "X64"]')
         || 'ubuntu-latest'
       }}
 
@@ -85,3 +86,10 @@ jobs:
           tag: ${{ steps.dump.outputs.release_tag }}
           name: ${{ steps.dump.outputs.release_name }}
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Clean workspace
+        if: always() && inputs.runner_type == 'self-hosted'
+        run: |
+          rm -rf out boot dyn ota ota_new *.zip *.bin *.7z*
+          git clean -ffdx
+
