@@ -14,28 +14,49 @@ interface ChangelogsPluginData {
   changelogLinks: Record<string, string>;
 }
 
+function getBuildStamp(tagName: string): string {
+  const match = tagName.match(/(\d{6})-(\d{4})/);
+  return match ? match[1] + match[2] : '';
+}
+
 export default function ReleaseFeed(): React.JSX.Element {
   const { releases, totalCount: totalReleasesCount, status: statusSource, error: errorState, loading } = useGitHubReleases();
   // SAFETY: Validated by Docusaurus plugin contract
   const { changelogLinks } = usePluginData('changelogs-plugin') as ChangelogsPluginData;
-  // Deduplicate builds so each device model displays only its single latest release.
+
   const latestReleasesPerModel = React.useMemo(() => {
-    const seen = new Set<string>();
-    const result: Release[] = [];
-    
+    const modelMap = new Map<string, Release>();
+    const indexMap = new Map<Release, number>();
+    releases.forEach((r, i) => indexMap.set(r, i));
+
     for (const release of releases) {
       const code = release.codename.toLowerCase();
-      if (!seen.has(code)) {
-        seen.add(code);
-        result.push(release);
+      const existing = modelMap.get(code);
+
+      if (!existing) {
+        modelMap.set(code, release);
+        continue;
+      }
+
+      const existingStamp = getBuildStamp(existing.tagName);
+      const candidateStamp = getBuildStamp(release.tagName);
+
+      if (candidateStamp > existingStamp) {
+        modelMap.set(code, release);
       }
     }
-    return result;
+
+    return Array.from(modelMap.values()).sort((a, b) => {
+      const stampA = getBuildStamp(a.tagName);
+      const stampB = getBuildStamp(b.tagName);
+      if (stampA !== stampB) {
+        return stampB.localeCompare(stampA);
+      }
+      return (indexMap.get(a) ?? 0) - (indexMap.get(b) ?? 0);
+    });
   }, [releases]);
 
-
-
-  const latestRelease = releases[0] || {
+  const latestRelease = latestReleasesPerModel[0] || {
     tagName: '------',
     codename: 'N/A',
     version: 'N/A',
