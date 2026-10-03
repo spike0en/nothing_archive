@@ -14,7 +14,9 @@
     "nothing-flasher",
     "glyph-tones",
     "better-nothing-glyph-composer-bngc",
-    "voidcaller"
+    "voidcaller",
+    "404",
+    "openqore"
   ],
   "platformOverrides": {
     "nothing-archive": ["web"],
