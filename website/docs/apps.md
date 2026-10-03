@@ -165,6 +165,7 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | App | Developer | Description |
 |-----|-----------|-------------|
 | [Blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | Tech detox phone blocking app with Glyph integration |
+| [Glyph Clock](https://github.com/whoisfazenda/glyphclock) | whoisfazenda | Alarm clock, world clock, timers and stopwatch that plays Glyph Composer light recordings on Nothing Phone (3a) and (3a) Pro |
 | [Glyph Compass](https://play.google.com/store/apps/details?id=com.JayKayCooperations.glyph_compass) | JayKayCooperations | Use your Glyph interface as a compass |
 | [Glyph Initiator](https://github.com/lowqualitysoarin/Glyph-Initiator/releases) | lowqualitysoarin | Control glyph interface via intents |
 | [Glyph Manager](https://github.com/SthrNilshaaa/package_apps_nglyph) | SthrNilshaaa | Nothing Phone (1) Glyph Manager |
