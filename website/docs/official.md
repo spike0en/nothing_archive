@@ -12,8 +12,6 @@ Official apps, resources, and developer tools from Nothing Technology Limited.
 
 Unified index of official and developer resources for Nothing and CMF phones, including wallpapers, system dumps, kernel sources, 3D models, and user guides.
 
-<a id="nothing-phones"></a>
-
 ### Nothing Phones
 
 | Device | Wallpapers | System Dump | Kernel Source | 3D Model | User Manual | Sustainability Report | EU Product Label |
@@ -30,9 +28,7 @@ Unified index of official and developer resources for Nothing and CMF phones, in
 | **Phone (4a) Pro** | [Download](https://archive.org/download/nothing-archive/spike0en/walls/frogger%28pro%29/) | [Dumps](https://dumps.tadiphone.dev/dumps/nothing/froggerpro/) | [Repository](https://github.com/NothingOSS/android_kernel_msm-6.6_nothing_sm7750) | [Silver](https://cdn.sanity.io/files/gtd4w1cq/production/0ab0aab2653e4f45cd9435145a3f936834e67cd2.glb) <br /> [Black](https://cdn.sanity.io/files/gtd4w1cq/production/9b93f1ad6cd3ed81cdb51ea89974473f54b62afa.glb) <br /> [Pink](https://cdn.sanity.io/files/gtd4w1cq/production/5000880af271c65200de52b3b00e1fc5eadb2e61.glb) | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Phone_4a_Pro_User_Guide_Global_en_7d9167f4-802c-473f-88a0-f0b28b63b0d4.pdf?v=1773115876) | N/A | [Label](https://cdn.sanity.io/images/gtd4w1cq/production/8b9d16c5b4139a3f49d8e7b61f4f38de94d978fc-1134x2268.png?auto=format) |
 | **Phone (4b)** | [Download](https://archive.org/download/nothing-archive/spike0en/walls/supercontra/) | [Dumps](https://dumps.tadiphone.dev/dumps/nothing/supercontra/) | N/A | [White](https://cdn.sanity.io/files/gtd4w1cq/production/f76e9b641b0cd4e0a939142e571657c9a0fcaed9.glb) <br /> [Blue](https://cdn.sanity.io/files/gtd4w1cq/production/de57916b7499d7a3a53f971e76481ac8121cedfe.glb) <br /> [Black](https://cdn.sanity.io/files/gtd4w1cq/production/aa8d49d8c685e3fe507c28c58ca6cacb7acf7c29.glb) | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Phone_4b_User_Guide_Global_en.pdf?v=1782977789) | N/A | [Label](https://cdn.sanity.io/images/gtd4w1cq/production/e120a2804a26f55ca1abe6f7f38ffdd0257bdd21-1134x2268.png?auto=format) |
 
-<a id="cmf-phones"></a>
-
-### CMF Phones
+### CMF by Nothing Phones
 
 | Device | Wallpapers | System Dump | Kernel Source | 3D Model | User Manual | EU Product Label |
 |--------|------------|-------------|---------------|----------|-------------|-------------|
@@ -82,10 +78,12 @@ APK mirrors for manual installation are available at [APKMirror](https://www.apk
 
 Official user manuals, guides, and 3D assets for audio, smartwatches, and ecosystem accessories.
 
-### Audio
+### Nothing Audio
 
 | Device | User Manual |
 |--------|-------------|
+| **Ear (1)** | [PDF](https://cdn.shopify.com/s/files/1/0584/0932/0622/files/ear_1_quick_start_web_20210715.pdf?v=1626857872) |
+| **Ear (stick)** | [PDF](https://archive.org/download/nothing-ear-stick/ear-stick-english.pdf) |
 | **Ear (2)** | [PDF](https://cdn.shopifycdn.net/s/files/1/0583/2871/1328/files/Product-Guide-EN.pdf?v=1679563481) |
 | **Ear** | [PDF](https://cdn.shopify.com/s/files/1/0586/3270/0077/files/ear_EN.pdf?v=1714993847) |
 | **Ear (a)** | [PDF](https://cdn.shopify.com/s/files/1/0586/3270/0077/files/ear_a_EN.pdf?v=1714993262) |
@@ -93,8 +91,25 @@ Official user manuals, guides, and 3D assets for audio, smartwatches, and ecosys
 | **Headphone (1)** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Nothing_Headphone_1_Quick_Start_Guide.pdf?v=1757401105) |
 | **Ear (3)** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Nothing_Ear_3_Quick_Start_Guide_Safety_Warranty_Information.pdf?v=1758509694) |
 | **Headphone (a)** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Headphone_a_Quick_Start_Guide_Safety_Warranty_Information.pdf?v=1772185946) |
+| **Ear (3a)** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Ear_3a_Safety_information_Warranty_information.pdf?v=1782815085) |
+| **Headphone (1) Pro** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Nothing_Headphone_1_Pro_Quick_Start_Guide.pdf?v=1788952876) |
 
-### Watches
+### CMF by Nothing Audio
+
+| Device | User Manual |
+|--------|-------------|
+| **Buds Pro** | [PDF](https://cdn.shopify.com/s/files/1/0802/1200/1068/files/CMF_Buds_Pro_User_Manual_English_French_German_Arabic_Indian_Hindi_Japanese.pdf?v=1696609341) |
+| **Buds** | [PDF](https://cdn.shopify.com/s/files/1/0797/8739/3316/files/CMF_Buds_User_Manual_English_French_German_Indian_Hindi_Japanese_Arabic.pdf?v=1710141073) |
+| **Neckband Pro** | [PDF](https://cdn.shopify.com/s/files/1/0797/8739/3316/files/CMF_Neckband_Pro_User_Manual_English_Indian_Hindi.pdf?v=1710141063) |
+| **Buds Pro 2** | [PDF](https://cdn.shopify.com/s/files/1/0585/5258/2321/files/Buds_Pro_2_User_Guide.pdf?v=1745467911) |
+| **Buds 2** | [PDF](https://cdn.shopify.com/s/files/1/0583/0072/7462/files/CMF_Buds_2_User_Guide_English_Spanish_French_Japanese_Arabic_Hindi_Korean_Traditional_Chinese_Simplified_Chinese.pdf?v=1749622490) |
+| **Buds 2 Plus** | [PDF](https://cdn.shopify.com/s/files/1/0583/0072/7462/files/CMF_Buds_2_Plus_User_Guide_English_German_Spanish_French_Arabic_Hindi_Korean_Traditional_Chinese_Simplified_Chinese_616d4ea9-7320-4865-afd7-d3000ccd3680.pdf?v=1749623817) |
+| **Buds 2a** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/CMF_Buds_2a_Product_Guide_German_Spanish_French_Japanese_Arabic_Hindi_Korean_Traditional_Chinese_Simplified_Chinese.pdf?v=1757403907) |
+| **Headphone Pro** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/CMF_Headphone_Pro_Quick_Start_Guide_Safety_Warranty_Information.pdf?v=1759027353) |
+| **Clip Pro** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Clip_Pro_Safety_information_Warranty_information.pdf?v=1785229150) |
+| **Buds Neo** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/CMF_Buds_Neo_User_Manual.pdf?v=1787561348) |
+
+### CMF by Nothing Watches
 
 | Device | User Manual | 3D Model |
 |--------|-------------|----------|
@@ -157,7 +172,7 @@ Availability of self-repair guides, spare parts, and service options on the B2X 
 | Resource | Description | Link |
 |----------|-------------|------|
 | **B2X Service Portal** | Main after-sales portal for Nothing and CMF repair services. | [Portal](https://nothing.one-connect.b2x.com/) |
-| **Repair Guides** | Official PDF repair manuals, disassembly guides, and documentation per model. | [Documentation](https://nothing.one-connect.b2x.com/documentation) |
+| **Repair Guides** | Official PDF repair manuals, disassembly guides, and documentation per model. | [Docs](https://nothing.one-connect.b2x.com/documentation) |
 | **Spare Parts Shop** | Webshop to purchase original replacement components. | [Shop](https://nothing.one-connect.b2x.com/shop) |
 | **Track & Trace** | Order status tracking for parts purchases and repair orders. | [Track](https://nothing.one-connect.b2x.com/track) |
 | **Service FAQs** | Frequently asked questions on spare parts ordering, returns, shipping costs, payment methods, and order tracking. | [FAQ](https://nothing.one-connect.b2x.com/faq) |

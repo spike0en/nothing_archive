@@ -76,7 +76,7 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 ## CMF by Nothing
 
 :::info[Official Resources]
-Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or official user manuals for CMF devices? You can find them in the [Official CMF Resources](/docs/official#cmf-phones) section.
+Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or official user manuals for CMF devices? You can find them in the [Official CMF Resources](/docs/official#cmf-by-nothing-phones) section.
 :::
 
 ### Phones
