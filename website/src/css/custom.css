@@ -2615,6 +2615,7 @@ details summary:hover::before {
   position: relative;
   vertical-align: middle;
   transition: transform 0.2s ease;
+  margin-right: 22px;
 }
 
 /* Constant padding avoids column width shifts when the copy control mounts. */
