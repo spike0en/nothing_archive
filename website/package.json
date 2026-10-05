@@ -16,6 +16,7 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "test:performance": "node scripts/performance-smoke-test.js",
+    "test:seo": "node scripts/seo-smoke-test.js",
     "write-heading-ids": "docusaurus write-heading-ids",
     "pretypecheck": "node scripts/fetch-github-data.js",
     "typecheck": "tsc"

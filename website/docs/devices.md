@@ -1,7 +1,8 @@
 ---
 sidebar_position: 2
-title: Devices
-description: Codenames, model numbers, release dates, factory firmware, and software support periods for Nothing and CMF phones, audio, and accessories.
+sidebar_label: Devices
+title: Nothing and CMF Devices - Specs, Codenames & Updates
+description: Explore Nothing and CMF devices with model numbers, codenames, release dates, factory firmware, and software support details for phones, audio, and accessories.
 ---
 
 # Device Catalog

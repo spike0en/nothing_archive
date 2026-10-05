@@ -1,8 +1,9 @@
 ---
 sidebar_position: 1
 slug: /intro
-title: Introduction
-description: Official Nothing OS firmware, OTA packages, device specs, technical guides, changelogs, community apps, and aftermarket projects.
+sidebar_label: Introduction
+title: Nothing Archive - Nothing OS Firmware & Device Guides
+description: Browse Nothing OS firmware, OTA updates, device specs, changelogs, technical guides, apps, and community projects in the Nothing Archive.
 ---
 
 # Nothing Archive

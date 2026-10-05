@@ -1,8 +1,9 @@
 ---
 sidebar_position: 4
-title: Guides
+sidebar_label: Guides
+title: Nothing OS Guides - OTA, Rooting, ROMs & Unbricking
 pagination_prev: changelogs/index
-description: Technical guides for OTA sideloading, dialer codes, bootloader unlocking, rooting, partition backups, custom ROMs, and unbricking.
+description: Step-by-step Nothing OS guides for OTA sideloading, dialer codes, bootloader unlocking, rooting, custom ROMs, partition backups, flashing, and unbricking.
 ---
 
 # How-to Guides
