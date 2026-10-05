@@ -1,0 +1,31 @@
+{
+  "featuredSlugs": [
+    "glyphify",
+    "dot-hub",
+    "glyph-museum",
+    "nothing-wiki",
+    "ear-web",
+    "fmc",
+    "nothing-archive",
+    "custom-nothing-glyph-tools",
+    "glyph-toybox",
+    "glyph-barty",
+    "better-nothing-music-visualizer-bnmv",
+    "nothing-flasher",
+    "glyph-tones",
+    "better-nothing-glyph-composer-bngc",
+    "voidcaller",
+    "404",
+    "openqore"
+  ],
+  "platformOverrides": {
+    "nothing-archive": ["web"],
+    "nothing-flasher": ["windows", "linux", "macos"]
+  },
+  "categoryOverrides": {
+    "glyph-studio": ["glyph-matrix-powered", "glyph-powered"]
+  },
+  "iconOverrides": {
+    "carl-pei-ama": "https://cdn.nothing.community/assets/avatars/QsrtcJ6JB15WCmXc.png"
+  }
+}

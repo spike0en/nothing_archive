@@ -14,7 +14,7 @@ The largest open-source, community-driven index and archive for the Nothing and 
   <a href="https://nothingarchive.tech/"><b>Explore Hub 🌐</b></a> &nbsp;&middot;&nbsp;
   <a href="https://nothingarchive.tech/docs/firmware"><b>Firmware Archive 📥</b></a> &nbsp;&middot;&nbsp;
   <a href="https://nothingarchive.tech/docs/guides"><b>Guides 📖</b></a> &nbsp;&middot;&nbsp;
-  <a href="https://telegram.me/s/Nothing_Archive"><b>Community 💬</b></a>
+  <a href="https://t.me/s/NothingTechCommunity"><b>Community 💬</b></a>
 </p>
 
 [![Hits](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%23b02a37&labelColor=2E2E3F&message=&style=for-the-badge)](https://github.com/spike0en/nothing_archive) &nbsp; [![Total Downloads](https://img.shields.io/github/downloads/spike0en/nothing_archive/total?style=for-the-badge&logo=github&logoColor=white)](https://github.com/spike0en/nothing_archive/releases) &nbsp; [![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0%20%2F%20MIT-007ec6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/spike0en/nothing_archive/blob/main/LICENSE)
@@ -100,6 +100,7 @@ Nothing Archive employs a multi-license structure to protect the original work o
 *   **Community projects and third-party apps** belong to their respective developers under their own licensing terms. We index these links solely to bring the developer community together in one accessible hub.
 *   **The pipeline logic and website source code** (under `/scripts` and `/website`, excluding documentation content) are licensed under the [MIT License](LICENSE-MIT).
 *   **Project branding and visual identity** assets under `website/static/img/` (including original logos, banners, and graphics) are strictly proprietary and not licensed for reuse or redistribution.
+*   **Project typography and font assets** under `website/static/fonts/` are subject to their respective open-source licenses and brand foundry attributions. See [website/static/fonts/README.md](website/static/fonts/README.md) for full licensing details.
 
 > [!IMPORTANT]
 > **Attribution Mandate**: Anyone replicating, scraping, hosting mirrors of, or adapting any custom guides or compiled database tables from this repository **MUST** provide prominent, visible credit to **Nothing Archive** and link back to this source repository:
@@ -108,12 +109,15 @@ Nothing Archive employs a multi-license structure to protect the original work o
 ## Credits & Acknowledgements
 
 Special thanks to:
+*   **[PHATWalrus](https://github.com/PHATWalrus)** for project operations, domain maintenance, and web infrastructure.
 *   **[luk1337](https://github.com/luk1337/oplus_archive)** for the AOSP OTA extraction tool.
 *   **[arter97](https://github.com/arter97/nothing_archive)** for adapting the archive for Phone (2).
-*   **[Shiki](https://github.com/guptavishalxm1)** for crafting the initial website for the repo and providing a self-hosted runner instance.
-*   **[Earendel Labs](https://github.com/Earendel-lab)** and **[Burak Dede](https://github.com/burakdede0)** for their suggestions, feedback, and QA testing that helped identify bugs and drive several improvements to the webpage over time.
+*   **[Shiki](https://github.com/guptavishalxm1)** for building the initial website.
+*   **[Earendel Labs](https://github.com/Earendel-lab)** and **[Burak Dede](https://github.com/burakdede0)** for suggestions, feedback, and QA testing that helped identify bugs and improve the website over time.
+*   **[AdaaamB](https://github.com/AdaaamB)** for community wiki and documentation contributions.
 *   **[XelXen](https://github.com/XelXen)** for helping with initial [project branding and design](https://github.com/spike0en/nothing_archive/tree/main/website/static/img).
 *   **[LukeSkyD](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/)** for early build references.
+*   **[Miki](https://github.com/RealYasin)** for backend help with necessary resources.
 *   All project contributors listed in the [Contributors Chart](https://github.com/spike0en/nothing_archive/graphs/contributors).
 
 ## Support the Project
@@ -131,9 +135,9 @@ Thank you for your support!
 <div align="center">
   <a href="https://www.star-history.com/?repos=spike0en%2Fnothing_archive&type=date&legend=top-left">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=spike0en/nothing_archive&type=date&theme=dark&legend=top-left&sealed_token=bf9fX18UNYOCcb9nUIV6JpuBewyDqIOSoMGafpatPjjhDGvaBvxq71ZG5L89NAZw4sktBe4IIy6UEMfjJ1qT3KIc0spgiJXvjZAhYRrmagsePEMVzj3IF2v8wLNib5R0W-OeVPKtZuJSNYCbN6E2OOx3hCbBGzviQ3PW8A3iv2dRU-US6GTzSkhMTQbY" />
-      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=spike0en/nothing_archive&type=date&legend=top-left&sealed_token=bf9fX18UNYOCcb9nUIV6JpuBewyDqIOSoMGafpatPjjhDGvaBvxq71ZG5L89NAZw4sktBe4IIy6UEMfjJ1qT3KIc0spgiJXvjZAhYRrmagsePEMVzj3IF2v8wLNib5R0W-OeVPKtZuJSNYCbN6E2OOx3hCbBGzviQ3PW8A3iv2dRU-US6GTzSkhMTQbY" />
-      <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=spike0en/nothing_archive&type=date&legend=top-left&sealed_token=bf9fX18UNYOCcb9nUIV6JpuBewyDqIOSoMGafpatPjjhDGvaBvxq71ZG5L89NAZw4sktBe4IIy6UEMfjJ1qT3KIc0spgiJXvjZAhYRrmagsePEMVzj3IF2v8wLNib5R0W-OeVPKtZuJSNYCbN6E2OOx3hCbBGzviQ3PW8A3iv2dRU-US6GTzSkhMTQbY" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=spike0en/nothing_archive&type=date&theme=dark&legend=top-left&sealed_token=NcVgyxYK8-jUI033z9tzG6AFGZLdqldpomXFSofgrxrvb8PMZqfNREtTpK163Xt2AJSrHQUZtWvr3vdO4xyoCsN6wGFoANqWn3VwYKnzzwlb8eVxnhAc3MkoYCLQ2UqFclIGFG3BBambKWD_jzqGR8DjyPy3o9PNc9xSOn5wLsPx7g3hviz8DG3Ut7G6" />
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=spike0en/nothing_archive&type=date&legend=top-left&sealed_token=NcVgyxYK8-jUI033z9tzG6AFGZLdqldpomXFSofgrxrvb8PMZqfNREtTpK163Xt2AJSrHQUZtWvr3vdO4xyoCsN6wGFoANqWn3VwYKnzzwlb8eVxnhAc3MkoYCLQ2UqFclIGFG3BBambKWD_jzqGR8DjyPy3o9PNc9xSOn5wLsPx7g3hviz8DG3Ut7G6" />
+      <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=spike0en/nothing_archive&type=date&legend=top-left&sealed_token=NcVgyxYK8-jUI033z9tzG6AFGZLdqldpomXFSofgrxrvb8PMZqfNREtTpK163Xt2AJSrHQUZtWvr3vdO4xyoCsN6wGFoANqWn3VwYKnzzwlb8eVxnhAc3MkoYCLQ2UqFclIGFG3BBambKWD_jzqGR8DjyPy3o9PNc9xSOn5wLsPx7g3hviz8DG3Ut7G6" />
     </picture>
   </a>
 </div>

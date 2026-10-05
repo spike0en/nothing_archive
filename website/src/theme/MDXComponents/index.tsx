@@ -6,7 +6,7 @@
  * Boundary: Controls rendering wrappers for headings, tables, links, images, and admonitions.
  */
 
-import React, {type ComponentProps} from 'react';
+import React, {type ComponentProps, type ReactNode} from 'react';
 import Head from '@docusaurus/Head';
 import MDXCode from '@theme/MDXComponents/Code';
 import MDXA from '@theme/MDXComponents/A';
@@ -20,6 +20,113 @@ import Admonition from '@theme/Admonition';
 import Mermaid from '@theme/Mermaid';
 
 import type {MDXComponentsObject} from '@theme/MDXComponents';
+
+/**
+ * Extracts plain text recursively from a React node tree for row metadata indexing.
+ */
+function getNodeText(node: ReactNode): string {
+  if (node === null || node === undefined || node === true || node === false) {
+    return '';
+  }
+  if (Array.isArray(node)) {
+    return node.map(getNodeText).join('');
+  }
+  if (React.isValidElement(node)) {
+    // SAFETY: Dynamic React element props inspection
+    return getNodeText((node.props as any)?.children);
+  }
+  return String(node);
+}
+
+/**
+ * Attaches contextual metadata from sibling columns into hidden screen-reader spans within each table cell.
+ * Enables Algolia search crawlers to associate isolated values (such as codenames or package IDs) with parent row context.
+ */
+function enhanceTableChildren(children: ReactNode): ReactNode {
+  try {
+    const childrenArray = React.Children.toArray(children);
+    let headers: string[] = [];
+
+    // Extract table column headers from <thead>
+    childrenArray.forEach((child) => {
+      if (React.isValidElement(child) && child.type === 'thead') {
+        // SAFETY: Dynamic React element props inspection
+        const theadChildren = React.Children.toArray((child.props as any)?.children);
+        theadChildren.forEach((tr) => {
+          if (React.isValidElement(tr) && tr.type === 'tr') {
+            // SAFETY: Dynamic React element props inspection
+            const thList = React.Children.toArray((tr.props as any)?.children);
+            headers = thList.map((th) => getNodeText(th).trim());
+          }
+        });
+      }
+    });
+
+    if (headers.length === 0) {
+      return children;
+    }
+
+    // Process <tbody> rows to attach cross-column context
+    return childrenArray.map((child) => {
+      if (!React.isValidElement(child) || child.type !== 'tbody') {
+        return child;
+      }
+
+      // SAFETY: Dynamic React element props inspection
+      const rows = React.Children.toArray((child.props as any)?.children);
+      const enhancedRows = rows.map((tr) => {
+        if (!React.isValidElement(tr) || tr.type !== 'tr') {
+          return tr;
+        }
+
+        // SAFETY: Dynamic React element props inspection
+        const cells = React.Children.toArray((tr.props as any)?.children);
+        if (cells.length === 0) {
+          return tr;
+        }
+
+        // Extract cleaned text representation of each cell in the row
+        const cellTexts = cells.map((cell) => getNodeText(cell).trim().replace(/\s+/g, ' '));
+
+        const enhancedCells = cells.map((cell, index) => {
+          if (!React.isValidElement(cell) || (cell.type !== 'td' && cell.type !== 'th')) {
+            return cell;
+          }
+
+          // Build context string from all sibling cells in the same row
+          const otherContextParts: string[] = [];
+          cellTexts.forEach((text, i) => {
+            if (i !== index && text && headers[i]) {
+              const cleanHeader = headers[i].replace(/\s*\/\s*/g, '/');
+              otherContextParts.push(`${cleanHeader}: ${text}`);
+            }
+          });
+
+          if (otherContextParts.length === 0) {
+            return cell;
+          }
+
+          const contextStr = otherContextParts.join(' — ');
+          // SAFETY: Dynamic React element props inspection
+          const existingChildren = (cell.props as any)?.children;
+
+          return React.cloneElement(cell, {}, [
+            existingChildren,
+            <span key="algolia-ctx" className="algolia-search-context sr-only">
+              {` (${contextStr})`}
+            </span>,
+          ]);
+        });
+
+        return React.cloneElement(tr, {}, enhancedCells);
+      });
+
+      return React.cloneElement(child, {}, enhancedRows);
+    });
+  } catch {
+    return children;
+  }
+}
 
 const MDXComponents: MDXComponentsObject = {
   Head,
@@ -39,7 +146,7 @@ const MDXComponents: MDXComponentsObject = {
   h6: (props: ComponentProps<'h6'>) => <MDXHeading as="h6" {...props} />,
   table: (props: ComponentProps<'table'>) => (
     <div className="table-responsive-fallback">
-      <table {...props} />
+      <table {...props}>{enhanceTableChildren(props.children)}</table>
     </div>
   ),
   admonition: Admonition,

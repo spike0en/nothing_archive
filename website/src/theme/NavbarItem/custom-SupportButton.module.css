@@ -3,7 +3,7 @@
   align-items: center;
   font-weight: 600;
   color: var(--ifm-navbar-link-color, inherit) !important;
-  border: 1px solid var(--nothing-border);
+  border: 2px solid var(--nothing-border);
   border-radius: 999px;
   padding: 0.25rem 0.75rem !important;
   margin-left: 0.25rem;
@@ -12,13 +12,14 @@
   font-size: 0.8rem !important;
   height: fit-content;
   align-self: center;
+  order: 1 !important;
 }
 
 .supportBtn:hover {
   background-color: rgba(215, 25, 33, 0.05) !important;
   color: var(--ifm-color-primary) !important;
   border-color: var(--ifm-color-primary) !important;
-  box-shadow: 0 0 10px rgba(215, 25, 33, 0.15);
+  box-shadow: 0 0 10px rgba(215, 25, 33, 0.2) !important;
   text-decoration: none !important;
 }
 
@@ -48,6 +49,7 @@
   background-color: rgba(215, 25, 33, 0.05) !important;
 }
 
+/* Collapse text to render as a 32px circular icon button on tablet/mobile viewports for uniform header height */
 @media (max-width: 996px) {
   .supportBtn span {
     display: none;
@@ -60,11 +62,11 @@
   }
 
   .supportBtn {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     padding: 0 !important;
     border-radius: 50%;
     justify-content: center;
-    margin-left: 0.25rem;
+    margin: 0;
   }
 }

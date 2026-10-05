@@ -1,12 +1,6 @@
 /**
- * @file time.ts
- * @description Time formatting utility for computing human-readable relative ages.
- * 
- * Layer: Shared utilities.
- * Boundary: Pure date calculation functions.
- * 
- * @param dateStr The ISO date string or timestamp string to compare.
- * @returns A formatted relative age string (e.g., "5m", "3h", "2d", or "N/A").
+ * Formats an ISO timestamp into a compact relative age (e.g., "5m", "3h", "2d").
+ * Used across commit feeds and release badges where screen space is constrained.
  */
 export function getTimeLag(dateStr: string): string {
   if (!dateStr) return 'N/A';

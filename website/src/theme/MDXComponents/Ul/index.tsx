@@ -14,7 +14,7 @@ import styles from './styles.module.css';
 
 function transformUlClassName(className?: string): string | undefined {
   // Fix https://github.com/facebook/docusaurus/issues/9098
-  if (typeof className === 'undefined') {
+  if (className === undefined) {
     return undefined;
   }
   return clsx(

@@ -27,20 +27,21 @@
   box-shadow: none !important;
 }
 
-/* --- Telemetry Header --- */
 .telemetryHeader {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px dashed var(--nothing-border-strong);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+  justify-content: flex-start;
+  text-align: left;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0;
 }
 
 .systemLabel {
   display: flex;
   align-items: center;
-  font-family: var(--ifm-font-family-base);
+  justify-content: flex-start;
+  gap: 0.5rem;
+  font-family: var(--ifm-font-family-monospace);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -50,7 +51,7 @@
 .feedTextPrefix {
   color: inherit;
   opacity: 0.85;
-  margin-right: 6px;
+  margin-right: 0;
 }
 
 .feedStatusLive {
@@ -61,7 +62,6 @@
   color: rgba(128, 128, 128, 0.7);
 }
 
-/* --- Stats Strip --- */
 .statsStrip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -110,7 +110,6 @@
   white-space: nowrap;
 }
 
-/* --- Console/Terminal (full width) --- */
 .consolePanel {
   background-color: rgba(0, 0, 0, 0.03);
   border: 1px solid var(--nothing-border);
@@ -180,10 +179,9 @@
   background: var(--ifm-color-primary);
 }
 
-/* Each commit row — now also an anchor tag */
 .consoleLine {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-shrink: 0;
   font-size: 0.72rem;
   line-height: 1.4;
@@ -297,28 +295,30 @@
 
 .authorsWrapper {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2px 4px;
-  width: 92px;
+  flex-direction: column;
+  align-items: flex-start;
   flex-shrink: 0;
+  line-height: 1.3;
+}
+
+.authorLine {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
 }
 
 .authorTag {
   opacity: 0.45;
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
+  display: inline;
   cursor: help;
-  white-space: normal;
-  word-break: break-word;
+  white-space: nowrap;
 }
 
 .coAuthorSeparator {
   opacity: 0.35;
   font-weight: 700;
   user-select: none;
-  display: inline;
+  white-space: pre;
 }
 
 .messageText {
@@ -331,8 +331,9 @@
 }
 
 .shaTag {
+  font-family: var(--ifm-font-family-monospace);
   font-size: 0.62rem;
-  opacity: 0.3;
+  opacity: 0.35;
   flex-shrink: 0;
   letter-spacing: 0.03em;
 }
@@ -358,13 +359,12 @@
   opacity: 0.8;
 }
 
-/* --- Responsive Breakpoints --- */
-
 @media screen and (max-width: 768px) {
   .statsStrip {
     grid-template-columns: repeat(2, 1fr);
   }
-  .statsStrip > :nth-child(3) {
+
+  .statsStrip> :nth-child(3) {
     grid-column: span 2;
   }
 
@@ -373,8 +373,8 @@
   }
 
   .consoleBody {
-    height: 180px;
-    max-height: 180px;
+    height: 165px;
+    max-height: 165px;
   }
 
   .messageText {
@@ -395,10 +395,6 @@
   .consoleLine {
     font-size: 0.7rem;
   }
-
-  .authorsWrapper {
-    width: 80px;
-  }
 }
 
 .loadingBar {
@@ -417,34 +413,17 @@
   0% {
     transform: scaleX(0);
   }
+
   50% {
     transform: scaleX(0.75) translateX(25%);
   }
+
   100% {
     transform: scaleX(0) translateX(100%);
   }
 }
 
-/* Local Torx Screw positioning */
-.screw {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  z-index: 10;
-  pointer-events: none;
-}
 
-.screwTopLeft { top: 10px; left: 10px; }
-.screwTopRight { top: 10px; right: 10px; }
-.screwBottomLeft { bottom: 10px; left: 10px; }
-.screwBottomRight { bottom: 10px; right: 10px; }
-
-/* Hide screws on mobile to prevent clutter */
-@media screen and (max-width: 768px) {
-  .screw {
-    display: none !important;
-  }
-}
 
 
 @media screen and (max-width: 576px) {
@@ -455,4 +434,3 @@
     padding-bottom: 0.5rem;
   }
 }
-

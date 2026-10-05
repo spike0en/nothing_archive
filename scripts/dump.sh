@@ -5,11 +5,10 @@
 #
 # Modified by: spike0en
 
-# === Configuration ===
 set -e
 ORIGINAL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-export LD_LIBRARY_PATH="$ORIGINAL_DIR/bin:$LD_LIBRARY_PATH"
 
+# Clamp thread allocation to prevent memory exhaustion and I/O thrashing on large nodes
 DETECTED_CORES=$(nproc)
 CORES=$((DETECTED_CORES > 44 ? 44 : DETECTED_CORES))
 echo "Detected $DETECTED_CORES CPU cores, using $CORES cores for parallel processing"
@@ -22,14 +21,42 @@ echo "Thread allocation - ARIA2C: $ARIA2C_CONNECTIONS, PARALLEL: $PARALLEL_JOBS,
 
 export PARALLEL="-j$PARALLEL_JOBS"
 
+HOST_ARCH=$(uname -m)
+case "$HOST_ARCH" in
+    aarch64|arm64)
+        OTA_EXTRACTOR="$ORIGINAL_DIR/bin/arm64/ota_extractor"
+        ;;
+    x86_64|amd64|*)
+        OTA_EXTRACTOR="$ORIGINAL_DIR/bin/x86_64/ota_extractor"
+        export LD_LIBRARY_PATH="$ORIGINAL_DIR/bin/x86_64:$LD_LIBRARY_PATH"
+        ;;
+esac
+chmod +x "$OTA_EXTRACTOR" 2>/dev/null || true
 
-OTA_EXTRACTOR="$ORIGINAL_DIR/bin/ota_extractor"
 DEVICES_JSON="$ORIGINAL_DIR/scripts/devices.json"
 OUTPUT_DIR="$ORIGINAL_DIR/out"
 
 mkdir -p "$OUTPUT_DIR"
 
-# === Helper Functions ===
+generate_metadata_notice() {
+    cat << EOF
+===================================================================
+                     NOTHING ARCHIVE FIRMWARE
+===================================================================
+ Model:        $MODEL
+ Build:        $TAG
+ Source:       https://github.com/spike0en/nothing_archive
+ Webpage:      https://nothingarchive.tech
+===================================================================
+ Notice:
+ Firmware images are property of Nothing Technology Limited (OEM).
+ OTA payload extraction, incremental update patching, partition
+ image generation, and archiving provided by Nothing Archive.
+ If redistributing or repacking these partition images, please
+ retain this notice to credit the project.
+===================================================================
+EOF
+}
 
 download_with_gdown() {
     echo "Downloading with gdown: $1"
@@ -39,16 +66,10 @@ download_with_gdown() {
 download_with_aria2c() {
     echo "Downloading with aria2c using $ARIA2C_CONNECTIONS connections: $1"
     if ! aria2c -x$ARIA2C_CONNECTIONS -s$ARIA2C_CONNECTIONS --max-tries=5 --retry-wait=5 "$1" -o ota.zip; then
-        echo "aria2c download failed. Cleaning up and falling back..."
+        echo "aria2c download failed. Cleaning up and falling back to curl..."
         rm -f ota.zip ota.zip.aria2
-        if command -v wget &> /dev/null; then
-            echo "Downloading with wget..."
-            wget -O ota.zip "$1"
-        elif command -v curl &> /dev/null; then
-            echo "Downloading with curl..."
-            curl -L -o ota.zip "$1"
-        else
-            echo "Error: Neither wget nor curl is installed as a fallback." >&2
+        if ! curl --retry 3 --retry-delay 5 -fL -o ota.zip "$1"; then
+            echo "Error: curl download fallback failed." >&2
             exit 1
         fi
     fi
@@ -79,7 +100,8 @@ extract_version() {
 
 detect_model() {
     local detected_model="UnknownModel"
-    local models=$(jq -r '.devices | keys[]' "$DEVICES_JSON")
+    local models
+    models=$(jq -r '.devices | keys[]' "$DEVICES_JSON")
     
     if [ -z "$models" ]; then
         echo "Error: Could not read models from $DEVICES_JSON or jq is not installed." >&2
@@ -87,21 +109,11 @@ detect_model() {
         return
     fi
 
-    local metadata_content=$(unzip -p ota.zip META-INF/com/android/metadata 2>/dev/null || echo "")
-    if [ -n "$metadata_content" ]; then
+    local combined_content
+    combined_content=$(unzip -p ota.zip META-INF/com/android/metadata payload_properties.txt 2>/dev/null || true)
+    if [ -n "$combined_content" ]; then
         for model in $models; do
-            if echo "$metadata_content" | grep -qi "\b$model\b"; then
-                detected_model="$model"
-                echo "$detected_model"
-                return
-            fi
-        done
-    fi
-
-    local properties_content=$(unzip -p ota.zip payload_properties.txt 2>/dev/null || echo "")
-     if [ -n "$properties_content" ]; then
-        for model in $models; do
-             if echo "$properties_content" | grep -qi "\b$model\b"; then
+            if echo "$combined_content" | grep -qi "\b$model\b"; then
                 detected_model="$model"
                 echo "$detected_model"
                 return
@@ -118,7 +130,11 @@ detect_model() {
     echo "$detected_model"
 }
 
-# === Main Execution ===
+if [ ! -f "$OTA_EXTRACTOR" ]; then
+    echo "Error: Extractor binary not found at $OTA_EXTRACTOR" >&2
+    exit 1
+fi
+chmod +x "$OTA_EXTRACTOR"
 
 echo "Downloading initial OTA package..."
 download_file "$1"
@@ -135,7 +151,6 @@ if [ "$MODEL" == "UnknownModel" ]; then
 fi
 
 echo "Extracting initial payload..."
-chmod +x "$OTA_EXTRACTOR"
 unzip ota.zip payload.bin || { echo "Failed to unzip payload"; rm -f ota.zip; exit 1; }
 mv payload.bin payload_working.bin
 
@@ -150,8 +165,6 @@ mkdir -p ota out dyn boot
 echo "Initial payload extracted."
 rm payload_working.bin
 
-# === Incremental Updates ===
-
 shift
 for i in "$@"; do
     echo "Processing incremental OTA: $i"
@@ -165,13 +178,11 @@ for i in "$@"; do
     rm ota.zip
 
     mkdir -p ota_new
-    "$OTA_EXTRACTOR" -input-dir ota -output_dir ota_new -payload payload_working.bin || { echo "Error: Failed to extract incremental payload for $i"; rm -f payload_working.bin; exit 1; }
+    "$OTA_EXTRACTOR" -input_dir ota -output_dir ota_new -payload payload_working.bin || { echo "Error: Failed to extract incremental payload for $i"; rm -f payload_working.bin; exit 1; }
     rm -rf ota
     mv ota_new ota
     rm payload_working.bin
 done
-
-# === Prepare Release Information ===
 
 BODY=$(printf "%s\n\n**Fingerprint:**\n%s" "$BODY" "${FINGERPRINT//|/$'\n'}")
 
@@ -179,8 +190,6 @@ if [ -n "$GITHUB_RUN_ID" ]; then
     RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
     BODY=$(printf "%s\n\n**Workflow Run**: [Here](%s)" "$BODY" "$RUN_URL")
 fi
-
-# === Fetch Partition Information ===
 
 echo "Fetching partition lists for model: $MODEL"
 
@@ -197,15 +206,17 @@ echo "Using dynamically fetched partitions for model: $MODEL"
 echo "Boot Partitions: $BOOT_PARTITIONS"
 echo "Logical Partitions: $LOGICAL_PARTITIONS"
 
-# === Generate SHA-256 Hashes ===
-
 echo "Generating file hashes using $PARALLEL_JOBS parallel jobs..."
 cd ota
 
-echo "--- SHA256 Hashes ---"
-find . -maxdepth 1 -type f -print0 | parallel -0 -j $PARALLEL_JOBS "openssl dgst -sha256 -r" 2>/dev/null | sort -k2 -V | tee ../out/${TAG}-hash.sha256
+HASH_FILE="../out/${TAG}-hash.sha256"
 
-# === Organize Images ===
+# Lines prefixed with '#' are ignored by sha256sum -c
+generate_metadata_notice | sed 's/^/# /' > "$HASH_FILE"
+echo "" >> "$HASH_FILE"
+
+echo "--- SHA256 Hashes ---"
+find . -maxdepth 1 -type f -print0 | parallel -0 -j $PARALLEL_JOBS "openssl dgst -sha256 -r" 2>/dev/null | sort -k2 -V | tee -a "$HASH_FILE"
 
 echo "Organizing images..."
 
@@ -217,7 +228,10 @@ for f in $LOGICAL_PARTITIONS; do
     [ -f "${f}.img" ] && mv "${f}.img" ../dyn
 done
 
-# === Archive Images ===
+generate_metadata_notice > spike0en_nothing_archive.txt
+
+[ -d "../boot" ] && cp spike0en_nothing_archive.txt ../boot/
+[ -d "../dyn" ] && cp spike0en_nothing_archive.txt ../dyn/
 
 echo "Archiving images using optimized compression settings..."
 
@@ -229,13 +243,12 @@ if [ -d "../ota" ] && [ "$(ls -A ../ota 2>/dev/null)" ]; then
     (cd ../ota && 7z a -mmt$COMPRESSION_THREADS -mx6 ../out/${TAG}-image-firmware.7z * && rm -rf ../ota) &
 fi
 
+# Split dynamic/super partition images into 2GB chunks to stay under release upload limits
 if [ -d "../dyn" ] && [ "$(ls -A ../dyn 2>/dev/null)" ]; then
     (cd ../dyn && 7z a -mmt$COMPRESSION_THREADS -mx6 -v2000M ../out/${TAG}-image-logical.7z * && rm -rf ../dyn) &
 fi
 
 wait
-
-# === Set GitHub Actions Outputs ===
 
 echo "Setting GitHub Actions outputs..."
 

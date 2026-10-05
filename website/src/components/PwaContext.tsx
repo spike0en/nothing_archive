@@ -1,9 +1,5 @@
 /**
- * @file PwaContext.tsx
- * @description Context provider and hook managing PWA installation prompts and status state across the site.
- * 
- * Layer: Global React context providers.
- * Boundary: Listens to browser beforeinstallprompt and appinstalled window events.
+ * Context provider and hook managing PWA installation prompts and status.
  */
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
@@ -29,31 +25,24 @@ const PwaContext = createContext<PwaContextType>({
   install: async () => {},
 });
 
-/**
- * Custom hook to access PwaContext values.
- * 
- * @returns Object containing isInstallable, isInstalled status flags and install launcher function.
- */
 export const usePwa = () => useContext(PwaContext);
 
-/**
- * PwaProvider component.
- * Tracks display mode and install events, managing the deferred install prompt.
- */
 export function PwaProvider({ children }: { children: React.ReactNode }): React.JSX.Element {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [isInstallable, setIsInstallable] = useState(false);
   const [isInstalled, setIsInstalled] = useState(false);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (globalThis.window === undefined) return;
 
+    // SAFETY: iOS Safari navigator standalone property
     const isStandalone = window.matchMedia('(display-mode: standalone)').matches || 
                         (window.navigator as any).standalone === true;
     setIsInstalled(isStandalone);
 
     const handleBeforeInstall = (e: Event) => {
       e.preventDefault();
+      // SAFETY: Standard BeforeInstallPromptEvent browser event
       setDeferredPrompt(e as BeforeInstallPromptEvent);
       setIsInstallable(true);
     };

@@ -17,6 +17,7 @@
 
 .nudge {
   pointer-events: auto;
+  touch-action: none;
   width: 340px;
   background-color: var(--ifm-card-background-color);
   border: 1px solid var(--nothing-border-strong);
@@ -111,8 +112,9 @@
 .nudgeActions {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
 }
 
 /* --- CTA button --- */
@@ -120,23 +122,25 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 5px;
   background-color: var(--ifm-font-color-base);
   color: var(--ifm-card-background-color) !important;
-  border: 1px solid var(--ifm-font-color-base);
+  border: 2px solid var(--ifm-font-color-base);
   border-radius: 999px;
-  padding: 0.45rem 1rem;
-  font-size: 0.72rem;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
   cursor: pointer;
   text-decoration: none !important;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .nudgeCta:hover {
-  background-color: transparent;
+  background-color: transparent !important;
   color: var(--ifm-font-color-base) !important;
+  border-color: var(--ifm-font-color-base) !important;
 }
 
 .ctaIcon {
@@ -144,27 +148,31 @@
   animation: heartPulse 1.5s infinite ease-in-out;
 }
 
-/* --- Already Supported (ghost link) --- */
+/* --- Already Supported (secondary ghost button) --- */
 .alreadySupported {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  background: none;
-  border: none;
+  gap: 4px;
+  background: transparent;
+  border: 2px solid transparent;
   color: var(--ifm-font-color-base);
-  opacity: 0.4;
+  opacity: 0.45;
   font-size: 0.68rem;
   font-weight: 600;
+  white-space: nowrap;
   cursor: pointer;
-  padding: 0.35rem 0.25rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
+  padding: 0.4rem 0.65rem;
+  border-radius: 999px;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
   letter-spacing: 0.01em;
 }
 
 .alreadySupported:hover {
-  opacity: 0.75;
-  background-color: var(--nothing-hover-bg);
+  opacity: 0.9;
+  background-color: transparent !important;
+  border-color: var(--nothing-border-strong) !important;
+  color: var(--ifm-font-color-base) !important;
+  transform: translateY(-1px);
 }
 
 
@@ -223,18 +231,34 @@
   to { width: 0%; }
 }
 
-/* --- Responsive: mobile --- */
+/* --- Responsive: mobile floating card --- */
 @media (max-width: 768px) {
   .nudgeContainer {
-    bottom: 0;
-    right: 0;
-    left: 0;
-    padding: 0.75rem;
+    bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+    right: 0.75rem;
+    left: 0.75rem;
+    padding: 0;
   }
 
   .nudge {
     width: 100%;
     border-radius: 16px;
+    padding: 1rem 1.1rem 0.85rem;
+    gap: 0.6rem;
+  }
+
+  .nudgeTitle {
+    font-size: 0.8rem;
+  }
+
+  .nudgeBody {
+    display: block !important;
+    font-size: 0.76rem;
+    line-height: 1.45;
+  }
+
+  .alreadySupported {
+    display: inline-flex !important;
   }
 }
 

@@ -12,6 +12,9 @@ import CopyButtonSetup from '../components/CopyButton';
 import { PwaProvider } from '../components/PwaContext';
 import SupportModal from '../components/SupportModal';
 import SupportNudge from '../components/SupportNudge';
+import MagneticCursorRing from '../components/MagneticCursorRing';
+
+import PwaReloadPopup from './PwaReloadPopup';
 
 interface RootProps {
   children: React.ReactNode;
@@ -22,7 +25,7 @@ interface RootProps {
  */
 export default function Root({ children }: RootProps): React.JSX.Element {
   // Synchronously migrate existing users to "System" theme by default on client-side
-  if (typeof window !== 'undefined') {
+  if (globalThis.window !== undefined) {
     try {
       const MIGRATE_KEY = 'nothing_archive_theme_migrated_v1';
       if (!localStorage.getItem(MIGRATE_KEY)) {
@@ -39,17 +42,19 @@ export default function Root({ children }: RootProps): React.JSX.Element {
 
   const [showShortcuts, setShowShortcuts] = useState(false);
   const [showSupport, setShowSupport] = useState(false);
+  const [showPwaTest, setShowPwaTest] = useState(false);
 
   const modalRef = useRef<HTMLDivElement>(null);
   const previousActiveElement = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     if (showShortcuts) {
+      // SAFETY: Active DOM element focus casting
       previousActiveElement.current = document.activeElement as HTMLElement;
-      // Focus the close button or first focusable element in the modal
+      // SAFETY: Modal close button query selector casting
       const closeBtn = modalRef.current?.querySelector('.shortcut-modal-close') as HTMLElement;
       if (closeBtn) {
-        // Wait a tick for rendering transition
+        // 50ms delay accommodates the CSS transition before claiming focus.
         setTimeout(() => closeBtn.focus(), 50);
       }
     } else {
@@ -66,7 +71,9 @@ export default function Root({ children }: RootProps): React.JSX.Element {
         'button, [href], input, select, textarea, [tabindex="0"]'
       );
       if (focusableEls && focusableEls.length > 0) {
+        // SAFETY: Focusable element array casting
         const firstEl = focusableEls[0] as HTMLElement;
+        // SAFETY: Focusable element array casting
         const lastEl = focusableEls[focusableEls.length - 1] as HTMLElement;
         if (e.shiftKey) {
           if (document.activeElement === firstEl) {
@@ -85,9 +92,9 @@ export default function Root({ children }: RootProps): React.JSX.Element {
     }
   };
 
-  // Support modal trigger listeners (hash and custom event)
+  // Support modal & PWA reload test trigger listeners (hash and custom event)
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (globalThis.window === undefined) return;
 
     const checkHash = () => {
       if (window.location.hash === '#support' || window.location.hash === '#donate') {
@@ -98,6 +105,8 @@ export default function Root({ children }: RootProps): React.JSX.Element {
         } catch (e) {
           console.warn('Failed to clear hash:', e);
         }
+      } else if (window.location.hash === '#pwa-reload' || window.location.hash === '#pwa-test' || window.location.hash === '#stack-test' || window.location.search.includes('pwa-test=true')) {
+        setShowPwaTest(true);
       }
     };
 
@@ -119,7 +128,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
 
   // Keyboard shortcut map event listener
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (globalThis.window === undefined) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
       const activeEl = document.activeElement;
@@ -143,38 +152,61 @@ export default function Root({ children }: RootProps): React.JSX.Element {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  // Appends canonical source attribution metadata to copied text snippets (>60 chars) to maintain project credit
+  useEffect(() => {
+    if (globalThis.window === undefined) return;
+
+    const handleCopy = (e: ClipboardEvent) => {
+      const selection = window.getSelection();
+      if (!selection || selection.toString().trim().length < 60) return;
+
+      const activeEl = document.activeElement;
+      if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA' || activeEl.hasAttribute('contenteditable'))) return;
+
+      const copiedText = selection.toString();
+      const attribution = `\n\n— Source: Nothing Archive (${window.location.href})`;
+      if (e.clipboardData) {
+        e.clipboardData.setData('text/plain', copiedText + attribution);
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('copy', handleCopy);
+    return () => document.removeEventListener('copy', handleCopy);
+  }, []);
+
   // Scroll progress ring: SVG injected into the back-to-top button
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (globalThis.window === undefined) return;
 
-    const RADIUS = 24;
+    const RADIUS = 21;
     const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
     const SVG_NS = 'http://www.w3.org/2000/svg';
 
     // Create SVG ring
     const svg = document.createElementNS(SVG_NS, 'svg');
     svg.setAttribute('class', 'scroll-ring-svg');
-    svg.setAttribute('viewBox', '0 0 52 52');
+    svg.setAttribute('viewBox', '0 0 46 46');
     svg.setAttribute('aria-hidden', 'true');
 
     const trackCircle = document.createElementNS(SVG_NS, 'circle');
-    trackCircle.setAttribute('cx', '26');
-    trackCircle.setAttribute('cy', '26');
+    trackCircle.setAttribute('cx', '23');
+    trackCircle.setAttribute('cy', '23');
     trackCircle.setAttribute('r', String(RADIUS));
     trackCircle.setAttribute('fill', 'none');
-    trackCircle.setAttribute('stroke', 'currentColor');
-    trackCircle.setAttribute('stroke-width', '2.5');
-    trackCircle.setAttribute('opacity', '0.12');
+    trackCircle.setAttribute('class', 'scroll-ring-track');
+    trackCircle.setAttribute('stroke-width', '1.75');
     trackCircle.setAttribute('stroke-dasharray', String(CIRCUMFERENCE));
     trackCircle.setAttribute('stroke-dashoffset', '0');
 
     const progressCircle = document.createElementNS(SVG_NS, 'circle');
-    progressCircle.setAttribute('cx', '26');
-    progressCircle.setAttribute('cy', '26');
+    progressCircle.setAttribute('cx', '23');
+    progressCircle.setAttribute('cy', '23');
     progressCircle.setAttribute('r', String(RADIUS));
     progressCircle.setAttribute('fill', 'none');
+    progressCircle.setAttribute('class', 'scroll-ring-progress');
     progressCircle.setAttribute('stroke', 'var(--ifm-color-primary)');
-    progressCircle.setAttribute('stroke-width', '2.5');
+    progressCircle.setAttribute('stroke-width', '1.75');
     progressCircle.setAttribute('stroke-linecap', 'round');
     progressCircle.setAttribute('stroke-dasharray', String(CIRCUMFERENCE));
     progressCircle.setAttribute('stroke-dashoffset', String(CIRCUMFERENCE));
@@ -240,6 +272,9 @@ export default function Root({ children }: RootProps): React.JSX.Element {
       <CopyButtonSetup />
       <SupportModal isOpen={showSupport} onClose={() => setShowSupport(false)} />
       <SupportNudge />
+      {showPwaTest && (
+        <PwaReloadPopup onReload={() => window.location.reload()} />
+      )}
 
       {showShortcuts && (
         <div
@@ -302,6 +337,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
           </div>
         </div>
       )}
+      <MagneticCursorRing />
     </PwaProvider>
   );
 }

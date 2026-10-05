@@ -1,15 +1,26 @@
-# Third-party Tools (Binaries)
+# Third-Party & Standalone Tools (Binaries)
 
-The files in this directory are external binaries used by the Nothing Archive project for extracting OTA packages. They are not owned by the Nothing Archive authors and are provided here for convenience.
+The files in this directory are binaries used by the Nothing Archive project for extracting OTA packages.
 
-## Tools Summary
+## Directory Structure
 
-### 1. OTA Extractor (`ota_extractor`)
-Sourced from [luk1337/oplus_archive](https://github.com/luk1337/oplus_archive) under the Apache License 2.0 / AOSP. It extracts payload.bin files from Android/Oryza/Oplus OTA packages.
+- `bin/x86_64/`: x86_64 prebuilt `ota_extractor` and supporting dynamic libraries (`.so`).
+- `bin/arm64/`: AArch64 / ARM64 standalone `ota_extractor` binary.
 
-### 2. Supporting Libraries (`.so` files)
-Sourced from the Android Open Source Project (AOSP) / Chromium under the Apache License 2.0 / BSD-3-Clause. These are standard shared libraries required by the `ota_extractor`.
+## Attribution & Build Credits
+
+### 1. ARM64 OTA Extractor (`bin/arm64/ota_extractor`)
+- **Upstream Source**: Sourced from the [Android Open Source Project (AOSP)](https://android.googlesource.com/platform/system/update_engine/) (`system/update_engine`, `libchrome`, `libsnapshot`) and Chromium under Apache License 2.0 / BSD-3-Clause.
+- **Port & Build Configuration**: Extracted, ported to a standalone CMake build system, and compiled natively for AArch64 Linux by **spike0en / Nothing Archive**.
+
+### 2. x86_64 OTA Extractor (`bin/x86_64/ota_extractor`)
+- **Upstream Source**: Sourced from [luk1337/oplus_archive](https://github.com/luk1337/oplus_archive) / AOSP under Apache License 2.0.
+
+### 3. Supporting Libraries (`bin/x86_64/*.so`)
+- Sourced from AOSP / Chromium under Apache License 2.0 / BSD-3-Clause. Standard shared libraries required by the x86_64 binary.
 
 ---
 
-**Note**: All binaries in this directory remain the property of their respective owners and are used here under their respective open-source licenses.
+## License Notice
+
+All upstream components remain the intellectual property of their respective copyright holders (Google LLC, The Chromium Authors, Android Open Source Project contributors) and are redistributed under the terms of the Apache License 2.0 and BSD-3-Clause.

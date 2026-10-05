@@ -7,7 +7,8 @@
  * Boundary: Reads GitHub stats/commits hooks and local visitor API, renders local HTML structure.
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import clsx from 'clsx';
 import styles from './CommitMatrix.module.css';
 import { getTimeLag } from '../utils/time';
@@ -21,31 +22,31 @@ interface HitsState {
 
 const HITS_CACHE_KEY = 'nothing_archive_hits_v1';
 const HITS_CACHE_TIME_KEY = 'nothing_archive_hits_time_v1';
+// 15-minute hit count cache prevents excessive calls to the external hitscounter service.
 const HITS_CACHE_TIMEOUT = 15 * 60 * 1000;
 
-/**
- * CommitMatrix component.
- * Fetches hitscounter data, filters recent commits, and formats authors for display.
- */
 export default function CommitMatrix(): React.JSX.Element {
-  // Centralized GitHub data hooks: deduplicated, stale-while-revalidate
-  const { commits, status: commitStatus, error: commitError, loading: commitLoading } = useGitHubCommits();
+  const { commits, status: statusSource, error: errorState, loading } = useGitHubCommits();
   const { stats: repoStats, loading: statsGhLoading } = useGitHubRepoStats();
 
-  const statusSource = commitStatus;
-  const errorState = commitError;
-  const loading = commitLoading;
-
-  // hitscounter.dev is not a GitHub API; kept as a separate inline fetch
+  // hitscounter.dev is an external visitor tracker, not a GitHub API.
   const [hitsData, setHitsData] = useState<HitsState>({ hits: 0 });
   const [hitsLoading, setHitsLoading] = useState(true);
 
   const filteredCommits = React.useMemo(() => {
+    // 7 rows fill the telemetry console panel without vertical scrolling.
+    const TARGET_COMMITS = 7;
+    const sorted = [...commits].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    // Restricts display to commits within 7 days, falling back to recent history if activity is quiet.
     const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
-    return commits.filter(commit => new Date(commit.date).getTime() >= sevenDaysAgo);
+    const recent = sorted.filter(commit => new Date(commit.date).getTime() >= sevenDaysAgo);
+
+    if (recent.length >= TARGET_COMMITS) {
+      return recent;
+    }
+    return sorted.slice(0, TARGET_COMMITS);
   }, [commits]);
 
-  // Fetch hitscounter.dev visitor count (not a GitHub API; kept separate)
   useEffect(() => {
     async function loadHits() {
       try {
@@ -104,40 +105,85 @@ export default function CommitMatrix(): React.JSX.Element {
   ];
 
   /**
-   * Formats the author list inline for a commit entry. Primary and co-authors are rendered
-   * inline to ensure direct visibility and attribution for all contributors in the commit log.
+   * Measures the widest author string with Canvas to align commit titles into a column.
    */
+  const dynamicAuthorWidth = useMemo(() => {
+    if (!ExecutionEnvironment.canUseDOM) return 110;
+    try {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return 110;
+      ctx.font = '500 0.72rem Geist, "Inter var", Inter, system-ui, sans-serif';
+      let maxW = 40;
+      filteredCommits.forEach((commit) => {
+        if (commit.coAuthors.length === 0) {
+          maxW = Math.max(maxW, ctx.measureText(commit.author).width);
+        } else if (commit.coAuthors.length === 1) {
+          const line = `${commit.author} & ${commit.coAuthors[0]}`;
+          maxW = Math.max(maxW, ctx.measureText(line).width);
+        } else {
+          const all = [commit.author, ...commit.coAuthors];
+          const initial = all.slice(0, -1).join(', ') + ' &';
+          const last = all[all.length - 1];
+          maxW = Math.max(maxW, ctx.measureText(initial).width, ctx.measureText(last).width);
+        }
+      });
+      // +2px margin prevents right-edge clipping from fractional font sub-pixel rendering.
+      return Math.ceil(maxW) + 2;
+    } catch {
+      return 110;
+    }
+  }, [filteredCommits]);
+
   const formatAuthors = (commit: Commit, isLatest: boolean): React.JSX.Element => {
     const authorClass = clsx(styles.authorTag, isLatest && styles.authorLatest);
     if (commit.coAuthors.length === 0) {
       return (
-        <span className={styles.authorsWrapper}>
-          <span className={authorClass} title={commit.author}>{commit.author}</span>
+        <span className={styles.authorsWrapper} style={{ width: `${dynamicAuthorWidth}px` }}>
+          <span className={styles.authorLine}>
+            <span className={authorClass} title={commit.author}>{commit.author}</span>
+          </span>
         </span>
       );
     }
 
     const allAuthors = [commit.author, ...commit.coAuthors];
     const tooltip = allAuthors.join(', ');
+
+    let content: React.ReactNode;
+    if (allAuthors.length === 2) {
+      content = (
+        <span className={styles.authorLine}>
+          <span className={authorClass}>{allAuthors[0]}</span>
+          <span className={styles.coAuthorSeparator}> &amp; </span>
+          <span className={authorClass}>{allAuthors[1]}</span>
+        </span>
+      );
+    } else {
+      const initialAuthors = allAuthors.slice(0, -1);
+      const lastAuthor = allAuthors[allAuthors.length - 1];
+      content = (
+        <>
+          <span className={styles.authorLine}>
+            {initialAuthors.map((author, i) => (
+              <React.Fragment key={author}>
+                <span className={authorClass}>{author}</span>
+                <span className={styles.coAuthorSeparator}>
+                  {i === initialAuthors.length - 1 ? ' & ' : ', '}
+                </span>
+              </React.Fragment>
+            ))}
+          </span>
+          <span className={styles.authorLine}>
+            <span className={authorClass}>{lastAuthor}</span>
+          </span>
+        </>
+      );
+    }
+
     return (
-      <span className={styles.authorsWrapper} title={tooltip}>
-        {allAuthors.map((author, index) => {
-          const isLast = index === allAuthors.length - 1;
-          let separator: React.JSX.Element | null = null;
-          if (index > 0) {
-            if (isLast) {
-              separator = <span className={styles.coAuthorSeparator}> &amp; </span>;
-            } else {
-              separator = <span className={styles.coAuthorSeparator}>, </span>;
-            }
-          }
-          return (
-            <React.Fragment key={author}>
-              {separator}
-              <span className={authorClass}>{author}</span>
-            </React.Fragment>
-          );
-        })}
+      <span className={styles.authorsWrapper} style={{ width: `${dynamicAuthorWidth}px` }} title={tooltip}>
+        {content}
       </span>
     );
   };
@@ -148,7 +194,6 @@ export default function CommitMatrix(): React.JSX.Element {
     <div className={styles.container}>
 
       {isProgressLoading && <div className={styles.loadingBar} />}
-      {/* Telemetry Header */}
       <div className={styles.telemetryHeader}>
         <div className={styles.systemLabel}>
           <span className={styles.feedTextPrefix}>REPO</span>
@@ -160,7 +205,6 @@ export default function CommitMatrix(): React.JSX.Element {
         </div>
       </div>
 
-      {/* Stats Strip */}
       <div className={styles.statsStrip}>
         {stats.map((stat, i) => (
           <div key={i} className={styles.statItem}>
@@ -170,7 +214,6 @@ export default function CommitMatrix(): React.JSX.Element {
         ))}
       </div>
 
-      {/* Recent Changes — full width */}
       <div className={styles.consolePanel}>
         <div className={styles.consoleHeader}>
           <span>RECENT CHANGES</span>
@@ -203,7 +246,7 @@ export default function CommitMatrix(): React.JSX.Element {
           ) : filteredCommits.length === 0 ? (
             <div className={styles.consoleLine}>
               <span className={styles.statusDot} />
-              <span className={styles.messageText}>NO CHANGES IN THE LAST 7 DAYS</span>
+              <span className={styles.messageText}>NO RECENT COMMITS</span>
             </div>
           ) : (
             filteredCommits.map((commit, idx) => {

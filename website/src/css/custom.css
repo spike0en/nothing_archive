@@ -1,7 +1,7 @@
 /**
  * Global CSS Overrides
  * Establishes root design tokens, theming variables, and core layout modifications.
- * Inter is bundled locally to avoid a render-blocking third-party font request.
+ * Geist, Geist Mono, and Inter variable fonts are bundled locally to eliminate render-blocking requests.
  */
 
 html,
@@ -14,118 +14,35 @@ textarea {
   font-feature-settings: "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1, "cv06" 1, "cv09" 1, "cv10" 1, "cv11" 1, "zero" 1;
 }
 
+/* Suppress native OS mouse pointer when custom magnetic cursor is active (Desktop & Tablet with pointer device >= 576px) */
+@media (min-width: 576px) and (hover: hover) {
+  html.nothing-custom-cursor-active,
+  html.nothing-custom-cursor-active *,
+  html.nothing-custom-cursor-active *::before,
+  html.nothing-custom-cursor-active *::after,
+  html.nothing-custom-cursor-active *:hover,
+  html.nothing-custom-cursor-active *:focus,
+  html.nothing-custom-cursor-active *:active,
+  body.nothing-custom-cursor-active,
+  body.nothing-custom-cursor-active *,
+  body.nothing-custom-cursor-active *::before,
+  body.nothing-custom-cursor-active *::after,
+  body.nothing-custom-cursor-active *:hover,
+  body.nothing-custom-cursor-active *:focus,
+  body.nothing-custom-cursor-active *:active {
+    cursor: none !important;
+  }
+}
 
-/* ── Theme-switch transition guard ───────────────────────────────────────
- * When the theme toggle is clicked, CopyButton.tsx adds `theme-transition`
- * to <html> for 500 ms. During that window every element on the page
- * smoothly fades background-color, color, border-color, and box-shadow
- * at a unified 0.25 s duration. A wildcard rule is used because there are
- * 80+ elements with their own background-color declarations; enumerating
- * them individually was guaranteed to miss some, causing the "snap vs fade"
- * jitter the user reported.
- *
- * Exclusions: elements that run CSS animations, transforms, or layout
- * transitions (e.g., search box expand, sidebar slide) are carved out so
- * the wildcard doesn't interfere with their independent timing. */
-/* Enable smooth background & color transitions on top-level layout wrappers only to prevent color inheritance lockups */
+
+/* Synchronous theme state application — forces atomic background and typography state updates across viewports */
 html.theme-transition,
-html.theme-transition body {
-  transition: background-color 0.25s ease,
-              color 0.25s ease !important;
-}
-
-/* Optimize child element transitions and exclude text color from wildcard calculations so child text updates instantly */
-html.theme-transition :not(svg, svg *, [class*="matrixDot"], [class*="matrixGrid"], [class*="dot"], [class*="CommitMatrix"], [class*="CommitMatrix"] *, [class*="ReleaseFeed"], [class*="ReleaseFeed"] *),
-html.theme-transition :not(svg, svg *, [class*="matrixDot"], [class*="matrixGrid"], [class*="dot"], [class*="CommitMatrix"], [class*="CommitMatrix"] *, [class*="ReleaseFeed"], [class*="ReleaseFeed"] *)::before,
-html.theme-transition :not(svg, svg *, [class*="matrixDot"], [class*="matrixGrid"], [class*="dot"], [class*="CommitMatrix"], [class*="CommitMatrix"] *, [class*="ReleaseFeed"], [class*="ReleaseFeed"] *)::after {
-  transition: background-color 0.25s ease,
-              border-color 0.25s ease,
-              box-shadow 0.25s ease,
-              fill 0.25s ease,
-              stroke 0.25s ease !important;
-}
-
-/* Temporarily disable backdrop-filter to prevent layout-painting bottleneck during transition */
 html.theme-transition *,
 html.theme-transition *::before,
 html.theme-transition *::after {
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-}
-
-/* Opt-out: elements whose own transitions must stay untouched during theme switch */
-html.theme-transition .navbar-sidebar,
-html.theme-transition [class*="collapseSidebarButton"],
-html.theme-transition [class*="expandButton"] {
   transition: none !important;
-}
-
-/* ── Custom transition restoration during theme switch ───────────────────
- * Restore original transitions for components that have their own custom 
- * animations (transforms, filters, etc.) which would otherwise be wiped out 
- * by the wildcard theme-transition shorthand. */
-
-/* Theme Toggle Slider */
-html.theme-transition [class*="slider"] {
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              background-color 0.3s ease,
-              border-color 0.3s ease !important;
-}
-
-/* Theme Toggle Icons */
-html.theme-transition [class*="iconSvg"] {
-  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-/* Homepage CTA Buttons */
-html.theme-transition [class*="ctaButton"] {
-  transition: background-color 0.2s ease,
-              transform 0.2s ease,
-              box-shadow 0.2s ease,
-              filter 0.2s ease !important;
-}
-
-/* Homepage Hero Logo */
-html.theme-transition [class*="heroLogo"] {
-  transition: filter 0.3s ease !important;
-}
-
-/* Homepage Feature Cards */
-html.theme-transition [class*="featureCard"] {
-  transition: border-color 0.25s ease,
-              background-color 0.25s ease,
-              transform 0.25s ease,
-              box-shadow 0.25s ease !important;
-}
-
-/* Homepage Feature Icons */
-html.theme-transition [class*="featureIcon"] {
-  transition: background 0.2s ease,
-              transform 0.2s ease !important;
-}
-
-/* Header Badges */
-html.theme-transition [class*="header-badge"] img {
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-              border-color 0.2s ease,
-              box-shadow 0.2s ease !important;
-}
-
-/* Table Copy Links */
-html.theme-transition table td a {
-  transition: background-color 0.15s ease,
-              border-color 0.15s ease,
-              color 0.15s ease,
-              box-shadow 0.15s ease,
-              transform 0.15s ease !important;
-}
-
-/* Navbar/Sidebar Menu Links */
-html.theme-transition .menu__link {
-  transition: background 0.2s ease,
-              color 0.2s ease,
-              transform 0.2s ease !important;
 }
 
 /* Prevent Docusaurus SSR code block theme flashes on page load */
@@ -147,6 +64,10 @@ html.theme-transition .menu__link {
   border-radius: var(--ifm-pre-border-radius) !important;
 }
 
+h1 {
+  font-family: var(--f-headline);
+}
+
 h1,
 h2,
 h3,
@@ -154,6 +75,31 @@ h4,
 h5,
 h6 {
   letter-spacing: -0.03em;
+}
+
+/* Typography utility classes */
+.font-ndot {
+  font-family: var(--f-ndot);
+}
+.font-headline {
+  font-family: var(--f-headline);
+}
+.font-regular {
+  font-family: var(--f-regular);
+}
+.font-mono {
+  font-family: var(--f-mono);
+}
+.font-lettera {
+  font-family: var(--f-lettera);
+  font-size: 0.85em;
+  letter-spacing: -0.02em;
+}
+.font-geist {
+  font-family: 'Geist', sans-serif;
+}
+.font-geist-mono {
+  font-family: 'Geist Mono', monospace;
 }
 
 /* 
@@ -171,30 +117,30 @@ div[class*="tableWrapper"] table td,
 }
 
 :root {
-  --nothing-red: #D71921;
+  --nothing-red: #D71920;
   --nothing-orange: #FA471F;
   --nothing-yellow: #FFC700;
   --nothing-blue: #2A2B7B;
-  --nothing-dark-grey: #1C1C1C;
+  --nothing-dark-grey: #1A1A1A;
   --nothing-light-grey: #292929;
-  --nothing-white: #F1F1F1;
+  --nothing-white: #FFFFFF;
   --nothing-dull-white: #D4D4D4;
 
-  --ifm-color-primary: #D71921;
-  --ifm-color-primary-dark: #c1161d;
-  --ifm-color-primary-darker: #b6151b;
-  --ifm-color-primary-darkest: #961117;
-  --ifm-color-primary-light: #e32a32;
-  --ifm-color-primary-lighter: #e53940;
-  --ifm-color-primary-lightest: #ea5b61;
+  --ifm-color-primary: #D71920;
+  --ifm-color-primary-dark: #c1161c;
+  --ifm-color-primary-darker: #b6151a;
+  --ifm-color-primary-darkest: #961116;
+  --ifm-color-primary-light: #e32a31;
+  --ifm-color-primary-lighter: #e5393f;
+  --ifm-color-primary-lightest: #ea5b60;
 
-  --ifm-color-info: #2A2B7B;
-  --ifm-color-info-dark: #25266e;
-  --ifm-color-info-darker: #232468;
-  --ifm-color-info-darkest: #1d1e56;
-  --ifm-color-info-light: #2e2f87;
-  --ifm-color-info-lighter: #30318d;
-  --ifm-color-info-lightest: #36379f;
+  --ifm-color-info: #10b981;
+  --ifm-color-info-dark: #0fa774;
+  --ifm-color-info-darker: #0e9e6d;
+  --ifm-color-info-darkest: #0b8259;
+  --ifm-color-info-light: #16ca8f;
+  --ifm-color-info-lighter: #1cd094;
+  --ifm-color-info-lightest: #34d39f;
 
   --ifm-color-warning: #FFC700;
   --ifm-color-warning-dark: #e5b300;
@@ -204,13 +150,13 @@ div[class*="tableWrapper"] table td,
   --ifm-color-warning-lighter: #ffcf26;
   --ifm-color-warning-lightest: #fed74c;
 
-  --ifm-color-danger: #D71921;
-  --ifm-color-danger-dark: #c1161d;
-  --ifm-color-danger-darker: #b6151b;
-  --ifm-color-danger-darkest: #961117;
-  --ifm-color-danger-light: #e32a32;
-  --ifm-color-danger-lighter: #e53940;
-  --ifm-color-danger-lightest: #ea5b61;
+  --ifm-color-danger: #D71920;
+  --ifm-color-danger-dark: #c1161c;
+  --ifm-color-danger-darker: #b6151a;
+  --ifm-color-danger-darkest: #961116;
+  --ifm-color-danger-light: #e32a31;
+  --ifm-color-danger-lighter: #e5393f;
+  --ifm-color-danger-lightest: #ea5b60;
 
   --ifm-color-success: #10b981;
   --ifm-color-success-dark: #0fa774;
@@ -220,8 +166,16 @@ div[class*="tableWrapper"] table td,
   --ifm-color-success-lighter: #1cd094;
   --ifm-color-success-lightest: #34d39f;
 
-  --ifm-font-family-base: 'Inter var', 'Inter', system-ui, -apple-system, sans-serif;
-  --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', 'Fira Mono', 'SF Mono', Monaco, Consolas, 'Liberation Mono', monospace;
+  --ifm-font-family-base: 'Geist', 'Inter var', 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-font-family-monospace: 'Geist Mono', GeistMono, 'Geist-Mono', 'JetBrains Mono', 'Fira Code', 'Fira Mono', 'SF Mono', Monaco, Consolas, 'Liberation Mono', monospace;
+  
+  /* Brand Typography Tokens */
+  --f-ndot: 'NDot55', 'Geist Mono', GeistMono, monospace;
+  --f-headline: 'NType82Headline', 'Geist', sans-serif;
+  --f-regular: 'NType82', 'Geist', 'Inter var', sans-serif;
+  --f-mono: 'NType82Mono', 'Geist Mono', GeistMono, 'JetBrains Mono', monospace;
+  --f-lettera: 'LetteraMonoLL', 'Geist Mono', GeistMono, monospace;
+
   --ifm-code-font-size: 90%;
   --ifm-heading-font-weight: 600;
 
@@ -264,21 +218,21 @@ div[class*="tableWrapper"] table td,
 }
 
 [data-theme='dark'] {
-  --ifm-color-primary: #D71921;
-  --ifm-color-primary-dark: #c1161d;
-  --ifm-color-primary-darker: #b6151b;
-  --ifm-color-primary-darkest: #961117;
-  --ifm-color-primary-light: #e32a32;
-  --ifm-color-primary-lighter: #e53940;
-  --ifm-color-primary-lightest: #ea5b61;
+  --ifm-color-primary: #D71920;
+  --ifm-color-primary-dark: #c1161c;
+  --ifm-color-primary-darker: #b6151a;
+  --ifm-color-primary-darkest: #961116;
+  --ifm-color-primary-light: #e32a31;
+  --ifm-color-primary-lighter: #e5393f;
+  --ifm-color-primary-lightest: #ea5b60;
 
-  --ifm-color-info: #2A2B7B;
-  --ifm-color-info-dark: #25266e;
-  --ifm-color-info-darker: #232468;
-  --ifm-color-info-darkest: #1d1e56;
-  --ifm-color-info-light: #2e2f87;
-  --ifm-color-info-lighter: #30318d;
-  --ifm-color-info-lightest: #36379f;
+  --ifm-color-info: #10b981;
+  --ifm-color-info-dark: #0fa774;
+  --ifm-color-info-darker: #0e9e6d;
+  --ifm-color-info-darkest: #0b8259;
+  --ifm-color-info-light: #16ca8f;
+  --ifm-color-info-lighter: #1cd094;
+  --ifm-color-info-lightest: #34d39f;
 
   --ifm-color-warning: #FFC700;
   --ifm-color-warning-dark: #e5b300;
@@ -288,13 +242,13 @@ div[class*="tableWrapper"] table td,
   --ifm-color-warning-lighter: #ffcf26;
   --ifm-color-warning-lightest: #fed74c;
 
-  --ifm-color-danger: #D71921;
-  --ifm-color-danger-dark: #c1161d;
-  --ifm-color-danger-darker: #b6151b;
-  --ifm-color-danger-darkest: #961117;
-  --ifm-color-danger-light: #e32a32;
-  --ifm-color-danger-lighter: #e53940;
-  --ifm-color-danger-lightest: #ea5b61;
+  --ifm-color-danger: #D71920;
+  --ifm-color-danger-dark: #c1161c;
+  --ifm-color-danger-darker: #b6151a;
+  --ifm-color-danger-darkest: #961116;
+  --ifm-color-danger-light: #e32a31;
+  --ifm-color-danger-lighter: #e5393f;
+  --ifm-color-danger-lightest: #ea5b60;
 
   --ifm-color-success: #10b981;
   --ifm-color-success-dark: #0fa774;
@@ -307,7 +261,7 @@ div[class*="tableWrapper"] table td,
   --ifm-background-color: #000000;
   --ifm-navbar-background-color: #000000;
   --ifm-footer-background-color: #000000;
-  --ifm-card-background-color: #1C1C1C;
+  --ifm-card-background-color: #1A1A1A;
 
   --docusaurus-highlighted-code-line-bg: rgba(215, 25, 33, 0.15);
 
@@ -352,18 +306,27 @@ div[class*="tableWrapper"] table td,
   margin: 0 auto;
 }
 
-.navbar__brand {
+.navbar__brand,
+.navbar__brand:hover,
+.navbar__brand:focus,
+.navbar__brand:active,
+.navbar__brand *,
+.navbar__brand:hover * {
   gap: 0.75rem;
+  text-decoration: none !important;
 }
 
 .navbar__logo {
   display: none !important;
 }
 
-.navbar__title {
+.navbar__title,
+.navbar__title:hover,
+.navbar__title:focus {
   font-weight: 600;
   font-size: 1rem;
   letter-spacing: -0.03em;
+  text-decoration: none !important;
 }
 
 .navbar__link {
@@ -390,50 +353,85 @@ div[class*="tableWrapper"] table td,
   color: var(--ifm-color-primary) !important;
 }
 
-/* Nothing OS Active dot indicator */
+/* Active primary navigation indicator bar — centered horizontal pill anchored to active route */
 .navbar__link--active::after {
   content: '';
   position: absolute;
-  bottom: 4px;
+  bottom: 2px;
   left: 50%;
   transform: translateX(-50%);
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
+  width: 18px;
+  height: 3px;
+  border-radius: 999px;
   background-color: var(--ifm-color-primary);
-  animation: navbarDotFade 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: navbarBarFade 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@keyframes navbarDotFade {
+@keyframes navbarBarFade {
   from {
     opacity: 0;
-    transform: translateX(-50%) scale(0);
+    transform: translateX(-50%) scaleX(0);
   }
 
   to {
     opacity: 1;
-    transform: translateX(-50%) scale(1);
+    transform: translateX(-50%) scaleX(1);
   }
 }
 
 
-/* Navbar right-side items arrangement & spacing: Dark Toggle -> PWA Install -> Search */
-.navbar__items--right [class*="colorModeToggle"] {
+/* Force navbar search into normal flex flow across all viewports */
+.navbar__search,
+[class*="navbarSearchContainer"],
+.navbar__items--right .navbar__search,
+.navbar__items--right [class*="navbarSearchContainer"] {
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Navbar right-side items arrangement & spacing: Support -> Search -> Install -> Theme Toggle */
+.navbar__items--right {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 0.35rem !important;
+}
+
+.navbar__items--right > * {
+  flex-shrink: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Order direct flex children of .navbar__items--right: Support (1) -> Theme Toggle (2) -> Search (3) -> Install (4) */
+.navbar__items--right > [class*="supportBtn"] {
   order: 1 !important;
-  margin-left: 0.5rem !important;
-  margin-right: 0.5rem !important;
 }
 
-.navbar__items--right a[class*="installBtn"] {
+.navbar__items--right > [class*="colorModeToggle"] {
   order: 2 !important;
-  margin-left: 0.5rem !important;
-  margin-right: 0.5rem !important;
+  margin: 0 0.15rem !important;
 }
 
-.navbar__items--right .DocSearch-Button {
+.navbar__items--right .DocSearch-Button,
+.navbar__items--right > .navbar__search,
+.navbar__items--right > [class*="navbarSearchContainer"],
+.navbar__items--right > [class*="search"] {
   order: 3 !important;
-  margin-left: 0.5rem !important;
-  margin-right: 0 !important;
+}
+
+.navbar__items--right > [class*="installBtn"] {
+  order: 4 !important;
 }
 
 .navbar-sidebar__backdrop {
@@ -496,21 +494,13 @@ div[class*="tableWrapper"] table td,
 
   .navbar__items--right {
     display: flex !important;
-    gap: 0;
-    /* Match desktop layout spacing */
+    gap: 0.35rem !important;
     align-items: center;
     justify-content: flex-end !important;
   }
 
-  .navbar__items--right>* {
-    flex-shrink: 0;
-    /* Prevent squishing/overlapping */
-  }
-
-  .navbar__items--right .navbar__item {
-    display: inline-flex !important;
-    align-items: center;
-    padding: 0.2rem 0.4rem;
+  .navbar__items--right > * {
+    flex-shrink: 0 !important;
   }
 
   .navbar__items--right .header-badge img {
@@ -521,7 +511,6 @@ div[class*="tableWrapper"] table td,
   .navbar [class*="colorModeToggle"] {
     display: flex !important;
   }
-
   /* Compact right-side spacing for mobile viewports */
   .navbar__items--right [class*="colorModeToggle"] {
     margin-left: 0.25rem !important;
@@ -549,10 +538,9 @@ div[class*="tableWrapper"] table td,
 
 @media (max-width: 576px) {
 
-  /* Compact the right side to fix the large gap between navigation badges and search */
   .navbar__items--right {
     justify-content: flex-end !important;
-    gap: 6px !important;
+    gap: 0.25rem !important;
   }
 
   .navbar__items--right a[class*="installBtn"] {
@@ -587,7 +575,7 @@ div[class*="tableWrapper"] table td,
    SIDEBAR
    ========================================== */
 .theme-doc-sidebar-container {
-  border-right: none !important;
+  border-right: 1px solid var(--nothing-border) !important;
   width: 280px;
   min-width: 280px;
 }
@@ -648,78 +636,114 @@ div[class*="tableWrapper"] table td,
   transform: translateX(3px);
 }
 
-/* Remove separate button background/highlight behind the arrow carets */
+/* Collapsible chevron background normalization */
 .menu__caret,
 .menu__caret:hover {
   background-color: transparent !important;
 }
 
-/* Base active style for all links - Nothing OS capsule and dot style */
-.menu__link--active {
-  font-weight: 600;
-  color: var(--ifm-color-primary) !important;
-  background-color: rgba(215, 25, 33, 0.04) !important;
-  border-left: none !important;
-}
-
+/* ── Navigation Tree Active State Architecture ──────────────────────────────
+ * Active document cards (.menu__list-item:not(.menu__list-item-collapsible) > .menu__link--active)
+ * are isolated to target leaf nodes to prevent sub-branch visual noise.
+ * Parent categories receive high-contrast text color accents while maintaining transparent containers. */
+.menu__link::before,
 .menu__link--active::before {
-  content: '';
-  display: inline-block;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: var(--ifm-color-primary);
-  margin-right: 8px;
-  vertical-align: middle;
-  animation: navbarDotFade 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Isolation for nested active categories */
-.menu__list-item-collapsible>.menu__link--active {
-  color: inherit !important;
-  background-color: transparent !important;
-  border-left: none !important;
-}
-
-.menu__list-item-collapsible>.menu__link--active::before {
   display: none !important;
 }
 
-.menu__link--active:hover {
-  background-color: rgba(215, 25, 33, 0.08) !important;
+/* Active Leaf Document Link (Light Mode) */
+.menu__list-item:not(.menu__list-item-collapsible) > .menu__link--active {
+  font-weight: 600 !important;
+  color: var(--ifm-color-primary) !important;
+  background-color: rgba(215, 25, 33, 0.06) !important;
+  border: 1px solid rgba(215, 25, 33, 0.15) !important;
+  border-radius: 8px !important;
+}
+
+.menu__list-item:not(.menu__list-item-collapsible) > .menu__link--active:hover {
+  background-color: rgba(215, 25, 33, 0.1) !important;
   transform: translateX(3px);
 }
 
-[data-theme='dark'] .menu__link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  transform: translateX(3px);
-}
-
-[data-theme='dark'] .menu__link--active {
-  background-color: rgba(215, 25, 33, 0.08) !important;
-}
-
-[data-theme='dark'] .menu__link--active:hover {
+/* Active Leaf Document Link (Dark Mode) */
+[data-theme='dark'] .menu__list-item:not(.menu__list-item-collapsible) > .menu__link--active {
+  color: #FFFFFF !important;
   background-color: rgba(215, 25, 33, 0.12) !important;
+  border: 1px solid rgba(215, 25, 33, 0.25) !important;
+  border-radius: 8px !important;
+}
+
+[data-theme='dark'] .menu__list-item:not(.menu__list-item-collapsible) > .menu__link--active:hover {
+  background-color: rgba(215, 25, 33, 0.18) !important;
   transform: translateX(3px);
 }
 
-/* Sidebar hierarchical indentation */
-.menu__list .menu__list>.menu__list-item>.menu__link,
-.menu__list .menu__list>.menu__list-item>.menu__list-item-collapsible>.menu__link {
-  padding-left: 1.5rem !important;
+/* Ancestor category container normalization — preserves flat hierarchy across collapsible branches */
+.menu__list-item-collapsible,
+.menu__list-item-collapsible > .menu__link,
+.menu__list-item-collapsible > .menu__link--active,
+.menu__link--sublist,
+.menu__link--sublist.menu__link--active,
+[data-theme='dark'] .menu__list-item-collapsible,
+[data-theme='dark'] .menu__list-item-collapsible > .menu__link,
+[data-theme='dark'] .menu__list-item-collapsible > .menu__link--active,
+[data-theme='dark'] .menu__link--sublist,
+[data-theme='dark'] .menu__link--sublist.menu__link--active {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-left: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.menu__list-item-collapsible > .menu__link--active,
+.menu__link--sublist.menu__link--active,
+[data-theme='dark'] .menu__list-item-collapsible > .menu__link--active,
+[data-theme='dark'] .menu__link--sublist.menu__link--active {
+  color: var(--ifm-color-primary) !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+
+.menu__list-item-collapsible > .menu__link--active:hover,
+.menu__link--sublist.menu__link--active:hover,
+[data-theme='dark'] .menu__list-item-collapsible > .menu__link--active:hover,
+[data-theme='dark'] .menu__link--sublist.menu__link--active:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  transform: translateX(2px);
+}
+
+/* Sidebar hierarchical indentation & nested active tab alignment */
+.menu__list-item > .menu__link {
+  margin-left: 0.4rem;
+  padding-left: 0.75rem !important;
+  width: calc(100% - 0.6rem);
+}
+
+.menu__list .menu__list > .menu__list-item > .menu__link,
+.menu__list .menu__list > .menu__list-item > .menu__list-item-collapsible > .menu__link {
+  margin-left: 1.1rem !important;
+  padding-left: 0.75rem !important;
+  width: calc(100% - 1.3rem);
   font-size: 0.85rem;
 }
 
-.menu__list .menu__list .menu__list>.menu__list-item>.menu__link,
-.menu__list .menu__list .menu__list>.menu__list-item>.menu__list-item-collapsible>.menu__link {
-  padding-left: 2.25rem !important;
+.menu__list .menu__list .menu__list > .menu__list-item > .menu__link,
+.menu__list .menu__list .menu__list > .menu__list-item > .menu__list-item-collapsible > .menu__link {
+  margin-left: 1.75rem !important;
+  padding-left: 0.75rem !important;
+  width: calc(100% - 1.95rem);
   font-size: 0.85rem;
 }
 
-.menu__list .menu__list .menu__list .menu__list>.menu__list-item>.menu__link,
-.menu__list .menu__list .menu__list .menu__list>.menu__list-item>.menu__list-item-collapsible>.menu__link {
-  padding-left: 3rem !important;
+.menu__list .menu__list .menu__list .menu__list > .menu__list-item > .menu__link,
+.menu__list .menu__list .menu__list .menu__list > .menu__list-item > .menu__list-item-collapsible > .menu__link {
+  margin-left: 2.4rem !important;
+  padding-left: 0.75rem !important;
+  width: calc(100% - 2.6rem);
   font-size: 0.85rem;
 }
 
@@ -788,6 +812,7 @@ article h1,
 article h2,
 article h3 {
   letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 /* Doc sidebar responsive - mobile drawer */
@@ -811,6 +836,20 @@ article h3 {
     font-weight: 500;
     padding: 0.5rem 1rem;
   }
+}
+
+/* Screen reader & Algolia search context utility classes */
+.algolia-search-context,
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 /* ==========================================
@@ -1030,7 +1069,7 @@ table td a:visited {
   padding: 0.2rem 0.6rem;
   background-color: rgba(0, 0, 0, 0.04);
   color: var(--ifm-color-primary) !important;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(0, 0, 0, 0.08);
   border-radius: 6px;
   font-family: var(--ifm-font-family-base);
   font-size: 0.8rem;
@@ -1042,10 +1081,9 @@ table td a:visited {
 
 table td a:hover,
 .table-copy-wrapper:hover a {
-  background-color: var(--ifm-color-primary) !important;
-  color: #ffffff !important;
-  border-color: var(--ifm-color-primary);
-  box-shadow: 0 2px 8px rgba(215, 25, 33, 0.2);
+  background-color: rgba(215, 25, 33, 0.08) !important;
+  color: var(--ifm-color-primary) !important;
+  border: 2px solid var(--ifm-color-primary) !important;
 }
 
 table td a:hover {
@@ -1056,17 +1094,16 @@ table td a:hover {
 [data-theme='dark'] table td a:link,
 [data-theme='dark'] table td a:visited {
   background-color: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.06);
+  border: 2px solid rgba(255, 255, 255, 0.08);
   color: var(--ifm-color-primary) !important;
   font-weight: 600 !important;
 }
 
 [data-theme='dark'] table td a:hover,
 [data-theme='dark'] .table-copy-wrapper:hover a {
-  background-color: var(--ifm-color-primary) !important;
-  color: #ffffff !important;
-  border-color: var(--ifm-color-primary);
-  box-shadow: 0 2px 10px rgba(215, 25, 33, 0.3);
+  background-color: rgba(215, 25, 33, 0.15) !important;
+  color: var(--ifm-color-primary) !important;
+  border: 2px solid var(--ifm-color-primary) !important;
 }
 
 /* Mobile adjustments */
@@ -1256,12 +1293,10 @@ code {
 
   [data-theme='light'] .header-badge:hover img {
     border-color: rgba(0, 0, 0, 0.25);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
   }
 
   [data-theme='dark'] .header-badge:hover img {
     border-color: var(--ifm-color-primary-light);
-    box-shadow: 0 4px 12px rgba(215, 25, 33, 0.25);
   }
 }
 
@@ -1435,7 +1470,7 @@ a:hover {
   opacity: 0.8;
 }
 
-/* Buttons - Nothing geometric, sharp -> now rounded */
+/* Buttons */
 .button {
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -1457,7 +1492,7 @@ a:hover {
 
 .button--secondary {
   background-color: transparent;
-  border: 1px solid var(--nothing-border-strong);
+  border: 2px solid var(--nothing-border-strong);
   color: inherit !important;
 }
 
@@ -1474,10 +1509,10 @@ a:hover {
   margin: 2rem 0;
 }
 
-/* Cards — NothingOS surface cards */
+/* Cards */
 .card {
   background-color: var(--ifm-card-background-color);
-  border: 1px solid var(--nothing-border);
+  border: 2px solid var(--nothing-border);
   border-radius: 24px;
   box-shadow: none;
   transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
@@ -1497,11 +1532,186 @@ a:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Admonitions */
-.admonition {
+/*
+ * Admonition Component Styling
+ * Restricts callout variants to red, yellow, and green channels across themes.
+ * Light mode uses high-lightness surface fills; dark mode uses low-alpha surface overlays.
+ * Left indicator strips are disabled by default. Uncomment border-left properties to re-enable.
+ */
+.admonition,
+.theme-admonition,
+div[class*="admonition-"] {
   border-radius: 8px;
-  border-left-width: 4px; /* impeccable-disable-line side-tab */
+  border-left: none !important;
+  box-shadow: none !important;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
+
+/* Light mode surface fills (WCAG 2.1 AA contrast floor >= 4.5:1) */
+[data-theme='light'] .admonition-danger,
+[data-theme='light'] .theme-admonition-danger,
+[data-theme='light'] div.alert--danger,
+[data-theme='light'] div[class*="admonition-danger"],
+[data-theme='light'] div[class*="theme-admonition-danger"] {
+  background-color: #FFF5F5 !important;
+  color: #961116 !important;
+  /* border-left: 4px solid #D71920 !important; */
+}
+
+[data-theme='light'] .admonition-warning,
+[data-theme='light'] .admonition-caution,
+[data-theme='light'] .theme-admonition-warning,
+[data-theme='light'] .theme-admonition-caution,
+[data-theme='light'] div.alert--warning,
+[data-theme='light'] div.alert--caution,
+[data-theme='light'] div[class*="admonition-warning"],
+[data-theme='light'] div[class*="admonition-caution"] {
+  background-color: #FFFBE6 !important;
+  color: #7A5E00 !important;
+  /* border-left: 4px solid #FFC700 !important; */
+}
+
+[data-theme='light'] .admonition-info,
+[data-theme='light'] .admonition-note,
+[data-theme='light'] .admonition-tip,
+[data-theme='light'] .theme-admonition-info,
+[data-theme='light'] .theme-admonition-note,
+[data-theme='light'] .theme-admonition-tip,
+[data-theme='light'] div.alert--info,
+[data-theme='light'] div.alert--success,
+[data-theme='light'] div.alert--secondary,
+[data-theme='light'] div[class*="admonition-info"],
+[data-theme='light'] div[class*="admonition-note"],
+[data-theme='light'] div[class*="admonition-tip"],
+[data-theme='light'] div[class*="admonition-secondary"] {
+  background-color: #F0FDF4 !important;
+  color: #065F46 !important;
+  /* border-left: 4px solid #10B981 !important; */
+}
+
+/* Dark mode surface overlays */
+[data-theme='dark'] .admonition-danger,
+[data-theme='dark'] .theme-admonition-danger,
+[data-theme='dark'] div.alert--danger,
+[data-theme='dark'] div[class*="admonition-danger"],
+[data-theme='dark'] div[class*="theme-admonition-danger"] {
+  background-color: rgba(215, 25, 32, 0.10) !important;
+  color: #FCA5A5 !important;
+  /* border-left: 4px solid #D71920 !important; */
+}
+
+[data-theme='dark'] .admonition-warning,
+[data-theme='dark'] .admonition-caution,
+[data-theme='dark'] .theme-admonition-warning,
+[data-theme='dark'] .theme-admonition-caution,
+[data-theme='dark'] div.alert--warning,
+[data-theme='dark'] div.alert--caution,
+[data-theme='dark'] div[class*="admonition-warning"],
+[data-theme='dark'] div[class*="admonition-caution"] {
+  background-color: rgba(255, 199, 0, 0.08) !important;
+  color: #FDE047 !important;
+  /* border-left: 4px solid #FFC700 !important; */
+}
+
+[data-theme='dark'] .admonition-info,
+[data-theme='dark'] .admonition-note,
+[data-theme='dark'] .admonition-tip,
+[data-theme='dark'] .theme-admonition-info,
+[data-theme='dark'] .theme-admonition-note,
+[data-theme='dark'] .theme-admonition-tip,
+[data-theme='dark'] div.alert--info,
+[data-theme='dark'] div.alert--success,
+[data-theme='dark'] div.alert--secondary,
+[data-theme='dark'] div[class*="admonition-info"],
+[data-theme='dark'] div[class*="admonition-note"],
+[data-theme='dark'] div[class*="admonition-tip"],
+[data-theme='dark'] div[class*="admonition-secondary"] {
+  background-color: rgba(16, 185, 129, 0.10) !important;
+  color: #6EE7B7 !important;
+  /* border-left: 4px solid #10B981 !important; */
+}
+
+/*
+ * Optional hover and focus-within indicator activation rules.
+ * Uncomment this block to enable left border indicators on hover or focus-within.
+ *
+ * .admonition-danger:hover,
+ * .admonition-danger:focus-within,
+ * .theme-admonition-danger:hover,
+ * .theme-admonition-danger:focus-within,
+ * .alert--danger:hover,
+ * .alert--danger:focus-within,
+ * div[class*="admonition-danger"]:hover,
+ * div[class*="admonition-danger"]:focus-within,
+ * div[class*="theme-admonition-danger"]:hover,
+ * div[class*="theme-admonition-danger"]:focus-within {
+ *   border-left: 4px solid #D71920 !important;
+ * }
+ *
+ * .admonition-warning:hover,
+ * .admonition-warning:focus-within,
+ * .admonition-caution:hover,
+ * .admonition-caution:focus-within,
+ * .theme-admonition-warning:hover,
+ * .theme-admonition-warning:focus-within,
+ * .theme-admonition-caution:hover,
+ * .theme-admonition-caution:focus-within,
+ * .alert--warning:hover,
+ * .alert--warning:focus-within,
+ * .alert--caution:hover,
+ * .alert--caution:focus-within,
+ * div[class*="admonition-warning"]:hover,
+ * div[class*="admonition-warning"]:focus-within,
+ * div[class*="admonition-caution"]:hover,
+ * div[class*="admonition-caution"]:focus-within {
+ *   border-left: 4px solid #FFC700 !important;
+ * }
+ *
+ * .admonition-info:hover,
+ * .admonition-info:focus-within,
+ * .admonition-note:hover,
+ * .admonition-note:focus-within,
+ * .admonition-tip:hover,
+ * .admonition-tip:focus-within,
+ * .theme-admonition-info:hover,
+ * .theme-admonition-info:focus-within,
+ * .theme-admonition-note:hover,
+ * .theme-admonition-note:focus-within,
+ * .theme-admonition-tip:hover,
+ * .theme-admonition-tip:focus-within,
+ * .alert--info:hover,
+ * .alert--info:focus-within,
+ * .alert--success:hover,
+ * .alert--success:focus-within,
+ * .alert--secondary:hover,
+ * .alert--secondary:focus-within,
+ * div[class*="admonition-info"]:hover,
+ * div[class*="admonition-info"]:focus-within,
+ * div[class*="admonition-note"]:hover,
+ * div[class*="admonition-note"]:focus-within,
+ * div[class*="admonition-tip"]:hover,
+ * div[class*="admonition-tip"]:focus-within,
+ * div[class*="admonition-secondary"]:hover,
+ * div[class*="admonition-secondary"]:focus-within {
+ *   border-left: 4px solid #10B981 !important;
+ * }
+ */
+
+/* Headings and icons inherit parent element color */
+.admonition [class*="admonitionHeading"],
+.theme-admonition [class*="admonitionHeading"],
+div[class*="admonition"] [class*="admonitionHeading"],
+.alert [class*="admonitionHeading"] {
+  color: inherit !important;
+}
+
+.admonition [class*="admonitionIcon"] svg,
+.theme-admonition [class*="admonitionIcon"] svg,
+div[class*="admonition"] [class*="admonitionIcon"] svg {
+  fill: currentColor !important;
+  color: inherit !important;
+}
+
 /* Inline links in admonitions (Red text with underlines for accessibility) */
 .admonition a,
 .theme-admonition a,
@@ -1527,11 +1737,27 @@ div[class*="admonition"] a:hover {
 .breadcrumbs__link {
   font-weight: 500;
   letter-spacing: -0.01em;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+  background: #F0F0F0 !important;
+  color: #000000 !important;
+  font-weight: 600;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme='dark'] .breadcrumbs__item--active .breadcrumbs__link {
+  background: #1A1A1A !important;
+  color: #FFFFFF !important;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
 }
 
 /* Pagination (prev/next) */
 .pagination-nav__link {
-  border: 1px solid var(--nothing-border);
+  border: 2px solid var(--nothing-border);
   border-radius: 12px;
   transition: border-color 0.2s ease;
 }
@@ -1741,7 +1967,7 @@ div[class*="admonition"] a:hover {
 
 /* Pagination (prev/next) */
 .pagination-nav__link {
-  border: 1px solid var(--nothing-border);
+  border: 2px solid var(--nothing-border);
   border-radius: 12px;
   transition: border-color 0.2s ease;
 }
@@ -1939,15 +2165,40 @@ details.alert {
   background-color: var(--ifm-card-background-color) !important;
   border: 1px solid var(--nothing-border) !important;
   border-radius: 24px !important;
-  margin: 1rem 0 !important;
+  margin: 0.2rem 0 !important;
   padding: 0 !important;
-  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease, border-radius 0.15s ease;
   --ifm-alert-border-color: transparent;
   max-width: 100% !important;
   overflow: hidden !important;
   box-shadow: none !important;
 }
 
+/* Grouped accordion list layout — unifies adjacent collapsible sections into cohesive list items */
+details + details,
+details[class*="details"] + details[class*="details"] {
+  margin-top: 2px !important;
+}
+
+/* Grouped corner radii for stacked details lists */
+details:has(+ details),
+details[class*="details"]:has(+ details[class*="details"]) {
+  border-bottom-left-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+}
+
+details + details,
+details[class*="details"] + details[class*="details"] {
+  border-top-left-radius: 6px !important;
+  border-top-right-radius: 6px !important;
+  border-bottom-left-radius: 24px !important;
+  border-bottom-right-radius: 24px !important;
+}
+
+details + details:has(+ details),
+details[class*="details"] + details[class*="details"]:has(+ details[class*="details"]) {
+  border-radius: 6px !important;
+}
 
 
 details:hover,
@@ -2120,86 +2371,263 @@ details summary:hover::before {
   --docsearch-key-shadow: none;
 }
 
+/* Icon-only Search Button across all viewports */
 .DocSearch-Button {
-  border: 1px solid var(--nothing-border);
-  border-radius: 12px;
-  background: transparent;
-  color: var(--ifm-font-color-base);
-  margin: 0;
-  min-width: 2.5rem;
-  padding: 0.35rem 0.55rem;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  max-width: 32px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 2px solid var(--nothing-border) !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  color: var(--ifm-font-color-base) !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer;
 }
 
 .DocSearch-Button:hover,
 .DocSearch-Button:focus-visible {
-  background: var(--ifm-background-surface-color);
-  border-color: var(--ifm-color-primary);
-  box-shadow: 0 0 0 3px rgba(215, 25, 33, 0.18);
-  color: var(--ifm-font-color-base);
+  background: rgba(215, 25, 33, 0.05) !important;
+  border-color: var(--ifm-color-primary) !important;
+  color: var(--ifm-color-primary) !important;
+  box-shadow: 0 0 10px rgba(215, 25, 33, 0.15) !important;
 }
 
-.DocSearch-Button-Placeholder {
-  font-family: var(--ifm-font-family-base);
-  font-size: 0.85rem;
+.DocSearch-Button-Container {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-.DocSearch-Button-Key {
-  background: var(--ifm-background-color);
-  border: 1px solid var(--nothing-border);
-  box-shadow: none;
-  color: var(--ifm-font-color-base);
+.DocSearch-Search-Icon {
+  width: 16px !important;
+  height: 16px !important;
+  margin: 0 !important;
+  color: currentColor !important;
+  fill: currentColor !important;
+  stroke: none !important;
+  opacity: 1 !important;
+  display: block !important;
+  transition: transform 0.2s ease;
 }
 
-.DocSearch-Modal {
-  border: 1px solid var(--nothing-border-strong);
-  border-radius: 16px;
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+.DocSearch-Button:hover .DocSearch-Search-Icon {
+  transform: scale(1.1);
 }
 
+/* Hide text label and shortcut keys to enforce icon-only search button globally */
+.DocSearch-Button-Placeholder,
+.DocSearch-Button-Keys {
+  display: none !important;
+}
+
+/* Keep "Powered by Algolia" logo visible for DocSearch TOS compliance,
+   but disable pointer events so hover doesn't show browser URL status bar */
+.DocSearch-Logo,
+.DocSearch-Logo a {
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+/* DocSearch Modal Container - Desktop (Floating Centered Dialog) */
+@media (min-width: 769px) {
+  .DocSearch-Modal {
+    border: 1px solid var(--nothing-border-strong) !important;
+    border-radius: 16px !important;
+    overflow: hidden !important; /* Clip top input and bottom footer to match modal's 16px rounded corners */
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4) !important;
+    margin: 60px auto auto !important;
+    max-width: 800px !important;
+  }
+}
+
+/* DocSearch Modal Container - Mobile & Tablet (Edge-to-Edge Fullscreen) */
+@media (max-width: 768px) {
+  .DocSearch-Container {
+    padding: 0 !important;
+  }
+
+  .DocSearch-Modal {
+    inset: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    border-radius: 0 !important; /* Remove corner radius on mobile full-screen view to fix dark background gap */
+    border: none !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+  }
+}
+
+/* Integrated Search Input Header */
 .DocSearch-Form {
-  border: 1px solid var(--nothing-border);
-  border-radius: 12px;
-  box-shadow: none;
+  border: none !important;
+  border-bottom: 1px solid var(--nothing-border) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  transition: border-color 0.2s ease;
 }
 
 .DocSearch-Form:focus-within {
-  border-color: var(--ifm-color-primary);
-  box-shadow: 0 0 0 3px rgba(215, 25, 33, 0.18);
+  border-bottom-color: var(--ifm-color-primary) !important;
+  box-shadow: none !important;
 }
 
 .DocSearch-Input {
-  font-family: var(--ifm-font-family-base);
+  font-family: var(--ifm-font-family-base) !important;
+}
+
+/* Footer Container */
+.DocSearch-Footer {
+  border-top: 1px solid var(--nothing-border) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: var(--ifm-background-surface-color) !important;
 }
 
 .DocSearch-Hit a {
   border: 1px solid transparent;
-  border-radius: 10px;
+  border-radius: 12px;
+  background: transparent;
+  text-decoration: none !important;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
+/* Selected / hovered result item — subtle elevated card in tune with site background */
 .DocSearch-Hit[aria-selected='true'] a,
 .DocSearch-Hit a:hover {
-  background: var(--ifm-color-primary);
-  border-color: var(--ifm-color-primary);
-  color: #ffffff;
+  background: rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(215, 25, 33, 0.5) !important;
+  color: var(--ifm-color-content) !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+
+[data-theme='dark'] .DocSearch-Hit[aria-selected='true'] a,
+[data-theme='dark'] .DocSearch-Hit a:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(215, 25, 33, 0.6) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+
+/* Ensure no text-decoration / underlines inside hit items */
+.DocSearch-Hit-title,
+.DocSearch-Hit-path,
+.DocSearch-Hit-text,
+.DocSearch-Hit-content-wrapper,
+.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-title,
+.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-path,
+.DocSearch-Hit a:hover .DocSearch-Hit-title,
+.DocSearch-Hit a:hover .DocSearch-Hit-path {
+  text-decoration: none !important;
+}
+
+.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-title,
+.DocSearch-Hit a:hover .DocSearch-Hit-title {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-title,
+[data-theme='dark'] .DocSearch-Hit a:hover .DocSearch-Hit-title {
+  color: #ffffff !important;
+}
+
+.DocSearch-Hit-path {
+  color: var(--ifm-color-content) !important;
+  opacity: 0.6;
 }
 
 .DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-path,
-.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-title,
-.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-icon,
-.DocSearch-Hit a:hover .DocSearch-Hit-path,
-.DocSearch-Hit a:hover .DocSearch-Hit-title,
-.DocSearch-Hit a:hover .DocSearch-Hit-icon {
-  color: #ffffff;
+.DocSearch-Hit a:hover .DocSearch-Hit-path {
+  color: var(--ifm-color-primary) !important;
+  opacity: 0.85;
 }
 
+.DocSearch-Hit-icon {
+  color: var(--ifm-color-content) !important;
+  opacity: 0.6;
+}
+
+.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-icon,
+.DocSearch-Hit a:hover .DocSearch-Hit-icon {
+  color: var(--ifm-color-primary) !important;
+  opacity: 1;
+}
+
+/* ONLY highlight search query keywords in RED, with NO underline */
 .DocSearch-Hit mark {
-  color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary) !important;
+  font-weight: 700 !important;
+  background: transparent !important;
+  text-decoration: none !important;
 }
 
 .DocSearch-Hit[aria-selected='true'] mark,
 .DocSearch-Hit a:hover mark {
-  color: #ffffff;
-  text-decoration: underline;
+  color: var(--ifm-color-primary) !important;
+  font-weight: 700 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+}
+
+/* DocSearch Hit Action Buttons (Remove from history X, Favorite star, Select arrow) */
+.DocSearch-Hit-action-button,
+.DocSearch-Hit-action {
+  color: var(--ifm-font-color-base) !important;
+  opacity: 0.4;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 50%;
+  padding: 4px !important;
+  transition: opacity 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-action-button,
+.DocSearch-Hit[aria-selected='true'] .DocSearch-Hit-action {
+  opacity: 0.75;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.DocSearch-Hit-action-button:hover,
+.DocSearch-Hit-action-button:focus,
+.DocSearch-Hit-action:hover {
+  opacity: 1 !important;
+  transform: scale(1.15);
+  color: var(--ifm-color-primary) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.DocSearch-Hit-action-button svg,
+.DocSearch-Hit-action svg {
+  color: currentColor !important;
+  fill: currentColor !important;
+  width: 14px;
+  height: 14px;
+}
+
+/* Favorite star button state */
+.DocSearch-Hit-action-button[title*="save"]:hover,
+.DocSearch-Hit-action-button[title*="favorite"]:hover,
+.DocSearch-Hit-action-button[aria-label*="favorite"]:hover,
+.DocSearch-Hit-action-button[aria-label*="save"]:hover {
+  color: #eac54f !important;
 }
 
 .DocSearch-Commands-Key,
@@ -2214,6 +2642,7 @@ details summary:hover::before {
   position: relative;
   vertical-align: middle;
   transition: transform 0.2s ease;
+  margin-right: 22px;
 }
 
 /* Constant padding avoids column width shifts when the copy control mounts. */
@@ -2368,58 +2797,113 @@ details summary:hover::before {
    BACK TO TOP BUTTON
    ========================================== */
 .theme-back-to-top-button {
-  background-color: var(--ifm-card-background-color) !important;
-  color: var(--ifm-color-primary) !important;
-  border-radius: 999px !important;
   width: 44px !important;
   height: 44px !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
-  border: 1px solid var(--nothing-border) !important;
+  border-radius: 50% !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   overflow: visible !important;
   z-index: 100 !important;
+  cursor: pointer !important;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-    background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease,
-    border-color 0.2s ease !important;
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease !important;
+}
+
+.theme-back-to-top-button::before {
+  display: none !important;
+}
+
+.theme-back-to-top-button::after {
+  content: '' !important;
+  display: block !important;
+  width: 9px !important;
+  height: 9px !important;
+  box-sizing: border-box !important;
+  border-top: 2px solid #111111 !important;
+  border-left: 2px solid #111111 !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  border-radius: 1px !important;
+  transform: rotate(45deg) translate(2px, 2px) !important;
+  mask: none !important;
+  -webkit-mask: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  transition: border-color 0.2s ease, transform 0.2s ease !important;
+}
+
+[data-theme='dark'] .theme-back-to-top-button {
+  background-color: rgba(22, 22, 24, 0.85) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+
+[data-theme='dark'] .theme-back-to-top-button::after {
+  border-top-color: #EDEDED !important;
+  border-left-color: #EDEDED !important;
 }
 
 /* Scroll-progress ring drawn via SVG injected by Root.tsx */
 .scroll-ring-svg {
   position: absolute;
-  top: -4px;
-  left: -4px;
-  width: calc(100% + 8px);
-  height: calc(100% + 8px);
+  top: -3px;
+  left: -3px;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
   border-radius: 50%;
   pointer-events: none;
   z-index: -1;
   overflow: visible;
   transform: rotate(-90deg);
-  /* start from top */
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.15));
+  transition: filter 0.2s ease;
+}
+
+.scroll-ring-track {
+  stroke: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] .scroll-ring-track {
+  stroke: rgba(255, 255, 255, 0.08);
+}
+
+.scroll-ring-progress {
+  stroke: var(--ifm-color-primary);
 }
 
 .theme-back-to-top-button:hover {
-  background-color: var(--ifm-color-primary) !important;
-  border-color: var(--ifm-color-primary) !important;
-  color: #ffffff !important;
-  transform: translateY(-2px) scale(1.05) !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+  background-color: rgba(215, 25, 33, 0.06) !important;
+  border-color: rgba(215, 25, 33, 0.4) !important;
+  transform: translateY(-3px) scale(1.04) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12), 0 0 12px rgba(215, 25, 33, 0.15) !important;
 }
 
-.theme-back-to-top-button:active {
-  transform: translateY(0) scale(0.95) !important;
+.theme-back-to-top-button:hover .scroll-ring-svg {
+  filter: drop-shadow(0 0 4px rgba(215, 25, 33, 0.45));
 }
 
-[data-theme='dark'] .theme-back-to-top-button {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+.theme-back-to-top-button:hover::after {
+  border-top-color: var(--ifm-color-primary) !important;
+  border-left-color: var(--ifm-color-primary) !important;
+  transform: rotate(45deg) translate(1px, 1px) !important;
 }
 
 [data-theme='dark'] .theme-back-to-top-button:hover {
-  background-color: var(--ifm-color-primary) !important;
-  border-color: var(--ifm-color-primary) !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45) !important;
+  background-color: rgba(215, 25, 33, 0.1) !important;
+  border-color: rgba(215, 25, 33, 0.5) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5), 0 0 14px rgba(215, 25, 33, 0.25) !important;
+}
+
+.theme-back-to-top-button:active {
+  transform: translateY(-1px) scale(0.96) !important;
 }
 
 /* ==========================================
@@ -2657,7 +3141,7 @@ details summary:hover::before {
 
 .mention-card {
   background-color: var(--ifm-card-background-color);
-  border: 1px solid var(--nothing-border);
+  border: 2px solid var(--nothing-border);
   border-radius: 16px;
   padding: 1.25rem;
   display: flex;

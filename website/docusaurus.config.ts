@@ -13,12 +13,13 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import * as child_process from 'node:child_process';
 
 /**
- * Maps Android version codename letters to their chronological ranks.
- * Add new letters here (e.g., D: 6 for Android 18) to explicitly define them if needed.
+ * Maps Android dessert version letters to chronological release ranks.
+ * Android 16 resets alphabetical progression back to B (Baklava) instead of W.
  */
-const androidOrder: Record<string, number> = {
+const androidOrder = {
   T: 1, // Android 13 (Tiramisu)
   U: 2, // Android 14 (Upside Down Cake)
   V: 3, // Android 15 (Vanilla)
@@ -28,18 +29,15 @@ const androidOrder: Record<string, number> = {
 
 /**
  * Resolves the chronological rank of an Android codename letter.
- * Checks the explicit lookup map first, then dynamically falls back to alphabetical rank for B-Z.
- *
- * @param letter The Android version letter (e.g. 'B', 'V', 'T')
- * @returns Numerical rank representing chronological order (higher is newer)
+ * Checks the explicit lookup map first, then falls back to ASCII alphabetical order for B through Z.
  */
 function getAndroidLetterRank(letter: string): number {
   const upper = letter.toUpperCase();
-  const knownRank = androidOrder[upper];
-  if (knownRank !== undefined) {
-    return knownRank;
+  if (upper in androidOrder) {
+    // SAFETY: Key checked in androidOrder map before property access
+    return androidOrder[upper as keyof typeof androidOrder];
   }
-  // Dynamic fallback for B-Z (B starts at rank 4, C is 5, etc.) using ASCII char code
+  // Dynamic fallback for post-Baklava letter progression (B starts at rank 4, C is 5).
   const code = upper.charCodeAt(0);
   if (code >= 66 && code <= 90) { // 'B' (66) through 'Z' (90)
     return code - 66 + 4;
@@ -48,11 +46,7 @@ function getAndroidLetterRank(letter: string): number {
 }
 
 /**
- * Compares two software version strings.
- *
- * @param vAStr First version string (e.g. '1.0.1')
- * @param vBStr Second version string (e.g. '1.0.2')
- * @returns Negative if vAStr > vBStr, positive if vBStr > vAStr, or 0 if equal.
+ * Compares two dot-delimited software version strings in descending order (higher version first).
  */
 function compareVersions(vAStr: string, vBStr: string): number {
   const partsA = vAStr.split('.');
@@ -76,12 +70,9 @@ function compareVersions(vAStr: string, vBStr: string): number {
 }
 
 /**
- * Sorts Docusaurus changelog documentation pages.
- * Orders them chronologically by Android letter rank, version string, date, and timestamp.
- *
- * @param idA First changelog file identifier path
- * @param idB Second changelog file identifier path
- * @returns Comparison value for sorting
+ * Sorts changelog pages descending by Android letter rank, version, date, and timestamp.
+ * Matches Nothing OS build tag pattern: [Codename]-[AndroidLetter][Version]-[YYMMDD]-[HHMM]
+ * Example: Pacman-U2.6-240828-1925
  */
 function compareChangelogs(idA: string, idB: string): number {
   const nameA = (idA.split('/').pop() || '').replace(/\.mdx?$/i, '');
@@ -119,10 +110,7 @@ function compareChangelogs(idA: string, idB: string): number {
 }
 
 /**
- * Resolves the numeric ranking score of a device name suffix variant.
- *
- * @param name Device display name
- * @returns Numeric variant rank (lower number represents higher priority)
+ * Priority rank for device model suffixes (Pro Plus > Pro > Plus > Base).
  */
 function getVariantRank(name: string): number {
   const lower = name.toLowerCase();
@@ -229,14 +217,6 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
       return compareChangelogs(a.id, b.id);
     });
 
-    let link = item.link;
-    if (sortedSubItems.length > 0 && sortedSubItems[0].type === 'doc') {
-      link = {
-        type: 'doc',
-        id: sortedSubItems[0].id,
-      };
-    }
-
     const codename = getCodenameFromCategory({ items: sortedSubItems });
     const matchingDevices = devicesMetadata.filter((device: any) => {
       const folderForDevice = device.folder || device.codename;
@@ -248,7 +228,7 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
     let brand = 'Nothing';
 
     if (matchingDevices.length > 1) {
-      const cleanNames = matchingDevices.map((d: any) => d.name.split(' (')[0]);
+      const cleanNames = matchingDevices.map((d: any) => d.name.match(/^(.*)\s\([^(]+\)$/)?.at(1) ?? "");
       cleanNames.sort();
       const joinedNames = cleanNames.join(' / ').replace(/\/ Phone \(/g, '/ (');
       
@@ -276,9 +256,9 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
     const processedCategory = {
       ...item,
       label,
-      link,
       items: sortedSubItems,
     };
+    delete processedCategory.link;
 
     if (!dev) {
       unknownItems.push(processedCategory);
@@ -365,7 +345,7 @@ const websiteSchema = JSON.stringify({
 
 const config: Config = {
   title: 'Nothing Archive',
-  tagline: 'A curated hub for everything related to the Nothing ecosystem.',
+  tagline: 'Community-driven index for Nothing OS firmware, apps, projects, official resources, and guides.',
   favicon: 'img/brand/favicon.ico',
 
   future: {
@@ -406,6 +386,34 @@ const config: Config = {
         const changelogsDir = path.join(__dirname, 'docs', 'changelogs');
         const latestLinks: Record<string, string> = {};
         const changelogLinks: Record<string, string> = {};
+        const changelogs: {
+          tagName: string;
+          path: string;
+          publishedAt: string;
+        }[] = [];
+
+        // Batch query git commit timestamps for changelog files to determine repository availability date
+        const fileCommitDates = new Map<string, string>();
+        try {
+          const logOutput = child_process.execSync(
+            'git log --name-only --format=COMMIT:%cI -- docs/changelogs',
+            { cwd: __dirname, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }
+          );
+          let currentCommitDate = '';
+          for (const line of logOutput.split(/\r?\n/)) {
+            const trimmed = line.trim();
+            if (trimmed.startsWith('COMMIT:')) {
+              currentCommitDate = trimmed.slice(7);
+            } else if (trimmed && trimmed.endsWith('.md') && currentCommitDate) {
+              const baseName = path.basename(trimmed, '.md').toLowerCase();
+              if (!fileCommitDates.has(baseName)) {
+                fileCommitDates.set(baseName, currentCommitDate);
+              }
+            }
+          }
+        } catch {
+          // Subprocess execution fails gracefully in environments lacking git history
+        }
         
         if (fs.existsSync(changelogsDir)) {
           const folders = fs.readdirSync(changelogsDir);
@@ -418,7 +426,25 @@ const config: Config = {
 
               for (const file of files) {
                 const filename = file.replace(/\.md$/, '');
-                changelogLinks[filename.toLowerCase()] = `${baseUrl}docs/changelogs/${folder}/${filename}`;
+                const filePath = path.join(folderPath, file);
+                const targetUrl = `${baseUrl}docs/changelogs/${folder}/${filename}`;
+                changelogLinks[filename.toLowerCase()] = targetUrl;
+
+                const lowerName = filename.toLowerCase();
+                let publishedAt = fileCommitDates.get(lowerName);
+                if (!publishedAt) {
+                  try {
+                    publishedAt = fs.statSync(filePath).mtime.toISOString();
+                  } catch {
+                    publishedAt = new Date().toISOString();
+                  }
+                }
+
+                changelogs.push({
+                  tagName: filename,
+                  path: targetUrl,
+                  publishedAt,
+                });
               }
               
               if (files.length > 0) {
@@ -486,8 +512,11 @@ const config: Config = {
             }
           }
         }
+
+        // Sort changelogs chronologically descending by commit date
+        changelogs.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
         
-        setGlobalData({ latestLinks, changelogLinks });
+        setGlobalData({ latestLinks, changelogLinks, changelogs });
       }
     }),
     [
@@ -589,12 +618,49 @@ const config: Config = {
         content: '82DB95221F91EA16',
       },
     },
+    // Anti-AI data mining and crawler opt-out standards
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'robots',
+        content: 'noai, noimageai',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'tdm-reservation',
+        content: '1',
+      },
+    },
     {
       tagName: 'script',
       attributes: {
         type: 'application/ld+json',
       },
       innerHTML: websiteSchema,
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap',
+      },
     },
     {
       tagName: 'link',
@@ -650,6 +716,26 @@ const config: Config = {
         rel: 'preload',
         as: 'font',
         type: 'font/woff2',
+        href: `${baseUrl}fonts/Geist-Variable.woff2`,
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        as: 'font',
+        type: 'font/woff2',
+        href: `${baseUrl}fonts/GeistMono-Variable.woff2`,
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        as: 'font',
+        type: 'font/woff2',
         href: `${baseUrl}fonts/InterVariable.woff2`,
         crossorigin: 'anonymous',
       },
@@ -659,13 +745,92 @@ const config: Config = {
       attributes: {},
       innerHTML: `
         @font-face {
+          font-family: 'Geist';
+          font-style: normal;
+          font-weight: 100 900;
+          font-display: swap;
+          src: url('${baseUrl}fonts/Geist-Variable.woff2') format('woff2');
+        }
+        @font-face {
+          font-family: 'Geist Mono';
+          font-style: normal;
+          font-weight: 100 900;
+          font-display: swap;
+          src: url('${baseUrl}fonts/GeistMono-Variable.woff2') format('woff2');
+        }
+        @font-face {
+          font-family: 'GeistMono';
+          font-style: normal;
+          font-weight: 100 900;
+          font-display: swap;
+          src: url('${baseUrl}fonts/GeistMono-Variable.woff2') format('woff2');
+        }
+        @font-face {
+          font-family: 'Geist-Mono';
+          font-style: normal;
+          font-weight: 100 900;
+          font-display: swap;
+          src: url('${baseUrl}fonts/GeistMono-Variable.woff2') format('woff2');
+        }
+        @font-face {
           font-family: 'Inter var';
           font-style: normal;
           font-weight: 100 900;
           font-display: swap;
           src: url('${baseUrl}fonts/InterVariable.woff2') format('woff2');
         }
+        @font-face {
+          font-family: 'NDot55';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url('${baseUrl}fonts/NDot-55.woff2') format('woff2'),
+               url('${baseUrl}fonts/NDot-55.otf') format('opentype');
+        }
+        @font-face {
+          font-family: 'NType82Headline';
+          font-style: normal;
+          font-weight: 400 700;
+          font-display: swap;
+          src: url('${baseUrl}fonts/NType82-Headline.woff2') format('woff2'),
+               url('${baseUrl}fonts/NType82-Headline.otf') format('opentype');
+        }
+        @font-face {
+          font-family: 'NType82';
+          font-style: normal;
+          font-weight: 400 700;
+          font-display: swap;
+          src: url('${baseUrl}fonts/NType82-Regular.woff2') format('woff2'),
+               url('${baseUrl}fonts/NType82-Regular.otf') format('opentype');
+        }
+        @font-face {
+          font-family: 'NType82Mono';
+          font-style: normal;
+          font-weight: 400 700;
+          font-display: swap;
+          src: url('${baseUrl}fonts/NType82Mono-Regular.woff2') format('woff2'),
+               url('${baseUrl}fonts/NType82Mono-Regular.otf') format('opentype');
+        }
+        @font-face {
+          font-family: 'LetteraMonoLL';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url('${baseUrl}fonts/LetteraMono-LL.woff2') format('woff2'),
+               url('${baseUrl}fonts/LetteraMono-LL.otf') format('opentype');
+        }
       `,
+    },
+    // Preload critical headline font to eliminate FCP/LCP render delay
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        href: `${baseUrl}fonts/NType82-Headline.woff2`,
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: 'anonymous',
+      },
     },
     // Preconnect directives for external font domains to reduce latency
     {
@@ -683,12 +848,20 @@ const config: Config = {
         crossorigin: 'anonymous',
       },
     },
+    // Non-render-blocking font stylesheet loading for JetBrains Mono
     {
       tagName: 'link',
       attributes: {
-        rel: 'stylesheet',
+        rel: 'preload',
+        as: 'style',
         href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap',
+        onload: "this.onload=null;this.rel='stylesheet'",
       },
+    },
+    {
+      tagName: 'noscript',
+      attributes: {},
+      innerHTML: `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">`,
     },
   ],
 
@@ -702,7 +875,7 @@ const config: Config = {
       { property: 'og:image:width', content: '2160' },
       { property: 'og:image:height', content: '1080' },
       { property: 'og:image:type', content: 'image/png' },
-      { property: 'og:image:alt', content: 'Nothing Archive — Nothing OS Firmware & Community Resources' },
+      { property: 'og:image:alt', content: 'Nothing Archive — Nothing OS Firmware, OTA Updates & Community Apps' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:image', content: `${siteUrl}${baseUrl}img/brand/social-banner.png` },
     ],
@@ -743,11 +916,15 @@ const config: Config = {
           className: 'header-home-link',
         },
         {
-          type: 'custom-PwaInstallButton',
+          type: 'custom-SupportButton',
           position: 'right',
         },
         {
-          type: 'custom-SupportButton',
+          type: 'custom-CursorToggle',
+          position: 'right',
+        },
+        {
+          type: 'custom-PwaInstallButton',
           position: 'right',
         },
         {
@@ -767,7 +944,7 @@ const config: Config = {
     footer: {
       style: 'dark',
       links: [],
-      copyright: `<div class="footer-custom"><div class="footer-links"><a href="${baseUrl}docs/contributing">Contributing</a><span class="separator">•</span><a href="${baseUrl}docs/licensing">License</a><span class="separator">•</span><a href="${baseUrl}docs/acknowledgements">Credits</a></div><div class="footer-info"><span>© 2026 NOTHING ARCHIVE</span><span class="info-dot">•</span><span>A community initiative led by <a href="https://github.com/spike0en" target="_blank" rel="noopener noreferrer" class="credit-link">Spike</a></span></div><div class="footer-disclaimer">Not affiliated with Nothing Technology Limited</div></div>`,
+      copyright: `<div class="footer-custom"><div class="footer-links"><a href="${baseUrl}docs/contributing">Contributing</a><span class="separator">•</span><a href="${baseUrl}docs/licensing">License</a><span class="separator">•</span><a href="${baseUrl}docs/acknowledgements">Credits</a></div><div class="footer-info"><span>© 2026 NOTHING ARCHIVE</span></div><div class="footer-disclaimer">Not affiliated with Nothing Technology Limited</div></div>`,
     },
     prism: {
       theme: prismThemes.github,

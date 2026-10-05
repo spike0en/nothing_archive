@@ -6,8 +6,15 @@ on:
       - main
     paths:
       - 'website/**'
+      - 'CONTRIBUTING.md'
       - '.github/workflows/deploy.yml'
   workflow_dispatch:
+    inputs:
+      use_self_hosted:
+        description: 'Run on self-hosted ARM64 runner (uncheck for GitHub ubuntu-latest)'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -23,7 +30,11 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ${{ vars.USE_SELF_HOSTED == 'true' && fromJSON('["self-hosted", "Linux"]') || 'ubuntu-latest' }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    runs-on: ${{ ((github.event_name == 'workflow_dispatch' && inputs.use_self_hosted) || (github.event_name != 'workflow_dispatch' && vars.USE_SELF_HOSTED == 'true')) && fromJSON('["self-hosted", "Linux", "ARM64"]') || 'ubuntu-latest' }}
     defaults:
       run:
         working-directory: website
@@ -32,6 +43,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2

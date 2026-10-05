@@ -1,17 +1,15 @@
 ---
 sidebar_position: 4
 title: Guides
-description: Step-by-step guides for bootloader unlocking, rooting, OTA updates, and Nothing device customization.
-keywords: [nothing bootloader unlock, root nothing phone, nothing fastboot, nothing ota updates, nothing dialer codes, remap essential key]
+pagination_prev: changelogs/index
+description: Technical guides for OTA sideloading, dialer codes, bootloader unlocking, rooting, partition backups, custom ROMs, and unbricking.
 ---
 
 # How-to Guides
 
-Step-by-step guides on several aspects.
+Step-by-step procedures for Nothing OS configuration, maintenance, and modification.
 
 ## General Use & Troubleshooting
-
-Tips, tricks, and general guides for everyday use.
 
 ### OTA Sideloading
 
@@ -104,7 +102,7 @@ B. **Proceed with Sideloading**
       *#*#682#*#*
       ```
    - This will launch the built-in offline updater tool.  
-   - The UI may show `NothingOfflineOtaUpdate` or `NOTHING BETA OTA UPDATE` — both work.
+   - The UI may show `NothingOfflineOtaUpdate` or `NOTHING BETA OTA UPDATE`; both work.
 
  - **Apply the Update:**  
    - The updater will automatically detect the update file.  
@@ -523,7 +521,7 @@ D. **Restoring Partitions**
 Ensure your bootloader is unlocked before proceeding. Refer to the [Unlocking Bootloader](#unlocking-bootloader) guide if you have not done so.
 :::
 
-:::danger Disclaimer & Warning
+:::danger[Disclaimer & Warning]
 - This is a generic guide designed to work in most scenarios. Always cross-reference and follow any specific instructions provided by the ROM developer or maintainer.
 - Flashing a custom ROM for the first time or performing a clean flash **will erase all user data**. Back up your data before proceeding (e.g., using Google One, copying folders manually via `adb pull` or FTP, or using root backup tools like Swift Backup if your device is already rooted).
 - You must have an unlocked bootloader and properly configured USB, ADB, and Fastboot drivers on your PC.
@@ -542,7 +540,7 @@ Ensure your bootloader is unlocked before proceeding. Refer to the [Unlocking Bo
 
 #### Recovery / Sideload Based ROMs
 
-:::note Key Considerations
+:::note[Key Considerations]
 - **Sideload Progress & PC Status:** When running `adb sideload`, the progress indicator on your PC will often pause at around **47%** and may report `Total xfer: 1.00x` or error messages such as `adb: failed to read command: Success`, `No error`, or `Undefined error: 0`. This is normal behavior and indicates a successful transfer. Always refer to your phone's screen to verify that the installation completed (look for `exit status 0`). Reaching 47% on the PC and seeing `/metadata/ota` errors on the device screen after formatting are expected.
 - **Flashing via Custom Recoveries:** Directly flashing recovery-based custom ROM builds using custom recoveries like TWRP or OrangeFox is generally possible. However, check developer notes to ensure functionality is not broken. Note that doing so may disable automatic OTA updates, as OTAs typically rely on the stock recovery image shipped with the ROM.
 - **Error 7 (kInstallDeviceOpenError):** If you are switching from the stock ROM or another custom ROM and encounter `Error Applying update: 7 (ErrorCode: kInstallDeviceOpenError)` (or if flashing fails via recovery), you must flash the `super_empty.img` partition image. You can obtain this file from the Telegram discussion group for your specific device model.
@@ -848,8 +846,8 @@ This section should only be referred to when no other option is left to recover 
 
 Install the appropriate drivers for your device's SoC manufacturer.
 
-- **Qualcomm HS-USB 9008 Driver:** [OneDrive](https://itraps-my.sharepoint.com/personal/public_builds_itraps_onmicrosoft_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers&viewid=fce5f287%2D4883%2D4f5a%2Daf37%2D29642c53cfdf) // [Microsoft Update Catalog](https://catalog.update.microsoft.com/Search.aspx?q=qualcomm%20hs-usb)
-- **MediaTek Driver:** [MediaFire](https://www.mediafire.com/file/w0z94wwe4lkka7q/MTK-Driver-v5.2307.zip/file) // [OneDrive](https://itraps-my.sharepoint.com/personal/public_builds_itraps_onmicrosoft_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fpublic%5Fbuilds%5Fitraps%5Fonmicrosoft%5Fcom%2FDocuments%2FNothing%20Resources%2F%40Drivers&viewid=fce5f287%2D4883%2D4f5a%2Daf37%2D29642c53cfdf)
+- **Qualcomm HS-USB 9008 Driver:** [Gofile](https://gofile.io/d/s2C20f) // [Microsoft Update Catalog](https://catalog.update.microsoft.com/Search.aspx?q=qualcomm%20hs-usb) // [Pixeldrain](https://pixeldrain.com/u/xyUqeUyr)
+- **MediaTek Driver:** [Gofile](https://gofile.io/d/s2C20f) // [MediaFire](https://www.mediafire.com/file/w0z94wwe4lkka7q/MTK-Driver-v5.2307.zip/file) // [Pixeldrain](https://pixeldrain.com/u/fLng7rMk)
 
 ### EDL Cable (Qualcomm)
 
@@ -859,7 +857,7 @@ Install the appropriate drivers for your device's SoC manufacturer.
 
 ### Tools & Resources
 
-:::danger Disclaimer & Notice
+:::danger[Disclaimer & Notice]
 
 - This section serves solely as a reference index for resources already publicly available on the open web. This project does not host, store, or distribute any of the proprietary tools or binary files listed below.
 - All links provided point to external, third-party repositories and file hosts over which we have no control. We do not guarantee the security, integrity, or legality of these external resources.
@@ -883,7 +881,7 @@ Stay updated with custom ROMs, kernels, and development projects.
 
 :::note
 
-- This section is community-managed in [Telegram](https://telegram.me/Nothing_Archive) and is not affiliated with Nothing.
+- This section is community-managed in [Telegram](https://t.me/s/NothingTechCommunity) and is not affiliated with Nothing.
 - The links below provide filtered search results from Telegram channels without the need to sign up. However, it is recommended to do so to interact and join discussion chats for respective devices, seek support, or engage with the enthusiast community if you are interested in tinkering, maximizing your device's potential, or staying up to date with all releases.
 - At times, the links below might return no results, which means that certain categories of content are not yet available, developed, or maintained by a reliable maintainer for that particular model.
 - Unlocking the bootloader and flashing custom firmware will void your OEM warranty. Please read all flashing guides if stated in the corresponding posts and refer to the support chat if linked or the discussion group for the model.

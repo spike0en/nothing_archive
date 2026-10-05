@@ -18,32 +18,49 @@ interface ChangelogsPluginData {
   changelogLinks: Record<string, string>;
 }
 
-/**
- * ReleaseFeed component.
- * Filters and lists latest firmware releases per device model and computes total download metrics.
- */
+function getBuildStamp(tagName: string): string {
+  const match = tagName.match(/(\d{6})-(\d{4})/);
+  return match ? match[1] + match[2] : '';
+}
+
 export default function ReleaseFeed(): React.JSX.Element {
-  // Centralized GitHub data hook: deduplicated, stale-while-revalidate
   const { releases, totalCount: totalReleasesCount, status: statusSource, error: errorState, loading } = useGitHubReleases();
+  // SAFETY: Validated by Docusaurus plugin contract
   const { changelogLinks } = usePluginData('changelogs-plugin') as ChangelogsPluginData;
-  // Track the latest release per model.
+
   const latestReleasesPerModel = React.useMemo(() => {
-    const seen = new Set<string>();
-    const result: Release[] = [];
-    
+    const modelMap = new Map<string, Release>();
+    const indexMap = new Map<Release, number>();
+    releases.forEach((r, i) => indexMap.set(r, i));
+
     for (const release of releases) {
       const code = release.codename.toLowerCase();
-      if (!seen.has(code)) {
-        seen.add(code);
-        result.push(release);
+      const existing = modelMap.get(code);
+
+      if (!existing) {
+        modelMap.set(code, release);
+        continue;
+      }
+
+      const existingStamp = getBuildStamp(existing.tagName);
+      const candidateStamp = getBuildStamp(release.tagName);
+
+      if (candidateStamp > existingStamp) {
+        modelMap.set(code, release);
       }
     }
-    return result;
+
+    return Array.from(modelMap.values()).sort((a, b) => {
+      const stampA = getBuildStamp(a.tagName);
+      const stampB = getBuildStamp(b.tagName);
+      if (stampA !== stampB) {
+        return stampB.localeCompare(stampA);
+      }
+      return (indexMap.get(a) ?? 0) - (indexMap.get(b) ?? 0);
+    });
   }, [releases]);
 
-
-
-  const latestRelease = releases[0] || {
+  const latestRelease = latestReleasesPerModel[0] || {
     tagName: '------',
     codename: 'N/A',
     version: 'N/A',
@@ -53,17 +70,17 @@ export default function ReleaseFeed(): React.JSX.Element {
   };
 
   const totalDownloads = React.useMemo(() => {
-    return releases.reduce((sum, r) => sum + (r.downloads || 0), 0);
+    return releases.reduce((sum: number, r: Release) => sum + (r.downloads || 0), 0);
   }, [releases]);
 
   const stats = [
     {
-      label: 'TOTAL RELEASES',
-      value: loading ? '—' : `${totalReleasesCount}`,
+      label: 'LATEST RELEASE',
+      value: loading ? '—' : latestRelease.publishedAt ? getTimeLag(latestRelease.publishedAt) + ' ago' : '—',
     },
     {
-      label: 'LATEST RELEASE AGE',
-      value: loading ? '—' : latestRelease.publishedAt ? getTimeLag(latestRelease.publishedAt) + ' ago' : '—',
+      label: 'TOTAL RELEASES',
+      value: loading ? '—' : `${totalReleasesCount}`,
     },
     {
       label: 'TOTAL DOWNLOADS',
@@ -75,7 +92,6 @@ export default function ReleaseFeed(): React.JSX.Element {
     <div className={styles.container}>
 
       {loading && <div className={styles.loadingBar} />}
-      {/* Telemetry Header */}
       <div className={styles.telemetryHeader}>
         <div className={styles.systemLabel}>
           <span className={styles.feedTextPrefix}>RELEASES</span>
@@ -87,7 +103,6 @@ export default function ReleaseFeed(): React.JSX.Element {
         </div>
       </div>
 
-      {/* Stats Strip */}
       <div className={styles.statsStrip}>
         {stats.map((stat, i) => (
           <div key={i} className={styles.statItem}>
@@ -99,7 +114,7 @@ export default function ReleaseFeed(): React.JSX.Element {
 
       <div className={styles.consolePanel}>
         <div className={styles.consoleHeader}>
-          <span>RECENT FACTORY IMAGE RELEASES</span>
+          <span>RECENT RELEASES</span>
         </div>
         <div className={styles.consoleBody}>
           {loading ? (

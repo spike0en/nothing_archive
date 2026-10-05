@@ -8,7 +8,7 @@
  */
 
 import React, { useState, useEffect, useRef } from 'react';
-import { FaCopy, FaCheck, FaTimes, FaExternalLinkAlt, FaHeart } from 'react-icons/fa';
+import { FaCopy, FaCheck, FaTimes, FaExternalLinkAlt, FaHeart, FaClipboardList } from 'react-icons/fa';
 import donationsData from '../data/donations.json';
 import donorsData from '../data/donors.json';
 import SupporterWidget from './SupporterWidget';
@@ -44,7 +44,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
 
   // Track and scale NOWPayments iframe to fit mobile viewport
   useEffect(() => {
-    if (!isOpen || typeof window === 'undefined') return;
+    if (!isOpen || globalThis.window === undefined) return;
 
     const updateScale = () => {
       if (containerRef.current) {
@@ -58,7 +58,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
     updateScale();
 
     let resizeObserver: ResizeObserver | null = null;
-    if (typeof ResizeObserver !== 'undefined' && containerRef.current) {
+    if (globalThis.ResizeObserver !== undefined && containerRef.current) {
       resizeObserver = new ResizeObserver(() => {
         updateScale();
       });
@@ -81,7 +81,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
 
   // Disable body scroll when modal is open
   useEffect(() => {
-    if (typeof document === 'undefined') return;
+    if (globalThis.document === undefined) return;
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -94,7 +94,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
 
   // Escape key listener to close modal
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (globalThis.window === undefined) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isOpen) {
         onClose();
@@ -107,7 +107,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
   if (!isOpen) return null;
 
   const handleCopy = (id: string, text: string) => {
-    if (typeof navigator === 'undefined' || !navigator.clipboard) return;
+    if (globalThis.navigator === undefined || !navigator.clipboard) return;
     navigator.clipboard.writeText(text).then(() => {
       setCopiedId(id);
       setTimeout(() => setCopiedId(null), 2000);
@@ -115,6 +115,9 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
       console.error('Failed to copy address: ', err);
     });
   };
+
+  // SAFETY: Validated donation channel list structure
+  const channels = donationsData as DonationChannel[];
 
   return (
     <div
@@ -149,12 +152,30 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
                 Donations are completely optional, and every contribution is sincerely appreciated. 💛
               </p>
               <p>
-                As a small thank-you, the supporters widget recognizes those who have made notable contributions. If you choose to support the project, your name can be featured there too.
-              </p>
-              <p>
                 Thank you for being part of the journey!
               </p>
             </div>
+
+            <div className={styles.formCallout}>
+              <div className={styles.formCalloutContent}>
+                <FaClipboardList className={styles.formCalloutIcon} />
+                <div className={styles.formCalloutTextGroup}>
+                  <span className={styles.formCalloutTitle}>Already donated?</span>
+                  <span className={styles.formCalloutSub}>Fill out our supporter form so we can track your donation and feature you on the widget below.</span>
+                </div>
+              </div>
+              <a
+                href="https://forms.gle/krJQjc5XshNaGSF58"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.formCalloutBtn}
+                title="Fill Donation Tracking Form"
+              >
+                <span>Fill Form</span>
+                <FaExternalLinkAlt size={11} className={styles.btnIcon} />
+              </a>
+            </div>
+
             <SupporterWidget donors={donorsData} />
           </div>
 
@@ -165,7 +186,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
           <div className={styles.contentLayout}>
             <div className={styles.leftColumn}>
               <div className={styles.stack}>
-                {(donationsData as DonationChannel[]).map((channel) => (
+                {channels.map((channel) => (
                   <div key={channel.id} className={styles.card}>
                     <h3 className={styles.cardTitle}>{channel.title}</h3>
                     {channel.description && <p className={styles.cardDesc}>{channel.description}</p>}
@@ -177,6 +198,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
                           readOnly
                           value={channel.address}
                           className={styles.addressInput}
+                          // SAFETY: Input click event target casting
                           onClick={(e) => (e.target as HTMLInputElement).select()}
                           aria-label={`${channel.title} payment address`}
                         />

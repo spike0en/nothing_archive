@@ -13,14 +13,10 @@
 
 import { useState, useEffect } from 'react';
 
-// --- Static fallback imports (generated at build time by scripts/fetch-github-data.js) ---
-
 import staticReleases from '../data/releases.json';
 import staticCommits from '../data/commits.json';
 import staticRepoStats from '../data/repo-stats.json';
 import staticContributors from '../data/contributors.json';
-
-// --- Types ---
 
 export interface Release {
   id: number;
@@ -62,9 +58,8 @@ interface ReleasesPayload {
 type DataStatus = 'LIVE' | 'OFFLINE';
 type ErrorState = 'RATE_LIMITED' | 'FAILED' | null;
 
-// --- Cache configuration ---
-
-const CACHE_TTL = 15 * 60 * 1000; // 15 minutes
+// 15-minute cache TTL balances fresh activity feeds with GitHub's 60 req/hr unauthenticated rate limit.
+const CACHE_TTL = 15 * 60 * 1000;
 
 /** localStorage key prefixes, versioned to allow safe cache invalidation. */
 const LS_KEYS = {
@@ -74,35 +69,25 @@ const LS_KEYS = {
   commitsTime: 'na_gh_commits_time_v3',
   repoStats: 'na_gh_stats_v3',
   repoStatsTime: 'na_gh_stats_time_v3',
-  contributors: 'na_gh_contributors_v6',
-  contributorsTime: 'na_gh_contributors_time_v6',
+  contributors: 'na_gh_contributors_v7',
+  contributorsTime: 'na_gh_contributors_time_v7',
 } as const;
 
-// --- In-memory deduplication layer ---
-
-/**
- * In-flight request map. When a fetch is already in progress for a key,
- * subsequent callers receive the same Promise instead of firing a duplicate request.
- */
 const inflight = new Map<string, Promise<any>>();
 
-/** In-memory data cache, surviving across re-renders within a single page session. */
+/** In-memory data cache surviving across re-renders within a single page session. */
 const memoryCache = new Map<string, { data: any; timestamp: number }>();
 
-// --- Core cache utilities ---
-
 /**
- * Reads and parses data from localStorage.
- * 
- * @param key The key under which the data is stored in localStorage.
- * @param timeKey The key under which the timestamp is stored.
- * @returns The parsed data and freshness status, or null on cache miss or error.
+ * Reads cached payload and timestamp from localStorage.
+ * Returns null on cache miss, parse error, or when storage is unavailable.
  */
 function readLocalStorage<T>(key: string, timeKey: string): { data: T; fresh: boolean } | null {
   try {
     const raw = localStorage.getItem(key);
     const time = localStorage.getItem(timeKey);
     if (!raw || !time) return null;
+    // SAFETY: Generic JSON parse casting
     const data = JSON.parse(raw) as T;
     const fresh = Date.now() - parseInt(time, 10) < CACHE_TTL;
     return { data, fresh };
@@ -112,11 +97,7 @@ function readLocalStorage<T>(key: string, timeKey: string): { data: T; fresh: bo
 }
 
 /**
- * Serializes and writes data to localStorage.
- * 
- * @param key The destination storage key.
- * @param timeKey The destination timestamp key.
- * @param data The payload to serialize and write.
+ * Persists payload and write timestamp to localStorage, silently degrading if storage is full or disabled.
  */
 function writeLocalStorage(key: string, timeKey: string, data: any): void {
   try {
@@ -128,19 +109,17 @@ function writeLocalStorage(key: string, timeKey: string, data: any): void {
 }
 
 /**
- * Deduplicating fetch wrapper. If a request for the same cacheKey is
- * already in flight, returns the existing Promise.
- * 
- * @param cacheKey Unique identifier key for request de-duplication.
- * @param fetcher Async callback that performs the underlying data fetch.
- * @returns Promise resolving to the fetched data type T.
+ * Reuses inflight promises for matching cache keys to prevent duplicate network calls.
  */
 async function deduplicatedFetch<T>(
   cacheKey: string,
   fetcher: () => Promise<T>,
 ): Promise<T> {
   const existing = inflight.get(cacheKey);
-  if (existing) return existing as Promise<T>;
+  if (existing) {
+    // SAFETY: Map inflight promise casting
+    return existing as Promise<T>;
+  }
 
   const promise = fetcher().finally(() => {
     inflight.delete(cacheKey);
@@ -149,8 +128,6 @@ async function deduplicatedFetch<T>(
   inflight.set(cacheKey, promise);
   return promise;
 }
-
-// --- Fetcher functions ---
 
 async function fetchReleasesFromAPI(): Promise<ReleasesPayload> {
   const response = await fetch(
@@ -253,7 +230,8 @@ async function fetchCommitsFromAPI(): Promise<Commit[]> {
       sha: item.sha.substring(0, 7),
       author,
       coAuthors: parseCoAuthors(fullMessage, author),
-      date: item.commit.author?.date || new Date().toISOString(),
+      // Committer date preserves chronological ordering when author dates are altered or rebased.
+      date: item.commit.committer?.date || item.commit.author?.date || new Date().toISOString(),
       message: fullMessage.split('\n')[0] || 'Code updates',
     };
   });
@@ -292,6 +270,7 @@ async function fetchContributorsFromAPI(): Promise<Contributor[]> {
 
   const raw = await response.json();
   const apiContributors: Contributor[] = raw.map((item: any) => {
+    // SAFETY: Static contributors list array casting
     const staticMatch = (staticContributors as any[] || []).find((sc) => sc.login === item.login);
     return {
       login: item.login,
@@ -304,6 +283,7 @@ async function fetchContributorsFromAPI(): Promise<Contributor[]> {
 
   // Preserve any static contributors (such as core team members) missing from GitHub API response
   const apiLogins = new Set(apiContributors.map((c) => c.login));
+  // SAFETY: Static contributors list array casting
   const missingStatic = (staticContributors as Contributor[] || []).filter(
     (sc) => !apiLogins.has(sc.login),
   );
@@ -312,6 +292,42 @@ async function fetchContributorsFromAPI(): Promise<Contributor[]> {
 }
 
 // --- Generic stale-while-revalidate hook factory ---
+
+export interface GitHubDataHookResult<T> {
+  data: T;
+  status: DataStatus;
+  error: ErrorState;
+  loading: boolean;
+}
+
+export interface GitHubReleasesHookResult {
+  releases: Release[];
+  totalCount: number;
+  status: DataStatus;
+  error: ErrorState;
+  loading: boolean;
+}
+
+export interface GitHubCommitsHookResult {
+  commits: Commit[];
+  status: DataStatus;
+  error: ErrorState;
+  loading: boolean;
+}
+
+export interface GitHubRepoStatsHookResult {
+  stats: RepoStats;
+  status: DataStatus;
+  error: ErrorState;
+  loading: boolean;
+}
+
+export interface GitHubContributorsHookResult {
+  contributors: Contributor[];
+  status: DataStatus;
+  error: ErrorState;
+  loading: boolean;
+}
 
 /**
  * Creates a React hook that implements the full tiered fallback chain:
@@ -331,7 +347,7 @@ function useGitHubData<T>(config: {
   fetcher: () => Promise<T>;
   /** Validates that the data is non-empty / usable */
   isValid: (data: T) => boolean;
-}): { data: T; status: DataStatus; error: ErrorState; loading: boolean } {
+}): GitHubDataHookResult<T> {
   const [data, setData] = useState<T>(() => {
     // Synchronous init: check memory cache first
     const mem = memoryCache.get(config.cacheKey);
@@ -346,7 +362,7 @@ function useGitHubData<T>(config: {
     let cancelled = false;
 
     async function load() {
-      // 1. Check memory cache
+      // 1. Check memory cache.
       const mem = memoryCache.get(config.cacheKey);
       if (mem && config.isValid(mem.data)) {
         if (!cancelled) {
@@ -357,14 +373,14 @@ function useGitHubData<T>(config: {
         const isFresh = Date.now() - mem.timestamp < CACHE_TTL;
         if (isFresh) {
           if (!cancelled) setLoading(false);
-          return; // Still fresh, no need to refetch
+          return;
         }
-        // Stale — continue to background refresh but don't show loading
+        // Stale: proceed with background refresh without showing a blocking loading indicator.
         if (!cancelled) setLoading(false);
       }
 
-      // 2. Check localStorage
-      if (typeof window !== 'undefined') {
+      // 2. Check localStorage.
+      if (globalThis.window !== undefined) {
         const ls = readLocalStorage<T>(config.lsKey, config.lsTimeKey);
         if (ls && config.isValid(ls.data)) {
           if (!cancelled) {
@@ -373,25 +389,22 @@ function useGitHubData<T>(config: {
             setError(null);
             setLoading(false);
           }
-          // Populate memory cache
           memoryCache.set(config.cacheKey, {
             data: ls.data,
             timestamp: parseInt(localStorage.getItem(config.lsTimeKey) || '0', 10),
           });
-          if (ls.fresh) return; // Still fresh
-          // Stale — continue to background refresh
+          if (ls.fresh) return;
         }
       }
 
-      // 3. Static fallback is already set as initial state — ensure loading clears
+      // 3. Clear loading state if static fallback is already visible.
       if (!cancelled && loading) {
-        // If we have valid static data, show it and clear loading
         if (config.isValid(config.staticFallback)) {
           setLoading(false);
         }
       }
 
-      // 4. Live API fetch (background refresh)
+      // 4. Background refresh via GitHub API.
       try {
         const freshData = await deduplicatedFetch(config.cacheKey, config.fetcher);
         if (!cancelled && config.isValid(freshData)) {
@@ -399,22 +412,20 @@ function useGitHubData<T>(config: {
           setStatus('LIVE');
           setError(null);
           setLoading(false);
-          // Update caches
           memoryCache.set(config.cacheKey, { data: freshData, timestamp: Date.now() });
-          if (typeof window !== 'undefined') {
+          if (globalThis.window !== undefined) {
             writeLocalStorage(config.lsKey, config.lsTimeKey, freshData);
           }
         }
       } catch (err: any) {
         if (!cancelled) {
           setLoading(false);
-          // Only show error if we have no cached data at all
+          // Surface error only if no cached or static data is available.
           const hasData = config.isValid(data);
           if (!hasData) {
             setError(err.message === 'RATE_LIMITED' ? 'RATE_LIMITED' : 'FAILED');
             setStatus('OFFLINE');
           }
-          // If we have stale data, keep showing it — no error state
         }
       }
     }
@@ -426,16 +437,9 @@ function useGitHubData<T>(config: {
   return { data, status, error, loading };
 }
 
-// --- Public hooks ---
-
 /** Releases feed data with stale-while-revalidate caching. */
-export function useGitHubReleases(): {
-  releases: Release[];
-  totalCount: number;
-  status: DataStatus;
-  error: ErrorState;
-  loading: boolean;
-} {
+export function useGitHubReleases(): GitHubReleasesHookResult {
+  // SAFETY: Static releases fallback properties casting
   const fallback: ReleasesPayload = {
     releases: (staticReleases as any).releases || [],
     totalCount: (staticReleases as any).totalCount || 0,
@@ -454,12 +458,8 @@ export function useGitHubReleases(): {
 }
 
 /** Commit history data with stale-while-revalidate caching. */
-export function useGitHubCommits(): {
-  commits: Commit[];
-  status: DataStatus;
-  error: ErrorState;
-  loading: boolean;
-} {
+export function useGitHubCommits(): GitHubCommitsHookResult {
+  // SAFETY: Static commits array fallback casting
   const fallback = (staticCommits as any) || [];
 
   const { data, status, error, loading } = useGitHubData<Commit[]>({
@@ -475,12 +475,8 @@ export function useGitHubCommits(): {
 }
 
 /** Repository stars and fork count with stale-while-revalidate caching. */
-export function useGitHubRepoStats(): {
-  stats: RepoStats;
-  status: DataStatus;
-  error: ErrorState;
-  loading: boolean;
-} {
+export function useGitHubRepoStats(): GitHubRepoStatsHookResult {
+  // SAFETY: Static repo stats fallback properties casting
   const fallback: RepoStats = {
     stars: (staticRepoStats as any).stars || 0,
     forks: (staticRepoStats as any).forks || 0,
@@ -499,12 +495,8 @@ export function useGitHubRepoStats(): {
 }
 
 /** Contributor list with stale-while-revalidate caching. */
-export function useGitHubContributors(): {
-  contributors: Contributor[];
-  status: DataStatus;
-  error: ErrorState;
-  loading: boolean;
-} {
+export function useGitHubContributors(): GitHubContributorsHookResult {
+  // SAFETY: Static contributors array fallback casting
   const fallback = Array.isArray(staticContributors) ? (staticContributors as Contributor[]) : [];
 
   const { data, status, error, loading } = useGitHubData<Contributor[]>({

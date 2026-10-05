@@ -1,8 +1,7 @@
 ---
 sidebar_position: 8
 title: Photography
-description: GCAM ports, camera configs, and stock presets for Nothing devices.
-keywords: [nothing gcam, nothing phone camera configs, nothing camera presets, nothing photography]
+description: Google Camera ports, device sensor XML configs, and stock Nothing Camera presets.
 ---
 
 # Photography Resources
@@ -21,9 +20,9 @@ GCAM ports, configs, and camera presets for Nothing devices.
 ### GCAM Configs
 
 :::note
-- "**Best**" is subjective. Try out all available configurations and variants to determine which one works best for you!
-- For Snapdragon- and MTK-based devices, it is generally recommended to use the **Snap** and **Aweme** variants respectively.
-- Installing a random variant of the GCAM app alone is not enough to get the best results; the config files tuned by a config creator based on the device's camera sensor/lenses are what make it usable and perform the best.
+- Camera quality varies with each configuration. Test available profiles to find what fits your shooting conditions.
+- For Snapdragon and MediaTek devices, use the **Snap** and **Aweme** package variants respectively.
+- Tuning XML configs for specific sensor hardware delivers better image processing than running default port settings.
 :::
 
 #### Importing the Config
@@ -77,7 +76,7 @@ Resources for Nothing Camera presets:
 | Google Photos Collection | [View](https://photos.google.com/share/AF1QipMLXmA5txDQHqlHzF6OV4HhkLTMsqUx9m8_3jMNH0_MizjA7038n_j8gz4v54zTNw?pli=1&key=QUJKYVY4akFFWGVCWWtleG9DMkNCcDc1c2V5TzZB) |
 | Nothing Playground | [Browse](https://playground.nothing.tech/presets) |
 | Notion Doc by flo_rahil | [View](http://aromatic-perfume-9a5.notion.site/1bd0ff2f0ced80c0b32cce32f552aa4e?v=1bd0ff2f0ced8152aa23000ce56a341a) |
-| Reddit Search | [r/NothingTech](https://www.reddit.com/r/NothingTech/search/?q=camera+presets&type=posts&sort=new) · [r/NOTHING](https://www.reddit.com/r/NOTHING/search/?q=camera+presets&type=posts&sort=new) · [r/CMFtech](https://www.reddit.com/r/CMFTech/search/?q=camera+presets&type=posts&sort=new) |
+| Reddit Search | [r/NothingTech](https://www.reddit.com/r/NothingTech/search/?q=camera+presets&type=posts&sort=new) <br /> [r/NOTHING](https://www.reddit.com/r/NOTHING/search/?q=camera+presets&type=posts&sort=new) <br /> [r/CMFtech](https://www.reddit.com/r/CMFTech/search/?q=camera+presets&type=posts&sort=new) |
 | Telegram Community | [Join](https://telegram.me/NothingTelegramCommunity) |
 
 

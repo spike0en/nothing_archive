@@ -1,25 +1,70 @@
 {
-  "core": [
+  "maintainers": [
     "pikawee",
-    "luk1337",
-    "arter97",
-    "guptavishalxm1",
     "PHATWalrus"
   ],
+  "lead": "pikawee",
+  "foundational": [
+    "luk1337",
+    "arter97",
+    "guptavishalxm1"
+  ],
+  "core": [
+    "pikawee",
+    "PHATWalrus",
+    "luk1337",
+    "arter97",
+    "guptavishalxm1"
+  ],
+  "key": [
+    "Earendel-lab",
+    "burakdede0",
+    "AdaaamB",
+    "LukeSkyD"
+  ],
+  "roles": {
+    "pikawee": "Founder & Project Lead",
+    "luk1337": "OTA Extraction Pipeline",
+    "arter97": "Fastboot ROM Packaging",
+    "PHATWalrus": "Operations Maintainer",
+    "guptavishalxm1": "Initial Website Architecture",
+    "Earendel-lab": "QA Testing & Indexing",
+    "burakdede0": "QA Testing & Indexing",
+    "AdaaamB": "Community Wiki & Docs",
+    "bluehomewu": "Guides & Tooling",
+    "reindex-ot": "Community Projects & Docs",
+    "LukeSkyD": "Early Phone (1) Firmware References",
+    "NightBlobby": "App Directory",
+    "SebiAi": "Device Profiles & Docs"
+  },
+  "customAvatars": {
+    "pikawee": "https://avatars.githubusercontent.com/u/241428588?v=4",
+    "XelXen": "https://avatars.githubusercontent.com/u/78258352?v=4"
+  },
   "customUrls": {
-    "guptavishalxm1": "https://github.com/spike0en/nothing_archive/commits?author=guptavishal998.pa@gmail.com"
+    "guptavishalxm1": "https://github.com/spike0en/nothing_archive/commits?author=guptavishal998.pa@gmail.com",
+    "LukeSkyD": "https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/",
+    "XelXen": "https://github.com/spike0en/nothing_archive/commit/f82092f2178372a1007edd2fe325e0d9c7e7c83f"
   },
   "customNames": {
-    "pikawee": "Spike (spike0en)",
+    "pikawee": "Spike (spike0en / pikawee)",
     "luk1337": "Łukasz Patron (luk1337)",
     "arter97": "Juhyung Park (arter97)",
-    "guptavishalxm1": "Vishal Gupta (Shiki)",
-    "PHATWalrus": "Harshit Sinha (Phatwalrus)"
+    "guptavishalxm1": "Vishal Gupta (shikixm)",
+    "PHATWalrus": "Harshit Sinha (Phatwalrus)",
+    "Earendel-lab": "Earendel (Earendel-lab)",
+    "burakdede0": "Burak Dede (siemens_nx)",
+    "AdaaamB": "Adam Bowman (adbo)",
+    "LukeSkyD": "LukeSkyD (AnotherMan1)",
+    "bluehomewu": "EdwardWu",
+    "reindex-ot": "Re*Index.",
+    "NightBlobby": "NightBlobby",
+    "SebiAi": "SebiAi"
   },
   "branding": {
     "login": "XelXen",
     "name": "XelXen",
     "avatar_url": "https://avatars.githubusercontent.com/u/78258352?v=4",
-    "html_url": "https://github.com/spike0en/nothing_archive#nothing-archive"
+    "html_url": "https://github.com/spike0en/nothing_archive/commit/f82092f2178372a1007edd2fe325e0d9c7e7c83f"
   }
 }
