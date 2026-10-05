@@ -28,6 +28,8 @@ Unified index of official and developer resources for Nothing and CMF phones, in
 | **Phone (4a) Pro** | [Download](https://archive.org/download/nothing-archive/spike0en/walls/frogger%28pro%29/) | [Dumps](https://dumps.tadiphone.dev/dumps/nothing/froggerpro/) | [Repository](https://github.com/NothingOSS/android_kernel_msm-6.6_nothing_sm7750) | [Silver](https://cdn.sanity.io/files/gtd4w1cq/production/0ab0aab2653e4f45cd9435145a3f936834e67cd2.glb) <br /> [Black](https://cdn.sanity.io/files/gtd4w1cq/production/9b93f1ad6cd3ed81cdb51ea89974473f54b62afa.glb) <br /> [Pink](https://cdn.sanity.io/files/gtd4w1cq/production/5000880af271c65200de52b3b00e1fc5eadb2e61.glb) | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Phone_4a_Pro_User_Guide_Global_en_7d9167f4-802c-473f-88a0-f0b28b63b0d4.pdf?v=1773115876) | N/A | [Label](https://cdn.sanity.io/images/gtd4w1cq/production/8b9d16c5b4139a3f49d8e7b61f4f38de94d978fc-1134x2268.png?auto=format) |
 | **Phone (4b)** | [Download](https://archive.org/download/nothing-archive/spike0en/walls/supercontra/) | [Dumps](https://dumps.tadiphone.dev/dumps/nothing/supercontra/) | N/A | [White](https://cdn.sanity.io/files/gtd4w1cq/production/f76e9b641b0cd4e0a939142e571657c9a0fcaed9.glb) <br /> [Blue](https://cdn.sanity.io/files/gtd4w1cq/production/de57916b7499d7a3a53f971e76481ac8121cedfe.glb) <br /> [Black](https://cdn.sanity.io/files/gtd4w1cq/production/aa8d49d8c685e3fe507c28c58ca6cacb7acf7c29.glb) | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Phone_4b_User_Guide_Global_en.pdf?v=1782977789) | N/A | [Label](https://cdn.sanity.io/images/gtd4w1cq/production/e120a2804a26f55ca1abe6f7f38ffdd0257bdd21-1134x2268.png?auto=format) |
 
+<span id="cmf-phones" className="legacy-heading-anchor" />
+
 ### CMF by Nothing Phones
 
 | Device | Wallpapers | System Dump | Kernel Source | 3D Model | User Manual | EU Product Label |
@@ -78,6 +80,8 @@ APK mirrors for manual installation are available at [APKMirror](https://www.apk
 
 Official user manuals, guides, and 3D assets for audio, smartwatches, and ecosystem accessories.
 
+<span id="audio" className="legacy-heading-anchor" />
+
 ### Nothing Audio
 
 | Device | User Manual |
@@ -108,6 +112,8 @@ Official user manuals, guides, and 3D assets for audio, smartwatches, and ecosys
 | **Headphone Pro** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/CMF_Headphone_Pro_Quick_Start_Guide_Safety_Warranty_Information.pdf?v=1759027353) |
 | **Clip Pro** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Clip_Pro_Safety_information_Warranty_information.pdf?v=1785229150) |
 | **Buds Neo** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/CMF_Buds_Neo_User_Manual.pdf?v=1787561348) |
+
+<span id="watches" className="legacy-heading-anchor" />
 
 ### CMF by Nothing Watches
 

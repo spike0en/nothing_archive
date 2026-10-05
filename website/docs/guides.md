@@ -1,13 +1,14 @@
 ---
 sidebar_position: 4
-title: Guides
+sidebar_label: Guides
+title: Nothing OS & CMF Guides
 pagination_prev: changelogs/index
-description: Technical guides for OTA sideloading, dialer codes, bootloader unlocking, rooting, partition backups, custom ROMs, and unbricking.
+description: Practical guides for Nothing OS and CMF devices, from OTA sideloading and bootloader unlocking to rooting, partition backups, custom ROMs, and recovery.
 ---
 
-# How-to Guides
+# Nothing OS & CMF Guides {/* #how-to-guides */}
 
-Step-by-step procedures for Nothing OS configuration, maintenance, and modification.
+Step-by-step procedures for Nothing OS configuration, maintenance, and modification. Start with the [device catalog](/docs/devices) to identify a model and codename, then check its [firmware](/docs/firmware) and [OTA changelog](/docs/changelogs) before following a procedure.
 
 ## General Use & Troubleshooting
 

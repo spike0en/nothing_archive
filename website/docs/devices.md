@@ -1,12 +1,13 @@
 ---
 sidebar_position: 2
-title: Devices
-description: Codenames, model numbers, release dates, factory firmware, and software support periods for Nothing and CMF phones, audio, and accessories.
+sidebar_label: Devices
+title: Nothing & CMF Device Catalog
+description: Catalog of Nothing and CMF by Nothing phones, audio, watches, accessories, apparel, and products with codenames, release dates, firmware, and support periods.
 ---
 
-# Device Catalog
+# Nothing & CMF Device Catalog {/* #device-catalog */}
 
-Catalog of Nothing & CMF by Nothing products with model numbers, codenames, and release dates.
+Browse the [firmware index](/docs/firmware), [OTA changelogs](/docs/changelogs), and [technical guides](/docs/guides) alongside this catalog. Phone rows link directly to firmware details and the latest changelog for each device codename.
 
 ## Nothing
 
@@ -18,17 +19,17 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 
 | Device / Pokémon Codename | Model | Release Date | Factory Firmware | Updates (OS + Security) | Wiki Page |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| [Phone (1)](https://nothing.tech/products/phone-1) <br /> <small>Spacewar / Abra</small> | A063 | 12 July 2022 | Nothing OS 1.0 (Android 12) | 3 + 1 Years (EOL) | [Here](https://nothing.wiki/hardware/phone_1) |
-| [Phone (2)](https://nothing.tech/products/phone-2) <br /> <small>Pong / Alakazam</small> | A065 / AIN065 | 11 July 2023 | Nothing OS 2.0 (Android 13) | 3 + 1 Years | [Here](https://nothing.wiki/hardware/phone_2) |
-| [Phone (2a)](https://intl.nothing.tech/products/phone-2a) <br /> <small>Pacman / Aerodactyl</small> | A142 | 05 March 2024 | Nothing OS 2.5 (Android 14) | 3 + 1 Years | [Here](https://nothing.wiki/hardware/phone_2a_series) |
-| [Phone (2a) Plus](https://nl.nothing.tech/products/phone-2a-plus) <br /> <small>PacmanPro / Mega Aerodactyl</small> | A142P | 31 July 2024 | Nothing OS 2.6 (Android 14) | 3 + 1 Years | [Here](https://nothing.wiki/hardware/phone_2a_series) |
-| [Phone (3a)](https://nothing.tech/products/phone-3a) <br /> <small>Asteroids / Arcanine</small> | A059 | 04 March 2025 | Nothing OS 3.0 (Android 15) | 3 + 3 Years | [Here](https://nothing.wiki/hardware/phone_3a_series) |
-| [Phone (3a) Pro](https://nothing.tech/products/phone-3a-pro) <br /> <small>AsteroidsPro / Arcanine</small> | A059P | 04 March 2025 | Nothing OS 3.0 (Android 15) | 3 + 3 Years | [Here](https://nothing.wiki/hardware/phone_3a_series) |
-| [Phone (3)](https://nothing.tech/products/phone-3) <br /> <small>Metroid / Arbok</small> | A024 | 01 July 2025 | Nothing OS 3.5 (Android 15) | 5 + 2 Years | [Here](https://nothing.wiki/hardware/phone_3) |
-| [Phone (3a) Lite](https://nothing.tech/products/phone-3a-lite) <br /> <small>Galaxian / Bulbasaur</small> | A001T | 29 October 2025 | Nothing OS 3.5 (Android 15) | 3 + 3 Years | [Here](https://nothing.wiki/hardware/phone_3a_lite) |
-| [Phone (4a)](https://nothing.tech/products/phone-4a) <br /> <small>Frogger / Bellsprout</small> | A069 | 05 March 2026 | Nothing OS 4.1 (Android 16) | 3 + 3 Years | [Here](https://nothing.wiki/hardware/phone_4a_series) |
-| [Phone (4a) Pro](https://nothing.tech/products/phone-4a-pro) <br /> <small>FroggerPro / Bellsprout</small> | A069P | 05 March 2026 | Nothing OS 4.1 (Android 16) | 3 + 3 Years | [Here](https://nothing.wiki/hardware/phone_4a_series) |
-| [Phone (4b)](https://nothing.tech/products/phone-4b) <br /> <small>SuperContra / Blastoise</small> | A009P | 07 July 2026 | Nothing OS 4.1 (Android 16) | 3 + 3 Years | [Here](https://nothing.wiki/hardware/phone_4b) |
+| [Phone (1)](https://nothing.tech/products/phone-1) <br /> <small>Spacewar / Abra</small> | A063 | 12 July 2022 | Nothing OS 1.0 (Android 12)<br />[Firmware](/docs/firmware#spacewar) · [Latest changelog](/docs/changelogs/spacewar) | 3 + 1 Years (EOL) | [Here](https://nothing.wiki/hardware/phone_1) |
+| [Phone (2)](https://nothing.tech/products/phone-2) <br /> <small>Pong / Alakazam</small> | A065 / AIN065 | 11 July 2023 | Nothing OS 2.0 (Android 13)<br />[Firmware](/docs/firmware#pong) · [Latest changelog](/docs/changelogs/pong) | 3 + 1 Years | [Here](https://nothing.wiki/hardware/phone_2) |
+| [Phone (2a)](https://intl.nothing.tech/products/phone-2a) <br /> <small>Pacman / Aerodactyl</small> | A142 | 05 March 2024 | Nothing OS 2.5 (Android 14)<br />[Firmware](/docs/firmware#pacman) · [Latest changelog](/docs/changelogs/pacman) | 3 + 1 Years | [Here](https://nothing.wiki/hardware/phone_2a_series) |
+| [Phone (2a) Plus](https://nl.nothing.tech/products/phone-2a-plus) <br /> <small>PacmanPro / Mega Aerodactyl</small> | A142P | 31 July 2024 | Nothing OS 2.6 (Android 14)<br />[Firmware](/docs/firmware#pacmanpro) · [Latest changelog](/docs/changelogs/pacmanpro) | 3 + 1 Years | [Here](https://nothing.wiki/hardware/phone_2a_series) |
+| [Phone (3a)](https://nothing.tech/products/phone-3a) <br /> <small>Asteroids / Arcanine</small> | A059 | 04 March 2025 | Nothing OS 3.0 (Android 15)<br />[Firmware](/docs/firmware#asteroids) · [Latest changelog](/docs/changelogs/asteroids) | 3 + 3 Years | [Here](https://nothing.wiki/hardware/phone_3a_series) |
+| [Phone (3a) Pro](https://nothing.tech/products/phone-3a-pro) <br /> <small>AsteroidsPro / Arcanine</small> | A059P | 04 March 2025 | Nothing OS 3.0 (Android 15)<br />[Firmware](/docs/firmware#asteroids) · [Latest changelog](/docs/changelogs/asteroidspro) | 3 + 3 Years | [Here](https://nothing.wiki/hardware/phone_3a_series) |
+| [Phone (3)](https://nothing.tech/products/phone-3) <br /> <small>Metroid / Arbok</small> | A024 | 01 July 2025 | Nothing OS 3.5 (Android 15)<br />[Firmware](/docs/firmware#metroid) · [Latest changelog](/docs/changelogs/metroid) | 5 + 2 Years | [Here](https://nothing.wiki/hardware/phone_3) |
+| [Phone (3a) Lite](https://nothing.tech/products/phone-3a-lite) <br /> <small>Galaxian / Bulbasaur</small> | A001T | 29 October 2025 | Nothing OS 3.5 (Android 15)<br />[Firmware](/docs/firmware#galaxian) · [Latest changelog](/docs/changelogs/galaxian) | 3 + 3 Years | [Here](https://nothing.wiki/hardware/phone_3a_lite) |
+| [Phone (4a)](https://nothing.tech/products/phone-4a) <br /> <small>Frogger / Bellsprout</small> | A069 | 05 March 2026 | Nothing OS 4.1 (Android 16)<br />[Firmware](/docs/firmware#frogger) · [Latest changelog](/docs/changelogs/frogger) | 3 + 3 Years | [Here](https://nothing.wiki/hardware/phone_4a_series) |
+| [Phone (4a) Pro](https://nothing.tech/products/phone-4a-pro) <br /> <small>FroggerPro / Bellsprout</small> | A069P | 05 March 2026 | Nothing OS 4.1 (Android 16)<br />[Firmware](/docs/firmware#froggerpro) · [Latest changelog](/docs/changelogs/froggerpro) | 3 + 3 Years | [Here](https://nothing.wiki/hardware/phone_4a_series) |
+| [Phone (4b)](https://nothing.tech/products/phone-4b) <br /> <small>SuperContra / Blastoise</small> | A009P | 07 July 2026 | Nothing OS 4.1 (Android 16)<br />[Firmware](/docs/firmware#supercontra) · [Latest changelog](/docs/changelogs/supercontra) | 3 + 3 Years | [Here](https://nothing.wiki/hardware/phone_4b) |
 
 ### Audio
 
@@ -83,8 +84,8 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 
 | Device / Pokémon Codename | Model | Release Date | Factory Firmware | Updates (OS + Security) | Wiki Page |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| [Phone (1)](https://in.nothing.tech/products/cmf-phone-1) <br /> <small>Tetris / Beedrill</small> | A015 | 08 July 2024 | Nothing OS 2.6 (Android 14) | 2 + 1 Years | [Here](https://nothing.wiki/cmf/cmf_phone_1) |
-| [Phone (2) Pro](https://in.nothing.tech/products/cmf-phone-2-pro) <br /> <small>Galaga / Bulbasaur</small> | A001 | 28 April 2025 | Nothing OS 3.2 (Android 15) | 3 + 3 Years | [Here](https://nothing.wiki/cmf/cmf_phone_2_pro) |
+| [Phone (1)](https://in.nothing.tech/products/cmf-phone-1) <br /> <small>Tetris / Beedrill</small> | A015 | 08 July 2024 | Nothing OS 2.6 (Android 14)<br />[Firmware](/docs/firmware#tetris) · [Latest changelog](/docs/changelogs/tetris) | 2 + 1 Years | [Here](https://nothing.wiki/cmf/cmf_phone_1) |
+| [Phone (2) Pro](https://in.nothing.tech/products/cmf-phone-2-pro) <br /> <small>Galaga / Bulbasaur</small> | A001 | 28 April 2025 | Nothing OS 3.2 (Android 15)<br />[Firmware](/docs/firmware#galaga) · [Latest changelog](/docs/changelogs/galaga) | 3 + 3 Years | [Here](https://nothing.wiki/cmf/cmf_phone_2_pro) |
 
 
 ### Audio
@@ -119,4 +120,3 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 | [Power 100W GaN](https://nothing.tech/products/cmf-power-100w-gan) | C269 | 26 September 2024 | [Here](https://nothing.wiki/cmf/accessories#cmf_power_100w_gan) |
 | [Power 140W GaN](https://nothing.tech/products/cmf-power-140w-gan) | C362 | 26 September 2024 | [Here](https://nothing.wiki/cmf/accessories#cmf_power_140w_gan) |
 | Power 33W Fast Charger | C281 | 2026 | N/A |
-

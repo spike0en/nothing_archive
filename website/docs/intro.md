@@ -1,13 +1,14 @@
 ---
 sidebar_position: 1
 slug: /intro
-title: Introduction
-description: Official Nothing OS firmware, OTA packages, device specs, technical guides, changelogs, community apps, and aftermarket projects.
+sidebar_label: Introduction
+title: 'Nothing Archive: Nothing OS Resources'
+description: Nothing Archive indexes Nothing OS firmware, OTA packages, device catalogs, guides, changelogs, apps, and projects for Nothing and CMF by Nothing devices.
 ---
 
-# Nothing Archive
+# Nothing Archive: Nothing OS and Device Resources {/* #nothing-archive */}
 
-A central archive of Nothing OS firmware, stock OTA packages, community projects, and installation guides for Nothing and CMF devices.
+A central archive of Nothing OS firmware, stock OTA packages, community projects, and installation guides for Nothing and CMF by Nothing devices. Start with the [device catalog](/docs/devices), [firmware index](/docs/firmware), [OTA changelogs](/docs/changelogs), or [technical guides](/docs/guides).
 
 <div class="features-grid">
   <div class="feature-card">

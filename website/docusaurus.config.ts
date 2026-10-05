@@ -14,6 +14,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import * as child_process from 'node:child_process';
+const { enrichDoc } = require('./scripts/enrich-docs.cjs');
 
 /**
  * Maps Android dessert version letters to chronological release ranks.
@@ -366,6 +367,22 @@ const config: Config = {
   markdown: {
     format: 'mdx',
     mermaid: true,
+    preprocessor({ filePath, fileContent }) {
+      return enrichDoc({ filePath, content: fileContent, frontMatter: {} }, {
+        docsDir: path.join(__dirname, 'docs'),
+        devices: devicesMetadata,
+      }).content;
+    },
+    async parseFrontMatter(params) {
+      const parsed = await params.defaultParseFrontMatter(params);
+      return {
+        ...parsed,
+        ...enrichDoc({ filePath: params.filePath, ...parsed }, {
+          docsDir: path.join(__dirname, 'docs'),
+          devices: devicesMetadata,
+        }),
+      };
+    },
     hooks: {
       onBrokenMarkdownLinks: 'throw',
     },
@@ -377,6 +394,7 @@ const config: Config = {
   },
 
   plugins: [
+    require.resolve('./plugins/canonical-redirects.cjs'),
     () => ({
       name: 'changelogs-plugin',
       async contentLoaded({ actions }) {
@@ -580,7 +598,8 @@ const config: Config = {
           filename: 'sitemap.xml',
           async createSitemapItems({ defaultCreateSitemapItems, ...params }) {
             const items = await defaultCreateSitemapItems(params);
-            return items.map((item) => {
+            // Single-codename routes redirect to a concrete release; submit only content pages.
+            return items.filter((item) => !/\/docs\/changelogs\/[^/]+\/?$/.test(new URL(item.url).pathname)).map((item) => {
               if (item.url.includes('/docs/firmware')) {
                 return { ...item, changefreq: 'daily' as const, priority: 0.8 };
               }
@@ -721,26 +740,6 @@ const config: Config = {
       },
     },
     {
-      tagName: 'link',
-      attributes: {
-        rel: 'preload',
-        as: 'font',
-        type: 'font/woff2',
-        href: `${baseUrl}fonts/GeistMono-Variable.woff2`,
-        crossorigin: 'anonymous',
-      },
-    },
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preload',
-        as: 'font',
-        type: 'font/woff2',
-        href: `${baseUrl}fonts/InterVariable.woff2`,
-        crossorigin: 'anonymous',
-      },
-    },
-    {
       tagName: 'style',
       attributes: {},
       innerHTML: `
@@ -831,37 +830,6 @@ const config: Config = {
         type: 'font/woff2',
         crossorigin: 'anonymous',
       },
-    },
-    // Preconnect directives for external font domains to reduce latency
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preconnect',
-        href: 'https://fonts.googleapis.com',
-      },
-    },
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preconnect',
-        href: 'https://fonts.gstatic.com',
-        crossorigin: 'anonymous',
-      },
-    },
-    // Non-render-blocking font stylesheet loading for JetBrains Mono
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preload',
-        as: 'style',
-        href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap',
-        onload: "this.onload=null;this.rel='stylesheet'",
-      },
-    },
-    {
-      tagName: 'noscript',
-      attributes: {},
-      innerHTML: `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">`,
     },
   ],
 

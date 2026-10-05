@@ -3518,3 +3518,8 @@ details summary:hover::before {
   margin-top: 2rem !important;
   margin-bottom: 1rem !important;
 }
+
+/* Keep document fragment targets below the fixed navigation. */
+details[id], .markdown h1[id], .legacy-heading-anchor {
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
+}

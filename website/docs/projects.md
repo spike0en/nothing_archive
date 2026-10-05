@@ -53,6 +53,8 @@ Community-built widgets inspired by Nothing OS for various platforms and desktop
 | [Nothing KWGT](https://github.com/AumGupta/KWGT-Widgets) | AumGupta | KWGT widgets |
 | [Rainmeter Nothing Widgets](https://github.com/KrazyManJ/rainmeter-nothing-widgets) | KrazyManJ | Rainmeter widgets that replicate Nothing OS widgets on the Windows desktop |
 
+<span id="desktop--ide-themes" className="legacy-heading-anchor" />
+
 ### Desktop Rices & Application Themes
 
 Themes and rices for Arch Linux, VS Code, and other development environments following the Nothing design language.

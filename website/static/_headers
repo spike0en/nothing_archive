@@ -1,16 +1,13 @@
-# Global anti-AI scraping HTTP headers
+# Optional hosts that support _headers. GitHub Pages ignores this file;
+# configure equivalent rules at the serving CDN when deploying there.
 /*
   X-Robots-Tag: noai, noimageai
   TDM-Reservation: 1
 
-# 1-year immutable cache lifetime headers for static assets
+# Only Docusaurus content-hashed assets can safely be immutable.
 /fonts/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=86400, must-revalidate
 /img/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=86400, must-revalidate
 /assets/*
-  Cache-Control: public, max-age=31536000, immutable
-/*.js
-  Cache-Control: public, max-age=31536000, immutable
-/*.css
   Cache-Control: public, max-age=31536000, immutable

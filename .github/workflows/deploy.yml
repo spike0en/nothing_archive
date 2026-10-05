@@ -91,6 +91,9 @@ jobs:
             echo "Patched robots.txt → ${SITE_URL}${BASE_URL}sitemap.xml"
           fi
 
+      - name: SEO smoke test
+        run: bun run test:seo
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

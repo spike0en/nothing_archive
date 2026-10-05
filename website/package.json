@@ -16,6 +16,7 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "test:performance": "bun scripts/performance-smoke-test.js",
+    "test:seo": "bun scripts/enrich-docs.test.cjs && bun plugins/canonical-redirects.test.cjs && bun scripts/seo-smoke-test.cjs",
     "write-heading-ids": "docusaurus write-heading-ids",
     "pretypecheck": "bun scripts/fetch-github-data.js",
     "typecheck": "tsc"

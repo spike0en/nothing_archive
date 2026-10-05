@@ -1,3 +1,5 @@
+<span id="contributing" className="legacy-heading-anchor" />
+
 # Contributing to Nothing Archive
 
 Thank you for contributing to Nothing Archive.
@@ -45,6 +47,8 @@ All entries must use the standard 3-column markdown table structure:
 - **Description Quality**: Keep descriptions to a single, concise sentence. State what the application or project does plainly and factually. Avoid promotional hype, marketing adjectives, buzzwords, and clichés (such as "unlock the full potential", "seamless", "vibrant", "revolutionary", or "beautifully crafted"). Avoid participle tails (such as ", featuring...") and em dashes. Do not include raw HTML (`<br>`, `<img ...>`), line breaks, or Markdown images inside table cells.
 - **Platform Keywords**: For desktop, CLI, or web utilities (e.g. earbud controllers, desktop rices, screensavers, developer tools), explicitly state the supported operating systems in the description (e.g. *for Windows*, *for macOS*, *for Linux*, *for Windows and macOS*, *for Windows, Linux, and macOS*, *Web-based*). Avoid ambiguous labels like "PC". Explicit OS keywords ensure the Showcase prebuild parser accurately tags the entry for Target Platform filters.
 
+<span id="naming-conventions" className="legacy-heading-anchor" />
+
 ### 2. Naming Conventions
 
 * **Clean display names**: Keep product titles clean without parenthetical OS tags (e.g., **Nothing Clock**, **Attune**, **Nothing Desktop**, **EarA**).
@@ -53,9 +57,13 @@ All entries must use the standard 3-column markdown table structure:
 * **Use title case**: Capitalize words properly. Avoid all-lowercase or repo-style names (e.g., **Nothing Rice** instead of `nothing-rice`).
 * **Preserve acronyms & abbreviations**: Keep 2-4 letter technical acronyms, protocol abbreviations, and product codes in ALL CAPS (**FMC**, **SDDM**, **KWGT**, **AOD**, **BLE**, **PWA**, **ADB**, **GUI**, **CLI**).
 
+<span id="2-alphabetical-sorting" className="legacy-heading-anchor" />
+
 ### 3. Alphabetical Sorting
 * All entries within a table must be sorted **alphabetically by display name** (inside the square brackets `[...]`).
 * Sorting is case-insensitive (e.g., `No Volume` comes before `Nothing Audio`).
+
+<span id="how-to-submit-changes" className="legacy-heading-anchor" />
 
 ## How to Contribute
 
