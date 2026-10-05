@@ -116,3 +116,8 @@ const manifest = JSON.parse(read('static', 'manifest.json'));
 assert.equal(manifest.start_url, '.');
 assert.equal(manifest.scope, '.');
 assert(manifest.icons.every((icon) => !icon.src.startsWith('/')));
+
+const redirectToLatest = read('src', 'components', 'RedirectToLatest.tsx');
+assert(redirectToLatest.includes('useLocation'), 'RedirectToLatest must use useLocation to preserve queries and hashes');
+assert(redirectToLatest.includes('${search}${hash}'), 'RedirectToLatest must append search and hash to destination');
+assert(config.includes('\\/docs\\/changelogs\\/[^/]+'), 'Sitemap config must filter device changelog redirect helper routes');

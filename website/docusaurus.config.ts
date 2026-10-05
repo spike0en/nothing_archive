@@ -579,15 +579,17 @@ const config: Config = {
           filename: 'sitemap.xml',
           async createSitemapItems({ defaultCreateSitemapItems, ...params }) {
             const items = await defaultCreateSitemapItems(params);
-            return items.map((item) => {
-              if (item.url.includes('/docs/firmware')) {
-                return { ...item, changefreq: 'daily' as const, priority: 0.8 };
-              }
-              if (item.url.includes('/docs/intro') || item.url.endsWith(baseUrl)) {
-                return { ...item, priority: 0.9 };
-              }
-              return item;
-            });
+            return items
+              .filter((item) => !/\/docs\/changelogs\/[^/]+\/?$/.test(new URL(item.url).pathname))
+              .map((item) => {
+                if (item.url.includes('/docs/firmware')) {
+                  return { ...item, changefreq: 'daily' as const, priority: 0.8 };
+                }
+                if (item.url.includes('/docs/intro') || item.url.endsWith(baseUrl)) {
+                  return { ...item, priority: 0.9 };
+                }
+                return item;
+              });
           },
         }
       } satisfies Preset.Options,
