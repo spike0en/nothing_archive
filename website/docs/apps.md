@@ -253,6 +253,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Nothing Notes](https://play.google.com/store/apps/details?id=com.ApexCreator.nothingnotes) | Apex Creator | Minimal notepad |
 | [Nothiq](https://play.google.com/store/apps/details?id=com.rontag.nothiq) | Rontag | Nothing-inspired notes and task management app |
 | [Noting](https://play.google.com/store/apps/details?id=com.hearthborn.studios.notingnotes) | Hearthborn | Notes and tasks with cloud backup |
+| [Nowt](https://play.google.com/store/apps/details?id=systems.voynich.nowt) | Voynich Systems | Block-based encrypted notes and task planner with Nothing OS styling |
 | [Seton](https://github.com/arijit4/Seton) | arijit4 | Pin and edit notes with widget |
 | [Spend Notes](https://play.google.com/store/apps/details?id=com.cmlabs.spendflow.spendflow) | Coder monk labs | Expense tracking |
 
@@ -303,6 +304,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Root My Nothing](https://github.com/ang3lo-azevedo/root-my-nothing) | ang3lo-azevedo | One-click root app for Nothing Phone (1) using CVE-2026-43499 (GhostLock) to install KernelSU without unlocking the bootloader |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Device insights tool |
 | [Side Dock](https://play.google.com/store/apps/details?id=com.sidedock.app) | Quivox Engineering | Sidebar overlay built for faster multitasking, quick tools, and smoother workflows |
+| [Tapbar](https://github.com/Earendel-lab/Tapbar) | Earendel | Custom screen tap zones to launch apps and system shortcuts with gestures |
 
 ### File Managers
 
