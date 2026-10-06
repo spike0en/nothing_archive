@@ -210,9 +210,10 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [Nothing Archive](https://nothingarchive.tech) | spike0en | Curated hub for official Nothing & CMF firmware, community apps, projects, resources and aftermarket development. ([Repo](https://github.com/spike0en/nothing_archive)) |
 | [Nothing Brand Reference](https://nothing.wiki/nothing/brand_reference) | adbo | An unofficial Nothing brand guidelines reference for community developers and designers |
 | [Nothing Community App Store](https://nothingstore.base44.app/) | Ali Fakhruddin | PWA-style web app that indexes community apps, using a foundational database sourced from [Nothing Archive](https://github.com/spike0en/nothing_archive) |
-| [Nothing Flasher](https://github.com/spike0en/nothing-flasher) | spike0en & Hellboy017 | Fastboot flashing scripts |
+| [Nothing Flasher](https://github.com/spike0en/nothing-flasher) | spike0en & Hellboy017 | Fastboot flashing scripts to flash stock and custom firmware for Nothing and CMF devices on Windows, macOS, and Linux |
 | [Nothing Glyph Interface Research](https://github.com/ThatOneCheat/nothing-glyph-interface-research) | ThatOneCheat | Reverse-engineering notes on the Nothing Phone Glyph SDK and system service, verified against decompiled code |
 | [Nothing News Hub](https://nothing-news.com) | StickyPRP | News and resources hub |
+| [Nothing OS Flasher Flutter](https://github.com/Mashopy/nothingos_flasher_flutter) | Mashopy | Desktop GUI fastboot flashing tool for Nothing OS devices for Windows, Linux, and macOS |
 | [Nothing OS Logkit Softfix](https://github.com/kunaibox/NothingOS-Logkit-Softfix) | kunaibox | Tool to patch/disable Logkit via ADB |
 | [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | A curated gallery of the Nothing community's favourite widgets |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | Community hub ([Repo](https://github.com/nothingtools/nothingtools.github.io)) |

@@ -19,8 +19,7 @@
     "openqore"
   ],
   "platformOverrides": {
-    "nothing-archive": ["web"],
-    "nothing-flasher": ["windows", "linux", "macos"]
+    "nothing-archive": ["web"]
   },
   "categoryOverrides": {
     "glyph-studio": ["glyph-matrix-powered", "glyph-powered"]
