@@ -146,6 +146,7 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | [Glyph Studio](https://github.com/SyedAhkam/glyph-studio) | SyedAhkam | Playground for everything Glyphs |
 | [Glyph Studio](https://play.google.com/store/apps/details?id=tech.abra.glyphstudio) | AbraDev | Generate custom ringtones and real-time audio visualizations for both Glyph LEDs and the Glyph Matrix |
 | [Glyph Torch](https://github.com/Earendel-lab/GlyphTorch) | Earendel | Android App for letting the nothing phone glyphs glow on trigger |
+| [One Glyph](https://github.com/Jackson4Rocks/OneGlyph) | Jackson4Rocks | Controls the single rear Glyph dot on Nothing Phone (3a) Lite with music beat sync, blink patterns, an eight-step composer, and camera countdowns |
 
 ### Notifications & Indicators
 
