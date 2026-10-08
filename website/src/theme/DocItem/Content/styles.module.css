@@ -1,0 +1,22 @@
+.otaBottomLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--ifm-color-emphasis-300);
+  font-size: 0.88rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.otaBottomLink a {
+  font-family: var(--ifm-font-family-monospace);
+  font-weight: 600;
+  color: #d71921;
+}
+
+.otaBottomLink a:hover {
+  text-decoration: underline;
+}

@@ -2146,7 +2146,12 @@ details.alert {
   box-shadow: none !important;
 }
 
-/* Grouped accordion list layout — unifies adjacent collapsible sections into cohesive list items */
+/* Offset accordion scroll target by fixed navbar height plus 24px breathing room */
+details[id] {
+  scroll-margin-top: calc(var(--ifm-navbar-height, 60px) + 24px) !important;
+}
+
+/* Grouped accordion list layout: unifies adjacent collapsible sections into cohesive list items */
 details + details,
 details[class*="details"] + details[class*="details"] {
   margin-top: 2px !important;

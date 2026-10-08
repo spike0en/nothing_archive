@@ -3,6 +3,26 @@
  * Document IDs referenced here must map directly to Markdown filenames within `/docs`.
  */
 import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
+import devicesData from './src/data/devices-metadata.json';
+
+interface DeviceItem {
+  name: string;
+  codename: string;
+  brand: string;
+  series: string;
+}
+
+// SAFETY: Validated structure matching DeviceItem schema generated during prebuild
+const devices = devicesData as DeviceItem[];
+
+/** Filters devices metadata and returns sidebar link items pointing to firmware hash anchors. */
+function getFirmwareLinks(predicate: (d: DeviceItem) => boolean) {
+  return devices.filter(predicate).map((d) => ({
+    type: 'link' as const,
+    label: d.name,
+    href: `/docs/firmware#${d.codename}`,
+  }));
+}
 
 const sidebars: SidebarsConfig = {
   mainSidebar: [
@@ -23,8 +43,69 @@ const sidebars: SidebarsConfig = {
       label: 'Resources',
       collapsed: false,
       items: [
-        'devices',
-        'firmware',
+        {
+          type: 'category',
+          label: 'Devices',
+          link: {
+            type: 'doc',
+            id: 'devices',
+          },
+          collapsed: true,
+          items: [
+            {
+              type: 'category',
+              label: 'Nothing',
+              items: [
+                { type: 'link', label: 'Phones', href: '/docs/devices#phones' },
+                { type: 'link', label: 'Audio', href: '/docs/devices#audio' },
+                { type: 'link', label: 'Accessories', href: '/docs/devices#accessories' },
+                { type: 'link', label: 'Apparel', href: '/docs/devices#apparel' },
+                { type: 'link', label: 'Other Products', href: '/docs/devices#other-products' },
+              ],
+            },
+            {
+              type: 'category',
+              label: 'CMF by Nothing',
+              items: [
+                { type: 'link', label: 'Phones', href: '/docs/devices#phones-1' },
+                { type: 'link', label: 'Audio', href: '/docs/devices#audio-1' },
+                { type: 'link', label: 'Watches', href: '/docs/devices#watches' },
+                { type: 'link', label: 'Accessories', href: '/docs/devices#accessories-1' },
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Firmware',
+          link: {
+            type: 'doc',
+            id: 'firmware',
+          },
+          collapsed: true,
+          items: [
+            {
+              type: 'category',
+              label: 'Nothing Phone Series',
+              items: getFirmwareLinks((d) => d.brand === 'Nothing' && d.series === 'number'),
+            },
+            {
+              type: 'category',
+              label: 'Nothing Phone (a) Series',
+              items: getFirmwareLinks((d) => d.brand === 'Nothing' && d.series === 'a'),
+            },
+            {
+              type: 'category',
+              label: 'Nothing Phone (b / Lite) Series',
+              items: getFirmwareLinks((d) => d.brand === 'Nothing' && d.series === 'b'),
+            },
+            {
+              type: 'category',
+              label: 'CMF by Nothing Phone Series',
+              items: getFirmwareLinks((d) => d.brand === 'CMF' || d.series === 'cmf'),
+            },
+          ],
+        },
         {
           type: 'category',
           label: 'OTA Changelogs',

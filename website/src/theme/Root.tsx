@@ -8,6 +8,7 @@
  */
 
 import React, { useEffect, useState, useRef } from 'react';
+import { useLocation } from '@docusaurus/router';
 import CopyButtonSetup from '../components/CopyButton';
 import { PwaProvider } from '../components/PwaContext';
 import SupportModal from '../components/SupportModal';
@@ -24,6 +25,8 @@ interface RootProps {
  * Root component wrapping the entire Docusaurus application.
  */
 export default function Root({ children }: RootProps): React.JSX.Element {
+  const location = useLocation();
+
   // Synchronously migrate existing users to "System" theme by default on client-side
   if (globalThis.window !== undefined) {
     try {
@@ -92,12 +95,13 @@ export default function Root({ children }: RootProps): React.JSX.Element {
     }
   };
 
-  // Support modal & PWA reload test trigger listeners (hash and custom event)
+  // Support modal, PWA reload triggers, and hash-based details accordion expansion
   useEffect(() => {
     if (globalThis.window === undefined) return;
 
     const checkHash = () => {
-      if (window.location.hash === '#support' || window.location.hash === '#donate') {
+      const currentHash = location.hash || window.location.hash;
+      if (currentHash === '#support' || currentHash === '#donate') {
         setShowSupport(true);
         // Clear hash to allow re-triggering later without polluting navigation history
         try {
@@ -105,13 +109,70 @@ export default function Root({ children }: RootProps): React.JSX.Element {
         } catch (e) {
           console.warn('Failed to clear hash:', e);
         }
-      } else if (window.location.hash === '#pwa-reload' || window.location.hash === '#pwa-test' || window.location.hash === '#stack-test' || window.location.search.includes('pwa-test=true')) {
+      } else if (
+        currentHash === '#pwa-reload' ||
+        currentHash === '#pwa-test' ||
+        currentHash === '#stack-test' ||
+        window.location.search.includes('pwa-test=true')
+      ) {
         setShowPwaTest(true);
+      } else if (currentHash && currentHash.length > 1) {
+        try {
+          const id = decodeURIComponent(currentHash.slice(1));
+          const target = document.getElementById(id);
+          if (target) {
+            // SAFETY: target.tagName check confirms HTMLDetailsElement instance
+            const details = target.tagName === 'DETAILS' ? (target as HTMLDetailsElement) : target.closest('details');
+            if (details) {
+              const summary = details.querySelector('summary');
+              const isClosed = !details.open || details.getAttribute('data-collapsed') === 'true';
+
+              // If closed, trigger summary click to activate Docusaurus's React state and expand collapsible content
+              if (isClosed && summary) {
+                summary.click();
+              } else if (!details.open) {
+                details.open = true;
+              }
+
+              // Ensure inline styles on collapsible wrapper allow visibility
+              const collapsible = details.querySelector('[class*="collapsibleContent"]')?.parentElement;
+              if (collapsible) {
+                collapsible.style.display = 'block';
+                collapsible.style.height = 'auto';
+                collapsible.style.overflow = 'visible';
+              }
+              details.setAttribute('data-collapsed', 'false');
+              details.open = true;
+
+              // Smoothly scroll to the target with navbar offset
+              const scrollToElement = () => {
+                const navbar = document.querySelector('.navbar');
+                const navbarHeight = navbar ? navbar.getBoundingClientRect().height : 60;
+                const rect = details.getBoundingClientRect();
+                const targetTop = rect.top + window.scrollY;
+                // Offset by navbar height + 20px padding so the summary header is completely visible with breathing room
+                const offsetPosition = Math.max(0, targetTop - navbarHeight - 20);
+
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth',
+                });
+              };
+
+              // Schedule scroll after accordion layout shifts
+              setTimeout(scrollToElement, 100);
+            }
+          }
+        } catch {
+          // Ignore invalid URI component in hash
+        }
       }
     };
 
-    // Initial check
+    // Run checks at intervals to handle initial hydration and DOM mount transitions
     checkHash();
+    const timer1 = setTimeout(checkHash, 100);
+    const timer2 = setTimeout(checkHash, 300);
 
     window.addEventListener('hashchange', checkHash);
 
@@ -121,10 +182,12 @@ export default function Root({ children }: RootProps): React.JSX.Element {
     window.addEventListener('open-support-modal', handleOpenSupport);
 
     return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
       window.removeEventListener('hashchange', checkHash);
       window.removeEventListener('open-support-modal', handleOpenSupport);
     };
-  }, []);
+  }, [location.pathname, location.hash]);
 
   // Keyboard shortcut map event listener
   useEffect(() => {
