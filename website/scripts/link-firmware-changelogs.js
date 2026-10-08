@@ -117,6 +117,12 @@ for (let i = 0; i < lines.length; i++) {
   if (line.trim().startsWith('|') && !line.includes('---') && !line.includes('Nothing OS Version')) {
     const cols = line.split('|');
     if (cols.length >= 4) {
+      // Strip accidental changelog links from the Delta OTA source build column
+      if (cols[3] && /\[([^\]]+)\]\(\/docs\/changelogs\/[^)]+\)\s*->/.test(cols[3])) {
+        cols[3] = cols[3].replace(/\[([^\]]+)\]\(\/docs\/changelogs\/[^)]+\)\s*->/g, '$1 ->');
+        lines[i] = cols.join('|');
+      }
+
       const buildCell = cols[2].trim();
       // Matches OTA build tag format: [Codename]-[AndroidLetter][Version]-[YYMMDD]-[HHMM].
       if (!buildCell.startsWith('[') && /-[A-Z0-9.]+-\d{6}-\d{4}/i.test(buildCell)) {
