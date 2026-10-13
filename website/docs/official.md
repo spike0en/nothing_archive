@@ -96,18 +96,19 @@ Official user manuals, guides, and 3D assets for audio, smartwatches, and ecosys
 
 ### CMF by Nothing Audio
 
-| Device | User Manual |
-|--------|-------------|
-| **Buds Pro** | [PDF](https://cdn.shopify.com/s/files/1/0802/1200/1068/files/CMF_Buds_Pro_User_Manual_English_French_German_Arabic_Indian_Hindi_Japanese.pdf?v=1696609341) |
-| **Buds** | [PDF](https://cdn.shopify.com/s/files/1/0797/8739/3316/files/CMF_Buds_User_Manual_English_French_German_Indian_Hindi_Japanese_Arabic.pdf?v=1710141073) |
-| **Neckband Pro** | [PDF](https://cdn.shopify.com/s/files/1/0797/8739/3316/files/CMF_Neckband_Pro_User_Manual_English_Indian_Hindi.pdf?v=1710141063) |
-| **Buds Pro 2** | [PDF](https://cdn.shopify.com/s/files/1/0585/5258/2321/files/Buds_Pro_2_User_Guide.pdf?v=1745467911) |
-| **Buds 2** | [PDF](https://cdn.shopify.com/s/files/1/0583/0072/7462/files/CMF_Buds_2_User_Guide_English_Spanish_French_Japanese_Arabic_Hindi_Korean_Traditional_Chinese_Simplified_Chinese.pdf?v=1749622490) |
-| **Buds 2 Plus** | [PDF](https://cdn.shopify.com/s/files/1/0583/0072/7462/files/CMF_Buds_2_Plus_User_Guide_English_German_Spanish_French_Arabic_Hindi_Korean_Traditional_Chinese_Simplified_Chinese_616d4ea9-7320-4865-afd7-d3000ccd3680.pdf?v=1749623817) |
-| **Buds 2a** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/CMF_Buds_2a_Product_Guide_German_Spanish_French_Japanese_Arabic_Hindi_Korean_Traditional_Chinese_Simplified_Chinese.pdf?v=1757403907) |
-| **Headphone Pro** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/CMF_Headphone_Pro_Quick_Start_Guide_Safety_Warranty_Information.pdf?v=1759027353) |
-| **Clip Pro** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Clip_Pro_Safety_information_Warranty_information.pdf?v=1785229150) |
-| **Buds Neo** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/CMF_Buds_Neo_User_Manual.pdf?v=1787561348) |
+| Device | User Manual | 3D Model |
+|--------|-------------|----------|
+| **Buds Pro** | [PDF](https://cdn.shopify.com/s/files/1/0802/1200/1068/files/CMF_Buds_Pro_User_Manual_English_French_German_Arabic_Indian_Hindi_Japanese.pdf?v=1696609341) | N/A |
+| **Buds** | [PDF](https://cdn.shopify.com/s/files/1/0797/8739/3316/files/CMF_Buds_User_Manual_English_French_German_Indian_Hindi_Japanese_Arabic.pdf?v=1710141073) | N/A |
+| **Neckband Pro** | [PDF](https://cdn.shopify.com/s/files/1/0797/8739/3316/files/CMF_Neckband_Pro_User_Manual_English_Indian_Hindi.pdf?v=1710141063) | N/A |
+| **Buds Pro 2** | [PDF](https://cdn.shopify.com/s/files/1/0585/5258/2321/files/Buds_Pro_2_User_Guide.pdf?v=1745467911) | N/A |
+| **Buds 2** | [PDF](https://cdn.shopify.com/s/files/1/0583/0072/7462/files/CMF_Buds_2_User_Guide_English_Spanish_French_Japanese_Arabic_Hindi_Korean_Traditional_Chinese_Simplified_Chinese.pdf?v=1749622490) | N/A |
+| **Buds 2 Plus** | [PDF](https://cdn.shopify.com/s/files/1/0583/0072/7462/files/CMF_Buds_2_Plus_User_Guide_English_German_Spanish_French_Arabic_Hindi_Korean_Traditional_Chinese_Simplified_Chinese_616d4ea9-7320-4865-afd7-d3000ccd3680.pdf?v=1749623817) | N/A |
+| **Buds 2a** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/CMF_Buds_2a_Product_Guide_German_Spanish_French_Japanese_Arabic_Hindi_Korean_Traditional_Chinese_Simplified_Chinese.pdf?v=1757403907) | N/A |
+| **Headphone Pro** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/CMF_Headphone_Pro_Quick_Start_Guide_Safety_Warranty_Information.pdf?v=1759027353) | N/A |
+| **Clip Pro** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Clip_Pro_Safety_information_Warranty_information.pdf?v=1785229150) | N/A |
+| **Buds Neo** | [PDF](https://cdn.shopify.com/s/files/1/0376/5420/0459/files/CMF_Buds_Neo_User_Manual.pdf?v=1787561348) | N/A |
+| **Speaker S & M** | N/A | [Power Button](https://nothing.community/api/fof/download/cdfede22-04f1-4f23-bdf6-08c8cd5a3011/312843/lMIhpju8sgXFIpIsMIpicMy2vFfO4BVypIARznb6) <br /> [Original Knobs](https://nothing.community/api/fof/download/5bbaf3e2-7796-4e7c-bb0b-e3ac3633ae9d/312843/lMIhpju8sgXFIpIsMIpicMy2vFfO4BVypIARznb6) <br /> [Unique Knobs](https://nothing.community/api/fof/download/8b9622e1-803f-48bb-a431-6fc59ca26d84/312843/lMIhpju8sgXFIpIsMIpicMy2vFfO4BVypIARznb6) <br /> [S Original Panel](https://nothing.community/api/fof/download/c7acfece-1c60-464a-a612-dd9f80959540/312843/lMIhpju8sgXFIpIsMIpicMy2vFfO4BVypIARznb6) <br /> [S Covered Panel](https://nothing.community/api/fof/download/8aad3a8d-0313-4690-a8d6-6ce966218fe8/312843/lMIhpju8sgXFIpIsMIpicMy2vFfO4BVypIARznb6) <br /> [S Slotted Panel](https://nothing.community/api/fof/download/fcda2e5b-bcbe-4702-bc2d-265abcfe5bbb/312843/lMIhpju8sgXFIpIsMIpicMy2vFfO4BVypIARznb6) <br /> [S Cone Panel](https://nothing.community/api/fof/download/584fbbfe-23d5-4fed-b90c-dea68782d3ca/312843/lMIhpju8sgXFIpIsMIpicMy2vFfO4BVypIARznb6) <br /> [S Double Panel](https://nothing.community/api/fof/download/53867e2c-f56d-4188-91e7-ecdcd9b33777/312843/lMIhpju8sgXFIpIsMIpicMy2vFfO4BVypIARznb6) <br /> [M Original Panel](https://nothing.community/api/fof/download/c22c0744-aec9-474d-b8db-319f0a8eaebd/312843/lMIhpju8sgXFIpIsMIpicMy2vFfO4BVypIARznb6) <br /> [M Half Panel](https://nothing.community/api/fof/download/493aa983-0b5a-4b65-b3f3-84f39cfc0d9a/312843/lMIhpju8sgXFIpIsMIpicMy2vFfO4BVypIARznb6) <br /> [M Cone Panel](https://nothing.community/api/fof/download/1d718507-91ad-4d26-924e-5b7b2ddf1e56/312843/lMIhpju8sgXFIpIsMIpicMy2vFfO4BVypIARznb6) <br /> [M Traffic Light Panel](https://nothing.community/api/fof/download/d10e637e-98fe-4f58-bcea-2b36567c6b4c/312843/lMIhpju8sgXFIpIsMIpicMy2vFfO4BVypIARznb6) <br /> [M Double Panel](https://nothing.community/api/fof/download/7d67ca04-1036-46b2-badc-a55548a42921/312843/lMIhpju8sgXFIpIsMIpicMy2vFfO4BVypIARznb6) |
 
 ### CMF by Nothing Watches
 
