@@ -39,6 +39,7 @@ See [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) for of
 | [Glyph Shot](https://github.com/shaibu54/glyph-shot) | shaibu54 | Hold to charge artillery game for the Nothing Phone (3)'s Glyph Matrix |
 | [Glyph Slot](https://github.com/aero-md/glyphslot) | aero-md | Slot-machine Glyph Toy for the Nothing Phone (3) Glyph Matrix |
 | [Glyph Snake](https://github.com/AlyaNs1/GlyphSnake) | AlyaNs1 | Snake Game for Nothing Phone (3)'s Glyph Matrix |
+| [Glyph Squish](https://github.com/valebell/glyph-squish) | valebell | Interactive virtual creature toy for the Nothing Phone (3) Glyph Matrix with tilt movement, shake form changes, and unlockable moves |
 | [Glyph Stack](https://github.com/pauwma/GlyphStack) | pauwma | A stacker arcade game |
 | [Glyph Tide](https://github.com/erosika/glyph-tide) | erosika | Tide tracking toy for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Toybox](https://play.google.com/store/apps/details?id=com.singularityux.glyphtoybox) | Singularity Design | Coin flip, ringer mode, battery flow |
@@ -62,6 +63,7 @@ See [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) for of
 | [Better Clock](https://github.com/Snakehater/betterclock) | Snakehater | Multifunctional display |
 | [Clip Matrix](https://github.com/Sukhendu2002/ClipMatrix) | Sukhendu2002 | Customize the Glyph Matrix on Nothing Phone (4a) Pro with different Glyph Toy |
 | [Clock AOD Glyph](https://github.com/Aureliink/Clock-AOD-Glyph-Toy) | Aureliink | A vertical-style clock toy for Nothing Phone (3)'s Glyph Matrix |
+| [Dota Rank Glyph](https://github.com/tolik518/DotaRankGlyph) | tolik518 | Glyph Matrix toy displaying live Dota 2 rank medal, stars, and leaderboard position for Nothing Phone (3) |
 | [Figly](https://github.com/psygos/figly) | psygos | A glyph matrix herbarium for the Nothing Phone (4a) Pro |
 | [Glucose Glyph](https://github.com/0NLyM/CgmGlyph) | 0NLyM | Display continuous glucose monitor (CGM) readings on the Nothing Phone (3) Glyph Matrix via ControlX2 |
 | [Glyp Clocks](https://bleelblep.github.io/disclaimer/glyphclocks/) | bleelblep | 16 Clocks for Phone (3)'s Glyph Matrix ([Repo](https://github.com/bleelblep/glyphclocks)) |
@@ -94,6 +96,7 @@ See [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) for of
 | [Better Nothing Music Visualizer (BNMV)](https://github.com/Aleks-Levet/better-nothing-music-visualizer) | Aleks Levet | Real-time audio visualizer for Nothing Phone Glyphs, Glyph Matrix, and haptics |
 | [Counter](https://nothing.community/d/36837-introducing-counter-a-glyph-toy) | Daniel | Counter ranging 0-9999 |
 | [Dot Hub](https://play.google.com/store/apps/details?id=com.gesekus.dothub) | nostream | Visualizer, compass, dice, counter |
+| [Dotwave](https://github.com/AK-120/GlyphControllers) | AK-120 | Reactive Glyph Matrix controller for Nothing Phone (4a) Pro with volume, charging, and media visualizers |
 | [Glyf1](https://github.com/dfrost90/glyf1) | dfrost90 | F1 companion for Nothing phones with Glyph Matrix and home-screen race updates. |
 | [Glyph Anki](https://github.com/R0uli078/GlyphAnki) | R0uli078 | Anki flashcard integration |
 | [Glyph Barty](https://github.com/Link2011-Act2/GlyphBarty) | Link2011-Act2 | Glyph visualizer app incorporating both Nothing-inspired and Material 3 UI interfaces |
@@ -108,6 +111,7 @@ See [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) for of
 | [Glyph Matrix Lab](https://github.com/alex-1121/glyph-matrix-lab) | alex-1121 | Toolkit for creating and intelligently displaying custom Glyph Matrix visuals for Nothing Phone (4a) Pro |
 | [Glyph Matrix Tasker Plugin](https://github.com/Gennadiyev/GlyphMatrixTaskerPlugin) | Gennadiyev | Tasker plugin for controlling the Glyph Matrix on Nothing Phone (3). |
 | [Glyph Matrix Tools](https://github.com/toberfasanok/Glyph-Matrix-Tools) | toberfasanok | Draw and display custom glyph images and animations on the Nothing Phone (3) Glyph Matrix |
+| [Glyph Mini Apps](https://github.com/akilxasp/glyph-mini-apps) | akilxasp | Collection of mini apps and utilities for Nothing Phone (4a) Pro Glyph Matrix with games, notifications, and media status |
 | [Glyph Mo](https://github.com/anamite/GlyphMo) | anamite | Glyph Matrix control application designed exclusively for the Nothing Phone (4a) Pro. |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Notifications, timers, visualizer |
 | [Glyph Nothing](https://github.com/manttii/Glphy-Nothing) | manttii | Create, preview, and trigger custom Glyph Matrix animations on Nothing phones |
@@ -117,6 +121,7 @@ See [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) for of
 | [Glyph Studio](https://play.google.com/store/apps/details?id=tech.abra.glyphstudio) | AbraDev | Generate custom ringtones and real-time audio visualizations for both Glyph LEDs and the Glyph Matrix |
 | [Glyph Temperature](https://github.com/Gabelloide/GlyphTemperatureToy) | Gabelloide | Displays CPU, battery, and GPU temperatures with a scrolling history plot on the Nothing Phone (3) Glyph Matrix |
 | [Glyph Torch Toy](https://github.com/dotstaraj/GlyphTorchToy) | dotstaraj | Minimal Glyph Toy for Nothing Phone (3) that flashes the entire matrix as a torch |
+| [Glyph Tuner](https://github.com/Swapnil-Kar/glyph-tuner) | Swapnil-Kar | Guitar and chromatic instrument tuner for Nothing Phone (3) Glyph Matrix |
 | [Glyph Type](https://github.com/deepudxd/GlyphType) | deepudxd | Converts text into scrolling dot-matrix animations for the Nothing Phone (4a) Pro's 13×13 Glyph Matrix |
 | [Glyphifier](https://github.com/AhmedYasser5/Glyphifier) | AhmedYasser5 | Play GIFs, media, and notification-triggered visuals on the Glyph Matrix |
 | [HA Glyph](https://github.com/PzmuV1517/HA-glyph) | pzmuv1517 | Home Assistant entity toggle |
@@ -160,6 +165,7 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | [Glyph Unlock Pulse](https://play.google.com/store/apps/details?id=com.singularityux.glyphunlockpulse) | Singularity Design | Customize device unlock with animated glyphs |
 | [Nothing Charging Meter](https://github.com/BroCoder007/NothiNGChargingMeter) | BroCoder007 | Minimalist charging indicator for Nothing Phone (3a) |
 | [Nothing Phone Battery Notification](https://github.com/f3bruary/nothing-phone-battery-notification) | f3bruary | Red Glyph LED notifier with customizable low battery patterns for Phone (4a) |
+| [Tiny Glyph](https://github.com/SworderZ/tinyGlyph) | SworderZ | Android widgets and Glyph light indicators for Claude and Codex usage limits, weather precipitation, and screen-off idle timers |
 
 ### Utilities & Tools
 
@@ -168,6 +174,7 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | [Blockit](https://play.google.com/store/apps/details?id=com.hypenet.focused) | Mirko_ddd | Tech detox phone blocking app with Glyph integration |
 | [Glyph Clock](https://github.com/whoisfazenda/glyphclock) | whoisfazenda | Alarm clock, world clock, timers and stopwatch that plays Glyph Composer light recordings on Nothing Phone (3a) and (3a) Pro |
 | [Glyph Compass](https://play.google.com/store/apps/details?id=com.JayKayCooperations.glyph_compass) | JayKayCooperations | Use your Glyph interface as a compass |
+| [Glyph Controller](https://github.com/Chengdong-Yu/Glyph-Controller) | Chengdong-Yu | Root-based controller for Nothing Phone (2) to adjust 33-zone LED brightness, notification pulses, and charging animations via sysfs |
 | [Glyph Initiator](https://github.com/lowqualitysoarin/Glyph-Initiator/releases) | lowqualitysoarin | Control glyph interface via intents |
 | [Glyph Manager](https://github.com/SthrNilshaaa/package_apps_nglyph) | SthrNilshaaa | Nothing Phone (1) Glyph Manager |
 | [Glyph Pom](https://github.com/ArushCodes/GlyphPom) | ArushCodes | Pomodoro timer for Phone (3a) & (3a) Pro |
@@ -381,6 +388,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Nothing Calendar](https://github.com/AyushKumar-Singh/Calendar-APK) | AyushKumar-Singh | Minimal calendar and task management app inspired by the Nothing/CMF OS design language |
 | [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | World clock, timer, stopwatch |
 | [Nothing Desk Clock](https://play.google.com/store/apps/details?id=com.ApexCreator.deskclock) | Apex Creators | Desk clock app |
+| [Omni Clock](https://github.com/andrasulthan-alt/OmniClock) | andrasulthan-alt | Nothing-style clock and dot-matrix home-screen widgets for Android with alarm, world clock, timer, and stopwatch |
 
 ### General Daily Utilities
 
@@ -391,6 +399,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Compass](https://github.com/Earendel-lab/Compass) | Earendel | Simple compass |
 | [Currency](https://curency.pages.dev/) | Earendel | Currency converter web app |
 | [Desight](https://play.google.com/store/apps/details?id=com.repomedia.desight) | Repomedia | Nothing-inspired, free eye strain reduction app |
+| [Dot Weather](https://github.com/SMMahmudIqbal/DotWeather) | SMMahmudIqbal | Minimalist weather and environmental monitor app for Android inspired by Nothing OS 3.0 |
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | AI-powered browser |
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Flashlight app with widgets |
 | [Glimpse](https://github.com/amitozalvo/nothing-phone-apps) | amitozalvo | Notification and OTP assistant for Nothing Phone (3) |
@@ -411,6 +420,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Nothing News](https://play.google.com/store/apps/details?id=com.nothing.news) | Mirko_ddd | Community news |
 | [Nothing OS Smart Edge](https://github.com/f4646/Smart-Edge/releases) | f4646 | Floating windows for Sidebar and Nothing OS |
 | [Nothing Weather](https://play.google.com/store/apps/details?id=com.ApexCreator.nothing_weather) | Apex Creators | Weather app |
+| [Procam](https://github.com/pleum333333/procam-nothing-2a-plus) | pleum333333 | Manual camera app for Nothing Phone (2a) Plus with RAW capture, 32-second exposures, focus peaking, and live histogram |
 | [Void](https://play.google.com/store/apps/details?id=com.thevoid.focus) | vmcreate | Minimal app blocker based on Nothing OS design language |
 | [Voidcaller](https://play.google.com/store/apps/details?id=com.voidware.voidcaller) | VoidwareLabs | Minimalist dialer |
 | [WhispCal](https://play.google.com/store/apps/details?id=com.thomasmorice.whispcal) | Thomas Morice | Calorie tracking app for Android and [iOS](https://apps.apple.com/in/app/whispcal/id6757860582) |
