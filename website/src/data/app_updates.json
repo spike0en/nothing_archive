@@ -1,1 +1,106 @@
-{}
+{
+  "com.nothing.communitywidgets": {
+    "name": "Nothing Community Widgets",
+    "versionName": "1.1.2",
+    "updatedAt": "2025-07-04T14:45:12+00:00",
+    "iconUrl": "https://play-lh.googleusercontent.com/IbjO9cN1q7kqj00DgMBSGxn2dFRKIoYRVKbOVXLtPFONtke_-SVF9-zJV9q6ul6VYUtpYYYhgv5cX4xVQI48",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.communitywidgets&hl=en&gl=us",
+    "changelog": "Introducing Fortunes, a new community widget featuring fortunes, puns, riddles, and sarcasm delivered daily to your home screen. Created by Rahil Hussain with support from Thomas Legendre."
+  },
+  "com.nothing.essential.search": {
+    "name": "Essential Search",
+    "versionName": "1.0.3",
+    "updatedAt": "2026-01-30T03:34:54+00:00",
+    "iconUrl": "https://play-lh.googleusercontent.com/H2oIFEm-8GxcjXOKsAFkIdSqjaSDGSTaGMRVu9zJJ9-z6j5sSpshtODyFcsKslT6EYU4QPe7pnyZux0FYNRLog",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.essential.search&hl=en&gl=us",
+    "changelog": "🛠️ General bug fixes and performance improvements."
+  },
+  "com.nothing.ntessentialspace": {
+    "name": "Essential Space",
+    "versionName": "2.2.0",
+    "updatedAt": "2026-09-18T02:57:30+00:00",
+    "iconUrl": "https://play-lh.googleusercontent.com/bvF1_vQErzySJRR3DxH_YIjKNLQOnLvjpceZu9DYwYvg739S4vbYy_cUam2VSDzwH2ihfQSnbxA_9kGIsf6KO5A",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.ntessentialspace&hl=en&gl=us",
+    "changelog": "What’s New in Essential Space\n• Stability & Performance\n 🐞 Bug fixes and stability enhancements."
+  },
+  "com.nothing.gallery": {
+    "name": "Nothing Gallery",
+    "versionName": "3.1.2.0819",
+    "updatedAt": "2026-08-21T08:27:04+00:00",
+    "iconUrl": "https://play-lh.googleusercontent.com/1oIzd_YpxjtuFzecQNs_DPg1LaaiMKh0j6ENRMYtLH4CS2uZ0eZ3YM9sLlZDl9dACFy9rgtPa6GKWF7d2rz9LQ",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.gallery&hl=en&gl=us",
+    "changelog": "This release focuses on stability and key bug fixes."
+  },
+  "com.nothing.games": {
+    "name": "Games",
+    "versionName": "1.0.2",
+    "updatedAt": "2026-05-13T02:40:13+00:00",
+    "iconUrl": "https://play-lh.googleusercontent.com/ZJhgzcyCrfr5ezFYdSVd8rQTXG7N-0eVtiv5ST19l876mF8XnizXlSt6UQFuBN30f8KuydlpIE2qZ6b9FRAssg",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.games&hl=en&gl=us",
+    "changelog": "Welcome to Games! Dive into simple, fast, and engaging experiences designed to help you unwind. Ready for your next adventure? Just tap and play!"
+  },
+  "com.nothing.glyph.composer": {
+    "name": "Glyph Composer",
+    "versionName": "1.4.4",
+    "updatedAt": "2025-07-08T12:27:29+00:00",
+    "iconUrl": "https://play-lh.googleusercontent.com/fSQfq0EX4lyY3pfi5-y1MzY-Nnf7nRt1obn18xa4y6QYcj1KsDLscjatS32fMm6hLoxgvsVulkeVA_jtrhGs",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.glyph.composer&hl=en&gl=us",
+    "changelog": "👾 General bug fixes & minor experience improvements\n💬 Support Japanese Ndot font\n🛠️ Support change the font in Settings-Experimental features"
+  },
+  "com.nothing.icon": {
+    "name": "Nothing Icon Pack",
+    "versionName": "1.0.2",
+    "updatedAt": "2024-07-17T09:11:37+00:00",
+    "iconUrl": "https://play-lh.googleusercontent.com/8GRD_lTB27ug3C3InQWTh4lsPoRTX2kEzLhDLujg2VC7XHTvxl43pNQaMwwwUdd8RRWpIrXybAYTsxgBOSHxPQ",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.icon&hl=en&gl=us",
+    "changelog": "👾 General bug fixes and general improvements."
+  },
+  "com.nothing.launcher": {
+    "name": "Nothing Launcher",
+    "versionName": "4.0.18",
+    "updatedAt": "2026-07-28T06:35:58+00:00",
+    "iconUrl": "https://play-lh.googleusercontent.com/jsCiYyFojG6Y8AE3z5mz_JpRoblb31tgUmCL-PvMB9NlMgVBoZ-Ydu5Yo1u5TjH2so33qFsPD7q_F81lDF2a-A",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.launcher&hl=en&gl=us",
+    "changelog": "🔧 Fixed general bugs and improved the user experience."
+  },
+  "com.nothing.smartcenter": {
+    "name": "Nothing X",
+    "versionName": "3.10.0",
+    "updatedAt": "2026-09-29T10:12:12+00:00",
+    "iconUrl": "https://play-lh.googleusercontent.com/AkF6hnTA2q6eNW2c6OsmxYM5YBz-BWIU_d-5Mw3GBa3XGkwnGBEOsJ96R3BbomDMk2qugt-SdCzLzoO6cqNo",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.smartcenter&hl=en&gl=us",
+    "changelog": "1. Supports the all-new CMF Speaker S and CMF Speaker M\n2. Bug fixes and improvements"
+  },
+  "com.nothing.wallpaper": {
+    "name": "Nothing Wallpaper",
+    "versionName": "1.8.20",
+    "updatedAt": "2026-07-06T11:31:09+00:00",
+    "iconUrl": "https://play-lh.googleusercontent.com/wBTVAZOiU_Ajs9BNbyZzTYOZ1dg-c_nemB_C1GO0yIXZA9uYmxjJoDeh7lE_ihOPx1T8W5n3FW7-JmWPMegcbA",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.wallpaper&hl=en&gl=us",
+    "changelog": "🔧 Fixed general bugs and improved the user experience."
+  },
+  "com.nothing.weather": {
+    "name": "Nothing Weather",
+    "versionName": "3.3.3",
+    "updatedAt": "2026-09-07T02:04:21+00:00",
+    "iconUrl": "https://play-lh.googleusercontent.com/vk9LI_JUKH7Q3IRLbTCENyoQeWAvkT2QmWlbsF4FDsMCDWWL1VDFTjC6NocW66nNhw2VzOxfDl4NHJlVieAApc4",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.weather&hl=en&gl=us",
+    "changelog": "🛠️ General bug fixes and enhanced user experience."
+  },
+  "com.nothing.hearthstone": {
+    "name": "Nothing Widgets",
+    "versionName": "3.5.3",
+    "updatedAt": "2026-08-27T02:09:00+00:00",
+    "iconUrl": "https://play-lh.googleusercontent.com/4CDbT2RZnFhNjcV2EJxsin1T9Iw4xJHqAdm6NMZqbqieI_jpNqC_JxEB66Wy-s9E5KHODj26FUeX3e90XwKWgQ",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.hearthstone&hl=en&gl=us",
+    "changelog": "🛠️ General bug fixes and user experience improvements."
+  },
+  "com.nothing.essentialapps": {
+    "name": "Essential Apps",
+    "versionName": "1.0.43",
+    "iconUrl": "https://play-lh.googleusercontent.com/c7AtCqAmBuwVhAkevIfrRSymLUS_fuFDsr_s7P6vseLUQ3itAS6fQ9tuR_MdTWMswBsRE1PuekYgFqIaxh8xTQ",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.essentialapps&hl=en&gl=us",
+    "changelog": "Bug fixes and stability improvements.",
+    "updatedAt": "2026-10-05T14:22:06+00:00"
+  }
+}
