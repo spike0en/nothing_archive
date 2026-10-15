@@ -1,1 +1,272 @@
-{}
+{
+  "B181": {
+    "modelId": "B181",
+    "name": "Ear (1)",
+    "brand": "Nothing",
+    "codename": "Aipom",
+    "version": "0.6700.1.88",
+    "changelog": "1.New synchronisation with Phone (1) in Game Mode. If Phone (1) is connected to Ear (1) whilst entering a game, Ear (1) will also automatically activate low-latency mode. \n2.Added support for Microsoft Quick Swift. Allows quick pairing with all Microsoft devices of Windows 10 (version 1803 above) via an automatic pop-up window prompting connection. \n3.Optimised call power consumption and increased call life.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/1751954874878ATA-11-C_low_bat_V88(CS_579CC936)_20220623.bin",
+    "updatedAt": "2025-07-08T06:07:54.878000+00:00"
+  },
+  "B157": {
+    "modelId": "B157",
+    "name": "Ear (stick)",
+    "brand": "Nothing",
+    "codename": "Bellossom",
+    "version": "1.0.1.86",
+    "changelog": "1. Optimised the bass sound when 'MORE BASS' is selected in the EQ. \n2. Optimised call quality.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/1742889840270Stick_1_0_1_86_20230727.bin",
+    "updatedAt": "2025-03-25T08:04:00.270000+00:00"
+  },
+  "B155": {
+    "modelId": "B155",
+    "name": "Ear (2)",
+    "brand": "Nothing",
+    "codename": "Azumarill",
+    "version": "1.0.1.102",
+    "changelog": "Bugs fixed.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/174314625815521211_BT_CRC32_V1.0.1.102_202308022_02d76a81_CASE_V1.0.1.73_20230410_release.dfu",
+    "updatedAt": "2025-03-28T07:17:38.155000+00:00"
+  },
+  "B171": {
+    "modelId": "B171",
+    "name": "Ear",
+    "brand": "Nothing",
+    "codename": "Entei",
+    "version": "1.0.1.56",
+    "changelog": "1. Bugs fixed.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/177218566695223262_BT_OTA_V1.0.1.56_20260131_3EF97D6E_Release.dfu",
+    "updatedAt": "2026-02-27T09:47:46.952000+00:00"
+  },
+  "B162": {
+    "modelId": "B162",
+    "name": "Ear (a)",
+    "brand": "Nothing",
+    "codename": "Cleffa",
+    "version": "1.0.1.51",
+    "changelog": "1. Bugs fixed.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/177201627884822251_BT_OTA_V1.0.1.51_20260202_ed307710_Release.dfu",
+    "updatedAt": "2026-02-25T10:44:38.848000+00:00"
+  },
+  "B174": {
+    "modelId": "B174",
+    "name": "Ear (open)",
+    "brand": "Nothing",
+    "codename": "Flaaffy",
+    "version": "1.0.1.28",
+    "changelog": "1. Enhanced connection reliability.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/176916339135723291_BT_OTA_V1.0.1.28_20251208_fa8ae467_Release.dfu",
+    "updatedAt": "2026-01-23T10:16:31.357000+00:00"
+  },
+  "B170": {
+    "modelId": "B170",
+    "name": "Headphone (1)",
+    "brand": "Nothing",
+    "codename": "Elekid",
+    "version": "1.0.1.81",
+    "changelog": "Refined bass tuning for clearer low-frequency performance while maintaining overall balance.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/177081672187923251_BT_OTA_V1.0.1.81_Release.dfu",
+    "updatedAt": "2026-02-11T13:32:01.879000+00:00"
+  },
+  "B173": {
+    "modelId": "B173",
+    "name": "Ear (3)",
+    "brand": "Nothing",
+    "codename": "Feraligatr",
+    "version": "1.0.1.69",
+    "changelog": "1. Bugs fixed.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/178117362732623282_EARBUD_OTA_V1.0.1.69_20260601_Release.dfu",
+    "updatedAt": "2026-06-11T10:27:07.326000+00:00"
+  },
+  "B186": {
+    "modelId": "B186",
+    "name": "Headphone (a)",
+    "brand": "Nothing",
+    "codename": "Hoppip",
+    "version": "1.0.1.51",
+    "changelog": "1. Clearer sound for a smoother listening experience.\n2. Improved connectivity.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/177743194278724292_BT_BOOT_V1.0.1.51_release.dfu",
+    "updatedAt": "2026-04-29T03:05:42.787000+00:00"
+  },
+  "B190": {
+    "modelId": "B190",
+    "name": "Ear (3a)",
+    "brand": "Nothing",
+    "codename": "Jumpluff",
+    "version": "1.0.1.71",
+    "changelog": "1. Improved connection stability.\n2. Bugs fixed.\n*Update to the latest version for optimal performance.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/179146536208125252_EARBUD_OTA_V1.0.1.71_20260928_Release.dfu",
+    "updatedAt": "2026-10-08T13:16:02.081000+00:00"
+  },
+  "B192": {
+    "modelId": "B192",
+    "name": "Headphone (1) Pro",
+    "brand": "Nothing",
+    "codename": "Lanturn",
+    "version": "1.0.1.53",
+    "changelog": "1. Improved dual-device connection stability and audio performance.\n2. Optimised USB audio performance.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/179064831985425221_EARBUD_OTA_V1.0.1.53_20260911_Release.dfu",
+    "updatedAt": "2026-09-29T02:18:39.854000+00:00"
+  },
+  "B163": {
+    "modelId": "B163",
+    "name": "Buds Pro",
+    "brand": "CMF",
+    "codename": "Corsola",
+    "version": "1.0.1.193",
+    "changelog": "Optimised the sound quality of the 'Balanced' and 'More Bass' options within the Equaliser.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/1743146334978Corsola_1_0_1_193_20240629.bin",
+    "updatedAt": "2025-03-28T07:18:54.978000+00:00"
+  },
+  "B164": {
+    "modelId": "B164",
+    "name": "Neckband Pro",
+    "brand": "CMF",
+    "codename": "Crobat",
+    "version": "1.0.1.035",
+    "changelog": "1. Fixed the GFPS bug.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/1772595542878best1502x_22271_V1.0.1.035_2_04_4M_OTA.bin",
+    "updatedAt": "2026-03-04T03:39:02.878000+00:00"
+  },
+  "B168": {
+    "modelId": "B168",
+    "name": "Buds",
+    "brand": "CMF",
+    "codename": "Donphan",
+    "version": "1.0.5.049",
+    "changelog": "1.Optimsed the sound quality of Dirac Opteo.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/174314650245623231_v1.0.5.049_ota.bin",
+    "updatedAt": "2025-03-28T07:21:42.456000+00:00"
+  },
+  "B172": {
+    "modelId": "B172",
+    "name": "Buds Pro 2",
+    "brand": "CMF",
+    "codename": "Espeon",
+    "version": "0.0.8.8",
+    "changelog": "1. Fixed the GFPS bug.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/1772015695725JX195_20_NT_23272_BES2600Z_6X_V0.0.8.8_202602021600_ota.bin.converted.bin",
+    "updatedAt": "2026-02-25T10:34:55.725000+00:00"
+  },
+  "B187": {
+    "modelId": "B187",
+    "name": "Buds Pro 2",
+    "brand": "CMF",
+    "codename": "Heracross",
+    "version": "1.0.1.74",
+    "changelog": "1. Fixed the GFPS bug.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/1770728924357NT_24253_BES2710IHC_6Z_V1.0.1.74_260202_ota.bin.converted.bin",
+    "updatedAt": "2026-02-10T13:08:44.357000+00:00"
+  },
+  "B179": {
+    "modelId": "B179",
+    "name": "Buds 2",
+    "brand": "CMF",
+    "codename": "Girafarig",
+    "version": "1.0.1.52",
+    "changelog": "1. Bugs fixed.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/177201289909724232_BT_OTA_V1.0.1.52_20260202_6efb0462_Release.bin",
+    "updatedAt": "2026-02-25T09:48:19.097000+00:00"
+  },
+  "B184": {
+    "modelId": "B184",
+    "name": "Buds 2 Plus",
+    "brand": "CMF",
+    "codename": "Gligar",
+    "version": "1.0.1.54",
+    "changelog": "1. Bugs fixed.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/177201311567724241_BT_OTA_V1.0.1.54_20260202_b97a2dde_Release.bin",
+    "updatedAt": "2026-02-25T09:51:55.677000+00:00"
+  },
+  "B185": {
+    "modelId": "B185",
+    "name": "Buds 2a",
+    "brand": "CMF",
+    "codename": "Hoothoot",
+    "version": "1.0.1.60",
+    "changelog": "1. Fixed an issue where the second ear does not switch to ANC.\n 2. Fixed the GFPS bug.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/1770643469058TN24283_offlinelog_v1.0.1.60.bin",
+    "updatedAt": "2026-02-09T13:24:29.058000+00:00"
+  },
+  "B175": {
+    "modelId": "B175",
+    "name": "Headphone Pro",
+    "brand": "CMF",
+    "codename": "Forretress",
+    "version": "1.0.1.49",
+    "changelog": "1. Improved Bluetooth connection stability.\n2. Improved Google Fast Pair reliability.\n3. Optimised notification volume.\n4. Enhanced audio performance.\n5. Refined audio performance.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/1786438500128NT24211_V1.0.1.49_MCU_V1019_20260707_APP_CRC.bin",
+    "updatedAt": "2026-08-11T08:55:00.128000+00:00"
+  },
+  "B189": {
+    "modelId": "B189",
+    "name": "Clip Pro",
+    "brand": "CMF",
+    "codename": "Jumpluff",
+    "version": "1.0.1.79",
+    "changelog": "1. Optimizes Bluetooth connection stability and audio performance.\n2. Improves dual-device connection.\n3. Fixed volume adjustment, prompt tones, calls and media playback.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/178642097984925211_V1.0.1.79_20260722_cdf2cf94_OTA_APP.bin",
+    "updatedAt": "2026-08-11T04:02:59.849000+00:00"
+  },
+  "B193": {
+    "modelId": "B193",
+    "name": "Buds Neo",
+    "brand": "CMF",
+    "codename": "Larvitar",
+    "version": "1.0.1.57",
+    "changelog": "1. Reduced unwanted popping sounds for a cleaner listening experience.\n2. Smoother volume adjustment, especially during rapid changes.\n3. Faster and more stable reconnection after powering on.\n4. Added the option to remove pairing records in the app.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/1789551746303NT25231_V1.0.1.57_20260708.bin",
+    "updatedAt": "2026-09-16T09:42:26.303000+00:00"
+  },
+  "E494": {
+    "modelId": "E494",
+    "name": "Speaker S",
+    "brand": "CMF",
+    "codename": "Victini",
+    "version": "1.0.1.55",
+    "changelog": "Dual Connection: Added disconnect, reconnect, and delete options for paired devices. Stores up to 8 phones and supports deleting individual pairing records.\nParty Mode (Auracast): Compatible with Nothing Headphone 1 Pro and other Nothing or CMF devices that support Auracast.\nStereo Mode: Improved stereo mode experience.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/1791859010129ota11_1.55.bin",
+    "updatedAt": "2026-10-13T02:36:50.129000+00:00"
+  },
+  "E495": {
+    "modelId": "E495",
+    "name": "Speaker M",
+    "brand": "CMF",
+    "codename": "Snivy",
+    "version": "1.0.1.55",
+    "changelog": "Dual Connection: Added disconnect, reconnect, and delete options for paired devices. Stores up to 8 phones and supports deleting individual pairing records.\nParty Mode (Auracast): Compatible with Nothing Headphone 1 Pro and other Nothing or CMF devices that support Auracast.\nStereo Mode: Improved stereo mode experience.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/1791859131484ota21_1.55.bin",
+    "updatedAt": "2026-10-13T02:38:51.484000+00:00"
+  },
+  "D395": {
+    "modelId": "D395",
+    "name": "Watch Pro",
+    "brand": "CMF",
+    "codename": "Empoleon",
+    "version": "11.0.0.57",
+    "changelog": "1. Improved the display of standing times.\n2. Enhanced overall user experience.",
+    "downloadUrl": "https://dmen2t88o28qi.cloudfront.net/ota/1758597926034JX401-05_ATS3085C_CI-W036S_V11.0.0.57_GPS_V9_20241127.bin",
+    "updatedAt": "2025-09-23T03:25:26.034000+00:00"
+  },
+  "D398": {
+    "modelId": "D398",
+    "name": "Watch Pro 2",
+    "brand": "CMF",
+    "codename": "Buizel",
+    "version": "1.0.0.73",
+    "changelog": "Fixed bugs and improved overall user experience.",
+    "downloadUrl": "https://dmen2t88o28qi.cloudfront.net/ota/1758271254329JX402_01_ATS3089C_V1.0.0.73_GPS_V10_20250913.bin",
+    "updatedAt": "2025-09-19T08:40:54.329000+00:00"
+  },
+  "D399": {
+    "modelId": "D399",
+    "name": "Watch 3 Pro",
+    "brand": "CMF",
+    "codename": "Buneary",
+    "version": "1.0.1.77",
+    "changelog": "Enhanced overall user experience",
+    "downloadUrl": "https://dmen2t88o28qi.cloudfront.net/ota/1779242269230JX402_08_ATS3089C_V1.0.1.77_GPS_V6_20260418.bin",
+    "updatedAt": "2026-05-20T01:57:49.230000+00:00"
+  }
+}

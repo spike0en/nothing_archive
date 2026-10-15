@@ -44,11 +44,11 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 | [Ear (stick)](https://nothing.tech/products/ear-stick) <br /> <small>Bellossom</small> | B157 | 26 October 2022 | [Here](https://nothing.wiki/hardware/ear_series#ear_stick) |
 | [Ear (2)](https://nothing.tech/products/ear-2) <br /> <small>Azumarill</small> | B155 | 22 March 2023 | [Here](https://nothing.wiki/hardware/ear_series#ear_2) |
 | [Ear](https://nothing.tech/products/ear) <br /> <small>Entei</small> | B171 | 18 April 2024 | [Here](https://nothing.wiki/hardware/ear_series#ear) |
-| [Ear (a)](https://nothing.tech/products/ear-a) <br /> <small>Cleffa</small> | B162 / B183 | 18 April 2024 | [Here](https://nothing.wiki/hardware/ear_series#ear_a) |
+| [Ear (a)](https://nothing.tech/products/ear-a) <br /> <small>Cleffa</small> | B162 | 18 April 2024 | [Here](https://nothing.wiki/hardware/ear_series#ear_a) |
 | [Ear (open)](https://nothing.tech/products/ear-open) <br /> <small>Flaaffy</small> | B174 | 24 September 2024 | [Here](https://nothing.wiki/hardware/ear_series#ear_open) |
 | [Headphone (1)](https://nothing.tech/products/headphone-1) <br /> <small>Elekid</small> | B170 | 01 July 2025 | [Here](https://nothing.wiki/hardware/headphone_1) |
 | [Ear (3)](https://nothing.tech/products/ear-3) <br /> <small>Feraligatr</small> | B173 | 18 September 2025 | [Here](https://nothing.wiki/hardware/ear_series#ear_3) |
-| [Headphone (a)](https://us.nothing.tech/products/headphone-a) <br /> <small>Hoppip</small> | B186 / B198 | 05 March 2026 | [Here](https://nothing.wiki/hardware/headphone_a) |
+| [Headphone (a)](https://us.nothing.tech/products/headphone-a) <br /> <small>Hoppip</small> | B186 | 05 March 2026 | [Here](https://nothing.wiki/hardware/headphone_a) |
 | [Ear (3a)](https://nothing.tech/products/ear-3a?Colour=Pink) <br /> <small>Jumpluff</small> | B190 | 07 July 2026 | [Here](https://nothing.wiki/hardware/ear_series#ear_3a) |
 | [Headphone (1) Pro](https://nothing.tech/products/headphone-1-pro) <br /> <small>Lanturn</small> | B192 | 29 September 2026 | [Here](https://nothing.wiki/hardware/headphone_1_pro) |
 
