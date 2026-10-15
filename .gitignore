@@ -13,6 +13,8 @@ website/src/data/*
 !website/src/data/donors.json
 !website/src/data/contributor-metadata.json
 !website/src/data/showcase-config.json
+!website/src/data/app_updates.json
+!website/src/data/accessories_updates.json
 website/docs/contributing.md
 website/docs/acknowledgements.md
 

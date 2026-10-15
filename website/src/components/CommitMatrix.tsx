@@ -91,7 +91,7 @@ export default function CommitMatrix(): React.JSX.Element {
 
   const stats = [
     {
-      label: 'LAST COMMIT',
+      label: 'LATEST COMMIT',
       value: loading ? '—' : latestCommit.date ? getTimeLag(latestCommit.date) + ' ago' : '—',
     },
     {
@@ -216,7 +216,7 @@ export default function CommitMatrix(): React.JSX.Element {
 
       <div className={styles.consolePanel}>
         <div className={styles.consoleHeader}>
-          <span>RECENT CHANGES</span>
+          <span>RECENT COMMITS</span>
         </div>
         <div className={styles.consoleBody}>
           {loading ? (

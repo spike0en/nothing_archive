@@ -90,7 +90,7 @@ export default function ReleaseFeed(): React.JSX.Element {
       {loading && <div className={styles.loadingBar} />}
       <div className={styles.telemetryHeader}>
         <div className={styles.systemLabel}>
-          <span className={styles.feedTextPrefix}>RELEASES</span>
+          <span className={styles.feedTextPrefix}>PHONE FIRMWARE</span>
           {(errorState || statusSource !== 'LIVE') && (
             <span className={styles.feedStatusOffline}>
               {errorState === 'RATE_LIMITED' ? 'RATE LIMITED' : errorState ? 'ERROR' : 'OFFLINE'}

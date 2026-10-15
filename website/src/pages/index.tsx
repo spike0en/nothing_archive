@@ -18,6 +18,8 @@ import styles from './index.module.css';
 import { JSX } from 'react';
 import CommitMatrix from '../components/CommitMatrix';
 import ReleaseFeed from '../components/ReleaseFeed';
+import AppUpdatesFeed from '../components/AppUpdatesFeed';
+import AudioFirmwareFeed from '../components/AudioFirmwareFeed';
 import AnnouncementBanner from '../components/AnnouncementBanner';
 import StarMilestones from '../components/StarMilestones';
 import HeroGlyphLogo from '../components/HeroGlyphLogo';
@@ -619,12 +621,18 @@ function HomepageActivity() {
         <Heading as="h2" className={styles.sectionLabel}>
           Activity
         </Heading>
-        <div className={styles.telemetrySection}>
+        <div className={styles.telemetryGrid}>
           <div className={styles.telemetryBox}>
             <CommitMatrix />
           </div>
           <div className={styles.telemetryBox}>
             <ReleaseFeed />
+          </div>
+          <div className={styles.telemetryBox}>
+            <AppUpdatesFeed />
+          </div>
+          <div className={styles.telemetryBox}>
+            <AudioFirmwareFeed />
           </div>
         </div>
       </div>

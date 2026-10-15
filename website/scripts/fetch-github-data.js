@@ -296,6 +296,31 @@ async function main() {
     console.error(`[prefetch] local parsers failed: ${e.message}`);
   }
 
+  // Cache app update icons locally to avoid hotlinking and CORS/ORB blocking
+  try {
+    const appUpdatesPath = path.join(__dirname, '..', 'src', 'data', 'app_updates.json');
+    const iconsDir = path.join(__dirname, '..', 'static', 'img', 'apps');
+    if (fs.existsSync(appUpdatesPath)) {
+      fs.mkdirSync(iconsDir, { recursive: true });
+      const apps = JSON.parse(fs.readFileSync(appUpdatesPath, 'utf8'));
+      for (const [pkg, item] of Object.entries(apps)) {
+        const dest = path.join(iconsDir, `${pkg}.png`);
+        if (!fs.existsSync(dest) && item.iconUrl) {
+          const res = await fetch(item.iconUrl, {
+            headers: { 'User-Agent': 'Mozilla/5.0' },
+            signal: AbortSignal.timeout(5000),
+          });
+          if (res.ok) {
+            const buf = Buffer.from(await res.arrayBuffer());
+            fs.writeFileSync(dest, buf);
+          }
+        }
+      }
+    }
+  } catch {
+    // Non-fatal if offline; component falls back to iconUrl
+  }
+
   // Auto-sync root CONTRIBUTING.md to website/docs/contributing.md with Docusaurus frontmatter
   const rootContrib = path.join(__dirname, '..', '..', 'CONTRIBUTING.md');
   const docContrib = path.join(__dirname, '..', 'docs', 'contributing.md');
