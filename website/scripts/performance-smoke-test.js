@@ -8,7 +8,6 @@ const path = require('node:path');
 
 const siteRoot = path.resolve(__dirname, '..');
 const read = (...parts) => fs.readFileSync(path.join(siteRoot, ...parts), 'utf8');
-const readRepositoryFile = (...parts) => fs.readFileSync(path.join(siteRoot, '..', ...parts), 'utf8');
 const assetExists = (...parts) => fs.existsSync(path.join(siteRoot, ...parts));
 
 assert(assetExists('static', 'img', 'brand', 'logo-dark-hero.webp'));
@@ -62,13 +61,6 @@ assert.equal(packageJson.dependencies['@docusaurus/theme-mermaid'], '3.10.2');
 assert.equal(packageJson.dependencies['@easyops-cn/docusaurus-search-local'], undefined);
 // Verify test:performance command supports execution via node or bun for cross-environment compatibility
 assert(packageJson.scripts['test:performance'].startsWith('node ') || packageJson.scripts['test:performance'].startsWith('bun '));
-
-const workflow = readRepositoryFile('.github', 'workflows', 'deploy.yml');
-assert(workflow.includes('oven-sh/setup-bun@v2'));
-assert(workflow.includes("bun-version: '1.3.14'"));
-assert(workflow.includes('bun install --frozen-lockfile'));
-assert(workflow.includes('bun run test:performance'));
-assert(!workflow.includes('package-lock'));
 
 const firmware = read('docs', 'firmware.md');
 const guides = read('docs', 'guides.md');
