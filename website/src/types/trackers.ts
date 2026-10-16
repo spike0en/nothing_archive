@@ -5,7 +5,9 @@ export interface AppUpdateItem {
   iconUrl: string;
   playStoreUrl: string;
   changelog: string;
-  updatedAt: string;
+  publishedAt: string;
+  discoveredAt: string;
+  updatedAt?: string;
 }
 
 export interface AudioUpdateItem {

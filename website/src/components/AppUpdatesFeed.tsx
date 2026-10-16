@@ -9,6 +9,8 @@ export default function AppUpdatesFeed(): React.JSX.Element {
   const { withBaseUrl } = useBaseUrlUtils();
   const [expandedPkg, setExpandedPkg] = useState<string | null>(null);
 
+  const getEffectiveDate = (item: AppUpdateItem): string => item.discoveredAt || item.publishedAt || item.updatedAt || '';
+
   const apps = useMemo(() => {
     // SAFETY: Static JSON file maps package IDs to AppUpdateItem records.
     const recordMap = rawData as Record<string, AppUpdateItem>;
@@ -17,11 +19,12 @@ export default function AppUpdatesFeed(): React.JSX.Element {
         ...item,
         packageName,
       }))
-      .sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
+      .sort((a, b) => new Date(getEffectiveDate(b)).getTime() - new Date(getEffectiveDate(a)).getTime());
   }, []);
 
   const latestApp = apps[0];
-  const latestLag = latestApp?.updatedAt ? getTimeLag(latestApp.updatedAt) + ' ago' : '—';
+  const latestDate = latestApp ? getEffectiveDate(latestApp) : '';
+  const latestLag = latestDate ? getTimeLag(latestDate) + ' ago' : '—';
 
   const stats = [
     { label: 'LATEST UPDATE', value: latestLag },
@@ -79,7 +82,7 @@ export default function AppUpdatesFeed(): React.JSX.Element {
                     }
                   }}
                 >
-                  <span className={`${styles.timeLag} ${idx === 0 ? styles.timeLagActive : ''}`}>{getTimeLag(app.updatedAt)}</span>
+                  <span className={`${styles.timeLag} ${idx === 0 ? styles.timeLagActive : ''}`}>{getTimeLag(getEffectiveDate(app))}</span>
                   <img
                     src={withBaseUrl(`/img/apps/${app.packageName}.png`)}
                     alt={app.name}
@@ -94,7 +97,9 @@ export default function AppUpdatesFeed(): React.JSX.Element {
                   />
                   <div className={styles.appDetails}>
                     <span className={styles.appName}>{app.name}</span>
-                    <span className={styles.versionBadge}>{app.versionName}</span>
+                    <div className={styles.appSubline}>
+                      <span className={styles.versionBadge}>{app.versionName}</span>
+                    </div>
                   </div>
                   <div className={styles.actionArea}>
                     <a

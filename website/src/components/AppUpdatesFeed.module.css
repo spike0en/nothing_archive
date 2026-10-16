@@ -232,17 +232,27 @@
   flex: 1;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  flex-wrap: wrap;
+  column-gap: 0.45rem;
+  row-gap: 0.15rem;
   min-width: 0;
-  overflow: hidden;
 }
 
 .appName {
   font-weight: 600;
   color: inherit;
   white-space: nowrap;
+  flex-shrink: 0;
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.appSubline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
 }
 
 .versionBadge {
@@ -336,6 +346,17 @@
 [data-theme='dark'] .changelogDrawer {
   background: transparent;
   border-top-color: var(--nothing-border, rgba(255, 255, 255, 0.1));
+}
+
+@media (max-width: 640px) {
+  .consoleLine {
+    gap: 0.35rem;
+  }
+
+  .timeLag {
+    width: 2rem;
+    font-size: 0.7rem;
+  }
 }
 
 .emptyFeed {
