@@ -1,13 +1,3 @@
-/**
- * @file SearchBar/index.tsx
- * @description Custom swizzled SearchBar component overriding @docusaurus/theme-search-algolia/SearchBar.
- * Renders the primary navigation search button with official Google Material Symbols Outlined search SVG icon.
- * Intercepts Algolia search client to record exact query hits, preventing @docsearch/react count accumulation bug.
- * 
- * Layer: Navigation theme search component.
- * Boundary: Invoked by Docusaurus navbar for Algolia DocSearch integration.
- */
-
 import React, {
   useCallback,
   useMemo,

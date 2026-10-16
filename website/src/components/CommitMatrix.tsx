@@ -1,12 +1,3 @@
-/**
- * @file CommitMatrix.tsx
- * @description Component that displays commit statistics, stargazers, page visitor hits, 
- * and a list of recent commits to the repository.
- * 
- * Layer: Home page metadata components.
- * Boundary: Reads GitHub stats/commits hooks and local visitor API, renders local HTML structure.
- */
-
 import React, { useState, useEffect, useMemo } from 'react';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import clsx from 'clsx';
@@ -14,7 +5,6 @@ import styles from './CommitMatrix.module.css';
 import { getTimeLag } from '../utils/time';
 import { useGitHubCommits, useGitHubRepoStats } from '../utils/github-cache';
 import type { Commit } from '../utils/github-cache';
-
 
 interface HitsState {
   hits: number;
@@ -33,7 +23,7 @@ export default function CommitMatrix(): React.JSX.Element {
   const [hitsData, setHitsData] = useState<HitsState>({ hits: 0 });
   const [hitsLoading, setHitsLoading] = useState(true);
 
-  const filteredCommits = React.useMemo(() => {
+  const filteredCommits = useMemo(() => {
     // 7 rows fill the telemetry console panel without vertical scrolling.
     const TARGET_COMMITS = 7;
     const sorted = [...commits].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());

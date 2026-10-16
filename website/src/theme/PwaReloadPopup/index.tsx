@@ -1,11 +1,3 @@
-/**
- * @file PwaReloadPopup/index.tsx
- * @description Swizzled PWA reload notification component for site version updates.
- * 
- * Layer: Navigation / PWA theme components.
- * Boundary: Swizzles @theme/PwaReloadPopup invoked by @docusaurus/plugin-pwa.
- */
-
 import React, { type ReactNode, useState, useRef } from 'react';
 import clsx from 'clsx';
 import Translate from '@docusaurus/Translate';
@@ -63,9 +55,6 @@ function CloseIcon({ className }: { className?: string }): React.JSX.Element {
   );
 }
 
-/**
- * Toast notification prompting users to reload when a new PWA service worker version activates.
- */
 export default function PwaReloadPopup({ onReload }: Props): ReactNode {
   const [isVisible, setIsVisible] = useState(true);
   const [exiting, setExiting] = useState(false);

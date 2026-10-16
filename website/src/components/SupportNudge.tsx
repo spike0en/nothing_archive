@@ -14,18 +14,12 @@ import styles from './SupportNudge.module.css';
  * - Already Supported: permanently hidden via localStorage.
  */
 
-/** localStorage key for the permanent opt-out flag. */
 const PERMANENT_KEY = 'support_nudge_permanent';
-/** localStorage key storing the epoch timestamp of the last dismissal. */
 const DISMISS_KEY = 'support_nudge_dismissed';
-/** Days to suppress the nudge after an explicit close button dismissal. */
 const DISMISS_DAYS = 7;
-/** Delay in milliseconds before the nudge first appears after page load. */
 const SHOW_DELAY_MS = 15_000;
-/** Duration in milliseconds the nudge remains visible before auto-hiding. */
 const AUTO_HIDE_MS = 15_000;
 
-/** Returns true if nudge was permanently opted out or dismissed within cooldown window. */
 function isNudgeHidden(): boolean {
   if (globalThis.localStorage === undefined) return false;
   try {
@@ -39,7 +33,6 @@ function isNudgeHidden(): boolean {
   }
 }
 
-/** Persists current timestamp as the last dismissal time. */
 function setDismissed(): void {
   try {
     localStorage.setItem(DISMISS_KEY, String(Date.now()));
@@ -48,7 +41,6 @@ function setDismissed(): void {
   }
 }
 
-/** Sets permanent opt-out flag so the nudge never appears again. */
 function setPermanentlyHidden(): void {
   try {
     localStorage.setItem(PERMANENT_KEY, '1');
@@ -62,7 +54,6 @@ export default function SupportNudge(): React.JSX.Element | null {
   const [exiting, setExiting] = useState(false);
   const autoHideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  /** Cancels the pending auto-hide timeout, if any. */
   const clearAutoHide = useCallback(() => {
     if (autoHideTimer.current) {
       clearTimeout(autoHideTimer.current);
@@ -70,14 +61,12 @@ export default function SupportNudge(): React.JSX.Element | null {
     }
   }, []);
 
-  /** Dismisses the nudge without setting any cooldown (auto-hide / CTA click). */
   const dismiss = useCallback(() => {
     setExiting(true);
     clearAutoHide();
     setTimeout(() => setVisible(false), 350);
   }, [clearAutoHide]);
 
-  /** Dismisses the nudge and suppresses it for {@link DISMISS_DAYS} days (✕ button). */
   const dismissWithCooldown = useCallback(() => {
     setExiting(true);
     setDismissed();
@@ -85,7 +74,6 @@ export default function SupportNudge(): React.JSX.Element | null {
     setTimeout(() => setVisible(false), 350);
   }, [clearAutoHide]);
 
-  /** Permanently hides the nudge ("Already Supported" opt-out). */
   const dismissPermanently = useCallback(() => {
     setExiting(true);
     setPermanentlyHidden();
@@ -156,7 +144,6 @@ export default function SupportNudge(): React.JSX.Element | null {
   const dragXRef = useRef<number>(0);
   const [dragX, setDragX] = useState<number>(0);
 
-  /** Captures initial pointer coordinate and locks pointer capture to element. */
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     if (e.button !== undefined && e.button !== 0) return;
     // SAFETY: Pointer event target HTMLElement casting
@@ -171,7 +158,6 @@ export default function SupportNudge(): React.JSX.Element | null {
     }
   };
 
-  /** Updates drag offset synchronously in ref and updates visual state. */
   const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
     if (dragStartXRef.current === null) return;
     const diff = e.clientX - dragStartXRef.current;
@@ -179,7 +165,6 @@ export default function SupportNudge(): React.JSX.Element | null {
     setDragX(diff);
   };
 
-  /** Evaluates swipe distance against 75px threshold on pointer release. */
   const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
     if (dragStartXRef.current === null) return;
     try {
@@ -200,14 +185,12 @@ export default function SupportNudge(): React.JSX.Element | null {
     dragXRef.current = 0;
   };
 
-  /** Resets drag position when pointer gesture is canceled. */
   const handlePointerCancel = () => {
     setDragX(0);
     dragStartXRef.current = null;
     dragXRef.current = 0;
   };
 
-  /** Handles the "Support Project" CTA — dismisses the nudge and opens the SupportModal. */
   const handleCta = (e: React.MouseEvent) => {
     e.preventDefault();
     dismiss();

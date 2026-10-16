@@ -1,13 +1,3 @@
-/**
- * @file docusaurus.config.ts
- * @description Primary configuration file for the Docusaurus-based site. Defines
- * build metadata, plugin setups, site navigation structure, internationalization,
- * and custom parsing tools for sorting changelogs and devices.
- *
- * Layer: Global site configuration.
- * Boundary: Invoked exclusively by Docusaurus at build time.
- */
-
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';

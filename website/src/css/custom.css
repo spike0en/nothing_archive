@@ -34,8 +34,7 @@ textarea {
   }
 }
 
-
-/* Synchronous theme state application — forces atomic background and typography state updates across viewports */
+/* Suppress CSS transitions during theme changes to prevent color flashing. */
 html.theme-transition,
 html.theme-transition *,
 html.theme-transition *::before,

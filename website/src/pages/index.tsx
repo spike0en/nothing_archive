@@ -27,8 +27,6 @@ import { useGitHubContributors } from '../utils/github-cache';
 import type { Contributor } from '../utils/github-cache';
 import contributorMetadata from '../data/contributor-metadata.json';
 
-
-
 type FeatureItem = {
   title: string;
   description: string;
@@ -36,9 +34,6 @@ type FeatureItem = {
   icon: JSX.Element;
 };
 
-/**
- * Returns the collection of feature cards for the resources grid.
- */
 function getFeatureList(): FeatureItem[] {
   return [
     {
@@ -519,7 +514,6 @@ function HomepageCommunity() {
           })}
         </div>
 
-        {/* Foundational Contributors Subsection */}
         <Heading as="h3" className={clsx(styles.subSectionLabel, styles.subSectionLabelMargin)}>
           Foundational Contributors
         </Heading>

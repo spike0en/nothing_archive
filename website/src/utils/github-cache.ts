@@ -291,8 +291,6 @@ async function fetchContributorsFromAPI(): Promise<Contributor[]> {
   return [...apiContributors, ...missingStatic];
 }
 
-// --- Generic stale-while-revalidate hook factory ---
-
 export interface GitHubDataHookResult<T> {
   data: T;
   status: DataStatus;

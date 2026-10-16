@@ -1,11 +1,3 @@
-/**
- * @file AnnouncementBanner.tsx
- * @description Header announcement banner notifying users of recent Nothing OS release updates.
- *
- * Layer: Home and global theme components.
- * Boundary: Consumes changelogs plugin global data and persistent client-side dismissal state.
- */
-
 import React, { useState, useEffect } from 'react';
 import Link from '@docusaurus/Link';
 import { usePluginData } from '@docusaurus/useGlobalData';
@@ -40,7 +32,6 @@ function parseDismissedTags(key: string): string[] {
 }
 
 /**
- * Header announcement banner component.
  * Evaluates changelog commit recency against a 7-day threshold and presents an animated rotating ticker for multiple releases.
  */
 export default function AnnouncementBanner(): React.JSX.Element | null {

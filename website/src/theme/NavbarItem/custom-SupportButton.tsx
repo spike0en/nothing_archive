@@ -1,12 +1,3 @@
-/**
- * @file custom-SupportButton.tsx
- * @description Button component displayed in the navigation bar to trigger the global support/donation modal.
- * Uses official Google Material Symbols Outlined volunteer_activism icon path.
- * 
- * Layer: Navigation theme components.
- * Boundary: Dispatches CustomEvent 'open-support-modal' on click, handled globally.
- */
-
 import React from 'react';
 import clsx from 'clsx';
 import styles from './custom-SupportButton.module.css';
@@ -30,9 +21,6 @@ function VolunteerActivismIcon({ className }: { className?: string }): React.JSX
   );
 }
 
-/**
- * Navbar button that dispatches a global custom event to display the support/donation modal.
- */
 export default function SupportButton({ mobile }: SupportButtonProps): React.JSX.Element | null {
   if (mobile) {
     return null;

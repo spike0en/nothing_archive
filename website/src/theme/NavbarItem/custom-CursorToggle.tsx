@@ -1,11 +1,3 @@
-/**
- * @file custom-CursorToggle.tsx
- * @description Custom Navbar button that toggles the site-wide Magnetic Target Cursor Ring.
- * 
- * Layer: Navigation theme components.
- * Boundary: Controls localStorage preference and dispatches global custom events.
- */
-
 import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import styles from './custom-CursorToggle.module.css';
@@ -14,10 +6,6 @@ interface CursorToggleProps {
   mobile?: boolean;
 }
 
-/**
- * Navigation button that toggles the magnetic cursor ring preference.
- * Persists choice in localStorage and broadcasts custom events to listener components.
- */
 export default function CursorToggle({ mobile }: CursorToggleProps): React.JSX.Element | null {
   const [enabled, setEnabled] = useState<boolean>(false);
   const [mounted, setMounted] = useState(false);

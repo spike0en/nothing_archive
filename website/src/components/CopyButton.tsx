@@ -125,15 +125,23 @@ export default function CopyButtonSetup(): null {
     setupCopyButtons();
 
     // Client-side route changes inject new markdown tables after initial mount.
+    let debounceTimer: ReturnType<typeof setTimeout> | null = null;
+    const targetEl = document.querySelector('main') || document.body;
     const routeObserver = new MutationObserver(() => {
-      setupCopyButtons();
+      if (debounceTimer) clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        setupCopyButtons();
+      }, 100);
     });
-    routeObserver.observe(document.body, {
+    routeObserver.observe(targetEl, {
       childList: true,
       subtree: true,
     });
 
     return () => {
+      if (debounceTimer) {
+        clearTimeout(debounceTimer);
+      }
       if (themeTransitionTimeout) {
         clearTimeout(themeTransitionTimeout);
       }

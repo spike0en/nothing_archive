@@ -1,12 +1,3 @@
-/**
- * @file DeviceGrid.tsx
- * @description Component that renders the visual catalog of Nothing and CMF devices
- * as a grid on the homepage, allowing users to toggle between color variants of each model.
- * 
- * Layer: Home page components.
- * Boundary: Consumes devices-metadata.json and dynamically routes users to their latest changelog.
- */
-
 import React, { useState } from 'react';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -19,7 +10,6 @@ interface ColorVariant {
   imageUrl: string;
 }
 
-/** Represents metadata details for a specific device model. */
 interface DeviceItem {
   name: string;
   codename: string;
@@ -33,10 +23,6 @@ import devicesData from '../data/devices-metadata.json';
 // SAFETY: Validated structure matching DeviceItem schema
 const devices: DeviceItem[] = devicesData as DeviceItem[];
 
-/**
- * ModelCard component representing a single device in the grid.
- * Displays the name, active color variant image, and custom selector controls.
- */
 function ModelCard({ device, latestLink }: { device: DeviceItem; latestLink: string }): React.JSX.Element {
   const resolvedLink = useBaseUrl(latestLink);
   const [selectedColor, setSelectedColor] = useState<ColorVariant | null>(
@@ -117,10 +103,6 @@ function ModelCard({ device, latestLink }: { device: DeviceItem; latestLink: str
   );
 }
 
-/**
- * DeviceGrid component.
- * Filters and categorizes the parsed device metadata list, rendering grouped section grids.
- */
 export default function DeviceGrid(): React.JSX.Element {
   // SAFETY: Validated by Docusaurus plugin contract
   const { latestLinks } = usePluginData('changelogs-plugin') as { latestLinks: Record<string, string> };

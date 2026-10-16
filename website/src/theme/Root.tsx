@@ -1,12 +1,3 @@
-/**
- * @file Root.tsx
- * @description Top-level theme wrapper component that injects global modals, PWA providers, 
- * scroll progress rings, and keyboard shortcut event listeners across all routes.
- * 
- * Layer: Theme root wrappers.
- * Boundary: Mounts SupportModal, PwaProvider, and global event listeners.
- */
-
 import React, { useEffect, useState, useRef } from 'react';
 import { useLocation } from '@docusaurus/router';
 import CopyButtonSetup from '../components/CopyButton';
@@ -21,9 +12,6 @@ interface RootProps {
   children: React.ReactNode;
 }
 
-/**
- * Root component wrapping the entire Docusaurus application.
- */
 export default function Root({ children }: RootProps): React.JSX.Element {
   const location = useLocation();
 
@@ -215,7 +203,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Appends canonical source attribution metadata to copied text snippets (>60 chars) to maintain project credit
+  // Appends canonical source attribution to copied text snippets exceeding 60 characters.
   useEffect(() => {
     if (globalThis.window === undefined) return;
 
@@ -225,6 +213,12 @@ export default function Root({ children }: RootProps): React.JSX.Element {
 
       const activeEl = document.activeElement;
       if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA' || activeEl.hasAttribute('contenteditable'))) return;
+
+      const anchorNode = selection.anchorNode;
+      const anchorEl = anchorNode instanceof Element ? anchorNode : anchorNode?.parentElement;
+      const focusNode = selection.focusNode;
+      const focusEl = focusNode instanceof Element ? focusNode : focusNode?.parentElement;
+      if (anchorEl?.closest('pre, code, table') || focusEl?.closest('pre, code, table')) return;
 
       const copiedText = selection.toString();
       const attribution = `\n\n— Source: Nothing Archive (${window.location.href})`;
@@ -308,11 +302,16 @@ export default function Root({ children }: RootProps): React.JSX.Element {
       });
     };
 
-    // Retry injection: button appears only after Docusaurus mounts
+    // Retry injection with a bounded count; button appears after Docusaurus mounts
+    let retryTimer: ReturnType<typeof setTimeout> | null = null;
+    let retries = 0;
+    const MAX_RETRIES = 10;
+
     const tryInject = () => {
       injectSVG();
-      if (!document.querySelector('.scroll-ring-svg')) {
-        setTimeout(tryInject, 200);
+      if (!document.querySelector('.scroll-ring-svg') && retries < MAX_RETRIES) {
+        retries += 1;
+        retryTimer = setTimeout(tryInject, 200);
       }
     };
     tryInject();
@@ -323,14 +322,13 @@ export default function Root({ children }: RootProps): React.JSX.Element {
     return () => {
       window.removeEventListener('scroll', handleScroll);
       if (animFrame) window.cancelAnimationFrame(animFrame);
+      if (retryTimer) clearTimeout(retryTimer);
       svg.remove();
     };
   }, []);
 
   return (
     <PwaProvider>
-      <span id="support" style={{ display: 'none' }} />
-      <span id="donate" style={{ display: 'none' }} />
       {children}
       <CopyButtonSetup />
       <SupportModal isOpen={showSupport} onClose={() => setShowSupport(false)} />

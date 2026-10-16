@@ -1,13 +1,3 @@
-/**
- * @file custom-PwaInstallButton.tsx
- * @description Button component displayed in the navigation bar to trigger PWA installation 
- * when the application is installable on the user's platform/browser.
- * Uses official Google Material Symbols Outlined mobile_arrow_down icon path.
- * 
- * Layer: Navigation theme components.
- * Boundary: Interacts with custom PwaContext to verify availability and trigger prompt.
- */
-
 import React from 'react';
 import { usePwa } from '../../components/PwaContext';
 import clsx from 'clsx';
@@ -32,9 +22,6 @@ function MobileArrowDownIcon({ className }: { className?: string }): React.JSX.E
   );
 }
 
-/**
- * Navbar button that prompts the browser's native PWA installation flow when available.
- */
 export default function PwaInstallButton({ mobile }: PwaInstallButtonProps): React.JSX.Element | null {
   const { isInstallable, install } = usePwa();
 

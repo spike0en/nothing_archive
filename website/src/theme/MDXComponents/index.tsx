@@ -1,11 +1,3 @@
-/**
- * @file MDXComponents/index.tsx
- * @description Central MDX component mapping registry providing custom styling wrappers for standard Markdown elements.
- * 
- * Layer: Theme MDX element overrides.
- * Boundary: Controls rendering wrappers for headings, tables, links, images, and admonitions.
- */
-
 import React, {type ComponentProps, type ReactNode} from 'react';
 import Head from '@docusaurus/Head';
 import MDXCode from '@theme/MDXComponents/Code';

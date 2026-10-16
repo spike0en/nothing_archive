@@ -68,7 +68,6 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
     };
   }, [isOpen]);
 
-  // Disable body scroll when modal is open
   useEffect(() => {
     if (globalThis.document === undefined) return;
     if (isOpen) {
@@ -81,7 +80,6 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
     };
   }, [isOpen]);
 
-  // Escape key listener to close modal
   useEffect(() => {
     if (globalThis.window === undefined) return;
     const handleKeyDown = (e: KeyboardEvent) => {

@@ -1,12 +1,3 @@
-/**
- * @file ColorModeToggle/index.tsx
- * @description Custom theme override component for toggling between Light, System, and Dark color modes.
- * Uses official raw Google Material Symbols Outlined SVGs fetched directly from Google repository.
- * 
- * Layer: Navigation theme overrides.
- * Boundary: Controls root Docusaurus theme state via onChange callback.
- */
-
 import React from 'react';
 import clsx from 'clsx';
 import useIsBrowser from '@docusaurus/useIsBrowser';
@@ -66,16 +57,12 @@ function MoonIcon(): React.JSX.Element {
   );
 }
 
-/**
- * Three-state segmented toggle control for switching between Light, System, and Dark color modes.
- */
 function ColorModeToggle({
   className,
   value,
   onChange,
 }: Props): React.JSX.Element {
   const isBrowser = useIsBrowser();
-  // Map null color mode value to 'system' active state
   const currentChoice = value === null ? 'system' : value;
 
   return (
