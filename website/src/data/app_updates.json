@@ -109,11 +109,11 @@
   },
   "com.nothing.essentialapps": {
     "name": "Essential Apps",
-    "versionName": "1.0.43",
-    "publishedAt": "2026-10-05T14:22:06+00:00",
-    "discoveredAt": "2026-10-05T16:04:15+00:00",
+    "versionName": "1.0.44",
+    "publishedAt": "2026-10-08T13:21:20+00:00",
+    "discoveredAt": "2026-10-16T11:56:01.961823+00:00",
     "iconUrl": "https://play-lh.googleusercontent.com/c7AtCqAmBuwVhAkevIfrRSymLUS_fuFDsr_s7P6vseLUQ3itAS6fQ9tuR_MdTWMswBsRE1PuekYgFqIaxh8xTQ",
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.essentialapps&hl=en&gl=us",
-    "changelog": "Bug fixes and stability improvements."
+    "changelog": "4x2 and 4x4 widgets now available."
   }
 }
