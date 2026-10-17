@@ -77,13 +77,16 @@ export default function AudioFirmwareFeed(): React.JSX.Element {
                       }
                     }}
                   >
-                    <span className={`${styles.timeLag} ${idx === 0 ? styles.timeLagActive : ''}`}>{getTimeLag(dev.updatedAt)}</span>
+                    <span className={`${styles.timeLag} ${idx === 0 ? styles.timeLagActive : ''}`} suppressHydrationWarning>{getTimeLag(dev.updatedAt)}</span>
                     {!imgErrors[dev.modelId] ? (
                       <img
                         src={withBaseUrl(`/img/accessories/${dev.modelId}.png`)}
                         alt={`${dev.brand} ${dev.name}`}
                         className={styles.deviceIcon}
+                        width={39}
+                        height={39}
                         loading="lazy"
+                        decoding="async"
                         onError={() => {
                           setImgErrors((prev) => ({ ...prev, [dev.modelId]: true }));
                         }}

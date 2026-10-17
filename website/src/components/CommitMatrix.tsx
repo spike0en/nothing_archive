@@ -198,7 +198,7 @@ export default function CommitMatrix(): React.JSX.Element {
       <div className={styles.statsStrip}>
         {stats.map((stat, i) => (
           <div key={i} className={styles.statItem}>
-            <span className={styles.statValue}>{stat.value}</span>
+            <span className={styles.statValue} suppressHydrationWarning>{stat.value}</span>
             <span className={styles.statLabel}>{stat.label}</span>
           </div>
         ))}
@@ -249,7 +249,7 @@ export default function CommitMatrix(): React.JSX.Element {
                   rel="noopener noreferrer"
                   className={styles.consoleLine}
                 >
-                  <span className={`${styles.timeLag} ${isLatest ? styles.timeLagActive : ''}`}>{getTimeLag(commit.date)}</span>
+                  <span className={`${styles.timeLag} ${isLatest ? styles.timeLagActive : ''}`} suppressHydrationWarning>{getTimeLag(commit.date)}</span>
                   {formatAuthors(commit, isLatest)}
                   <span className={`${styles.messageText} ${isLatest ? styles.messageTextLatest : ''}`}>{commit.message}</span>
                   <span className={`${styles.shaTag} ${isLatest ? styles.shaLatest : ''}`}>{commit.sha}</span>

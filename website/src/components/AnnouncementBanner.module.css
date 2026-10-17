@@ -348,7 +348,9 @@
   }
   .dismissBtn {
     font-size: 0.95rem;
-    padding: 0.15rem 0.25rem;
+    padding: 0.4rem 0.5rem;
+    min-width: 44px;
+    min-height: 44px;
     margin-left: 0.05rem;
   }
 }

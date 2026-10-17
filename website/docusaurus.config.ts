@@ -631,28 +631,7 @@ const config: Config = {
       },
       innerHTML: websiteSchema,
     },
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preconnect',
-        href: 'https://fonts.googleapis.com',
-      },
-    },
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preconnect',
-        href: 'https://fonts.gstatic.com',
-        crossorigin: 'anonymous',
-      },
-    },
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap',
-      },
-    },
+
     {
       tagName: 'link',
       attributes: {
@@ -812,7 +791,17 @@ const config: Config = {
         }
       `,
     },
-    // Preload critical headline font to eliminate FCP/LCP render delay
+    // Preload mobile hero logo to resolve LCP network discovery delay.
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        as: 'image',
+        href: `${baseUrl}img/brand/logo-dark-hero-256.webp`,
+        type: 'image/webp',
+      },
+    },
+    // Preload critical headline font to eliminate FCP/LCP render delay.
     {
       tagName: 'link',
       attributes: {
@@ -822,37 +811,6 @@ const config: Config = {
         type: 'font/woff2',
         crossorigin: 'anonymous',
       },
-    },
-    // Preconnect directives for external font domains to reduce latency
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preconnect',
-        href: 'https://fonts.googleapis.com',
-      },
-    },
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preconnect',
-        href: 'https://fonts.gstatic.com',
-        crossorigin: 'anonymous',
-      },
-    },
-    // Non-render-blocking font stylesheet loading for JetBrains Mono
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'preload',
-        as: 'style',
-        href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap',
-        onload: "this.onload=null;this.rel='stylesheet'",
-      },
-    },
-    {
-      tagName: 'noscript',
-      attributes: {},
-      innerHTML: `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">`,
     },
   ],
 

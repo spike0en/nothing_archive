@@ -1415,7 +1415,8 @@ a:hover {
 }
 
 .footer-disclaimer {
-  opacity: 0.45;
+  /* Opacity 0.75 satisfies WCAG AA contrast against dark and light footers */
+  opacity: 0.75;
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;

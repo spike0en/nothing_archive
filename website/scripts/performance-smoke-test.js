@@ -32,9 +32,11 @@ assert(assetExists('static', '_headers'));
 
 const config = read('docusaurus.config.ts');
 assert(!config.includes('https://rsms.me/inter/inter.css'));
+assert(!config.includes('fonts.googleapis.com'));
 assert(!config.includes('https://nowpayments.io'));
 assert(!config.includes('logo-dark.gif'));
 assert(!config.includes('logo-light.gif'));
+assert(config.includes('logo-dark-hero-256.webp'));
 assert(config.includes('changelogLinks'));
 assert(config.includes('`${baseUrl}fonts/Geist-Variable.woff2`'));
 assert(config.includes('`${baseUrl}fonts/GeistMono-Variable.woff2`'));
