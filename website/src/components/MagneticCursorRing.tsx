@@ -180,13 +180,11 @@ export default function MagneticCursorRing(): React.JSX.Element | null {
         'a, button, input, select, textarea, [role="button"], [data-magnetic], .button, [class*="featureCard"], [class*="coreCard"], [class*="socialLink"]'
       );
 
-      if (interactive) {
-        setIsHovered(true);
-        activeElementRef.current = interactive;
-      } else {
-        setIsHovered(false);
-        activeElementRef.current = null;
+      const isNowHovered = interactive !== null;
+      if (isNowHovered !== (activeElementRef.current !== null)) {
+        setIsHovered(isNowHovered);
       }
+      activeElementRef.current = interactive;
     };
 
     // Retains last valid coordinates on leave so fade-out occurs in place rather than translating to off-screen origin

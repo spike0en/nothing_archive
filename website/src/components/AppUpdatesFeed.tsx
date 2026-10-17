@@ -82,12 +82,15 @@ export default function AppUpdatesFeed(): React.JSX.Element {
                     }
                   }}
                 >
-                  <span className={`${styles.timeLag} ${idx === 0 ? styles.timeLagActive : ''}`}>{getTimeLag(getEffectiveDate(app))}</span>
+                  <span className={`${styles.timeLag} ${idx === 0 ? styles.timeLagActive : ''}`} suppressHydrationWarning>{getTimeLag(getEffectiveDate(app))}</span>
                   <img
                     src={withBaseUrl(`/img/apps/${app.packageName}.png`)}
                     alt={app.name}
                     className={styles.appIcon}
+                    width={39}
+                    height={39}
                     loading="lazy"
+                    decoding="async"
                     referrerPolicy="no-referrer"
                     onError={(e) => {
                       if (app.iconUrl && e.currentTarget.src !== app.iconUrl) {

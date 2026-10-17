@@ -102,7 +102,7 @@ export default function ReleaseFeed(): React.JSX.Element {
       <div className={styles.statsStrip}>
         {stats.map((stat, i) => (
           <div key={i} className={styles.statItem}>
-            <span className={styles.statValue}>{stat.value}</span>
+            <span className={styles.statValue} suppressHydrationWarning>{stat.value}</span>
             <span className={styles.statLabel}>{stat.label}</span>
           </div>
         ))}
@@ -152,7 +152,7 @@ export default function ReleaseFeed(): React.JSX.Element {
                     rel={hasChangelog ? undefined : 'noopener noreferrer'}
                     className={styles.releaseLink}
                   >
-                    <span className={`${styles.timeLag} ${idx === 0 ? styles.timeLagActive : ''}`}>{getTimeLag(release.publishedAt)}</span>
+                    <span className={`${styles.timeLag} ${idx === 0 ? styles.timeLagActive : ''}`} suppressHydrationWarning>{getTimeLag(release.publishedAt)}</span>
                     <span className={`${styles.messageText} ${idx === 0 ? styles.messageTextLatest : ''}`}>
                       <span className={idx === 0 ? styles.buildTextLatest : styles.buildText}>
                         {release.name}
