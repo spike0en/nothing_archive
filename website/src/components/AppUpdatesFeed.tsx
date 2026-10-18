@@ -46,7 +46,7 @@ export default function AppUpdatesFeed(): React.JSX.Element {
       <div className={styles.statsStrip}>
         {stats.map((s, idx) => (
           <div key={idx} className={styles.statItem}>
-            <span className={styles.statValue}>{s.value}</span>
+            <span className={styles.statValue} suppressHydrationWarning>{s.value}</span>
             <span className={styles.statLabel}>{s.label}</span>
           </div>
         ))}

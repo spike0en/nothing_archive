@@ -15,8 +15,8 @@ interface RootProps {
 export default function Root({ children }: RootProps): React.JSX.Element {
   const location = useLocation();
 
-  // Synchronously migrate existing users to "System" theme by default on client-side
-  if (globalThis.window !== undefined) {
+  // Migrate existing users to "System" theme by default on client-side after mount
+  useEffect(() => {
     try {
       const MIGRATE_KEY = 'nothing_archive_theme_migrated_v1';
       if (!localStorage.getItem(MIGRATE_KEY)) {
@@ -29,7 +29,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
     } catch (e) {
       console.warn('Theme migration failed:', e);
     }
-  }
+  }, []);
 
   const [showShortcuts, setShowShortcuts] = useState(false);
   const [showSupport, setShowSupport] = useState(false);
