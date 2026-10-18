@@ -304,15 +304,16 @@ async function main() {
       fs.mkdirSync(iconsDir, { recursive: true });
       const apps = JSON.parse(fs.readFileSync(appUpdatesPath, 'utf8'));
       for (const [pkg, item] of Object.entries(apps)) {
-        const dest = path.join(iconsDir, `${pkg}.png`);
-        if (!fs.existsSync(dest) && item.iconUrl) {
+        const destWebp = path.join(iconsDir, `${pkg}.webp`);
+        const destPng = path.join(iconsDir, `${pkg}.png`);
+        if (!fs.existsSync(destWebp) && !fs.existsSync(destPng) && item.iconUrl) {
           const res = await fetch(item.iconUrl, {
             headers: { 'User-Agent': 'Mozilla/5.0' },
             signal: AbortSignal.timeout(5000),
           });
           if (res.ok) {
             const buf = Buffer.from(await res.arrayBuffer());
-            fs.writeFileSync(dest, buf);
+            fs.writeFileSync(destWebp, buf);
           }
         }
       }
