@@ -10,7 +10,7 @@ import {createPortal} from 'react-dom';
 import {useDocSearchKeyboardEvents} from '@docsearch/react/useDocSearchKeyboardEvents';
 import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
-import {useHistory} from '@docusaurus/router';
+import {useHistory, useLocation} from '@docusaurus/router';
 import {
   isRegexpStringMatch,
   useSearchLinkCreator,
@@ -267,6 +267,8 @@ function useSearchParameters({
  * @returns {ReactNode} Search bar trigger button and portal modal dialog.
  */
 function DocSearch({externalUrlRegex, ...props}: DocSearchV4Props) {
+  const location = useLocation();
+  const isShowcase = location.pathname.startsWith('/showcase');
   const navigator = useNavigator({externalUrlRegex});
   // SAFETY: DocSearch properties conversion
   const searchParameters = useSearchParameters({...props} as DocSearchProps);
@@ -318,7 +320,7 @@ function DocSearch({externalUrlRegex, ...props}: DocSearchV4Props) {
     hitsCount: latestHitsCount,
   });
 
-  // SAFETY: Keyboard events props conversion
+  // Suppress Algolia forward-slash on showcase to yield '/' to the in-page search input.
   useDocSearchKeyboardEvents({
     isOpen,
     onOpen: openModal,
@@ -327,6 +329,10 @@ function DocSearch({externalUrlRegex, ...props}: DocSearchV4Props) {
     searchButtonRef,
     isAskAiActive: isAskAiActive ?? false,
     onAskAiToggle: onAskAiToggle ?? (() => {}),
+    keyboardShortcuts: {
+      'Ctrl/Cmd+K': true,
+      '/': !isShowcase,
+    },
   } satisfies UseDocSearchKeyboardEventsProps & {
     isAskAiActive: boolean;
     onAskAiToggle: (askAiToggle: boolean) => void;

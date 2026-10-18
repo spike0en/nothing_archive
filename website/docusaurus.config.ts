@@ -886,7 +886,7 @@ const config: Config = {
     footer: {
       style: 'dark',
       links: [],
-      copyright: `<div class="footer-custom"><div class="footer-links"><a href="${baseUrl}docs/contributing">Contributing</a><span class="separator">•</span><a href="${baseUrl}docs/licensing">License</a><span class="separator">•</span><a href="${baseUrl}docs/acknowledgements">Credits</a></div><div class="footer-info"><span>© 2026 NOTHING ARCHIVE</span></div><div class="footer-disclaimer">Not affiliated with Nothing Technology Limited</div></div>`,
+      copyright: `<div class="footer-custom"><div class="footer-links"><a href="${baseUrl}docs/contributing">Contributing</a><span class="separator">•</span><a href="${baseUrl}docs/licensing">License</a><span class="separator">•</span><a href="${baseUrl}docs/acknowledgements">Credits</a><span class="separator">•</span><a href="#shortcuts" class="footer-shortcut-trigger" role="button">Shortcuts</a></div><div class="footer-info"><span>© 2026 NOTHING ARCHIVE</span></div><div class="footer-disclaimer">Not affiliated with Nothing Technology Limited</div></div>`,
     },
     prism: {
       theme: prismThemes.github,

@@ -2912,7 +2912,7 @@ details summary:hover::before {
   border: 1px solid var(--nothing-border-strong);
   border-radius: 24px;
   width: 90%;
-  max-width: 440px;
+  max-width: 480px;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   animation: scaleUp 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -2934,13 +2934,12 @@ details summary:hover::before {
   letter-spacing: 0.12em;
 }
 
-.shortcut-modal-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--ifm-color-primary);
+.shortcut-modal-icon {
   margin-right: 8px;
-  box-shadow: 0 0 6px var(--ifm-color-primary);
+  font-size: 0.95rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
 }
 
 .shortcut-modal-close {
@@ -2980,6 +2979,12 @@ details summary:hover::before {
   text-align: left;
   border-bottom: 1px solid var(--nothing-border);
   font-size: 0.78rem;
+}
+
+.shortcut-table th:last-child,
+.shortcut-table td:last-child {
+  text-align: right;
+  white-space: nowrap;
 }
 
 .shortcut-table th {

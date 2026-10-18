@@ -392,17 +392,27 @@ export default function ShowcasePage(): React.JSX.Element {
     };
   }, []);
 
-  // Global keyboard shortcut: pressing '/' focuses the search field
+  // Focus showcase search input on '/' when not typing in editable fields.
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === '/' && document.activeElement !== searchInputRef.current) {
-        const tagName = document.activeElement?.tagName?.toLowerCase();
-        if (tagName !== 'input' && tagName !== 'textarea') {
-          e.preventDefault();
-          searchInputRef.current?.focus();
-        }
+      if (e.key !== '/') return;
+
+      const activeEl = document.activeElement;
+      if (activeEl === searchInputRef.current) return;
+
+      const isEditable =
+        activeEl &&
+        (activeEl.tagName === 'INPUT' ||
+          activeEl.tagName === 'TEXTAREA' ||
+          activeEl.tagName === 'SELECT' ||
+          activeEl.hasAttribute('contenteditable'));
+
+      if (!isEditable) {
+        e.preventDefault();
+        searchInputRef.current?.focus();
       }
     };
+
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);

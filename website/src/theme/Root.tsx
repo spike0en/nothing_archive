@@ -97,6 +97,13 @@ export default function Root({ children }: RootProps): React.JSX.Element {
         } catch (e) {
           console.warn('Failed to clear hash:', e);
         }
+      } else if (currentHash === '#shortcuts' || currentHash === '#keyboard-shortcuts') {
+        setShowShortcuts(true);
+        try {
+          history.replaceState(null, '', window.location.pathname + window.location.search);
+        } catch (e) {
+          console.warn('Failed to clear hash:', e);
+        }
       } else if (
         currentHash === '#pwa-reload' ||
         currentHash === '#pwa-test' ||
@@ -167,13 +174,28 @@ export default function Root({ children }: RootProps): React.JSX.Element {
     const handleOpenSupport = () => {
       setShowSupport(true);
     };
+    const handleOpenShortcuts = () => {
+      setShowShortcuts(true);
+    };
+    const handleDocumentClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement)?.closest('a[href*="#shortcuts"], a[href*="#keyboard-shortcuts"]');
+      if (target) {
+        e.preventDefault();
+        setShowShortcuts(true);
+      }
+    };
+
     window.addEventListener('open-support-modal', handleOpenSupport);
+    window.addEventListener('open-shortcuts-modal', handleOpenShortcuts);
+    document.addEventListener('click', handleDocumentClick);
 
     return () => {
       clearTimeout(timer1);
       clearTimeout(timer2);
       window.removeEventListener('hashchange', checkHash);
       window.removeEventListener('open-support-modal', handleOpenSupport);
+      window.removeEventListener('open-shortcuts-modal', handleOpenShortcuts);
+      document.removeEventListener('click', handleDocumentClick);
     };
   }, [location.pathname, location.hash]);
 
@@ -349,7 +371,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
         >
           <div className="shortcut-modal" onClick={e => e.stopPropagation()}>
             <div className="shortcut-modal-header">
-              <span className="shortcut-modal-dot" />
+              <span className="shortcut-modal-icon" aria-hidden="true">⌨️</span>
               <span id="shortcut-title">KEYBOARD SHORTCUTS</span>
               <button
                 className="shortcut-modal-close"
@@ -371,7 +393,13 @@ export default function Root({ children }: RootProps): React.JSX.Element {
                   <tr>
                     <td>Search Documentation</td>
                     <td>
-                      <kbd>Ctrl</kbd> + <kbd>K</kbd> / <kbd>⌘</kbd> + <kbd>K</kbd>
+                      <kbd>Ctrl</kbd> + <kbd>K</kbd> / <kbd>⌘</kbd> + <kbd>K</kbd> / <kbd>/</kbd>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Showcase Search</td>
+                    <td>
+                      <kbd>/</kbd>
                     </td>
                   </tr>
                   <tr>
