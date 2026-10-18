@@ -203,6 +203,7 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [NothingBar (macOS)](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | Menu bar app to control Nothing and CMF audio devices for macOS |
 | [OpenBuds Windows](https://github.com/MahinZx/openbuds-windows) | MahinZx | Unofficial Windows desktop companion application for Nothing and CMF audio devices |
 | [OpenQore](https://github.com/nnonickreal/openqore) | nnonick | Firmware modification toolkit with Nothing & CMF audio devices support for Windows and Linux |
+| [Orbit](https://harsha20599.github.io/orbit/) | harsha20599 | Customizable controller that turns the CMF Buds Pro 2 case dial into an input wheel to scroll, scrub media, and trigger shortcuts for Windows, macOS, and Android ([Repo](https://github.com/harsha20599/orbit)) |
 | [Something X](https://github.com/SoaOaoS/something-x) | SoaOaoS | Nothing X app for Linux, tested to work on [Omarchy](https://omarchy.org/) |
 | [WCMF](https://lexp-hub.github.io/wcmf/) | lexp-hub | Web based watchface designer and Bluetooth BLE flasher for CMF Watch Pro, Watch Pro 2 & Watch 3 Pro ([Repo](https://github.com/lexp-hub/wcmf)) |
 
