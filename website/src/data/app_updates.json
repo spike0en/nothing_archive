@@ -115,5 +115,14 @@
     "iconUrl": "https://play-lh.googleusercontent.com/c7AtCqAmBuwVhAkevIfrRSymLUS_fuFDsr_s7P6vseLUQ3itAS6fQ9tuR_MdTWMswBsRE1PuekYgFqIaxh8xTQ",
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.essentialapps&hl=en&gl=us",
     "changelog": "4x2 and 4x4 widgets now available."
+  },
+  "com.nothing.user.center": {
+    "name": "Nothing Account",
+    "versionName": "1.0.0",
+    "publishedAt": "2024-12-23T21:05:00+00:00",
+    "discoveredAt": "2024-12-23T21:05:00+00:00",
+    "iconUrl": "https://play-lh.googleusercontent.com/kkRNZI9KwM3T78u9o8_tE1yzNPfFcc8zanF8xTdQaIWhX8JCtgYRcMHUIl23Ds-eWAV1bDyivb8TbhWGkoCw",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.user.center&hl=en&gl=us",
+    "changelog": "Initial release."
   }
 }
