@@ -290,8 +290,8 @@ async function main() {
   // Run parse-devices and parse-showcase to extract local device and showcase metadata
   try {
     const { execSync } = require('child_process');
-    execSync('node ' + path.join(__dirname, 'parse-devices.js'), { stdio: 'inherit' });
-    execSync('node ' + path.join(__dirname, 'parse-showcase.js'), { stdio: 'inherit' });
+    execSync(`node "${path.join(__dirname, 'parse-devices.js')}"`, { stdio: 'inherit' });
+    execSync(`node "${path.join(__dirname, 'parse-showcase.js')}"`, { stdio: 'inherit' });
   } catch (e) {
     console.error(`[prefetch] local parsers failed: ${e.message}`);
   }
