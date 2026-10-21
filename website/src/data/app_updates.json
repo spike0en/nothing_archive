@@ -118,11 +118,11 @@
   },
   "com.nothing.user.center": {
     "name": "Nothing Account",
-    "versionName": "1.0.0",
-    "publishedAt": "2024-12-23T21:05:00+00:00",
-    "discoveredAt": "2024-12-23T21:05:00+00:00",
+    "versionName": "17.06.02",
+    "publishedAt": "2026-10-21T02:31:00+00:00",
+    "discoveredAt": "2026-10-21T07:06:15.813655+00:00",
     "iconUrl": "https://play-lh.googleusercontent.com/kkRNZI9KwM3T78u9o8_tE1yzNPfFcc8zanF8xTdQaIWhX8JCtgYRcMHUIl23Ds-eWAV1bDyivb8TbhWGkoCw",
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.user.center&hl=en&gl=us",
-    "changelog": "Initial release."
+    "changelog": "Bug fixes and stability improvements."
   }
 }
