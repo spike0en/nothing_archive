@@ -73,12 +73,12 @@
   },
   "com.nothing.smartcenter": {
     "name": "Nothing X",
-    "versionName": "3.10.0",
-    "publishedAt": "2026-09-29T10:12:12+00:00",
-    "discoveredAt": "2026-10-12T13:51:09+00:00",
+    "versionName": "3.10.1",
+    "publishedAt": "2026-10-15T11:58:26+00:00",
+    "discoveredAt": "2026-10-22T09:01:14.872692+00:00",
     "iconUrl": "https://play-lh.googleusercontent.com/AkF6hnTA2q6eNW2c6OsmxYM5YBz-BWIU_d-5Mw3GBa3XGkwnGBEOsJ96R3BbomDMk2qugt-SdCzLzoO6cqNo",
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.smartcenter&hl=en&gl=us",
-    "changelog": "1. Supports the all-new CMF Speaker S and CMF Speaker M\n2. Bug fixes and improvements"
+    "changelog": "1. Bug fixes and improvements"
   },
   "com.nothing.wallpaper": {
     "name": "Nothing Wallpaper",
