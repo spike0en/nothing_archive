@@ -5,6 +5,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaCopy, FaCheck, FaTimes, FaExternalLinkAlt, FaHeart, FaClipboardList } from 'react-icons/fa';
 import donationsData from '../data/donations.json';
+// Supporters ranked by donation amount
 import donorsData from '../data/donors.json';
 import SupporterWidget from './SupporterWidget';
 import styles from './SupportModal.module.css';
