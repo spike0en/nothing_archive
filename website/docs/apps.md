@@ -348,6 +348,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [qMetronome](https://github.com/quaternionmedia/qmetronome) | quaternionmedia | Metronome and tempo visualizer built with Nothing OS aesthetics |
 | [Redrop Music](https://play.google.com/store/apps/details?id=re.tag.redrop) | Tagrelate | Offline music player combining Material 3 and Nothing aesthetics |
 | [Sound Stream Now](https://play.google.com/store/apps/details?id=go.ssn) | Moworks | Music player supporting the Glyph Matrix |
+| [Xaos Music Player](https://github.com/XaosWasHere/xaos-music-player) | XaosWasHere | Local music player for Android with a Windows companion for library management, USB sync, and Wi-Fi streaming |
 
 ### Launchers
 
