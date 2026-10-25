@@ -5,21 +5,27 @@
   color: var(--ifm-navbar-link-color, inherit) !important;
   border: 2px solid var(--nothing-border);
   border-radius: 999px;
-  padding: 0.25rem 0.75rem !important;
+  background-color: rgba(0, 0, 0, 0.04) !important;
+  padding: 0 0.75rem !important;
   margin-left: 0.25rem;
   margin-right: 0.25rem;
   transition: all 0.2s ease;
   font-size: 0.8rem !important;
-  height: fit-content;
+  height: 32px;
+  box-sizing: border-box;
   align-self: center;
   order: 1 !important;
 }
 
+:global([data-theme='dark']) .supportBtn {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
 .supportBtn:hover {
-  background-color: rgba(215, 25, 33, 0.05) !important;
+  background-color: rgba(215, 25, 33, 0.08) !important;
   color: var(--ifm-color-primary) !important;
   border-color: var(--ifm-color-primary) !important;
-  box-shadow: 0 0 10px rgba(215, 25, 33, 0.2) !important;
+  box-shadow: none !important;
   text-decoration: none !important;
 }
 

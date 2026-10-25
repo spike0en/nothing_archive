@@ -1,94 +1,45 @@
-/*
- * ColorModeToggle Module Styles
- */
-
 .toggleContainer {
   position: relative;
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(0, 0, 0, 0.04);
   border: 2px solid var(--nothing-border);
   border-radius: 999px;
-  height: 30px;
-  /* Total track width 80px ensures exact 2.0px left & right capsule margins */
-  width: 80px;
-  overflow: hidden;
+  height: 32px;
+  width: 76px;
+  padding: 0 3px;
   user-select: none;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
   box-sizing: border-box;
 }
 
-/* Glassmorphism background for dark theme */
 :global([data-theme='dark']) .toggleContainer {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-.slider {
-  position: absolute;
-  /* Top 2px + left 2px positioning for 2.0px top/left outer padding */
-  top: 2px;
-  left: 2px;
-  /* 24px x 24px circle guarantees 12.0px 360-degree equal radius around icon */
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  pointer-events: none;
-  z-index: 1;
-  box-sizing: border-box;
-}
-
-:global([data-theme='dark']) .slider {
-  background-color: #262626;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-}
-
-/* Slider translations: 0px (Light), 26px (System center), 52px (Dark right) */
-:global(html[data-theme-choice='light']) .slider {
-  transform: translateX(0);
-}
-
-:global(html[data-theme-choice='system']) .slider {
-  transform: translateX(26px);
-}
-
-:global(html[data-theme-choice='dark']) .slider {
-  transform: translateX(52px);
-}
-
 .toggleButton {
-  position: absolute;
-  top: 2px;
-  display: flex;
+  position: relative;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
   border: none;
   background: transparent;
   padding: 0;
   cursor: pointer;
-  z-index: 2;
   border-radius: 50%;
   -webkit-tap-highlight-color: transparent;
   outline: none;
   box-sizing: border-box;
+  transition: opacity 0.2s ease;
 }
 
-/* Absolute button slot positions matching slider circle coordinates */
-.buttonLight {
-  left: 2px;
-}
-
-.buttonSystem {
-  left: 28px;
-}
-
-.buttonDark {
-  left: 54px;
+.toggleButton:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 1px;
 }
 
 .toggleButtonDisabled {
@@ -97,38 +48,49 @@
 }
 
 .iconSvg {
-  color: rgba(0, 0, 0, 0.45);
-  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 16px;
+  height: 16px;
+  color: var(--ifm-color-content);
+  opacity: 0.72;
   display: block;
+  overflow: visible;
+  transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
 }
 
 :global([data-theme='dark']) .iconSvg {
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--ifm-color-content);
+  opacity: 0.72;
 }
 
-/* Hover effect on inactive icons */
-.toggleButton:hover .iconSvg {
-  color: rgba(0, 0, 0, 0.8);
+.toggleButton:not(.toggleButtonActive):hover .iconSvg {
+  opacity: 1;
+  color: var(--ifm-color-content);
   transform: scale(1.08);
 }
 
-:global([data-theme='dark']) .toggleButton:hover .iconSvg {
-  color: rgba(255, 255, 255, 0.85);
+:global([data-theme='dark']) .toggleButton:not(.toggleButtonActive):hover .iconSvg {
+  opacity: 1;
+  color: var(--ifm-color-content);
   transform: scale(1.08);
 }
 
-/* Active states based on HTML data-theme-choice */
-:global(html[data-theme-choice='light']) .buttonLight .iconSvg {
-  color: var(--ifm-color-primary);
-  transform: scale(1.05);
-}
-
-:global(html[data-theme-choice='system']) .buttonSystem .iconSvg {
-  color: var(--ifm-color-primary);
-  transform: scale(1.05);
-}
-
+.toggleButtonActive .iconSvg,
+:global(html[data-theme-choice='light']) .buttonLight .iconSvg,
+:global(html[data-theme-choice='system']) .buttonSystem .iconSvg,
 :global(html[data-theme-choice='dark']) .buttonDark .iconSvg {
   color: var(--ifm-color-primary);
-  transform: scale(1.05);
+  opacity: 1;
+  transform: scale(1.06);
+  filter: none;
 }
+
+:global([data-theme='dark']) .toggleButtonActive .iconSvg,
+:global(html[data-theme='dark'][data-theme-choice='light']) .buttonLight .iconSvg,
+:global(html[data-theme='dark'][data-theme-choice='system']) .buttonSystem .iconSvg,
+:global(html[data-theme='dark'][data-theme-choice='dark']) .buttonDark .iconSvg {
+  color: var(--ifm-color-primary);
+  opacity: 1;
+  transform: scale(1.06);
+  filter: none;
+}
+

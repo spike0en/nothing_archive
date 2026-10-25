@@ -2362,19 +2362,24 @@ details summary:hover::before {
   margin: 0 !important;
   border: 2px solid var(--nothing-border) !important;
   border-radius: 50% !important;
-  background: transparent !important;
+  background-color: rgba(0, 0, 0, 0.04) !important;
   color: var(--ifm-font-color-base) !important;
   box-shadow: none !important;
+  box-sizing: border-box !important;
   transition: all 0.2s ease !important;
   cursor: pointer;
 }
 
+[data-theme='dark'] .DocSearch-Button {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
 .DocSearch-Button:hover,
 .DocSearch-Button:focus-visible {
-  background: rgba(215, 25, 33, 0.05) !important;
+  background-color: rgba(215, 25, 33, 0.08) !important;
   border-color: var(--ifm-color-primary) !important;
   color: var(--ifm-color-primary) !important;
-  box-shadow: 0 0 10px rgba(215, 25, 33, 0.15) !important;
+  box-shadow: none !important;
 }
 
 .DocSearch-Button-Container {
@@ -2861,11 +2866,11 @@ details summary:hover::before {
   background-color: rgba(215, 25, 33, 0.06) !important;
   border-color: rgba(215, 25, 33, 0.4) !important;
   transform: translateY(-3px) scale(1.04) !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12), 0 0 12px rgba(215, 25, 33, 0.15) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12) !important;
 }
 
 .theme-back-to-top-button:hover .scroll-ring-svg {
-  filter: drop-shadow(0 0 4px rgba(215, 25, 33, 0.45));
+  filter: none;
 }
 
 .theme-back-to-top-button:hover::after {
@@ -2877,7 +2882,7 @@ details summary:hover::before {
 [data-theme='dark'] .theme-back-to-top-button:hover {
   background-color: rgba(215, 25, 33, 0.1) !important;
   border-color: rgba(215, 25, 33, 0.5) !important;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5), 0 0 14px rgba(215, 25, 33, 0.25) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5) !important;
 }
 
 .theme-back-to-top-button:active {
