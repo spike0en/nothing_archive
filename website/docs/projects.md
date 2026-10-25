@@ -61,6 +61,7 @@ Themes and rices for Arch Linux, VS Code, and other development environments fol
 |---------|-----------|-------------|
 | [Dotfiles Nothing OS](https://github.com/0xbbuddha/dotfiles_nothing_os) | 0xbbuddha | Hyprland + Quickshell rice for Linux inspired by Nothing OS design language. |
 | [Everything Dots](https://github.com/SambuddhaRoy/Everything-dots) | SambuddhaRoy | Quickshell and Hyprland desktop setup for Linux with a morphing pill and dot-matrix interface |
+| [Glyph Rice](https://github.com/Nebelung-cloud/glyph-rice) | Nebelung-cloud | Hyprland and Quickshell desktop rice for Linux with Nothing OS styling, screen-edge Glyph OSD, and earbud controls |
 | [Glyph SDDM](https://github.com/xCaptaiN09/glyph-sddm) | xCaptaiN09 | Minimalist SDDM theme inspired by Nothing's design language |
 | [MkDocs Void](https://github.com/rkriad585/mkdocs-void) | rkriad585 | Nothing OS inspired design theme for MkDocs website |
 | [Notes (Windows)](https://github.com/rohankishore/Notes-1) | rohankishore | Nothing themed notepad for Windows |
