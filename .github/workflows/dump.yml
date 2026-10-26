@@ -75,7 +75,8 @@ jobs:
         run: |
           git fetch origin main
           git tag "${{ steps.dump.outputs.release_tag }}" HEAD
-          git push origin "${{ steps.dump.outputs.release_tag }}"
+          for i in 1 2 3; do git push origin "${{ steps.dump.outputs.release_tag }}" && exit 0 || sleep 3; done
+          exit 1
 
       - name: Upload release assets
         uses: ncipollo/release-action@v1
