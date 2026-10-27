@@ -27,6 +27,7 @@ See [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) for of
 | Project | Developer | Description |
 |---------|-----------|-------------|
 | [404+](https://play.google.com/store/apps/details?id=com.glyphfour.app) | h17 devs | Glyph Matrix control app for Nothing Phone (3) and (4a) Pro |
+| [Backlit](https://play.google.com/store/apps/details?id=app.backlit) | venusai | Glyph Matrix toy pack with clock faces, music bars, a charging sprout, virtual pets, a sand timer, badge messages, and a pixel drawing studio |
 | [Endless Life](https://github.com/the-ivan/endless-life) | the-ivan | An ambient, endless Game of Life for the Nothing Phone (3)'s Glyph Matrix |
 | [Glyph Bike](https://play.google.com/store/apps/details?id=com.ofishialdigital.glyphbike) | Ofishial Digital | Scrolling motorcycle game |
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Arcade games on Glyph Matrix |
@@ -315,6 +316,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/) | [Freeyourgadget](https://codeberg.org/Freeyourgadget/Gadgetbridge#authors) | Use Bluetooth wearables without OEM apps, accounts, or cloud |
 | [Hey Battery](https://github.com/ghostyapps/HeyBattery) | Candan | Battery usage tracker |
 | [Nothing Dashcam](https://github.com/amitskamboj/nothing-dashcam) | amitskamboj | Dashcam app for Nothing Phone (2) with support for loop recording, impact detection, call pause/resume, GPS overlay and MediaStore output |
+| [Nothing Firmware](https://play.google.com/store/apps/details?id=com.techiboy.nothingfirmware) | TechiBoy Studios | Track Nothing OS updates, firmware builds, and app changelogs |
 | [Nothing Quick Tools](https://github.com/DylanAkp/NothingQuickTools) | DylanAkp | Quick tiles for Phone (2) |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Recording light control for Phone (3) |
 | [Root My Nothing](https://github.com/ang3lo-azevedo/root-my-nothing) | ang3lo-azevedo | One-click root app for Nothing Phone (1) using CVE-2026-43499 (GhostLock) to install KernelSU without unlocking the bootloader |
