@@ -248,6 +248,7 @@ These require root access (KernelSU or Magisk). Proceed with caution.
 | [Nothing Battery Fix](https://github.com/Farpathan/Nothing-Battery-Fix) | Farpathan | Restore classic battery percentage style |
 | [Nothing eUICC](https://github.com/reindex-ot/nothing-euicc) | reindex-ot | Enable eSIM functionality on Nothing devices that do not support it |
 | [Nothing Essential Sync](https://github.com/m24ih/nothing-essential-sync) | m24ih | Event-driven root module syncing Nothing OS Essential Space captures, voice notes, and AI summaries into Obsidian |
+| [Nothing Launcher Plus](https://github.com/Dr-Essence/Nothing-Launcher-Plus) | Dr-Essence | LSPosed module for custom app drawer folders, dot-matrix emoji covers, dot-matrix app icons, landscape home screen, and console-style interface sounds in Nothing Launcher |
 | [Nothing OS Aura Killer](https://github.com/reindex-ot/NOS_AuraKiller/) | reindex-ot | Debloat Aura services on NOS 4.0 |
 | [Nothing Phone Patch](https://github.com/reindex-ot/magisk-module-nothing) | reindex-ot | System tweaks and enhancements |
 | [Nothing Tweaks](https://github.com/RevealedSoulEven/NothingTweaks) | RevealedSoulEven | A multi-feature customization module for Nothing OS based on Xposed framework |
