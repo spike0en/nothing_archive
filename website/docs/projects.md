@@ -229,6 +229,7 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [Nothing Shelf](https://nothing-shelf.vercel.app/) | therealcocoboy | A curated gallery of the Nothing community's favourite widgets |
 | [Nothing Space](https://nothingtools.github.io/) | ROHit | Community hub ([Repo](https://github.com/nothingtools/nothingtools.github.io)) |
 | [Nothing Termux Voice Control](https://github.com/abdular721-lgtm/nothing-archives) | abdular721-lgtm | Termux voice-control scripts for the Nothing Phone (2a) Plus |
+| [Pacman Flash Tool](https://github.com/R0rt1z2/pacman-flash-tool) | R0rt1z2 | BROM and preloader flashing tool for Nothing Phone (2a) and Phone (2a) Plus for Windows and Linux |
 | [Nothing Wiki](https://nothing.wiki) | adbo | Community-maintained unofficial wiki for Nothing |
 
 ## Root Modules
