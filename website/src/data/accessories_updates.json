@@ -84,10 +84,10 @@
     "name": "Headphone (a)",
     "brand": "Nothing",
     "codename": "Hoppip",
-    "version": "1.0.1.52",
-    "changelog": "1. General performance improvements.",
-    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/179316880985724292_BT_OTA_V1.0.1.52_Release.dfu",
-    "updatedAt": "2026-10-28T06:26:49.857000+00:00"
+    "version": "1.0.1.51",
+    "changelog": "1. Clearer sound for a smoother listening experience.\n2. Improved connectivity.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/177743194278724292_BT_BOOT_V1.0.1.51_release.dfu",
+    "updatedAt": "2026-04-29T03:05:42.787000+00:00"
   },
   "B190": {
     "modelId": "B190",
