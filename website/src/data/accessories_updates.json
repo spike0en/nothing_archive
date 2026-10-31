@@ -104,10 +104,10 @@
     "name": "Headphone (1) Pro",
     "brand": "Nothing",
     "codename": "Lanturn",
-    "version": "1.0.1.53",
-    "changelog": "1. Improved dual-device connection stability and audio performance.\n2. Optimised USB audio performance.",
-    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/179064831985425221_EARBUD_OTA_V1.0.1.53_20260911_Release.dfu",
-    "updatedAt": "2026-09-29T02:18:39.854000+00:00"
+    "version": "1.0.1.58",
+    "changelog": "1. Enhanced audio experience.\n2. General performance improvements.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/179342885550525221_EARBUD_OTA_V1.0.1.58_20261023_Release.dfu",
+    "updatedAt": "2026-10-31T06:40:55.505000+00:00"
   },
   "B163": {
     "modelId": "B163",
@@ -214,10 +214,10 @@
     "name": "Buds Neo",
     "brand": "CMF",
     "codename": "Larvitar",
-    "version": "1.0.1.57",
-    "changelog": "1. Reduced unwanted popping sounds for a cleaner listening experience.\n2. Smoother volume adjustment, especially during rapid changes.\n3. Faster and more stable reconnection after powering on.\n4. Added the option to remove pairing records in the app.",
-    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/1789551746303NT25231_V1.0.1.57_20260708.bin",
-    "updatedAt": "2026-09-16T09:42:26.303000+00:00"
+    "version": "1.0.1.65",
+    "changelog": "1. Optimised overall sound quality.\n2. Fixed bugs and improved overall user experience.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/1793439399523NT25231_V1.0.1.65_20261023.bin",
+    "updatedAt": "2026-10-31T09:36:39.523000+00:00"
   },
   "E494": {
     "modelId": "E494",
