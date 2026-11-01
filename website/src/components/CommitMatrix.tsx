@@ -6,6 +6,7 @@ import { useScrollLight } from '../utils/useScrollLight';
 import { useGitHubCommits, useGitHubRepoStats } from '../utils/github-cache';
 import type { Commit } from '../utils/github-cache';
 import contributorsData from '../data/contributors.json';
+import contributorMetadata from '../data/contributor-metadata.json';
 
 interface HitsState {
   hits: number;
@@ -142,15 +143,20 @@ export default function CommitMatrix(): React.JSX.Element {
       });
     }
 
-    map.set('spike0en', 'https://avatars.githubusercontent.com/u/241428588?v=4');
-    map.set('pikawee', 'https://avatars.githubusercontent.com/u/90617898?v=4');
-    map.set('spike', 'https://avatars.githubusercontent.com/u/90617898?v=4');
+    const customAvatars = contributorMetadata.customAvatars;
+    if (customAvatars) {
+      Object.entries(customAvatars).forEach(([key, url]) => {
+        if (url) {
+          map.set(key.toLowerCase(), url);
+        }
+      });
+    }
+
 
     return map;
   }, []);
 
   const getAuthorAvatarUrl = (name: string, authorAvatar?: string, authorLogin?: string): string => {
-    if (authorAvatar) return authorAvatar;
     if (authorLogin && contributorAvatarMap.has(authorLogin.toLowerCase())) {
       return contributorAvatarMap.get(authorLogin.toLowerCase())!;
     }
@@ -158,6 +164,15 @@ export default function CommitMatrix(): React.JSX.Element {
     if (contributorAvatarMap.has(clean)) {
       return contributorAvatarMap.get(clean)!;
     }
+    const base = name.replace(/\s*\([^)]*\)/, '').trim().toLowerCase();
+    if (contributorAvatarMap.has(base)) {
+      return contributorAvatarMap.get(base)!;
+    }
+    const cleanBase = base.replace(/[^\w-]/g, '');
+    if (contributorAvatarMap.has(cleanBase)) {
+      return contributorAvatarMap.get(cleanBase)!;
+    }
+    if (authorAvatar) return authorAvatar;
     if (/^[a-zA-Z0-9-]+$/.test(clean)) {
       return `https://github.com/${clean}.png?size=40`;
     }

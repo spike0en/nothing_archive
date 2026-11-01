@@ -223,15 +223,30 @@ async function fetchReleases() {
 
 async function fetchCommits() {
   const filePath = path.join(OUT_DIR, 'commits.json');
+  const metadataPath = path.join(OUT_DIR, 'contributor-metadata.json');
   const label = 'commits';
   try {
+    let customAvatars = {};
+    if (fs.existsSync(metadataPath)) {
+      try {
+        const metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
+        customAvatars = metadata.customAvatars || {};
+      } catch (e) {
+        console.warn(`[${label}] Failed to parse contributor metadata: ${e.message}`);
+      }
+    }
+
     const { data: rawCommits } = await fetchJSON('/repos/spike0en/nothing_archive/commits?per_page=100');
 
     const commits = rawCommits.map((item) => {
       const fullMessage = item.commit.message || '';
       const author = item.commit.author?.name || item.author?.login || 'Contributor';
       const authorLogin = item.author?.login || undefined;
-      const authorAvatar = item.author?.avatar_url || (authorLogin ? `https://github.com/${authorLogin}.png?size=40` : undefined);
+      const authorAvatar =
+        (authorLogin && customAvatars[authorLogin]) ||
+        customAvatars[author] ||
+        item.author?.avatar_url ||
+        (authorLogin ? `https://github.com/${authorLogin}.png?size=40` : undefined);
 
       // Extract co-author names from commit message trailers
       const coAuthors = [];
