@@ -83,6 +83,7 @@ Reddit threads highlighting, reviewing, and recommending Nothing Archive as a pr
 
 | Thread Title | Link |
 | :--- | :--- |
+| Carl Pei's AMA (Sept 4, 2026) | [Reddit](https://www.reddit.com/r/NothingTech/comments/1w78hmo/comment/p7t275r/) |
 | Nothing Stock Firmware Archive | [Reddit](https://www.reddit.com/r/NothingTech/comments/1bqslzs/nothing_stock_firmware_archive/) |
 | Introducing the Awesome Nothing Website | [Reddit](https://www.reddit.com/r/NothingTech/comments/1riis40/introducing_the_awesome_nothing_website/) |
 | Awesome Nothing is now merged into Nothing Archive | [Reddit](https://www.reddit.com/r/NothingTech/comments/1s0l6pj/awesome_nothing_is_now_merged_into_nothing_archive/) |
@@ -94,14 +95,17 @@ Reddit threads highlighting, reviewing, and recommending Nothing Archive as a pr
 
 ## X (Twitter) Mentions
 
-Key posts on X (Twitter) discussing, highlighting, and recommending Nothing Archive projects and updates, routed through privacy-respecting *xcancel.com* mirrors:
+Key posts on X (Twitter) discussing, highlighting, and recommending Nothing Archive projects and updates:
 
-| Author | Link (XCancel) |
+| Author | Link |
 | :--- | :--- |
-| Tom Doerr | [Post](https://xcancel.com/tom_doerr/status/2068417271110717801?s=20) |
-| Teknovist | [Post](https://xcancel.com/Teknovist/status/2035979159768326559?s=20) |
-| Tor Harrington | [Post](https://xcancel.com/torharrington/status/2063959834614026282?s=20) |
-| Spike | [Post](https://xcancel.com/spike0en/status/2063956108524605486?s=20) |
-| Nothing Newsroom | [Post](https://xcancel.com/NothingNewsroom/status/2036438901947244931?s=20) |
-| Techiboy | [Post](https://xcancel.com/techiboy96/status/1989219002279751931?s=20) |
-| Tor Harrington | [Post](https://xcancel.com/torharrington/status/1988669030044160387?s=20) |
+| Tom Doerr | [Post](https://x.com/tom_doerr/status/2068417271110717801) |
+| Teknovist | [Post](https://x.com/Teknovist/status/2035979159768326559) |
+| Tor Harrington | [Post](https://x.com/torharrington/status/2063959834614026282) |
+| Spike | [Post](https://x.com/spike0en/status/2063956108524605486) |
+| Nothing Newsroom | [Post](https://x.com/NothingNewsroom/status/2036438901947244931) |
+| Techiboy | [Post](https://x.com/techiboy96/status/1989219002279751931) |
+| Tor Harrington | [Post](https://x.com/torharrington/status/1988669030044160387) |
+| Ali Fakhruddin | [Post](https://x.com/AliFakhruddin13/status/2095807457117507937) |
+| Abhishek Lakhani | [Post](https://x.com/singularity_ux/status/2095387619006021681) |
+| Tech Enthusiast | [Post](https://x.com/techienthusiast/status/2096468037948015068) |
