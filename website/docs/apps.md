@@ -68,7 +68,6 @@ See [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) for of
 | [Dota Rank Glyph](https://github.com/tolik518/DotaRankGlyph) | tolik518 | Glyph Matrix toy displaying live Dota 2 rank medal, stars, and leaderboard position for Nothing Phone (3) |
 | [Figly](https://github.com/psygos/figly) | psygos | A glyph matrix herbarium for the Nothing Phone (4a) Pro |
 | [Glucose Glyph](https://github.com/0NLyM/CgmGlyph) | 0NLyM | Display continuous glucose monitor (CGM) readings on the Nothing Phone (3) Glyph Matrix via ControlX2 |
-| [Glyp Clocks](https://bleelblep.github.io/disclaimer/glyphclocks/) | bleelblep | 16 Clocks for Phone (3)'s Glyph Matrix [Repo](https://github.com/bleelblep/glyphclocks) |
 | [Glyph Aquarium](https://github.com/chriskenhall-tech/Glyph-Aquarium) | chriskenhall-tech | A dynamic AOD aquarium simulation using the Nothing Glyph SDK for the Phone (3) rear light matrix |
 | [Glyph Eyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | Playful tilting pupil toy |
 | [Glyph GIF Rotator](https://github.com/ChichoXD/glyph-gif-rotator) | ChichoXD | Turn the Glyph Matrix on Nothing Phone (3) into a rotating GIF gallery with clock, vinyl music player, and battery level animations |
@@ -120,7 +119,6 @@ See [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) for of
 | [Glyph Mo](https://github.com/anamite/GlyphMo) | anamite | Glyph Matrix control application designed exclusively for the Nothing Phone (4a) Pro. |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Notifications, timers, visualizer |
 | [Glyph Nothing](https://github.com/manttii/Glphy-Nothing) | manttii | Create, preview, and trigger custom Glyph Matrix animations on Nothing phones |
-| [Glyph Pilot](https://play.google.com/store/apps/details?id=com.glyphcontroller.app) | Kalainovainfotech | Create custom 25×25 animations, audio-reactive visuals, widgets, and automations for the Glyph Matrix |
 | [Glyph Pomodoro](https://github.com/itsmixu/glyph-pomo) | itsmixu | Pomodoro timer for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Stopwatch](https://github.com/Sturdy7435/GlyphStopwatch) | Sturdy7435 | A simple stopwatch for the Nothing Phone (4a) Pro's Glyph Matrix |
 | [Glyph Studio](https://play.google.com/store/apps/details?id=tech.abra.glyphstudio) | AbraDev | Generate custom ringtones and real-time audio visualizations for both Glyph LEDs and the Glyph Matrix |
@@ -155,7 +153,6 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | [Glyph Lights](https://github.com/Nonta72/glyph-lights.nonta) | Nonta72 | Simple UT app to turn ON/OFF glyphs lights on Nothing Phone (1) |
 | [Glyph Studio](https://github.com/SyedAhkam/glyph-studio) | SyedAhkam | Playground for everything Glyphs |
 | [Glyph Studio](https://play.google.com/store/apps/details?id=tech.abra.glyphstudio) | AbraDev | Generate custom ringtones and real-time audio visualizations for both Glyph LEDs and the Glyph Matrix |
-| [Glyph Torch](https://github.com/Earendel-lab/GlyphTorch) | Earendel | Android App for letting the nothing phone glyphs glow on trigger |
 | [Glyph Typing](https://github.com/JuanCarlosGP/glyphTyping) | JuanCarlosGP | Lights up the Glyph LEDs while typing with key flashes and typing speed meters for Nothing Phone (1) |
 | [One Glyph](https://github.com/Jackson4Rocks/OneGlyph) | Jackson4Rocks | Controls the single rear Glyph dot on Nothing Phone (3a) Lite with music beat sync, blink patterns, an eight-step composer, and camera countdowns |
 
@@ -227,7 +224,6 @@ Custom widgets for the home screen, from system monitors to minimalist tools.
 
 | App | Developer | Description |
 |-----|-----------|-------------|
-| [!Thing Widgets](https://bleelblep.github.io/disclaimer/not-thing-widgets/) | bleelblep | Custom widgets for Nothing OS 4.1+ that show up on the AOD, lock screen, and home screen |
 | [Dot Matrix Widget](https://github.com/Swapnil41/DotMatrixWidget) | Swapnil41 | Dot matrix clock widget with transparent background |
 | [Dot Widgets](https://play.google.com/store/apps/details?id=com.lended.widjets) | Creepsmile | Nothing-inspired dot-matrix everyday tools |
 | [Elements Widgets](https://play.google.com/store/apps/details?id=com.hearthborn.studios.elements) | Hearthborn | Minimal widgets |
@@ -380,7 +376,6 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Dot Calculator](https://play.google.com/store/apps/details?id=com.nebula.developer.dotcalculator) | Nebula Developer | Calculator app with dot matrix fonts |
 | [N Calc](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ncalc) | Hearthborn | Calculator with Nothing style |
 | [Neo Calc](https://play.google.com/store/apps/details?id=com.lended.neocalc) | Creepsmile | Nothing OS inspired calculator |
-| [Nothing Calc](https://github.com/himanshuksr0007/NothingCalc) | himanshuksr0007 | Calculator app inspired by the Nothing OS design language |
 | [Nothing Calculator](https://github.com/git-jamesfrench/NothingCalculator) | git-jamesfrench | Community made Nothing calculator |
 | [Nothing Calculator](https://play.google.com/store/apps/details?id=com.anoobav.calculator) | Anubhav | Nothing's design-inspired minimal calculator with live calculations, scientific functions, and history |
 | [Nx Calculator](https://github.com/montybytes/nxcalculator) | montybytes | Simple calculator |

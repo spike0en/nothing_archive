@@ -73,7 +73,6 @@ Themes and rices for Arch Linux, VS Code, and other development environments fol
 | [Nothing KDE Rice](https://github.com/buddi0812/nothing-kde-rice) | buddi0812 | Nothing OS inspired KDE Plasma 6 desktop for Linux. |
 | [Nothing KDE Rice](https://github.com/byteoverride/nothing-rice) | byteoverride | Nothing OS-themed KDE Plasma 6 desktop rice for Linux with monochrome styling and matching SDDM login |
 | [Nothing Liquid](https://github.com/shlok-shinde/nothing-liquid) | shlok-shinde | Hyprland desktop rice for Linux with liquid glass refraction and Nothing OS dot-matrix accents |
-| [Nothing Mono KDE](https://github.com/veedy-dev/nothing-mono-kde) | veedy-dev | Nothing inspired KDE Plasma 6 setup |
 | [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | GNOME desktop build |
 | [Nothing Telegram Theme](https://github.com/Costeer/Nothing-Telegram-Theme) | Costeer | Nothing inspired theme for Telegram |
 | [Nothing VS Code Theme](https://github.com/shahriaravi/nothing-vscode-theme) | shahriaravi | VS Code theme |
