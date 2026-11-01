@@ -309,6 +309,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Battery Info](https://github.com/burakdede0/NothingBatteryHealth) | burakdede0 | One-tap launcher shortcut to open the hidden Nothing OS battery health and information screen directly |
 | [BoltShot](https://github.com/Red-Bolt-Design/BoltShot) | Red-Bolt-Design | Screenshot helper for Nothing style workflows |
 | [Crucial Space](https://github.com/LainsMain/CrucialSpace) | LainsMain | Vibe coded copy of Nothing's essential space app |
+| [Dynamic Droid](https://github.com/kavinagarwalagarwal-coder/dynamic-island-polish) | kavinagarwalagarwal-coder | Dynamic Island-style overlay that expands from the camera cutout to show music, calls, messages, and timers as live activities |
 | [EarPhone X](https://github.com/noebachofner/EarPhonesX) | noebachofner | Linux application to control and configure Nothing and CMF earbuds |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Essential Space port for all devices with screenshots, notes, and voice memos |
 | [Essential Voice](https://github.com/email2ishaanpatel-collab/essential-voice) | email2ishaanpatel-collab | On device Essential Voice for unsupported Nothing/CMF phones |
