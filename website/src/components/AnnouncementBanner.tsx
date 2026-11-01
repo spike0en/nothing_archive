@@ -134,8 +134,8 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
           <span key={currentRelease.tagName} className={styles.message}>
             <span className={styles.buildName}>{currentRelease.tagName}</span>
             <span className={styles.actionText}>
-              <span className={styles.actionFull}> is now available!</span>
-              <span className={styles.actionShort}> is live!</span>
+              <span className={styles.actionFull}> available for download</span>
+              <span className={styles.actionShort}> available</span>
             </span>
           </span>
           {releases.length > 1 && (

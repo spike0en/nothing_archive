@@ -32,6 +32,8 @@ export interface Release {
 export interface Commit {
   sha: string;
   author: string;
+  authorLogin?: string;
+  authorAvatar?: string;
   coAuthors: string[];
   date: string;
   message: string;
@@ -226,9 +228,13 @@ async function fetchCommitsFromAPI(): Promise<Commit[]> {
   return rawCommits.map((item: any) => {
     const fullMessage = item.commit.message || '';
     const author = item.commit.author?.name || item.author?.login || 'Contributor';
+    const authorLogin = item.author?.login || undefined;
+    const authorAvatar = item.author?.avatar_url || (authorLogin ? `https://github.com/${authorLogin}.png?size=40` : undefined);
     return {
       sha: item.sha.substring(0, 7),
       author,
+      authorLogin,
+      authorAvatar,
       coAuthors: parseCoAuthors(fullMessage, author),
       // Committer date preserves chronological ordering when author dates are altered or rebased.
       date: item.commit.committer?.date || item.commit.author?.date || new Date().toISOString(),

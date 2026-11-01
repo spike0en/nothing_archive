@@ -626,6 +626,11 @@ const config: Config = {
     },
     {
       tagName: 'script',
+      attributes: {},
+      innerHTML: 'window.process = window.process || { env: {} };',
+    },
+    {
+      tagName: 'script',
       attributes: {
         type: 'application/ld+json',
       },

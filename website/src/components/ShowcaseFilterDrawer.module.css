@@ -24,7 +24,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background: var(--ifm-card-background-color, #ffffff);
+  background-color: hsl(var(--card));
   box-sizing: border-box;
   z-index: 1001;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
@@ -37,8 +37,8 @@
 }
 
 [data-theme='dark'] .drawer {
-  background: #111113;
-  border-top-color: rgba(255, 255, 255, 0.12);
+  background-color: hsl(var(--card));
+  border-top-color: hsl(var(--border));
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
 }
 
@@ -244,15 +244,16 @@
 /* Fluid Segmented Control (Catalog Type) */
 .segmentedControl {
   display: flex;
-  gap: 0.35rem;
+  gap: 0.25rem;
   padding: 3px;
-  background: var(--ifm-color-emphasis-100);
-  border-radius: 10px;
+  background-color: hsl(var(--muted));
+  border-radius: var(--radius-md);
   box-sizing: border-box;
+  border: 1px solid hsl(var(--border) / 0.5);
 }
 
 [data-theme='dark'] .segmentedControl {
-  background: rgba(255, 255, 255, 0.04);
+  background-color: hsl(var(--muted));
 }
 
 .segmentTab {
@@ -261,37 +262,38 @@
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
-  padding: 0.5rem 0.4rem;
-  border-radius: 8px;
+  padding: 0.4rem;
+  border-radius: calc(var(--radius-md) - 2px);
   background: transparent;
   border: none;
-  color: var(--ifm-color-emphasis-700);
+  color: hsl(var(--muted-foreground));
   font-family: var(--ifm-font-family-base);
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.15s ease;
   white-space: nowrap;
 }
 
 [data-theme='dark'] .segmentTab {
-  color: #bbb;
+  color: hsl(var(--muted-foreground));
 }
 
 .segmentTab:hover {
-  color: var(--ifm-heading-color);
+  color: hsl(var(--foreground));
 }
 
 .segmentTabActive {
-  background: #ffffff !important;
-  color: var(--nothing-red) !important;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  background-color: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
 }
 
 [data-theme='dark'] .segmentTabActive {
-  background: rgba(215, 25, 32, 0.18) !important;
-  color: #ffffff !important;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  background-color: hsl(var(--card)) !important;
+  color: hsl(var(--foreground)) !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
 }
 
 .segmentIcon {
@@ -321,43 +323,39 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.4rem 0.7rem;
-  background: var(--ifm-color-emphasis-100);
-  border: 1px solid transparent;
-  border-radius: 8px;
+  padding: 0.35rem 0.65rem;
+  background-color: hsl(var(--secondary) / 0.5);
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-md);
   font-family: var(--ifm-font-family-base);
   font-size: 0.76rem;
-  color: var(--ifm-color-emphasis-800);
+  color: hsl(var(--foreground));
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 [data-theme='dark'] .platformChip {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.06);
-  color: #ccc;
+  background-color: hsl(var(--secondary) / 0.3);
+  border-color: hsl(var(--border));
+  color: hsl(var(--foreground));
 }
 
 .platformChip:hover {
-  border-color: var(--ifm-color-emphasis-300);
-}
-
-[data-theme='dark'] .platformChip:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
 }
 
 .platformChipActive {
-  background: #FCEAEA !important;
-  border-color: var(--nothing-red) !important;
-  color: var(--nothing-red) !important;
+  background-color: hsl(var(--primary)) !important;
+  border-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
   font-weight: 600;
 }
 
 [data-theme='dark'] .platformChipActive {
-  background: rgba(215, 25, 32, 0.18) !important;
-  border-color: var(--nothing-red) !important;
-  color: #ffffff !important;
+  background-color: hsl(var(--primary)) !important;
+  border-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
 }
 
 .platformIcon {
@@ -488,7 +486,7 @@
 .subCategoryContainer {
   margin: 0.35rem 0 0.45rem 1.6rem;
   padding-left: 0.65rem;
-  border-left: 2px solid rgba(215, 25, 32, 0.3);
+  border-left: 1px solid hsl(var(--border) / 0.6);
 }
 
 .subCategoryPills {
@@ -614,7 +612,7 @@
 .footer {
   padding: 0.85rem 1.25rem;
   border-top: 1px solid var(--ifm-color-emphasis-200);
-  background: var(--ifm-card-background-color, #ffffff);
+  background-color: hsl(var(--card));
 }
 
 [data-theme='dark'] .footer {

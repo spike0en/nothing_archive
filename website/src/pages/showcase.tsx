@@ -30,6 +30,7 @@ import {
 import clsx from 'clsx';
 import ShowcaseCard from '../components/ShowcaseCard';
 import ShowcaseSidebar from '../components/ShowcaseSidebar';
+import { LuPanelLeft } from 'react-icons/lu';
 import ShowcaseFilterDrawer from '../components/ShowcaseFilterDrawer';
 import {
   ALL_SHOWCASE_ITEMS,
@@ -742,6 +743,31 @@ export default function ShowcasePage(): React.JSX.Element {
 
   const hasActiveFilters = activeFilterCount > 0;
 
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(() => {
+    if (ExecutionEnvironment.canUseDOM) {
+      return localStorage.getItem('showcase_sidebar_collapsed') === 'true';
+    }
+    return false;
+  });
+
+  const handleToggleSidebar = useCallback(() => {
+    setIsSidebarCollapsed((prev) => {
+      const next = !prev;
+      if (ExecutionEnvironment.canUseDOM) {
+        localStorage.setItem('showcase_sidebar_collapsed', String(next));
+      }
+      return next;
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!ExecutionEnvironment.canUseDOM) return;
+    const handleEvent = () => handleToggleSidebar();
+    window.addEventListener('toggle-showcase-sidebar', handleEvent);
+    return () => window.removeEventListener('toggle-showcase-sidebar', handleEvent);
+  }, [handleToggleSidebar]);
+
+
   return (
     <Layout
       title="Community Showcase"
@@ -781,12 +807,26 @@ export default function ShowcasePage(): React.JSX.Element {
               availablePlatforms={availablePlatforms}
               onResetAll={handleResetFilters}
               hasActiveFilters={hasActiveFilters}
-            />
+              isCollapsed={isSidebarCollapsed}
+              />
 
             {/* Main Content Area */}
             <main className={styles.mainContent}>
               {/* Command toolbar */}
               <div className={styles.toolbar}>
+                {/* Desktop Sidebar Toggle Button */}
+                <button
+                  type="button"
+                  onClick={handleToggleSidebar}
+                  className={clsx(
+                    styles.sidebarTriggerBtn,
+                    !isSidebarCollapsed && styles.sidebarTriggerBtnActive
+                  )}
+                  title={isSidebarCollapsed ? "Expand filters" : "Collapse filters"}
+                  aria-label="Toggle filters sidebar"
+                >
+                  <LuPanelLeft size={15} />
+                </button>
                 {/* Integrated Search Input */}
                 <div className={styles.searchSection}>
                   <FaMagnifyingGlass className={styles.searchIcon} size={14} />

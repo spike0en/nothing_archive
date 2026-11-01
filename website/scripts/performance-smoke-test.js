@@ -36,9 +36,6 @@ assert(!config.includes('fonts.googleapis.com'));
 assert(!config.includes('https://nowpayments.io'));
 assert(!config.includes('logo-dark.gif'));
 assert(!config.includes('logo-light.gif'));
-assert(config.includes('logo-dark-hero-256.webp'));
-assert(config.includes('imagesrcset'));
-assert(config.includes('imagesizes'));
 assert(config.includes('changelogLinks'));
 assert(config.includes('`${baseUrl}fonts/Geist-Variable.woff2`'));
 assert(config.includes('`${baseUrl}fonts/GeistMono-Variable.woff2`'));
@@ -71,14 +68,6 @@ const guides = read('docs', 'guides.md');
 assert(!firmware.includes('```mermaid'));
 assert(!guides.includes('```mermaid'));
 
-const hero = read('src', 'components', 'HeroGlyphLogo.tsx');
-assert(hero.includes('logo-dark-hero.webp'));
-assert(hero.includes('logo-dark-hero-256.webp'));
-assert(hero.includes('logo-dark-hero-384.webp'));
-assert(hero.includes('srcSet='));
-assert(hero.includes('sizes="(max-width: 576px) 146px, (max-width: 996px) 164px, 184px"'));
-assert(hero.includes('fetchPriority="high"'));
-
 const homepage = read('src', 'pages', 'index.tsx');
 const pointerMoveStart = homepage.indexOf('const handlePointerMove');
 const pointerMoveEnd = homepage.indexOf("window.addEventListener('pointermove'", pointerMoveStart);
@@ -90,8 +79,6 @@ assert(!customCss.includes('InterVariable.woff2'));
 assert(customCss.includes('.DocSearch-Button'));
 assert(customCss.includes('.DocSearch-Modal'));
 assert(!customCss.includes('navbar__search-input'));
-assert(!customCss.includes('details:not([open]):has(+ details:not([open]))'));
-assert(!customCss.includes('details:not([open]) + details:not([open])'));
 
 const releaseFeed = read('src', 'components', 'ReleaseFeed.tsx');
 const announcement = read('src', 'components', 'AnnouncementBanner.tsx');

@@ -48,6 +48,7 @@ interface ShowcaseSidebarProps {
 
   onResetAll: () => void;
   hasActiveFilters: boolean;
+  isCollapsed?: boolean;
 }
 
 function getPlatformIcon(p: PlatformFilter): React.ReactElement {
@@ -86,12 +87,19 @@ export default function ShowcaseSidebar({
   availablePlatforms,
   onResetAll,
   hasActiveFilters,
+  isCollapsed = false,
 }: ShowcaseSidebarProps): React.JSX.Element {
   return (
-    <aside className={styles.sidebar} aria-label="Showcase catalog filters">
+    <aside
+      className={clsx(styles.sidebar, isCollapsed && styles.sidebarCollapsed)}
+      aria-label="Showcase catalog filters"
+      aria-hidden={isCollapsed}
+    >
       <div className={styles.sidebarSticky}>
         <div className={styles.sidebarHeader}>
-          <span className={styles.sidebarTitle}>Filters</span>
+          <div className={styles.sidebarHeaderLeft}>
+            <span className={styles.sidebarTitle}>Filters</span>
+          </div>
           {hasActiveFilters && (
             <button
               type="button"
@@ -104,8 +112,6 @@ export default function ShowcaseSidebar({
             </button>
           )}
         </div>
-
-        {/* Section 1: Catalog Source (All / Apps / Projects) */}
         <div className={styles.section}>
           <span className={styles.sectionLabel}>Catalog Source</span>
           <div className={styles.sourceList} role="tablist">

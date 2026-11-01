@@ -1,12 +1,6 @@
 /**
- * @file AnnouncementBanner.module.css
- * @description Layout and responsive styling for the top announcement banner pill.
- *
- * Design & Layout Invariants:
- * 1. Single-Line Pill Geometry: Forces flex-wrap: nowrap and text-overflow: ellipsis
- *    so release tags fit on a single horizontal line without inflating the 999px pill.
- * 2. Ripple Wave Clearance: Maintains 1.5rem bottom padding on mobile to provide a ~20px
- *    optical cushion above the peak expansion height of the HeroGlyphLogo ripple wave.
+ * AnnouncementBanner.module.css
+ * Layout and responsive styling for the top announcement banner pill.
  */
 
 .banner {
@@ -58,30 +52,42 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 2px solid var(--nothing-border-strong);
-  border-radius: 999px;
-  padding: 0 0.4rem 0 0;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  background-color: hsl(var(--card) / 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-pill, 999px);
+  padding: 0.35rem 0.6rem 0.35rem 0.95rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
   max-width: 90%;
   opacity: 0;
   transform: translateY(-10px) scale(0.95);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
   animation: pillSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
   cursor: pointer;
+  gap: 0.35rem;
 }
 
 [data-theme='dark'] .container {
-  background-color: rgba(18, 18, 18, 0.75);
-  border-color: var(--nothing-border-strong);
+  background-color: hsl(var(--card) / 0.7);
+  border-color: hsl(var(--border));
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .container:active {
   transform: scale(0.985);
-  border-color: rgba(215, 25, 32, 0.55);
+}
+
+.container:hover {
+  transform: translateY(-1px);
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme='dark'] .container:hover {
+  background-color: rgba(30, 30, 30, 0.85);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
 }
 
 .content:active .buildName,
@@ -100,19 +106,6 @@
   outline: none;
 }
 
-.container:hover {
-  transform: translateY(-1px) scale(1.01);
-  border-color: rgba(215, 25, 32, 0.5);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-}
-
-[data-theme='dark'] .container:hover {
-  background-color: rgba(24, 24, 24, 0.85);
-  border-color: rgba(215, 25, 32, 0.55);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
-  transform: translateY(-1px) scale(1.01);
-}
-
 .content:hover .buildName,
 .container:hover .buildName {
   color: var(--ifm-color-primary) !important;
@@ -127,12 +120,6 @@
 .container:hover .announcementTag,
 .content:hover .announcementTag {
   animation: alertWobbleHover 1s ease-in-out infinite;
-}
-
-.dismissBtn:hover {
-  opacity: 1;
-  color: var(--ifm-color-primary);
-  transform: scale(1.15);
 }
 
 .bannerDismissing .container {
@@ -169,13 +156,13 @@
   justify-content: center;
   gap: 0.35rem;
   font-family: var(--ifm-font-family-base);
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.78rem;
+  font-weight: 500;
   color: inherit !important;
   text-decoration: none !important;
   white-space: nowrap;
   min-width: 0;
-  padding: calc(0.5rem - 1px) 0.5rem calc(0.5rem - 1px) 1.25rem;
+  padding: 0;
 }
 
 .buildName {
@@ -186,7 +173,7 @@
 
 .actionText {
   color: inherit;
-  font-weight: 600;
+  font-weight: 500;
   white-space: pre;
 }
 
@@ -225,8 +212,8 @@
 }
 
 .announcementTag {
-  font-size: 0.85rem;
-  margin-right: 4px;
+  font-size: 0.82rem;
+  margin-right: 2px;
   flex-shrink: 0;
   user-select: none;
   display: inline-block;
@@ -287,51 +274,56 @@
   background: none;
   border: none;
   color: inherit;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   line-height: 1;
   cursor: pointer;
-  opacity: 0.5;
-  padding: 0.25rem 0.4rem;
-  transition: opacity 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  opacity: 0.45;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 0.25rem;
+  padding: 0;
+  margin-left: 0.15rem;
   flex-shrink: 0;
+  transition: opacity 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.dismissBtn:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme='dark'] .dismissBtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .dismissBtn:active {
-  opacity: 1;
-  color: var(--ifm-color-primary);
-  transform: scale(1.1);
+  transform: scale(0.92);
 }
 
-/* Mobile: center-align on small screens */
+/* Mobile: clean centered layout on small screens */
 @media screen and (max-width: 576px) {
   .banner {
-    padding: 0.25rem 0.25rem 1.5rem 0.25rem;
+    padding: 0 0 1rem 0;
     animation: expandDownMobile 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
   .bannerDismissing {
     animation: retractUpMobile 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
   }
   .container {
-    padding: 0 0.15rem 0 0;
-    max-width: calc(100vw - 16px);
+    padding: 0.3rem 0.45rem 0.3rem 0.75rem;
+    max-width: min(92%, 360px);
+    gap: 0.3rem;
   }
   .content {
-    justify-content: center;
-    font-size: 0.68rem;
-    gap: 0.2rem;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    min-width: 0;
-    padding: 0.35rem 0.25rem 0.35rem 0.6rem;
+    font-size: 0.72rem;
+    gap: 0.25rem;
   }
   .message {
-    font-size: 0.68rem;
-    letter-spacing: -0.02em;
-    white-space: nowrap;
+    font-size: 0.72rem;
+    letter-spacing: -0.01em;
   }
   .actionFull {
     display: none;
@@ -343,26 +335,24 @@
     margin-left: 0.2rem;
   }
   .announcementTag {
-    font-size: 0.72rem;
-    margin-right: 2px;
+    font-size: 0.74rem;
   }
   .dismissBtn {
-    font-size: 0.95rem;
-    padding: 0.4rem 0.5rem;
-    min-width: 44px;
-    min-height: 44px;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    font-size: 0.85rem;
     margin-left: 0.05rem;
   }
 }
 
 @media screen and (max-width: 360px) {
   .content {
-    font-size: 0.62rem;
-    padding: 0.3rem 0.15rem 0.3rem 0.45rem;
-    gap: 0.15rem;
+    font-size: 0.65rem;
   }
   .message {
-    font-size: 0.62rem;
+    font-size: 0.65rem;
   }
 }
 
@@ -375,8 +365,8 @@
   }
   to {
     max-height: 140px;
-    padding-top: 0.25rem;
-    padding-bottom: 1.5rem;
+    padding-top: 0;
+    padding-bottom: 1rem;
     opacity: 1;
   }
 }
@@ -384,8 +374,8 @@
 @keyframes retractUpMobile {
   from {
     max-height: 140px;
-    padding-top: 0.25rem;
-    padding-bottom: 1.5rem;
+    padding-top: 0;
+    padding-bottom: 1rem;
     opacity: 1;
   }
   to {

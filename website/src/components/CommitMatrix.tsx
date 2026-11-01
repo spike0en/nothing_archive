@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import clsx from 'clsx';
 import styles from './CommitMatrix.module.css';
 import { getTimeLag } from '../utils/time';
+import { useScrollLight } from '../utils/useScrollLight';
 import { useGitHubCommits, useGitHubRepoStats } from '../utils/github-cache';
 import type { Commit } from '../utils/github-cache';
+import contributorsData from '../data/contributors.json';
 
 interface HitsState {
   hits: number;
@@ -12,22 +13,62 @@ interface HitsState {
 
 const HITS_CACHE_KEY = 'nothing_archive_hits_v1';
 const HITS_CACHE_TIME_KEY = 'nothing_archive_hits_time_v1';
-// 15-minute hit count cache prevents excessive calls to the external hitscounter service.
 const HITS_CACHE_TIMEOUT = 15 * 60 * 1000;
 
+function AuthorAvatar({
+  name,
+  avatarUrl,
+  isLatest,
+  style,
+}: {
+  name: string;
+  avatarUrl?: string;
+  isLatest?: boolean;
+  style?: React.CSSProperties;
+}): React.JSX.Element {
+  const [hasError, setHasError] = useState(false);
+
+  if (!avatarUrl || hasError) {
+    const initial = name.replace(/^[^a-zA-Z0-9]+/, '').charAt(0).toUpperCase() || '?';
+    return (
+      <span
+        className={clsx(styles.authorAvatarPlaceholder, isLatest && styles.authorAvatarLatest)}
+        title={name}
+        aria-label={name}
+        style={style}
+      >
+        {initial}
+      </span>
+    );
+  }
+
+  return (
+    <img
+      src={avatarUrl}
+      alt={name}
+      title={name}
+      className={clsx(styles.authorAvatar, isLatest && styles.authorAvatarLatest)}
+      width={20}
+      height={20}
+      loading="lazy"
+      decoding="async"
+      onError={() => setHasError(true)}
+      style={style}
+    />
+  );
+}
+
 export default function CommitMatrix(): React.JSX.Element {
+  const [consoleBodyRef, isScrolling] = useScrollLight<HTMLDivElement>();
   const { commits, status: statusSource, error: errorState, loading } = useGitHubCommits();
   const { stats: repoStats, loading: statsGhLoading } = useGitHubRepoStats();
 
-  // hitscounter.dev is an external visitor tracker, not a GitHub API.
   const [hitsData, setHitsData] = useState<HitsState>({ hits: 0 });
   const [hitsLoading, setHitsLoading] = useState(true);
 
   const filteredCommits = useMemo(() => {
-    // 7 rows fill the telemetry console panel without vertical scrolling.
     const TARGET_COMMITS = 7;
     const sorted = [...commits].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-    // Restricts display to commits within 7 days, falling back to recent history if activity is quiet.
     const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
     const recent = sorted.filter(commit => new Date(commit.date).getTime() >= sevenDaysAgo);
 
@@ -77,103 +118,66 @@ export default function CommitMatrix(): React.JSX.Element {
     loadHits();
   }, []);
 
-  const latestCommit = commits[0] || { sha: '------', author: 'N/A', coAuthors: [], date: '', message: 'Waiting for connection...' };
+  const contributorAvatarMap = useMemo(() => {
+    const map = new Map<string, string>();
+    map.set('spike', 'https://avatars.githubusercontent.com/u/241428588?v=4');
+    map.set('spike0en', 'https://avatars.githubusercontent.com/u/241428588?v=4');
+    map.set('pikawee', 'https://avatars.githubusercontent.com/u/241428588?v=4');
 
-  const stats = [
-    {
-      label: 'LATEST COMMIT',
-      value: loading ? '—' : latestCommit.date ? getTimeLag(latestCommit.date) + ' ago' : '—',
-    },
-    {
-      label: 'STARS',
-      value: statsGhLoading ? '—' : repoStats.stars.toLocaleString(),
-    },
-    {
-      label: 'VIEWS',
-      value: hitsLoading ? '—' : hitsData.hits.toLocaleString(),
-    },
-  ];
-
-  /**
-   * Measures the widest author string with Canvas to align commit titles into a column.
-   */
-  const dynamicAuthorWidth = useMemo(() => {
-    if (!ExecutionEnvironment.canUseDOM) return 110;
-    try {
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
-      if (!ctx) return 110;
-      ctx.font = '500 0.72rem Geist, "Inter var", Inter, system-ui, sans-serif';
-      let maxW = 40;
-      filteredCommits.forEach((commit) => {
-        if (commit.coAuthors.length === 0) {
-          maxW = Math.max(maxW, ctx.measureText(commit.author).width);
-        } else if (commit.coAuthors.length === 1) {
-          const line = `${commit.author} & ${commit.coAuthors[0]}`;
-          maxW = Math.max(maxW, ctx.measureText(line).width);
-        } else {
-          const all = [commit.author, ...commit.coAuthors];
-          const initial = all.slice(0, -1).join(', ') + ' &';
-          const last = all[all.length - 1];
-          maxW = Math.max(maxW, ctx.measureText(initial).width, ctx.measureText(last).width);
+    if (Array.isArray(contributorsData)) {
+      contributorsData.forEach((c: { login?: string; name?: string; avatar_url?: string }) => {
+        if (!c.avatar_url) return;
+        if (c.login) {
+          map.set(c.login.toLowerCase(), c.avatar_url);
+        }
+        if (c.name) {
+          map.set(c.name.toLowerCase(), c.avatar_url);
+          const parenMatch = c.name.match(/\(([^)]+)\)/);
+          if (parenMatch) {
+            map.set(parenMatch[1].toLowerCase(), c.avatar_url);
+          }
         }
       });
-      // +2px margin prevents right-edge clipping from fractional font sub-pixel rendering.
-      return Math.ceil(maxW) + 2;
-    } catch {
-      return 110;
     }
-  }, [filteredCommits]);
+    return map;
+  }, []);
+
+  const getAuthorAvatarUrl = (name: string, authorAvatar?: string, authorLogin?: string): string => {
+    if (authorAvatar) return authorAvatar;
+    if (authorLogin && contributorAvatarMap.has(authorLogin.toLowerCase())) {
+      return contributorAvatarMap.get(authorLogin.toLowerCase())!;
+    }
+    const clean = name.replace(/[^\w-]/g, '').toLowerCase().trim();
+    if (contributorAvatarMap.has(clean)) {
+      return contributorAvatarMap.get(clean)!;
+    }
+    if (/^[a-zA-Z0-9-]+$/.test(clean)) {
+      return `https://github.com/${clean}.png?size=40`;
+    }
+    return '';
+  };
 
   const formatAuthors = (commit: Commit, isLatest: boolean): React.JSX.Element => {
-    const authorClass = clsx(styles.authorTag, isLatest && styles.authorLatest);
-    if (commit.coAuthors.length === 0) {
-      return (
-        <span className={styles.authorsWrapper} style={{ width: `${dynamicAuthorWidth}px` }}>
-          <span className={styles.authorLine}>
-            <span className={authorClass} title={commit.author}>{commit.author}</span>
-          </span>
-        </span>
-      );
-    }
-
     const allAuthors = [commit.author, ...commit.coAuthors];
-    const tooltip = allAuthors.join(', ');
-
-    let content: React.ReactNode;
-    if (allAuthors.length === 2) {
-      content = (
-        <span className={styles.authorLine}>
-          <span className={authorClass}>{allAuthors[0]}</span>
-          <span className={styles.coAuthorSeparator}> &amp; </span>
-          <span className={authorClass}>{allAuthors[1]}</span>
-        </span>
-      );
-    } else {
-      const initialAuthors = allAuthors.slice(0, -1);
-      const lastAuthor = allAuthors[allAuthors.length - 1];
-      content = (
-        <>
-          <span className={styles.authorLine}>
-            {initialAuthors.map((author, i) => (
-              <React.Fragment key={author}>
-                <span className={authorClass}>{author}</span>
-                <span className={styles.coAuthorSeparator}>
-                  {i === initialAuthors.length - 1 ? ' & ' : ', '}
-                </span>
-              </React.Fragment>
-            ))}
-          </span>
-          <span className={styles.authorLine}>
-            <span className={authorClass}>{lastAuthor}</span>
-          </span>
-        </>
-      );
-    }
+    const tooltip = allAuthors.join(' & ');
 
     return (
-      <span className={styles.authorsWrapper} style={{ width: `${dynamicAuthorWidth}px` }} title={tooltip}>
-        {content}
+      <span className={styles.authorsWrapper} title={tooltip}>
+        {allAuthors.map((author, index) => {
+          const avatarUrl = index === 0
+            ? getAuthorAvatarUrl(author, commit.authorAvatar, commit.authorLogin)
+            : getAuthorAvatarUrl(author);
+
+          return (
+            <AuthorAvatar
+              key={`${commit.sha}-${author}-${index}`}
+              name={author}
+              avatarUrl={avatarUrl}
+              isLatest={isLatest}
+              style={index > 0 ? { marginLeft: '-6px' } : undefined}
+            />
+          );
+        })}
       </span>
     );
   };
@@ -182,11 +186,53 @@ export default function CommitMatrix(): React.JSX.Element {
 
   return (
     <div className={styles.container}>
-
       {isProgressLoading && <div className={styles.loadingBar} />}
-      <div className={styles.telemetryHeader}>
-        <div className={styles.systemLabel}>
-          <span className={styles.feedTextPrefix}>REPO</span>
+
+      <div className={styles.widgetHeader}>
+        <div className={styles.headerTitleGroup}>
+          <span className={styles.cliPrompt}>$ git</span>
+          <span className={styles.widgetTitle}>log --since=7d</span>
+        </div>
+        <div className={styles.headerRight}>
+          <a
+            href="https://github.com/spike0en/nothing_archive/stargazers"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.starLink}
+            title="View Stargazers on GitHub"
+          >
+            <svg
+              width="11"
+              height="11"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <span suppressHydrationWarning>{statsGhLoading ? '—' : repoStats.stars.toLocaleString()}</span>
+          </a>
+          <span className={styles.viewsPill} title="Total page views across all sessions" suppressHydrationWarning>
+            <svg
+              width="11"
+              height="11"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+            <span>{hitsLoading ? '—' : hitsData.hits.toLocaleString()}</span>
+          </span>
           {(errorState || statusSource !== 'LIVE') && (
             <span className={styles.feedStatusOffline}>
               {errorState === 'RATE_LIMITED' ? 'RATE LIMITED' : errorState ? 'ERROR' : 'OFFLINE'}
@@ -195,48 +241,29 @@ export default function CommitMatrix(): React.JSX.Element {
         </div>
       </div>
 
-      <div className={styles.statsStrip}>
-        {stats.map((stat, i) => (
-          <div key={i} className={styles.statItem}>
-            <span className={styles.statValue} suppressHydrationWarning>{stat.value}</span>
-            <span className={styles.statLabel}>{stat.label}</span>
-          </div>
-        ))}
-      </div>
-
       <div className={styles.consolePanel}>
-        <div className={styles.consoleHeader}>
-          <span>RECENT COMMITS</span>
-        </div>
-        <div className={styles.consoleBody}>
-          {loading ? (
+        <div ref={consoleBodyRef} className={clsx(styles.consoleBody, isScrolling && styles.isScrolling)}>
+          {loading && filteredCommits.length === 0 ? (
             <div className={styles.consoleLine}>
               <span className={styles.statusDot} />
-              <span className={styles.messageText}>CONNECTING TELEMETRY FEED...</span>
+              <span className={styles.messageText}>Loading commits...</span>
             </div>
-          ) : errorState === 'RATE_LIMITED' ? (
-            <div className={styles.errorContainer}>
-              <div className={styles.errorHeader}>&gt; RATE LIMIT REACHED</div>
-              <div className={styles.errorMessage}>
-                GITHUB API LIMIT EXCEEDED. PLEASE REFRESH AGAIN LATER.
-              </div>
-            </div>
-          ) : errorState === 'FAILED' ? (
+          ) : errorState && filteredCommits.length === 0 ? (
             <div className={styles.errorContainer}>
               <div className={styles.errorHeader}>&gt; CONNECTION ERROR</div>
               <div className={styles.errorMessage}>
-                COULD NOT SYNC WITH REPOSITORY. CHECK NETWORK CONNECTION.
+                Could not sync with repository. Check network connection.
               </div>
             </div>
           ) : commits.length === 0 ? (
             <div className={styles.consoleLine}>
               <span className={styles.statusDot} />
-              <span className={styles.messageText}>NO COMMITS FOUND</span>
+              <span className={styles.messageText}>No commits found</span>
             </div>
           ) : filteredCommits.length === 0 ? (
             <div className={styles.consoleLine}>
               <span className={styles.statusDot} />
-              <span className={styles.messageText}>NO RECENT COMMITS</span>
+              <span className={styles.messageText}>No recent commits</span>
             </div>
           ) : (
             filteredCommits.map((commit, idx) => {
@@ -249,10 +276,16 @@ export default function CommitMatrix(): React.JSX.Element {
                   rel="noopener noreferrer"
                   className={styles.consoleLine}
                 >
-                  <span className={`${styles.timeLag} ${isLatest ? styles.timeLagActive : ''}`} suppressHydrationWarning>{getTimeLag(commit.date)}</span>
+                  <span className={clsx(styles.timeLag, isLatest && styles.timeLagActive)} suppressHydrationWarning>
+                    {getTimeLag(commit.date)}
+                  </span>
                   {formatAuthors(commit, isLatest)}
-                  <span className={`${styles.messageText} ${isLatest ? styles.messageTextLatest : ''}`}>{commit.message}</span>
-                  <span className={`${styles.shaTag} ${isLatest ? styles.shaLatest : ''}`}>{commit.sha}</span>
+                  <span className={clsx(styles.messageText, isLatest && styles.messageTextLatest)}>
+                    {commit.message}
+                  </span>
+                  <span className={styles.shaTag}>
+                    {commit.sha}
+                  </span>
                 </a>
               );
             })

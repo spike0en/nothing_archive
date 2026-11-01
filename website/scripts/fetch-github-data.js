@@ -230,6 +230,8 @@ async function fetchCommits() {
     const commits = rawCommits.map((item) => {
       const fullMessage = item.commit.message || '';
       const author = item.commit.author?.name || item.author?.login || 'Contributor';
+      const authorLogin = item.author?.login || undefined;
+      const authorAvatar = item.author?.avatar_url || (authorLogin ? `https://github.com/${authorLogin}.png?size=40` : undefined);
 
       // Extract co-author names from commit message trailers
       const coAuthors = [];
@@ -243,6 +245,8 @@ async function fetchCommits() {
       return {
         sha: item.sha.substring(0, 7),
         author,
+        authorLogin,
+        authorAvatar,
         coAuthors,
         // Committer date preserves chronological ordering when author dates are altered or rebased.
         date: item.commit.committer?.date || item.commit.author?.date || new Date().toISOString(),
