@@ -28,8 +28,8 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 | [Phone (2)](https://nothing.tech/products/phone-2) <br /> <small>Pong / Alakazam</small> | A065 / AIN065 | 11 July 2023 | Nothing OS 2.0 (Android 13) | 3 + 1 Years | [Changelogs](/docs/changelogs/pong) | [Downloads](/docs/firmware#pong) | [Here](https://nothing.wiki/hardware/phone_2) |
 | [Phone (2a)](https://intl.nothing.tech/products/phone-2a) <br /> <small>Pacman / Aerodactyl</small> | A142 | 05 March 2024 | Nothing OS 2.5 (Android 14) | 3 + 1 Years | [Changelogs](/docs/changelogs/pacman) | [Downloads](/docs/firmware#pacman) | [Here](https://nothing.wiki/hardware/phone_2a_series) |
 | [Phone (2a) Plus](https://nl.nothing.tech/products/phone-2a-plus) <br /> <small>PacmanPro / Mega Aerodactyl</small> | A142P | 31 July 2024 | Nothing OS 2.6 (Android 14) | 3 + 1 Years | [Changelogs](/docs/changelogs/pacmanpro) | [Downloads](/docs/firmware#pacmanpro) | [Here](https://nothing.wiki/hardware/phone_2a_series) |
-| [Phone (3a)](https://nothing.tech/products/phone-3a) <br /> <small>Asteroids / Arcanine</small> | A059 | 04 March 2025 | Nothing OS 3.0 (Android 15) | 3 + 3 Years | [Changelogs](/docs/changelogs/asteroids) | [Downloads](/docs/firmware#asteroids) | [Here](https://nothing.wiki/hardware/phone_3a_series) |
-| [Phone (3a) Pro](https://nothing.tech/products/phone-3a-pro) <br /> <small>AsteroidsPro / Arcanine</small> | A059P | 04 March 2025 | Nothing OS 3.0 (Android 15) | 3 + 3 Years | [Changelogs](/docs/changelogs/asteroids) | [Downloads](/docs/firmware#asteroids) | [Here](https://nothing.wiki/hardware/phone_3a_series) |
+| [Phone (3a)](https://in.nothing.tech/products/phone-3a) <br /> <small>Asteroids / Arcanine</small> | A059 | 04 March 2025 | Nothing OS 3.0 (Android 15) | 3 + 3 Years | [Changelogs](/docs/changelogs/asteroids) | [Downloads](/docs/firmware#asteroids) | [Here](https://nothing.wiki/hardware/phone_3a_series) |
+| [Phone (3a) Pro](https://in.nothing.tech/products/phone-3a-pro) <br /> <small>AsteroidsPro / Arcanine</small> | A059P | 04 March 2025 | Nothing OS 3.0 (Android 15) | 3 + 3 Years | [Changelogs](/docs/changelogs/asteroids) | [Downloads](/docs/firmware#asteroids) | [Here](https://nothing.wiki/hardware/phone_3a_series) |
 | [Phone (3)](https://nothing.tech/products/phone-3) <br /> <small>Metroid / Arbok</small> | A024 | 01 July 2025 | Nothing OS 3.5 (Android 15) | 5 + 2 Years | [Changelogs](/docs/changelogs/metroid) | [Downloads](/docs/firmware#metroid) | [Here](https://nothing.wiki/hardware/phone_3) |
 | [Phone (3a) Lite](https://nothing.tech/products/phone-3a-lite) <br /> <small>Galaxian / Bulbasaur</small> | A001T | 29 October 2025 | Nothing OS 3.5 (Android 15) | 3 + 3 Years | [Changelogs](/docs/changelogs/galaxian) | [Downloads](/docs/firmware#galaxian) | [Here](https://nothing.wiki/hardware/phone_3a_lite) |
 | [Phone (4a)](https://nothing.tech/products/phone-4a) <br /> <small>Frogger / Bellsprout</small> | A069 | 05 March 2026 | Nothing OS 4.1 (Android 16) | 3 + 3 Years | [Changelogs](/docs/changelogs/frogger) | [Downloads](/docs/firmware#frogger) | [Here](https://nothing.wiki/hardware/phone_4a_series) |
@@ -43,7 +43,7 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 | [Ear (1)](https://in.nothing.tech/products/ear-1) <br /> <small>Aipom</small> | B181 | 27 July 2021 | [Here](https://nothing.wiki/hardware/ear_series#ear_1) |
 | [Ear (stick)](https://nothing.tech/products/ear-stick) <br /> <small>Bellossom</small> | B157 | 26 October 2022 | [Here](https://nothing.wiki/hardware/ear_series#ear_stick) |
 | [Ear (2)](https://nothing.tech/products/ear-2) <br /> <small>Azumarill</small> | B155 | 22 March 2023 | [Here](https://nothing.wiki/hardware/ear_series#ear_2) |
-| [Ear](https://nothing.tech/products/ear) <br /> <small>Entei</small> | B171 | 18 April 2024 | [Here](https://nothing.wiki/hardware/ear_series#ear) |
+| [Ear](https://in.nothing.tech/products/ear) <br /> <small>Entei</small> | B171 | 18 April 2024 | [Here](https://nothing.wiki/hardware/ear_series#ear) |
 | [Ear (a)](https://nothing.tech/products/ear-a) <br /> <small>Cleffa</small> | B162 | 18 April 2024 | [Here](https://nothing.wiki/hardware/ear_series#ear_a) |
 | [Ear (open)](https://nothing.tech/products/ear-open) <br /> <small>Flaaffy</small> | B174 | 24 September 2024 | [Here](https://nothing.wiki/hardware/ear_series#ear_open) |
 | [Headphone (1)](https://nothing.tech/products/headphone-1) <br /> <small>Elekid</small> | B170 | 01 July 2025 | [Here](https://nothing.wiki/hardware/headphone_1) |
@@ -56,7 +56,7 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 
 | Device Name | Model | Release Date | Wiki Page |
 | :--- | :--- | :--- | :--- |
-| [Power (45W)](https://nothing.tech/products/power-45w) | C304 / C347 / C348 | 12 July 2022 | N/A |
+| [Power (45W)](https://in.nothing.tech/products/power-45w) | C304 / C347 / C348 | 12 July 2022 | N/A |
 | [Cable (c-c) (Transparent)](https://in.nothing.tech/products/cable) | C306 (100cm) <br /> C351 (180cm) | [July 2023](https://x.com/nothing/status/1671516845545750530) | N/A |
 | Cable (c-c) (TPE Jacket) | C270 | July 2024 | N/A |
 
@@ -106,7 +106,7 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 | [Buds 2a](https://nothing.tech/products/cmf-buds-2a) <br /> <small>Hoothoot</small> | B185 | 28 April 2025 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_buds_2a) |
 | [Headphone Pro](https://nothing.tech/products/cmf-headphone-pro) <br /> <small>Forretress</small> | B175 | 29 September 2025 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_headphone_pro) |
 | [Clip Pro](https://nothing.tech/products/cmf-clip-pro) <br /> <small>Igglybuff</small> | B189 | 04 August 2026 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_clip_pro) |
-| [Buds Neo](https://nothing.tech/products/cmf-buds-neo) <br /> <small>Larvitar</small> | B193 | 20 August 2026 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_buds_neo) |
+| [Buds Neo](https://nothing.community/d/61543-cmf-buds-neo-india-launch) <br /> <small>Larvitar</small> | B193 | 20 August 2026 | [Here](https://nothing.wiki/cmf/cmf_audio#cmf_buds_neo) |
 | [Speaker S](https://nothing.tech/products/cmf-speaker-s) <br /> <small>Victini</small> | E494 | 12 October 2026 | [Here](https://nothing.wiki/cmf/cmf_speaker) |
 | [Speaker M](https://nothing.tech/products/cmf-speaker-m) <br /> <small>Snivy</small> | E495 | 12 October 2026 | [Here](https://nothing.wiki/cmf/cmf_speaker) |
 
@@ -122,7 +122,7 @@ Looking for wallpapers, system firmware dumps, kernel sources, 3D models, or off
 
 | Device Name | Model | Release Date | Wiki Page |
 | :--- | :--- | :--- | :--- |
-| [Power 65W GaN](https://nothing.tech/products/cmf-power-65w-gan) | C332 | 26 September 2023 | [Here](https://nothing.wiki/cmf/accessories#cmf_power_65w_gan) |
+| [Power 65W GaN](https://web.archive.org/web/20250515085502/https://nothing.tech/products/cmf-power-65w-gan) | C332 | 26 September 2023 | [Here](https://nothing.wiki/cmf/accessories#cmf_power_65w_gan) |
 | Power 33W Fast Charger | C383 | 08 July 2024 | N/A |
 | [Power 100W GaN](https://nothing.tech/products/cmf-power-100w-gan) | C269 | 26 September 2024 | [Here](https://nothing.wiki/cmf/accessories#cmf_power_100w_gan) |
 | [Power 140W GaN](https://nothing.tech/products/cmf-power-140w-gan) | C362 | 26 September 2024 | [Here](https://nothing.wiki/cmf/accessories#cmf_power_140w_gan) |
