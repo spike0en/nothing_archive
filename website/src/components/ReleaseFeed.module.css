@@ -101,7 +101,9 @@
 
   gap: 0.35rem;
 
-  padding: 0.15rem 0.55rem;
+  height: 22px;
+  line-height: 1;
+  padding: 0 0.55rem;
 
   border-radius: var(--radius-pill, 999px);
 
@@ -127,6 +129,17 @@
 
   background-color: hsl(var(--secondary) / 0.6);
 
+}
+
+.metricPill svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.metricPill span {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
 }
 
 .widgetTitle {

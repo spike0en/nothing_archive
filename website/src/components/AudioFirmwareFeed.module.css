@@ -99,7 +99,9 @@
 
   gap: 0.35rem;
 
-  padding: 0.15rem 0.55rem;
+  height: 22px;
+  line-height: 1;
+  padding: 0 0.55rem;
 
   border-radius: var(--radius-pill, 999px);
 
@@ -125,6 +127,17 @@
 
   background-color: hsl(var(--secondary) / 0.6);
 
+}
+
+.metricPill svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.metricPill span {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
 }
 
 .widgetTitle {
@@ -682,63 +695,21 @@
 
 .accordionContent {
 
-  padding: 0.25rem 0.35rem 0.5rem;
+  padding: 0.5rem 0.75rem 0.65rem;
 
-}
-
-.changelogBox {
-
-  padding: 0.65rem 0.85rem;
-
-  background: rgba(0, 0, 0, 0.025);
-
-  border: 1px solid hsl(var(--border));
-
-  border-radius: 10px;
-
-  font-size: 0.72rem;
-
-  transition: all 0.2s ease;
-
-}
-
-[data-theme='dark'] .changelogBox {
-
-  background: rgba(255, 255, 255, 0.035);
-
-  border-color: hsl(var(--border));
-
-}
-
-.changelogHeader {
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 0.35rem;
-
-  font-family: var(--f-mono, monospace);
-
-  font-size: 0.64rem;
-
-  font-weight: 600;
-
-  letter-spacing: 0.04em;
-
-  color: var(--ifm-color-content-muted);
-
-  margin-bottom: 0.35rem;
+  border-top: 1px solid var(--nothing-border);
 
 }
 
 .changelogText {
 
-  color: var(--ifm-color-content);
+  font-family: var(--f-mono, monospace);
 
-  line-height: 1.5;
+  font-size: 0.72rem;
 
-  font-size: 0.7rem;
+  line-height: 1.45;
+
+  color: var(--ifm-color-content-muted);
 
   white-space: pre-wrap;
 

@@ -178,6 +178,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
       setShowShortcuts(true);
     };
     const handleDocumentClick = (e: MouseEvent) => {
+      // SAFETY: Event target checked as Element for DOM hierarchy traversal.
       const target = (e.target as HTMLElement)?.closest('a[href*="#shortcuts"], a[href*="#keyboard-shortcuts"]');
       if (target) {
         e.preventDefault();

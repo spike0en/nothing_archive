@@ -156,13 +156,8 @@ export default function AudioFirmwareFeed(): React.JSX.Element {
 
                   {isExpanded && (
                     <div className={styles.accordionContent}>
-                      <div className={styles.changelogBox}>
-                        <div className={styles.changelogHeader}>
-                          <span>Changelogs</span>
-                        </div>
-                        <div className={styles.changelogText}>
-                          {dev.changelog || 'Stability and performance enhancements.'}
-                        </div>
+                      <div className={styles.changelogText}>
+                        {dev.changelog || 'Stability and performance enhancements.'}
                       </div>
                     </div>
                   )}

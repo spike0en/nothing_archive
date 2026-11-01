@@ -141,13 +141,8 @@ export default function AppUpdatesFeed(): React.JSX.Element {
 
                   {isExpanded && (
                     <div className={styles.accordionContent}>
-                      <div className={styles.changelogBox}>
-                        <div className={styles.changelogHeader}>
-                          <span>Changelogs</span>
-                        </div>
-                        <div className={styles.changelogText}>
-                          {app.changelog || 'Performance improvements and bug fixes.'}
-                        </div>
+                      <div className={styles.changelogText}>
+                        {app.changelog || 'Performance improvements and bug fixes.'}
                       </div>
                     </div>
                   )}

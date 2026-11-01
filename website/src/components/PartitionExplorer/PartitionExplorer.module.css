@@ -776,20 +776,12 @@
 
 .rootAlert {
   grid-column: span 2;
-  padding: 0.45rem 0.75rem;
-  border-radius: 6px;
-  background: rgba(245, 158, 11, 0.08);
-  border-left: 3px solid #f59e0b;
 }
 
 @media (max-width: 600px) {
   .rootAlert {
     grid-column: auto;
   }
-}
-
-.rootAlert .metaKey {
-  color: #f59e0b;
 }
 
 .slotMappingItem {

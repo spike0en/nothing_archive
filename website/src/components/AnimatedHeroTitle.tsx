@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import styles from '../pages/index.module.css';
 
 const ARCHIVE_TEXT = 'ARCHIVE';
@@ -8,7 +9,7 @@ export default function AnimatedHeroTitle(): React.JSX.Element {
   const [archiveLength, setArchiveLength] = useState<number>(0);
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (ExecutionEnvironment.canUseDOM && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setArchiveLength(ARCHIVE_TEXT.length);
       return;
     }

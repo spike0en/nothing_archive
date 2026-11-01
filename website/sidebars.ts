@@ -43,38 +43,7 @@ const sidebars: SidebarsConfig = {
       label: 'Resources',
       collapsed: false,
       items: [
-        {
-          type: 'category',
-          label: 'Devices',
-          link: {
-            type: 'doc',
-            id: 'devices',
-          },
-          collapsed: true,
-          items: [
-            {
-              type: 'category',
-              label: 'Nothing',
-              items: [
-                { type: 'link', label: 'Phones', href: '/docs/devices#phones' },
-                { type: 'link', label: 'Audio', href: '/docs/devices#audio' },
-                { type: 'link', label: 'Accessories', href: '/docs/devices#accessories' },
-                { type: 'link', label: 'Apparel', href: '/docs/devices#apparel' },
-                { type: 'link', label: 'Other Products', href: '/docs/devices#other-products' },
-              ],
-            },
-            {
-              type: 'category',
-              label: 'CMF by Nothing',
-              items: [
-                { type: 'link', label: 'Phones', href: '/docs/devices#phones-1' },
-                { type: 'link', label: 'Audio', href: '/docs/devices#audio-1' },
-                { type: 'link', label: 'Watches', href: '/docs/devices#watches' },
-                { type: 'link', label: 'Accessories', href: '/docs/devices#accessories-1' },
-              ],
-            },
-          ],
-        },
+        'devices',
         {
           type: 'category',
           label: 'Firmware',

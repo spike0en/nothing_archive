@@ -726,13 +726,13 @@
 
   justify-content: center;
 
-  width: 38px;
+  width: 28px;
 
-  height: 38px;
+  height: 28px;
 
   flex-shrink: 0;
 
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm, 6px);
 
   background: rgba(0, 0, 0, 0.04);
 
@@ -896,7 +896,7 @@
 
   border: 1px solid rgba(255, 255, 255, 0.12);
 
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm, 6px);
 
   margin-top: 1.15rem;
 
@@ -1000,7 +1000,7 @@
 
 .bentoCard_firmware .bentoTitle {
 
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 
 }
 
@@ -1348,7 +1348,7 @@
 
   border: 1px solid hsl(var(--border));
 
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm, 6px);
 
   padding: 1.1rem 0.55rem;
 
@@ -2258,7 +2258,7 @@
 
   border: 1px solid hsl(var(--border));
 
-  border-radius: var(--radius-block, 24px) !important;
+  border-radius: 12px !important;
 
   color: inherit;
 
@@ -2674,7 +2674,7 @@
 
   .socialLink {
 
-    padding: 0.6rem 0.4rem;
+    padding: 0.6rem 0.65rem;
 
     font-size: 0.8rem;
 
@@ -2828,7 +2828,7 @@
 
   .socialLink {
 
-    padding: 0.5rem 0.35rem;
+    padding: 0.5rem 0.55rem;
 
     font-size: 0.8rem;
 

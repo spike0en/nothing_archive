@@ -120,9 +120,6 @@ export default function CommitMatrix(): React.JSX.Element {
 
   const contributorAvatarMap = useMemo(() => {
     const map = new Map<string, string>();
-    map.set('spike', 'https://avatars.githubusercontent.com/u/241428588?v=4');
-    map.set('spike0en', 'https://avatars.githubusercontent.com/u/241428588?v=4');
-    map.set('pikawee', 'https://avatars.githubusercontent.com/u/241428588?v=4');
 
     if (Array.isArray(contributorsData)) {
       contributorsData.forEach((c: { login?: string; name?: string; avatar_url?: string }) => {
@@ -132,6 +129,11 @@ export default function CommitMatrix(): React.JSX.Element {
         }
         if (c.name) {
           map.set(c.name.toLowerCase(), c.avatar_url);
+          const baseName = c.name.replace(/\s*\([^)]*\)/, '').trim().toLowerCase();
+          if (baseName) {
+            map.set(baseName, c.avatar_url);
+            map.set(baseName.replace(/[^\w-]/g, ''), c.avatar_url);
+          }
           const parenMatch = c.name.match(/\(([^)]+)\)/);
           if (parenMatch) {
             map.set(parenMatch[1].toLowerCase(), c.avatar_url);
@@ -139,6 +141,11 @@ export default function CommitMatrix(): React.JSX.Element {
         }
       });
     }
+
+    map.set('spike0en', 'https://avatars.githubusercontent.com/u/241428588?v=4');
+    map.set('pikawee', 'https://avatars.githubusercontent.com/u/90617898?v=4');
+    map.set('spike', 'https://avatars.githubusercontent.com/u/90617898?v=4');
+
     return map;
   }, []);
 

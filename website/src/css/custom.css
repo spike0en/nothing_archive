@@ -1755,17 +1755,17 @@ table thead tr th {
 
 table thead tr th:first-child {
 
-  border-top-left-radius: 24px !important;
+  border-top-left-radius: 8px !important;
 
-  border-bottom-left-radius: 6px !important;
+  border-bottom-left-radius: 0 !important;
 
 }
 
 table thead tr th:last-child {
 
-  border-top-right-radius: 24px !important;
+  border-top-right-radius: 8px !important;
 
-  border-bottom-right-radius: 6px !important;
+  border-bottom-right-radius: 0 !important;
 
 }
 
@@ -1775,39 +1775,31 @@ table tbody tr td {
 
 }
 
-/* Match row outer boundaries for elements in the middle of the vertical stack */
-
 table tbody tr:not(:last-child) td:first-child {
 
-  border-top-left-radius: 6px !important;
-
-  border-bottom-left-radius: 6px !important;
+  border-radius: 0 !important;
 
 }
 
 table tbody tr:not(:last-child) td:last-child {
 
-  border-top-right-radius: 6px !important;
-
-  border-bottom-right-radius: 6px !important;
+  border-radius: 0 !important;
 
 }
 
-/* Round the tail-end cell corners of the vertical stack to match top-level container curvature */
-
 table tbody tr:last-child td:first-child {
 
-  border-top-left-radius: 6px !important;
+  border-top-left-radius: 0 !important;
 
-  border-bottom-left-radius: 24px !important;
+  border-bottom-left-radius: 8px !important;
 
 }
 
 table tbody tr:last-child td:last-child {
 
-  border-top-right-radius: 6px !important;
+  border-top-right-radius: 0 !important;
 
-  border-bottom-right-radius: 24px !important;
+  border-bottom-right-radius: 8px !important;
 
 }
 
@@ -5696,6 +5688,9 @@ details summary:hover::before {
 }
 
 .feature-icon {
+  display: flex;
+  align-items: center;
+  color: var(--ifm-color-content);
 
   font-size: 1.75rem;
 
@@ -5761,7 +5756,7 @@ details summary:hover::before {
 
   margin-bottom: 16px !important;
 
-  border-radius: 24px !important;
+  border-radius: 12px !important;
 
 }
 
@@ -5773,9 +5768,9 @@ details summary:hover::before {
 
   margin-bottom: 16px !important;
 
-  border-bottom-left-radius: 24px !important;
+  border-bottom-left-radius: 12px !important;
 
-  border-bottom-right-radius: 24px !important;
+  border-bottom-right-radius: 12px !important;
 
 }
 
@@ -5785,9 +5780,9 @@ details summary:hover::before {
 
   margin-top: 16px !important;
 
-  border-top-left-radius: 24px !important;
+  border-top-left-radius: 12px !important;
 
-  border-top-right-radius: 24px !important;
+  border-top-right-radius: 12px !important;
 
 }
 

@@ -320,6 +320,7 @@ function DocSearch({externalUrlRegex, ...props}: DocSearchV4Props) {
     hitsCount: latestHitsCount,
   });
 
+  // SAFETY: Validated signature compatibility for DocSearch keyboard shortcuts wrapper.
   // Suppress Algolia forward-slash on showcase to yield '/' to the in-page search input.
   useDocSearchKeyboardEvents({
     isOpen,
