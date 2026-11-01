@@ -85,6 +85,19 @@ export default function CopyButtonSetup(): null {
         if (anchor.querySelector('img') || anchor.querySelector('svg')) {
           return;
         }
+        const anchorText = anchor.textContent?.trim().toLowerCase();
+        if (anchorText === 'repo' || anchorText === 'source' || anchorText === 'github') {
+          return;
+        }
+
+        const cell = anchor.closest('td');
+        if (cell) {
+          const table = anchor.closest('table');
+          const header = table?.querySelectorAll('th')[cell.cellIndex]?.textContent?.trim().toLowerCase();
+          if (header === 'description' || header === 'notes' || header === 'details') {
+            return;
+          }
+        }
 
         const wrapper = document.createElement('span');
         wrapper.className = 'table-copy-wrapper';
