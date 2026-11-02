@@ -204,10 +204,10 @@
     "name": "Clip Pro",
     "brand": "CMF",
     "codename": "Igglybuff",
-    "version": "1.0.1.79",
-    "changelog": "1. Optimizes Bluetooth connection stability and audio performance.\n2. Improves dual-device connection.\n3. Fixed volume adjustment, prompt tones, calls and media playback.",
-    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/178642097984925211_V1.0.1.79_20260722_cdf2cf94_OTA_APP.bin",
-    "updatedAt": "2026-08-11T04:02:59.849000+00:00"
+    "version": "1.0.1.83",
+    "changelog": "1. Fixed an issue where right earbud incorrectly shows ringing status when re-entering Find Earbuds page after auto-exiting the page at the 20-second ring timeout.\n2. Optimized slow reconnection after opening the case and disconnection on case closure.\n3. Bug fixes for LE 08 disconnection, Find Earbuds ring sync, call ringtone noise and factory battery reporting. Includes power management, discharge curve, transmit power and Malleus audio algorithm optimizations, plus a new earbud-case soft reset command.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/179361453323825211_V1.0.1.83_20261016_d88fdb86_OTA_APP(1).bin",
+    "updatedAt": "2026-11-02T10:15:33.238000+00:00"
   },
   "B193": {
     "modelId": "B193",
