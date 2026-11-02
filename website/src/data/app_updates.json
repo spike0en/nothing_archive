@@ -19,12 +19,12 @@
   },
   "com.nothing.ntessentialspace": {
     "name": "Essential Space",
-    "versionName": "2.2.0",
-    "publishedAt": "2026-09-18T02:57:30+00:00",
-    "discoveredAt": "2026-09-21T14:18:25+00:00",
+    "versionName": "2.2.2",
+    "publishedAt": "2026-10-27T10:22:54+00:00",
+    "discoveredAt": "2026-11-02T04:22:25.780808+00:00",
     "iconUrl": "https://play-lh.googleusercontent.com/bvF1_vQErzySJRR3DxH_YIjKNLQOnLvjpceZu9DYwYvg739S4vbYy_cUam2VSDzwH2ihfQSnbxA_9kGIsf6KO5A",
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.ntessentialspace&hl=en&gl=us",
-    "changelog": "What’s New in Essential Space\n• Stability & Performance\n 🐞 Bug fixes and stability enhancements."
+    "changelog": "What’s New in Essential Space\n• Capture Card Redesign\n✨ A fresh look for your captures, making key information easier to find at a glance.\n• Stability & Performance\n🐞 Bug fixes and stability enhancements."
   },
   "com.nothing.gallery": {
     "name": "Nothing Gallery",
