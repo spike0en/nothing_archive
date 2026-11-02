@@ -217,6 +217,7 @@ Icon packs styled for the Nothing aesthetic.
 | [Jimtendo Transparent](https://play.google.com/store/apps/details?id=com.jimtendo.nothingiconpacktransparent) | Jimtendo |
 | [N Thing Adaptive](https://play.google.com/store/apps/details?id=com.nothing.icon.free) | JustNewDesigns |
 | [Nothing Much](https://github.com/TeamNothingMuch/NothingMuch) | TeamNothingMuch |
+| [Nothing Translucent Icons](https://github.com/SyedSibtain9/NothingTranslucentIcons) | SyedSibtain9 |
 
 ### Widgets
 
