@@ -315,6 +315,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Hey Battery](https://github.com/ghostyapps/HeyBattery) | Candan | Battery usage tracker |
 | [Nothing Dashcam](https://github.com/amitskamboj/nothing-dashcam) | amitskamboj | Dashcam app for Nothing Phone (2) with support for loop recording, impact detection, call pause/resume, GPS overlay and MediaStore output |
 | [Nothing Firmware](https://play.google.com/store/apps/details?id=com.techiboy.nothingfirmware) | TechiBoy Studios | Track Nothing OS updates, firmware builds, and app changelogs |
+| [Nothing IconGen](https://github.com/linuxct/nothing-icongen) | linuxct | Generate and install translucent Nothing OS 5.0-style icon packs with automatic theme refresh |
 | [Nothing Quick Tools](https://github.com/DylanAkp/NothingQuickTools) | DylanAkp | Quick tiles for Phone (2) |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Recording light control for Phone (3) |
 | [Root My Nothing](https://github.com/ang3lo-azevedo/root-my-nothing) | ang3lo-azevedo | One-click root app for Nothing Phone (1) using CVE-2026-43499 (GhostLock) to install KernelSU without unlocking the bootloader |
