@@ -18,6 +18,7 @@ A collection of tools for creating custom Glyph tones and compositions.
 | [Cassette](https://github.com/Chipik0/Cassette) | Chipik0 | Create glyph compositions |
 | [Custom Nothing Glyph Tools](https://github.com/SebiAi/custom-nothing-glyph-tools) | SebiAi | Create custom tones with Audacity |
 | [Glyph Converter](https://github.com/jarpl-o-pvl/glyph-converter) | jarpl-o-pvl | Convert Audacity labels into custom Glyph ringtones for Nothing Phone |
+| [Glyph Creator](https://bella-breaux.github.io/Glyph-Creator/) | bella-breaux | Design, animate, and generate LED patterns for the Nothing Phone (4a) Pro Glyph Matrix [Repo](https://github.com/bella-breaux/Glyph-Creator) |
 | [Glyph Ctrl](https://github.com/Nonta72/glyph_ctrl) | Nonta72 | Simple helper used by the Glyphs Lights Click app for Ubuntu Touch on the Nothing Phone (1) |
 | [Glyph Matrix Editor](https://github.com/pauwma/GlyphMatrixEditor) | pauwma | Pixel art editor for Phone (3) |
 | [Glyph Matrix Image Maker](https://quintenvandamme.github.io/glyph-matrix-image-maker/) | quintenvandamme | Convert images into Glyph Matrix patterns [Repo](https://github.com/quintenvandamme/glyph-matrix-image-maker) |
@@ -53,9 +54,9 @@ Community-built widgets inspired by Nothing OS for various platforms and desktop
 | [Nothing KWGT](https://github.com/AumGupta/KWGT-Widgets) | AumGupta | KWGT widgets |
 | [Rainmeter Nothing Widgets](https://github.com/KrazyManJ/rainmeter-nothing-widgets) | KrazyManJ | Rainmeter widgets that replicate Nothing OS widgets on the Windows desktop |
 
-### Desktop Rices & Application Themes
+### Desktop Rices
 
-Themes and rices for Arch Linux, VS Code, and other development environments following the Nothing design language.
+Full desktop environments and window manager rices inspired by Nothing OS.
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
@@ -63,25 +64,33 @@ Themes and rices for Arch Linux, VS Code, and other development environments fol
 | [Everything Dots](https://github.com/SambuddhaRoy/Everything-dots) | SambuddhaRoy | Quickshell and Hyprland desktop setup for Linux with a morphing pill and dot-matrix interface |
 | [Glyph Rice](https://github.com/Nebelung-cloud/glyph-rice) | Nebelung-cloud | Hyprland and Quickshell desktop rice for Linux with Nothing OS styling, screen-edge Glyph OSD, and earbud controls |
 | [Glyph SDDM](https://github.com/xCaptaiN09/glyph-sddm) | xCaptaiN09 | Minimalist SDDM theme inspired by Nothing's design language |
-| [MkDocs Void](https://github.com/rkriad585/mkdocs-void) | rkriad585 | Nothing OS inspired design theme for MkDocs website |
-| [Notes (Windows)](https://github.com/rohankishore/Notes-1) | rohankishore | Nothing themed notepad for Windows |
-| [Nothing Bar](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | macOS menu bar app |
-| [Nothing Clock](https://github.com/AlexSUNNDER-PRY0R/nothing-clock-SS) | AlexSUNNDER-PRY0R | Nothing OS inspired clock screensaver for Windows and macOS |
-| [Nothing Cursor Pack](https://discord.com/channels/930878214237200394/1513976039335002192) | farinhajorge | A cursor pack inspired by Nothing's design language |
-| [Nothing Floris](https://github.com/itsmeralph09/nothing-floris) | itsmeralph09 | Minimalist Nothing OS inspired theme for FlorisBoard Android keyboard |
+| [Legenda](https://github.com/callmidavid/legenda) | callmidavid | Nothing OS-inspired desktop rice for Ubuntu with Hyprland and Quickshell |
 | [Nothing Hyprland Rice](https://github.com/Adhil-ka/nothing-rice) | Adhil-ka | Nothing OS inspired Arch Hyprland desktop rice |
 | [Nothing KDE Rice](https://github.com/buddi0812/nothing-kde-rice) | buddi0812 | Nothing OS inspired KDE Plasma 6 desktop for Linux. |
 | [Nothing KDE Rice](https://github.com/byteoverride/nothing-rice) | byteoverride | Nothing OS-themed KDE Plasma 6 desktop rice for Linux with monochrome styling and matching SDDM login |
 | [Nothing Liquid](https://github.com/shlok-shinde/nothing-liquid) | shlok-shinde | Hyprland desktop rice for Linux with liquid glass refraction and Nothing OS dot-matrix accents |
-| [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | GNOME desktop build |
-| [Nothing Telegram Theme](https://github.com/Costeer/Nothing-Telegram-Theme) | Costeer | Nothing inspired theme for Telegram |
-| [Nothing VS Code Theme](https://github.com/shahriaravi/nothing-vscode-theme) | shahriaravi | VS Code theme |
-| [Nothing Zen Dot](https://github.com/kalaNaag/nothing-zen-dot) | kalaNaag | Dot-matrix visual theme and mod for Zen Browser inspired by Nothing design |
-| [Nth Cord](https://github.com/deathbyfrag/nthCord) | deathbyfrag | Nothing OS inspired theme for Discord |
-| [Obsidian Nothing Theme](https://github.com/saulojoab/obsidian-nothing-theme) | saulojoab | Obsidian theme based on Nothing |
+| [Nothing OS Fedora](https://github.com/DaemonHehe/nothingOS-Fedora) | DaemonHehe | Nothing OS visual theme for Fedora COSMIC with matching GTK styling, icons, and system cards |
+| [Nothing OS Manjaro](https://github.com/HyenaDesign/nothingos-gnome-manjaro) | HyenaDesign | Nothing OS-styled GNOME desktop rice for Manjaro Linux |
+| [Nothing OS Rice](https://github.com/roninscript30/nothing-os-rice) | roninscript30 | Hyprland desktop rice for Linux inspired by the Nothing OS theme and Glyph design |
 | [Omarchy Nothing Theme](https://github.com/lookiyam-94/omarchy-nothing-theme) | lookiyam-94 | Monochrome Omarchy theme inspired by Nothing OS with dot-matrix backgrounds and red accent |
+| [Omarchy Nothing Theme](https://github.com/Ninnix/omarchy-nthing-theme) | Ninnix | Nothing OS-inspired theme for Omarchy with wallpapers, dot-matrix lettering, and red accents |
 | [Ryoku Nothing Interface](https://github.com/venchik111/ryoku-nothing-interface) | venchik111 | Nothing OS-inspired island bar, lock screen, and desktop widgets for Ryoku on Linux |
-| [SelfControl Mastered](https://github.com/advegaf/selfcontrol-mastered) | advegaf | Nothing-inspired distraction and website blocker for macOS |
+
+### Application Themes
+
+Themes for code editors, browsers, terminals, and chat clients following the Nothing design language.
+
+| Project | Developer | Description |
+|---------|-----------|-------------|
+| [MkDocs Void](https://github.com/rkriad585/mkdocs-void) | rkriad585 | Nothing OS-inspired theme for MkDocs documentation sites |
+| [Monotile](https://github.com/TheKimi7/monotile) | TheKimi7 | Nothing OS-inspired monochrome icon theme for Linux with automatic desktop application updates |
+| [Nothing Cursor Pack](https://discord.com/channels/930878214237200394/1513976039335002192) | farinhajorge | Desktop cursor pack inspired by Nothing's design language |
+| [Nothing Floris](https://github.com/itsmeralph09/nothing-floris) | itsmeralph09 | Nothing OS-inspired theme for FlorisBoard keyboard on Android |
+| [Nothing Telegram Theme](https://github.com/Costeer/Nothing-Telegram-Theme) | Costeer | Monochrome theme for Telegram inspired by Nothing OS |
+| [Nothing VS Code Theme](https://github.com/shahriaravi/nothing-vscode-theme) | shahriaravi | Dark monochrome theme for Visual Studio Code inspired by Nothing OS |
+| [Nothing Zen Dot](https://github.com/kalaNaag/nothing-zen-dot) | kalaNaag | Dot-matrix visual theme and mod for Zen Browser inspired by Nothing design |
+| [Nth Cord](https://github.com/deathbyfrag/nthCord) | deathbyfrag | Nothing OS-inspired theme for Discord |
+| [Obsidian Nothing Theme](https://github.com/saulojoab/obsidian-nothing-theme) | saulojoab | Nothing OS-inspired monochrome theme for Obsidian |
 | [Soot Theme](https://github.com/OsqY/soot-theme) | OsqY | Monochrome dot-matrix theme for the Zed editor influenced by Nothing design |
 
 ### Fonts & Style
@@ -130,6 +139,7 @@ Web-based applications inspired by Nothing OS.
 | Project | Developer | Description |
 |---------|-----------|-------------|
 | [Airi Forecasts](https://github.com/the3dmslobj/airi-forcasts) | the3dmslobj | A weather app built with Expo and React Native, wrapped in a Nothing-style monochrome dot-matrix interface |
+| [Currency](https://curency.pages.dev/) | Earendel | Currency converter web app with Nothing OS styling [Repo](https://github.com/Earendel-lab/Currency) |
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Control earbuds from web [Repo](https://github.com/radiance-project/ear-web) |
 | [Essential Space Web](https://prostmitwein.github.io/EssentialSpaceWeb/) | CorruptPriest | Minimalist notespace [Repo](https://github.com/CorruptPriest/EssentialSpaceWeb) |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
@@ -144,7 +154,8 @@ Web-based applications inspired by Nothing OS.
 | [Nothing Clone](https://nothingclone-jivan.netlify.app/) | Jivan-Patel | Static UI clone inspired by Nothing product pages [Repo](https://github.com/Jivan-Patel/nothing-clone) |
 | [Nothing Glyph](https://kuldeepjambhulkar.github.io/Nothing-Glyph/) | kuldeepjambhulkar | Interactive animated pixel-glyph web simulation inspired by Nothing's Glyph interface [Repo](https://github.com/kuldeepjambhulkar/Nothing-Glyph) |
 | [Nothing History](https://ironstike.github.io/nothing-history/) | Ironstike | A website about the history of Nothing's phones [Repo](https://github.com/Ironstike/nothing-history) |
-| [Nothing OS Weather Web App](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) | ROCK-CON | Nothing OS inspired weather web app |
+| [Nothing OS Weather Web App](https://nothingos-weather-webapp.vercel.app/) | ROCK-CON | Nothing OS inspired weather web app [Repo](https://github.com/ROCK-CON/NothingOS-Weather-WebApp) |
+| [Nothing Profile](https://whoisfazenda.github.io/nothing-profile/) | whoisfazenda | GitHub profile README generator with custom colors and animated SVG widgets [Repo](https://github.com/whoisfazenda/nothing-profile) |
 | [Nothing Solitaire](https://solitaire-swart.vercel.app/) | S1r1u511 | Classic Solitaire card game web app built with Nothing OS design aesthetics [Repo](https://github.com/S1r1u511/Solitaire) |
 | [Nothing Store Landing](https://github.com/Vladislav-Korsun/nothing-store-landing) | Vladislav-Korsun | Product store landing page with Nothing OS styling |
 | [Nothing Weather Clone](https://github.com/Avadhkumar-geek/nothing_weather_clone) | Avadhkumar-geek | Flutter-based weather application replicating the Nothing OS weather design |
@@ -204,9 +215,20 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [OpenBuds Windows](https://github.com/MahinZx/openbuds-windows) | MahinZx | Unofficial Windows desktop companion application for Nothing and CMF audio devices |
 | [OpenQore](https://github.com/nnonickreal/openqore) | nnonick | Firmware modification toolkit with Nothing & CMF audio devices support for Windows and Linux |
 | [Orbit](https://harsha20599.github.io/orbit/) | harsha20599 | Customizable controller that turns the CMF Buds Pro 2 case dial into an input wheel to scroll, scrub media, and trigger shortcuts for Windows, macOS, and Android [Repo](https://github.com/harsha20599/orbit) |
+| [Pinch](https://github.com/t-sappl/harbour-pinch) | t-sappl | Companion app for Nothing earbuds on Sailfish OS with noise control, gestures, and battery stats |
 | [Something X](https://github.com/SoaOaoS/something-x) | SoaOaoS | Nothing X app for Linux, tested to work on [Omarchy](https://omarchy.org/) |
 | [WCMF](https://lexp-hub.github.io/wcmf/) | lexp-hub | Web based watchface designer and Bluetooth BLE flasher for CMF Watch Pro, Watch Pro 2 & Watch 3 Pro [Repo](https://github.com/lexp-hub/wcmf) |
 
+
+### Desktop Applications
+
+Desktop software and utilities designed with the Nothing aesthetic.
+
+| Project | Developer | Description |
+|---------|-----------|-------------|
+| [Notes (Windows)](https://github.com/rohankishore/Notes-1) | rohankishore | Lightweight text editor and notepad for Windows with Nothing OS styling |
+| [Nothing Clock](https://github.com/AlexSUNNDER-PRY0R/nothing-clock-SS) | AlexSUNNDER-PRY0R | Clock screensaver inspired by Nothing OS with burn-in protection for Windows and macOS |
+| [SelfControl Mastered](https://github.com/advegaf/selfcontrol-mastered) | advegaf | Distraction and website blocker for macOS with a Nothing-inspired interface |
 
 ### Documentation & Resources
 
@@ -241,6 +263,7 @@ These require root access (KernelSU or Magisk). Proceed with caution.
 |--------|--------|-------------|
 | [Dirac Audio Nothing Phone 1 Magisk Module](https://github.com/reiryuki/Dirac-Audio-Nothing-Phone-1-Magisk-Module) | reiryuki | Dirac Audio module ported from the Nothing Phone (1) for other devices |
 | [Glyph CLI](https://github.com/mahdi-salmanzade/glyph-cli) | mahdi-salmanzade | Control 137 LEDs directly from your terminal. No SDK. No app sandbox. Pure sysfs. |
+| [Glyph Keeper](https://github.com/vaccreate/GlyphKeeper) | vaccreate | Root module to control Nothing Phone (2a) Glyphs via sysfs and WebUI |
 | [Ndot to Roboto](https://github.com/reindex-ot/Ndot-to-Roboto) | reindex-ot | Magisk module to replace the system Ndot font with Roboto |
 | [NetHunter Asteroids](https://github.com/Tbeard602/nothing-phone-3a-nethunter) | Tbeard602 | Kali NetHunter Kernel build with OrangeFox recovery (3a) & (3a) Pro|
 | [NetHunter Spacewar](https://github.com/ExTV/nethunter-spacewar) | ExTV | Kali NetHunter Magisk module for the Nothing Phone (1) |
