@@ -357,6 +357,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Nothing Audio Recorder](https://play.google.com/store/apps/details?id=com.service.rare.audio.recorder) | Cloud Nine Labs | Audio recorder |
 | [Nothing Mixer](https://github.com/farizanjum/mixer-1) | farizanjum | Per-app volume control app with Nothing OS styling |
 | [Nothingfy](https://github.com/Matteoguerra07/Nothingfy) | Matteoguerra07 | Nothing OS styled music player |
+| [Pixtone](https://github.com/JameSanderlanding/PIXTONE) | JameSanderlanding | Local-first music player for Android with dot-matrix typography, synced lyrics, and offline playlists |
 | [Pour Music](https://play.google.com/store/apps/details?id=com.indie6403.pour_music) | Anonymous Indie | Offline music player with Nothing OS styling |
 | [qMetronome](https://github.com/quaternionmedia/qmetronome) | quaternionmedia | Metronome and tempo visualizer built with Nothing OS aesthetics |
 | [Redrop Music](https://play.google.com/store/apps/details?id=re.tag.redrop) | Tagrelate | Offline music player combining Material 3 and Nothing aesthetics |
