@@ -269,6 +269,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [N Notes](https://play.google.com/store/apps/details?id=com.bhavukverma.nNotes) | Bhavuk Verma | Open source Nothing OS style notes |
 | [Noteing Pad](https://github.com/WYSTAF/Noteing-Pad) | WYSTAF | Minimal notes app with Glyph integration |
 | [Notes](https://play.google.com/store/apps/details?id=com.monospace.notes) | monospace | Notes app with built-in security |
+| [Notes](https://play.google.com/store/apps/details?id=com.whatifsoftworks.notes) | What If? Softworks | Notebook app with drawing tools, voice memos, photo imports, password-locked folders, reminders, and Nothing OS styling |
 | [NotesApp](https://play.google.com/store/apps/details?id=ru.znaetapps.notesapp) | ZnaetAPPS | Notes app with a Nothing OS inspired theme |
 | [Nothing Notes](https://github.com/ThriveEngineer/nothing.notes) | ThriveEngineer | Nothing themed notes app |
 | [Nothing Notes](https://play.google.com/store/apps/details?id=com.ApexCreator.nothingnotes) | Apex Creator | Minimal notepad |
@@ -332,6 +333,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Recording light control for Phone (3) |
 | [Root My Nothing](https://github.com/ang3lo-azevedo/root-my-nothing) | ang3lo-azevedo | One-click root app for Nothing Phone (1) using CVE-2026-43499 (GhostLock) to install KernelSU without unlocking the bootloader |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Device insights tool |
+| [Sensu](https://play.google.com/store/apps/details?id=com.piyush.pie) | Piyush M. | One-handed edge pie menu for navigation gestures, system toggles, volume controls, and app shortcuts with Dot matrix styling |
 | [Side Dock](https://play.google.com/store/apps/details?id=com.sidedock.app) | Quivox Engineering | Sidebar overlay built for faster multitasking, quick tools, and smoother workflows |
 | [Tapbar](https://github.com/Earendel-lab/Tapbar) | Earendel | Custom screen tap zones to launch apps and system shortcuts with gestures |
 
@@ -422,6 +424,7 @@ Phone dialers, contacts managers, and messaging utilities.
 | [Chats By Voidwarelabs](https://play.google.com/store/apps/details?id=com.voidwarelabs.chats) | VoidwareLabs | Minimalist SMS messaging app styled with Nothing UI aesthetics |
 | [N Dial](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ndial) | Hearthborn | Phone dialer and contact manager with Nothing OS design language |
 | [Nothing Dialer 1](https://play.google.com/store/apps/details?id=com.rkkvishva.nothing_dialer) | Knurdz | Nothing OS inspired dialer with synced Glyph effects [Repo](https://github.com/rkvishwa/Nothing-Dialer-1) |
+| [Nothiq Dialer](https://play.google.com/store/apps/details?id=com.rontag.nothiqdialer) | Rontag | Minimalist phone dialer with monochrome styling, dot-matrix typography, and red accents |
 | [Voidcaller](https://play.google.com/store/apps/details?id=com.voidware.voidcaller) | VoidwareLabs | Minimalist phone dialer app with Nothing OS typography and styling |
 
 ### Finance & Expenses
@@ -438,6 +441,7 @@ Personal finance, budget managers, and expense tracking tools.
 | App | Developer | Description |
 |-----|-----------|-------------|
 | [Calories Are Nothing](https://play.google.com/store/apps/details?id=can.wearemobilefirst.com) | WeAreMobileFirst | Meal logging app |
+| [Conscious Smoking](https://github.com/puneetfsn/Conscious-Smoking) | puneetfsn | Offline habit tracker and cigarette counter with expense metrics and a Nothing OS styled home-screen widget |
 | [Compass](https://github.com/Earendel-lab/Compass) | Earendel | Simple compass |
 | [Desight](https://play.google.com/store/apps/details?id=com.repomedia.desight) | Repomedia | Nothing-inspired, free eye strain reduction app |
 | [Dot Weather](https://github.com/SMMahmudIqbal/DotWeather) | SMMahmudIqbal | Minimalist weather and environmental monitor app for Android inspired by Nothing OS 3.0 |
