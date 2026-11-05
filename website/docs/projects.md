@@ -161,6 +161,7 @@ Web-based applications inspired by Nothing OS.
 | [Nothing Weather Clone](https://github.com/Avadhkumar-geek/nothing_weather_clone) | Avadhkumar-geek | Flutter-based weather application replicating the Nothing OS weather design |
 | [OmniTill](https://andrasulthan-alt.github.io/OmniTill/) | andrasulthan-alt | Offline-first point of sale system with Nothing OS design for web and Android [Repo](https://github.com/andrasulthan-alt/OmniTill) |
 | [Pomodoro App](https://kroxerr.github.io/pomodoro-app/) | Kroxerr | Installable offline Pomodoro timer web app designed with a Nothing-style dot-matrix pill interface [Repo](https://github.com/Kroxerr/pomodoro-app) |
+| [Sound Studio (1) Pro](https://sound-studio-1-pro.pages.dev/) | sokkaUmB | Web-based parametric equalizer suite and preset generator that exports Nothing X QR codes for Nothing and CMF audio devices [Repo](https://github.com/sokkaUmB/sound-studio-1-pro) |
 | [Spin The Bottle](https://dotmatrix-beerbottle.vercel.app/) | MadGlacierRunner | Spin the bottle simulator |
 | [Study Logix](https://github.com/ashutoshpatraa/StudyLogix) | ashutoshpatraa | Nothing OS-inspired study tracking web application with focus tools and analytics |
 
@@ -210,6 +211,7 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [Nothing X (macOS)](https://github.com/eldandelion/nothing-x-macos) | eldandelion | Companion app for the Nothing ear (1) for macOS |
 | [Nothing X (macOS)](https://github.com/marlon-yepes/cmf-macos) | marlon-yepes | Unofficial macOS companion app for Nothing & CMF earbuds |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | macOS companion app for Nothing and CMF earbuds |
+| [Nothing X (macOS)](https://github.com/Senooy/nothing-x-mac) | Senooy | Native companion app for the Nothing Headphone (1) with noise control, spatial audio head tracking, and an 8-band equalizer for macOS |
 | [Nothing X (Windows)](https://github.com/debarkak/nothingx-pc) | debarkak | Unofficial Windows and Linux implementation of Nothing X protocols for Nothing & CMF audio devices |
 | [NothingBar (macOS)](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | Menu bar app to control Nothing and CMF audio devices for macOS |
 | [OpenBuds Windows](https://github.com/MahinZx/openbuds-windows) | MahinZx | Unofficial Windows desktop companion application for Nothing and CMF audio devices |
@@ -271,6 +273,7 @@ These require root access (KernelSU or Magisk). Proceed with caution.
 | [Nothing Battery Fix](https://github.com/Farpathan/Nothing-Battery-Fix) | Farpathan | Restore classic battery percentage style |
 | [Nothing eUICC](https://github.com/reindex-ot/nothing-euicc) | reindex-ot | Enable eSIM functionality on Nothing devices that do not support it |
 | [Nothing Essential Sync](https://github.com/m24ih/nothing-essential-sync) | m24ih | Event-driven root module syncing Nothing OS Essential Space captures, voice notes, and AI summaries into Obsidian |
+| [Nothing Glass](https://github.com/ShinysLove/NothingGlass) | ShinysLove | LSPosed module that adds dark frosted glass to the notification shade, quick settings, cards, and volume panel on Nothing OS |
 | [Nothing Launcher Plus](https://github.com/Dr-Essence/Nothing-Launcher-Plus) | Dr-Essence | LSPosed module for custom app drawer folders, dot-matrix emoji covers, dot-matrix app icons, landscape home screen, and console-style interface sounds in Nothing Launcher |
 | [Nothing OS Aura Killer](https://github.com/reindex-ot/NOS_AuraKiller/) | reindex-ot | Debloat Aura services on NOS 4.0 |
 | [Nothing Phone Patch](https://github.com/reindex-ot/magisk-module-nothing) | reindex-ot | System tweaks and enhancements |
