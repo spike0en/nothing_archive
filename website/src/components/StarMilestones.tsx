@@ -73,8 +73,11 @@ export default function StarMilestones(): React.JSX.Element {
       <TorxScrew className={clsx(styles.screw, styles.screwBottomRight)} rotation={20} />
 
       <div className={styles.milestoneHeader}>
-        <div className={styles.liveStats}>
-          <span className={styles.liveText}>{stars.toLocaleString()} stargazers</span>
+        <div className={styles.headerTitleGroup}>
+          <span className={styles.widgetTitle}>Stargazers</span>
+          <span className={styles.targetPill}>
+            <span>{allReached ? 'Completed' : `Target ${fmtCount(MILESTONES[nextIdx])}`}</span>
+          </span>
         </div>
 
         {/*

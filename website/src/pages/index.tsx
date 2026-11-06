@@ -18,9 +18,9 @@ import {
 
   FaMobileAlt, FaDownload, FaClipboardList,
 
-  FaBoxOpen, FaRocket, FaCode, FaCameraRetro,
+  FaBoxOpen, FaRocket, FaCameraRetro,
 
-  FaRegCompass, FaArrowRight,
+  FaArrowRight,
 
 } from 'react-icons/fa';
 
@@ -101,15 +101,36 @@ function getBentoList(): BentoItem[] {
       spanCol: 4,
     },
     {
-      id: 'apps',
-      title: 'Community Apps',
-      badge: '440+ indexed',
+      id: 'official',
+      title: 'Official Resources',
+      badge: 'Brand assets',
       badgeType: 'neutral',
-      description: 'Explore custom apps, Glyph tools, and productivity utilities made by the community.',
-      link: '/docs/apps',
-      icon: <FaRocket size={16} />,
-      pills: ['Glyph Matrix', 'Glyph-Powered', 'Customization', 'Productivity', 'Utilities'],
+      description: 'Find official Nothing apps, wallpapers, custom fonts, kernel sources, and developer tools.',
+      link: '/docs/official',
+      icon: <FaBoxOpen size={16} />,
+      pills: ['Wallpapers', 'Kernel Sources', '3D Models', 'User Manuals'],
       spanCol: 4,
+    },
+    {
+      id: 'showcase',
+      title: 'Community Apps & Projects',
+      badge: '460+ indexed',
+      badgeType: 'neutral',
+      description: "Explore apps and projects built by the community, inspired by Nothing's design philosophy and made for devices across the ecosystem.",
+      link: '/showcase',
+      icon: <FaRocket size={16} />,
+      pills: [
+        'App Store',
+        'Essential Apps',
+        'Glyph Matrix',
+        'Glyph Tools',
+        'Widgets',
+        'Icon Packs',
+        'Desktop Themes',
+        'Web Apps',
+        'Root Modules',
+      ],
+      spanCol: 8,
     },
     {
       id: 'guides',
@@ -120,17 +141,6 @@ function getBentoList(): BentoItem[] {
       link: '/docs/guides',
       icon: <FaTerminal size={16} />,
       pills: ['OTA Sideloading', 'Bootloader Unlock', 'Rooting', 'Flashing', 'Unbrick', 'Misc'],
-      spanCol: 4,
-    },
-    {
-      id: 'photography',
-      title: 'Photography',
-      badge: 'Camera tuning',
-      badgeType: 'neutral',
-      description: 'Improve your photos with GCAM ports, custom configurations, and presets tuned for Nothing and CMF phones.',
-      link: '/docs/photography',
-      icon: <FaCameraRetro size={16} />,
-      pills: ['GCam Ports', 'Config XMLs', 'Camera Presets'],
       spanCol: 4,
     },
     {
@@ -145,25 +155,14 @@ function getBentoList(): BentoItem[] {
       spanCol: 4,
     },
     {
-      id: 'official',
-      title: 'Official Resources',
-      badge: 'Brand assets',
+      id: 'photography',
+      title: 'Photography',
+      badge: 'Camera tuning',
       badgeType: 'neutral',
-      description: 'Find official Nothing apps, wallpapers, custom fonts, kernel sources, and developer tools.',
-      link: '/docs/official',
-      icon: <FaBoxOpen size={16} />,
-      pills: ['Wallpapers', 'Kernel Sources', '3D Models', 'User Manuals'],
-      spanCol: 4,
-    },
-    {
-      id: 'projects',
-      title: 'Community Projects',
-      badge: 'Hardware & mods',
-      badgeType: 'neutral',
-      description: 'Browse creative software, tools, and custom projects built for the Nothing ecosystem.',
-      link: '/docs/projects',
-      icon: <FaCode size={16} />,
-      pills: ['Glyph Tools', 'Customization', 'Developer Tools', 'Web Apps', 'Root Modules'],
+      description: 'Improve your photos with GCAM ports, custom configurations, and presets tuned for Nothing and CMF phones.',
+      link: '/docs/photography',
+      icon: <FaCameraRetro size={16} />,
+      pills: ['GCam Ports', 'Config XMLs', 'Camera Presets'],
       spanCol: 4,
     },
   ];
@@ -323,15 +322,9 @@ function HomepageHeader() {
 
           <div className={styles.buttons}>
 
-            <Link className={clsx('button', styles.ctaButton)} to="/showcase">
+            <Link className={clsx('button', styles.ctaButton)} to="/docs/intro">
 
-              <span className={styles.ctaIconWrapper}>
-
-                <FaRegCompass className={styles.ctaCompassIcon} size={16} />
-
-              </span>
-
-              <span>Explore Apps & Projects</span>
+              <span>Get Started</span>
 
               <FaArrowRight className={styles.ctaArrowIcon} size={12} />
 
@@ -375,11 +368,16 @@ function HomepageHeader() {
 
 function BentoCard({ item }: { item: BentoItem }) {
 
-  const isHero = item.spanCol === 8;
+  const colClass =
+    item.spanCol === 8
+      ? styles.bentoColHero
+      : item.spanCol === 6
+      ? styles.bentoColHalf
+      : styles.bentoColStandard;
 
   return (
 
-    <div className={clsx(styles.bentoCol, isHero ? styles.bentoColHero : styles.bentoColStandard)}>
+    <div className={clsx(styles.bentoCol, colClass)}>
 
       <Link to={item.link} className={styles.bentoLink}>
 
