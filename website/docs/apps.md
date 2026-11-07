@@ -174,6 +174,7 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | [Delivery Glyph](https://github.com/Goktug-Dusunen/Glyph-Developer-Kit/tree/main/DeliveryGlyph) | Goktug-Dusunen | Delivery tracking app, specially optimized for Turkish services |
 | [Gemini Glyph](https://github.com/TbitL/GeminiGlyph) | TbitL | Brings Glyph interface light responses to Google Gemini assistant on Nothing Phone (3a) |
 | [Glyph Battery](https://github.com/0x91m0n/NothingGlyphBattery) | 0x91m0n | Battery level visualization through the Glyph Interface |
+| [Glyph Charge](https://github.com/garenyondem/nothing-battery-charge-widget) | garenyondem | Displays battery levels on the Glyph Interface through Live Updates when the phone charges face down |
 | [Glyph Charging Meter](https://github.com/swrneko/ngcm) | swrneko | Displays smooth battery level progress and plug-in animations on the Glyph LEDs of Nothing Phone (3a) while charging |
 | [Glyph Essentials](https://play.google.com/store/apps/details?id=com.tldc.essentials) | GlyphLab | Advanced customisation for Glyph notifications |
 | [Glyph Nexus](https://play.google.com/store/apps/details?id=com.voidtechstudios.smartglyph) | Experion Labs | Advanced notification control including Glyph Timer |
@@ -428,6 +429,7 @@ Phone dialers, contacts managers, and messaging utilities.
 | [N Dial](https://play.google.com/store/apps/details?id=com.hearthborn.studios.ndial) | Hearthborn | Phone dialer and contact manager with Nothing OS design language |
 | [Nothing Dialer 1](https://play.google.com/store/apps/details?id=com.rkkvishva.nothing_dialer) | Knurdz | Nothing OS inspired dialer with synced Glyph effects [Repo](https://github.com/rkvishwa/Nothing-Dialer-1) |
 | [Nothiq Dialer](https://play.google.com/store/apps/details?id=com.rontag.nothiqdialer) | Rontag | Minimalist phone dialer with monochrome styling, dot-matrix typography, and red accents |
+| [Quickdot](https://play.google.com/store/apps/details?id=app.quickdot.sms) | nico2511 | SMS messenger for Android with scheduled messages, local backups, and speech-to-text [Repo](https://github.com/nico2511/quickdot) |
 | [Voidcaller](https://play.google.com/store/apps/details?id=com.voidware.voidcaller) | VoidwareLabs | Minimalist phone dialer app with Nothing OS typography and styling |
 
 ### Finance & Expenses
