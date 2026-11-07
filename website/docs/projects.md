@@ -151,7 +151,7 @@ Web-based applications inspired by Nothing OS.
 | [Glyph Portal](https://glyph.suns.red/) | aero-md | Web portal with real-scale browser previews of Nothing Phone Glyph Matrix toys [Repo](https://github.com/aero-md/GlyphPortal) |
 | [Home Page](https://github.com/CorruptPriest/HomePage) | CorruptPriest | Terminal-inspired homepage |
 | [Invo](https://dibyajyotikabi.github.io/Nothing-OS-Inspired-Invoice-App) | Dibyajyotikabi | Nothing OS Inspired Invoice Web App [Repo](https://github.com/Dibyajyotikabi/Nothing-OS-Inspired-Invoice-App) |
-| [Its Nothing](https://github.com/eduardochiaro/its-nothing) | eduardochiaro | Minimal web page inspired by Nothing OS |
+| [It's Nothing](https://apps.rebble.io/en_US/application/68190b36404fff0009e209bb) | eduardochiaro | Pebble watchface inspired by Nothing OS with date, steps, and weather modules [Repo](https://github.com/eduardochiaro/its-nothing) |
 | [Lutai](https://vauth.github.io/lutai) | Vauth | Create lut filters (.cube) for Nothing phone [Repo](https://github.com/Vauth/lutai) |
 | [Ndot Logo Generator](https://lovinoes.github.io/ndot-logo-generator/) | Lovinoes | HTML logo generator using the Nothing fonts [Repo](https://github.com/Lovinoes/ndot-logo-generator) |
 | [Nothing Chess](https://github.com/ankur874/Chess-FE) | ankur874 | Real-time multiplayer chess game web app with Nothing-inspired UI |
