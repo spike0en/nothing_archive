@@ -15,38 +15,39 @@ Step-by-step procedures for Nothing OS configuration, maintenance, and modificat
 
 :::note
 
-- Bootloader unlocking is not mandatory to sideload incremental OTA updates. Skip Step A unless you are a rooted user.
+- Bootloader unlocking is not mandatory to sideload incremental OTA updates. Skip the partition restoration section below unless you have modified partitions or rooted your device.
 - Sideloading official incremental or full OTA updates is safe as long as they are downloaded directly from this archive.
-- Do not use third-party sources. All firmware in the Nothing Archive is sourced directly from Nothing's official OEM servers.  
-  This can be verified by inspecting the download URL(s) in the incremental OTA section, which point to official server and not third-party file hosts.
+- Do not use third-party sources. All firmware in the Nothing Archive is sourced directly from Nothing's official OEM servers.
+  This can be verified by inspecting download URLs in the incremental OTA section, which point to official servers and not third-party file hosts.
 - The built-in Nothing OS offline updater only accepts OEM-signed update packages.
 - The updater verifies the firmware hash before installation and will fail if an incorrect or mismatched OTA zip is used.
 - The same verification applies to full OTA packages; they will not install unless their integrity is intact.
 - Because of these checks, it is not possible to brick your device by sideloading an official OTA zip on a locked bootloader.
-- For Open Beta Test updates, sideload them via `Nothing Beta Updater Hub` (name might change in future) provided by the OEM if the dialer method does not work
-  You can launch the interface from Settings. This happens when you have installed the OEM's beta updater app which overrides the stock inbuilt version.
-- For visual references, see the images [sideloading images](https://github.com/spike0en/nothing_archive/tree/main/assets/sideloading) in the listed order.
+- For Open Beta Test updates, sideload them via `Nothing Beta Updater Hub` provided by the OEM if the dialer method does not work.
+  You can launch the interface from Settings if you have installed the OEM's beta updater app.
+- For visual references, see the [sideloading images](https://github.com/spike0en/nothing_archive/tree/main/assets/sideloading) in the listed order.
 
 :::
 
-<br />
+<details>
+<summary><strong>Prerequisite for rooted or modified devices: Restore stock partitions</strong></summary>
 
-A. **Restoring Stock Partitions (For Rooted Users Only)**  
-  :::tip
-  If your bootloader is locked, skip directly to Point B!
-  :::
+If you rooted your device, installed a custom recovery or kernel, or modified any partition images on an unlocked bootloader, you must restore stock partitions before installing an OTA update.
+Nothing OS incremental OTAs verify the exact cryptographic hash of each target partition before applying updates.
+If any partition has been altered, the updater aborts the installation to prevent system corruption.
+Devices running stock, unmodified partitions (including standard devices with a locked bootloader) can skip this section.
 
 1. Check your current Nothing OS version:  
    - Go to `Settings > About phone > Tap the device banner`.  
    - Note down the build number.  
 
 2. Fetch stock images for your current firmware build:  
-   - Download the `-boot-image.7z` file.  
+   - Download the `-boot-image.7z` file from the [firmware index](/docs/firmware).  
    - Extract the archive to obtain `.img` files.  
 
 3. Identify the required partitions:  
    - Qualcomm devices: `boot`, `init_boot`, `vendor_boot`, `recovery`, `vbmeta`  
-   - MediaTek devices: `init_boot`, `vbmeta`, `lk`
+   - MediaTek devices: `init_boot`, `vbmeta`, `lk`  
 
 4. **Flash stock partitions** in bootloader mode:  
    :::note
@@ -61,63 +62,67 @@ A. **Restoring Stock Partitions (For Rooted Users Only)**
    fastboot flash --slot=all lk lk.img
    ```
 
-5. **Reboot to system and update via System Updater:**
-   - If the update **fails**, proceed with **manual sideloading** in the next section.
+5. **Reboot to system and update via System Updater:**  
+   - If the update **fails**, proceed with **manual sideloading** in the next section.  
 
-6. **Restoring Root (Optional):**
-   - After updating, you may re-root by **flashing a patched boot image** for the updated NOS version.
-   - **Modules will remain intact** after re-rooting.
+6. **Restoring Root (Optional):**  
+   - After updating, you may re-root by **flashing a patched boot image** for the updated NOS version.  
+   - **Modules will remain intact** after re-rooting.  
 
-<br />
+</details>
 
-B. **Proceed with Sideloading** 
+#### 1. Check your current build number
+Open `Settings > System > About phone` (or tap the device banner at the top of Settings).
+Note down your current **Build number**.
 
- - **Download the Correct Update Firmware File:**  
-   - Find the correct OTA firmware file for your device from [firmware index](/docs/firmware).
+#### 2. Download the update file
+1. Open the [firmware index](/docs/firmware) and select your device model.
+2. Locate the **Incremental OTA** column.
+3. Find the package that lists your current build as its starting point.
+   For example, if your Phone (2) runs `Pong_U2.6-241016-1700` and you want `Pong_V3.0-241226-2001`, download the package showing `Pong_U2.6-241016-1700 -> Pong_V3.0-241226-2001`.
+4. Download the `.zip` file directly to your phone.
+   The file saves to your `Download` folder.
+   See [this reference image](https://github.com/spike0en/nothing_archive/blob/main/assets/sideloading/3.1_ota_sideload.jpg) for visual confirmation.
 
- - **How to Select the Right File?**  
-   - Navigate to the repository and select your device model.  
-   - Look for the Incremental OTA column.  
-   - **Verify your current OS Build Number**:  
-    - Go to: `Settings > System > About Phone`.  
-    - Tap the **device banner** and note the **Build Number**.
+#### 3. Open the offline updater
+1. Open the **Phone** app dialer.
+2. Dial `*#*#682#*#*`.
+3. The offline update utility opens (`NothingOfflineOtaUpdate` or `NOTHING BETA OTA UPDATE`).
 
- - **Example:**  
-   - Suppose your **Phone (2)** has the build number: `Pong_U2.6-241016-1700` 
-    - Assuming the latest available OTA update is: `Pong_V3.0-241226-2001`
-    - The corresponding update pathway would be: `Pong_U2.6-241016-1700` -> `Pong_V3.0-241226-2001`
-   - Ensure you select the correct pathway based on your device and OS version.
-    - Refer to [this](https://github.com/spike0en/nothing_archive/blob/main/assets/sideloading/3.1_ota_sideload.jpg) for better clarity.
+:::tip
+If you installed the Nothing Beta Updater app, the dialer code may not open.
+Launch the updater directly from `Settings > System > Update to Beta version`.
+:::
 
- - **Create the `ota` Folder:** 
-   - Create a folder named `ota` in your device's **internal storage**, full path being:  
-     ```text
-     /sdcard/ota/
-     ```
-   - Move the downloaded `<firmware>.zip` file to this folder.
+#### 4. Import and install the update
+1. In the offline updater, tap **Browse**.
+2. Select the downloaded `.zip` file from your `Download` folder.
+3. Tap **Directly Apply OTA** (or **Update**).
+4. The tool verifies package integrity and installs the update.
+5. Tap **Reboot** when prompted, or wait for the device to restart automatically.
 
- - **Access the Nothing Offline OTA Updater:**  
-    - Open the **Phone app** and dial:  
-      ```text
-      *#*#682#*#*
-      ```
-   - This will launch the built-in offline updater tool.  
-   - The UI may show `NothingOfflineOtaUpdate` or `NOTHING BETA OTA UPDATE`; both work.
+<details>
+<summary>Alternative method: Automatic detection via the ota folder</summary>
 
- - **Apply the Update:**  
-   - The updater will automatically detect the update file.  
-   - If not detected, manually browse and import the OTA file.  
-   - Tap `Directly Apply OTA` or `Update` (based on the app UI).  
-   - Wait for the update to complete; your device will reboot automatically.
+You can also place the update file in an `ota` folder in your internal storage:
+1. Using a file manager, create a folder named `ota` in internal storage (`/sdcard/ota/`).
+2. Move the downloaded update `.zip` into `/sdcard/ota/`.
+3. Open the offline updater (`*#*#682#*#*`).
+4. The updater scans the folder and selects the file automatically.
 
-:::note
+Use the **Browse** button if the updater fails to detect the file or shows an unknown error.
+</details>
 
-- If the updater shows an **unknown error**, try using the **"Browse"** option instead of manually copying the file to the **"ota"** folder.
-- **Full OTA firmware** can be sideloaded if incremental OTA fails.
-- **Full OTA cannot be used to downgrade**; it can only update to the same or a higher build.
-- **Unlocked bootloader users** can flash full OTA via custom recoveries (e.g., OrangeFox for Phone (2)).
-- **Not every release has a Full OTA file**; use incrementals instead in such cases.
+:::note[Additional Notes]
 
+- If an incremental update repeatedly fails, download and sideload the **Full OTA** package for your target build.
+- Full OTA packages cannot reliably downgrade your system to an older build.
+  While downgrading may succeed in select builds or scenarios, it is not a guaranteed method.
+  Full OTAs are designed to update or reinstall the current or newer build.
+  To downgrade safely, follow the [Flashing Stock ROM guide](#flashing-stock-rom-unbrick--downgrade) after creating full backups of your partitions and personal data.
+- If your bootloader is unlocked, you can also flash Full OTA packages via custom recoveries such as OrangeFox.
+- Some releases only provide incremental packages. Check the firmware index for your device to see available formats.
+- For step-by-step screenshots, see the [visual references repository](https://github.com/spike0en/nothing_archive/tree/main/assets/sideloading).
 :::
 
 ### Safe Mode
@@ -340,9 +345,6 @@ C. **Post-Unlock**
 - Users can also refer to the visual guides linked alongside: [orailnoor](https://www.youtube.com/watch?v=v0i4rftKNWs) | [Droidwin](https://www.youtube.com/watch?v=4T1ZHDUCBsw) | [EpicDroid](https://www.youtube.com/watch?v=vXIBfyX7s-k).
 
 :::
-
-<br />
-
 A. **Prerequisites**
 - **Unlocked bootloader** with **USB Debugging enabled**
 - A **PC with ADB & Fastboot**  
@@ -354,17 +356,11 @@ A. **Prerequisites**
   - [Magisk](https://github.com/topjohnwu/Magisk/releases) | [Installation](https://topjohnwu.github.io/Magisk/install.html)
   - [KernelSU (KSU)](https://github.com/tiann/KernelSU) | [Installation](https://kernelsu.org/guide/installation.html)
   - [KernelSU Next (KSUN)](https://github.com/KernelSU-Next/KernelSU-Next) | [Installation](https://kernelsu-next.github.io/webpage/pages/installation.html)
-
-<br />
-
 B. **Check Current Software Version**
 - On your phone, navigate to: Settings > About phone > Tap the Nothing OS banner.
 - **Note down the Build Number**
 - Example: `Pong_B4.0-251119-1654`
 - Ignore any regional suffix like `IND`/`EEA`/`TUR` and so on.
-
-<br />
-
 C. **Fetch Stock Boot / Init_boot Image**
 - Navigate to the [release index](/docs/firmware).
 - Select your **device model**
@@ -381,9 +377,6 @@ C. **Fetch Stock Boot / Init_boot Image**
   # or
   adb push boot.img /sdcard/Download/
   ```
-
-<br />
-
 D. **Patch the Image**
 
 **Magisk**
@@ -391,9 +384,6 @@ D. **Patch the Image**
 - Open Magisk → Install → Select and Patch a File.
 - Choose the transferred `init_boot` (preferred) / `boot` image. 
 - Magisk will generate: `magisk_patched-XXXXX.img`
-
-<br />
-
 **KernelSU / KernelSU Next**  
 
 :::note
@@ -535,9 +525,6 @@ Ensure your bootloader is unlocked before proceeding. Refer to the [Unlocking Bo
   - If the zip contains a `payload.bin` file, it is a **Recovery/Sideload** based ROM (or OTA zip).
   - If it contains multiple individual partition `.img` files, it is a **Fastboot** based ROM.
 :::
-
-<br />
-
 #### Recovery / Sideload Based ROMs
 
 :::note[Key Considerations]
@@ -547,7 +534,7 @@ Ensure your bootloader is unlocked before proceeding. Refer to the [Unlocking Bo
 - **Troubleshooting Sideload Failures:** If sideloading continues to fail, flash a Fastboot-based version of any available ROM first to set up the device. After that, flash the recovery image corresponding to your desired AOSP/CLO ROM, and sideload the ROM zip through it. It should complete successfully.
 :::
 
-##### Clean Flash
+#### Clean Flash
 
 A. **Prerequisites**
 - An **unlocked bootloader** with **USB Debugging** enabled.
@@ -652,9 +639,7 @@ J. **Final Wipe and Boot**
 1. Navigate to Factory Reset and select Format data / factory reset one final time to clear encryption.
 2. Select **Reboot system now**.
 
-<br />
-
-##### Dirty Flash
+#### Dirty Flash
 
 :::info
 - Magisk/KernelSU root access and modules typically survive a dirty flash.
@@ -695,8 +680,6 @@ B. **Method 2: Recovery Sideload**
    ```
 5. When prompted to install additional packages, select **NO** *(unless you need to reflash GApps)*.
 6. Select **Reboot system now**.
-
-<br />
 
 #### Fastboot-Based ROMs
 

@@ -6,6 +6,10 @@ description: Catalog of community apps for Nothing OS, including Essential Apps,
 
 # Community Apps
 
+:::tip[Interactive Showcase]
+Browse, search, and filter all community apps and projects together in the [Community Showcase](/showcase).
+:::
+
 Community-made and inspired apps following the Nothing design language.
 
 ## Essential Apps
@@ -205,7 +209,6 @@ Apps that integrate with the Glyph interface on Nothing phones.
 | App | Developer | Description |
 |-----|-----------|-------------|
 | [Simone](https://play.google.com/store/apps/details?id=com.lisra.simone) | RapidZapper | Classic memory game with Glyph interface |
-
 
 ## Customization
 
@@ -464,7 +467,6 @@ Personal finance, budget managers, and expense tracking tools.
 | [Procam](https://github.com/pleum333333/procam-nothing-2a-plus) | pleum333333 | Manual camera app for Nothing Phone (2a) Plus with RAW capture, 32-second exposures, focus peaking, and live histogram |
 | [Void](https://play.google.com/store/apps/details?id=com.thevoid.focus) | vmcreate | Minimal app blocker based on Nothing OS design language |
 | [WhispCal](https://play.google.com/store/apps/details?id=com.thomasmorice.whispcal) | Thomas Morice | Calorie tracking app for Android and [iOS](https://apps.apple.com/in/app/whispcal/id6757860582) |
-
 
 ## Games
 

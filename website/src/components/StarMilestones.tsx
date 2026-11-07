@@ -208,5 +208,3 @@ export default function StarMilestones(): React.JSX.Element {
     </div>
   );
 }
-
-

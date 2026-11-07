@@ -38,8 +38,6 @@
   border-color: rgba(215, 25, 33, 0.4);
 }
 
-
-
 @media (max-width: 575px), (prefers-reduced-motion: reduce) {
   .cursorToggleBtn {
     display: none !important;

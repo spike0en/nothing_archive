@@ -15,7 +15,7 @@ Welcome to the Nothing OS update index, featuring official changelogs for Nothin
 
 Review these guidelines to understand how Nothing OS updates are built and distributed.
 
-## 🚀 How Updates Work
+## How Updates Work
 
 ### 1. Phased Regional Rollouts
 Nothing OS updates roll out in staged phases over several days so the software team can monitor stability before global deployment. 
@@ -57,10 +57,10 @@ Each Nothing and CMF device has its own development cycle tailored to its hardwa
 
 :::tip[Technical Background]
 To learn more about the development, testing, and distribution process behind Nothing OS updates, see the community article:
-👉 **[Inside a Major Nothing OS Update](https://nothing.community/d/47051-inside-a-major-nothing-os-update)**
+**[Inside a Major Nothing OS Update](https://nothing.community/d/47051-inside-a-major-nothing-os-update)**
 :::
 
-## Select Your Device 📱
+## Select Your Device
 
 Select your device model below to view its complete Nothing OS update history and official changelogs.
 

@@ -6,6 +6,10 @@ description: Community projects for Nothing devices, including Glyph tools, desk
 
 # Community Projects
 
+:::tip[Interactive Showcase]
+Browse, search, and filter all community apps and projects together in the [Community Showcase](/showcase).
+:::
+
 Projects maintained by the Nothing community.
 
 ## Glyph Tools
@@ -220,7 +224,6 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [Pinch](https://github.com/t-sappl/harbour-pinch) | t-sappl | Companion app for Nothing earbuds on Sailfish OS with noise control, gestures, and battery stats |
 | [Something X](https://github.com/SoaOaoS/something-x) | SoaOaoS | Nothing X app for Linux, tested to work on [Omarchy](https://omarchy.org/) |
 | [WCMF](https://lexp-hub.github.io/wcmf/) | lexp-hub | Web based watchface designer and Bluetooth BLE flasher for CMF Watch Pro, Watch Pro 2 & Watch 3 Pro [Repo](https://github.com/lexp-hub/wcmf) |
-
 
 ### Desktop Applications
 

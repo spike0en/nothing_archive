@@ -78,8 +78,6 @@
   background-color: rgba(255, 255, 255, 0.01);
 }
 
-
-
 .fallbackContainer {
   display: flex;
   flex-direction: column;
@@ -230,7 +228,6 @@
   border-color: var(--ifm-color-primary-dark) !important;
   color: #ffffff !important;
 }
-
 
 .cardLink {
   text-decoration: none !important;

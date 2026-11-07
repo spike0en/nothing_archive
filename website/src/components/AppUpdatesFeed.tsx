@@ -8,8 +8,6 @@ import { getTimeLag } from '../utils/time';
 import { useScrollLight } from '../utils/useScrollLight';
 import type { AppUpdateItem } from '../types/trackers';
 
-
-
 export default function AppUpdatesFeed(): React.JSX.Element {
   const [consoleBodyRef, isScrolling] = useScrollLight<HTMLDivElement>();
   const { withBaseUrl } = useBaseUrlUtils();

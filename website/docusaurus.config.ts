@@ -315,7 +315,6 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
   return newSubItems;
 }
 
-
 const siteUrl = process.env.SITE_URL || (process.env.GITHUB_ACTIONS === 'true' ? 'https://nothingarchive.tech' : 'http://localhost:3000');
 const baseUrl = process.env.BASE_URL || '/';
 const websiteSchema = JSON.stringify({
@@ -869,6 +868,13 @@ const config: Config = {
         {
           type: 'custom-CursorToggle',
           position: 'right',
+        },
+        {
+          href: 'https://github.com/spike0en/nothing_archive',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
+          title: 'GitHub',
         },
         {
           type: 'custom-PwaInstallButton',
