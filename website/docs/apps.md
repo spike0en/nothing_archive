@@ -36,7 +36,8 @@ See [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) for of
 | [Glyph Bike](https://play.google.com/store/apps/details?id=com.ofishialdigital.glyphbike) | Ofishial Digital | Scrolling motorcycle game |
 | [Glyph Cade](https://github.com/bleelblep/GlyphCade/) | bleelblep | Arcade games on Glyph Matrix |
 | [Glyph Cars](https://github.com/AlyaNs1/GlyphCars) | AlyaNs1 | Car Game For Nothing Phone (3)'s Glyph Matrix |
-| [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | Pokémon collecting fan-game |
+| [Glyph Catch](https://github.com/equalparts/glyph-catch) | equalparts | Pokémon collecting fan-game for Nothing Phone (3) |
+| [Glyph Catch](https://github.com/ErikPeTo1/glyph-catch) | ErikPeTo1 | Pokémon catching game for Nothing Phone (3) continued from [equalparts](https://github.com/equalparts/glyph-catch) with 649 Pokémon and team widgets |
 | [Glyph Invaders](https://github.com/rembo226/GlyphInvaders) | rembo226 | Space Invaders game |
 | [Glyph Lab](https://play.google.com/store/apps/details?id=com.projectkriya.glyphlab) | Vimanam Studio | Interactive Glyph Matrix toys for Nothing devices |
 | [Glyph Life](https://github.com/Yuma-Eimymk2/glyph-life) | Yuma-Eimymk2 | Conway's Game of Life toy for the Nothing Phone (4a) Pro's Glyph Matrix |
@@ -74,6 +75,7 @@ See [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) for of
 | [Figly](https://github.com/psygos/figly) | psygos | A glyph matrix herbarium for the Nothing Phone (4a) Pro |
 | [Glucose Glyph](https://github.com/0NLyM/CgmGlyph) | 0NLyM | Display continuous glucose monitor (CGM) readings on the Nothing Phone (3) Glyph Matrix via ControlX2 |
 | [Glyph Aquarium](https://github.com/chriskenhall-tech/Glyph-Aquarium) | chriskenhall-tech | A dynamic AOD aquarium simulation using the Nothing Glyph SDK for the Phone (3) rear light matrix |
+| [Glyph Cast](https://github.com/danijerez/glyph-cast) | danijerez | Glyph Toy for Nothing Phone (3) displaying time, weather conditions, moon phases, and battery levels on the Glyph Matrix |
 | [Glyph Eyes](https://github.com/yuk1-kondo/GlyphToys-Glypheyes) | yuk1-kondo | Playful tilting pupil toy |
 | [Glyph GIF Rotator](https://github.com/ChichoXD/glyph-gif-rotator) | ChichoXD | Turn the Glyph Matrix on Nothing Phone (3) into a rotating GIF gallery with clock, vinyl music player, and battery level animations |
 | [Glyph Hanabi](https://github.com/Yuma-Eimymk2/glyph-hanabi) | Yuma-Eimymk2 | A fireworks festival display for the Glyph Matrix that triggers when the phone screen is turned off |
