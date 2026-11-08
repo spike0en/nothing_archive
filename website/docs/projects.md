@@ -95,6 +95,7 @@ Themes for code editors, browsers, terminals, and chat clients following the Not
 | [Nothing Zen Dot](https://github.com/kalaNaag/nothing-zen-dot) | kalaNaag | Dot-matrix visual theme and mod for Zen Browser inspired by Nothing design |
 | [Nth Cord](https://github.com/deathbyfrag/nthCord) | deathbyfrag | Nothing OS-inspired theme for Discord |
 | [Obsidian Nothing Theme](https://github.com/saulojoab/obsidian-nothing-theme) | saulojoab | Nothing OS-inspired monochrome theme for Obsidian |
+| [SlimTVOS](https://github.com/sauravpradhan/SlimTVOS) | sauravpradhan | Android TV launcher theme with a Nothing OS-inspired clock face and lock screen |
 | [Soot Theme](https://github.com/OsqY/soot-theme) | OsqY | Monochrome dot-matrix theme for the Zed editor influenced by Nothing design |
 
 ### Fonts & Style
@@ -132,6 +133,7 @@ Assets and tools for developers building Nothing-inspired projects.
 | [Nothing Design Skill](https://github.com/yuebinzhang77-hub/nothing-design-skill) | yuebinzhang77-hub | Nothing-inspired UI/UX design skill for Claude Code |
 | [Nothing Design Skill](https://github.com/dominikmartn/nothing-design-skill) | dominikmartn | A design system skill for Claude Code to generate user interfaces following the Nothing visual language |
 | [Nothing Glyph Communication](https://github.com/endan-criso/Nothing-Glyph-Battery-Low-Indicator) | endan-criso | Android playground and reference implementation demonstrating official Glyph SDK integration on Nothing Phone (2a) |
+| [Nothing Monochrome Entries](https://github.com/cyberxz2077/nothing-monochrome-entries) | cyberxz2077 | CLI tooling and AI agent skill to build and install standalone monochrome app launcher entries for Nothing OS |
 | [Nothing MTUI](https://github.com/jaikhuranna/nothing-mtui) | jaikhuranna | Color token library resolving Nothing OS widget palettes from Material You dynamic seeds for JavaScript and React Native |
 | [Swift Nothing Ear](https://github.com/bestK1ngArthur/swift-nothing-ear) | bestK1ngArthur | Swift Package for interacting with Nothing headphones on macOS |
 | [Vibe Nothing Design](https://wangbh030722.github.io/vibe-nothing-ui-design/) | wangbh030722 | A Nothing OS inspired UI component library for the web [Repo](https://github.com/wangbh030722/vibe-nothing-ui-design) |
@@ -144,6 +146,7 @@ Web-based applications inspired by Nothing OS.
 |---------|-----------|-------------|
 | [Airi Forecasts](https://github.com/the3dmslobj/airi-forcasts) | the3dmslobj | A weather app built with Expo and React Native, wrapped in a Nothing-style monochrome dot-matrix interface |
 | [Currency](https://curency.pages.dev/) | Earendel | Currency converter web app with Nothing OS styling [Repo](https://github.com/Earendel-lab/Currency) |
+| [Dotted](https://dotted-tau.vercel.app/) | wwGuGuww | Dot-matrix logic puzzle web game inspired by Nothing OS with time attack and daily challenge modes [Repo](https://github.com/wwGuGuww/dotted) |
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Control earbuds from web [Repo](https://github.com/radiance-project/ear-web) |
 | [Essential Space Web](https://prostmitwein.github.io/EssentialSpaceWeb/) | CorruptPriest | Minimalist notespace [Repo](https://github.com/CorruptPriest/EssentialSpaceWeb) |
 | [Flow](https://flowpo.pages.dev/) | Earendel | Pomodoro timer web app |
@@ -201,7 +204,7 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | Native Rust desktop client for Nothing and CMF audio devices for Windows and Linux |
 | [Ear Tray](https://github.com/Vadim-Karpenko/ear-tray) | Vadim-Karpenko | Lightweight Windows tray app for Nothing / CMF earbuds |
 | [Ear X](https://gitlab.com/somaxa8/ear-x) | somaxa8 & [Bharadwaj Raju](https://gitlab.com/bharadwaj-raju/ear2ctl) | Rust based linux app to control Nothing earbuds' ANC modes |
-| [EarA](https://oneydef.github.io/EarA-linux/) | oneydef | Unofficial GTK4 companion for Nothing and CMF earbuds on Linux [Repo](https://github.com/oneydef/EarA-linux) |
+| [EarA](https://oneydef.github.io/EarA-linux/) | oneydef | Unofficial GTK4 companion for Nothing and CMF earbuds for Linux [Repo](https://github.com/oneydef/EarA-linux) |
 | [Earctl](https://github.com/xhain/earctl) | xhain | [Alfred](https://www.alfredapp.com/) workflow to control Nothing Ear (2) Bluetooth headphones from macOS |
 | [EarPhone X](https://github.com/noebachofner/EarPhonesX) | noebachofner | Linux application to control and configure Nothing and CMF earbuds |
 | [FMC](https://fmc.freethinkel.dev) | freethinkel | Terminal companion tool, watchface compiler, and BLE sideloading manager for CMF Watch Pro 2 for Windows, Linux, and macOS [Repo](https://github.com/freethinkel/fmc) |
