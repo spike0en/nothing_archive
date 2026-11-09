@@ -63,11 +63,13 @@
 }
 
 .updateIcon {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   color: var(--nothing-red, #D71921);
   display: inline-block;
   flex-shrink: 0;
+  position: relative;
+  top: -1px;
   animation: updateSpin 3s linear infinite;
 }
 
@@ -93,6 +95,8 @@
   justify-content: center;
   border-radius: 50%;
   flex-shrink: 0;
+  position: relative;
+  top: -1px;
   transition: all 0.2s ease;
 }
 
@@ -123,12 +127,12 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  background-color: var(--nothing-red, #D71921);
-  color: #ffffff !important;
-  border: 2px solid var(--nothing-red, #D71921);
+  background-color: var(--ifm-font-color-base);
+  color: var(--ifm-card-background-color) !important;
+  border: 2px solid var(--ifm-font-color-base);
   border-radius: 999px;
-  padding: 0.45rem 1.1rem;
-  font-size: 0.75rem;
+  padding: 0.4rem 0.95rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   cursor: pointer;
@@ -139,8 +143,8 @@
 
 .refreshCta:hover {
   background-color: transparent !important;
-  color: var(--nothing-red, #D71921) !important;
-  border-color: var(--nothing-red, #D71921) !important;
+  color: var(--ifm-font-color-base) !important;
+  border-color: var(--ifm-font-color-base) !important;
   transform: translateY(-1px);
   box-shadow: none;
 }

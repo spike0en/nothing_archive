@@ -2,14 +2,15 @@ import React, { type ReactNode, useState, useRef } from 'react';
 import clsx from 'clsx';
 import Translate from '@docusaurus/Translate';
 import type { Props } from '@theme/PwaReloadPopup';
+import { FaTimes } from 'react-icons/fa';
 import styles from './styles.module.css';
 
 function UpdateArrowsIcon({ className }: { className?: string }): React.JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
+      width="15"
+      height="15"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -36,21 +37,6 @@ function RefreshIcon({ className }: { className?: string }): React.JSX.Element {
       className={className}
     >
       <path d="M480-160q-134 0-227-93t-93-227q0-134 93-227t227-93q69 0 132 28.5T720-690v-110h80v260H540v-80h134q-36-44-87.5-67T480-720q-100 0-170 70t-70 170q0 100 70 170t170 70q80 0 144-46.5T708-400h84q-20 115-103 187.5T480-160Z" />
-    </svg>
-  );
-}
-
-function CloseIcon({ className }: { className?: string }): React.JSX.Element {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      height="12"
-      width="12"
-      viewBox="0 -960 960 960"
-      fill="currentColor"
-      className={className}
-    >
-      <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
     </svg>
   );
 }
@@ -273,7 +259,7 @@ export default function PwaReloadPopup({ onReload }: Props): ReactNode {
             onClick={handleDismiss}
             aria-label="Dismiss update notification"
           >
-            <CloseIcon />
+            <FaTimes size={12} />
           </button>
         </div>
 

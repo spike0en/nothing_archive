@@ -29,7 +29,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'About the Project',
-      collapsed: false,
+      collapsible: false,
       items: [
         'intro',
         'mentions',
@@ -41,7 +41,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Resources',
-      collapsed: false,
+      collapsible: false,
       items: [
         {
           type: 'category',

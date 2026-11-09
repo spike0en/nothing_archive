@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from '@docusaurus/Link';
 import { usePluginData } from '@docusaurus/useGlobalData';
+import { FaTimes } from 'react-icons/fa';
 import clsx from 'clsx';
 import styles from './AnnouncementBanner.module.css';
 
@@ -150,7 +151,7 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
           aria-label="Dismiss announcement"
           title="Dismiss"
         >
-          &times;
+          <FaTimes size={10} aria-hidden="true" />
         </button>
       </div>
     </div>

@@ -1,0 +1,56 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.breadcrumbsContainer {
+  --ifm-breadcrumb-size-multiplier: 0.8;
+  margin-bottom: 0.8rem;
+}
+
+.breadcrumbsContainer :global(.breadcrumbs) {
+  display: flex;
+  flex-wrap: wrap !important;
+  align-items: center;
+  gap: 0.35rem 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumbsContainer :global(.breadcrumbs__item) {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.breadcrumbsContainer :global(.breadcrumbs__link),
+.breadcrumbsContainer :global(.breadcrumbs__link:hover),
+.breadcrumbsContainer :global(.breadcrumbs__link:focus),
+.breadcrumbsContainer :global(.breadcrumbs__link:active) {
+  text-decoration: none !important;
+}
+
+.breadcrumbsContainer :global(a.breadcrumbs__link) {
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.8;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.breadcrumbsContainer :global(a.breadcrumbs__link:hover) {
+  opacity: 1;
+  color: var(--ifm-color-primary) !important;
+  text-decoration: none !important;
+}
+
+.breadcrumbsContainer :global(span.breadcrumbs__link) {
+  cursor: default;
+}
+
+.breadcrumbsContainer :global(span.breadcrumbs__link:not(.breadcrumbs__item--active *)) {
+  opacity: 0.65;
+  color: inherit;
+}

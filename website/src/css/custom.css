@@ -224,6 +224,7 @@ div[class*="tableWrapper"] table td,
   --sidebar-width-icon: 3rem;
   --doc-sidebar-width: 280px;
   --doc-sidebar-hidden-width: 52px;
+  --ifm-navbar-sidebar-width: min(340px, 88vw);
   --nothing-red: #D71920;
   --nothing-orange: #FA471F;
   --cmf-orange: #FF5310;
@@ -677,8 +678,8 @@ div[class*="tableWrapper"] table td,
   .navbar__items--right .header-github-link {
     display: inline-flex !important;
   }
-  /* Hide color mode toggle on true mobile view to save space */
-  .navbar [class*="colorModeToggle"] {
+  /* Hide color mode toggle in top bar on true mobile view to save header space */
+  .navbar__inner [class*="colorModeToggle"] {
     display: none !important;
   }
 }
@@ -774,6 +775,24 @@ div[class*="tableWrapper"] table td,
 .menu__caret,
 .menu__caret:hover {
   background-color: transparent !important;
+  min-width: 36px;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0 !important;
+}
+
+.menu__list-item-collapsible {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu__list-item-collapsible > .menu__link {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto !important;
 }
 
 /* ── Navigation Tree Active State Architecture ──────────────────────────────
@@ -894,34 +913,92 @@ div[class*="tableWrapper"] table td,
 .navbar-sidebar {
   background: var(--ifm-background-color);
   border-right: 1px solid var(--nothing-border);
-  width: min(320px, 85vw);
+  width: min(340px, 88vw) !important;
+  max-width: 88vw !important;
 }
 
 .navbar-sidebar__brand {
-  padding: 1rem 1.25rem;
+  padding: 0.85rem 1.15rem;
   border-bottom: 1px solid var(--nothing-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+/* Circular close button matching Supporters donation dialog & site-wide red hover */
 .navbar-sidebar__close {
-  padding: 0.5rem;
-  border-radius: 0;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50% !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  color: var(--ifm-font-color-base) !important;
+  opacity: 0.8;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+[data-theme='dark'] .navbar-sidebar__close {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.navbar-sidebar__close:hover,
+.navbar-sidebar__close:focus-visible {
+  opacity: 1;
+  background-color: rgba(215, 25, 33, 0.08) !important;
+  border-color: rgba(215, 25, 33, 0.35) !important;
+  color: var(--ifm-color-primary) !important;
+  transform: rotate(90deg);
+}
+
+[data-theme='dark'] .navbar-sidebar__close:hover,
+[data-theme='dark'] .navbar-sidebar__close:focus-visible {
+  background-color: rgba(215, 25, 33, 0.16) !important;
+  border-color: rgba(215, 25, 33, 0.5) !important;
+  color: var(--ifm-color-primary) !important;
 }
 
 .navbar-sidebar__close svg {
-  width: 20px;
-  height: 20px;
+  width: 13px;
+  height: 13px;
+  display: block;
 }
 
 .navbar-sidebar__items {
-  padding: 1rem 0;
+  display: flex !important;
+  width: 200% !important;
+  min-width: 200% !important;
+  padding: 0.75rem 0 !important;
+  transition: transform var(--ifm-transition-fast) ease-in-out !important;
+}
+
+.navbar-sidebar__items--show-secondary {
+  transform: translate3d(-50%, 0, 0) !important;
 }
 
 .navbar-sidebar__item {
-  padding: 0.25rem 1.25rem;
+  width: 50% !important;
+  max-width: 50% !important;
+  flex: 0 0 50% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
+  padding: 0.25rem 0.75rem !important;
 }
 
 .navbar-sidebar__item .menu__link {
-  padding: 0.6rem 1rem;
+  padding: 0.45rem 0.6rem;
+  font-size: 0.85rem;
+  line-height: 1.35;
 }
 
 .navbar-sidebar .menu__link--active {
@@ -934,6 +1011,131 @@ div[class*="tableWrapper"] table td,
 
 .navbar-sidebar .header-github-link {
   display: none !important;
+}
+
+/* Ensure collapsible rows occupy full width of panel and keep carets aligned on right edge */
+.navbar-sidebar .menu__list-item-collapsible {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  box-sizing: border-box !important;
+}
+
+.navbar-sidebar .menu__list-item-collapsible > .menu__link {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  width: auto !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  font-size: 0.85rem !important;
+  line-height: 1.35 !important;
+  padding: 0.45rem 0.6rem !important;
+}
+
+.navbar-sidebar .menu__caret {
+  flex-shrink: 0 !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.navbar-sidebar .menu__link--sublist-caret {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+.navbar-sidebar .menu__link--sublist-caret:after {
+  flex-shrink: 0 !important;
+  min-width: 1.25rem !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  margin-left: 0.5rem !important;
+}
+
+/* Hierarchical indentation via nested lists to keep 100% row width alignment */
+.navbar-sidebar .menu__list {
+  padding-left: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.navbar-sidebar .menu__list .menu__list {
+  padding-left: 0.65rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.navbar-sidebar .menu__list .menu__list .menu__list {
+  padding-left: 0.65rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.navbar-sidebar .menu__list .menu__list .menu__list .menu__list {
+  padding-left: 0.65rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Consistent scaling down across narrow mobile viewports */
+@media screen and (max-width: 440px) {
+  :root {
+    --ifm-navbar-sidebar-width: min(320px, 90vw);
+  }
+  .navbar-sidebar {
+    width: min(320px, 90vw) !important;
+    max-width: 90vw !important;
+  }
+  .navbar-sidebar__item {
+    padding: 0.25rem 0.5rem !important;
+  }
+  .navbar-sidebar__item .menu__link {
+    font-size: 0.82rem !important;
+    padding: 0.35rem 0.5rem !important;
+  }
+  .navbar-sidebar .menu__list .menu__list {
+    padding-left: 0.5rem !important;
+  }
+  .navbar-sidebar .menu__caret {
+    min-width: 28px !important;
+    width: 28px !important;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  :root {
+    --ifm-navbar-sidebar-width: 92vw;
+  }
+  .navbar-sidebar {
+    width: 92vw !important;
+    max-width: 92vw !important;
+  }
+  .navbar-sidebar__item {
+    padding: 0.2rem 0.35rem !important;
+  }
+  .navbar-sidebar__item .menu__link {
+    font-size: 0.78rem !important;
+    padding: 0.3rem 0.4rem !important;
+  }
+  .navbar-sidebar .menu__list .menu__list {
+    padding-left: 0.4rem !important;
+  }
+  .navbar-sidebar .menu__caret {
+    min-width: 24px !important;
+    width: 24px !important;
+  }
 }
 
 /* ==========================================
@@ -983,7 +1185,7 @@ article h3 {
   }
   .navbar-sidebar {
     box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
-    width: min(300px, 90vw);
+    width: min(340px, 88vw) !important;
   }
   [data-theme='dark'] .navbar-sidebar {
     box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
@@ -1893,6 +2095,35 @@ div[class*="admonition"] a:hover code {
   letter-spacing: -0.01em;
   border-radius: 999px;
   padding: 0.15rem 0.6rem;
+  text-decoration: none !important;
+}
+
+.breadcrumbs__link:hover,
+.breadcrumbs__link:focus,
+.breadcrumbs__link:active {
+  text-decoration: none !important;
+}
+
+a.breadcrumbs__link {
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.8;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+a.breadcrumbs__link:hover {
+  opacity: 1;
+  color: var(--ifm-color-primary) !important;
+  text-decoration: none !important;
+}
+
+span.breadcrumbs__link {
+  cursor: default;
+}
+
+span.breadcrumbs__link:not(.breadcrumbs__item--active *) {
+  opacity: 0.65;
+  color: inherit;
 }
 
 .breadcrumbs__item--active .breadcrumbs__link {
@@ -1900,6 +2131,8 @@ div[class*="admonition"] a:hover code {
   color: #000000 !important;
   font-weight: 600;
   border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  cursor: default;
+  opacity: 1 !important;
 }
 
 [data-theme='dark'] .breadcrumbs__item--active .breadcrumbs__link {
@@ -1907,6 +2140,8 @@ div[class*="admonition"] a:hover code {
   color: #FFFFFF !important;
   font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  cursor: default;
+  opacity: 1 !important;
 }
 
 /* Pagination (prev/next) */
@@ -2080,13 +2315,6 @@ div[class*="admonition"] a:hover code {
     padding: 0.75rem;
     font-size: 0.9rem;
   }
-}
-
-/* Breadcrumbs */
-
-.breadcrumbs__link {
-  font-weight: 500;
-  letter-spacing: -0.01em;
 }
 
 /* Pagination (prev/next) */
@@ -2474,13 +2702,6 @@ details summary:hover::before {
   overflow-x: hidden !important;
 }
 
-/* Arrow container fixed pixel */
-
-.navbar-sidebar .menu__list-item-collapsible {
-  width: 280px !important;
-  max-width: 280px !important;
-}
-
 /* ==========================================
 
    DOCSEARCH
@@ -2625,6 +2846,17 @@ but disable pointer events so hover doesn't show browser URL status bar */
 .DocSearch-Form:focus-within {
   border-bottom-color: var(--ifm-color-primary) !important;
   box-shadow: none !important;
+}
+
+.DocSearch-Reset {
+  border-radius: 50% !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.DocSearch-Reset:hover {
+  transform: rotate(90deg) !important;
+  color: var(--ifm-color-primary) !important;
+  background-color: var(--nothing-hover-bg) !important;
 }
 
 .DocSearch-Input {
@@ -3128,21 +3360,23 @@ but disable pointer events so hover doesn't show browser URL status bar */
   margin-left: auto;
   background: none;
   border: none;
-  font-size: 1.5rem;
   color: inherit;
-  opacity: 0.4;
+  opacity: 0.5;
   cursor: pointer;
-  line-height: 1;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.2s ease, color 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   padding: 0;
 }
 
 .shortcut-modal-close:hover {
   opacity: 1;
-  color: var(--ifm-color-primary);
+  background-color: var(--nothing-hover-bg);
+  transform: rotate(90deg);
 }
 
 .shortcut-modal-body {

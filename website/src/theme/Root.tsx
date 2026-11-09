@@ -5,6 +5,7 @@ import { PwaProvider } from '../components/PwaContext';
 import SupportModal from '../components/SupportModal';
 import SupportNudge from '../components/SupportNudge';
 import MagneticCursorRing from '../components/MagneticCursorRing';
+import { FaTimes } from 'react-icons/fa';
 
 import PwaReloadPopup from './PwaReloadPopup';
 
@@ -379,7 +380,7 @@ export default function Root({ children }: RootProps): React.JSX.Element {
                 onClick={() => setShowShortcuts(false)}
                 aria-label="Close"
               >
-                &times;
+                <FaTimes size={14} aria-hidden="true" />
               </button>
             </div>
             <div className="shortcut-modal-body">
