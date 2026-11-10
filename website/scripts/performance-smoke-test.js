@@ -91,9 +91,7 @@ assert(!githubCache.includes('const [status, setStatus] = useState<DataStatus>((
 assert(!githubCache.includes('const [loading, setLoading] = useState(() =>'));
 
 const supportModal = read('src', 'components', 'SupportModal.tsx');
-assert(supportModal.includes('const [loadPaymentWidget, setLoadPaymentWidget] = useState(false);'));
-assert(supportModal.includes('{loadPaymentWidget && iframeLoading && ('));
-assert(supportModal.includes('onClick={() => setLoadPaymentWidget(true)}'));
+assert(!supportModal.includes('<iframe'));
 
 const manifest = JSON.parse(read('static', 'manifest.json'));
 assert.equal(manifest.start_url, '.');

@@ -1,8 +1,3 @@
-/**
- * AnnouncementBanner.module.css
- * Layout and responsive styling for the top announcement banner pill.
- */
-
 .banner {
   width: 100%;
   display: flex;
@@ -148,7 +143,6 @@
   }
 }
 
-/* Entire content area acts as single-release link */
 .content {
   display: flex;
   align-items: center;
@@ -269,7 +263,6 @@
   animation: tickerSlideFade 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Dismiss button integrated in the flex layout of the pill */
 .dismissBtn {
   background: none;
   border: none;
@@ -287,25 +280,22 @@
   padding: 0;
   margin-left: 0.15rem;
   flex-shrink: 0;
-  transition: opacity 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
 }
 
 .dismissBtn:hover {
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.06);
-  transform: rotate(90deg);
 }
 
 [data-theme='dark'] .dismissBtn:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  transform: rotate(90deg);
 }
 
 .dismissBtn:active {
   transform: scale(0.92);
 }
 
-/* Mobile: clean centered layout on small screens */
 @media screen and (max-width: 576px) {
   .banner {
     padding: 0 0 1rem 0;

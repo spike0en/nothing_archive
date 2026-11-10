@@ -6,6 +6,7 @@ import SupportModal from '../components/SupportModal';
 import SupportNudge from '../components/SupportNudge';
 import MagneticCursorRing from '../components/MagneticCursorRing';
 import { FaTimes } from 'react-icons/fa';
+import { FaKeyboard } from 'react-icons/fa6';
 
 import PwaReloadPopup from './PwaReloadPopup';
 
@@ -373,8 +374,12 @@ export default function Root({ children }: RootProps): React.JSX.Element {
         >
           <div className="shortcut-modal" onClick={e => e.stopPropagation()}>
             <div className="shortcut-modal-header">
-              <span className="shortcut-modal-icon" aria-hidden="true">⌨️</span>
-              <span id="shortcut-title">KEYBOARD SHORTCUTS</span>
+              <div className="shortcut-modal-title-group">
+                <span className="shortcut-modal-icon" aria-hidden="true">
+                  <FaKeyboard size={14} />
+                </span>
+                <span id="shortcut-title" className="shortcut-modal-title">KEYBOARD SHORTCUTS</span>
+              </div>
               <button
                 className="shortcut-modal-close"
                 onClick={() => setShowShortcuts(false)}

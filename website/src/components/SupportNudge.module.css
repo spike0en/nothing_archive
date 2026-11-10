@@ -1,12 +1,3 @@
-/**
- * SupportNudge — Bottom-right floating toast card.
- *
- * Visual: glassmorphism card (backdrop-blur) with slide-in/slide-out
- * animations, a shrinking progress bar for auto-dismiss, and full
- * responsive adaptation (full-width bottom bar on mobile ≤768 px).
- * Respects `prefers-reduced-motion` for accessibility.
- */
-
 .nudgeContainer {
   position: fixed;
   bottom: 1.5rem;
@@ -41,12 +32,10 @@
   border-color: var(--nothing-border-strong);
 }
 
-/* --- Exiting state --- */
 .nudgeExiting {
   animation: slideOutDown 0.35s cubic-bezier(0.55, 0, 1, 0.45) forwards;
 }
 
-/* --- Header row --- */
 .nudgeHeader {
   display: flex;
   align-items: center;
@@ -91,16 +80,18 @@
   justify-content: center;
   border-radius: 50%;
   flex-shrink: 0;
-  transition: all 0.2s ease;
+  transition: opacity 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
 }
 
 .closeBtn:hover {
   opacity: 0.85;
   background-color: var(--nothing-hover-bg);
-  transform: rotate(90deg);
 }
 
-/* --- Body text --- */
+.closeBtn:active {
+  transform: scale(0.92);
+}
+
 .nudgeBody {
   font-size: 0.78rem;
   line-height: 1.55;
@@ -109,7 +100,6 @@
   margin: 0;
 }
 
-/* --- Actions row --- */
 .nudgeActions {
   display: flex;
   align-items: center;
@@ -118,7 +108,6 @@
   flex-wrap: nowrap;
 }
 
-/* --- CTA button --- */
 .nudgeCta {
   display: inline-flex;
   align-items: center;
@@ -151,7 +140,6 @@
   animation: heartPulse 1.5s infinite ease-in-out;
 }
 
-/* --- Already Supported (secondary ghost button) --- */
 .alreadySupported {
   display: inline-flex;
   align-items: center;
@@ -178,8 +166,6 @@
   transform: translateY(-1px);
 }
 
-
-/* --- Auto-dismiss progress bar --- */
 .progressTrack {
   position: absolute;
   bottom: 0;
@@ -200,7 +186,6 @@
   opacity: 0.6;
 }
 
-/* --- Animations --- */
 @keyframes slideInUp {
   from {
     transform: translateY(100%) scale(0.95);
@@ -234,7 +219,6 @@
   to { width: 0%; }
 }
 
-/* --- Responsive: mobile floating card --- */
 @media (max-width: 768px) {
   .nudgeContainer {
     bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
@@ -265,7 +249,6 @@
   }
 }
 
-/* --- Reduced motion --- */
 @media (prefers-reduced-motion: reduce) {
   .nudge,
   .nudgeExiting {

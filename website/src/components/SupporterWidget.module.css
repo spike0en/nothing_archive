@@ -1,14 +1,3 @@
-/**
- * @file SupporterWidget.module.css
- * @description Layout and animation styles for the supporters marquee ticker widget.
- * 
- * Container uses a dual-layer background technique: an opaque surface fill clipped to the 
- * padding box over an animated gradient border clipped to the border box.
- * 
- * Performance: background-position translation runs on the compositor thread without 
- * triggering layout reflows or repaint cycles.
- */
-
 .tickerContainer {
   position: relative;
   width: 100%;
@@ -75,36 +64,8 @@
   cursor: default;
   user-select: none;
   -webkit-user-select: none;
-}
-
-/* Gradient edge overlays for seamless fade without CPU-bound mask-image overhead */
-.tickerWindow::before,
-.tickerWindow::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 20px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.tickerWindow::before {
-  left: 0;
-  background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
-}
-
-.tickerWindow::after {
-  right: 0;
-  background: linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0));
-}
-
-[data-theme='dark'] .tickerWindow::before {
-  background: linear-gradient(to right, #141414, rgba(20, 20, 20, 0));
-}
-
-[data-theme='dark'] .tickerWindow::after {
-  background: linear-gradient(to left, #141414, rgba(20, 20, 20, 0));
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20px, black calc(100% - 20px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 20px, black calc(100% - 20px), transparent 100%);
 }
 
 .marqueeTrack {
@@ -119,7 +80,6 @@
   animation: marqueeScroll var(--marquee-duration, 30s) linear infinite;
 }
 
-/* Pause the animation immediately when user hovers over the ticker window */
 .tickerWindow:hover .marqueeTrack {
   animation-play-state: paused;
 }
@@ -137,7 +97,6 @@
   -webkit-font-smoothing: antialiased;
 }
 
-/* Highlight the hovered supporter name with theme's primary color */
 .tickerWindow:hover .supporterName:hover {
   color: var(--ifm-color-primary);
 }
@@ -169,7 +128,6 @@
   }
 }
 
-/* Smooth continuous border gradient sweep animation */
 @keyframes borderShimmer {
   0% {
     background-position: 0 0, 0% 0%;

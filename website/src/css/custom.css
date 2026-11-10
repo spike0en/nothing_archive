@@ -176,9 +176,9 @@ h5,
   font-family: 'Geist Mono', monospace;
 }
 
-/* 
+/*
 
- * Apply custom characters AND tabular numbers (tnum) for tabular data, 
+ * Apply custom characters AND tabular numbers (tnum) for tabular data,
 
  * live clocks, and stats values to prevent horizontal layout shifting as numbers change.
 
@@ -925,7 +925,7 @@ div[class*="tableWrapper"] table td,
   justify-content: space-between;
 }
 
-/* Circular close button matching Supporters donation dialog & site-wide red hover */
+/* Circular close button matching Support modal and Keyboard Shortcuts modal */
 .navbar-sidebar__close {
   width: 32px;
   height: 32px;
@@ -936,41 +936,37 @@ div[class*="tableWrapper"] table td,
   align-items: center;
   justify-content: center;
   border-radius: 50% !important;
-  background-color: rgba(0, 0, 0, 0.05) !important;
-  color: var(--ifm-font-color-base) !important;
-  opacity: 0.8;
-  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  background: none !important;
+  color: inherit !important;
+  opacity: 0.5;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
   flex-shrink: 0;
   margin-left: auto;
-}
-
-[data-theme='dark'] .navbar-sidebar__close {
-  background-color: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
 .navbar-sidebar__close:hover,
 .navbar-sidebar__close:focus-visible {
   opacity: 1;
-  background-color: rgba(215, 25, 33, 0.08) !important;
-  border-color: rgba(215, 25, 33, 0.35) !important;
-  color: var(--ifm-color-primary) !important;
-  transform: rotate(90deg);
+  background-color: var(--nothing-hover-bg) !important;
+  color: inherit !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-[data-theme='dark'] .navbar-sidebar__close:hover,
-[data-theme='dark'] .navbar-sidebar__close:focus-visible {
-  background-color: rgba(215, 25, 33, 0.16) !important;
-  border-color: rgba(215, 25, 33, 0.5) !important;
-  color: var(--ifm-color-primary) !important;
+.navbar-sidebar__close:active {
+  transform: scale(0.92);
 }
 
 .navbar-sidebar__close svg {
-  width: 13px;
-  height: 13px;
+  width: 14px;
+  height: 14px;
   display: block;
+  color: inherit;
 }
 
 .navbar-sidebar__items {
@@ -2850,13 +2846,16 @@ but disable pointer events so hover doesn't show browser URL status bar */
 
 .DocSearch-Reset {
   border-radius: 50% !important;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: color 0.15s ease, background-color 0.15s ease, transform 0.15s ease !important;
 }
 
 .DocSearch-Reset:hover {
-  transform: rotate(90deg) !important;
   color: var(--ifm-color-primary) !important;
   background-color: var(--nothing-hover-bg) !important;
+}
+
+.DocSearch-Reset:active {
+  transform: scale(0.92) !important;
 }
 
 .DocSearch-Input {
@@ -3340,20 +3339,45 @@ but disable pointer events so hover doesn't show browser URL status bar */
 .shortcut-modal-header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 1.15rem 1.5rem 0.95rem;
-  border-bottom: 1px dashed var(--nothing-border);
+  border-bottom: 1px solid var(--nothing-border);
+}
+
+.shortcut-modal-title-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1;
+}
+
+.shortcut-modal-title {
   font-family: var(--ifm-font-family-base);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ifm-font-color-base);
+  line-height: 1;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
 }
 
 .shortcut-modal-icon {
-  margin-right: 8px;
-  font-size: 0.95rem;
-  line-height: 1;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  color: var(--ifm-font-color-base);
+  opacity: 0.85;
+  flex-shrink: 0;
+  line-height: 1;
+  overflow: visible;
+}
+
+.shortcut-modal-icon svg {
+  display: block;
+  overflow: visible;
 }
 
 .shortcut-modal-close {
@@ -3369,14 +3393,17 @@ but disable pointer events so hover doesn't show browser URL status bar */
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
   padding: 0;
 }
 
 .shortcut-modal-close:hover {
   opacity: 1;
   background-color: var(--nothing-hover-bg);
-  transform: rotate(90deg);
+}
+
+.shortcut-modal-close:active {
+  transform: scale(0.92);
 }
 
 .shortcut-modal-body {

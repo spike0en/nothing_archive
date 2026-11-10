@@ -1,11 +1,7 @@
-/**
- * Donation modal options with cryptocurrency widget embedding and copyable addresses.
- */
-
-import React, { useState, useEffect, useRef } from 'react';
-import { FaCopy, FaCheck, FaTimes, FaExternalLinkAlt, FaHeart, FaClipboardList } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { FaCopy, FaCheck, FaTimes, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaPaypal, FaIndianRupeeSign, FaMoneyBills, FaHandshake, FaClipboardList } from 'react-icons/fa6';
 import donationsData from '../data/donations.json';
-// Supporters ranked by donation amount
 import donorsData from '../data/donors.json';
 import SupporterWidget from './SupporterWidget';
 import styles from './SupportModal.module.css';
@@ -13,9 +9,10 @@ import styles from './SupportModal.module.css';
 interface DonationChannel {
   id: string;
   title: string;
-  description?: string;
+  badge?: string;
   address: string;
-  extraInfo?: string;
+  displayAddress?: string;
+  directUrl?: string;
   proofUrl?: string;
   buttonText?: string;
 }
@@ -27,47 +24,6 @@ interface SupportModalProps {
 
 export default function SupportModal({ isOpen, onClose }: SupportModalProps): React.JSX.Element | null {
   const [copiedId, setCopiedId] = useState<string | null>(null);
-  const [iframeLoading, setIframeLoading] = useState(true);
-  const [loadPaymentWidget, setLoadPaymentWidget] = useState(false);
-  const [scale, setScale] = useState(1);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // Track and scale NOWPayments iframe to fit mobile viewport
-  useEffect(() => {
-    if (!isOpen || globalThis.window === undefined) return;
-
-    const updateScale = () => {
-      if (containerRef.current) {
-        const width = containerRef.current.clientWidth;
-        if (width > 0) {
-          setScale(width / 346);
-        }
-      }
-    };
-
-    updateScale();
-
-    let resizeObserver: ResizeObserver | null = null;
-    if (globalThis.ResizeObserver !== undefined && containerRef.current) {
-      resizeObserver = new ResizeObserver(() => {
-        updateScale();
-      });
-      resizeObserver.observe(containerRef.current);
-    } else {
-      window.addEventListener('resize', updateScale);
-    }
-
-    const timer = setTimeout(updateScale, 100);
-
-    return () => {
-      clearTimeout(timer);
-      if (resizeObserver) {
-        resizeObserver.disconnect();
-      } else {
-        window.removeEventListener('resize', updateScale);
-      }
-    };
-  }, [isOpen]);
 
   useEffect(() => {
     if (globalThis.document === undefined) return;
@@ -95,16 +51,28 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
   if (!isOpen) return null;
 
   const handleCopy = (id: string, text: string) => {
-    if (globalThis.navigator === undefined || !navigator.clipboard) return;
-    navigator.clipboard.writeText(text).then(() => {
-      setCopiedId(id);
-      setTimeout(() => setCopiedId(null), 2000);
-    }).catch(err => {
-      console.error('Failed to copy address: ', err);
-    });
+    setCopiedId(id);
+    setTimeout(() => setCopiedId(null), 2000);
+
+    if (globalThis.navigator !== undefined && globalThis.navigator.clipboard) {
+      globalThis.navigator.clipboard.writeText(text).catch(() => {
+        try {
+          const textarea = document.createElement('textarea');
+          textarea.value = text;
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+        } catch {
+          // Ignore fallback failure when document copy command is not supported.
+        }
+      });
+    }
   };
 
-  // SAFETY: Validated donation channel list structure
+  // SAFETY: Bundled static JSON matches the DonationChannel interface schema.
   const channels = donationsData as DonationChannel[];
 
   return (
@@ -118,38 +86,39 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
       <div className={styles.modal} onClick={e => e.stopPropagation()}>
         <div className={styles.header}>
           <div className={styles.headerTitleGroup}>
-            <FaHeart className={styles.heartIcon} size={14} />
+            <span className={styles.headerIcon} aria-hidden="true">
+              <FaHandshake size={15} />
+            </span>
             <h2 id="support-modal-title" className={styles.title}>SUPPORT THE PROJECT</h2>
           </div>
           <button
             className={styles.closeBtn}
             onClick={onClose}
-            aria-label="Close dialogue"
+            aria-label="Close dialog"
           >
-            <FaTimes size={18} />
+            <FaTimes size={14} aria-hidden="true" />
           </button>
         </div>
-        
+
         <div className={styles.body}>
           <div className={styles.introContainer}>
-            <div className={styles.introText}>
-              <p>
-                Nothing Archive is a community-driven project. Keeping it up to date and relevant takes time, effort, and ongoing costs (where applicable). If you've benefited from the archive and would like to support it, your donation helps cover these costs and allows the project to keep growing.
-              </p>
-              <p>
-                Donations are completely optional, and every contribution is sincerely appreciated. 💛
-              </p>
-              <p>
-                Thank you for being part of the journey!
-              </p>
-            </div>
+            <p className={styles.introText}>
+              Nothing Archive is community-run. Keeping everything current takes real time and upkeep, from domain renewals and automated workflows to cloud compute, bandwidth, and heavy storage drive wear.
+            </p>
+            <p className={styles.subText}>
+              If the archive has been useful to you, chipping in helps keep the infrastructure online. Donations are completely optional. Thank you for supporting the project.
+            </p>
 
             <div className={styles.formCallout}>
               <div className={styles.formCalloutContent}>
-                <FaClipboardList className={styles.formCalloutIcon} />
+                <span className={styles.formCalloutIcon} aria-hidden="true">
+                  <FaClipboardList size={18} />
+                </span>
                 <div className={styles.formCalloutTextGroup}>
-                  <span className={styles.formCalloutTitle}>Already donated?</span>
-                  <span className={styles.formCalloutSub}>Fill out our supporter form so we can track your donation and feature you on the widget below.</span>
+                  <h4 className={styles.formCalloutTitle}>Already donated?</h4>
+                  <p className={styles.formCalloutSub}>
+                    Fill out our supporter form so we can track your donation and feature you on the widget below.
+                  </p>
                 </div>
               </div>
               <a
@@ -160,121 +129,78 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
                 title="Fill Donation Tracking Form"
               >
                 <span>Fill Form</span>
-                <FaExternalLinkAlt size={11} className={styles.btnIcon} />
+                <FaExternalLinkAlt size={10} className={styles.btnIcon} />
               </a>
             </div>
 
             <SupporterWidget donors={donorsData} />
           </div>
 
-          <h3 className={styles.donorsTitle}>
-            <span className={styles.animatedEmoji}>💵</span> DONATION METHODS
-          </h3>
+          <div className={styles.methodsSection}>
+            <div className={styles.methodsHeader}>
+              <span className={styles.methodsIcon} aria-hidden="true">
+                <FaMoneyBills size={14} />
+              </span>
+              <h3 className={styles.methodsTitle}>DONATION METHODS</h3>
+            </div>
 
-          <div className={styles.contentLayout}>
-            <div className={styles.leftColumn}>
-              <div className={styles.stack}>
-                {channels.map((channel) => (
-                  <div key={channel.id} className={styles.card}>
-                    <h3 className={styles.cardTitle}>{channel.title}</h3>
-                    {channel.description && <p className={styles.cardDesc}>{channel.description}</p>}
-                    
-                    <div className={styles.addressContainer}>
-                      <div className={styles.addressField}>
-                        <input
-                          type="text"
-                          readOnly
-                          value={channel.address}
-                          className={styles.addressInput}
-                          // SAFETY: Input click event target casting
-                          onClick={(e) => (e.target as HTMLInputElement).select()}
-                          aria-label={`${channel.title} payment address`}
-                        />
-                        <button
-                          className={`${styles.copyBtn} ${copiedId === channel.id ? styles.copied : ''}`}
-                          onClick={() => handleCopy(channel.id, channel.address)}
-                          title="Copy Address"
-                          aria-label={`Copy ${channel.title} address`}
-                        >
-                          {copiedId === channel.id ? <FaCheck size={12} /> : <FaCopy size={12} />}
-                        </button>
+            <div className={styles.methodsGrid}>
+              {channels.map((channel) => (
+                <div key={channel.id} className={styles.card}>
+                  <div className={styles.cardHeader}>
+                    <div className={styles.cardBrand}>
+                      <div className={styles.cardIcon}>
+                        {channel.id === 'paypal' ? (
+                          <FaPaypal size={16} />
+                        ) : (
+                          <FaIndianRupeeSign size={15} />
+                        )}
                       </div>
+                      <h4 className={styles.cardTitle}>{channel.title}</h4>
                     </div>
-
-                    {channel.extraInfo && (
-                      <div className={styles.extraInfo}>{channel.extraInfo}</div>
-                    )}
-
-                    {channel.proofUrl && (
-                      <a
-                        href={channel.proofUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.paidBtn}
-                      >
-                        <span>{channel.buttonText || 'Share Confirmation'}</span>
-                        <FaExternalLinkAlt size={10} className={styles.btnIcon} />
-                      </a>
+                    {channel.badge && (
+                      <span className={styles.channelBadge}>{channel.badge}</span>
                     )}
                   </div>
-                ))}
-              </div>
-            </div>
 
-            <div className={styles.rightColumn}>
-              <div className={`${styles.card} ${styles.cryptoCard}`}>
-                <h3 className={styles.cardTitle}>NOWPayments</h3>
-                <p className={styles.cardDesc}>
-                  Donate securely using any major cryptocurrency via NOWPayments.
-                </p>
-                <div 
-                  ref={containerRef} 
-                  className={styles.iframeWrapper}
-                  style={{
-                    height: loadPaymentWidget ? `${615 * scale}px` : 'auto',
-                  }}
-                >
-                  {loadPaymentWidget && iframeLoading && (
-                    <div className={styles.spinnerContainer}>
-                      <div className={styles.spinner} />
-                      <span className={styles.spinnerText}>Loading Widget...</span>
-                    </div>
-                  )}
-                  {loadPaymentWidget ? (
-                    <iframe
-                      src="https://nowpayments.io/embeds/donation-widget?api_key=5c5ff9c5-3853-4097-9453-03f55ea87d34"
-                      width="346"
-                      height="615"
-                      frameBorder="0"
-                      scrolling="no"
-                      style={{
-                        position: 'absolute',
-                        left: '50%',
-                        top: 0,
-                        overflowY: 'hidden',
-                        display: 'block',
-                        borderRadius: '14px',
-                        opacity: iframeLoading ? 0 : 1,
-                        transition: 'opacity 0.3s ease',
-                        transform: `translate(-50%, 0) scale(${scale})`,
-                        transformOrigin: 'top center'
-                      }}
-                      title="NOWPayments Donation Widget"
-                      onLoad={() => setIframeLoading(false)}
+                  <div className={styles.addressField}>
+                    <input
+                      type="text"
+                      readOnly
+                      value={channel.displayAddress || channel.address}
+                      className={styles.addressInput}
+                      onClick={(e) => e.currentTarget.select()}
+                      aria-label={`${channel.title} address`}
+                    />
+                    <button
+                      className={`${styles.copyBtn} ${copiedId === channel.id ? styles.copied : ''}`}
+                      onClick={() => handleCopy(channel.id, channel.address)}
+                      title={copiedId === channel.id ? 'Copied to clipboard' : 'Copy address'}
+                      aria-label={`Copy ${channel.title} address`}
                     >
-                      Can't load widget
-                    </iframe>
-                  ) : (
-                    <button type="button" className={styles.paidBtn} onClick={() => setLoadPaymentWidget(true)}>
-                      Load payment widget
+                      {copiedId === channel.id ? (
+                        <FaCheck size={13} className={styles.copiedIcon} />
+                      ) : (
+                        <FaCopy size={13} />
+                      )}
                     </button>
+                  </div>
+
+                  {channel.proofUrl && (
+                    <a
+                      href={channel.proofUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.actionBtn}
+                    >
+                      <span>{channel.buttonText || 'Proceed'}</span>
+                      <FaExternalLinkAlt size={10} className={styles.btnIcon} />
+                    </a>
                   )}
                 </div>
-              </div>
+              ))}
             </div>
           </div>
-
-
         </div>
       </div>
     </div>

@@ -1,35 +1,22 @@
 [
   {
     "id": "upi",
-    "title": "UPI (India)",
-    "description": "Send via any UPI app (PhonePe / GPay / Paytm) to the ID below. Add reference: NOTHING ARCHIVE.",
+    "title": "UPI",
+    "badge": "India",
     "address": "harshitsinha@fam",
-    "extraInfo": "holder: Harshit Sinha",
+    "displayAddress": "harshitsinha@fam",
+    "directUrl": "upi://pay?pa=harshitsinha@fam&pn=Nothing%20Archive&cu=INR",
     "proofUrl": "https://telegram.me/Phattylol",
     "buttonText": "Share Confirmation"
   },
   {
-    "id": "kofi",
-    "title": "Ko-fi",
-    "description": "One-tap tip via Ko-fi (card / Apple Pay / Google Pay).",
-    "address": "https://ko-fi.com/phatwalrus",
-    "proofUrl": "https://ko-fi.com/phatwalrus",
-    "buttonText": "Open Ko-fi"
-  },
-  {
     "id": "paypal",
     "title": "PayPal",
-    "description": "Send via PayPal.me — 'Friends & Family' if possible.",
+    "badge": "Global",
     "address": "https://paypal.me/PhatWalrus",
+    "displayAddress": "paypal.me/PhatWalrus",
+    "directUrl": "https://paypal.me/PhatWalrus",
     "proofUrl": "https://paypal.me/PhatWalrus",
     "buttonText": "Open PayPal"
-  },
-  {
-    "id": "boosty",
-    "title": "Boosty (Russia)",
-    "description": "Support the archive via Boosty (available for cards in Russia).",
-    "address": "https://boosty.to/phatwalrus/donate",
-    "proofUrl": "https://boosty.to/phatwalrus/donate",
-    "buttonText": "Open Boosty"
   }
 ]
