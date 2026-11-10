@@ -387,6 +387,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Keyboard By Voidwarelabs](https://play.google.com/store/apps/details?id=com.voidware.keyboard) | VoidwareLabs | Fast, privacy-first AI keyboard with smart suggestions and voice input. |
 | [N Board](https://github.com/MathieuDvv/Nboard) | MathieuDvv | Nothing-inspired keyboard with AI tools |
 | [N Keyboard](https://github.com/arunk140/nth-kbd) | arunk14 | Themed keyboard |
+| [Nothing Type](https://github.com/CVRSPOTTED/nothing-type) | cvrspotted | Open-source Android keyboard inspired by Nothing OS with offline autocorrect, voice input, and custom layouts |
 | [Nothiq Keys](https://play.google.com/store/apps/details?id=com.rontag.nothiqkeys) | Rontag | Nothing-inspired keyboard with customizable themes, accent colors, clipboard history, and cursor controls |
 | [Typebase](https://play.google.com/store/apps/details?id=com.typebase.app) | Quivox Engineering | Keyboard inspired by Nothing OS with Side Dock integration |
 
@@ -420,6 +421,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Nothing Clock](https://github.com/SushiiReboot/Nothing-Clock) | Sasha Chverenko | World clock, timer, stopwatch |
 | [Nothing Desk Clock](https://play.google.com/store/apps/details?id=com.ApexCreator.deskclock) | Apex Creators | Desk clock app |
 | [Omni Clock](https://github.com/andrasulthan-alt/OmniClock) | andrasulthan-alt | Nothing-style clock and dot-matrix home-screen widgets for Android with alarm, world clock, timer, and stopwatch |
+| [Standby](https://play.google.com/store/apps/details?id=com.cedarworks.standby) | Cedarworks | Ambient desk and nightstand clock dock with customizable clock faces and Nothing OS styling |
 
 ### Phone & Messaging
 
