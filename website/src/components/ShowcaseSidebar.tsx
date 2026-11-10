@@ -7,7 +7,6 @@ import {
   FaLayerGroup,
   FaMobileScreenButton,
   FaCode,
-  FaRotateLeft,
   FaAndroid,
   FaApple,
   FaWindows,
@@ -45,9 +44,6 @@ interface ShowcaseSidebarProps {
   selectedPlatform: PlatformFilter;
   onSelectPlatform: (platform: PlatformFilter) => void;
   availablePlatforms: { id: PlatformFilter; label: string }[];
-
-  onResetAll: () => void;
-  hasActiveFilters: boolean;
   isCollapsed?: boolean;
 }
 
@@ -85,8 +81,6 @@ export default function ShowcaseSidebar({
   selectedPlatform,
   onSelectPlatform,
   availablePlatforms,
-  onResetAll,
-  hasActiveFilters,
   isCollapsed = false,
 }: ShowcaseSidebarProps): React.JSX.Element {
   return (
@@ -97,20 +91,7 @@ export default function ShowcaseSidebar({
     >
       <div className={styles.sidebarSticky}>
         <div className={styles.sidebarHeader}>
-          <div className={styles.sidebarHeaderLeft}>
-            <span className={styles.sidebarTitle}>Filters</span>
-          </div>
-          {hasActiveFilters && (
-            <button
-              type="button"
-              onClick={onResetAll}
-              className={styles.resetBtn}
-              title="Reset all filters"
-            >
-              <FaRotateLeft size={10} />
-              <span>Reset</span>
-            </button>
-          )}
+          <span className={styles.sidebarTitle}>Filters</span>
         </div>
         <div className={styles.section}>
           <span className={styles.sectionLabel}>Catalog Source</span>

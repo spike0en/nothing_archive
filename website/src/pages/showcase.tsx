@@ -509,8 +509,6 @@ export default function ShowcasePage(): React.JSX.Element {
 
     if (source === 'apps') {
       filters = filters.filter((p) => p.id === 'android' || p.id === 'ios');
-    } else if (source === 'projects') {
-      filters = filters.filter((p) => p.id !== 'android' && p.id !== 'ios');
     }
 
     return filters;
@@ -648,13 +646,11 @@ export default function ShowcasePage(): React.JSX.Element {
 
       if (searchQuery.trim()) {
         const query = searchQuery.toLowerCase().trim();
-        const matchTitle = item.title.toLowerCase().includes(query);
-        const matchDev = item.developer.toLowerCase().includes(query);
-        const matchDesc = item.description.toLowerCase().includes(query);
-        const matchCat = item.category?.toLowerCase().includes(query);
-        const matchSubCat = item.subCategory?.toLowerCase().includes(query);
+        const searchTokens = query.split(/\s+/).filter(Boolean);
+        const searchableText = `${item.title} ${item.developer} ${item.description} ${item.category || ''} ${item.subCategory || ''}`.toLowerCase();
 
-        if (!matchTitle && !matchDev && !matchDesc && !matchCat && !matchSubCat) {
+        const matchesAllTokens = searchTokens.every((token) => searchableText.includes(token));
+        if (!matchesAllTokens) {
           return false;
         }
       }
@@ -805,10 +801,8 @@ export default function ShowcasePage(): React.JSX.Element {
               selectedPlatform={selectedPlatform}
               onSelectPlatform={handleSelectPlatform}
               availablePlatforms={availablePlatforms}
-              onResetAll={handleResetFilters}
-              hasActiveFilters={hasActiveFilters}
               isCollapsed={isSidebarCollapsed}
-              />
+            />
 
             {/* Main Content Area */}
             <main className={styles.mainContent}>

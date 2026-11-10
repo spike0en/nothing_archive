@@ -274,10 +274,11 @@ function resolvePlatformOS(combinedText, mainUrl, source, slug, links = {}) {
 
   const isAndroid = mainUrl?.includes('play.google.com') ||
                     (source === 'apps' && !mainUrl?.includes('apps.apple.com')) ||
-                    /\b(?:android|apk|play store|phone \(\d\)|cmf phone|magisk|ksu|kernelsu|xposed|lsposed)\b/i.test(text);
+                    /\b(?:android|apk|play store|phone\s*\([0-9a-z\s+]+\)|cmf phone|magisk|ksu|kernelsu|xposed|lsposed|kwgt|termux|systemui|essential space|logkit|root module|root modules)\b/i.test(text) ||
+                    text.includes('root modules');
 
   const isWindows = /\b(?:windows|rainmeter|vs\s*code|win11|win10)\b|\.exe\b/i.test(text);
-  const isLinux = /\b(?:linux|kde|arch|ubuntu|kde plasma|ruri|gnome|gtk4|sddm)\b/i.test(text);
+  const isLinux = /\b(?:linux|kde|arch|ubuntu|kde plasma|ruri|gnome|gtk4|gtk|sddm|cosmic|fedora)\b/i.test(text);
   const isMacOS = /\b(?:macos|mac os|apple silicon|alfred workflow)\b/i.test(text);
   const isIOS = mainUrl?.includes('apps.apple.com') ||
                 Boolean(links.appStore) ||
@@ -651,10 +652,32 @@ async function main() {
   const devCounts = new Map();
   const uniqueItemsMap = new Map();
   const uniqueItems = [];
+  const usedSlugs = new Set();
+
+  function getProjectKey(item) {
+    const url = item.links.playStore || item.links.github || item.links.appStore || item.links.website || '';
+    if (url) {
+      return `${item.source}::url::${url.toLowerCase().trim().replace(/\/+$/, '')}`;
+    }
+    return `${item.source}::name::${item.slug}::${slugify(item.developer || '')}`;
+  }
 
   for (const item of [...appItems, ...projectItems]) {
-    const key = `${item.source}-${item.slug}`;
+    const key = getProjectKey(item);
     if (!uniqueItemsMap.has(key)) {
+      let slug = item.slug;
+      if (usedSlugs.has(slug)) {
+        const devSlug = slugify(item.developer || '');
+        slug = devSlug ? `${item.slug}-${devSlug}` : `${item.slug}-2`;
+        let counter = 2;
+        while (usedSlugs.has(slug)) {
+          slug = `${item.slug}-${devSlug || 'item'}-${counter++}`;
+        }
+      }
+      usedSlugs.add(slug);
+      item.slug = slug;
+      item.id = `${item.source}-${slug}`;
+
       const explicitOverrides = CATEGORY_OVERRIDES[item.slug] || [];
       item.categoryKeys = Array.from(new Set([item.categoryKey, ...explicitOverrides]));
       item.subCategoryKeys = [item.subCategoryKey];
