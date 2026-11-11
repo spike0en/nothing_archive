@@ -73,9 +73,9 @@
   },
   "com.nothing.smartcenter": {
     "name": "Nothing X",
-    "versionName": "3.10.2",
-    "publishedAt": "2026-10-26T09:14:13+00:00",
-    "discoveredAt": "2026-11-02T08:37:05.347492+00:00",
+    "versionName": "3.10.3",
+    "publishedAt": "2026-11-03T12:35:30+00:00",
+    "discoveredAt": "2026-11-11T09:31:07.506844+00:00",
     "iconUrl": "https://play-lh.googleusercontent.com/AkF6hnTA2q6eNW2c6OsmxYM5YBz-BWIU_d-5Mw3GBa3XGkwnGBEOsJ96R3BbomDMk2qugt-SdCzLzoO6cqNo",
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.smartcenter&hl=en&gl=us",
     "changelog": "1. Bug fixes and improvements"
