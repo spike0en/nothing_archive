@@ -61,6 +61,7 @@ See [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) for of
 | [Nothing Dot](https://github.com/kavastore/nothing-dot#english) | kavastore | Glyph Matrix toy app with a pixel editor, AOD toys, and a mini Arkanoid-style game with support for the Essential Key |
 | [Pikachu Glyph](https://github.com/nadigchinnu/pikachu-glyph) | nadigchinnu | Pikachu Glyph Matrix toy for Nothing Phone (3) |
 | [Rem's Glyph Toys](https://github.com/RemiH06/RemsGlyphToys) | RemiH06 | Collection of Glyph Matrix toys for Nothing Phone (3) with fluid physics, custom glyph drawing, and audio visualizers |
+| [SIUUUU](https://github.com/valentinaschiavon99/glyph-siuuu) | valentinaschiavon99 | Goal celebration Glyph Toy with pixel art animations and scrolling text for Nothing Phone (3) |
 | [V Pet](https://github.com/uzugu/V-pet-Glyph-Matrix) | uzugu | Digimon V-pet emulator adaptation for the Nothing Phone (3)'s Glyph Matrix |
 
 ### Widgets & Displays
@@ -145,6 +146,7 @@ See [Nothing Playground Glyph Toys](https://playground.nothing.tech/toys) for of
 | [Leveller](https://play.google.com/store/apps/details?id=com.lisra.matrixleveler) | RapidZapper | Gyroscopic level tool |
 | [Michibiki Compass](https://github.com/Maslodium/michibiki-compass) | Maslodium | Waypoint compass and navigation toy for the Nothing Phone (3) Glyph Matrix |
 | [Morse Glyph](https://github.com/Reyiannonn/MorseGlyph) | Reyiannonn | Translates text into Morse code and transmits it through the Nothing Phone's Glyph Matrix |
+| [Notify Glyph](https://github.com/mwazqa/notify-glyph) | mwazqa | Animated Glyph Matrix notification icons for AI, messaging, and social apps on Nothing Phone (3) |
 | [Odyssey Glyph](https://github.com/rickastley12/OdysseyGlyph) | rickastley12 | Turn your videos and lyrics into custom animations for the Nothing Phone (3) Glyph Matrix |
 | [Pomodoro Timer](https://github.com/PzmuV1517/GlyphPomodoroTimer) | pzmuV1517 | Pomodoro timer toy |
 | [Toyph](https://github.com/antonvidishchev/toyph) | antonvidishchev | A JSON-driven Glyph Toy for the Nothing Phone (4a) Pro |
@@ -261,6 +263,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Atmo Engine](https://github.com/saad-khan-rind/NOSAtmosphereEffect) | saad-khan-rind | Atmosphere wallpaper effect |
 | [Dot Battery](https://play.google.com/store/apps/details?id=com.lisra.dotbattery) | RapidZapper | Battery level wallpaper |
 | [Lentlay](https://lentlay.framer.website/) | Omkar Mangalekar | Lenticular effect for images |
+| [Nothing Atmosphere](https://github.com/Shashtwat/nothing-atmosphere-wallpaper) | Shashtwat | Live wallpaper replicating the Nothing OS Atmosphere unlock blur transition for Android |
 | [Nothing Wallpaper Changer](https://github.com/NineCSdev/nothing-wallpaper-changer) | NineCSdev | Lockscreen wallpaper changer for Nothing Phone (1) |
 | [Snake Wall](https://play.google.com/store/apps/details?id=kalp.snake.wall) | Kalpu-24 | Interactive Snake game live wallpaper inspired by the Nothing Snake widget [Repo](https://github.com/Kalpu-24/SnakeWall) |
 
@@ -282,6 +285,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Nothiq](https://play.google.com/store/apps/details?id=com.rontag.nothiq) | Rontag | Nothing-inspired notes and task management app |
 | [Noting](https://play.google.com/store/apps/details?id=com.hearthborn.studios.notingnotes) | Hearthborn | Notes and tasks with cloud backup |
 | [Nowt](https://play.google.com/store/apps/details?id=systems.voynich.nowt) | Voynich Systems | Block-based encrypted notes and task planner with Nothing OS styling |
+| [OmniNote](https://github.com/andrasulthan-alt/OmniNote) | andrasulthan-alt | Markdown notes app with encrypted vault, checklists, drawing canvas, home-screen widgets, and Syncthing sync |
 | [Seton](https://github.com/arijit4/Seton) | arijit4 | Pin and edit notes with widget |
 | [Spend Notes](https://play.google.com/store/apps/details?id=com.cmlabs.spendflow.spendflow) | Coder monk labs | Expense tracking |
 
@@ -358,6 +362,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 |-----|-----------|-------------|
 | [CMF Custom Volume Controller](https://github.com/alirezafarghadani999/CMF_CustomVolumeControl) | AlirezaFarghadani | Custom volume controller for CMF |
 | [Dot Player](https://play.google.com/store/apps/details?id=com.creepsmile.dotplayer) | Creepsmile | Minimal local music player |
+| [Dot Player](https://github.com/dhananjay6561/dot) | dhananjay6561 | Offline music player with Glyph light reactions, beat-synced crossfade, 10-band EQ, synced lyrics, and dot-matrix visualizers |
 | [Missing Core Music](https://play.google.com/store/apps/details?id=com.cyanchill.missingcore.music) | MissingCore | Offline music player |
 | [N Music](https://github.com/alimohsenmaruf/N-Music) | alimohsenmaruf | Simple Yt music wrapper Nothing OS styled Music player |
 | [N Tape](https://play.google.com/store/apps/details?id=com.celestialcolosseum.ntape) | Celestial Colosseum | Lightweight and minimal music player |
@@ -457,8 +462,8 @@ Personal finance, budget managers, and expense tracking tools.
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | AI-powered browser |
 | [Geo Torch](https://github.com/georgenelson576/GeoTorch/) | georgenelson576 | Flashlight app with widgets |
 | [Glimpse](https://github.com/amitozalvo/nothing-phone-apps) | amitozalvo | Notification and OTP assistant for Nothing Phone (3) |
-| [Hey Cam](https://github.com/ghostyapps/HeyCam) | Candan | Minimalist camera with Glyph Matrix support |
 | [Iris](https://github.com/hrideshmg/iris) | hrideshmg | Nothing Phone (3a) voice assistant companion app for Hermes AI agent |
+| [Koshi Camera](https://github.com/ghostyapps/Koshi-Camera) | ghostyapps | Zero-processing manual camera with RAW DNG capture, direct lens switching, manual focus controls, and Glyph Matrix countdown support |
 | [Minimal Browser](https://github.com/aaswani-v/Minimal-Browser) | aaswani-v | Browser with AI summarization |
 | [N Recipe](https://play.google.com/store/apps/details?id=com.a3chron.nrecipe) | a3chron | Offline recipebook |
 | [Nothing Cinema](https://github.com/Zwe-Paing-Htet/nothing_cinema) | Zwe-Paing-Htet | Movie catalog and streaming companion app designed with Nothing OS aesthetics |

@@ -198,6 +198,10 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | Project | Developer | Description |
 |---------|-----------|-------------|
 | [Attune](https://github.com/RocketSpot/attune) | RocketSpot | Desktop control and smart auto-EQ for CMF Buds Pro 2 and Nothing earbuds for Windows |
+| [Battery Bar](https://github.com/kp00004/battery-bar) | kp00004 | Displays Bluetooth battery levels in the Windows taskbar with separate earbud and case status for Nothing and CMF devices for Windows |
+| [CMF Buds Linux](https://github.com/YTArmen/cmf-buds-linux) | YTArmen | GTK4 application to control noise cancellation, EQ presets, Ultra Bass, gestures, and battery levels for CMF Buds for Linux |
+| [CMF Companion](https://github.com/vinayak-mv/CMF-Companion) | vinayak-mv | Companion app for CMF Headphone Pro with an 8-band parametric equalizer editor, profile library, ANC modes, and spatial audio for Windows and Android |
+| [CMF Headphone Pro Tray](https://github.com/faamobot/cmf-headphone-pro-tray) | faamobot | System tray controller for CMF Headphone Pro with noise control, game mode, Ultra Bass, and battery monitoring for Windows |
 | [CMF Ringtone Tool](https://github.com/tirodz/CMF-Ringtone-Tool) | tirodz | CMF Watch Pro 2 ringtone customization tool |
 | [CMF Tray](https://github.com/abhineet00/cmf-tray) | abhineet00 | Windows taskbar tray app to control CMF and Nothing earbuds settings and battery |
 | [Ear Battery CLI](https://github.com/pedrordgs/nothing-ear) | pedrordgs | Command-line tool to check battery levels of Nothing Ear wireless earbuds via Bluetooth on Linux |
@@ -214,12 +218,14 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [Nothing Desktop](https://github.com/sowahq/nothing-desktop) | sowahq | macOS menu bar app to control battery, ANC, and EQ settings for Nothing earbuds |
 | [Nothing Ear Linux](https://github.com/sn99/nothing-linux) | sn99 | Tauri-based Linux application to control and configure Nothing Ear earbuds (inspired by [Ear (Web)](https://earweb.bttl.xyz/)) |
 | [Nothing Linux](https://github.com/Dospacite/NothingLinux) | Dospacite | Unofficial local Rust/GTK4 controller for Nothing Ear on Linux |
+| [Nothing Windows UI](https://github.com/noiab3d/nothing-windows-ui) | noiab3d | System tray application to control noise cancellation, EQ presets, Bass Enhance, gestures, and battery for Nothing and CMF earbuds for Windows |
 | [Nothing X (DMS)](https://github.com/Bestello/dms-nothingx/) | Bestello | Nothing and CMF audio device controller plugin for Dank Material Shell |
 | [Nothing X (macOS)](https://github.com/eldandelion/nothing-x-macos) | eldandelion | Companion app for the Nothing ear (1) for macOS |
 | [Nothing X (macOS)](https://github.com/marlon-yepes/cmf-macos) | marlon-yepes | Unofficial macOS companion app for Nothing & CMF earbuds |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | macOS companion app for Nothing and CMF earbuds |
 | [Nothing X (macOS)](https://github.com/Senooy/nothing-x-mac) | Senooy | Native companion app for the Nothing Headphone (1) with noise control, spatial audio head tracking, and an 8-band equalizer for macOS |
 | [Nothing X (Windows)](https://github.com/debarkak/nothingx-pc) | debarkak | Unofficial Windows and Linux implementation of Nothing X protocols for Nothing & CMF audio devices |
+| [Nothing X Desktop](https://github.com/raffycaccia/nothing-x-desktop-unofficial) | raffycaccia | System tray application to control battery, noise cancellation, equalizer presets, Ultra Bass, and gestures for Nothing and CMF earbuds for Windows, Linux, and macOS |
 | [NothingBar (macOS)](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | Menu bar app to control Nothing and CMF audio devices for macOS |
 | [OpenBuds Windows](https://github.com/MahinZx/openbuds-windows) | MahinZx | Unofficial Windows desktop companion application for Nothing and CMF audio devices |
 | [OpenQore](https://github.com/nnonickreal/openqore) | nnonick | Firmware modification toolkit with Nothing & CMF audio devices support for Windows and Linux |
@@ -269,6 +275,7 @@ These require root access (KernelSU or Magisk). Proceed with caution.
 
 | Module | Author | Description |
 |--------|--------|-------------|
+| [CMF True Stereo](https://github.com/Dr-Essence/CMF-true-stereo) | Dr-Essence | Root module for CMF Phone 1 that routes audio into stereo channels with device orientation tracking |
 | [Dirac Audio Nothing Phone 1 Magisk Module](https://github.com/reiryuki/Dirac-Audio-Nothing-Phone-1-Magisk-Module) | reiryuki | Dirac Audio module ported from the Nothing Phone (1) for other devices |
 | [Glyph CLI](https://github.com/mahdi-salmanzade/glyph-cli) | mahdi-salmanzade | Control 137 LEDs directly from your terminal. No SDK. No app sandbox. Pure sysfs. |
 | [Glyph Keeper](https://github.com/vaccreate/GlyphKeeper) | vaccreate | Root module to control Nothing Phone (2a) Glyphs via sysfs and WebUI |
