@@ -105,10 +105,10 @@
 .searchInput {
   width: 100%;
   height: 36px;
-  line-height: 36px;
+  line-height: normal;
   font-family: var(--ifm-font-family-base);
   font-size: 0.84rem;
-  padding: 0 2.2rem 0 2.2rem;
+  padding: 0.45rem 2.2rem;
   background-color: hsl(var(--secondary) / 0.5);
   border: 1px solid hsl(var(--input));
   border-radius: var(--radius-md);
@@ -118,9 +118,19 @@
   box-sizing: border-box;
 }
 
+.searchInput::selection {
+  background-color: rgba(215, 25, 32, 0.22);
+  color: inherit;
+}
+
 [data-theme='dark'] .searchInput {
   background-color: hsl(var(--secondary) / 0.5);
   color: #ffffff;
+}
+
+[data-theme='dark'] .searchInput::selection {
+  background-color: rgba(215, 25, 32, 0.35);
+  color: inherit;
 }
 
 .searchInput:focus,

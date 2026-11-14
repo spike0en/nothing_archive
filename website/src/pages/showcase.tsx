@@ -153,6 +153,23 @@ function buildUrlSearch(state: ShowcaseUrlState): string {
   return qs ? `?${qs}` : '';
 }
 
+/**
+ * Checks whether an alphanumeric token matches concatenated adjacent words starting at word boundaries.
+ * Prevents false substring matches across internal word boundaries (such as 'glyph eyes' matching 'hey').
+ */
+function matchesCompoundWord(text: string, token: string): boolean {
+  const words = text.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
+  for (let i = 0; i < words.length; i++) {
+    let combined = '';
+    for (let j = i; j < words.length; j++) {
+      combined += words[j];
+      if (combined === token || combined.startsWith(token)) return true;
+      if (combined.length > token.length) break;
+    }
+  }
+  return false;
+}
+
 /** Dropdown menu for catalog sort mode with outside-click dismissal. */
 function CustomSortDropdown({
   value,
@@ -649,9 +666,18 @@ export default function ShowcasePage(): React.JSX.Element {
         const searchTokens = query.split(/\s+/).filter(Boolean);
         const searchableText = `${item.title} ${item.developer} ${item.description} ${item.category || ''} ${item.subCategory || ''}`.toLowerCase();
 
-        const matchesAllTokens = searchTokens.every((token) => searchableText.includes(token));
+        const matchesAllTokens = searchTokens.every((token) => {
+          if (searchableText.includes(token)) return true;
+          const cleanToken = token.replace(/[^a-z0-9]/g, '');
+          return Boolean(cleanToken) && matchesCompoundWord(searchableText, cleanToken);
+        });
+
         if (!matchesAllTokens) {
-          return false;
+          // Check full query as a compound term when individual tokens do not match
+          const cleanQuery = query.replace(/[^a-z0-9]/g, '');
+          if (!cleanQuery || !matchesCompoundWord(searchableText, cleanQuery)) {
+            return false;
+          }
         }
       }
 
