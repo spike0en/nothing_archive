@@ -13,6 +13,8 @@
   justify-content: center;
   animation: fadeIn 0.15s ease-out;
   padding: 1.25rem;
+  overscroll-behavior: contain;
+  will-change: opacity;
 }
 
 [data-theme='dark'] .overlay {
@@ -32,6 +34,10 @@
   color: var(--ifm-font-color-base);
   display: flex;
   flex-direction: column;
+  overscroll-behavior: contain;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform-origin: center center;
 }
 
 [data-theme='dark'] .modal {
@@ -470,6 +476,11 @@
   to { opacity: 1; }
 }
 
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
 @keyframes scaleUp {
   from {
     transform: scale(0.96);
@@ -478,6 +489,36 @@
   to {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+}
+
+.overlayExiting {
+  animation: fadeOut 0.2s ease-in forwards;
+  pointer-events: none;
+}
+
+.modalExiting {
+  animation: scaleDown 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .overlayExiting,
+  .modal,
+  .modalExiting {
+    animation: none !important;
   }
 }
 

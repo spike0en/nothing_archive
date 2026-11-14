@@ -2,7 +2,7 @@
  * Mobile filter drawer sheet (< 1024px) for the Community Showcase catalog.
  */
 
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   FaXmark,
   FaRotateLeft,
@@ -114,9 +114,6 @@ function getSourceIcon(s: SourceFilter): React.ReactElement {
 
 /**
  * Mobile filter drawer and bottom-sheet component.
- *
- * @param {ShowcaseFilterDrawerProps} props - Component properties.
- * @returns {React.JSX.Element | null} Rendered bottom sheet or null if closed.
  */
 export default function ShowcaseFilterDrawer({
   isOpen,
@@ -142,12 +139,37 @@ export default function ShowcaseFilterDrawer({
   hasActiveFilters,
   totalMatches,
 }: ShowcaseFilterDrawerProps): React.JSX.Element | null {
-  // Prevent body scrolling when sheet is open on mobile
+  const [isMounted, setIsMounted] = useState(isOpen);
+  const [isExiting, setIsExiting] = useState(false);
+
   useEffect(() => {
-    if (!isOpen) return;
+    if (isOpen) {
+      setIsMounted(true);
+      setIsExiting(false);
+    } else if (isMounted) {
+      setIsExiting(true);
+      // 220ms matches slide-out exit animation before unmounting from DOM.
+      const timer = setTimeout(() => {
+        setIsMounted(false);
+        setIsExiting(false);
+      }, 220);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen, isMounted]);
+
+  useEffect(() => {
+    if (!isMounted) return;
 
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [isMounted]);
+
+  useEffect(() => {
+    if (!isMounted || isExiting) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -155,24 +177,23 @@ export default function ShowcaseFilterDrawer({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => {
-      document.body.style.overflow = originalOverflow;
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isOpen, onClose]);
+  }, [isMounted, isExiting, onClose]);
 
-  if (!isOpen) return null;
+  if (!isMounted) return null;
 
   return (
     <div
-      className={styles.overlay}
+      className={clsx(styles.overlay, isExiting && styles.overlayExiting)}
       onClick={(e) => {
-        if (e.target === e.currentTarget) onClose();
+        if (e.target === e.currentTarget && !isExiting) onClose();
       }}
       role="dialog"
       aria-modal="true"
       aria-labelledby="filter-sheet-title"
     >
-      <div id="filter-sheet-drawer" className={styles.drawer}>
+      <div id="filter-sheet-drawer" className={clsx(styles.drawer, isExiting && styles.drawerExiting)}>
         {/* Mobile Drag Indicator Pill */}
         <div className={styles.dragHandleWrapper}>
           <div className={styles.dragHandle} />

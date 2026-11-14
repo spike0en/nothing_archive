@@ -36,11 +36,6 @@
 .supportIcon {
   margin-right: 6px;
   flex-shrink: 0;
-  transition: transform 0.2s ease;
-}
-
-.supportBtn:hover .supportIcon {
-  transform: scale(1.15);
 }
 
 .mobileSupportLink {

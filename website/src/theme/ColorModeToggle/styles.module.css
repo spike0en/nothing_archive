@@ -54,7 +54,7 @@
   opacity: 0.72;
   display: block;
   overflow: visible;
-  transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+  transition: color 0.25s ease, opacity 0.25s ease;
 }
 
 :global([data-theme='dark']) .iconSvg {
@@ -65,13 +65,11 @@
 .toggleButton:not(.toggleButtonActive):hover .iconSvg {
   opacity: 1;
   color: var(--ifm-color-content);
-  transform: scale(1.08);
 }
 
 :global([data-theme='dark']) .toggleButton:not(.toggleButtonActive):hover .iconSvg {
   opacity: 1;
   color: var(--ifm-color-content);
-  transform: scale(1.08);
 }
 
 .toggleButtonActive .iconSvg,

@@ -372,7 +372,7 @@
   background: rgba(0, 0, 0, 0.04);
   color: #040404;
   border: 1px solid rgba(0, 0, 0, 0.06);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 [data-theme='dark'] .bentoIcon {
@@ -383,7 +383,6 @@
 
 .bentoCard:hover .bentoIcon,
 .bentoIcon:hover {
-  transform: scale(1.08);
   color: var(--color-widget-red, #D71920) !important;
   background: rgba(215, 25, 32, 0.08) !important;
   border-color: rgba(215, 25, 32, 0.25) !important;
@@ -484,6 +483,8 @@
 
 .bentoArrow {
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .bentoCard:hover .bentoArrow {

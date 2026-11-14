@@ -7,6 +7,11 @@
 
  */
 
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
 html,
 body,
 button,
@@ -2179,11 +2184,11 @@ span.breadcrumbs__link:not(.breadcrumbs__item--active *) {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--ifm-color-primary) !important;
+  background: rgba(0, 0, 0, 0.3) !important;
 }
 
 [data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
-  background: var(--nothing-yellow, #FFC700) !important;
+  background: rgba(255, 255, 255, 0.3) !important;
 }
 
 ::-webkit-scrollbar-corner {
@@ -2352,11 +2357,11 @@ span.breadcrumbs__link:not(.breadcrumbs__item--active *) {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--ifm-color-primary) !important;
+  background: rgba(0, 0, 0, 0.3) !important;
 }
 
 [data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
-  background: var(--nothing-yellow, #FFC700) !important;
+  background: rgba(255, 255, 255, 0.3) !important;
 }
 
 ::-webkit-scrollbar-corner {
@@ -2771,11 +2776,44 @@ details summary:hover::before {
   stroke: none !important;
   opacity: 1 !important;
   display: block !important;
-  transition: transform 0.2s ease;
 }
 
-.DocSearch-Button:hover .DocSearch-Search-Icon {
-  transform: scale(1.1);
+/* DocSearch dialog entrance and background blur */
+
+.DocSearch-Container {
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  background-color: rgba(0, 0, 0, 0.45) !important;
+  animation: docsearchFadeIn 0.15s ease-out !important;
+  overscroll-behavior: contain;
+  will-change: opacity;
+}
+
+[data-theme='dark'] .DocSearch-Container {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.DocSearch-Modal {
+  animation: docsearchScaleUp 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  overscroll-behavior: contain;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+@keyframes docsearchFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes docsearchScaleUp {
+  from {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* Hide text label and shortcut keys to enforce icon-only search button globally */
@@ -3157,6 +3195,16 @@ but disable pointer events so hover doesn't show browser URL status bar */
   opacity: 1 !important;
 }
 
+.table-copy-btn.copied svg {
+  animation: copyCheckSpring 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes copyCheckSpring {
+  0% { transform: scale(0.6); }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
 /* ==========================================
 
    LAST UPDATED TIMESTAMP
@@ -3314,6 +3362,8 @@ but disable pointer events so hover doesn't show browser URL status bar */
   align-items: center;
   justify-content: center;
   animation: fadeIn 0.15s ease-out;
+  overscroll-behavior: contain;
+  will-change: opacity;
 }
 
 [data-theme='dark'] .shortcut-modal-overlay {
@@ -3330,6 +3380,9 @@ but disable pointer events so hover doesn't show browser URL status bar */
   overflow: hidden;
   animation: scaleUp 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   color: var(--ifm-font-color-base);
+  overscroll-behavior: contain;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 [data-theme='dark'] .shortcut-modal {

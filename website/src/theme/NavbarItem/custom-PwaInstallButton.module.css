@@ -39,11 +39,6 @@
   flex-shrink: 0;
   width: 16px !important;
   height: 16px !important;
-  transition: transform 0.2s ease;
-}
-
-.installBtn:hover .installIcon {
-  transform: scale(1.15);
 }
 
 /* Mobile Sidebar Specific Styling */

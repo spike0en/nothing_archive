@@ -159,12 +159,13 @@
   width: 100%;
   height: 220px;
   max-height: 220px;
-  padding-right: 4px;
+  padding-right: 6px;
+  scrollbar-gutter: stable;
   flex: 1;
 }
 
 .consoleBody::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 .consoleBody::-webkit-scrollbar-track {
@@ -172,41 +173,9 @@
 }
 
 .consoleBody::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.18);
+  background: rgba(0, 0, 0, 0.16);
   border-radius: 999px;
   transition: background 0.15s ease;
-}
-
-.consoleBody::-webkit-scrollbar-button:single-button:vertical:decrement {
-  display: block;
-  height: 10px;
-  width: 6px;
-  background-position: center 2px;
-  background-repeat: no-repeat;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='4' viewBox='0 0 6 4'%3E%3Cpolygon points='3,0 6,4 0,4' fill='%23888888'/%3E%3C/svg%3E");
-}
-
-.consoleBody::-webkit-scrollbar-button:single-button:vertical:increment {
-  display: block;
-  height: 10px;
-  width: 6px;
-  background-position: center 4px;
-  background-repeat: no-repeat;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='4' viewBox='0 0 6 4'%3E%3Cpolygon points='0,0 6,0 3,4' fill='%23888888'/%3E%3C/svg%3E");
-}
-
-.consoleBody.isScrolling::-webkit-scrollbar-button:single-button:vertical:decrement,
-.consoleBody[data-scrolling='true']::-webkit-scrollbar-button:single-button:vertical:decrement,
-.consoleBody:hover::-webkit-scrollbar-button:single-button:vertical:decrement,
-.consoleBody::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='4' viewBox='0 0 6 4'%3E%3Cpolygon points='3,0 6,4 0,4' fill='%23FF5310'/%3E%3C/svg%3E");
-}
-
-.consoleBody.isScrolling::-webkit-scrollbar-button:single-button:vertical:increment,
-.consoleBody[data-scrolling='true']::-webkit-scrollbar-button:single-button:vertical:increment,
-.consoleBody:hover::-webkit-scrollbar-button:single-button:vertical:increment,
-.consoleBody::-webkit-scrollbar-button:single-button:vertical:increment:hover {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='4' viewBox='0 0 6 4'%3E%3Cpolygon points='0,0 6,0 3,4' fill='%23FF5310'/%3E%3C/svg%3E");
 }
 
 .consoleBody.isScrolling::-webkit-scrollbar-thumb,
@@ -214,33 +183,17 @@
 .consoleBody:hover::-webkit-scrollbar-thumb,
 .consoleBody::-webkit-scrollbar-thumb:hover,
 .consoleBody::-webkit-scrollbar-thumb:active {
-  background: var(--cmf-orange, #FF5310) !important;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.consoleBody::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 [data-theme='dark'] .consoleBody::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.18);
-}
-
-[data-theme='dark'] .consoleBody::-webkit-scrollbar-button:single-button:vertical:decrement {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='4' viewBox='0 0 6 4'%3E%3Cpolygon points='3,0 6,4 0,4' fill='%23666666'/%3E%3C/svg%3E");
-}
-
-[data-theme='dark'] .consoleBody::-webkit-scrollbar-button:single-button:vertical:increment {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='4' viewBox='0 0 6 4'%3E%3Cpolygon points='0,0 6,0 3,4' fill='%23666666'/%3E%3C/svg%3E");
-}
-
-[data-theme='dark'] .consoleBody.isScrolling::-webkit-scrollbar-button:single-button:vertical:decrement,
-[data-theme='dark'] .consoleBody[data-scrolling='true']::-webkit-scrollbar-button:single-button:vertical:decrement,
-[data-theme='dark'] .consoleBody:hover::-webkit-scrollbar-button:single-button:vertical:decrement,
-[data-theme='dark'] .consoleBody::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='4' viewBox='0 0 6 4'%3E%3Cpolygon points='3,0 6,4 0,4' fill='%23FFC700'/%3E%3C/svg%3E");
-}
-
-[data-theme='dark'] .consoleBody.isScrolling::-webkit-scrollbar-button:single-button:vertical:increment,
-[data-theme='dark'] .consoleBody[data-scrolling='true']::-webkit-scrollbar-button:single-button:vertical:increment,
-[data-theme='dark'] .consoleBody:hover::-webkit-scrollbar-button:single-button:vertical:increment,
-[data-theme='dark'] .consoleBody::-webkit-scrollbar-button:single-button:vertical:increment:hover {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='4' viewBox='0 0 6 4'%3E%3Cpolygon points='0,0 6,0 3,4' fill='%23FFC700'/%3E%3C/svg%3E");
+  background: rgba(255, 255, 255, 0.16);
 }
 
 [data-theme='dark'] .consoleBody.isScrolling::-webkit-scrollbar-thumb,
@@ -248,31 +201,32 @@
 [data-theme='dark'] .consoleBody:hover::-webkit-scrollbar-thumb,
 [data-theme='dark'] .consoleBody::-webkit-scrollbar-thumb:hover,
 [data-theme='dark'] .consoleBody::-webkit-scrollbar-thumb:active {
-  background: var(--nothing-yellow, #FFC700) !important;
+  background: rgba(255, 255, 255, 0.35);
 }
 
 @supports not selector(::-webkit-scrollbar) {
   .consoleBody {
     scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.18) transparent;
+    scrollbar-color: rgba(0, 0, 0, 0.16) transparent;
   }
   .consoleBody.isScrolling,
   .consoleBody[data-scrolling='true'],
   .consoleBody:hover {
-    scrollbar-color: var(--cmf-orange, #FF5310) transparent;
+    scrollbar-color: rgba(0, 0, 0, 0.35) transparent;
   }
   [data-theme='dark'] .consoleBody {
-    scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+    scrollbar-color: rgba(255, 255, 255, 0.16) transparent;
   }
   [data-theme='dark'] .consoleBody.isScrolling,
   [data-theme='dark'] .consoleBody[data-scrolling='true'],
   [data-theme='dark'] .consoleBody:hover {
-    scrollbar-color: var(--nothing-yellow, #FFC700) transparent;
+    scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
   }
 }
 
 .consoleLine {
   display: flex;
+  align-items: center;
   align-items: center;
   flex-shrink: 0;
   font-size: 0.75rem;

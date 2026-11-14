@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import clsx from 'clsx';
 import { FaCopy, FaCheck, FaTimes, FaExternalLinkAlt } from 'react-icons/fa';
 import { FaPaypal, FaIndianRupeeSign, FaMoneyBills, FaHandshake, FaClipboardList } from 'react-icons/fa6';
 import donationsData from '../data/donations.json';
@@ -24,10 +25,27 @@ interface SupportModalProps {
 
 export default function SupportModal({ isOpen, onClose }: SupportModalProps): React.JSX.Element | null {
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [isMounted, setIsMounted] = useState(isOpen);
+  const [isExiting, setIsExiting] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+      setIsExiting(false);
+    } else if (isMounted) {
+      setIsExiting(true);
+      // 200ms matches exit animation duration before unmounting from DOM.
+      const timer = setTimeout(() => {
+        setIsMounted(false);
+        setIsExiting(false);
+      }, 200);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen, isMounted]);
 
   useEffect(() => {
     if (globalThis.document === undefined) return;
-    if (isOpen) {
+    if (isMounted) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -35,20 +53,20 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
     return () => {
       document.body.style.overflow = '';
     };
-  }, [isOpen]);
+  }, [isMounted]);
 
   useEffect(() => {
     if (globalThis.window === undefined) return;
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) {
+      if (e.key === 'Escape' && isOpen && !isExiting) {
         onClose();
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, onClose]);
+  }, [isOpen, isExiting, onClose]);
 
-  if (!isOpen) return null;
+  if (!isMounted) return null;
 
   const handleCopy = (id: string, text: string) => {
     setCopiedId(id);
@@ -77,13 +95,15 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps): Re
 
   return (
     <div
-      className={styles.overlay}
-      onClick={onClose}
+      className={clsx(styles.overlay, isExiting && styles.overlayExiting)}
+      onClick={() => {
+        if (!isExiting) onClose();
+      }}
       role="dialog"
       aria-modal="true"
       aria-labelledby="support-modal-title"
     >
-      <div className={styles.modal} onClick={e => e.stopPropagation()}>
+      <div className={clsx(styles.modal, isExiting && styles.modalExiting)} onClick={e => e.stopPropagation()}>
         <div className={styles.header}>
           <div className={styles.headerTitleGroup}>
             <span className={styles.headerIcon} aria-hidden="true">

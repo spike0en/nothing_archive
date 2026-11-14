@@ -9,6 +9,8 @@
   justify-content: flex-end;
   align-items: flex-end;
   animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  overscroll-behavior: contain;
+  will-change: opacity;
 }
 
 @keyframes fadeIn {
@@ -18,6 +20,20 @@
   to {
     opacity: 1;
   }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.overlayExiting {
+  animation: fadeOut 0.22s ease-in forwards;
+  pointer-events: none;
 }
 
 .drawer {
@@ -34,6 +50,23 @@
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  overscroll-behavior: contain;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.drawerExiting {
+  animation: slideDown 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  pointer-events: none;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
 }
 
 [data-theme='dark'] .drawer {
@@ -79,6 +112,29 @@
     to {
       transform: translateX(0);
     }
+  }
+
+  .drawerExiting {
+    animation: slideRight 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    pointer-events: none;
+  }
+
+  @keyframes slideRight {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .overlayExiting,
+  .drawer,
+  .drawerExiting {
+    animation: none !important;
   }
 }
 
