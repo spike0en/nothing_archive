@@ -145,6 +145,7 @@ Web-based applications inspired by Nothing OS.
 | Project | Developer | Description |
 |---------|-----------|-------------|
 | [Airi Forecasts](https://github.com/the3dmslobj/airi-forcasts) | the3dmslobj | A weather app built with Expo and React Native, wrapped in a Nothing-style monochrome dot-matrix interface |
+| [CMF Watch Pro 2 Emulator](https://cmf.arnv.dev/emulator/watch-pro-2/) | arnav-kr | Web-based emulator for CMF Watch Pro 2 that runs stock and custom Zephyr firmware with interactive crown, touch, and sensor controls |
 | [Currency](https://curency.pages.dev/) | Earendel | Currency converter web app with Nothing OS styling [Repo](https://github.com/Earendel-lab/Currency) |
 | [Dotted](https://dotted-tau.vercel.app/) | wwGuGuww | Dot-matrix logic puzzle web game inspired by Nothing OS with time attack and daily challenge modes [Repo](https://github.com/wwGuGuww/dotted) |
 | [Ear (Web)](https://earweb.bttl.xyz/) | RapidZapper | Control earbuds from web [Repo](https://github.com/radiance-project/ear-web) |
@@ -202,8 +203,12 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [CMF Buds Linux](https://github.com/YTArmen/cmf-buds-linux) | YTArmen | GTK4 application to control noise cancellation, EQ presets, Ultra Bass, gestures, and battery levels for CMF Buds for Linux |
 | [CMF Companion](https://github.com/vinayak-mv/CMF-Companion) | vinayak-mv | Companion app for CMF Headphone Pro with an 8-band parametric equalizer editor, profile library, ANC modes, and spatial audio for Windows and Android |
 | [CMF Headphone Pro Tray](https://github.com/faamobot/cmf-headphone-pro-tray) | faamobot | System tray controller for CMF Headphone Pro with noise control, game mode, Ultra Bass, and battery monitoring for Windows |
+| [CMF Open](https://cmf.techjeeper.com/) | TechJeeper | Web Bluetooth app store, watchface builder, and sideloading toolkit for CMF Watch 3 Pro [Repo](https://github.com/TechJeeper/CMF-Open) |
+| [CMF Parser](https://github.com/ambraglow/cmfparser) | ambraglow | Rust CLI utility to unpack OTA firmware images and app binaries for CMF Watch 3 Pro and Watch Pro 2 for Windows, Linux, and macOS |
 | [CMF Ringtone Tool](https://github.com/tirodz/CMF-Ringtone-Tool) | tirodz | CMF Watch Pro 2 ringtone customization tool |
 | [CMF Tray](https://github.com/abhineet00/cmf-tray) | abhineet00 | Windows taskbar tray app to control CMF and Nothing earbuds settings and battery |
+| [CMF Watch Pro 2 Bad Apple](https://github.com/cmf-tech-community/firmware-wp2-badapple) | arnav-kr & cmf-tech-community | Custom Zephyr firmware port for CMF Watch Pro 2 that plays synchronized Bad Apple video and audio with dial crown controls |
+| [CMF Watch Utils](https://github.com/cmf-tech-community/cmf-watch-utils) | arnav-kr & cmf-tech-community | Firmware container toolkit, BLE CLI, QEMU runner, and reverse-engineering documentation for CMF Watch Pro 2 for Windows, Linux, and macOS ([Docs](https://cmf.arnv.dev/)) |
 | [Ear Battery CLI](https://github.com/pedrordgs/nothing-ear) | pedrordgs | Command-line tool to check battery levels of Nothing Ear wireless earbuds via Bluetooth on Linux |
 | [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | Native Rust desktop client for Nothing and CMF audio devices for Windows and Linux |
 | [Ear Tray](https://github.com/Vadim-Karpenko/ear-tray) | Vadim-Karpenko | Lightweight Windows tray app for Nothing / CMF earbuds |
