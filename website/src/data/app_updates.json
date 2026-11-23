@@ -19,12 +19,12 @@
   },
   "com.nothing.ntessentialspace": {
     "name": "Essential Space",
-    "versionName": "2.2.2",
-    "publishedAt": "2026-10-27T10:22:54+00:00",
-    "discoveredAt": "2026-11-02T04:22:25.780808+00:00",
+    "versionName": "2.2.4",
+    "publishedAt": "2026-11-12T07:41:33+00:00",
+    "discoveredAt": "2026-11-23T02:30:52.497641+00:00",
     "iconUrl": "https://play-lh.googleusercontent.com/bvF1_vQErzySJRR3DxH_YIjKNLQOnLvjpceZu9DYwYvg739S4vbYy_cUam2VSDzwH2ihfQSnbxA_9kGIsf6KO5A",
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.ntessentialspace&hl=en&gl=us",
-    "changelog": "What’s New in Essential Space\n• Capture Card Redesign\n✨ A fresh look for your captures, making key information easier to find at a glance.\n• Stability & Performance\n🐞 Bug fixes and stability enhancements."
+    "changelog": "What’s New in Essential Space\n• Task and Event Redesign  \n✨ Redesigned task and event views make information easier to find and edit. Now set how often tasks repeat and when they stop, or edit event locations and links.\n• Stability & Performance  \n🐞 Bug fixes and stability enhancements."
   },
   "com.nothing.gallery": {
     "name": "Nothing Gallery",
