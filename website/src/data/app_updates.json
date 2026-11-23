@@ -124,5 +124,14 @@
     "iconUrl": "https://play-lh.googleusercontent.com/kkRNZI9KwM3T78u9o8_tE1yzNPfFcc8zanF8xTdQaIWhX8JCtgYRcMHUIl23Ds-eWAV1bDyivb8TbhWGkoCw",
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.user.center&hl=en&gl=us",
     "changelog": "Bug fixes and stability improvements."
+  },
+  "com.nothing.glyph": {
+    "name": "Glyph",
+    "versionName": "1.0.0",
+    "publishedAt": "2026-11-17T14:57:26+00:00",
+    "discoveredAt": "2026-11-23T09:25:41.628526+00:00",
+    "iconUrl": "https://play-lh.googleusercontent.com/7lzPdQLvZF48McNYAtnn1FHCD_MxXU26IvUBqmi0q1wUHSJGv8g42Fm7HKu7yXxEecaYKaPSNcttAglmTnLZOg",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.nothing.glyph&hl=en&gl=us",
+    "changelog": "Manage and discover all your Glyph experiences in one app"
   }
 }
