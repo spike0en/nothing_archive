@@ -94,10 +94,10 @@
     "name": "Ear (3a)",
     "brand": "Nothing",
     "codename": "Jumpluff",
-    "version": "1.0.1.71",
-    "changelog": "1. Improved connection stability.\n2. Bugs fixed.\n*Update to the latest version for optimal performance.",
-    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/179146536208125252_EARBUD_OTA_V1.0.1.71_20260928_Release.dfu",
-    "updatedAt": "2026-10-08T13:16:02.081000+00:00"
+    "version": "1.0.1.81",
+    "changelog": "1. Device diagnostic tool now available.\n2. Improved Balanced EQ tuning.\n3. Fixed compatibility issues with iOS 27.\n*Update to the latest version for optimal performance.",
+    "downloadUrl": "https://d1zc89dd4u2mk2.cloudfront.net/ota/179541465176825252_EARBUD_OTA_V1.0.1.81_20261112_Release.dfu",
+    "updatedAt": "2026-11-23T06:17:31.768000+00:00"
   },
   "B192": {
     "modelId": "B192",
