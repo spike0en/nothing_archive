@@ -23,11 +23,11 @@ export default function CopyButtonSetup(): null {
 
     const triggerThemeTransition = () => {
       document.documentElement.classList.add('theme-transition');
-      
+
       if (themeTransitionTimeout) {
         clearTimeout(themeTransitionTimeout);
       }
-      
+
       themeTransitionTimeout = setTimeout(() => {
         document.documentElement.classList.remove('theme-transition');
       }, 850); // 850ms covers React render blocking during complex table re-renders
@@ -64,7 +64,7 @@ export default function CopyButtonSetup(): null {
     });
 
     const hasHoverSupport = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    
+
     const setupCopyButtons = () => {
       if (!hasHoverSupport) return;
       const links = document.querySelectorAll('table td a');

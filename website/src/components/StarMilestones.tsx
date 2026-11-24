@@ -41,7 +41,7 @@ export default function StarMilestones(): React.JSX.Element {
     if (stars === null) return MILESTONES.map(() => 0);
     return MILESTONES.map((milestone, idx) => {
       if (stars >= milestone) return 100;
-      
+
       // Before the first milestone
       if (idx === 0) {
         return Math.max(0, Math.min(100, (stars / milestone) * 100));
@@ -49,7 +49,7 @@ export default function StarMilestones(): React.JSX.Element {
 
       const prevMilestone = MILESTONES[idx - 1];
       if (stars <= prevMilestone) return 0;
-      
+
       // Partial progress inside this segment
       return Math.max(0, Math.min(100, ((stars - prevMilestone) / (milestone - prevMilestone)) * 100));
     });

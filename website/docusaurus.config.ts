@@ -221,7 +221,7 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
       const cleanNames = matchingDevices.map((d: any) => d.name.match(/^(.*)\s\([^(]+\)$/)?.at(1) ?? "");
       cleanNames.sort();
       const joinedNames = cleanNames.join(' / ').replace(/\/ Phone \(/g, '/ (');
-      
+
       const cleanCodenames = matchingDevices.map((d: any) => {
         const parts = d.name.match(/\(([^)]+)\)$/);
         return parts ? parts[1] : d.codename;
@@ -231,7 +231,7 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
       if (cleanCodenames.includes('Asteroids') && cleanCodenames.includes('AsteroidsPro')) {
         joinedCodenames = 'Asteroids(Pro)';
       }
-      
+
       label = `${joinedNames} (${joinedCodenames})`;
       series = matchingDevices[0].series;
       brand = matchingDevices[0].brand;
@@ -402,7 +402,7 @@ const config: Config = {
         } catch {
           // Subprocess execution fails gracefully in environments lacking git history
         }
-        
+
         if (fs.existsSync(changelogsDir)) {
           const folders = fs.readdirSync(changelogsDir);
           for (const folder of folders) {
@@ -434,7 +434,7 @@ const config: Config = {
                   publishedAt,
                 });
               }
-              
+
               if (files.length > 0) {
                 files.sort((a, b) => {
                   const nameA = a.replace(/\.md$/, '');
@@ -451,7 +451,7 @@ const config: Config = {
                   }
                   return nameB.localeCompare(nameA);
                 });
-                
+
                 const latestFile = files[0].replace(/\.md$/, '');
                 const latestPath = `/docs/changelogs/${folder}/${latestFile}`;
                 latestLinks[folder] = latestPath;
@@ -460,7 +460,7 @@ const config: Config = {
                 const mappedCodenames = devicesMetadata
                   .filter((d: any) => d.folder && d.folder.toLowerCase() === folder.toLowerCase() && d.codename.toLowerCase() !== folder.toLowerCase())
                   .map((d: any) => d.codename.toLowerCase());
-                
+
                 for (const codename of mappedCodenames) {
                   latestLinks[codename] = latestPath;
                 }
@@ -503,7 +503,7 @@ const config: Config = {
 
         // Sort changelogs chronologically descending by commit date
         changelogs.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
-        
+
         setGlobalData({ latestLinks, changelogLinks, changelogs });
       }
     }),

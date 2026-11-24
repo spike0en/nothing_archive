@@ -448,11 +448,11 @@
   .milestoneContainer {
     padding: 1.5rem 1.5rem 1.25rem;
   }
-  
+
   .glyphHousing {
     padding: 0.6rem 0.75rem 0.6rem;
   }
-  
+
   .glyphTrack {
     height: 12px;
     gap: 4px;
@@ -485,7 +485,7 @@
     width: 40px;
     font-size: 9px;
   }
-  
+
   .tickMark {
     height: 4px;
   }
@@ -499,7 +499,7 @@
     gap: 3px;
     padding: 0 calc(1rem + 1px);
   }
-  
+
   .milestoneContainer {
     padding: 1.25rem 1rem 1rem;
     border-radius: 16px;

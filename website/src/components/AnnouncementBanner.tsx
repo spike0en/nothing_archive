@@ -92,7 +92,7 @@ export default function AnnouncementBanner(): React.JSX.Element | null {
       const newlyDismissed = releases.map((r) => r.tagName);
       const merged = Array.from(new Set([...previouslyDismissed, ...newlyDismissed]));
       localStorage.setItem(DISMISS_KEY, JSON.stringify(merged));
-      
+
       setIsDismissing(true);
       // 400ms matches the CSS exit transition duration.
       setTimeout(() => {
