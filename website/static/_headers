@@ -1,6 +1,6 @@
 # Global anti-AI scraping HTTP headers
 /*
-  X-Robots-Tag: noai, noimageai
+  X-Robots-Tag: noai, noimageai, max-snippet:160
   TDM-Reservation: 1
 
 # 1-year immutable cache lifetime headers for static assets

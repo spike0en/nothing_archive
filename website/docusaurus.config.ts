@@ -613,7 +613,7 @@ const config: Config = {
       tagName: 'meta',
       attributes: {
         name: 'robots',
-        content: 'noai, noimageai',
+        content: 'noai, noimageai, max-snippet:160',
       },
     },
     {

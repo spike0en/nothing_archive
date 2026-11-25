@@ -7,14 +7,22 @@ This directory contains visual assets used by the **Nothing Archive** website an
 ## 1. Project Branding & Original Graphics
 
 - **Directory**: `brand/`
-- **Files**: `logo-dark-hero*.webp`, `logo-*-nav.webp`, `banner*.png`, `icon-*.png`, `favicon.ico`
+- **Files**: `logo-dark*`, `logo-light*`, `social-banner.png`, `apple-touch-icon.png`, `icon-*.png`, `favicon.ico`
 - **Copyright Owner**: Copyright (c) 2024–2026 Nothing Archive Contributors.
 - **License**: Proprietary. All rights reserved.
 - **Usage**: Dedicated project identity for Nothing Archive. Not licensed for reuse or redistribution without explicit permission.
 
 ---
 
-## 2. Product Renders & Accessory Silhouettes
+## 2. Archived Reference Screenshots
+
+- **Directory**: `archived/`
+- **Files**: `1.png`–`5.png`
+- **License**: Licensed under [CC BY-NC 4.0](https://github.com/spike0en/nothing_archive/blob/main/LICENSE) as part of the project documentation archive.
+
+---
+
+## 3. Product Renders & Accessory Silhouettes
 
 - **Directories**: `devices/`, `accessories/`
 - **Files**: Device color variant renders and accessory hardware icons (Ear series, CMF Buds, CMF Watch Pro, CMF Headphone, chargers, and speakers).
@@ -23,7 +31,7 @@ This directory contains visual assets used by the **Nothing Archive** website an
 
 ---
 
-## 3. Application Icons
+## 4. Application Icons
 
 - **Directory**: `apps/`
 - **Files**: Official application package icons (`com.nothing.*.png`).

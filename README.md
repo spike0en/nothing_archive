@@ -8,16 +8,21 @@
 
 # Nothing Archive
 
-The largest open-source, community-driven index and archive for the Nothing and CMF ecosystem, featuring Nothing OS firmware, OTA updates, community-built apps and projects, hardware customization tools, official developer resources, and detailed guides.
+A firmware distribution and community resource hub for Nothing and CMF by Nothing devices.
+It indexes official Nothing OS OTA links, changelogs, full firmware packages, stock OTA images, and step-by-step guides.
+It also lists community-made apps, tools, and developer resources.
 
 <p align="center">
-  <a href="https://nothingarchive.tech/"><b>Explore Hub 🌐</b></a> &nbsp;&middot;&nbsp;
-  <a href="https://nothingarchive.tech/docs/firmware"><b>Firmware Archive 📥</b></a> &nbsp;&middot;&nbsp;
-  <a href="https://nothingarchive.tech/docs/guides"><b>Guides 📖</b></a> &nbsp;&middot;&nbsp;
-  <a href="https://t.me/s/NothingTechCommunity"><b>Community 💬</b></a>
+  <a href="https://nothingarchive.tech/"><b>Website</b></a> &nbsp;&middot;&nbsp;
+  <a href="https://nothingarchive.tech/docs/firmware"><b>Firmware</b></a> &nbsp;&middot;&nbsp;
+  <a href="https://nothingarchive.tech/showcase"><b>Apps &amp; Projects</b></a> &nbsp;&middot;&nbsp;
+  <a href="https://nothingarchive.tech/docs/guides"><b>Guides</b></a> &nbsp;&middot;&nbsp;
+  <a href="https://t.me/s/NothingTechCommunity"><b>Community</b></a>
 </p>
 
-[![Hits](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%23b02a37&labelColor=2E2E3F&message=&style=for-the-badge)](https://github.com/spike0en/nothing_archive) &nbsp; [![Total Downloads](https://img.shields.io/github/downloads/spike0en/nothing_archive/total?style=for-the-badge&logo=github&logoColor=white)](https://github.com/spike0en/nothing_archive/releases) &nbsp; [![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0%20%2F%20MIT-007ec6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/spike0en/nothing_archive/blob/main/LICENSE)
+[![Hits](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%23b02a37&labelColor=2E2E3F&message=&style=for-the-badge)](https://github.com/spike0en/nothing_archive) &nbsp; [![GitHub Stars](https://img.shields.io/github/stars/spike0en/nothing_archive?style=for-the-badge&logo=github&logoColor=white&labelColor=2E2E3F&color=b02a37)](https://github.com/spike0en/nothing_archive/stargazers) &nbsp; [![Total Downloads](https://img.shields.io/github/downloads/spike0en/nothing_archive/total?style=for-the-badge&logo=github&logoColor=white&labelColor=2E2E3F&color=b02a37)](https://github.com/spike0en/nothing_archive/releases) &nbsp; [![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0%20%2F%20MIT-b02a37?style=for-the-badge&labelColor=2E2E3F)](https://github.com/spike0en/nothing_archive/blob/main/LICENSE)
+
+<sub>Hits show daily / total repository views tracked since 11 November 2025.</sub>
 
 <br>
 
@@ -27,111 +32,91 @@ The largest open-source, community-driven index and archive for the Nothing and 
   <img alt="Nothing Archive Banner" src="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/brand/social-banner.png" width="100%">
 </picture>
 
-<br>
-
 </div>
 
-## Core Pillars & Navigation
+## What the archive covers
 
-Nothing Archive is a centralized, community-led index. Use the interactive directory below to browse our documentation sections on the live site or access their source markdown files in the workspace.
+The live site at [nothingarchive.tech](https://nothingarchive.tech/) indexes firmware, documentation, and community software built from this repository.
 
-### [Devices Catalog](https://nothingarchive.tech/docs/devices)
-*Workspace Source: [`devices.md`](website/docs/devices.md)*
-
-A detailed catalog of Nothing and CMF products, detailing hardware specifications, codename mappings, and release dates.
-
-### [Firmware & Delta OTAs](https://nothingarchive.tech/docs/firmware)
-*Workspace Source: [`firmware.md`](website/docs/firmware.md)*
-
-Direct download links for sideloading incremental and full OTA updates sourced from official OEM servers, bypassing staggered regional rollouts.
-
-### [Stock Factory Images](https://nothingarchive.tech/docs/firmware)
-*Workspace Source: [`firmware.md`](website/docs/firmware.md)*
-
-Unmodified stock OTA partition images archived for supported phone models, obtained by extracting and reconstructing base and incremental OTA updates through an automated pipeline.
-
-### [Nothing OS Changelogs](https://nothingarchive.tech/docs/changelogs)
-*Workspace Source: [`changelogs/`](website/docs/changelogs)*
-
-A complete chronological database of official release notes, system changes, bug fixes, and security patches for every Nothing and CMF phone model.
-
-### [Technical Guides](https://nothingarchive.tech/docs/guides)
-*Workspace Source: [`guides.md`](website/docs/guides.md)*
-
-Detailed step-by-step guides covering critical technical operations, including bootloader unlocking, custom ROM installation, partition backups, rooting, and device recovery.
-
-### [Official OEM Resources](https://nothingarchive.tech/docs/official)
-*Workspace Source: [`official.md`](website/docs/official.md)*
-
-A curated collection of official Nothing apps, wallpapers, system fonts, kernel sources, 3D product models, and user manuals.
-
-### [Community Apps & Projects](https://nothingarchive.tech/docs/apps)
-*Workspace Sources: [`apps.md`](website/docs/apps.md) &nbsp;&middot;&nbsp; [`projects.md`](website/docs/projects.md)*
-
-A directory of community-developed applications, Glyph LED integrations, custom widgets, utilities, flashing toolkits, and wearable scripts.
-
-### [Camera Configs & Mods](https://nothingarchive.tech/docs/photography)
-*Workspace Source: [`photography.md`](website/docs/photography.md)*
-
-Stable Google Camera (GCam) ports, custom community-made XML configurations, stock presets, and custom LUTs optimized for Nothing's camera hardware.
-
-## Contribution Guidelines
-
-We welcome community pull requests to expand the archive. To ensure data integrity, several files are restricted to automated updates:
-
-| Category | Contribution Scope | Files & Path |
+| Section | What you find | Source |
 | :--- | :--- | :--- |
-| **Device Catalog** | **Open** | [`devices.md`](website/docs/devices.md) |
-| **Community Initiatives Indexing** | **Open** | [`apps.md`](website/docs/apps.md), [`projects.md`](website/docs/projects.md) |
-| **Official Resources** | **Open** | [`official.md`](website/docs/official.md) |
-| **Guides** | **Open** | [`guides.md`](website/docs/guides.md), [`photography.md`](website/docs/photography.md) |
-| **Firmware & Changelogs** | **Restricted** *(Automated)* | [`firmware.md`](website/docs/firmware.md), [`changelogs/`](website/docs/changelogs/) |
+| [Firmware and OTAs](https://nothingarchive.tech/docs/firmware) | Incremental, delta, and full OTAs, stock partition images, and an interactive Partition Explorer | [`firmware.md`](website/docs/firmware.md) |
+| [Device catalog](https://nothingarchive.tech/docs/devices) | Specifications, codenames, model numbers, and support windows for Nothing and CMF hardware | [`devices.md`](website/docs/devices.md) |
+| [OTA changelogs](https://nothingarchive.tech/docs/changelogs) | Chronological release notes, system changes, bug fixes, and security patches for every Nothing and CMF phone | [`changelogs/`](website/docs/changelogs/) |
+| [Technical guides](https://nothingarchive.tech/docs/guides) | Instructions for OTA sideloading, bootloader unlocking, rooting, backups, device recovery, and troubleshooting | [`guides.md`](website/docs/guides.md) |
+| [Community Apps &amp; Projects Store](https://nothingarchive.tech/showcase) | Searchable directory of community-made apps and projects for the Nothing and CMF ecosystem | [`apps.md`](website/docs/apps.md), [`projects.md`](website/docs/projects.md) |
+| [Official resources](https://nothingarchive.tech/docs/official) | Official Nothing apps, wallpapers, kernel sources, 3D models, user manuals, and EU product labels | [`official.md`](website/docs/official.md) |
+| [Audio and app trackers](https://nothingarchive.tech/) | Live feeds that track audio and watch firmware binaries plus official app updates | [`accessories_updates.json`](website/src/data/accessories_updates.json), [`app_updates.json`](website/src/data/app_updates.json) |
+| [Photography](https://nothingarchive.tech/docs/photography) | GCam ports, sensor XML configs, and stock camera presets | [`photography.md`](website/docs/photography.md) |
 
-Before creating a Pull Request, please read our [Contributing Guidelines](CONTRIBUTING.md) to ensure compliance with sorting rules, casing conventions, and spacing standards.
+**Firmware authenticity**
 
-## Licensing & Attribution
+- **Official sources**: Firmware links point to OEM-signed packages on Google or Nothing CDNs, with `archive.org` mirrors when official links expire.
+- **Unmodified extraction**: [`.github/workflows/dump.yml`](.github/workflows/dump.yml) runs [`scripts/dump.sh`](scripts/dump.sh) with AOSP `ota_extractor` to unpack raw `.img` files without repacking or modifying system data.
+- **Release verification**: Every [GitHub Release](https://github.com/spike0en/nothing_archive/releases) includes the source OTA URLs, the workflow run log (valid for 90 days), and a `<TAG>-hash.sha256` checksum manifest.
 
-Nothing Archive employs a multi-license structure to protect the original work of contributors, respect third-party intellectual property, and prevent legal liabilities.
+## Repository layout
 
-### Intellectual Property Boundaries
+| Path | Role |
+| :--- | :--- |
+| [`website/`](website/) | Docusaurus 3 site, React components, prebuild data scripts, and Markdown docs |
+| [`scripts/`](scripts/) | Automated OTA extraction pipeline (`dump.sh`), device partition manifest (`devices.json`), and local archive helpers |
+| [`bin/`](bin/) | Prebuilt `ota_extractor` binaries and shared libraries for `arm64` and `x86_64` Linux |
+| [`.github/workflows/`](.github/workflows/) | GitHub Actions workflows for firmware dumps (`dump.yml`), site deployment (`deploy.yml`), and monthly link checks (`link-checker.yml`) |
+| [`assets/`](assets/) | Reference screenshots for OTA sideloading |
 
-*   **The project effort and database compilation** are licensed under [CC BY-NC 4.0](LICENSE) (Creative Commons Attribution-NonCommercial 4.0 International). While the underlying links are publicly available, the curated compilation database, structured tables, device codename mappings, extraction indices, and custom flashing and recovery guides represent original research, maintenance, and self-hosted pipeline development.
-*   **OEM firmware and official resources** remain the exclusive proprietary intellectual property of Nothing Technology Limited and its partners. All indexed firmware payloads, OTA update links (distributed by Google/GMS servers), official system APKs, system fonts, device wallpapers, 3D models, hardware renders, accessory icons, and user manuals are mirrored and indexed solely for non-commercial community recovery, telemetry identification, and archival purposes under Fair Use.
-*   **Community projects and third-party apps** belong to their respective developers under their own licensing terms. We index these links and app icons solely to connect the developer community in one hub.
-*   **The pipeline logic and website source code** (under `/scripts` and `/website`, excluding documentation content) are licensed under the [MIT License](LICENSE-MIT).
-*   **Project branding and visual identity** assets under `website/static/img/brand/` (original logos, banners, and graphics) are proprietary to Nothing Archive and are not licensed for redistribution.
-*   **Product and application imagery** under `website/static/img/accessories/`, `website/static/img/apps/`, and `website/static/img/devices/` belong to Nothing Technology Limited or third-party developers. These assets are used under nominative fair use for identification and telemetry. See [website/static/img/README.md](website/static/img/README.md) for directory-level details.
-*   **Project typography and font assets** under `website/static/fonts/` are subject to their respective open-source licenses and brand foundry attributions. See [website/static/fonts/README.md](website/static/fonts/README.md) for full licensing details.
+## Local development and extraction
+
+### Run the website locally
+
+The site works with Node.js `20` or later (`npm`) and [Bun](https://bun.sh/) (`1.3.14` with `bun.lock` in CI).
+Before starting or building, the `prestart` and `prebuild` hooks run [`fetch-github-data.js`](website/scripts/fetch-github-data.js), [`parse-devices.js`](website/scripts/parse-devices.js), and [`parse-showcase.js`](website/scripts/parse-showcase.js) to build local JSON caches.
+
+```sh
+cd website
+npm install
+npm run start
+```
+
+To test a production bundle locally, run `npm run build` and then `npm run serve`.
+If you use Bun, install with `bun install --frozen-lockfile` and run `bun run test:performance`, `bun run typecheck`, and `bun run build` before opening a pull request.
+
+## Contributing
+
+Send pull requests for documentation updates, new community app and project entries, or website improvements.
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting changes.
+It explains table formatting, alphabetical sorting, and platform keyword rules.
+
+| Scope | Status | Target paths |
+| :--- | :--- | :--- |
+| Device catalog and guides | Open | [`devices.md`](website/docs/devices.md), [`guides.md`](website/docs/guides.md), [`official.md`](website/docs/official.md), [`photography.md`](website/docs/photography.md) |
+| Community apps and projects | Open | [`apps.md`](website/docs/apps.md), [`projects.md`](website/docs/projects.md) |
+| Website source and scripts | Open | [`website/src/`](website/src/), [`scripts/`](scripts/) |
+| Firmware index and changelogs | Restricted (project maintainers) | [`firmware.md`](website/docs/firmware.md), [`changelogs/`](website/docs/changelogs/) |
+| Featured directory overrides | Restricted (project maintainers) | [`showcase-config.json`](website/src/data/showcase-config.json) |
+
+## Licensing and attribution
+
+Nothing Archive uses separate licenses for code, curated documentation, extraction tools, and brand assets.
+
+- **Documentation and firmware tables**: Licensed under [CC BY-NC 4.0](LICENSE). CC BY-NC 4.0 and EU TDM Article 4 terms prohibit commercial generative AI model training and automated scraping.
+- **Website source and automation scripts**: Code under [`website/`](website/) (excluding `website/docs/` content) and [`scripts/`](scripts/) uses the [MIT License](LICENSE-MIT).
+- **Extraction binaries**: `ota_extractor` and its shared libraries under [`bin/`](bin/) come from AOSP and Chromium under Apache 2.0 and BSD-3-Clause terms. See [`bin/README.md`](bin/README.md).
+- **OEM firmware and product assets**: Nothing Technology Limited owns all official OTA links, system APKs, device renders, and manuals. We index them for non-commercial recovery and hardware identification under nominative fair use.
+- **Project branding and fonts**: Brand graphics under `website/static/img/brand/` are proprietary to Nothing Archive. Font licensing details live in [`website/static/fonts/README.md`](website/static/fonts/README.md), and image licensing details live in [`website/static/img/README.md`](website/static/img/README.md).
 
 > [!IMPORTANT]
-> **Attribution Mandate**: Anyone replicating, scraping, hosting mirrors of, or adapting any custom guides or compiled database tables from this repository **MUST** provide prominent, visible credit to **Nothing Archive** and link back to this source repository:
-> `https://github.com/spike0en/nothing_archive`
+> If you mirror, adapt, or republish guides or compiled tables from this repository, credit **Nothing Archive** clearly and link back to `https://github.com/spike0en/nothing_archive`.
 
-## Credits & Acknowledgements
+## Acknowledgements and support
 
-Special thanks to:
-*   **[PHATWalrus](https://github.com/PHATWalrus)** for project operations, domain maintenance, and web infrastructure.
-*   **[luk1337](https://github.com/luk1337/oplus_archive)** for the AOSP OTA extraction tool.
-*   **[arter97](https://github.com/arter97/nothing_archive)** for adapting the archive for Phone (2).
-*   **[Shiki](https://github.com/guptavishalxm1)** for building the initial website.
-*   **[Earendel Labs](https://github.com/Earendel-lab)** and **[Burak Dede](https://github.com/burakdede0)** for suggestions, feedback, and QA testing that helped identify bugs and improve the website over time.
-*   **[AdaaamB](https://github.com/AdaaamB)** for community wiki and documentation contributions.
-*   **[XelXen](https://github.com/XelXen)** for helping with initial [project branding and design](https://github.com/spike0en/nothing_archive/tree/main/website/static/img).
-*   **[LukeSkyD](https://xdaforums.com/t/nothing-phone-1-repo-nos-ota-img-guide-root.4464039/)** for early build references.
-*   **[Miki](https://github.com/RealYasin)** for backend help with necessary resources.
-*   All project contributors listed in the [Contributors Chart](https://github.com/spike0en/nothing_archive/graphs/contributors).
+For full project credits, see [Acknowledgements](website/docs/acknowledgements.md) and the [GitHub Contributors](https://github.com/spike0en/nothing_archive/graphs/contributors) page.
 
-## Support the Project
+If the archive helps you, star the repository to improve visibility and support ongoing maintenance.
+You can also help cover domain, server, and maintenance costs through the donation modes listed on the [Nothing Archive Support Panel](https://nothingarchive.tech/#support).
 
-If you would like to support the project financially to help cover server hosting and pipeline maintenance costs, please consider donating. 
-
-You can view our supported payment methods (including **UPI**, **Ko-fi**, **PayPal**, **Boosty**, and **Cryptocurrencies**) through our:
-*   **[Nothing Archive Support Panel (Web UI) 🌐](https://nothingarchive.tech/#support)**
-*   **GitHub Sponsor button** at the top right of this repository.
-
-If this project helps you, please consider **starring the repository** at the top right of this page (requires a GitHub account). It helps with discoverability and encourages maintenance.
-
-Thank you for your support!
+Thank you for your support.
 
 <div align="center">
   <a href="https://www.star-history.com/?repos=spike0en%2Fnothing_archive&type=date&legend=top-left">

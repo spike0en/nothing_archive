@@ -16,7 +16,6 @@ website/src/data/*
 !website/src/data/app_updates.json
 !website/src/data/accessories_updates.json
 website/docs/contributing.md
-website/docs/acknowledgements.md
 
 # Dependencies
 node_modules/
