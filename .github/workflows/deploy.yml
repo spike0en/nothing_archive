@@ -70,9 +70,12 @@ jobs:
           BASE_URL: ${{ vars.BASE_URL }}
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: website/build
+
+      - name: Wait for artifact propagation
+        run: sleep 10
 
       - name: Deploy to GitHub Pages
         id: deployment
