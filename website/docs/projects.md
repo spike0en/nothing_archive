@@ -47,7 +47,7 @@ Community-built widgets inspired by Nothing OS for various platforms and desktop
 
 | Project | Developer | Description |
 |---------|-----------|-------------|
-| [Everything UI](https://github.com/Prince-1652/EveryThing-UI) | Prince-1652 | Nothing OS Inspired Rainmeter Widget |
+| [Everything UI](https://github.com/Prince-1652/EveryThing-UI) | Prince-1652 | Nothing OS-inspired Rainmeter widget suite with clocks, media player, audio visualizers, system monitors, weather, and quick toggles for Windows |
 | [Kdear](https://github.com/AndresLopezzz/Kdear-nothing-cmf) | AndresLopezzz | KDE Plasma 6 desktop widget to control ANC, EQ, and battery for Nothing and CMF earbuds |
 | [KWGT Widgets](https://github.com/rjwarrier/KWGT-Widgets) | rjwarrier | KWGT Widgets inspired by Ndot |
 | [N KWGT](https://github.com/avnishkt2783/nKWGT) | avnishkt2783 | Nothing-style widgets |
@@ -209,6 +209,7 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [CMF Tray](https://github.com/abhineet00/cmf-tray) | abhineet00 | Windows taskbar tray app to control CMF and Nothing earbuds settings and battery |
 | [CMF Watch Pro 2 Bad Apple](https://github.com/cmf-tech-community/firmware-wp2-badapple) | arnav-kr & cmf-tech-community | Custom Zephyr firmware port for CMF Watch Pro 2 that plays synchronized Bad Apple video and audio with dial crown controls |
 | [CMF Watch Utils](https://github.com/cmf-tech-community/cmf-watch-utils) | arnav-kr & cmf-tech-community | Firmware container toolkit, BLE CLI, QEMU runner, and reverse-engineering documentation for CMF Watch Pro 2 for Windows, Linux, and macOS ([Docs](https://cmf.arnv.dev/)) |
+| [Dial Control](https://dial-control.netlify.app/) | Yuvraj675 | Context-aware radial menu and shortcut launcher driven by the CMF Buds Pro 2 dial or keyboard shortcuts to run macros, scroll, and adjust volume and brightness for Windows, Linux, and macOS [Repo](https://github.com/Yuvraj675/dial-control) |
 | [Ear Battery CLI](https://github.com/pedrordgs/nothing-ear) | pedrordgs | Command-line tool to check battery levels of Nothing Ear wireless earbuds via Bluetooth on Linux |
 | [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | Native Rust desktop client for Nothing and CMF audio devices for Windows and Linux |
 | [Ear Tray](https://github.com/Vadim-Karpenko/ear-tray) | Vadim-Karpenko | Lightweight Windows tray app for Nothing / CMF earbuds |
@@ -225,10 +226,12 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [Nothing Linux](https://github.com/Dospacite/NothingLinux) | Dospacite | Unofficial local Rust/GTK4 controller for Nothing Ear on Linux |
 | [Nothing Windows UI](https://github.com/noiab3d/nothing-windows-ui) | noiab3d | System tray application to control noise cancellation, EQ presets, Bass Enhance, gestures, and battery for Nothing and CMF earbuds for Windows |
 | [Nothing X (DMS)](https://github.com/Bestello/dms-nothingx/) | Bestello | Nothing and CMF audio device controller plugin for Dank Material Shell |
+| [Nothing X (Linux & macOS)](https://basanta.cc/nothing-x/) | basanta-bhandari | Desktop companion app, widget, and COSMIC panel applet to control Nothing and CMF audio devices, PipeWire routing, and battery status for Linux and macOS [Repo](https://github.com/basanta-bhandari/Nothing-x) |
 | [Nothing X (macOS)](https://github.com/eldandelion/nothing-x-macos) | eldandelion | Companion app for the Nothing ear (1) for macOS |
 | [Nothing X (macOS)](https://github.com/marlon-yepes/cmf-macos) | marlon-yepes | Unofficial macOS companion app for Nothing & CMF earbuds |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | macOS companion app for Nothing and CMF earbuds |
 | [Nothing X (macOS)](https://github.com/Senooy/nothing-x-mac) | Senooy | Native companion app for the Nothing Headphone (1) with noise control, spatial audio head tracking, and an 8-band equalizer for macOS |
+| [Nothing X (macOS & Windows)](https://github.com/yashraut362/nothing-x-mac) | yashraut362 | Menu bar and system tray companion app to control battery, noise cancellation, equalizer, gestures, and spatial audio on Nothing and CMF earbuds for Windows and macOS |
 | [Nothing X (Windows)](https://github.com/debarkak/nothingx-pc) | debarkak | Unofficial Windows and Linux implementation of Nothing X protocols for Nothing & CMF audio devices |
 | [Nothing X Desktop](https://github.com/raffycaccia/nothing-x-desktop-unofficial) | raffycaccia | System tray application to control battery, noise cancellation, equalizer presets, Ultra Bass, and gestures for Nothing and CMF earbuds for Windows, Linux, and macOS |
 | [NothingBar (macOS)](https://github.com/bestK1ngArthur/nothing-bar) | bestK1ngArthur | Menu bar app to control Nothing and CMF audio devices for macOS |
@@ -238,6 +241,7 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [Pinch](https://github.com/t-sappl/harbour-pinch) | t-sappl | Companion app for Nothing earbuds on Sailfish OS with noise control, gestures, and battery stats |
 | [Something X](https://github.com/SoaOaoS/something-x) | SoaOaoS | Nothing X app for Linux, tested to work on [Omarchy](https://omarchy.org/) |
 | [WCMF](https://lexp-hub.github.io/wcmf/) | lexp-hub | Web based watchface designer and Bluetooth BLE flasher for CMF Watch Pro, Watch Pro 2 & Watch 3 Pro [Repo](https://github.com/lexp-hub/wcmf) |
+| [WinX](https://github.com/Threalcocoboy/WinX) | Threalcocoboy | System tray companion app for Windows to manage battery status, noise control, equalizer, and Talk Mode on Nothing and CMF audio devices |
 
 ### Desktop Applications
 

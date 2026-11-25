@@ -308,6 +308,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Essential Mapper](https://github.com/tracpants/essential-mapper) | tracpants | Remap the Essential Key to launch apps or toggle flashlight by tap count |
 | [Essential Remap](https://github.com/AbdulKus/essential_remap) | AbdulKus | Free utility for remapping the physical Essential Key on Nothing OS |
 | [Essential Remapper](https://play.google.com/store/apps/details?id=com.essential.remapper) | AllexB | Remap the hardware Essential Key on Nothing & CMF devices to custom actions, shortcuts, or media controls |
+| [Joyous Remap](https://github.com/joyousyun/Joyous-Remap) | joyousyun | Remap the Essential Key on Nothing and CMF phones without root or ADB using press patterns, per-app profiles, a floating Quick Menu, and screen-off media controls |
 | [Kea](https://play.google.com/store/apps/details?id=com.techiboystudios.kea) | TechiBoy Studios | Remap hardware buttons with single, double, triple, or long press actions and adaptive detection |
 | [Nothing Button Remapper](https://github.com/THE-TECH-CHANGER/NothingButtonRemapper) | THE-TECH-CHANGER | Remap the Essential Key on Nothing Phone without root access |
 | [Sidecue](https://github.com/shashh-hash/sidecue) | shashh-hash | Remap the Essential Key with custom press actions, Glyph Matrix feedback, and auto-pause features |
@@ -325,6 +326,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Dynamic Droid](https://github.com/kavinagarwalagarwal-coder/dynamic-island-polish) | kavinagarwalagarwal-coder | Dynamic Island-style overlay that expands from the camera cutout to show music, calls, messages, and timers as live activities |
 | [Dynamic Island](https://github.com/VIJNESH200/Dynamic-Island) | VIJNESH200 | Dynamic Island overlay built with Jetpack Compose for CMF Phone 2 Pro |
 | [EarPhone X](https://github.com/noebachofner/EarPhonesX) | noebachofner | Linux application to control and configure Nothing and CMF earbuds |
+| [Essential Lite](https://github.com/wwGuGuww/EssentialLite) | wwGuGuww | Nothing OS-style capture utility for Android with OCR screenshots, notes, voice memos, a dot-matrix toolbox, Glyph alarms, and an encrypted PC link |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Essential Space port for all devices with screenshots, notes, and voice memos |
 | [Essential Voice](https://github.com/email2ishaanpatel-collab/essential-voice) | email2ishaanpatel-collab | On device Essential Voice for unsupported Nothing/CMF phones |
 | [Flip To Glyph Quick Tile](https://github.com/trup40/QuickTileForFlip2GlyphNP) | trup40 | A basic quick tile to toggle the Flip to Glyph setting on Nothing phones |
@@ -335,6 +337,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Nothing IconGen](https://github.com/linuxct/nothing-icongen) | linuxct | Generate and install translucent Nothing OS 5.0-style icon packs with automatic theme refresh |
 | [Nothing Land](https://github.com/TheGlitchh/NothingLand) | TheGlitchh | Dynamic Island-style notification and media overlay for Nothing OS |
 | [Nothing Quick Tools](https://github.com/DylanAkp/NothingQuickTools) | DylanAkp | Quick tiles for Phone (2) |
+| [Open Essential](https://github.com/CYPHERLYNX/Open-Essential) | CYPHERLYNX | Local-first alternative to Essential Space for Android to capture voice notes, screenshots, documents, and links with on-device AI search and summaries |
 | [Recording Light Control](https://github.com/Farpathan/Recording-Light-Control) | Farpathan | Recording light control for Phone (3) |
 | [Root My Nothing](https://github.com/ang3lo-azevedo/root-my-nothing) | ang3lo-azevedo | One-click root app for Nothing Phone (1) using CVE-2026-43499 (GhostLock) to install KernelSU without unlocking the bootloader |
 | [SaferDev](https://play.google.com/store/apps/details?id=com.abhixv.saferdev) | abhixv | Device insights tool |
@@ -411,6 +414,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 
 | App | Developer | Description |
 |-----|-----------|-------------|
+| [Dot Alarm](https://play.google.com/store/apps/details?id=com.appdexon.alarmdot) | App Dexon | Offline, ad-free alarm clock app with a 96-dot 24-hour visual timeline for single-tap alarm setup |
 | [Dot Cal](https://play.google.com/store/apps/details?id=com.dotfield.dotcal) | Dotfield Studio | Minimalist calendar app inspired by Nothing OS |
 | [Dotpray](https://github.com/muev-d-between/dotpray) | muev-d-between | Offline prayer clock and home-screen widgets for Android with Nothing OS styling |
 | [Moon in Pixels](https://play.google.com/store/apps/details?id=com.indie6403.mooninpixels) | Archit Verma | Moon phase calendar and lunar tracker |
@@ -452,6 +456,7 @@ Personal finance, budget managers, and expense tracking tools.
 | [Calories Are Nothing](https://play.google.com/store/apps/details?id=can.wearemobilefirst.com) | WeAreMobileFirst | Meal logging app |
 | [Conscious Smoking](https://github.com/puneetfsn/Conscious-Smoking) | puneetfsn | Offline habit tracker and cigarette counter with expense metrics and a Nothing OS styled home-screen widget |
 | [Compass](https://github.com/Earendel-lab/Compass) | Earendel | Simple compass |
+| [Cooking](https://github.com/aetnox-dot/cooking-android) | aetnox-dot | Recipe book and cooking assistant for Android with an AI sous-chef, dynamic serving scaling, step timers, JSON backups, and automatic Nothing OS styling |
 | [Desight](https://play.google.com/store/apps/details?id=com.repomedia.desight) | Repomedia | Nothing-inspired, free eye strain reduction app |
 | [Dot Weather](https://github.com/SMMahmudIqbal/DotWeather) | SMMahmudIqbal | Minimalist weather and environmental monitor app for Android inspired by Nothing OS 3.0 |
 | [Essential Browser](https://play.google.com/store/apps/details?id=com.lended.browser) | Creepsmile | AI-powered browser |
@@ -468,9 +473,11 @@ Personal finance, budget managers, and expense tracking tools.
 | [Nothing K](https://github.com/cuadratico/NothingK) | cuadratico | Password vault |
 | [Nothing LED Banner](https://play.google.com/store/apps/details?id=com.ApexCreator.thebannerapp) | Apex Creators | LED banner creator |
 | [Nothing News](https://play.google.com/store/apps/details?id=com.nothing.news) | Mirko_ddd | News aggregator and updates reader for the Nothing community |
+| [Nothing News](https://github.com/DemonCodes-tech/Newsthing) | DemonCodes-tech | Personal news reader with topic collections, offline article saving, and headline summaries in a Nothing OS interface |
 | [Nothing OS Smart Edge](https://github.com/f4646/Smart-Edge/releases) | f4646 | Floating windows for Sidebar and Nothing OS |
 | [Nothing Weather](https://play.google.com/store/apps/details?id=com.ApexCreator.nothing_weather) | Apex Creators | Minimalist weather application designed with Nothing OS aesthetics |
 | [Procam](https://github.com/pleum333333/procam-nothing-2a-plus) | pleum333333 | Manual camera app for Nothing Phone (2a) Plus with RAW capture, 32-second exposures, focus peaking, and live histogram |
+| [PULSE](https://github.com/Threalcocoboy/PULSE) | Threalcocoboy | Customizable, local-first Android health dashboard with modular dot-matrix widgets, Health Connect sync, and personal goals |
 | [Void](https://play.google.com/store/apps/details?id=com.thevoid.focus) | vmcreate | Minimal app blocker based on Nothing OS design language |
 | [WhispCal](https://play.google.com/store/apps/details?id=com.thomasmorice.whispcal) | Thomas Morice | Calorie tracking app for Android and [iOS](https://apps.apple.com/in/app/whispcal/id6757860582) |
 
