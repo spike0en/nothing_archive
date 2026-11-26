@@ -16,7 +16,8 @@
     "better-nothing-glyph-composer-bngc",
     "voidcaller",
     "404",
-    "openqore"
+    "openqore",
+    "standby"
   ],
   "platformOverrides": {
     "nothing-archive": ["web"]
