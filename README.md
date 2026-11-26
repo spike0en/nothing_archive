@@ -26,11 +26,13 @@ It also lists community-made apps, tools, and developer resources.
 
 <br>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/brand/social-banner.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/brand/social-banner.png">
-  <img alt="Nothing Archive Banner" src="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/brand/social-banner.png" width="100%">
-</picture>
+<a href="https://nothingarchive.tech/">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/brand/social-banner.png">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/brand/social-banner.png">
+    <img alt="Nothing Archive Banner" src="https://raw.githubusercontent.com/spike0en/nothing_archive/main/website/static/img/brand/social-banner.png" width="100%">
+  </picture>
+</a>
 
 </div>
 
