@@ -326,6 +326,7 @@ Dynamic wallpapers and visual enhancements to customize your device's interface.
 | [Dynamic Droid](https://github.com/kavinagarwalagarwal-coder/dynamic-island-polish) | kavinagarwalagarwal-coder | Dynamic Island-style overlay that expands from the camera cutout to show music, calls, messages, and timers as live activities |
 | [Dynamic Island](https://github.com/VIJNESH200/Dynamic-Island) | VIJNESH200 | Dynamic Island overlay built with Jetpack Compose for CMF Phone 2 Pro |
 | [EarPhone X](https://github.com/noebachofner/EarPhonesX) | noebachofner | Linux application to control and configure Nothing and CMF earbuds |
+| [Essential Island](https://github.com/Jero009/essential-island) | Jero009 | Nothing OS-styled dynamic island overlay for Android |
 | [Essential Lite](https://github.com/wwGuGuww/EssentialLite) | wwGuGuww | Nothing OS-style capture utility for Android with OCR screenshots, notes, voice memos, a dot-matrix toolbox, Glyph alarms, and an encrypted PC link |
 | [Essential Space Lite](https://github.com/rKyzen/Essential_Space_Lite) | rKyzen | Essential Space port for all devices with screenshots, notes, and voice memos |
 | [Essential Voice](https://github.com/email2ishaanpatel-collab/essential-voice) | email2ishaanpatel-collab | On device Essential Voice for unsupported Nothing/CMF phones |
