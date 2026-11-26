@@ -206,6 +206,7 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [CMF Open](https://cmf.techjeeper.com/) | TechJeeper | Web Bluetooth app store, watchface builder, and sideloading toolkit for CMF Watch 3 Pro [Repo](https://github.com/TechJeeper/CMF-Open) |
 | [CMF Parser](https://github.com/ambraglow/cmfparser) | ambraglow | Rust CLI utility to unpack OTA firmware images and app binaries for CMF Watch 3 Pro and Watch Pro 2 for Windows, Linux, and macOS |
 | [CMF Ringtone Tool](https://github.com/tirodz/CMF-Ringtone-Tool) | tirodz | CMF Watch Pro 2 ringtone customization tool |
+| [CMF Speaker Linux](https://github.com/haosb/cmfspeaker-panel-linux) | haosb | Local web UI and CLI to control CMF Speaker S for Linux |
 | [CMF Tray](https://github.com/abhineet00/cmf-tray) | abhineet00 | Windows taskbar tray app to control CMF and Nothing earbuds settings and battery |
 | [CMF Watch Pro 2 Bad Apple](https://github.com/cmf-tech-community/firmware-wp2-badapple) | arnav-kr & cmf-tech-community | Custom Zephyr firmware port for CMF Watch Pro 2 that plays synchronized Bad Apple video and audio with dial crown controls |
 | [CMF Watch Utils](https://github.com/cmf-tech-community/cmf-watch-utils) | arnav-kr & cmf-tech-community | Firmware container toolkit, BLE CLI, QEMU runner, and reverse-engineering documentation for CMF Watch Pro 2 for Windows, Linux, and macOS ([Docs](https://cmf.arnv.dev/)) |
@@ -227,7 +228,9 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [Nothing Windows UI](https://github.com/noiab3d/nothing-windows-ui) | noiab3d | System tray application to control noise cancellation, EQ presets, Bass Enhance, gestures, and battery for Nothing and CMF earbuds for Windows |
 | [Nothing X (DMS)](https://github.com/Bestello/dms-nothingx/) | Bestello | Nothing and CMF audio device controller plugin for Dank Material Shell |
 | [Nothing X (Linux & macOS)](https://basanta.cc/nothing-x/) | basanta-bhandari | Desktop companion app, widget, and COSMIC panel applet to control Nothing and CMF audio devices, PipeWire routing, and battery status for Linux and macOS [Repo](https://github.com/basanta-bhandari/Nothing-x) |
+| [Nothing X (macOS)](https://github.com/Abberate/nothing-x-app-macos) | Abberate | Unofficial macOS companion app for CMF Buds Pro 2 |
 | [Nothing X (macOS)](https://github.com/eldandelion/nothing-x-macos) | eldandelion | Companion app for the Nothing ear (1) for macOS |
+| [Nothing X (macOS)](https://github.com/farhancdr/nothing-x-mac) | farhancdr | Menu bar app to control Nothing and CMF earbuds for macOS |
 | [Nothing X (macOS)](https://github.com/marlon-yepes/cmf-macos) | marlon-yepes | Unofficial macOS companion app for Nothing & CMF earbuds |
 | [Nothing X (macOS)](https://github.com/nikiomori/nothing-x-macos/) | nikiomori, arunavo4 | macOS companion app for Nothing and CMF earbuds |
 | [Nothing X (macOS)](https://github.com/Senooy/nothing-x-mac) | Senooy | Native companion app for the Nothing Headphone (1) with noise control, spatial audio head tracking, and an 8-band equalizer for macOS |
@@ -240,6 +243,7 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [Orbit](https://harsha20599.github.io/orbit/) | harsha20599 | Customizable controller that turns the CMF Buds Pro 2 case dial into an input wheel to scroll, scrub media, and trigger shortcuts for Windows, macOS, and Android [Repo](https://github.com/harsha20599/orbit) |
 | [Pinch](https://github.com/t-sappl/harbour-pinch) | t-sappl | Companion app for Nothing earbuds on Sailfish OS with noise control, gestures, and battery stats |
 | [Something X](https://github.com/SoaOaoS/something-x) | SoaOaoS | Nothing X app for Linux, tested to work on [Omarchy](https://omarchy.org/) |
+| [Watch Languages](https://watchlanguages.app) | chrispetrou | Web-based tool to add Greek, Georgian, Armenian, and extra emoji to the CMF Watch 3 Pro font ([Repo](https://github.com/chrispetrou/cmf-watch3pro-languages)) |
 | [WCMF](https://lexp-hub.github.io/wcmf/) | lexp-hub | Web based watchface designer and Bluetooth BLE flasher for CMF Watch Pro, Watch Pro 2 & Watch 3 Pro [Repo](https://github.com/lexp-hub/wcmf) |
 | [WinX](https://github.com/Threalcocoboy/WinX) | Threalcocoboy | System tray companion app for Windows to manage battery status, noise control, equalizer, and Talk Mode on Nothing and CMF audio devices |
 
@@ -286,6 +290,7 @@ These require root access (KernelSU or Magisk). Proceed with caution.
 |--------|--------|-------------|
 | [CMF True Stereo](https://github.com/Dr-Essence/CMF-true-stereo) | Dr-Essence | Root module for CMF Phone 1 that routes audio into stereo channels with device orientation tracking |
 | [Dirac Audio Nothing Phone 1 Magisk Module](https://github.com/reiryuki/Dirac-Audio-Nothing-Phone-1-Magisk-Module) | reiryuki | Dirac Audio module ported from the Nothing Phone (1) for other devices |
+| [Essential Tweaks](https://github.com/xWey10/Essential-Tweaks) | xWey10 | LSPosed module with power menu, lock screen, and Essential Key tweaks for Nothing OS |
 | [Glyph CLI](https://github.com/mahdi-salmanzade/glyph-cli) | mahdi-salmanzade | Control 137 LEDs directly from your terminal. No SDK. No app sandbox. Pure sysfs. |
 | [Glyph Keeper](https://github.com/vaccreate/GlyphKeeper) | vaccreate | Root module to control Nothing Phone (2a) Glyphs via sysfs and WebUI |
 | [Ndot to Roboto](https://github.com/reindex-ot/Ndot-to-Roboto) | reindex-ot | Magisk module to replace the system Ndot font with Roboto |
@@ -293,6 +298,8 @@ These require root access (KernelSU or Magisk). Proceed with caution.
 | [NetHunter Spacewar](https://github.com/ExTV/nethunter-spacewar) | ExTV | Kali NetHunter Magisk module for the Nothing Phone (1) |
 | [Nothing AI Changer](https://github.com/Martmists-GH/Nothing-AI-Changer) | Martmists-GH | Replace ChatGPT integration with another app |
 | [Nothing Battery Fix](https://github.com/Farpathan/Nothing-Battery-Fix) | Farpathan | Restore classic battery percentage style |
+| [Nothing Blur Icons](https://github.com/Ak1o-T/NothingBlurIcons) | Ak1o-T | LSPosed module that adds frosted glass blur to app icons on Nothing OS 5.0 |
+| [Nothing Blur Shortcuts](https://github.com/Ak1o-T/NothingBlurShortcuts) | Ak1o-T | LSPosed module that adds frosted glass blur to lock screen shortcuts and notifications on Nothing OS 5.0 |
 | [Nothing eUICC](https://github.com/reindex-ot/nothing-euicc) | reindex-ot | Enable eSIM functionality on Nothing devices that do not support it |
 | [Nothing Essential Sync](https://github.com/m24ih/nothing-essential-sync) | m24ih | Event-driven root module syncing Nothing OS Essential Space captures, voice notes, and AI summaries into Obsidian |
 | [Nothing Glass](https://github.com/ShinysLove/NothingGlass) | ShinysLove | LSPosed module that adds dark frosted glass to the notification shade, quick settings, cards, and volume panel on Nothing OS |
