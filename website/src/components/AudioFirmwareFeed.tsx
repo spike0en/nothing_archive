@@ -59,7 +59,7 @@ export default function AudioFirmwareFeed(): React.JSX.Element {
               <span>No tracked accessory releases</span>
             </div>
           ) : (
-            devices.map((dev) => {
+            devices.map((dev, idx) => {
               const isExpanded = expandedId === dev.modelId;
               const isCmf = dev.brand === 'CMF';
 
@@ -81,7 +81,7 @@ export default function AudioFirmwareFeed(): React.JSX.Element {
                       }
                     }}
                   >
-                    <span className={styles.timeLag} suppressHydrationWarning>
+                    <span className={clsx(styles.timeLag, idx === 0 && styles.timeLagActive)} suppressHydrationWarning>
                       {getTimeLag(dev.updatedAt)}
                     </span>
                     {!imgErrors[dev.modelId] ? (
@@ -108,50 +108,59 @@ export default function AudioFirmwareFeed(): React.JSX.Element {
                           {dev.brand}
                         </span>
                         <span className={styles.deviceName}>{dev.name}</span>
-                        <span className={styles.versionBadge}>v{dev.version}</span>
-                        {dev.size && <span className={styles.sizePill}>{dev.size}</span>}
+                        <span className={styles.versionSlot}>
+                          <span className={styles.versionBadge}>v{dev.version}</span>
+                          {dev.size && <span className={styles.sizePill}>{dev.size}</span>}
+                        </span>
                       </div>
                     </div>
-                    {dev.downloadUrl && (
-                      <a
-                        href={dev.downloadUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.downloadIconBtn}
-                        title={`Download ${dev.brand} ${dev.name} v${dev.version} firmware (.bin)`}
-                        aria-label={`Download ${dev.brand} ${dev.name} v${dev.version} firmware (.bin)`}
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <svg
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className={styles.downloadIcon}
+                    <div className={styles.actionArea}>
+                      {dev.downloadUrl && (
+                        <a
+                          href={dev.downloadUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.downloadIconBtn}
+                          title={`Download ${dev.brand} ${dev.name} v${dev.version} firmware (.bin)`}
+                          aria-label={`Download ${dev.brand} ${dev.name} v${dev.version} firmware (.bin)`}
+                          onClick={(e) => e.stopPropagation()}
                         >
-                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                          <polyline points="7 10 12 15 17 10" />
-                          <line x1="12" y1="15" x2="12" y2="3" />
-                        </svg>
-                      </a>
-                    )}
-                    <svg
-                      className={clsx(styles.chevron, isExpanded && styles.chevronExpanded)}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      width="12"
-                      height="12"
-                    >
-                      <polyline points="6 9 12 15 18 9" />
-                    </svg>
+                          <svg
+                            viewBox="0 0 28 28"
+                            fill="none"
+                            className={styles.downloadIcon}
+                            aria-hidden="true"
+                          >
+                            <circle cx="14" cy="14" r="11.5" className={styles.downloadFill} />
+                            <circle cx="14" cy="14" r="12.5" strokeWidth="2" className={styles.downloadRing} />
+                            <g
+                              transform="translate(8 8) scale(0.5)"
+                              stroke="currentColor"
+                              strokeWidth="2.1"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                              <polyline points="7 10 12 15 17 10" />
+                              <line x1="12" y1="15" x2="12" y2="3" />
+                            </g>
+                          </svg>
+                        </a>
+                      )}
+                      <svg
+                        className={clsx(styles.chevron, isExpanded && styles.chevronExpanded)}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        width="12"
+                        height="12"
+                      >
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </div>
                   </div>
 
                   {isExpanded && (

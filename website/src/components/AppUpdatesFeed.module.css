@@ -29,6 +29,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
+  margin-right: 10px;
   margin-bottom: 0.75rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--nothing-border);
@@ -131,7 +132,7 @@
 .consoleBody {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0;
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
@@ -161,7 +162,7 @@
 .consoleBody:hover::-webkit-scrollbar-thumb,
 .consoleBody::-webkit-scrollbar-thumb:hover,
 .consoleBody::-webkit-scrollbar-thumb:active {
-  background: rgba(0, 0, 0, 0.35);
+  background: var(--cmf-orange, #FF5310) !important;
 }
 
 .consoleBody::-webkit-scrollbar-button {
@@ -179,7 +180,7 @@
 [data-theme='dark'] .consoleBody:hover::-webkit-scrollbar-thumb,
 [data-theme='dark'] .consoleBody::-webkit-scrollbar-thumb:hover,
 [data-theme='dark'] .consoleBody::-webkit-scrollbar-thumb:active {
-  background: rgba(255, 255, 255, 0.35);
+  background: var(--nothing-yellow, #FFC700) !important;
 }
 
 @supports not selector(::-webkit-scrollbar) {
@@ -190,7 +191,7 @@
   .consoleBody.isScrolling,
   .consoleBody[data-scrolling='true'],
   .consoleBody:hover {
-    scrollbar-color: rgba(0, 0, 0, 0.35) transparent;
+    scrollbar-color: var(--cmf-orange, #FF5310) transparent;
   }
   [data-theme='dark'] .consoleBody {
     scrollbar-color: rgba(255, 255, 255, 0.16) transparent;
@@ -198,31 +199,33 @@
   [data-theme='dark'] .consoleBody.isScrolling,
   [data-theme='dark'] .consoleBody[data-scrolling='true'],
   [data-theme='dark'] .consoleBody:hover {
-    scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+    scrollbar-color: var(--nothing-yellow, #FFC700) transparent;
   }
 }
 
 .rowItem {
+  position: relative;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
+  padding: 0.14rem 0;
   border-radius: 8px;
   transition: background-color 0.15s ease;
 }
 
-.rowItemExpanded {
-  background-color: rgba(0, 0, 0, 0.02);
-  border-radius: 8px;
-  overflow: hidden;
+.rowItem:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 2.9rem;
+  right: 0;
+  bottom: 0;
+  height: 0;
+  border-bottom: 1px solid var(--nothing-border);
+  pointer-events: none;
 }
 
-[data-theme='dark'] .rowItemExpanded {
-  background-color: rgba(255, 255, 255, 0.03);
-}
-
-.rowItemExpanded .consoleLine {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+.rowItemExpanded::after {
+  opacity: 0;
 }
 
 .consoleLine {
@@ -231,28 +234,36 @@
   flex-shrink: 0;
   font-size: 0.75rem;
   line-height: 1.4;
-  gap: 0.55rem;
+  gap: 0.5rem;
   width: 100%;
   color: inherit;
-  border-radius: 6px;
-  padding: 0.25rem 0.4rem;
+  padding: 0.28rem 0;
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.15s ease;
 }
 
-.consoleLine:hover {
-  background-color: rgba(0, 0, 0, 0.04);
+.consoleLine:hover .appName,
+.consoleLine:hover .chevron {
+  color: var(--nothing-red, #D71920);
 }
 
-[data-theme='dark'] .consoleLine:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+[data-theme='dark'] .consoleLine:hover .appName,
+[data-theme='dark'] .consoleLine:hover .chevron {
+  color: #FF4D52;
+}
+
+.consoleLine:has(.playStoreBtn:hover) .appName {
+  color: var(--ifm-color-content);
+}
+
+.consoleLine:has(.playStoreBtn:hover) .chevron {
+  color: var(--ifm-color-content-muted);
 }
 
 .timeLag {
   color: var(--ifm-color-content-muted);
   font-weight: 500;
-  width: 28px;
+  width: 2.4rem;
   flex-shrink: 0;
   font-size: 0.72rem;
   opacity: 0.75;
@@ -275,32 +286,40 @@
 .appDetails {
   flex: 1;
   min-width: 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.5rem;
   white-space: nowrap;
-  overflow: hidden;
 }
 
 .appName {
+  min-width: 0;
   font-weight: 600;
   font-size: 0.74rem;
   color: var(--ifm-color-content);
   text-overflow: ellipsis;
   overflow: hidden;
+  transition: color 0.15s ease;
 }
 
 .versionBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 6.1rem;
   font-family: var(--f-lettera, var(--f-mono, monospace));
   font-size: 0.68rem;
   font-weight: 500;
-  padding: 0.1rem 0.4rem;
+  line-height: 1;
+  padding: 0.22rem 0.45rem 0.14rem;
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.08);
   color: var(--ifm-color-content);
   flex-shrink: 0;
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 [data-theme='dark'] .versionBadge {
@@ -317,43 +336,76 @@
 }
 
 .playStoreBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  border-radius: var(--radius-pill, 999px);
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
   background: transparent;
-  border: 1px solid hsl(var(--border));
   color: var(--ifm-color-content-muted);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: color 0.15s ease;
   text-decoration: none !important;
   flex-shrink: 0;
-}
-
-.playStoreBtn:hover {
-  background-color: rgba(1, 135, 95, 0.08);
-  border-color: rgba(1, 135, 95, 0.65);
-  color: #01875F;
+  line-height: 0;
 }
 
 [data-theme='dark'] .playStoreBtn {
-  background: transparent;
+  color: #CCCCCC;
+}
+
+.playStoreBtn:hover {
+  color: #01875F;
 }
 
 [data-theme='dark'] .playStoreBtn:hover {
-  background-color: rgba(0, 229, 117, 0.12);
-  border-color: rgba(0, 229, 117, 0.75);
   color: #00E575;
 }
 
 .playStoreIcon {
   display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.playStoreFill {
+  fill: rgba(0, 0, 0, 0.04);
+  transition: fill 0.15s ease;
+}
+
+[data-theme='dark'] .playStoreFill {
+  fill: rgba(255, 255, 255, 0.06);
+}
+
+.playStoreBtn:hover .playStoreFill {
+  fill: rgba(1, 135, 95, 0.08);
+}
+
+[data-theme='dark'] .playStoreBtn:hover .playStoreFill {
+  fill: rgba(0, 229, 117, 0.12);
+}
+
+.playStoreRing {
+  fill: none;
+  stroke: rgba(0, 0, 0, 0.16);
+  transition: stroke 0.15s ease;
+}
+
+[data-theme='dark'] .playStoreRing {
+  stroke: rgba(255, 255, 255, 0.22);
+}
+
+.playStoreBtn:hover .playStoreRing {
+  stroke: rgba(1, 135, 95, 0.65);
+}
+
+[data-theme='dark'] .playStoreBtn:hover .playStoreRing {
+  stroke: rgba(0, 229, 117, 0.75);
 }
 
 .chevron {
   color: var(--ifm-color-content-muted);
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: color 0.15s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .chevronExpanded {
@@ -361,14 +413,21 @@
 }
 
 .accordionContent {
-  padding: 0.5rem 0.75rem 0.65rem;
-  border-top: 1px solid var(--nothing-border);
+  margin: 0.12rem calc(38px + 0.85rem) 0.42rem 2.9rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.025);
+  border: 1px solid var(--nothing-border);
+}
+
+[data-theme='dark'] .accordionContent {
+  background-color: rgba(255, 255, 255, 0.035);
 }
 
 .changelogText {
-  font-family: var(--f-mono, monospace);
-  font-size: 0.72rem;
-  line-height: 1.45;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.75rem;
+  line-height: 1.55;
   color: var(--ifm-color-content-muted);
   white-space: pre-wrap;
 }
@@ -398,6 +457,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 0.35rem;
+    margin-right: 6px;
     margin-bottom: 0.65rem;
     padding-bottom: 0.5rem;
   }
@@ -430,18 +490,46 @@
   .categoryBadge {
     display: none;
   }
+  .consoleBody {
+    scrollbar-gutter: auto;
+  }
+  .consoleLine {
+    gap: 0.3rem;
+    padding: 0.26rem 0;
+  }
+  .rowItem:not(:last-child)::after {
+    left: 2.3rem;
+    right: 0;
+  }
+  .timeLag {
+    width: 2rem;
+    font-size: 0.68rem;
+  }
+  .appIcon {
+    width: 20px;
+    height: 20px;
+  }
   .appDetails {
-    white-space: normal;
-    flex-wrap: wrap;
-    gap: 0.2rem 0.4rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.3rem;
   }
   .appName {
-    font-size: 0.76rem;
-    white-space: normal;
-    overflow: visible;
-    text-overflow: clip;
+    font-size: 0.72rem;
   }
   .versionBadge {
-    font-size: 0.65rem;
+    min-width: 4.1rem;
+    font-size: 0.6rem;
+    padding: 0.14rem 0.3rem 0.08rem;
+  }
+  .actionArea {
+    gap: 0.25rem;
+  }
+  .playStoreBtn {
+    width: 24px;
+    height: 24px;
+  }
+  .accordionContent {
+    margin: 0.1rem calc(36px + 0.55rem) 0.36rem 2.3rem;
+    padding: 0.45rem 0.6rem;
   }
 }

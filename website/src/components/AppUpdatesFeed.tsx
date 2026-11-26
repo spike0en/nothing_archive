@@ -119,7 +119,16 @@ export default function AppUpdatesFeed(): React.JSX.Element {
                         aria-label={`Open ${app.name} on Google Play`}
                         onClick={(e) => e.stopPropagation()}
                       >
-                        <FaGooglePlay size={10} className={styles.playStoreIcon} />
+                        <svg
+                          viewBox="0 0 28 28"
+                          fill="none"
+                          className={styles.playStoreIcon}
+                          aria-hidden="true"
+                        >
+                          <circle cx="14" cy="14" r="11.5" className={styles.playStoreFill} />
+                          <circle cx="14" cy="14" r="12.5" strokeWidth="2" className={styles.playStoreRing} />
+                          <FaGooglePlay size={10} x={9.8} y={9} />
+                        </svg>
                       </a>
                       <svg
                         className={clsx(styles.chevron, isExpanded && styles.chevronExpanded)}

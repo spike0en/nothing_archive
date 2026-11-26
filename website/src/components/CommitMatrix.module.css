@@ -29,6 +29,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
+  margin-right: 10px;
   margin-bottom: 0.75rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--nothing-border);
@@ -153,7 +154,7 @@
 .consoleBody {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0;
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
@@ -183,7 +184,7 @@
 .consoleBody:hover::-webkit-scrollbar-thumb,
 .consoleBody::-webkit-scrollbar-thumb:hover,
 .consoleBody::-webkit-scrollbar-thumb:active {
-  background: rgba(0, 0, 0, 0.35);
+  background: var(--cmf-orange, #FF5310) !important;
 }
 
 .consoleBody::-webkit-scrollbar-button {
@@ -201,7 +202,7 @@
 [data-theme='dark'] .consoleBody:hover::-webkit-scrollbar-thumb,
 [data-theme='dark'] .consoleBody::-webkit-scrollbar-thumb:hover,
 [data-theme='dark'] .consoleBody::-webkit-scrollbar-thumb:active {
-  background: rgba(255, 255, 255, 0.35);
+  background: var(--nothing-yellow, #FFC700) !important;
 }
 
 @supports not selector(::-webkit-scrollbar) {
@@ -212,7 +213,7 @@
   .consoleBody.isScrolling,
   .consoleBody[data-scrolling='true'],
   .consoleBody:hover {
-    scrollbar-color: rgba(0, 0, 0, 0.35) transparent;
+    scrollbar-color: var(--cmf-orange, #FF5310) transparent;
   }
   [data-theme='dark'] .consoleBody {
     scrollbar-color: rgba(255, 255, 255, 0.16) transparent;
@@ -220,13 +221,13 @@
   [data-theme='dark'] .consoleBody.isScrolling,
   [data-theme='dark'] .consoleBody[data-scrolling='true'],
   [data-theme='dark'] .consoleBody:hover {
-    scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+    scrollbar-color: var(--nothing-yellow, #FFC700) transparent;
   }
 }
 
 .consoleLine {
+  position: relative;
   display: flex;
-  align-items: center;
   align-items: center;
   flex-shrink: 0;
   font-size: 0.75rem;
@@ -235,25 +236,47 @@
   width: 100%;
   color: inherit;
   text-decoration: none;
-  border-radius: 6px;
-  padding: 0.25rem 0.4rem;
-  transition: background-color 0.15s ease;
+  padding: 0.42rem 0;
+}
+
+.consoleLine:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 2.95rem;
+  right: 0;
+  bottom: 0;
+  height: 0;
+  border-bottom: 1px solid var(--nothing-border);
+  pointer-events: none;
 }
 
 .consoleLine:hover {
-  background-color: rgba(0, 0, 0, 0.04);
   text-decoration: none !important;
   color: inherit;
 }
 
-[data-theme='dark'] .consoleLine:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+.consoleLine:hover .messageText {
+  color: var(--nothing-red, #D71920);
+}
+
+[data-theme='dark'] .consoleLine:hover .messageText {
+  color: #FF4D52;
+}
+
+.consoleLine:hover .shaTag {
+  border-color: rgba(215, 25, 32, 0.45);
+  color: var(--nothing-red, #D71920);
+}
+
+[data-theme='dark'] .consoleLine:hover .shaTag {
+  border-color: rgba(255, 77, 82, 0.5);
+  color: #FF4D52;
 }
 
 .timeLag {
   color: var(--ifm-color-content-muted);
   font-weight: 500;
-  width: 28px;
+  width: 2.4rem;
   flex-shrink: 0;
   font-size: 0.72rem;
   font-family: var(--f-lettera, monospace);
@@ -328,6 +351,7 @@
   color: var(--ifm-color-content-muted);
   font-size: 0.74rem;
   line-height: 1.35;
+  transition: color 0.15s ease;
 }
 
 .messageTextLatest {
@@ -338,7 +362,9 @@
 .shaTag {
   display: inline-flex;
   align-items: center;
-  padding: 0.1rem 0.4rem;
+  justify-content: center;
+  line-height: 1;
+  padding: 0.24rem 0.42rem 0.16rem;
   border-radius: 4px;
   background-color: hsl(var(--secondary) / 0.6);
   border: 1px solid hsl(var(--border));
@@ -346,6 +372,7 @@
   font-size: 0.65rem;
   color: var(--ifm-color-content-muted);
   flex-shrink: 0;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 [data-theme='dark'] .shaTag {
@@ -417,6 +444,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 0.35rem;
+    margin-right: 6px;
     margin-bottom: 0.65rem;
     padding-bottom: 0.5rem;
   }
@@ -452,15 +480,25 @@
   .viewsPill span {
     transform: translateY(0.75px);
   }
+  .consoleBody {
+    scrollbar-gutter: auto;
+  }
   .consoleLine {
     gap: 0.35rem;
-    padding: 0.2rem 0.25rem;
+    padding: 0.36rem 0;
+  }
+  .consoleLine:not(:last-child)::after {
+    left: 2.5rem;
+    right: 0;
+  }
+  .timeLag {
+    width: 2.15rem;
   }
   .messageText {
     font-size: 0.7rem;
   }
   .shaTag {
     font-size: 0.6rem;
-    padding: 0.08rem 0.3rem;
+    padding: 0.2rem 0.34rem 0.14rem;
   }
 }
