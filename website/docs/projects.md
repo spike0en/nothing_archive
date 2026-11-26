@@ -208,8 +208,9 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [CMF Ringtone Tool](https://github.com/tirodz/CMF-Ringtone-Tool) | tirodz | CMF Watch Pro 2 ringtone customization tool |
 | [CMF Speaker Linux](https://github.com/haosb/cmfspeaker-panel-linux) | haosb | Local web UI and CLI to control CMF Speaker S for Linux |
 | [CMF Tray](https://github.com/abhineet00/cmf-tray) | abhineet00 | Windows taskbar tray app to control CMF and Nothing earbuds settings and battery |
-| [CMF Watch Pro 2 Bad Apple](https://github.com/cmf-tech-community/firmware-wp2-badapple) | arnav-kr & cmf-tech-community | Custom Zephyr firmware port for CMF Watch Pro 2 that plays synchronized Bad Apple video and audio with dial crown controls |
-| [CMF Watch Utils](https://github.com/cmf-tech-community/cmf-watch-utils) | arnav-kr & cmf-tech-community | Firmware container toolkit, BLE CLI, QEMU runner, and reverse-engineering documentation for CMF Watch Pro 2 for Windows, Linux, and macOS ([Docs](https://cmf.arnv.dev/)) |
+| [CMF Watch Pro 2 Bad Apple](https://github.com/fmctools/firmware-wp2-badapple) | arnav-kr & fmctools | Custom Zephyr firmware port for CMF Watch Pro 2 that plays synchronized Bad Apple video and audio with dial crown controls |
+| [CMF Watch SDK](https://github.com/fmctools/cmf-watch-sdk) | fmctools | Rust SDK, firmware app loader patch, and BLE installer for third-party CMF Watch Pro 2 apps published to the FMC store for Windows, Linux, and macOS ([Apps](https://github.com/fmctools/apps)) |
+| [CMF Watch Utils](https://github.com/fmctools/cmf-watch-utils) | arnav-kr & fmctools | Firmware container toolkit, BLE CLI, QEMU runner, and reverse-engineering documentation for CMF Watch Pro 2 and Watch 3 Pro for Windows, Linux, and macOS ([Docs](https://cmf.arnv.dev/)) |
 | [Dial Control](https://dial-control.netlify.app/) | Yuvraj675 | Context-aware radial menu and shortcut launcher driven by the CMF Buds Pro 2 dial or keyboard shortcuts to run macros, scroll, and adjust volume and brightness for Windows, Linux, and macOS [Repo](https://github.com/Yuvraj675/dial-control) |
 | [Ear Battery CLI](https://github.com/pedrordgs/nothing-ear) | pedrordgs | Command-line tool to check battery levels of Nothing Ear wireless earbuds via Bluetooth on Linux |
 | [Ear Native](https://github.com/dest4590/ear-native) | dest4590 | Native Rust desktop client for Nothing and CMF audio devices for Windows and Linux |
@@ -218,7 +219,7 @@ Essential resources including wikis, firmware archives, audio control utilities,
 | [EarA](https://oneydef.github.io/EarA-linux/) | oneydef | Unofficial GTK4 companion for Nothing and CMF earbuds for Linux [Repo](https://github.com/oneydef/EarA-linux) |
 | [Earctl](https://github.com/xhain/earctl) | xhain | [Alfred](https://www.alfredapp.com/) workflow to control Nothing Ear (2) Bluetooth headphones from macOS |
 | [EarPhone X](https://github.com/noebachofner/EarPhonesX) | noebachofner | Linux application to control and configure Nothing and CMF earbuds |
-| [FMC](https://fmc.freethinkel.dev) | freethinkel | Terminal companion tool, watchface compiler, and BLE sideloading manager for CMF Watch Pro 2 for Windows, Linux, and macOS [Repo](https://github.com/freethinkel/fmc) |
+| [FMC](https://fmc.tools/) | freethinkel & fmctools | Web-based watch-face editor, community gallery, firmware hub, and app store with Web Bluetooth flashing for CMF Watch Pro 2 and Watch 3 Pro ([Repo](https://github.com/fmctools/fmc)) |
 | [Kairo](https://github.com/nikitawebdeg-debug/-kairo) | nikitawebdeg-debug | ESP32-powered desktop system monitor with a Nothing OS-inspired dot-matrix display |
 | [MuggleBuds](https://github.com/Daaarlis/MuggleBuds) | Daaarlis | Tray app for Windows to control CMF Buds Pro 2 earbuds |
 | [Nadamas](https://github.com/ezvk/nadamas) | ezvk | Linux desktop utility and system tray app to control Nothing and CMF earbuds with LDAC codec and ANC controls |
