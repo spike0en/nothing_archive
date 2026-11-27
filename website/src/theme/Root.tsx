@@ -7,8 +7,12 @@ import SupportNudge from '../components/SupportNudge';
 import MagneticCursorRing from '../components/MagneticCursorRing';
 import { FaTimes } from 'react-icons/fa';
 import { FaKeyboard } from 'react-icons/fa6';
+import devicesData from '../data/devices-metadata.json';
+import { getDeviceHashAliases } from '../utils/deviceGrouping';
 
 import PwaReloadPopup from './PwaReloadPopup';
+
+const FIRMWARE_HASH_ALIASES = getDeviceHashAliases(devicesData);
 
 interface RootProps {
   children: React.ReactNode;
@@ -115,7 +119,8 @@ export default function Root({ children }: RootProps): React.JSX.Element {
         setShowPwaTest(true);
       } else if (currentHash && currentHash.length > 1) {
         try {
-          const id = decodeURIComponent(currentHash.slice(1));
+          const rawId = decodeURIComponent(currentHash.slice(1));
+          const id = FIRMWARE_HASH_ALIASES.get(rawId.toLowerCase()) ?? rawId;
           const target = document.getElementById(id);
           if (target) {
             // SAFETY: target.tagName check confirms HTMLDetailsElement instance

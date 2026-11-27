@@ -4,23 +4,30 @@
  */
 import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 import devicesData from './src/data/devices-metadata.json';
+import {
+  formatMergedDeviceLabel,
+  type DeviceEntry,
+} from './src/utils/deviceGrouping';
 
-interface DeviceItem {
-  name: string;
-  codename: string;
-  brand: string;
-  series: string;
-}
+const devices: readonly DeviceEntry[] = devicesData;
 
-// SAFETY: Validated structure matching DeviceItem schema generated during prebuild
-const devices = devicesData as DeviceItem[];
+/** Groups device links by shared firmware anchor. */
+function getFirmwareLinks(predicate: (d: DeviceEntry) => boolean) {
+  const groups = new Map<string, DeviceEntry[]>();
+  for (const d of devices.filter(predicate)) {
+    const targetId = d.folder || d.codename;
+    const group = groups.get(targetId);
+    if (group) {
+      group.push(d);
+    } else {
+      groups.set(targetId, [d]);
+    }
+  }
 
-/** Filters devices metadata and returns sidebar link items pointing to firmware hash anchors. */
-function getFirmwareLinks(predicate: (d: DeviceItem) => boolean) {
-  return devices.filter(predicate).map((d) => ({
+  return Array.from(groups.entries()).map(([targetId, group]) => ({
     type: 'link' as const,
-    label: d.name,
-    href: `/docs/firmware#${d.codename}`,
+    label: formatMergedDeviceLabel(group),
+    href: `/docs/firmware#${targetId}`,
   }));
 }
 

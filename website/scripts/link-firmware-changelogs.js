@@ -29,19 +29,46 @@ let fwContent = fs.readFileSync(FW_PATH, 'utf8');
 const METADATA_PATH = path.join(__dirname, '..', 'src', 'data', 'devices-metadata.json');
 const devices = fs.existsSync(METADATA_PATH) ? JSON.parse(fs.readFileSync(METADATA_PATH, 'utf8')) : [];
 
-// Dynamically map summary subtitles and codenames to device anchors and changelog folders
-const subtitleMap = {
-  'Asteroids(Pro)': { id: 'asteroids', name: 'Phone (3a) & (3a) Pro', folder: 'asteroids' },
-};
+// Map summary subtitles and codenames to device anchors and changelog folders.
+const subtitleMap = {};
+const folderGroups = new Map();
 
 for (const dev of devices) {
   const baseName = dev.name.replace(/\s*\([^)]+\)$/, '');
-  const config = { id: dev.folder || dev.codename, name: baseName, folder: dev.folder || dev.codename };
+  const folderId = dev.folder || dev.codename;
+  const config = { id: folderId, name: baseName, folder: folderId };
   subtitleMap[dev.codename.toLowerCase()] = config;
   const matchCap = dev.name.match(/\(([^)]+)\)$/);
   if (matchCap) {
     subtitleMap[matchCap[1].trim()] = config;
     subtitleMap[matchCap[1].trim().toLowerCase()] = config;
+  }
+
+  if (!folderGroups.has(folderId)) {
+    folderGroups.set(folderId, []);
+  }
+  folderGroups.get(folderId).push(dev);
+}
+
+for (const [folderId, group] of folderGroups.entries()) {
+  if (group.length <= 1) continue;
+  const names = group.map(d => d.name.replace(/\s*\([^)]+\)$/, '')).sort();
+  const joinedName = names.join(' & ').replace(/& Phone \(/g, '& (');
+  const codenames = group
+    .map(d => {
+      const m = d.name.match(/\(([^)]+)\)$/);
+      return m ? m[1].trim() : d.codename;
+    })
+    .sort();
+  const groupConfig = { id: folderId, name: joinedName, folder: folderId };
+  subtitleMap[codenames.join(' / ')] = groupConfig;
+  const [base, ...rest] = codenames;
+  const suffixes =
+    rest.length > 0 && rest.every(c => c.startsWith(base))
+      ? rest.map(c => c.slice(base.length)).filter(Boolean)
+      : [];
+  if (suffixes.length > 0) {
+    subtitleMap[`${base}(${suffixes.join('/')})`] = groupConfig;
   }
 }
 

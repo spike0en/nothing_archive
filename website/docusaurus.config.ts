@@ -4,6 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import * as child_process from 'node:child_process';
+import { formatMergedDeviceLabel } from './src/utils/deviceGrouping';
 
 /**
  * Maps Android dessert version letters to chronological release ranks.
@@ -218,21 +219,7 @@ function groupAndSortChangelogSidebar(items: any[]): any[] {
     let brand = 'Nothing';
 
     if (matchingDevices.length > 1) {
-      const cleanNames = matchingDevices.map((d: any) => d.name.match(/^(.*)\s\([^(]+\)$/)?.at(1) ?? "");
-      cleanNames.sort();
-      const joinedNames = cleanNames.join(' / ').replace(/\/ Phone \(/g, '/ (');
-
-      const cleanCodenames = matchingDevices.map((d: any) => {
-        const parts = d.name.match(/\(([^)]+)\)$/);
-        return parts ? parts[1] : d.codename;
-      });
-      cleanCodenames.sort();
-      let joinedCodenames = cleanCodenames.join(' / ');
-      if (cleanCodenames.includes('Asteroids') && cleanCodenames.includes('AsteroidsPro')) {
-        joinedCodenames = 'Asteroids(Pro)';
-      }
-
-      label = `${joinedNames} (${joinedCodenames})`;
+      label = formatMergedDeviceLabel(matchingDevices);
       series = matchingDevices[0].series;
       brand = matchingDevices[0].brand;
     } else if (dev) {

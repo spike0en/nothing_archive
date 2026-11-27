@@ -152,13 +152,19 @@ function parseDevices() {
     }
   }
 
-  function resolveChangelogFolder(codename) {
+  function resolveChangelogFolder(codename, rowCodenames = []) {
     if (fs.existsSync(path.join(CHANGELOGS_DIR, codename))) {
       return codename;
     }
     const baseCodename = codename.replace(/(pro|plus|lite)$/i, '');
     if (fs.existsSync(path.join(CHANGELOGS_DIR, baseCodename))) {
       return baseCodename;
+    }
+    // Fall back to any sibling codename on the same devices.md row that owns a changelog folder.
+    for (const sibling of rowCodenames) {
+      if (sibling !== codename && fs.existsSync(path.join(CHANGELOGS_DIR, sibling))) {
+        return sibling;
+      }
     }
     return null;
   }
@@ -175,7 +181,7 @@ function parseDevices() {
 
   for (const row of parsedRows) {
     for (const codename of row.codenames) {
-      const folder = resolveChangelogFolder(codename);
+      const folder = resolveChangelogFolder(codename, row.codenames);
       if (!folder) {
         continue;
       }
@@ -193,7 +199,7 @@ function parseDevices() {
 
       let displayCodename = '';
       const otherFoldersExist = otherCodenames.some(c => {
-        const mappedC = resolveChangelogFolder(c);
+        const mappedC = resolveChangelogFolder(c, row.codenames);
         return mappedC && fs.existsSync(path.join(CHANGELOGS_DIR, mappedC));
       });
       
