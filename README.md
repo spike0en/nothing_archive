@@ -22,9 +22,11 @@ It also lists community-made apps, tools, and developer resources.
 
 [![Hits](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fspike0en%2Fnothing_archive&label=Hits&icon=github&color=%23b02a37&labelColor=2E2E3F&message=&style=for-the-badge)](https://github.com/spike0en/nothing_archive) &nbsp; [![GitHub Stars](https://img.shields.io/github/stars/spike0en/nothing_archive?style=for-the-badge&logo=github&logoColor=white&labelColor=2E2E3F&color=b02a37)](https://github.com/spike0en/nothing_archive/stargazers) &nbsp; [![Total Downloads](https://img.shields.io/github/downloads/spike0en/nothing_archive/total?style=for-the-badge&logo=github&logoColor=white&labelColor=2E2E3F&color=b02a37)](https://github.com/spike0en/nothing_archive/releases) &nbsp; [![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0%20%2F%20MIT-b02a37?style=for-the-badge&labelColor=2E2E3F)](https://github.com/spike0en/nothing_archive/blob/main/LICENSE)
 
-<sub>Hits show daily / total repository views tracked since 11 November 2025.</sub>
-
-<br>
+<p align="center">
+  <a href="https://trendshift.io/repositories/26029" target="_blank"><img src="https://trendshift.io/api/badge/trendshift/repositories/26029/daily?language=CSS" alt="Trendshift: #1 CSS repository of the day" width="250" height="55"></a>
+  &nbsp;
+  <a href="https://trendshift.io/repositories/26029" target="_blank"><img src="https://trendshift.io/api/badge/trendshift/repositories/26029/yearly?language=CSS" alt="Trendshift: #19 CSS repository of the year" width="250" height="55"></a>
+</p>
 
 <a href="https://nothingarchive.tech/">
   <picture>
