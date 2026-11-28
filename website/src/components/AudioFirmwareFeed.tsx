@@ -109,8 +109,8 @@ export default function AudioFirmwareFeed(): React.JSX.Element {
                         </span>
                         <span className={styles.deviceName}>{dev.name}</span>
                         <span className={styles.versionSlot}>
-                          <span className={styles.versionBadge}>v{dev.version}</span>
-                          {dev.size && <span className={styles.sizePill}>{dev.size}</span>}
+                          <span className={styles.versionBadge}><span>v{dev.version}</span></span>
+                          {dev.size && <span className={styles.sizePill}><span>{dev.size}</span></span>}
                         </span>
                       </div>
                     </div>

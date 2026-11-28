@@ -107,7 +107,7 @@ export default function AppUpdatesFeed(): React.JSX.Element {
                     />
                     <div className={styles.appDetails}>
                       <span className={styles.appName}>{app.name}</span>
-                      <span className={styles.versionBadge}>{app.versionName}</span>
+                      <span className={styles.versionBadge}><span>{app.versionName}</span></span>
                     </div>
                     <div className={styles.actionArea}>
                       <a

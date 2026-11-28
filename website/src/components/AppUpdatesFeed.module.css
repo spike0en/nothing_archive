@@ -307,14 +307,16 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 6.1rem;
+  min-width: 5.2rem;
+  height: 20px;
+  box-sizing: border-box;
   font-family: var(--f-lettera, var(--f-mono, monospace));
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   font-weight: 500;
-  line-height: 1;
-  padding: 0.22rem 0.45rem 0.14rem;
-  border-radius: 4px;
-  background: rgba(0, 0, 0, 0.05);
+  line-height: normal;
+  padding: 0 0.5rem;
+  border-radius: var(--radius-pill, 999px);
+  background: rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(0, 0, 0, 0.08);
   color: var(--ifm-color-content);
   flex-shrink: 0;
@@ -322,9 +324,16 @@
   white-space: nowrap;
 }
 
+.versionBadge span {
+  display: inline-flex;
+  align-items: center;
+  line-height: normal;
+  transform: translateY(1.25px);
+}
+
 [data-theme='dark'] .versionBadge {
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: #E0E0E0;
 }
 
@@ -518,8 +527,12 @@
   }
   .versionBadge {
     min-width: 4.1rem;
-    font-size: 0.6rem;
-    padding: 0.14rem 0.3rem 0.08rem;
+    height: 18px;
+    font-size: 0.58rem;
+    padding: 0 0.4rem;
+  }
+  .versionBadge span {
+    transform: translateY(0.75px);
   }
   .actionArea {
     gap: 0.25rem;
